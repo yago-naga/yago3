@@ -21,20 +21,33 @@ import basics.N4Writer;
  */
 public class HardExtractor  extends Extractor {
 
-	public final Map<String,String> output=new FinalMap<String,String>("hardWiredFacts","These are the hard-wired facts of YAGO");
-
-	protected File inputFile;
-	
-	@Override
-	public void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception {
-		Announce.doing("Copying hard wired facts from",inputFile.getName());
-		for(Fact f : new N4Reader(inputFile)) {
-			writers.get(0).write(f);
-		}
-		Announce.doing();
+	public Map<String,String> output() {
+		return(new FinalMap<String,String>("hardWiredFacts","These are the hard-wired facts of YAGO"));
 	}
 
-	public HardExtractor(File input) {
-		inputFile=input;
+	protected File inputFolder;
+
+	/** Helper*/
+	public void extract(File input, N4Writer writer) throws Exception {
+		if(!input.getName().endsWith(".ttl")) return;
+		Announce.doing("Copying hard wired facts from",input.getName());		
+		for(Fact f : new N4Reader(input)) {
+			writer.write(f);
+		}
+		Announce.done();
+	}
+
+	@Override
+	public void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception {
+		Announce.doing("Copying hard wired facts");
+		Announce.message("Folder is",inputFolder);
+		for(File f : inputFolder.listFiles()) extract(f,writers.get(0));
+		Announce.done();
+	}
+
+	public HardExtractor(File inputFolder) {
+		if(!inputFolder.exists()) throw new RuntimeException("Folder not found "+inputFolder);
+		if(!inputFolder.isDirectory()) throw new RuntimeException("Not a folder: "+inputFolder);
+		this.inputFolder=inputFolder;
 	}
 }

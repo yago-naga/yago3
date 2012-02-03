@@ -19,14 +19,18 @@ import basics.N4Writer;
 public abstract class Extractor {
 
 	/** The themes required*/
-	public final List<String> input=Arrays.asList();
+	public List<String> input() {
+		return(Arrays.asList());
+	}
 	
 	/** The themes produced with descriptions*/
-	public final Map<String,String> output=new TreeMap<String,String>();
+	public Map<String,String> output() {
+		return(new TreeMap<String,String>());
+	}
 	
 	/** Returns the name*/
 	public final String name() {
-		return(this.getClass().getName());
+		return(this.getClass().getSimpleName());
 	}
 	
 	/** Main method*/
