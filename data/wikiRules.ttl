@@ -1,0 +1,20 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+
+@base <http://yago-knowledge/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+"$0 wasBornOnDate $"	<_implies>	"$0 type wordnet_person_100007846" .
+"$0 diedOnDate $"	<_implies>	"$0 type wordnet_person_100007846" .
+"$0 isMarriedTo $"	<_implies>	"$0 type wordnet_person_100007846" .
+"$0 worksAt $"	<_implies>	"$0 type wordnet_person_100007846" .
+"$0 hasAcademicAdvisor $"	<_implies>	"$0 type wordnet_person_100007846" .
+"$0 hasLatitude $"	<_implies>	"$0 type yagoGeoEntity" .
+"$0 hasLongitude $"	<_implies>	"$0 type yagoGeoEntity" .

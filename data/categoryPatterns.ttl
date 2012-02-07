@@ -1,0 +1,79 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+
+@base <http://yago-knowledge/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+"(.+) winners"	<categoryPattern>	<hasWonPrize> .
+"(?:^* )?(.+) laureates"	<categoryPattern>	<hasWonPrize> .
+#@ <id_nobel>
+"Nobel laureates in (.+)"	<categoryPattern>	<hasWonPrize> .
+<id_nobel>   <hasObject>    "Nobel_Prize_in_$1"
+"Cities in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"port cities and towns in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+#@ <id_20120207175542_32>
+"[a-zA-Z]* ?(Asia)n countries"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_32>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_33>
+"Central American countries"	<categoryPattern>	<isLocatedIn>
+<id_20120207175542_33>  <hasObject> "North_America" .
+<id_20120207175542_33>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_34>
+"(Northern America)n countries"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_34>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_35>
+"Caribbean countries"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_35>  <hasObject> "North_America" .
+<id_20120207175542_35>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_36>
+"(South America)n countries"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_36>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_37>
+"(Africa)n countries"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_37>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_38>
+"(Oceania)n countries"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_38>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_39>
+"(Europe)an countries"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_39>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_40>
+"populated places in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_40>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_41>
+"capitals in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_41>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_42>
+"port settlements in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_42>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_43>
+"provinces and territories of (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_43>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_44>
+"regions of (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_44>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_45>
+"port cities in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_45>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_46>
+"coastal cities in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+<id_20120207175542_46>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+"Towns in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Countries in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Rivers of (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Mountains of (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"States of (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Lakes of (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Museums in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Villages in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Parks in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Islands of (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"Attractions in (?:the )?(.+)"	<categoryPattern>	<isLocatedIn> .
+"(?:Presidents|Governors|Chancellors|Vice Presidents|Deputy Prime Ministers|Ministers|Prime Ministers) of (?:the )?(.+)"	<categoryPattern>	<isPoliticianOf> .

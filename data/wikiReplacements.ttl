@@ -1,0 +1,91 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+
+@base <http://yago-knowledge/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+"<br ?/?>"	<_wikiReplace>	";" .
+"<!--.*?-->"	<_wikiReplace>	"" .
+#@ <id_20120207175542_48>
+"<[^/t][^>]*?>"	<_wikiReplace>	"" .
+<id_20120207175542_48>	<_hasComment>	"Get rid of all HTML tags except for title. Tags that appear in other _wikiReplace patterns will be replaced before" .
+#@ <id_20120207175542_49>
+"</[^t][^>]*?>"	<_wikiReplace>	"" .
+<id_20120207175542_49>	<_hasComment>	"Get rid of all HTML tags except for title. Tags that appear in other _wikiReplace patterns will be replaced before" .
+"<title>Economy of the Bahamas</title>"	<_wikiReplace>	"<title>The_Bahamas</title> [[Category:locations]]" .
+"<title>Economy of the Gambia</title>"	<_wikiReplace>	"<title>The_Gambia</title> [[Category:locations]]" .
+"<title>Economy of the (.+)</title>"	<_wikiReplace>	"<title>$1</title> [[Category:locations]]" .
+"<title>Economy of (.+)</title>"	<_wikiReplace>	"<title>$1</title> [[Category:locations]]" .
+"<title>Political divisions"	<_wikiReplace>	"NIL" .
+"<title>List of"	<_wikiReplace>	"NIL" .
+"<title>[^:<]+:[^<]+</title>"	<_wikiReplace>	"NIL" .
+"<title>History of"	<_wikiReplace>	"NIL" .
+"<title>Comparison of"	<_wikiReplace>	"NIL" .
+"<title>Demography of"	<_wikiReplace>	"NIL" .
+"<title>Demographics of"	<_wikiReplace>	"NIL" .
+"<title>[^<]+eography[^<]+</title>"	<_wikiReplace>	"NIL" .
+"<title>[^<]* and [^<]*</title>"	<_wikiReplace>	"NIL" .
+"<title>[^<]{100,}</title>"	<_wikiReplace>	"NIL" .
+"<title>\u005cd+</title>"	<_wikiReplace>	"NIL" .
+"\u005c[\u005c[Category:Articles[^\u005c]]*\u005c]\u005c]"	<_wikiReplace>	"" .
+"\u005c[\u005c[Category:Requests[^\u005c]]*\u005c]\u005c]"	<_wikiReplace>	"" .
+"\u005c[\u005c[Category:Predecessors[^\u005c]]*\u005c]\u005c]"	<_wikiReplace>	"" .
+"\u005c[\u005c[File:[^\u005c]]*\u005c]\u005c]"	<_wikiReplace>	"" .
+"\u005c[\u005c[Image:[^\u005c]]*\u005c]\u005c]"	<_wikiReplace>	"" .
+"\u005c[\u005c[wp:[^\u005c]]*\u005c]\u005c]"	<_wikiReplace>	"" .
+"\u005c[\u005c[1000000000000 \u005c(number\u005c)\u005c|.*?\u005c]\u005c]"	<_wikiReplace>	" trillion " .
+"\u005c[\u005c[1000000000 \u005c(number\u005c)\u005c|.*?\u005c]\u005c]"	<_wikiReplace>	" billion " .
+"\u005c[\u005c[1000000 \u005c(number\u005c)\u005c|.*?\u005c]\u005c]"	<_wikiReplace>	" million " .
+"\u005c[\u005c[1000 \u005c(number\u005c)\u005c|.*?\u005c]\u005c]"	<_wikiReplace>	" thousand " .
+"\u005c[\u005c[euro\u005c|.*?\u005c]\u005c]"	<_wikiReplace>	" Euro " .
+"(?i)\u005c|\u005cs*lat_?d\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?m\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?s\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?NS\u005cs*=\u005cs*(.)"	<_wikiReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds $4 " .
+"(?i)\u005c|\u005cs*long_?d\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*long_?m\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*long_?s\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*long_?EW\u005cs*=\u005cs*(.)"	<_wikiReplace>	" |_longitude = $1 degrees $2 minutes $3 seconds $4 " .
+"(?i)\u005c|\u005cs*lat_?d\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?m\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?NS\u005cs*=\u005cs*(.)"	<_wikiReplace>	" |_latitude = $1 degrees $2 minutes 0 seconds $3 " .
+"(?i)\u005c|\u005cs*long_?d\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*long_?m\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*long_?EW\u005cs*=\u005cs*(.)"	<_wikiReplace>	" |_longitude = $1 degrees $2 minutes 0 seconds $3 " .
+"(?i)\u005c{\u005c{coord\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|([\u005cd\u005c.]+)\u005c|(.)\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|([\u005cd\u005c.]+)\u005c|(.)\u005c|.*?\u005c}\u005c}"	<_wikiReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds $4 |_longitude = $5 degrees $6 minutes $7 seconds $8 " .
+"(?i)\u005c|\u005cs*lat_?deg\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?min\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?sec\u005cs*=\u005cs*([\u005cd\u005c.]+)"	<_wikiReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds N " .
+"(?i)\u005c|\u005cs*lon_?deg\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lon_?min\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lon_?sec\u005cs*=\u005cs*([\u005cd\u005c.]+)"	<_wikiReplace>	" |_longitude = $1 degrees $2 minutes $3 seconds E " .
+"(?i)\u005c|\u005cs*lat_?deg\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?min\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?sec\u005cs*=\u005cs*"	<_wikiReplace>	" |_latitude = $1 degrees $2 minutes 0 seconds N " .
+"(?i)\u005c|\u005cs*lon_?deg\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lon_?min\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lon_?sec\u005cs*=\u005cs*"	<_wikiReplace>	" |_longitude = $1 degrees $2 minutes 0 seconds E " .
+<// "(?i)\u005c|\u005cs*lat_?d\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?m\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*lat_?s\u005cs*=\u005cs*([\u005cd\u005c.]+)">	<_wikiReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds N " .
+<// "(?i)\u005c|\u005cs*long_?d\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*long_?m\u005cs*=\u005cs*([\u005cd\u005c.]+)\u005cs*\u005c|\u005cs*long_?s\u005cs*=\u005cs*([\u005cd\u005c.]+)">	<_wikiReplace>	" |_longitude = $1 degrees $2 minutes $3 seconds E " .
+"(?i)\u005c{\u005c{cite .*?\u005c}\u005c}"	<_wikiReplace>	"" .
+"\u005c{\u005c{USA\u005c}\u005c}"	<_wikiReplace>	"[[United_States]]" .
+"\u005c{\u005c{RUS\u005c}\u005c}"	<_wikiReplace>	"[[Russia]]" .
+"\u005c{\u005c{FRA\u005c}\u005c}"	<_wikiReplace>	"[[France]]" .
+"\u005c{\u005c{ARG\u005c}\u005c}"	<_wikiReplace>	"[[Argentina]]" .
+"\u005c{\u005c{AUS\u005c}\u005c}"	<_wikiReplace>	"[[Australia]]" .
+"\u005c{\u005c{PAK\u005c}\u005c}"	<_wikiReplace>	"[[Pakistan]]" .
+"\u005c{\u005c{UK\u005c}\u005c}"	<_wikiReplace>	"[[United_Kingdom]]" .
+"\u005c{\u005c{GBR\u005c}\u005c}"	<_wikiReplace>	"[[United_Kingdom]]" .
+"\u005c{\u005c{CHINA\u005c}\u005c}"	<_wikiReplace>	"[[China]]" .
+"\u005c{\u005c{PAGENAME\u005c}\u005c}"	<_wikiReplace>	"[[$0]]" .
+"\u005c{\u005c{nowrap\u005c|(.*?)\u005c}\u005c}"	<_wikiReplace>	"$1" .
+"(?i)\u005c{\u005c{birth date(\u005c|[^\u005c|\u005cd]+)?\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|(\u005cd+)(\u005c|[^\u005c|\u005cd]+)?\u005c}\u005c}"	<_wikiReplace>	" $2-$3-$4 " .
+"(?i)\u005c{\u005c{Death date and age(\u005c|[^\u005c|\u005cd]+)?\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|\u005cd+\u005c|\u005cd+\u005c|\u005cd+\u005c}\u005c}"	<_wikiReplace>	" $2-$3-$4 " .
+"(?i)\u005c{\u005c{dda(\u005c|[^\u005c|\u005cd]+)?\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|\u005cd+\u005c|\u005cd+\u005c|\u005cd+\u005c}\u005c}"	<_wikiReplace>	" $1-$2-$3 " .
+"(?i)\u005c{\u005c{polytonic\u005c|(.*?)\u005c}\u005c}"	<_wikiReplace>	" ''$1'' " .
+"(?i)\u005c{\u005c{lang[\u005c|\u005c-].*?\u005c|(.*?)\u005c}\u005c}"	<_wikiReplace>	" ''$1'' " .
+#@ <id_20120207175542_50>
+"\u005c{\u005c{[^\u005c|\u005c}]*\u005c}\u005c}"	<_wikiReplace>	"" .
+<id_20120207175542_50>	<_hasComment>	"Get rid of all micro formats that do not have vertical bars. Micro formats that appear in other _wikiReplace patterns will be replaced before" .
+"\u005c{\u005c{spaces\u005c|.*?\u005c}\u005c}"	<_wikiReplace>	" " .
+"\u005c{\u005c{convert\u005c|(\u005cd+\u005c.?\u005cd*)\u005c|(.*?)\u005c|.*?\u005c}\u005c}"	<_wikiReplace>	" $1 $2 " .
+"\u005c{\u005c{height\u005c|ft=(\u005cd+)\u005c|in=(\u005cd+\u005c.?\u005cd*)\u005c}\u005c}"	<_wikiReplace>	" $1 feet $2 inches " .
+"\u005c{\u005c{([a-z]+) to [a-z]+\u005c|(\u005cd+\u005c.?\u005cd*).*?\u005c}\u005c}"	<_wikiReplace>	" $2 $1 " .
+"\u005c{\u005c{nowrap\u005c|(.*?)\u005c}\u005c}"	<_wikiReplace>	"$1" .
+"\u005c{\u005c{bday\u005c|(.*?)\u005c}\u005c}"	<_wikiReplace>	" $1 " .
+"\u005c{\u005c{flag ?(icon)?\u005c|(.*?)\u005c}\u005c}"	<_wikiReplace>	"[[$2]]" .
+"\u005c{\u005c{awd\u005c|"	<_wikiReplace>	"" .
+"\u005c{\u005c{award\u005c|"	<_wikiReplace>	"" .
+"\u005c{\u005c{birth-date\u005c|(.*?)\u005c}\u005c}"	<_wikiReplace>	" $1 " .
+"\u005c{\u005c{death-date\u005c|(.*?)\u005c}\u005c}"	<_wikiReplace>	" $1 " .
+"spouse"	<_wikiSplit>	"\u005c|" .
+"spouse"	<_wikiSplit>	";" .

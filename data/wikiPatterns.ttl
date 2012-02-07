@@ -1,0 +1,164 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+
+@base <http://yago-knowledge/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rdfs:subClassOf	<_wordnetFileOf>	"wn_hyp.pl" .
+<partOf>	<_wordnetFileOf>	"wn_mm.pl" .
+<hasGloss>	<_wordnetFileOf>	"wn_g.pl" .
+"birth"	rdf:type	<yagoNonConceptualWord> .
+"death"	rdf:type	<yagoNonConceptualWord> .
+"acronym"	rdf:type	<yagoNonConceptualWord> .
+"disestablishment"	rdf:type	<yagoNonConceptualWord> .
+"establishment"	rdf:type	<yagoNonConceptualWord> .
+"science"	rdf:type	<yagoNonConceptualWord> .
+"coeval"	rdf:type	<yagoNonConceptualWord> .
+"figure"	rdf:type	<yagoNonConceptualWord> .
+"introduction"	rdf:type	<yagoNonConceptualWord> .
+#@ <id_20120207175542_29>
+"update"	rdf:type	<yagoNonConceptualWord> .
+<id_20120207175542_29>	<_hasComment>	"For 1911_Britannica_articles_needing_updates\u0022" .
+"article"	rdf:type	<yagoNonConceptualWord> .
+"dispute"	rdf:type	<yagoNonConceptualWord> .
+"list"	rdf:type	<yagoNonConceptualWord> .
+"name"	rdf:type	<yagoNonConceptualWord> .
+"page"	rdf:type	<yagoNonConceptualWord> .
+"redirect"	rdf:type	<yagoNonConceptualWord> .
+"stub"	rdf:type	<yagoNonConceptualWord> .
+#@ <id_20120207175542_30>
+"human"	rdf:type	<yagoNonConceptualWord> .
+<id_20120207175542_30>	<_hasComment>	"contains human sciences" .
+"point"	rdf:type	<yagoNonConceptualWord> .
+"term"	rdf:type	<yagoNonConceptualWord> .
+"word"	rdf:type	<yagoNonConceptualWord> .
+"affix"	rdf:type	<yagoNonConceptualWord> .
+"suffix"	rdf:type	<yagoNonConceptualWord> .
+"suicide"	rdf:type	<yagoNonConceptualWord> .
+"title"	rdf:type	<yagoNonConceptualWord> .
+"variant"	rdf:type	<yagoNonConceptualWord> .
+"communication"	rdf:type	<yagoNonConceptualWord> .
+"reserve"	rdf:type	<yagoNonConceptualWord> .
+"punter"	rdf:type	<yagoNonConceptualWord> .
+"cabinet"	rdf:type	<yagoNonConceptualWord> .
+"composition"	rdf:type	<yagoNonConceptualWord> .
+"surname"	rdf:type	<yagoNonConceptualWord> .
+"loanword"	rdf:type	<yagoNonConceptualWord> .
+"candidate"	rdf:type	<yagoNonConceptualWord> .
+"member"	rdf:type	<yagoNonConceptualWord> .
+"climber"	rdf:type	<yagoNonConceptualWord> .
+#@ <id_20120207175542_31>
+"vega"	rdf:type	<yagoNonConceptualWord> .
+<id_20120207175542_31>	<_hasComment>	"For 'Las Vegas'" .
+"<title>"	<_wikiKeep>	"<text xml:space=\u0022preserve\u0022>" .
+"\u005c{\u005c{Infobox "	<_wikiKeep>	"}}" .
+"\u005c{\u005c{coord"	<_wikiKeep>	"}}" .
+"\u005c[\u005c[[a-z]{1,3}:"	<_wikiKeep>	"]]" .
+"\u005c[\u005c[Category:"	<_wikiKeep>	"]]" .
+"#REDIRECT"	<_wikiKeep>	"</text>" .
+"[["	<_wikiBrackets>	"]]" .
+"{{"	<_wikiBrackets>	"}}" .
+"\u005c[\u005c[Category:([^\u005c]]+) [wW]inners\u005c]\u005c]"	<_wikiPattern>	"$0 hasWonPrize @Entity($1)" .
+"\u005c[\u005c[Category:(?:[^ ]* )?([^\u005c]]+) [lL]aureates\u005c]\u005c]"	<_wikiPattern>	"$0 hasWonPrize @Entity($1)" .
+"\u005c[\u005c[Category:Nobel laureates in ([^\u005c]]+)\u005c]\u005c]"	<_wikiPattern>	"$0 hasWonPrize @Entity(Nobel_Prize_in_$1)" .
+"\u005c[\u005c[Category:[Cc]ities in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[pP]ort cities and towns in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+#@ <id_20120207175542_32>
+"\u005c[\u005c[Category:[a-zA-Z]* ?Asian countries"	<_wikiPattern>	"$0 isLocatedIn @Entity(Asia)" .
+<id_20120207175542_32>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_33>
+"\u005c[\u005c[Category:Central American countries"	<_wikiPattern>	"$0 isLocatedIn @Entity(North_America)" .
+<id_20120207175542_33>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_34>
+"\u005c[\u005c[Category:Northern American countries"	<_wikiPattern>	"$0 isLocatedIn @Entity(North_America)" .
+<id_20120207175542_34>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_35>
+"\u005c[\u005c[Category:Caribbean countries"	<_wikiPattern>	"$0 isLocatedIn @Entity(North_America)" .
+<id_20120207175542_35>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_36>
+"\u005c[\u005c[Category:South American countries"	<_wikiPattern>	"$0 isLocatedIn @Entity(South_America)" .
+<id_20120207175542_36>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_37>
+"\u005c[\u005c[Category:African countries"	<_wikiPattern>	"$0 isLocatedIn @Entity(Africa)" .
+<id_20120207175542_37>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_38>
+"\u005c[\u005c[Category:Oceanian countries"	<_wikiPattern>	"$0 isLocatedIn @Entity(Oceania)" .
+<id_20120207175542_38>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_39>
+"\u005c[\u005c[Category:European countries"	<_wikiPattern>	"$0 isLocatedIn @Entity(Europe)" .
+<id_20120207175542_39>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+#@ <id_20120207175542_40>
+"\u005c[\u005c[Category:[pP]opulated places in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+<id_20120207175542_40>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_41>
+"\u005c[\u005c[Category:[cC]apitals in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+<id_20120207175542_41>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_42>
+"\u005c[\u005c[Category:[pP]ort settlements in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+<id_20120207175542_42>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_43>
+"\u005c[\u005c[Category:[pP]rovinces and territories of (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+<id_20120207175542_43>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_44>
+"\u005c[\u005c[Category:[rR]egions of (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+<id_20120207175542_44>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_45>
+"\u005c[\u005c[Category:[pP]ort cities in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+<id_20120207175542_45>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_46>
+"\u005c[\u005c[Category:[cC]oastal cities in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+<id_20120207175542_46>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+"\u005c[\u005c[Category:[Tt]owns in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Cc]ountries in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Rr]ivers of (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Mm]ountains of (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Ss]tates of (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Ll]akes of (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Mm]useums in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Vv]illages in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Pp]arks in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Ii]slands of (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:[Aa]ttractions in (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isLocatedIn @Entity($1)" .
+"\u005c[\u005c[Category:(?:Presidents|Governors|Chancellors|Vice Presidents|Deputy Prime Ministers|Ministers|Prime Ministers) of (?:the )?([^\u005c]]+)\u005c]"	<_wikiPattern>	"$0 isPoliticianOf @Entity($1)" .
+"\u005c[\u005c[([a-z]{2}):(.+?)\u005c]\u005c]"	<_wikiPattern>	"$0 isCalled @String($2); #1 inLanguage @LanguageCode($1)" .
+#@ <id_20120207175542_47>
+"\u005c{\u005c{imdb title\u005c|[0=9]+\u005c}\u005c}"	<_wikiPattern>	"$0 hasImdb @String($1)" .
+<id_20120207175542_47>	<_hasComment>	"Added 2011-05-13" .
+"<title>(.{1,100}?)</title>"	<_wikiPattern>	"@String($1) means $0" .
+"<title>(.{1,100}?)</title>"	<_wikiPattern>	"$0 hasWikipediaUrl @Url(http://en.wikipedia.org/wiki/$0)" .
+"<title>(.{1,100}?),.+?</title>"	<_wikiPattern>	"@String($1) means $0" .
+"<title>(.{1,100}?) \u005c(.+?\u005c)</title>"	<_wikiPattern>	"@String($1) means $0" .
+"<title>(.{1,100}?)(?: \u005c(.+?\u005c))?</title>"	<_wikiPattern>	"$0 hasPreferredName @String($1)" .
+"<title>(.{1,100}?)</title>"	<_wikiPattern>	"@String($1) hasPreferredMeaning $0" .
+"{{Disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Airport_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Battledist}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Callsigndis}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Chemistry disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Church_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Disambig-Chinese-char-title}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Disambig-cleanup}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Genus_disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Geodis}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Hndis}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Hndis-cleanup}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Hospitaldis}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Hurricane_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Letter_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Letter-NumberCombDisambig}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Mathdab}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{MolFormDisambig}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{NA_Broadcast_List}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Numberdis}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Schooldis}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Species_Latin name abbreviation disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Taxonomy_disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{Species_Latin_name_disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
+"{{WP_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .

@@ -1,0 +1,258 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+
+@base <http://yago-knowledge/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+"_latitude = (.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasLatitude @yagoGeoCoordinate($1)" .
+"_longitude = (.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasLongitude @yagoGeoCoordinate($1)" .
+"(?i)\u005c{\u005c{Infobox (.+?)IBL\u005c|BEG"	<_wikiPattern>	"$0 type @Class($1)" .
+"(?i)IBL\u005c|BEG\u005cs*Nickname\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*native[_ ]?name\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*common[_ ]?name\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*alias\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*alternatename\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*abbreviation\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*common[_ ]?name\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*company[_ ]?name\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*fullname\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+#@ <id_20120207175542_0>
+"(?i)IBL\u005c|BEG\u005cs*binomial\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+<id_20120207175542_0>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <id_20120207175542_1>
+"(?i)IBL\u005c|BEG\u005cs*playername\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+<id_20120207175542_1>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <id_20120207175542_2>
+"(?i)IBL\u005c|BEG\u005cs*synonyms\u005cs*=\u005cs*''(.*?)''IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+<id_20120207175542_2>	<_hasComment>	"Added by Fabian 2011-05-27" .
+"(?i)IBL\u005c|BEG\u005cs*ICD10\u005cs*=\u005cs*\u005c{\u005c{ICD10\u005c|(.)\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|"	<_wikiPattern>	"$0 type wordnet_disease_114070360; $0 hasICD10 @String($1-$2.$3)" .
+"(?i)IBL\u005c|BEG\u005cs*Capital\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasCapital @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*OfficialLang\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasOfficialLanguage @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*Governor\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) isLeaderOf $0" .
+"(?i)IBL\u005c|BEG\u005cs*Senators\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) isPoliticianOf $0" .
+"(?i)IBL\u005c|BEG\u005cs*TotalArea\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasArea @yagoArea($1km2)" .
+"(?i)IBL\u005c|BEG\u005cs*Motto\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasMotto @String($1)" .
+"(?i)IBL\u005c|BEG\u005cs*national[_ ]?Motto\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasMotto @String($1)" .
+"(?i)IBL\u005c|BEG\u005cs*government[_ ]?type\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 type @Class($1)" .
+"(?i)IBL\u005c|BEG\u005cs*leader[_ ]?name\u005cd?\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) isLeaderOf $0" .
+"(?i)IBL\u005c|BEG\u005cs*established\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*established[_ ]?date1\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*established[_ ]?date\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*area[_ ]?km2\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasArea @yagoArea($1km2)" .
+"(?i)IBL\u005c|BEG\u005cs*population[_ ]?estimate\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasPopulation @yagoInteger($1)" .
+"(?i)IBL\u005c|BEG\u005cs*population[_ ]?density[_ ]?km2?\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasPopulationDensity @yagoDensityPerArea($1#/km^2)" .
+"(?i)IBL\u005c|BEG\u005cs*GDP[_ ]?nominal\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasGDP @yagoMonetaryValue($1)" .
+"(?i)IBL\u005c|BEG\u005cs*Gini\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasGini @Number($1)" .
+"(?i)IBL\u005c|BEG\u005cs*utc[_ ]?offset\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasUTCOffset @Number($1)" .
+"(?i)IBL\u005c|BEG\u005cs*area\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasArea @yagoArea($1)" .
+"(?i)IBL\u005c|BEG\u005cs*cctld\u005cs*=\u005cs*\u005c[\u005c[([^\u005c]\u005c|]+)"	<_wikiPattern>	"$0 hasTLD @String($1)" .
+"(?i)IBL\u005c|BEG\u005cs*currency\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasCurrency @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*expenses\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasExpenses @yagoMonetaryValue($1)" .
+"(?i)IBL\u005c|BEG\u005cs*export-goods\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 exports @Class($1)" .
+"(?i)IBL\u005c|BEG\u005cs*export-partners\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 dealsWith @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*exports\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasExport @yagoMonetaryValue($1)" .
+"(?i)IBL\u005c|BEG\u005cs*growth\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasEconomicGrowth @yagoNumber($1)" .
+"(?i)IBL\u005c|BEG\u005cs*hdi\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasHDI @yagoNumber($1)" .
+"(?i)IBL\u005c|BEG\u005cs*import-goods\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 imports @Class($1)" .
+"(?i)IBL\u005c|BEG\u005cs*import-partners\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 dealsWith @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*imports\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasImport @yagoMonetaryValue($1)" .
+"(?i)IBL\u005c|BEG\u005cs*inflation\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasInflation @yagoProportion($1)" .
+"(?i)IBL\u005c|BEG\u005cs*local[_ ]?name\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*location\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+#@ <id_20120207175542_3>
+"(?i)IBL\u005c|BEG\u005cs*county\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_3>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_4>
+"(?i)IBL\u005c|BEG\u005cs*roof\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasHeight @yagoLength($1)" .
+<id_20120207175542_4>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_5>
+"(?i)IBL\u005c|BEG\u005cs*subdivision_name1\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_5>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <id_20120207175542_6>
+"(?i)IBL\u005c|BEG\u005cs*subdivision_name\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_6>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+"(?i)IBL\u005c|BEG\u005cs*location[_ ]?city\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*official[_ ]?languages\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasOfficialLanguage @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*official[_ ]?name\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*population\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasPopulation @yagoInteger($1)" .
+"(?i)IBL\u005c|BEG\u005cs*population[_ ]total\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasPopulation @yagoInteger($1)" .
+"(?i)IBL\u005c|BEG\u005cs*poverty\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasPoverty @yagoProportion($1)" .
+"(?i)IBL\u005c|BEG\u005cs*unemployment\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasUnemployment @yagoProportion($1)" .
+"(?i)IBL\u005c|BEG\u005cs*latitude\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasLatitude @yagoNumber($1)" .
+"(?i)IBL\u005c|BEG\u005cs*longitude\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasLongitude @yagoNumber($1)" .
+#@ <id_20120207175542_7>
+"(?i)IBL\u005c|BEG\u005cs*length\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasLength @yagoNumber($1)" .
+<id_20120207175542_7>	<_hasComment>	"Added 2011-04-27 for GeoCLEF" .
+#@ <id_20120207175542_8>
+"(?i)IBL\u005c|BEG\u005cs*established\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+<id_20120207175542_8>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <id_20120207175542_9>
+"(?i)IBL\u005c|BEG\u005cs*architect\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+<id_20120207175542_9>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <id_20120207175542_10>
+"(?i)IBL\u005c|BEG\u005cs*department\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_10>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <id_20120207175542_11>
+"(?i)IBL\u005c|BEG\u005cs*arondissement\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_11>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <id_20120207175542_12>
+"(?i)IBL\u005c|BEG\u005cs*canton\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_12>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <id_20120207175542_13>
+"(?i)IBL\u005c|BEG\u005cs*road\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) isLocatedIn $0" .
+<id_20120207175542_13>	<_hasComment>	"Added by Fabian 2011-05-29" .
+"(?i)IBL\u005c|BEG\u005cs*nationality\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isCitizenOf @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*citizenship\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isCitizenOf @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*birthname\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@String($1) means $0" .
+"(?i)IBL\u005c|BEG\u005cs*birth[_ ]?date\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasBornOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*date[_ ]?of[_ ]?birth\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasBornOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*born\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasBornOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*death[_ ]?date\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 diedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*date[_ ]?of[_ ]?death\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 diedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*birth[_ ]?place\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasBornIn @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*death[_ ]?place\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 diedIn @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*died\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 diedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*spouse\u005cs*=\u005cs*(.+?\u005c]\u005c]).+?\u005c((\u005cd+)\u005cD(\u005cd*)\u005c).*?IBL\u005c|END"	<_wikiPattern>	"$0 isMarriedTo @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date($3); @WikiLink($1) isMarriedTo $0" .
+"(?i)IBL\u005c|BEG\u005cs*spouse\u005cs*=\u005cs*(.+?\u005c]\u005c]).+?\u005c((\u005cd+)\u005cD.*?\u005c).*?IBL\u005c|END"	<_wikiPattern>	"$0 isMarriedTo @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil ####-##-##; @WikiLink($1) isMarriedTo $0" .
+"(?i)IBL\u005c|BEG\u005cs*spouse(?:[_ ]?\u005cd)?\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isMarriedTo @WikiLink($1); @WikiLink($1) isMarriedTo $0" .
+"(?i)IBL\u005c|BEG\u005cs*children\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasChild @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*occupation\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 type @Class($1)" .
+"(?i)IBL\u005c|BEG\u005cs*profession\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 type @Class($1)" .
+"(?i)IBL\u005c|BEG\u005cs*political[_ ]?party\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*party\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*main[_ ]?interests\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isInterestedIn @Class($1)" .
+"(?i)IBL\u005c|BEG\u005cs*notable[_ ]?ideas\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isKnownFor @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*contributions\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isKnownFor @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*known[_ ]?for\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isKnownFor @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*prizes\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWonPrize @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*awards\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWonPrize @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*notable[_ ]?works\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 created @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*work[_ ]?institutions\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 worksAt @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*work[_ ]?places\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 worksAt @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*doctoral[_ ]?advisor\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasAcademicAdvisor @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*doctoral[_ ]?students\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) hasAcademicAdvisor $0" .
+"(?i)IBL\u005c|BEG\u005cs*parents\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) hasChild $0" .
+"(?i)IBL\u005c|BEG\u005cs*father\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) hasChild $0" .
+"(?i)IBL\u005c|BEG\u005cs*mother\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) hasChild $0" .
+"(?i)IBL\u005c|BEG\u005cs*influences\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) influences $0" .
+"(?i)IBL\u005c|BEG\u005cs*influenced[_ ]?by\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) influences $0" .
+"(?i)IBL\u005c|BEG\u005cs*influenced\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 influences @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*alma[_ ]?mater\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 graduatedFrom @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*height\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasHeight @yagoLength($1)" .
+"(?i)IBL\u005c|BEG\u005cs*weight\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWeight @yagoWeight($1)" .
+"(?i)IBL\u005c|BEG\u005cs*website\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWebsite @Url($1)" .
+"(?i)IBL\u005c|BEG\u005cs*academyawards\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWonPrize @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*afiawards\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWonPrize @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*artist\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+"(?i)IBL\u005c|BEG\u005cs*awards\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWonPrize @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*baftaawards\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWonPrize @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*commander\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) isLeaderOf $0" .
+"(?i)IBL\u005c|BEG\u005cs*commander-in-chief\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) isLeaderOf $0" .
+"(?i)IBL\u005c|BEG\u005cs*famous[_ ]?works\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 created @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*founded\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*goldenglobeawards\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWonPrize @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*height\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasHeight @yagoLength($1)" .
+"(?i)IBL\u005c|BEG\u005cs*homepage\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWebsite @Url($1)" .
+"(?i)IBL\u005c|BEG\u005cs*instrument\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasMusicalRole @Class($1)" .
+"(?i)IBL\u005c|BEG\u005cs*magnum[_ ]?opus\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 created @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*place[_ ]?of[_ ]?birth\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasBornIn @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*place[_ ]?of[_ ]?death\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 diedIn @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*premier\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) isLeaderOf $0" .
+"(?i)IBL\u005c|BEG\u005cs*prizes\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWonPrize @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*residence\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 livesIn @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*url\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasWebsite @Url($1)" .
+"(?is)IBL\u005c|BEG\u005cs*office\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_start\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_end\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*predecessor\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*successor\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 holdsPoliticalPosition @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date($3); #1 hasPredecessor @WikiLink($4); #1 hasSuccessor @WikiLink($5)" .
+"(?is)IBL\u005c|BEG\u005cs*office(\u005cd{1,2})\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_start\u005c1?\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_end\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*predecessor\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*successor\u005c1?s*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date($4); #1 hasPredecessor @WikiLink($5); #1 hasSuccessor @WikiLink($6)\u0022" .
+"(?is)IBL\u005c|BEG\u005cs*office\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_start\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*predecessor\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 holdsPoliticalPosition @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date(####-##-##); #1 hasPredecessor @WikiLink($3)" .
+"(?is)IBL\u005c|BEG\u005cs*office(\u005cd{1,2})\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_start\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*predecessor\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date(####-##-##); #1 hasPredecessor @WikiLink($4)" .
+"(?is)IBL\u005c|BEG\u005cs*office\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_start\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_end?\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 holdsPoliticalPosition @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date($3)" .
+"(?is)IBL\u005c|BEG\u005cs*office(\u005cd{1,2})\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_start\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_end\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date($4)" .
+"(?is)IBL\u005c|BEG\u005cs*office\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_start\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 holdsPoliticalPosition @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date(####-##-##)" .
+"(?is)IBL\u005c|BEG\u005cs*office(\u005cd{1,2})\u005cs*=\u005cs*(.*?)IBL\u005c|END.*?IBL\u005c|BEG\u005cs*term_start\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date(####-##-##)" .
+"(?is)IBL\u005c|BEG\u005cs*years(\u005cd{1,2})\u005cs*=\u005cs*(\u005cd{4}).*?(\u005cd{4})IBL\u005c|END.*?IBL\u005c|BEG\u005cs*clubs\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 playsFor @WikiLink($4); #1 occursSince @Date($2); #1 occursUntil @Date($3)" .
+"(?is)IBL\u005c|BEG\u005cs*years(\u005cd{1,2})\u005cs*=\u005cs*(\u005cd{4})[^\u005cd]*IBL\u005c|END.*?IBL\u005c|BEG\u005cs*clubs\u005c1\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 playsFor @WikiLink($4); #1 occursSince @Date($2); #1 occursUntil @Date(####-##-##)" .
+#@ <id_20120207175542_14>
+"(?i)IBL\u005c|BEG\u005cs*cityofbirth\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasBornIn @WikiLink($1)" .
+<id_20120207175542_14>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <id_20120207175542_15>
+"(?i)IBL\u005c|BEG\u005cs*countryofbirth\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasBornIn @WikiLink($1)" .
+<id_20120207175542_15>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <id_20120207175542_16>
+"(?i)IBL\u005c|BEG\u005cs*team\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
+<id_20120207175542_16>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <id_20120207175542_17>
+"(?i)IBL\u005c|BEG\u005cs*clubs\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
+<id_20120207175542_17>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <id_20120207175542_18>
+"(?i)IBL\u005c|BEG\u005cs*youthclubs\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
+<id_20120207175542_18>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <id_20120207175542_19>
+"(?i)IBL\u005c|BEG\u005cs*nationalteam\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
+<id_20120207175542_19>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <id_20120207175542_20>
+"(?i)IBL\u005c|BEG\u005cs*currentclub\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
+<id_20120207175542_20>	<_hasComment>	"Added by Fabian 2011-05-29" .
+"(?i)IBL\u005c|BEG\u005cs*director\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) directed $0" .
+"(?i)IBL\u005c|BEG\u005cs*writer\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+"(?i)IBL\u005c|BEG\u005cs*composer\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+"(?i)IBL\u005c|BEG\u005cs*starring\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) actedIn $0" .
+"(?i)IBL\u005c|BEG\u005cs*producer\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) produced $0" .
+"(?i)IBL\u005c|BEG\u005cs*published\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*author\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+"(?i)IBL\u005c|BEG\u005cs*released\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*release[_ ]?date\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*pages\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasPages @yagoInteger($1)" .
+"(?i)IBL\u005c|BEG\u005cs*runtime\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasDuration @yagoDuration($1)" .
+"(?i)IBL\u005c|BEG\u005cs*duration\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasDuration @yagoDuration($1)" .
+"(?i)IBL\u005c|BEG\u005cs*budget\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasBudget @yagoMonetaryValue($1)" .
+"(?i)IBL\u005c|BEG\u005cs*date[_ ]?created\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*isbn\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasISBN @yagoISBN($1)" .
+"(?i)IBL\u005c|BEG\u005cs*creator\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+"(?i)IBL\u005c|BEG\u005cs*designer\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+"(?i)IBL\u005c|BEG\u005cs*developer\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+"(?i)IBL\u005c|BEG\u005cs*imdb[_ ]?id\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasImdb @yagoInteger($1)" .
+"(?i)IBL\u005c|BEG\u005cs*producer\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) produced $0" .
+"(?i)IBL\u005c|BEG\u005cs*production company\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) produced $0" .
+"(?i)IBL\u005c|BEG\u005cs*revenue\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasRevenue @yagoMonetaryValue($1)" .
+"(?i)IBL\u005c|BEG\u005cs*slogan\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasMotto @String($1)" .
+#@ <id_20120207175542_21>
+"(?i)IBL\u005c|BEG\u005cs*recorded\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+<id_20120207175542_21>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <id_20120207175542_22>
+"(?i)IBL\u005c|BEG\u005cs*editing\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) edited $0" .
+<id_20120207175542_22>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <id_20120207175542_23>
+"(?i)IBL\u005c|BEG\u005cs*music\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) wroteMusicFor $0" .
+<id_20120207175542_23>	<_hasComment>	"Added by Fabian 2011-05-29" .
+"(?i)IBL\u005c|BEG\u005cs*founder\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) created $0" .
+"(?i)IBL\u005c|BEG\u005cs*location\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+#@ <id_20120207175542_24>
+"(?i)IBL\u005c|BEG\u005cs*region\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_24>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <id_20120207175542_25>
+"(?i)IBL\u005c|BEG\u005cs*country\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_25>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <id_20120207175542_26>
+"(?i)IBL\u005c|BEG\u005cs*city\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_26>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <id_20120207175542_27>
+"(?i)IBL\u005c|BEG\u005cs*state\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+<id_20120207175542_27>	<_hasComment>	"Added by Fabian 2011-05-26" .
+"(?i)IBL\u005c|BEG\u005cs*foundation\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 wasCreatedOnDate @Date($1)" .
+"(?i)IBL\u005c|BEG\u005cs*headquarters\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 isLocatedIn @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*num[_ ]?employees\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 hasNumberOfPeople @yagoNonNegativeInteger($1)" .
+#@ <id_20120207175542_28>
+"(?i)IBL\u005c|BEG\u005cs*owner\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) owns $0" .
+<id_20120207175542_28>	<_hasComment>	"Added by Fabian 2011-05-29" .
+"(?i)IBL\u005c|BEG\u005cs*combatant\u005cd?\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"@WikiLink($1) participatedIn $0" .
+"(?i)IBL\u005c|BEG\u005cs*place\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 happenedIn @WikiLink($1)" .
+"(?i)IBL\u005c|BEG\u005cs*date[s]?\u005cs*=\u005cs*([^\u005c‚Äì\u005c-\u005c|]*)\u005cs*[\u005c‚Äì\u005c-]\u005cs*([^\u005c‚Äì\u005c-\u005c|]*)\u005cs*IBL\u005c|END"	<_wikiPattern>	"$0 startedOnDate @Date($1); $0 endedOnDate @Date($2)" .
+"(?i)IBL\u005c|BEG\u005cs*date\u005cs*=\u005cs*([^\u005c‚Äì\u005c-\u005c|]*?)IBL\u005c|END"	<_wikiPattern>	"$0 happenedOnDate @Date($1); $0 startedOnDate @Date($1); $0 endedOnDate @Date($2)" .
+"(?i)IBL\u005c|BEG\u005cs*year\u005cs*=\u005cs*(.*?)IBL\u005c|END"	<_wikiPattern>	"$0 happenedOnDate @Date($1); $0 startedOnDate @Date($1); $0 endedOnDate @Date($2)" .
