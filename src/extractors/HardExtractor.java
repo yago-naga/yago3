@@ -1,11 +1,10 @@
 package extractors;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 
 import javatools.administrative.Announce;
-import javatools.datatypes.FinalMap;
 import basics.Fact;
 import basics.FactCollection;
 import basics.N4Reader;
@@ -17,21 +16,26 @@ import basics.N4Writer;
  * Produces the hard-coded facts.
  * 
  * @author Fabian
- *
+ * 
  */
-public class HardExtractor  extends Extractor {
+public class HardExtractor extends Extractor {
 
-	public Map<String,String> output() {
-		return(new FinalMap<String,String>("hardWiredFacts","These are the hard-wired facts of YAGO"));
+	public List<String> output() {
+		return (Arrays.asList("hardWiredFacts"));
+	}
+
+	public List<String> outputDescriptions() {
+		return (Arrays.asList("These are the hard-wired facts of YAGO"));
 	}
 
 	protected File inputFolder;
 
-	/** Helper*/
+	/** Helper */
 	public void extract(File input, N4Writer writer) throws Exception {
-		if(!input.getName().endsWith(".ttl")) return;
-		Announce.doing("Copying hard wired facts from",input.getName());		
-		for(Fact f : new N4Reader(input)) {
+		if (!input.getName().endsWith(".ttl"))
+			return;
+		Announce.doing("Copying hard wired facts from", input.getName());
+		for (Fact f : new N4Reader(input)) {
 			writer.write(f);
 		}
 		Announce.done();
@@ -40,14 +44,22 @@ public class HardExtractor  extends Extractor {
 	@Override
 	public void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception {
 		Announce.doing("Copying hard wired facts");
-		Announce.message("Folder is",inputFolder);
-		for(File f : inputFolder.listFiles()) extract(f,writers.get(0));
+		Announce.message("Input folder is", inputFolder);
+		for (File f : inputFolder.listFiles())
+			extract(f, writers.get(0));
 		Announce.done();
 	}
 
 	public HardExtractor(File inputFolder) {
-		if(!inputFolder.exists()) throw new RuntimeException("Folder not found "+inputFolder);
-		if(!inputFolder.isDirectory()) throw new RuntimeException("Not a folder: "+inputFolder);
-		this.inputFolder=inputFolder;
+		if (!inputFolder.exists())
+			throw new RuntimeException("Folder not found " + inputFolder);
+		if (!inputFolder.isDirectory())
+			throw new RuntimeException("Not a folder: " + inputFolder);
+		this.inputFolder = inputFolder;
+	}
+
+	@Override
+	public List<String> input() {
+		return Arrays.asList();
 	}
 }

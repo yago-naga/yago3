@@ -1,38 +1,89 @@
 package extractors;
 
+import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Map;
 import java.util.TreeMap;
 
+import javatools.administrative.Announce;
+import javatools.datatypes.Pair;
 import basics.FactCollection;
 import basics.N4Writer;
 
 /**
  * Extractor - Yago2s
  * 
- * Superclass of all extractors. It is suggested that the constructor takes as argument the input file. 
+ * Superclass of all extractors. It is suggested that the constructor takes as
+ * argument the input file.
  * 
  * @author Fabian
- *
+ * 
  */
 public abstract class Extractor {
 
-	/** The themes required*/
-	public List<String> input() {
-		return(Arrays.asList());
-	}
-	
-	/** The themes produced with descriptions*/
-	public Map<String,String> output() {
-		return(new TreeMap<String,String>());
-	}
-	
-	/** Returns the name*/
+	/** The themes required */
+	public abstract List<String> input();
+
+	/** The themes produced */
+	public abstract List<String> output();
+
+	/** Descriptions for the themes */
+	public abstract List<String> outputDescriptions();
+
+	/** Returns the name */
 	public final String name() {
-		return(this.getClass().getSimpleName());
+		return (this.getClass().getSimpleName());
+	}
+
+	/** Main method */
+	public abstract void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception;
+
+	/** Convenience method */
+	public void extract(File inputFolder, String header) throws Exception {
+		extract(inputFolder, inputFolder, header);
 	}
 	
-	/** Main method*/
-	public abstract void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception;
+	/** Convenience method */
+	public void extract(File inputFolder, File outputFolder, String header) throws Exception {
+		Announce.doing("Running",this.name());
+		List<FactCollection> input = new ArrayList<FactCollection>();
+		Announce.doing("Loading input");
+		for (String theme : input()) {
+			input.add(new FactCollection(new File(inputFolder, theme + ".ttl")));
+		}
+		Announce.done();
+		List<N4Writer> writers = new ArrayList<N4Writer>();
+		Announce.doing("Creating output files");
+		for (int j = 0; j < output().size(); j++) {
+			Announce.doing("Creating file", output().get(j));
+			File file = new File(outputFolder, output().get(j) + ".ttl");
+			if (file.exists())
+				Announce.error("File", file, "already exists");
+			writers.add(new N4Writer(file, header + outputDescriptions().get(j)));
+			Announce.done();
+		}
+		Announce.done();
+		Announce.done();
+	}
+
+	/** Creates an extractor given by name */
+	public static Extractor forName(String className, File datainput) {
+		Announce.doing("Creating extractor", className);
+		Extractor extractor;
+		try {
+			if (datainput != null) {
+				extractor = (Extractor) Class.forName(className).getConstructor(File.class).newInstance(datainput);
+			} else {
+				extractor = (Extractor) Class.forName(className).newInstance();
+			}
+		} catch (Exception ex) {
+			Announce.message(ex.getMessage());
+			Announce.failed();
+			return (null);
+		}
+		Announce.done();
+		return (extractor);
+	}
+
 }

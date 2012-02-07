@@ -48,12 +48,12 @@ public class Caller {
 				Announce.done();
 				List<N4Writer> writers = new ArrayList<N4Writer>();
 				Announce.doing("Creating output files");
-				for (String theme : e.output().keySet()) {
-					Announce.doing("Creating file",theme);
-					File file = new File(outputFolder, theme + ".ttl");
+				for (int j=0;j<e.output().size();j++) {
+					Announce.doing("Creating file",e.output().get(j));
+					File file = new File(outputFolder, e.output().get(j)+ ".ttl");
 					if (file.exists())
 						Announce.error("File", file, "already exists");
-					writers.add(new N4Writer(file, header + e.output().get(theme)));
+					writers.add(new N4Writer(file, header + e.outputDescriptions().get(j)));
 					Announce.done();
 				}
 				Announce.done();
