@@ -127,7 +127,7 @@ public class CategoryExtractor extends Extractor {
 		if (!FileLines.scrollTo(in, "<title>"))
 			return (null);
 		String title = FileLines.readTo(in, "</title>").toString();
-		for (Fact pattern : titlePatterns.get("<_wikiReplace>")) {
+		for (Fact pattern : titlePatterns.get("<_titleReplace>")) {
 			title = title.replaceAll(pattern.getArgNoQuotes(1), pattern.getArgNoQuotes(2));
 			if (title.contains("NIL") && pattern.arg2.equals("\"NIL\""))
 				return (null);
@@ -141,7 +141,7 @@ public class CategoryExtractor extends Extractor {
 		// Prepare the scene
 		Announce.doing("Compiling category patterns");
 		Map<Pattern, String> patterns = new HashMap<Pattern, String>();
-		for (Fact fact : factCollections.get(0).get("<categoryPattern>")) {
+		for (Fact fact : factCollections.get(0).get("<_categoryPattern>")) {
 			patterns.put(Pattern.compile(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
 		}
 		if(patterns.isEmpty()) {
@@ -149,7 +149,7 @@ public class CategoryExtractor extends Extractor {
 			throw new Exception("No category patterns found");
 		}
 		Map<Pattern, String> objects = new HashMap<Pattern, String>();
-		for (Fact fact : factCollections.get(0).get("<categoryObject>")) {
+		for (Fact fact : factCollections.get(0).get("<_categoryObject>")) {
 			patterns.put(Pattern.compile(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
 		}
 		Announce.done();
@@ -157,7 +157,7 @@ public class CategoryExtractor extends Extractor {
 		Announce.doing("Compiling word exceptions");
 		Set<String> nonconceptual=new TreeSet<String>();
 		for (Fact fact : factCollections.get(0).get("rdf:type")) {
-			if(!fact.arg2.equals("<yagoNonConceptualWord>")) continue;
+			if(!fact.arg2.equals("<_yagoNonConceptualWord>")) continue;
 			nonconceptual.add(fact.getArgNoQuotes(1));
 		}
 		if(nonconceptual.isEmpty()) {
