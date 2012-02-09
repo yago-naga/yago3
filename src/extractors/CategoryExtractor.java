@@ -34,6 +34,7 @@ import basics.N4Writer;
  */
 public class CategoryExtractor extends Extractor {
 
+	/** the file from which we read*/
 	protected File wikipedia;
 
 	@Override
@@ -154,7 +155,7 @@ public class CategoryExtractor extends Extractor {
 		}
 		Announce.done();
 		
-		Announce.doing("Compiling word exceptions");
+		Announce.doing("Compiling non-conceptual words");
 		Set<String> nonconceptual=new TreeSet<String>();
 		for (Fact fact : factCollections.get(0).get("rdf:type")) {
 			if(!fact.arg2.equals("<_yagoNonConceptualWord>")) continue;
@@ -201,6 +202,7 @@ public class CategoryExtractor extends Extractor {
 		}
 	}
 
+	/** Constructor from source file*/
 	public CategoryExtractor(File wikipedia) {
 		this.wikipedia = wikipedia;
 	}
