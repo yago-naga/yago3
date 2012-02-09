@@ -115,7 +115,7 @@ public class CategoryExtractor extends Extractor {
 		return (null);
 	}
 
-	/** Extracts facts from the category name */
+	/** Extracts type from the category name */
 	protected void extractType(String titleEntity, String category, N4Writer writer, Set<String> nonconceptual, Map<String, String> preferredMeaning) throws IOException {
        String concept=category2class(category, nonconceptual, preferredMeaning);
        if(concept==null) return;
@@ -137,28 +137,52 @@ public class CategoryExtractor extends Extractor {
 
 	@Override
 	public void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception {
+		
+		// Prepare the scene
 		Announce.doing("Compiling category patterns");
 		Map<Pattern, String> patterns = new HashMap<Pattern, String>();
 		for (Fact fact : factCollections.get(0).get("<categoryPattern>")) {
 			patterns.put(Pattern.compile(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
 		}
+		if(patterns.isEmpty()) {
+			Announce.failed();
+			throw new Exception("No category patterns found");
+		}
 		Map<Pattern, String> objects = new HashMap<Pattern, String>();
 		for (Fact fact : factCollections.get(0).get("<categoryObject>")) {
 			patterns.put(Pattern.compile(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
 		}
-		if(patterns.isEmpty()) Announce.error("No category patterns found");
 		Announce.done();
 		
 		Announce.doing("Compiling word exceptions");
 		Set<String> nonconceptual=new TreeSet<String>();
-		
+		for (Fact fact : factCollections.get(0).get("rdf:type")) {
+			if(!fact.arg2.equals("<yagoNonConceptualWord>")) continue;
+			nonconceptual.add(fact.getArgNoQuotes(1));
+		}
+		if(nonconceptual.isEmpty()) {
+			Announce.failed();
+			throw new Exception("No non-conceptual words found");
+		}
 		Map<String, String> preferredMeaning=new HashMap<String, String>();
+		for (Fact fact : factCollections.get(1).get("rdf:type")) {
+			if(!fact.arg2.equals("<isPreferredMeaningOf>")) continue;
+			preferredMeaning.put(fact.getArgNoQuotes(2),fact.getArg(1));
+		}
+		if(preferredMeaning.isEmpty()) {
+			Announce.failed();
+			throw new Exception("No preferred meanings found");
+		}
+		Announce.done();
 		
+		// Extract the information
+		Announce.doing("Extracting");
 		Reader in = new BufferedReader(new FileReader(wikipedia));
 		String titleEntity = null;
 		while (true) {
 			switch (FileLines.find(in, "<title>", "[[Category:")) {
 			case -1:
+				Announce.done();
 				in.close();
 				return;
 			case 0:
@@ -172,7 +196,7 @@ public class CategoryExtractor extends Extractor {
 					continue;
 				category = category.substring(0, category.length() - 2);
 				extractFacts(titleEntity, category, patterns, objects, writers);
-				extractType(titleEntity, category, writers.get(1));
+				extractType(titleEntity, category, writers.get(1), nonconceptual, preferredMeaning);
 			}
 		}
 	}
