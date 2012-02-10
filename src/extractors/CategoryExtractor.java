@@ -39,7 +39,7 @@ public class CategoryExtractor extends Extractor {
 
 	@Override
 	public List<String> input() {
-		return Arrays.asList("categoryPatterns", "titlePatterns", "hardWiredFacts");
+		return Arrays.asList("_categoryPatterns", "_titlePatterns", "hardWiredFacts");
 	}
 
 	@Override
@@ -155,6 +155,7 @@ public class CategoryExtractor extends Extractor {
 		}
 		Announce.done();
 		
+		// Still preparing...
 		Announce.doing("Compiling non-conceptual words");
 		Set<String> nonconceptual=new TreeSet<String>();
 		for (Fact fact : factCollections.get(0).get("rdf:type")) {

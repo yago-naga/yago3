@@ -23,7 +23,7 @@ import basics.N4Writer;
 public class PatternHardExtractor extends HardExtractor {
 
 	public List<String> output() {
-		return (Arrays.asList("infoboxPatterns","titlePatterns","categoryPatterns"));
+		return (Arrays.asList("_infoboxPatterns","_titlePatterns","_categoryPatterns"));
 	}
 
 	public List<String> outputDescriptions() {
