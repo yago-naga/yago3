@@ -36,15 +36,19 @@ public class Caller {
 	public static void call(List<Extractor> extractors) throws Exception {
 		Set<String> themesWeHave = new TreeSet<String>();
 		Announce.doing("Calling extractors");
+		Announce.message("Extractors",extractors);
 		for (int i = 0; i < extractors.size(); i++) {
 			Extractor e = extractors.get(i);
 			if (e.input().isEmpty() || themesWeHave.containsAll(e.input())) {
-				Announce.message("Current themes:", themesWeHave);
 				e.extract(outputFolder, header);
+				themesWeHave.addAll(e.output());
 				extractors.remove(i);
-				i = 0; // Start again from the beginning
+				Announce.message("Current themes:", themesWeHave);
+				Announce.message("Current extractors:",extractors);
+				i = -1; // Start again from the beginning
 			}
 		}
+		if(!extractors.isEmpty()) Announce.warning("Could not call",extractors);
 		Announce.done();
 	}
 
@@ -62,7 +66,7 @@ public class Caller {
 		List<Extractor> extractors = new ArrayList<Extractor>();
 		for (String extractorName : extractorNames) {
 			Announce.doing("Creating", extractorName);
-			Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z0-9/\\.]*)\\)").matcher(extractorName);
+			Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z0-9:/\\.]*)\\)").matcher(extractorName);
 			if (!m.matches()) {
 				Announce.warning("Cannot understand extractor call:", extractorName);
 				Announce.failed();

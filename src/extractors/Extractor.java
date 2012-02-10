@@ -36,6 +36,10 @@ public abstract class Extractor {
 		return (this.getClass().getSimpleName());
 	}
 
+	@Override
+	public String toString() {
+		return name();
+	}
 	/** Main method */
 	public abstract void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception;
 
@@ -58,12 +62,14 @@ public abstract class Extractor {
 		for (int j = 0; j < output().size(); j++) {
 			Announce.doing("Creating file", output().get(j));
 			File file = new File(outputFolder, output().get(j) + ".ttl");
-			if (file.exists())
-				Announce.error("File", file, "already exists");
+			//if (file.exists())
+			//	Announce.error("File", file, "already exists");
 			writers.add(new N4Writer(file, header + outputDescriptions().get(j)));
 			Announce.done();
 		}
 		Announce.done();
+		extract(writers,input);
+		for(N4Writer w : writers) w.close();
 		Announce.done();
 	}
 

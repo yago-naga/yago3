@@ -94,15 +94,18 @@ public class WordnetExtractor extends Extractor {
 						new Fact(null, lastClass, "<hasSynsetId>",
 								FactComponent.forNumber(id)));
 			}
+			String wordForm=FactComponent.forString(word, "en", null);
 			// add additional fact if it is preferred meaning
-			if (numMeaning.equals("1")) {
+			if (numMeaning.equals("1")) {				
+				// First check whether we do not already have such an element
+				if(factCollections.get(0).getBySecondArgSlow("<isPreferredMeaningOf>", wordForm).isEmpty()) {
 				writers.get(1).write(
 						new Fact(null, lastClass, "<isPreferredMeaningOf>",
-								FactComponent.forString(word, "en", null)));
+								wordForm));
+				}
 			}
 			writers.get(1).write(
-					new Fact(null, lastClass, "rdf:label", FactComponent
-							.forString(word, "en", null)));
+					new Fact(null, lastClass, "rdf:label",wordForm));
 		}
 		instances = null;
 		for (String line : new FileLines(new File(wordnetFolder, "wn_hyp.pl"),

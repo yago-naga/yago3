@@ -47,7 +47,7 @@ public class Tester {
 			for(String theme : extractor.output()) {
 				FactCollection goldStandard=new FactCollection(new File(testCase,theme));
 				FactCollection result=new FactCollection(new File(outputFolder,theme));
-				if(!result.checkEqual(goldStandard)) {
+				if(!result.equals(goldStandard)) {
 					Announce.failed();
 					Announce.done();
 					failed++;
