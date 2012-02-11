@@ -63,7 +63,7 @@ public class CategoryExtractor extends Extractor {
 					object = m.group(1);
 				else
 					object = FactComponent.stripQuotes(object).replace("$1", m.group(1));
-				Fact fact = new Fact(null, titleEntity, patterns.get(pattern), FactComponent.forYagoEntity(object));
+				Fact fact = new Fact(null, titleEntity, patterns.get(pattern), FactComponent.forYagoEntity(object.replace(' ', '_')));
 				if (fact.relation.equals("rdf:type"))
 					writers.get(0).write(fact);
 				else
@@ -125,9 +125,8 @@ public class CategoryExtractor extends Extractor {
 
 	/** Reads the title entity, supposes that the reader is after "<title>" */
 	public static String getTitleEntity(Reader in, FactCollection titlePatterns) throws IOException {
-		if (!FileLines.scrollTo(in, "<title>"))
-			return (null);
 		String title = FileLines.readTo(in, "</title>").toString();
+		title=title.substring(0,title.length()-8);
 		for (Fact pattern : titlePatterns.get("<_titleReplace>")) {
 			title = title.replaceAll(pattern.getArgNoQuotes(1), pattern.getArgNoQuotes(2));
 			if (title.contains("NIL") && pattern.arg2.equals("\"NIL\""))
@@ -167,8 +166,7 @@ public class CategoryExtractor extends Extractor {
 			throw new Exception("No non-conceptual words found");
 		}
 		Map<String, String> preferredMeaning=new HashMap<String, String>();
-		for (Fact fact : factCollections.get(1).get("rdf:type")) {
-			if(!fact.arg2.equals("<isPreferredMeaningOf>")) continue;
+		for (Fact fact : factCollections.get(2).get("<isPreferredMeaningOf>")) {
 			preferredMeaning.put(fact.getArgNoQuotes(2),fact.getArg(1));
 		}
 		if(preferredMeaning.isEmpty()) {
@@ -206,5 +204,9 @@ public class CategoryExtractor extends Extractor {
 	/** Constructor from source file*/
 	public CategoryExtractor(File wikipedia) {
 		this.wikipedia = wikipedia;
+	}
+	
+	public static void main(String[] args) throws Exception {
+		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("../../yago2/newfacts"), "Test on 1 wikipedia article");
 	}
 }
