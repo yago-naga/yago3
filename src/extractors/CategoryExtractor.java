@@ -15,6 +15,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
@@ -34,12 +35,12 @@ import basics.N4Writer;
  */
 public class CategoryExtractor extends Extractor {
 
-	/** the file from which we read*/
+	/** the file from which we read */
 	protected File wikipedia;
 
 	@Override
 	public List<String> input() {
-		return Arrays.asList("_categoryPatterns", "_titlePatterns", "hardWiredFacts");
+		return Arrays.asList("_categoryPatterns", "_titlePatterns", "hardWiredFacts", "wordnetWords");
 	}
 
 	@Override
@@ -54,16 +55,15 @@ public class CategoryExtractor extends Extractor {
 
 	/** Extracts facts from the category name */
 	protected void extractFacts(String titleEntity, String category, Map<Pattern, String> patterns,
-			Map<Pattern, String> objects, List<N4Writer> writers) throws IOException {
+			Map<String, String> objects, List<N4Writer> writers) throws IOException {
 		for (Pattern pattern : patterns.keySet()) {
 			Matcher m = pattern.matcher(category);
 			if (m.matches()) {
-				String object = objects.get(pattern);
-				if (object == null)
-					object = m.group(1);
-				else
-					object = FactComponent.stripQuotes(object).replace("$1", m.group(1));
-				Fact fact = new Fact(null, titleEntity, patterns.get(pattern), FactComponent.forYagoEntity(object.replace(' ', '_')));
+				String object = objects.get(pattern.pattern());
+				if (object == null) {
+					object = FactComponent.forYagoEntity(m.group(1).replace(' ', '_'));
+				}
+				Fact fact = new Fact(null, titleEntity, patterns.get(pattern), object);
 				if (fact.relation.equals("rdf:type"))
 					writers.get(0).write(fact);
 				else
@@ -110,23 +110,25 @@ public class CategoryExtractor extends Extractor {
 		}
 		// Try head
 		String wordnet = preferredMeaning.get(stemmedHead);
-		if (wordnet != null && wordnet.startsWith("wordnet_"))
+		if (wordnet != null)// && wordnet.startsWith("<wordnet_"))
 			return (wordnet);
-		Announce.debug("Could not find type in", categoryName, "(no wordnet match)");
+		Announce.debug("Could not find type in", categoryName, stemmedHead, "(no wordnet match)");
 		return (null);
 	}
 
 	/** Extracts type from the category name */
-	protected void extractType(String titleEntity, String category, N4Writer writer, Set<String> nonconceptual, Map<String, String> preferredMeaning) throws IOException {
-       String concept=category2class(category, nonconceptual, preferredMeaning);
-       if(concept==null) return;
-       writer.write(new Fact(null,titleEntity,FactComponent.forQname("rdf:","type"),FactComponent.forYagoEntity(concept)));
+	protected void extractType(String titleEntity, String category, N4Writer writer, Set<String> nonconceptual,
+			Map<String, String> preferredMeaning) throws IOException {
+		String concept = category2class(category, nonconceptual, preferredMeaning);
+		if (concept == null)
+			return;
+		writer.write(new Fact(null, titleEntity, FactComponent.forQname("rdf:", "type"), concept));
 	}
 
 	/** Reads the title entity, supposes that the reader is after "<title>" */
 	public static String getTitleEntity(Reader in, FactCollection titlePatterns) throws IOException {
 		String title = FileLines.readTo(in, "</title>").toString();
-		title=title.substring(0,title.length()-8);
+		title = title.substring(0, title.length() - 8);
 		for (Fact pattern : titlePatterns.get("<_titleReplace>")) {
 			title = title.replaceAll(pattern.getArgNoQuotes(1), pattern.getArgNoQuotes(2));
 			if (title.contains("NIL") && pattern.arg2.equals("\"NIL\""))
@@ -137,44 +139,47 @@ public class CategoryExtractor extends Extractor {
 
 	@Override
 	public void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception {
-		
+
 		// Prepare the scene
 		Announce.doing("Compiling category patterns");
 		Map<Pattern, String> patterns = new HashMap<Pattern, String>();
 		for (Fact fact : factCollections.get(0).get("<_categoryPattern>")) {
 			patterns.put(Pattern.compile(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
 		}
-		if(patterns.isEmpty()) {
+		if (patterns.isEmpty()) {
 			Announce.failed();
 			throw new Exception("No category patterns found");
 		}
-		Map<Pattern, String> objects = new HashMap<Pattern, String>();
+		Map<String, String> objects = new HashMap<String, String>();
 		for (Fact fact : factCollections.get(0).get("<_categoryObject>")) {
-			patterns.put(Pattern.compile(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
+			objects.put(fact.getArgNoQuotes(1), fact.getArgNoQuotes(2));
 		}
 		Announce.done();
-		
+
 		// Still preparing...
 		Announce.doing("Compiling non-conceptual words");
-		Set<String> nonconceptual=new TreeSet<String>();
+		Set<String> nonconceptual = new TreeSet<String>();
 		for (Fact fact : factCollections.get(0).get("rdf:type")) {
-			if(!fact.arg2.equals("<_yagoNonConceptualWord>")) continue;
+			if (!fact.arg2.equals("<_yagoNonConceptualWord>"))
+				continue;
 			nonconceptual.add(fact.getArgNoQuotes(1));
 		}
-		if(nonconceptual.isEmpty()) {
+		if (nonconceptual.isEmpty()) {
 			Announce.failed();
 			throw new Exception("No non-conceptual words found");
 		}
-		Map<String, String> preferredMeaning=new HashMap<String, String>();
-		for (Fact fact : factCollections.get(2).get("<isPreferredMeaningOf>")) {
-			preferredMeaning.put(fact.getArgNoQuotes(2),fact.getArg(1));
+		Map<String, String> preferredMeaning = new HashMap<String, String>();
+		for (int i = 2; i < 4; i++) {
+			for (Fact fact : factCollections.get(i).get("<isPreferredMeaningOf>")) {
+				preferredMeaning.put(fact.getArgNoQuotes(2), fact.getArg(1));
+			}
 		}
-		if(preferredMeaning.isEmpty()) {
+		if (preferredMeaning.isEmpty()) {
 			Announce.failed();
 			throw new Exception("No preferred meanings found");
 		}
 		Announce.done();
-		
+
 		// Extract the information
 		Announce.doing("Extracting");
 		Reader in = new BufferedReader(new FileReader(wikipedia));
@@ -196,17 +201,19 @@ public class CategoryExtractor extends Extractor {
 					continue;
 				category = category.substring(0, category.length() - 2);
 				extractFacts(titleEntity, category, patterns, objects, writers);
-				extractType(titleEntity, category, writers.get(1), nonconceptual, preferredMeaning);
+				extractType(titleEntity, category, writers.get(0), nonconceptual, preferredMeaning);
 			}
 		}
 	}
 
-	/** Constructor from source file*/
+	/** Constructor from source file */
 	public CategoryExtractor(File wikipedia) {
 		this.wikipedia = wikipedia;
 	}
-	
+
 	public static void main(String[] args) throws Exception {
-		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("../../yago2/newfacts"), "Test on 1 wikipedia article");
+		Announce.setLevel(Announce.Level.DEBUG);
+		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("../../yago2/newfacts"),
+				"Test on 1 wikipedia article");
 	}
 }
