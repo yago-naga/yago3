@@ -20,8 +20,11 @@ import basics.N4Writer;
  */
 public class HardExtractor extends Extractor {
 
-	public List<String> output() {
-		return (Arrays.asList("hardWiredFacts"));
+	/** Our output*/
+	public static final Theme HARDWIREDFACTS=new Theme("hardWiredFacts");
+	
+	public List<Theme> output() {
+		return (Arrays.asList(HARDWIREDFACTS));
 	}
 
 	public List<String> outputDescriptions() {
@@ -59,7 +62,7 @@ public class HardExtractor extends Extractor {
 	}
 
 	@Override
-	public List<String> input() {
+	public List<Theme> input() {
 		return Arrays.asList();
 	}
 }

@@ -15,13 +15,18 @@ import basics.N4Writer;
 public class InfoboxExtractor extends Extractor {
 
 	@Override
-	public List<String> input() {		
-		return Arrays.asList("categoryTypes","_infoboxPatterns");
+	public List<Theme> input() {		
+		return Arrays.asList(CategoryExtractor.CATEGORTYPES, PatternHardExtractor.INFOBOXPATTERNS);
 	}
 
+	/** Infobox facts, non-checked*/
+	public static final Theme DIRTYINFOBOXFACTS=new Theme("dirtyInfoxboxFacts");
+	/** Types derived from infoboxes*/
+	public static final Theme INFOBOXTYPES=new Theme("infoboxTypes");
+
 	@Override
-	public List<String> output() {
-		return Arrays.asList("dirtyInfoxboxFacts","infoboxTypes");
+	public List<Theme> output() {
+		return Arrays.asList(DIRTYINFOBOXFACTS, INFOBOXTYPES);
 	}
 
 	@Override

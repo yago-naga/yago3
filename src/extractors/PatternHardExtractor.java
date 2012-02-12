@@ -22,8 +22,15 @@ import basics.N4Writer;
  */
 public class PatternHardExtractor extends HardExtractor {
 
-	public List<String> output() {
-		return (Arrays.asList("_infoboxPatterns","_titlePatterns","_categoryPatterns"));
+	/** Patterns of infoboxes*/
+	public static final Theme INFOBOXPATTERNS=new Theme("_infoboxPatterns");
+	/** Patterns of titles*/
+	public static final Theme TITLEPATTERNS=new Theme("_titlePatterns");
+	/** Patterns of categories*/
+	public static final Theme CATEGORYPATTERNS=new Theme("_categoryPatterns");
+	
+	public List<Theme> output() {
+		return (Arrays.asList(INFOBOXPATTERNS,TITLEPATTERNS,CATEGORYPATTERNS));
 	}
 
 	public List<String> outputDescriptions() {

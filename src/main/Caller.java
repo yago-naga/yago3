@@ -10,9 +10,8 @@ import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
-import basics.FactCollection;
-import basics.N4Writer;
 import extractors.Extractor;
+import extractors.Theme;
 
 /**
  * Caller - YAGO2s
@@ -34,7 +33,7 @@ public class Caller {
 
 	/** Calls all extractors in the right order */
 	public static void call(List<Extractor> extractors) throws Exception {
-		Set<String> themesWeHave = new TreeSet<String>();
+		Set<Theme> themesWeHave = new TreeSet<Theme>();
 		Announce.doing("Calling extractors");
 		Announce.message("Extractors",extractors);
 		for (int i = 0; i < extractors.size(); i++) {

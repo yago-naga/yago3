@@ -23,10 +23,10 @@ import basics.N4Writer;
 public abstract class Extractor {
 
 	/** The themes required */
-	public abstract List<String> input();
+	public abstract List<Theme> input();
 
 	/** The themes produced */
-	public abstract List<String> output();
+	public abstract List<Theme> output();
 
 	/** Descriptions for the themes */
 	public abstract List<String> outputDescriptions();
@@ -53,15 +53,15 @@ public abstract class Extractor {
 		Announce.doing("Running",this.name());
 		List<FactCollection> input = new ArrayList<FactCollection>();
 		Announce.doing("Loading input");
-		for (String theme : input()) {
-			input.add(new FactCollection(new File(inputFolder, theme + ".ttl")));
+		for (Theme theme : input()) {
+			input.add(new FactCollection(theme.file(inputFolder)));
 		}
 		Announce.done();
 		List<N4Writer> writers = new ArrayList<N4Writer>();
 		Announce.doing("Creating output files");
 		for (int j = 0; j < output().size(); j++) {
 			Announce.doing("Creating file", output().get(j));
-			File file = new File(outputFolder, output().get(j) + ".ttl");
+			File file = output().get(j).file(outputFolder);
 			//if (file.exists())
 			//	Announce.error("File", file, "already exists");
 			writers.add(new N4Writer(file, header + outputDescriptions().get(j)));

@@ -20,16 +20,24 @@ import basics.N4Writer;
 
 public class WordnetExtractor extends Extractor {
 
+	/** Folder where wordnet lives*/
 	protected File wordnetFolder;
 
+	/** wordnet classes*/
+	public static final Theme WORDNETCLASSES=new Theme("wordnetClasses");
+	/** wordnet labels/means*/
+	public static final Theme WORDNETWORDS=new Theme("wordnetWords");
+	/** ids of wordnet*/
+	public static final Theme WORDNETIDS=new Theme("wordnetIds");
+
 	@Override
-	public List<String> input() {
-		return Arrays.asList("hardWiredFacts");
+	public List<Theme> input() {
+		return Arrays.asList(HardExtractor.HARDWIREDFACTS);
 	}
 
 	@Override
-	public List<String> output() {
-		return Arrays.asList("wordnetClasses", "wordnetWords", "wordnetIds");
+	public List<Theme> output() {
+		return Arrays.asList(WORDNETCLASSES,WORDNETWORDS , WORDNETIDS);
 	}
 
 	@Override

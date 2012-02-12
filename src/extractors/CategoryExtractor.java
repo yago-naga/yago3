@@ -17,6 +17,7 @@ import java.util.regex.Pattern;
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
+import javatools.parsers.DateParser;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
@@ -35,17 +36,22 @@ import basics.N4Writer;
  */
 public class CategoryExtractor extends Extractor {
 
-	/** the file from which we read */
+	/** The file from which we read */
 	protected File wikipedia;
 
 	@Override
-	public List<String> input() {
-		return Arrays.asList("_categoryPatterns", "_titlePatterns", "hardWiredFacts", "wordnetWords");
+	public List<Theme> input() {
+		return Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS,PatternHardExtractor.TITLEPATTERNS,HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS);
 	}
 
+	/** Patterns of infoboxes*/
+	public static final Theme CATEGORTYPES=new Theme("categoryTypes");
+	/** Patterns of titles*/
+	public static final Theme CATEGORYFACTS=new Theme("categoryFacts");
+
 	@Override
-	public List<String> output() {
-		return Arrays.asList("categoryTypes", "categoryFacts");
+	public List<Theme> output() {
+		return Arrays.asList(CATEGORTYPES, CATEGORYFACTS);
 	}
 
 	@Override
@@ -58,22 +64,30 @@ public class CategoryExtractor extends Extractor {
 			Map<String, String> objects, List<N4Writer> writers) throws IOException {
 		for (Pattern pattern : patterns.keySet()) {
 			Matcher m = pattern.matcher(category);
-			if (m.matches()) {
-				String object = objects.get(pattern.pattern());
-				if (object == null) {
-					object = FactComponent.forYagoEntity(m.group(1).replace(' ', '_'));
-				} else {
-					if(m.groupCount()>0) object=object.replace("$1", m.group(1));
-					object=FactComponent.forYagoEntity(object.replace(' ', '_'));
-				}
-				Fact fact = new Fact(null, titleEntity, patterns.get(pattern), object);
-				if (fact.relation.equals("rdf:type"))
-					writers.get(0).write(fact);
+			if (!m.matches())
+				continue;
+			// See whether we have a predefined pattern
+			// Note: we cannot look up the pattern in the hash map
+			// because patterns do not support equals().
+			// Therefore, we look up the string behind the pattern.
+			String object = objects.get(pattern.pattern());
+			if (object == null) {
+				object = DateParser.normalize(m.group(1).replace(' ', '_'));
+				if (object.matches("\\d+"))
+					object = FactComponent.forYear(object);
 				else
-					writers.get(1).write(fact);
+					object = FactComponent.forAny(object);
+			} else {
+				if (m.groupCount() > 0)
+					object = object.replace("$1", m.group(1));
+				object = FactComponent.forAny(object.replace(' ', '_'));
 			}
+			Fact fact = new Fact(null, titleEntity, patterns.get(pattern), object);
+			if (fact.relation.equals("rdf:type"))
+				writers.get(0).write(fact);
+			else
+				writers.get(1).write(fact);
 		}
-
 	}
 
 	/** Maps a category to a wordnet class */
@@ -216,8 +230,9 @@ public class CategoryExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		//new PatternHardExtractor(new File("./data")).extract(new File("../../yago2/newfacts"),
-		//"Test on 1 wikipedia article");
+		// new PatternHardExtractor(new File("./data")).extract(new
+		// File("../../yago2/newfacts"),
+		// "Test on 1 wikipedia article");
 		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("../../yago2/newfacts"),
 				"Test on 1 wikipedia article");
 	}
