@@ -17,14 +17,14 @@
 "(.+) winners"	<_categoryPattern>	<hasWonPrize> .
 "(?:^* )?(.+) laureates"	<_categoryPattern>	<hasWonPrize> .
 "Nobel laureates in (.+)"	<_categoryPattern>	<hasWonPrize> .
-"Nobel laureates in (.+)"   <_categoryObject>    "Nobel_Prize_in_$1"
+"Nobel laureates in (.+)"   <_categoryObject>    "Nobel_Prize_in_$1" .
 "Cities in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
 "port cities and towns in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
 #@ <id_20120207175542_32>
 "[a-zA-Z]* ?(Asia)n countries"	<_categoryPattern>	<isLocatedIn> .
 <id_20120207175542_32>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_33>
-"Central American countries"	<_categoryPattern>	<isLocatedIn>
+"Central American countries"	<_categoryPattern>	<isLocatedIn> .
 "Central American countries"  <_categoryObject> "North_America" .
 <id_20120207175542_33>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_34>
@@ -79,6 +79,61 @@
 "Islands of (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
 "Attractions in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
 "(?:Presidents|Governors|Chancellors|Vice Presidents|Deputy Prime Ministers|Ministers|Prime Ministers) of (?:the )?(.+)"	<_categoryPattern>	<isPoliticianOf> .
+
+"(\u005cd+) births"	<_categoryPattern>	<wasBornOnDate> .
+"(\u005cd+) deaths"	<_categoryPattern>	<diedOnDate> .
+"(\u005cd+) .*novels"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*books"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*poems"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*short stories"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*essays"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*songs"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*albums"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*films"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*video games"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*operas"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*musicals"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*premieres"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*architecture"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*paintings"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*works"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*television series debuts"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) establishments"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) disestablishments"	<_categoryPattern>	<wasDestroyedOnDate> .
+".+ established in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
+".+ opened in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
+".+ created in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
+".+ completed in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
+".+ disestablished in (\u005cd+)"	<_categoryPattern>	<wasDestroyedOnDate> .
+".+ closed in (\u005cd+)"	<_categoryPattern>	<wasDestroyedOnDate> .
+"(\u005cd+) in sports"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+) .*?(?:Olympics|Championship[s]?|Season|Games|Paralympics)(?:\u005c||)"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+) in law"	<_categoryPattern>	<happenedOnDate> .
+".*Incidents in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
+".*Accidents in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
+".*Explosions in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
+".*Disasters in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
+".*Earthquakes? in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+)s? .*Incidents"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+)s? .*Accidents"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+)s? .*Explosions"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+)s? .*Disasters"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+)s? .*Earthquakes?"	<_categoryPattern>	<happenedOnDate> .
+"Conflicts in (?:the)? ?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+) Riots"	<_categoryPattern>	<happenedOnDate> .
+"Treaties entered into force in (\u005cd+)"	<_categoryPattern>	<startedOnDate> .
+"(\u005cd+) .*Awards"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+) Elections?.*"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+) .*Introductions"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) .*Discoveries"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+th-century) .*Introductions"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+th-century) .*Discoveries"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+th-century) .*Revolutions"	<_categoryPattern>	<happenedOnDate> .
+"(\u005cd+th-century) .*Rebellions"	<_categoryPattern>	<happenedOnDate> .
+".*described in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
+".*introduced in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
+".*discovered in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
+
 
 # Non-conceptual words
 
