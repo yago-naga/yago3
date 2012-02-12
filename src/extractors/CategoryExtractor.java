@@ -15,8 +15,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.filehandlers.FileLines;
+import javatools.parsers.Char;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
@@ -62,6 +62,9 @@ public class CategoryExtractor extends Extractor {
 				String object = objects.get(pattern.pattern());
 				if (object == null) {
 					object = FactComponent.forYagoEntity(m.group(1).replace(' ', '_'));
+				} else {
+					if(m.groupCount()>0) object=object.replace("$1", m.group(1));
+					object=FactComponent.forYagoEntity(object.replace(' ', '_'));
 				}
 				Fact fact = new Fact(null, titleEntity, patterns.get(pattern), object);
 				if (fact.relation.equals("rdf:type"))
@@ -144,7 +147,7 @@ public class CategoryExtractor extends Extractor {
 		Announce.doing("Compiling category patterns");
 		Map<Pattern, String> patterns = new HashMap<Pattern, String>();
 		for (Fact fact : factCollections.get(0).get("<_categoryPattern>")) {
-			patterns.put(Pattern.compile(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
+			patterns.put(Pattern.compile(Char.decodeBackslash(fact.getArgNoQuotes(1))), fact.getArgNoQuotes(2));
 		}
 		if (patterns.isEmpty()) {
 			Announce.failed();
@@ -152,7 +155,7 @@ public class CategoryExtractor extends Extractor {
 		}
 		Map<String, String> objects = new HashMap<String, String>();
 		for (Fact fact : factCollections.get(0).get("<_categoryObject>")) {
-			objects.put(fact.getArgNoQuotes(1), fact.getArgNoQuotes(2));
+			objects.put(Char.decodeBackslash(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
 		}
 		Announce.done();
 
@@ -213,6 +216,8 @@ public class CategoryExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
+		//new PatternHardExtractor(new File("./data")).extract(new File("../../yago2/newfacts"),
+		//"Test on 1 wikipedia article");
 		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("../../yago2/newfacts"),
 				"Test on 1 wikipedia article");
 	}
