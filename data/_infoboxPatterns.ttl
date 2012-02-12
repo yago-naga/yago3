@@ -16,24 +16,24 @@
 "_latitude"	<_infoboxPattern>	"$0 hasLatitude @yagoGeoCoordinate($1)" .
 "_longitude"	<_infoboxPattern>	"$0 hasLongitude @yagoGeoCoordinate($1)" .
 "(?i)\u005c{\u005c{Infobox (.+?)IBL\u005c|BEG"	<_infoboxPattern>	"$0 type @Class($1)" .
-"Nickname"	<_infoboxPattern>	"@String($1) means $0" .
-"nativename"	<_infoboxPattern>	"@String($1) means $0" .
-"commonname"	<_infoboxPattern>	"@String($1) means $0" .
-"alias"	<_infoboxPattern>	"@String($1) means $0" .
-"alternatename"	<_infoboxPattern>	"@String($1) means $0" .
-"abbreviation"	<_infoboxPattern>	"@String($1) means $0" .
-"commonname"	<_infoboxPattern>	"@String($1) means $0" .
-"companyname"	<_infoboxPattern>	"@String($1) means $0" .
-"fullname"	<_infoboxPattern>	"@String($1) means $0" .
-#@ <id0>
-"binomial"	<_infoboxPattern>	"@String($1) means $0" .
-<id0>	<_hasComment>	"Added by Fabian 2011-05-26" .
-#@ <id1>
-"playername"	<_infoboxPattern>	"@String($1) means $0" .
-<id1>	<_hasComment>	"Added by Fabian 2011-05-26" .
-#@ <id2>
-"synonyms\u005cs*=\u005cs*''(.*?)''IBL\u005c|END"	<_infoboxPattern>	"@String($1) means $0" .
-<id2>	<_hasComment>	"Added by Fabian 2011-05-27" .
+"Nickname"	<_infoboxPattern>	rdfs:label .
+"nativename"	<_infoboxPattern>	rdfs:label .
+"commonname"	<_infoboxPattern>	rdfs:label .
+"alias"	<_infoboxPattern>	rdfs:label .
+"alternatename"	<_infoboxPattern>	rdfs:label .
+"abbreviation"	<_infoboxPattern>	rdfs:label .
+"commonname"	<_infoboxPattern>	rdfs:label .
+"companyname"	<_infoboxPattern>	rdfs:label .
+"fullname"	<_infoboxPattern>	rdfs:label .
+#@ <infoBoxId0>
+"binomial"	<_infoboxPattern>	rdfs:label .
+<infoBoxId0>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <infoBoxId1>
+"playername"	<_infoboxPattern>	rdfs:label .
+<infoBoxId1>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <infoBoxId2>
+"synonyms\u005cs*=\u005cs*''(.*?)''IBL\u005c|END"	<_infoboxPattern>	rdfs:label .
+<infoBoxId2>	<_hasComment>	"Added by Fabian 2011-05-27" .
 "ICD10\u005cs*=\u005cs*\u005c{\u005c{ICD10\u005c|(.)\u005c|(\u005cd+)\u005c|(\u005cd+)\u005c|"	<_infoboxPattern>	"$0 type wordnet_disease_114070360; $0 hasICD10 @String($1-$2.$3)" .
 "Capital"	<_infoboxPattern>	"$0 hasCapital @WikiLink($1)" .
 "OfficialLang"	<_infoboxPattern>	"$0 hasOfficialLanguage @WikiLink($1)" .
@@ -43,7 +43,7 @@
 "Motto"	<_infoboxPattern>	"$0 hasMotto @String($1)" .
 "nationalMotto"	<_infoboxPattern>	"$0 hasMotto @String($1)" .
 "governmenttype"	<_infoboxPattern>	"$0 type @Class($1)" .
-"leadername\u005cd?"	<_infoboxPattern>	"@WikiLink($1) isLeaderOf $0" .
+"leadername"	<_infoboxPattern>	"@WikiLink($1) isLeaderOf $0" .
 "established"	<_infoboxPattern>	"$0 wasCreatedOnDate @Date($1)" .
 "establisheddate1"	<_infoboxPattern>	"$0 wasCreatedOnDate @Date($1)" .
 "establisheddate"	<_infoboxPattern>	"$0 wasCreatedOnDate @Date($1)" .
@@ -66,53 +66,53 @@
 "import-partners"	<_infoboxPattern>	"$0 dealsWith @WikiLink($1)" .
 "imports"	<_infoboxPattern>	"$0 hasImport @yagoMonetaryValue($1)" .
 "inflation"	<_infoboxPattern>	"$0 hasInflation @yagoProportion($1)" .
-"localname"	<_infoboxPattern>	"@String($1) means $0" .
+"localname"	<_infoboxPattern>	rdfs:label .
 "location"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-#@ <id3>
+#@ <infoBoxId3>
 "county"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id3>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
-#@ <id4>
+<infoBoxId3>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <infoBoxId4>
 "roof"	<_infoboxPattern>	"$0 hasHeight @yagoLength($1)" .
-<id4>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
-#@ <id5>
+<infoBoxId4>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <infoBoxId5>
 "subdivision_name1"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id5>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
-#@ <id6>
+<infoBoxId5>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+#@ <infoBoxId6>
 "subdivision_name"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id6>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<infoBoxId6>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
 "locationcity"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
 "officiallanguages"	<_infoboxPattern>	"$0 hasOfficialLanguage @WikiLink($1)" .
-"officialname"	<_infoboxPattern>	"@String($1) means $0" .
+"officialname"	<_infoboxPattern>	rdfs:label .
 "population"	<_infoboxPattern>	"$0 hasPopulation @yagoInteger($1)" .
 "population[_ ]total"	<_infoboxPattern>	"$0 hasPopulation @yagoInteger($1)" .
 "poverty"	<_infoboxPattern>	"$0 hasPoverty @yagoProportion($1)" .
 "unemployment"	<_infoboxPattern>	"$0 hasUnemployment @yagoProportion($1)" .
 "latitude"	<_infoboxPattern>	"$0 hasLatitude @yagoNumber($1)" .
 "longitude"	<_infoboxPattern>	"$0 hasLongitude @yagoNumber($1)" .
-#@ <id7>
+#@ <infoBoxId7>
 "length"	<_infoboxPattern>	"$0 hasLength @yagoNumber($1)" .
-<id7>	<_hasComment>	"Added 2011-04-27 for GeoCLEF" .
-#@ <id8>
+<infoBoxId7>	<_hasComment>	"Added 2011-04-27 for GeoCLEF" .
+#@ <infoBoxId8>
 "established"	<_infoboxPattern>	"$0 wasCreatedOnDate @Date($1)" .
-<id8>	<_hasComment>	"Added by Fabian 2011-05-27" .
-#@ <id9>
+<infoBoxId8>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <infoBoxId9>
 "architect"	<_infoboxPattern>	"@WikiLink($1) created $0" .
-<id9>	<_hasComment>	"Added by Fabian 2011-05-27" .
-#@ <id10>
+<infoBoxId9>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <infoBoxId10>
 "department"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id10>	<_hasComment>	"Added by Fabian 2011-05-27" .
-#@ <id11>
+<infoBoxId10>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <infoBoxId11>
 "arondissement"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id11>	<_hasComment>	"Added by Fabian 2011-05-27" .
-#@ <id12>
+<infoBoxId11>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <infoBoxId12>
 "canton"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id12>	<_hasComment>	"Added by Fabian 2011-05-27" .
-#@ <id13>
+<infoBoxId12>	<_hasComment>	"Added by Fabian 2011-05-27" .
+#@ <infoBoxId13>
 "road"	<_infoboxPattern>	"@WikiLink($1) isLocatedIn $0" .
-<id13>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId13>	<_hasComment>	"Added by Fabian 2011-05-29" .
 "nationality"	<_infoboxPattern>	"$0 isCitizenOf @WikiLink($1)" .
 "citizenship"	<_infoboxPattern>	"$0 isCitizenOf @WikiLink($1)" .
-"birthname"	<_infoboxPattern>	"@String($1) means $0" .
+"birthname"	<_infoboxPattern>	rdfs:label .
 "birthdate"	<_infoboxPattern>	"$0 wasBornOnDate @Date($1)" .
 "dateofbirth"	<_infoboxPattern>	"$0 wasBornOnDate @Date($1)" .
 "born"	<_infoboxPattern>	"$0 wasBornOnDate @Date($1)" .
@@ -180,27 +180,27 @@
 "(?is)IBL\u005c|BEG\u005cs*office(\u005cd{1,2}).*?IBL\u005c|BEG\u005cs*term_start\u005c1"	<_infoboxPattern>	"$0 holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date(####-##-##)" .
 "(?is)IBL\u005c|BEG\u005cs*years(\u005cd{1,2})\u005cs*=\u005cs*(\u005cd{4}).*?(\u005cd{4})IBL\u005c|END.*?IBL\u005c|BEG\u005cs*clubs\u005c1"	<_infoboxPattern>	"$0 playsFor @WikiLink($4); #1 occursSince @Date($2); #1 occursUntil @Date($3)" .
 "(?is)IBL\u005c|BEG\u005cs*years(\u005cd{1,2})\u005cs*=\u005cs*(\u005cd{4})[^\u005cd]*IBL\u005c|END.*?IBL\u005c|BEG\u005cs*clubs\u005c1"	<_infoboxPattern>	"$0 playsFor @WikiLink($4); #1 occursSince @Date($2); #1 occursUntil @Date(####-##-##)" .
-#@ <id14>
+#@ <infoBoxId14>
 "cityofbirth"	<_infoboxPattern>	"$0 wasBornIn @WikiLink($1)" .
-<id14>	<_hasComment>	"Added by Fabian 2011-05-26" .
-#@ <id15>
+<infoBoxId14>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <infoBoxId15>
 "countryofbirth"	<_infoboxPattern>	"$0 wasBornIn @WikiLink($1)" .
-<id15>	<_hasComment>	"Added by Fabian 2011-05-26" .
-#@ <id16>
+<infoBoxId15>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <infoBoxId16>
 "team"	<_infoboxPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
-<id16>	<_hasComment>	"Added by Fabian 2011-05-29" .
-#@ <id17>
+<infoBoxId16>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <infoBoxId17>
 "clubs"	<_infoboxPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
-<id17>	<_hasComment>	"Added by Fabian 2011-05-29" .
-#@ <id18>
+<infoBoxId17>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <infoBoxId18>
 "youthclubs"	<_infoboxPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
-<id18>	<_hasComment>	"Added by Fabian 2011-05-29" .
-#@ <id19>
+<infoBoxId18>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <infoBoxId19>
 "nationalteam"	<_infoboxPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
-<id19>	<_hasComment>	"Added by Fabian 2011-05-29" .
-#@ <id20>
+<infoBoxId19>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <infoBoxId20>
 "currentclub"	<_infoboxPattern>	"$0 isAffiliatedTo @WikiLink($1)" .
-<id20>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId20>	<_hasComment>	"Added by Fabian 2011-05-29" .
 "director"	<_infoboxPattern>	"@WikiLink($1) directed $0" .
 "writer"	<_infoboxPattern>	"@WikiLink($1) created $0" .
 "composer"	<_infoboxPattern>	"@WikiLink($1) created $0" .
@@ -224,37 +224,37 @@
 "production company"	<_infoboxPattern>	"@WikiLink($1) produced $0" .
 "revenue"	<_infoboxPattern>	"$0 hasRevenue @yagoMonetaryValue($1)" .
 "slogan"	<_infoboxPattern>	"$0 hasMotto @String($1)" .
-#@ <id21>
+#@ <infoBoxId21>
 "recorded"	<_infoboxPattern>	"$0 wasCreatedOnDate @Date($1)" .
-<id21>	<_hasComment>	"Added by Fabian 2011-05-26" .
-#@ <id22>
+<infoBoxId21>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <infoBoxId22>
 "editing"	<_infoboxPattern>	"@WikiLink($1) edited $0" .
-<id22>	<_hasComment>	"Added by Fabian 2011-05-29" .
-#@ <id23>
+<infoBoxId22>	<_hasComment>	"Added by Fabian 2011-05-29" .
+#@ <infoBoxId23>
 "music"	<_infoboxPattern>	"@WikiLink($1) wroteMusicFor $0" .
-<id23>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId23>	<_hasComment>	"Added by Fabian 2011-05-29" .
 "founder"	<_infoboxPattern>	"@WikiLink($1) created $0" .
 "location"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-#@ <id24>
+#@ <infoBoxId24>
 "region"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id24>	<_hasComment>	"Added by Fabian 2011-05-26" .
-#@ <id25>
+<infoBoxId24>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <infoBoxId25>
 "country"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id25>	<_hasComment>	"Added by Fabian 2011-05-26" .
-#@ <id26>
+<infoBoxId25>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <infoBoxId26>
 "city"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id26>	<_hasComment>	"Added by Fabian 2011-05-26" .
-#@ <id27>
+<infoBoxId26>	<_hasComment>	"Added by Fabian 2011-05-26" .
+#@ <infoBoxId27>
 "state"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
-<id27>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId27>	<_hasComment>	"Added by Fabian 2011-05-26" .
 "foundation"	<_infoboxPattern>	"$0 wasCreatedOnDate @Date($1)" .
 "headquarters"	<_infoboxPattern>	"$0 isLocatedIn @WikiLink($1)" .
 "numemployees"	<_infoboxPattern>	"$0 hasNumberOfPeople @yagoNonNegativeInteger($1)" .
-#@ <id28>
+#@ <infoBoxId28>
 "owner"	<_infoboxPattern>	"@WikiLink($1) owns $0" .
-<id28>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId28>	<_hasComment>	"Added by Fabian 2011-05-29" .
 "combatant\u005cd?"	<_infoboxPattern>	"@WikiLink($1) participatedIn $0" .
 "place"	<_infoboxPattern>	"$0 happenedIn @WikiLink($1)" .
 "date[s]?\u005cs*=\u005cs*([^\u005c‚Äì\u005c-\u005c|]*)\u005cs*[\u005c‚Äì\u005c-]\u005cs*([^\u005c‚Äì\u005c-\u005c|]*)\u005cs*IBL\u005c|END"	<_infoboxPattern>	"$0 startedOnDate @Date($1); $0 endedOnDate @Date($2)" .
-"date\u005cs*=\u005cs*([^\u005c‚Äì\u005c-\u005c|]*?)IBL\u005c|END"	<_infoboxPattern>	"$0 happenedOnDate @Date($1); $0 startedOnDate @Date($1); $0 endedOnDate @Date($2)" .
-"year"	<_infoboxPattern>	"$0 happenedOnDate @Date($1); $0 startedOnDate @Date($1); $0 endedOnDate @Date($2)" .
+"date\u005cs*=\u005cs*([^\u005c‚Äì\u005c-\u005c|]*?)IBL\u005c|END"	<_infoboxPattern>	"$0 happenedOnDate @Date($1);" .
+"year"	<_infoboxPattern>	"$0 happenedOnDate @Date($1);" .
