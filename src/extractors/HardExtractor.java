@@ -1,10 +1,12 @@
 package extractors;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.datatypes.FinalMap;
 import basics.Fact;
 import basics.FactCollection;
 import basics.N4Reader;
@@ -23,12 +25,8 @@ public class HardExtractor extends Extractor {
 	/** Our output*/
 	public static final Theme HARDWIREDFACTS=new Theme("hardWiredFacts");
 	
-	public List<Theme> output() {
-		return (Arrays.asList(HARDWIREDFACTS));
-	}
-
-	public List<String> outputDescriptions() {
-		return (Arrays.asList("These are the hard-wired facts of YAGO"));
+	public Map<Theme,String> output() {
+		return (new FinalMap<Theme,String>(HARDWIREDFACTS,"These are the hard-wired facts of YAGO"));
 	}
 
 	protected File inputFolder;
@@ -45,11 +43,11 @@ public class HardExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception {
+	public void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception {
 		Announce.doing("Copying hard wired facts");
 		Announce.message("Input folder is", inputFolder);
 		for (File f : inputFolder.listFiles())
-			extract(f, writers.get(0));
+			extract(f, writers.get(HARDWIREDFACTS));
 		Announce.done();
 	}
 
@@ -62,7 +60,7 @@ public class HardExtractor extends Extractor {
 	}
 
 	@Override
-	public List<Theme> input() {
-		return Arrays.asList();
+	public Set<Theme> input() {
+		return new TreeSet<Theme>();
 	}
 }

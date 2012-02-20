@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
@@ -15,8 +16,9 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
+import javatools.datatypes.FinalMap;
+import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.Char;
 import javatools.parsers.DateParser;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
@@ -40,8 +42,8 @@ public class CategoryExtractor extends Extractor {
 	protected File wikipedia;
 
 	@Override
-	public List<Theme> input() {
-		return Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS,PatternHardExtractor.TITLEPATTERNS,HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS);
+	public Set<Theme> input() {
+		return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS,PatternHardExtractor.TITLEPATTERNS,HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS));
 	}
 
 	/** Patterns of infoboxes*/
@@ -50,27 +52,23 @@ public class CategoryExtractor extends Extractor {
 	public static final Theme CATEGORYFACTS=new Theme("categoryFacts");
 
 	@Override
-	public List<Theme> output() {
-		return Arrays.asList(CATEGORTYPES, CATEGORYFACTS);
+	public Map<Theme,String> output() {
+		return new FinalMap<Theme,String>(CATEGORTYPES, "Types derived from the categories", CATEGORYFACTS,  "Facts derived from the categories");
 	}
 
-	@Override
-	public List<String> outputDescriptions() {
-		return Arrays.asList("Types derived from the categories", "Facts derived from the categories");
-	}
 
 	/** Extracts facts from the category name */
-	protected void extractFacts(String titleEntity, String category, Map<Pattern, String> patterns,
-			Map<String, String> objects, List<N4Writer> writers) throws IOException {
-		for (Pattern pattern : patterns.keySet()) {
-			Matcher m = pattern.matcher(category);
+	protected void extractFacts(String titleEntity, String category, List<Pair<Pattern, String>> patterns,
+			Map<String, String> objects, Map<Theme,N4Writer> writers) throws IOException {
+		for (Pair<Pattern,String> pattern : patterns) {
+			Matcher m = pattern.first.matcher(category);
 			if (!m.matches())
 				continue;
 			// See whether we have a predefined pattern
 			// Note: we cannot look up the pattern in the hash map
 			// because patterns do not support equals().
 			// Therefore, we look up the string behind the pattern.
-			String object = objects.get(pattern.pattern());
+			String object = objects.get(pattern.first.pattern());
 			if (object == null) {
 				object = DateParser.normalize(m.group(1).replace(' ', '_'));
 				if (object.matches("\\d+"))
@@ -82,16 +80,16 @@ public class CategoryExtractor extends Extractor {
 					object = object.replace("$1", m.group(1));
 				object = FactComponent.forAny(object.replace(' ', '_'));
 			}
-			Fact fact = new Fact(null, titleEntity, patterns.get(pattern), object);
+			Fact fact = new Fact(null, titleEntity, pattern.second, object);
 			if (fact.relation.equals("rdf:type"))
-				writers.get(0).write(fact);
+				writers.get(CATEGORTYPES).write(fact);
 			else
-				writers.get(1).write(fact);
+				writers.get(CATEGORYFACTS).write(fact);
 		}
 	}
 
 	/** Maps a category to a wordnet class */
-	protected String category2class(String categoryName, Set<String> nonconceptual, Map<String, String> preferredMeaning) {
+	public static String category2class(String categoryName, Set<String> nonconceptual, Map<String, String> preferredMeaning) {
 		// Check out whether the new category is worth being added
 		NounGroup category = new NounGroup(categoryName);
 		if (category.head() == null) {
@@ -155,30 +153,28 @@ public class CategoryExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception {
+	public void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception {
 
 		// Prepare the scene
 		Announce.doing("Compiling category patterns");
-		Map<Pattern, String> patterns = new HashMap<Pattern, String>();
-		for (Fact fact : factCollections.get(0).get("<_categoryPattern>")) {
-			patterns.put(Pattern.compile(Char.decodeBackslash(fact.getArgNoQuotes(1))), fact.getArgNoQuotes(2));
+		List<Pair<Pattern, String>> patterns = new ArrayList<Pair<Pattern, String>>();
+		for (Fact fact : factCollections.get(PatternHardExtractor.CATEGORYPATTERNS).get("<_categoryPattern>")) {
+			patterns.add(new Pair<Pattern,String>(fact.getArgPattern(1), fact.getArgNoQuotes(2)));
 		}
 		if (patterns.isEmpty()) {
 			Announce.failed();
 			throw new Exception("No category patterns found");
 		}
 		Map<String, String> objects = new HashMap<String, String>();
-		for (Fact fact : factCollections.get(0).get("<_categoryObject>")) {
-			objects.put(Char.decodeBackslash(fact.getArgNoQuotes(1)), fact.getArgNoQuotes(2));
+		for (Fact fact : factCollections.get(PatternHardExtractor.CATEGORYPATTERNS).get("<_categoryObject>")) {
+			objects.put(fact.getArgPattern(1).pattern(), fact.getArgNoQuotes(2));
 		}
 		Announce.done();
 
 		// Still preparing...
 		Announce.doing("Compiling non-conceptual words");
 		Set<String> nonconceptual = new TreeSet<String>();
-		for (Fact fact : factCollections.get(0).get("rdf:type")) {
-			if (!fact.arg2.equals("<_yagoNonConceptualWord>"))
-				continue;
+		for (Fact fact : factCollections.get(HardExtractor.HARDWIREDFACTS).getBySecondArgSlow("rdf:type","<_yagoNonConceptualWord>")) {
 			nonconceptual.add(fact.getArgNoQuotes(1));
 		}
 		if (nonconceptual.isEmpty()) {
@@ -186,8 +182,8 @@ public class CategoryExtractor extends Extractor {
 			throw new Exception("No non-conceptual words found");
 		}
 		Map<String, String> preferredMeaning = new HashMap<String, String>();
-		for (int i = 2; i < 4; i++) {
-			for (Fact fact : factCollections.get(i).get("<isPreferredMeaningOf>")) {
+		for (FactCollection fc:factCollections.values()) {
+			for (Fact fact : fc.get("<isPreferredMeaningOf>")) {
 				preferredMeaning.put(fact.getArgNoQuotes(2), fact.getArg(1));
 			}
 		}
@@ -218,7 +214,7 @@ public class CategoryExtractor extends Extractor {
 					continue;
 				category = category.substring(0, category.length() - 2);
 				extractFacts(titleEntity, category, patterns, objects, writers);
-				extractType(titleEntity, category, writers.get(0), nonconceptual, preferredMeaning);
+				extractType(titleEntity, category, writers.get(CATEGORTYPES), nonconceptual, preferredMeaning);
 			}
 		}
 	}

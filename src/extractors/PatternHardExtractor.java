@@ -29,22 +29,16 @@ public class PatternHardExtractor extends HardExtractor {
 	/** Patterns of categories*/
 	public static final Theme CATEGORYPATTERNS=new Theme("_categoryPatterns");
 	
-	public List<Theme> output() {
-		return (Arrays.asList(INFOBOXPATTERNS,TITLEPATTERNS,CATEGORYPATTERNS));
-	}
-
-	public List<String> outputDescriptions() {
-		return (Arrays.asList("These are the Wikipedia infobox patterns used in YAGO",
-				"These are the replacement patterns for Wikipedia titles used in YAGO",
-				"These are the Wikipedia category patterns used in YAGO"));
+	public Map<Theme,String> output() {
+		return (new FinalMap<Theme,String>(INFOBOXPATTERNS,"These are the Wikipedia infobox patterns used in YAGO",TITLEPATTERNS,"These are the replacement patterns for Wikipedia titles used in YAGO",CATEGORYPATTERNS,"These are the Wikipedia category patterns used in YAGO"));
 	}
 
 	@Override
-	public void extract(List<N4Writer> writers, List<FactCollection> factCollections) throws Exception {
+	public void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception {
 		Announce.doing("Copying patterns");
 		Announce.message("Input folder is",inputFolder);
-		for(int i=0;i<output().size();i++) {
-		  extract(new File(inputFolder,output().get(i)+".ttl"),writers.get(i));
+		for(Theme t : output().keySet()) {
+		  extract(t.file(inputFolder),writers.get(t));
 		}
 		Announce.done();
 	}

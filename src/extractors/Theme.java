@@ -12,6 +12,12 @@ public class Theme implements Comparable<Theme>{
 
 	/** Name of the theme*/
 	public final String name;
+
+	/** Counts the themes*/
+	protected static int ids=0;
+	
+	/** (dynamic) Id of this theme*/
+	protected final int id=ids++;
 	
 	public Theme(String name) {
 		this.name=name;
@@ -24,12 +30,12 @@ public class Theme implements Comparable<Theme>{
 	
 	@Override
 	public int compareTo(Theme o) {	
-		return name.compareTo(o.name);
+		return id>o.id?1:id<o.id?-1:0;
 	}
 	
 	@Override
 	public boolean equals(Object obj) {	
-		return name.equals(obj.toString());
+		return (obj instanceof Theme) && ((Theme)obj).id==id;
 	}
 	@Override
 	public String toString() {	
@@ -37,6 +43,6 @@ public class Theme implements Comparable<Theme>{
 	}
 	@Override
 	public int hashCode() {	
-		return name.hashCode();
+		return id;
 	}
 }

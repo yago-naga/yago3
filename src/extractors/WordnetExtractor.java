@@ -7,10 +7,12 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
+import javatools.datatypes.FinalMap;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Name;
 import basics.Fact;
@@ -31,20 +33,13 @@ public class WordnetExtractor extends Extractor {
 	public static final Theme WORDNETIDS=new Theme("wordnetIds");
 
 	@Override
-	public List<Theme> input() {
-		return Arrays.asList(HardExtractor.HARDWIREDFACTS);
+	public Set<Theme> input() {
+		return new HashSet<Theme>(Arrays.asList(HardExtractor.HARDWIREDFACTS));
 	}
 
 	@Override
-	public List<Theme> output() {
-		return Arrays.asList(WORDNETCLASSES,WORDNETWORDS , WORDNETIDS);
-	}
-
-	@Override
-	public List<String> outputDescriptions() {
-		return Arrays.asList("SubclassOf-Hierarchy from WordNet",
-				"Labels and preferred meanings form Wordnet",
-				"Ids from Wordnet");
+	public Map<Theme,String> output() {
+		return new FinalMap<Theme,String>(WORDNETCLASSES,"SubclassOf-Hierarchy from WordNet",WORDNETWORDS ,"Labels and preferred meanings form Wordnet", WORDNETIDS,"Ids from Wordnet");
 	}
 
 	/** Pattern for synset definitions */
@@ -58,8 +53,8 @@ public class WordnetExtractor extends Extractor {
 			.compile("\\w*\\((\\d{9}),(.*)\\)\\.");
 
 	@Override
-	public void extract(List<N4Writer> writers,
-			List<FactCollection> factCollections) throws Exception {
+	public void extract(Map<Theme,N4Writer> writers,
+			Map<Theme,FactCollection> factCollections) throws Exception {
 		Announce.doing("Extracting from Wordnet");
 		Collection<String> instances = new HashSet<String>(8000);
 		for (String line : new FileLines(new File(wordnetFolder, "wn_ins.pl"),
@@ -95,10 +90,10 @@ public class WordnetExtractor extends Extractor {
 			if (!id.equals(lastId)) {
 				id2class.put(lastId = id,
 						lastClass = FactComponent.forWordnetEntity(word, id));
-				writers.get(1).write(
+				writers.get(WORDNETWORDS).write(
 						new Fact(null, lastClass, "<skos:prefLabel>",
 								FactComponent.forString(word, "en", null)));
-				writers.get(2).write(
+				writers.get(WORDNETIDS).write(
 						new Fact(null, lastClass, "<hasSynsetId>",
 								FactComponent.forNumber(id)));
 			}
@@ -106,13 +101,13 @@ public class WordnetExtractor extends Extractor {
 			// add additional fact if it is preferred meaning
 			if (numMeaning.equals("1")) {				
 				// First check whether we do not already have such an element
-				if(factCollections.get(0).getBySecondArgSlow("<isPreferredMeaningOf>", wordForm).isEmpty()) {
-				writers.get(1).write(
+				if(factCollections.get(HardExtractor.HARDWIREDFACTS).getBySecondArgSlow("<isPreferredMeaningOf>", wordForm).isEmpty()) {
+				writers.get(WORDNETWORDS).write(
 						new Fact(null, lastClass, "<isPreferredMeaningOf>",
 								wordForm));
 				}
 			}
-			writers.get(1).write(
+			writers.get(WORDNETWORDS).write(
 					new Fact(null, lastClass, "rdf:label",wordForm));
 		}
 		instances = null;
@@ -131,7 +126,7 @@ public class WordnetExtractor extends Extractor {
 			}
 			if (!id2class.containsKey(arg2))
 				continue;
-			writers.get(0).write(
+			writers.get(WORDNETCLASSES).write(
 					new Fact(null, id2class.get(arg1), "rdfs:subClassOf",
 							id2class.get(arg2)));
 		}
