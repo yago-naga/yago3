@@ -40,7 +40,7 @@ public class Caller {
 			Extractor e = extractors.get(i);
 			if (e.input().isEmpty() || themesWeHave.containsAll(e.input())) {
 				e.extract(outputFolder, header);
-				themesWeHave.addAll(e.output());
+				themesWeHave.addAll(e.output().keySet());
 				extractors.remove(i);
 				Announce.message("Current themes:", themesWeHave);
 				Announce.message("Current extractors:",extractors);

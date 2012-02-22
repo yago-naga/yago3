@@ -88,8 +88,10 @@ public class WordnetExtractor extends Extractor {
 			if (!type.equals("n"))
 				continue;
 			if (!id.equals(lastId)) {
+				if(id.equals("100001740")) lastClass="rdf:Resource";
+				else lastClass = FactComponent.forWordnetEntity(word, id);
 				id2class.put(lastId = id,
-						lastClass = FactComponent.forWordnetEntity(word, id));
+						lastClass);
 				writers.get(WORDNETWORDS).write(
 						new Fact(null, lastClass, "<skos:prefLabel>",
 								FactComponent.forString(word, "en", null)));

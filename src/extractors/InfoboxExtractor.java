@@ -21,9 +21,12 @@ import javatools.administrative.D;
 import javatools.datatypes.FinalMap;
 import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
+import javatools.parsers.Char;
 import basics.Fact;
 import basics.FactCollection;
+import basics.FactComponent;
 import basics.N4Writer;
+import extractorUtils.TermExtractor;
 
 public class InfoboxExtractor extends Extractor {
 
@@ -34,6 +37,7 @@ public class InfoboxExtractor extends Extractor {
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
+				PatternHardExtractor.CATEGORYPATTERNS,
 				WordnetExtractor.WORDNETWORDS,
 				PatternHardExtractor.TITLEPATTERNS,
 				HardExtractor.HARDWIREDFACTS));
@@ -59,10 +63,42 @@ public class InfoboxExtractor extends Extractor {
 	}
 	
 	/** Extracts a relation from a string */
-	protected void extract(String string, String relation,
-			String relation2, FactCollection factCollection, N4Writer n4Writer, List<Pair<Pattern, String>> replacements) {
-		
+	protected void extract(String entity, String string, String relation,
+			Map<String,String> preferredMeanings, FactCollection factCollection, N4Writer n4Writer, List<Pair<Pattern, String>> replacements) throws IOException {
+		for(Pair<Pattern,String> replacement : replacements) {
+			string=replacement.first.matcher(string).replaceAll(replacement.second);
+		}
+		string=string.trim();
+		if(string.length()==0) return;
+		String cls;
+		boolean inverse;
+		if(relation.endsWith("-")) {
+			inverse=true;
+			relation=Char.cutLast(string);
+			cls=factCollection.getArg2(relation, "rdfs:domain");
+		} else {
+			inverse=false;
+			cls=factCollection.getArg2(relation, "rdfs:range");			
+		}
+		if(cls==null) {
+			Announce.warning("Unknown relation to extract:",relation);
+			cls="rdfs:Resource";
+		}
+		TermExtractor extractor=cls.equals("rdf:Class")?new TermExtractor.ForClass(preferredMeanings):TermExtractor.forType(cls);
+		Announce.debug("Relation",relation,"with type checker",extractor.getClass().getSimpleName());
+		String syntaxChecker=factCollection.getArg2(cls, "<_hasTypeCheckPattern>");
+		if(syntaxChecker!=null) syntaxChecker=FactComponent.stripQuotes(Char.decodeBackslash(syntaxChecker));
+		for(String object : extractor.extractList(string)) {
+			if(syntaxChecker!=null && !object.matches(syntaxChecker)) {
+				Announce.debug("Extraction",object, "does not match typecheck",syntaxChecker);
+				continue;
+			}
+			if(inverse) n4Writer.write(new Fact(object, relation,entity));
+			else n4Writer.write(new Fact(entity, relation,object));
+			if(factCollection.contains(relation, "rdf:type", "<yagoFunction>")) break;
+		}
 	}
+	
 	/** reads an environment, returns the char on which we finish */
 	public static int readEnvironment(Reader in, StringBuilder b)
 			throws IOException {
@@ -140,11 +176,12 @@ public class InfoboxExtractor extends Extractor {
 				PatternHardExtractor.INFOBOXPATTERNS).get("<_infoboxReplace>")) {
 			replacements.add(new Pair<Pattern,String>(fact.getArgPattern(1),fact.getArgNoQuotes(2)));
 		}
+		Announce.done();
 
 		// Still preparing...
 		Announce.doing("Compiling non-conceptual words");
 		Set<String> nonconceptual = new TreeSet<String>();
-		for (Fact fact : factCollections.get(HardExtractor.HARDWIREDFACTS)
+		for (Fact fact : factCollections.get(PatternHardExtractor.CATEGORYPATTERNS)
 				.getBySecondArgSlow("rdf:type", "<_yagoNonConceptualWord>")) {
 			nonconceptual.add(fact.getArgNoQuotes(1));
 		}
@@ -177,7 +214,7 @@ public class InfoboxExtractor extends Extractor {
 				return;
 			case 0:
 				titleEntity = CategoryExtractor.getTitleEntity(in,
-						factCollections.get(1));
+						factCollections.get(PatternHardExtractor.TITLEPATTERNS));
 				break;
 			default:
 				if (titleEntity == null)
@@ -194,10 +231,9 @@ public class InfoboxExtractor extends Extractor {
 					Set<String> relations=patterns.get(attribute);
 					if(relations==null) continue;
 					for(String relation : relations) {
-						extract(titleEntity, attributes.get(attribute),relation,factCollections.get(HardExtractor.HARDWIREDFACTS),writers.get(DIRTYINFOBOXFACTS), replacements);
+						extract(titleEntity, attributes.get(attribute),relation,preferredMeaning, factCollections.get(HardExtractor.HARDWIREDFACTS),writers.get(DIRTYINFOBOXFACTS), replacements);
 					}
 				}
-				D.p(cls, attributes);
 			}
 		}
 	}	
@@ -210,6 +246,7 @@ public class InfoboxExtractor extends Extractor {
 	public static void main(String[] args) throws Exception {
 		new PatternHardExtractor(new File("./data")).extract(new File(
 				"c:/fabian/data/yago2s"), "test");
+		Announce.setLevel(Announce.Level.DEBUG);
 		new InfoboxExtractor(new File("./testCases/wikitest.xml")).extract(
 				new File("c:/fabian/data/yago2s"), "test");
 	}
