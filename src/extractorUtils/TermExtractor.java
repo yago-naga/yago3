@@ -138,7 +138,7 @@ public abstract class TermExtractor {
 
 		@Override
 		public List<String> extractList(String s) {
-			List<String> result = new ArrayList<>();
+			List<String> result = new ArrayList<String>();
 			for(String d : DateParser.getDates(DateParser.normalize(s))) {
 				result.add(FactComponent.forDate(d));
 			}

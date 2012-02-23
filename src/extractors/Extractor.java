@@ -9,6 +9,7 @@ import java.util.Set;
 import javatools.administrative.Announce;
 import basics.FactCollection;
 import basics.N4Writer;
+import basics.Theme;
 
 /**
  * Extractor - Yago2s

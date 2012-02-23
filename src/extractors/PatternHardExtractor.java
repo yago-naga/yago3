@@ -11,6 +11,7 @@ import basics.Fact;
 import basics.FactCollection;
 import basics.N4Reader;
 import basics.N4Writer;
+import basics.Theme;
 
 /**
  * PatternHardExtractor - YAGO2s

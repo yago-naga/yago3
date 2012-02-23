@@ -8,10 +8,11 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import basics.Theme;
+
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
 import extractors.Extractor;
-import extractors.Theme;
 
 /**
  * Caller - YAGO2s

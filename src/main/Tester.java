@@ -5,8 +5,8 @@ import java.io.File;
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
 import basics.FactCollection;
+import basics.Theme;
 import extractors.Extractor;
-import extractors.Theme;
 
 /**
  * Runs test cases for extractors

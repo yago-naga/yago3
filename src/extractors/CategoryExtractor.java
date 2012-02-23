@@ -5,10 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -27,6 +25,9 @@ import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
 import basics.N4Writer;
+import basics.Theme;
+import extractorUtils.PatternList;
+import extractorUtils.TitleExtractor;
 
 /**
  * CategoryExtractor - YAGO2s
@@ -58,9 +59,9 @@ public class CategoryExtractor extends Extractor {
 
 
 	/** Extracts facts from the category name */
-	protected void extractFacts(String titleEntity, String category, List<Pair<Pattern, String>> patterns,
+	protected void extractFacts(String titleEntity, String category, PatternList patterns,
 			Map<String, String> objects, Map<Theme,N4Writer> writers) throws IOException {
-		for (Pair<Pattern,String> pattern : patterns) {
+		for (Pair<Pattern,String> pattern : patterns.patterns) {
 			Matcher m = pattern.first.matcher(category);
 			if (!m.matches())
 				continue;
@@ -140,71 +141,31 @@ public class CategoryExtractor extends Extractor {
 		writer.write(new Fact(null, titleEntity, FactComponent.forQname("rdf:", "type"), concept));
 	}
 
-	/** Reads the title entity, supposes that the reader is after "<title>" */
-	public static String getTitleEntity(Reader in, FactCollection titlePatterns) throws IOException {
-		String title = FileLines.readTo(in, "</title>").toString();
-		title = title.substring(0, title.length() - 8);
-		for (Fact pattern : titlePatterns.get("<_titleReplace>")) {
-			title = title.replaceAll(pattern.getArgNoQuotes(1), pattern.getArgNoQuotes(2));
-			if (title.contains("NIL") && pattern.arg2.equals("\"NIL\""))
-				return (null);
-		}
-		return (FactComponent.forYagoEntity(title.replace(' ', '_')));
+	public static Set<String> nonConceptualWords(Map<Theme,FactCollection> factCollections) {
+		return(factCollections.get(PatternHardExtractor.CATEGORYPATTERNS).asStringSet("<_yagoNonConceptualWord>"));
 	}
-
+	
 	@Override
 	public void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception {
 
-		// Prepare the scene
-		Announce.doing("Compiling category patterns");
-		List<Pair<Pattern, String>> patterns = new ArrayList<Pair<Pattern, String>>();
-		for (Fact fact : factCollections.get(PatternHardExtractor.CATEGORYPATTERNS).get("<_categoryPattern>")) {
-			patterns.add(new Pair<Pattern,String>(fact.getArgPattern(1), fact.getArgNoQuotes(2)));
-		}
-		if (patterns.isEmpty()) {
-			Announce.failed();
-			throw new Exception("No category patterns found");
-		}
-		Map<String, String> objects = new HashMap<String, String>();
-		for (Fact fact : factCollections.get(PatternHardExtractor.CATEGORYPATTERNS).get("<_categoryObject>")) {
-			objects.put(fact.getArgPattern(1).pattern(), fact.getArgNoQuotes(2));
-		}
-		Announce.done();
-
-		// Still preparing...
-		Announce.doing("Compiling non-conceptual words");
-		Set<String> nonconceptual = new TreeSet<String>();
-		for (Fact fact : factCollections.get(HardExtractor.HARDWIREDFACTS).getBySecondArgSlow("rdf:type","<_yagoNonConceptualWord>")) {
-			nonconceptual.add(fact.getArgNoQuotes(1));
-		}
-		if (nonconceptual.isEmpty()) {
-			Announce.failed();
-			throw new Exception("No non-conceptual words found");
-		}
-		Map<String, String> preferredMeaning = new HashMap<String, String>();
-		for (FactCollection fc:factCollections.values()) {
-			for (Fact fact : fc.get("<isPreferredMeaningOf>")) {
-				preferredMeaning.put(fact.getArgNoQuotes(2), fact.getArg(1));
-			}
-		}
-		if (preferredMeaning.isEmpty()) {
-			Announce.failed();
-			throw new Exception("No preferred meanings found");
-		}
-		Announce.done();
-
+		PatternList categoryPatterns=new PatternList(factCollections.get(PatternHardExtractor.CATEGORYPATTERNS),"<_categoryPattern>");
+		Map<String, String> objects = factCollections.get(PatternHardExtractor.CATEGORYPATTERNS).asStringMap("<_categoryObject>");
+		Set<String> nonconceptual = nonConceptualWords(factCollections);
+		Map<String,String> preferredMeanings=WordnetExtractor.preferredMeanings(factCollections.values());
+        TitleExtractor titleExtractor=new TitleExtractor(factCollections);
+        
 		// Extract the information
 		Announce.doing("Extracting");
 		Reader in = new BufferedReader(new FileReader(wikipedia));
 		String titleEntity = null;
 		while (true) {
-			switch (FileLines.find(in, "<title>", "[[Category:")) {
+			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:")) {
 			case -1:
 				Announce.done();
 				in.close();
 				return;
 			case 0:
-				titleEntity = getTitleEntity(in, factCollections.get(1));
+				titleEntity = titleExtractor.getTitleEntity(in);
 				break;
 			case 1:
 				if (titleEntity == null)
@@ -213,8 +174,8 @@ public class CategoryExtractor extends Extractor {
 				if (!category.endsWith("]]"))
 					continue;
 				category = category.substring(0, category.length() - 2);
-				extractFacts(titleEntity, category, patterns, objects, writers);
-				extractType(titleEntity, category, writers.get(CATEGORTYPES), nonconceptual, preferredMeaning);
+				extractFacts(titleEntity, category, categoryPatterns, objects, writers);
+				extractType(titleEntity, category, writers.get(CATEGORTYPES), nonconceptual, preferredMeanings);
 			}
 		}
 	}
