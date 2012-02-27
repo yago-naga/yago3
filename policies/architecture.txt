@@ -38,3 +38,15 @@ dependency graph of extractors.
 
 Extractors are scheduled in the right order and 
 called by main.Caller
+
+-------------- Test cases --------------------
+
+Every extractor should come with a test case.
+A test case is
+* an input file
+* hand-defined Theme files that are expected as output
+
+Any changes should be checked with the test cases
+before release.
+
+Test cases are run by main.Tester

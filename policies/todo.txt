@@ -1,0 +1,90 @@
+YAGO2s: Todos
+
+The following extractors still have to be translated to YAGO2s:
+
+* Infobox extractor
+todo: polishing and debugging
+responsible: Fabian
+
+* Category extractor
+todo: polishing and debugging
+responsible: Fabian
+
+* WordNet extractor
+todo: polishing and debugging
+responsible: Fabian
+
+* Rule/Implication extractor
+todo: to write
+responsible: ?, Fabian can do it
+
+* Simple Taxonomy extractor
+todo: to write
+responsible: Fabian
+
+* Type checker
+todo: to write
+responsible: ?, Fabian can do it
+
+* Gender extractor
+If the wikipedia entity is a person,
+count "he" and "she" in the article.
+Output a hasGender fact
+todo: to write
+responsible: Edwin ?
+
+* DBpedia instance link extractor
+For every instance X, output
+X owl:sameAs X'
+where X' is the name of the instance in DBpedia
+todo: to write
+responsible: Edwin ?
+
+* DBpedia class link extractor
+For every class X, output
+X rdfs:subClassOf X'
+X' rdfs:subClassOf X
+where X' is the name of the classin DBpedia
+todo: to write
+responsible: Edwin ?
+
+* Redirect extractor
+as an extractor that cleans up the infobox facts
+todo: to write
+responsible: Johannes?
+
+* Text fact extractors
+Wiki-category, wiki-links, context etc.
+May be multiple extractors
+todo: to write
+responsible: Johannes?
+
+* Disambiguation extractor
+todo: to write
+responsible: Johannes?
+
+* Geoames instances extractor
+todo: to write
+responsible: Johannes?
+
+* Geoames classes extractor
+todo: to write
+responsible: Johannes?
+
+* Temporal extractor
+todo: to write
+responsible: Erdal ?
+
+* Set up test beds and test frames
+See yago2s/main/Tester
+responsible: Spyros ?
+
+* Web page
+- make a FAQ
+- offer YAGO Themes as separate downloads
+- make a news point
+- link to the new DBpedia mappings at http://webdam.inria.fr/paris
+- general cleanup
+
+* Update YAGO server
+Responsible: Edwin ?

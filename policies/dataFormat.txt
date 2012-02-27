@@ -16,6 +16,17 @@ This is to save space and keep readability.
 (3) All other entities are given as full URIs "<http://...>"
 (4) The encoding is UTF-8, and backslash encodings are only used if necessary.
 
+-------------- Entities --------------------
+
+We use predefined RDF entities wherever possible, in particular 
+rdfs:domain, skos:prefLabel, rdfs:range, rdfs:label, rdfs:subClassOf,  
+rdfs:subPropertyOf, rdf:type, rdf:Resource, xsd:boolean, rdf:Class, 
+xsd:date, xsd:duration, rdf:Statement, xsd:integer, xsd:nonNegativeInteger, 
+xsd:decimal, xsd:decimal, rdf:Property, xsd:string, xsd:gYear
+
+We integrate XML types into the YAGO literal type hierarchy. 
+We use YAGO literal types as literal types in RDF.
+
 -------------- N4 --------------------
 
 We extend RDF/Turtle by giving each triple an optional (!) fact id.
