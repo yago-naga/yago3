@@ -140,7 +140,7 @@ public class WordnetExtractor extends Extractor {
 		Map<String, String> preferredMeaning = new HashMap<String, String>();
 		for (FactCollection fc : fcs) {
 			for (Fact fact : fc.get("<isPreferredMeaningOf>")) {
-				preferredMeaning.put(fact.getArgString(2), fact.getArg(1));
+				preferredMeaning.put(fact.getArgJavaString(2), fact.getArg(1));
 			}
 		}
 		if (preferredMeaning.isEmpty())

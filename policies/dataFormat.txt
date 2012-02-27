@@ -1,0 +1,35 @@
+YAGO2s Policy: Data format
+Author: Fabian M. Suchanek
+
+-------------- Format --------------------
+
+The data format of YAGO2s is RDF/Turtle, as specified here:
+ http://www.w3.org/TeamSubmission/turtle/#sec-grammar-grammar 
+
+-------------- Design Choices --------------------
+ 
+Turtle leaves some design choices open. We make the following conventions:
+(1) YAGO entities are always given as relative URIs "<Albert_Einstein>".
+This is because qnames may not contain certain characters
+(2) All entities from standard namespaces are given as qnames
+This is to save space and keep readability.
+(3) All other entities are given as full URIs "<http://...>"
+(4) The encoding is UTF-8, and backslash encodings are only used if necessary.
+
+-------------- N4 --------------------
+
+We extend RDF/Turtle by giving each triple an optional (!) fact id.
+This id is given in the line before the fact as a comment of the form
+     #@ XXX
+where XXX is a valid Turtle id for the following fact.
+
+-------------- Implementation --------------------
+
+Currently, all facts are in this format even inside the running program 
+(i.e., inside Fact, FactCollection, etc.).
+The implementation has to convert specifically to a Java String
+in order to work with real (16-bit) Java strings. This is done by
+FactComponent.asJavaString()
+
+All frequent YAGO and RDFS string constants are declared in 
+basics.YAGO and basics.RDFS, respectively.

@@ -61,7 +61,7 @@ public abstract class Extractor {
 			File file = entry.getKey().file(outputFolder);
 			//if (file.exists())
 			//	Announce.error("File", file, "already exists");
-			writers.put(entry.getKey(),new N4Writer(file, header + entry.getValue()));
+			writers.put(entry.getKey(),new N4Writer(file, header + "\n"+entry.getValue()));
 			Announce.done();
 		}
 		Announce.done();

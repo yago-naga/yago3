@@ -169,7 +169,6 @@ public class InfoboxExtractor extends Extractor {
 		Map<String, Set<String>> patterns = infoboxPatterns(factCollections);
 		PatternList replacements = new PatternList(factCollections.get(PatternHardExtractor.INFOBOXPATTERNS),
 				"<_infoboxReplace>");
-		Set<String> nonconceptual = CategoryExtractor.nonConceptualWords(factCollections);
 		Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(factCollections);
 		TitleExtractor titleExtractor = new TitleExtractor(factCollections);
 
@@ -189,8 +188,8 @@ public class InfoboxExtractor extends Extractor {
 			default:
 				if (titleEntity == null)
 					continue;
-				String cls = FileLines.readTo(in, '}', '|').toString();
-				String type = CategoryExtractor.category2class(cls, nonconceptual, preferredMeaning);
+				String cls = FileLines.readTo(in, '}', '|').toString().trim();
+				String type = preferredMeaning.get(cls);
 				if (type != null) {
 					writers.get(INFOBOXTYPES).write(new Fact(null, titleEntity, RDFS.type, type));
 				}
@@ -213,7 +212,7 @@ public class InfoboxExtractor extends Extractor {
 		Map<String, Set<String>> patterns = new HashMap<String, Set<String>>();
 		Announce.doing("Compiling infobox patterns");
 		for (Fact fact : factCollections.get(PatternHardExtractor.INFOBOXPATTERNS).get("<_infoboxPattern>")) {
-			D.addKeyValue(patterns, normalizeAttribute(fact.getArgString(1)), fact.getArg(2), TreeSet.class);
+			D.addKeyValue(patterns, normalizeAttribute(fact.getArgJavaString(1)), fact.getArg(2), TreeSet.class);
 		}
 		if (patterns.isEmpty()) {
 			Announce.warning("No infobox patterns found");
@@ -229,9 +228,9 @@ public class InfoboxExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		new PatternHardExtractor(new File("./data")).extract(new File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
-		new HardExtractor(new File("./data")).extract(new File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
-		//new InfoboxExtractor(new File("./testCases/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
-		new InfoboxExtractor(new File("./testCases/wikitest.xml")).extract(new File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
+		new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
+		new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
+		new InfoboxExtractor(new File("./testCases/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
+		//new InfoboxExtractor(new File("./testCases/wikitest.xml")).extract(new File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
 	}
 }

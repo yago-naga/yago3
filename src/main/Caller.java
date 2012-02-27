@@ -43,6 +43,7 @@ public class Caller {
 				e.extract(outputFolder, header);
 				themesWeHave.addAll(e.output().keySet());
 				extractors.remove(i);
+				Announce.message("----------------------------");
 				Announce.message("Current themes:", themesWeHave);
 				Announce.message("Current extractors:",extractors);
 				i = -1; // Start again from the beginning

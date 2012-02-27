@@ -1,0 +1,52 @@
+YAGO2s Policy: Code
+Author: Fabian M. Suchanek
+
+-------------- Code --------------------
+
+The YAGO2s project will be used and extended by
+several people. Some people will join the project,
+others will leave. To facilitate such collaboration,
+we have to keep the code extremely clean.
+
+-------------- Comments --------------------
+
+Every class and/or method should have a responsible 
+person, so that we can ask that person if there
+are questions.
+ 
+Therefore
+* every class should have a comment stating
+- the purpose of the class
+- the author
+
+* every method should have a comment stating
+- the purpose of the method
+- the author (by default: the author of the class)
+
+Likewise, non-obvious steps in methods should be 
+explained with a comment.
+
+-------------- Modularity --------------------
+
+Every class should
+* have a clearly defined functionality, and not do 
+anything beyond that. (Make a new class or extend
+the class if you want to add functionality)
+* reduce and clearly define dependencies on other classes
+* be usable without undocumented constraints or side effects
+
+In particular, code snippets or methods for testing purposes
+or private projects should not be committed to the YAGO2s project.
+
+-------------- Code Style --------------------
+
+Code should be as maintainable and readable as possible:
+* externalize Strings to declared constants, if they appear multiple times
+* use Enums instead of several String or Integer constants
+* use Enum-internal constants or methods where useful
+* use switch instead of multiple ifs
+* do not copy/paste code, create methods instead
+* make use of new Java 6 and Java 7 features, where adequate:
+- switch can use Strings
+- try can use resources such as files, and close them automatically
+- for can loop over a collection ("for-each loop")

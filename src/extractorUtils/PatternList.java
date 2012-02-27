@@ -24,7 +24,7 @@ public class PatternList {
 	public PatternList(FactCollection facts, String relation) {
 		Announce.doing("Loading patterns of",relation);
 		for (Fact fact : facts.get(relation)) {
-			patterns.add(new Pair<Pattern, String>(fact.getArgPattern(1), fact.getArgString(2)));
+			patterns.add(new Pair<Pattern, String>(fact.getArgPattern(1), fact.getArgJavaString(2)));
 		}
 		if(patterns.isEmpty()) {
 			Announce.warning("No patterns found!");
