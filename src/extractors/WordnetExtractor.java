@@ -91,7 +91,7 @@ public class WordnetExtractor extends Extractor {
 					lastClass = FactComponent.forWordnetEntity(word, id);
 				id2class.put(lastId = id, lastClass);
 				writers.get(WORDNETWORDS).write(
-						new Fact(null, lastClass, "<skos:prefLabel>", FactComponent.forString(word, "en", null)));
+						new Fact(null, lastClass, "skos:prefLabel", FactComponent.forString(word, "en", null)));
 				writers.get(WORDNETIDS).write(new Fact(null, lastClass, "<hasSynsetId>", FactComponent.forNumber(id)));
 			}
 			String wordForm = FactComponent.forString(word, "en", null);

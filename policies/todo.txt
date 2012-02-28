@@ -3,11 +3,11 @@ YAGO2s: Todos
 The following extractors still have to be translated to YAGO2s:
 
 * Infobox extractor
-todo: polishing and debugging
+todo: polishing and debugging, parallelization
 responsible: Fabian
 
 * Category extractor
-todo: polishing and debugging
+todo: polishing and debugging, fact templates
 responsible: Fabian
 
 * WordNet extractor
@@ -19,6 +19,10 @@ todo: to write
 responsible: ?, Fabian can do it
 
 * Simple Taxonomy extractor
+todo: to write
+responsible: Fabian
+
+* Type coherence checker
 todo: to write
 responsible: Fabian
 
@@ -77,6 +81,7 @@ responsible: Erdal ?
 
 * Set up test beds and test frames
 See yago2s/main/Tester
+Do this with JUnit tests?
 responsible: Spyros ?
 
 * Web page

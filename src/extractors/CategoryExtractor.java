@@ -6,7 +6,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -25,7 +24,9 @@ import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
 import basics.N4Writer;
+import basics.RDFS;
 import basics.Theme;
+import extractorUtils.FactTemplateExtractor;
 import extractorUtils.PatternList;
 import extractorUtils.TitleExtractor;
 
@@ -55,38 +56,6 @@ public class CategoryExtractor extends Extractor {
 	@Override
 	public Map<Theme,String> output() {
 		return new FinalMap<Theme,String>(CATEGORTYPES, "Types derived from the categories", CATEGORYFACTS,  "Facts derived from the categories");
-	}
-
-
-	/** Extracts facts from the category name */
-	protected void extractFacts(String titleEntity, String category, PatternList patterns,
-			Map<String, String> objects, Map<Theme,N4Writer> writers) throws IOException {
-		for (Pair<Pattern,String> pattern : patterns.patterns) {
-			Matcher m = pattern.first.matcher(category);
-			if (!m.matches())
-				continue;
-			// See whether we have a predefined pattern
-			// Note: we cannot look up the pattern in the hash map
-			// because patterns do not support equals().
-			// Therefore, we look up the string behind the pattern.
-			String object = objects.get(pattern.first.pattern());
-			if (object == null) {
-				object = DateParser.normalize(m.group(1).replace(' ', '_'));
-				if (object.matches("\\d+"))
-					object = FactComponent.forYear(object);
-				else
-					object = FactComponent.forAny(object);
-			} else {
-				if (m.groupCount() > 0)
-					object = object.replace("$1", m.group(1));
-				object = FactComponent.forAny(object.replace(' ', '_'));
-			}
-			Fact fact = new Fact(null, titleEntity, pattern.second, object);
-			if (fact.relation.equals("rdf:type"))
-				writers.get(CATEGORTYPES).write(fact);
-			else
-				writers.get(CATEGORYFACTS).write(fact);
-		}
 	}
 
 	/** Maps a category to a wordnet class */
@@ -148,8 +117,7 @@ public class CategoryExtractor extends Extractor {
 	@Override
 	public void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception {
 
-		PatternList categoryPatterns=new PatternList(factCollections.get(PatternHardExtractor.CATEGORYPATTERNS),"<_categoryPattern>");
-		Map<String, String> objects = factCollections.get(PatternHardExtractor.CATEGORYPATTERNS).asStringMap("<_categoryObject>");
+		FactTemplateExtractor categoryPatterns=new FactTemplateExtractor(factCollections.get(PatternHardExtractor.CATEGORYPATTERNS),"<_categoryPattern>");
 		Set<String> nonconceptual = nonConceptualWords(factCollections);
 		Map<String,String> preferredMeanings=WordnetExtractor.preferredMeanings(factCollections.values());
         TitleExtractor titleExtractor=new TitleExtractor(factCollections);
@@ -174,7 +142,13 @@ public class CategoryExtractor extends Extractor {
 				if (!category.endsWith("]]"))
 					continue;
 				category = category.substring(0, category.length() - 2);
-				extractFacts(titleEntity, category, categoryPatterns, objects, writers);
+				for(Fact fact : categoryPatterns.extract(category, titleEntity)) {
+					if(fact==null) continue;
+					if (fact.relation.equals("rdf:type"))
+						writers.get(CATEGORTYPES).write(fact);
+					else
+						writers.get(CATEGORYFACTS).write(fact);
+				}
 				extractType(titleEntity, category, writers.get(CATEGORTYPES), nonconceptual, preferredMeanings);
 			}
 		}
@@ -187,10 +161,10 @@ public class CategoryExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		// new PatternHardExtractor(new File("./data")).extract(new
-		// File("../../yago2/newfacts"),
-		// "Test on 1 wikipedia article");
-		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("../../yago2/newfacts"),
+		 new PatternHardExtractor(new File("./data")).extract(new
+		 File("c:/fabian/data/yago2s"),
+		 "Test on 1 wikipedia article");
+		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"),
 				"Test on 1 wikipedia article");
 	}
 }

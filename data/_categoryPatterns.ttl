@@ -3,136 +3,133 @@
 # This file contains (1) the category patterns and (2) the non-conceptual words
 # It is used by the CategoryExtractor
 
-@base <http://yago-knowledge/resource/> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix owl: <http://www.w3.org/2002/07/owl#> .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@base <http://yago-knowledge/resource/> @Entity($1)" .
+@prefix dc: <http://purl.org/dc/terms/> @Entity($1)" .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> @Entity($1)" .
+@prefix owl: <http://www.w3.org/2002/07/owl#> @Entity($1)" .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> @Entity($1)" .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> @Entity($1)" .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> @Entity($1)" .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> @Entity($1)" .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> @Entity($1)" .
 
 # Category patterns
-"(.+) winners"	<_categoryPattern>	<hasWonPrize> .
-"(?:^* )?(.+) laureates"	<_categoryPattern>	<hasWonPrize> .
-"Nobel laureates in (.+)"	<_categoryPattern>	<hasWonPrize> .
-"Nobel laureates in (.+)"   <_categoryObject>    "Nobel_Prize_in_$1" .
-"Cities in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"port cities and towns in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
+"(.+) winners"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .
+"(?:^* )?(.+) laureates"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .
+"Nobel laureates in (.+)"	<_categoryPattern>	"$0 <hasWonPrize> @Entity(Nobel_Prize_in_$1)" .
+"Cities in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"port cities and towns in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 #@ <id_20120207175542_32>
-"[a-zA-Z]* ?(Asia)n countries"	<_categoryPattern>	<isLocatedIn> .
+"[a-zA-Z]* ?(Asia)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_32>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_33>
-"Central American countries"	<_categoryPattern>	<isLocatedIn> .
-"Central American countries"  <_categoryObject> "North_America" .
+"Central American countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity(North_America)" .
 <id_20120207175542_33>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_34>
-"(Northern America)n countries"	<_categoryPattern>	<isLocatedIn> .
+"(Northern America)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_34>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_35>
-"Caribbean countries"	<_categoryPattern>	<isLocatedIn> .
-"Caribbean countries"  <_categoryObject> "North_America" .
+"Caribbean countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity(North_America)" .
 <id_20120207175542_35>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_36>
-"(South America)n countries"	<_categoryPattern>	<isLocatedIn> .
+"(South America)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_36>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_37>
-"(Africa)n countries"	<_categoryPattern>	<isLocatedIn> .
+"(Africa)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_37>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_38>
-"(Oceania)n countries"	<_categoryPattern>	<isLocatedIn> .
+"(Oceania)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_38>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_39>
-"(Europe)an countries"	<_categoryPattern>	<isLocatedIn> .
+"(Europe)an countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_39>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_40>
-"populated places in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
+"populated places in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_40>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_41>
-"capitals in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
+"capitals in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_41>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_42>
-"port settlements in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
+"port settlements in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_42>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_43>
-"provinces and territories of (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
+"provinces and territories of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_43>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_44>
-"regions of (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
+"regions of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_44>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_45>
-"port cities in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
+"port cities in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_45>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_46>
-"coastal cities in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
+"coastal cities in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 <id_20120207175542_46>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
-"Towns in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Countries in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Rivers of (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Mountains of (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"States of (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Lakes of (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Museums in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Villages in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Parks in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Islands of (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"Attractions in (?:the )?(.+)"	<_categoryPattern>	<isLocatedIn> .
-"(?:Presidents|Governors|Chancellors|Vice Presidents|Deputy Prime Ministers|Ministers|Prime Ministers) of (?:the )?(.+)"	<_categoryPattern>	<isPoliticianOf> .
+"Towns in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Countries in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Rivers of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Mountains of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"States of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Lakes of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Museums in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Villages in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Parks in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Islands of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"Attractions in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
+"(?:Presidents|Governors|Chancellors|Vice Presidents|Deputy Prime Ministers|Ministers|Prime Ministers) of (?:the )?(.+)"	<_categoryPattern>	"$0 <isPoliticianOf> @Entity($1)" .
 
-"(\u005cd+) births"	<_categoryPattern>	<wasBornOnDate> .
-"(\u005cd+) deaths"	<_categoryPattern>	<diedOnDate> .
-"(\u005cd+) .*novels"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*books"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*poems"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*short stories"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*essays"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*songs"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*albums"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*films"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*video games"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*operas"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*musicals"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*premieres"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*architecture"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*paintings"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*works"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*television series debuts"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) establishments"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) disestablishments"	<_categoryPattern>	<wasDestroyedOnDate> .
-".+ established in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
-".+ opened in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
-".+ created in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
-".+ completed in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
-".+ disestablished in (\u005cd+)"	<_categoryPattern>	<wasDestroyedOnDate> .
-".+ closed in (\u005cd+)"	<_categoryPattern>	<wasDestroyedOnDate> .
-"(\u005cd+) in sports"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+) .*?(?:Olympics|Championship[s]?|Season|Games|Paralympics)(?:\u005c||)"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+) in law"	<_categoryPattern>	<happenedOnDate> .
-".*Incidents in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
-".*Accidents in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
-".*Explosions in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
-".*Disasters in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
-".*Earthquakes? in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+)s? .*Incidents"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+)s? .*Accidents"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+)s? .*Explosions"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+)s? .*Disasters"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+)s? .*Earthquakes?"	<_categoryPattern>	<happenedOnDate> .
-"Conflicts in (?:the)? ?(\u005cd+)s?"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+) Riots"	<_categoryPattern>	<happenedOnDate> .
-"Treaties entered into force in (\u005cd+)"	<_categoryPattern>	<startedOnDate> .
-"(\u005cd+) .*Awards"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+) Elections?.*"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+) .*Introductions"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+) .*Discoveries"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+th-century) .*Introductions"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+th-century) .*Discoveries"	<_categoryPattern>	<wasCreatedOnDate> .
-"(\u005cd+th-century) .*Revolutions"	<_categoryPattern>	<happenedOnDate> .
-"(\u005cd+th-century) .*Rebellions"	<_categoryPattern>	<happenedOnDate> .
-".*described in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
-".*introduced in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
-".*discovered in (\u005cd+)"	<_categoryPattern>	<wasCreatedOnDate> .
+"(\u005cd+) births"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
+"(\u005cd+) deaths"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .
+"(\u005cd+) .*novels"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*books"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*poems"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*short stories"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*essays"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*songs"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*albums"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*films"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*video games"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*operas"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*musicals"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*premieres"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*architecture"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*paintings"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*works"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*television series debuts"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) establishments"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) disestablishments"	<_categoryPattern>	"$0 <wasDestroyedOnDate> @Date($1)" .
+".+ established in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+".+ opened in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+".+ created in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+".+ completed in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+".+ disestablished in (\u005cd+)"	<_categoryPattern>	"$0 <wasDestroyedOnDate> @Date($1)" .
+".+ closed in (\u005cd+)"	<_categoryPattern>	"$0 <wasDestroyedOnDate> @Date($1)" .
+"(\u005cd+) in sports"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+) .*?(?:Olympics|Championship[s]?|Season|Games|Paralympics)(?:\u005c||)"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+) in law"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+".*Incidents in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+".*Accidents in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+".*Explosions in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+".*Disasters in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+".*Earthquakes? in (?:the)? ?.*?(\u005cd+)s?"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+)s? .*Incidents"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+)s? .*Accidents"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+)s? .*Explosions"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+)s? .*Disasters"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+)s? .*Earthquakes?"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"Conflicts in (?:the)? ?(\u005cd+)s?"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+) Riots"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"Treaties entered into force in (\u005cd+)"	<_categoryPattern>	"$0 <startedOnDate> @Date($1)" .
+"(\u005cd+) .*Awards"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+) Elections?.*"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+) .*Introductions"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+) .*Discoveries"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+th-century) .*Introductions"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+th-century) .*Discoveries"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+"(\u005cd+th-century) .*Revolutions"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+"(\u005cd+th-century) .*Rebellions"	<_categoryPattern>	"$0 <happenedOnDate> @Date($1)" .
+".*described in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+".*introduced in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
+".*discovered in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
 
 
 # Non-conceptual words
