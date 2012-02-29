@@ -9,25 +9,20 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
-import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.DateParser;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
+import basics.N4Reader;
 import basics.N4Writer;
-import basics.RDFS;
 import basics.Theme;
 import extractorUtils.FactTemplateExtractor;
-import extractorUtils.PatternList;
 import extractorUtils.TitleExtractor;
 
 /**
@@ -109,18 +104,20 @@ public class CategoryExtractor extends Extractor {
 			return;
 		writer.write(new Fact(null, titleEntity, FactComponent.forQname("rdf:", "type"), concept));
 	}
-
-	public static Set<String> nonConceptualWords(Map<Theme,FactCollection> factCollections) {
-		return(factCollections.get(PatternHardExtractor.CATEGORYPATTERNS).asStringSet("<_yagoNonConceptualWord>"));
+	
+	/** Returns the set of non-conceptual words*/
+	public static Set<String> nonConceptualWords(FactCollection categoryPatterns) {
+		return(categoryPatterns.asStringSet("<_yagoNonConceptualWord>"));
 	}
 	
 	@Override
-	public void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception {
+	public void extract(Map<Theme,N4Writer> writers, Map<Theme,N4Reader> input) throws Exception {
 
-		FactTemplateExtractor categoryPatterns=new FactTemplateExtractor(factCollections.get(PatternHardExtractor.CATEGORYPATTERNS),"<_categoryPattern>");
-		Set<String> nonconceptual = nonConceptualWords(factCollections);
-		Map<String,String> preferredMeanings=WordnetExtractor.preferredMeanings(factCollections.values());
-        TitleExtractor titleExtractor=new TitleExtractor(factCollections);
+		FactCollection categoryPatternCollection=new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS));
+		FactTemplateExtractor categoryPatterns=new FactTemplateExtractor(categoryPatternCollection,"<_categoryPattern>");
+		Set<String> nonconceptual = nonConceptualWords(categoryPatternCollection);
+		Map<String,String> preferredMeanings=WordnetExtractor.preferredMeanings(new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)), new FactCollection(input.get(WordnetExtractor.WORDNETWORDS)));
+        TitleExtractor titleExtractor=new TitleExtractor(input);
         
 		// Extract the information
 		Announce.doing("Extracting");

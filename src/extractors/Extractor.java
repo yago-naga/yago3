@@ -8,6 +8,7 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import basics.FactCollection;
+import basics.N4Reader;
 import basics.N4Writer;
 import basics.Theme;
 
@@ -38,7 +39,7 @@ public abstract class Extractor {
 		return name();
 	}
 	/** Main method */
-	public abstract void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception;
+	public abstract void extract(Map<Theme,N4Writer> input, Map<Theme,N4Reader> output) throws Exception;
 
 	/** Convenience method */
 	public void extract(File inputFolder, String header) throws Exception {
@@ -48,10 +49,10 @@ public abstract class Extractor {
 	/** Convenience method */
 	public void extract(File inputFolder, File outputFolder, String header) throws Exception {
 		Announce.doing("Running",this.name());
-		Map<Theme,FactCollection> input = new HashMap<Theme,FactCollection>();
+		Map<Theme,N4Reader> input = new HashMap<Theme,N4Reader>();
 		Announce.doing("Loading input");
 		for (Theme theme : input()) {
-			input.put(theme,new FactCollection(theme.file(inputFolder)));
+			input.put(theme,new N4Reader(theme.file(inputFolder)));
 		}
 		Announce.done();
 		Map<Theme,N4Writer> writers = new HashMap<Theme,N4Writer>();

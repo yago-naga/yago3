@@ -22,6 +22,7 @@ import javatools.parsers.Char;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
+import basics.N4Reader;
 import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
@@ -165,12 +166,14 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, N4Writer> writers, Map<Theme, FactCollection> factCollections) throws Exception {
-		Map<String, Set<String>> patterns = infoboxPatterns(factCollections);
-		PatternList replacements = new PatternList(factCollections.get(PatternHardExtractor.INFOBOXPATTERNS),
+	public void extract(Map<Theme, N4Writer> writers, Map<Theme, N4Reader> input) throws Exception {
+		FactCollection infoboxFacts=new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS));
+		FactCollection hardWiredFacts=new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));		
+		Map<String, Set<String>> patterns = infoboxPatterns(infoboxFacts);
+		PatternList replacements = new PatternList(infoboxFacts,
 				"<_infoboxReplace>");
-		Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(factCollections);
-		TitleExtractor titleExtractor = new TitleExtractor(factCollections);
+		Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(hardWiredFacts, new FactCollection(input.get(WordnetExtractor.WORDNETWORDS)));
+		TitleExtractor titleExtractor = new TitleExtractor(input);
 
 		// Extract the information
 		Announce.doing("Extracting");
@@ -199,8 +202,7 @@ public class InfoboxExtractor extends Extractor {
 					if (relations == null)
 						continue;
 					for (String relation : relations) {
-						extract(titleEntity, attributes.get(attribute), relation, preferredMeaning, factCollections
-								.get(HardExtractor.HARDWIREDFACTS), writers.get(DIRTYINFOBOXFACTS), replacements);
+						extract(titleEntity, attributes.get(attribute), relation, preferredMeaning, hardWiredFacts, writers.get(DIRTYINFOBOXFACTS), replacements);
 					}
 				}
 			}
@@ -208,10 +210,10 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	/** returns the infobox patterns*/
-	public static Map<String, Set<String>> infoboxPatterns(Map<Theme, FactCollection> factCollections) {
+	public static Map<String, Set<String>> infoboxPatterns(FactCollection infoboxFacts) {
 		Map<String, Set<String>> patterns = new HashMap<String, Set<String>>();
 		Announce.doing("Compiling infobox patterns");
-		for (Fact fact : factCollections.get(PatternHardExtractor.INFOBOXPATTERNS).get("<_infoboxPattern>")) {
+		for (Fact fact :infoboxFacts.get("<_infoboxPattern>")) {
 			D.addKeyValue(patterns, normalizeAttribute(fact.getArgJavaString(1)), fact.getArg(2), TreeSet.class);
 		}
 		if (patterns.isEmpty()) {

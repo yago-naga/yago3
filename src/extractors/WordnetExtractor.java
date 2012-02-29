@@ -1,11 +1,11 @@
 package extractors;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -18,6 +18,7 @@ import javatools.parsers.Name;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
+import basics.N4Reader;
 import basics.N4Writer;
 import basics.Theme;
 
@@ -53,7 +54,8 @@ public class WordnetExtractor extends Extractor {
 	public static Pattern RELATIONPATTERN = Pattern.compile("\\w*\\((\\d{9}),(.*)\\)\\.");
 
 	@Override
-	public void extract(Map<Theme, N4Writer> writers, Map<Theme, FactCollection> factCollections) throws Exception {
+	public void extract(Map<Theme, N4Writer> writers, Map<Theme, N4Reader> input) throws Exception {
+		FactCollection hardWiredFacts=new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 		Announce.doing("Extracting from Wordnet");
 		Collection<String> instances = new HashSet<String>(8000);
 		for (String line : new FileLines(new File(wordnetFolder, "wn_ins.pl"), "Loading instances")) {
@@ -98,7 +100,7 @@ public class WordnetExtractor extends Extractor {
 			// add additional fact if it is preferred meaning
 			if (numMeaning.equals("1")) {
 				// First check whether we do not already have such an element
-				if (factCollections.get(HardExtractor.HARDWIREDFACTS).getBySecondArgSlow("<isPreferredMeaningOf>",
+				if (hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>",
 						wordForm).isEmpty()) {
 					writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "<isPreferredMeaningOf>", wordForm));
 				}
@@ -131,8 +133,13 @@ public class WordnetExtractor extends Extractor {
 	}
 
 	/** Returns a map of Java strings to preferred YAGO entities*/
-	public static Map<String, String> preferredMeanings(Map<Theme,FactCollection> fcs) {
-		return(preferredMeanings(fcs.values()));
+	public static Map<String,String> preferredMeanings(Map<Theme,N4Reader> input) throws IOException {
+		return(preferredMeanings(new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)), new FactCollection(input.get(WordnetExtractor.WORDNETWORDS))));
+	}
+	
+	/** Returns a map of Java strings to preferred YAGO entities*/
+	public static Map<String, String> preferredMeanings(FactCollection... fcs) {
+		return(preferredMeanings(Arrays.asList(fcs)));
 	}
 	
 	/** Returns a map of Java strings to preferred YAGO entities*/

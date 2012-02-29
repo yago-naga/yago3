@@ -1,5 +1,6 @@
 package extractorUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
@@ -12,6 +13,7 @@ import javatools.administrative.Announce;
 import javatools.datatypes.Pair;
 import basics.Fact;
 import basics.FactCollection;
+import basics.N4Reader;
 
 /**
  * YAGO2s - FactTemplateExtractor
@@ -26,6 +28,12 @@ public class FactTemplateExtractor {
 	/** List of patterns*/
 	public final List<Pair<Pattern, List<FactTemplate>>> patterns=new ArrayList<>();
 
+	/** Constructor 
+	 * @throws IOException */
+	public FactTemplateExtractor(N4Reader facts, String relation) throws IOException {
+		this(new FactCollection(facts),relation);
+	}
+	
 	/** Constructor */
 	public FactTemplateExtractor(FactCollection facts, String relation) {
 		Announce.doing("Loading fact templates of",relation);

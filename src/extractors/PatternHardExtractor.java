@@ -1,14 +1,10 @@
 package extractors;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.List;
 import java.util.Map;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
-import basics.Fact;
-import basics.FactCollection;
 import basics.N4Reader;
 import basics.N4Writer;
 import basics.Theme;
@@ -35,7 +31,7 @@ public class PatternHardExtractor extends HardExtractor {
 	}
 
 	@Override
-	public void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception {
+	public void extract(Map<Theme,N4Writer> writers, Map<Theme,N4Reader> factCollections) throws Exception {
 		Announce.doing("Copying patterns");
 		Announce.message("Input folder is",inputFolder);
 		for(Theme t : output().keySet()) {

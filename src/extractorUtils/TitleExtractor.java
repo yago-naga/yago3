@@ -7,6 +7,7 @@ import java.util.Map;
 import javatools.filehandlers.FileLines;
 import basics.FactCollection;
 import basics.FactComponent;
+import basics.N4Reader;
 import basics.Theme;
 import extractors.PatternHardExtractor;
 
@@ -25,8 +26,8 @@ public class TitleExtractor {
 		replacer=new PatternList(titlePatternFacts, "<_titleReplace>");
 	}
 	
-	public TitleExtractor(Map<Theme,FactCollection> factCollections) {
-		this(factCollections.get(PatternHardExtractor.TITLEPATTERNS));
+	public TitleExtractor(Map<Theme,N4Reader> factCollections) throws IOException {
+		this(new FactCollection(factCollections.get(PatternHardExtractor.TITLEPATTERNS)));
 	}
 	
 	/** Reads the title entity, supposes that the reader is after "<title>" */

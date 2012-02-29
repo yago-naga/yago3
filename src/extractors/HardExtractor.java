@@ -44,7 +44,7 @@ public class HardExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme,N4Writer> writers, Map<Theme,FactCollection> factCollections) throws Exception {
+	public void extract(Map<Theme,N4Writer> writers, Map<Theme,N4Reader> factCollections) throws Exception {
 		Announce.doing("Copying hard wired facts");
 		Announce.message("Input folder is", inputFolder);
 		for (File f : inputFolder.listFiles())
