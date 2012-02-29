@@ -39,7 +39,7 @@ public abstract class Extractor {
 		return name();
 	}
 	/** Main method */
-	public abstract void extract(Map<Theme,N4Writer> input, Map<Theme,N4Reader> output) throws Exception;
+	public abstract void extract(Map<Theme,N4Writer> output, Map<Theme,N4Reader> input) throws Exception;
 
 	/** Convenience method */
 	public void extract(File inputFolder, String header) throws Exception {
