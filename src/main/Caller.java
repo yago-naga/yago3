@@ -49,6 +49,18 @@ public class Caller {
 				i = -1; // Start again from the beginning
 			}
 		}
+		// Call the ALL extractors
+		for(int i = 0; i < extractors.size(); i++) {
+			Extractor e = extractors.get(i);
+			if(!e.input().contains(Theme.ALL)) continue;
+			e.extract(outputFolder, header);
+			themesWeHave.addAll(e.output().keySet());
+			extractors.remove(i);
+			Announce.message("----------------------------");
+			Announce.message("Current themes:", themesWeHave);
+			Announce.message("Current extractors:",extractors);
+			i--;
+		}
 		if(!extractors.isEmpty()) Announce.warning("Could not call",extractors);
 		Announce.done();
 	}

@@ -7,6 +7,7 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 import javatools.administrative.Announce;
+import javatools.filehandlers.FileSet;
 import basics.FactReader;
 import basics.FactWriter;
 import basics.N4Reader;
@@ -28,7 +29,7 @@ public abstract class Extractor {
 	public abstract Set<Theme> input();
 
 	/** Themes produced and descriptions for the themes */
-	public abstract Map<Theme,String> output();
+	public abstract Map<Theme, String> output();
 
 	/** Returns the name */
 	public final String name() {
@@ -39,36 +40,46 @@ public abstract class Extractor {
 	public String toString() {
 		return name();
 	}
+
 	/** Main method */
-	public abstract void extract(Map<Theme,FactWriter> output, Map<Theme,FactReader> input) throws Exception;
+	public abstract void extract(Map<Theme, FactWriter> output, Map<Theme, FactReader> input) throws Exception;
 
 	/** Convenience method */
 	public void extract(File inputFolder, String header) throws Exception {
 		extract(inputFolder, inputFolder, header);
 	}
-	
+
 	/** Convenience method */
 	public void extract(File inputFolder, File outputFolder, String header) throws Exception {
-		Announce.doing("Running",this.name());
-		Map<Theme,FactReader> input = new HashMap<Theme,FactReader>();
+		Announce.doing("Running", this.name());
+		Map<Theme, FactReader> input = new HashMap<Theme, FactReader>();
 		Announce.doing("Loading input");
-		for (Theme theme : input()) {
-			input.put(theme,new N4Reader(theme.file(inputFolder)));
+		if (input().contains(Theme.ALL)) {
+           for(File f : inputFolder.listFiles()) {
+        	   if(!f.getName().endsWith(".ttl")) continue;
+        	   Theme theme=new Theme(FileSet.noExtension(f.getName()));
+        	   input.put(theme, new N4Reader(f));
+           }
+		} else {
+			for (Theme theme : input()) {
+				input.put(theme, new N4Reader(theme.file(inputFolder)));
+			}
 		}
 		Announce.done();
-		Map<Theme,FactWriter> writers = new HashMap<Theme,FactWriter>();
+		Map<Theme, FactWriter> writers = new HashMap<Theme, FactWriter>();
 		Announce.doing("Creating output files");
-		for (Entry<Theme,String> entry : output().entrySet()) {
+		for (Entry<Theme, String> entry : output().entrySet()) {
 			Announce.doing("Creating file", entry.getKey().name);
 			File file = entry.getKey().file(outputFolder);
-			//if (file.exists())
-			//	Announce.error("File", file, "already exists");
-			writers.put(entry.getKey(),new N4Writer(file, header + "\n"+entry.getValue()));
+			// if (file.exists())
+			// Announce.error("File", file, "already exists");
+			writers.put(entry.getKey(), new N4Writer(file, header + "\n" + entry.getValue()));
 			Announce.done();
 		}
 		Announce.done();
-		extract(writers,input);
-		for(FactWriter w : writers.values()) w.close();
+		extract(writers, input);
+		for (FactWriter w : writers.values())
+			w.close();
 		Announce.done();
 	}
 
