@@ -18,8 +18,9 @@ import javatools.parsers.Name;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
+import basics.FactReader;
+import basics.FactWriter;
 import basics.N4Reader;
-import basics.N4Writer;
 import basics.Theme;
 import basics.YAGO;
 
@@ -55,7 +56,7 @@ public class WordnetExtractor extends Extractor {
 	public static Pattern RELATIONPATTERN = Pattern.compile("\\w*\\((\\d{9}),(.*)\\)\\.");
 
 	@Override
-	public void extract(Map<Theme, N4Writer> writers, Map<Theme, N4Reader> input) throws Exception {
+	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactReader> input) throws Exception {
 		FactCollection hardWiredFacts=new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 		Announce.doing("Extracting from Wordnet");
 		Collection<String> instances = new HashSet<String>(8000);

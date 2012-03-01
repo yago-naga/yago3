@@ -20,7 +20,8 @@ import javatools.parsers.PlingStemmer;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
-import basics.N4Reader;
+import basics.FactReader;
+import basics.FactWriter;
 import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
@@ -99,7 +100,7 @@ public class CategoryExtractor extends Extractor {
 	}
 
 	/** Extracts type from the category name */
-	protected void extractType(String titleEntity, String category, N4Writer writer, Set<String> nonconceptual,
+	protected void extractType(String titleEntity, String category, FactWriter writer, Set<String> nonconceptual,
 			Map<String, String> preferredMeaning) throws IOException {
 		String concept = category2class(category, nonconceptual, preferredMeaning);
 		if (concept == null)
@@ -113,7 +114,7 @@ public class CategoryExtractor extends Extractor {
 	}
 	
 	@Override
-	public void extract(Map<Theme,N4Writer> writers, Map<Theme,N4Reader> input) throws Exception {
+	public void extract(Map<Theme,FactWriter> writers, Map<Theme,FactReader> input) throws Exception {
 
 		FactCollection categoryPatternCollection=new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS));
 		FactTemplateExtractor categoryPatterns=new FactTemplateExtractor(categoryPatternCollection,"<_categoryPattern>");

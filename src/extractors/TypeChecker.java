@@ -11,7 +11,8 @@ import javatools.datatypes.FinalMap;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
-import basics.N4Reader;
+import basics.FactReader;
+import basics.FactWriter;
 import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
@@ -33,11 +34,11 @@ public class TypeChecker extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, N4Writer> output, Map<Theme, N4Reader> input) throws Exception {
+	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactReader> input) throws Exception {
 		FactCollection types=new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
 		types.load(input.get(CategoryExtractor.CATEGORTYPES));
 		types.load(input.get(HardExtractor.HARDWIREDFACTS));
-		N4Writer out=output.get(CHECKEDINFOBOXFACTS);
+		FactWriter out=output.get(CHECKEDINFOBOXFACTS);
 		Announce.doing("Type checking facts");
 		for(Fact fact : input.get(InfoboxExtractor.DIRTYINFOBOXFACTS)) {
 			if(FactComponent.isLiteral(fact.getArg(2))) {

@@ -4,12 +4,11 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.Set;
 
 import javatools.administrative.Announce;
-import basics.FactCollection;
+import basics.FactReader;
+import basics.FactWriter;
 import basics.N4Reader;
 import basics.N4Writer;
 import basics.Theme;
@@ -41,7 +40,7 @@ public abstract class Extractor {
 		return name();
 	}
 	/** Main method */
-	public abstract void extract(Map<Theme,N4Writer> output, Map<Theme,N4Reader> input) throws Exception;
+	public abstract void extract(Map<Theme,FactWriter> output, Map<Theme,FactReader> input) throws Exception;
 
 	/** Convenience method */
 	public void extract(File inputFolder, String header) throws Exception {
@@ -51,13 +50,13 @@ public abstract class Extractor {
 	/** Convenience method */
 	public void extract(File inputFolder, File outputFolder, String header) throws Exception {
 		Announce.doing("Running",this.name());
-		Map<Theme,N4Reader> input = new HashMap<Theme,N4Reader>();
+		Map<Theme,FactReader> input = new HashMap<Theme,FactReader>();
 		Announce.doing("Loading input");
 		for (Theme theme : input()) {
 			input.put(theme,new N4Reader(theme.file(inputFolder)));
 		}
 		Announce.done();
-		Map<Theme,N4Writer> writers = new HashMap<Theme,N4Writer>();
+		Map<Theme,FactWriter> writers = new HashMap<Theme,FactWriter>();
 		Announce.doing("Creating output files");
 		for (Entry<Theme,String> entry : output().entrySet()) {
 			Announce.doing("Creating file", entry.getKey().name);
@@ -69,7 +68,7 @@ public abstract class Extractor {
 		}
 		Announce.done();
 		extract(writers,input);
-		for(N4Writer w : writers.values()) w.close();
+		for(FactWriter w : writers.values()) w.close();
 		Announce.done();
 	}
 
