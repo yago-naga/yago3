@@ -13,6 +13,7 @@ import basics.N4Reader;
 import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
+import basics.YAGO;
 
 public class TypeChecker extends Extractor {
 
@@ -38,15 +39,18 @@ public class TypeChecker extends Extractor {
 		Announce.doing("Type checking facts");
 		for(Fact fact : input.get(InfoboxExtractor.DIRTYINFOBOXFACTS)) {
         	String domain=domRan.getArg2(fact.relation, RDFS.domain);
-        	if(check(fact.arg2,domain,types)) out.write(fact); 
+        	if(check(fact.getArg(1),domain,types)) out.write(fact); 
+        	else Announce.debug("Domain check failed",fact);
+        	String range=domRan.getArg2(fact.relation, RDFS.range);
+        	if(check(fact.getArg(2),range,types)) out.write(fact); 
+        	else Announce.debug("Range check failed",fact);
         }
 		Announce.done();
 	}
 
 	protected boolean check(String arg2, String domain, FactCollection types) {
-		if(domain==null) domain=RDFS.resource;
-		Set<String> classes=types.classesOf(arg2);
-		return classes!=null && classes.contains(domain);
+		if(domain==null) domain=YAGO.entity;
+		return(types.instanceOf(arg2, domain));
 	}
 
 }

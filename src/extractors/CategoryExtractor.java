@@ -13,6 +13,7 @@ import java.util.TreeSet;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
 import javatools.filehandlers.FileLines;
+import javatools.parsers.Char;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
@@ -21,6 +22,7 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.N4Reader;
 import basics.N4Writer;
+import basics.RDFS;
 import basics.Theme;
 import extractorUtils.FactTemplateExtractor;
 import extractorUtils.TitleExtractor;
@@ -147,8 +149,26 @@ public class CategoryExtractor extends Extractor {
 						writers.get(CATEGORYFACTS).write(fact);
 				}
 				extractType(titleEntity, category, writers.get(CATEGORTYPES), nonconceptual, preferredMeanings);
+				for(String name : namesOf(titleEntity)) {
+						writers.get(CATEGORYFACTS).write(new Fact(titleEntity,RDFS.label,name));
+				}
 			}
 		}
+	}
+
+	/** returns the (trivial) names of an entity*/
+	public static Set<String> namesOf(String titleEntity) {
+		Set<String> result=new TreeSet<>();
+		String name=Char.decode(titleEntity.replace('_', ' '));
+		result.add(name);
+		result.add(Char.normalize(name));
+		if(name.contains(" (")) {
+			result.add(name.substring(0,name.indexOf(" (")).trim());
+		}
+		if(name.contains(",")) {
+			result.add(name.substring(0,name.indexOf(",")).trim());
+		}		
+		return(result);
 	}
 
 	/** Constructor from source file */
