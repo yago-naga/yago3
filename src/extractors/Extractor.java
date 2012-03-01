@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 import java.util.Set;
 
 import javatools.administrative.Announce;
@@ -82,7 +84,7 @@ public abstract class Extractor {
 				extractor = (Extractor) Class.forName(className).newInstance();
 			}
 		} catch (Exception ex) {
-			Announce.message(ex.getMessage());
+			Announce.message(ex);
 			Announce.failed();
 			return (null);
 		}

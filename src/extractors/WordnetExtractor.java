@@ -21,6 +21,7 @@ import basics.FactComponent;
 import basics.N4Reader;
 import basics.N4Writer;
 import basics.Theme;
+import basics.YAGO;
 
 public class WordnetExtractor extends Extractor {
 
@@ -87,7 +88,10 @@ public class WordnetExtractor extends Extractor {
 			if (!type.equals("n"))
 				continue;
 			if (!id.equals(lastId)) {
-                lastClass = FactComponent.forWordnetEntity(word, id);
+				if (id.equals("100001740"))
+					lastClass = YAGO.entity;
+				else
+					lastClass = FactComponent.forWordnetEntity(word, id);
 				id2class.put(lastId = id, lastClass);
 				writers.get(WORDNETWORDS).write(
 						new Fact(null, lastClass, "skos:prefLabel", FactComponent.forString(word, "en", null)));

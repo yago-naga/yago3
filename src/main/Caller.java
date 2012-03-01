@@ -66,25 +66,31 @@ public class Caller {
 		}
 		List<Extractor> extractors = new ArrayList<Extractor>();
 		for (String extractorName : extractorNames) {
-			Announce.doing("Creating", extractorName);
-			Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z0-9:/\\.]*)\\)").matcher(extractorName);
-			if (!m.matches()) {
-				Announce.warning("Cannot understand extractor call:", extractorName);
-				Announce.failed();
-				continue;
-			}
-			Extractor extractor = Extractor.forName(m.group(1), m.group(2) == null ? null : new File(m.group(2)));
-			if (extractor == null) {
-				Announce.failed();
-				continue;
-			}
-			extractors.add(extractor);
-			Announce.done();
+			Extractor e=extractorForCall(extractorName);
+			if(e!=null) extractors.add(e);
 		}
 		Announce.done();
 		return (extractors);
 	}
 
+	/** Creates an extractor for a call of the form "extractorName(File)" */
+	public static Extractor extractorForCall(String extractorName) {
+		Announce.doing("Creating", extractorName);
+		Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z0-9:/\\.]*)\\)").matcher(extractorName);
+		if (!m.matches()) {
+			Announce.warning("Cannot understand extractor call:", extractorName);
+			Announce.failed();
+			return(null);
+		}
+		Extractor extractor = Extractor.forName(m.group(1), m.group(2) == null || m.group(2).isEmpty() ? null : new File(m.group(2)));
+		if (extractor == null) {
+			Announce.failed();
+			return(null);
+		}
+		Announce.done();
+		return(extractor);
+	}
+	
 	/** Run */
 	public static void main(String[] args) throws Exception {
 		Announce.doing("Creating YAGO");

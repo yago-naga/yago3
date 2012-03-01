@@ -1,5 +1,6 @@
 package extractors;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
@@ -9,6 +10,7 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
 import basics.Fact;
 import basics.FactCollection;
+import basics.FactComponent;
 import basics.N4Reader;
 import basics.N4Writer;
 import basics.RDFS;
@@ -34,23 +36,34 @@ public class TypeChecker extends Extractor {
 	public void extract(Map<Theme, N4Writer> output, Map<Theme, N4Reader> input) throws Exception {
 		FactCollection types=new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
 		types.load(input.get(CategoryExtractor.CATEGORTYPES));
-		FactCollection domRan=new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
+		types.load(input.get(HardExtractor.HARDWIREDFACTS));
 		N4Writer out=output.get(CHECKEDINFOBOXFACTS);
 		Announce.doing("Type checking facts");
 		for(Fact fact : input.get(InfoboxExtractor.DIRTYINFOBOXFACTS)) {
-        	String domain=domRan.getArg2(fact.relation, RDFS.domain);
-        	if(check(fact.getArg(1),domain,types)) out.write(fact); 
-        	else Announce.debug("Domain check failed",fact);
-        	String range=domRan.getArg2(fact.relation, RDFS.range);
+			if(FactComponent.isLiteral(fact.getArg(2))) {
+				out.write(fact); 
+				continue;
+			}
+        	String domain=types.getArg2(fact.relation, RDFS.domain);
+        	if(!check(fact.getArg(1),domain,types)) {
+        		Announce.debug("Domain check failed",fact);
+        		continue;
+        	}
+        	String range=types.getArg2(fact.relation, RDFS.range);
         	if(check(fact.getArg(2),range,types)) out.write(fact); 
         	else Announce.debug("Range check failed",fact);
         }
 		Announce.done();
 	}
 
-	protected boolean check(String arg2, String domain, FactCollection types) {
-		if(domain==null) domain=YAGO.entity;
-		return(types.instanceOf(arg2, domain));
+	/** Checks whether an entity is of a type*/
+	protected boolean check(String entity, String type, FactCollection types) {
+		if(type==null) type=YAGO.entity;
+		return(types.instanceOf(entity, type));
 	}
 
+	public static void main(String[] args) throws Exception {
+		Announce.setLevel(Announce.Level.DEBUG);
+		new TypeChecker().extract(new File("c:/fabian/data/yago2s"), "test");
+	}
 }
