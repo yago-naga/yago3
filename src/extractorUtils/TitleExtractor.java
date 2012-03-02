@@ -7,7 +7,7 @@ import java.util.Map;
 import javatools.filehandlers.FileLines;
 import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactReader;
+import basics.FactSource;
 import basics.Theme;
 import extractors.PatternHardExtractor;
 
@@ -26,7 +26,7 @@ public class TitleExtractor {
 		replacer=new PatternList(titlePatternFacts, "<_titleReplace>");
 	}
 	
-	public TitleExtractor(Map<Theme,FactReader> factCollections) throws IOException {
+	public TitleExtractor(Map<Theme,FactSource> factCollections) throws IOException {
 		this(new FactCollection(factCollections.get(PatternHardExtractor.TITLEPATTERNS)));
 	}
 	

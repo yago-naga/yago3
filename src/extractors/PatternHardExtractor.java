@@ -5,7 +5,7 @@ import java.util.Map;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
-import basics.FactReader;
+import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 
@@ -36,7 +36,7 @@ public class PatternHardExtractor extends HardExtractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactReader> factCollections) throws Exception {
+	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> factCollections) throws Exception {
 		Announce.doing("Copying patterns");
 		Announce.message("Input folder is", inputFolder);
 		for (Theme t : output().keySet()) {

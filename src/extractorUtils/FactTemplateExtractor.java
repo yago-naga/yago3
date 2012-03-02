@@ -13,7 +13,7 @@ import javatools.administrative.Announce;
 import javatools.datatypes.Pair;
 import basics.Fact;
 import basics.FactCollection;
-import basics.N4Reader;
+import basics.FactSource;
 
 /**
  * YAGO2s - FactTemplateExtractor
@@ -30,7 +30,7 @@ public class FactTemplateExtractor {
 
 	/** Constructor 
 	 * @throws IOException */
-	public FactTemplateExtractor(N4Reader facts, String relation) throws IOException {
+	public FactTemplateExtractor(FactSource  facts, String relation) throws IOException {
 		this(new FactCollection(facts),relation);
 	}
 	

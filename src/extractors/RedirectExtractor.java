@@ -15,7 +15,7 @@ import javatools.datatypes.FinalMap;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import basics.Fact;
-import basics.FactReader;
+import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import extractorUtils.TitleExtractor;
@@ -37,7 +37,7 @@ public class RedirectExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(InfoboxExtractor.DIRTYINFOBOXFACTS));
+    return new HashSet<Theme>(Arrays.asList(InfoboxExtractor.DIRTYINFOBOXFACTS, PatternHardExtractor.TITLEPATTERNS));
   }
 
   /** Redirected Infobox facts, non-checked */
@@ -50,7 +50,7 @@ public class RedirectExtractor extends Extractor {
   }
 
   @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactReader> input) throws Exception {
+  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     // Extract the information
     Announce.doing("Extracting Redirects");
     Map<String, String> redirects = new HashMap<>();
@@ -81,7 +81,7 @@ public class RedirectExtractor extends Extractor {
     
     FactWriter out = output.get(REDIRECTEDINFOBOXFACTS);
     
-    FactReader dirtyInfoboxFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);
+    FactSource dirtyInfoboxFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);
     
     Announce.doing("Applying redirects to Infobox facts");
     

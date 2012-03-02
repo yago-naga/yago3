@@ -8,7 +8,7 @@ import java.util.TreeSet;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
 import basics.Fact;
-import basics.FactReader;
+import basics.FactSource;
 import basics.FactWriter;
 import basics.N4Reader;
 import basics.Theme;
@@ -37,14 +37,14 @@ public class HardExtractor extends Extractor {
 		if (!input.getName().endsWith(".ttl"))
 			return;
 		Announce.doing("Copying hard wired facts from", input.getName());
-		for (Fact f : new N4Reader(input)) {
+		for (Fact f : FactSource.from(input)) {
 			writer.write(f);
 		}
 		Announce.done();
 	}
 
 	@Override
-	public void extract(Map<Theme,FactWriter> writers, Map<Theme,FactReader> factCollections) throws Exception {
+	public void extract(Map<Theme,FactWriter> writers, Map<Theme,FactSource> factCollections) throws Exception {
 		Announce.doing("Copying hard wired facts");
 		Announce.message("Input folder is", inputFolder);
 		for (File f : inputFolder.listFiles())

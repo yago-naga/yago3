@@ -12,7 +12,7 @@ import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
-import basics.FactReader;
+import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
@@ -34,7 +34,7 @@ public class StatisticsExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactReader> input) throws Exception {
+	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		Map<String, Integer> relations = new TreeMap<>();
 		Set<String> instances = new TreeSet<>();
 		Map<String, Integer> classes = new TreeMap<>();

@@ -23,7 +23,7 @@ import javatools.parsers.Char;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactReader;
+import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
@@ -167,7 +167,7 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactReader> input) throws Exception {
+	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
 		FactCollection infoboxFacts=new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS));
 		FactCollection hardWiredFacts=new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));		
 		Map<String, Set<String>> patterns = infoboxPatterns(infoboxFacts);

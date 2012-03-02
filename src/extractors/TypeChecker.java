@@ -11,7 +11,7 @@ import javatools.datatypes.FinalMap;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactReader;
+import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
@@ -21,7 +21,7 @@ public class TypeChecker extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new TreeSet<Theme>(Arrays.asList(InfoboxExtractor.DIRTYINFOBOXFACTS, HardExtractor.HARDWIREDFACTS,
+		return new TreeSet<Theme>(Arrays.asList(RedirectExtractor.REDIRECTEDINFOBOXFACTS, HardExtractor.HARDWIREDFACTS,
 				WordnetExtractor.WORDNETCLASSES, CategoryExtractor.CATEGORTYPES));
 	}
 
@@ -34,13 +34,13 @@ public class TypeChecker extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactReader> input) throws Exception {
+	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		FactCollection types = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
 		types.load(input.get(CategoryExtractor.CATEGORTYPES));
 		types.load(input.get(HardExtractor.HARDWIREDFACTS));
 		FactWriter out = output.get(CHECKEDINFOBOXFACTS);
 		Announce.doing("Type checking facts");
-		for (Fact fact : input.get(InfoboxExtractor.DIRTYINFOBOXFACTS)) {
+		for (Fact fact : input.get(RedirectExtractor.REDIRECTEDINFOBOXFACTS)) {
 			if (FactComponent.isLiteral(fact.getArg(2))) {
 				out.write(fact);
 				continue;

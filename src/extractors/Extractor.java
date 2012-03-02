@@ -8,7 +8,7 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileSet;
-import basics.FactReader;
+import basics.FactSource;
 import basics.FactWriter;
 import basics.N4Reader;
 import basics.N4Writer;
@@ -42,7 +42,7 @@ public abstract class Extractor {
 	}
 
 	/** Main method */
-	public abstract void extract(Map<Theme, FactWriter> output, Map<Theme, FactReader> input) throws Exception;
+	public abstract void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception;
 
 	/** Convenience method */
 	public void extract(File inputFolder, String header) throws Exception {
@@ -52,17 +52,17 @@ public abstract class Extractor {
 	/** Convenience method */
 	public void extract(File inputFolder, File outputFolder, String header) throws Exception {
 		Announce.doing("Running", this.name());
-		Map<Theme, FactReader> input = new HashMap<Theme, FactReader>();
+		Map<Theme, FactSource> input = new HashMap<Theme, FactSource>();
 		Announce.doing("Loading input");
 		if (input().contains(Theme.ALL)) {
            for(File f : inputFolder.listFiles()) {
         	   if(!f.getName().endsWith(".ttl")) continue;
         	   Theme theme=new Theme(FileSet.noExtension(f.getName()));
-        	   input.put(theme, new N4Reader(f));
+        	   input.put(theme, FactSource.from(f));
            }
 		} else {
 			for (Theme theme : input()) {
-				input.put(theme, new N4Reader(theme.file(inputFolder)));
+				input.put(theme,FactSource.from(theme.file(inputFolder)));
 			}
 		}
 		Announce.done();
