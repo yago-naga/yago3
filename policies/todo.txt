@@ -7,7 +7,7 @@ todo: polishing and debugging, parallelization
 responsible: Fabian
 
 * Category extractor
-todo: polishing and debugging, fact templates
+todo: polishing and debugging
 responsible: Fabian
 
 * WordNet extractor
@@ -22,13 +22,17 @@ responsible: ?, Fabian can do it
 todo: to write
 responsible: Fabian
 
+* Statistics extractor
+todo: to write
+responsible: Fabian
+
 * Type coherence checker
 todo: to write
 responsible: Fabian
 
 * Type checker
-todo: to write
-responsible: ?, Fabian can do it
+todo: polishing and debugging
+responsible: Fabian
 
 * Gender extractor
 If the wikipedia entity is a person,
@@ -77,12 +81,12 @@ responsible: Johannes?
 
 * Temporal extractor
 todo: to write
-responsible: Erdal ?
+responsible: Erdal
 
 * Set up test beds and test frames
 See yago2s/main/Tester
 Do this with JUnit tests?
-responsible: Spyros ?
+responsible: Spyros
 
 * Web page
 - make a FAQ

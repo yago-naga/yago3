@@ -3,6 +3,7 @@ package extractorUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.TreeMap;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
@@ -71,6 +72,7 @@ public class FactTemplate {
 	public static String instantiate(String s, Map<String,String> variables) {
 		for(Entry<String, String> rep : variables.entrySet()) s=s.replace(rep.getKey(),rep.getValue());
 		if(s.startsWith("@")) return(format(s));
+		if(isVariable(s) || isFactReference(s)) return(null);
 		return(FactComponent.forAny(s));
 	}
 	
@@ -165,9 +167,14 @@ public class FactTemplate {
 		}
 		return (factList);
 	}
-	
+
 	/** Instantiates fact templates with variables*/
 	public static List<Fact> instantiate(List<FactTemplate> templates, Map<String,String> variables) {
+		return(instantiate(templates,variables,0));
+	}
+	
+	/** Instantiates fact templates with variables*/
+	public static List<Fact> instantiate(List<FactTemplate> templates, Map<String,String> variables, int idOffset) {
 		List<Fact> factList = new ArrayList<Fact>();
 		Set<Integer> factReferences=new TreeSet<>();
 		for(FactTemplate template : templates) {
@@ -175,9 +182,9 @@ public class FactTemplate {
 		}
 		for(int i=0;i<templates.size();i++) {
 			String id=null;
-			if(factReferences.contains(i)) {
+			if(factReferences.contains(i+idOffset)) {
 				id=FactComponent.makeId();
-				variables.put("#"+i, id);
+				variables.put("#"+(i+idOffset), id);
 			}
 			factList.add(templates.get(i).instantiate(variables,id));
 		}		
@@ -224,6 +231,39 @@ public class FactTemplate {
 		} else if (!relation.equals(other.relation))
 			return false;
 		return true;
+	}
+
+	/** Returns a map of the variables to the fact*/
+	public Map<String,String> mapTo(Fact fact) {
+		Map<String,String> result=new TreeMap<String, String>();
+		if(!arg1.equals(fact.getArg(1))) {
+			if(isVariable(arg1)) result.put(arg1, fact.getArg(1));
+			else return(null);
+		}
+		if(!relation.equals(fact.getRelation())) {
+			if(isVariable(relation)) result.put(relation, fact.getRelation());
+			else return(null);
+		}
+		if(!arg1.equals(fact.getArg(1))) {
+			if(isVariable(arg1)) result.put(arg1, fact.getArg(1));
+			else return(null);
+		}
+		return(result);
+	}
+	
+	/** Instantiates the fact template partially*/
+	public FactTemplate instantiatePartially(Map<String,String> variables) {
+		String a1=instantiate(arg1,variables);
+		String r=instantiate(relation, variables);
+		String a2=instantiate(arg2,variables);
+		return(new FactTemplate(a1, r, a2));
+	}
+	
+	/** Instantiates the fact templates partially*/
+	public static List<FactTemplate> instantiatePartially(List<FactTemplate> templates, Map<String,String> variables) {
+		List<FactTemplate>  result=new ArrayList<>();
+		for(FactTemplate t : templates) result.add(t.instantiatePartially(variables));
+		return(result);
 	}
 	
 }

@@ -45,15 +45,15 @@ public class StatisticsExtractor extends Extractor {
 			int counter = 0;
 			for (Fact f : input.get(t)) {
 				counter++;
-				if ((f.relation.equals(RDFS.domain) || f.relation.equals(RDFS.range))
+				if ((f.getRelation().equals(RDFS.domain) || f.getRelation().equals(RDFS.range))
 						&& !relations.containsKey(f.getArg(1)))
 					relations.put(f.getArg(1), 0);
-				D.addKeyValue(relations, f.relation, 1);
-				if (f.relation.equals(RDFS.type)) {
+				D.addKeyValue(relations, f.getRelation(), 1);
+				if (f.getRelation().equals(RDFS.type)) {
 					instances.add(f.getArg(1));
 					D.addKeyValue(classes, f.getArg(2), 1);
 				}
-				if (f.relation.equals(RDFS.subclassOf)) {
+				if (f.getRelation().equals(RDFS.subclassOf)) {
 					D.addKeyValue(classes, f.getArg(2), 0);
 					D.addKeyValue(classes, f.getArg(1), 0);
 				}

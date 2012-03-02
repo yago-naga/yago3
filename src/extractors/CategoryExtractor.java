@@ -144,7 +144,7 @@ public class CategoryExtractor extends Extractor {
 				category = category.substring(0, category.length() - 2);
 				for(Fact fact : categoryPatterns.extract(category, titleEntity)) {
 					if(fact==null) continue;
-					if (fact.relation.equals("rdf:type"))
+					if (fact.getRelation().equals("rdf:type"))
 						writers.get(CATEGORTYPES).write(fact);
 					else
 						writers.get(CATEGORYFACTS).write(fact);
