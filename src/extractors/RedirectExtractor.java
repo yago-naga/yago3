@@ -41,7 +41,7 @@ public class RedirectExtractor extends Extractor {
   }
 
   /** Redirected Infobox facts, non-checked */
-  public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("redirectectInfoxboxFacts");
+  public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("redirectedInfoxboxFacts");
 
   @Override
   public Map<Theme, String> output() {

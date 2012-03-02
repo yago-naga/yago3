@@ -178,7 +178,7 @@ public class InfoboxExtractor extends Extractor {
 
 		// Extract the information
 		Announce.doing("Extracting");
-		Reader in = new BufferedReader(new InputStreamReader(new FileInputStream(wikipedia), "UTF-8"));
+		Reader in = new BufferedReader(new InputStreamReader(new FileInputStream(wikipedia)));
 		String titleEntity = null;
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox", "{{ Infobox")) {

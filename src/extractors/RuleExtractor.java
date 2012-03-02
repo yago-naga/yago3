@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
@@ -49,19 +50,19 @@ public class RuleExtractor extends Extractor {
 		public final List<FactTemplate> body;
 		/** Consequences of the rule */
 		public final List<FactTemplate> head;
-		/** Fact id of the first template (for references such as #3) */
-		public final int id;
-
+        /** Reference of the current fact*/
+		public final int reference;
+		
 		/** Creates a rule from an implies-fact */
 		public Rule(Fact f) {
 			this(FactTemplate.create(f.getArgJavaString(1)), FactTemplate.create(f.getArgJavaString(2)), 1);
 		}
 
 		/** creates a rule with conditions and consequences */
-		public Rule(List<FactTemplate> body, List<FactTemplate> head, int id) {
+		public Rule(List<FactTemplate> body, List<FactTemplate> head, int reference) {
 			this.body = body;
 			this.head = head;
-			this.id = id;
+			this.reference = reference;
 		}
 
 		/**
@@ -72,10 +73,13 @@ public class RuleExtractor extends Extractor {
 			return (body.get(0).mapTo(fact));
 		}
 
-		/** Removes first body atom, maps remainder */
-		public Rule rest(Map<String, String> map) {
-			return (new Rule(FactTemplate.instantiatePartially(head.subList(1, head.size()), map),
-					FactTemplate.instantiatePartially(head, map), id + 1));
+		/** Removes first body atom, maps remainder 
+		 * @param string */
+		public Rule rest(Map<String, String> map, String id) {
+			Map<String,String> refMap=new TreeMap<>(map);
+			if(id!=null) refMap.put("#"+reference,id);
+			return (new Rule(FactTemplate.instantiatePartially(body.subList(1, body.size()), map),
+					FactTemplate.instantiatePartially(head, map), reference + 1));
 		}
 
 		/** TRUE if the rule does not have conditions */
@@ -86,7 +90,11 @@ public class RuleExtractor extends Extractor {
 		/** Returns head, translated to facts */
 		public List<Fact> headFacts() {
 			Map<String, String> empty = new TreeMap<>();
-			return (FactTemplate.instantiate(head, empty, id));
+			return (FactTemplate.instantiate(head, empty));
+		}
+		@Override
+		public String toString() {
+			return body+"=>"+head;
 		}
 	}
 
@@ -95,7 +103,7 @@ public class RuleExtractor extends Extractor {
 		// Initialize
 		FactCollection ruleFacts = new FactCollection(input.get(PatternHardExtractor.RULES));
 		List<Rule> rules = new ArrayList<>();
-		for (Fact f : ruleFacts.get("<implies>")) {
+		for (Fact f : ruleFacts.get("<_implies>")) {
 			rules.add(new Rule(f));
 		}
 
@@ -111,9 +119,10 @@ public class RuleExtractor extends Extractor {
 					for (Rule r : rules) {
 						Map<String, String> map = r.mapFirstTo(fact);
 						if (map != null) {
-							if (fact.getId() != null)
-								map.put("#" + r.id, fact.getId());
-							survivingRules.add(r.rest(map));
+							Announce.debug("Instantiating",r);
+							Announce.debug("with",map);
+							Announce.debug("yields",r.rest(map,fact.getId()));
+							survivingRules.add(r.rest(map,fact.getId()));
 						}
 					}
 				}
@@ -138,9 +147,11 @@ public class RuleExtractor extends Extractor {
 			Announce.done();
 			survivingRules.clear();
 		} while (!rules.isEmpty());
+		Announce.done();
 	}
 
 	public static void main(String[] args) throws Exception {
+		Announce.setLevel(Announce.Level.DEBUG);
        new RuleExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
 	}
 }

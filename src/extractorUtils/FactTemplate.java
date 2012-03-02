@@ -11,6 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.parsers.DateParser;
 import basics.Fact;
 import basics.FactComponent;
@@ -169,11 +170,6 @@ public class FactTemplate {
 
 	/** Instantiates fact templates with variables*/
 	public static List<Fact> instantiate(List<FactTemplate> templates, Map<String,String> variables) {
-		return(instantiate(templates,variables,0));
-	}
-	
-	/** Instantiates fact templates with variables*/
-	public static List<Fact> instantiate(List<FactTemplate> templates, Map<String,String> variables, int idOffset) {
 		List<Fact> factList = new ArrayList<Fact>();
 		Set<Integer> factReferences=new TreeSet<>();
 		for(FactTemplate template : templates) {
@@ -181,9 +177,9 @@ public class FactTemplate {
 		}
 		for(int i=0;i<templates.size();i++) {
 			String id=null;
-			if(factReferences.contains(i+idOffset)) {
+			if(factReferences.contains(i+1)) {
 				id=FactComponent.makeId();
-				variables.put("#"+(i+idOffset), id);
+				variables.put("#"+(i+1), id);
 			}
 			factList.add(templates.get(i).instantiate(variables,id));
 		}		
@@ -243,8 +239,8 @@ public class FactTemplate {
 			if(isVariable(relation)) result.put(relation, fact.getRelation());
 			else return(null);
 		}
-		if(!arg1.equals(fact.getArg(1))) {
-			if(isVariable(arg1)) result.put(arg1, fact.getArg(1));
+		if(!arg2.equals(fact.getArg(1))) {
+			if(isVariable(arg2)) result.put(arg2, fact.getArg(2));
 			else return(null);
 		}
 		return(result);
@@ -252,9 +248,9 @@ public class FactTemplate {
 	
 	/** Instantiates the fact template partially*/
 	public FactTemplate instantiatePartially(Map<String,String> variables) {
-		String a1=instantiate(arg1,variables);
-		String r=instantiate(relation, variables);
-		String a2=instantiate(arg2,variables);
+		String a1=D.getOr(variables, arg1, arg1);
+		String r=D.getOr(variables, relation, relation);
+		String a2=D.getOr(variables, arg2, arg2);
 		return(new FactTemplate(a1, r, a2));
 	}
 	
