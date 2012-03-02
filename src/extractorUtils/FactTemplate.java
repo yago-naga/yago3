@@ -3,15 +3,14 @@ package extractorUtils;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.Map.Entry;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
-import javatools.parsers.Char;
 import javatools.parsers.DateParser;
 import basics.Fact;
 import basics.FactComponent;

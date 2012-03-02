@@ -7,14 +7,12 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalMap;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactReader;
 import basics.FactWriter;
-import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;

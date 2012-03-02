@@ -2,21 +2,17 @@ package extractorUtils;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.zip.DataFormatException;
-
-import basics.FactComponent;
 
 import javatools.administrative.Announce;
 import javatools.parsers.DateParser;
 import javatools.parsers.NumberParser;
 import javatools.parsers.PlingStemmer;
+import basics.FactComponent;
 
 /**
  * Class TermExtractor
@@ -62,9 +58,6 @@ public abstract class TermExtractor {
 	private static List<Pattern> urlPatterns = Arrays.asList(
 			Pattern.compile("http[s]?://([-\\w\\./\\\\]+)"),
 			Pattern.compile("(www\\.[-\\w\\./\\\\]+)"));
-
-	/** Map of Redirects */
-	private static Map<String, String> redirects = new HashMap<String, String>();
 
 	/** Extracts an entity from a string. Return NULL if this fails. */
 	public String extractSingle(String s) {
@@ -277,28 +270,6 @@ public abstract class TermExtractor {
 		}
 
 	};
-
-	/**
-	 * Uses the Wikipedia Redirects to resolve the link. If no redirect is
-	 * available, the input is returned unchanged
-	 * 
-	 * @param link
-	 *            Link to check redirect for
-	 * @return Redirected target or initial link if no redirect is available
-	 */
-	private static String resolveRedirect(String link) {
-		String target = redirects.get(link);
-
-		if (target == null) {
-			return link;
-		} else {
-			return target;
-		}
-	}
-
-	public static void addRedirect(String source, String target) {
-		redirects.put(source, target);
-	}
 
 	/** Extracts a wordnet class form a string */
 	public static class ForClass extends TermExtractor {

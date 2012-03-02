@@ -22,7 +22,6 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactReader;
 import basics.FactWriter;
-import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
 import extractorUtils.FactTemplateExtractor;

@@ -11,7 +11,6 @@ import basics.Fact;
 import basics.FactReader;
 import basics.FactWriter;
 import basics.N4Reader;
-import basics.N4Writer;
 import basics.Theme;
 
 /**
