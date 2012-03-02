@@ -2,8 +2,6 @@ package extractors;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -15,6 +13,7 @@ import java.util.regex.Pattern;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
 import javatools.filehandlers.FileLines;
+import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactReader;
 import basics.FactWriter;
@@ -56,7 +55,7 @@ public class RedirectExtractor extends Extractor {
     Announce.doing("Extracting Redirects");
     Map<String, String> redirects = new HashMap<>();
 
-    BufferedReader in = new BufferedReader(new InputStreamReader(new FileInputStream(wikipedia), "UTF-8"));
+    BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     TitleExtractor titleExtractor = new TitleExtractor(input);
 
     String titleEntity = null;
