@@ -17,12 +17,20 @@ import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
 
+/**
+ * YAGO2s - TypeChecker
+ * 
+ * Does a type check on infobox facts
+ * 
+ * @author Fabian M. Suchanek
+ *
+ */
 public class TypeChecker extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
 		return new TreeSet<Theme>(Arrays.asList(RedirectExtractor.REDIRECTEDINFOBOXFACTS, HardExtractor.HARDWIREDFACTS,
-				WordnetExtractor.WORDNETCLASSES, CategoryExtractor.CATEGORTYPES));
+				WordnetExtractor.WORDNETCLASSES, CategoryExtractor.CATEGORYTYPES, CategoryExtractor.CATEGORYCLASSES));
 	}
 
 	/** The output of this extractor */
@@ -36,7 +44,8 @@ public class TypeChecker extends Extractor {
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		FactCollection types = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
-		types.load(input.get(CategoryExtractor.CATEGORTYPES));
+		types.load(input.get(CategoryExtractor.CATEGORYTYPES));
+		types.load(input.get(CategoryExtractor.CATEGORYCLASSES));
 		types.load(input.get(HardExtractor.HARDWIREDFACTS));
 		FactWriter out = output.get(CHECKEDINFOBOXFACTS);
 		Announce.doing("Type checking facts");

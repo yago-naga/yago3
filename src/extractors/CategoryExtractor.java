@@ -45,14 +45,17 @@ public class CategoryExtractor extends Extractor {
 		return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS,PatternHardExtractor.TITLEPATTERNS,HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS));
 	}
 
-	/** Patterns of infoboxes*/
-	public static final Theme CATEGORTYPES=new Theme("categoryTypes");
-	/** Patterns of titles*/
+	/** Types deduced from categories*/
+	public static final Theme CATEGORYTYPES=new Theme("categoryTypes");
+	/** Facts deduced from categories*/
 	public static final Theme CATEGORYFACTS=new Theme("categoryFacts");
+	/** Classes deduced from categories*/
+	public static final Theme CATEGORYCLASSES=new Theme("categoryClasses");
 
 	@Override
 	public Map<Theme,String> output() {
-		return new FinalMap<Theme,String>(CATEGORTYPES, "Types derived from the categories", CATEGORYFACTS,  "Facts derived from the categories");
+		return new FinalMap<Theme,String>(CATEGORYTYPES, "Types derived from the categories", CATEGORYFACTS,  "Facts derived from the categories",
+				CATEGORYCLASSES,  "Classes derived from the categories");
 	}
 
 	/** Maps a category to a wordnet class */
@@ -98,13 +101,15 @@ public class CategoryExtractor extends Extractor {
 		return (null);
 	}
 
-	/** Extracts type from the category name */
-	protected void extractType(String titleEntity, String category, FactWriter writer, Set<String> nonconceptual,
+	/** Extracts type from the category name 
+	 * @param classWriter */
+	protected void extractType(String titleEntity, String category, FactWriter typeWriter, FactWriter classWriter, Set<String> nonconceptual,
 			Map<String, String> preferredMeaning) throws IOException {
 		String concept = category2class(category, nonconceptual, preferredMeaning);
 		if (concept == null)
 			return;
-		writer.write(new Fact(null, titleEntity, FactComponent.forQname("rdf:", "type"), concept));
+		typeWriter.write(new Fact(null, titleEntity, RDFS.type, FactComponent.forWikiCategory(category)));
+		classWriter.write(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept));
 	}
 	
 	/** Returns the set of non-conceptual words*/
@@ -144,11 +149,11 @@ public class CategoryExtractor extends Extractor {
 				for(Fact fact : categoryPatterns.extract(category, titleEntity)) {
 					if(fact==null) continue;
 					if (fact.getRelation().equals("rdf:type"))
-						writers.get(CATEGORTYPES).write(fact);
+						writers.get(CATEGORYTYPES).write(fact);
 					else
 						writers.get(CATEGORYFACTS).write(fact);
 				}
-				extractType(titleEntity, category, writers.get(CATEGORTYPES), nonconceptual, preferredMeanings);
+				extractType(titleEntity, category, writers.get(CATEGORYTYPES), writers.get(CATEGORYCLASSES), nonconceptual, preferredMeanings);
 				for(String name : namesOf(titleEntity)) {
 						writers.get(CATEGORYFACTS).write(new Fact(titleEntity,RDFS.label,name));
 				}

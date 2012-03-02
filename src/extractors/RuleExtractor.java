@@ -9,7 +9,6 @@ import java.util.Set;
 import java.util.TreeMap;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
@@ -31,7 +30,7 @@ public class RuleExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(PatternHardExtractor.RULES, CategoryExtractor.CATEGORTYPES,
+		return new FinalSet<>(PatternHardExtractor.RULES, CategoryExtractor.CATEGORYTYPES,CategoryExtractor.CATEGORYCLASSES,
 				CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXTYPES,
 				TypeChecker.CHECKEDINFOBOXFACTS, WordnetExtractor.WORDNETCLASSES);
 	}
