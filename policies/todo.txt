@@ -3,27 +3,31 @@ YAGO2s: Todos
 The following extractors still have to be translated to YAGO2s:
 
 * Infobox extractor
-todo: polishing and debugging, parallelization
+todo: done, parallelization
 responsible: Fabian
 
 * Category extractor
-todo: polishing and debugging
+todo: done
 responsible: Fabian
 
 * WordNet extractor
-todo: polishing and debugging
+todo: done
 responsible: Fabian
 
 * Rule/Implication extractor
-todo: to write
-responsible: ?, Fabian can do it
+todo: done
+responsible: Fabian
 
 * Simple Taxonomy extractor
-todo: to write
+todo: done
+responsible: Fabian
+
+* Transitive Closure Extractor
+todo: done
 responsible: Fabian
 
 * Statistics extractor
-todo: to write
+todo: done
 responsible: Fabian
 
 * Type coherence checker
@@ -31,8 +35,12 @@ todo: to write
 responsible: Fabian
 
 * Type checker
-todo: polishing and debugging
+todo: done
 responsible: Fabian
+
+* Final Theme generator / duplicate eliminator
+todo: to do
+responsible: ?
 
 * Gender extractor
 If the wikipedia entity is a person,
@@ -57,9 +65,8 @@ todo: to write
 responsible: Edwin ?
 
 * Redirect extractor
-as an extractor that cleans up the infobox facts
-todo: to write
-responsible: Johannes?
+todo: done
+responsible: Johannes
 
 * Text fact extractors
 Wiki-category, wiki-links, context etc.

@@ -23,10 +23,11 @@ We use predefined RDF entities wherever possible, in particular
 rdfs:domain, skos:prefLabel, rdfs:range, rdfs:label, rdfs:subClassOf,  
 rdfs:subPropertyOf, rdf:type, rdf:Resource, xsd:boolean, rdf:Class, 
 xsd:date, xsd:duration, rdf:Statement, xsd:integer, xsd:nonNegativeInteger, 
-xsd:decimal, xsd:decimal, rdf:Property, xsd:string, xsd:gYear
+xsd:decimal, xsd:decimal, rdf:Property, xsd:string, xsd:gYear, owl:Thing
 
 We integrate XML types into the YAGO literal type hierarchy. 
 We use YAGO literal types as literal types in RDF.
+The root of the taxonomy of individuals (formerly "entity") is owl:Thing.
 
 -------------- N4 --------------------
 
