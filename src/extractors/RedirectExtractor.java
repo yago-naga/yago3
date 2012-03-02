@@ -89,6 +89,7 @@ public class RedirectExtractor extends Extractor {
       Fact redirectedDirtyFact = redirectArguments(dirtyFact, redirects);
       out.write(redirectedDirtyFact);
     }
+    Announce.done();
   }
 
   private String getRedirectTarget(String redirect) {
