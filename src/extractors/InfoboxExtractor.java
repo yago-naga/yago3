@@ -2,8 +2,9 @@ package extractors;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -24,7 +25,6 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactReader;
 import basics.FactWriter;
-import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
@@ -178,7 +178,7 @@ public class InfoboxExtractor extends Extractor {
 
 		// Extract the information
 		Announce.doing("Extracting");
-		Reader in = new BufferedReader(new FileReader(wikipedia));
+		Reader in = new BufferedReader(new InputStreamReader(new FileInputStream(wikipedia), "UTF-8"));
 		String titleEntity = null;
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox", "{{ Infobox")) {
