@@ -20,6 +20,7 @@ import javatools.administrative.D;
 import javatools.datatypes.FinalMap;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
+import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -73,9 +74,9 @@ public class InfoboxExtractor extends Extractor {
 		// Check inverse
 		boolean inverse;
 		String cls;
-		if (relation.endsWith("-")) {
+		if (relation.endsWith("->")) {
 			inverse = true;
-			relation = Char.cutLast(string);
+			relation = Char.cutLast(Char.cutLast(relation))+'>';
 			cls = factCollection.getArg2(relation, "rdfs:domain");
 		} else {
 			inverse = false;
@@ -178,7 +179,7 @@ public class InfoboxExtractor extends Extractor {
 
 		// Extract the information
 		Announce.doing("Extracting");
-		Reader in = new BufferedReader(new InputStreamReader(new FileInputStream(wikipedia)));
+		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox", "{{ Infobox")) {
