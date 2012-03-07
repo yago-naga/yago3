@@ -25,6 +25,8 @@ public class PatternHardExtractor extends HardExtractor {
 	public static final Theme TITLEPATTERNS = new Theme("_titlePatterns");
 	/** Patterns of categories */
 	public static final Theme CATEGORYPATTERNS = new Theme("_categoryPatterns");
+	/** Patterns of disambiguation pages */
+  public static final Theme DISAMBIGUATIONTEMPLATES = new Theme("_disambiguationPatterns");
 	/** Patterns of categories */
 	public static final Theme RULES = new Theme("_rules");
 

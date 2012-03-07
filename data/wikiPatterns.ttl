@@ -137,28 +137,3 @@ rdfs:subClassOf	<_wordnetFileOf>	"wn_hyp.pl" .
 "<title>(.{1,100}?) \u005c(.+?\u005c)</title>"	<_wikiPattern>	"@String($1) means $0" .
 "<title>(.{1,100}?)(?: \u005c(.+?\u005c))?</title>"	<_wikiPattern>	"$0 hasPreferredName @String($1)" .
 "<title>(.{1,100}?)</title>"	<_wikiPattern>	"@String($1) hasPreferredMeaning $0" .
-"{{Disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Airport_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Battledist}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Callsigndis}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Chemistry disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Church_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Disambig-Chinese-char-title}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Disambig-cleanup}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Genus_disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Geodis}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Hndis}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Hndis-cleanup}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Hospitaldis}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Hurricane_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Letter_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Letter-NumberCombDisambig}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Mathdab}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{MolFormDisambig}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{NA_Broadcast_List}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Numberdis}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Schooldis}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Species_Latin name abbreviation disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Taxonomy_disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{Species_Latin_name_disambiguation}}"	rdf:type	<yagoDisambiguationTemplate> .
-"{{WP_disambig}}"	rdf:type	<yagoDisambiguationTemplate> .
