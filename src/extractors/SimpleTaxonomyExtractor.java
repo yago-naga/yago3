@@ -1,6 +1,7 @@
 package extractors;
 
 import java.io.File;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -27,8 +28,8 @@ import basics.YAGO;
  */
 public class SimpleTaxonomyExtractor extends Extractor {
 
-	/** Branches of YAGO*/
-	public static final Set<String> yagoBranches=new FinalSet<>("<wordnet_person_100007846>","<wordnet_location_100027167>","<wordnet_artifact_100021939>",
+	/** Branches of YAGO, order matters!*/
+	public static final List<String> yagoBranches=new FinalSet<>("<wordnet_person_100007846>","<wordnet_organization_108008335>","<wordnet_location_100027167>","<wordnet_artifact_100021939>",
 		      "<wordnet_physical_entity_100001930>",
 		      "<wordnet_abstraction_100002137>");
 	
@@ -61,10 +62,8 @@ public class SimpleTaxonomyExtractor extends Extractor {
 		    	output.get(SIMPLETAXONOMY).write(f);
 	    		continue;
 	    	}
-	    	Set<String> supr=wordnet.superClasses(f.getArg(2));
-	    	supr.retainAll(yagoBranches);
-	    	if(supr.isEmpty()) continue;
-	    	String superBranch=supr.contains("<wordnet_person_100007846>")?"<wordnet_person_100007846>":D.pick(supr); 
+	    	String superBranch=yagoBranch(f.getArg(2),wordnet);
+	    	if(superBranch==null) continue;
 	    	output.get(SIMPLETAXONOMY).write(f);
 	    	output.get(SIMPLETAXONOMY).write(new Fact(f.getArg(2),RDFS.subclassOf,superBranch));
 	    	done.add(f.getArg(2));
@@ -72,6 +71,15 @@ public class SimpleTaxonomyExtractor extends Extractor {
 	    Announce.done();
 	}
 
+	/** returns the super-branch that this wordnet class belongs to*/
+	public static String yagoBranch(String wordnetclass, FactCollection wordnetClasses) {
+		Set<String> supr=wordnetClasses.superClasses(wordnetclass);
+		for(String b : yagoBranches) {
+			if(supr.contains(b)) return(b);
+		}
+		return(null);
+	}
+	
 	public static void main(String[] args) throws Exception {
 		new SimpleTaxonomyExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
 	}

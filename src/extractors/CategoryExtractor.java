@@ -8,9 +8,11 @@ import java.io.Reader;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalMap;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
@@ -44,7 +46,8 @@ public class CategoryExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS,
-				PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS));
+				PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS,
+				WordnetExtractor.WORDNETCLASSES));
 	}
 
 	/** Types deduced from categories */
@@ -90,17 +93,25 @@ public class CategoryExtractor extends Extractor {
 			return (null);
 		}
 
-		// Try premodifier + head
+		// Try all premodifiers (reducing the length in each step) + head
 		if (category.preModifier() != null) {
-			String wordnet = preferredMeaning.get(category.preModifier() + ' ' + stemmedHead);
-			if (wordnet != null)
-				return (wordnet);
+			String wordnet = null;
+			String preModifier = category.preModifier().replace('_', ' ');
+
+			for (int start = 0; start != -1 && start < preModifier.length() - 2; start = preModifier.indexOf(' ',
+					start + 1)) {
+				wordnet = preferredMeaning.get(preModifier.substring(start) + " " + stemmedHead);
+				// take the longest matching sequence
+				if (wordnet != null)
+					return (wordnet);
+			}
 		}
+
 		// Try head
 		String wordnet = preferredMeaning.get(stemmedHead);
-		if (wordnet != null)// && wordnet.startsWith("<wordnet_"))
+		if (wordnet != null)
 			return (wordnet);
-		Announce.debug("Could not find type in", categoryName, stemmedHead, "(no wordnet match)");
+		Announce.debug("Could not find type in", categoryName, "(no wordnet match)");
 		return (null);
 	}
 
@@ -109,13 +120,13 @@ public class CategoryExtractor extends Extractor {
 	 * 
 	 * @param classWriter
 	 */
-	protected void extractType(String titleEntity, String category, FactCollection facts, Set<String> nonconceptual,
-			Map<String, String> preferredMeaning) throws IOException {
+	protected void extractType(String titleEntity, String category, FactCollection facts, FactCollection categoryFacts,
+			Set<String> nonconceptual, Map<String, String> preferredMeaning) throws IOException {
 		String concept = category2class(category, nonconceptual, preferredMeaning);
 		if (concept == null)
 			return;
 		facts.add(new Fact(null, titleEntity, RDFS.type, FactComponent.forWikiCategory(category)));
-		facts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept));
+		categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept));
 	}
 
 	/** Returns the set of non-conceptual words */
@@ -134,6 +145,8 @@ public class CategoryExtractor extends Extractor {
 				new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)),
 				new FactCollection(input.get(WordnetExtractor.WORDNETWORDS)));
 		TitleExtractor titleExtractor = new TitleExtractor(input);
+		FactCollection wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
+		FactCollection categoryClasses = new FactCollection();
 
 		// Extract the information
 		Announce.doing("Extracting");
@@ -143,14 +156,15 @@ public class CategoryExtractor extends Extractor {
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:")) {
 			case -1:
-				flush(facts, writers);
+				flush(titleEntity,facts, writers, categoryClasses,wordnetClasses);
+				for (Fact f : categoryClasses)
+					writers.get(CATEGORYCLASSES).write(f);
 				Announce.done();
 				in.close();
 				return;
 			case 0:
-				flush(facts, writers);
+				flush(titleEntity,facts, writers, categoryClasses, wordnetClasses);
 				titleEntity = titleExtractor.getTitleEntity(in);
-				facts = new FactCollection();
 				if (titleEntity != null) {
 					for (String name : namesOf(titleEntity)) {
 						facts.add(new Fact(titleEntity, RDFS.label, name));
@@ -168,19 +182,28 @@ public class CategoryExtractor extends Extractor {
 					if (fact != null)
 						facts.add(fact);
 				}
-				extractType(titleEntity, category, facts, nonconceptual, preferredMeanings);
+				extractType(titleEntity, category, facts, categoryClasses, nonconceptual, preferredMeanings);
 			}
 		}
 	}
 
 	/** Writes the facts */
-	public static void flush(FactCollection facts, Map<Theme, FactWriter> writers) throws IOException {
-		if (facts.get("rdf:type").isEmpty())
+	public static void flush(String entity, FactCollection facts, Map<Theme, FactWriter> writers,
+			FactCollection categoryClasses, FactCollection wordnetClasses) throws IOException {
+		if(entity==null) return;
+		String yagoBranch = yagoBranch(entity, facts, categoryClasses, wordnetClasses);
+		Announce.debug("Branch of", entity, "is", yagoBranch);
+		if (yagoBranch == null)
 			return;
 		for (Fact fact : facts) {
 			switch (fact.getRelation()) {
 			case RDFS.type:
-				writers.get(CATEGORYTYPES).write(fact);
+				String branch=yagoBranch(fact.getArg(2), categoryClasses, wordnetClasses);
+				if (branch==null || !branch.equals(yagoBranch)) {
+					Announce.debug("Wrong branch:", fact.getArg(2),branch);
+				} else {
+					writers.get(CATEGORYTYPES).write(fact);
+				}
 				break;
 			case RDFS.subclassOf:
 				writers.get(CATEGORYCLASSES).write(fact);
@@ -189,6 +212,37 @@ public class CategoryExtractor extends Extractor {
 				writers.get(CATEGORYFACTS).write(fact);
 			}
 		}
+		facts.clear();
+	}
+
+	/** Returns the YAGO branch for a category class */
+	public static String yagoBranch(String arg, FactCollection categoryClasses, FactCollection wordnetClasses) {
+		String yagoBranch = SimpleTaxonomyExtractor.yagoBranch(arg, wordnetClasses);
+		if (yagoBranch != null)
+			return (yagoBranch);
+		for (String sup : categoryClasses.getArg2s(arg, RDFS.subclassOf)) {
+			yagoBranch = SimpleTaxonomyExtractor.yagoBranch(sup, wordnetClasses);
+			if (yagoBranch != null)
+				return (yagoBranch);
+		}
+		return null;
+	}
+
+	/** Returns the YAGO branch for a an entity */
+	public static String yagoBranch(String entity, FactCollection facts, FactCollection categoryClasses,
+			FactCollection wordnetClasses) {
+		Map<String, Integer> branches = new TreeMap<>();
+		for (Fact type : facts.get(entity, RDFS.type)) {
+			String yagoBranch = yagoBranch(type.getArg(2), categoryClasses, wordnetClasses);
+			if (yagoBranch != null)
+				D.addKeyValue(branches, yagoBranch, 1);
+		}
+		String yagoBranch = null;
+		for (String b : branches.keySet()) {
+			if (yagoBranch == null || branches.get(b) > branches.get(yagoBranch))
+				yagoBranch = b;
+		}
+		return (yagoBranch);
 	}
 
 	/** returns the (trivial) names of an entity */
@@ -217,8 +271,8 @@ public class CategoryExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"),
-				"Test on 1 wikipedia article");
+		//new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"),
+		//		"Test on 1 wikipedia article");
 		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"),
 				"Test on 1 wikipedia article");
 	}
