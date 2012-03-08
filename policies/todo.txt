@@ -30,10 +30,6 @@ responsible: Fabian
 todo: done
 responsible: Fabian
 
-* Type coherence checker
-todo: to write
-responsible: Fabian
-
 * Type checker
 todo: done
 responsible: Fabian
@@ -46,6 +42,11 @@ responsible: ?
 If the wikipedia entity is a person,
 count "he" and "she" in the article.
 Output a hasGender fact
+todo: to write
+responsible: Edwin ?
+
+* PersonName extractor
+Run through all type facts. If an entity is a person, use the name parser to generate given and family name. 
 todo: to write
 responsible: Edwin ?
 
