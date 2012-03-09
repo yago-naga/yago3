@@ -100,7 +100,7 @@ public class CategoryExtractor extends Extractor {
 
 			for (int start = 0; start != -1 && start < preModifier.length() - 2; start = preModifier.indexOf(' ',
 					start + 1)) {
-				wordnet = preferredMeaning.get(preModifier.substring(start) + " " + stemmedHead);
+				wordnet = preferredMeaning.get((start==0?preModifier:preModifier.substring(start+1)) + " " + stemmedHead);
 				// take the longest matching sequence
 				if (wordnet != null)
 					return (wordnet);
@@ -270,7 +270,7 @@ public class CategoryExtractor extends Extractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Announce.setLevel(Announce.Level.DEBUG);
+		//Announce.setLevel(Announce.Level.DEBUG);
 		//new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"),
 		//		"Test on 1 wikipedia article");
 		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"),
