@@ -146,6 +146,7 @@ public class InfoboxExtractor extends Extractor {
 			case '|':
 				return ('|');
 			default:
+				if(b.length()>4000) return('}');
 				b.append((char) c);
 			}
 		}
