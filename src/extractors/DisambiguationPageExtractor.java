@@ -35,7 +35,7 @@ public class DisambiguationPageExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.DISAMBIGUATIONTEMPLATES));
+    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.DISAMBIGUATIONTEMPLATES, PatternHardExtractor.TITLEPATTERNS));
   }
 
   /** Means facts from disambiguation pages */

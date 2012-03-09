@@ -34,7 +34,7 @@ public class PatternHardExtractor extends HardExtractor {
 		return (new FinalMap<Theme, String>(INFOBOXPATTERNS, "These are the Wikipedia infobox patterns used in YAGO",
 				TITLEPATTERNS, "These are the replacement patterns for Wikipedia titles used in YAGO",
 				CATEGORYPATTERNS, "These are the Wikipedia category patterns used in YAGO", RULES,
-				"These are the implication rules of YAGO"));
+				"These are the implication rules of YAGO", DISAMBIGUATIONTEMPLATES,"Patterns for the disambiguation pages of Wikipedia"));
 	}
 
 	@Override
