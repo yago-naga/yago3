@@ -12,6 +12,8 @@ import basics.Theme;
 
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
+import javatools.parsers.DateParser;
+import javatools.parsers.NumberFormatter;
 import extractors.Extractor;
 
 /**
@@ -106,12 +108,17 @@ public class Caller {
 	/** Run */
 	public static void main(String[] args) throws Exception {
 		Announce.doing("Creating YAGO");
+		long time=System.currentTimeMillis();
+		Announce.message("Starting at",NumberFormatter.ISOtime());
 		String initFile = args.length == 0 ? "yago.ini" : args[0];
 		Announce.doing("Initializing from", initFile);
 		Parameters.init(initFile);
 		Announce.done();
 		outputFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "the folder where YAGO should be created");
 		call(extractors(Parameters.getList("extractors")));
+		long now=System.currentTimeMillis();
+		Announce.message("Finished at",NumberFormatter.ISOtime());
+		Announce.message("Time needed:",NumberFormatter.formatMS(now-time));
 		Announce.done();
 	}
 }
