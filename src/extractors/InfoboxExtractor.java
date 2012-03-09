@@ -114,7 +114,9 @@ public class InfoboxExtractor extends Extractor {
 
 	/** reads an environment, returns the char on which we finish */
 	public static int readEnvironment(Reader in, StringBuilder b) throws IOException {
+		final int MAX=4000;
 		while (true) {
+			if(b.length()>MAX) return(-2);
 			int c;
 			switch (c = in.read()) {
 			case -1:
@@ -127,6 +129,7 @@ public class InfoboxExtractor extends Extractor {
 				while (c != -1 && c != '}') {
 					b.append((char) c);
 					c = readEnvironment(in, b);
+					if(c==-2) return(-2);
 				}
 				in.read();
 				b.append("}}");
@@ -137,6 +140,7 @@ public class InfoboxExtractor extends Extractor {
 				while (c != -1 && c != ']') {
 					b.append((char) c);
 					c = readEnvironment(in, b);
+					if(c==-2) return(-2);
 				}
 				in.read();
 				b.append("]]");
@@ -146,7 +150,6 @@ public class InfoboxExtractor extends Extractor {
 			case '|':
 				return ('|');
 			default:
-				if(b.length()>4000) return('}');
 				b.append((char) c);
 			}
 		}
@@ -162,7 +165,7 @@ public class InfoboxExtractor extends Extractor {
 			StringBuilder value = new StringBuilder();
 			int c = readEnvironment(in, value);
 			result.put(attribute, value.toString());
-			if (c == '}' || c == -1)
+			if (c == '}' || c == -1 || c==-2)
 				break;
 		}
 		return (result);
@@ -179,7 +182,7 @@ public class InfoboxExtractor extends Extractor {
 		TitleExtractor titleExtractor = new TitleExtractor(input);
 
 		// Extract the information
-		Announce.progressStart("Extracting",3_900_000);
+		Announce.progressStart("Extracting",4_500_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		while (true) {
