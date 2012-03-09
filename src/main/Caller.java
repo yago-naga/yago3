@@ -90,7 +90,7 @@ public class Caller {
 	/** Creates an extractor for a call of the form "extractorName(File)" */
 	public static Extractor extractorForCall(String extractorName) {
 		Announce.doing("Creating", extractorName);
-		Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z0-9:/\\.]*)\\)").matcher(extractorName);
+		Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z_0-9:/\\.]*)\\)").matcher(extractorName);
 		if (!m.matches()) {
 			Announce.warning("Cannot understand extractor call:", extractorName);
 			Announce.failed();
