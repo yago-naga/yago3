@@ -149,20 +149,21 @@ public class CategoryExtractor extends Extractor {
 		FactCollection categoryClasses = new FactCollection();
 
 		// Extract the information
-		Announce.doing("Extracting");
+		Announce.progressStart("Extracting",3_900_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		FactCollection facts = new FactCollection();
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:")) {
-			case -1:
+			case -1:				
 				flush(titleEntity,facts, writers, categoryClasses,wordnetClasses);
 				for (Fact f : categoryClasses)
 					writers.get(CATEGORYCLASSES).write(f);
-				Announce.done();
+				Announce.progressDone();
 				in.close();
 				return;
 			case 0:
+				Announce.progressStep();
 				flush(titleEntity,facts, writers, categoryClasses, wordnetClasses);
 				titleEntity = titleExtractor.getTitleEntity(in);
 				if (titleEntity != null) {
