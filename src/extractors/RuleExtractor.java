@@ -118,9 +118,9 @@ public class RuleExtractor extends Extractor {
 					for (Rule r : rules) {
 						Map<String, String> map = r.mapFirstTo(fact);
 						if (map != null) {
-							Announce.debug("Instantiating",r);
-							Announce.debug("with",map);
-							Announce.debug("yields",r.rest(map,fact.getId()));
+							//Announce.debug("Instantiating",r);
+							//Announce.debug("with",map);
+							//Announce.debug("yields",r.rest(map,fact.getId()));
 							survivingRules.add(r.rest(map,fact.getId()));
 						}
 					}

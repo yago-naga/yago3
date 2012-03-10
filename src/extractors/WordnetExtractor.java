@@ -103,7 +103,8 @@ public class WordnetExtractor extends Extractor {
 			if (numMeaning.equals("1")) {
 				// First check whether we do not already have such an element
 				if (hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>",
-						wordForm).isEmpty()) {
+						wordForm).isEmpty() && hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>",
+								Character.toUpperCase(wordForm.charAt(0))+wordForm.substring(1)).isEmpty()) {
 					writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "<isPreferredMeaningOf>", wordForm));
 				}
 			}

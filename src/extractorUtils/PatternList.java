@@ -1,5 +1,6 @@
 package extractorUtils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Pattern;
@@ -8,25 +9,32 @@ import javatools.administrative.Announce;
 import javatools.datatypes.Pair;
 import basics.Fact;
 import basics.FactCollection;
+import basics.FactSource;
 
 /**
  * Replaces patterns by strings
  * 
  * @author Fabian M. Suchanek
- *
+ * 
  */
 public class PatternList {
 
 	/** Holds the patterns to apply */
-	public final List<Pair<Pattern, String>> patterns=new ArrayList<Pair<Pattern,String>>();
+	public final List<Pair<Pattern, String>> patterns = new ArrayList<Pair<Pattern, String>>();
+
+	/** Constructor 
+	 * @throws IOException */
+	public PatternList(FactSource facts, String relation) throws IOException {
+		this(new FactCollection(facts), relation);
+	}
 
 	/** Constructor */
 	public PatternList(FactCollection facts, String relation) {
-		Announce.doing("Loading patterns of",relation);
+		Announce.doing("Loading patterns of", relation);
 		for (Fact fact : facts.get(relation)) {
 			patterns.add(new Pair<Pattern, String>(fact.getArgPattern(1), fact.getArgJavaString(2)));
 		}
-		if(patterns.isEmpty()) {
+		if (patterns.isEmpty()) {
 			Announce.warning("No patterns found!");
 		}
 		Announce.done();

@@ -37,7 +37,7 @@ public class RedirectExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(InfoboxExtractor.DIRTYINFOBOXFACTS, PatternHardExtractor.TITLEPATTERNS));
+    return new HashSet<Theme>(Arrays.asList(InfoboxExtractor.DIRTYINFOBOXFACTS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
   }
 
   /** Redirected Infobox facts, non-checked */
