@@ -131,7 +131,7 @@ public class Caller {
 		Announce.done();
 		outputFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "the folder where YAGO should be created");
 		if (Parameters.isDefined("callNow")) {
-			call(extractors(Parameters.getList("callNow")));
+			callNow(extractors(Parameters.getList("callNow")));
 		} else {
 			call(extractors(Parameters.getList("extractors")));
 		}
