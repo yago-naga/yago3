@@ -1,6 +1,8 @@
 package main;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -8,12 +10,10 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import basics.Theme;
-
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
-import javatools.parsers.DateParser;
 import javatools.parsers.NumberFormatter;
+import basics.Theme;
 import extractors.Extractor;
 
 /**
@@ -118,6 +118,10 @@ public class Caller {
 
 	/** Run */
 	public static void main(String[] args) throws Exception {
+		File logFile=new File("yago_"+NumberFormatter.timeStamp()+".log");
+		Announce.message("Output written to"+logFile);
+		Writer log=new FileWriter(logFile);
+		Announce.setWriter(log);
 		Announce.doing("Creating YAGO");
 		long time = System.currentTimeMillis();
 		Announce.message("Starting at", NumberFormatter.ISOtime());
@@ -135,5 +139,6 @@ public class Caller {
 		Announce.message("Finished at", NumberFormatter.ISOtime());
 		Announce.message("Time needed:", NumberFormatter.formatMS(now - time));
 		Announce.done();
+		log.close();
 	}
 }
