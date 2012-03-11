@@ -6,11 +6,10 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
-import javatools.datatypes.FinalMap;
+import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;
 import basics.FactWriter;
-import basics.N4Reader;
 import basics.Theme;
 
 /**
@@ -24,10 +23,10 @@ import basics.Theme;
 public class HardExtractor extends Extractor {
 
 	/** Our output*/
-	public static final Theme HARDWIREDFACTS=new Theme("hardWiredFacts");
+	public static final Theme HARDWIREDFACTS=new Theme("hardWiredFacts","These are the hard-wired facts of YAGO");
 	
-	public Map<Theme,String> output() {
-		return (new FinalMap<Theme,String>(HARDWIREDFACTS,"These are the hard-wired facts of YAGO"));
+	public Set<Theme> output() {
+		return (new FinalSet<Theme>(HARDWIREDFACTS));
 	}
 
 	protected File inputFolder;

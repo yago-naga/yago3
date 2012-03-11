@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
-import javatools.datatypes.FinalMap;
+import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -23,7 +23,7 @@ import basics.YAGO;
  * Does a type check on infobox facts
  * 
  * @author Fabian M. Suchanek
- *
+ * 
  */
 public class TypeChecker extends Extractor {
 
@@ -34,11 +34,12 @@ public class TypeChecker extends Extractor {
 	}
 
 	/** The output of this extractor */
-	public static final Theme CHECKEDINFOBOXFACTS = new Theme("checkedInfoboxFacts");
+	public static final Theme CHECKEDINFOBOXFACTS = new Theme("checkedInfoboxFacts",
+			"The facts extracted from the infoboxes, checked for types");
 
 	@Override
-	public Map<Theme, String> output() {
-		return new FinalMap<>(CHECKEDINFOBOXFACTS, "The facts extracted from the infoboxes, checked for types");
+	public Set<Theme> output() {
+		return new FinalSet<>(CHECKEDINFOBOXFACTS);
 	}
 
 	@Override

@@ -28,8 +28,8 @@ public abstract class Extractor {
 	/** The themes required */
 	public abstract Set<Theme> input();
 
-	/** Themes produced and descriptions for the themes */
-	public abstract Map<Theme, String> output();
+	/** Themes produced*/
+	public abstract Set<Theme> output();
 
 	/** Returns the name */
 	public final String name() {
@@ -54,26 +54,16 @@ public abstract class Extractor {
 		Announce.doing("Running", this.name());
 		Map<Theme, FactSource> input = new HashMap<Theme, FactSource>();
 		Announce.doing("Loading input");
-		if (input().contains(Theme.ALL)) {
-           for(File f : inputFolder.listFiles()) {
-        	   if(!f.getName().endsWith(".ttl")) continue;
-        	   Theme theme=new Theme(FileSet.noExtension(f.getName()));
-        	   input.put(theme, FactSource.from(f));
-           }
-		} else {
-			for (Theme theme : input()) {
-				input.put(theme,FactSource.from(theme.file(inputFolder)));
-			}
+		for (Theme theme : input()) {
+			input.put(theme, FactSource.from(theme.file(inputFolder)));
 		}
 		Announce.done();
 		Map<Theme, FactWriter> writers = new HashMap<Theme, FactWriter>();
 		Announce.doing("Creating output files");
-		for (Entry<Theme, String> entry : output().entrySet()) {
-			Announce.doing("Creating file", entry.getKey().name);
-			File file = entry.getKey().file(outputFolder);
-			// if (file.exists())
-			// Announce.error("File", file, "already exists");
-			writers.put(entry.getKey(), new N4Writer(file, header + "\n" + entry.getValue()));
+		for (Theme out : output()) {
+			Announce.doing("Creating file", out.name);
+			File file = out.file(outputFolder);
+			writers.put(out, new N4Writer(file, header + "\n" + out.description));
 			Announce.done();
 		}
 		Announce.done();

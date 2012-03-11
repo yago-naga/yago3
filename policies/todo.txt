@@ -35,8 +35,8 @@ todo: done
 responsible: Fabian
 
 * Final Theme generator / duplicate eliminator
-todo: to do
-responsible: ?
+todo: done
+responsible: Fabian
 
 * Gender extractor
 If the wikipedia entity is a person,
@@ -46,9 +46,8 @@ todo: to write
 responsible: Edwin ?
 
 * PersonName extractor
-Run through all type facts. If an entity is a person, use the name parser to generate given and family name. 
-todo: to write
-responsible: Edwin ?
+todo: done
+responsible: Fabian
 
 * DBpedia instance link extractor
 For every instance X, output
@@ -61,7 +60,7 @@ responsible: Edwin ?
 For every class X, output
 X rdfs:subClassOf X'
 X' rdfs:subClassOf X
-where X' is the name of the classin DBpedia
+where X' is the name of the class in DBpedia
 todo: to write
 responsible: Edwin ?
 

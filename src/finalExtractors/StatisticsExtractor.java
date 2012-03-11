@@ -1,4 +1,4 @@
-package extractors;
+package finalExtractors;
 
 import java.io.File;
 import java.util.Map;
@@ -6,9 +6,10 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import extractors.Extractor;
+
 import javatools.administrative.Announce;
 import javatools.administrative.D;
-import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
@@ -18,19 +19,28 @@ import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
 
+/**
+ * YAGO2s - StatisticsExtractor
+ * 
+ * Extracts statistics about YAGO themes etc.
+ * 
+ * @author Fabian M. Suchanek
+ * 
+ */
 public class StatisticsExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(Theme.ALL);
+		return new FinalSet<>(TaxonomyExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
+				LabelExtractor.YAGOLABELS);
 	}
 
 	/** YAGO statistics theme */
-	public static final Theme STATISTICS = new Theme("statistics");
+	public static final Theme STATISTICS = new Theme("yagoStatistics", "Statistics about YAGO");
 
 	@Override
-	public Map<Theme, String> output() {
-		return new FinalMap<>(STATISTICS, "Statistics about YAGO");
+	public Set<Theme> output() {
+		return new FinalSet<>(STATISTICS);
 	}
 
 	@Override
@@ -64,23 +74,26 @@ public class StatisticsExtractor extends Extractor {
 		}
 		Announce.doing("Writing results");
 		for (String rel : relations.keySet()) {
-			out.write(new Fact(rel, YAGO.hasNumber, FactComponent.forNumber(relations.get(rel))));
 			if (relations.get(rel) == 0)
 				Announce.warning("Relation without facts:", rel);
+			else
+				out.write(new Fact(rel, YAGO.hasNumber, FactComponent.forNumber(relations.get(rel))));
 		}
 		for (String cls : classes.keySet()) {
 			if (classes.get(cls) > 0)
 				out.write(new Fact(cls, YAGO.hasNumber, FactComponent.forNumber(classes.get(cls))));
 		}
 		Announce.done();
-		Announce.message(instances.size(),"things");
-		Announce.message(classes.size(),"classes");
-		out.write(new Fact(YAGO.yago,FactComponent.forYagoEntity("hasNumberOfThings"),FactComponent.forNumber(instances.size())));
-		out.write(new Fact(YAGO.yago,FactComponent.forYagoEntity("hasNumberOfClasses"),FactComponent.forNumber(classes.size())));		
+		Announce.message(instances.size(), "things");
+		Announce.message(classes.size(), "classes");
+		out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("hasNumberOfThings"), FactComponent
+				.forNumber(instances.size())));
+		out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("hasNumberOfClasses"), FactComponent
+				.forNumber(classes.size())));
 		Announce.done();
 	}
 
 	public static void main(String[] args) throws Exception {
-		new StatisticsExtractor().extract(new File("c:/fabian/data/yago2s"),"test");
+		new StatisticsExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
 	}
 }

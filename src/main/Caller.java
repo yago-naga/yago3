@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -36,7 +37,7 @@ public class Caller {
 
 	/** Calls specific extractors in the given order */
 	public static void callNow(List<Extractor> extractors) throws Exception {
-		Announce.doing("Calling extractors");
+		Announce.doing("Calling manually specified extractors");
 		for (Extractor e : extractors) {
 			e.extract(outputFolder, header);
 		}
@@ -46,32 +47,19 @@ public class Caller {
 	/** Calls all extractors in the right order */
 	public static void call(List<Extractor> extractors) throws Exception {
 		Set<Theme> themesWeHave = new TreeSet<Theme>();
-		Announce.doing("Calling extractors");
+		Announce.doing("Calling extractors in scheduled order");
 		Announce.message("Extractors", extractors);
 		for (int i = 0; i < extractors.size(); i++) {
 			Extractor e = extractors.get(i);
 			if (e.input().isEmpty() || themesWeHave.containsAll(e.input())) {
 				e.extract(outputFolder, header);
-				themesWeHave.addAll(e.output().keySet());
+				themesWeHave.addAll(e.output());
 				extractors.remove(i);
 				Announce.message("----------------------------");
 				Announce.message("Current themes:", themesWeHave);
 				Announce.message("Current extractors:", extractors);
 				i = -1; // Start again from the beginning
 			}
-		}
-		// Call the ALL extractors
-		for (int i = 0; i < extractors.size(); i++) {
-			Extractor e = extractors.get(i);
-			if (!e.input().contains(Theme.ALL))
-				continue;
-			e.extract(outputFolder, header);
-			themesWeHave.addAll(e.output().keySet());
-			extractors.remove(i);
-			Announce.message("----------------------------");
-			Announce.message("Current themes:", themesWeHave);
-			Announce.message("Current extractors:", extractors);
-			i--;
 		}
 		if (!extractors.isEmpty())
 			Announce.warning("Could not call", extractors);
@@ -118,11 +106,14 @@ public class Caller {
 
 	/** Run */
 	public static void main(String[] args) throws Exception {
-		File logFile=new File("yago_"+NumberFormatter.timeStamp()+".log");
-		Announce.message("Output written to"+logFile);
-		Writer log=new FileWriter(logFile);
-		Announce.setWriter(log);
-		Announce.doing("Creating YAGO");
+		Writer log = null;
+		if (Arrays.asList(args).contains("log")) {
+			File logFile = new File("yago_" + NumberFormatter.timeStamp() + ".log");
+			Announce.message("Output written to", logFile);
+			log = new FileWriter(logFile);
+			Announce.setWriter(log);
+		}
+		Announce.doing("Running YAGO extractors");
 		long time = System.currentTimeMillis();
 		Announce.message("Starting at", NumberFormatter.ISOtime());
 		String initFile = args.length == 0 ? "yago.ini" : args[0];
@@ -139,6 +130,7 @@ public class Caller {
 		Announce.message("Finished at", NumberFormatter.ISOtime());
 		Announce.message("Time needed:", NumberFormatter.formatMS(now - time));
 		Announce.done();
-		log.close();
+		if (log != null)
+			log.close();
 	}
 }

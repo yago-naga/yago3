@@ -12,7 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
-import javatools.datatypes.FinalMap;
+import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Name;
 import basics.Fact;
@@ -20,7 +20,6 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
-import basics.N4Reader;
 import basics.Theme;
 import basics.YAGO;
 
@@ -30,11 +29,11 @@ public class WordnetExtractor extends Extractor {
 	protected File wordnetFolder;
 
 	/** wordnet classes */
-	public static final Theme WORDNETCLASSES = new Theme("wordnetClasses");
+	public static final Theme WORDNETCLASSES = new Theme("wordnetClasses", "SubclassOf-Hierarchy from WordNet");
 	/** wordnet labels/means */
-	public static final Theme WORDNETWORDS = new Theme("wordnetWords");
+	public static final Theme WORDNETWORDS = new Theme("wordnetWords", "Labels and preferred meanings form Wordnet");
 	/** ids of wordnet */
-	public static final Theme WORDNETIDS = new Theme("wordnetIds");
+	public static final Theme WORDNETIDS = new Theme("wordnetIds", "Ids from Wordnet");
 
 	@Override
 	public Set<Theme> input() {
@@ -42,9 +41,8 @@ public class WordnetExtractor extends Extractor {
 	}
 
 	@Override
-	public Map<Theme, String> output() {
-		return new FinalMap<Theme, String>(WORDNETCLASSES, "SubclassOf-Hierarchy from WordNet", WORDNETWORDS,
-				"Labels and preferred meanings form Wordnet", WORDNETIDS, "Ids from Wordnet");
+	public Set<Theme> output() {
+		return new FinalSet<Theme>(WORDNETCLASSES, WORDNETWORDS, WORDNETIDS);
 	}
 
 	/** Pattern for synset definitions */
@@ -57,7 +55,7 @@ public class WordnetExtractor extends Extractor {
 
 	@Override
 	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-		FactCollection hardWiredFacts=new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
+		FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 		Announce.doing("Extracting from Wordnet");
 		Collection<String> instances = new HashSet<String>(8000);
 		for (String line : new FileLines(new File(wordnetFolder, "wn_ins.pl"), "Loading instances")) {
@@ -102,9 +100,9 @@ public class WordnetExtractor extends Extractor {
 			// add additional fact if it is preferred meaning
 			if (numMeaning.equals("1")) {
 				// First check whether we do not already have such an element
-				if (hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>",
-						wordForm).isEmpty() && hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>",
-								Character.toUpperCase(wordForm.charAt(0))+wordForm.substring(1)).isEmpty()) {
+				if (hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>", wordForm).isEmpty()
+						&& hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>",
+								Character.toUpperCase(wordForm.charAt(0)) + wordForm.substring(1)).isEmpty()) {
 					writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "<isPreferredMeaningOf>", wordForm));
 				}
 			}
@@ -135,17 +133,18 @@ public class WordnetExtractor extends Extractor {
 		this.wordnetFolder = wordnetFolder;
 	}
 
-	/** Returns a map of Java strings to preferred YAGO entities*/
-	public static Map<String,String> preferredMeanings(Map<Theme,FactSource> input) throws IOException {
-		return(preferredMeanings(new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)), new FactCollection(input.get(WordnetExtractor.WORDNETWORDS))));
+	/** Returns a map of Java strings to preferred YAGO entities */
+	public static Map<String, String> preferredMeanings(Map<Theme, FactSource> input) throws IOException {
+		return (preferredMeanings(new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)),
+				new FactCollection(input.get(WordnetExtractor.WORDNETWORDS))));
 	}
-	
-	/** Returns a map of Java strings to preferred YAGO entities*/
+
+	/** Returns a map of Java strings to preferred YAGO entities */
 	public static Map<String, String> preferredMeanings(FactCollection... fcs) {
-		return(preferredMeanings(Arrays.asList(fcs)));
+		return (preferredMeanings(Arrays.asList(fcs)));
 	}
-	
-	/** Returns a map of Java strings to preferred YAGO entities*/
+
+	/** Returns a map of Java strings to preferred YAGO entities */
 	public static Map<String, String> preferredMeanings(Collection<FactCollection> fcs) {
 		Map<String, String> preferredMeaning = new HashMap<String, String>();
 		for (FactCollection fc : fcs) {

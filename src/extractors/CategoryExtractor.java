@@ -1,8 +1,6 @@
 package extractors;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
@@ -13,7 +11,7 @@ import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
-import javatools.datatypes.FinalMap;
+import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.parsers.Name;
@@ -29,6 +27,7 @@ import basics.RDFS;
 import basics.Theme;
 import extractorUtils.FactTemplateExtractor;
 import extractorUtils.TitleExtractor;
+import finalExtractors.SimpleTaxonomyExtractor;
 
 /**
  * CategoryExtractor - YAGO2s
@@ -51,16 +50,16 @@ public class CategoryExtractor extends Extractor {
 	}
 
 	/** Types deduced from categories */
-	public static final Theme CATEGORYTYPES = new Theme("categoryTypes");
+	public static final Theme CATEGORYTYPES = new Theme("categoryTypes", "Types derived from the categories");
 	/** Facts deduced from categories */
-	public static final Theme CATEGORYFACTS = new Theme("categoryFacts");
+	public static final Theme CATEGORYFACTS = new Theme("categoryFacts","Facts derived from the categories");
 	/** Classes deduced from categories */
-	public static final Theme CATEGORYCLASSES = new Theme("categoryClasses");
+	public static final Theme CATEGORYCLASSES = new Theme("categoryClasses", "Classes derived from the categories");
 
 	@Override
-	public Map<Theme, String> output() {
-		return new FinalMap<Theme, String>(CATEGORYTYPES, "Types derived from the categories", CATEGORYFACTS,
-				"Facts derived from the categories", CATEGORYCLASSES, "Classes derived from the categories");
+	public Set<Theme> output() {
+		return new FinalSet<Theme>(CATEGORYTYPES, CATEGORYFACTS,
+				 CATEGORYCLASSES);
 	}
 
 	/** Maps a category to a wordnet class */

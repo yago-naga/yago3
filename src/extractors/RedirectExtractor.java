@@ -11,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
-import javatools.datatypes.FinalMap;
+import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import basics.Fact;
@@ -21,110 +21,113 @@ import basics.Theme;
 import extractorUtils.TitleExtractor;
 
 /**
- * Takes the facts from the InfoboxExtractor and checks if
- * any of the entities are actually a redirect and resolves
- * them
+ * Takes the facts from the InfoboxExtractor and checks if any of the entities
+ * are actually a redirect and resolves them
  * 
  * @author Johannes Hoffart
- *
+ * 
  */
 public class RedirectExtractor extends Extractor {
 
-  /** Input file */
-  private File wikipedia;
+	/** Input file */
+	private File wikipedia;
 
-  private static final Pattern pattern = Pattern.compile("#REDIRECT ?\\[\\[(.*?)\\]\\]");
+	private static final Pattern pattern = Pattern.compile("#REDIRECT ?\\[\\[(.*?)\\]\\]");
 
-  @Override
-  public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(InfoboxExtractor.DIRTYINFOBOXFACTS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
-  }
+	@Override
+	public Set<Theme> input() {
+		return new HashSet<Theme>(Arrays.asList(InfoboxExtractor.DIRTYINFOBOXFACTS, PatternHardExtractor.TITLEPATTERNS,
+				WordnetExtractor.WORDNETWORDS));
+	}
 
-  /** Redirected Infobox facts, non-checked */
-  public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("redirectedInfoxboxFacts");
+	/** Redirected Infobox facts, non-checked */
+	public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("redirectedInfoxboxFacts",
+			"Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
 
-  @Override
-  public Map<Theme, String> output() {
-    return new FinalMap<Theme, String>(REDIRECTEDINFOBOXFACTS,
-        "Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
-  }
+	@Override
+	public Set<Theme> output() {
+		return new FinalSet<Theme>(REDIRECTEDINFOBOXFACTS);
+	}
 
-  @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    // Extract the information
-    Announce.doing("Extracting Redirects");
-    Map<String, String> redirects = new HashMap<>();
+	@Override
+	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+		// Extract the information
+		Announce.doing("Extracting Redirects");
+		Map<String, String> redirects = new HashMap<>();
 
-    BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-    TitleExtractor titleExtractor = new TitleExtractor(input);
+		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		TitleExtractor titleExtractor = new TitleExtractor(input);
 
-    String titleEntity = null;
-    redirect: while (true) {
-      switch (FileLines.findIgnoreCase(in, "<title>", "#REDIRECT")) {
-        case -1:
-          Announce.done();
-          in.close();
-          break redirect;
-        case 0:
-          titleEntity = titleExtractor.getTitleEntity(in);
-          break;
-        default:
-          if (titleEntity == null) continue;
-          String redirect = FileLines.readTo(in, "]]").toString().trim();
-          String redirectTarget = getRedirectTarget(redirect);
+		String titleEntity = null;
+		redirect: while (true) {
+			switch (FileLines.findIgnoreCase(in, "<title>", "#REDIRECT")) {
+			case -1:
+				Announce.done();
+				in.close();
+				break redirect;
+			case 0:
+				titleEntity = titleExtractor.getTitleEntity(in);
+				break;
+			default:
+				if (titleEntity == null)
+					continue;
+				String redirect = FileLines.readTo(in, "]]").toString().trim();
+				String redirectTarget = getRedirectTarget(redirect);
 
-          if (redirectTarget != null) {
-            redirects.put(titleEntity, redirectTarget);
-          }
-      }
-    }
-    
-    FactWriter out = output.get(REDIRECTEDINFOBOXFACTS);
-    
-    FactSource dirtyInfoboxFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);
-    
-    Announce.doing("Applying redirects to Infobox facts");
-    
-    for (Fact dirtyFact : dirtyInfoboxFacts) {
-      Fact redirectedDirtyFact = redirectArguments(dirtyFact, redirects);
-      out.write(redirectedDirtyFact);
-    }
-    Announce.done();
-  }
+				if (redirectTarget != null) {
+					redirects.put(titleEntity, redirectTarget);
+				}
+			}
+		}
 
-  private String getRedirectTarget(String redirect) {
-    Matcher m = pattern.matcher(redirect);
+		FactWriter out = output.get(REDIRECTEDINFOBOXFACTS);
 
-    if (m.find()) {
-      return m.group(1);
-    } else {
-      return null;
-    }
-  }
+		FactSource dirtyInfoboxFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);
 
-  private Fact redirectArguments(Fact dirtyFact, Map<String, String> redirects) {
-    String redirectedArg1 = dirtyFact.getArg(1);
-    if (redirects.containsKey(dirtyFact.getArg(1))) {
-      redirectedArg1 = redirects.get(dirtyFact.getArg(1));
-    }
-    
-    String redirectedArg2 = dirtyFact.getArg(2);
-    if (redirects.containsKey(dirtyFact.getArg(2))) {
-      redirectedArg2 = redirects.get(dirtyFact.getArg(2));
-    }
-    
-    Fact redirectedFact = new Fact(dirtyFact.getId(), redirectedArg1, dirtyFact.getRelation(), redirectedArg2, dirtyFact.getdataType());
-        
-    return redirectedFact;
-  }
+		Announce.doing("Applying redirects to Infobox facts");
 
-  /**
-   * Needs Wikipedia as input
-   * 
-   * @param wikipedia Wikipedia XML dump
-   */
-  public RedirectExtractor(File wikipedia) {
-    this.wikipedia = wikipedia;
-  }
+		for (Fact dirtyFact : dirtyInfoboxFacts) {
+			Fact redirectedDirtyFact = redirectArguments(dirtyFact, redirects);
+			out.write(redirectedDirtyFact);
+		}
+		Announce.done();
+	}
+
+	private String getRedirectTarget(String redirect) {
+		Matcher m = pattern.matcher(redirect);
+
+		if (m.find()) {
+			return m.group(1);
+		} else {
+			return null;
+		}
+	}
+
+	private Fact redirectArguments(Fact dirtyFact, Map<String, String> redirects) {
+		String redirectedArg1 = dirtyFact.getArg(1);
+		if (redirects.containsKey(dirtyFact.getArg(1))) {
+			redirectedArg1 = redirects.get(dirtyFact.getArg(1));
+		}
+
+		String redirectedArg2 = dirtyFact.getArg(2);
+		if (redirects.containsKey(dirtyFact.getArg(2))) {
+			redirectedArg2 = redirects.get(dirtyFact.getArg(2));
+		}
+
+		Fact redirectedFact = new Fact(dirtyFact.getId(), redirectedArg1, dirtyFact.getRelation(), redirectedArg2,
+				dirtyFact.getdataType());
+
+		return redirectedFact;
+	}
+
+	/**
+	 * Needs Wikipedia as input
+	 * 
+	 * @param wikipedia
+	 *            Wikipedia XML dump
+	 */
+	public RedirectExtractor(File wikipedia) {
+		this.wikipedia = wikipedia;
+	}
 
 }

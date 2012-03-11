@@ -41,7 +41,7 @@ public class Tester {
 			}
 			extractor.extract(testCase, outputFolder, "Test of YAGO2s");
 			Announce.doing("Checking output");
-			for(Theme theme : extractor.output().keySet()) {
+			for(Theme theme : extractor.output()) {
 				FactCollection goldStandard=new FactCollection(theme.file(testCase));
 				FactCollection result=new FactCollection(theme.file(outputFolder));
 				if(!result.checkEqual(goldStandard)) {

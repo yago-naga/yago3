@@ -11,7 +11,6 @@ import java.util.TreeMap;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
-import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
@@ -38,11 +37,11 @@ public class RuleExtractor extends Extractor {
 	}
 
 	/** Theme of deductions */
-	public static final Theme RULERESULTS = new Theme("ruleResults");
+	public static final Theme RULERESULTS = new Theme("ruleResults", "Results of rule applications");
 
 	@Override
-	public Map<Theme, String> output() {
-		return new FinalMap<>(RULERESULTS, "Results of rule applications");
+	public Set<Theme> output() {
+		return new FinalSet<>(RULERESULTS);
 	}
 
 	/** Represents a rule */
@@ -146,10 +145,10 @@ public class RuleExtractor extends Extractor {
 			}
 			return (result);
 		}
-		
-		/** True if no rules got stocked*/
+
+		/** True if no rules got stocked */
 		public boolean isEmpty() {
-			return(rel2subj2rules.isEmpty());
+			return (rel2subj2rules.isEmpty());
 		}
 	}
 

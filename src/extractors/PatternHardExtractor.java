@@ -2,9 +2,10 @@ package extractors;
 
 import java.io.File;
 import java.util.Map;
+import java.util.Set;
 
 import javatools.administrative.Announce;
-import javatools.datatypes.FinalMap;
+import javatools.datatypes.FinalSet;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
@@ -20,28 +21,29 @@ import basics.Theme;
 public class PatternHardExtractor extends HardExtractor {
 
 	/** Patterns of infoboxes */
-	public static final Theme INFOBOXPATTERNS = new Theme("_infoboxPatterns");
+	public static final Theme INFOBOXPATTERNS = new Theme("_infoboxPatterns",
+			"These are the Wikipedia infobox patterns used in YAGO");
 	/** Patterns of titles */
-	public static final Theme TITLEPATTERNS = new Theme("_titlePatterns");
+	public static final Theme TITLEPATTERNS = new Theme("_titlePatterns",
+			"These are the replacement patterns for Wikipedia titles used in YAGO");
 	/** Patterns of categories */
-	public static final Theme CATEGORYPATTERNS = new Theme("_categoryPatterns");
+	public static final Theme CATEGORYPATTERNS = new Theme("_categoryPatterns",
+			"These are the Wikipedia category patterns used in YAGO");
 	/** Patterns of disambiguation pages */
-  public static final Theme DISAMBIGUATIONTEMPLATES = new Theme("_disambiguationPatterns");
+	public static final Theme DISAMBIGUATIONTEMPLATES = new Theme("_disambiguationPatterns",
+			"Patterns for the disambiguation pages of Wikipedia");
 	/** Patterns of categories */
-	public static final Theme RULES = new Theme("_rules");
+	public static final Theme RULES = new Theme("_rules", "These are the implication rules of YAGO");
 
-	public Map<Theme, String> output() {
-		return (new FinalMap<Theme, String>(INFOBOXPATTERNS, "These are the Wikipedia infobox patterns used in YAGO",
-				TITLEPATTERNS, "These are the replacement patterns for Wikipedia titles used in YAGO",
-				CATEGORYPATTERNS, "These are the Wikipedia category patterns used in YAGO", RULES,
-				"These are the implication rules of YAGO", DISAMBIGUATIONTEMPLATES,"Patterns for the disambiguation pages of Wikipedia"));
+	public Set<Theme> output() {
+		return (new FinalSet<Theme>(INFOBOXPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES));
 	}
 
 	@Override
 	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> factCollections) throws Exception {
 		Announce.doing("Copying patterns");
 		Announce.message("Input folder is", inputFolder);
-		for (Theme t : output().keySet()) {
+		for (Theme t : output()) {
 			extract(t.file(inputFolder), writers.get(t));
 		}
 		Announce.done();

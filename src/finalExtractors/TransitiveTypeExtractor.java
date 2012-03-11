@@ -1,4 +1,4 @@
-package extractors;
+package finalExtractors;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,6 +6,11 @@ import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+
+import extractors.CategoryExtractor;
+import extractors.Extractor;
+import extractors.InfoboxExtractor;
+import extractors.WordnetExtractor;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
@@ -29,23 +34,22 @@ public class TransitiveTypeExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(WordnetExtractor.WORDNETCLASSES,CategoryExtractor.CATEGORYTYPES,CategoryExtractor.CATEGORYCLASSES,InfoboxExtractor.INFOBOXTYPES);
+		return new FinalSet<>(TaxonomyExtractor.YAGOTAXONOMY,TypeExtractor.YAGOTYPES);
 	}
 
 	/** All type facts*/
-	public static final Theme TRANSITIVETYPE=new Theme("transitiveType");
+	public static final Theme TRANSITIVETYPE=new Theme("yagoTransitiveType","Transitive closure of all type/subclassof facts");
 	
 	@Override
-	public Map<Theme, String> output() {	
-		return new FinalMap<>(TRANSITIVETYPE,"Transitive closure of all type/subclassof facts");
+	public Set<Theme> output() {	
+		return new FinalSet<>(TRANSITIVETYPE);
 	}
 
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-		FactCollection classes=new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
-		classes.load(input.get(CategoryExtractor.CATEGORYCLASSES));
+		FactCollection classes=new FactCollection(input.get(TaxonomyExtractor.YAGOTAXONOMY));
 		Announce.doing("Computing the transitive closure");
-		for(Theme theme : Arrays.asList(CategoryExtractor.CATEGORYTYPES,InfoboxExtractor.INFOBOXTYPES)) {
+		for(Theme theme : Arrays.asList(TypeExtractor.YAGOTYPES)) {
 			Announce.doing("Treating entities in",theme);
 			String lastEntity=null;
 			Set<String> lastClasses=new TreeSet<>();

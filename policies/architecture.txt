@@ -20,8 +20,6 @@ work in return.
 The YAGO2s data is split into "themes". Themes can overlap,
 but should not. The union of all themes constitutes "YAGO2s full".
 
-Themes will be offered for download separately.
-
 The class basics.Theme implements a theme.
 
 -------------- Extractors --------------------
@@ -38,6 +36,13 @@ dependency graph of extractors.
 
 Extractors are scheduled in the right order and 
 called by main.Caller
+
+-------------- Final Themes --------------------
+
+Themes that are free of duplicates and ready for
+export are called "final themes". These live in the
+same folder as the other themes, but start with "yago...".
+Final themes are constructed by finalExtractors.
 
 -------------- Test cases --------------------
 
