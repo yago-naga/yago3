@@ -29,9 +29,7 @@ import basics.YAGO;
 public class SimpleTaxonomyExtractor extends Extractor {
 
 	/** Branches of YAGO, order matters!*/
-	public static final List<String> yagoBranches=new FinalSet<>("<wordnet_person_100007846>","<wordnet_organization_108008335>","<wordnet_location_100027167>","<wordnet_artifact_100021939>",
-		      "<wordnet_physical_entity_100001930>",
-		      "<wordnet_abstraction_100002137>");
+	public static final List<String> yagoBranches=new FinalSet<>(YAGO.person, YAGO.organization, YAGO.artifact, YAGO.location, YAGO.abstraction, YAGO.physicalEntity);
 	
 	@Override
 	public Set<Theme> input() {
@@ -43,7 +41,7 @@ public class SimpleTaxonomyExtractor extends Extractor {
 	
 	@Override
 	public Map<Theme, String> output() {
-		return new FinalMap<>(SIMPLETAXONOMY,"A subset if the YAGO taxonomy");
+		return new FinalMap<>(SIMPLETAXONOMY,"A subset of the YAGO taxonomy, which contains just Wikipedia categories\n, WordNet leaves, the main YAGO branches, and "+YAGO.entity+".");
 	}
 
 	@Override
