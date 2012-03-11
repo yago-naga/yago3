@@ -13,10 +13,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 "$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2"	<_implies>	"$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2 ; #1 <happenedIn> $2; #2 <happenedOnDate> $1" .
-"$0 <wasBornOnDate> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
-"$0 <diedOnDate> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <wasBornOnDate> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <diedOnDate> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
 "$0 <isMarriedTo> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
-"$0 <worksAt> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
-"$0 <hasAcademicAdvisor> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
-"$0 <hasLatitude> $1"	<_implies>	"$0 rdf:type <yagoGeoEntity>" .
-"$0 <hasLongitude> $1"	<_implies>	"$0 rdf:type <yagoGeoEntity>" .
+# "$0 <worksAt> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <hasAcademicAdvisor> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
+# "$0 <hasLatitude> $1"	<_implies>	"$0 rdf:type <yagoGeoEntity>" .
+# "$0 <hasLongitude> $1"	<_implies>	"$0 rdf:type <yagoGeoEntity>" .
