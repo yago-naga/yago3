@@ -7,13 +7,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import extractors.CategoryExtractor;
-import extractors.Extractor;
-import extractors.InfoboxExtractor;
-import extractors.WordnetExtractor;
-
 import javatools.administrative.Announce;
-import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
@@ -21,6 +15,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import extractors.Extractor;
 
 /**
  * YAGO2s - TransitiveTypeExtractor

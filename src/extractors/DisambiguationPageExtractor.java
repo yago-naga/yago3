@@ -17,7 +17,6 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import extractorUtils.FactTemplateExtractor;
-import extractorUtils.TitleExtractor;
 
 /**
  * Extracts means facts from Wikipedia disambiguation pages
@@ -51,7 +50,6 @@ public class DisambiguationPageExtractor extends Extractor {
 		Announce.doing("Extracting disambiguation means");
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-		TitleExtractor titleExtractor = new TitleExtractor(input);
 
 		FactCollection disambiguationPatternCollection = new FactCollection(
 				input.get(PatternHardExtractor.DISAMBIGUATIONTEMPLATES));
@@ -69,7 +67,7 @@ public class DisambiguationPageExtractor extends Extractor {
 				in.close();
 				return;
 			case 0:
-				titleEntity = titleExtractor.getTitleEntity(in);
+				titleEntity = FileLines.readToBoundary(in, "</title>");
 				break;
 			default:
 				if (titleEntity == null)

@@ -1,0 +1,21 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+
+@base <http://yago-knowledge/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Wikipedia links with |
+"(?s)(.{0,500})\\[\\[([^\\]\u000a:]+?)\\|([^\\]\u000a]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($2); #1 hasAnchorText @String($3); #1 hasContextPrecedingAnchor @String($1); #1 hasContextSucceedingAnchor @String($4)" .
+
+# Links without |
+"(?s)(.{0,500})\\[\\[([^\\]\u000a\\|:]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($2); #1 hasContextPrecedingAnchor @String($1); #1 hasContextSucceedingAnchor @String($3)" .
+
+# External links
+"\\[(https?://[^\\s\\]\u000a]+)\\s+([^\\]\u000a]+)\\]"	<_extendedStructureWikiPattern>	"$0 hasExternalWikipediaLinkTo @Url($1); #1 hasAnchorText @String($2)" .

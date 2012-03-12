@@ -3,14 +3,11 @@ package extractors;
 import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 
 import javatools.administrative.Announce;
-import javatools.filehandlers.FileSet;
 import basics.FactSource;
 import basics.FactWriter;
-import basics.N4Reader;
 import basics.N4Writer;
 import basics.Theme;
 

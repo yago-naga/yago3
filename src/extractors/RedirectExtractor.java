@@ -18,7 +18,6 @@ import basics.Fact;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
-import extractorUtils.TitleExtractor;
 
 /**
  * Takes the facts from the InfoboxExtractor and checks if any of the entities
@@ -32,7 +31,7 @@ public class RedirectExtractor extends Extractor {
 	/** Input file */
 	private File wikipedia;
 
-	private static final Pattern pattern = Pattern.compile("#REDIRECT ?\\[\\[(.*?)\\]\\]");
+	private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
 	@Override
 	public Set<Theme> input() {
@@ -56,7 +55,6 @@ public class RedirectExtractor extends Extractor {
 		Map<String, String> redirects = new HashMap<>();
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-		TitleExtractor titleExtractor = new TitleExtractor(input);
 
 		String titleEntity = null;
 		redirect: while (true) {
@@ -66,7 +64,7 @@ public class RedirectExtractor extends Extractor {
 				in.close();
 				break redirect;
 			case 0:
-				titleEntity = titleExtractor.getTitleEntity(in);
+        titleEntity = FileLines.readToBoundary(in, "</title>");
 				break;
 			default:
 				if (titleEntity == null)
@@ -114,8 +112,7 @@ public class RedirectExtractor extends Extractor {
 			redirectedArg2 = redirects.get(dirtyFact.getArg(2));
 		}
 
-		Fact redirectedFact = new Fact(dirtyFact.getId(), redirectedArg1, dirtyFact.getRelation(), redirectedArg2,
-				dirtyFact.getdataType());
+		Fact redirectedFact = new Fact(dirtyFact.getId(), redirectedArg1, dirtyFact.getRelation(), redirectedArg2);
 
 		return redirectedFact;
 	}

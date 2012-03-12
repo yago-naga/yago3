@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/basics2s"/>
+	<classpathentry combineaccessrules="false" kind="src" path="/javatools"/>
+	<classpathentry kind="lib" path="/Applications/eclipse_indigo/plugins/org.junit_4.8.2.v4_8_2_v20110321-1705/junit.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="http://www.junit.org/junit/javadoc/4.5"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

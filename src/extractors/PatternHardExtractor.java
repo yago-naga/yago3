@@ -32,11 +32,19 @@ public class PatternHardExtractor extends HardExtractor {
 	/** Patterns of disambiguation pages */
 	public static final Theme DISAMBIGUATIONTEMPLATES = new Theme("_disambiguationPatterns",
 			"Patterns for the disambiguation pages of Wikipedia");
+	 /** Patterns of entity keyphrases */
+  public static final Theme CONTEXTPATTERNS = new Theme("_extendedContextWikiPatterns",
+      "Patterns for extracting Keyphrases");
+  /** Patterns of entity keyphrases */
+ public static final Theme STRUCTUREPATTERNS = new Theme("_extendedStructureWikiPatterns",
+     "Patterns for extracting regular structure from Wikipedia (e.g. links)");
 	/** Patterns of categories */
 	public static final Theme RULES = new Theme("_rules", "These are the implication rules of YAGO");
 
 	public Set<Theme> output() {
-		return (new FinalSet<Theme>(INFOBOXPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES));
+		return (new FinalSet<Theme>(
+		    INFOBOXPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES, 
+		    CONTEXTPATTERNS, STRUCTUREPATTERNS));
 	}
 
 	@Override
