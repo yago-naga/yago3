@@ -23,7 +23,19 @@ import basics.FactComponent;
  */
 public abstract class TermExtractor {
 
-	/** Watch out: forClass needs to be handled separately*/
+	/** Holds the name of the extractor */
+	public final String name;
+
+	protected TermExtractor(String n) {
+		name = "TermExtractor for " + n;
+	}
+
+	@Override
+	public String toString() {
+		return name;
+	}
+
+	/** Watch out: forClass needs to be handled separately */
 	public static TermExtractor forType(String type) {
 		switch (type) {
 		case "rdf:Resource":
@@ -36,7 +48,7 @@ public abstract class TermExtractor {
 		case "<yagoISBN>":
 		case "<yagoIdentifier>":
 			return (forString);
-		case "<yagoUrl>":
+		case "<yagoURL>":
 			return (forUrl);
 		case "xsd:decimal":
 		case "<yagoGeoCoordinate>":
@@ -55,8 +67,7 @@ public abstract class TermExtractor {
 	}
 
 	// also needs to match \ for yago-encoded stuff
-	private static List<Pattern> urlPatterns = Arrays.asList(
-			Pattern.compile("http[s]?://([-\\w\\./\\\\]+)"),
+	private static List<Pattern> urlPatterns = Arrays.asList(Pattern.compile("http[s]?://([-\\w\\./\\\\]+)"),
 			Pattern.compile("(www\\.[-\\w\\./\\\\]+)"));
 
 	/** Extracts an entity from a string. Return NULL if this fails. */
@@ -78,12 +89,18 @@ public abstract class TermExtractor {
 	}
 
 	/** Extracts a number form a string */
-	public static TermExtractor forNumber = new TermExtractor() {
+	public static TermExtractor forNumber = new TermExtractor("number") {
 
 		@Override
 		public List<String> extractList(String s) {
-			List<String> result = NumberParser.getNumbers(NumberParser
-					.normalize(s));
+			List<String> result = new ArrayList<>();
+			for (String num : NumberParser.getNumbers(NumberParser.normalize(s))) {
+				String[] nd = NumberParser.getNumberAndUnit(num, new int[2]);
+				if (nd.length == 1 || nd[1] == null)
+					result.add(FactComponent.forNumber(nd[0]));
+				else
+					result.add(FactComponent.forString(nd[0], null, FactComponent.forYagoEntity(nd[1])));
+			}
 			if (result.size() == 0) {
 				Announce.debug("No number found in", s);
 			}
@@ -93,7 +110,7 @@ public abstract class TermExtractor {
 	};
 
 	/** Extracts a URL form a string */
-	public static TermExtractor forUrl = new TermExtractor() {
+	public static TermExtractor forUrl = new TermExtractor("url") {
 
 		@Override
 		public List<String> extractList(String s) {
@@ -109,8 +126,7 @@ public abstract class TermExtractor {
 				for (Pattern p : urlPatterns) {
 					Matcher m = p.matcher(s);
 					if (m.find(pos)) {
-						String url = FactComponent.forUri("http://"
-								+ m.group(1));
+						String url = FactComponent.forUri("http://" + m.group(1));
 						urls.add(url);
 						match = true;
 						pos = m.end(1);
@@ -127,12 +143,12 @@ public abstract class TermExtractor {
 	};
 
 	/** Extracts a date form a string */
-	public static TermExtractor forDate = new TermExtractor() {
+	public static TermExtractor forDate = new TermExtractor("date") {
 
 		@Override
 		public List<String> extractList(String s) {
 			List<String> result = new ArrayList<String>();
-			for(String d : DateParser.getDates(DateParser.normalize(s))) {
+			for (String d : DateParser.getDates(DateParser.normalize(s))) {
 				result.add(FactComponent.forDate(d));
 			}
 			if (result.size() == 0) {
@@ -144,7 +160,7 @@ public abstract class TermExtractor {
 	};
 
 	/** Extracts an entity form a string */
-	public static TermExtractor forEntity = new TermExtractor() {
+	public static TermExtractor forEntity = new TermExtractor("entity") {
 
 		@Override
 		public List<String> extractList(String s) {
@@ -158,13 +174,13 @@ public abstract class TermExtractor {
 	};
 
 	/** Extracts a YAGO string from a string */
-	public static TermExtractor forString = new TermExtractor() {
+	public static TermExtractor forString = new TermExtractor("string") {
 
 		@Override
 		public List<String> extractList(String s) {
 			s = s.trim();
 			List<String> result = new ArrayList<String>(3);
-			for (String w : s.split(";|,?<br />|'''|''|, ?;|\"")) {
+			for (String w : s.split(";|,?\n|'''|''|, ?;|\"")) {
 				w = w.trim();
 				if (w.length() > 2 && !w.contains("{{") && !w.contains("[["))
 					result.add(FactComponent.forString(w, null, null));
@@ -176,7 +192,7 @@ public abstract class TermExtractor {
 	};
 
 	/** Extracts a cleaned YAGO string form a part of text */
-	public static TermExtractor forText = new TermExtractor() {
+	public static TermExtractor forText = new TermExtractor("text") {
 
 		@Override
 		public List<String> extractList(String s) {
@@ -198,8 +214,7 @@ public abstract class TermExtractor {
 			String clean = sb.toString().trim();
 
 			clean = clean.replaceAll("\\s+", " ");
-			clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]",
-					"$1");
+			clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
 			clean = clean.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
 			clean = clean.replaceAll("\\[https?:.*?\\]", "");
 			clean = clean.replaceAll("'{2,}", "");
@@ -215,7 +230,7 @@ public abstract class TermExtractor {
 	};
 
 	/** Extracts a language form a string */
-	public static TermExtractor forLanguageCode = new TermExtractor() {
+	public static TermExtractor forLanguageCode = new TermExtractor("language") {
 
 		@Override
 		public List<String> extractList(String s) {
@@ -227,10 +242,9 @@ public abstract class TermExtractor {
 	};
 
 	/** Extracts a wiki link form a string */
-	public static TermExtractor forWikiLink = new TermExtractor() {
+	public static TermExtractor forWikiLink = new TermExtractor("wikilink") {
 
-		Pattern wikipediaLink = Pattern
-				.compile("\\[\\[([^\\|\\]]+)(?:\\|([^\\]]+))?\\]\\]");
+		Pattern wikipediaLink = Pattern.compile("\\[\\[([^\\|\\]]+)(?:\\|([^\\]]+))?\\]\\]");
 
 		@Override
 		public boolean requiresTypecheck() {
@@ -253,19 +267,27 @@ public abstract class TermExtractor {
 				if (result.matches("\\d+"))
 					continue; // It's the year in which sth happened
 				result = result.trim();
-				if(result.startsWith("[")) result=result.substring(1);
+				if (result.startsWith("["))
+					result = result.substring(1);
 				if (result.isEmpty())
 					continue; // the result was composed only of whitespaces
 
-				result=result.replace(' ','_');
-				// resolve redirect and add to links
-				// String target = resolveRedirect(result); TODO redirects not
-				// yet implemented
-				links.add(FactComponent.forYagoEntity(result));
+				result = result.replace(' ', '_');
+				links.add(FactComponent.forWikipediaTitle(result));
 			}
 
-			if (links.size() == 0)
+			if (links.isEmpty()) {
+				for (String c : s.split("\n")) {
+					c = c.trim();
+					if (c.contains(" ") && c.matches("[A-Z,a-z ]+")) {
+						Announce.debug("Finding suboptimal wikilink", c, "in", s);
+						links.add(FactComponent.forWikipediaTitle(c));
+					}
+				}
+			}
+			if (links.isEmpty()) {
 				Announce.debug("Could not find wikilink in", s);
+			}
 			return links;
 		}
 
@@ -277,19 +299,24 @@ public abstract class TermExtractor {
 		public Map<String, String> preferredMeanings;
 
 		public ForClass(Map<String, String> preferredMeanings) {
+			super("class");
 			this.preferredMeanings = preferredMeanings;
 		}
 
 		@Override
 		public List<String> extractList(String s) {
 			List<String> result = new ArrayList<String>(3);
-			for (String word : s.split(",")) {
+			for (String word : s.split(",|\n")) {
 				word = word.trim().replace("[", "").replace("]]", "");
 				if (word.length() < 4)
 					continue;
 				String meaning = preferredMeanings.get(word);
 				if (meaning == null)
 					meaning = preferredMeanings.get(PlingStemmer.stem(word));
+				if (meaning == null)
+					meaning = preferredMeanings.get(word.toLowerCase());
+				if (meaning == null)
+					meaning = preferredMeanings.get(PlingStemmer.stem(word.toLowerCase()));
 				if (meaning == null)
 					continue;
 				result.add(meaning);

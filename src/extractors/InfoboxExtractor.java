@@ -61,7 +61,7 @@ public class InfoboxExtractor extends Extractor {
 	/** Extracts a relation from a string */
 	protected void extract(String entity, String string, String relation, Map<String, String> preferredMeanings,
 			FactCollection factCollection, FactWriter n4Writer, PatternList replacements) throws IOException {
-		string = replacements.transform(string);
+		string = replacements.transform(Char.decodeAmpersand(string));
 		string = string.trim();
 		if (string.length() == 0)
 			return;
@@ -85,10 +85,8 @@ public class InfoboxExtractor extends Extractor {
 		// Get the term extractor
 		TermExtractor extractor = cls.equals(RDFS.clss) ? new TermExtractor.ForClass(preferredMeanings) : TermExtractor
 				.forType(cls);
-		Announce.debug("Relation", relation, "with type checker", extractor.getClass().getSimpleName());
-		String syntaxChecker = factCollection.getArg2(cls, "<_hasTypeCheckPattern>");
-		if (syntaxChecker != null)
-			syntaxChecker = FactComponent.asJavaString(syntaxChecker);
+		Announce.debug("Relation", relation, "with", cls,extractor);
+		String syntaxChecker = FactComponent.asJavaString(factCollection.getArg2(cls, "<_hasTypeCheckPattern>"));
 
 		// Extract all terms
 		List<String> objects = extractor.extractList(string);
@@ -118,30 +116,24 @@ public class InfoboxExtractor extends Extractor {
 			case -1:
 				return (-1);
 			case '}':
-				return (c);
+				return ('}');
 			case '{':
-				in.read();
-				b.append("{{");
 				while (c != -1 && c != '}') {
 					b.append((char) c);
 					c = readEnvironment(in, b);
 					if (c == -2)
 						return (-2);
 				}
-				in.read();
-				b.append("}}");
+				b.append("}");
 				break;
 			case '[':
-				in.read();
-				b.append("[[");
 				while (c != -1 && c != ']') {
 					b.append((char) c);
 					c = readEnvironment(in, b);
 					if (c == -2)
 						return (-2);
 				}
-				in.read();
-				b.append("]]");
+				b.append("]");
 				break;
 			case ']':
 				return (']');

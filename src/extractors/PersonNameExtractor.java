@@ -53,11 +53,7 @@ public class PersonNameExtractor extends Extractor {
 				if (people.contains(f.getArg(1)))
 					continue;
 				people.add(f.getArg(1));
-				String n = f.getArgJavaString(1);
-				if (n.startsWith("<"))
-					n = n.substring(1);
-				if (n.endsWith(">"))
-					n = Char.cutLast(n);
+				String n = FactComponent.stripBrackets(f.getArgJavaString(1));
 				n = Char.decode(n);
 				PersonName name = new PersonName(n);
 				String given = name.givenName();
