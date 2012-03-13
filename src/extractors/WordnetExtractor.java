@@ -34,6 +34,8 @@ public class WordnetExtractor extends Extractor {
 	public static final Theme WORDNETWORDS = new Theme("wordnetWords", "Labels and preferred meanings form Wordnet");
 	/** ids of wordnet */
 	public static final Theme WORDNETIDS = new Theme("wordnetIds", "Ids from Wordnet");
+	 /** wordnet glosses */
+  public static final Theme WORDNETGLOSSES = new Theme("wordnetGlosses", "Glosses from Wordnet");
 
 	@Override
 	public Set<Theme> input() {
@@ -42,7 +44,7 @@ public class WordnetExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(WORDNETCLASSES, WORDNETWORDS, WORDNETIDS);
+		return new FinalSet<Theme>(WORDNETCLASSES, WORDNETWORDS, WORDNETIDS, WORDNETGLOSSES);
 	}
 
 	/** Pattern for synset definitions */
@@ -126,6 +128,23 @@ public class WordnetExtractor extends Extractor {
 			writers.get(WORDNETCLASSES)
 					.write(new Fact(null, id2class.get(arg1), "rdfs:subClassOf", id2class.get(arg2)));
 		}
+		
+    for (String line : new FileLines(new File(wordnetFolder, "wn_g.pl"), "Loading hasGloss")) {
+      line = line.replace("''", "'");
+      Matcher m = RELATIONPATTERN.matcher(line);
+      if (!m.matches()) {
+        continue;
+      }
+      String arg1 = m.group(1);
+      String arg2 = m.group(2);
+      if (!id2class.containsKey(arg1)) {
+        continue;
+      }
+
+      arg2 = "\"" + arg2.substring(1, arg2.length() - 1) + "\"";//.replace("''", "'"));
+      Fact fact = new Fact(null, id2class.get(arg1), "hasGloss", arg2);
+      writers.get(WORDNETGLOSSES).write(fact);
+    }
 		Announce.done();
 	}
 
