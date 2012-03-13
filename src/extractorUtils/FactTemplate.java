@@ -78,7 +78,7 @@ public class FactTemplate {
 	
 	/** Creates a fact component for a formatted string of the form @XXX() */
 	public static String format(String word) {
-		final Pattern formattedPattern = Pattern.compile("@([a-zA-Z]+)\\((.+)\\)");
+		final Pattern formattedPattern = Pattern.compile("@([a-zA-Z]+)\\((.*?)\\)");
 		Matcher m = formattedPattern.matcher(word);
 		if (!m.matches())
 			Announce.error("Ill-formed formatter", word);

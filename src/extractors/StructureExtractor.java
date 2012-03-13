@@ -48,7 +48,7 @@ public class StructureExtractor extends Extractor {
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		// Extract the information
-		Announce.doing("Extracting disambiguation means");
+		Announce.doing("Extracting structure facts");
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		TitleExtractor titleExtractor = new TitleExtractor(input);
@@ -69,13 +69,13 @@ public class StructureExtractor extends Extractor {
 				return;
 			case 0:
 				titleEntity = titleExtractor.getTitleEntity(in);
-				break;
-			default:
 				if (titleEntity == null)
 					continue;
 
 				String page = FileLines.readBetween(in, "<text", "</text>");
-				for (Fact fact : structurePatterns.extract(page, titleEntity)) {
+        String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
+
+				for (Fact fact : structurePatterns.extract(normalizedPage, titleEntity)) {
 				  if (fact != null)
 				    out.write(fact);
 				}
