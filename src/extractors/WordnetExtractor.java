@@ -20,6 +20,7 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
+import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
 
@@ -108,7 +109,7 @@ public class WordnetExtractor extends Extractor {
 					writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "<isPreferredMeaningOf>", wordForm));
 				}
 			}
-			writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "rdf:label", wordForm));
+			writers.get(WORDNETWORDS).write(new Fact(null, lastClass, RDFS.label, wordForm));
 		}
 		instances = null;
 		for (String line : new FileLines(new File(wordnetFolder, "wn_hyp.pl"), "Loading subclassOf")) {
@@ -141,8 +142,8 @@ public class WordnetExtractor extends Extractor {
         continue;
       }
 
-      arg2 = "\"" + arg2.substring(1, arg2.length() - 1) + "\"";//.replace("''", "'"));
-      Fact fact = new Fact(null, id2class.get(arg1), "hasGloss", arg2);
+      arg2 = FactComponent.forString(arg2.substring(1, arg2.length() - 1));//.replace("''", "'"));
+      Fact fact = new Fact(null, id2class.get(arg1), "<hasGloss>", arg2);
       writers.get(WORDNETGLOSSES).write(fact);
     }
 		Announce.done();
