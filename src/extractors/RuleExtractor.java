@@ -194,6 +194,7 @@ public class RuleExtractor extends Extractor {
 	}
 
 	public static void main(String[] args) throws Exception {
+	   //new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
 		Announce.setLevel(Announce.Level.DEBUG);
 		new RuleExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
 	}
