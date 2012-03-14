@@ -53,16 +53,16 @@ responsible: Fabian
 For every instance X, output
 X owl:sameAs X'
 where X' is the name of the instance in DBpedia
-todo: to write
-responsible: Edwin ?
+todo: done
+responsible: Fabian
 
 * DBpedia class link extractor
 For every class X, output
 X rdfs:subClassOf X'
 X' rdfs:subClassOf X
 where X' is the name of the class in DBpedia
-todo: to write
-responsible: Edwin ?
+todo: done
+responsible: Fabian
 
 * Redirect extractor
 todo: done
@@ -93,7 +93,7 @@ responsible: Erdal
 * Set up test beds and test frames
 See yago2s/main/Tester
 Do this with JUnit tests?
-responsible: Spyros
+responsible: Fabian
 
 * Web page
 - make a FAQ
