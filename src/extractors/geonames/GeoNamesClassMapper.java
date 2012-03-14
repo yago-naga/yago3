@@ -47,8 +47,8 @@ public class GeoNamesClassMapper extends Extractor {
   private BreakIterator bi = BreakIterator.getWordInstance();
   private Pattern NON_WORD_CHAR = Pattern.compile("^[^\\w]*$");
 
-  /** geonames classes */
-  public static final Theme GEONAMESIDS = new Theme("geonamesIds", "IDs from GeoNames");
+  /** geonames class links */
+  public static final Theme GEONAMESCLASSSIDS = new Theme("geonamesClassIds", "IDs from GeoNames classes");
     /** geonames classes */
   public static final Theme GEONAMESCLASSES = new Theme("geonamesClasses", "Classes from GeoNames");
    /** geonames glosses */
@@ -62,7 +62,7 @@ public class GeoNamesClassMapper extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(GEONAMESCLASSES, GEONAMESGLOSSES, GEONAMESIDS);
+    return new FinalSet<Theme>(GEONAMESCLASSES, GEONAMESGLOSSES, GEONAMESCLASSSIDS);
   }
 
   @Override
@@ -93,7 +93,7 @@ public class GeoNamesClassMapper extends Extractor {
       String parentClass = (wordNetClass != null) ? wordNetClass : GEO_CLASS;
 
       output.get(GEONAMESCLASSES).write(new Fact(null, geoClass, RDFS.subclassOf, parentClass));
-      output.get(GEONAMESIDS).write(new Fact(null, geoClass, "<hasGeoclassId>", FactComponent.asJavaString(featureId)));
+      output.get(GEONAMESCLASSSIDS).write(new Fact(null, geoClass, "<hasGeonamesClassId>", FactComponent.asJavaString(featureId)));
 
       if (featureGloss != null) {
         // there is a gloss
