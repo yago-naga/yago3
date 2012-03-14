@@ -16,6 +16,7 @@
 # Category patterns
 "(.+) winners"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .
 "(?:^* )?(.+) laureates"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .
+"(.+) laureates"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .
 "Nobel laureates in (.+)"	<_categoryPattern>	"$0 <hasWonPrize> @Entity(Nobel_Prize_in_$1)" .
 "Cities in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 "port cities and towns in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
