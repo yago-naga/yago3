@@ -1,9 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Facts derived from the categories
 
 @base <http://yago-knowledge/resource/> .
@@ -14,6 +9,7 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+<Berlusconi_I_Cabinet>	<wasCreatedOnDate>	"1994-##-##"^^xsd:date .
 <Berlusconi_I_Cabinet>	<wasDestroyedOnDate>	"1995-##-##"^^xsd:date .
 <Berlusconi_I_Cabinet>	rdfs:label	"Berlusconi I Cabinet" .
 <Campania>	<isLocatedIn>	<Italy> .
