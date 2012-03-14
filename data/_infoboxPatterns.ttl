@@ -51,7 +51,7 @@
 "establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
 "areakm2"	<_infoboxPattern>	<hasArea> .
 "populationestimate"	<_infoboxPattern>	<hasPopulation> .
-"populationdensitykm2?"	<_infoboxPattern>	<hasPopulationDensity> .
+"populationdensitykm2"	<_infoboxPattern>	<hasPopulationDensity> .
 "GDPnominal"	<_infoboxPattern>	<hasGDP> .
 "Gini"	<_infoboxPattern>	<hasGini> .
 "utcoffset"	<_infoboxPattern>	<hasUTCOffset> .
@@ -265,6 +265,10 @@
 "year"	<_infoboxPattern>	<happenedOnDate> .
 
 # ------------ Replacements ----------
+"<br/>"	<_infoboxReplace>	"\n" .
+"<br>"	<_infoboxReplace>	"\n" .
+"<br />"	<_infoboxReplace>	"\n" .
+"<br >"	<_infoboxReplace>	"\n" .
 "\\[\\[File:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[Image:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[wp:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
