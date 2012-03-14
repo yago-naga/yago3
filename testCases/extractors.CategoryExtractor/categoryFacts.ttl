@@ -1,0 +1,401 @@
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# 
+# 
+# Facts derived from the categories
+
+@base <http://yago-knowledge/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<Berlusconi_I_Cabinet>	<wasDestroyedOnDate>	"1995-##-##"^^xsd:date .
+<Berlusconi_I_Cabinet>	rdfs:label	"Berlusconi I Cabinet" .
+<Campania>	<isLocatedIn>	<Italy> .
+<Campania>	rdfs:label	"Campania" .
+<Campania>	<isLocatedIn>	<European_Union> .
+<Carlo_Azeglio_Ciampi>	rdfs:label	"Carlo Azeglio Ciampi" .
+<Carlo_Azeglio_Ciampi>	<isPoliticianOf>	<Italy> .
+<Carlo_Azeglio_Ciampi>	<wasBornOnDate>	"1920-##-##"^^xsd:date .
+<Catholic_Church>	rdfs:label	"Catholic Church" .
+<Forza_Italia>	<wasCreatedOnDate>	"1993-##-##"^^xsd:date .
+<Forza_Italia>	rdfs:label	"Forza Italia" .
+<Forza_Italia>	<wasDestroyedOnDate>	"2009-##-##"^^xsd:date .
+<Gianfranco_Fini>	<isPoliticianOf>	<Foreign_Affairs> .
+<Gianfranco_Fini>	rdfs:label	"Gianfranco Fini" .
+<Gianfranco_Fini>	<wasBornOnDate>	"1952-##-##"^^xsd:date .
+<Giorgio_Napolitano>	<isPoliticianOf>	<Italy> .
+<Giorgio_Napolitano>	rdfs:label	"Giorgio Napolitano" .
+<Giorgio_Napolitano>	<isPoliticianOf>	<Italian_Chamber_of_Deputies> .
+<Giorgio_Napolitano>	<isPoliticianOf>	<Interior> .
+<Giorgio_Napolitano>	<wasBornOnDate>	"1925-##-##"^^xsd:date .
+<Giuliano_Amato>	<wasBornOnDate>	"1938-##-##"^^xsd:date .
+<Giuliano_Amato>	<isPoliticianOf>	<Italy> .
+<Giuliano_Amato>	rdfs:label	"Giuliano Amato" .
+<Giuliano_Amato>	<isPoliticianOf>	<Interior> .
+<Giuliano_Amato>	<isPoliticianOf>	<Treasury> .
+<Giulio_Tremonti>	rdfs:label	"Giulio Tremonti" .
+<Giulio_Tremonti>	<wasBornOnDate>	"1947-##-##"^^xsd:date .
+<Lamberto_Dini>	<isPoliticianOf>	<Foreign_Affairs> .
+<Lamberto_Dini>	<isPoliticianOf>	<Italy> .
+<Italian_Chamber_of_Deputies>	rdfs:label	"Italian Chamber of Deputies" .
+<Lamberto_Dini>	rdfs:label	"Lamberto Dini" .
+<Lamberto_Dini>	<wasBornOnDate>	"1931-##-##"^^xsd:date .
+<Lazio>	<isLocatedIn>	<European_Union> .
+<Lazio>	<isLocatedIn>	<Italy> .
+<Lazio>	rdfs:label	"Lazio" .
+<Lombardy>	<isLocatedIn>	<Italy> .
+<Lombardy>	rdfs:label	"Lombardy" .
+<Lombardy>	<isLocatedIn>	<European_Union> .
+<Marco_Follini>	rdfs:label	"Marco Follini" .
+<Marco_Follini>	<wasBornOnDate>	"1954-##-##"^^xsd:date .
+<Marina_Berlusconi>	rdfs:label	"Marina Berlusconi" .
+<Marina_Berlusconi>	<wasBornOnDate>	"1966-##-##"^^xsd:date .
+<Mario_Monti>	<isPoliticianOf>	<Italy> .
+<Mario_Monti>	rdfs:label	"Mario Monti" .
+<Mario_Monti>	<wasBornOnDate>	"1943-##-##"^^xsd:date .
+<Milan>	rdfs:label	"Milan" .
+<Molise>	<wasCreatedOnDate>	"1963-##-##"^^xsd:date .
+<Molise>	rdfs:label	"Molise" .
+<Molise>	<isLocatedIn>	<Italy> .
+<Oscar_Luigi_Scalfaro>	<wasBornOnDate>	"1918-##-##"^^xsd:date .
+<Oscar_Luigi_Scalfaro>	<isPoliticianOf>	<Interior> .
+<Oscar_Luigi_Scalfaro>	<diedOnDate>	"2012-##-##"^^xsd:date .
+<Oscar_Luigi_Scalfaro>	<isPoliticianOf>	<Italy> .
+<Oscar_Luigi_Scalfaro>	rdfs:label	"Oscar Luigi Scalfaro" .
+<Oscar_Luigi_Scalfaro>	<isPoliticianOf>	<Italian_Chamber_of_Deputies> .
+<Pier_Silvio_Berlusconi>	<wasBornOnDate>	"1969-##-##"^^xsd:date .
+<Pier_Silvio_Berlusconi>	rdfs:label	"Pier Silvio Berlusconi" .
+<Prime_Minister_of_Italy>	rdfs:label	"Prime Minister of Italy" .
+<Prime_Minister_of_Italy>	<isPoliticianOf>	<Italy|> .
+<Roberto_Maroni>	<wasBornOnDate>	"1955-##-##"^^xsd:date .
+<Roberto_Maroni>	rdfs:label	"Roberto Maroni" .
+<Roberto_Maroni>	<isPoliticianOf>	<Interior> .
+<Romano_Prodi>	<wasBornOnDate>	"1939-##-##"^^xsd:date .
+<Romano_Prodi>	<isPoliticianOf>	<European_Commission> .
+<Romano_Prodi>	<isPoliticianOf>	<Italy> .
+<Romano_Prodi>	rdfs:label	"Romano Prodi" .
+<Silvio_Berlusconi>	rdfs:label	"Silvio Berlusconi" .
+<Silvio_Berlusconi>	<isPoliticianOf>	<Italy> .
+<Silvio_Berlusconi>	<isPoliticianOf>	<European_Council> .
+<Silvio_Berlusconi>	<wasBornOnDate>	"1936-##-##"^^xsd:date .
+<The_People_of_Freedom>	<wasCreatedOnDate>	"2009-##-##"^^xsd:date .
+<The_People_of_Freedom>	rdfs:label	"The People of Freedom" .
+<University_of_Milan>	rdfs:label	"University of Milan" .
+<University_of_Milan>	<wasCreatedOnDate>	"1924-##-##"^^xsd:date .
+<Veronica_Lario>	rdfs:label	"Veronica Lario" .
+<Veronica_Lario>	<wasBornOnDate>	"1956-##-##"^^xsd:date .
+<Cherie_Blair>	<wasBornOnDate>	"1954-##-##"^^xsd:date .
+<Cherie_Blair>	rdfs:label	"Cherie Blair" .
+<Cherie_Blair>	<isPoliticianOf>	<United_Kingdom> .
+<Connaught_Square>	rdfs:label	"Connaught Square" .
+<Edinburgh>	<isLocatedIn>	<Scotland> .
+<Edinburgh>	<isLocatedIn>	<Europe> .
+<Edinburgh>	rdfs:label	"Edinburgh" .
+<Elizabeth_II>	rdfs:label	"Elizabeth II" .
+<Elizabeth_II>	<wasBornOnDate>	"1926-##-##"^^xsd:date .
+<Frank_Dobson>	<wasBornOnDate>	"1940-##-##"^^xsd:date .
+<Frank_Dobson>	rdfs:label	"Frank Dobson" .
+<Gordon_Brown>	<isPoliticianOf>	<Exchequer_of_the_United_Kingdom> .
+<Gordon_Brown>	rdfs:label	"Gordon Brown" .
+<Gordon_Brown>	<isPoliticianOf>	<United_Kingdom> .
+<Gordon_Brown>	<wasBornOnDate>	"1951-##-##"^^xsd:date .
+<Inns_of_Court_School_of_Law>	rdfs:label	"Inns of Court School of Law" .
+<Inns_of_Court_School_of_Law>	<wasCreatedOnDate>	"1852-##-##"^^xsd:date .
+<Jack_Straw>	<isPoliticianOf>	<United_Nations_Security_Council> .
+<Jack_Straw>	rdfs:label	"Jack Straw" .
+<Jack_Straw>	<isPoliticianOf>	<Great_Britain> .
+<Jack_Straw>	<wasBornOnDate>	"1946-##-##"^^xsd:date .
+<Jack_Straw>	<isPoliticianOf>	<National_Union_of_Students_(United_Kingdom)> .
+<John_Major>	<isPoliticianOf>	<Exchequer_of_the_United_Kingdom> .
+<John_Major>	<isPoliticianOf>	<United_Nations_Security_Council> .
+<John_Major>	rdfs:label	"John Major" .
+<John_Major>	<wasBornOnDate>	"1943-##-##"^^xsd:date .
+<John_Major>	<isPoliticianOf>	<Surrey_CCC> .
+<John_Major>	<isPoliticianOf>	<European_Council> .
+<John_Major>	<isPoliticianOf>	<United_Kingdom> .
+<John_Prescott>	<isPoliticianOf>	<United_Kingdom> .
+<John_Prescott>	<wasBornOnDate>	"1938-##-##"^^xsd:date .
+<John_Prescott>	rdfs:label	"John Prescott" .
+<John_Smith_(Labour_Party_leader)>	rdfs:label	"John Smith" .
+<John_Smith_(Labour_Party_leader)>	<wasBornOnDate>	"1938-##-##"^^xsd:date .
+<John_Smith_(Labour_Party_leader)>	<diedOnDate>	"1994-##-##"^^xsd:date .
+<John_Smith_(Labour_Party_leader)>	rdfs:label	"John Smith (Labour Party leader)" .
+<Labour_Party_(UK)>	<wasCreatedOnDate>	"1900-##-##"^^xsd:date .
+<Labour_Party_(UK)>	rdfs:label	"Labour Party (UK)" .
+<Labour_Party_(UK)>	rdfs:label	"Labour Party" .
+<Leader_of_the_Labour_Party_(UK)>	rdfs:label	"Leader of the Labour Party" .
+<Margaret_Beckett>	<isPoliticianOf>	<Council> .
+<Leader_of_the_Opposition_(United_Kingdom)>	rdfs:label	"Leader of the Opposition" .
+<Leader_of_the_Labour_Party_(UK)>	rdfs:label	"Leader of the Labour Party (UK)" .
+<Leader_of_the_Opposition_(United_Kingdom)>	rdfs:label	"Leader of the Opposition (United Kingdom)" .
+<Margaret_Beckett>	rdfs:label	"Margaret Beckett" .
+<Margaret_Beckett>	<wasBornOnDate>	"1943-##-##"^^xsd:date .
+<Michael_Meacher>	rdfs:label	"Michael Meacher" .
+<Member_of_Parliament_(UK)>	rdfs:label	"Member of Parliament (UK)" .
+<Michael_Meacher>	<wasBornOnDate>	"1939-##-##"^^xsd:date .
+<Member_of_Parliament_(UK)>	rdfs:label	"Member of Parliament" .
+<Neil_Kinnock>	rdfs:label	"Neil Kinnock" .
+<Neil_Kinnock>	<wasBornOnDate>	"1942-##-##"^^xsd:date .
+<Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson" .
+<Phil_Wilson_(British_politician)>	<wasBornOnDate>	"1959-##-##"^^xsd:date .
+<Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson (British politician)" .
+<Prime_Minister_of_the_United_Kingdom>	rdfs:label	"Prime Minister of the United Kingdom" .
+<Prime_Minister_of_the_United_Kingdom>	<isPoliticianOf>	<United_Kingdom|> .
+<Roy_Hattersley>	rdfs:label	"Roy Hattersley" .
+<Roman_Catholicism>	rdfs:label	"Roman Catholicism" .
+<Roy_Hattersley>	<wasBornOnDate>	"1932-##-##"^^xsd:date .
+<Sedgefield_(UK_Parliament_constituency)>	<wasCreatedOnDate>	"1983-##-##"^^xsd:date .
+<Sedgefield_(UK_Parliament_constituency)>	<wasCreatedOnDate>	"1918-##-##"^^xsd:date .
+<Sedgefield_(UK_Parliament_constituency)>	rdfs:label	"Sedgefield" .
+<Sedgefield_(UK_Parliament_constituency)>	<wasDestroyedOnDate>	"1974-##-##"^^xsd:date .
+<Sedgefield_(UK_Parliament_constituency)>	rdfs:label	"Sedgefield (UK Parliament constituency)" .
+<Shadow_Secretary_of_State_for_Employment>	rdfs:label	"Shadow Secretary of State for Employment" .
+<St_John's_College,_Oxford>	rdfs:label	"St John's College" .
+<St_John's_College,_Oxford>	<wasCreatedOnDate>	"1555-##-##"^^xsd:date .
+<St_John's_College,_Oxford>	rdfs:label	"St John's College, Oxford" .
+<Shadow_Home_Secretary>	rdfs:label	"Shadow Home Secretary" .
+<Shadow_Secretary_of_State_for_Energy>	rdfs:label	"Shadow Secretary of State for Energy" .
+<Tony_Blair>	<wasBornOnDate>	"1953-##-##"^^xsd:date .
+<Tony_Blair>	rdfs:label	"Tony Blair" .
+<Tony_Blair>	<hasWonPrize>	<People_of_the_Year_Awards> .
+<Tony_Blair>	<isPoliticianOf>	<United_Kingdom> .
+<Tony_Blair>	<isPoliticianOf>	<European_Council> .
+<World_Economic_Forum>	<wasCreatedOnDate>	"1971-##-##"^^xsd:date .
+<World_Economic_Forum>	rdfs:label	"World Economic Forum" .
+<Angela_Merkel>	<wasBornOnDate>	"1954-##-##"^^xsd:date .
+<Angela_Merkel>	rdfs:label	"Angela Merkel" .
+<Angela_Merkel>	<isPoliticianOf>	<European_Council> .
+<Angela_Merkel>	<isPoliticianOf>	<Germany> .
+<Bundestag>	rdfs:label	"Bundestag" .
+<Christian_Democratic_Union_(Germany)>	rdfs:label	"Christian Democratic Union (Germany)" .
+<Chancellor_of_Germany>	<isPoliticianOf>	<Germany> .
+<Christian_Democratic_Union_(Germany)>	<wasCreatedOnDate>	"1945-##-##"^^xsd:date .
+<Chancellor_of_Germany>	rdfs:label	"Chancellor of Germany" .
+<Christian_Democratic_Union_(Germany)>	rdfs:label	"Christian Democratic Union" .
+<Christian_Wulff>	<wasBornOnDate>	"1959-##-##"^^xsd:date .
+<Christian_Wulff>	<isPoliticianOf>	<Germany> .
+<Christian_Wulff>	rdfs:label	"Christian Wulff" .
+<Claudia_Nolte>	<isPoliticianOf>	<Germany> .
+<Claudia_Nolte>	rdfs:label	"Claudia Nolte" .
+<Claudia_Nolte>	<wasBornOnDate>	"1966-##-##"^^xsd:date .
+<Democratic_Awakening>	<wasDestroyedOnDate>	"1990-##-##"^^xsd:date .
+<Democratic_Awakening>	rdfs:label	"Democratic Awakening" .
+<Democratic_Awakening>	<wasCreatedOnDate>	"1989-##-##"^^xsd:date .
+<Frank-Walter_Steinmeier>	<isPoliticianOf>	<Germany> .
+<Frank-Walter_Steinmeier>	<wasBornOnDate>	"1956-##-##"^^xsd:date .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelical Church in Germany" .
+<Frank-Walter_Steinmeier>	rdfs:label	"Frank-Walter Steinmeier" .
+<Franz_Müntefering>	rdfs:label	"Franz Muentefering" .
+<Franz_Müntefering>	<wasBornOnDate>	"1940-##-##"^^xsd:date .
+<Franz_Müntefering>	<isPoliticianOf>	<Germany> .
+<Franz_Müntefering>	rdfs:label	"Franz Müntefering" .
+<Gerhard_Schröder>	<isPoliticianOf>	<Germany> .
+<Gerhard_Schröder>	rdfs:label	"Gerhard Schröder" .
+<Gerhard_Schröder>	rdfs:label	"Gerhard Schroeder" .
+<Gerhard_Schröder>	<wasBornOnDate>	"1944-##-##"^^xsd:date .
+<Germany>	<isLocatedIn>	<United_Nations> .
+<Germany>	<isLocatedIn>	<Union_for_the_Mediterranean> .
+<Germany>	<isLocatedIn>	<European_Union> .
+<Germany>	<isLocatedIn>	<NATO> .
+<Germany>	<wasCreatedOnDate>	"1871-##-##"^^xsd:date .
+<Germany>	rdfs:label	"Germany" .
+<Germany>	<isLocatedIn>	<Europe> .
+<Guido_Westerwelle>	<isPoliticianOf>	<United_Nations_Security_Council> .
+<Guido_Westerwelle>	<wasBornOnDate>	"1961-##-##"^^xsd:date .
+<Guido_Westerwelle>	rdfs:label	"Guido Westerwelle" .
+<Guido_Westerwelle>	<isPoliticianOf>	<Germany> .
+<Hamburg>	<isLocatedIn>	<North_German_Confederation> .
+<Hamburg>	<isLocatedIn>	<German_Confederation> .
+<Hamburg>	<isLocatedIn>	<Germany> .
+<Hamburg>	<isLocatedIn>	<Holy_Roman_Empire> .
+<Hamburg>	<isLocatedIn>	<German_Empire> .
+<Hamburg>	rdfs:label	"Hamburg" .
+<Hamburg>	<isLocatedIn>	<Weimar_Republic> .
+<Hamburg>	<isLocatedIn>	<European_Union> .
+<Helmut_Kohl>	rdfs:label	"Helmut Kohl" .
+<Helmut_Kohl>	<isPoliticianOf>	<European_Council> .
+<Helmut_Kohl>	<isPoliticianOf>	<Germany> .
+<Helmut_Kohl>	<wasBornOnDate>	"1930-##-##"^^xsd:date .
+<Horst_Köhler>	<wasBornOnDate>	"1943-##-##"^^xsd:date .
+<Horst_Köhler>	rdfs:label	"Horst Koehler" .
+<Horst_Köhler>	rdfs:label	"Horst Köhler" .
+<Horst_Köhler>	<isPoliticianOf>	<Germany> .
+<Joachim_Sauer>	<wasBornOnDate>	"1949-##-##"^^xsd:date .
+<Joachim_Sauer>	<isPoliticianOf>	<Germany> .
+<Joachim_Sauer>	rdfs:label	"Joachim Sauer" .
+<Jürgen_Trittin>	<wasBornOnDate>	"1954-##-##"^^xsd:date .
+<Jürgen_Trittin>	rdfs:label	"Juergen Trittin" .
+<Jürgen_Trittin>	rdfs:label	"Jürgen Trittin" .
+<Jürgen_Trittin>	<isPoliticianOf>	<Germany> .
+<Klaus_Töpfer>	<wasBornOnDate>	"1938-##-##"^^xsd:date .
+<Klaus_Töpfer>	<isPoliticianOf>	<Germany> .
+<Klaus_Töpfer>	rdfs:label	"Klaus Toepfer" .
+<Klaus_Töpfer>	rdfs:label	"Klaus Töpfer" .
+<Philipp_Rösler>	<isPoliticianOf>	<Germany> .
+<Philipp_Rösler>	<wasBornOnDate>	"1973-##-##"^^xsd:date .
+<Philipp_Rösler>	rdfs:label	"Philipp Rösler" .
+<Philipp_Rösler>	rdfs:label	"Philipp Roesler" .
+<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	rdfs:label	"Stralsund – Nordvorpommern – Rügen" .
+<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	rdfs:label	"Stralsund – Nordvorpommern – Rügen (electoral district)" .
+<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	rdfs:label	"Stralsund - Nordvorpommern - Ruegen (electoral district)" .
+<University_of_Leipzig>	<isLocatedIn>	<Leipzig> .
+<University_of_Leipzig>	rdfs:label	"University of Leipzig" .
+<University_of_Leipzig>	<wasCreatedOnDate>	"1409-##-##"^^xsd:date .
+<West_Germany>	rdfs:label	"West Germany" .
+<West_Germany>	<wasCreatedOnDate>	"1949-##-##"^^xsd:date .
+<Achille_Peretti>	<diedOnDate>	"1983-##-##"^^xsd:date .
+<Achille_Peretti>	<wasBornOnDate>	"1911-##-##"^^xsd:date .
+<Achille_Peretti>	rdfs:label	"Achille Peretti" .
+<Albert_Pintat>	rdfs:label	"Albert Pintat" .
+<Albert_Pintat>	<isPoliticianOf>	<Andorra> .
+<Albert_Pintat>	<wasBornOnDate>	"1943-##-##"^^xsd:date .
+<Antoni_Martí>	<wasBornOnDate>	"1963-##-##"^^xsd:date .
+<Antoni_Martí>	rdfs:label	"Antoni Marti" .
+<Antoni_Martí>	rdfs:label	"Antoni Martí" .
+<Carla_Bruni>	rdfs:label	"Carla Bruni" .
+<Carla_Bruni>	<wasBornOnDate>	"1967-##-##"^^xsd:date .
+<Cécilia_Attias>	rdfs:label	"Cecilia Attias" .
+<Cécilia_Attias>	<wasBornOnDate>	"1957-##-##"^^xsd:date .
+<Cécilia_Attias>	rdfs:label	"Cécilia Attias" .
+<Christian_Frémont>	rdfs:label	"Christian Fremont" .
+<Christian_Frémont>	rdfs:label	"Christian Frémont" .
+<Christian_Frémont>	<wasBornOnDate>	"1942-##-##"^^xsd:date .
+<Co-Princes_of_Andorra>	rdfs:label	"Co-Princes of Andorra" .
+<Daniel_Vaillant>	rdfs:label	"Daniel Vaillant" .
+<Daniel_Vaillant>	<wasBornOnDate>	"1949-##-##"^^xsd:date .
+<Dominique_de_Villepin>	rdfs:label	"Dominique de Villepin" .
+<Dominique_de_Villepin>	<isPoliticianOf>	<United_Nations_Security_Council> .
+<Dominique_de_Villepin>	<wasBornOnDate>	"1953-##-##"^^xsd:date .
+<Dominique_de_Villepin>	<isPoliticianOf>	<France> .
+<Emmanuelle_Mignon>	rdfs:label	"Emmanuelle Mignon" .
+<Emmanuelle_Mignon>	<wasBornOnDate>	"1968-##-##"^^xsd:date .
+<Édouard_Balladur>	rdfs:label	"Édouard Balladur" .
+<Édouard_Balladur>	<isPoliticianOf>	<France> .
+<Édouard_Balladur>	<wasBornOnDate>	"1929-##-##"^^xsd:date .
+<Édouard_Balladur>	rdfs:label	"Edouard Balladur" .
+<Élysée_Palace>	rdfs:label	"Elysee Palace" .
+<Élysée_Palace>	rdfs:label	"Élysée Palace" .
+<Francis_Mer>	<wasBornOnDate>	"1939-##-##"^^xsd:date .
+<Francis_Mer>	rdfs:label	"Francis Mer" .
+<François_Baroin>	<isPoliticianOf>	<Finance> .
+<François_Baroin>	rdfs:label	"Francois Baroin" .
+<François_Baroin>	rdfs:label	"François Baroin" .
+<François_Baroin>	<wasBornOnDate>	"1965-##-##"^^xsd:date .
+<François_Fillon>	<isPoliticianOf>	<France> .
+<François_Fillon>	rdfs:label	"François Fillon" .
+<François_Fillon>	rdfs:label	"Francois Fillon" .
+<François_Fillon>	<wasBornOnDate>	"1954-##-##"^^xsd:date .
+<François_d'Aubert>	<wasBornOnDate>	"1943-##-##"^^xsd:date .
+<François_d'Aubert>	rdfs:label	"Francois d'Aubert" .
+<François_d'Aubert>	<isPoliticianOf>	<Budget> .
+<François_d'Aubert>	rdfs:label	"François d'Aubert" .
+<French_Fourth_Republic>	<isLocatedIn>	<Europe|France,_Republic_4> .
+<French_Fourth_Republic>	rdfs:label	"French Fourth Republic" .
+<French_Fourth_Republic>	<wasCreatedOnDate>	"1946-##-##"^^xsd:date .
+<Giulia_Sarkozy>	rdfs:label	"Giulia Sarkozy" .
+<Giulia_Sarkozy>	<wasBornOnDate>	"2011-##-##"^^xsd:date .
+<Hervé_Gaymard>	<wasBornOnDate>	"1960-##-##"^^xsd:date .
+<Hervé_Gaymard>	<isPoliticianOf>	<Finance> .
+<Hervé_Gaymard>	rdfs:label	"Herve Gaymard" .
+<Hervé_Gaymard>	rdfs:label	"Hervé Gaymard" .
+<Institut_d'Études_Politiques_de_Paris>	rdfs:label	"Institut d'Etudes Politiques de Paris" .
+<Institut_d'Études_Politiques_de_Paris>	<wasCreatedOnDate>	"1872-##-##"^^xsd:date .
+<Institut_d'Études_Politiques_de_Paris>	rdfs:label	"Institut d'Études Politiques de Paris" .
+<Jacques_Chirac>	<isPoliticianOf>	<France> .
+<Jacques_Chirac>	<hasWonPrize>	<Ig_Nobel_Prize> .
+<Jacques_Chirac>	<hasWonPrize>	<State_Prize_of_the_Russian_Federation> .
+<Jacques_Chirac>	<wasBornOnDate>	"1932-##-##"^^xsd:date .
+<Jacques_Chirac>	rdfs:label	"Jacques Chirac" .
+<Jaume_Bartumeu>	rdfs:label	"Jaume Bartumeu" .
+<Jaume_Bartumeu>	<wasBornOnDate>	"1954-##-##"^^xsd:date .
+<Jean_Sarkozy>	<wasBornOnDate>	"1986-##-##"^^xsd:date .
+<Jean_Sarkozy>	rdfs:label	"Jean Sarkozy" .
+<Jean-Pierre_Raffarin>	rdfs:label	"Jean-Pierre Raffarin" .
+<Jean-Pierre_Raffarin>	<wasBornOnDate>	"1948-##-##"^^xsd:date .
+<Jean-Pierre_Raffarin>	<isPoliticianOf>	<France> .
+<Joan_Enric_Vives_Sicília>	<wasBornOnDate>	"1949-##-##"^^xsd:date .
+<Joan_Enric_Vives_Sicília>	rdfs:label	"Joan Enric Vives Sicília" .
+<Joan_Enric_Vives_Sicília>	rdfs:label	"Joan Enric Vives Sicilia" .
+<Michel_Charasse>	<wasBornOnDate>	"1941-##-##"^^xsd:date .
+<Michel_Charasse>	rdfs:label	"Michel Charasse" .
+<Minister_of_the_Interior_(France)>	rdfs:label	"Minister of the Interior" .
+<Minister_of_the_Interior_(France)>	rdfs:label	"Minister of the Interior (France)" .
+<Neuilly-sur-Seine>	<happenedOnDate>	"1900-##-##"^^xsd:date .
+<Neuilly-sur-Seine>	rdfs:label	"Neuilly-sur-Seine" .
+<Nicolas_Sarkozy>	<isPoliticianOf>	<Budget> .
+<Nicolas_Sarkozy>	<isPoliticianOf>	<France> .
+<Nicolas_Sarkozy>	<wasBornOnDate>	"1955-##-##"^^xsd:date .
+<Nicolas_Sarkozy>	<isPoliticianOf>	<European_Council> .
+<Nicolas_Sarkozy>	rdfs:label	"Nicolas Sarkozy" .
+<Paris_West_University_Nanterre_La_Défense>	rdfs:label	"Paris West University Nanterre La Defense" .
+<Paris_West_University_Nanterre_La_Défense>	<wasCreatedOnDate>	"1964-##-##"^^xsd:date .
+<Paris_West_University_Nanterre_La_Défense>	rdfs:label	"Paris West University Nanterre La Défense" .
+<Pere_López_Agràs>	rdfs:label	"Pere López Agràs" .
+<Pere_López_Agràs>	rdfs:label	"Pere Lopez Agras" .
+<Philippe_Massoni>	<wasBornOnDate>	"1936-##-##"^^xsd:date .
+<Philippe_Massoni>	rdfs:label	"Philippe Massoni" .
+<President_of_France>	rdfs:label	"President of France" .
+<President_of_France>	<isPoliticianOf>	<France|> .
+<Rally_for_the_Republic>	<wasCreatedOnDate>	"1976-##-##"^^xsd:date .
+<Rally_for_the_Republic>	rdfs:label	"Rally for the Republic" .
+<Rally_for_the_Republic>	<wasDestroyedOnDate>	"2002-##-##"^^xsd:date .
+<Union_for_a_Popular_Movement>	<wasCreatedOnDate>	"2002-##-##"^^xsd:date .
+<Union_for_a_Popular_Movement>	rdfs:label	"Union for a Popular Movement" .
+<Alfredo_Pérez_Rubalcaba>	<wasBornOnDate>	"1951-##-##"^^xsd:date .
+<Alfredo_Pérez_Rubalcaba>	<isPoliticianOf>	<Spain> .
+<Alfredo_Pérez_Rubalcaba>	rdfs:label	"Alfredo Perez Rubalcaba" .
+<Alfredo_Pérez_Rubalcaba>	rdfs:label	"Alfredo Pérez Rubalcaba" .
+<Congress_of_Deputies_(Spain)>	rdfs:label	"Congress of Deputies (Spain)" .
+<Elena_Salgado>	<isPoliticianOf>	<Spain> .
+<Congress_of_Deputies_(Spain)>	rdfs:label	"Congress of Deputies" .
+<Elena_Salgado>	rdfs:label	"Elena Salgado" .
+<Elena_Salgado>	<isPoliticianOf>	<Economy_and_Finance> .
+<Elena_Salgado>	<wasBornOnDate>	"1949-##-##"^^xsd:date .
+<Francoist_Spain>	<wasDestroyedOnDate>	"1975-##-##"^^xsd:date .
+<Francoist_Spain>	rdfs:label	"Francoist Spain" .
+<Francoist_Spain>	<wasCreatedOnDate>	"1939-##-##"^^xsd:date .
+<Joaquín_Almunia>	rdfs:label	"Joaquín Almunia" .
+<Joaquín_Almunia>	<wasBornOnDate>	"1948-##-##"^^xsd:date .
+<Joaquín_Almunia>	rdfs:label	"Joaquin Almunia" .
+<José_Luis_Rodríguez_Zapatero>	<wasBornOnDate>	"1960-##-##"^^xsd:date .
+<José_Luis_Rodríguez_Zapatero>	rdfs:label	"Jose Luis Rodriguez Zapatero" .
+<José_Luis_Rodríguez_Zapatero>	rdfs:label	"José Luis Rodríguez Zapatero" .
+<José_Luis_Rodríguez_Zapatero>	<isPoliticianOf>	<Spain> .
+<José_María_Aznar>	<wasBornOnDate>	"1953-##-##"^^xsd:date .
+<José_María_Aznar>	rdfs:label	"José María Aznar" .
+<José_María_Aznar>	rdfs:label	"Jose Maria Aznar" .
+<José_María_Aznar>	<isPoliticianOf>	<Spain> .
+<Juan_Carlos_I_of_Spain>	<happenedOnDate>	"1972-##-##"^^xsd:date .
+<Juan_Carlos_I_of_Spain>	rdfs:label	"Juan Carlos I of Spain" .
+<Juan_Carlos_I_of_Spain>	<wasBornOnDate>	"1938-##-##"^^xsd:date .
+<Leader_of_the_Opposition_(Spain)>	rdfs:label	"Leader of the Opposition" .
+<León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León" .
+<Leader_of_the_Opposition_(Spain)>	rdfs:label	"Leader of the Opposition (Spain)" .
+<León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León (Spanish Congress Electoral District)" .
+<León_(Spanish_Congress_Electoral_District)>	rdfs:label	"Leon (Spanish Congress Electoral District)" .
+<Madrid_(Spanish_Congress_Electoral_District)>	rdfs:label	"Madrid" .
+<Madrid_(Spanish_Congress_Electoral_District)>	rdfs:label	"Madrid (Spanish Congress Electoral District)" .
+<Mariano_Rajoy>	<isPoliticianOf>	<Spain> .
+<Mariano_Rajoy>	rdfs:label	"Mariano Rajoy" .
+<Mariano_Rajoy>	<wasBornOnDate>	"1955-##-##"^^xsd:date .
+<María_Teresa_Fernández_de_la_Vega>	<wasBornOnDate>	"1949-##-##"^^xsd:date .
+<María_Teresa_Fernández_de_la_Vega>	rdfs:label	"María Teresa Fernández de la Vega" .
+<María_Teresa_Fernández_de_la_Vega>	rdfs:label	"Maria Teresa Fernandez de la Vega" .
+<María_Teresa_Fernández_de_la_Vega>	<isPoliticianOf>	<Spain> .
+<Prime_Minister_of_Spain>	<isPoliticianOf>	<Spain|> .
+<Prime_Minister_of_Spain>	rdfs:label	"Prime Minister of Spain" .
+<Sonsoles_Espinosa>	rdfs:label	"Sonsoles Espinosa" .
+<Sonsoles_Espinosa>	<wasBornOnDate>	"1961-##-##"^^xsd:date .
+<Spanish_Socialist_Workers'_Party>	<wasCreatedOnDate>	"1879-##-##"^^xsd:date .
+<Spanish_Socialist_Workers'_Party>	rdfs:label	"Spanish Socialist Workers' Party" .
+<University_of_León>	<wasCreatedOnDate>	"1979-##-##"^^xsd:date .
+<University_of_León>	rdfs:label	"University of León" .
+<University_of_León>	rdfs:label	"University of Leon" .
+<Valladolid>	rdfs:label	"Valladolid" .
+<Valladolid>	<isLocatedIn>	<Province_of_Valladolid> .
