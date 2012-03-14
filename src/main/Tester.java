@@ -4,6 +4,7 @@ import java.io.File;
 
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
+import javatools.filehandlers.FileSet;
 import basics.FactCollection;
 import basics.Theme;
 import extractors.Extractor;
@@ -18,6 +19,14 @@ import extractors.Extractor;
  */
 public class Tester {
 
+	/** Finds the data in file*/
+	public static File dataFile(File folder) {
+		for(File f : folder.listFiles()) {
+			if(!f.isDirectory() && !FileSet.extension(f).equals(".ttl")) return(f);
+		}
+		return(null);
+	}
+	
 	/** Runs the tester*/
 	public static void main(String[] args) throws Exception {
 		Announce.doing("Testing YAGO extractors");
@@ -27,30 +36,30 @@ public class Tester {
 		Announce.done();
 		int total=0;
 		int failed=0;
-		File outputFolder=Parameters.getOrRequestAndAddFile("testYagoFolder", "the folder where the test version of YAGO should be created");
+		File yagoFolder=Parameters.getOrRequestAndAddFile("yagoFolder", "Enter the folder where the real version of YAGO lives (for the inputs):");
+		File outputFolder=Parameters.getOrRequestAndAddFile("testYagoFolder", "Enter the folder where the test version of YAGO should be created:");
 		File testCases=new File("testCases");
 		for(File testCase : testCases.listFiles()) {
-			if(!testCase.isDirectory()) continue;
+			if(!testCase.isDirectory() || testCase.getName().startsWith(".")) continue;
 			total++;
 			Announce.doing("Testing",testCase.getName());
-			File datainput=new File(new File(testCase,"in"),"datainput.txt");
-			if(!datainput.exists()) datainput=null;
-			Extractor extractor=Extractor.forName(testCase.getName(),datainput);
+			Extractor extractor=Extractor.forName(testCase.getName(),dataFile(testCase));
 			if(extractor==null) {
 				Announce.failed();
 				failed++;
 				continue;
 			}
-			extractor.extract(new File(testCase,"in"), outputFolder, "Test of YAGO2s");
+			extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
 			Announce.doing("Checking output");
 			for(Theme theme : extractor.output()) {
-				FactCollection goldStandard=new FactCollection(theme.file(new File(testCase,"out")));
+				Announce.doing("Checking",theme);
+				FactCollection goldStandard=new FactCollection(theme.file(testCase));
 				FactCollection result=new FactCollection(theme.file(outputFolder));
 				if(!result.checkEqual(goldStandard)) {
-					Announce.failed();
-					Announce.done();
+					Announce.done("--------> "+theme+" failed");
 					failed++;
-					continue;
+				} else {
+					Announce.done("--------> "+theme+" OK");
 				}
 			}
 			Announce.done();
