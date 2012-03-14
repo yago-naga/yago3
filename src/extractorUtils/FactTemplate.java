@@ -185,6 +185,7 @@ public class FactTemplate {
 			if (factReferences.contains(i + 1)) {
 				Fact fact = templates.get(i).instantiate(variables, true);
 				variables.put("#" + (i + 1), fact.getId());
+				factList.add(fact);
 			} else {
 				factList.add(templates.get(i).instantiate(variables, false));
 			}
