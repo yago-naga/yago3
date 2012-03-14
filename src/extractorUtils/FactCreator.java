@@ -76,7 +76,7 @@ public class FactCreator {
 		return (factList);
 	}
 	
-	/** Instantiates fact templates with variables*/
+	/** Instantiates fact templates with variables DUPLICATE METHOD?
 	public static List<Fact> instantiate(List<FactTemplate> templates, Map<String,String> variables) {
 		List<Fact> factList = new ArrayList<Fact>();
 		Set<Integer> factReferences=new TreeSet<>();
@@ -92,5 +92,5 @@ public class FactCreator {
 			factList.add(templates.get(i).instantiate(variables,id));
 		}		
 		return(factList);
-	}
+	}*/
 }
