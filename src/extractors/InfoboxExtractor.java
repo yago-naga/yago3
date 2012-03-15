@@ -159,9 +159,6 @@ public class InfoboxExtractor extends Extractor {
 				break;
 		}
 		// Apply combinations
-		if(result.containsKey("latd")) {
-			D.p("here");
-		}
 		next: for (String code : combinations.keySet()) {
 			StringBuilder val = new StringBuilder();
 			for (String attribute : code.split(">")) {
