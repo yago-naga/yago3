@@ -1,4 +1,4 @@
-# Test of YAGO2s
+# test
 # Facts extracted from the Wikipedia infoboxes - still to be type-checked
 
 @base <http://yago-knowledge/resource/> .
@@ -71,6 +71,8 @@
 <Mario_Monti>	<isAffiliatedTo>	<Independent_(politician)> .
 <Mario_Monti>	<isMarriedTo>	<Elsa_Antonioli> .
 <Milan>	<wasCreatedOnDate>	"396-##-##"^^xsd:date .
+<Milan>	<hasLatitude>	"45.46416666666667"^^xsd:decimal .
+<Milan>	<hasLongitude>	"9.190277777777778"^^xsd:decimal .
 <Milan>	rdfs:label	<The_Economic_Capital_of_Italy> .
 <Milan>	<isLocatedIn>	<Lombardy> .
 <Molise>	<hasPopulation>	"319834"^^xsd:integer .
@@ -128,6 +130,8 @@
 <Cherie_Blair>	<livesIn>	<Connaught_Square> .
 <Cherie_Blair>	<isMarriedTo>	<Tony_Blair> .
 <Edinburgh>	<wasCreatedOnDate>	"1889-##-##"^^xsd:date .
+<Edinburgh>	<hasLatitude>	"55.95305555555556"^^xsd:decimal .
+<Edinburgh>	<hasLongitude>	"-3.1888888888888887"^^xsd:decimal .
 <Edinburgh>	<hasMotto>	"Nisi Dominus Frustra" .
 <Edinburgh>	<hasMotto>	"<small>" .
 <Edinburgh>	<hasMotto>	"Except the Lord in vain" .
@@ -284,6 +288,8 @@
 <Guido_Westerwelle>	rdf:type	<wordnet_lawyer_110249950> .
 <Guido_Westerwelle>	<livesIn>	<Berlin> .
 <Guido_Westerwelle>	<livesIn>	<Bonn> .
+<Hamburg>	<hasLatitude>	"53.56527777777777"^^xsd:decimal .
+<Hamburg>	<hasLongitude>	"10.001388888888888"^^xsd:decimal .
 <Hamburg>	<hasPopulation>	"1796077"^^xsd:integer .
 <Helmut_Kohl>	<graduatedFrom>	<University_of_Heidelberg> .
 <Helmut_Kohl>	<wasBornOnDate>	"1930-04-03"^^xsd:date .
@@ -476,5 +482,7 @@
 <University_of_León>	<wasCreatedOnDate>	"1979-##-##"^^xsd:date .
 <University_of_León>	<hasMotto>	"Universitas legionensis" .
 <Valladolid>	<wasCreatedOnDate>	"1072-##-##"^^xsd:date .
+<Valladolid>	<hasLatitude>	"41.63333333333333"^^xsd:decimal .
+<Valladolid>	<hasLongitude>	"-4.716666666666667"^^xsd:decimal .
 <Valladolid>	<hasPopulation>	"313437"^^xsd:integer .
 <Valladolid>	<hasUTCOffset>	"+1"^^xsd:integer .
