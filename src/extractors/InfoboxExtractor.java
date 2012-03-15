@@ -85,7 +85,7 @@ public class InfoboxExtractor extends Extractor {
 		// Get the term extractor
 		TermExtractor extractor = cls.equals(RDFS.clss) ? new TermExtractor.ForClass(preferredMeanings) : TermExtractor
 				.forType(cls);
-		Announce.debug("Relation", relation, "with", cls,extractor);
+		Announce.debug("Relation", relation, "with", cls, extractor);
 		String syntaxChecker = FactComponent.asJavaString(factCollection.getArg2(cls, "<_hasTypeCheckPattern>"));
 
 		// Extract all terms
@@ -146,7 +146,7 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	/** reads an infobox */
-	public static Map<String, String> readInfobox(Reader in) throws IOException {
+	public static Map<String, String> readInfobox(Reader in, Map<String, String> combinations) throws IOException {
 		Map<String, String> result = new TreeMap<String, String>();
 		while (true) {
 			String attribute = normalizeAttribute(FileLines.readTo(in, '=', '}').toString());
@@ -154,9 +154,29 @@ public class InfoboxExtractor extends Extractor {
 				return (result);
 			StringBuilder value = new StringBuilder();
 			int c = readEnvironment(in, value);
-			result.put(attribute, value.toString());
+			result.put(attribute, value.toString().trim());
 			if (c == '}' || c == -1 || c == -2)
 				break;
+		}
+		// Apply combinations
+		if(result.containsKey("latd")) {
+			D.p("here");
+		}
+		next: for (String code : combinations.keySet()) {
+			StringBuilder val = new StringBuilder();
+			for (String attribute : code.split(">")) {
+				int scanTo=attribute.indexOf('<');
+				if (scanTo!=-1) {
+					val.append(attribute.substring(0,scanTo));
+					String newVal = result.get(normalizeAttribute(attribute.substring(scanTo+1)));
+					if (newVal == null)
+						continue next;
+					val.append(newVal);
+				} else {
+					val.append(attribute);
+				}
+			}
+			result.put(combinations.get(code), val.toString());
 		}
 		return (result);
 	}
@@ -167,6 +187,7 @@ public class InfoboxExtractor extends Extractor {
 		FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 		Map<String, Set<String>> patterns = infoboxPatterns(infoboxFacts);
 		PatternList replacements = new PatternList(infoboxFacts, "<_infoboxReplace>");
+		Map<String, String> combinations = infoboxFacts.asStringMap("<_infoboxCombine>");
 		Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(hardWiredFacts, new FactCollection(
 				input.get(WordnetExtractor.WORDNETWORDS)));
 		TitleExtractor titleExtractor = new TitleExtractor(input);
@@ -193,7 +214,7 @@ public class InfoboxExtractor extends Extractor {
 				if (type != null) {
 					writers.get(INFOBOXTYPES).write(new Fact(null, titleEntity, RDFS.type, type));
 				}
-				Map<String, String> attributes = readInfobox(in);
+				Map<String, String> attributes = readInfobox(in, combinations);
 				for (String attribute : attributes.keySet()) {
 					Set<String> relations = patterns.get(attribute);
 					if (relations == null)
@@ -228,9 +249,9 @@ public class InfoboxExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
-		new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-		new InfoboxExtractor(new File("./testCases/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
+		//new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
+		//new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
+		new InfoboxExtractor(new File("./testCases/extractors.InfoboxExtractor/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
 		// new InfoboxExtractor(new
 		// File("./testCases/wikitest.xml")).extract(new
 		// File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
