@@ -14,10 +14,14 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+# --------- Combinations of Infobox atributes --------------
+"<latd> degrees <latm> minutes <lats> seconds <latNS>"	<_infoboxCombine>	"latitude" .
+"<longd> degrees <longm> minutes <longs> seconds <longEW>"	<_infoboxCombine>	"longitude" .
+
 # --------- Infobox patterns --------------
 
-"_latitude"	<_infoboxPattern>	<hasLatitude> .
-"_longitude"	<_infoboxPattern>	<hasLongitude> .
+"latitude"	<_infoboxPattern>	<hasLatitude> .
+"longitude"	<_infoboxPattern>	<hasLongitude> .
 "Nickname"	<_infoboxPattern>	rdfs:label .
 "nativename"	<_infoboxPattern>	rdfs:label .
 "commonname"	<_infoboxPattern>	rdfs:label .
