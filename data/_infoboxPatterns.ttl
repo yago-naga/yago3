@@ -14,9 +14,14 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-# --------- Combinations of Infobox atributes --------------
+# --------- Combinations of Infobox attributes --------------
+"<area> km^2"	<_infoboxCombine>	"area" .
 "<latd> degrees <latm> minutes <lats> seconds <latNS>"	<_infoboxCombine>	"latitude" .
 "<longd> degrees <longm> minutes <longs> seconds <longEW>"	<_infoboxCombine>	"longitude" .
+"<latd> degrees <latm> minutes 0 seconds <latNS>"	<_infoboxCombine>	"latitude" .
+"<longd> degrees <longm> minutes 0 seconds <longEW>"	<_infoboxCombine>	"longitude" .
+"<latdeg> degrees <latmin> minutes <latsec> seconds <latNS>"	<_infoboxCombine>	"latitude" .
+"<longdeg> degrees <longmin> minutes <longsec> seconds <longEW>"	<_infoboxCombine>	"longitude" .
 
 # --------- Infobox patterns --------------
 
@@ -28,7 +33,6 @@
 "alias"	<_infoboxPattern>	rdfs:label .
 "alternatename"	<_infoboxPattern>	rdfs:label .
 "abbreviation"	<_infoboxPattern>	rdfs:label .
-"commonname"	<_infoboxPattern>	rdfs:label .
 "companyname"	<_infoboxPattern>	rdfs:label .
 "fullname"	<_infoboxPattern>	rdfs:label .
 #@ <infoBoxId0>
@@ -50,8 +54,6 @@
 "nationalMotto"	<_infoboxPattern>	<hasMotto> .
 "governmenttype"	<_infoboxPattern>	rdf:type .
 "leadername"	<_infoboxPattern>	<isLeaderOf-> .
-"established"	<_infoboxPattern>	<wasCreatedOnDate> .
-"establisheddate1"	<_infoboxPattern>	<wasCreatedOnDate> .
 "establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
 "areakm2"	<_infoboxPattern>	<hasArea> .
 "populationestimate"	<_infoboxPattern>	<hasPopulation> .
@@ -93,8 +95,6 @@
 "populationtotal"	<_infoboxPattern>	<hasPopulation> .
 "poverty"	<_infoboxPattern>	<hasPoverty> .
 "unemployment"	<_infoboxPattern>	<hasUnemployment> .
-"latitude"	<_infoboxPattern>	<hasLatitude> .
-"longitude"	<_infoboxPattern>	<hasLongitude> .
 #@ <infoBoxId7>
 "length"	<_infoboxPattern>	<hasLength> .
 <infoBoxId7>	<_hasComment>	"Added 2011-04-27 for GeoCLEF" .
@@ -127,9 +127,6 @@
 "birthplace"	<_infoboxPattern>	<wasBornIn> .
 "deathplace"	<_infoboxPattern>	<diedIn> .
 "died"	<_infoboxPattern>	<diedOnDate> .
-# Still to do: dates for spouses
-# "spouse\\s*=\\s*(.+?\\]\\]).+?\\((\\d+)\\D(\\d*)\\).*?IBL\\|END"	<_infoboxPattern>	<isMarriedTo @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date($3); @WikiLink($1) isMarriedTo-> .
-# "spouse\\s*=\\s*(.+?\\]\\]).+?\\((\\d+)\\D.*?\\).*?IBL\\|END"	<_infoboxPattern>	<isMarriedTo @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil ####-##-##; @WikiLink($1) isMarriedTo-> .
 "spouse"	<_infoboxPattern>	<isMarriedTo> .
 "children"	<_infoboxPattern>	<hasChild> .
 "occupation"	<_infoboxPattern>	rdf:type .
@@ -140,7 +137,6 @@
 "notableideas"	<_infoboxPattern>	<isKnownFor> .
 "contributions"	<_infoboxPattern>	<isKnownFor> .
 "knownfor"	<_infoboxPattern>	<isKnownFor> .
-"prizes"	<_infoboxPattern>	<hasWonPrize> .
 "awards"	<_infoboxPattern>	<hasWonPrize> .
 "notableworks"	<_infoboxPattern>	<created> .
 "workinstitutions"	<_infoboxPattern>	<worksAt> .
@@ -160,14 +156,12 @@
 "academyawards"	<_infoboxPattern>	<hasWonPrize> .
 "afiawards"	<_infoboxPattern>	<hasWonPrize> .
 "artist"	<_infoboxPattern>	<created-> .
-"awards"	<_infoboxPattern>	<hasWonPrize> .
 "baftaawards"	<_infoboxPattern>	<hasWonPrize> .
 "commander"	<_infoboxPattern>	<isLeaderOf-> .
 "commander-in-chief"	<_infoboxPattern>	<isLeaderOf-> .
 "famousworks"	<_infoboxPattern>	<created> .
 "founded"	<_infoboxPattern>	<wasCreatedOnDate> .
 "goldenglobeawards"	<_infoboxPattern>	<hasWonPrize> .
-"height"	<_infoboxPattern>	<hasHeight> .
 "homepage"	<_infoboxPattern>	<hasWebsite> .
 "instrument"	<_infoboxPattern>	<hasMusicalRole> .
 "magnumopus"	<_infoboxPattern>	<created> .
@@ -177,17 +171,6 @@
 "prizes"	<_infoboxPattern>	<hasWonPrize> .
 "residence"	<_infoboxPattern>	<livesIn> .
 "url"	<_infoboxPattern>	<hasWebsite> .
-## still to do: dates for political positions
-# "(?is)IBL\\|BEG\\s*office.*?IBL\\|BEG\\s*term_start.*?IBL\\|BEG\\s*term_end.*?IBL\\|BEG\\s*predecessor.*?IBL\\|BEG\\s*successor"	<_infoboxPattern>	<holdsPoliticalPosition @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date($3); #1 hasPredecessor @WikiLink($4); #1 hasSuccessor @WikiLink($5)" .
-# "(?is)IBL\\|BEG\\s*office(\\d{1,2}).*?IBL\\|BEG\\s*term_start\\1?.*?IBL\\|BEG\\s*term_end\\1.*?IBL\\|BEG\\s*predecessor\\1.*?IBL\\|BEG\\s*successor\\1?s*=\\s*(.*?)IBL\\|END"	<_infoboxPattern>	<holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date($4); #1 hasPredecessor @WikiLink($5); #1 hasSuccessor @WikiLink($6)\u0022" .
-# "(?is)IBL\\|BEG\\s*office.*?IBL\\|BEG\\s*term_start.*?IBL\\|BEG\\s*predecessor"	<_infoboxPattern>	<holdsPoliticalPosition @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date(####-##-##); #1 hasPredecessor @WikiLink($3)" .
-# "(?is)IBL\\|BEG\\s*office(\\d{1,2}).*?IBL\\|BEG\\s*term_start\\1.*?IBL\\|BEG\\s*predecessor\\1"	<_infoboxPattern>	<holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date(####-##-##); #1 hasPredecessor @WikiLink($4)" .
-# "(?is)IBL\\|BEG\\s*office.*?IBL\\|BEG\\s*term_start.*?IBL\\|BEG\\s*term_end?"	<_infoboxPattern>	<holdsPoliticalPosition @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date($3)" .
-# "(?is)IBL\\|BEG\\s*office(\\d{1,2}).*?IBL\\|BEG\\s*term_start\\1.*?IBL\\|BEG\\s*term_end\\1"	<_infoboxPattern>	<holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date($4)" .
-# "(?is)IBL\\|BEG\\s*office.*?IBL\\|BEG\\s*term_start"	<_infoboxPattern>	<holdsPoliticalPosition @WikiLink($1); #1 occursSince @Date($2); #1 occursUntil @Date(####-##-##)" .
-# "(?is)IBL\\|BEG\\s*office(\\d{1,2}).*?IBL\\|BEG\\s*term_start\\1"	<_infoboxPattern>	<holdsPoliticalPosition @WikiLink($2); #1 occursSince @Date($3); #1 occursUntil @Date(####-##-##)" .
-# "(?is)IBL\\|BEG\\s*years(\\d{1,2})\\s*=\\s*(\\d{4}).*?(\\d{4})IBL\\|END.*?IBL\\|BEG\\s*clubs\\1"	<_infoboxPattern>	<playsFor @WikiLink($4); #1 occursSince @Date($2); #1 occursUntil @Date($3)" .
-# "(?is)IBL\\|BEG\\s*years(\\d{1,2})\\s*=\\s*(\\d{4})[^\\d]*IBL\\|END.*?IBL\\|BEG\\s*clubs\\1"	<_infoboxPattern>	<playsFor @WikiLink($4); #1 occursSince @Date($2); #1 occursUntil @Date(####-##-##)" .
 #@ <infoBoxId14>
 "cityofbirth"	<_infoboxPattern>	<wasBornIn> .
 <infoBoxId14>	<_hasComment>	"Added by Fabian 2011-05-26" .
@@ -228,7 +211,6 @@
 "designer"	<_infoboxPattern>	<created-> .
 "developer"	<_infoboxPattern>	<created-> .
 "imdbid"	<_infoboxPattern>	<hasImdb> .
-"producer"	<_infoboxPattern>	<produced-> .
 "production company"	<_infoboxPattern>	<produced-> .
 "revenue"	<_infoboxPattern>	<hasRevenue> .
 "slogan"	<_infoboxPattern>	<hasMotto> .
@@ -242,7 +224,6 @@
 "music"	<_infoboxPattern>	<wroteMusicFor-> .
 <infoBoxId23>	<_hasComment>	"Added by Fabian 2011-05-29" .
 "founder"	<_infoboxPattern>	<created-> .
-"location"	<_infoboxPattern>	<isLocatedIn> .
 #@ <infoBoxId24>
 "region"	<_infoboxPattern>	<isLocatedIn> .
 <infoBoxId24>	<_hasComment>	"Added by Fabian 2011-05-26" .
@@ -263,8 +244,6 @@
 <infoBoxId28>	<_hasComment>	"Added by Fabian 2011-05-29" .
 "combatant"	<_infoboxPattern>	<participatedIn-> .
 "place"	<_infoboxPattern>	<happenedIn> .
-# Still to do: dates
-# "date[s]?\\s*=\\s*([^\\‚Äì\\-\\|]*)\\s*[\\‚Äì\\-]\\s*([^\\‚Äì\\-\\|]*)\\s*IBL\\|END"	<_infoboxPattern>	<startedOnDate @Date($1); $0 endedOnDate @Date($2)" .
 "dat" <_infoboxPattern>	<happenedOnDate> .
 "year"	<_infoboxPattern>	<happenedOnDate> .
 
@@ -281,17 +260,7 @@
 "\\[\\[1000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" million " .
 "\\[\\[1000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" thousand " .
 "\\[\\[euro\\|.*?\\]\\]"	<_infoboxReplace>	" Euro " .
-"\\|\\s*lat_?d\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?m\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?s\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?NS\\s*=\\s*(.)"	<_infoboxReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds $4 " .
-"\\|\\s*long_?d\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*long_?m\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*long_?s\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*long_?EW\\s*=\\s*(.)"	<_infoboxReplace>	" |_longitude = $1 degrees $2 minutes $3 seconds $4 " .
-"\\|\\s*lat_?d\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?m\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?NS\\s*=\\s*(.)"	<_infoboxReplace>	" |_latitude = $1 degrees $2 minutes 0 seconds $3 " .
-"\\|\\s*long_?d\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*long_?m\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*long_?EW\\s*=\\s*(.)"	<_infoboxReplace>	" |_longitude = $1 degrees $2 minutes 0 seconds $3 " .
 "\\{\\{coord\\|(\\d+)\\|(\\d+)\\|([\\d\\.]+)\\|(.)\\|(\\d+)\\|(\\d+)\\|([\\d\\.]+)\\|(.)\\|.*?\\}\\}"	<_infoboxReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds $4 |_longitude = $5 degrees $6 minutes $7 seconds $8 " .
-"\\|\\s*lat_?deg\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?min\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?sec\\s*=\\s*([\\d\\.]+)"	<_infoboxReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds N " .
-"\\|\\s*lon_?deg\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lon_?min\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lon_?sec\\s*=\\s*([\\d\\.]+)"	<_infoboxReplace>	" |_longitude = $1 degrees $2 minutes $3 seconds E " .
-"\\|\\s*lat_?deg\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?min\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?sec\\s*=\\s*"	<_infoboxReplace>	" |_latitude = $1 degrees $2 minutes 0 seconds N " .
-"\\|\\s*lon_?deg\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lon_?min\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lon_?sec\\s*=\\s*"	<_infoboxReplace>	" |_longitude = $1 degrees $2 minutes 0 seconds E " .
-<// "\\|\\s*lat_?d\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?m\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*lat_?s\\s*=\\s*([\\d\\.]+)">	<_infoboxReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds N " .
-<// "\\|\\s*long_?d\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*long_?m\\s*=\\s*([\\d\\.]+)\\s*\\|\\s*long_?s\\s*=\\s*([\\d\\.]+)">	<_infoboxReplace>	" |_longitude = $1 degrees $2 minutes $3 seconds E " .
 "\\{\\{cite .*?\\}\\}"	<_infoboxReplace>	"" .
 "\\{\\{USA\\}\\}"	<_infoboxReplace>	"[[United_States]]" .
 "\\{\\{RUS\\}\\}"	<_infoboxReplace>	"[[Russia]]" .
@@ -313,7 +282,6 @@
 "\\{\\{convert\\|(\\d+\\.?\\d*)\\|(.*?)\\|.*?\\}\\}"	<_infoboxReplace>	" $1 $2 " .
 "\\{\\{height\\|ft=(\\d+)\\|in=(\\d+\\.?\\d*)\\}\\}"	<_infoboxReplace>	" $1 feet $2 inches " .
 "\\{\\{([a-z]+) to [a-z]+\\|(\\d+\\.?\\d*).*?\\}\\}"	<_infoboxReplace>	" $2 $1 " .
-"\\{\\{nowrap\\|(.*?)\\}\\}"	<_infoboxReplace>	"$1" .
 "\\{\\{bday\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
 "\\{\\{flag ?(icon)?\\|(.*?)\\}\\}"	<_infoboxReplace>	"[[$2]]" .
 "\\{\\{awd\\|"	<_infoboxReplace>	"" .

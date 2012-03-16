@@ -1,9 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test on 1 wikipedia article
 # Facts derived from the categories - still to be type checked
 
 @base <http://yago-knowledge/resource/> .
@@ -50,10 +45,10 @@
 <Giuliano_Amato>	<isPoliticianOf>	<Italy> .
 <Giulio_Tremonti>	rdfs:label	"Giulio Tremonti" .
 <Giulio_Tremonti>	<wasBornOnDate>	"1947-##-##"^^xsd:date .
+<Italian_Chamber_of_Deputies>	rdfs:label	"Italian Chamber of Deputies" .
 <Lamberto_Dini>	<wasBornOnDate>	"1931-##-##"^^xsd:date .
 <Lamberto_Dini>	<isPoliticianOf>	<Foreign_Affairs> .
 <Lamberto_Dini>	<isPoliticianOf>	<Italy> .
-<Italian_Chamber_of_Deputies>	rdfs:label	"Italian Chamber of Deputies" .
 <Lamberto_Dini>	rdfs:label	"Lamberto Dini" .
 <Lazio>	<isLocatedIn>	<European_Union> .
 <Lazio>	<isLocatedIn>	<Italy> .
@@ -88,8 +83,6 @@
 <Oscar_Luigi_Scalfaro>	<isPoliticianOf>	<Italian_Chamber_of_Deputies> .
 <Pier_Silvio_Berlusconi>	<wasBornOnDate>	"1969-##-##"^^xsd:date .
 <Pier_Silvio_Berlusconi>	rdfs:label	"Pier Silvio Berlusconi" .
-<Prime_Minister_of_Italy>	rdfs:label	"Prime Minister of Italy" .
-<Prime_Minister_of_Italy>	<isPoliticianOf>	<Italy|> .
 <Roberto_Maroni>	<wasBornOnDate>	"1955-##-##"^^xsd:date .
 <Roberto_Maroni>	rdfs:label	"Roberto Maroni" .
 <Roberto_Maroni>	<isPoliticianOf>	<Interior> .
@@ -167,11 +160,11 @@
 <Labour_Party_(UK)>	<wasCreatedOnDate>	"1900-##-##"^^xsd:date .
 <Labour_Party_(UK)>	rdfs:label	"Labour Party" .
 <Labour_Party_(UK)>	rdfs:label	"Labour Party (UK)" .
-<Margaret_Beckett>	<isPoliticianOf>	<Council> .
 <Leader_of_the_Opposition_(United_Kingdom)>	rdfs:label	"Leader of the Opposition (United Kingdom)" .
 <Leader_of_the_Labour_Party_(UK)>	rdfs:label	"Leader of the Labour Party" .
 <Leader_of_the_Opposition_(United_Kingdom)>	rdfs:label	"Leader of the Opposition" .
 <Leader_of_the_Labour_Party_(UK)>	rdfs:label	"Leader of the Labour Party (UK)" .
+<Margaret_Beckett>	<isPoliticianOf>	<Council> .
 <Margaret_Beckett>	rdfs:label	"Margaret Beckett" .
 <Margaret_Beckett>	<wasBornOnDate>	"1943-##-##"^^xsd:date .
 <Michael_Meacher>	rdfs:label	"Michael Meacher" .
@@ -183,8 +176,6 @@
 <Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson" .
 <Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson (British politician)" .
 <Phil_Wilson_(British_politician)>	<wasBornOnDate>	"1959-##-##"^^xsd:date .
-<Prime_Minister_of_the_United_Kingdom>	rdfs:label	"Prime Minister of the United Kingdom" .
-<Prime_Minister_of_the_United_Kingdom>	<isPoliticianOf>	<United_Kingdom|> .
 <Roy_Hattersley>	rdfs:label	"Roy Hattersley" .
 <Roman_Catholicism>	rdfs:label	"Roman Catholicism" .
 <Roy_Hattersley>	<wasBornOnDate>	"1932-##-##"^^xsd:date .
@@ -225,9 +216,9 @@
 <Democratic_Awakening>	<wasDestroyedOnDate>	"1990-##-##"^^xsd:date .
 <Democratic_Awakening>	rdfs:label	"Democratic Awakening" .
 <Democratic_Awakening>	<wasCreatedOnDate>	"1989-##-##"^^xsd:date .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelical Church in Germany" .
 <Frank-Walter_Steinmeier>	<isPoliticianOf>	<Germany> .
 <Frank-Walter_Steinmeier>	<wasBornOnDate>	"1956-##-##"^^xsd:date .
-<Evangelical_Church_in_Germany>	rdfs:label	"Evangelical Church in Germany" .
 <Frank-Walter_Steinmeier>	rdfs:label	"Frank-Walter Steinmeier" .
 <Franz_Müntefering>	<wasBornOnDate>	"1940-##-##"^^xsd:date .
 <Franz_Müntefering>	<isPoliticianOf>	<Germany> .
@@ -341,7 +332,7 @@
 <François_d'Aubert>	<isPoliticianOf>	<Budget> .
 <François_d'Aubert>	rdfs:label	"François d'Aubert" .
 <French_Fourth_Republic>	<wasCreatedOnDate>	"1946-##-##"^^xsd:date .
-<French_Fourth_Republic>	<isLocatedIn>	<Europe|France,_Republic_4> .
+<French_Fourth_Republic>	<isLocatedIn>	<Europe> .
 <French_Fourth_Republic>	rdfs:label	"French Fourth Republic" .
 <Giulia_Sarkozy>	rdfs:label	"Giulia Sarkozy" .
 <Giulia_Sarkozy>	<wasBornOnDate>	"2011-##-##"^^xsd:date .
@@ -395,7 +386,7 @@
 <Philippe_Massoni>	<wasBornOnDate>	"1936-##-##"^^xsd:date .
 <Philippe_Massoni>	rdfs:label	"Philippe Massoni" .
 <President_of_France>	rdfs:label	"President of France" .
-<President_of_France>	<isPoliticianOf>	<France|> .
+<President_of_France>	<isPoliticianOf>	<France> .
 <Rally_for_the_Republic>	<wasCreatedOnDate>	"1976-##-##"^^xsd:date .
 <Rally_for_the_Republic>	rdfs:label	"Rally for the Republic" .
 <Rally_for_the_Republic>	<wasDestroyedOnDate>	"2002-##-##"^^xsd:date .
@@ -405,11 +396,11 @@
 <Alfredo_Pérez_Rubalcaba>	<wasBornOnDate>	"1951-##-##"^^xsd:date .
 <Alfredo_Pérez_Rubalcaba>	<isPoliticianOf>	<Spain> .
 <Alfredo_Pérez_Rubalcaba>	rdfs:label	"Alfredo Pérez Rubalcaba" .
-<Elena_Salgado>	<isPoliticianOf>	<Spain> .
 <Congress_of_Deputies_(Spain)>	rdfs:label	"Congress of Deputies" .
+<Congress_of_Deputies_(Spain)>	rdfs:label	"Congress of Deputies (Spain)" .
+<Elena_Salgado>	<isPoliticianOf>	<Spain> .
 <Elena_Salgado>	<isPoliticianOf>	<Economy_and_Finance> .
 <Elena_Salgado>	<wasBornOnDate>	"1949-##-##"^^xsd:date .
-<Congress_of_Deputies_(Spain)>	rdfs:label	"Congress of Deputies (Spain)" .
 <Elena_Salgado>	rdfs:label	"Elena Salgado" .
 <Francoist_Spain>	<wasDestroyedOnDate>	"1975-##-##"^^xsd:date .
 <Francoist_Spain>	rdfs:label	"Francoist Spain" .
@@ -439,8 +430,8 @@
 <Juan_Carlos_I_of_Spain>	<hasWonPrize>	<Order_of_the_Three_Stars,_1st_Class_with_Chain> .
 <Juan_Carlos_I_of_Spain>	<wasBornOnDate>	"1938-##-##"^^xsd:date .
 <Leader_of_the_Opposition_(Spain)>	rdfs:label	"Leader of the Opposition" .
-<León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León" .
 <Leader_of_the_Opposition_(Spain)>	rdfs:label	"Leader of the Opposition (Spain)" .
+<León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León" .
 <León_(Spanish_Congress_Electoral_District)>	rdfs:label	"Leon (Spanish Congress Electoral District)" .
 <León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León (Spanish Congress Electoral District)" .
 <Madrid_(Spanish_Congress_Electoral_District)>	rdfs:label	"Madrid" .
@@ -453,8 +444,6 @@
 <María_Teresa_Fernández_de_la_Vega>	<hasWonPrize>	<Order_of_the_Cross_of_Terra_Mariana,_1st_Class> .
 <María_Teresa_Fernández_de_la_Vega>	rdfs:label	"María Teresa Fernández de la Vega" .
 <María_Teresa_Fernández_de_la_Vega>	rdfs:label	"Maria Teresa Fernandez de la Vega" .
-<Prime_Minister_of_Spain>	<isPoliticianOf>	<Spain|> .
-<Prime_Minister_of_Spain>	rdfs:label	"Prime Minister of Spain" .
 <Sonsoles_Espinosa>	<wasBornOnDate>	"1961-##-##"^^xsd:date .
 <Sonsoles_Espinosa>	rdfs:label	"Sonsoles Espinosa" .
 <Spanish_Socialist_Workers'_Party>	<wasCreatedOnDate>	"1879-##-##"^^xsd:date .

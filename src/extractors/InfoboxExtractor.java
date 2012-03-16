@@ -74,6 +74,7 @@ public class InfoboxExtractor extends Extractor {
 	protected void extract(String entity, String string, String relation, Map<String, String> preferredMeanings,
 			FactCollection factCollection, FactWriter n4Writer, PatternList replacements) throws IOException {
 		string = replacements.transform(Char.decodeAmpersand(string));
+		string = string.replace("$0", FactComponent.stripBrackets(entity));
 		string = string.trim();
 		if (string.length() == 0)
 			return;
@@ -84,30 +85,38 @@ public class InfoboxExtractor extends Extractor {
 		if (relation.endsWith("->")) {
 			inverse = true;
 			relation = Char.cutLast(Char.cutLast(relation)) + '>';
-			cls = factCollection.getArg2(relation, "rdfs:domain");
+			cls = factCollection.getArg2(relation,RDFS.domain);
 		} else {
 			inverse = false;
-			cls = factCollection.getArg2(relation, "rdfs:range");
+			cls = factCollection.getArg2(relation,RDFS.range);
 		}
 		if (cls == null) {
 			Announce.warning("Unknown relation to extract:", relation);
-			cls = "rdfs:Resource";
+			cls =YAGO.entity;
 		}
 
 		// Get the term extractor
 		TermExtractor extractor = cls.equals(RDFS.clss) ? new TermExtractor.ForClass(preferredMeanings) : TermExtractor
 				.forType(cls);
-		Announce.debug("Relation", relation, "with", cls, extractor);
 		String syntaxChecker = FactComponent.asJavaString(factCollection.getArg2(cls, "<_hasTypeCheckPattern>"));
 
 		// Extract all terms
 		List<String> objects = extractor.extractList(string);
 		for (String object : objects) {
+			// Check syntax
 			if (syntaxChecker != null && !FactComponent.asJavaString(object).matches(syntaxChecker)) {
-				Announce.debug("Extraction", object, "does not match typecheck", syntaxChecker);
+				Announce.debug("Extraction", object, "does not match syntax check", syntaxChecker);
 				continue;
 			}
-			FactComponent.setDataType(object, cls);
+			// Check data type
+			if (FactComponent.isLiteral(object)) {
+				String[] value = FactComponent.literalAndDataType(object);
+				if(value.length!=2 || !factCollection.isSubClassOf(value[1], cls)) {
+					Announce.debug("Extraction", object, "does not match typecheck", cls);
+					continue;
+				} 
+				FactComponent.setDataType(object, cls);
+			}
 			if (inverse)
 				n4Writer.write(new Fact(object, relation, entity));
 			else
@@ -185,7 +194,7 @@ public class InfoboxExtractor extends Extractor {
 					val.append(attribute);
 				}
 			}
-			result.put(combinations.get(code), val.toString());
+			result.put(normalizeAttribute(combinations.get(code)), val.toString());
 		}
 		return (result);
 	}
@@ -258,10 +267,8 @@ public class InfoboxExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		// new PatternHardExtractor(new File("./data")).extract(new
-		// File("c:/fabian/data/yago2s"), "test");
-		// new HardExtractor(new File("../basics2s/data")).extract(new
-		// File("c:/fabian/data/yago2s"), "test");
+		new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
+		new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
 		new InfoboxExtractor(new File("./testCases/extractors.InfoboxExtractor/wikitest.xml")).extract(new File(
 				"c:/fabian/data/yago2s"), "test");
 		// new InfoboxExtractor(new

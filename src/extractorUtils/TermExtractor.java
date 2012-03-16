@@ -51,15 +51,16 @@ public abstract class TermExtractor {
 		case "<yagoURL>":
 			return (forUrl);
 		case "xsd:decimal":
-		case "<yagoGeoCoordinate>":
-		case "<yagoArea>":
+		case "<degrees>":
+		case "<m^2>":
 		case "<yagoMonetaryValue>":
-		case "<yagoProportion>":
-		case "<yagoDensityPerArea>":
+		case "<%>":
+		case "</km^2>":
 		case "xsd:integer":
 		case "xsd:duration":
-		case "<yagoWeight>":
-		case "<yagoLength>":
+		case "<g>":
+		case "<m>":
+		case "<s>":
 		case "xsd:nonNegativeInteger":
 			return (forNumber);
 		}

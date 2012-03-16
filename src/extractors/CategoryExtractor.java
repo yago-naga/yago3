@@ -134,7 +134,7 @@ public class CategoryExtractor extends Extractor {
 			return;
 		facts.add(new Fact(null, titleEntity, RDFS.type, FactComponent.forWikiCategory(category)));
 		categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept));
-		String name = new NounGroup(category).stemmed();
+		String name = new NounGroup(category).stemmed().replace('_', ' ');
 		if (!name.isEmpty())
 			categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent
 					.forString(name)));
@@ -186,10 +186,8 @@ public class CategoryExtractor extends Extractor {
 			case 1:
 				if (titleEntity == null)
 					continue;
-				String category = FileLines.readTo(in, "]]").toString();
-				if (!category.endsWith("]]"))
-					continue;
-				category = category.substring(0, category.length() - 2);
+				String category = FileLines.readTo(in, ']','|').toString();
+				category = category.trim();
 				for (Fact fact : categoryPatterns.extract(category, titleEntity)) {
 					if (fact != null)
 						facts.add(fact);
