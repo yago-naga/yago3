@@ -10,6 +10,8 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import extractors.Extractor.FollowUpExtractor;
+
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -26,7 +28,7 @@ import basics.Theme;
  * @author Johannes Hoffart
  * 
  */
-public class RedirectExtractor extends Extractor {
+public class RedirectExtractor extends FollowUpExtractor {
 
 	/** Input file */
 	private File wikipedia;
@@ -35,17 +37,13 @@ public class RedirectExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(InfoboxExtractor.DIRTYINFOBOXFACTS, PatternHardExtractor.TITLEPATTERNS,
+		return new HashSet<Theme>(Arrays.asList(checkMe, PatternHardExtractor.TITLEPATTERNS,
 				WordnetExtractor.WORDNETWORDS));
 	}
 
-	/** Redirected Infobox facts, non-checked */
-	public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("redirectedInfoxboxFacts",
-			"Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
-
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(REDIRECTEDINFOBOXFACTS);
+		return new FinalSet<Theme>(checked);
 	}
 
 	@Override
@@ -78,9 +76,9 @@ public class RedirectExtractor extends Extractor {
 			}
 		}
 
-		FactWriter out = output.get(REDIRECTEDINFOBOXFACTS);
+		FactWriter out = output.get(checked);
 
-		FactSource dirtyInfoboxFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);
+		FactSource dirtyInfoboxFacts = input.get(checkMe);
 
 		Announce.doing("Applying redirects to Infobox facts");
 
@@ -123,7 +121,9 @@ public class RedirectExtractor extends Extractor {
 	 * @param wikipedia
 	 *            Wikipedia XML dump
 	 */
-	public RedirectExtractor(File wikipedia) {
+	public RedirectExtractor(File wikipedia, Theme in, Theme out) {
+		this.checkMe=in;
+		this.checked=out;
 		this.wikipedia = wikipedia;
 	}
 

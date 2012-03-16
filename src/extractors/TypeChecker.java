@@ -16,41 +16,44 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import extractors.Extractor.FollowUpExtractor;
 
 /**
  * YAGO2s - TypeChecker
  * 
- * Does a type check on infobox facts
+ * Does a type check on infobox facts. 
  * 
  * @author Fabian M. Suchanek
  * 
  */
-public class TypeChecker extends Extractor {
+public class TypeChecker extends FollowUpExtractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new TreeSet<Theme>(Arrays.asList(RedirectExtractor.REDIRECTEDINFOBOXFACTS, HardExtractor.HARDWIREDFACTS,
+		return new TreeSet<Theme>(Arrays.asList(checkMe, HardExtractor.HARDWIREDFACTS,
 				WordnetExtractor.WORDNETCLASSES, CategoryExtractor.CATEGORYTYPES, CategoryExtractor.CATEGORYCLASSES));
 	}
 
-	/** The output of this extractor */
-	public static final Theme CHECKEDINFOBOXFACTS = new Theme("checkedInfoboxFacts",
-			"The facts extracted from the infoboxes, checked for types");
-
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<>(CHECKEDINFOBOXFACTS);
+		return new FinalSet<>(checked);
 	}
 
+	/** Constructor, takes theme to be checked and theme to output*/
+	public TypeChecker(Theme in, Theme out) {
+		checkMe=in;
+		checked=out;
+	}
+	
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		FactCollection types = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
 		types.load(input.get(CategoryExtractor.CATEGORYTYPES));
 		types.load(input.get(CategoryExtractor.CATEGORYCLASSES));
 		types.load(input.get(HardExtractor.HARDWIREDFACTS));
-		FactWriter out = output.get(CHECKEDINFOBOXFACTS);
+		FactWriter out = output.get(checked);
 		Announce.doing("Type checking facts");
-		for (Fact fact : input.get(RedirectExtractor.REDIRECTEDINFOBOXFACTS)) {
+		for (Fact fact : input.get(checkMe)) {
 			if (FactComponent.isLiteral(fact.getArg(2))) {
 				out.write(fact);
 				continue;
@@ -76,8 +79,4 @@ public class TypeChecker extends Extractor {
 		return (types.instanceOf(entity, type));
 	}
 
-	public static void main(String[] args) throws Exception {
-		Announce.setLevel(Announce.Level.DEBUG);
-		new TypeChecker().extract(new File("c:/fabian/data/yago2s"), "test");
-	}
 }

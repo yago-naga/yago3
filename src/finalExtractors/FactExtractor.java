@@ -15,6 +15,7 @@ import basics.Theme;
 import extractors.CategoryExtractor;
 import extractors.Extractor;
 import extractors.HardExtractor;
+import extractors.InfoboxExtractor;
 import extractors.RuleExtractor;
 import extractors.TypeChecker;
 
@@ -31,7 +32,7 @@ public class FactExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS,
-				TypeChecker.CHECKEDINFOBOXFACTS);
+				InfoboxExtractor.INFOBOXFACTS);
 	}
 
 	/** All facts of YAGO */

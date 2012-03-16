@@ -14,6 +14,7 @@ import extractors.CategoryExtractor;
 import extractors.DisambiguationPageExtractor;
 import extractors.Extractor;
 import extractors.HardExtractor;
+import extractors.InfoboxExtractor;
 import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
 import extractors.TypeChecker;
@@ -35,7 +36,7 @@ public class LabelExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<>(DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, HardExtractor.HARDWIREDFACTS,
-				RuleExtractor.RULERESULTS, TypeChecker.CHECKEDINFOBOXFACTS, PersonNameExtractor.PERSONNAMES, CategoryExtractor.CATEGORYFACTS);
+				RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS, PersonNameExtractor.PERSONNAMES, CategoryExtractor.CATEGORYFACTS);
 	}
 
 	/** All facts of YAGO */

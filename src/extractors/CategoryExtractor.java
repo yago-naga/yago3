@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -43,6 +44,11 @@ public class CategoryExtractor extends Extractor {
 	protected File wikipedia;
 
 	@Override
+	public Set<Extractor> followUp() {
+		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(DIRTYCATEGORYFACTS, CATEGORYFACTS)));
+	}
+	
+	@Override
 	public Set<Theme> input() {
 		return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS,
@@ -52,14 +58,15 @@ public class CategoryExtractor extends Extractor {
 	/** Types deduced from categories */
 	public static final Theme CATEGORYTYPES = new Theme("categoryTypes", "Types derived from the categories");
 	/** Facts deduced from categories */
-	public static final Theme CATEGORYFACTS = new Theme("categoryFacts","Facts derived from the categories");
+	public static final Theme DIRTYCATEGORYFACTS = new Theme("categoryFactsDirty", "Facts derived from the categories - still to be type checked");
+	/** Facts deduced from categories */
+	public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "Facts derived from the categories");
 	/** Classes deduced from categories */
 	public static final Theme CATEGORYCLASSES = new Theme("categoryClasses", "Classes derived from the categories");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(CATEGORYTYPES, CATEGORYFACTS,
-				 CATEGORYCLASSES);
+		return new FinalSet<Theme>(CATEGORYTYPES, DIRTYCATEGORYFACTS, CATEGORYCLASSES);
 	}
 
 	/** Maps a category to a wordnet class */
@@ -99,7 +106,8 @@ public class CategoryExtractor extends Extractor {
 
 			for (int start = 0; start != -1 && start < preModifier.length() - 2; start = preModifier.indexOf(' ',
 					start + 1)) {
-				wordnet = preferredMeaning.get((start==0?preModifier:preModifier.substring(start+1)) + " " + stemmedHead);
+				wordnet = preferredMeaning.get((start == 0 ? preModifier : preModifier.substring(start + 1)) + " "
+						+ stemmedHead);
 				// take the longest matching sequence
 				if (wordnet != null)
 					return (wordnet);
@@ -126,6 +134,10 @@ public class CategoryExtractor extends Extractor {
 			return;
 		facts.add(new Fact(null, titleEntity, RDFS.type, FactComponent.forWikiCategory(category)));
 		categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept));
+		String name = new NounGroup(category).stemmed();
+		if (!name.isEmpty())
+			categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent
+					.forString(name)));
 	}
 
 	/** Returns the set of non-conceptual words */
@@ -148,14 +160,14 @@ public class CategoryExtractor extends Extractor {
 		FactCollection categoryClasses = new FactCollection();
 
 		// Extract the information
-		Announce.progressStart("Extracting",3_900_000);
+		Announce.progressStart("Extracting", 3_900_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		FactCollection facts = new FactCollection();
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:")) {
-			case -1:				
-				flush(titleEntity,facts, writers, categoryClasses,wordnetClasses);
+			case -1:
+				flush(titleEntity, facts, writers, categoryClasses, wordnetClasses);
 				for (Fact f : categoryClasses)
 					writers.get(CATEGORYCLASSES).write(f);
 				Announce.progressDone();
@@ -163,7 +175,7 @@ public class CategoryExtractor extends Extractor {
 				return;
 			case 0:
 				Announce.progressStep();
-				flush(titleEntity,facts, writers, categoryClasses, wordnetClasses);
+				flush(titleEntity, facts, writers, categoryClasses, wordnetClasses);
 				titleEntity = titleExtractor.getTitleEntity(in);
 				if (titleEntity != null) {
 					for (String name : namesOf(titleEntity)) {
@@ -190,7 +202,8 @@ public class CategoryExtractor extends Extractor {
 	/** Writes the facts */
 	public static void flush(String entity, FactCollection facts, Map<Theme, FactWriter> writers,
 			FactCollection categoryClasses, FactCollection wordnetClasses) throws IOException {
-		if(entity==null) return;
+		if (entity == null)
+			return;
 		String yagoBranch = yagoBranch(entity, facts, categoryClasses, wordnetClasses);
 		Announce.debug("Branch of", entity, "is", yagoBranch);
 		if (yagoBranch == null)
@@ -198,9 +211,9 @@ public class CategoryExtractor extends Extractor {
 		for (Fact fact : facts) {
 			switch (fact.getRelation()) {
 			case RDFS.type:
-				String branch=yagoBranch(fact.getArg(2), categoryClasses, wordnetClasses);
-				if (branch==null || !branch.equals(yagoBranch)) {
-					Announce.debug("Wrong branch:", fact.getArg(2),branch);
+				String branch = yagoBranch(fact.getArg(2), categoryClasses, wordnetClasses);
+				if (branch == null || !branch.equals(yagoBranch)) {
+					Announce.debug("Wrong branch:", fact.getArg(2), branch);
 				} else {
 					writers.get(CATEGORYTYPES).write(fact);
 				}
@@ -209,7 +222,7 @@ public class CategoryExtractor extends Extractor {
 				writers.get(CATEGORYCLASSES).write(fact);
 				break;
 			default:
-				writers.get(CATEGORYFACTS).write(fact);
+				writers.get(DIRTYCATEGORYFACTS).write(fact);
 			}
 		}
 		facts.clear();
@@ -270,10 +283,12 @@ public class CategoryExtractor extends Extractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		//Announce.setLevel(Announce.Level.DEBUG);
-		//new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"),
-		//		"Test on 1 wikipedia article");
-		new CategoryExtractor(new File("./testCases/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"),
+		Announce.setLevel(Announce.Level.DEBUG);
+		new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"),
 				"Test on 1 wikipedia article");
+		new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"),
+				"Test on 1 wikipedia article");
+		new CategoryExtractor(new File("./testCases/extractors.CategoryExtractor/wikitest.xml")).extract(new File(
+				"c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
 	}
 }

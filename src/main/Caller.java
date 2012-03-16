@@ -55,6 +55,7 @@ public class Caller {
 				e.extract(outputFolder, header);
 				themesWeHave.addAll(e.output());
 				extractors.remove(i);
+				extractors.addAll(e.followUp());
 				Announce.message("----------------------------");
 				Announce.message("Current themes:", themesWeHave);
 				Announce.message("Current extractors:", extractors);

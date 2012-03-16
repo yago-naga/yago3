@@ -1,6 +1,7 @@
 package extractors;
 
 import java.io.File;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -28,9 +29,24 @@ public abstract class Extractor {
 	/** Themes produced*/
 	public abstract Set<Theme> output();
 
+	/** A Dummy class to indicate extractors that are called en suite*/
+	public static abstract class FollowUpExtractor extends Extractor {
+		/** This is the theme we want to check*/
+		protected Theme checkMe;
+
+		/** This is the theme we produce*/
+		protected Theme checked;
+	}
+	
+	/** Returns other extractors to be called en suite*/
+	@SuppressWarnings("unchecked")
+	public Set<Extractor> followUp() {
+		return(Collections.EMPTY_SET);
+	}
+	
 	/** Returns the name */
 	public final String name() {
-		return (this.getClass().getSimpleName());
+		return (this.getClass().getName());
 	}
 
 	@Override

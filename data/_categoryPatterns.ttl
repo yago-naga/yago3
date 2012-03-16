@@ -14,6 +14,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> @Entity($1)" .
 
 # Category patterns
+"Recipients of the (.+)"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .
 "(.+) winners"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .
 "(?:^* )?(.+) laureates"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .
 "(.+) laureates"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .

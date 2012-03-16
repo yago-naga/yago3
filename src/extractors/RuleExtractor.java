@@ -33,7 +33,7 @@ public class RuleExtractor extends Extractor {
 	public Set<Theme> input() {
 		return new FinalSet<>(PatternHardExtractor.RULES, CategoryExtractor.CATEGORYTYPES,
 				CategoryExtractor.CATEGORYCLASSES, CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS,
-				InfoboxExtractor.INFOBOXTYPES, TypeChecker.CHECKEDINFOBOXFACTS, WordnetExtractor.WORDNETCLASSES);
+				InfoboxExtractor.INFOBOXTYPES, InfoboxExtractor.INFOBOXFACTS, WordnetExtractor.WORDNETCLASSES);
 	}
 
 	/** Theme of deductions */

@@ -36,6 +36,12 @@ public class InfoboxExtractor extends Extractor {
 	protected File wikipedia;
 
 	@Override
+	public Set<Extractor> followUp() {
+		return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(wikipedia, DIRTYINFOBOXFACTS,
+				REDIRECTEDINFOBOXFACTS), new TypeChecker(REDIRECTEDINFOBOXFACTS, INFOBOXFACTS)));
+	}
+
+	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS,
 				PatternHardExtractor.CATEGORYPATTERNS, WordnetExtractor.WORDNETWORDS,
@@ -43,8 +49,14 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	/** Infobox facts, non-checked */
-	public static final Theme DIRTYINFOBOXFACTS = new Theme("dirtyInfoxboxFacts",
-			"Facts extracted from the Wikipedia infoboxes - still to be type-checked");
+	public static final Theme DIRTYINFOBOXFACTS = new Theme("infoboxFactsVeryDirty",
+			"Facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked");
+	/** Redirected Infobox facts, non-checked */
+	public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("infoxboxFactsDirty",
+			"Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
+	/** Final Infobox facts */
+	public static final Theme INFOBOXFACTS = new Theme("infoxboxFacts",
+			"Facts extracted from the Wikipedia infoboxes with redirects resolved");
 	/** Types derived from infoboxes */
 	public static final Theme INFOBOXTYPES = new Theme("infoboxTypes", "Types extracted from Wikipedia infoboxes");
 
@@ -162,10 +174,10 @@ public class InfoboxExtractor extends Extractor {
 		next: for (String code : combinations.keySet()) {
 			StringBuilder val = new StringBuilder();
 			for (String attribute : code.split(">")) {
-				int scanTo=attribute.indexOf('<');
-				if (scanTo!=-1) {
-					val.append(attribute.substring(0,scanTo));
-					String newVal = result.get(normalizeAttribute(attribute.substring(scanTo+1)));
+				int scanTo = attribute.indexOf('<');
+				if (scanTo != -1) {
+					val.append(attribute.substring(0, scanTo));
+					String newVal = result.get(normalizeAttribute(attribute.substring(scanTo + 1)));
 					if (newVal == null)
 						continue next;
 					val.append(newVal);
@@ -246,9 +258,12 @@ public class InfoboxExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		//new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
-		//new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-		new InfoboxExtractor(new File("./testCases/extractors.InfoboxExtractor/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
+		// new PatternHardExtractor(new File("./data")).extract(new
+		// File("c:/fabian/data/yago2s"), "test");
+		// new HardExtractor(new File("../basics2s/data")).extract(new
+		// File("c:/fabian/data/yago2s"), "test");
+		new InfoboxExtractor(new File("./testCases/extractors.InfoboxExtractor/wikitest.xml")).extract(new File(
+				"c:/fabian/data/yago2s"), "test");
 		// new InfoboxExtractor(new
 		// File("./testCases/wikitest.xml")).extract(new
 		// File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
