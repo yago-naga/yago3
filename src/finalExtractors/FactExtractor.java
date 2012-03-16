@@ -76,7 +76,7 @@ public class FactExtractor extends Extractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		//Announce.setLevel(Announce.Level.DEBUG);
+		Announce.setLevel(Announce.Level.DEBUG);
 		new FactExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
 	}
 }
