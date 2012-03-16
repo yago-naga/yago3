@@ -12,6 +12,7 @@ import basics.Fact;
 import basics.FactCollection;
 import basics.FactSource;
 import basics.FactWriter;
+import basics.RDFS;
 import basics.Theme;
 import extractors.CategoryExtractor;
 import extractors.Extractor;
@@ -59,7 +60,8 @@ public class FactExtractor extends Extractor {
 				for (Fact fact : input.get(theme)) {
 					if (!relationsDone.contains(fact.getRelation())
 							&& !LabelExtractor.LABELRELATIONS.contains(fact.getRelation())
-							&& !fact.getRelation().startsWith("<_"))
+							&& !SchemaExtractor.SCHEMARELATIONS.contains(fact.getRelation())
+							&& !fact.getRelation().startsWith("<_") && !fact.getRelation().equals(RDFS.type)&& !fact.getRelation().equals(RDFS.subclassOf))
 						relationsToDo.add(fact.getRelation());
 					if (!relation.equals(fact.getRelation()))
 						continue;

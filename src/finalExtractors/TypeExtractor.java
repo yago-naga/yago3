@@ -15,6 +15,7 @@ import basics.RDFS;
 import basics.Theme;
 import extractors.CategoryExtractor;
 import extractors.Extractor;
+import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
 
 /**
@@ -29,7 +30,7 @@ public class TypeExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(InfoboxExtractor.INFOBOXTYPES, CategoryExtractor.CATEGORYTYPES);
+		return new FinalSet<>(InfoboxExtractor.INFOBOXTYPES, CategoryExtractor.CATEGORYTYPES, HardExtractor.HARDWIREDFACTS);
 	}
 
 	/** Final types */

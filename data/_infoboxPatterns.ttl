@@ -252,10 +252,9 @@
 "year"	<_infoboxPattern>	<happenedOnDate> .
 
 # ------------ Replacements ----------
-"<br/>"	<_infoboxReplace>	"\n" .
-"<br>"	<_infoboxReplace>	"\n" .
-"<br />"	<_infoboxReplace>	"\n" .
-"<br >"	<_infoboxReplace>	"\n" .
+"<br ?/>"	<_infoboxReplace>	"\n" .
+"<br ?>"	<_infoboxReplace>	"\n" .
+"</ ?br ?>"	<_infoboxReplace>	"\n" .
 "\\[\\[File:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[Image:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[wp:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
@@ -293,3 +292,6 @@
 "\\{\\{birth-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
 "\\{\\{death-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
 "''"	<_infoboxReplace>	"\u0022" .
+"<small>.*</small>"	<_infoboxReplace>	"" .
+"<!--.*-->"	<_infoboxReplace>	"" .
+"</?span[^>]*>"	<_infoboxReplace>	"" .

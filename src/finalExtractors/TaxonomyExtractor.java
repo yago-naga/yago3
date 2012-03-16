@@ -8,9 +8,11 @@ import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;
 import basics.FactWriter;
+import basics.RDFS;
 import basics.Theme;
 import extractors.CategoryExtractor;
 import extractors.Extractor;
+import extractors.HardExtractor;
 import extractors.WordnetExtractor;
 
 /**
@@ -24,7 +26,7 @@ public class TaxonomyExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<>(CategoryExtractor.CATEGORYCLASSES, WordnetExtractor.WORDNETCLASSES,
-				WordnetExtractor.WORDNETWORDS);
+				WordnetExtractor.WORDNETWORDS, HardExtractor.HARDWIREDFACTS);
 	}
 
 	/** The YGAO taxonomy */
@@ -41,6 +43,7 @@ public class TaxonomyExtractor extends Extractor {
 		for (Theme theme : input.keySet()) {
 			Announce.doing("Reading", theme);
 			for (Fact f : input.get(theme)) {
+				if(f.getRelation().equals(RDFS.subclassOf))
 				output.get(YAGOTAXONOMY).write(f);
 			}
 			Announce.done();

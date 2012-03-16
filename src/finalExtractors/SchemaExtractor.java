@@ -18,34 +18,32 @@ import extractors.InfoboxExtractor;
 import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
 import extractors.TypeChecker;
-import extractors.WordnetExtractor;
 
 /**
- * YAGO2s - LabelExtractor
+ * YAGO2s - SchemaExtractor
  * 
- * Writes all labels
+ * Writes the schema
  * 
  * @author Fabian M. Suchanek
  * 
  */
-public class LabelExtractor extends Extractor {
+public class SchemaExtractor extends Extractor {
 
 	/** relations that I treat */
-	public static final Set<String> LABELRELATIONS = new FinalSet<>(RDFS.label, "skos:prefLabel",
-			"<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>");
+	public static final Set<String> SCHEMARELATIONS = new FinalSet<>(RDFS.domain, RDFS.range, RDFS.subpropertyOf);
 
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<>(DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, HardExtractor.HARDWIREDFACTS,
-				RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS, PersonNameExtractor.PERSONNAMES, CategoryExtractor.CATEGORYFACTS, CategoryExtractor.CATEGORYCLASSES, WordnetExtractor.WORDNETWORDS);
+				RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS, PersonNameExtractor.PERSONNAMES, CategoryExtractor.CATEGORYFACTS);
 	}
 
 	/** All facts of YAGO */
-	public static final Theme YAGOLABELS = new Theme("yagoLabels", "All labels of YAGO things");
+	public static final Theme YAGOSCHEMA = new Theme("yagoSchema", "The schema of YAGO");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<>(YAGOLABELS);
+		return new FinalSet<>(YAGOSCHEMA);
 	}
 
 	@Override
@@ -53,9 +51,9 @@ public class LabelExtractor extends Extractor {
 		for (Theme theme : input.keySet()) {
 			Announce.doing("Reading", theme);
 			for (Fact fact : input.get(theme)) {
-				if (!LABELRELATIONS.contains(fact.getRelation()))
+				if (!SCHEMARELATIONS.contains(fact.getRelation()))
 					continue;
-				output.get(YAGOLABELS).write(fact);
+				output.get(YAGOSCHEMA).write(fact);
 			}
 			Announce.done();
 		}

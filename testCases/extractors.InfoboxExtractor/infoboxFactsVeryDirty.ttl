@@ -1,4 +1,9 @@
-# test
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# 
+# 
 # Facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked
 
 @base <http://yago-knowledge/resource/> .
@@ -148,6 +153,10 @@
 <Cherie_Blair>	<wasBornOnDate>	"1954-09-23"^^xsd:date .
 <Cherie_Blair>	rdfs:label	<Cherie_Booth> .
 <Cherie_Blair>	<wasBornIn>	<Bury> .
+<Cherie_Blair>	<hasChild>	<Euan_Blair> .
+<Cherie_Blair>	<hasChild>	<Nicholas_Blair> .
+<Cherie_Blair>	<hasChild>	<Kathryn_Blair> .
+<Cherie_Blair>	<hasChild>	<Leo_Blair> .
 <Cherie_Blair>	<isCitizenOf>	<British_people> .
 <Cherie_Blair>	<isAffiliatedTo>	<Labour_Party_(UK)> .
 <Cherie_Blair>	rdf:type	<wordnet_barrister_109840963> .
@@ -177,13 +186,6 @@
 <Edinburgh>	<hasLongitude>	"-3.183333333333333"^^<degrees> .
 <Edinburgh>	<hasLongitude>	"-3.1888888888888887"^^<degrees> .
 <Edinburgh>	<hasMotto>	"Nisi Dominus Frustra"^^xsd:string .
-<Edinburgh>	<hasMotto>	"<small>"^^xsd:string .
-<Edinburgh>	<hasMotto>	"Except the Lord in vain"^^xsd:string .
-<Edinburgh>	<hasMotto>	"associated with Edinburgh since 1647, it is a normal heraldic contraction of a verse from the 127th Psalm,"^^xsd:string .
-<Edinburgh>	<hasMotto>	"Except the Lord build the house, they labour in vain that build it. Except the Lord keep the city, the watchman waketh but in vain"^^xsd:string .
-<Edinburgh>	<hasMotto>	"</small>"^^xsd:string .
-<Edinburgh>	<hasMotto>	"<!-- images and maps ---------->"^^xsd:string .
-<Edinburgh>	rdfs:label	<Scottish_Gaelic_Language> .
 <Edinburgh>	rdfs:label	<City_of_Edinburgh> .
 <Edinburgh>	<hasPopulation>	"486120"^^xsd:integer .
 <Edinburgh>	<isLocatedIn>	<City_of_Edinburgh> .
@@ -211,6 +213,7 @@
 <Gordon_Brown>	<graduatedFrom>	<University_of_Edinburgh> .
 <Gordon_Brown>	<wasBornOnDate>	"1951-02-20"^^xsd:date .
 <Gordon_Brown>	<wasBornIn>	<Giffnock> .
+<Gordon_Brown>	<hasChild>	<Jennifer_Jane> .
 <Gordon_Brown>	<hasChild>	<John_Macaulay> .
 <Gordon_Brown>	<hasChild>	<James_Fraser> .
 <Gordon_Brown>	<isCitizenOf>	<British_nationality_law> .
@@ -353,7 +356,6 @@
 <Germany>	<hasGini>	"27"^^xsd:integer .
 <Germany>	<hasHDI>	"0.905"^^xsd:decimal .
 <Germany>	<hasLatitude>	"52.516666666666666"^^<degrees> .
-<Horst_Seehofer>	<isLeaderOf>	<Germany> .
 <Joachim_Gauck>	<isLeaderOf>	<Germany> .
 <Angela_Merkel>	<isLeaderOf>	<Germany> .
 <Horst_Seehofer>	<isLeaderOf>	<Germany> .
@@ -425,9 +427,6 @@
 <West_Germany>	<hasLatitude>	"50.733333333333334"^^<degrees> .
 <West_Germany>	<hasLongitude>	"7.1"^^<degrees> .
 <West_Germany>	<hasLongitude>	"7.1"^^<degrees> .
-<West_Germany>	<hasMotto>	"<small>"^^xsd:string .
-<West_Germany>	<hasMotto>	"Unity and Justice and Freedom"^^xsd:string .
-<West_Germany>	<hasMotto>	"</small>"^^xsd:string .
 <West_Germany>	<hasUTCOffset>	"+1"^^xsd:integer .
 <Albert_Pintat>	<graduatedFrom>	<University_of_Fribourg> .
 <Albert_Pintat>	<wasBornOnDate>	"1943-06-23"^^xsd:date .
@@ -438,9 +437,7 @@
 <Carla_Bruni>	<wasBornOnDate>	"1967-12-23"^^xsd:date .
 <Carla_Bruni>	rdfs:label	<Carla_Gilberta_Bruni_Tedeschi> .
 <Carla_Bruni>	<wasBornIn>	<Turin> .
-<Carla_Bruni>	<hasChild>	<Raphaël_Enthoven> .
 <Carla_Bruni>	<hasChild>	<Giulia_Sarkozy> .
-<Carla_Bruni>	<hasChild>	<Nicolas_Sarkozy> .
 <Carla_Bruni>	<isCitizenOf>	<French_nationality_law> .
 <Carla_Bruni>	rdf:type	<wordnet_model_110324560> .
 <Carla_Bruni>	<livesIn>	<Élysée_Palace> .
@@ -480,7 +477,7 @@
 <François_Fillon>	<livesIn>	<Hôtel_Matignon> .
 <François_Fillon>	<isMarriedTo>	<Penelope_Clarke> .
 <French_Fourth_Republic>	<hasCurrency>	<French_Franc> .
-<French_Fourth_Republic>	<hasMotto>	"<span lang="^^xsd:string .
+<French_Fourth_Republic>	rdfs:label	<République_française> .
 <Institut_d'Études_Politiques_de_Paris>	<wasCreatedOnDate>	"1872-##-##"^^xsd:date .
 <Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.fr/> .
 <Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.fr> .
@@ -517,7 +514,6 @@
 <Nicolas_Sarkozy>	<wasBornOnDate>	"1955-01-28"^^xsd:date .
 <Nicolas_Sarkozy>	<wasBornIn>	<Paris> .
 <Nicolas_Sarkozy>	<hasChild>	<Jean_Sarkozy> .
-<Nicolas_Sarkozy>	<hasChild>	<Giulia_Sarkozy> .
 <Nicolas_Sarkozy>	<isAffiliatedTo>	<Union_for_a_Popular_Movement> .
 <Nicolas_Sarkozy>	<livesIn>	<Élysée_Palace> .
 <Nicolas_Sarkozy>	<isMarriedTo>	<Cécilia_Attias> .
@@ -544,6 +540,7 @@
 <Alfredo_Pérez_Rubalcaba>	<wasBornIn>	<Solares> .
 <Alfredo_Pérez_Rubalcaba>	<isAffiliatedTo>	<Spanish_Socialist_Workers'_Party> .
 <Alfredo_Pérez_Rubalcaba>	rdf:type	<wordnet_chemist_109913824> .
+<Alfredo_Pérez_Rubalcaba>	<isMarriedTo>	<Pilar_Goya> .
 <Congress_of_Deputies_(Spain)>	rdfs:label	<Congreso_de_los_Diputados> .
 <Congress_of_Deputies_(Spain)>	<hasWebsite>	<http://www.congreso.es/> .
 <Congress_of_Deputies_(Spain)>	<hasWebsite>	<http://www.congreso.es> .
@@ -555,7 +552,6 @@
 <Francoist_Spain>	<hasCapital>	<Madrid> .
 <Francoist_Spain>	<hasCurrency>	<Spanish_peseta> .
 <Francoist_Spain>	<hasMotto>	"Plus Ultra"^^xsd:string .
-<Francoist_Spain>	<hasMotto>	"</br>"^^xsd:string .
 <Francoist_Spain>	<hasMotto>	"Una, Grande y Libre"^^xsd:string .
 <Joaquín_Almunia>	<graduatedFrom>	<University_of_Deusto> .
 <Joaquín_Almunia>	<wasBornOnDate>	"1948-06-17"^^xsd:date .
@@ -584,6 +580,7 @@
 <Mariano_Rajoy>	<wasBornIn>	<Santiago_de_Compostela> .
 <Mariano_Rajoy>	<isAffiliatedTo>	<People's_Party_(Spain)> .
 <Mariano_Rajoy>	<livesIn>	<Palace_of_Moncloa> .
+<Mariano_Rajoy>	<isMarriedTo>	<Elvira_Fernández_Balboa> .
 <Mariano_Rajoy>	<hasWebsite>	<http://www.pp.es/index.asp> .
 <María_Teresa_Fernández_de_la_Vega>	<graduatedFrom>	<Complutense_University_of_Madrid> .
 <María_Teresa_Fernández_de_la_Vega>	<wasBornOnDate>	"1949-06-15"^^xsd:date .
