@@ -1,5 +1,6 @@
 package finalExtractors;
 
+import java.io.File;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -17,7 +18,6 @@ import extractors.Extractor;
 import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
 import extractors.RuleExtractor;
-import extractors.TypeChecker;
 
 /**
  * YAGO2s - FactExtractor
@@ -36,7 +36,7 @@ public class FactExtractor extends Extractor {
 	}
 
 	/** All facts of YAGO */
-	public static final Theme YAGOFACTS = new Theme("yagoFacts", "All facts of YAGO");
+	public static final Theme YAGOFACTS = new Theme("yagoFacts", "All instance facts of YAGO");
 
 	@Override
 	public Set<Theme> output() {
@@ -71,8 +71,12 @@ public class FactExtractor extends Extractor {
 			Announce.doing("Writing", relation);
 			for (Fact fact : facts)
 				output.get(YAGOFACTS).write(fact);
-			Announce.done();
+			Announce.done();			
 		}
 	}
 
+	public static void main(String[] args) throws Exception {
+		//Announce.setLevel(Announce.Level.DEBUG);
+		new FactExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
+	}
 }
