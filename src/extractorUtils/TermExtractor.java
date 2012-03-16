@@ -9,10 +9,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.parsers.DateParser;
 import javatools.parsers.NumberParser;
 import javatools.parsers.PlingStemmer;
 import basics.FactComponent;
+import basics.YAGO;
 
 /**
  * Class TermExtractor
@@ -184,7 +186,7 @@ public abstract class TermExtractor {
 			for (String w : s.split(";|,?\n|'''|''|, ?;|\"")) {
 				w = w.trim();
 				if (w.length() > 2 && !w.contains("{{") && !w.contains("[["))
-					result.add(FactComponent.forString(w, null, null));
+					result.add(FactComponent.forString(w, null, YAGO.string));
 			}
 			if (result.size() == 0)
 				Announce.debug("Could not find string in", s);
@@ -279,8 +281,8 @@ public abstract class TermExtractor {
 
 			if (links.isEmpty()) {
 				for (String c : s.split("\n")) {
-					c = c.trim();
-					if (c.contains(" ") && c.matches("[A-Z,a-z ]+")) {
+					c = FactComponent.stripQuotes(c.trim());
+					if (c.contains(" ") && c.matches("[\\p{L} ]+")) {
 						Announce.debug("Finding suboptimal wikilink", c, "in", s);
 						links.add(FactComponent.forWikipediaTitle(c));
 					}
@@ -308,7 +310,7 @@ public abstract class TermExtractor {
 		public List<String> extractList(String s) {
 			List<String> result = new ArrayList<String>(3);
 			for (String word : s.split(",|\n")) {
-				word = word.trim().replace("[", "").replace("]]", "");
+				word = word.trim().replace("[", "").replace("]", "");
 				if (word.length() < 4)
 					continue;
 				String meaning = preferredMeanings.get(word);

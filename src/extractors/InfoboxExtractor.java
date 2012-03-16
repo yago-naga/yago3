@@ -101,18 +101,21 @@ public class InfoboxExtractor extends Extractor {
 		String syntaxChecker = FactComponent.asJavaString(factCollection.getArg2(cls, "<_hasTypeCheckPattern>"));
 
 		// Extract all terms
+		if(relation.equals("<hasPopulationDensity>") && string.contains("229")) {
+			D.p("here");
+		}
 		List<String> objects = extractor.extractList(string);
 		for (String object : objects) {
 			// Check syntax
 			if (syntaxChecker != null && !FactComponent.asJavaString(object).matches(syntaxChecker)) {
-				Announce.debug("Extraction", object, "does not match syntax check", syntaxChecker);
+				Announce.debug("Extraction", object, "for", entity, relation,"does not match syntax check", syntaxChecker);
 				continue;
 			}
 			// Check data type
 			if (FactComponent.isLiteral(object)) {
 				String[] value = FactComponent.literalAndDataType(object);
-				if(value.length!=2 || !factCollection.isSubClassOf(value[1], cls)) {
-					Announce.debug("Extraction", object, "does not match typecheck", cls);
+				if(value.length!=2 || !factCollection.isSubClassOf(value[1], cls) && !(value.length==1 && cls.equals(YAGO.string))) {
+					Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
 					continue;
 				} 
 				FactComponent.setDataType(object, cls);
@@ -167,15 +170,15 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	/** reads an infobox */
-	public static Map<String, String> readInfobox(Reader in, Map<String, String> combinations) throws IOException {
-		Map<String, String> result = new TreeMap<String, String>();
+	public static Map<String, Set<String>> readInfobox(Reader in, Map<String, String> combinations) throws IOException {
+		Map<String, Set<String>> result = new TreeMap<String, Set<String>>();
 		while (true) {
 			String attribute = normalizeAttribute(FileLines.readTo(in, '=', '}').toString());
 			if (attribute.length() == 0)
 				return (result);
 			StringBuilder value = new StringBuilder();
 			int c = readEnvironment(in, value);
-			result.put(attribute, value.toString().trim());
+			D.addKeyValue(result,attribute, value.toString().trim(),TreeSet.class);
 			if (c == '}' || c == -1 || c == -2)
 				break;
 		}
@@ -186,7 +189,7 @@ public class InfoboxExtractor extends Extractor {
 				int scanTo = attribute.indexOf('<');
 				if (scanTo != -1) {
 					val.append(attribute.substring(0, scanTo));
-					String newVal = result.get(normalizeAttribute(attribute.substring(scanTo + 1)));
+					String newVal = D.pick(result.get(normalizeAttribute(attribute.substring(scanTo + 1))));
 					if (newVal == null)
 						continue next;
 					val.append(newVal);
@@ -194,7 +197,7 @@ public class InfoboxExtractor extends Extractor {
 					val.append(attribute);
 				}
 			}
-			result.put(normalizeAttribute(combinations.get(code)), val.toString());
+			D.addKeyValue(result,normalizeAttribute(combinations.get(code)), val.toString(),TreeSet.class);
 		}
 		return (result);
 	}
@@ -232,14 +235,16 @@ public class InfoboxExtractor extends Extractor {
 				if (type != null) {
 					writers.get(INFOBOXTYPES).write(new Fact(null, titleEntity, RDFS.type, type));
 				}
-				Map<String, String> attributes = readInfobox(in, combinations);
+				Map<String, Set<String>> attributes = readInfobox(in, combinations);
 				for (String attribute : attributes.keySet()) {
 					Set<String> relations = patterns.get(attribute);
 					if (relations == null)
 						continue;
 					for (String relation : relations) {
-						extract(titleEntity, attributes.get(attribute), relation, preferredMeaning, hardWiredFacts,
+						for(String value : attributes.get(attribute)) {
+						extract(titleEntity, value, relation, preferredMeaning, hardWiredFacts,
 								writers.get(DIRTYINFOBOXFACTS), replacements);
+						}
 					}
 				}
 			}

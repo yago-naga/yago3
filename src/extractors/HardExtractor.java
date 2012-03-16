@@ -6,6 +6,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;

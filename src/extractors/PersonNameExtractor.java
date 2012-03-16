@@ -1,10 +1,9 @@
 package extractors;
 
+import java.io.File;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
-import finalExtractors.TransitiveTypeExtractor;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -17,6 +16,7 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import finalExtractors.TransitiveTypeExtractor;
 
 /**
  * YAGO2s - PersonNameExtractor
@@ -70,4 +70,7 @@ public class PersonNameExtractor extends Extractor {
 		}
 	}
 
+	public static void main(String[] args) throws Exception {
+		new PersonNameExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
+	}
 }

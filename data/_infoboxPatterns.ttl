@@ -15,16 +15,20 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # --------- Combinations of Infobox attributes --------------
+"<population_density_km2> /km^2"	<_infoboxCombine>	"population_density" .
 "<area> km^2"	<_infoboxCombine>	"area" .
-"<latd> degrees <latm> minutes <lats> seconds <latNS>"	<_infoboxCombine>	"latitude" .
-"<longd> degrees <longm> minutes <longs> seconds <longEW>"	<_infoboxCombine>	"longitude" .
+"<areakm2> km^2"	<_infoboxCombine>	"area" .
+"<latitude> degrees 0 minutes 0 seconds W"	<_infoboxCombine>	"_latitude" .
+"<longitude> degrees 0 minutes 0 seconds S"	<_infoboxCombine>	"_longitude" .
+"<latd> degrees <latm> minutes <lats> seconds <latNS>"	<_infoboxCombine>	"_latitude" .
+"<longd> degrees <longm> minutes <longs> seconds <longEW>"	<_infoboxCombine>	"_longitude" .
 "<latd> degrees <latm> minutes 0 seconds <latNS>"	<_infoboxCombine>	"latitude" .
 "<longd> degrees <longm> minutes 0 seconds <longEW>"	<_infoboxCombine>	"longitude" .
-"<latdeg> degrees <latmin> minutes <latsec> seconds <latNS>"	<_infoboxCombine>	"latitude" .
-"<longdeg> degrees <longmin> minutes <longsec> seconds <longEW>"	<_infoboxCombine>	"longitude" .
 
 # --------- Infobox patterns --------------
 
+"_latitude"	<_infoboxPattern>	<hasLatitude> .
+"_longitude"	<_infoboxPattern>	<hasLongitude> .
 "latitude"	<_infoboxPattern>	<hasLatitude> .
 "longitude"	<_infoboxPattern>	<hasLongitude> .
 "Nickname"	<_infoboxPattern>	rdfs:label .
@@ -57,7 +61,7 @@
 "establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
 "areakm2"	<_infoboxPattern>	<hasArea> .
 "populationestimate"	<_infoboxPattern>	<hasPopulation> .
-"populationdensitykm2"	<_infoboxPattern>	<hasPopulationDensity> .
+"populationdensity"	<_infoboxPattern>	<hasPopulationDensity> .
 "GDPnominal"	<_infoboxPattern>	<hasGDP> .
 "Gini"	<_infoboxPattern>	<hasGini> .
 "utcoffset"	<_infoboxPattern>	<hasUTCOffset> .
@@ -288,3 +292,4 @@
 "\\{\\{award\\|"	<_infoboxReplace>	"" .
 "\\{\\{birth-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
 "\\{\\{death-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
+"''"	<_infoboxReplace>	"\u0022" .
