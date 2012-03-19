@@ -43,13 +43,19 @@ public class Tester {
 			if(!testCase.isDirectory() || testCase.getName().startsWith(".")) continue;
 			total++;
 			Announce.doing("Testing",testCase.getName());
-			Extractor extractor=Extractor.forName(testCase.getName(),dataFile(testCase));
-			if(extractor==null) {
-				Announce.failed();
-				failed++;
-				continue;
+			Extractor extractor = null;
+			if (inputFolder(testCase) != null) {
+			  extractor=Extractor.forName(testCase.getName(),dataFile(testCase));
+			  extractor.extract(inputFolder(testCase), outputFolder, "Test of YAGO2s");
+			} else {
+			  extractor=Extractor.forName(testCase.getName(),dataFile(testCase));
+			  if(extractor==null) {
+			    Announce.failed();
+			    failed++;
+			    continue;
+			  }
+		     extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
 			}
-			extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
 			Announce.doing("Checking output");
 			for(Theme theme : extractor.output()) {
 				Announce.doing("Checking",theme);
@@ -68,4 +74,14 @@ public class Tester {
 		Announce.done();
 		Announce.message((total-failed),"/",total,"tests succeeded");
 	}
+
+  private static File inputFolder(File testCase) {
+    for (File f : testCase.listFiles()) {
+      if (f.isDirectory() && f.getName().equals("input")) {
+        return f;
+      }
+    }
+    
+    return null;     
+  }
 }
