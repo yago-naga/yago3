@@ -17,7 +17,6 @@ import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
 import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
-import extractors.TypeChecker;
 import extractors.WordnetExtractor;
 
 /**

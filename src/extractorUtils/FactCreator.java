@@ -2,12 +2,6 @@ package extractorUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
-
-import basics.Fact;
-import basics.FactComponent;
 
 /**
  * YAGO2s - FactCreator

@@ -9,7 +9,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.parsers.DateParser;
 import javatools.parsers.NumberParser;
 import javatools.parsers.PlingStemmer;

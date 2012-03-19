@@ -11,11 +11,13 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
+import basics.RDFS;
 import basics.Theme;
 import extractors.Extractor;
 import extractors.InfoboxExtractor;
@@ -72,44 +74,54 @@ public class GeoNamesEntityMapper extends Extractor {
       id2longitude.put(geonamesId, longi);
     }
 
-    FactSource ibFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);
-       
-    Map<String, Float> halfCoordinateCache = new HashMap<String, Float>();
+    FactSource ibFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);       
+   
+    // Try to match all entities of type yagoGeoEntity
+    Set<String> yagoGeoEntities = new HashSet<>();
+    Map<String, Pair<Float, Float>> coordinates = new HashMap<>();
     
     for (Fact f : ibFacts) {
-      if (f.getRelation().equals("<hasLatitude>") || f.getRelation().equals("<hasLongitude>")) {
-        String location = f.getArg(1);
+      if (f.getRelation().equals(RDFS.type) && f.getArg(2).equals(GeoNamesClassMapper.GEO_CLASS)) {
+        yagoGeoEntities.add(f.getArg(1));
+      } else if (f.getRelation().equals("<hasLatitude>")) {
+        Pair<Float, Float> coos = coordinates.get(f.getArg(1));
         
-        Float halfCoordinate = halfCoordinateCache.get(location);
-        if (halfCoordinate == null) {
-          halfCoordinateCache.put(location, 
-              Float.parseFloat(FactComponent.stripQuotes(FactComponent.literalAndDataType(f.getArg(2))[0])));
-          continue;
+        if (coos == null) {
+          coos = new Pair<Float, Float>(null, null);
+          coordinates.put(f.getArg(1), coos);          
         }
         
-        // both coordinates are available, attemp matching
-        Float lats = null;
-        Float longs = null;
+        coos.first = Float.parseFloat(FactComponent.stripQuotes(FactComponent.literalAndDataType(f.getArg(2))[0]));
+      } else if (f.getRelation().equals("<hasLongitude>")) {
+        Pair<Float, Float> coos = coordinates.get(f.getArg(1));
         
-        switch (f.getRelation()) {
-          case "<hasLatitude>":
-            lats = Float.parseFloat(FactComponent.stripQuotes(FactComponent.literalAndDataType(f.getArg(2))[0]));
-            longs = halfCoordinateCache.get(location);            
-            break;
-
-          case "<hasLongitude>":
-            lats = halfCoordinateCache.get(location);            
-            longs = Float.parseFloat(FactComponent.stripQuotes(FactComponent.literalAndDataType(f.getArg(2))[0]));
-            break;
+        if (coos == null) {
+          coos = new Pair<Float, Float>(null, null);
+          coordinates.put(f.getArg(1), coos);          
         }
         
-        Integer geoId = matchToGeonames(location, lats, longs);
-        
-        if (geoId != -1) {
-          output.get(GEONAMESENTITYIDS).write(new Fact(location, "<hasGeonamesEntityId>", FactComponent.forNumber(geoId)));
-        }
+        coos.second = Float.parseFloat(FactComponent.stripQuotes(FactComponent.literalAndDataType(f.getArg(2))[0]));
       }
     }
+    
+    for (String geoEntity : yagoGeoEntities) {
+      Pair<Float, Float> coos = coordinates.get(geoEntity);
+      
+      Float lats = null;
+      Float longs = null;
+      
+      if (coos != null) {
+        lats = coos.first;
+        longs = coos.second;
+      }
+      
+      Integer geoId = matchToGeonames(geoEntity, lats, longs);
+
+      if (geoId != -1) {
+        output.get(GEONAMESENTITYIDS).write(new Fact(geoEntity, "<hasGeonamesEntityId>", FactComponent.forNumber(geoId)));
+      }
+    }
+
   }
   
   public Integer matchToGeonames(String name, Float lats, Float longs) {
@@ -144,11 +156,11 @@ public class GeoNamesEntityMapper extends Extractor {
   }
   
   private boolean isInGeonames(String locationName) {
-    return name2ids.containsKey(locationName);
+    return name2ids.containsKey(FactComponent.stripBrackets(locationName));
   }
 
   private List<Integer> getGeonamesIds(String locationName) {
-    return name2ids.get(locationName);
+    return name2ids.get(FactComponent.stripBrackets(locationName));
   }
 
   private int getIdForLocation(String locationName, float latitude, float longitude) {
