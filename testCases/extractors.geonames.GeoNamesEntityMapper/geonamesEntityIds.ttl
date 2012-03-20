@@ -1,5 +1,4 @@
 # Test of YAGO2s
-# Facts extracted from the Wikipedia infoboxes - still to be type-checked
 
 @base <http://yago-knowledge/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .

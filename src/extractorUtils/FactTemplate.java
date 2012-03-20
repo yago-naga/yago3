@@ -27,13 +27,16 @@ import basics.FactComponent;
  * @author Fabian M. Suchanek
  * 
  */
-public class FactTemplate {
+public class FactTemplate {  
 	/** Argument 1 */
 	public String arg1;
 	/** Relation */
 	public String relation;
 	/** Argument 2 */
 	public String arg2;
+	
+	/** Pattern for checking URLs */
+	private static Pattern urlPattern = Pattern.compile("^https?://.+");
 
 	/** Constructor */
 	public FactTemplate(String arg1, String relation, String arg2) {
@@ -101,7 +104,7 @@ public class FactTemplate {
 		case "String":
 			return (FactComponent.forString(thing));
 		case "Url":
-			if (!thing.startsWith("http://")) {
+			if (!urlPattern.matcher(thing).matches()) {
 				Announce.debug("Not an URL:", thing);
 				return (null);
 			}

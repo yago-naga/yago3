@@ -93,7 +93,7 @@ public class GeoNamesClassMapper extends Extractor {
       String parentClass = (wordNetClass != null) ? wordNetClass : GEO_CLASS;
 
       output.get(GEONAMESCLASSES).write(new Fact(null, geoClass, RDFS.subclassOf, parentClass));
-      output.get(GEONAMESCLASSSIDS).write(new Fact(null, geoClass, "<hasGeonamesClassId>", FactComponent.asJavaString(featureId)));
+      output.get(GEONAMESCLASSSIDS).write(new Fact(null, geoClass, "<hasGeonamesClassId>", FactComponent.forString(featureId)));
 
       if (featureGloss != null) {
         // there is a gloss

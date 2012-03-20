@@ -18,4 +18,4 @@
 "(?s)(.{0,500})\\[\\[([^\\]\u000a\\|:]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($2); #1 hasContextPrecedingAnchor @String($1); #1 hasContextSucceedingAnchor @String($3)" .
 
 # External links
-"\\[(https?://[^\\s\\]\u000a]+)\\s+([^\\]\u000a]+)\\]"	<_extendedStructureWikiPattern>	"$0 hasExternalWikipediaLinkTo @Url($1); #1 hasAnchorText @String($2)" .
+"(?i)\\[(https?://[^\\s\\]\u000a]+)\\s+([^\\]\u000a]+)\\]"	<_extendedStructureWikiPattern>	"$0 hasExternalWikipediaLinkTo @Url($1); #1 hasAnchorText @String($2)" .

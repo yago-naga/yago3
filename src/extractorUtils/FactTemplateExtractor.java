@@ -54,7 +54,14 @@ public class FactTemplateExtractor {
 			while(m.find()) {
 				Map<String,String> variables=new TreeMap<>();
 				variables.put("$0", dollarZero);
-				for(int i=1;i<=m.groupCount();i++) variables.put("$"+i,m.group(i));
+				for(int i=1;i<=m.groupCount();i++) {
+				  if (m.group(i).trim().isEmpty()) { 
+				    Announce.debug("$"+i+" was empty, skipping fact for pattern: " + pattern);
+				    continue;
+				  } else {
+				    variables.put("$"+i,m.group(i));
+				  }
+				}
 				result.addAll(FactTemplate.instantiate(pattern.second(), variables));
 			}
 		}

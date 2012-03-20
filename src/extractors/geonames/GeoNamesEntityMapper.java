@@ -44,7 +44,7 @@ public class GeoNamesEntityMapper extends Extractor {
   @Override
   public Set<Theme> input() {
     return new HashSet<Theme>(Arrays.asList(
-        InfoboxExtractor.DIRTYINFOBOXFACTS));
+        InfoboxExtractor.INFOBOXFACTS));
   }
 
   @Override
@@ -74,7 +74,7 @@ public class GeoNamesEntityMapper extends Extractor {
       id2longitude.put(geonamesId, longi);
     }
 
-    FactSource ibFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);       
+    FactSource ibFacts = input.get(InfoboxExtractor.INFOBOXFACTS);       
    
     // Try to match all entities of type yagoGeoEntity
     Set<String> yagoGeoEntities = new HashSet<>();
