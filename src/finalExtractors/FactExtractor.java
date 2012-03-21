@@ -1,12 +1,15 @@
 package finalExtractors;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
+import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
@@ -15,15 +18,18 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import extractors.CategoryExtractor;
+import extractors.DisambiguationPageExtractor;
 import extractors.Extractor;
 import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
+import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
+import extractors.WordnetExtractor;
 
 /**
  * YAGO2s - FactExtractor
  * 
- * Deduplicates all facts
+ * Deduplicates all facts and puts them into the right themes
  * 
  * @author Fabian M. Suchanek
  * 
@@ -32,22 +38,57 @@ public class FactExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS,
-				InfoboxExtractor.INFOBOXFACTS);
+		return new FinalSet<>(CategoryExtractor.CATEGORYFACTS,
+				CategoryExtractor.CATEGORYTYPES,
+				CategoryExtractor.CATEGORYCLASSES, 
+				HardExtractor.HARDWIREDFACTS, 
+				RuleExtractor.RULERESULTS,
+				InfoboxExtractor.INFOBOXFACTS, 
+				InfoboxExtractor.INFOBOXTYPES, 				 
+				//DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, 
+				HardExtractor.HARDWIREDFACTS,
+				RuleExtractor.RULERESULTS, 
+				PersonNameExtractor.PERSONNAMES, 
+				WordnetExtractor.WORDNETCLASSES,
+				WordnetExtractor.WORDNETWORDS, 
+				WordnetExtractor.WORDNETGLOSSES,
+				WordnetExtractor.WORDNETIDS,
+				HardExtractor.HARDWIREDFACTS	);
 	}
 
 	/** All facts of YAGO */
 	public static final Theme YAGOFACTS = new Theme("yagoFacts", "All instance facts of YAGO");
+	/** All facts of YAGO */
+	public static final Theme YAGOSCHEMA = new Theme("yagoSchema", "The schema of YAGO relations");
+	/** All facts of YAGO */
+	public static final Theme YAGOLABELS = new Theme("yagoLabels", "All labels of YAGO instances");
+	/** Final types */
+	public static final Theme YAGOTYPES = new Theme("yagoTypes", "Types of YAGO");
+	/** The YGAO taxonomy */
+	public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy", "The entire YAGO taxonomy");
+
+	/** which relations go to which theme */
+	public static final Map<Theme, Set<String>> theme2relations = new FinalMap<>(YAGOSCHEMA, new FinalSet<>(
+			RDFS.domain, RDFS.range, RDFS.subpropertyOf), YAGOLABELS, new FinalSet<>(RDFS.label, "skos:prefLabel",
+			"<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>","<hasGloss>"), YAGOTYPES, new FinalSet<>(RDFS.type), YAGOTAXONOMY, new FinalSet<>(RDFS.subclassOf));
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<>(YAGOFACTS);
+		Set<Theme> themes=new HashSet<>(theme2relations.keySet());
+		themes.add(YAGOFACTS);
+		return themes;
 	}
 
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+		Map<String, FactWriter> relation2Writer = new TreeMap<>();
+		for (Theme t : theme2relations.keySet()) {
+			for (String r : theme2relations.get(t)) {
+				relation2Writer.put(r, output.get(t));
+			}
+		}
 		Set<String> relationsToDo = new TreeSet<>();
-		relationsToDo.add("<wasBornOnDate>");
+		relationsToDo.add(RDFS.label);
 		Set<String> relationsDone = new TreeSet<>();
 		while (!relationsToDo.isEmpty()) {
 			String relation = D.pick(relationsToDo);
@@ -59,9 +100,7 @@ public class FactExtractor extends Extractor {
 				Announce.doing("Reading", theme);
 				for (Fact fact : input.get(theme)) {
 					if (!relationsDone.contains(fact.getRelation())
-							&& !LabelExtractor.LABELRELATIONS.contains(fact.getRelation())
-							&& !SchemaExtractor.SCHEMARELATIONS.contains(fact.getRelation())
-							&& !fact.getRelation().startsWith("<_") && !fact.getRelation().equals(RDFS.type)&& !fact.getRelation().equals(RDFS.subclassOf))
+							&& !fact.getRelation().startsWith("<_"))
 						relationsToDo.add(fact.getRelation());
 					if (!relation.equals(fact.getRelation()))
 						continue;
@@ -71,9 +110,11 @@ public class FactExtractor extends Extractor {
 			}
 			Announce.done();
 			Announce.doing("Writing", relation);
+			FactWriter w=relation2Writer.get(relation);
+			if(w==null) w=output.get(YAGOFACTS);
 			for (Fact fact : facts)
-				output.get(YAGOFACTS).write(fact);
-			Announce.done();			
+				w.write(fact);
+			Announce.done();
 		}
 	}
 

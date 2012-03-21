@@ -31,8 +31,8 @@ public class StatisticsExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(TaxonomyExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
-				LabelExtractor.YAGOLABELS);
+		return new FinalSet<>(FactExtractor.YAGOTAXONOMY, FactExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
+				FactExtractor.YAGOLABELS);
 	}
 
 	/** YAGO statistics theme */
