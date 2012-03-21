@@ -29,7 +29,7 @@ public class TransitiveTypeExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(FactExtractor.YAGOTAXONOMY,FactExtractor.YAGOTYPES);
+		return new FinalSet<>(TypeExtractor.YAGOTAXONOMY,TypeExtractor.YAGOTYPES);
 	}
 
 	/** All type facts*/
@@ -42,9 +42,9 @@ public class TransitiveTypeExtractor extends Extractor {
 
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-		FactCollection classes=new FactCollection(input.get(FactExtractor.YAGOTAXONOMY));
+		FactCollection classes=new FactCollection(input.get(TypeExtractor.YAGOTAXONOMY));
 		Announce.doing("Computing the transitive closure");
-		for(Theme theme : Arrays.asList(FactExtractor.YAGOTYPES)) {
+		for(Theme theme : Arrays.asList(TypeExtractor.YAGOTYPES)) {
 			Announce.doing("Treating entities in",theme);
 			String lastEntity=null;
 			Set<String> lastClasses=new TreeSet<>();

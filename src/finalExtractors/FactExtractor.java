@@ -39,21 +39,15 @@ public class FactExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<>(CategoryExtractor.CATEGORYFACTS,
-				CategoryExtractor.CATEGORYTYPES,
-				CategoryExtractor.CATEGORYCLASSES, 
 				HardExtractor.HARDWIREDFACTS, 
 				RuleExtractor.RULERESULTS,
-				InfoboxExtractor.INFOBOXFACTS, 
-				InfoboxExtractor.INFOBOXTYPES, 				 
-				//DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, 
-				HardExtractor.HARDWIREDFACTS,
+				InfoboxExtractor.INFOBOXFACTS, 			 
+				DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, 
 				RuleExtractor.RULERESULTS, 
 				PersonNameExtractor.PERSONNAMES, 
-				WordnetExtractor.WORDNETCLASSES,
 				WordnetExtractor.WORDNETWORDS, 
 				WordnetExtractor.WORDNETGLOSSES,
-				WordnetExtractor.WORDNETIDS,
-				HardExtractor.HARDWIREDFACTS	);
+				WordnetExtractor.WORDNETIDS);
 	}
 
 	/** All facts of YAGO */
@@ -62,15 +56,11 @@ public class FactExtractor extends Extractor {
 	public static final Theme YAGOSCHEMA = new Theme("yagoSchema", "The schema of YAGO relations");
 	/** All facts of YAGO */
 	public static final Theme YAGOLABELS = new Theme("yagoLabels", "All labels of YAGO instances");
-	/** Final types */
-	public static final Theme YAGOTYPES = new Theme("yagoTypes", "Types of YAGO");
-	/** The YGAO taxonomy */
-	public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy", "The entire YAGO taxonomy");
 
 	/** which relations go to which theme */
 	public static final Map<Theme, Set<String>> theme2relations = new FinalMap<>(YAGOSCHEMA, new FinalSet<>(
 			RDFS.domain, RDFS.range, RDFS.subpropertyOf), YAGOLABELS, new FinalSet<>(RDFS.label, "skos:prefLabel",
-			"<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>","<hasGloss>"), YAGOTYPES, new FinalSet<>(RDFS.type), YAGOTAXONOMY, new FinalSet<>(RDFS.subclassOf));
+			"<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>","<hasGloss>"));
 
 	@Override
 	public Set<Theme> output() {
@@ -99,7 +89,7 @@ public class FactExtractor extends Extractor {
 			for (Theme theme : input.keySet()) {
 				Announce.doing("Reading", theme);
 				for (Fact fact : input.get(theme)) {
-					if (!relationsDone.contains(fact.getRelation())
+					if (!relationsDone.contains(fact.getRelation()) && !relation.equals(RDFS.subclassOf) && !relation.equals(RDFS.type)
 							&& !fact.getRelation().startsWith("<_"))
 						relationsToDo.add(fact.getRelation());
 					if (!relation.equals(fact.getRelation()))
