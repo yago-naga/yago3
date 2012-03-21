@@ -1,16 +1,20 @@
 package extractors;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
+import basics.Fact;
+import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.N4Writer;
 import basics.Theme;
+import basics.YAGO;
 
 /**
  * Extractor - Yago2s
@@ -105,4 +109,17 @@ public abstract class Extractor {
 		return (extractor);
 	}
 
+	 /** Creates provenance facts, writes fact and meta facts;source will be made a URI, technique will be made a string*/
+	  public void write(Map<Theme,FactWriter> factWriters, Theme factTheme, Fact f, Theme metaFactTheme, String source, String technique) throws IOException {
+		  write(factWriters.get(factTheme),f,factWriters.get(metaFactTheme),source,technique);
+	  }
+	  
+	 /** Creates provenance facts, writes fact and meta facts; source will be made a URI, technique will be made a string*/
+	  public void write(FactWriter factWriter, Fact f, FactWriter metaFactWriter, String source, String technique) throws IOException {
+		  Fact sourceFact=f.metaFact(YAGO.extractionSource,FactComponent.forUri(source));
+		  Fact techniqueFact=sourceFact.metaFact(YAGO.extractionTechnique, FactComponent.forString(technique));
+		  factWriter.write(f);
+		  metaFactWriter.write(sourceFact);
+		  metaFactWriter.write(techniqueFact);
+	  }
 }

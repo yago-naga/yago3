@@ -5,7 +5,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
@@ -21,7 +20,10 @@ import extractors.WordnetExtractor;
 /**
  * YAGO2s - TypeExtractor
  * 
- * Deduplicates all type and subclass facts and puts them into the right themes
+ * Deduplicates all type and subclass facts and puts them into the right themes.
+ * 
+ * This is different from the FactExtractor, because its output is useful for
+ * many extractors that deliver input for the FactExtractor.
  * 
  * @author Fabian M. Suchanek
  * 
@@ -46,7 +48,7 @@ public class TypeExtractor extends FactExtractor {
 
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-		for(String relation : Arrays.asList(RDFS.subclassOf,RDFS.type)) {
+		for (String relation : Arrays.asList(RDFS.subclassOf, RDFS.type)) {
 			Announce.doing("Reading", relation);
 			FactCollection facts = new FactCollection();
 			for (Theme theme : input.keySet()) {
@@ -60,7 +62,7 @@ public class TypeExtractor extends FactExtractor {
 			}
 			Announce.done();
 			Announce.doing("Writing", relation);
-			FactWriter w = relation.equals(RDFS.subclassOf)?output.get(YAGOTAXONOMY):output.get(YAGOTYPES);
+			FactWriter w = relation.equals(RDFS.subclassOf) ? output.get(YAGOTAXONOMY) : output.get(YAGOTYPES);
 			for (Fact fact : facts)
 				w.write(fact);
 			Announce.done();

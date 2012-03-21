@@ -38,10 +38,12 @@ public class RuleExtractor extends Extractor {
 
 	/** Theme of deductions */
 	public static final Theme RULERESULTS = new Theme("ruleResults", "Results of rule applications");
+	/** Theme of sources deductions */
+	public static final Theme RULESOURCES= new Theme("ruleSources", "Source information for results of rule applications");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<>(RULERESULTS);
+		return new FinalSet<>(RULERESULTS, RULESOURCES);
 	}
 
 	/** Represents a rule */
@@ -52,7 +54,9 @@ public class RuleExtractor extends Extractor {
 		public final List<FactTemplate> head;
 		/** Reference of the current fact */
 		public final int reference;
-
+        /** reference to the original rule*/
+		public final Rule original;
+		
 		/** Creates a rule from an implies-fact */
 		public Rule(Fact f) {
 			this(FactTemplate.create(f.getArgJavaString(1)), FactTemplate.create(f.getArgJavaString(2)), 1);
@@ -60,9 +64,15 @@ public class RuleExtractor extends Extractor {
 
 		/** creates a rule with conditions and consequences */
 		public Rule(List<FactTemplate> body, List<FactTemplate> head, int reference) {
+			this(body,head,reference,null);
+		}
+		
+		/** creates a rule with conditions and consequences */
+		public Rule(List<FactTemplate> body, List<FactTemplate> head, int reference, Rule original) {
 			this.body = body;
 			this.head = head;
 			this.reference = reference;
+			this.original=original==null?this:original;
 		}
 
 		/**
@@ -83,7 +93,7 @@ public class RuleExtractor extends Extractor {
 			if (id != null)
 				refMap.put("#" + reference, id);
 			return (new Rule(FactTemplate.instantiatePartially(body.subList(1, body.size()), map),
-					FactTemplate.instantiatePartially(head, map), reference + 1));
+					FactTemplate.instantiatePartially(head, map), reference + 1, original));
 		}
 
 		/** TRUE if the rule does not have conditions */
@@ -176,7 +186,7 @@ public class RuleExtractor extends Extractor {
 							Rule newRule = r.rest(map, fact.getId());
 							if (newRule.isReadyToGo()) {
 								for (Fact h : newRule.headFacts()) {
-									output.get(RULERESULTS).write(h);
+									write(output,RULERESULTS,h, RULESOURCES, reader.getKey().toString(),r.original.toString());
 								}
 							} else {
 								survivingRules.add(newRule);

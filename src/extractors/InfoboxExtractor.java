@@ -56,13 +56,16 @@ public class InfoboxExtractor extends Extractor {
 			"Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
 	/** Final Infobox facts */
 	public static final Theme INFOBOXFACTS = new Theme("infoxboxFacts",
-			"Facts extracted from the Wikipedia infoboxes with redirects resolved");
+			"Facts extracted from the Wikipedia infoboxes, type-checked and with redirects resolved");
+	/** Infobox sources */
+	public static final Theme INFOBOXSOURCES = new Theme("infoxboxSources",
+			"Source information for the facts extracted from the Wikipedia infoboxes");
 	/** Types derived from infoboxes */
 	public static final Theme INFOBOXTYPES = new Theme("infoboxTypes", "Types extracted from Wikipedia infoboxes");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(DIRTYINFOBOXFACTS, INFOBOXTYPES);
+		return new FinalSet<Theme>(DIRTYINFOBOXFACTS, INFOBOXTYPES, INFOBOXSOURCES);
 	}
 
 	/** normalizes an attribute name */
@@ -72,7 +75,7 @@ public class InfoboxExtractor extends Extractor {
 
 	/** Extracts a relation from a string */
 	protected void extract(String entity, String string, String relation, Map<String, String> preferredMeanings,
-			FactCollection factCollection, FactWriter n4Writer, PatternList replacements) throws IOException {
+			FactCollection factCollection, Map<Theme, FactWriter> writers, PatternList replacements) throws IOException {
 		string = replacements.transform(Char.decodeAmpersand(string));
 		string = string.replace("$0", FactComponent.stripBrackets(entity));
 		string = string.trim();
@@ -85,14 +88,14 @@ public class InfoboxExtractor extends Extractor {
 		if (relation.endsWith("->")) {
 			inverse = true;
 			relation = Char.cutLast(Char.cutLast(relation)) + '>';
-			cls = factCollection.getArg2(relation,RDFS.domain);
+			cls = factCollection.getArg2(relation, RDFS.domain);
 		} else {
 			inverse = false;
-			cls = factCollection.getArg2(relation,RDFS.range);
+			cls = factCollection.getArg2(relation, RDFS.range);
 		}
 		if (cls == null) {
 			Announce.warning("Unknown relation to extract:", relation);
-			cls =YAGO.entity;
+			cls = YAGO.entity;
 		}
 
 		// Get the term extractor
@@ -101,29 +104,30 @@ public class InfoboxExtractor extends Extractor {
 		String syntaxChecker = FactComponent.asJavaString(factCollection.getArg2(cls, "<_hasTypeCheckPattern>"));
 
 		// Extract all terms
-		if(relation.equals("<hasPopulationDensity>") && string.contains("229")) {
-			D.p("here");
-		}
 		List<String> objects = extractor.extractList(string);
 		for (String object : objects) {
 			// Check syntax
 			if (syntaxChecker != null && !FactComponent.asJavaString(object).matches(syntaxChecker)) {
-				Announce.debug("Extraction", object, "for", entity, relation,"does not match syntax check", syntaxChecker);
+				Announce.debug("Extraction", object, "for", entity, relation, "does not match syntax check",
+						syntaxChecker);
 				continue;
 			}
 			// Check data type
 			if (FactComponent.isLiteral(object)) {
 				String[] value = FactComponent.literalAndDataType(object);
-				if(value.length!=2 || !factCollection.isSubClassOf(value[1], cls) && !(value.length==1 && cls.equals(YAGO.string))) {
+				if (value.length != 2 || !factCollection.isSubClassOf(value[1], cls)
+						&& !(value.length == 1 && cls.equals(YAGO.string))) {
 					Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
 					continue;
-				} 
+				}
 				FactComponent.setDataType(object, cls);
 			}
 			if (inverse)
-				n4Writer.write(new Fact(object, relation, entity));
+				write(writers, DIRTYINFOBOXFACTS, new Fact(object, relation, entity), INFOBOXSOURCES, entity,
+						"InfoboxExtractor: from " + string);
 			else
-				n4Writer.write(new Fact(entity, relation, object));
+				write(writers, DIRTYINFOBOXFACTS, new Fact(entity, relation, object), INFOBOXSOURCES, entity,
+						"InfoboxExtractor: from " + string);
 			if (factCollection.contains(relation, RDFS.type, YAGO.function))
 				break;
 		}
@@ -178,7 +182,7 @@ public class InfoboxExtractor extends Extractor {
 				return (result);
 			StringBuilder value = new StringBuilder();
 			int c = readEnvironment(in, value);
-			D.addKeyValue(result,attribute, value.toString().trim(),TreeSet.class);
+			D.addKeyValue(result, attribute, value.toString().trim(), TreeSet.class);
 			if (c == '}' || c == -1 || c == -2)
 				break;
 		}
@@ -197,7 +201,7 @@ public class InfoboxExtractor extends Extractor {
 					val.append(attribute);
 				}
 			}
-			D.addKeyValue(result,normalizeAttribute(combinations.get(code)), val.toString(),TreeSet.class);
+			D.addKeyValue(result, normalizeAttribute(combinations.get(code)), val.toString(), TreeSet.class);
 		}
 		return (result);
 	}
@@ -233,7 +237,8 @@ public class InfoboxExtractor extends Extractor {
 				String cls = FileLines.readTo(in, '}', '|').toString().trim();
 				String type = preferredMeaning.get(cls);
 				if (type != null) {
-					writers.get(INFOBOXTYPES).write(new Fact(null, titleEntity, RDFS.type, type));
+					write(writers, INFOBOXTYPES, new Fact(null, titleEntity, RDFS.type, type), INFOBOXSOURCES,
+							titleEntity, "InfoboxExtractor: Preferred meaning of infobox type " + cls);
 				}
 				Map<String, Set<String>> attributes = readInfobox(in, combinations);
 				for (String attribute : attributes.keySet()) {
@@ -241,9 +246,9 @@ public class InfoboxExtractor extends Extractor {
 					if (relations == null)
 						continue;
 					for (String relation : relations) {
-						for(String value : attributes.get(attribute)) {
-						extract(titleEntity, value, relation, preferredMeaning, hardWiredFacts,
-								writers.get(DIRTYINFOBOXFACTS), replacements);
+						for (String value : attributes.get(attribute)) {
+							extract(titleEntity, value, relation, preferredMeaning, hardWiredFacts, writers,
+									replacements);
 						}
 					}
 				}
