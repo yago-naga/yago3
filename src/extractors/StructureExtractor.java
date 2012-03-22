@@ -35,10 +35,21 @@ public class StructureExtractor extends Extractor {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.STRUCTUREPATTERNS, 
 				PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
 	}
+	
+	 @Override
+  public Set<Extractor> followUp() {
+    return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(wikipedia, DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS), new TypeChecker(
+        REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS)));
+  }
 
-	/** Means facts from disambiguation pages */
-	public static final Theme STRUCTUREFACTS = new Theme("structureFacts",
-			"Regular structure from Wikipedia, e.g. links");
+  /** Facts representing the Wikipedia structure (e.g. links) */
+  public static final Theme DIRTYSTRUCTUREFACTS = new Theme("diryStructureFacts", "Regular structure from Wikipedia, e.g. links - needs redirecting and typechecking");
+
+  /** Facts representing the Wikipedia structure (e.g. links) */
+  public static final Theme REDIRECTEDSTRUCTUREFACTS = new Theme("redirectedStructureFacts", "Regular structure from Wikipedia, e.g. links - needs typechecking");
+
+  /** Facts representing the Wikipedia structure (e.g. links) */
+  public static final Theme STRUCTUREFACTS = new Theme("structureFacts", "Regular structure from Wikipedia, e.g. links");
 
 	@Override
 	public Set<Theme> output() {

@@ -36,7 +36,16 @@ public class ConteXtExtractor extends Extractor {
 				PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
 	}
 
-	/** Means facts from disambiguation pages */
+	@Override
+  public Set<Extractor> followUp() {
+	  return new HashSet<Extractor>(Arrays.asList(new TypeChecker(DIRTYCONTEXTFACTS, CONTEXTFACTS)));
+  }
+
+  /** Context for entities */
+  public static final Theme DIRTYCONTEXTFACTS = new Theme("dirtyConteXtFacts",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs typechecking");
+	
+	/** Context for entities */
 	public static final Theme CONTEXTFACTS = new Theme("conteXtFacts",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
