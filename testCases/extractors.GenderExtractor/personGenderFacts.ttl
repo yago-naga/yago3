@@ -1,0 +1,93 @@
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# 
+# 
+# Facts extracted from the Wikipedia test file for testing the gender extractor
+
+@base <http://yago-knowledge/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<Carlo_Azeglio_Ciampi>	<hasGender>	<male> .
+<Gianfranco_Fini>	<hasGender>	<male> .
+<Giorgio_Napolitano>	<hasGender>	<male> .
+<Giuliano_Amato>	<hasGender>	<male> .
+<Giulio_Tremonti>	<hasGender>	<male> .
+<Lamberto_Dini>	<hasGender>	<male> .
+<Marco_Follini>	<hasGender>	<male> .
+<Marina_Berlusconi>	<hasGender>	<female> .
+<Mario_Monti>	<hasGender>	<male> .
+<Oscar_Luigi_Scalfaro>	<hasGender>	<male> .
+<Pier_Silvio_Berlusconi>	<hasGender>	<male> .
+<Roberto_Maroni>	<hasGender>	<male> .
+<Romano_Prodi>	<hasGender>	<male> .
+<Silvio_Berlusconi>	<hasGender>	<male> .
+<Veronica_Lario>	<hasGender>	<female> .
+<Cherie_Blair>	<hasGender>	<female> .
+<Elizabeth_II>	<hasGender>	<female> .
+<Frank_Dobson>	<hasGender>	<male> .
+<Gordon_Brown>	<hasGender>	<male> .
+<Jack_Straw>	<hasGender>	<male> .
+<John_Major>	<hasGender>	<male> .
+<John_Prescott>	<hasGender>	<male> .
+<John_Smith_(Labour_Party_leader)>	<hasGender>	<male> .
+<Margaret_Beckett>	<hasGender>	<female> .
+<Michael_Meacher>	<hasGender>	<male> .
+<Neil_Kinnock>	<hasGender>	<male> .
+<Phil_Wilson_(British_politician)>	<hasGender>	<male> .
+<Roy_Hattersley>	<hasGender>	<male> .
+<Tony_Blair>	<hasGender>	<male> .
+<Angela_Merkel>	<hasGender>	<female> .
+<Christian_Wulff>	<hasGender>	<male> .
+<Claudia_Nolte>	<hasGender>	<female> .
+<Frank-Walter_Steinmeier>	<hasGender>	<male> .
+<Franz_Müntefering>	<hasGender>	<male> .
+<Gerhard_Schröder>	<hasGender>	<male> .
+<Guido_Westerwelle>	<hasGender>	<male> .
+<Helmut_Kohl>	<hasGender>	<male> .
+<Horst_Köhler>	<hasGender>	<male> .
+<Joachim_Sauer>	<hasGender>	<male> .
+<Jürgen_Trittin>	<hasGender>	<male> .
+<Klaus_Töpfer>	<hasGender>	<male> .
+<Philipp_Rösler>	<hasGender>	<male> .
+<Achille_Peretti>	<hasGender>	<male> .
+<Albert_Pintat>	<hasGender>	<male> .
+<Antoni_Martí>	<hasGender>	<male> .
+<Carla_Bruni>	<hasGender>	<female> .
+<Cécilia_Attias>	<hasGender>	<female> .
+<Christian_Frémont>	<hasGender>	<male> .
+<Daniel_Vaillant>	<hasGender>	<male> .
+<Dominique_de_Villepin>	<hasGender>	<male> .
+<Édouard_Balladur>	<hasGender>	<male> .
+<Francis_Mer>	<hasGender>	<male> .
+<François_Baroin>	<hasGender>	<male> .
+<François_Fillon>	<hasGender>	<male> .
+<François_d'Aubert>	<hasGender>	<male> .
+<Hervé_Gaymard>	<hasGender>	<male> .
+<Jacques_Chirac>	<hasGender>	<male> .
+<Jaume_Bartumeu>	<hasGender>	<male> .
+<Jean_Sarkozy>	<hasGender>	<male> .
+<Jean-Pierre_Raffarin>	<hasGender>	<male> .
+<Joan_Enric_Vives_Sicília>	<hasGender>	<male> .
+<Michel_Charasse>	<hasGender>	<male> .
+<Nicolas_Sarkozy>	<hasGender>	<male> .
+<Philippe_Massoni>	<hasGender>	<male> .
+<Alfredo_Pérez_Rubalcaba>	<hasGender>	<male> .
+<Elena_Salgado>	<hasGender>	<female> .
+<Joaquín_Almunia>	<hasGender>	<male> .
+<José_Luis_Rodríguez_Zapatero>	<hasGender>	<male> .
+<José_María_Aznar>	<hasGender>	<male> .
+<Juan_Carlos_I_of_Spain>	<hasGender>	<male> .
+<Mariano_Rajoy>	<hasGender>	<male> .
+<María_Teresa_Fernández_de_la_Vega>	<hasGender>	<female> .
+<Sonsoles_Espinosa>	<hasGender>	<female> .
+# faulty types need revision on getting genders 
+<Co-Princes_of_Andorra>	<hasGender>	<male> .
+<President_of_France>	<hasGender>	<male> .
+<Leader_of_the_Opposition_(United_Kingdom)>	<hasGender>	<male> .
