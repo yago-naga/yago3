@@ -19,61 +19,74 @@ import extractors.Extractor;
  */
 public class Tester {
 
-	/** Finds the data in file*/
-	public static File dataFile(File folder) {
-		for(File f : folder.listFiles()) {
-			if(!f.isDirectory() && !FileSet.extension(f).equals(".ttl")) return(f);
-		}
-		return(null);
-	}
-	
-	/** Runs the tester*/
-	public static void main(String[] args) throws Exception {
-		Announce.doing("Testing YAGO extractors");
-		String initFile = args.length == 0 ? "yago.ini" : args[0];
-		Announce.doing("Initializing from", initFile);
-		Parameters.init(initFile);
-		Announce.done();
-		int total=0;
-		int failed=0;
-		File yagoFolder=Parameters.getOrRequestAndAddFile("yagoFolder", "Enter the folder where the real version of YAGO lives (for the inputs):");
-		File outputFolder=Parameters.getOrRequestAndAddFile("testYagoFolder", "Enter the folder where the test version of YAGO should be created:");
-		File testCases=new File("testCases");
-		for(File testCase : testCases.listFiles()) {
-			if(!testCase.isDirectory() || testCase.getName().startsWith(".")) continue;
-			total++;
-			Announce.doing("Testing",testCase.getName());
-			Extractor extractor = null;
-			if (inputFolder(testCase) != null) {
-			  extractor=Extractor.forName(testCase.getName(),dataFile(testCase));
-			  extractor.extract(inputFolder(testCase), outputFolder, "Test of YAGO2s");
-			} else {
-			  extractor=Extractor.forName(testCase.getName(),dataFile(testCase));
-			  if(extractor==null) {
-			    Announce.failed();
-			    failed++;
-			    continue;
-			  }
-		     extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
-			}
-			Announce.doing("Checking output");
-			for(Theme theme : extractor.output()) {
-				Announce.doing("Checking",theme);
-				FactCollection goldStandard=new FactCollection(theme.file(testCase));
-				FactCollection result=new FactCollection(theme.file(outputFolder));
-				if(!result.checkEqual(goldStandard)) {
-					Announce.done("--------> "+theme+" failed");
-					failed++;
-				} else {
-					Announce.done("--------> "+theme+" OK");
-				}
-			}
-			Announce.done();
-			Announce.done();
-		}
-		Announce.done();
-		Announce.message((total-failed),"/",total,"tests succeeded");
-	}
+  /** Finds the data in file*/
+  public static File dataFile(File folder) {
+    for (File f : folder.listFiles()) {
+      if (!f.isDirectory() && !FileSet.extension(f).equals(".ttl")) return (f);
+    }
+    return (null);
+  }
+
+  private static int total = 0;
+
+  private static int failed = 0;
+
+  /** Runs the tester*/
+  public static void main(String[] args) throws Exception {
+    Announce.doing("Testing YAGO extractors");
+    String initFile = args.length == 0 ? "yago.ini" : args[0];
+    Announce.doing("Initializing from", initFile);
+    Parameters.init(initFile);
+    Announce.done();
+    //    int total = 0;
+    //    int failed = 0;
+    File yagoFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "Enter the folder where the real version of YAGO lives (for the inputs):");
+    File outputFolder = Parameters.getOrRequestAndAddFile("testYagoFolder", "Enter the folder where the test version of YAGO should be created:");
+    File singleTest = Parameters.getFile("singleTest", null);
+    if (singleTest != null) {
+      runTest(singleTest, yagoFolder, outputFolder);
+    } else {
+      File testCases = new File("testCases");
+      for (File testCase : testCases.listFiles()) {
+        runTest(testCase, yagoFolder, outputFolder);
+      }
+    }
+    Announce.done();
+    Announce.message((total - failed), "/", total, "tests succeeded");
+  }
+
+  private static void runTest(File testCase, File yagoFolder, File outputFolder) throws Exception {
+    if (!testCase.isDirectory() || testCase.getName().startsWith(".")) return;
+    total++;
+    Announce.doing("Testing", testCase.getName());
+    Extractor extractor = null;
+    if (inputFolder(testCase) != null) {
+      extractor = Extractor.forName(testCase.getName(), dataFile(testCase));
+      extractor.extract(inputFolder(testCase), outputFolder, "Test of YAGO2s");
+    } else {
+      extractor = Extractor.forName(testCase.getName(), dataFile(testCase));
+      if (extractor == null) {
+        Announce.failed();
+        failed++;
+        return;
+      }
+      extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
+    }
+    Announce.doing("Checking output");
+    for (Theme theme : extractor.output()) {
+      Announce.doing("Checking", theme);
+      FactCollection goldStandard = new FactCollection(theme.file(testCase));
+      FactCollection result = new FactCollection(theme.file(outputFolder));
+      if (!result.checkEqual(goldStandard)) {
+        Announce.done("--------> " + theme + " failed");
+        failed++;
+      } else {
+        Announce.done("--------> " + theme + " OK");
+      }
+    }
+    Announce.done();
+    Announce.done();
+  }
 
   private static File inputFolder(File testCase) {
     for (File f : testCase.listFiles()) {
@@ -81,7 +94,6 @@ public class Tester {
         return f;
       }
     }
-    
-    return null;     
+    return null;
   }
 }
