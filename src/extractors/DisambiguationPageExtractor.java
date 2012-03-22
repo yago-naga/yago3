@@ -34,7 +34,21 @@ public class DisambiguationPageExtractor extends Extractor {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.DISAMBIGUATIONTEMPLATES,
 				PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
 	}
+	
+  @Override
+ public Set<Extractor> followUp() {
+   return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(wikipedia, DIRTYDISAMBIGUATIONMEANSFACTS, REDIRECTEDDISAMBIGUATIONMEANSFACTS), new TypeChecker(
+       REDIRECTEDDISAMBIGUATIONMEANSFACTS, DISAMBIGUATIONMEANSFACTS)));
+ }
 
+  /** Means facts from disambiguation pages */
+  public static final Theme DIRTYDISAMBIGUATIONMEANSFACTS = new Theme("dirtyDisambiguationMeansFacts",
+      "Means facts from disambiguation pages - needs redirecting and typechecking");
+  
+  /** Means facts from disambiguation pages */
+  public static final Theme REDIRECTEDDISAMBIGUATIONMEANSFACTS = new Theme("redirectedDisambiguationMeansFacts",
+      "Means facts from disambiguation pages - needs typechecking");
+  
 	/** Means facts from disambiguation pages */
 	public static final Theme DISAMBIGUATIONMEANSFACTS = new Theme("disambiguationMeansFacts",
 			"Means facts from disambiguation pages");
