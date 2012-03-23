@@ -14,6 +14,7 @@ import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
+import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
@@ -141,7 +142,7 @@ public class RuleExtractor extends Extractor {
 		}
 
 		/** Returns rules whose first body atom matches potentially */
-		public List<Rule> potentialMatches(Fact f) {
+    public List<Rule> potentialMatches(Fact f) {
 			List<Rule> result = new ArrayList<>();
 			for (String rel : Arrays.asList("$", f.getRelation())) {
 				Map<String, List<Rule>> map = rel2subj2rules.get(rel);
@@ -160,6 +161,11 @@ public class RuleExtractor extends Extractor {
 		public boolean isEmpty() {
 			return (rel2subj2rules.isEmpty());
 		}
+		
+		@Override
+		public String toString() {
+		  return rel2subj2rules.toString();
+		}
 	}
 
 	@Override
@@ -170,7 +176,8 @@ public class RuleExtractor extends Extractor {
 		for (Fact f : ruleFacts.get("<_implies>")) {
 			rules.add(new Rule(f));
 		}
-
+    Announce.debug(rules);
+    
 		// Loop
 		Announce.doing("Applying rules");
 		RuleSet survivingRules = new RuleSet();
@@ -180,13 +187,17 @@ public class RuleExtractor extends Extractor {
 			for (Entry<Theme, FactSource> reader : input.entrySet()) {
 				Announce.doing("Reading", reader.getKey());
 				for (Fact fact : reader.getValue()) {
+				  if(fact.getArg(2).equals("<yagoSymmetricRelation>")) {
+				    D.p("here");
+				  }
 					for (Rule r : rules.potentialMatches(fact)) {
 						Map<String, String> map = r.mapFirstTo(fact);
 						if (map != null) {
+						  Announce.debug("Matched",fact,"with",r);
 							Rule newRule = r.rest(map, fact.getId());
 							if (newRule.isReadyToGo()) {
 								for (Fact h : newRule.headFacts()) {
-									write(output,RULERESULTS,h, RULESOURCES, reader.getKey().toString(),r.original.toString());
+									write(output,RULERESULTS,h, RULESOURCES, FactComponent.forTheme(reader.getKey()),"RuleExtractor: "+r.original.toString());
 								}
 							} else {
 								survivingRules.add(newRule);
@@ -204,7 +215,7 @@ public class RuleExtractor extends Extractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-	   //new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
+	   new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");	   
 		Announce.setLevel(Announce.Level.DEBUG);
 		new RuleExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
 	}

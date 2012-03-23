@@ -68,7 +68,7 @@ public class StatisticsExtractor extends Extractor {
 					D.addKeyValue(classes, f.getArg(1), 0);
 				}
 			}
-			out.write(new Fact(FactComponent.forYagoEntity("YAGOtheme_" + t), YAGO.hasNumber, FactComponent
+			out.write(new Fact(FactComponent.forTheme(t), YAGO.hasNumber, FactComponent
 					.forNumber(counter)));
 			Announce.done();
 		}

@@ -253,7 +253,7 @@ public class FactTemplate {
 			else
 				return (null);
 		}
-		if (!arg2.equals(fact.getArg(1))) {
+		if (!arg2.equals(fact.getArg(2))) {
 			if (isVariable(arg2))
 				result.put(arg2, fact.getArg(2));
 			else
