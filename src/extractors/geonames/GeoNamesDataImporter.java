@@ -74,7 +74,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
     for (String line : new FileLines(geodata, "UTF-8", "Importing GeoNames entity data")) {
       String[] data = line.split("\t");
 
-      String geonamesId = FactComponent.forNumber(Integer.parseInt(data[0]));
+      String geonamesId = FactComponent.forString(data[0]);
       
       if (shouldImportForGeonamesId(geonamesId, geoEntityId2yago)) {  
         String name = data[1];
@@ -82,7 +82,13 @@ public abstract class GeoNamesDataImporter extends Extractor {
         Float lati = Float.parseFloat(data[4]);
         Float longi = Float.parseFloat(data[5]);
         
-        String fc = data[6] + "." + data[7];
+        String fc = null;
+        
+        if (data[6].length() > 0 && data[7].length() > 0) {
+          fc = data[6] + "." + data[7];
+        } else {
+          continue;
+        }
         
         String alternateNames = data[3];
         List<String> namesList = null;
@@ -92,11 +98,12 @@ public abstract class GeoNamesDataImporter extends Extractor {
         }
         
         // will remain untouched if not mapped
-        name = getYagoNameForGeonamesId(name, FactComponent.forNumber(geonamesId), geoEntityId2yago);
+        name = FactComponent.forYagoEntity(getYagoNameForGeonamesId(name, FactComponent.forNumber(geonamesId), geoEntityId2yago));
         
         out.write(new Fact(name, "<hasLatitude>", FactComponent.forNumber(lati)));
         out.write(new Fact(name, "<hasLongitude>", FactComponent.forNumber(longi)));
         out.write(new Fact(name, RDFS.subclassOf, geoClassId2yago.get(FactComponent.forString(fc))));
+        out.write(new Fact(name, "<hasGeonamesEntityId>", geonamesId));
         
         if (namesList != null) {
           for (String alternateName : namesList) {

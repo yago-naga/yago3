@@ -36,24 +36,25 @@ public class StructureExtractor extends Extractor {
 				PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
 	}
 	
-	 @Override
+	@Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(wikipedia, DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS), new TypeChecker(
-        REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS)));
+    return new HashSet<Extractor>(Arrays.asList(
+        new RedirectExtractor(wikipedia, DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS),
+        new TypeChecker(REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS)));
   }
 
   /** Facts representing the Wikipedia structure (e.g. links) */
-  public static final Theme DIRTYSTRUCTUREFACTS = new Theme("diryStructureFacts", "Regular structure from Wikipedia, e.g. links - needs redirecting and typechecking");
+  public static final Theme DIRTYSTRUCTUREFACTS = new Theme("structureFactsNeedTypeCheckingRedirecting", "Regular structure from Wikipedia, e.g. links - needs redirecting and typechecking");
 
   /** Facts representing the Wikipedia structure (e.g. links) */
-  public static final Theme REDIRECTEDSTRUCTUREFACTS = new Theme("redirectedStructureFacts", "Regular structure from Wikipedia, e.g. links - needs typechecking");
+  public static final Theme REDIRECTEDSTRUCTUREFACTS = new Theme("StructureFactsNeedTypeChecking", "Regular structure from Wikipedia, e.g. links - needs typechecking");
 
   /** Facts representing the Wikipedia structure (e.g. links) */
   public static final Theme STRUCTUREFACTS = new Theme("structureFacts", "Regular structure from Wikipedia, e.g. links");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(STRUCTUREFACTS);
+		return new FinalSet<Theme>(DIRTYSTRUCTUREFACTS);
 	}
 
 	@Override
@@ -69,7 +70,7 @@ public class StructureExtractor extends Extractor {
 		FactTemplateExtractor structurePatterns = new FactTemplateExtractor(structurePatternCollection,
 				"<_extendedStructureWikiPattern>");
 
-		FactWriter out = output.get(STRUCTUREFACTS);
+		FactWriter out = output.get(DIRTYSTRUCTUREFACTS);
 
 		String titleEntity = null;
 		while (true) {
