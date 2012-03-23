@@ -34,7 +34,7 @@ public class WordnetExtractor extends Extractor {
 	/** wordnet labels/means */
 	public static final Theme WORDNETWORDS = new Theme("wordnetWords", "Labels and preferred meanings form Wordnet");
 	/** ids of wordnet */
-	public static final Theme WORDNETIDS = new Theme("wordnetIds", "Ids from Wordnet");
+	public static final Theme WORDNETIDS = new Theme("yagoWordnetIds", "Ids from Wordnet");
 	 /** wordnet glosses */
   public static final Theme WORDNETGLOSSES = new Theme("wordnetGlosses", "Glosses from Wordnet");
 

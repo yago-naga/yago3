@@ -33,11 +33,6 @@ public class TypeChecker extends FollowUpExtractor {
 				WordnetExtractor.WORDNETCLASSES, CategoryExtractor.CATEGORYTYPES, CategoryExtractor.CATEGORYCLASSES));
 	}
 
-	@Override
-	public Set<Theme> output() {
-		return new FinalSet<>(checked);
-	}
-
 	/** Constructor, takes theme to be checked and theme to output*/
 	public TypeChecker(Theme in, Theme out) {
 		checkMe=in;

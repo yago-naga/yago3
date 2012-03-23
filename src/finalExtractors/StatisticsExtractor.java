@@ -7,6 +7,7 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import extractors.Extractor;
+import extractors.WordnetExtractor;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -32,7 +33,7 @@ public class StatisticsExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<>(TypeExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
-				FactExtractor.YAGOLABELS);
+				FactExtractor.YAGOLABELS, FactExtractor.YAGOMETAFACTS, FactExtractor.YAGOSCHEMA,FactExtractor.YAGOSOURCES, WordnetExtractor.WORDNETIDS);
 	}
 
 	/** YAGO statistics theme */

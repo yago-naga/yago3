@@ -165,10 +165,6 @@
 <Labour_Party_(UK)>	<wasCreatedOnDate>	"1900-##-##"^^xsd:date .
 <Labour_Party_(UK)>	rdfs:label	"Labour Party" .
 <Labour_Party_(UK)>	rdfs:label	"Labour Party (UK)" .
-<Leader_of_the_Opposition_(United_Kingdom)>	rdfs:label	"Leader of the Opposition (United Kingdom)" .
-<Leader_of_the_Labour_Party_(UK)>	rdfs:label	"Leader of the Labour Party" .
-<Leader_of_the_Opposition_(United_Kingdom)>	rdfs:label	"Leader of the Opposition" .
-<Leader_of_the_Labour_Party_(UK)>	rdfs:label	"Leader of the Labour Party (UK)" .
 <Margaret_Beckett>	<isPoliticianOf>	<Council> .
 <Margaret_Beckett>	rdfs:label	"Margaret Beckett" .
 <Margaret_Beckett>	<wasBornOnDate>	"1943-##-##"^^xsd:date .
@@ -305,7 +301,6 @@
 <Christian_Frémont>	rdfs:label	"Christian Fremont" .
 <Christian_Frémont>	rdfs:label	"Christian Frémont" .
 <Christian_Frémont>	<wasBornOnDate>	"1942-##-##"^^xsd:date .
-<Co-Princes_of_Andorra>	rdfs:label	"Co-Princes of Andorra" .
 <Daniel_Vaillant>	rdfs:label	"Daniel Vaillant" .
 <Daniel_Vaillant>	<wasBornOnDate>	"1949-##-##"^^xsd:date .
 <Dominique_de_Villepin>	rdfs:label	"Dominique de Villepin" .
@@ -390,8 +385,6 @@
 <Pere_López_Agràs>	rdfs:label	"Pere Lopez Agras" .
 <Philippe_Massoni>	<wasBornOnDate>	"1936-##-##"^^xsd:date .
 <Philippe_Massoni>	rdfs:label	"Philippe Massoni" .
-<President_of_France>	rdfs:label	"President of France" .
-<President_of_France>	<isPoliticianOf>	<France> .
 <Rally_for_the_Republic>	<wasCreatedOnDate>	"1976-##-##"^^xsd:date .
 <Rally_for_the_Republic>	rdfs:label	"Rally for the Republic" .
 <Rally_for_the_Republic>	<wasDestroyedOnDate>	"2002-##-##"^^xsd:date .
@@ -434,8 +427,6 @@
 <Juan_Carlos_I_of_Spain>	<hasWonPrize>	<Royal_Victorian_Chain> .
 <Juan_Carlos_I_of_Spain>	<hasWonPrize>	<Order_of_the_Three_Stars,_1st_Class_with_Chain> .
 <Juan_Carlos_I_of_Spain>	<wasBornOnDate>	"1938-##-##"^^xsd:date .
-<Leader_of_the_Opposition_(Spain)>	rdfs:label	"Leader of the Opposition" .
-<Leader_of_the_Opposition_(Spain)>	rdfs:label	"Leader of the Opposition (Spain)" .
 <León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León" .
 <León_(Spanish_Congress_Electoral_District)>	rdfs:label	"Leon (Spanish Congress Electoral District)" .
 <León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León (Spanish Congress Electoral District)" .

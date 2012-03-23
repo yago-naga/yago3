@@ -55,22 +55,24 @@ public class Tester {
     Announce.message((total - failed), "/", total, "tests succeeded");
   }
 
+  /** Runs a single test*/
   private static void runTest(File testCase, File yagoFolder, File outputFolder) throws Exception {
     if (!testCase.isDirectory() || testCase.getName().startsWith(".")) return;
     total++;
     Announce.doing("Testing", testCase.getName());
     Extractor extractor = null;
-    if (inputFolder(testCase) != null) {
-      extractor = Extractor.forName(testCase.getName(), dataFile(testCase));
-      extractor.extract(inputFolder(testCase), outputFolder, "Test of YAGO2s");
-    } else {
-      extractor = Extractor.forName(testCase.getName(), dataFile(testCase));
-      if (extractor == null) {
-        Announce.failed();
-        failed++;
-        return;
+    try {
+      if (inputFolder(testCase) != null) {
+        extractor = Extractor.forName(testCase.getName(), dataFile(testCase));
+        extractor.extract(inputFolder(testCase), outputFolder, "Test of YAGO2s");
+      } else {
+        extractor = Extractor.forName(testCase.getName(), dataFile(testCase));
+        extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
       }
-      extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
+    } catch (Exception e) {
+      Announce.failed();
+      failed++;
+      return;
     }
     Announce.doing("Checking output");
     for (Theme theme : extractor.output()) {

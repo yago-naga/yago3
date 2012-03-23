@@ -55,7 +55,7 @@ public class DisambiguationPageExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(DISAMBIGUATIONMEANSFACTS);
+		return new FinalSet<Theme>(DIRTYDISAMBIGUATIONMEANSFACTS);
 	}
 
 	@Override

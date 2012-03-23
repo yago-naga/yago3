@@ -28,7 +28,7 @@ import finalExtractors.TransitiveTypeExtractor;
  * 
  * Extracts the gender for persons in wikipedia
  * 
- * @author Fabian
+ * @author Edwin
  * 
  */
 public class GenderExtractor extends Extractor {
@@ -55,9 +55,13 @@ public class GenderExtractor extends Extractor {
     return (new FinalSet<Theme>(PERSONS_GENDER));
   }
 
+  /** Pattern for "she"*/
+  private static final Pattern she=Pattern.compile("\\b(she|her)\\b", Pattern.CASE_INSENSITIVE);
+  /** Pattern for "he"*/
+  private static final Pattern he=Pattern.compile("\\b(he|his)\\b", Pattern.CASE_INSENSITIVE);
+  
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    Announce.progressStart("Extracting Genders", 4_500_000);
     Set<String> people = new HashSet<>();
     for (Fact f : input.get(TransitiveTypeExtractor.TRANSITIVETYPE)) {
       if (f.getRelation().equals(RDFS.type) && f.getArg(2).equals(YAGO.person)) {
@@ -68,6 +72,7 @@ public class GenderExtractor extends Extractor {
     TitleExtractor titleExtractor = new TitleExtractor(input);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
+    Announce.progressStart("Extracting Genders", 4_500_000);
     while (true) {
       switch (FileLines.findIgnoreCase(in, "<title>")) {
         case -1:
@@ -82,11 +87,11 @@ public class GenderExtractor extends Extractor {
             String page = FileLines.readBetween(in, "<text", "</text>");
             String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
             int male = 0;
-            Matcher gm = Pattern.compile("\\b(he|his)\\b", Pattern.CASE_INSENSITIVE).matcher(normalizedPage);
+            Matcher gm = he.matcher(normalizedPage);
             while (gm.find())
               male++;
             int female = 0;
-            gm = Pattern.compile("\\b(she|her)\\b", Pattern.CASE_INSENSITIVE).matcher(normalizedPage);
+            gm = she.matcher(normalizedPage);
             while (gm.find())
               female++;
             if (male > female * 2 || (male > 10 && male > female)) {

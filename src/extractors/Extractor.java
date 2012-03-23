@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -40,6 +41,11 @@ public abstract class Extractor {
 
 		/** This is the theme we produce*/
 		protected Theme checked;
+		
+		@Override
+	  public Set<Theme> output() {
+	    return new FinalSet<>(checked);
+	  }
 	}
 	
 	/** Returns other extractors to be called en suite*/

@@ -20,8 +20,10 @@ import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
 import extractors.CategoryExtractor;
+import extractors.ConteXtExtractor;
 import extractors.DisambiguationPageExtractor;
 import extractors.Extractor;
+import extractors.GenderExtractor;
 import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
 import extractors.PersonNameExtractor;
@@ -43,7 +45,7 @@ public class FactExtractor extends Extractor {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS,
         DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, RuleExtractor.RULERESULTS, PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETGLOSSES, WordnetExtractor.WORDNETIDS, RuleExtractor.RULESOURCES,
-        InfoboxExtractor.INFOBOXSOURCES);
+        InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER);//, ConteXtExtractor.CONTEXTFACTS);
   }
 
   /** All facts of YAGO */
@@ -67,7 +69,7 @@ public class FactExtractor extends Extractor {
           "<hasGivenName>", "<hasFamilyName>", "<hasGloss>"), YAGOSOURCES, new FinalSet<>(YAGO.extractionSource, YAGO.extractionTechnique));
 
   /** relations that we exclude, because they are treated elsewhere */
-  public static final Set<String> relationsExcluded = new FinalSet<>(RDFS.type, RDFS.subclassOf);
+  public static final Set<String> relationsExcluded = new FinalSet<>(RDFS.type, RDFS.subclassOf, "<hasSynsetId>");
 
   @Override
   public Set<Theme> output() {
@@ -86,30 +88,31 @@ public class FactExtractor extends Extractor {
         relation2Writer.put(r, output.get(t));
       }
     }
-    Set<String> relationsToDo = new TreeSet<>();
+    // Collect themes where we find the relations
+    Map<String,Set<Theme>> relationsToDo = new TreeMap<>();
     // Start with some standard relation
-    relationsToDo.add(RDFS.label);
-    // Pretend we already did the relations that we want to exclude
-    Set<String> relationsDone = new TreeSet<>(relationsExcluded);
+    relationsToDo.put(RDFS.label, input.keySet());
+    boolean isFirstRun=true;
     while (!relationsToDo.isEmpty()) {
-      String relation = D.pick(relationsToDo);
-      relationsToDo.remove(relation);
-      relationsDone.add(relation);
+      String relation = D.pick(relationsToDo.keySet());
       Announce.doing("Reading", relation);
       FactCollection facts = new FactCollection();
       boolean isMetaRelation = false;
-      for (Theme theme : input.keySet()) {
+      for (Theme theme : relationsToDo.get(relation)) {
         Announce.doing("Reading", theme);
         for (Fact fact : input.get(theme)) {
           isMetaRelation = FactComponent.isFactId(fact.getArg(1));
-          if (!relationsDone.contains(fact.getRelation()) && !fact.getRelation().startsWith("<_")) {
-            relationsToDo.add(fact.getRelation());
+          if (isFirstRun && !fact.getRelation().startsWith("<_") && !relationsExcluded.contains(fact.getRelation())) {
+            //D.p(relationsToDo, fact.getRelation(),theme);
+            D.addKeyValue(relationsToDo,fact.getRelation(),theme,HashSet.class);
           }
           if (!relation.equals(fact.getRelation())) continue;
           facts.add(fact);
         }
         Announce.done();
+        relationsToDo.remove(relation);
       }
+      isFirstRun=false;
       Announce.done();
       Announce.doing("Writing", relation);
       FactWriter w = relation2Writer.get(relation);
