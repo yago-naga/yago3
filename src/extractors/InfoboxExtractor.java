@@ -52,13 +52,13 @@ public class InfoboxExtractor extends Extractor {
 	public static final Theme DIRTYINFOBOXFACTS = new Theme("infoboxFactsVeryDirty",
 			"Facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked");
 	/** Redirected Infobox facts, non-checked */
-	public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("infoxboxFactsDirty",
+	public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("infoboxFactsDirty",
 			"Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
 	/** Final Infobox facts */
-	public static final Theme INFOBOXFACTS = new Theme("infoxboxFacts",
+	public static final Theme INFOBOXFACTS = new Theme("infoboxFacts",
 			"Facts extracted from the Wikipedia infoboxes, type-checked and with redirects resolved");
 	/** Infobox sources */
-	public static final Theme INFOBOXSOURCES = new Theme("infoxboxSources",
+	public static final Theme INFOBOXSOURCES = new Theme("infoboxSources",
 			"Source information for the facts extracted from the Wikipedia infoboxes");
 	/** Types derived from infoboxes */
 	public static final Theme INFOBOXTYPES = new Theme("infoboxTypes", "Types extracted from Wikipedia infoboxes");
