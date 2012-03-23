@@ -13,7 +13,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 "$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2"	<_implies>	"$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2 ; #1 <happenedIn> $2; #2 <happenedOnDate> $1" .
-"$0 <isMarriedTo> $1"	<_implies>	"$1 <isMarriedTo> $0" .
+"$0 rdf:type <yagoSymmetricRelation>; $1 $0 $2"	<_implies>	"$2 $0 $1" .
 
 # Fabian: Let's avoid inferring types, as this is sometimes erroneous (for horses which have a birthdate)
 # and as it might screw up the type coherence checking
