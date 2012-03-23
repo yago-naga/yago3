@@ -187,9 +187,6 @@ public class RuleExtractor extends Extractor {
 			for (Entry<Theme, FactSource> reader : input.entrySet()) {
 				Announce.doing("Reading", reader.getKey());
 				for (Fact fact : reader.getValue()) {
-				  if(fact.getArg(2).equals("<yagoSymmetricRelation>")) {
-				    D.p("here");
-				  }
 					for (Rule r : rules.potentialMatches(fact)) {
 						Map<String, String> map = r.mapFirstTo(fact);
 						if (map != null) {
