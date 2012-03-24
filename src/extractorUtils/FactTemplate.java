@@ -122,9 +122,9 @@ public class FactTemplate {
 			}
 			return (FactComponent.forDate(DateParser.newDate(datecomp[0], datecomp[1], datecomp[2])));
 		default:
-			Announce.error("Unknown formatter", word);
+			Announce.warning("Unknown formatter", word);
 		}
-		return (null); // Never happens
+		return (null); 
 	}
 
 	/** Reads facts from a fact template */
