@@ -92,8 +92,10 @@ public class FactTemplate {
 	public static String format(String word) {
 		final Pattern formattedPattern = Pattern.compile("@([a-zA-Z]+)\\((.*?)\\)");
 		Matcher m = formattedPattern.matcher(word);
-		if (!m.matches())
-			Announce.error("Ill-formed formatter", word);
+		if (!m.matches()) {
+			Announce.debug("Ill-formed formatter", word);
+			return(null);
+		}
 		String thing = m.group(2).trim();
 		if (thing.isEmpty()) {
 			Announce.debug("Empty fact template component");
