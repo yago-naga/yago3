@@ -12,10 +12,10 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Wikipedia links with |
-"(?s)(.{0,500})\\[\\[([^\\]\u000a:]+?)\\|([^\\]\u000a]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($2); #1 hasAnchorText @String($3); #1 hasContextPrecedingAnchor @String($1); #1 hasContextSucceedingAnchor @String($4)" .
+"(?s)(.{0,500})\\[\\[([^\\]\\n:]+?)\\|([^\\]\\n]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($2); #1 hasAnchorText @String($3); #1 hasContextPrecedingAnchor @String($1); #1 hasContextSucceedingAnchor @String($4)" .
 
 # Links without |
-"(?s)(.{0,500})\\[\\[([^\\]\u000a\\|:]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($2); #1 hasContextPrecedingAnchor @String($1); #1 hasContextSucceedingAnchor @String($3)" .
+"(?s)(.{0,500})\\[\\[([^\\]\\n\\|:]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($2); #1 hasContextPrecedingAnchor @String($1); #1 hasContextSucceedingAnchor @String($3)" .
 
 # External links
-"(?i)\\[(https?://[^\\s\\]\u000a]+)\\s+([^\\]\u000a]+)\\]"	<_extendedStructureWikiPattern>	"$0 hasExternalWikipediaLinkTo @Url($1); #1 hasAnchorText @String($2)" .
+"(?i)\\[(https?://[^\\s\\]\\n]+)\\s+([^\\]\\n]+)\\]"	<_extendedStructureWikiPattern>	"$0 hasExternalWikipediaLinkTo @Url($1); #1 hasAnchorText @String($2)" .

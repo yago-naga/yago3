@@ -107,7 +107,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
         
         if (namesList != null) {
           for (String alternateName : namesList) {
-            out.write(new Fact(name, "<isCalled>", FactComponent.forString(alternateName)));
+            out.write(new Fact(name, RDFS.label, FactComponent.forString(alternateName)));
           }
         }
       }
