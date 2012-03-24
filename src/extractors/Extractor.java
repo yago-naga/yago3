@@ -108,6 +108,7 @@ public abstract class Extractor {
 			}
 		} catch (Exception ex) {
 			Announce.message(ex);
+			Announce.message(ex.getMessage());
 			Announce.failed();
 			return (null);
 		}
