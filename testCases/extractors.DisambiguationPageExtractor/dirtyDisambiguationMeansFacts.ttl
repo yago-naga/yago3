@@ -1,0 +1,55 @@
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# 
+# 
+# Means facts from disambiguation pages - needs redirecting and typechecking
+
+@base <http://yago-knowledge/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+"Ark"	<means>	<Ark_(2004_film)> .
+"Ark"	<means>	<The_Ark_(Doctor_Who)> .
+"Ark"	<means>	<The_Ark_(Stargate_Atlantis)> .
+"Ark"	<means>	<Ark_(Baxter_novel)> .
+"Ark"	<means>	<Ark_(L'Arc-en-Ciel_album)> .
+"Ark"	<means>	<Ark_(The_Animals_album)> .
+"Ark"	<means>	<The_Ark_(album)> .
+"Ark"	<means>	<The_Ark_(Halo)> .
+"Ark"	<means>	<The_Ark_(ship)> .
+"Ark"	<means>	<The_Ark_(newspaper)> .
+"Ark"	<means>	<Ark_(synagogue)> .
+"Ark"	<means>	<Ark_of_the_Covenant> .
+"Ark"	<means>	<Ark_of_bulrushes> .
+"Ark"	<means>	<Noah's_Ark> .
+"Ark"	<means>	<Blessed_Virgin_Mary> .
+"Ark"	<means>	<Ark,_Virginia> .
+"Ark"	<means>	<The_Ark_(fortress)> .
+"Ark"	<means>	<The_Ark_(Antarctica)> .
+"Ark"	<means>	<The_London_Ark> .
+"Ark"	<means>	<Ark_(computing)> .
+"Ark"	<means>	<Ark_Linux> .
+"Ark"	<means>	<Interstellar_ark> .
+"Ark"	<means>	<Ark_(river_boat)> .
+"Ark"	<means>	<Ark_(scooter)> .
+"Ark"	<means>	<Chicken_ark> .
+"Ark"	<means>	<Ark_(Transformers)> .
+"Ark"	<means>	<Ark_(Noon_Universe)> .
+"Ark"	<means>	<Ark_II> .
+"Ark"	<means>	<Ark_(Brendan_Perry_album)> .
+"Ark"	<means>	<The_Ark_(folk_venue)> .
+"Ark"	<means>	<The_Ark_(band)> .
+"Ark"	<means>	<Ark_(UK_band)> .
+"Ark"	<means>	<ARK_(band)> .
+"Ark"	<means>	<Ark_(toy_company)> .
+"Ark"	<means>	<Arc> .
+"Ark"	<means>	<Arch> .
+"Ark"	<means>	<ARK> .
+"Ark"	<means>	<Arkana> .
+"Ark"	<means>	<ARRC> .

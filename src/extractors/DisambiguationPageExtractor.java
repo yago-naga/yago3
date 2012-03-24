@@ -71,9 +71,11 @@ public class DisambiguationPageExtractor extends Extractor {
 				"<_disambiguationPattern>");
 		Set<String> templates = disambiguationTemplates(disambiguationPatternCollection);
 
-		FactWriter out = output.get(DISAMBIGUATIONMEANSFACTS);
+		FactWriter out = output.get(DIRTYDISAMBIGUATIONMEANSFACTS);
 
 		String titleEntity = null;
+		String page = null;
+		
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>")) {
 			case -1:
@@ -82,12 +84,11 @@ public class DisambiguationPageExtractor extends Extractor {
 				return;
 			case 0:
 				titleEntity = FileLines.readToBoundary(in, "</title>");
-				break;
-			default:
-				if (titleEntity == null)
+        page = FileLines.readBetween(in, "<text", "</text>");
+        
+				if (titleEntity == null || page == null)
 					continue;
 
-				String page = FileLines.readBetween(in, "<text", "</text>");
 				if (isDisambiguationPage(page, templates)) {
 					for (Fact fact : disambiguationPatterns.extract(page, titleEntity)) {
 						if (fact != null)
