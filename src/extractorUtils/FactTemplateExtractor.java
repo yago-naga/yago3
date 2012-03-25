@@ -3,6 +3,7 @@ package extractorUtils;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.TreeMap;
@@ -45,10 +46,34 @@ public class FactTemplateExtractor {
 		}
 		Announce.done();
 	}
+	
+	
+	 /**
+   * Extracts facts using patterns without provenance
+   * 
+   * @param string
+   * @param dollarZero
+   * @return Collection of facts
+   */
+	 public Collection<Fact> extract(String string, String dollarZero) {
+	   Collection<Pair<Fact,String>> rwp = extractWithProvenance(string, dollarZero);
+	   List<Fact> results = new LinkedList<Fact>();
+	   
+	   for (Pair<Fact,String> fwp : rwp) 
+	     results.add(fwp.first);
+	   
+	   return results;	   
+	 }
 
-	/** Extractor*/
-	public Collection<Fact> extract(String string, String dollarZero) {
-		List<Fact> result=new ArrayList<>();
+	/**
+	 * Extracts facts using patterns including provenance
+	 * 
+	 * @param string
+	 * @param dollarZero
+	 * @return Collection of <fact, extractionTechnique> pairs
+	 */
+	public Collection<Pair<Fact, String>> extractWithProvenance(String string, String dollarZero) {
+		List<Pair<Fact, String>> result=new LinkedList<>();
 		for(Pair<Pattern, List<FactTemplate>> pattern : patterns) {
 			Matcher m=pattern.first().matcher(string);
 			while(m.find()) {
@@ -62,7 +87,9 @@ public class FactTemplateExtractor {
 				    variables.put("$"+i,m.group(i));
 				  }
 				}
-				result.addAll(FactTemplate.instantiate(pattern.second(), variables));
+				for (Fact f : FactTemplate.instantiate(pattern.second(), variables)) {
+				  result.add(new Pair<Fact, String>(f, pattern.first.toString() + " -> " + pattern.second().toString()));
+				}
 			}
 		}
 		return(result);

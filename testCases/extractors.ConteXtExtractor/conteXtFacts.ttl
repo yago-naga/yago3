@@ -1,4 +1,9 @@
-# Test of YAGO2s
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# 
+# 
 # Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names
 
 @base <http://yago-knowledge/resource/> .
@@ -1353,6 +1358,103 @@
 <Catholic_Church>	<hasWikipediaCategory>	"Roman Catholic Church" .
 <Catholic_Church>	<hasWikipediaCategory>	"Apostolic sees" .
 <Catholic_Church>	<hasWikipediaCategory>	"Chalcedonianism" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"French" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"English" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Robert. B. Reich" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"social entrepreneur" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"environmental" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"profit" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"profit" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"loanword" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"economist" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Richard Cantillon" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Jean-Baptiste Say" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"discrimination" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"leadership" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"team-building" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Joseph Schumpeter" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"creative destruction" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"social" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"educational" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"economic" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"traits" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"ambition" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"status quo" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"emotional" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"poverty" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"innovative" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"entrepreneurs" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"shareholders" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"business model" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"self-employed" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"work/life balance" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"creative industries" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"tourism industry" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"entrepreneurship" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"exit strategy" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"entrepreneurship" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"small business" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"global market" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Samuel Crompton" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Thomas Newcomen" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"James Watt" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"John Jacob Astor" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Andrew Carnegie" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"James Buchanan Duke" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"J. P. Morgan" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"John D. Rockefeller" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Leland Stanford" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Joseph Seligman" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Cornelius Vanderbilt" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Otto Beisheim" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Richard Branson" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Larry Ellison" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Bill Gates" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Carlos Slim" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Steve Jobs" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Ingvar Kamprad" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Henry Hu" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Henry Ford" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Mark Zuckerberg" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Drew Houston" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Jack Dorsey" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Kevin Rose" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Larry Page" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Sergey Brin" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Elon Musk" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Business oligarch" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Businessperson" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Captain of industry" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Entrepreneurship education" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Erasmus for Young Entrepreneurs" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Factors of production" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Financier" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Infopreneur" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Investor" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Internet entrepreneur" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Media proprietor" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Real estate entrepreneur" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Robber baron (industrialist)" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Operational risk" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Venture capitalist" .
+<Entrepreneur>	<hasCitationTitle>	"Economics: Principles in action" .
+<Entrepreneur>	<hasCitationTitle>	"Harvard Business Publishing Presents: An interview with John Elkington - Key Traits of Social Entrepreneurs." .
+<Entrepreneur>	<hasCitationTitle>	"Is entrepreneurship just about the exit?" .
+<Entrepreneur>	<hasCitationTitle>	"Ecommerce as a business strategy: lessons learned from rural and small town businesses" .
+<Entrepreneur>	<hasCitationTitle>	"TREPS: The Young Titans of the New Economy" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Business dictionary definition" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"Serial Entrepreneur Quotes" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"&quot;Is There an Elephant in Entrepreneurship? Blind Assumptions in Theory Development.(Business research)&quot;" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"&quot;Entrepreneurial types and economic growth&quot;" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"&quot;Who is a 'non-entrepreneur'? Taking the 'others' of entrepreneurship seriously&quot;" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"&quot;The Promise of Entrepreneurship as A Field of Research&quot;" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"&quot;The Focus of Entrepreneurial Research: Contextual and Process Issues&quot;" .
+<Entrepreneur>	<hasWikipediaAnchorText>	"&quot;A typology of social entrepreneurs: Motives, search processes and ethical challenges&quot;" .
+<Entrepreneur>	<hasWikipediaCategory>	"Business and financial operations occupations" .
+<Entrepreneur>	<hasWikipediaCategory>	"Entrepreneurship" .
+<Entrepreneur>	<hasWikipediaCategory>	"French loanwords" .
+<Entrepreneur>	<hasWikipediaCategory>	"French words and phrases" .
+<Entrepreneur>	<hasWikipediaCategory>	"Management occupations" .
 <Forza_Italia>	<hasWikipediaAnchorText>	"Social democratic" .
 <Forza_Italia>	<hasWikipediaAnchorText>	"EPP–ED" .
 <Forza_Italia>	<hasWikipediaAnchorText>	"Christian Democracy" .
@@ -5748,6 +5850,42 @@
 <Connaught_Square>	<hasWikipediaAnchorText>	"Page at markuscoffee.com" .
 <Connaught_Square>	<hasWikipediaCategory>	"Streets in Westminster" .
 <Connaught_Square>	<hasWikipediaCategory>	"Squares in Westminster" .
+<Diplomat>	<hasWikipediaAnchorText>	"state" .
+<Diplomat>	<hasWikipediaAnchorText>	"Greek" .
+<Diplomat>	<hasWikipediaAnchorText>	"letters" .
+<Diplomat>	<hasWikipediaAnchorText>	"accreditation" .
+<Diplomat>	<hasWikipediaAnchorText>	"minister" .
+<Diplomat>	<hasWikipediaAnchorText>	"consuls" .
+<Diplomat>	<hasWikipediaAnchorText>	"Secretary of State" .
+<Diplomat>	<hasWikipediaAnchorText>	"Secure email" .
+<Diplomat>	<hasWikipediaAnchorText>	"degrees" .
+<Diplomat>	<hasWikipediaAnchorText>	"immunities" .
+<Diplomat>	<hasWikipediaAnchorText>	"diplomacy" .
+<Diplomat>	<hasWikipediaAnchorText>	"international organization" .
+<Diplomat>	<hasWikipediaAnchorText>	"foreign policy" .
+<Diplomat>	<hasWikipediaAnchorText>	"foreign minister" .
+<Diplomat>	<hasWikipediaAnchorText>	"diploma" .
+<Diplomat>	<hasWikipediaAnchorText>	"ambassador" .
+<Diplomat>	<hasWikipediaAnchorText>	"envoy" .
+<Diplomat>	<hasWikipediaAnchorText>	"chargé d’affaires" .
+<Diplomat>	<hasWikipediaAnchorText>	"Vienna Convention on Diplomatic Relations" .
+<Diplomat>	<hasWikipediaAnchorText>	"attachés" .
+<Diplomat>	<hasWikipediaAnchorText>	"foreign policy" .
+<Diplomat>	<hasWikipediaAnchorText>	"Thomas Jefferson" .
+<Diplomat>	<hasWikipediaAnchorText>	"cablegram" .
+<Diplomat>	<hasWikipediaAnchorText>	"culture" .
+<Diplomat>	<hasWikipediaAnchorText>	"university" .
+<Diplomat>	<hasWikipediaAnchorText>	"international relations" .
+<Diplomat>	<hasWikipediaAnchorText>	"political science" .
+<Diplomat>	<hasWikipediaAnchorText>	"economics" .
+<Diplomat>	<hasWikipediaAnchorText>	"law" .
+<Diplomat>	<hasWikipediaAnchorText>	"self-esteem" .
+<Diplomat>	<hasWikipediaAnchorText>	"etiquette" .
+<Diplomat>	<hasWikipediaAnchorText>	"international law" .
+<Diplomat>	<hasWikipediaAnchorText>	"Harold Nicolson" .
+<Diplomat>	<hasWikipediaCategory>	"Diplomacy" .
+<Diplomat>	<hasWikipediaCategory>	"Foreign policy" .
+<Diplomat>	<hasWikipediaCategory>	"Diplomats" .
 <Edinburgh>	<hasWikipediaAnchorText>	"Scots" .
 <Edinburgh>	<hasWikipediaAnchorText>	"Scottish Gaelic" .
 <Edinburgh>	<hasWikipediaAnchorText>	"Unitary authority" .
@@ -17910,6 +18048,134 @@
 <Philipp_Rösler>	<hasWikipediaCategory>	"Members of the Landtag of Lower Saxony" .
 <Philipp_Rösler>	<hasWikipediaCategory>	"Politicians of Vietnamese descent" .
 <Philipp_Rösler>	<hasWikipediaCategory>	"Vice-Chancellors of Germany" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"motion" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"dynamics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"plasticity" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Reaction kinetics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"rate of a reaction" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"membranes" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical compounds" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"bonded" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"nuclei" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"non-equilibrium" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"equilibrium" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"reversible changes" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"reactants" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"products" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"transition states" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"energy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"elementary reactions" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"millions of billions of billions" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Gibbs energy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Molecular Physics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"physics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"energy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"force" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"time" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"thermodynamics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"quantum chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"statistical mechanics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical physics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical equilibrium" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"colloids" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Intermolecular forces" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"tensile strength" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"surface tension" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"liquid" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Surface chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"electrochemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"atoms" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical reactions" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Quantum chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"quantum mechanics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Spectroscopy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"electromagnetic radiation" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical thermodynamics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"combustion engine" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"thermal expansion coefficient" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"entropy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"pressure" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"gas" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"liquid" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"quasi-equilibrium" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical kinetics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"catalysts" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"statistical mechanics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Mikhail Lomonosov" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Petersburg University" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical thermodynamics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"electrolyte" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical kinetics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Josiah Willard Gibbs" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"On the Equilibrium of Heterogeneous Substances" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"chemical potential" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Gibbs phase rule" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"On the Equilibrium of Heterogeneous Substances" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"enthalpy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Heike Kamerlingh Onnes" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"macromolecular" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"scientific journal" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Zeitschrift für Physikalische Chemie" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Wilhelm Ostwald" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Jacobus Henricus van 't Hoff" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Svante August Arrhenius" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Nobel Prize in Chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"statistical mechanics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"colloid" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"surface chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Irving Langmuir" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"quantum mechanics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"quantum chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Linus Pauling" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"spectroscopy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"infrared spectroscopy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"microwave spectroscopy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"EPR spectroscopy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"NMR spectroscopy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"nuclear chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"astrochemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Group contribution method" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Joback method" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"QSPR" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"QSAR" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Zeitschrift für Physikalische Chemie" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Journal of Physical Chemistry A" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Physical Chemistry Chemical Physics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Faraday Transactions" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Macromolecular Chemistry and Physics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Annual Review of Physical Chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Journal of Physical Organic Chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Journal of Physical Chemistry B" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"ChemPhysChem" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Journal of Physical Chemistry C" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Journal of Physical Chemistry Letters" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Annales de chimie et de physique" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Thermochemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Chemical kinetics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Quantum chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Electrochemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Photochemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Surface chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Solid-state chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Spectroscopy" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Biophysical chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Materials science" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Physical organic chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Micromeritics" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"List of important publications in chemistry#Physical chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"List of unsolved problems in chemistry#Physical chemistry problems" .
+<Physical_chemistry>	<hasCitationTitle>	"Surface chemistry and electrochemistry of membranes" .
+<Physical_chemistry>	<hasCitationTitle>	"Science in Russian culture" .
+<Physical_chemistry>	<hasCitationTitle>	"The World of Physical Chemistry" .
+<Physical_chemistry>	<hasCitationTitle>	"Chemistry of Star-Forming Regions" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Physical Chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"The World of Physical Chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Physical Chemistry from Ostwald to Pauling" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"100 Years of Physical Chemistry" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Physical Chemistry: neither Fish nor Fowl?" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"Cathedrals of Science" .
+<Physical_chemistry>	<hasWikipediaAnchorText>	"The Cambridge History of Science: The modern physical and mathematical sciences" .
+<Physical_chemistry>	<hasWikipediaCategory>	"Physical chemistry" .
 <Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	<hasWikipediaAnchorText>	"German" .
 <Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	<hasWikipediaAnchorText>	"German Bundestag" .
 <Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	<hasWikipediaAnchorText>	"1990" .

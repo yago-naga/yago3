@@ -9,6 +9,7 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import basics.Fact;
@@ -40,9 +41,13 @@ public class ConteXtExtractor extends Extractor {
 	public static final Theme CONTEXTFACTS = new Theme("conteXtFacts",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
+	 /** Context for entities */
+  public static final Theme CONTEXTSOURCES = new Theme("conteXtSources",
+      "Source information for the extracted keyphrases");
+	
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(CONTEXTFACTS);
+		return new FinalSet<Theme>(CONTEXTFACTS, CONTEXTSOURCES);
 	}
 
 	@Override
@@ -59,6 +64,7 @@ public class ConteXtExtractor extends Extractor {
 				"<_extendedContextWikiPattern>");
 
 		FactWriter out = output.get(CONTEXTFACTS);
+    FactWriter outSources = output.get(CONTEXTSOURCES);
 
 		String titleEntity = null;
 		while (true) {
@@ -75,10 +81,9 @@ public class ConteXtExtractor extends Extractor {
 				String page = FileLines.readBetween(in, "<text", "</text>");
 				String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
 
-				for (Fact fact : contextPatterns.extract(normalizedPage, titleEntity)) {
+				for (Pair<Fact, String> fact : contextPatterns.extractWithProvenance(normalizedPage, titleEntity)) {
 				  if (fact != null)
-				    // TODO add technique
-				    out.write(fact);
+				    write(out, fact.first, outSources, titleEntity, "ConteXtExtractor from: " + fact.second);
 				}
 			}
 		}
