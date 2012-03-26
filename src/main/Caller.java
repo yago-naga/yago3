@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
@@ -62,8 +63,15 @@ public class Caller {
 				i = -1; // Start again from the beginning
 			}
 		}
-		if (!extractors.isEmpty())
-			Announce.warning("Could not call", extractors);
+		if (!extractors.isEmpty()) {
+			Announce.doing("Warning: Could not call");
+			for(Extractor e : extractors) {
+			  Set<Theme> weneed=new HashSet<>(e.input());
+			  weneed.removeAll(themesWeHave);
+			  Announce.message(e.name(),"because of missing",weneed);
+			}
+			Announce.done();
+		}
 		Announce.done();
 	}
 
