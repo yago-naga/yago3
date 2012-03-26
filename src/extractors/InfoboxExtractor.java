@@ -230,8 +230,6 @@ public class InfoboxExtractor extends Extractor {
 			case 0:
 				Announce.progressStep();
 				titleEntity = titleExtractor.getTitleEntity(in);
-				//TODO debugging
-				D.p(titleEntity);
 				break;
 			default:
 				if (titleEntity == null)
