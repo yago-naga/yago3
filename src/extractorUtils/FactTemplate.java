@@ -189,6 +189,8 @@ public class FactTemplate {
 		for (int i = 0; i < templates.size(); i++) {
 			if (factReferences.contains(i + 1)) {
 				Fact fact = templates.get(i).instantiate(variables, true);
+				if(fact==null) Announce.error("Can't instantiate",i,"in",templates);
+				if(fact.getId()==null) fact.makeId();
 				variables.put("#" + (i + 1), fact.getId());
 				factList.add(fact);
 			} else {
