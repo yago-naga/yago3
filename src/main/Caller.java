@@ -81,7 +81,10 @@ public class Caller {
 			Extractor e = extractorForCall(extractorName);
 			if (e != null)
 				extractors.add(e);
-		}
+			else {
+			  Announce.error("Could not build extractor",extractorName);
+			}
+		} 
 		Announce.done();
 		return (extractors);
 	}
