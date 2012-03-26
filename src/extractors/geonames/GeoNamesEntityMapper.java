@@ -39,7 +39,7 @@ public class GeoNamesEntityMapper extends Extractor {
   private Map<Integer, Float> id2longitude = new HashMap<>();
   
   /** geonames entity links */
-  public static final Theme GEONAMESENTITYIDS = new Theme("geonamesEntityIds", "IDs from GeoNames entities");
+  public static final Theme GEONAMESENTITYIDS = new Theme("yagoGeonamesEntityIds", "IDs from GeoNames entities");
 
   @Override
   public Set<Theme> input() {

@@ -5,7 +5,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -29,6 +28,7 @@ import extractors.InfoboxExtractor;
 import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
 import extractors.WordnetExtractor;
+import extractors.geonames.GeoNamesDataImporter;
 
 /**
  * YAGO2s - FactExtractor
@@ -45,7 +45,7 @@ public class FactExtractor extends Extractor {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS,
         DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, RuleExtractor.RULERESULTS, PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETGLOSSES, WordnetExtractor.WORDNETIDS, RuleExtractor.RULESOURCES,
-        InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER, ConteXtExtractor.CONTEXTFACTS);
+        InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER, ConteXtExtractor.CONTEXTFACTS, GeoNamesDataImporter.GEONAMESDATA);
   }
 
   /** All facts of YAGO */

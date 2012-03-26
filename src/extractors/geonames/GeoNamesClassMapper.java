@@ -48,11 +48,11 @@ public class GeoNamesClassMapper extends Extractor {
   private Pattern NON_WORD_CHAR = Pattern.compile("^[^\\w]*$");
 
   /** geonames class links */
-  public static final Theme GEONAMESCLASSSIDS = new Theme("geonamesClassIds", "IDs from GeoNames classes");
+  public static final Theme GEONAMESCLASSSIDS = new Theme("yagoGeonamesClassIds", "IDs from GeoNames classes");
     /** geonames classes */
-  public static final Theme GEONAMESCLASSES = new Theme("geonamesClasses", "Classes from GeoNames");
+  public static final Theme GEONAMESCLASSES = new Theme("yagoGeonamesClasses", "Classes from GeoNames");
    /** geonames glosses */
-  public static final Theme GEONAMESGLOSSES = new Theme("geonamesGlosses", "Glosses from GeoNames");
+  public static final Theme GEONAMESGLOSSES = new Theme("yagoGeonamesGlosses", "Glosses from GeoNames");
   
   @Override
   public Set<Theme> input() {
