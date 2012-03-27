@@ -125,6 +125,7 @@ public class Caller {
 			log = new FileWriter(logFile);
 			Announce.setWriter(log);
 		}
+		try {
 		Announce.doing("Running YAGO extractors");
 		long time = System.currentTimeMillis();
 		Announce.message("Starting at", NumberFormatter.ISOtime());
@@ -142,6 +143,10 @@ public class Caller {
 		Announce.message("Finished at", NumberFormatter.ISOtime());
 		Announce.message("Time needed:", NumberFormatter.formatMS(now - time));
 		Announce.done();
+		} catch(Exception e) {
+      Announce.failed();
+		  e.printStackTrace();
+		}
 		if (log != null)
 			log.close();
 	}

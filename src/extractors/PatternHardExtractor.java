@@ -23,11 +23,15 @@ public class PatternHardExtractor extends HardExtractor {
 	/** Patterns of infoboxes */
 	public static final Theme INFOBOXPATTERNS = new Theme("_infoboxPatterns",
 			"These are the Wikipedia infobox patterns used in YAGO");
+	public static final Theme INFOBOXTEMPORALPATTERNS = new Theme("_infoboxTemporalPatterns",
+			"These are the Wikipedia infobox patterns used in YAGO");
 	/** Patterns of titles */
 	public static final Theme TITLEPATTERNS = new Theme("_titlePatterns",
 			"These are the replacement patterns for Wikipedia titles used in YAGO");
 	/** Patterns of categories */
 	public static final Theme CATEGORYPATTERNS = new Theme("_categoryPatterns",
+			"These are the Wikipedia category patterns used in YAGO");
+	public static final Theme TEMPORALCATEGORYPATTERNS = new Theme("_categoryTemporalPatterns",
 			"These are the Wikipedia category patterns used in YAGO");
 	/** Patterns of disambiguation pages */
 	public static final Theme DISAMBIGUATIONTEMPLATES = new Theme("_disambiguationPatterns",
@@ -43,7 +47,7 @@ public class PatternHardExtractor extends HardExtractor {
 
 	public Set<Theme> output() {
 		return (new FinalSet<Theme>(
-		    INFOBOXPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES, 
+		    INFOBOXPATTERNS,INFOBOXTEMPORALPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS,TEMPORALCATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES, 
 		    CONTEXTPATTERNS, STRUCTUREPATTERNS));
 	}
 
