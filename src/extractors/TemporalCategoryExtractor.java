@@ -27,7 +27,7 @@ public class TemporalCategoryExtractor extends Extractor{
 	private File wikipedia;
 	@Override
 	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(DIRTYCATEGORYFACTS, CATEGORYFACTS)));
+		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(DIRTYCATEGORYFACTS, TEMPORALCATEGORYFACTS)));
 	}
 	@Override
 	public Set<Theme> input() {
@@ -36,9 +36,9 @@ public class TemporalCategoryExtractor extends Extractor{
 	}
 
 	/** Facts deduced from categories */
-	public static final Theme DIRTYCATEGORYFACTS = new Theme("categoryTemporalFactsDirty", "Facts derived from the categories - still to be type checked");
+	public static final Theme DIRTYCATEGORYFACTS = new Theme("categoryTemporalFactsDirty", "Temporal Facts derived from the categories - still to be type checked");
 	/** Facts deduced from categories */
-	public static final Theme CATEGORYFACTS = new Theme("categoryTemporalFacts", "Facts derived from the categories");
+	public static final Theme TEMPORALCATEGORYFACTS = new Theme("categoryTemporalFacts", "Temporal Facts derived from the categories");
 	@Override
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(DIRTYCATEGORYFACTS);

@@ -38,7 +38,7 @@ public class TemporalInfoboxExtractor extends Extractor{
 	
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(wikipedia, DIRTYINFOBOXFACTS,
-				REDIRECTEDINFOBOXFACTS), new TypeChecker(REDIRECTEDINFOBOXFACTS, INFOBOXFACTS)));
+				REDIRECTEDINFOBOXFACTS), new TypeChecker(REDIRECTEDINFOBOXFACTS, TEMPORALINFOBOXFACTS)));
 	}
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXTEMPORALPATTERNS, WordnetExtractor.WORDNETWORDS,
@@ -51,7 +51,7 @@ public class TemporalInfoboxExtractor extends Extractor{
 	public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("infoboxTemporalFactsDirty",
 			"Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
 	/** Final Infobox facts */
-	public static final Theme INFOBOXFACTS = new Theme("infoboxTemporalFacts",
+	public static final Theme TEMPORALINFOBOXFACTS = new Theme("infoboxTemporalFacts",
 			"Facts extracted from the Wikipedia infoboxes, type-checked and with redirects resolved");
 	/** Infobox sources */
 	public static final Theme INFOBOXSOURCES = new Theme("infoboxTemporalSources",
