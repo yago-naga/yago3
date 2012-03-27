@@ -46,9 +46,8 @@ public class FactExtractor extends Extractor {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS,
         DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, RuleExtractor.RULERESULTS, PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETGLOSSES, WordnetExtractor.WORDNETIDS, RuleExtractor.RULESOURCES,
-        InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER, ConteXtExtractor.CONTEXTFACTS, GeoNamesDataImporter.GEONAMESDATA
-        /*,
-        UWNImporter.UWNDATA*/);
+        InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER, ConteXtExtractor.CONTEXTFACTS, GeoNamesDataImporter.GEONAMESDATA,
+        UWNImporter.UWNDATA);
   }
 
   /** All facts of YAGO */
@@ -92,10 +91,10 @@ public class FactExtractor extends Extractor {
       }
     }
     // Collect themes where we find the relations
-    Map<String,Set<Theme>> relationsToDo = new TreeMap<>();
+    Map<String, Set<Theme>> relationsToDo = new TreeMap<>();
     // Start with some standard relation
     relationsToDo.put(RDFS.label, new HashSet<Theme>(input.keySet()));
-    boolean isFirstRun=true;
+    boolean isFirstRun = true;
     while (!relationsToDo.isEmpty()) {
       String relation = D.pick(relationsToDo.keySet());
       Announce.doing("Reading", relation);
@@ -106,7 +105,7 @@ public class FactExtractor extends Extractor {
         for (Fact fact : input.get(theme)) {
           isMetaRelation = FactComponent.isFactId(fact.getArg(1));
           if (isFirstRun && !fact.getRelation().startsWith("<_") && !relationsExcluded.contains(fact.getRelation())) {
-            D.addKeyValue(relationsToDo, fact.getRelation(), theme,HashSet.class);
+            D.addKeyValue(relationsToDo, fact.getRelation(), theme, HashSet.class);
           }
           if (!relation.equals(fact.getRelation())) continue;
           facts.add(fact);
@@ -114,7 +113,7 @@ public class FactExtractor extends Extractor {
         Announce.done();
         relationsToDo.remove(relation);
       }
-      isFirstRun=false;
+      isFirstRun = false;
       Announce.done();
       Announce.doing("Writing", relation);
       FactWriter w = relation2Writer.get(relation);
