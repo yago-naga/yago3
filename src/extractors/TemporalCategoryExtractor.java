@@ -38,7 +38,7 @@ public class TemporalCategoryExtractor extends Extractor {
 	@Override
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(
-				DIRTYCATEGORYFACTS, CATEGORYFACTS)));
+				DIRTYCATEGORYFACTS, TEMPORALCATEGORYFACTS)));
 	}
 
 	@Override
@@ -54,7 +54,7 @@ public class TemporalCategoryExtractor extends Extractor {
 			"categoryTemporalFactsDirty",
 			"Facts derived from the categories - still to be type checked");
 	/** Facts deduced from categories */
-	public static final Theme CATEGORYFACTS = new Theme(
+	public static final Theme TEMPORALCATEGORYFACTS = new Theme(
 			"categoryTemporalFacts", "Facts derived from the categories");
 
 	@Override

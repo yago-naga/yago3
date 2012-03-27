@@ -47,8 +47,8 @@ public class TemporalInfoboxExtractor extends Extractor {
 
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(
-				wikipedia, DIRTYINFOBOXFACTS, REDIRECTEDINFOBOXFACTS),
-				new TypeChecker(REDIRECTEDINFOBOXFACTS, INFOBOXFACTS)));
+				wikipedia, TEMPORALDIRTYINFOBOXFACTS, TEMPORALREDIRECTEDINFOBOXFACTS),
+				new TypeChecker(TEMPORALREDIRECTEDINFOBOXFACTS, TEMPORALINFOBOXFACTS)));
 	}
 
 	public Set<Theme> input() {
@@ -60,28 +60,28 @@ public class TemporalInfoboxExtractor extends Extractor {
 	}
 
 	/** Infobox facts, non-checked */
-	public static final Theme DIRTYINFOBOXFACTS = new Theme(
+	public static final Theme TEMPORALDIRTYINFOBOXFACTS = new Theme(
 			"infoboxTemporalFactsVeryDirty",
-			"Facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked");
+			"Temporal facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked");
 	/** Redirected Infobox facts, non-checked */
-	public static final Theme REDIRECTEDINFOBOXFACTS = new Theme(
+	public static final Theme TEMPORALREDIRECTEDINFOBOXFACTS = new Theme(
 			"infoboxTemporalFactsDirty",
-			"Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
+			"Temporal facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
 	/** Final Infobox facts */
-	public static final Theme INFOBOXFACTS = new Theme(
+	public static final Theme TEMPORALINFOBOXFACTS = new Theme(
 			"infoboxTemporalFacts",
-			"Facts extracted from the Wikipedia infoboxes, type-checked and with redirects resolved");
+			"Temporal facts extracted from the Wikipedia infoboxes, type-checked and with redirects resolved");
 	/** Infobox sources */
-	public static final Theme INFOBOXSOURCES = new Theme(
+	public static final Theme TEMPORALINFOBOXSOURCES = new Theme(
 			"infoboxTemporalSources",
-			"Source information for the facts extracted from the Wikipedia infoboxes");
+			"Source information for the temporal facts extracted from the Wikipedia infoboxes");
 	/** Types derived from infoboxes */
 	public static final Theme INFOBOXTYPES = new Theme("infoboxTemporalTypes",
 			"Types extracted from Wikipedia infoboxes");
 
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(DIRTYINFOBOXFACTS, INFOBOXTYPES,
-				INFOBOXSOURCES);
+		return new FinalSet<Theme>(TEMPORALDIRTYINFOBOXFACTS, INFOBOXTYPES,
+				TEMPORALINFOBOXSOURCES);
 	}
 
 	public void extract(Map<Theme, FactWriter> writers,
@@ -126,7 +126,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 				String type = preferredMeaning.get(cls);
 				if (type != null) {
 					write(writers, INFOBOXTYPES, new Fact(null, titleEntity,
-							RDFS.type, type), INFOBOXSOURCES, titleEntity,
+							RDFS.type, type), TEMPORALINFOBOXSOURCES, titleEntity,
 							"InfoboxExtractor: Preferred meaning of infobox type "
 									+ cls);
 				}
@@ -230,15 +230,15 @@ public class TemporalInfoboxExtractor extends Extractor {
 					FactComponent.setDataType(object, cls);
 				}
 				if (inverse)
-					write(writers, DIRTYINFOBOXFACTS, new Fact(object,
-							relation, entity), INFOBOXSOURCES, entity,
+					write(writers, TEMPORALDIRTYINFOBOXFACTS, new Fact(object,
+							relation, entity), TEMPORALINFOBOXSOURCES, entity,
 							"InfoboxExtractor: from " + valueString);
 
 				else {
 					baseFact = new Fact(entity, relation, object);
 					if(FactComponent.isLiteral(baseFact.getArg(2)))
-					write(writers, DIRTYINFOBOXFACTS, baseFact,
-							INFOBOXSOURCES, entity,
+					write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact,
+							TEMPORALINFOBOXSOURCES, entity,
 							"InfoboxExtractor: from " + valueString);
 
 				}
@@ -249,19 +249,19 @@ public class TemporalInfoboxExtractor extends Extractor {
 						List<String> dates = dateObjectsList.get(i);
 						if (dates.size() > 0
 								&& FactComponent.isUri(baseFact.getArg(2))) {
-							write(writers, DIRTYINFOBOXFACTS, baseFact,
-									INFOBOXSOURCES, entity,
+							write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact,
+									TEMPORALINFOBOXSOURCES, entity,
 									"InfoboxExtractor: from " + valueString);
 							Fact metafact = baseFact.metaFact("<occursSince>",
 									dates.get(0));
-							write(writers, DIRTYINFOBOXFACTS, metafact,
-									INFOBOXSOURCES, entity,
+							write(writers, TEMPORALDIRTYINFOBOXFACTS, metafact,
+									TEMPORALINFOBOXSOURCES, entity,
 									"InfoboxExtractor: from " + valueString);
 							if (dates.size() > 1) {
 								metafact = baseFact.metaFact("<occursUntil>",
 										dates.get(1));
-								write(writers, DIRTYINFOBOXFACTS, metafact,
-										INFOBOXSOURCES, entity,
+								write(writers, TEMPORALDIRTYINFOBOXFACTS, metafact,
+										TEMPORALINFOBOXSOURCES, entity,
 										"InfoboxExtractor: from " + valueString);
 							}
 
@@ -352,18 +352,18 @@ public class TemporalInfoboxExtractor extends Extractor {
 				}
 
 				if (inverse)
-					write(writers, DIRTYINFOBOXFACTS, new Fact(object,
-							relation, entity), INFOBOXSOURCES, entity,
+					write(writers, TEMPORALDIRTYINFOBOXFACTS, new Fact(object,
+							relation, entity), TEMPORALINFOBOXSOURCES, entity,
 							"InfoboxExtractor: from " + valueString);
 				else if (i == 0) {
 					baseFact = new Fact(entity, relation, object);
 					// baseFact.makeId();
-					write(writers, DIRTYINFOBOXFACTS, baseFact, INFOBOXSOURCES,
+					write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact, TEMPORALINFOBOXSOURCES,
 							entity, "InfoboxExtractor: from " + valueString);
 				} else if (!baseFact.getRelation().equals("")) {
 
 					Fact metafact = baseFact.metaFact(relation, object);
-					write(writers, DIRTYINFOBOXFACTS, metafact, INFOBOXSOURCES,
+					write(writers, TEMPORALDIRTYINFOBOXFACTS, metafact, TEMPORALINFOBOXSOURCES,
 							entity, "InfoboxExtractor: from " + valueString);
 				}
 
