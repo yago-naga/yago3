@@ -114,6 +114,12 @@ public class CategoryExtractor extends Extractor {
 			}
 		}
 
+		// Try postmodifiers to catch "head of state"
+    if(category.postModifier()!=null && category.preposition()!=null && category.preposition().equals("of")) {
+      String wordnet = preferredMeaning.get(stemmedHead+" of "+category.postModifier().head());
+      if(wordnet!=null) return(wordnet);
+    }
+    
 		// Try head
 		String wordnet = preferredMeaning.get(stemmedHead);
 		if (wordnet != null)

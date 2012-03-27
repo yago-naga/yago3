@@ -58,7 +58,6 @@ public class Tester {
   /** Runs a single test*/
   private static void runTest(File testCase, File yagoFolder, File outputFolder) throws Exception {
     if (!testCase.isDirectory() || testCase.getName().startsWith(".")) return;
-    total++;
     Announce.doing("Testing", testCase.getName());
     Extractor extractor = null;
     try {
@@ -71,11 +70,13 @@ public class Tester {
       }
     } catch (Exception e) {
       Announce.failed();
+      total++;
       failed++;
       return;
     }
     Announce.doing("Checking output");
     for (Theme theme : extractor.output()) {
+      total++;
       Announce.doing("Checking", theme);
       FactCollection goldStandard = new FactCollection(theme.file(testCase));
       FactCollection result = new FactCollection(theme.file(outputFolder));

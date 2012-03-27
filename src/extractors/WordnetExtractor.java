@@ -58,8 +58,8 @@ public class WordnetExtractor extends Extractor {
 
 	@Override
 	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-		FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 		Announce.doing("Extracting from Wordnet");
+    Map<String,String> hardwiredMeanings=preferredMeanings(new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)));
 		Collection<String> instances = new HashSet<String>(8000);
 		for (String line : new FileLines(new File(wordnetFolder, "wn_ins.pl"), "Loading instances")) {
 			line = line.replace("''", "'");
@@ -103,9 +103,8 @@ public class WordnetExtractor extends Extractor {
 			// add additional fact if it is preferred meaning
 			if (numMeaning.equals("1")) {
 				// First check whether we do not already have such an element
-				if (hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>", wordForm).isEmpty()
-						&& hardWiredFacts.getBySecondArgSlow("<isPreferredMeaningOf>",
-								Character.toUpperCase(wordForm.charAt(0)) + wordForm.substring(1)).isEmpty()) {
+				if (hardwiredMeanings.get(word)==null && 
+				    hardwiredMeanings.get(Character.toUpperCase(wordForm.charAt(0)) + wordForm.substring(1))==null) {
 					writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "<isPreferredMeaningOf>", wordForm));
 				}
 			}
@@ -176,4 +175,5 @@ public class WordnetExtractor extends Extractor {
 			Announce.warning("No preferred meanings found");
 		return (preferredMeaning);
 	}
+	
 }
