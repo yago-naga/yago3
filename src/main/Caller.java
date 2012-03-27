@@ -13,6 +13,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
+import javatools.administrative.CallStack;
 import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
 import basics.Theme;
@@ -58,6 +59,7 @@ public class Caller {
           themesWeHave.addAll(e.output());
           extractors.addAll(e.followUp());
         } catch (Exception ex) {
+          Announce.warning(ex);
           ex.printStackTrace();
         }
         extractors.remove(i);
