@@ -27,6 +27,8 @@ import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
 import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
+import extractors.TemporalCategoryExtractor;
+import extractors.TemporalInfoboxExtractor;
 import extractors.UWNImporter;
 import extractors.WordnetExtractor;
 import extractors.geonames.GeoNamesDataImporter;
@@ -47,7 +49,7 @@ public class FactExtractor extends Extractor {
         DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, RuleExtractor.RULERESULTS, PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETGLOSSES, WordnetExtractor.WORDNETIDS, RuleExtractor.RULESOURCES,
         InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER, ConteXtExtractor.CONTEXTFACTS, GeoNamesDataImporter.GEONAMESDATA,
-        UWNImporter.UWNDATA);
+        UWNImporter.UWNDATA, TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
 
   /** All facts of YAGO */
