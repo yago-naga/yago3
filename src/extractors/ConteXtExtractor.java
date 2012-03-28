@@ -82,7 +82,7 @@ public class ConteXtExtractor extends Extractor {
 				String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
 
 				for (Pair<Fact, String> fact : contextPatterns.extractWithProvenance(normalizedPage, titleEntity)) {
-				  if (fact != null)
+				  if (fact.first != null)
 				    write(out, fact.first, outSources, titleEntity, "ConteXtExtractor from: " + fact.second);
 				}
 			}
