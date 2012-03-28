@@ -219,7 +219,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 				}
 				// Check data type
 				if (FactComponent.isLiteral(object)) {
-					String[] value = FactComponent.literalAndDataType(object);
+					String[] value = FactComponent.literalAndDatatypeAndLanguage(object);
 					if (value.length != 2
 							|| !factCollection.isSubClassOf(value[1], cls)
 							&& !(value.length == 1 && cls.equals(YAGO.string))) {
@@ -340,7 +340,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 				}
 				// Check data type
 				if (FactComponent.isLiteral(object)) {
-					String[] value = FactComponent.literalAndDataType(object);
+					String[] value = FactComponent.literalAndDatatypeAndLanguage(object);
 					if (value.length != 2
 							|| !factCollection.isSubClassOf(value[1], cls)
 							&& !(value.length == 1 && cls.equals(YAGO.string))) {

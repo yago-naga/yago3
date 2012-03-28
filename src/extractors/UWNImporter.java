@@ -58,7 +58,7 @@ public class UWNImporter extends Extractor {
       String data[] = line.split("\t");
             
       String lang = tlc2language.get(FactComponent.forString(data[0]));
-      String name = FactComponent.forString(data[1],data[0],null);
+      String name = FactComponent.forStringWithLanguage(data[1],data[0]);
       String wordnetSynset = wnssm.get(FactComponent.forString(data[3]));
       
       if (wordnetSynset == null) {

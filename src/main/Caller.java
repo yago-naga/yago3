@@ -54,6 +54,7 @@ public class Caller {
     for (int i = 0; i < extractors.size(); i++) {
       Extractor e = extractors.get(i);
       if (e.input().isEmpty() || themesWeHave.containsAll(e.input())) {
+        Announce.startTimer();
         try {
           e.extract(outputFolder, header);
           themesWeHave.addAll(e.output());
@@ -62,6 +63,7 @@ public class Caller {
           Announce.warning(ex);
           ex.printStackTrace();
         }
+        Announce.printTime();
         extractors.remove(i);
         Announce.message("----------------------------");
         Announce.message("Current themes:", themesWeHave);

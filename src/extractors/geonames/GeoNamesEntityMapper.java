@@ -91,7 +91,7 @@ public class GeoNamesEntityMapper extends Extractor {
           coordinates.put(f.getArg(1), coos);          
         }
         
-        coos.first = Float.parseFloat(FactComponent.stripQuotes(FactComponent.literalAndDataType(f.getArg(2))[0]));
+        coos.first = Float.parseFloat(f.getArgJavaString(2));
       } else if (f.getRelation().equals("<hasLongitude>")) {
         Pair<Float, Float> coos = coordinates.get(f.getArg(1));
         
@@ -100,7 +100,7 @@ public class GeoNamesEntityMapper extends Extractor {
           coordinates.put(f.getArg(1), coos);          
         }
         
-        coos.second = Float.parseFloat(FactComponent.stripQuotes(FactComponent.literalAndDataType(f.getArg(2))[0]));
+        coos.second = Float.parseFloat(FactComponent.stripQuotes(FactComponent.literalAndDatatypeAndLanguage(f.getArg(2))[0]));
       }
     }
     

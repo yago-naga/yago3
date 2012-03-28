@@ -69,6 +69,8 @@ public class Tester {
         extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
       }
     } catch (Exception e) {
+      e.printStackTrace();
+      Announce.message(e);
       Announce.failed();
       total++;
       failed++;

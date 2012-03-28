@@ -88,7 +88,7 @@ public abstract class TermExtractor {
       for (String num : NumberParser.getNumbers(NumberParser.normalize(s))) {
         String[] nd = NumberParser.getNumberAndUnit(num, new int[2]);
         if (nd.length == 1 || nd[1] == null) result.add(FactComponent.forNumber(nd[0]));
-        else result.add(FactComponent.forString(nd[0], null, FactComponent.forYagoEntity(nd[1])));
+        else result.add(FactComponent.forStringWithDatatype(nd[0], FactComponent.forYagoEntity(nd[1])));
       }
       if (result.size() == 0) {
         Announce.debug("No number found in", s);
@@ -157,7 +157,7 @@ public abstract class TermExtractor {
       List<String> result = new ArrayList<String>(3);
       for (String w : s.split(";|,?\n|'''|''|, ?;|\"")) {
         w = w.trim();
-        if (w.length() > 2 && !w.contains("{{") && !w.contains("[[")) result.add(FactComponent.forString(w, null, YAGO.string));
+        if (w.length() > 2 && !w.contains("{{") && !w.contains("[[")) result.add(FactComponent.forStringWithDatatype(w, YAGO.string));
       }
       if (result.size() == 0) Announce.debug("Could not find string in", s);
       return (result);
@@ -198,7 +198,7 @@ public abstract class TermExtractor {
         return (Arrays.asList());
       }
 
-      return Arrays.asList(FactComponent.forString(clean, null, null));
+      return Arrays.asList(FactComponent.forString(clean));
     }
   };
 

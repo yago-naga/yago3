@@ -96,10 +96,10 @@ public class WordnetExtractor extends Extractor {
 					lastClass = FactComponent.forWordnetEntity(word, id);
 				id2class.put(lastId = id, lastClass);
 				writers.get(WORDNETWORDS).write(
-						new Fact(null, lastClass, "skos:prefLabel", FactComponent.forString(word, "en", null)));
+						new Fact(null, lastClass, "skos:prefLabel", FactComponent.forStringWithLanguage(word, "en")));
 				writers.get(WORDNETIDS).write(new Fact(null, lastClass, "<hasSynsetId>", FactComponent.forString(id)));
 			}
-			String wordForm = FactComponent.forString(word, "en", null);
+			String wordForm = FactComponent.forStringWithLanguage(word, "en");
 			// add additional fact if it is preferred meaning
 			if (numMeaning.equals("1")) {
 				// First check whether we do not already have such an element

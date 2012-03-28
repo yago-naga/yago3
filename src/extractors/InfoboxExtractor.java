@@ -114,9 +114,9 @@ public class InfoboxExtractor extends Extractor {
 			}
 			// Check data type
 			if (FactComponent.isLiteral(object)) {
-				String[] value = FactComponent.literalAndDataType(object);
-				if (value.length != 2 || !factCollection.isSubClassOf(value[1], cls)
-						&& !(value.length == 1 && cls.equals(YAGO.string))) {
+				String datatype=FactComponent.getDatatype(object);
+				if(datatype==null) datatype=YAGO.string;
+				if (!factCollection.isSubClassOf(datatype, cls)) {
 					Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
 					continue;
 				}
