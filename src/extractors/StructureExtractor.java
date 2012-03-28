@@ -47,7 +47,7 @@ public class StructureExtractor extends Extractor {
   public static final Theme DIRTYSTRUCTUREFACTS = new Theme("structureFactsNeedTypeCheckingRedirecting", "Regular structure from Wikipedia, e.g. links - needs redirecting and typechecking");
 
   /** Facts representing the Wikipedia structure (e.g. links) */
-  public static final Theme REDIRECTEDSTRUCTUREFACTS = new Theme("StructureFactsNeedTypeChecking", "Regular structure from Wikipedia, e.g. links - needs typechecking");
+  public static final Theme REDIRECTEDSTRUCTUREFACTS = new Theme("structureFactsNeedTypeChecking", "Regular structure from Wikipedia, e.g. links - needs typechecking");
 
   /** Facts representing the Wikipedia structure (e.g. links) */
   public static final Theme STRUCTUREFACTS = new Theme("structureFacts", "Regular structure from Wikipedia, e.g. links");
