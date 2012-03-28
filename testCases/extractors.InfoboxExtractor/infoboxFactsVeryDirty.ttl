@@ -1,9 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked
 
 @base <http://yago-knowledge/resource/> .
@@ -18,6 +13,8 @@
 <Campania>	<hasArea>	"1.359E10"^^<m^2> .
 #@ <id_y9qq7a_dg9_1nx0f7z>
 <Campania>	<hasPopulation>	"5954882"^^xsd:integer .
+#@ <id_y9qq7a_ice_nhp74y>
+<Campania>	<hasWebsite>	<http://www.regione.campania.it/> .
 #@ <id_y9qq7a_ice_nhp74y>
 <Campania>	<hasWebsite>	<http://www.regione.campania.it/> .
 #@ <id_y9qq7a_ice_j36i5p>
@@ -130,12 +127,16 @@
 <Lazio>	<hasPopulation>	"5732212"^^xsd:integer .
 #@ <id_10q4wvf_ice_1hmw8d7>
 <Lazio>	<hasWebsite>	<http://www.regione.lazio.it/> .
+#@ <id_10q4wvf_ice_1hmw8d7>
+<Lazio>	<hasWebsite>	<http://www.regione.lazio.it/> .
 #@ <id_10q4wvf_ice_qxndqs>
 <Lazio>	<hasWebsite>	<http://www.regione.lazio.it> .
 #@ <id_1qfjlq_1b1_3dzijn>
 <Lombardy>	<hasArea>	"2.3844E10"^^<m^2> .
 #@ <id_1qfjlq_dg9_1bkgypx>
 <Lombardy>	<hasPopulation>	"9939193"^^xsd:integer .
+#@ <id_1qfjlq_ice_p231nn>
+<Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it/> .
 #@ <id_1qfjlq_ice_p231nn>
 <Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it/> .
 #@ <id_1qfjlq_ice_ulfqfg>
@@ -176,6 +177,8 @@
 <Molise>	<hasArea>	"4.438E9"^^<m^2> .
 #@ <id_2ox8i9_dg9_1ofu97i>
 <Molise>	<hasPopulation>	"319834"^^xsd:integer .
+#@ <id_2ox8i9_ice_1mtl0gd>
+<Molise>	<hasWebsite>	<http://www.regione.molise.it/> .
 #@ <id_2ox8i9_ice_1mtl0gd>
 <Molise>	<hasWebsite>	<http://www.regione.molise.it/> .
 #@ <id_2ox8i9_ice_8rrs2q>
@@ -258,6 +261,8 @@
 <The_People_of_Freedom>	rdfs:label	<Il_Popolo_della_Libertà> .
 #@ <id_zuuepc_ice_pgv025>
 <The_People_of_Freedom>	<hasWebsite>	<http://www.ilpopolodellaliberta.it> .
+#@ <id_zuuepc_ice_pgv025>
+<The_People_of_Freedom>	<hasWebsite>	<http://www.ilpopolodellaliberta.it> .
 #@ <id_prkzmu_z7a_10qtisd>
 <University_of_Milan>	<isLocatedIn>	<Milan> .
 #@ <id_prkzmu_z7a_10ot5dv>
@@ -265,9 +270,11 @@
 #@ <id_prkzmu_siu_17ifpai>
 <University_of_Milan>	<wasCreatedOnDate>	"1924-##-##"^^xsd:date .
 #@ <id_prkzmu_11k_cir6r8>
-<University_of_Milan>	<hasMotto>	"Scientia illuminans dignus"^^xsd:string .
+<University_of_Milan>	<hasMotto>	"Scientia illuminans dignus"@en .
 #@ <id_prkzmu_1ia_mf0asg>
 <University_of_Milan>	rdfs:label	<Università_degli_Studi_di_Milano> .
+#@ <id_prkzmu_ice_18bm07t>
+<University_of_Milan>	<hasWebsite>	<http://www.unimi.it/> .
 #@ <id_prkzmu_ice_18bm07t>
 <University_of_Milan>	<hasWebsite>	<http://www.unimi.it/> .
 #@ <id_prkzmu_ice_18bm07t>
@@ -314,6 +321,8 @@
 <Cherie_Blair>	<isMarriedTo>	<Tony_Blair> .
 #@ <id_11qatgv_ice_15xcqeo>
 <Cherie_Blair>	<hasWebsite>	<http://www.cherieblair.org/> .
+#@ <id_11qatgv_ice_15xcqeo>
+<Cherie_Blair>	<hasWebsite>	<http://www.cherieblair.org/> .
 #@ <id_z038xo_siu_d79xxf>
 <Edinburgh>	<wasCreatedOnDate>	"1125-##-##"^^xsd:date .
 #@ <id_z038xo_siu_zltrns>
@@ -357,7 +366,7 @@
 #@ <id_z038xo_jto_11fo2lq>
 <Edinburgh>	<hasLongitude>	"-3.1888888888888887"^^<degrees> .
 #@ <id_z038xo_11k_1yd201b>
-<Edinburgh>	<hasMotto>	"Nisi Dominus Frustra"^^xsd:string .
+<Edinburgh>	<hasMotto>	"Nisi Dominus Frustra"@en .
 #@ <id_z038xo_1ia_tvx1oo>
 <Edinburgh>	rdfs:label	<City_of_Edinburgh> .
 #@ <id_z038xo_dg9_1p0odkt>
@@ -372,6 +381,10 @@
 <Edinburgh>	<isLocatedIn>	<United_Kingdom> .
 #@ <id_z038xo_yrh_zik21x>
 <Edinburgh>	<hasUTCOffset>	"+0"^^xsd:integer .
+#@ <id_z038xo_ice_3b85a6>
+<Edinburgh>	<hasWebsite>	<http://www.edinburgh.gov.uk/> .
+#@ <id_z038xo_ice_o7m35>
+<Edinburgh>	<hasWebsite>	<http://www.edinburgh-inspiringcapital.com/> .
 #@ <id_z038xo_ice_3b85a6>
 <Edinburgh>	<hasWebsite>	<http://www.edinburgh.gov.uk/> .
 #@ <id_z038xo_ice_1le17kh>
@@ -434,12 +447,16 @@
 <Gordon_Brown>	<hasWebsite>	<http://www.gordonbrown.org.uk> .
 #@ <id_max52o_ice_4twvyy>
 <Gordon_Brown>	<hasWebsite>	<http://www.gordonbrown.org.uk> .
+#@ <id_max52o_ice_4twvyy>
+<Gordon_Brown>	<hasWebsite>	<http://www.gordonbrown.org.uk> .
 #@ <id_177pmny_z7a_27wsag>
 <Inns_of_Court_School_of_Law>	<isLocatedIn>	<London> .
 #@ <id_177pmny_z7a_10it2g9>
 <Inns_of_Court_School_of_Law>	<isLocatedIn>	<England> .
 #@ <id_177pmny_siu_1nhiiuc>
 <Inns_of_Court_School_of_Law>	<wasCreatedOnDate>	"1852-##-##"^^xsd:date .
+#@ <id_177pmny_ice_1wxwmaj>
+<Inns_of_Court_School_of_Law>	<hasWebsite>	<http://www.city.ac.uk/law/index.html> .
 #@ <id_177pmny_ice_1wxwmaj>
 <Inns_of_Court_School_of_Law>	<hasWebsite>	<http://www.city.ac.uk/law/index.html> .
 #@ <id_g6y5dz_10x_pqyhz8>
@@ -518,6 +535,8 @@
 <Michael_Meacher>	<hasWebsite>	<http://www.michaelmeacher.info> .
 #@ <id_27r2yr_ice_1eaxden>
 <Michael_Meacher>	<hasWebsite>	<http://www.michaelmeacher.info> .
+#@ <id_27r2yr_ice_1eaxden>
+<Michael_Meacher>	<hasWebsite>	<http://www.michaelmeacher.info> .
 #@ <id_7fm9w4_1xk_z7kvd>
 <Neil_Kinnock>	<wasBornOnDate>	"1942-03-28"^^xsd:date .
 #@ <id_7fm9w4_1ia_pekv4o>
@@ -562,6 +581,8 @@
 <Thomas_White_(merchant)>	<created>	<St_John's_College,_Oxford> .
 #@ <id_1bx19fo_ice_1vvzutj>
 <St_John's_College,_Oxford>	<hasWebsite>	<http://www.sjc.ox.ac.uk/> .
+#@ <id_1bx19fo_ice_1vvzutj>
+<St_John's_College,_Oxford>	<hasWebsite>	<http://www.sjc.ox.ac.uk/> .
 #@ <id_1bx19fo_1n8_10fvn9w>
 <St_John's_College,_Oxford>	<hasLatitude>	"-51.75612"^^<degrees> .
 #@ <id_1bx19fo_jto_l1jtn4>
@@ -584,12 +605,14 @@
 <Tony_Blair>	<isMarriedTo>	<Cherie_Blair> .
 #@ <id_gg7cuf_ice_1u7xor0>
 <Tony_Blair>	<hasWebsite>	<http://www.tonyblairoffice.org/> .
+#@ <id_gg7cuf_ice_1u7xor0>
+<Tony_Blair>	<hasWebsite>	<http://www.tonyblairoffice.org/> .
 #@ <id_17c51vo_z7a_7pv4sj>
 <World_Economic_Forum>	<isLocatedIn>	<Cologny> .
 #@ <id_1i8r7a9_1c7_17c51vo>
 <Klaus_Schwab>	<isLeaderOf>	<World_Economic_Forum> .
 #@ <id_17c51vo_11k_yreh6r>
-<World_Economic_Forum>	<hasMotto>	"Entrepreneurship in the global public interest"^^xsd:string .
+<World_Economic_Forum>	<hasMotto>	"Entrepreneurship in the global public interest"@en .
 #@ <id_17c51vo_ice_19757c0>
 <World_Economic_Forum>	<hasWebsite>	<http://www.weforum.org> .
 #@ <id_1fpq28n_10x_py5vtt>
@@ -610,6 +633,8 @@
 <Bundestag>	<isAffiliatedTo>	<Christian_Democratic_Union_(Germany)> .
 #@ <id_18367vn_ice_2c3vmd>
 <Bundestag>	<hasWebsite>	<http://www.bundestag.de> .
+#@ <id_18367vn_ice_2c3vmd>
+<Bundestag>	<hasWebsite>	<http://www.bundestag.de> .
 #@ <id_1cpbvlf_ice_9lmbq4>
 <Chancellor_of_Germany>	<hasWebsite>	<http://bundeskanzlerin.de> .
 #@ <id_t9jepg_siu_18syvnt>
@@ -618,6 +643,10 @@
 <Christian_Democratic_Union_(Germany)>	<isLocatedIn>	<Berlin> .
 #@ <id_t9jepg_1ia_1rg8l9i>
 <Christian_Democratic_Union_(Germany)>	rdfs:label	<Christlich_Demokratische_Union_Deutschlands> .
+#@ <id_t9jepg_ice_1heq0qs>
+<Christian_Democratic_Union_(Germany)>	<hasWebsite>	<http://www.cdu.de> .
+#@ <id_t9jepg_ice_1heq0qs>
+<Christian_Democratic_Union_(Germany)>	<hasWebsite>	<http://www.cdu.de> .
 #@ <id_t9jepg_ice_1heq0qs>
 <Christian_Democratic_Union_(Germany)>	<hasWebsite>	<http://www.cdu.de> .
 #@ <id_t9jepg_ice_1heq0qs>
@@ -632,6 +661,8 @@
 <Christian_Wulff>	<isAffiliatedTo>	<Christian_Democratic_Union_(Germany)> .
 #@ <id_jr01l4_16x_nkiphk>
 <Christian_Wulff>	<isMarriedTo>	<Bettina_Wulff> .
+#@ <id_jr01l4_ice_1894bxa>
+<Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/> .
 #@ <id_jr01l4_ice_1894bxa>
 <Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/> .
 #@ <id_tu1ps7_ice_6nsaxe>
@@ -687,9 +718,9 @@
 #@ <id_1ps9evn_siu_18px7c3>
 <Germany>	<wasCreatedOnDate>	"1990-10-03"^^xsd:date .
 #@ <id_1ps9evn_f9j_1clozfr>
-<Germany>	<hasGDP>	"3628000000000"^^<dollar> .
+<Germany>	<hasGDP>	"3628000000000"^^<yagoMonetaryValue> .
 #@ <id_1ps9evn_1b1_zik285>
-<Germany>	<hasGini>	"27"^^xsd:integer .
+<Germany>	<hasGini>	"27"^^xsd:decimal .
 #@ <id_1ps9evn_f9j_109sqbk>
 <Germany>	<hasHDI>	"0.905"^^xsd:decimal .
 #@ <id_1ps9evn_1n8_1sdnf49>
@@ -730,6 +761,8 @@
 <Guido_Westerwelle>	<livesIn>	<Bonn> .
 #@ <id_18vc8ci_ice_3uctt7>
 <Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/> .
+#@ <id_18vc8ci_ice_3uctt7>
+<Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/> .
 #@ <id_3gfkn0_1b1_1qaar9m>
 <Hamburg>	<hasArea>	"7.55E8"^^<m^2> .
 #@ <id_3gfkn0_1n8_10cmo6o>
@@ -744,6 +777,8 @@
 <Hamburg>	<hasLongitude>	"10.001388888888888"^^<degrees> .
 #@ <id_3gfkn0_dg9_bkbxp>
 <Hamburg>	<hasPopulation>	"1796077"^^xsd:integer .
+#@ <id_3gfkn0_ice_xkzcpf>
+<Hamburg>	<hasWebsite>	<http://www.hamburg.de/> .
 #@ <id_3gfkn0_ice_xkzcpf>
 <Hamburg>	<hasWebsite>	<http://www.hamburg.de/> .
 #@ <id_zycb9m_10x_1kwp9bi>
@@ -792,6 +827,8 @@
 <Jürgen_Trittin>	<isAffiliatedTo>	<Bündnis_90/Die_Grünen> .
 #@ <id_1cm9d6p_ice_tffo4h>
 <Jürgen_Trittin>	<hasWebsite>	<http://www.juergentrittin.de/> .
+#@ <id_1cm9d6p_ice_tffo4h>
+<Jürgen_Trittin>	<hasWebsite>	<http://www.juergentrittin.de/> .
 #@ <id_1cm9d6p_ice_uqigpa>
 <Jürgen_Trittin>	<hasWebsite>	<http://www.juergentrittin.de> .
 #@ <id_1czrim3_10x_xl0vxw>
@@ -810,6 +847,8 @@
 <Philipp_Rösler>	<livesIn>	<Hannover> .
 #@ <id_1czrim3_ice_1yx2yp2>
 <Philipp_Rösler>	<hasWebsite>	<http://www.philipp-roesler.de/> .
+#@ <id_1czrim3_ice_1yx2yp2>
+<Philipp_Rösler>	<hasWebsite>	<http://www.philipp-roesler.de/> .
 #@ <id_py5vtt_z7a_1s0921k>
 <University_of_Leipzig>	<isLocatedIn>	<Leipzig> .
 #@ <id_py5vtt_z7a_1ps9evn>
@@ -817,11 +856,13 @@
 #@ <id_py5vtt_siu_1uvgvpp>
 <University_of_Leipzig>	<wasCreatedOnDate>	"1409-12-02"^^xsd:date .
 #@ <id_py5vtt_11k_4uhzi4>
-<University_of_Leipzig>	<hasMotto>	"Aus Tradition Grenzen überschreiten - Crossing Boundaries out of Tradition"^^xsd:string .
+<University_of_Leipzig>	<hasMotto>	"Aus Tradition Grenzen überschreiten - Crossing Boundaries out of Tradition"@en .
 #@ <id_py5vtt_1ia_1lkrbh0>
 <University_of_Leipzig>	rdfs:label	<Universität_Leipzig> .
 #@ <id_py5vtt_z7a_5bpmr4>
 <University_of_Leipzig>	<isLocatedIn>	<Saxony> .
+#@ <id_py5vtt_ice_1l6natu>
+<University_of_Leipzig>	<hasWebsite>	<http://www.uni-leipzig.de/> .
 #@ <id_py5vtt_ice_1l6natu>
 <University_of_Leipzig>	<hasWebsite>	<http://www.uni-leipzig.de/> .
 #@ <id_py5vtt_ice_1l6natu>
@@ -942,6 +983,10 @@
 <Institut_d'Études_Politiques_de_Paris>	<wasCreatedOnDate>	"1872-##-##"^^xsd:date .
 #@ <id_jfqfk4_ice_qj8lvt>
 <Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.fr/> .
+#@ <id_jfqfk4_ice_qj8l7p>
+<Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.eu/> .
+#@ <id_jfqfk4_ice_qj8lvt>
+<Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.fr/> .
 #@ <id_jfqfk4_ice_1ofhm3q>
 <Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.fr> .
 #@ <id_jfqfk4_ice_qj8l7p>
@@ -1020,10 +1065,14 @@
 <Nicolas_Sarkozy>	<isMarriedTo>	<Carla_Bruni> .
 #@ <id_vkf2e7_ice_4rurel>
 <Nicolas_Sarkozy>	<hasWebsite>	<http://www.sarkozy.fr/home/> .
+#@ <id_vkf2e7_ice_4rurel>
+<Nicolas_Sarkozy>	<hasWebsite>	<http://www.sarkozy.fr/home/> .
 #@ <id_17gzuo3_z7a_1vqh5vd>
 <Paris_West_University_Nanterre_La_Défense>	<isLocatedIn>	<Nanterre> .
 #@ <id_17gzuo3_siu_gqphl2>
 <Paris_West_University_Nanterre_La_Défense>	<wasCreatedOnDate>	"1964-##-##"^^xsd:date .
+#@ <id_17gzuo3_ice_1k7bb8e>
+<Paris_West_University_Nanterre_La_Défense>	<hasWebsite>	<http://www.u-paris10.fr/> .
 #@ <id_17gzuo3_ice_1k7bb8e>
 <Paris_West_University_Nanterre_La_Défense>	<hasWebsite>	<http://www.u-paris10.fr/> .
 #@ <id_1isx97r_1s2_1lxa6xt>
@@ -1046,6 +1095,8 @@
 <Union_for_a_Popular_Movement>	<hasWebsite>	<http://www.lemouvementpopulaire.fr> .
 #@ <id_1as8dix_ice_1itk391>
 <Union_for_a_Popular_Movement>	<hasWebsite>	<http://www.lemouvementpopulaire.fr> .
+#@ <id_1as8dix_ice_1itk391>
+<Union_for_a_Popular_Movement>	<hasWebsite>	<http://www.lemouvementpopulaire.fr> .
 #@ <id_j2lde8_10x_wceha4>
 <Alfredo_Pérez_Rubalcaba>	<graduatedFrom>	<Complutense_University_of_Madrid> .
 #@ <id_j2lde8_1xk_f4ibnn>
@@ -1060,6 +1111,8 @@
 <Alfredo_Pérez_Rubalcaba>	<isMarriedTo>	<Pilar_Goya> .
 #@ <id_w2djwz_1ia_1gebrsf>
 <Congress_of_Deputies_(Spain)>	rdfs:label	<Congreso_de_los_Diputados> .
+#@ <id_w2djwz_ice_1cxo6vk>
+<Congress_of_Deputies_(Spain)>	<hasWebsite>	<http://www.congreso.es/> .
 #@ <id_w2djwz_ice_1cxo6vk>
 <Congress_of_Deputies_(Spain)>	<hasWebsite>	<http://www.congreso.es/> .
 #@ <id_w2djwz_ice_1mv0ke7>
@@ -1079,9 +1132,9 @@
 #@ <id_1u5uyhb_lje_qhq8an>
 <Francoist_Spain>	<hasCurrency>	<Spanish_peseta> .
 #@ <id_1u5uyhb_11k_1p7x38m>
-<Francoist_Spain>	<hasMotto>	"Plus Ultra"^^xsd:string .
+<Francoist_Spain>	<hasMotto>	"Plus Ultra"@en .
 #@ <id_1u5uyhb_11k_1dzw6iu>
-<Francoist_Spain>	<hasMotto>	"Una, Grande y Libre"^^xsd:string .
+<Francoist_Spain>	<hasMotto>	"Una, Grande y Libre"@en .
 #@ <id_1m0lrpx_10x_d3efgx>
 <Joaquín_Almunia>	<graduatedFrom>	<University_of_Deusto> .
 #@ <id_1m0lrpx_1xk_i0j564>
@@ -1140,6 +1193,8 @@
 <Mariano_Rajoy>	<isMarriedTo>	<Elvira_Fernández_Balboa> .
 #@ <id_45ua65_ice_1czcnuu>
 <Mariano_Rajoy>	<hasWebsite>	<http://www.pp.es/index.asp> .
+#@ <id_45ua65_ice_1czcnuu>
+<Mariano_Rajoy>	<hasWebsite>	<http://www.pp.es/index.asp> .
 #@ <id_1vmvigz_10x_wceha4>
 <María_Teresa_Fernández_de_la_Vega>	<graduatedFrom>	<Complutense_University_of_Madrid> .
 #@ <id_1vmvigz_1xk_woxfe3>
@@ -1164,12 +1219,16 @@
 <Spanish_Socialist_Workers'_Party>	<hasWebsite>	<http://www.psoe.es/> .
 #@ <id_1i5m33a_ice_1uagrqt>
 <Spanish_Socialist_Workers'_Party>	<hasWebsite>	<http://www.psoe.es/> .
+#@ <id_1i5m33a_ice_1uagrqt>
+<Spanish_Socialist_Workers'_Party>	<hasWebsite>	<http://www.psoe.es/> .
+#@ <id_1i5m33a_ice_1uagrqt>
+<Spanish_Socialist_Workers'_Party>	<hasWebsite>	<http://www.psoe.es/> .
 #@ <id_cacb9n_z7a_e5t89u>
 <University_of_León>	<isLocatedIn>	<León,_Spain> .
 #@ <id_cacb9n_siu_1bx7bsa>
 <University_of_León>	<wasCreatedOnDate>	"1979-##-##"^^xsd:date .
 #@ <id_cacb9n_11k_1op20t3>
-<University_of_León>	<hasMotto>	"Universitas legionensis"^^xsd:string .
+<University_of_León>	<hasMotto>	"Universitas legionensis"@en .
 #@ <id_cacb9n_1ia_depwmp>
 <University_of_León>	rdfs:label	<Universidad_de_León> .
 #@ <id_cacb9n_ice_8u0sd9>
@@ -1192,5 +1251,7 @@
 <Valladolid>	<isLocatedIn>	<Spain> .
 #@ <id_13dzdeu_yrh_zik21y>
 <Valladolid>	<hasUTCOffset>	"+1"^^xsd:integer .
+#@ <id_13dzdeu_ice_1xgqqoy>
+<Valladolid>	<hasWebsite>	<http://www.valladolid.es/> .
 #@ <id_13dzdeu_ice_1xgqqoy>
 <Valladolid>	<hasWebsite>	<http://www.valladolid.es/> .

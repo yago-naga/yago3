@@ -47,7 +47,7 @@ public abstract class TermExtractor {
         return (forWikiLink);
       case "xsd:date":
         return (forDate);
-      case "<yagoWord>":
+      case "<yagoLanString>":
       case "xsd:string":
       case "<yagoTLD>":
       case "<yagoISBN>":
