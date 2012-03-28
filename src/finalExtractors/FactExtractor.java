@@ -48,7 +48,7 @@ public class FactExtractor extends Extractor {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS,
         DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, RuleExtractor.RULERESULTS, PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETGLOSSES, WordnetExtractor.WORDNETIDS, RuleExtractor.RULESOURCES,
-        InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER, ConteXtExtractor.CONTEXTFACTS, GeoNamesDataImporter.GEONAMESDATA,
+        InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER, /*ConteXtExtractor.CONTEXTFACTS, */GeoNamesDataImporter.GEONAMESDATA,
         UWNImporter.UWNDATA, TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
 
