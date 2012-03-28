@@ -88,7 +88,7 @@ public class FactTemplateExtractor {
 				  }
 				}
 				for (Fact f : FactTemplate.instantiate(pattern.second(), variables)) {
-				  result.add(new Pair<Fact, String>(f, pattern.first.toString() + " -> " + pattern.second().toString()));
+				  result.add(new Pair<Fact, String>(f, pattern.first.toString() + " -> " + pattern.second.toString()));
 				}
 			}
 		}
