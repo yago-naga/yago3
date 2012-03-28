@@ -53,7 +53,7 @@ public class PersonNameExtractor extends Extractor {
 				if (people.contains(f.getArg(1)))
 					continue;
 				people.add(f.getArg(1));
-				String n = FactComponent.stripBrackets(f.getArgJavaString(1));
+				String n = FactComponent.stripBrackets(f.getArg(1));
 				n = Char.decode(n);
 				PersonName name = new PersonName(n);
 				String given = name.givenName();
