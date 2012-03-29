@@ -5,9 +5,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeMap;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
@@ -73,6 +75,23 @@ public class TransitiveTypeExtractor extends Extractor {
 		}
 	}
 
+  /** Loads and returns the entire transitive YAGO taxonomy. This may be large, so discard properly after use.*/
+  public static Map<String,Set<String>> yagoTaxonomy(Map<Theme,FactSource> input) {
+    return(yagoTaxonomy(input.get(TRANSITIVETYPE)));
+  }
+  
+	 /** Loads and returns the entire transitive YAGO taxonomy. This may be large, so discard properly after use.*/
+	public static Map<String,Set<String>> yagoTaxonomy(FactSource transitiveTaxonomy) {
+	  Map<String,Set<String>> taxonomy=new TreeMap<>();
+	  Announce.doing("Loading entire transitive YAGO taxonomy");
+	  for(Fact f : transitiveTaxonomy) {
+	    if(!f.getRelation().equals(RDFS.type)) continue;
+	    D.addKeyValue(taxonomy, f.getArg(1), f.getArg(2),TreeSet.class);
+	  }
+	  Announce.done();
+	  return(taxonomy);
+	}
+	
 	public static void main(String[] args) throws Exception {
 		new TransitiveTypeExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
 	}

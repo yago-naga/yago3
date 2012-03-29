@@ -2,6 +2,7 @@ package main;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,7 +14,6 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
-import javatools.administrative.CallStack;
 import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
 import basics.Theme;
@@ -61,7 +61,7 @@ public class Caller {
           extractors.addAll(e.followUp());
         } catch (Exception ex) {
           Announce.warning(ex);
-          ex.printStackTrace();
+          ex.printStackTrace(new PrintWriter(Announce.getWriter()));
         }
         Announce.printTime();
         extractors.remove(i);

@@ -49,7 +49,7 @@ public class FactExtractor extends Extractor {
         DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, RuleExtractor.RULERESULTS, PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETGLOSSES, WordnetExtractor.WORDNETIDS, RuleExtractor.RULESOURCES,
         InfoboxExtractor.INFOBOXSOURCES, GenderExtractor.PERSONS_GENDER, /*ConteXtExtractor.CONTEXTFACTS, */GeoNamesDataImporter.GEONAMESDATA,
-        UWNImporter.UWNDATA, TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
+        UWNImporter.UWNDATA, TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, CategoryExtractor.CATEGORYLABELS,TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
 
   /** All facts of YAGO */

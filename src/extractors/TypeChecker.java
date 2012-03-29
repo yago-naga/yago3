@@ -13,8 +13,8 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
-import basics.YAGO;
 import extractors.Extractor.FollowUpExtractor;
+import finalExtractors.TransitiveTypeExtractor;
 
 /**
  * YAGO2s - TypeChecker
@@ -28,8 +28,7 @@ public class TypeChecker extends FollowUpExtractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new TreeSet<Theme>(Arrays.asList(checkMe, HardExtractor.HARDWIREDFACTS,
-				WordnetExtractor.WORDNETCLASSES, CategoryExtractor.CATEGORYTYPES, CategoryExtractor.CATEGORYCLASSES));
+		return new TreeSet<Theme>(Arrays.asList(checkMe, TransitiveTypeExtractor.TRANSITIVETYPE, HardExtractor.HARDWIREDFACTS));
 	}
 
 	/** Constructor, takes theme to be checked and theme to output*/
@@ -40,23 +39,21 @@ public class TypeChecker extends FollowUpExtractor {
 	
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-		FactCollection types = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
-		types.load(input.get(CategoryExtractor.CATEGORYTYPES));
-		types.load(input.get(CategoryExtractor.CATEGORYCLASSES));
-		types.load(input.get(HardExtractor.HARDWIREDFACTS));
+	  Map<String,Set<String>> types=TransitiveTypeExtractor.yagoTaxonomy(input);
+	  FactCollection domRan=new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 		FactWriter out = output.get(checked);
 		Announce.doing("Type checking facts");
-		for (Fact fact : input.get(checkMe)) {
-			if (FactComponent.isLiteral(fact.getArg(2))) {
-				out.write(fact);
-				continue;
-			}
-			String domain = types.getArg2(fact.getRelation(), RDFS.domain);
+		for (Fact fact : input.get(checkMe)) {			
+			String domain = domRan.getArg2(fact.getRelation(), RDFS.domain);
 			if (!check(fact.getArg(1), domain, types)) {
 				Announce.debug("Domain check failed", fact);
 				continue;
 			}
-			String range = types.getArg2(fact.getRelation(), RDFS.range);
+			if (FactComponent.isLiteral(fact.getArg(2))) {
+        out.write(fact);
+        continue;
+      }
+			String range = domRan.getArg2(fact.getRelation(), RDFS.range);
 			if (check(fact.getArg(2), range, types))
 				out.write(fact);
 			else
@@ -66,10 +63,13 @@ public class TypeChecker extends FollowUpExtractor {
 	}
 
 	/** Checks whether an entity is of a type */
-	protected boolean check(String entity, String type, FactCollection types) {
-		if (type == null)
-			type = YAGO.entity;
-		return (types.instanceOf(entity, type));
+	protected boolean check(String entity, String type, Map<String,Set<String>> types) {
+		if (type == null) {
+		  // Type is entity, just check it's not a literal
+		  return(!FactComponent.isLiteral(entity));
+		}
+		Set<String> myTypes=types.get(entity);
+		return (myTypes!=null && myTypes.contains(type));
 	}
 
 }
