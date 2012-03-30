@@ -26,6 +26,9 @@ import basics.YAGO;
 
 public class WordnetExtractor extends Extractor {
 
+  /** Holds the preferred meanings, as these are frequently used. Call freeMemory() to abandon them. */
+  protected static Map<String, String> preferredMeaning;
+  
 	/** Folder where wordnet lives */
 	protected File wordnetFolder;
 
@@ -163,9 +166,14 @@ public class WordnetExtractor extends Extractor {
 		return (preferredMeanings(Arrays.asList(fcs)));
 	}
 
+	/** Frees the memory used by the cached preferred menaings*/
+	public static synchronized void freeMemory() {
+	  preferredMeaning=null;
+	}
+	
 	/** Returns a map of Java strings to preferred YAGO entities */
-	public static Map<String, String> preferredMeanings(Collection<FactCollection> fcs) {
-		Map<String, String> preferredMeaning = new HashMap<String, String>();
+	public synchronized static Map<String, String> preferredMeanings(Collection<FactCollection> fcs) {
+		preferredMeaning = new HashMap<String, String>();
 		for (FactCollection fc : fcs) {
 			for (Fact fact : fc.get("<isPreferredMeaningOf>")) {
 				preferredMeaning.put(fact.getArgJavaString(2), fact.getArg(1));

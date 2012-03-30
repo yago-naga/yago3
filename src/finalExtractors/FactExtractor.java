@@ -87,6 +87,7 @@ public class FactExtractor extends Extractor {
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     // We don't need any more taxonomy beyond this point
     TransitiveTypeExtractor.freeMemory();
+    WordnetExtractor.freeMemory();
     
     // Fix where we write the relations
     Map<String, FactWriter> relation2Writer = new TreeMap<>();
