@@ -24,6 +24,8 @@ import extractors.Extractor;
  * 
  * Extracts all transitive rdf:type facts.
  * 
+ * It also loads these transitive facts directly into memory to save time for the following extractors. You can free this memory by saying freeMemory().
+ * 
  * @author Fabian M. Suchanek
  *
  */
@@ -48,6 +50,7 @@ public class TransitiveTypeExtractor extends Extractor {
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     FactCollection classes = new FactCollection(input.get(TypeExtractor.YAGOTAXONOMY));
+    yagoTaxonomy = new TreeMap<>();
     Announce.doing("Computing the transitive closure");
     for (Theme theme : Arrays.asList(TypeExtractor.YAGOTYPES)) {
       Announce.doing("Treating entities in", theme);
@@ -75,10 +78,11 @@ public class TransitiveTypeExtractor extends Extractor {
   protected static void flush(String lastEntity, Set<String> lastClasses, FactWriter factWriter) throws IOException {
     for (String clss : lastClasses) {
       factWriter.write(new Fact(lastEntity, RDFS.type, clss));
+      D.addKeyValue(yagoTaxonomy, lastEntity, clss, TreeSet.class);
     }
   }
 
-  /** Loads and returns the entire transitive YAGO taxonomy. This may be large, so discard properly after use.*/
+  /** Loads and returns the entire transitive YAGO taxonomy. It is being loaded by default already when it's being written. This may be large, so discard if you don't need it.*/
   public static Map<String, Set<String>> yagoTaxonomy(Map<Theme, FactSource> input) {
     return (yagoTaxonomy(input.get(TRANSITIVETYPE)));
   }
@@ -88,7 +92,7 @@ public class TransitiveTypeExtractor extends Extractor {
     yagoTaxonomy = null;
   }
 
-  /** Loads and returns the entire transitive YAGO taxonomy. This may be large, so discard properly after use.*/
+  /** Loads and returns the entire transitive YAGO taxonomy. It is being loaded by default already when it's being written. This may be large, so discard if you don't need it.*/
   public synchronized static Map<String, Set<String>> yagoTaxonomy(FactSource transitiveTaxonomy) {
     if (yagoTaxonomy != null) return (yagoTaxonomy);
     yagoTaxonomy = new TreeMap<>();

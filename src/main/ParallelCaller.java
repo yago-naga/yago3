@@ -40,13 +40,14 @@ public class ParallelCaller {
   protected static Set<Theme> themesWeHave = new TreeSet<>();
 
   /** Number of threads we want*/
-  protected static int numThreads = 4;
+  protected static int numThreads = 16;
 
   /** Starting time */
   protected static long time;
 
   /** Calls next extractor*/
   public static synchronized void callNext(Extractor finished, boolean success) {
+    D.p(NumberFormatter.ISOtime());
     if (finished != null) {
       extractorsRunning.remove(finished);
       if (success) {
@@ -57,7 +58,7 @@ public class ParallelCaller {
         D.p("Failed", finished);
       }
     }
-    D.p("Themes:", themesWeHave);
+    //D.p("Themes:", themesWeHave);
     if (extractorsRunning.size() >= numThreads) return;
     for (int i = 0; i < extractorsToDo.size(); i++) {
       if (extractorsRunning.size() >= numThreads) break;
@@ -68,8 +69,14 @@ public class ParallelCaller {
         new ExtractionCaller(ex).start();
         extractorsToDo.remove(ex);
         i--;
+      } else {
+        //Set<Theme> weneed = new HashSet<>(ex.input());
+        //weneed.removeAll(themesWeHave);
+        //D.p("In the queue:",ex,"because of missing",weneed);
       }
     }
+    D.p("Extractors queuing:", extractorsToDo);
+    D.p("Extractors running:", extractorsRunning);
     if (!extractorsRunning.isEmpty()) return;
     long now = System.currentTimeMillis();
     D.p("Finished at", NumberFormatter.ISOtime());
@@ -110,14 +117,13 @@ public class ParallelCaller {
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.WARNING);
     D.p("Running YAGO extractors in parallel");
-    time = System.currentTimeMillis();
-    D.p("Starting at", NumberFormatter.ISOtime());
     String initFile = args.length == 0 ? "yago.ini" : args[0];
     D.p("Initializing from", initFile);
     Parameters.init(initFile);
     numThreads = Parameters.getInt("numThreads", numThreads);
     outputFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "the folder where YAGO should be created");
     extractorsToDo = Caller.extractors(Parameters.getList("extractors"));
+    time = System.currentTimeMillis();
     callNext(null, true);
   }
 

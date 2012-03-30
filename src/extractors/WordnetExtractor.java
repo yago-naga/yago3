@@ -24,6 +24,14 @@ import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
 
+/**
+ * YAGO2s - WordNetExtractor
+ * 
+ * Extracts facts form wordnet. 
+ * 
+ * @author Fabian M. Suchanek
+ *
+ */
 public class WordnetExtractor extends Extractor {
 
   /** Holds the preferred meanings, as these are frequently used. Call freeMemory() to abandon them. */
@@ -173,6 +181,7 @@ public class WordnetExtractor extends Extractor {
 	
 	/** Returns a map of Java strings to preferred YAGO entities */
 	public synchronized static Map<String, String> preferredMeanings(Collection<FactCollection> fcs) {
+	  if(preferredMeaning!=null) return(preferredMeaning);
 		preferredMeaning = new HashMap<String, String>();
 		for (FactCollection fc : fcs) {
 			for (Fact fact : fc.get("<isPreferredMeaningOf>")) {

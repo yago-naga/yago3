@@ -7,6 +7,7 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
+import javatools.parsers.Char;
 import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
@@ -50,6 +51,7 @@ public class TitleExtractor {
 		String title = FileLines.readToBoundary(in, "</title>");
 		title=replacer.transform(title);
 		if(title==null) return(null);
+		title=Char.decodeAmpersand(title);
 		if(wordnetWords.contains(title.toLowerCase())) return(null);
 		return (FactComponent.forYagoEntity(title.replace(' ', '_')));
 	}
