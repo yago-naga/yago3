@@ -19,7 +19,6 @@ import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
 import extractors.CategoryExtractor;
-import extractors.ConteXtExtractor;
 import extractors.DisambiguationPageExtractor;
 import extractors.Extractor;
 import extractors.GenderExtractor;

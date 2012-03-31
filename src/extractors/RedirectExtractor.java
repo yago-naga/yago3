@@ -6,24 +6,24 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import extractors.Extractor.FollowUpExtractor;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import basics.Fact;
+import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
+import extractors.Extractor.FollowUpExtractor;
 
 /**
- * Takes the facts from the InfoboxExtractor and checks if any of the entities
- * are actually a redirect and resolves them
+ * Extracts all redirects from Wikipedia
  * 
  * @author Johannes Hoffart
  * 
@@ -35,15 +35,19 @@ public class RedirectExtractor extends FollowUpExtractor {
 
 	private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
+	 /** Redirect facts from Wikipedia redirect pages */
+  public static final Theme REDIRECTFACTS = new Theme("redirectFacts",
+      "Redirect facts from Wikipedia redirect pages");
+	
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(checkMe, PatternHardExtractor.TITLEPATTERNS,
+		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS,
 				WordnetExtractor.WORDNETWORDS));
 	}
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(checked);
+		return new FinalSet<Theme>(REDIRECTFACTS);
 	}
 
 	@Override
@@ -76,16 +80,12 @@ public class RedirectExtractor extends FollowUpExtractor {
 			}
 		}
 
-		FactWriter out = output.get(checked);
+		FactWriter out = output.get(REDIRECTFACTS);
 
-		FactSource dirtyInfoboxFacts = input.get(checkMe);
-
-		Announce.doing("Applying redirects to Infobox facts");
-
-		for (Fact dirtyFact : dirtyInfoboxFacts) {
-			Fact redirectedDirtyFact = redirectArguments(dirtyFact, redirects);
-			out.write(redirectedDirtyFact);
+		for (Entry<String, String> redirect : redirects.entrySet()) {
+			out.write(new Fact(FactComponent.forString(redirect.getKey()), "<isWikipediaRedirectTo>", FactComponent.forYagoEntity(redirect.getValue())));
 		}
+		
 		Announce.done();
 	}
 
@@ -99,32 +99,13 @@ public class RedirectExtractor extends FollowUpExtractor {
 		}
 	}
 
-	private Fact redirectArguments(Fact dirtyFact, Map<String, String> redirects) {
-		String redirectedArg1 = dirtyFact.getArg(1);
-		if (redirects.containsKey(dirtyFact.getArg(1))) {
-			redirectedArg1 = redirects.get(dirtyFact.getArg(1));
-		}
-
-		String redirectedArg2 = dirtyFact.getArg(2);
-		if (redirects.containsKey(dirtyFact.getArg(2))) {
-			redirectedArg2 = redirects.get(dirtyFact.getArg(2));
-		}
-
-		Fact redirectedFact = new Fact(dirtyFact.getId(), redirectedArg1, dirtyFact.getRelation(), redirectedArg2);
-
-		return redirectedFact;
-	}
-
 	/**
 	 * Needs Wikipedia as input
 	 * 
 	 * @param wikipedia
 	 *            Wikipedia XML dump
 	 */
-	public RedirectExtractor(File wikipedia, Theme in, Theme out) {
-		this.checkMe=in;
-		this.checked=out;
+	public RedirectExtractor(File wikipedia) {
 		this.wikipedia = wikipedia;
 	}
-
 }

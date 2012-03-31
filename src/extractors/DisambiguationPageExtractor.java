@@ -37,7 +37,7 @@ public class DisambiguationPageExtractor extends Extractor {
 	
   @Override
  public Set<Extractor> followUp() {
-   return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(wikipedia, DIRTYDISAMBIGUATIONMEANSFACTS, REDIRECTEDDISAMBIGUATIONMEANSFACTS), new TypeChecker(
+   return new HashSet<Extractor>(Arrays.asList(new Redirector(DIRTYDISAMBIGUATIONMEANSFACTS, REDIRECTEDDISAMBIGUATIONMEANSFACTS), new TypeChecker(
        REDIRECTEDDISAMBIGUATIONMEANSFACTS, DISAMBIGUATIONMEANSFACTS)));
  }
 

@@ -18,10 +18,6 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
-import extractorUtils.PatternList;
-import extractorUtils.TermExtractor;
-import extractorUtils.TitleExtractor;
-
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -30,6 +26,9 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import extractorUtils.PatternList;
+import extractorUtils.TermExtractor;
+import extractorUtils.TitleExtractor;
 
 /**
  * TemporalInfoboxExtractor - YAGO2s
@@ -46,8 +45,8 @@ public class TemporalInfoboxExtractor extends Extractor {
 	protected File wikipedia;
 
 	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(
-				wikipedia, TEMPORALDIRTYINFOBOXFACTS, TEMPORALREDIRECTEDINFOBOXFACTS),
+		return new HashSet<Extractor>(Arrays.asList(
+		    new Redirector(TEMPORALDIRTYINFOBOXFACTS, TEMPORALREDIRECTEDINFOBOXFACTS),
 				new TypeChecker(TEMPORALREDIRECTEDINFOBOXFACTS, TEMPORALINFOBOXFACTS)));
 	}
 

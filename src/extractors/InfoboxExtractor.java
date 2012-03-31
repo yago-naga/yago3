@@ -37,7 +37,7 @@ public class InfoboxExtractor extends Extractor {
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new RedirectExtractor(wikipedia, DIRTYINFOBOXFACTS, REDIRECTEDINFOBOXFACTS), new TypeChecker(
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(DIRTYINFOBOXFACTS, REDIRECTEDINFOBOXFACTS), new TypeChecker(
         REDIRECTEDINFOBOXFACTS, INFOBOXFACTS)));
   }
 

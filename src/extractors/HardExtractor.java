@@ -8,7 +8,6 @@ import java.util.TreeSet;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
