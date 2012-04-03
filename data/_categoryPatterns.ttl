@@ -136,6 +136,9 @@
 
 # Non-conceptual words
 
+"entrant"	rdf:type	<_yagoNonConceptualWord> . # Can be anything entering a competition
+"trophy"	rdf:type	<_yagoNonConceptualWord> . # contains the clubs, not the awards 
+"relation"	rdf:type	<_yagoNonConceptualWord> .
 "birth"	rdf:type	<_yagoNonConceptualWord> .
 "death"	rdf:type	<_yagoNonConceptualWord> .
 "acronym"	rdf:type	<_yagoNonConceptualWord> .
