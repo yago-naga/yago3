@@ -83,6 +83,7 @@ public class ParallelCaller {
         //D.p("In the queue:",ex,"because of missing",weneed);
       }
     }
+    D.p("Themes:",themesWeHave);
     D.p("Extractors queuing:", extractorsToDo);
     D.p("Extractors running:", extractorsRunning);
     if (!extractorsRunning.isEmpty()) return;
