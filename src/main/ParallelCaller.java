@@ -136,7 +136,7 @@ public class ParallelCaller {
     if (reuse) {
       D.p("Reusing existing themes");
       for (File f : outputFolder.listFiles()) {
-        if(!f.getName().endsWith(".ttl")) continue;
+        if(!f.getName().endsWith(".ttl") || f.length()<100) continue;
         Theme t = Theme.forFile(f);
         if (t == null) {
           D.p("  No theme found for", f.getName());
