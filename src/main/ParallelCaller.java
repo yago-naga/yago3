@@ -22,6 +22,10 @@ import extractors.Extractor;
  * is: extractors = extractors.HardExtractor(./mydatafolder),
  * extractors.WikipediaExtractor(myWikipediaFile), ...
  * 
+ * Optionally, the ini-file can contain the parameter
+ * reuse=true
+ * ... which will re-use themes that are already there.
+ * 
  * @author Fabian M. Suchanek
  *
  */
@@ -64,9 +68,13 @@ public class ParallelCaller {
       if (extractorsRunning.size() >= numThreads) break;
       Extractor ex = extractorsToDo.get(i);
       if (ex.input().isEmpty() || themesWeHave.containsAll(ex.input())) {
-        D.p("Starting", ex);
-        extractorsRunning.add(ex);
-        new ExtractionCaller(ex).start();
+        if (themesWeHave.containsAll(ex.output())) {
+          D.p("Skipping", ex);
+        } else {
+          D.p("Starting", ex);
+          extractorsRunning.add(ex);
+          new ExtractionCaller(ex).start();
+        }
         extractorsToDo.remove(ex);
         i--;
       } else {
@@ -121,8 +129,21 @@ public class ParallelCaller {
     D.p("Initializing from", initFile);
     Parameters.init(initFile);
     numThreads = Parameters.getInt("numThreads", numThreads);
+    boolean reuse = Parameters.getBoolean("reuse", false);
     outputFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "the folder where YAGO should be created");
     extractorsToDo = Caller.extractors(Parameters.getList("extractors"));
+    if (reuse) {
+      D.p("Reusing existing themes");
+      for (File f : outputFolder.listFiles()) {
+        if(!f.getName().endsWith(".ttl")) continue;
+        Theme t = Theme.forFile(f);
+        if (t == null) {
+          D.p("  No theme found for", f.getName());
+        } else {
+          themesWeHave.add(t);
+        }
+      }
+    }
     time = System.currentTimeMillis();
     callNext(null, true);
   }

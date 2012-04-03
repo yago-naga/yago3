@@ -16,14 +16,18 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.YAGO;
 import extractors.CategoryExtractor;
+import extractors.DisambiguationPageExtractor;
 import extractors.Extractor;
 import extractors.GenderExtractor;
 import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
+import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
 import extractors.TemporalCategoryExtractor;
 import extractors.TemporalInfoboxExtractor;
+import extractors.UWNImporter;
 import extractors.WordnetExtractor;
 import extractors.geonames.GeoNamesDataImporter;
 
@@ -35,30 +39,27 @@ import extractors.geonames.GeoNamesDataImporter;
  * @author Fabian M. Suchanek
  * 
  */
-public class FactExtractor extends Extractor {
+public class MetaFactExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS,
-        GenderExtractor.PERSONS_GENDER, GeoNamesDataImporter.GEONAMESDATA, TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+    return new FinalSet<>(HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
-
-  /** All facts of YAGO */
-  public static final Theme YAGOFACTS = new Theme("yagoFacts", "All instance facts of YAGO");
+  /** All meta facts of YAGO */
+  public static final Theme YAGOMETAFACTS = new Theme("yagoMetaFacts", "All meta facts of YAGO");
 
   /** relations that we exclude, because they are treated elsewhere */
-  public static final Set<String> relationsExcluded = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range, RDFS.subpropertyOf,
-      RDFS.label, "skos:prefLabel", "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>", "<hasGloss>");
+  public static final Set<String> relationsExcluded = new FinalSet<>(YAGO.extractionSource, YAGO.extractionTechnique);
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(YAGOFACTS);
+    return new FinalSet<>(YAGOMETAFACTS);
   }
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    FactWriter w=output.get(YAGOFACTS);
+    FactWriter w=output.get(YAGOMETAFACTS);
 
     // We don't need any more taxonomy beyond this point
     TransitiveTypeExtractor.freeMemory();
@@ -67,7 +68,7 @@ public class FactExtractor extends Extractor {
     // Collect themes where we find the relations
     Map<String, Set<Theme>> relationsToDo = new TreeMap<>();
     // Start with some standard relation
-    relationsToDo.put("<wasBornOnDate>", new HashSet<Theme>(input.keySet()));
+    relationsToDo.put("<happenedOnDate>", new HashSet<Theme>(input.keySet()));
     boolean isFirstRun = true;
     while (!relationsToDo.isEmpty()) {
       String relation = D.pick(relationsToDo.keySet());
@@ -76,7 +77,7 @@ public class FactExtractor extends Extractor {
       for (Theme theme : relationsToDo.get(relation)) {
         Announce.doing("Reading", theme);
         for (Fact fact : input.get(theme)) {
-          if (isFirstRun && !fact.getRelation().startsWith("<_") && !relationsExcluded.contains(fact.getRelation()) && !FactComponent.isFactId(fact.getArg(1))) {
+          if (isFirstRun && !fact.getRelation().startsWith("<_") && !relationsExcluded.contains(fact.getRelation()) && FactComponent.isFactId(fact.getArg(1))) {
             D.addKeyValue(relationsToDo, fact.getRelation(), theme, HashSet.class);
           }
           if (!relation.equals(fact.getRelation())) continue;
@@ -96,6 +97,6 @@ public class FactExtractor extends Extractor {
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    new FactExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
+    new MetaFactExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
   }
 }

@@ -58,7 +58,7 @@ public class CategoryExtractor extends Extractor {
   public static final Theme CATEGORYTYPES = new Theme("categoryTypes", "Types derived from the categories");
 
   /** Facts deduced from categories */
-  public static final Theme CATEGORYLABELS= new Theme("categoryLabels", "Labels derived from the categories");
+  public static final Theme CATEGORYLANGUAGELABELS= new Theme("yagoMultilingualInstanceLabels", "Labels derived from the categories");
 
   /** Facts deduced from categories */
   public static final Theme DIRTYCATEGORYFACTS = new Theme("categoryFactsDirty", "Facts derived from the categories - still to be type checked");
@@ -71,7 +71,7 @@ public class CategoryExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(CATEGORYTYPES, DIRTYCATEGORYFACTS, CATEGORYCLASSES, CATEGORYLABELS);
+    return new FinalSet<Theme>(CATEGORYTYPES, DIRTYCATEGORYFACTS, CATEGORYCLASSES, CATEGORYLANGUAGELABELS);
   }
 
   /** Maps a category to a wordnet class */
@@ -225,7 +225,8 @@ public class CategoryExtractor extends Extractor {
           }
           break;
         case RDFS.label:
-          writers.get(CATEGORYLABELS).write(fact);
+          if(D.equal(FactComponent.getLanguage(fact.getArg(2)),"en")) writers.get(DIRTYCATEGORYFACTS).write(fact);
+          else writers.get(CATEGORYLANGUAGELABELS).write(fact);
           break;          
         case RDFS.subclassOf:
           writers.get(CATEGORYCLASSES).write(fact);
