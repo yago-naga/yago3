@@ -113,7 +113,15 @@ public class Caller {
       Announce.failed();
       return (null);
     }
-    Extractor extractor = Extractor.forName(m.group(1), m.group(2) == null || m.group(2).isEmpty() ? null : new File(m.group(2)));
+    Extractor extractor;
+    if(m.group(2)!=null && !m.group(2).isEmpty()) {
+      String inputDataFileName=Parameters.get(m.group(2),m.group(2));
+      File inputDataFile=new File(inputDataFileName);
+      if(!inputDataFile.exists()) Announce.error("Input data file not found:",inputDataFile);
+      extractor=Extractor.forName(m.group(1),inputDataFile);
+    } else {
+     extractor= Extractor.forName(m.group(1),null);
+    }
     if (extractor == null) {
       Announce.failed();
       return (null);
