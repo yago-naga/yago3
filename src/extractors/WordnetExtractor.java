@@ -12,6 +12,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Name;
@@ -71,6 +72,8 @@ public class WordnetExtractor extends Extractor {
 	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
 		Announce.doing("Extracting from Wordnet");
     Map<String,String> hardwiredMeanings=preferredMeanings(new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)));
+    // Reset the preferred meanings cache, because they only contain the hard-wired facts 
+    preferredMeaning=null;
 		Collection<String> instances = new HashSet<String>(8000);
 		for (String line : new FileLines(new File(wordnetFolder, "wn_ins.pl"), "Loading instances")) {
 			line = line.replace("''", "'");

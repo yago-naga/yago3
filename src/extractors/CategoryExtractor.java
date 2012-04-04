@@ -140,7 +140,7 @@ public class CategoryExtractor extends Extractor {
     facts.add(new Fact(null, titleEntity, RDFS.type, FactComponent.forWikiCategory(category)));
     categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept));
     String name = new NounGroup(category).stemmed().replace('_', ' ');
-    if (!name.isEmpty()) categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent.forString(name)));
+    if (!name.isEmpty()) categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent.forStringWithLanguage(name,"en")));
   }
 
   /** Returns the set of non-conceptual words */
@@ -150,12 +150,10 @@ public class CategoryExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-
     FactCollection categoryPatternCollection = new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS));
     FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(categoryPatternCollection, "<_categoryPattern>");
     Set<String> nonconceptual = nonConceptualWords(categoryPatternCollection);
-    Map<String, String> preferredMeanings = WordnetExtractor.preferredMeanings(new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)),
-        new FactCollection(input.get(WordnetExtractor.WORDNETWORDS)));
+    Map<String, String> preferredMeanings = WordnetExtractor.preferredMeanings(input);
     TitleExtractor titleExtractor = new TitleExtractor(input);
     FactCollection wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
     FactCollection categoryClasses = new FactCollection();
@@ -269,8 +267,8 @@ public class CategoryExtractor extends Extractor {
     if (titleEntity.startsWith("<")) titleEntity = titleEntity.substring(1);
     if (titleEntity.endsWith(">")) titleEntity = Char.cutLast(titleEntity);
     String name = Char.decode(titleEntity.replace('_', ' '));
-    result.add(FactComponent.forString(name));
-    result.add(FactComponent.forString(Char.normalize(name)));
+    result.add(FactComponent.forStringWithLanguage(name,"en"));
+    result.add(FactComponent.forStringWithLanguage(Char.normalize(name),"en"));
     if (name.contains(" (")) {
       result.add(FactComponent.forStringWithLanguage(name.substring(0, name.indexOf(" (")).trim(),"en"));
     }

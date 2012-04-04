@@ -23,6 +23,9 @@
 #@ <id_1m3s2y3_115_y9qq7a>
 <id_y9qq7a_ice_nhp74y>	<extractionSource>	<Campania> .
 <id_1m3s2y3_115_y9qq7a>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.campania.it/ www.regione.campania.it]" .
+#@ <id_1m3s2y3_115_y9qq7a>
+<id_y9qq7a_ice_nhp74y>	<extractionSource>	<Campania> .
+<id_1m3s2y3_115_y9qq7a>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.campania.it/ www.regione.campania.it]" .
 #@ <id_1jdghrw_115_y9qq7a>
 <id_y9qq7a_ice_j36i5p>	<extractionSource>	<Campania> .
 <id_1jdghrw_115_y9qq7a>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.campania.it/ www.regione.campania.it]" .
@@ -44,18 +47,9 @@
 #@ <id_zf0cax_115_1gaoy63>
 <id_1gaoy63_1s2_6diydo>	<extractionSource>	<Carlo_Azeglio_Ciampi> .
 <id_zf0cax_115_1gaoy63>	<extractionTechnique>	"InfoboxExtractor: from [[Action Party (Italy)|Action Party (1943-1947]]" .
-#@ <id_1dhzizr_115_1gaoy63>
-<id_1gaoy63_88c_1x9tonu>	<extractionSource>	<Carlo_Azeglio_Ciampi> .
-<id_1dhzizr_115_1gaoy63>	<extractionTechnique>	"InfoboxExtractor: from Economist \n Politician" .
-#@ <id_17ytkrc_115_1gaoy63>
-<id_1gaoy63_88c_1kbo50g>	<extractionSource>	<Carlo_Azeglio_Ciampi> .
-<id_17ytkrc_115_1gaoy63>	<extractionTechnique>	"InfoboxExtractor: from Economist \n Politician" .
 #@ <id_12o5ngj_115_1gaoy63>
 <id_1gaoy63_16x_38lj4w>	<extractionSource>	<Carlo_Azeglio_Ciampi> .
 <id_12o5ngj_115_1gaoy63>	<extractionTechnique>	"InfoboxExtractor: from Franca Pilla" .
-#@ <id_xa29k7_115_7r55ul>
-<id_7r55ul_88c_1y1zid8>	<extractionSource>	<Forza_Italia> .
-<id_xa29k7_115_7r55ul>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type political party" .
 #@ <id_1suvsu6_115_7r55ul>
 <id_7r55ul_siu_wdv4o9>	<extractionSource>	<Forza_Italia> .
 <id_1suvsu6_115_7r55ul>	<extractionTechnique>	"InfoboxExtractor: from 18 January 1994" .
@@ -83,18 +77,9 @@
 #@ <id_1dcs25k_115_1qqn7vt>
 <id_1qqn7vt_tje_10ot5dv>	<extractionSource>	<Gianfranco_Fini> .
 <id_1dcs25k_115_1qqn7vt>	<extractionTechnique>	"InfoboxExtractor: from [[Italy|Italian]]" .
-#@ <id_rzxo7s_115_1qqn7vt>
-<id_1qqn7vt_88c_1x4861e>	<extractionSource>	<Gianfranco_Fini> .
-<id_rzxo7s_115_1qqn7vt>	<extractionTechnique>	"InfoboxExtractor: from [[Journalist]] \n [[Politician]]" .
-#@ <id_mkm7we_115_1qqn7vt>
-<id_1qqn7vt_88c_1kbo50g>	<extractionSource>	<Gianfranco_Fini> .
-<id_mkm7we_115_1qqn7vt>	<extractionTechnique>	"InfoboxExtractor: from [[Journalist]] \n [[Politician]]" .
 #@ <id_1cn3jhh_115_1qqn7vt>
 <id_1qqn7vt_12k_zk2qwl>	<extractionSource>	<Gianfranco_Fini> .
 <id_1cn3jhh_115_1qqn7vt>	<extractionTechnique>	"InfoboxExtractor: from [[Rome]]" .
-#@ <id_1lr7t8u_115_1vo5vis>
-<id_1vo5vis_88c_vafydj>	<extractionSource>	<Giorgio_Napolitano> .
-<id_1lr7t8u_115_1vo5vis>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_1vjfj0b_115_1vo5vis>
 <id_1vo5vis_10x_knbcmp>	<extractionSource>	<Giorgio_Napolitano> .
 <id_1vjfj0b_115_1vo5vis>	<extractionTechnique>	"InfoboxExtractor: from [[University of Naples Federico II]]" .
@@ -113,9 +98,6 @@
 #@ <id_1ksj7f5_115_1vo5vis>
 <id_1vo5vis_16x_110on1m>	<extractionSource>	<Giorgio_Napolitano> .
 <id_1ksj7f5_115_1vo5vis>	<extractionTechnique>	"InfoboxExtractor: from Clio Maria Bittoni" .
-#@ <id_5lhgs8_115_1rnvp37>
-<id_1rnvp37_88c_vafydj>	<extractionSource>	<Giuliano_Amato> .
-<id_5lhgs8_115_1rnvp37>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_be95cj_115_1rnvp37>
 <id_1rnvp37_10x_caev3y>	<extractionSource>	<Giuliano_Amato> .
 <id_be95cj_115_1rnvp37>	<extractionTechnique>	"InfoboxExtractor: from [[University of Pisa]]\n[[Sant'Anna School of Advanced Studies]]\n[[Columbia Law School|Columbia University]]" .
@@ -137,9 +119,6 @@
 #@ <id_18b62gf_115_1rnvp37>
 <id_1rnvp37_16x_aibg5s>	<extractionSource>	<Giuliano_Amato> .
 <id_18b62gf_115_1rnvp37>	<extractionTechnique>	"InfoboxExtractor: from Diana Vincenzi" .
-#@ <id_kzn63u_115_1bclsii>
-<id_1bclsii_88c_vafydj>	<extractionSource>	<Giulio_Tremonti> .
-<id_kzn63u_115_1bclsii>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_x7jtbf_115_1bclsii>
 <id_1bclsii_10x_pt3h46>	<extractionSource>	<Giulio_Tremonti> .
 <id_x7jtbf_115_1bclsii>	<extractionTechnique>	"InfoboxExtractor: from [[University of Pavia]]" .
@@ -152,9 +131,6 @@
 #@ <id_1udyfo7_115_1bclsii>
 <id_1bclsii_1s2_zuuepc>	<extractionSource>	<Giulio_Tremonti> .
 <id_1udyfo7_115_1bclsii>	<extractionTechnique>	"InfoboxExtractor: from [[The People of Freedom|People of Freedom]]" .
-#@ <id_1w0pp8e_115_1bclsii>
-<id_1bclsii_88c_1inhq0u>	<extractionSource>	<Giulio_Tremonti> .
-<id_1w0pp8e_115_1bclsii>	<extractionTechnique>	"InfoboxExtractor: from [[Lawyer]]\n[[Law]] [[professor]]" .
 #@ <id_11ei1xw_115_1q29rbl>
 <id_1q29rbl_1ia_wddcm1>	<extractionSource>	<Italian_Chamber_of_Deputies> .
 <id_11ei1xw_115_1q29rbl>	<extractionTechnique>	"InfoboxExtractor: from Camera dei Deputati" .
@@ -176,12 +152,6 @@
 #@ <id_1u98kte_115_184v0j1>
 <id_184v0j1_1s2_zuuepc>	<extractionSource>	<Lamberto_Dini> .
 <id_1u98kte_115_184v0j1>	<extractionTechnique>	"InfoboxExtractor: from [[The People of Freedom]]" .
-#@ <id_1sq12s4_115_184v0j1>
-<id_184v0j1_88c_1kbo50g>	<extractionSource>	<Lamberto_Dini> .
-<id_1sq12s4_115_184v0j1>	<extractionTechnique>	"InfoboxExtractor: from [[Politician]] \n [[Economist]]" .
-#@ <id_1y9710j_115_184v0j1>
-<id_184v0j1_88c_1x9tonu>	<extractionSource>	<Lamberto_Dini> .
-<id_1y9710j_115_184v0j1>	<extractionTechnique>	"InfoboxExtractor: from [[Politician]] \n [[Economist]]" .
 #@ <id_tdnqvj_115_184v0j1>
 <id_184v0j1_12k_zk2qwl>	<extractionSource>	<Lamberto_Dini> .
 <id_tdnqvj_115_184v0j1>	<extractionTechnique>	"InfoboxExtractor: from [[Rome]], [[Italy]]" .
@@ -203,6 +173,9 @@
 #@ <id_s1uhrs_115_10q4wvf>
 <id_10q4wvf_ice_1hmw8d7>	<extractionSource>	<Lazio> .
 <id_s1uhrs_115_10q4wvf>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.lazio.it/ www.regione.lazio.it]" .
+#@ <id_s1uhrs_115_10q4wvf>
+<id_10q4wvf_ice_1hmw8d7>	<extractionSource>	<Lazio> .
+<id_s1uhrs_115_10q4wvf>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.lazio.it/ www.regione.lazio.it]" .
 #@ <id_feuohd_115_10q4wvf>
 <id_10q4wvf_ice_qxndqs>	<extractionSource>	<Lazio> .
 <id_feuohd_115_10q4wvf>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.lazio.it/ www.regione.lazio.it]" .
@@ -215,12 +188,12 @@
 #@ <id_l9amkm_115_1qfjlq>
 <id_1qfjlq_ice_p231nn>	<extractionSource>	<Lombardy> .
 <id_l9amkm_115_1qfjlq>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.lombardia.it/ www.regione.lombardia.it]" .
+#@ <id_l9amkm_115_1qfjlq>
+<id_1qfjlq_ice_p231nn>	<extractionSource>	<Lombardy> .
+<id_l9amkm_115_1qfjlq>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.lombardia.it/ www.regione.lombardia.it]" .
 #@ <id_ojcojt_115_1qfjlq>
 <id_1qfjlq_ice_ulfqfg>	<extractionSource>	<Lombardy> .
 <id_ojcojt_115_1qfjlq>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.lombardia.it/ www.regione.lombardia.it]" .
-#@ <id_vs87_115_4o2xc6>
-<id_4o2xc6_88c_vafydj>	<extractionSource>	<Mario_Monti> .
-<id_vs87_115_4o2xc6>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_fwb42i_115_4o2xc6>
 <id_4o2xc6_10x_xiwi9c>	<extractionSource>	<Mario_Monti> .
 <id_fwb42i_115_4o2xc6>	<extractionTechnique>	"InfoboxExtractor: from [[Bocconi University]]\n[[Yale University]]" .
@@ -278,6 +251,9 @@
 #@ <id_kuxf6f_115_2ox8i9>
 <id_2ox8i9_ice_1mtl0gd>	<extractionSource>	<Molise> .
 <id_kuxf6f_115_2ox8i9>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.molise.it/ www.regione.molise.it]" .
+#@ <id_kuxf6f_115_2ox8i9>
+<id_2ox8i9_ice_1mtl0gd>	<extractionSource>	<Molise> .
+<id_kuxf6f_115_2ox8i9>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.molise.it/ www.regione.molise.it]" .
 #@ <id_fiozoc_115_2ox8i9>
 <id_2ox8i9_ice_8rrs2q>	<extractionSource>	<Molise> .
 <id_fiozoc_115_2ox8i9>	<extractionTechnique>	"InfoboxExtractor: from [http://www.regione.molise.it/ www.regione.molise.it]" .
@@ -305,9 +281,6 @@
 #@ <id_14siqyy_115_1re08hr>
 <id_1re08hr_16x_5hsvz5>	<extractionSource>	<Oscar_Luigi_Scalfaro> .
 <id_14siqyy_115_1re08hr>	<extractionTechnique>	"InfoboxExtractor: from Maria Inzitari\n(1924-1944)" .
-#@ <id_rpz93n_115_93sgke>
-<id_93sgke_88c_vafydj>	<extractionSource>	<Roberto_Maroni> .
-<id_rpz93n_115_93sgke>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_13xsh5e_115_93sgke>
 <id_93sgke_10x_prkzmu>	<extractionSource>	<Roberto_Maroni> .
 <id_13xsh5e_115_93sgke>	<extractionTechnique>	"InfoboxExtractor: from [[University of Milan]]" .
@@ -320,9 +293,6 @@
 #@ <id_1yoog9n_115_93sgke>
 <id_93sgke_1s2_w3jqlb>	<extractionSource>	<Roberto_Maroni> .
 <id_1yoog9n_115_93sgke>	<extractionTechnique>	"InfoboxExtractor: from [[Lega Nord|Northern League]]" .
-#@ <id_1iumyu0_115_1uqzhxh>
-<id_1uqzhxh_88c_vafydj>	<extractionSource>	<Romano_Prodi> .
-<id_1iumyu0_115_1uqzhxh>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_e6mqgp_115_1uqzhxh>
 <id_1uqzhxh_10x_1l1h88i>	<extractionSource>	<Romano_Prodi> .
 <id_e6mqgp_115_1uqzhxh>	<extractionTechnique>	"InfoboxExtractor: from [[Università Cattolica del Sacro Cuore|Catholic University of the Sacred Heart]]\n[[London School of Economics]]" .
@@ -341,18 +311,9 @@
 #@ <id_guau9w_115_1uqzhxh>
 <id_1uqzhxh_1s2_15fk4hh>	<extractionSource>	<Romano_Prodi> .
 <id_guau9w_115_1uqzhxh>	<extractionTechnique>	"InfoboxExtractor: from [[Democratic Party (Italy)|Democratic Party]]" .
-#@ <id_1mjlig0_115_1uqzhxh>
-<id_1uqzhxh_88c_1x9tonu>	<extractionSource>	<Romano_Prodi> .
-<id_1mjlig0_115_1uqzhxh>	<extractionTechnique>	"InfoboxExtractor: from Economist\nProfessor" .
-#@ <id_pulmtk_115_1uqzhxh>
-<id_1uqzhxh_88c_8xmb98>	<extractionSource>	<Romano_Prodi> .
-<id_pulmtk_115_1uqzhxh>	<extractionTechnique>	"InfoboxExtractor: from Economist\nProfessor" .
 #@ <id_13ttxb5_115_1uqzhxh>
 <id_1uqzhxh_16x_13yjcwl>	<extractionSource>	<Romano_Prodi> .
 <id_13ttxb5_115_1uqzhxh>	<extractionTechnique>	"InfoboxExtractor: from Flavia Franzoni" .
-#@ <id_s369nd_115_wz05y3>
-<id_wz05y3_88c_vafydj>	<extractionSource>	<Silvio_Berlusconi> .
-<id_s369nd_115_wz05y3>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_14azhp4_115_wz05y3>
 <id_wz05y3_10x_prkzmu>	<extractionSource>	<Silvio_Berlusconi> .
 <id_14azhp4_115_wz05y3>	<extractionTechnique>	"InfoboxExtractor: from [[University of Milan]]" .
@@ -371,15 +332,9 @@
 #@ <id_2gdh8m_115_wz05y3>
 <id_wz05y3_1s2_zuuepc>	<extractionSource>	<Silvio_Berlusconi> .
 <id_2gdh8m_115_wz05y3>	<extractionTechnique>	"InfoboxExtractor: from [[The People of Freedom]]" .
-#@ <id_9ki8b5_115_wz05y3>
-<id_wz05y3_88c_1ukcfgc>	<extractionSource>	<Silvio_Berlusconi> .
-<id_9ki8b5_115_wz05y3>	<extractionTechnique>	"InfoboxExtractor: from [[Entrepreneur]]" .
 #@ <id_1b1i42m_115_wz05y3>
 <id_wz05y3_16x_7qjadl>	<extractionSource>	<Silvio_Berlusconi> .
 <id_1b1i42m_115_wz05y3>	<extractionTechnique>	"InfoboxExtractor: from Carla Dall'Oglio\n\n[[Veronica Lario]]" .
-#@ <id_lkxqhf_115_zuuepc>
-<id_zuuepc_88c_1y1zid8>	<extractionSource>	<The_People_of_Freedom> .
-<id_lkxqhf_115_zuuepc>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type political party" .
 #@ <id_tjpz0p_115_zuuepc>
 <id_zuuepc_siu_brvoq4>	<extractionSource>	<The_People_of_Freedom> .
 <id_tjpz0p_115_zuuepc>	<extractionTechnique>	"InfoboxExtractor: from 18 November 2007\n(launched)\n27 March 2009\n(founded)" .
@@ -410,6 +365,9 @@
 #@ <id_1yte1d1_115_zuuepc>
 <id_zuuepc_ice_pgv025>	<extractionSource>	<The_People_of_Freedom> .
 <id_1yte1d1_115_zuuepc>	<extractionTechnique>	"InfoboxExtractor: from http://www.ilpopolodellaliberta.it" .
+#@ <id_1yte1d1_115_zuuepc>
+<id_zuuepc_ice_pgv025>	<extractionSource>	<The_People_of_Freedom> .
+<id_1yte1d1_115_zuuepc>	<extractionTechnique>	"InfoboxExtractor: from http://www.ilpopolodellaliberta.it" .
 #@ <id_bof517_115_prkzmu>
 <id_prkzmu_z7a_10qtisd>	<extractionSource>	<University_of_Milan> .
 <id_bof517_115_prkzmu>	<extractionTechnique>	"InfoboxExtractor: from [[Milan]]" .
@@ -431,6 +389,9 @@
 #@ <id_18s8411_115_prkzmu>
 <id_prkzmu_ice_18bm07t>	<extractionSource>	<University_of_Milan> .
 <id_18s8411_115_prkzmu>	<extractionTechnique>	"InfoboxExtractor: from [http://www.unimi.it/ www.unimi.it/]" .
+#@ <id_18s8411_115_prkzmu>
+<id_prkzmu_ice_18bm07t>	<extractionSource>	<University_of_Milan> .
+<id_18s8411_115_prkzmu>	<extractionTechnique>	"InfoboxExtractor: from [http://www.unimi.it/ www.unimi.it/]" .
 #@ <id_12486z6_115_7qjadl>
 <id_7qjadl_88c_hsj9sm>	<extractionSource>	<Veronica_Lario> .
 <id_12486z6_115_7qjadl>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type person" .
@@ -446,15 +407,9 @@
 #@ <id_33dqz7_115_7qjadl>
 <id_7qjadl_gcl_wz05y3>	<extractionSource>	<Veronica_Lario> .
 <id_33dqz7_115_7qjadl>	<extractionTechnique>	"InfoboxExtractor: from Ex-wife of [[Silvio Berlusconi]]" .
-#@ <id_keua03_115_7qjadl>
-<id_7qjadl_88c_1uyhsab>	<extractionSource>	<Veronica_Lario> .
-<id_keua03_115_7qjadl>	<extractionTechnique>	"InfoboxExtractor: from [[Actress]]" .
 #@ <id_msx6kw_115_7qjadl>
 <id_7qjadl_16x_wz05y3>	<extractionSource>	<Veronica_Lario> .
 <id_msx6kw_115_7qjadl>	<extractionTechnique>	"InfoboxExtractor: from [[Silvio Berlusconi]]" .
-#@ <id_1glcnkg_115_11qatgv>
-<id_11qatgv_88c_vafydj>	<extractionSource>	<Cherie_Blair> .
-<id_1glcnkg_115_11qatgv>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_1xlmsy9_115_11qatgv>
 <id_11qatgv_10x_zvc8gq>	<extractionSource>	<Cherie_Blair> .
 <id_1xlmsy9_115_11qatgv>	<extractionTechnique>	"InfoboxExtractor: from [[London School of Economics]]" .
@@ -485,9 +440,6 @@
 #@ <id_fgj1wq_115_11qatgv>
 <id_11qatgv_1s2_10cbk3o>	<extractionSource>	<Cherie_Blair> .
 <id_fgj1wq_115_11qatgv>	<extractionTechnique>	"InfoboxExtractor: from [[Labour Party (UK)|Labour]]" .
-#@ <id_1kb8lz2_115_11qatgv>
-<id_11qatgv_88c_1ozxwix>	<extractionSource>	<Cherie_Blair> .
-<id_1kb8lz2_115_11qatgv>	<extractionTechnique>	"InfoboxExtractor: from [[Barrister]]" .
 #@ <id_1nl4u17_115_11qatgv>
 <id_11qatgv_12k_wd6076>	<extractionSource>	<Cherie_Blair> .
 <id_1nl4u17_115_11qatgv>	<extractionTechnique>	"InfoboxExtractor: from [[10 Downing Street]] \n[[Connaught Square]]" .
@@ -497,6 +449,9 @@
 #@ <id_n2buk9_115_11qatgv>
 <id_11qatgv_16x_gg7cuf>	<extractionSource>	<Cherie_Blair> .
 <id_n2buk9_115_11qatgv>	<extractionTechnique>	"InfoboxExtractor: from [[Tony Blair]] (1980–present)" .
+#@ <id_6shrwo_115_11qatgv>
+<id_11qatgv_ice_15xcqeo>	<extractionSource>	<Cherie_Blair> .
+<id_6shrwo_115_11qatgv>	<extractionTechnique>	"InfoboxExtractor: from [http://www.cherieblair.org/ Official website]" .
 #@ <id_6shrwo_115_11qatgv>
 <id_11qatgv_ice_15xcqeo>	<extractionSource>	<Cherie_Blair> .
 <id_6shrwo_115_11qatgv>	<extractionTechnique>	"InfoboxExtractor: from [http://www.cherieblair.org/ Official website]" .
@@ -590,6 +545,12 @@
 #@ <id_1g8w5cu_115_z038xo>
 <id_z038xo_ice_3b85a6>	<extractionSource>	<Edinburgh> .
 <id_1g8w5cu_115_z038xo>	<extractionTechnique>	"InfoboxExtractor: from [http://www.edinburgh.gov.uk/ www.edinburgh.gov.uk] (Official Council site)\n[http://www.edinburgh-inspiringcapital.com/ www.edinburgh-inspiringcapital.com] (Visitor-facing site)" .
+#@ <id_u2s5ii_115_z038xo>
+<id_z038xo_ice_o7m35>	<extractionSource>	<Edinburgh> .
+<id_u2s5ii_115_z038xo>	<extractionTechnique>	"InfoboxExtractor: from [http://www.edinburgh.gov.uk/ www.edinburgh.gov.uk] (Official Council site)\n[http://www.edinburgh-inspiringcapital.com/ www.edinburgh-inspiringcapital.com] (Visitor-facing site)" .
+#@ <id_1g8w5cu_115_z038xo>
+<id_z038xo_ice_3b85a6>	<extractionSource>	<Edinburgh> .
+<id_1g8w5cu_115_z038xo>	<extractionTechnique>	"InfoboxExtractor: from [http://www.edinburgh.gov.uk/ www.edinburgh.gov.uk] (Official Council site)\n[http://www.edinburgh-inspiringcapital.com/ www.edinburgh-inspiringcapital.com] (Visitor-facing site)" .
 #@ <id_x1if1s_115_z038xo>
 <id_z038xo_ice_1le17kh>	<extractionSource>	<Edinburgh> .
 <id_x1if1s_115_z038xo>	<extractionTechnique>	"InfoboxExtractor: from [http://www.edinburgh.gov.uk/ www.edinburgh.gov.uk] (Official Council site)\n[http://www.edinburgh-inspiringcapital.com/ www.edinburgh-inspiringcapital.com] (Visitor-facing site)" .
@@ -665,18 +626,15 @@
 #@ <id_1be7gnh_115_max52o>
 <id_max52o_1s2_10cbk3o>	<extractionSource>	<Gordon_Brown> .
 <id_1be7gnh_115_max52o>	<extractionTechnique>	"InfoboxExtractor: from [[Labour Party (UK)|Labour]]" .
-#@ <id_dhhv8_115_max52o>
-<id_max52o_88c_c2gjkd>	<extractionSource>	<Gordon_Brown> .
-<id_dhhv8_115_max52o>	<extractionTechnique>	"InfoboxExtractor: from Lecturer\nPolitician" .
-#@ <id_ey89q4_115_max52o>
-<id_max52o_88c_1kbo50g>	<extractionSource>	<Gordon_Brown> .
-<id_ey89q4_115_max52o>	<extractionTechnique>	"InfoboxExtractor: from Lecturer\nPolitician" .
 #@ <id_1wqsrq_115_max52o>
 <id_max52o_12k_1haru7r>	<extractionSource>	<Gordon_Brown> .
 <id_1wqsrq_115_max52o>	<extractionTechnique>	"InfoboxExtractor: from [[North Queensferry]] <ref></ref>" .
 #@ <id_s8wf5f_115_max52o>
 <id_max52o_16x_1m9as6s>	<extractionSource>	<Gordon_Brown> .
 <id_s8wf5f_115_max52o>	<extractionTechnique>	"InfoboxExtractor: from [[Sarah Brown (wife of Gordon Brown)|Sarah Brown]]" .
+#@ <id_csowgw_115_max52o>
+<id_max52o_ice_4twvyy>	<extractionSource>	<Gordon_Brown> .
+<id_csowgw_115_max52o>	<extractionTechnique>	"InfoboxExtractor: from [http://www.gordonbrown.org.uk www.gordonbrown.org.uk]" .
 #@ <id_csowgw_115_max52o>
 <id_max52o_ice_4twvyy>	<extractionSource>	<Gordon_Brown> .
 <id_csowgw_115_max52o>	<extractionTechnique>	"InfoboxExtractor: from [http://www.gordonbrown.org.uk www.gordonbrown.org.uk]" .
@@ -695,9 +653,9 @@
 #@ <id_16ig2s3_115_177pmny>
 <id_177pmny_ice_1wxwmaj>	<extractionSource>	<Inns_of_Court_School_of_Law> .
 <id_16ig2s3_115_177pmny>	<extractionTechnique>	"InfoboxExtractor: from http://www.city.ac.uk/law/index.html" .
-#@ <id_18nrbru_115_g6y5dz>
-<id_g6y5dz_88c_vafydj>	<extractionSource>	<Jack_Straw> .
-<id_18nrbru_115_g6y5dz>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
+#@ <id_16ig2s3_115_177pmny>
+<id_177pmny_ice_1wxwmaj>	<extractionSource>	<Inns_of_Court_School_of_Law> .
+<id_16ig2s3_115_177pmny>	<extractionTechnique>	"InfoboxExtractor: from http://www.city.ac.uk/law/index.html" .
 #@ <id_1kv9bym_115_g6y5dz>
 <id_g6y5dz_10x_pqyhz8>	<extractionSource>	<Jack_Straw> .
 <id_1kv9bym_115_g6y5dz>	<extractionTechnique>	"InfoboxExtractor: from [[University of Leeds]]\n[[Inns of Court School of Law|Inns of Court]]" .
@@ -716,9 +674,6 @@
 #@ <id_1rybacz_115_g6y5dz>
 <id_g6y5dz_16x_8j3k1t>	<extractionSource>	<Jack_Straw> .
 <id_1rybacz_115_g6y5dz>	<extractionTechnique>	"InfoboxExtractor: from Anthea Weston \n[[Alice Perkins]]" .
-#@ <id_1gf4naq_115_1xvi8at>
-<id_1xvi8at_88c_vafydj>	<extractionSource>	<John_Major> .
-<id_1gf4naq_115_1xvi8at>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_j0365u_115_1xvi8at>
 <id_1xvi8at_1xk_fnlv3f>	<extractionSource>	<John_Major> .
 <id_j0365u_115_1xvi8at>	<extractionTechnique>	"InfoboxExtractor: from {{Birth date and age|1943|3|29|df=y}}" .
@@ -767,9 +722,6 @@
 #@ <id_922tue_115_4ftjb3>
 <id_4ftjb3_16x_7hwzxl>	<extractionSource>	<John_Smith_(Labour_Party_leader)> .
 <id_922tue_115_4ftjb3>	<extractionTechnique>	"InfoboxExtractor: from [[Elizabeth Smith, Baroness Smith of Gilmorehill|Elizabeth Bennett]]" .
-#@ <id_1y0stcm_115_10cbk3o>
-<id_10cbk3o_88c_1y1zid8>	<extractionSource>	<Labour_Party_(UK)> .
-<id_1y0stcm_115_10cbk3o>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type political party" .
 #@ <id_eh5966_115_10cbk3o>
 <id_10cbk3o_z7a_1oe34ql>	<extractionSource>	<Labour_Party_(UK)> .
 <id_eh5966_115_10cbk3o>	<extractionTechnique>	"InfoboxExtractor: from the United Kingdom" .
@@ -785,9 +737,6 @@
 #@ <id_14j6uq8_115_10cbk3o>
 <id_10cbk3o_ice_1gx97om>	<extractionSource>	<Labour_Party_(UK)> .
 <id_14j6uq8_115_10cbk3o>	<extractionTechnique>	"InfoboxExtractor: from {{url|www.labour.org.uk}}" .
-#@ <id_1xsjdxw_115_16vp284>
-<id_16vp284_88c_vafydj>	<extractionSource>	<Margaret_Beckett> .
-<id_1xsjdxw_115_16vp284>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_10dh2ei_115_16vp284>
 <id_16vp284_1xk_fnkl3e>	<extractionSource>	<Margaret_Beckett> .
 <id_10dh2ei_115_16vp284>	<extractionTechnique>	"InfoboxExtractor: from {{birth date and age|1943|1|15|df=y}}" .
@@ -803,9 +752,6 @@
 #@ <id_14zw9wn_115_16vp284>
 <id_16vp284_16x_hvtmy9>	<extractionSource>	<Margaret_Beckett> .
 <id_14zw9wn_115_16vp284>	<extractionTechnique>	"InfoboxExtractor: from Leo Beckett" .
-#@ <id_27hgcd_115_27r2yr>
-<id_27r2yr_88c_vafydj>	<extractionSource>	<Michael_Meacher> .
-<id_27hgcd_115_27r2yr>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_g07hzy_115_27r2yr>
 <id_27r2yr_10x_1l4kmlr>	<extractionSource>	<Michael_Meacher> .
 <id_g07hzy_115_27r2yr>	<extractionTechnique>	"InfoboxExtractor: from [[New College, Oxford]]\n[[London School of Economics]]" .
@@ -824,9 +770,9 @@
 #@ <id_twzhrl_115_27r2yr>
 <id_27r2yr_ice_1eaxden>	<extractionSource>	<Michael_Meacher> .
 <id_twzhrl_115_27r2yr>	<extractionTechnique>	"InfoboxExtractor: from [http://www.michaelmeacher.info www.michaelmeacher.info]" .
-#@ <id_1uwzqkm_115_7fm9w4>
-<id_7fm9w4_88c_1kbo50g>	<extractionSource>	<Neil_Kinnock> .
-<id_1uwzqkm_115_7fm9w4>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type politician" .
+#@ <id_twzhrl_115_27r2yr>
+<id_27r2yr_ice_1eaxden>	<extractionSource>	<Michael_Meacher> .
+<id_twzhrl_115_27r2yr>	<extractionTechnique>	"InfoboxExtractor: from [http://www.michaelmeacher.info www.michaelmeacher.info]" .
 #@ <id_umg44e_115_7fm9w4>
 <id_7fm9w4_1xk_z7kvd>	<extractionSource>	<Neil_Kinnock> .
 <id_umg44e_115_7fm9w4>	<extractionTechnique>	"InfoboxExtractor: from {{birth date and age|1942|03|28|df=y}}" .
@@ -860,9 +806,6 @@
 #@ <id_1a1g9gu_115_104s7no>
 <id_104s7no_1s2_3dgoro>	<extractionSource>	<Phil_Wilson_(British_politician)> .
 <id_1a1g9gu_115_104s7no>	<extractionTechnique>	"InfoboxExtractor: from [[Labour party (UK)|Labour]]" .
-#@ <id_iz78cm_115_1jce2gm>
-<id_1jce2gm_88c_vafydj>	<extractionSource>	<Roy_Hattersley> .
-<id_iz78cm_115_1jce2gm>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_or6y45_115_1jce2gm>
 <id_1jce2gm_10x_ca9zyc>	<extractionSource>	<Roy_Hattersley> .
 <id_or6y45_115_1jce2gm>	<extractionTechnique>	"InfoboxExtractor: from [[University of Hull]]" .
@@ -875,9 +818,6 @@
 #@ <id_12ujrsk_115_1jce2gm>
 <id_1jce2gm_1s2_10cbk3o>	<extractionSource>	<Roy_Hattersley> .
 <id_12ujrsk_115_1jce2gm>	<extractionTechnique>	"InfoboxExtractor: from [[Labour Party (UK)|Labour]]" .
-#@ <id_btw16l_115_1jce2gm>
-<id_1jce2gm_88c_1x4861e>	<extractionSource>	<Roy_Hattersley> .
-<id_btw16l_115_1jce2gm>	<extractionTechnique>	"InfoboxExtractor: from [[Journalist]]" .
 #@ <id_1jc889r_115_lwoiij>
 <id_lwoiij_z7a_1bfocqw>	<extractionSource>	<Sedgefield_(UK_Parliament_constituency)> .
 <id_1jc889r_115_lwoiij>	<extractionTechnique>	"InfoboxExtractor: from [[County Durham]]" .
@@ -896,15 +836,15 @@
 #@ <id_1vkiloj_115_1bx19fo>
 <id_1bx19fo_ice_1vvzutj>	<extractionSource>	<St_John's_College,_Oxford> .
 <id_1vkiloj_115_1bx19fo>	<extractionTechnique>	"InfoboxExtractor: from [http://www.sjc.ox.ac.uk/ Homepage]" .
+#@ <id_1vkiloj_115_1bx19fo>
+<id_1bx19fo_ice_1vvzutj>	<extractionSource>	<St_John's_College,_Oxford> .
+<id_1vkiloj_115_1bx19fo>	<extractionTechnique>	"InfoboxExtractor: from [http://www.sjc.ox.ac.uk/ Homepage]" .
 #@ <id_ohvaa6_115_1bx19fo>
 <id_1bx19fo_1n8_10fvn9w>	<extractionSource>	<St_John's_College,_Oxford> .
 <id_ohvaa6_115_1bx19fo>	<extractionTechnique>	"InfoboxExtractor: from 51.75612 degrees 0 minutes 0 seconds W" .
 #@ <id_13l1ha2_115_1bx19fo>
 <id_1bx19fo_jto_l1jtn4>	<extractionSource>	<St_John's_College,_Oxford> .
 <id_13l1ha2_115_1bx19fo>	<extractionTechnique>	"InfoboxExtractor: from -1.258605 degrees 0 minutes 0 seconds S" .
-#@ <id_wqicxq_115_gg7cuf>
-<id_gg7cuf_88c_vafydj>	<extractionSource>	<Tony_Blair> .
-<id_wqicxq_115_gg7cuf>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_z9ej6c_115_gg7cuf>
 <id_gg7cuf_10x_1bx19fo>	<extractionSource>	<Tony_Blair> .
 <id_z9ej6c_115_gg7cuf>	<extractionTechnique>	"InfoboxExtractor: from [[St John's College, Oxford]]\n[[Inns of Court School of Law|Inns of Court]]" .
@@ -920,15 +860,15 @@
 #@ <id_136ge4c_115_gg7cuf>
 <id_gg7cuf_1s2_10cbk3o>	<extractionSource>	<Tony_Blair> .
 <id_136ge4c_115_gg7cuf>	<extractionTechnique>	"InfoboxExtractor: from [[Labour Party (UK)|Labour]]" .
-#@ <id_5yw94a_115_gg7cuf>
-<id_gg7cuf_88c_1inhq0u>	<extractionSource>	<Tony_Blair> .
-<id_5yw94a_115_gg7cuf>	<extractionTechnique>	"InfoboxExtractor: from Lawyer" .
 #@ <id_1udyvh6_115_gg7cuf>
 <id_gg7cuf_12k_1ks0wcp>	<extractionSource>	<Tony_Blair> .
 <id_1udyvh6_115_gg7cuf>	<extractionTechnique>	"InfoboxExtractor: from [[Connaught Square]]" .
 #@ <id_1ricm2x_115_gg7cuf>
 <id_gg7cuf_16x_11qatgv>	<extractionSource>	<Tony_Blair> .
 <id_1ricm2x_115_gg7cuf>	<extractionTechnique>	"InfoboxExtractor: from [[Cherie Blair|Cherie Booth]]" .
+#@ <id_1ntxoae_115_gg7cuf>
+<id_gg7cuf_ice_1u7xor0>	<extractionSource>	<Tony_Blair> .
+<id_1ntxoae_115_gg7cuf>	<extractionTechnique>	"InfoboxExtractor: from [http://www.tonyblairoffice.org/ Tony Blair Office]" .
 #@ <id_1ntxoae_115_gg7cuf>
 <id_gg7cuf_ice_1u7xor0>	<extractionSource>	<Tony_Blair> .
 <id_1ntxoae_115_gg7cuf>	<extractionTechnique>	"InfoboxExtractor: from [http://www.tonyblairoffice.org/ Tony Blair Office]" .
@@ -965,9 +905,6 @@
 #@ <id_k50x3y_115_1fpq28n>
 <id_1fpq28n_16x_1ck1v4q>	<extractionSource>	<Angela_Merkel> .
 <id_k50x3y_115_1fpq28n>	<extractionTechnique>	"InfoboxExtractor: from Ulrich Merkel \n[[Joachim Sauer]]" .
-#@ <id_1fl0zrr_115_18367vn>
-<id_18367vn_88c_15zg5an>	<extractionSource>	<Bundestag> .
-<id_1fl0zrr_115_18367vn>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type legislature" .
 #@ <id_2lmkg1_115_18367vn>
 <id_18367vn_1ia_y6h9ih>	<extractionSource>	<Bundestag> .
 <id_2lmkg1_115_18367vn>	<extractionTechnique>	"InfoboxExtractor: from Deutscher Bundestag" .
@@ -977,12 +914,12 @@
 #@ <id_b9devx_115_18367vn>
 <id_18367vn_ice_2c3vmd>	<extractionSource>	<Bundestag> .
 <id_b9devx_115_18367vn>	<extractionTechnique>	"InfoboxExtractor: from http://www.bundestag.de" .
+#@ <id_b9devx_115_18367vn>
+<id_18367vn_ice_2c3vmd>	<extractionSource>	<Bundestag> .
+<id_b9devx_115_18367vn>	<extractionTechnique>	"InfoboxExtractor: from http://www.bundestag.de" .
 #@ <id_1xdk3x2_115_1cpbvlf>
 <id_1cpbvlf_ice_9lmbq4>	<extractionSource>	<Chancellor_of_Germany> .
 <id_1xdk3x2_115_1cpbvlf>	<extractionTechnique>	"InfoboxExtractor: from http://bundeskanzlerin.de" .
-#@ <id_1mmwpu4_115_t9jepg>
-<id_t9jepg_88c_1y1zid8>	<extractionSource>	<Christian_Democratic_Union_(Germany)> .
-<id_1mmwpu4_115_t9jepg>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type political party" .
 #@ <id_1s9l6h7_115_t9jepg>
 <id_t9jepg_siu_18syvnt>	<extractionSource>	<Christian_Democratic_Union_(Germany)> .
 <id_1s9l6h7_115_t9jepg>	<extractionTechnique>	"InfoboxExtractor: from 1945" .
@@ -998,9 +935,12 @@
 #@ <id_tcvwgn_115_t9jepg>
 <id_t9jepg_ice_1heq0qs>	<extractionSource>	<Christian_Democratic_Union_(Germany)> .
 <id_tcvwgn_115_t9jepg>	<extractionTechnique>	"InfoboxExtractor: from [http://www.cdu.de http://www.cdu.de]" .
-#@ <id_19edi22_115_jr01l4>
-<id_jr01l4_88c_vafydj>	<extractionSource>	<Christian_Wulff> .
-<id_19edi22_115_jr01l4>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
+#@ <id_tcvwgn_115_t9jepg>
+<id_t9jepg_ice_1heq0qs>	<extractionSource>	<Christian_Democratic_Union_(Germany)> .
+<id_tcvwgn_115_t9jepg>	<extractionTechnique>	"InfoboxExtractor: from [http://www.cdu.de http://www.cdu.de]" .
+#@ <id_tcvwgn_115_t9jepg>
+<id_t9jepg_ice_1heq0qs>	<extractionSource>	<Christian_Democratic_Union_(Germany)> .
+<id_tcvwgn_115_t9jepg>	<extractionTechnique>	"InfoboxExtractor: from [http://www.cdu.de http://www.cdu.de]" .
 #@ <id_1nhwxwp_115_jr01l4>
 <id_jr01l4_10x_tqqkp2>	<extractionSource>	<Christian_Wulff> .
 <id_1nhwxwp_115_jr01l4>	<extractionTechnique>	"InfoboxExtractor: from [[University of Osnabrück]]" .
@@ -1019,12 +959,12 @@
 #@ <id_1wcbrpn_115_jr01l4>
 <id_jr01l4_ice_1894bxa>	<extractionSource>	<Christian_Wulff> .
 <id_1wcbrpn_115_jr01l4>	<extractionTechnique>	"InfoboxExtractor: from [http://www.christianwulff.de/ Official website]" .
+#@ <id_1wcbrpn_115_jr01l4>
+<id_jr01l4_ice_1894bxa>	<extractionSource>	<Christian_Wulff> .
+<id_1wcbrpn_115_jr01l4>	<extractionTechnique>	"InfoboxExtractor: from [http://www.christianwulff.de/ Official website]" .
 #@ <id_26yxb2_115_tu1ps7>
 <id_tu1ps7_ice_6nsaxe>	<extractionSource>	<Evangelical_Church_in_Germany> .
 <id_26yxb2_115_tu1ps7>	<extractionTechnique>	"InfoboxExtractor: from http://ekd.de/english/index.html" .
-#@ <id_uramwq_115_ht3f3u>
-<id_ht3f3u_88c_vafydj>	<extractionSource>	<Frank-Walter_Steinmeier> .
-<id_uramwq_115_ht3f3u>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_16scaip_115_ht3f3u>
 <id_ht3f3u_10x_pfblkl>	<extractionSource>	<Frank-Walter_Steinmeier> .
 <id_16scaip_115_ht3f3u>	<extractionTechnique>	"InfoboxExtractor: from [[University of Giessen]]" .
@@ -1049,15 +989,9 @@
 #@ <id_135w1a0_115_gh6929>
 <id_gh6929_tje_1ps9evn>	<extractionSource>	<Franz_Müntefering> .
 <id_135w1a0_115_gh6929>	<extractionTechnique>	"InfoboxExtractor: from [[Germany|German]] [[Germany]]" .
-#@ <id_1h2rxll_115_gh6929>
-<id_gh6929_88c_1kbo50g>	<extractionSource>	<Franz_Müntefering> .
-<id_1h2rxll_115_gh6929>	<extractionTechnique>	"InfoboxExtractor: from Industrial manager, politician" .
 #@ <id_1eacaus_115_gh6929>
 <id_gh6929_1s2_mcz636>	<extractionSource>	<Franz_Müntefering> .
 <id_1eacaus_115_gh6929>	<extractionTechnique>	"InfoboxExtractor: from [[Social Democratic Party of Germany|SPD]]" .
-#@ <id_li6uvj_115_107bpbp>
-<id_107bpbp_88c_vafydj>	<extractionSource>	<Gerhard_Schröder> .
-<id_li6uvj_115_107bpbp>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_vb8unt_115_107bpbp>
 <id_107bpbp_10x_m1t411>	<extractionSource>	<Gerhard_Schröder> .
 <id_vb8unt_115_107bpbp>	<extractionTechnique>	"InfoboxExtractor: from [[University of Göttingen]]" .
@@ -1073,9 +1007,6 @@
 #@ <id_1oh2x83_115_107bpbp>
 <id_107bpbp_1s2_mcz636>	<extractionSource>	<Gerhard_Schröder> .
 <id_1oh2x83_115_107bpbp>	<extractionTechnique>	"InfoboxExtractor: from [[Social Democratic Party of Germany|SPD]]" .
-#@ <id_cyjz3t_115_107bpbp>
-<id_107bpbp_88c_1inhq0u>	<extractionSource>	<Gerhard_Schröder> .
-<id_cyjz3t_115_107bpbp>	<extractionTechnique>	"InfoboxExtractor: from [[Lawyer]]" .
 #@ <id_1r7f9on_115_107bpbp>
 <id_107bpbp_16x_i4tzwr>	<extractionSource>	<Gerhard_Schröder> .
 <id_1r7f9on_115_107bpbp>	<extractionTechnique>	"InfoboxExtractor: from Eva Schubach \nAnne Taschenmacher \nHiltrud Hampel \n[[Doris Schröder-Köpf|Doris Köpf]]" .
@@ -1160,15 +1091,15 @@
 #@ <id_1410f8j_115_18vc8ci>
 <id_18vc8ci_1s2_opmyyg>	<extractionSource>	<Guido_Westerwelle> .
 <id_1410f8j_115_18vc8ci>	<extractionTechnique>	"InfoboxExtractor: from [[Free Democratic Party (Germany)|Free Democratic Party]]" .
-#@ <id_1i32g6n_115_18vc8ci>
-<id_18vc8ci_88c_1inhq0u>	<extractionSource>	<Guido_Westerwelle> .
-<id_1i32g6n_115_18vc8ci>	<extractionTechnique>	"InfoboxExtractor: from [[Lawyer]]" .
 #@ <id_1cxecut_115_18vc8ci>
 <id_18vc8ci_12k_1wd5e4i>	<extractionSource>	<Guido_Westerwelle> .
 <id_1cxecut_115_18vc8ci>	<extractionTechnique>	"InfoboxExtractor: from [[Berlin]] \n[[Bonn]]" .
 #@ <id_8gem6x_115_18vc8ci>
 <id_18vc8ci_12k_zjsj59>	<extractionSource>	<Guido_Westerwelle> .
 <id_8gem6x_115_18vc8ci>	<extractionTechnique>	"InfoboxExtractor: from [[Berlin]] \n[[Bonn]]" .
+#@ <id_25qlvn_115_18vc8ci>
+<id_18vc8ci_ice_3uctt7>	<extractionSource>	<Guido_Westerwelle> .
+<id_25qlvn_115_18vc8ci>	<extractionTechnique>	"InfoboxExtractor: from [http://www.guido-westerwelle.de/ guido-westerwelle.de]" .
 #@ <id_25qlvn_115_18vc8ci>
 <id_18vc8ci_ice_3uctt7>	<extractionSource>	<Guido_Westerwelle> .
 <id_25qlvn_115_18vc8ci>	<extractionTechnique>	"InfoboxExtractor: from [http://www.guido-westerwelle.de/ guido-westerwelle.de]" .
@@ -1196,9 +1127,9 @@
 #@ <id_1xcnog6_115_3gfkn0>
 <id_3gfkn0_ice_xkzcpf>	<extractionSource>	<Hamburg> .
 <id_1xcnog6_115_3gfkn0>	<extractionTechnique>	"InfoboxExtractor: from [http://www.hamburg.de/ hamburg.de]" .
-#@ <id_cpwe5l_115_zycb9m>
-<id_zycb9m_88c_vafydj>	<extractionSource>	<Helmut_Kohl> .
-<id_cpwe5l_115_zycb9m>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
+#@ <id_1xcnog6_115_3gfkn0>
+<id_3gfkn0_ice_xkzcpf>	<extractionSource>	<Hamburg> .
+<id_1xcnog6_115_3gfkn0>	<extractionTechnique>	"InfoboxExtractor: from [http://www.hamburg.de/ hamburg.de]" .
 #@ <id_1mah3r2_115_zycb9m>
 <id_zycb9m_10x_1kwp9bi>	<extractionSource>	<Helmut_Kohl> .
 <id_1mah3r2_115_zycb9m>	<extractionTechnique>	"InfoboxExtractor: from [[University of Heidelberg]]" .
@@ -1229,15 +1160,9 @@
 #@ <id_15oyu6r_115_1pj249b>
 <id_1pj249b_1s2_t9jepg>	<extractionSource>	<Horst_Köhler> .
 <id_15oyu6r_115_1pj249b>	<extractionTechnique>	"InfoboxExtractor: from [[Christian Democratic Union (Germany)|Christian Democratic Union]]" .
-#@ <id_1spycq3_115_1pj249b>
-<id_1pj249b_88c_1x9tonu>	<extractionSource>	<Horst_Köhler> .
-<id_1spycq3_115_1pj249b>	<extractionTechnique>	"InfoboxExtractor: from [[Economist]]" .
 #@ <id_15i9w0o_115_1pj249b>
 <id_1pj249b_16x_gbg2az>	<extractionSource>	<Horst_Köhler> .
 <id_15i9w0o_115_1pj249b>	<extractionTechnique>	"InfoboxExtractor: from [[Eva Köhler|Eva Bohnet]]" .
-#@ <id_wjy85k_115_1ck1v4q>
-<id_1ck1v4q_88c_vafydj>	<extractionSource>	<Joachim_Sauer> .
-<id_wjy85k_115_1ck1v4q>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_77du5k_115_1ck1v4q>
 <id_1ck1v4q_1xk_wow5f5>	<extractionSource>	<Joachim_Sauer> .
 <id_77du5k_115_1ck1v4q>	<extractionTechnique>	"InfoboxExtractor: from {{Birth date and age|1949|4|19|df=y}}" .
@@ -1271,12 +1196,12 @@
 #@ <id_vf1h3a_115_1cm9d6p>
 <id_1cm9d6p_ice_tffo4h>	<extractionSource>	<Jürgen_Trittin> .
 <id_vf1h3a_115_1cm9d6p>	<extractionTechnique>	"InfoboxExtractor: from [http://www.juergentrittin.de/ www.juergentrittin.de]" .
+#@ <id_vf1h3a_115_1cm9d6p>
+<id_1cm9d6p_ice_tffo4h>	<extractionSource>	<Jürgen_Trittin> .
+<id_vf1h3a_115_1cm9d6p>	<extractionTechnique>	"InfoboxExtractor: from [http://www.juergentrittin.de/ www.juergentrittin.de]" .
 #@ <id_w26mgy_115_1cm9d6p>
 <id_1cm9d6p_ice_uqigpa>	<extractionSource>	<Jürgen_Trittin> .
 <id_w26mgy_115_1cm9d6p>	<extractionTechnique>	"InfoboxExtractor: from [http://www.juergentrittin.de/ www.juergentrittin.de]" .
-#@ <id_ipyozi_115_1czrim3>
-<id_1czrim3_88c_vafydj>	<extractionSource>	<Philipp_Rösler> .
-<id_ipyozi_115_1czrim3>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_ylsdp9_115_1czrim3>
 <id_1czrim3_10x_xl0vxw>	<extractionSource>	<Philipp_Rösler> .
 <id_ylsdp9_115_1czrim3>	<extractionTechnique>	"InfoboxExtractor: from [[Hannover Medical School]]" .
@@ -1289,9 +1214,6 @@
 #@ <id_1jkg284_115_1czrim3>
 <id_1czrim3_tje_1ps9evh>	<extractionSource>	<Philipp_Rösler> .
 <id_1jkg284_115_1czrim3>	<extractionTechnique>	"InfoboxExtractor: from [[Germans|German]]" .
-#@ <id_194sfz5_115_1czrim3>
-<id_1czrim3_88c_17thdh9>	<extractionSource>	<Philipp_Rösler> .
-<id_194sfz5_115_1czrim3>	<extractionTechnique>	"InfoboxExtractor: from Physician" .
 #@ <id_1mtwgeg_115_1czrim3>
 <id_1czrim3_1s2_opmyyg>	<extractionSource>	<Philipp_Rösler> .
 <id_1mtwgeg_115_1czrim3>	<extractionTechnique>	"InfoboxExtractor: from [[Free Democratic Party (Germany)|FDP]]" .
@@ -1301,9 +1223,12 @@
 #@ <id_1ied03r_115_1czrim3>
 <id_1czrim3_ice_1yx2yp2>	<extractionSource>	<Philipp_Rösler> .
 <id_1ied03r_115_1czrim3>	<extractionTechnique>	"InfoboxExtractor: from [http://www.philipp-roesler.de/ philipp-roesler.de]" .
-#@ <id_qxda03_115_py5vtt>
-<id_py5vtt_88c_14dlnhu>	<extractionSource>	<University_of_Leipzig> .
-<id_qxda03_115_py5vtt>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type university" .
+#@ <id_1ied03r_115_1czrim3>
+<id_1czrim3_ice_1yx2yp2>	<extractionSource>	<Philipp_Rösler> .
+<id_1ied03r_115_1czrim3>	<extractionTechnique>	"InfoboxExtractor: from [http://www.philipp-roesler.de/ philipp-roesler.de]" .
+#@ <id_qxdc79_115_py5vtt>
+<id_py5vtt_88c_14dlqgs>	<extractionSource>	<University_of_Leipzig> .
+<id_qxdc79_115_py5vtt>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type university" .
 #@ <id_4d63rp_115_py5vtt>
 <id_py5vtt_z7a_1s0921k>	<extractionSource>	<University_of_Leipzig> .
 <id_4d63rp_115_py5vtt>	<extractionTechnique>	"InfoboxExtractor: from [[Leipzig]]" .
@@ -1322,6 +1247,9 @@
 #@ <id_1pdqse0_115_py5vtt>
 <id_py5vtt_z7a_5bpmr4>	<extractionSource>	<University_of_Leipzig> .
 <id_1pdqse0_115_py5vtt>	<extractionTechnique>	"InfoboxExtractor: from [[Saxony]]" .
+#@ <id_upyyoa_115_py5vtt>
+<id_py5vtt_ice_1l6natu>	<extractionSource>	<University_of_Leipzig> .
+<id_upyyoa_115_py5vtt>	<extractionTechnique>	"InfoboxExtractor: from [http://www.uni-leipzig.de/ www.uni-leipzig.de/]" .
 #@ <id_upyyoa_115_py5vtt>
 <id_py5vtt_ice_1l6natu>	<extractionSource>	<University_of_Leipzig> .
 <id_upyyoa_115_py5vtt>	<extractionTechnique>	"InfoboxExtractor: from [http://www.uni-leipzig.de/ www.uni-leipzig.de/]" .
@@ -1391,9 +1319,6 @@
 #@ <id_1qh09v4_115_14lrmcq>
 <id_14lrmcq_16x_vkf2e7>	<extractionSource>	<Carla_Bruni> .
 <id_1qh09v4_115_14lrmcq>	<extractionTechnique>	"InfoboxExtractor: from [[Nicolas Sarkozy]]" .
-#@ <id_1hfsrom_115_4h2ou9>
-<id_4h2ou9_88c_vafydj>	<extractionSource>	<Cécilia_Attias> .
-<id_1hfsrom_115_4h2ou9>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_r6smmh_115_4h2ou9>
 <id_4h2ou9_1xk_w67xnv>	<extractionSource>	<Cécilia_Attias> .
 <id_r6smmh_115_4h2ou9>	<extractionTechnique>	"InfoboxExtractor: from {{birth date and age|1957|11|12|df=y}}" .
@@ -1433,18 +1358,6 @@
 #@ <id_1rnj54b_115_sb8eld>
 <id_sb8eld_11e_1gohav0>	<extractionSource>	<Dominique_de_Villepin> .
 <id_1rnj54b_115_sb8eld>	<extractionTechnique>	"InfoboxExtractor: from [[Marie de Villepin]]\nArthur de Villepin\nVictoire de Villepin" .
-#@ <id_zqlczr_115_sb8eld>
-<id_sb8eld_88c_upbkvv>	<extractionSource>	<Dominique_de_Villepin> .
-<id_zqlczr_115_sb8eld>	<extractionTechnique>	"InfoboxExtractor: from Diplomat\nCivil Servant\nLawyer\nAuthor" .
-#@ <id_w2n83v_115_sb8eld>
-<id_sb8eld_88c_mxcdkg>	<extractionSource>	<Dominique_de_Villepin> .
-<id_w2n83v_115_sb8eld>	<extractionTechnique>	"InfoboxExtractor: from Diplomat\nCivil Servant\nLawyer\nAuthor" .
-#@ <id_znixr5_115_sb8eld>
-<id_sb8eld_88c_1inhq0u>	<extractionSource>	<Dominique_de_Villepin> .
-<id_znixr5_115_sb8eld>	<extractionTechnique>	"InfoboxExtractor: from Diplomat\nCivil Servant\nLawyer\nAuthor" .
-#@ <id_zslsit_115_sb8eld>
-<id_sb8eld_88c_w5vygh>	<extractionSource>	<Dominique_de_Villepin> .
-<id_zslsit_115_sb8eld>	<extractionTechnique>	"InfoboxExtractor: from Diplomat\nCivil Servant\nLawyer\nAuthor" .
 #@ <id_1ytbmi1_115_sb8eld>
 <id_sb8eld_1s2_14fyidp>	<extractionSource>	<Dominique_de_Villepin> .
 <id_1ytbmi1_115_sb8eld>	<extractionTechnique>	"InfoboxExtractor: from [[United Republic (France)|République Solidaire]]" .
@@ -1457,15 +1370,9 @@
 #@ <id_mfotwy_115_1qrqo30>
 <id_1qrqo30_oyl_147xp70>	<extractionSource>	<Édouard_Balladur> .
 <id_mfotwy_115_1qrqo30>	<extractionTechnique>	"InfoboxExtractor: from [[İzmir]], Turkey" .
-#@ <id_12ik9oi_115_1qrqo30>
-<id_1qrqo30_88c_1x9tonu>	<extractionSource>	<Édouard_Balladur> .
-<id_12ik9oi_115_1qrqo30>	<extractionTechnique>	"InfoboxExtractor: from Economist" .
 #@ <id_htipvd_115_1qrqo30>
 <id_1qrqo30_1s2_1as8dix>	<extractionSource>	<Édouard_Balladur> .
 <id_htipvd_115_1qrqo30>	<extractionTechnique>	"InfoboxExtractor: from [[Union for a Popular Movement]]" .
-#@ <id_1if3yef_115_hchqjy>
-<id_hchqjy_88c_1x95yav>	<extractionSource>	<Élysée_Palace> .
-<id_1if3yef_115_hchqjy>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type building" .
 #@ <id_14p5s0b_115_hchqjy>
 <id_hchqjy_z7a_10sbxbf>	<extractionSource>	<Élysée_Palace> .
 <id_14p5s0b_115_hchqjy>	<extractionTechnique>	"InfoboxExtractor: from [[Paris]], [[France]]" .
@@ -1478,9 +1385,6 @@
 #@ <id_11swpp7_115_cfajyt>
 <id_cfajyt_1s2_1as8dix>	<extractionSource>	<François_Baroin> .
 <id_11swpp7_115_cfajyt>	<extractionTechnique>	"InfoboxExtractor: from [[Union for a Popular Movement]]" .
-#@ <id_kiee73_115_efriae>
-<id_efriae_88c_vafydj>	<extractionSource>	<François_Fillon> .
-<id_kiee73_115_efriae>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_sh14w2_115_efriae>
 <id_efriae_10x_grz3oh>	<extractionSource>	<François_Fillon> .
 <id_sh14w2_115_efriae>	<extractionTechnique>	"InfoboxExtractor: from [[Paris Descartes University]]\n[[University of Maine (France)|University of Maine]]" .
@@ -1505,12 +1409,18 @@
 #@ <id_7p2s1e_115_1fvzpek>
 <id_1fvzpek_1ia_6a9bb>	<extractionSource>	<French_Fourth_Republic> .
 <id_7p2s1e_115_1fvzpek>	<extractionTechnique>	"InfoboxExtractor: from \u0022République française\u0022" .
-#@ <id_xa1tv7_115_jfqfk4>
-<id_jfqfk4_88c_14dlnhu>	<extractionSource>	<Institut_d'Études_Politiques_de_Paris> .
-<id_xa1tv7_115_jfqfk4>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type university" .
+#@ <id_xa1w2d_115_jfqfk4>
+<id_jfqfk4_88c_14dlqgs>	<extractionSource>	<Institut_d'Études_Politiques_de_Paris> .
+<id_xa1w2d_115_jfqfk4>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type university" .
 #@ <id_i7dsgc_115_jfqfk4>
 <id_jfqfk4_siu_1a3nezm>	<extractionSource>	<Institut_d'Études_Politiques_de_Paris> .
 <id_i7dsgc_115_jfqfk4>	<extractionTechnique>	"InfoboxExtractor: from 1872" .
+#@ <id_auhfwg_115_jfqfk4>
+<id_jfqfk4_ice_qj8lvt>	<extractionSource>	<Institut_d'Études_Politiques_de_Paris> .
+<id_auhfwg_115_jfqfk4>	<extractionTechnique>	"InfoboxExtractor: from [http://www.sciences-po.fr/ www.sciences-po.fr] (fr) [http://www.sciences-po.eu/ www.sciences-po.eu] (en)  \n (data for 2010)<ref></ref>" .
+#@ <id_auhee3_115_jfqfk4>
+<id_jfqfk4_ice_qj8l7p>	<extractionSource>	<Institut_d'Études_Politiques_de_Paris> .
+<id_auhee3_115_jfqfk4>	<extractionTechnique>	"InfoboxExtractor: from [http://www.sciences-po.fr/ www.sciences-po.fr] (fr) [http://www.sciences-po.eu/ www.sciences-po.eu] (en)  \n (data for 2010)<ref></ref>" .
 #@ <id_auhfwg_115_jfqfk4>
 <id_jfqfk4_ice_qj8lvt>	<extractionSource>	<Institut_d'Études_Politiques_de_Paris> .
 <id_auhfwg_115_jfqfk4>	<extractionTechnique>	"InfoboxExtractor: from [http://www.sciences-po.fr/ www.sciences-po.fr] (fr) [http://www.sciences-po.eu/ www.sciences-po.eu] (en)  \n (data for 2010)<ref></ref>" .
@@ -1538,12 +1448,6 @@
 #@ <id_1j2b9jg_115_1ilv35d>
 <id_1ilv35d_1s2_1as8dix>	<extractionSource>	<Jacques_Chirac> .
 <id_1j2b9jg_115_1ilv35d>	<extractionTechnique>	"InfoboxExtractor: from [[Union for a Popular Movement]]" .
-#@ <id_1md9nvr_115_1ilv35d>
-<id_1ilv35d_88c_mxcdkg>	<extractionSource>	<Jacques_Chirac> .
-<id_1md9nvr_115_1ilv35d>	<extractionTechnique>	"InfoboxExtractor: from civil servant, politician" .
-#@ <id_1y86v46_115_1ilv35d>
-<id_1ilv35d_88c_1kbo50g>	<extractionSource>	<Jacques_Chirac> .
-<id_1y86v46_115_1ilv35d>	<extractionTechnique>	"InfoboxExtractor: from civil servant, politician" .
 #@ <id_1348xcz_115_1ilv35d>
 <id_1ilv35d_16x_v71du5>	<extractionSource>	<Jacques_Chirac> .
 <id_1348xcz_115_1ilv35d>	<extractionTechnique>	"InfoboxExtractor: from [[Bernadette Chirac|Bernadette de Courcel]] (m. 1956–present)" .
@@ -1580,9 +1484,6 @@
 #@ <id_1l3wue5_115_ppnh9i>
 <id_ppnh9i_oyl_18do1k7>	<extractionSource>	<Jean-Pierre_Raffarin> .
 <id_1l3wue5_115_ppnh9i>	<extractionTechnique>	"InfoboxExtractor: from [[Poitiers]], France" .
-#@ <id_1sbb5x3_115_ppnh9i>
-<id_ppnh9i_88c_1inhq0u>	<extractionSource>	<Jean-Pierre_Raffarin> .
-<id_1sbb5x3_115_ppnh9i>	<extractionTechnique>	"InfoboxExtractor: from Lawyer" .
 #@ <id_1iarjwx_115_ppnh9i>
 <id_ppnh9i_1s2_1jysf42>	<extractionSource>	<Jean-Pierre_Raffarin> .
 <id_1iarjwx_115_ppnh9i>	<extractionTechnique>	"InfoboxExtractor: from [[Liberal Democracy (France)|DL]] (before 2002); [[Union for a Popular Movement|UMP]]" .
@@ -1637,6 +1538,9 @@
 #@ <id_1dcx9pa_115_vkf2e7>
 <id_vkf2e7_ice_4rurel>	<extractionSource>	<Nicolas_Sarkozy> .
 <id_1dcx9pa_115_vkf2e7>	<extractionTechnique>	"InfoboxExtractor: from [http://www.sarkozy.fr/home/ Official website]" .
+#@ <id_1dcx9pa_115_vkf2e7>
+<id_vkf2e7_ice_4rurel>	<extractionSource>	<Nicolas_Sarkozy> .
+<id_1dcx9pa_115_vkf2e7>	<extractionTechnique>	"InfoboxExtractor: from [http://www.sarkozy.fr/home/ Official website]" .
 #@ <id_15cnyi1_115_17gzuo3>
 <id_17gzuo3_z7a_1vqh5vd>	<extractionSource>	<Paris_West_University_Nanterre_La_Défense> .
 <id_15cnyi1_115_17gzuo3>	<extractionTechnique>	"InfoboxExtractor: from [[Nanterre]], [[Île-de-France (region)|Île-de-France]]" .
@@ -1646,15 +1550,15 @@
 #@ <id_1st1p1v_115_17gzuo3>
 <id_17gzuo3_ice_1k7bb8e>	<extractionSource>	<Paris_West_University_Nanterre_La_Défense> .
 <id_1st1p1v_115_17gzuo3>	<extractionTechnique>	"InfoboxExtractor: from [http://www.u-paris10.fr/ u-paris10.fr]" .
+#@ <id_1st1p1v_115_17gzuo3>
+<id_17gzuo3_ice_1k7bb8e>	<extractionSource>	<Paris_West_University_Nanterre_La_Défense> .
+<id_1st1p1v_115_17gzuo3>	<extractionTechnique>	"InfoboxExtractor: from [http://www.u-paris10.fr/ u-paris10.fr]" .
 #@ <id_1fzulw3_115_1isx97r>
 <id_1isx97r_1s2_1lxa6xt>	<extractionSource>	<Pere_López_Agràs> .
 <id_1fzulw3_115_1isx97r>	<extractionTechnique>	"InfoboxExtractor: from [[Social Democratic Party (Andorra)]]" .
 #@ <id_1d5y9gc_115_13n9nse>
 <id_13n9nse_1xk_unqotn>	<extractionSource>	<Philippe_Massoni> .
 <id_1d5y9gc_115_13n9nse>	<extractionTechnique>	"InfoboxExtractor: from 1936" .
-#@ <id_1jnsysj_115_1snxdw5>
-<id_1snxdw5_88c_1y1zid8>	<extractionSource>	<Rally_for_the_Republic> .
-<id_1jnsysj_115_1snxdw5>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type political party" .
 #@ <id_oh3fcc_115_1snxdw5>
 <id_1snxdw5_siu_3w0h47>	<extractionSource>	<Rally_for_the_Republic> .
 <id_oh3fcc_115_1snxdw5>	<extractionTechnique>	"InfoboxExtractor: from {{Start date|df=yes|1976}}" .
@@ -1664,9 +1568,6 @@
 #@ <id_ely754_115_1snxdw5>
 <id_1snxdw5_1ia_1i3jf1e>	<extractionSource>	<Rally_for_the_Republic> .
 <id_ely754_115_1snxdw5>	<extractionTechnique>	"InfoboxExtractor: from Rassemblement pour la République" .
-#@ <id_fd0957_115_1as8dix>
-<id_1as8dix_88c_1y1zid8>	<extractionSource>	<Union_for_a_Popular_Movement> .
-<id_fd0957_115_1as8dix>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type political party" .
 #@ <id_1834696_115_1as8dix>
 <id_1as8dix_siu_9f0bl2>	<extractionSource>	<Union_for_a_Popular_Movement> .
 <id_1834696_115_1as8dix>	<extractionTechnique>	"InfoboxExtractor: from 17 November 2002" .
@@ -1682,9 +1583,9 @@
 #@ <id_1lta7yb_115_1as8dix>
 <id_1as8dix_ice_1itk391>	<extractionSource>	<Union_for_a_Popular_Movement> .
 <id_1lta7yb_115_1as8dix>	<extractionTechnique>	"InfoboxExtractor: from [http://www.lemouvementpopulaire.fr www.lemouvementpopulaire.fr]" .
-#@ <id_1s2z3yg_115_j2lde8>
-<id_j2lde8_88c_vafydj>	<extractionSource>	<Alfredo_Pérez_Rubalcaba> .
-<id_1s2z3yg_115_j2lde8>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
+#@ <id_1lta7yb_115_1as8dix>
+<id_1as8dix_ice_1itk391>	<extractionSource>	<Union_for_a_Popular_Movement> .
+<id_1lta7yb_115_1as8dix>	<extractionTechnique>	"InfoboxExtractor: from [http://www.lemouvementpopulaire.fr www.lemouvementpopulaire.fr]" .
 #@ <id_8cmia8_115_j2lde8>
 <id_j2lde8_10x_wceha4>	<extractionSource>	<Alfredo_Pérez_Rubalcaba> .
 <id_8cmia8_115_j2lde8>	<extractionTechnique>	"InfoboxExtractor: from [[Complutense University of Madrid]]" .
@@ -1697,15 +1598,15 @@
 #@ <id_16rqol6_115_j2lde8>
 <id_j2lde8_1s2_1i5m33a>	<extractionSource>	<Alfredo_Pérez_Rubalcaba> .
 <id_16rqol6_115_j2lde8>	<extractionTechnique>	"InfoboxExtractor: from [[Spanish Socialist Workers' Party]]" .
-#@ <id_u8ye8a_115_j2lde8>
-<id_j2lde8_88c_1880c8b>	<extractionSource>	<Alfredo_Pérez_Rubalcaba> .
-<id_u8ye8a_115_j2lde8>	<extractionTechnique>	"InfoboxExtractor: from [[Chemist]]" .
 #@ <id_10x0l0g_115_j2lde8>
 <id_j2lde8_16x_lela4r>	<extractionSource>	<Alfredo_Pérez_Rubalcaba> .
 <id_10x0l0g_115_j2lde8>	<extractionTechnique>	"InfoboxExtractor: from Pilar Goya" .
 #@ <id_1cy8t5x_115_w2djwz>
 <id_w2djwz_1ia_1gebrsf>	<extractionSource>	<Congress_of_Deputies_(Spain)> .
 <id_1cy8t5x_115_w2djwz>	<extractionTechnique>	"InfoboxExtractor: from Congreso de los Diputados" .
+#@ <id_1mtzxvb_115_w2djwz>
+<id_w2djwz_ice_1cxo6vk>	<extractionSource>	<Congress_of_Deputies_(Spain)> .
+<id_1mtzxvb_115_w2djwz>	<extractionTechnique>	"InfoboxExtractor: from [http://www.congreso.es/ www.congreso.es]" .
 #@ <id_1mtzxvb_115_w2djwz>
 <id_w2djwz_ice_1cxo6vk>	<extractionSource>	<Congress_of_Deputies_(Spain)> .
 <id_1mtzxvb_115_w2djwz>	<extractionTechnique>	"InfoboxExtractor: from [http://www.congreso.es/ www.congreso.es]" .
@@ -1724,9 +1625,6 @@
 #@ <id_fag5tw_115_krjrbp>
 <id_krjrbp_1s2_1i5m33a>	<extractionSource>	<Elena_Salgado> .
 <id_fag5tw_115_krjrbp>	<extractionTechnique>	"InfoboxExtractor: from [[Spanish Socialist Workers' Party|Socialist Workers' Party]]" .
-#@ <id_x4b6m2_115_krjrbp>
-<id_krjrbp_88c_1x9tonu>	<extractionSource>	<Elena_Salgado> .
-<id_x4b6m2_115_krjrbp>	<extractionTechnique>	"InfoboxExtractor: from [[Industrial Engineer]], [[Economist]]" .
 #@ <id_17gd5xr_115_1u5uyhb>
 <id_1u5uyhb_789_2h36ql>	<extractionSource>	<Francoist_Spain> .
 <id_17gd5xr_115_1u5uyhb>	<extractionTechnique>	"InfoboxExtractor: from [[Madrid]]" .
@@ -1751,9 +1649,6 @@
 #@ <id_1x27msh_115_1m0lrpx>
 <id_1m0lrpx_1s2_1i5m33a>	<extractionSource>	<Joaquín_Almunia> .
 <id_1x27msh_115_1m0lrpx>	<extractionTechnique>	"InfoboxExtractor: from [[Spanish Socialist Workers' Party|Socialist Workers' Party]]" .
-#@ <id_8hys55_115_1ng0idk>
-<id_1ng0idk_88c_vafydj>	<extractionSource>	<José_Luis_Rodríguez_Zapatero> .
-<id_8hys55_115_1ng0idk>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_eaos1d_115_1ng0idk>
 <id_1ng0idk_10x_cacb9n>	<extractionSource>	<José_Luis_Rodríguez_Zapatero> .
 <id_eaos1d_115_1ng0idk>	<extractionTechnique>	"InfoboxExtractor: from [[University of León]]" .
@@ -1769,9 +1664,6 @@
 #@ <id_1dy8118_115_1ng0idk>
 <id_1ng0idk_16x_gbjwix>	<extractionSource>	<José_Luis_Rodríguez_Zapatero> .
 <id_1dy8118_115_1ng0idk>	<extractionTechnique>	"InfoboxExtractor: from [[Sonsoles Espinosa]]" .
-#@ <id_6mtmfl_115_lb8qid>
-<id_lb8qid_88c_vafydj>	<extractionSource>	<José_María_Aznar> .
-<id_6mtmfl_115_lb8qid>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_lxl2qh_115_lb8qid>
 <id_lb8qid_10x_wceha4>	<extractionSource>	<José_María_Aznar> .
 <id_lxl2qh_115_lb8qid>	<extractionTechnique>	"InfoboxExtractor: from [[Complutense University of Madrid]]" .
@@ -1811,9 +1703,6 @@
 #@ <id_1y91gns_115_1cx2d3n>
 <id_1cx2d3n_16x_o9if5j>	<extractionSource>	<Juan_Carlos_I_of_Spain> .
 <id_1y91gns_115_1cx2d3n>	<extractionTechnique>	"InfoboxExtractor: from [[Queen Sofía of Spain|Sophia of Greece and Denmark]]" .
-#@ <id_blnw7j_115_45ua65>
-<id_45ua65_88c_vafydj>	<extractionSource>	<Mariano_Rajoy> .
-<id_blnw7j_115_45ua65>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
 #@ <id_r4xrso_115_45ua65>
 <id_45ua65_10x_wt6dvn>	<extractionSource>	<Mariano_Rajoy> .
 <id_r4xrso_115_45ua65>	<extractionTechnique>	"InfoboxExtractor: from [[University of Santiago de Compostela]]" .
@@ -1838,9 +1727,9 @@
 #@ <id_10fdcts_115_45ua65>
 <id_45ua65_ice_1czcnuu>	<extractionSource>	<Mariano_Rajoy> .
 <id_10fdcts_115_45ua65>	<extractionTechnique>	"InfoboxExtractor: from [http://www.pp.es/index.asp?p=4842&c=c4616f5a24a66668f11ca4fa80525dc4 Party website]" .
-#@ <id_1gsucyd_115_1vmvigz>
-<id_1vmvigz_88c_vafydj>	<extractionSource>	<María_Teresa_Fernández_de_la_Vega> .
-<id_1gsucyd_115_1vmvigz>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type officeholder" .
+#@ <id_10fdcts_115_45ua65>
+<id_45ua65_ice_1czcnuu>	<extractionSource>	<Mariano_Rajoy> .
+<id_10fdcts_115_45ua65>	<extractionTechnique>	"InfoboxExtractor: from [http://www.pp.es/index.asp?p=4842&c=c4616f5a24a66668f11ca4fa80525dc4 Party website]" .
 #@ <id_1w3lt99_115_1vmvigz>
 <id_1vmvigz_10x_wceha4>	<extractionSource>	<María_Teresa_Fernández_de_la_Vega> .
 <id_1w3lt99_115_1vmvigz>	<extractionTechnique>	"InfoboxExtractor: from [[Complutense University of Madrid]]" .
@@ -1859,12 +1748,6 @@
 #@ <id_1c77pe5_115_1vmvigz>
 <id_1vmvigz_1s2_1i5m33a>	<extractionSource>	<María_Teresa_Fernández_de_la_Vega> .
 <id_1c77pe5_115_1vmvigz>	<extractionTechnique>	"InfoboxExtractor: from [[Spanish Socialist Workers' Party|PSOE]]" .
-#@ <id_1burqcj_115_1vmvigz>
-<id_1vmvigz_88c_krkayn>	<extractionSource>	<María_Teresa_Fernández_de_la_Vega> .
-<id_1burqcj_115_1vmvigz>	<extractionTechnique>	"InfoboxExtractor: from [[Jurist]]" .
-#@ <id_hvk68u_115_1i5m33a>
-<id_1i5m33a_88c_1y1zid8>	<extractionSource>	<Spanish_Socialist_Workers'_Party> .
-<id_hvk68u_115_1i5m33a>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type political party" .
 #@ <id_1pew117_115_1i5m33a>
 <id_1i5m33a_siu_6zo4ee>	<extractionSource>	<Spanish_Socialist_Workers'_Party> .
 <id_1pew117_115_1i5m33a>	<extractionTechnique>	"InfoboxExtractor: from {{Start date|1879|05|02}}" .
@@ -1880,9 +1763,15 @@
 #@ <id_1tpwao5_115_1i5m33a>
 <id_1i5m33a_ice_1uagrqt>	<extractionSource>	<Spanish_Socialist_Workers'_Party> .
 <id_1tpwao5_115_1i5m33a>	<extractionTechnique>	"InfoboxExtractor: from [http://www.psoe.es/ http://www.psoe.es/]" .
-#@ <id_1dtxjt7_115_cacb9n>
-<id_cacb9n_88c_14dlnhu>	<extractionSource>	<University_of_León> .
-<id_1dtxjt7_115_cacb9n>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type university" .
+#@ <id_1tpwao5_115_1i5m33a>
+<id_1i5m33a_ice_1uagrqt>	<extractionSource>	<Spanish_Socialist_Workers'_Party> .
+<id_1tpwao5_115_1i5m33a>	<extractionTechnique>	"InfoboxExtractor: from [http://www.psoe.es/ http://www.psoe.es/]" .
+#@ <id_1tpwao5_115_1i5m33a>
+<id_1i5m33a_ice_1uagrqt>	<extractionSource>	<Spanish_Socialist_Workers'_Party> .
+<id_1tpwao5_115_1i5m33a>	<extractionTechnique>	"InfoboxExtractor: from [http://www.psoe.es/ http://www.psoe.es/]" .
+#@ <id_1dtxm0d_115_cacb9n>
+<id_cacb9n_88c_14dlqgs>	<extractionSource>	<University_of_León> .
+<id_1dtxm0d_115_cacb9n>	<extractionTechnique>	"InfoboxExtractor: Preferred meaning of infobox type university" .
 #@ <id_k05hg4_115_cacb9n>
 <id_cacb9n_z7a_e5t89u>	<extractionSource>	<University_of_León> .
 <id_k05hg4_115_cacb9n>	<extractionTechnique>	"InfoboxExtractor: from [[León, Spain|León]]" .
@@ -1928,6 +1817,9 @@
 #@ <id_pacf91_115_13dzdeu>
 <id_13dzdeu_yrh_zik21y>	<extractionSource>	<Valladolid> .
 <id_pacf91_115_13dzdeu>	<extractionTechnique>	"InfoboxExtractor: from +1" .
+#@ <id_1daywj3_115_13dzdeu>
+<id_13dzdeu_ice_1xgqqoy>	<extractionSource>	<Valladolid> .
+<id_1daywj3_115_13dzdeu>	<extractionTechnique>	"InfoboxExtractor: from {{official website|http://www.valladolid.es/}}" .
 #@ <id_1daywj3_115_13dzdeu>
 <id_13dzdeu_ice_1xgqqoy>	<extractionSource>	<Valladolid> .
 <id_1daywj3_115_13dzdeu>	<extractionTechnique>	"InfoboxExtractor: from {{official website|http://www.valladolid.es/}}" .

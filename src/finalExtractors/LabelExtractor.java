@@ -36,7 +36,7 @@ public class LabelExtractor extends Extractor {
   public Set<Theme> input() {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS,
         DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, PersonNameExtractor.PERSONNAMES, WordnetExtractor.WORDNETWORDS,
-        WordnetExtractor.WORDNETGLOSSES, GeoNamesDataImporter.GEONAMESDATA, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
+        WordnetExtractor.WORDNETGLOSSES, /*GeoNamesDataImporter.GEONAMESDATA,*/ TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
 
   /** Relations that we care for*/

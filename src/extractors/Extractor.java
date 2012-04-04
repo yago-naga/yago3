@@ -99,6 +99,7 @@ public abstract class Extractor {
 	/** Creates an extractor given by name */
 	public static Extractor forName(String className, File datainput) {
 		Announce.doing("Creating extractor", className);
+		if(datainput!=null) Announce.message("Data input:",datainput);
 		if(datainput!=null && !datainput.exists()) {
 		  Announce.message("File or folder not found:",datainput);
 		  Announce.failed();
