@@ -1,13 +1,10 @@
 package finalExtractors;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
-
-import extractors.Extractor;
-import extractors.WordnetExtractor;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -19,6 +16,8 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import extractors.Extractor;
+import extractors.WordnetExtractor;
 
 /**
  * YAGO2s - StatisticsExtractor
@@ -33,7 +32,8 @@ public class StatisticsExtractor extends Extractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(TypeExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
-        MetaFactExtractor.YAGOMETAFACTS, SchemaExtractor.YAGOSCHEMA, LiteralFactExtractor.YAGOLITERALFACTS, SourceExtractor.YAGOSOURCES, WordnetExtractor.WORDNETIDS);
+        MetaFactExtractor.YAGOMETAFACTS, SchemaExtractor.YAGOSCHEMA, LiteralFactExtractor.YAGOLITERALFACTS, SourceExtractor.YAGOSOURCES,
+        WordnetExtractor.WORDNETIDS);
   }
 
   /** YAGO statistics theme */
@@ -46,9 +46,9 @@ public class StatisticsExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    Map<String, Integer> relations = new TreeMap<>();
-    Set<String> instances = new TreeSet<>();
-    Map<String, Integer> classes = new TreeMap<>();
+    Map<String, Integer> relations = new HashMap<>();
+    Set<String> instances = new HashSet<>();
+    Map<String, Integer> classes = new HashMap<>();
     FactWriter out = output.get(STATISTICS);
     Announce.doing("Making YAGO statistics");
     for (Theme t : input.keySet()) {
@@ -56,8 +56,9 @@ public class StatisticsExtractor extends Extractor {
       int counter = 0;
       for (Fact f : input.get(t)) {
         counter++;
-        if ((f.getRelation().equals(RDFS.domain) || f.getRelation().equals(RDFS.range)) && !relations.containsKey(f.getArg(1))) relations.put(
-            f.getArg(1), 0);
+        if ((f.getRelation().equals(RDFS.domain) || f.getRelation().equals(RDFS.range)) && !relations.containsKey(f.getArg(1))) {
+          relations.put(f.getArg(1), 0);
+        }
         D.addKeyValue(relations, f.getRelation(), 1);
         if (f.getRelation().equals(RDFS.type)) {
           instances.add(f.getArg(1));
