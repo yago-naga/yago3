@@ -1,10 +1,10 @@
 package finalExtractors;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -39,8 +39,13 @@ public class FactExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS,
-        GenderExtractor.PERSONS_GENDER, /*GeoNamesDataImporter.GEONAMESDATA,*/ TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS,
+        GenderExtractor.PERSONS_GENDER,        
+        HardExtractor.HARDWIREDFACTS, 
+        InfoboxExtractor.INFOBOXFACTS,        
+        RuleExtractor.RULERESULTS,      
+        GeoNamesDataImporter.GEONAMESDATA,
+         TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
 
@@ -65,7 +70,7 @@ public class FactExtractor extends Extractor {
     WordnetExtractor.freeMemory();
    
     // Collect themes where we find the relations
-    Map<String, Set<Theme>> relationsToDo = new TreeMap<>();
+    Map<String, Set<Theme>> relationsToDo = new HashMap<>();
     // Start with some standard relation
     relationsToDo.put("<actedIn>", new HashSet<Theme>(input.keySet()));
     boolean isFirstRun = true;

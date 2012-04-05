@@ -28,7 +28,9 @@ public class SourceExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(ConteXtExtractor.CONTEXTSOURCES,InfoboxExtractor.INFOBOXSOURCES,RuleExtractor.RULESOURCES,TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES);
+    return new FinalSet<>(InfoboxExtractor.INFOBOXSOURCES,
+        RuleExtractor.RULESOURCES,
+        TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES);
   }
 
   /** All source facts of YAGO */

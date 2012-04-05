@@ -1,0 +1,89 @@
+CategoryExtractor:
+CATEGORYTYPES (type), DIRTYCATEGORYFACTS -> CATEGORYFACTS (facts, literals), CATEGORYCLASSES (class), CATEGORYLANGUAGELABELS (final)
+
+ContextExtractor:
+CONTEXTFACTS (final), CONTEXTSOURCES (final)
+
+DisambiguationMeansExtractor:
+DIRTYDISAMBIGUATIONMEANSFACTS -> DISAMBIGUATIONMEANSFACTS (labels)
+
+GenderExtractor:
+PERSONS_GENDER (facts)
+
+HardExtractor:
+HARDWIREDFACTS (facts, metafacts, labels, types, literals, class, schema)
+
+InfoboxExtractor:
+DIRTYINFOBOXFACTS -> INFOBOXFACTS (facts, labels, literals), INFOBOXTYPES (type), INFOBOXSOURCES (source)
+
+PatternHardExtractor: (all ignored)
+INFOBOXPATTERNS,INFOBOXTEMPORALPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS,TEMPORALCATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES, CONTEXTPATTERNS, STRUCTUREPATTERNS
+
+PersonNameExtractor: 
+PERSONNAMES (labels)
+
+RedirectExtractor:
+REDIRECTFACTS (ignore)
+
+RuleExtractor:
+RULERESULTS (facts, metafacts, literals), RULESOURCES (source)
+
+StructureExtractor:
+DIRTYSTRUCTUREFACTS -> STRUCTUREFACTS (ignore)
+
+TemporalCategoryExtractor:
+TEMPORALCATEGORYFACTS (facts, metafacts, literals)
+
+TemporalInfoboxExtractor:
+TEMPORALDIRTYINFOBOXFACTS -> TEMPORALINFOBOXFACTS (facts, metafacts, literals), INFOBOXTYPES (ignore), TEMPORALINFOBOXSOURCES (source)
+
+UWNimporter:
+UWNDATA (final)
+
+WordNetExtractor:
+WORDNETCLASSES (class), WORDNETWORDS (label), WORDNETIDS (final), WORDNETGLOSSES (label)
+
+geonamesClassMapper: (all final)
+GEONAMESCLASSSIDS, GEONAMESCLASSES, GEONAMESGLOSSES
+
+GeonamesDataImporter:
+GEONAMESDATA (facts, literals)
+
+GeonamesentityMapper:
+GEONAMESENTITYIDS (final)
+
+DBpediaLinker:
+YAGODBPEDIACLASSES (final), YAGODBPEDIAINSTANCES (final)
+
+FactExtractor:
+YAGOFACTS (final)
+
+LabelExtractor:
+YAGOLABELS (final)
+
+LiteralFactExtractor:
+YAGOLITERALFACTS (final)
+
+MetaFactExtractor:
+YAGOMETAFACTS (final)
+
+SchemaExtractor:
+YAGOSCHEMA (final)
+
+SimpleTaxonomyExtractor:
+SIMPLETAXONOMY (final)
+
+SourceExtractor:
+YAGOSOURCES (final)
+
+StatisticsExtractor:
+STATISTICS (final)
+
+TransitiveTypeExtractor:
+TRANSITIVETYPE (final)
+
+TypeExtractor:
+YAGOTYPES (final)
+
+ClassExtractor:
+YAGOTAXONOMY (final)

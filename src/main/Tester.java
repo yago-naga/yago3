@@ -69,7 +69,6 @@ public class Tester {
         extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
       }
     } catch (Exception e) {
-      e.printStackTrace();
       Announce.message(e);
       Announce.failed();
       total++;
@@ -80,9 +79,15 @@ public class Tester {
     for (Theme theme : extractor.output()) {
       total++;
       Announce.doing("Checking", theme);
-      FactCollection goldStandard = new FactCollection(theme.file(testCase));
-      FactCollection result = new FactCollection(theme.file(outputFolder));
-      if (!result.checkEqual(goldStandard)) {
+      FactCollection goldStandard = null;
+      FactCollection result =null;
+      try {
+        goldStandard=new FactCollection(theme.file(testCase));
+        result= new FactCollection(theme.file(outputFolder));
+      } catch(Exception ex) {
+        Announce.message(ex);
+      }      
+      if (result==null || goldStandard==null || !result.checkEqual(goldStandard)) {
         Announce.done("--------> " + theme + " failed");
         failed++;
       } else {

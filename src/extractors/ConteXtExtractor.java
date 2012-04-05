@@ -38,11 +38,11 @@ public class ConteXtExtractor extends Extractor {
 	}
 
 	/** Context for entities */
-	public static final Theme CONTEXTFACTS = new Theme("conteXtFacts",
+	public static final Theme CONTEXTFACTS = new Theme("yagoConteXtFacts",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
 	 /** Context for entities */
-  public static final Theme CONTEXTSOURCES = new Theme("conteXtSources",
+  public static final Theme CONTEXTSOURCES = new Theme("yagoConteXtSources",
       "Source information for the extracted keyphrases");
 	
 	@Override

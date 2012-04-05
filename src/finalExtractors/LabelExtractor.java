@@ -34,9 +34,12 @@ public class LabelExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, InfoboxExtractor.INFOBOXFACTS,
-        DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS, PersonNameExtractor.PERSONNAMES, WordnetExtractor.WORDNETWORDS,
-        WordnetExtractor.WORDNETGLOSSES, /*GeoNamesDataImporter.GEONAMESDATA,*/ TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
+    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
+        HardExtractor.HARDWIREDFACTS, 
+        InfoboxExtractor.INFOBOXFACTS,
+        PersonNameExtractor.PERSONNAMES,
+          WordnetExtractor.WORDNETWORDS,
+        WordnetExtractor.WORDNETGLOSSES);
   }
 
   /** Relations that we care for*/

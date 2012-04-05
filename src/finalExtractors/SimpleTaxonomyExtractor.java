@@ -1,10 +1,10 @@
 package finalExtractors;
 
 import java.io.File;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -53,7 +53,7 @@ public class SimpleTaxonomyExtractor extends Extractor {
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		FactCollection wordnet = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
-		Set<String> done = new TreeSet<>();
+		Set<String> done = new HashSet<>();
 		Announce.doing("Extracting simple taxonomy");
 		for (String b : yagoBranches) {
 			output.get(SIMPLETAXONOMY).write(new Fact(b, RDFS.subclassOf, YAGO.entity));

@@ -1,10 +1,10 @@
 package finalExtractors;
 
 import java.io.File;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -14,22 +14,14 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
-import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
-import extractors.CategoryExtractor;
-import extractors.DisambiguationPageExtractor;
 import extractors.Extractor;
-import extractors.GenderExtractor;
 import extractors.HardExtractor;
-import extractors.InfoboxExtractor;
-import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
 import extractors.TemporalCategoryExtractor;
 import extractors.TemporalInfoboxExtractor;
-import extractors.UWNImporter;
 import extractors.WordnetExtractor;
-import extractors.geonames.GeoNamesDataImporter;
 
 /**
  * YAGO2s - FactExtractor
@@ -43,7 +35,9 @@ public class MetaFactExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS, TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+    return new FinalSet<>(HardExtractor.HARDWIREDFACTS, 
+                RuleExtractor.RULERESULTS,                 
+                TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
   /** All meta facts of YAGO */
@@ -66,7 +60,7 @@ public class MetaFactExtractor extends Extractor {
     WordnetExtractor.freeMemory();
    
     // Collect themes where we find the relations
-    Map<String, Set<Theme>> relationsToDo = new TreeMap<>();
+    Map<String, Set<Theme>> relationsToDo = new HashMap<>();
     // Start with some standard relation
     relationsToDo.put("<happenedOnDate>", new HashSet<Theme>(input.keySet()));
     boolean isFirstRun = true;
