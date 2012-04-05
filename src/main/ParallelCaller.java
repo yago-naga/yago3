@@ -83,7 +83,7 @@ public class ParallelCaller {
         //D.p("In the queue:",ex,"because of missing",weneed);
       }
     }
-    D.p("Themes:",themesWeHave);
+    D.p("Themes:", themesWeHave);
     D.p("Extractors queuing:", extractorsToDo);
     D.p("Extractors running:", extractorsRunning);
     if (!extractorsRunning.isEmpty()) return;
@@ -106,6 +106,7 @@ public class ParallelCaller {
     Extractor ex;
 
     public ExtractionCaller(Extractor e) {
+      this.setName("ExtractionCaller Thread :" + e.name());
       ex = e;
     }
 
@@ -136,7 +137,7 @@ public class ParallelCaller {
     if (reuse) {
       D.p("Reusing existing themes");
       for (File f : outputFolder.listFiles()) {
-        if(!f.getName().endsWith(".ttl") || f.length()<100) continue;
+        if (!f.getName().endsWith(".ttl") || f.length() < 100) continue;
         Theme t = Theme.forFile(f);
         if (t == null) {
           D.p("  No theme found for", f.getName());
