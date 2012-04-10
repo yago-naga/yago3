@@ -17,10 +17,10 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
-import basics.RDFS;
 import basics.Theme;
 import extractors.Extractor;
 import extractors.InfoboxExtractor;
+import finalExtractors.TransitiveTypeExtractor;
 
 /**
  * The GeoNamesEntityMapper maps geonames entities to Wikipedia entities.
@@ -44,7 +44,8 @@ public class GeoNamesEntityMapper extends Extractor {
   @Override
   public Set<Theme> input() {
     return new HashSet<Theme>(Arrays.asList(
-        InfoboxExtractor.INFOBOXFACTS));
+        InfoboxExtractor.INFOBOXFACTS,
+        TransitiveTypeExtractor.TRANSITIVETYPE));
   }
 
   @Override
@@ -74,16 +75,21 @@ public class GeoNamesEntityMapper extends Extractor {
       id2longitude.put(geonamesId, longi);
     }
 
+    FactSource typeFacts = input.get(TransitiveTypeExtractor.TRANSITIVETYPE);       
     FactSource ibFacts = input.get(InfoboxExtractor.INFOBOXFACTS);       
    
     // Try to match all entities of type yagoGeoEntity
     Set<String> yagoGeoEntities = new HashSet<>();
     Map<String, Pair<Float, Float>> coordinates = new HashMap<>();
     
-    for (Fact f : ibFacts) {
-      if (f.getRelation().equals(RDFS.type) && f.getArg(2).equals(GeoNamesClassMapper.GEO_CLASS)) {
+    for (Fact f : typeFacts) {
+      if (f.getArg(2).equals(GeoNamesClassMapper.GEO_CLASS)) {
         yagoGeoEntities.add(f.getArg(1));
-      } else if (f.getRelation().equals("<hasLatitude>")) {
+      }
+    }
+     
+    for (Fact f : ibFacts) {
+      if (f.getRelation().equals("<hasLatitude>")) {
         Pair<Float, Float> coos = coordinates.get(f.getArg(1));
         
         if (coos == null) {
