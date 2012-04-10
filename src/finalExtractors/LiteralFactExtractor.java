@@ -65,8 +65,9 @@ public class LiteralFactExtractor extends Extractor {
     FactWriter w=output.get(YAGOLITERALFACTS);
 
     // We don't need any more taxonomy beyond this point
-    TransitiveTypeExtractor.freeMemory();
-    WordnetExtractor.freeMemory();
+    // But: other extractors that run in parallel might still need it
+    //TransitiveTypeExtractor.freeMemory();
+    //WordnetExtractor.freeMemory();
    
     // Collect themes where we find the relations
     Map<String, Set<Theme>> relationsToDo = new HashMap<>();

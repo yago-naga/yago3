@@ -26,7 +26,7 @@ public class DBpediaLinker extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(TypeExtractor.YAGOTYPES,TypeExtractor.YAGOTAXONOMY);
+		return new FinalSet<>(TypeExtractor.YAGOTYPES,ClassExtractor.YAGOTAXONOMY);
 	}
 
 	/** Mapping to DBpedia classes*/
@@ -53,7 +53,7 @@ public class DBpediaLinker extends Extractor {
        Announce.done();
        Announce.doing("Mapping classes");
        instances=new TreeSet<>();
-       for(Fact fact : input.get(TypeExtractor.YAGOTAXONOMY)) {
+       for(Fact fact : input.get(ClassExtractor.YAGOTAXONOMY)) {
     	   if(!fact.getRelation().equals(RDFS.subclassOf) || instances.contains(fact.getArg(1))) continue;
     	   if(!fact.getArg(1).startsWith("<")) continue;
     	   String dbp=FactComponent.forUri("http://dbpedia.org/class/yago/"+FactComponent.stripBrackets(fact.getArg(1)));

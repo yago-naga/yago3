@@ -57,7 +57,7 @@ public class ParallelCaller {
       if (success) {
         D.p("Finished", finished);
         themesWeHave.addAll(finished.output());
-        extractorsToDo.addAll(finished.followUp());
+        extractorsToDo.addAll(finished.followUp());       
       } else {
         D.p("Failed", finished);
       }

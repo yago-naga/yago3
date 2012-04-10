@@ -38,12 +38,9 @@ public class TypeExtractor extends Extractor {
   /** Final types */
   public static final Theme YAGOTYPES = new Theme("yagoTypes", "Types of YAGO");
 
-  /** The YAGO taxonomy */
-  public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy", "The entire YAGO taxonomy");
-
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(YAGOTAXONOMY, YAGOTYPES);
+    return new FinalSet<>(YAGOTYPES);
   }
 
   @Override

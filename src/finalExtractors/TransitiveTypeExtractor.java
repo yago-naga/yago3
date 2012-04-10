@@ -1,9 +1,10 @@
 package finalExtractors;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -31,12 +32,12 @@ import extractors.Extractor;
  */
 public class TransitiveTypeExtractor extends Extractor {
 
-  /** We cache the entire YAGO taxonomy here for later calls. This may be too large. Set to NULL to free cache*/
+  /** We cache the entire YAGO taxonomy here for later calls. This may be too large. Call freeMamory() to free cache*/
   protected static Map<String, Set<String>> yagoTaxonomy = null;
-
+  
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(TypeExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES);
+    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES);
   }
 
   /** All type facts*/
@@ -49,37 +50,33 @@ public class TransitiveTypeExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    FactCollection classes = new FactCollection(input.get(TypeExtractor.YAGOTAXONOMY));
-    yagoTaxonomy = new TreeMap<>();
+    Announce.setLevel(Announce.Level.DEBUG);
+    FactCollection classes = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY));
+    Announce.warning(classes.size(),"classes");
+    Announce.setLevel(Announce.Level.WARNING);
+    yagoTaxonomy = new HashMap<>();
     Announce.doing("Computing the transitive closure");
     for (Theme theme : Arrays.asList(TypeExtractor.YAGOTYPES)) {
       Announce.doing("Treating entities in", theme);
-      String lastEntity = null;
-      Set<String> lastClasses = new TreeSet<>();
       for (Fact f : input.get(theme)) {
         if (f.getRelation().equals(RDFS.type)) {
-          if (lastEntity == null) lastEntity = f.getArg(1);
-          else if (!lastEntity.equals(f.getArg(1))) {
-            flush(lastEntity, lastClasses, output.get(TRANSITIVETYPE));
-            lastEntity = f.getArg(1);
-            lastClasses.clear();
+          D.addKeyValue(yagoTaxonomy, f.getArg(1), f.getArg(2), TreeSet.class);          
+          for(String c : classes.superClasses(f.getArg(2))) {
+            D.addKeyValue(yagoTaxonomy, f.getArg(1), c, TreeSet.class);
           }
-          classes.superClasses(f.getArg(2), lastClasses);
-          lastClasses.remove(f.getArg(2));
         }
       }
-      flush(lastEntity, lastClasses, output.get(TRANSITIVETYPE));
       Announce.done();
     }
-    Announce.done();
-  }
-
-  /** Writes the rdf:type facts*/
-  protected static void flush(String lastEntity, Set<String> lastClasses, FactWriter factWriter) throws IOException {
-    for (String clss : lastClasses) {
-      factWriter.write(new Fact(lastEntity, RDFS.type, clss));
-      D.addKeyValue(yagoTaxonomy, lastEntity, clss, TreeSet.class);
+    Announce.doing("Writing data");
+    FactWriter w=output.get(TRANSITIVETYPE);
+    for(Entry<String,Set<String>> type : yagoTaxonomy.entrySet()) {
+      for(String c : type.getValue()) {
+        w.write(new Fact(type.getKey(),RDFS.type,c));
+      }
     }
+    Announce.done();
+    Announce.done();
   }
 
   /** Loads and returns the entire transitive YAGO taxonomy. It is being loaded by default already when it's being written. This may be large, so discard if you don't need it.*/
