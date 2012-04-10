@@ -1,10 +1,14 @@
-package extractors;
+package finalExtractors;
 
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+
+import extractors.Extractor;
+import extractors.HardExtractor;
+import extractors.WordnetExtractor;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
