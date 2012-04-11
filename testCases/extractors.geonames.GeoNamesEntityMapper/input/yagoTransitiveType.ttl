@@ -9,5 +9,5 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-<Hamburg>	<hasLatitude>	"53.55"^^xsd:decimal .
-<Hamburg>	<hasLongitude>	"10"^^xsd:decimal .
+<Hamburg>	rdf:type	<yagoGeoEntity> .
+<Hamburg, Illinois>	rdf:type	<yagoGeoEntity> . 
