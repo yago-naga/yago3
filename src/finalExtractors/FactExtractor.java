@@ -1,30 +1,21 @@
 package finalExtractors;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import extractors.CategoryExtractor;
-import extractors.Extractor;
 import extractors.GenderExtractor;
 import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
 import extractors.RuleExtractor;
 import extractors.TemporalCategoryExtractor;
 import extractors.TemporalInfoboxExtractor;
-import extractors.WordnetExtractor;
 import extractors.geonames.GeoNamesDataImporter;
 
 /**
@@ -35,7 +26,7 @@ import extractors.geonames.GeoNamesDataImporter;
  * @author Fabian M. Suchanek
  * 
  */
-public class FactExtractor extends Extractor {
+public class FactExtractor extends Deduplicator {
 
   @Override
   public Set<Theme> input() {
@@ -45,7 +36,7 @@ public class FactExtractor extends Extractor {
         InfoboxExtractor.INFOBOXFACTS,        
         RuleExtractor.RULERESULTS,      
         GeoNamesDataImporter.GEONAMESDATA,
-         TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
 
@@ -57,51 +48,22 @@ public class FactExtractor extends Extractor {
       RDFS.label, "skos:prefLabel", "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>", "<hasGloss>");
 
   @Override
-  public Set<Theme> output() {
-    return new FinalSet<>(YAGOFACTS);
+  public Theme myOutput() {
+    return YAGOFACTS;
   }
 
   @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    FactWriter w=output.get(YAGOFACTS);
-
-    // We don't need any more taxonomy beyond this point
-    // BUT: due to parallelization, some other extractors might be using it!
-    //TransitiveTypeExtractor.freeMemory();
-    //WordnetExtractor.freeMemory();
-   
-    // Collect themes where we find the relations
-    Map<String, Set<Theme>> relationsToDo = new HashMap<>();
-    // Start with some standard relation
-    relationsToDo.put("<actedIn>", new HashSet<Theme>(input.keySet()));
-    boolean isFirstRun = true;
-    while (!relationsToDo.isEmpty()) {
-      String relation = D.pick(relationsToDo.keySet());
-      Announce.doing("Reading", relation);
-      FactCollection facts = new FactCollection();
-      for (Theme theme : relationsToDo.get(relation)) {
-        Announce.doing("Reading", theme);
-        for (Fact fact : input.get(theme)) {
-          if (isFirstRun && !fact.getRelation().startsWith("<_") && !relationsExcluded.contains(fact.getRelation()) && !FactComponent.isFactId(fact.getArg(1)) && !FactComponent.isLiteral(fact.getArg(2))) {
-            D.addKeyValue(relationsToDo, fact.getRelation(), theme, HashSet.class);
-          }
-          if (!relation.equals(fact.getRelation())) continue;
-          facts.add(fact);
-        }
-        Announce.done();
-        relationsToDo.remove(relation);
-      }
-      isFirstRun = false;
-      Announce.done();
-      Announce.doing("Writing", relation);
-      for (Fact fact : facts)
-        w.write(fact);
-      Announce.done();
-    }
+  public boolean isMyRelation(Fact fact) {
+    if(fact.getRelation().startsWith("<_")) return(false);
+    if(relationsExcluded.contains(fact.getRelation())) return(false);
+    if(FactComponent.isFactId(fact.getArg(1))) return(false);
+    if(FactComponent.isLiteral(fact.getArg(2))) return(false);
+    return(true);
   }
-
+  
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
     new FactExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
   }
+
 }
