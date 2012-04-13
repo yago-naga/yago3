@@ -5,7 +5,8 @@ if [ `hostname` != "d5blade05" ]; then
 fi
 echo Loading YAGO into the database
 cd /local/suchanek/yago2s
-echo yago2itnyago | psql -a -d yago2s -h postgres0 -U yago -f ~/workspace/converters2s/scripts/postgres.sql > ~/workspace/db.log &
+echo Enter the password: yago2itnyago
+psql -a -d yago2s -h postgres0 -U yago -f ~/workspace/converters2s/scripts/postgres.sql > ~/workspace/db.log &
 disown -h %1
 sleep 5s
 tail -f ~/workspace/db.log
