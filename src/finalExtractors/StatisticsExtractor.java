@@ -48,7 +48,6 @@ public class StatisticsExtractor extends Extractor {
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     Map<String, Integer> relations = new HashMap<>();
     Set<String> instances = new HashSet<>();
-    Map<String, Integer> classes = new HashMap<>();
     FactWriter out = output.get(STATISTICS);
     Announce.doing("Making YAGO statistics");
     for (Theme t : input.keySet()) {
@@ -62,11 +61,6 @@ public class StatisticsExtractor extends Extractor {
         D.addKeyValue(relations, f.getRelation(), 1);
         if (f.getRelation().equals(RDFS.type)) {
           instances.add(f.getArg(1));
-          D.addKeyValue(classes, f.getArg(2), 1);
-        }
-        if (f.getRelation().equals(RDFS.subclassOf)) {
-          D.addKeyValue(classes, f.getArg(2), 0);
-          D.addKeyValue(classes, f.getArg(1), 0);
         }
       }
       out.write(new Fact(FactComponent.forTheme(t), YAGO.hasNumber, FactComponent.forNumber(counter)));
@@ -77,14 +71,9 @@ public class StatisticsExtractor extends Extractor {
       if (relations.get(rel) == 0) Announce.warning("Relation without facts:", rel);
       else out.write(new Fact(rel, YAGO.hasNumber, FactComponent.forNumber(relations.get(rel))));
     }
-    for (String cls : classes.keySet()) {
-      if (classes.get(cls) > 0) out.write(new Fact(cls, YAGO.hasNumber, FactComponent.forNumber(classes.get(cls))));
-    }
     Announce.done();
     Announce.message(instances.size(), "things");
-    Announce.message(classes.size(), "classes");
     out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("hasNumberOfThings"), FactComponent.forNumber(instances.size())));
-    out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("hasNumberOfClasses"), FactComponent.forNumber(classes.size())));
     Announce.done();
   }
 
