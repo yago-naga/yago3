@@ -126,7 +126,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 				if (type != null) {
 					write(writers, INFOBOXTYPES, new Fact(null, titleEntity,
 							RDFS.type, type), TEMPORALINFOBOXSOURCES, titleEntity,
-							"InfoboxExtractor: Preferred meaning of infobox type "
+							"TemporalInfoboxExtractor: Preferred meaning of infobox type "
 									+ cls);
 				}
 				Map<String, Set<String>> attributes = readInfobox(in,
@@ -234,14 +234,14 @@ public class TemporalInfoboxExtractor extends Extractor {
 					if(baseFact.getArg(2).contains("xsd:date")) //type checking for dates
 					write(writers, TEMPORALDIRTYINFOBOXFACTS, new Fact(object,
 							relation, entity), TEMPORALINFOBOXSOURCES, entity,
-							"InfoboxExtractor: from " + valueString);
+							"TemporalInfoboxExtractor: from " + valueString);
 				}
 				else {
 					baseFact = new Fact(entity, relation, object);
 					if(baseFact.getArg(2).contains("xsd:date"))
 						write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact,
 							TEMPORALINFOBOXSOURCES, entity,
-							"InfoboxExtractor: from " + valueString);
+							"TemporalInfoboxExtractor: from " + valueString);
 
 				}
 
@@ -255,18 +255,18 @@ public class TemporalInfoboxExtractor extends Extractor {
 								&& FactComponent.isUri(baseFact.getArg(2))) {
 							write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact,
 									TEMPORALINFOBOXSOURCES, entity,
-									"InfoboxExtractor: from " + valueString);
+									"TemporalInfoboxExtractor: from " + valueString);
 							Fact metafact = baseFact.metaFact("<occursSince>",
 									dates.get(0));
 							write(writers, TEMPORALDIRTYINFOBOXFACTS, metafact,
 									TEMPORALINFOBOXSOURCES, entity,
-									"InfoboxExtractor: from " + valueString);
+									"TemporalInfoboxExtractor: from " + valueString);
 							if (dates.size() > 1) {
 								metafact = baseFact.metaFact("<occursUntil>",
 										dates.get(1));
 								write(writers, TEMPORALDIRTYINFOBOXFACTS, metafact,
 										TEMPORALINFOBOXSOURCES, entity,
-										"InfoboxExtractor: from " + valueString);
+										"TemporalInfoboxExtractor: from " + valueString);
 							}
 
 						}
@@ -358,17 +358,17 @@ public class TemporalInfoboxExtractor extends Extractor {
 				if (inverse)
 					write(writers, TEMPORALDIRTYINFOBOXFACTS, new Fact(object,
 							relation, entity), TEMPORALINFOBOXSOURCES, entity,
-							"InfoboxExtractor: from " + valueString);
+							"TemporalInfoboxExtractor: from " + valueString);
 				else if (i == 0) {
 					baseFact = new Fact(entity, relation, object);
 					// baseFact.makeId();
 					write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact, TEMPORALINFOBOXSOURCES,
-							entity, "InfoboxExtractor: from " + valueString);
+							entity, "TemporalInfoboxExtractor: from " + valueString);
 				} else if (!baseFact.getRelation().equals("")) {
 
 					Fact metafact = baseFact.metaFact(relation, object);
 					write(writers, TEMPORALDIRTYINFOBOXFACTS, metafact, TEMPORALINFOBOXSOURCES,
-							entity, "InfoboxExtractor: from " + valueString);
+							entity, "TemporalInfoboxExtractor: from " + valueString);
 				}
 
 				if (factCollection.contains(relation, RDFS.type, YAGO.function))
