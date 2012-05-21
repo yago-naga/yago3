@@ -14,6 +14,9 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+# --------- Bad Infobox --------------
+"weather"	rdf:type	<_yagoNonConceptualInfobox> .
+
 # --------- Combinations of Infobox attributes --------------
 "<population_density_km2> /km^2"	<_infoboxCombine>	"population_density" .
 "<area> km^2"	<_infoboxCombine>	"area" .

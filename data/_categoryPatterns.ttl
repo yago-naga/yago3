@@ -182,4 +182,3 @@
 #@ <id_20120207175542_31>
 "vega"	rdf:type	<_yagoNonConceptualWord> .
 <id_20120207175542_31>	<_hasComment>	"For 'Las Vegas'" .
-

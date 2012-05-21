@@ -37,8 +37,8 @@ public class InfoboxExtractor extends Extractor {
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(DIRTYINFOBOXFACTS, REDIRECTEDINFOBOXFACTS), new TypeChecker(
-        REDIRECTEDINFOBOXFACTS, INFOBOXFACTS)));
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(DIRTYINFOBOXFACTS, REDIRECTEDINFOBOXFACTS), new TypeChecker(REDIRECTEDINFOBOXFACTS,
+        INFOBOXFACTS)));
   }
 
   @Override
@@ -225,11 +225,13 @@ public class InfoboxExtractor extends Extractor {
           break;
         default:
           if (titleEntity == null) continue;
-          String cls = FileLines.readTo(in, '}', '|').toString().trim();
-          String type = preferredMeaning.get(cls);
-          if (type != null) {
-            write(writers, INFOBOXTYPES, new Fact(null, titleEntity, RDFS.type, type), INFOBOXSOURCES, titleEntity,
-                "InfoboxExtractor: Preferred meaning of infobox type " + cls);
+          String cls = FileLines.readTo(in, '}', '|').toString().trim().toLowerCase();
+          if (!infoboxFacts.contains(FactComponent.forString(cls), RDFS.type, "<_yagoNonConceptualInfobox>")) {
+            String type = preferredMeaning.get(cls);
+            if (type != null) {
+              write(writers, INFOBOXTYPES, new Fact(null, titleEntity, RDFS.type, type), INFOBOXSOURCES, titleEntity,
+                  "InfoboxExtractor: Preferred meaning of infobox type " + cls);
+            }
           }
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
           for (String attribute : attributes.keySet()) {

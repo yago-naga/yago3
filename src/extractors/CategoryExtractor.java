@@ -148,6 +148,18 @@ public class CategoryExtractor extends Extractor {
     return (categoryPatterns.asStringSet("<_yagoNonConceptualWord>"));
   }
 
+  /** Returns the set of non-conceptual words 
+   * @throws IOException */
+  public static Set<String> nonConceptualWords(FactSource categoryPatterns) throws IOException {
+    return (nonConceptualWords(new FactCollection(categoryPatterns)));
+  }
+  
+  /** Returns the set of non-conceptual words 
+   * @throws IOException */
+  public static Set<String> nonConceptualWords(Map<Theme,FactSource> themes) throws IOException {
+    return (nonConceptualWords(themes.get(PatternHardExtractor.CATEGORYPATTERNS)));
+  }
+
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
     FactCollection categoryPatternCollection = new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS));

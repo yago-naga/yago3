@@ -9,6 +9,8 @@ import java.util.Set;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
+import javatools.parsers.NumberFormatter;
+import javatools.parsers.NumberParser;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -74,6 +76,7 @@ public class StatisticsExtractor extends Extractor {
     Announce.done();
     Announce.message(instances.size(), "things");
     out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("hasNumberOfThings"), FactComponent.forNumber(instances.size())));
+    out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("wasCreatedOnDate"), FactComponent.forDate(NumberFormatter.ISOtime())));
     Announce.done();
   }
 
