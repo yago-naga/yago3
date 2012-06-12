@@ -138,5 +138,62 @@
 [[uk:Ковчег]]</text>
 		</revision>
 	</page>
+  <page>
+    <title>The London Ark</title>
+    <id>562545</id>
+    <revision>
+      <id>337670010</id>
+      <timestamp>2010-01-13T21:08:58Z</timestamp>
+      <contributor>
+        <username>DMS</username>
+        <id>545786</id>
+      </contributor>
+      <comment>Added photo to infobox</comment>
+      <text xml:space="preserve">{{Infobox Skyscraper
+|building_name = The Ark 
+|image         = [[Image:London-Ark-DMS-01.jpg|thumb|250px]] --&gt;
+|year_built    = 1992
+|location      = 201 Talgarth Road, [[London]], [[England]], [[United Kingdom]]
+|roof          = {{convert|76|m|ft|0}}
+|construction_period= 1989–1992 
+|[[complete]]  = 1992
+|floor_area= {{convert|15600|m2|sqft|-2}}
+|height_storeys= 10
+|architects    = [[Ralph Erskine, Lennart Bergstrom, Arkitektkontor, Rock Townsend]]
+|emporis_id    = 159306
+}}
 
+'''The Ark''' is a prominent office building located in [[Hammersmith]], [[London]], acquired by developers Landid, GE Real Estate and O&amp;H properties in 2006 and extensively refurbished in late 2007 early 2008. 
+
+The Ark, so called in reference to its hull-like profile, was designed by celebrated architect [[Ralph Erskine (architect)|Ralph Erskine]], for Swedish developers Ake Larson and Pronator. 
+
+Erskine, based in Sweden, worked from a small office in collaboration with other trusted architects in order to retain design freedom. In the case of the Ark, Erskine and Vernon Gracie (who worked with Erskine on Byker Wall in Newcastle) collaborated with London architects Rock Townsend and latterly Lennart Bergstrom in Stockholm. 
+
+Construction work began on 19 September 1989, the same day planning permission was granted and completed in 1992. Owing to the difficult economic circumstances Ake Larson’s UK division didn’t survive to occupy the building. Drinks company Seagram subsequently occupied the Ark from 1996 until it was bought by Vivendi Universal in 2000.
+
+In 2006 German property company Deka sold the Ark to Landid backed by GE Real Estate and O&amp;H Properties, who saw the building required a radical refit to make the interior better suited for multiple tenants.
+
+The ensuing £20 million conversion was carried out by DN-A architects, comprising the stripping out of the central “village” and connecting walkways which spanned the atrium and the floorplates filled in creating two smaller atriums turning “the doughnut plan into a pretzel” in the words of DN-A director Stuart McLarty. 
+
+A new double height atrium was created on the ground floor, and a new fifth and sixth floor were erected, while the seventh floor was extended as an open mezzanine. As a result net lettable floor space was increased by 30%, from 12,100m2 to 15,600m2. Each floor can be subdivided into two spaces and the open balustrading has been replaced with partially glazed partitions. 
+
+The Ark retains many of its original characteristics whilst the interior has been converted into an effective and flexible office space suitable for a diverse array of tenants.
+
+== References ==
+
+&lt;references/&gt;
+*[http://www.propertyweek.com/story.asp?sectioncode=39&amp;storycode=3100425 Article in Property Week]
+*[http://www.building.co.uk/story.asp?sectioncode=583&amp;storycode=3106848 Article in Building magazine discussing the 2008 conversion of the Ark]
+
+== External links ==
+*[http://www.thearklondon.com/ The London Ark web site]
+*[http://www.emporis.com/en/wm/bu/?id=159306 Emporis.com on the Ark]
+
+{{coord|51.4909|-0.2206|type:landmark_region:GB-HMF|display=title}}
+
+[[Category:Low and mid rise commercial buildings in London]]
+
+{{London-struct-stub}}</text>
+    </revision>
+  </page>
 </mediawiki>

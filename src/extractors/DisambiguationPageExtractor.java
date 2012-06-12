@@ -42,11 +42,11 @@ public class DisambiguationPageExtractor extends Extractor {
  }
 
   /** Means facts from disambiguation pages */
-  public static final Theme DIRTYDISAMBIGUATIONMEANSFACTS = new Theme("dirtyDisambiguationMeansFacts",
+  public static final Theme DIRTYDISAMBIGUATIONMEANSFACTS = new Theme("disambiguationMeansFactsDirty",
       "Means facts from disambiguation pages - needs redirecting and typechecking");
   
   /** Means facts from disambiguation pages */
-  public static final Theme REDIRECTEDDISAMBIGUATIONMEANSFACTS = new Theme("redirectedDisambiguationMeansFacts",
+  public static final Theme REDIRECTEDDISAMBIGUATIONMEANSFACTS = new Theme("disambiguationMeansFactsRedirected",
       "Means facts from disambiguation pages - needs typechecking");
   
 	/** Means facts from disambiguation pages */
