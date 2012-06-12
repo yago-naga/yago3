@@ -58,7 +58,7 @@ public class UWNImporter extends Extractor {
 
     FactWriter writer = output.get(UWNDATA);
     
-    for (String line : new FileLines(uwnNouns, "Importing UWN mappings")) {
+    for (String line : new FileLines(uwnNouns, "UTF-8", "Importing UWN mappings")) {
       String data[] = line.split("\t");
             
       String lang = tlc2language.get(FactComponent.forString(data[0]));
