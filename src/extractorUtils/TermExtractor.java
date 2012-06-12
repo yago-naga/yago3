@@ -156,6 +156,7 @@ public abstract class TermExtractor {
       s = s.trim();
       List<String> result = new ArrayList<String>(3);
       for (String w : s.split(";|,?\n|'''|''|, ?;|\"")) {
+        w=w.replaceAll("\\(.*\\)",""); //Remove bracketed parts
         w = w.trim();
         if (w.length() > 2 && !w.contains("{{") && !w.contains("[[")) result.add(FactComponent.forStringWithDatatype(w, YAGO.string));
       }

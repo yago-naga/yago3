@@ -18,6 +18,7 @@
 "weather"	rdf:type	<_yagoNonConceptualInfobox> .
 
 # --------- Combinations of Infobox attributes --------------
+"<dir1> /km^2"	<_infoboxCombine>	"population_density" .
 "<population_density_km2> /km^2"	<_infoboxCombine>	"population_density" .
 "<area> km^2"	<_infoboxCombine>	"area" .
 "<areakm2> km^2"	<_infoboxCombine>	"area" .
@@ -258,6 +259,8 @@
 "<br ?/>"	<_infoboxReplace>	"\n" .
 "<br ?>"	<_infoboxReplace>	"\n" .
 "</ ?br ?>"	<_infoboxReplace>	"\n" .
+"'''"	<_infoboxReplace>	"" .
+"''"	<_infoboxReplace>	"" .
 "\\[\\[File:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[Image:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[wp:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .

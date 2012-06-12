@@ -116,13 +116,13 @@ public class InfoboxExtractor extends Extractor {
         String datatype = FactComponent.getDatatype(object);
         if (datatype == null) datatype = YAGO.string;
         if (cls.equals(YAGO.languageString) && datatype.equals(YAGO.string)) {
-          object = FactComponent.setLanguage(object, "en");
+          //object = FactComponent.setLanguage(object, "en"); Don't do that. Names can be any language.
         } else {
           if (!factCollection.isSubClassOf(datatype, cls)) {
             Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
             continue;
           }
-          object = FactComponent.setDataType(object, cls);
+          //object = FactComponent.setDataType(object, cls); // We keep the more specific datatype!
         }
       }
       if (inverse) write(writers, DIRTYINFOBOXFACTS, new Fact(object, relation, entity), INFOBOXSOURCES, entity, "InfoboxExtractor: from " + string);
@@ -175,8 +175,8 @@ public class InfoboxExtractor extends Extractor {
       String attribute = normalizeAttribute(FileLines.readTo(in, '=', '}').toString());
       if (attribute.length() == 0) return (result);
       StringBuilder value = new StringBuilder();
-      int c = readEnvironment(in, value);
-      D.addKeyValue(result, attribute, value.toString().trim(), TreeSet.class);
+      int c = readEnvironment(in, value);      
+      D.addKeyValue(result, attribute, Char.decodeAmpersand(value.toString().trim()), TreeSet.class);
       if (c == '}' || c == -1 || c == -2) break;
     }
     // Apply combinations
@@ -270,7 +270,8 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("./testCases/extractors.InfoboxExtractor/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
+    new InfoboxExtractor(new File("c:/fabian/temp/np.xml")).extract(new File("c:/fabian/data/yago2s"),
+        "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");

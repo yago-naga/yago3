@@ -127,7 +127,7 @@ public class ParallelCaller {
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.WARNING);
     D.p("Running YAGO extractors in parallel");
-    String initFile = args.length == 0 ? "yago.ini" : args[0];
+    String initFile = args.length == 0 ? "c:/fabian/temp/yago.ini" : args[0];
     D.p("Initializing from", initFile);
     Parameters.init(initFile);
     numThreads = Parameters.getInt("numThreads", numThreads);

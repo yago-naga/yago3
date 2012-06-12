@@ -13,6 +13,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.YAGO;
 import extractors.Extractor.FollowUpExtractor;
 import finalExtractors.TransitiveTypeExtractor;
 
@@ -64,7 +65,7 @@ public class TypeChecker extends FollowUpExtractor {
 
 	/** Checks whether an entity is of a type */
 	protected boolean check(String entity, String type, Map<String,Set<String>> types) {
-		if (type == null) {
+		if (type == null || type.equals(YAGO.entity)) {
 		  // Type is entity, just check it's not a literal
 		  return(!FactComponent.isLiteral(entity));
 		}

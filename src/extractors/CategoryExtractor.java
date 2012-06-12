@@ -200,7 +200,7 @@ public class CategoryExtractor extends Extractor {
           category = category.trim();
           // Categories
           if (category.toLowerCase().startsWith("category:")) {
-            category=category.substring(9);
+            category=category.substring(9).trim();
             for (Fact fact : categoryPatterns.extract(category, titleEntity)) {
               if (fact != null) facts.add(fact);
             }
@@ -280,11 +280,12 @@ public class CategoryExtractor extends Extractor {
     if (titleEntity.endsWith(">")) titleEntity = Char.cutLast(titleEntity);
     String name = Char.decode(titleEntity.replace('_', ' '));
     result.add(FactComponent.forStringWithLanguage(name,"en"));
-    result.add(FactComponent.forStringWithLanguage(Char.normalize(name),"en"));
+    String norm=Char.normalize(name);
+    if(!norm.contains("[?]")) result.add(FactComponent.forStringWithLanguage(norm,"en"));
     if (name.contains(" (")) {
       result.add(FactComponent.forStringWithLanguage(name.substring(0, name.indexOf(" (")).trim(),"en"));
     }
-    if (name.contains(",")) {
+    if (name.contains(",") && !name.contains("(")) {
       result.add(FactComponent.forStringWithLanguage(name.substring(0, name.indexOf(",")).trim(),"en"));
     }
     return (result);
@@ -299,7 +300,7 @@ public class CategoryExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new CategoryExtractor(new File("./testCases/extractors.CategoryExtractor/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"),
+    new CategoryExtractor(new File("c:/fabian/temp/np.xml")).extract(new File("c:/fabian/data/yago2s"),
         "Test on 1 wikipedia article");
   }
 }

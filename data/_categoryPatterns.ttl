@@ -135,7 +135,7 @@
 
 
 # Non-conceptual words
-
+"studies"	rdf:type	<_yagoNonConceptualWord> . # Groups many things loosely related to studies of some kind, check e.g., "Germanic studies"
 "entrant"	rdf:type	<_yagoNonConceptualWord> . # Can be anything entering a competition
 "trophy"	rdf:type	<_yagoNonConceptualWord> . # contains the clubs, not the awards 
 "relation"	rdf:type	<_yagoNonConceptualWord> .
