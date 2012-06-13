@@ -6,6 +6,7 @@ import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractors.CategoryExtractor;
 import extractors.DisambiguationPageExtractor;
 import extractors.HardExtractor;
@@ -38,7 +39,7 @@ public class LabelExtractor extends Deduplicator {
       "<hasFamilyName>", "<hasGloss>");
 
   /** All facts of YAGO */
-  public static final Theme YAGOLABELS = new Theme("yagoLabels", "All labels of YAGO");
+  public static final Theme YAGOLABELS = new Theme("yagoLabels", "All rdfs:label facts of YAGO", ThemeGroup.CORE);
 
   @Override
   public Theme myOutput() {   

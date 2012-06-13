@@ -18,6 +18,7 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import basics.Theme.ThemeGroup;
 import extractors.Extractor;
 import extractors.WordnetExtractor;
 
@@ -39,7 +40,7 @@ public class StatisticsExtractor extends Extractor {
   }
 
   /** YAGO statistics theme */
-  public static final Theme STATISTICS = new Theme("yagoStatistics", "Statistics about YAGO");
+  public static final Theme STATISTICS = new Theme("yagoStatistics", "Statistics about YAGO and YAGO themes", ThemeGroup.META);
 
   @Override
   public Set<Theme> output() {
@@ -48,8 +49,10 @@ public class StatisticsExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+    TransitiveTypeExtractor.freeMemory();
+    WordnetExtractor.freeMemory();
     Map<String, Integer> relations = new HashMap<>();
-    Set<String> instances = new HashSet<>();
+    Set<String> instances = new HashSet<>(15_000_000);
     FactWriter out = output.get(STATISTICS);
     Announce.doing("Making YAGO statistics");
     for (Theme t : input.keySet()) {

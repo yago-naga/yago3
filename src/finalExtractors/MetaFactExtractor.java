@@ -9,6 +9,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
 import basics.YAGO;
+import basics.Theme.ThemeGroup;
 import extractors.HardExtractor;
 import extractors.RuleExtractor;
 import extractors.TemporalCategoryExtractor;
@@ -32,7 +33,7 @@ public class MetaFactExtractor extends Deduplicator {
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
   /** All meta facts of YAGO */
-  public static final Theme YAGOMETAFACTS = new Theme("yagoMetaFacts", "All meta facts of YAGO");
+  public static final Theme YAGOMETAFACTS = new Theme("yagoMetaFacts", "All temporal and geospatial meta facts of YAGO", ThemeGroup.META);
 
   /** relations that we exclude, because they are treated elsewhere */
   public static final Set<String> relationsExcluded = new FinalSet<>(YAGO.extractionSource, YAGO.extractionTechnique);

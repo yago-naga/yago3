@@ -11,6 +11,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractors.CategoryExtractor;
 import extractors.Extractor;
 import extractors.HardExtractor;
@@ -36,7 +37,7 @@ public class TypeExtractor extends Extractor {
   }
 
   /** Final types */
-  public static final Theme YAGOTYPES = new Theme("yagoTypes", "Types of YAGO");
+  public static final Theme YAGOTYPES = new Theme("yagoTypes", "All rdf:type facts of YAGO", ThemeGroup.TAXONOMY);
 
   @Override
   public Set<Theme> output() {

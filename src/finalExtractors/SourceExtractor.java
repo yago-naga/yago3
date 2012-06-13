@@ -10,6 +10,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import basics.YAGO;
+import basics.Theme.ThemeGroup;
 import extractors.ConteXtExtractor;
 import extractors.Extractor;
 import extractors.InfoboxExtractor;
@@ -34,7 +35,7 @@ public class SourceExtractor extends Extractor {
   }
 
   /** All source facts of YAGO */
-  public static final Theme YAGOSOURCES = new Theme("yagoSources", "All sources of YAGO facts");
+  public static final Theme YAGOSOURCES = new Theme("yagoSources", "All sources of YAGO facts", ThemeGroup.META);
 
   @Override
   public Set<Theme> output() {

@@ -24,6 +24,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractors.Extractor;
 import extractors.PatternHardExtractor;
 import extractors.WordnetExtractor;
@@ -48,11 +49,11 @@ public class GeoNamesClassMapper extends Extractor {
   private Pattern NON_WORD_CHAR = Pattern.compile("^[^\\w]*$");
 
   /** geonames class links */
-  public static final Theme GEONAMESCLASSSIDS = new Theme("yagoGeonamesClassIds", "IDs from GeoNames classes");
+  public static final Theme GEONAMESCLASSSIDS = new Theme("yagoGeonamesClassIds", "IDs from GeoNames classes", ThemeGroup.GEONAMES);
     /** geonames classes */
-  public static final Theme GEONAMESCLASSES = new Theme("yagoGeonamesClasses", "Classes from GeoNames");
+  public static final Theme GEONAMESCLASSES = new Theme("yagoGeonamesClasses", "Classes from GeoNames", ThemeGroup.GEONAMES);
    /** geonames glosses */
-  public static final Theme GEONAMESGLOSSES = new Theme("yagoGeonamesGlosses", "Glosses from GeoNames");
+  public static final Theme GEONAMESGLOSSES = new Theme("yagoGeonamesGlosses", "Glosses from GeoNames", ThemeGroup.GEONAMES);
   
   @Override
   public Set<Theme> input() {

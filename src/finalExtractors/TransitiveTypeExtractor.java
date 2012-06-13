@@ -18,6 +18,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractors.Extractor;
 
 /**
@@ -41,7 +42,7 @@ public class TransitiveTypeExtractor extends Extractor {
   }
 
   /** All type facts*/
-  public static final Theme TRANSITIVETYPE = new Theme("yagoTransitiveType", "Transitive closure of all type/subclassof facts");
+  public static final Theme TRANSITIVETYPE = new Theme("yagoTransitiveType", "Transitive closure of all rdf:type/rdfs:subClassOf facts", ThemeGroup.TAXONOMY);
 
   @Override
   public Set<Theme> output() {

@@ -20,6 +20,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 
 /**
  * Imports the multi-lingual class labels from Gerard de Melo's Universal WordNet (WUN=
@@ -36,7 +37,7 @@ public class UWNImporter extends Extractor {
     
   /** multi-lingual class names*/
   public static final Theme UWNDATA = new Theme("yagoMultilingualClassLabels", 
-      "Multi-lingual class labels from Universal WordNet");
+      "Multi-lingual labels for classes from Universal WordNet", ThemeGroup.MULTILINGUAL);
 
   @Override
   public Set<Theme> input() {

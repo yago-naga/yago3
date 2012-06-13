@@ -10,6 +10,8 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
+import basics.YAGO;
 import extractors.Extractor;
 import extractors.HardExtractor;
 
@@ -30,7 +32,7 @@ public class SchemaExtractor extends Extractor {
   }
 
   /** All facts of YAGO */
-  public static final Theme YAGOSCHEMA = new Theme("yagoSchema", "The schema of YAGO relations");
+  public static final Theme YAGOSCHEMA = new Theme("yagoSchema", "The domains, ranges and confidence values of YAGO relations", ThemeGroup.TAXONOMY);
 
   @Override
   public Set<Theme> output() {
@@ -38,7 +40,7 @@ public class SchemaExtractor extends Extractor {
   }
 
   /** Relations that we care for*/
-  public static Set<String> relations = new FinalSet<>(RDFS.domain, RDFS.range, RDFS.subpropertyOf);
+  public static Set<String> relations = new FinalSet<>(RDFS.domain, RDFS.range, RDFS.subpropertyOf, YAGO.hasConfidence);
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {

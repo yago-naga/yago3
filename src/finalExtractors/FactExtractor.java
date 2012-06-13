@@ -9,6 +9,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractors.CategoryExtractor;
 import extractors.GenderExtractor;
 import extractors.HardExtractor;
@@ -35,13 +36,13 @@ public class FactExtractor extends Deduplicator {
         HardExtractor.HARDWIREDFACTS, 
         InfoboxExtractor.INFOBOXFACTS,        
         RuleExtractor.RULERESULTS,      
-        GeoNamesDataImporter.GEONAMESDATA,
+        //GeoNamesDataImporter.GEONAMESDATA,
         TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
 
   /** All facts of YAGO */
-  public static final Theme YAGOFACTS = new Theme("yagoFacts", "All instance-instance facts of YAGO");
+  public static final Theme YAGOFACTS = new Theme("yagoFacts", "All facts of YAGO that hold between instances", ThemeGroup.CORE);
 
   /** relations that we exclude, because they are treated elsewhere */
   public static final Set<String> relationsExcluded = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range, RDFS.subpropertyOf,

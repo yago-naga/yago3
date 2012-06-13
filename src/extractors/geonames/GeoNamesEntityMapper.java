@@ -18,6 +18,7 @@ import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractors.Extractor;
 import extractors.InfoboxExtractor;
 import finalExtractors.TransitiveTypeExtractor;
@@ -39,7 +40,7 @@ public class GeoNamesEntityMapper extends Extractor {
   private Map<Integer, Float> id2longitude = new HashMap<>();
   
   /** geonames entity links */
-  public static final Theme GEONAMESENTITYIDS = new Theme("yagoGeonamesEntityIds", "IDs from GeoNames entities");
+  public static final Theme GEONAMESENTITYIDS = new Theme("yagoGeonamesEntityIds", "IDs from GeoNames entities", ThemeGroup.GEONAMES);
 
   @Override
   public Set<Theme> input() {

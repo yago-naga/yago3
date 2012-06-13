@@ -26,6 +26,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractorUtils.FactTemplateExtractor;
 import extractorUtils.TitleExtractor;
 import finalExtractors.SimpleTaxonomyExtractor;
@@ -55,19 +56,19 @@ public class CategoryExtractor extends Extractor {
   }
 
   /** Types deduced from categories */
-  public static final Theme CATEGORYTYPES = new Theme("categoryTypes", "Types derived from the categories");
+  public static final Theme CATEGORYTYPES = new Theme("categoryTypes", "The rdf:type facts that connect Wikipedia instances to Wikipedia classes. This is an essential part of YAGO.");
 
   /** Facts deduced from categories */
-  public static final Theme CATEGORYLANGUAGELABELS= new Theme("yagoMultilingualInstanceLabels", "Labels derived from the categories");
+  public static final Theme CATEGORYLANGUAGELABELS= new Theme("yagoMultilingualInstanceLabels", "Names for the Wikipedia instances in multiple languages", ThemeGroup.MULTILINGUAL);
 
   /** Facts deduced from categories */
   public static final Theme DIRTYCATEGORYFACTS = new Theme("categoryFactsDirty", "Facts derived from the categories - still to be type checked");
 
   /** Facts deduced from categories */
-  public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "Facts derived from the categories");
+  public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "Facts about Wikipedia instances, derived from the Wikipedia categories");
 
   /** Classes deduced from categories */
-  public static final Theme CATEGORYCLASSES = new Theme("categoryClasses", "Classes derived from the categories");
+  public static final Theme CATEGORYCLASSES = new Theme("categoryClasses", "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
 
   @Override
   public Set<Theme> output() {

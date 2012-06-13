@@ -9,6 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
+import javatools.parsers.Char;
 import javatools.parsers.DateParser;
 import javatools.parsers.NumberParser;
 import javatools.parsers.PlingStemmer;
@@ -158,7 +159,7 @@ public abstract class TermExtractor {
       for (String w : s.split(";|,?\n|'''|''|, ?;|\"")) {
         w=w.replaceAll("\\(.*\\)",""); //Remove bracketed parts
         w = w.trim();
-        if (w.length() > 2 && !w.contains("{{") && !w.contains("[[")) result.add(FactComponent.forStringWithDatatype(w, YAGO.string));
+        if (w.length() > 2 && !w.contains("{{") && !w.contains("[[")) result.add(FactComponent.forStringWithDatatype(Char.decodeAmpersand(w), YAGO.string));
       }
       if (result.size() == 0) Announce.debug("Could not find string in", s);
       return (result);

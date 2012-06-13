@@ -23,7 +23,7 @@ import basics.Theme;
 public class HardExtractor extends Extractor {
 
 	/** Our output*/
-	public static final Theme HARDWIREDFACTS=new Theme("hardWiredFacts","These are the hard-wired facts of YAGO");
+	public static final Theme HARDWIREDFACTS=new Theme("hardWiredFacts","The manually created facts of YAGO");
 	
 	public Set<Theme> output() {
 		return (new FinalSet<Theme>(HARDWIREDFACTS));

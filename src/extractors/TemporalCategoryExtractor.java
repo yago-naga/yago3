@@ -52,10 +52,10 @@ public class TemporalCategoryExtractor extends Extractor {
 	/** Facts deduced from categories */
 	public static final Theme DIRTYCATEGORYFACTS = new Theme(
 			"categoryTemporalFactsDirty",
-			"Facts derived from the categories - still to be type checked");
+			"Temporal facts derived from the categories - still to be type checked");
 	/** Facts deduced from categories */
 	public static final Theme TEMPORALCATEGORYFACTS = new Theme(
-			"categoryTemporalFacts", "Facts derived from the categories");
+			"categoryTemporalFacts", "Temporal facts derived from the categories");
 
 	@Override
 	public Set<Theme> output() {

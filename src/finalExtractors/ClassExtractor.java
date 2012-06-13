@@ -11,6 +11,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractors.CategoryExtractor;
 import extractors.Extractor;
 import extractors.HardExtractor;
@@ -37,7 +38,7 @@ public class ClassExtractor extends Extractor {
   }
 
   /** The YAGO taxonomy */
-  public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy", "The entire YAGO taxonomy");
+  public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy", "The entire YAGO taxonomy, all rdfs:subClassOf facts derived from Wikipedia and from WordNet", ThemeGroup.TAXONOMY);
 
   @Override
   public Set<Theme> output() {

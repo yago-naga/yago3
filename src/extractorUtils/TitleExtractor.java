@@ -49,9 +49,8 @@ public class TitleExtractor {
 	/** Reads the title entity, supposes that the reader is after "<title>" */
 	public String getTitleEntity(Reader in) throws IOException {
 		String title = FileLines.readToBoundary(in, "</title>");
-		title=replacer.transform(title);
+		title=replacer.transform(Char.decodeAmpersand(title));
 		if(title==null) return(null);
-		title=Char.decodeAmpersand(title);
 		if(wordnetWords.contains(title.toLowerCase())) return(null);
 		return (FactComponent.forYagoEntity(title.replace(' ', '_')));
 	}

@@ -12,6 +12,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import extractors.Extractor;
 
 /**
@@ -30,9 +31,9 @@ public class DBpediaLinker extends Extractor {
 	}
 
 	/** Mapping to DBpedia classes*/
-	public static final Theme YAGODBPEDIACLASSES=new Theme("yagoDBpediaClasses","Maps YAGO classes to DBpedia classes");
+	public static final Theme YAGODBPEDIACLASSES=new Theme("yagoDBpediaClasses","Mappings of YAGO classes to YAGO-based DBpedia classes", ThemeGroup.LINK);
 	/** Mapping to DBpedia instances*/
-	public static final Theme YAGODBPEDIAINSTANCES=new Theme("yagoDBpediaInstances","Maps YAGO instances to DBpedia instances");
+	public static final Theme YAGODBPEDIAINSTANCES=new Theme("yagoDBpediaInstances","Mappings of YAGO instances to DBpedia instances", ThemeGroup.LINK);
 	
 	@Override
 	public Set<Theme> output() {

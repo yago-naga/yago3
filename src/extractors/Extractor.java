@@ -86,7 +86,7 @@ public abstract class Extractor {
 		for (Theme out : output()) {
 			Announce.doing("Creating file", out.name);
 			File file = out.file(outputFolder);
-			writers.put(out, new N4Writer(file, header + "\n" + out.description));
+			writers.put(out, new N4Writer(file, header + "\n" + out.description+"\n"+out.themeGroup));
 			Announce.done();
 		}
 		Announce.done();
