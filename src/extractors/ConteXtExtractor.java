@@ -36,7 +36,16 @@ public class ConteXtExtractor extends Extractor {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CONTEXTPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
 	}
+	
+  @Override
+  public Set<Extractor> followUp() {
+    return new HashSet<Extractor>(Arrays.asList(new TypeChecker(DIRTYCONTEXTFACTS, CONTEXTFACTS)));
+  }
 
+	 /** Context for entities */
+  public static final Theme DIRTYCONTEXTFACTS = new Theme("conteXtFactsDirty",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs typechecking to throw away entities not in the final version");
+	
 	/** Context for entities */
 	public static final Theme CONTEXTFACTS = new Theme("yagoConteXtFacts",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
@@ -47,7 +56,7 @@ public class ConteXtExtractor extends Extractor {
 	
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(CONTEXTFACTS, CONTEXTSOURCES);
+		return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);
 	}
 
 	@Override
