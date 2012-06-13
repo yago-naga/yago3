@@ -72,7 +72,7 @@ public class ConteXtExtractor extends Extractor {
 		FactTemplateExtractor contextPatterns = new FactTemplateExtractor(contextPatternCollection,
 				"<_extendedContextWikiPattern>");
 
-		FactWriter out = output.get(CONTEXTFACTS);
+		FactWriter out = output.get(DIRTYCONTEXTFACTS);
     FactWriter outSources = output.get(CONTEXTSOURCES);
 
 		String titleEntity = null;
