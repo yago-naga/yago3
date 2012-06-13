@@ -73,7 +73,7 @@ public class SimpleTaxonomyExtractor extends Extractor {
 			if (superBranch == null)
 				continue;
 			output.get(SIMPLETAXONOMY).write(f);
-			output.get(SIMPLETAXONOMY).write(new Fact(f.getArg(2), RDFS.subclassOf, superBranch));
+			if(!f.getArg(2).equals(superBranch)) output.get(SIMPLETAXONOMY).write(new Fact(f.getArg(2), RDFS.subclassOf, superBranch));
 			done.add(f.getArg(2));
 		}
 		Announce.done();

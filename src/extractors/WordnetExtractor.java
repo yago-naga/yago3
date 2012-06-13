@@ -22,6 +22,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import basics.YAGO;
 
 /**
@@ -45,7 +46,7 @@ public class WordnetExtractor extends Extractor {
 	/** wordnet labels/means */
 	public static final Theme WORDNETWORDS = new Theme("wordnetWords", "Labels and preferred meanings form Wordnet");
 	/** ids of wordnet */
-	public static final Theme WORDNETIDS = new Theme("yagoWordnetIds", "Ids from Wordnet");
+	public static final Theme WORDNETIDS = new Theme("yagoWordnetIds", "Mappings of the WordNet-based YAGO classes to the ids of WordNet", ThemeGroup.LINK);
 	 /** wordnet glosses */
   public static final Theme WORDNETGLOSSES = new Theme("wordnetGlosses", "Glosses from Wordnet");
 

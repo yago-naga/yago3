@@ -79,7 +79,7 @@ public class StatisticsExtractor extends Extractor {
     Announce.done();
     Announce.message(instances.size(), "things");
     out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("hasNumberOfThings"), FactComponent.forNumber(instances.size())));
-    out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("wasCreatedOnDate"), FactComponent.forDate(NumberFormatter.ISOtime())));
+    out.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("wasCreatedOnDate"), FactComponent.forDate(NumberFormatter.ISOdate())));
     Announce.done();
   }
 
