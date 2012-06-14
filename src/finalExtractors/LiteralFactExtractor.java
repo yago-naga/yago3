@@ -37,11 +37,11 @@ public class LiteralFactExtractor extends Deduplicator {
   }
 
   /** All facts of YAGO */
-  public static final Theme YAGOLITERALFACTS = new Theme("yagoLiteralFacts", "All facts of YAGO that contain literals", ThemeGroup.CORE);
+  public static final Theme YAGOLITERALFACTS = new Theme("yagoLiteralFacts", "All facts of YAGO that contain literals (except labels)", ThemeGroup.CORE);
 
   /** relations that we exclude, because they are treated elsewhere */
   public static final Set<String> relationsExcluded = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range, RDFS.subpropertyOf,
-      RDFS.label, "skos:prefLabel", "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>", "<hasGloss>");
+      RDFS.label, "skos:prefLabel", "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>", "<hasGloss>", "<hasConfidence>");
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);

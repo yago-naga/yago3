@@ -39,7 +39,7 @@ public class LabelExtractor extends Deduplicator {
       "<hasFamilyName>", "<hasGloss>");
 
   /** All facts of YAGO */
-  public static final Theme YAGOLABELS = new Theme("yagoLabels", "All rdfs:label facts of YAGO", ThemeGroup.CORE);
+  public static final Theme YAGOLABELS = new Theme("yagoLabels", "All facts of YAGO that contain labels (rdfs:label, skos:prefLabel, isPreferredMeaningOf, hasGivenName, hasFamilyName, hasGloss)", ThemeGroup.CORE);
 
   @Override
   public Theme myOutput() {   

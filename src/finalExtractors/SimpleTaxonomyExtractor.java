@@ -44,7 +44,7 @@ public class SimpleTaxonomyExtractor extends Extractor {
 	public static final Theme SIMPLETAXONOMY = new Theme(
 			"yagoSimpleTaxonomy",
 			"A simple subset of the YAGO taxonomy, which contains just Wikipedia categories, WordNet leaves, the main YAGO branches, and "
-					+ YAGO.entity + ". This theme can substitute "+ClassExtractor.YAGOTAXONOMY,ThemeGroup.TAXONOMY);
+					+ YAGO.entity + ". This theme can substitute "+ClassExtractor.YAGOTAXONOMY+".",ThemeGroup.TAXONOMY);
 
 	@Override
 	public Set<Theme> output() {

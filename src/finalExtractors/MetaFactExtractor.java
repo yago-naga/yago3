@@ -33,7 +33,7 @@ public class MetaFactExtractor extends Deduplicator {
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }
   /** All meta facts of YAGO */
-  public static final Theme YAGOMETAFACTS = new Theme("yagoMetaFacts", "All temporal and geospatial meta facts of YAGO", ThemeGroup.META);
+  public static final Theme YAGOMETAFACTS = new Theme("yagoMetaFacts", "All temporal and geospatial meta facts of YAGO. This complements the raw facts of yagoFacts.", ThemeGroup.META);
 
   /** relations that we exclude, because they are treated elsewhere */
   public static final Set<String> relationsExcluded = new FinalSet<>(YAGO.extractionSource, YAGO.extractionTechnique);

@@ -31,7 +31,7 @@ public class DBpediaLinker extends Extractor {
 	}
 
 	/** Mapping to DBpedia classes*/
-	public static final Theme YAGODBPEDIACLASSES=new Theme("yagoDBpediaClasses","Mappings of YAGO classes to YAGO-based DBpedia classes. For the mappings between YAGO classes and other DBpedia classes, as well as the mapping between YAGO relations and DBpedia relations, see http://www.mpi-inf.mpg.de/yago-naga/yago/applications.html", ThemeGroup.LINK);
+	public static final Theme YAGODBPEDIACLASSES=new Theme("yagoDBpediaClasses","Mappings of YAGO classes to YAGO-based DBpedia classes. For the mappings between YAGO classes and other DBpedia classes, as well as the mapping between YAGO relations and DBpedia relations, see http://yago-knowledge.org -> Linking", ThemeGroup.LINK);
 	/** Mapping to DBpedia instances*/
 	public static final Theme YAGODBPEDIAINSTANCES=new Theme("yagoDBpediaInstances","Mappings of YAGO instances to DBpedia instances", ThemeGroup.LINK);
 	
