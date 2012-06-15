@@ -125,7 +125,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 				String type = preferredMeaning.get(cls);
 				if (type != null) {
 					write(writers, INFOBOXTYPES, new Fact(null, titleEntity,
-							RDFS.type, type), TEMPORALINFOBOXSOURCES, titleEntity,
+							RDFS.type, type), TEMPORALINFOBOXSOURCES, FactComponent.wikipediaURL(titleEntity),
 							"TemporalInfoboxExtractor: Preferred meaning of infobox type "
 									+ cls);
 				}
@@ -233,14 +233,14 @@ public class TemporalInfoboxExtractor extends Extractor {
 					baseFact = new Fact(object, relation, entity);
 					if(baseFact.getArg(2).contains("xsd:date")) //type checking for dates
 					write(writers, TEMPORALDIRTYINFOBOXFACTS, new Fact(object,
-							relation, entity), TEMPORALINFOBOXSOURCES, entity,
+							relation, entity), TEMPORALINFOBOXSOURCES, FactComponent.wikipediaURL(entity),
 							"TemporalInfoboxExtractor: from " + valueString);
 				}
 				else {
 					baseFact = new Fact(entity, relation, object);
 					if(baseFact.getArg(2).contains("xsd:date"))
 						write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact,
-							TEMPORALINFOBOXSOURCES, entity,
+							TEMPORALINFOBOXSOURCES, FactComponent.wikipediaURL(entity),
 							"TemporalInfoboxExtractor: from " + valueString);
 
 				}
@@ -357,18 +357,18 @@ public class TemporalInfoboxExtractor extends Extractor {
 
 				if (inverse)
 					write(writers, TEMPORALDIRTYINFOBOXFACTS, new Fact(object,
-							relation, entity), TEMPORALINFOBOXSOURCES, entity,
+							relation, entity), TEMPORALINFOBOXSOURCES, FactComponent.wikipediaURL(entity),
 							"TemporalInfoboxExtractor: from " + valueString);
 				else if (i == 0) {
 					baseFact = new Fact(entity, relation, object);
 					// baseFact.makeId();
 					write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact, TEMPORALINFOBOXSOURCES,
-							entity, "TemporalInfoboxExtractor: from " + valueString);
+					    FactComponent.wikipediaURL(entity), "TemporalInfoboxExtractor: from " + valueString);
 				} else if (!baseFact.getRelation().equals("")) {
 
 					Fact metafact = baseFact.metaFact(relation, object);
 					write(writers, TEMPORALDIRTYINFOBOXFACTS, metafact, TEMPORALINFOBOXSOURCES,
-							entity, "TemporalInfoboxExtractor: from " + valueString);
+					    FactComponent.wikipediaURL(entity), "TemporalInfoboxExtractor: from " + valueString);
 				}
 
 				if (factCollection.contains(relation, RDFS.type, YAGO.function))

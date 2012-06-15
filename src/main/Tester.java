@@ -35,8 +35,8 @@ public class Tester {
 
   /** Runs the tester*/
   public static void main(String[] args) throws Exception {
-    //Writer w=new FileWriter(new File("c:/fabian/temp/.t.txt"));
-    //Announce.setWriter(w);
+    Writer w=new FileWriter(new File("c:/fabian/temp/.t.txt"));
+    Announce.setWriter(w);
     Announce.doing("Testing YAGO extractors");
     String initFile = args.length == 0 ? "yago.ini" : args[0];
     Announce.doing("Initializing from", initFile);
@@ -57,7 +57,7 @@ public class Tester {
     }
     Announce.done();
     Announce.message((total - failed), "/", total, "tests succeeded");
-    //w.close();
+    w.close();
   }
 
   /** Runs a single test*/

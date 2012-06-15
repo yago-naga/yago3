@@ -125,8 +125,8 @@ public class InfoboxExtractor extends Extractor {
           //object = FactComponent.setDataType(object, cls); // We keep the more specific datatype!
         }
       }
-      if (inverse) write(writers, DIRTYINFOBOXFACTS, new Fact(object, relation, entity), INFOBOXSOURCES, entity, "InfoboxExtractor: from " + string);
-      else write(writers, DIRTYINFOBOXFACTS, new Fact(entity, relation, object), INFOBOXSOURCES, entity, "InfoboxExtractor: from " + string);
+      if (inverse) write(writers, DIRTYINFOBOXFACTS, new Fact(object, relation, entity), INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor: from " + string);
+      else write(writers, DIRTYINFOBOXFACTS, new Fact(entity, relation, object), INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor: from " + string);
       if (factCollection.contains(relation, RDFS.type, YAGO.function)) break;
     }
   }
@@ -229,7 +229,7 @@ public class InfoboxExtractor extends Extractor {
           if (!infoboxFacts.contains(FactComponent.forString(cls), RDFS.type, "<_yagoNonConceptualInfobox>")) {
             String type = preferredMeaning.get(cls);
             if (type != null) {
-              write(writers, INFOBOXTYPES, new Fact(null, titleEntity, RDFS.type, type), INFOBOXSOURCES, titleEntity,
+              write(writers, INFOBOXTYPES, new Fact(null, titleEntity, RDFS.type, type), INFOBOXSOURCES, FactComponent.wikipediaURL(titleEntity),
                   "InfoboxExtractor: Preferred meaning of infobox type " + cls);
             }
           }
