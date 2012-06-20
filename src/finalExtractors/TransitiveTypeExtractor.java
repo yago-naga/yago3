@@ -38,7 +38,7 @@ public class TransitiveTypeExtractor extends Extractor {
   
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES);
+    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES, SimpleTypeExtractor.SIMPLETAXONOMY /* Just to make sure that we don't use the memory in parallel...*/);
   }
 
   /** All type facts*/
@@ -93,7 +93,7 @@ public class TransitiveTypeExtractor extends Extractor {
   /** Loads and returns the entire transitive YAGO taxonomy. It is being loaded by default already when it's being written. This may be large, so discard if you don't need it.*/
   public synchronized static Map<String, Set<String>> yagoTaxonomy(FactSource transitiveTaxonomy) {
     if (yagoTaxonomy != null) return (yagoTaxonomy);
-    yagoTaxonomy = new TreeMap<>();
+    yagoTaxonomy = new HashMap<>();
     Announce.doing("Loading entire transitive YAGO taxonomy");
     for (Fact f : transitiveTaxonomy) {
       if (!f.getRelation().equals(RDFS.type)) continue;

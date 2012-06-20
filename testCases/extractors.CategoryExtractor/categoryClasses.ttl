@@ -1,5 +1,6 @@
-# Test on 1 wikipedia article
-# Classes derived from the categories
+# Test of YAGO2s
+# Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves
+# INTERNAL
 
 @base <http://yago-knowledge/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .

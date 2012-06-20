@@ -38,7 +38,7 @@ public class ClassExtractor extends Extractor {
   }
 
   /** The YAGO taxonomy */
-  public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy", "The entire YAGO taxonomy. These are all rdfs:subClassOf facts derived from Wikipedia and from WordNet. If you want a simpler taxonomy, use yagoSimpleTaxonomy instead.", ThemeGroup.TAXONOMY);
+  public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy", "The entire YAGO taxonomy. These are all rdfs:subClassOf facts derived from Wikipedia and from WordNet.", ThemeGroup.TAXONOMY);
 
   @Override
   public Set<Theme> output() {

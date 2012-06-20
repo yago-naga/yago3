@@ -29,7 +29,7 @@ import basics.Theme;
 import basics.Theme.ThemeGroup;
 import extractorUtils.FactTemplateExtractor;
 import extractorUtils.TitleExtractor;
-import finalExtractors.SimpleTaxonomyExtractor;
+import finalExtractors.SimpleTypeExtractor;
 
 /**
  * CategoryExtractor - YAGO2s
@@ -251,10 +251,10 @@ public class CategoryExtractor extends Extractor {
 
   /** Returns the YAGO branch for a category class */
   public static String yagoBranch(String arg, FactCollection categoryClasses, FactCollection wordnetClasses) {
-    String yagoBranch = SimpleTaxonomyExtractor.yagoBranch(arg, wordnetClasses);
+    String yagoBranch = SimpleTypeExtractor.yagoBranch(arg, wordnetClasses);
     if (yagoBranch != null) return (yagoBranch);
     for (String sup : categoryClasses.getArg2s(arg, RDFS.subclassOf)) {
-      yagoBranch = SimpleTaxonomyExtractor.yagoBranch(sup, wordnetClasses);
+      yagoBranch = SimpleTypeExtractor.yagoBranch(sup, wordnetClasses);
       if (yagoBranch != null) return (yagoBranch);
     }
     return null;
