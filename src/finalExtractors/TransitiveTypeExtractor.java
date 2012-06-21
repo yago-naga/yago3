@@ -85,6 +85,11 @@ public class TransitiveTypeExtractor extends Extractor {
     return (yagoTaxonomy(input.get(TRANSITIVETYPE)));
   }
 
+  /** Returns all YAGO entities. This is being loaded by default already when it's being written. This may be large, so discard if you don't need it.*/
+  public static Set<String> entities(Map<Theme, FactSource> input) {
+    return (yagoTaxonomy(input).keySet());
+  }
+
   /** Frees the memory of the yagoTaxonomy*/
   public synchronized static void freeMemory() {
     yagoTaxonomy = null;

@@ -61,7 +61,6 @@ public class SimpleTypeExtractor extends Extractor {
 
     Announce.doing("Writing types");
     for (Fact f : types) {
-      f.makeId();
       output.get(SIMPLETYPES).write(f);
     }
     Announce.done();
