@@ -1,5 +1,6 @@
-# Test on 1 wikipedia article
-# Types derived from the categories
+# Test of YAGO2s
+# The rdf:type facts that connect Wikipedia instances to Wikipedia classes. This is an essential part of YAGO.
+# INTERNAL
 
 @base <http://yago-knowledge/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
@@ -353,7 +354,6 @@
 <Tony_Blair>	rdf:type	<wikicategory_Alumni_of_the_Inns_of_Court_School_of_Law> .
 <Tony_Blair>	rdf:type	<wikicategory_Leaders_of_the_Opposition_(United_Kingdom)> .
 <Tony_Blair>	rdf:type	<wikicategory_Converts_to_Roman_Catholicism_from_Anglicanism> .
-<World_Economic_Forum>	rdf:type	<wikicategory_Foundations_based_in_Switzerland> .
 <World_Economic_Forum>	rdf:type	<wikicategory_Organizations_established_in_1971> .
 <World_Economic_Forum>	rdf:type	<wikicategory_Organisations_based_in_Geneva> .
 <World_Economic_Forum>	rdf:type	<wikicategory_Economics_organizations> .
@@ -468,7 +468,6 @@
 <Philipp_Rösler>	rdf:type	<wikicategory_Free_Democratic_Party_(Germany)_politicians> .
 <Philipp_Rösler>	rdf:type	<wikicategory_Politicians_of_Vietnamese_descent> .
 <Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	rdf:type	<wikicategory_Federal_electoral_districts_in_Mecklenburg-Vorpommern> .
-<University_of_Leipzig>	rdf:type	<wikicategory_Visitor_attractions_in_Leipzig> .
 <University_of_Leipzig>	rdf:type	<wikicategory_Educational_institutions_established_in_the_15th_century> .
 <University_of_Leipzig>	rdf:type	<wikicategory_Universities_and_colleges_in_Saxony> .
 <West_Germany>	rdf:type	<wikicategory_Borders_of_Germany> .

@@ -44,6 +44,7 @@ public abstract class TermExtractor {
       case RDFS.clss:
         Announce.error("Call TermExtractor.forClass() for classes!");
         return (null);
+      case YAGO.entity:
       case "rdf:Resource":
         return (forWikiLink);
       case "xsd:date":

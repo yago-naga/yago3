@@ -1,10 +1,6 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
-# Facts extracted from the Wikipedia test file for testing the gender extractor
+# Test of YAGO2s
+# Gender of a person
+# INTERNAL
 
 @base <http://yago-knowledge/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
@@ -87,7 +83,3 @@
 <Mariano_Rajoy>	<hasGender>	<male> .
 <María_Teresa_Fernández_de_la_Vega>	<hasGender>	<female> .
 <Sonsoles_Espinosa>	<hasGender>	<female> .
-# faulty types need revision on getting genders 
-<Co-Princes_of_Andorra>	<hasGender>	<male> .
-<President_of_France>	<hasGender>	<male> .
-<Leader_of_the_Opposition_(United_Kingdom)>	<hasGender>	<male> .
