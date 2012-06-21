@@ -155,7 +155,7 @@ public class WordnetExtractor extends Extractor {
         continue;
       }
 
-      arg2 = FactComponent.forString(arg2.substring(1, arg2.length() - 1));//.replace("''", "'"));
+      arg2 = FactComponent.forStringWithLanguage(arg2.substring(1, arg2.length() - 1),"en");//.replace("''", "'"));
       Fact fact = new Fact(null, id2class.get(arg1), "<hasGloss>", arg2);
       writers.get(WORDNETGLOSSES).write(fact);
     }
