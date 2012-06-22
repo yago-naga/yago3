@@ -63,7 +63,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
     Map<String, String> geoEntityId2yago = mappedEntityIds.getReverseMap("<hasGeonamesEntityId>");
     FactCollection mappedClassIds = new FactCollection(input.get(GeoNamesClassMapper.GEONAMESCLASSSIDS));
     Map<String, String> geoClassId2yago = mappedClassIds.getReverseMap("<hasGeonamesClassId>");
-    FactSource ibFacts = input.get(InfoboxExtractor.DIRTYINFOBOXFACTS);
+    FactSource ibFacts = input.get(InfoboxExtractor.INFOBOXFACTS);
     
     extractAllCountries(new File(geonamesFolder, "allCountries.txt"), out, geoEntityId2yago, geoClassId2yago);
     extractHierarchy(new File(geonamesFolder, "hierarchy.txt"), out, geoEntityId2yago);
