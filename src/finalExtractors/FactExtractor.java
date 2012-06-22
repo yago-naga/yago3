@@ -17,7 +17,6 @@ import extractors.InfoboxExtractor;
 import extractors.RuleExtractor;
 import extractors.TemporalCategoryExtractor;
 import extractors.TemporalInfoboxExtractor;
-import extractors.geonames.GeoNamesDataImporter;
 
 /**
  * YAGO2s - FactExtractor

@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
@@ -16,7 +15,6 @@ import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
-import extractorUtils.TermExtractor;
 import extractorUtils.TitleExtractor;
 import extractors.PatternHardExtractor;
 

@@ -10,15 +10,14 @@ import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.NumberFormatter;
-import javatools.parsers.NumberParser;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
-import basics.YAGO;
 import basics.Theme.ThemeGroup;
+import basics.YAGO;
 import extractors.Extractor;
 import extractors.WordnetExtractor;
 

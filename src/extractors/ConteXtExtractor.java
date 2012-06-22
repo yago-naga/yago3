@@ -38,11 +38,6 @@ public class ConteXtExtractor extends Extractor {
 				PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
 	}
 	
-  @Override
-  public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new TypeChecker(DIRTYCONTEXTFACTS, CONTEXTFACTS)));
-  }
-
 	 /** Context for entities */
   public static final Theme DIRTYCONTEXTFACTS = new Theme("conteXtFactsDirty",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs typechecking to throw away entities not in the final version");

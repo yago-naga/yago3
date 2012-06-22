@@ -18,6 +18,7 @@ import basics.FactWriter;
 import basics.Theme;
 import extractorUtils.FactTemplateExtractor;
 import extractorUtils.TitleExtractor;
+import finalExtractors.TransitiveTypeExtractor;
 
 /**
  * Extracts Wikipedia links
@@ -33,7 +34,7 @@ public class StructureExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.STRUCTUREPATTERNS, 
-				PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
+				PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
 	}
 	
 	@Override
