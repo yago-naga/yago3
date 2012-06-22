@@ -40,6 +40,9 @@ public class ParallelCaller {
   /** Extractors running */
   protected static List<Extractor> extractorsRunning = new ArrayList<>();
 
+  /** Extractors running */
+  protected static List<Extractor> extractorsFailed = new ArrayList<>();
+
   /** Themes we have */
   protected static Set<Theme> themesWeHave = new TreeSet<>();
 
@@ -60,6 +63,7 @@ public class ParallelCaller {
         extractorsToDo.addAll(finished.followUp());       
       } else {
         D.p("Failed", finished);
+        extractorsFailed.add(finished);
       }
     }
     //D.p("Themes:", themesWeHave);
@@ -86,6 +90,7 @@ public class ParallelCaller {
     D.p("Themes:", themesWeHave);
     D.p("Extractors queuing:", extractorsToDo);
     D.p("Extractors running:", extractorsRunning);
+    D.p("Extractors failed:", extractorsFailed);
     if (!extractorsRunning.isEmpty()) return;
     long now = System.currentTimeMillis();
     D.p("Finished at", NumberFormatter.ISOtime());
@@ -117,6 +122,7 @@ public class ParallelCaller {
         success = true;
       } catch (Exception e) {
         e.printStackTrace();
+        e.printStackTrace(System.out);
         success = false;
       }
       callNext(ex, success);
