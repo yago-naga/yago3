@@ -39,7 +39,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
   protected File geonamesFolder;
     
   /** geonames entity links */
-  public static final Theme GEONAMESDATA = new Theme("geonamesData", 
+  public static final Theme GEONAMESDATA = new Theme("yagoGeonamesData", 
       "Data from GeoNames, e.g. coordinates, alternative names, locatedIn hierarchy, neighbor of");
 
   @Override
@@ -47,7 +47,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
     return new HashSet<Theme>(Arrays.asList(
         GeoNamesClassMapper.GEONAMESCLASSSIDS, 
         GeoNamesEntityMapper.GEONAMESENTITYIDS,
-        InfoboxExtractor.DIRTYINFOBOXFACTS));
+        InfoboxExtractor.INFOBOXFACTS));
   }
 
   @Override
