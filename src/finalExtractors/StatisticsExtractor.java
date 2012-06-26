@@ -50,6 +50,7 @@ public class StatisticsExtractor extends Extractor {
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     TransitiveTypeExtractor.freeMemory();
     WordnetExtractor.freeMemory();
+    Set<String> definedRelations=new HashSet<>();
     Map<String, Integer> relations = new HashMap<>();
     Set<String> instances = new HashSet<>(15_000_000);
     FactWriter out = output.get(STATISTICS);
@@ -59,8 +60,8 @@ public class StatisticsExtractor extends Extractor {
       int counter = 0;
       for (Fact f : input.get(t)) {
         counter++;
-        if ((f.getRelation().equals(RDFS.domain) || f.getRelation().equals(RDFS.range)) && !relations.containsKey(f.getArg(1))) {
-          relations.put(f.getArg(1), 0);
+        if ((f.getRelation().equals(RDFS.domain) || f.getRelation().equals(RDFS.range))) {
+          definedRelations.add(f.getArg(1));
         }
         D.addKeyValue(relations, f.getRelation(), 1);
         if (f.getRelation().equals(RDFS.type)) {
@@ -72,8 +73,11 @@ public class StatisticsExtractor extends Extractor {
     }
     Announce.doing("Writing results");
     for (String rel : relations.keySet()) {
-      if (relations.get(rel) == 0) Announce.warning("Relation without facts:", rel);
-      else out.write(new Fact(rel, YAGO.hasNumber, FactComponent.forNumber(relations.get(rel))));
+      out.write(new Fact(rel, YAGO.hasNumber, FactComponent.forNumber(relations.get(rel))));
+      if(!definedRelations.contains(rel)) Announce.warning("Undefined relation:",rel);
+    }
+    for(String rel :definedRelations) {
+      if(!relations.containsKey(rel)) Announce.warning("Unused relation:",rel);
     }
     Announce.done();
     Announce.message(instances.size(), "things");

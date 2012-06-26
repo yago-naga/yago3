@@ -20,6 +20,8 @@ import extractors.Extractor;
  * 
  * Deduplicates all instance-instance facts and puts them into the right themes
  * 
+ * *************** THIS CLASS IS OBSOLETE! ************
+ * 
  * @author Fabian M. Suchanek
  * 
  */

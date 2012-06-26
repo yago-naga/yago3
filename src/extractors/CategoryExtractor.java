@@ -58,6 +58,9 @@ public class CategoryExtractor extends Extractor {
   /** Types deduced from categories */
   public static final Theme CATEGORYTYPES = new Theme("categoryTypes", "The rdf:type facts that connect Wikipedia instances to Wikipedia classes. This is an essential part of YAGO.");
 
+  /** Sources for category facts*/
+  public static final Theme CATEGORYSOURCES= new Theme("categorySources", "The sources of category facts");
+
   /** Facts deduced from categories */
   public static final Theme CATEGORYLANGUAGELABELS= new Theme("yagoMultilingualInstanceLabels", "Names for the Wikipedia instances in multiple languages", ThemeGroup.MULTILINGUAL);
 
@@ -72,7 +75,7 @@ public class CategoryExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(CATEGORYTYPES, DIRTYCATEGORYFACTS, CATEGORYCLASSES, CATEGORYLANGUAGELABELS);
+    return new FinalSet<Theme>(CATEGORYSOURCES,CATEGORYTYPES, DIRTYCATEGORYFACTS, CATEGORYCLASSES, CATEGORYLANGUAGELABELS);
   }
 
   /** Maps a category to a wordnet class */
@@ -138,10 +141,10 @@ public class CategoryExtractor extends Extractor {
       Map<String, String> preferredMeaning) throws IOException {
     String concept = category2class(category, nonconceptual, preferredMeaning);
     if (concept == null) return;
-    facts.add(new Fact(null, titleEntity, RDFS.type, FactComponent.forWikiCategory(category)));
-    categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept));
+    facts.add(new Fact(titleEntity, RDFS.type, FactComponent.forWikiCategory(category)),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from "+category);
+    categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from "+category);
     String name = new NounGroup(category).stemmed().replace('_', ' ');
-    if (!name.isEmpty()) categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent.forStringWithLanguage(name,"en")));
+    if (!name.isEmpty()) categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent.forStringWithLanguage(name,"en")),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from stemmed name");
   }
 
   /** Returns the set of non-conceptual words */
@@ -180,8 +183,10 @@ public class CategoryExtractor extends Extractor {
       switch (FileLines.findIgnoreCase(in, "<title>", "[[")) {
         case -1:
           flush(titleEntity, facts, writers, categoryClasses, wordnetClasses);
-          for (Fact f : categoryClasses)
-            writers.get(CATEGORYCLASSES).write(f);
+          for (Fact f : categoryClasses) {
+            if(FactComponent.isFactId(f.getArg(1))) writers.get(CATEGORYSOURCES).write(f);
+            else writers.get(CATEGORYCLASSES).write(f);
+          }
           Announce.progressDone();
           in.close();
           return;
@@ -191,7 +196,7 @@ public class CategoryExtractor extends Extractor {
           titleEntity = titleExtractor.getTitleEntity(in);
           if (titleEntity != null) {
             for (String name : namesOf(titleEntity)) {
-              facts.add(new Fact(titleEntity, RDFS.label, name));
+              facts.add(new Fact(titleEntity, RDFS.label, name),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from simple name heuristics");
             }
           }
           break;
@@ -203,7 +208,7 @@ public class CategoryExtractor extends Extractor {
           if (category.toLowerCase().startsWith("category:")) {
             category=category.substring(9).trim();
             for (Fact fact : categoryPatterns.extract(category, titleEntity)) {
-              if (fact != null) facts.add(fact);
+              if (fact != null) facts.add(fact,FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from "+category);
             }
             extractType(titleEntity, category, facts, categoryClasses, nonconceptual, preferredMeanings);
           } else {
@@ -219,7 +224,7 @@ public class CategoryExtractor extends Extractor {
   }
 
   /** Writes the facts */
-  public static void flush(String entity, FactCollection facts, Map<Theme, FactWriter> writers, FactCollection categoryClasses,
+  public void flush(String entity, FactCollection facts, Map<Theme, FactWriter> writers, FactCollection categoryClasses,
       FactCollection wordnetClasses) throws IOException {
     if (entity == null) return;
     String yagoBranch = yagoBranch(entity, facts, categoryClasses, wordnetClasses);
@@ -243,7 +248,8 @@ public class CategoryExtractor extends Extractor {
           writers.get(CATEGORYCLASSES).write(fact);
           break;
         default:
-          writers.get(DIRTYCATEGORYFACTS).write(fact);
+          if(FactComponent.isFactId(fact.getArg(1))) writers.get(CATEGORYSOURCES).write(fact);
+          else writers.get(DIRTYCATEGORYFACTS).write(fact);
       }
     }
     facts.clear();

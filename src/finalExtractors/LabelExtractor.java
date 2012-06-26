@@ -22,7 +22,7 @@ import extractors.WordnetExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class LabelExtractor extends Deduplicator {
+public class LabelExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {

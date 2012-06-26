@@ -24,7 +24,7 @@ import extractors.HardExtractor;
  * 
  */
 
-public class SchemaExtractor extends Extractor {
+public class SchemaExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
@@ -34,24 +34,18 @@ public class SchemaExtractor extends Extractor {
   /** All facts of YAGO */
   public static final Theme YAGOSCHEMA = new Theme("yagoSchema", "The domains, ranges and confidence values of YAGO relations", ThemeGroup.TAXONOMY);
 
-  @Override
-  public Set<Theme> output() {
-    return new FinalSet<>(YAGOSCHEMA);
-  }
-
   /** Relations that we care for*/
   public static Set<String> relations = new FinalSet<>(RDFS.domain, RDFS.range, RDFS.subpropertyOf, YAGO.hasConfidence);
 
   @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    FactWriter w=output.get(YAGOSCHEMA);
-    Announce.doing("Extracting schema");
-     for(Theme theme : input.keySet()) {
-       for(Fact fact : input.get(theme)) {
-         if(relations.contains(fact.getRelation())) w.write(fact);
-       }
-     }
-     Announce.done();
+  public Theme myOutput() {
+    return YAGOSCHEMA;
   }
+
+  @Override
+  public boolean isMyRelation(Fact fact) {
+    return relations.contains(fact.getRelation());
+  }
+
 
 }

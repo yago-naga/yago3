@@ -11,6 +11,7 @@ import basics.FactWriter;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
+import extractors.CategoryExtractor;
 import extractors.Extractor;
 import extractors.InfoboxExtractor;
 import extractors.RuleExtractor;
@@ -29,7 +30,7 @@ public class SourceExtractor extends Extractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(InfoboxExtractor.INFOBOXSOURCES,
-        RuleExtractor.RULESOURCES,
+        RuleExtractor.RULESOURCES,CategoryExtractor.CATEGORYSOURCES,
         TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES);
   }
 

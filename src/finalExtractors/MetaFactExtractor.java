@@ -23,7 +23,7 @@ import extractors.TemporalInfoboxExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class MetaFactExtractor extends Deduplicator {
+public class MetaFactExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
