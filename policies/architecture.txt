@@ -44,6 +44,16 @@ export are called "final themes". These live in the
 same folder as the other themes, but start with "yago...".
 Final themes are constructed by finalExtractors.
 
+-------------- Techniques --------------------
+
+Facts can have a meta-fact <extractionSource>. This 
+meta-fact can have a meta-fact <extractionTechnique>.
+There should be a finite set of techniques that does
+not grow with the data.
+
+Facts that do not have such an annotation are assumed
+to be trivially clean.
+
 -------------- Test cases --------------------
 
 Every extractor should come with a test case.
