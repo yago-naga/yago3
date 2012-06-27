@@ -83,7 +83,7 @@ public class RedirectExtractor extends FollowUpExtractor {
 		FactWriter out = output.get(REDIRECTFACTS);
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
-			out.write(new Fact(FactComponent.forString(redirect.getKey()), "<isWikipediaRedirectTo>", FactComponent.forYagoEntity(redirect.getValue())));
+			out.write(new Fact(FactComponent.forString(redirect.getKey()), "<_isWikipediaRedirectTo>", FactComponent.forYagoEntity(redirect.getValue())));
 		}
 		
 		Announce.done();
