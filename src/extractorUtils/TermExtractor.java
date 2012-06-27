@@ -157,6 +157,12 @@ public abstract class TermExtractor {
     public List<String> extractList(String s) {
       s = s.trim();
       List<String> result = new ArrayList<String>(3);
+      if(s.startsWith("[[")) {
+        for(String link : forWikiLink.extractList(s)) {
+          result.add(FactComponent.forString(FactComponent.stripBrackets(link).replace('_', ' ')));
+        }
+        return(result);
+      }
       for (String w : s.split(";|,?\n|'''|''|, ?;|\"")) {
         w=w.replaceAll("\\(.*\\)",""); //Remove bracketed parts
         w = w.trim();

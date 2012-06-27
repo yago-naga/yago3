@@ -31,6 +31,8 @@
 
 # --------- Infobox patterns --------------
 
+"clubs"	<_infoboxPattern>	<playsFor>
+"pages"	<_infoboxPattern>	<hasPages>
 "_latitude"	<_infoboxPattern>	<hasLatitude> .
 "_longitude"	<_infoboxPattern>	<hasLongitude> .
 "latitude"	<_infoboxPattern>	<hasLatitude> .
@@ -64,7 +66,7 @@
 "leadername"	<_infoboxPattern>	<isLeaderOf-> .
 "establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
 "areakm2"	<_infoboxPattern>	<hasArea> .
-"populationestimate"	<_infoboxPattern>	<hasPopulation> .
+"populationestimate"	<_infoboxPattern>	<hasNumberOfPeople> .
 "populationdensity"	<_infoboxPattern>	<hasPopulationDensity> .
 "GDPnominal"	<_infoboxPattern>	<hasGDP> .
 "Gini"	<_infoboxPattern>	<hasGini> .
@@ -99,8 +101,8 @@
 "locationcity"	<_infoboxPattern>	<isLocatedIn> .
 "officiallanguages"	<_infoboxPattern>	<hasOfficialLanguage> .
 "officialname"	<_infoboxPattern>	rdfs:label .
-"population"	<_infoboxPattern>	<hasPopulation> .
-"populationtotal"	<_infoboxPattern>	<hasPopulation> .
+"population"	<_infoboxPattern>	<hasNumberOfPeople> .
+"populationtotal"	<_infoboxPattern>	<hasNumberOfPeople> .
 "poverty"	<_infoboxPattern>	<hasPoverty> .
 "unemployment"	<_infoboxPattern>	<hasUnemployment> .
 #@ <infoBoxId7>

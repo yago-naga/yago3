@@ -72,7 +72,7 @@ public class InfoboxExtractor extends Extractor {
 
   /** normalizes an attribute name */
   public static String normalizeAttribute(String a) {
-    return (a.trim().toLowerCase().replace("_", "").replace(" ", "").replaceAll("\\d", ""));
+    return (a.trim().toLowerCase().replace("_", "").replace(" ", "").replace("-","").replaceAll("\\d", ""));
   }
 
   /** Extracts a relation from a string */
@@ -115,14 +115,17 @@ public class InfoboxExtractor extends Extractor {
       if (FactComponent.isLiteral(object)) {
         String datatype = FactComponent.getDatatype(object);
         if (datatype == null) datatype = YAGO.string;
-        if (cls.equals(YAGO.languageString) && datatype.equals(YAGO.string)) {
-          //object = FactComponent.setLanguage(object, "en"); Don't do that. Names can be any language.
+        if (datatype.equals(YAGO.string)) {
+          if(!factCollection.isSubClassOf(cls,datatype)) {
+            Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
+            continue;            
+          }
+          if(!cls.equals(YAGO.languageString)) object = FactComponent.setDataType(object, cls);
         } else {
           if (!factCollection.isSubClassOf(datatype, cls)) {
             Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
             continue;
-          }
-          //object = FactComponent.setDataType(object, cls); // We keep the more specific datatype!
+          }          
         }
       }
       if (inverse) write(writers, DIRTYINFOBOXFACTS, new Fact(object, relation, entity), INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor: from " + string);
