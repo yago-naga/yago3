@@ -54,6 +54,9 @@ public class GeoNamesClassMapper extends Extractor {
   public static final Theme GEONAMESCLASSES = new Theme("yagoGeonamesClasses", "Classes from GeoNames", ThemeGroup.GEONAMES);
    /** geonames glosses */
   public static final Theme GEONAMESGLOSSES = new Theme("yagoGeonamesGlosses", "Glosses from GeoNames", ThemeGroup.GEONAMES);
+  /** geonames sources */
+  public static final Theme GEONAMESSOURCES = new Theme("geonamesSources", "Source information for the facts extracted from GeoNames");
+
   
   @Override
   public Set<Theme> input() {
@@ -63,7 +66,7 @@ public class GeoNamesClassMapper extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(GEONAMESCLASSES, GEONAMESGLOSSES, GEONAMESCLASSSIDS);
+    return new FinalSet<Theme>(GEONAMESCLASSES, GEONAMESGLOSSES, GEONAMESCLASSSIDS, GEONAMESSOURCES);
   }
 
   @Override
@@ -93,7 +96,7 @@ public class GeoNamesClassMapper extends Extractor {
       String wordNetClass = mapGeonamesCategory(featureClass, featureGloss, wordnetWords, wordnetGlosses, wordnetClasses);
       String parentClass = (wordNetClass != null) ? wordNetClass : GEO_CLASS;
 
-      output.get(GEONAMESCLASSES).write(new Fact(null, geoClass, RDFS.subclassOf, parentClass));
+      write(output, GEONAMESCLASSES, new Fact(null, geoClass, RDFS.subclassOf, parentClass), GEONAMESSOURCES, "GeoNames", "GeoNamesClassMapper");
       output.get(GEONAMESCLASSSIDS).write(new Fact(null, geoClass, "<hasGeonamesClassId>", FactComponent.forString(featureId)));
 
       if (featureGloss != null) {
