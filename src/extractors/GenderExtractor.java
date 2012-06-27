@@ -15,6 +15,7 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import basics.Fact;
+import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
@@ -39,6 +40,9 @@ public class GenderExtractor extends Extractor {
   /** gender facts, checked if the entity is a person */
   public static final Theme PERSONS_GENDER = new Theme("personGenderFacts", "Gender of a person");
 
+  /** sources */
+  public static final Theme PERSONS_GENDER_SOURCES = new Theme("personGenderSources", "Sources for the gender of a person");
+
   /** Constructor from source file */
   public GenderExtractor(File wikipedia) {
     this.wikipedia = wikipedia;
@@ -52,7 +56,7 @@ public class GenderExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return (new FinalSet<Theme>(PERSONS_GENDER));
+    return (new FinalSet<Theme>(PERSONS_GENDER,PERSONS_GENDER_SOURCES));
   }
 
   /** Pattern for "she"*/
@@ -95,9 +99,9 @@ public class GenderExtractor extends Extractor {
             while (gm.find())
               female++;
             if (male > female * 2 || (male > 10 && male > female)) {
-              output.get(PERSONS_GENDER).write(new Fact(titleEntity, "<hasGender>", "<male>"));
+              write(output,PERSONS_GENDER,new Fact(titleEntity, "<hasGender>", "<male>"),PERSONS_GENDER_SOURCES,FactComponent.wikipediaURL(titleEntity),"GenderExtractor");
             } else if (female > male * 2 || (female > 10 && female > male)) {
-              output.get(PERSONS_GENDER).write(new Fact(titleEntity, "<hasGender>", "<female>"));
+              write(output,PERSONS_GENDER,new Fact(titleEntity, "<hasGender>", "<female>"),PERSONS_GENDER_SOURCES,FactComponent.wikipediaURL(titleEntity),"GenderExtractor");
             }
           }
           break;

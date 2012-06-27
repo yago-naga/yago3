@@ -36,9 +36,12 @@ public class PersonNameExtractor extends Extractor {
   /** Names of people */
   public static final Theme PERSONNAMES = new Theme("personNames", "Names of people");
 
+  /** Sources */
+  public static final Theme PERSONNAMESOURCES = new Theme("personNameSources", "Sources for the names of people");
+
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(PERSONNAMES);
+    return new FinalSet<>(PERSONNAMES,PERSONNAMESOURCES);
   }
 
   @Override
@@ -57,9 +60,16 @@ public class PersonNameExtractor extends Extractor {
         if (given == null) continue;
         String family = name.familyName();
         if (family == null) continue;
-        if (!given.endsWith(".") && given.length() > 1) output.get(PERSONNAMES).write(
-            new Fact(f.getArg(1), "<hasGivenName>", FactComponent.forString(given)));
-        output.get(PERSONNAMES).write(new Fact(f.getArg(1), "<hasFamilyName>", FactComponent.forString(family)));
+        if (!given.endsWith(".") && given.length() > 1) {
+          write(output, PERSONNAMES, new Fact(f.getArg(1), "<hasGivenName>", FactComponent.forString(given)), PERSONNAMESOURCES,
+              FactComponent.forTheme(theme), "PersonNameExtractor");
+          write(output, PERSONNAMES, new Fact(f.getArg(1), RDFS.label, FactComponent.forString(given)), PERSONNAMESOURCES,
+              FactComponent.forTheme(theme), "PersonNameExtractor");
+        }
+        write(output, PERSONNAMES, new Fact(f.getArg(1), "<hasFamilyName>", FactComponent.forString(family)), PERSONNAMESOURCES,
+            FactComponent.forTheme(theme), "PersonNameExtractor");
+        write(output, PERSONNAMES, new Fact(f.getArg(1), RDFS.label, FactComponent.forString(family)), PERSONNAMESOURCES,
+            FactComponent.forTheme(theme), "PersonNameExtractor");
       }
       Announce.done();
     }

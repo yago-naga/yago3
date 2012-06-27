@@ -23,49 +23,49 @@
 "port cities and towns in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 #@ <id_20120207175542_32>
 "[a-zA-Z]* ?(Asia)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_32>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+<id_20120207175542_32>	rdfs:comment	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_33>
 "Central American countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity(North_America)" .
-<id_20120207175542_33>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+<id_20120207175542_33>	rdfs:comment	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_34>
 "(Northern America)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_34>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+<id_20120207175542_34>	rdfs:comment	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_35>
 "Caribbean countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity(North_America)" .
-<id_20120207175542_35>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+<id_20120207175542_35>	rdfs:comment	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_36>
 "(South America)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_36>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+<id_20120207175542_36>	rdfs:comment	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_37>
 "(Africa)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_37>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+<id_20120207175542_37>	rdfs:comment	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_38>
 "(Oceania)n countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_38>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+<id_20120207175542_38>	rdfs:comment	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_39>
 "(Europe)an countries"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_39>	<_hasComment>	"Added 2011-04-29 for jeopardy" .
+<id_20120207175542_39>	rdfs:comment	"Added 2011-04-29 for jeopardy" .
 #@ <id_20120207175542_40>
 "populated places in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_40>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<id_20120207175542_40>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_41>
 "capitals in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_41>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<id_20120207175542_41>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_42>
 "port settlements in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_42>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<id_20120207175542_42>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_43>
 "provinces and territories of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_43>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<id_20120207175542_43>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_44>
 "regions of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_44>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<id_20120207175542_44>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_45>
 "port cities in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_45>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<id_20120207175542_45>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <id_20120207175542_46>
 "coastal cities in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
-<id_20120207175542_46>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<id_20120207175542_46>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 "Towns in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 "Countries in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 "Rivers of (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
@@ -135,9 +135,21 @@
 
 
 # Non-conceptual words
-"studies"	rdf:type	<_yagoNonConceptualWord> . # Groups many things loosely related to studies of some kind, check e.g., "Germanic studies"
-"entrant"	rdf:type	<_yagoNonConceptualWord> . # Can be anything entering a competition
-"trophy"	rdf:type	<_yagoNonConceptualWord> . # contains the clubs, not the awards 
+#@<id_surname>
+"surname"	rdf:type	<_yagoNonConceptualWord> . 
+<id_surname> rdfs:comment "We do not want surnames as entities" .
+#@<id_typenc>
+"type"	rdf:type	<_yagoNonConceptualWord> . 
+<id_typenc> rdfs:comment "Type of..." .
+#@<id_studies>
+"study"	rdf:type	<_yagoNonConceptualWord> . 
+<id_studies> rdfs:comment "Groups many things loosely related to studies of some kind, check e.g., 'Germanic studies'" .
+#@<id_entrant>
+"entrant"	rdf:type	<_yagoNonConceptualWord> . 
+<id_entrant> rdfs:comment "Can be anything entering a competition" .
+#@<id_trophy>
+"trophy"	rdf:type	<_yagoNonConceptualWord> . 
+<id_trophy> rdfs:comment "contains the clubs, not the awards" . 
 "relation"	rdf:type	<_yagoNonConceptualWord> .
 "birth"	rdf:type	<_yagoNonConceptualWord> .
 "death"	rdf:type	<_yagoNonConceptualWord> .
@@ -150,7 +162,7 @@
 "introduction"	rdf:type	<_yagoNonConceptualWord> .
 #@ <id_20120207175542_29>
 "update"	rdf:type	<_yagoNonConceptualWord> .
-<id_20120207175542_29>	<_hasComment>	"For 1911_Britannica_articles_needing_updates\u0022" .
+<id_20120207175542_29>	rdfs:comment	"For 1911_Britannica_articles_needing_updates\u0022" .
 "article"	rdf:type	<_yagoNonConceptualWord> .
 "dispute"	rdf:type	<_yagoNonConceptualWord> .
 "list"	rdf:type	<_yagoNonConceptualWord> .
@@ -160,7 +172,7 @@
 "stub"	rdf:type	<_yagoNonConceptualWord> .
 #@ <id_20120207175542_30>
 "human"	rdf:type	<_yagoNonConceptualWord> .
-<id_20120207175542_30>	<_hasComment>	"contains human sciences" .
+<id_20120207175542_30>	rdfs:comment	"contains human sciences" .
 "point"	rdf:type	<_yagoNonConceptualWord> .
 "term"	rdf:type	<_yagoNonConceptualWord> .
 "word"	rdf:type	<_yagoNonConceptualWord> .
@@ -174,11 +186,10 @@
 "punter"	rdf:type	<_yagoNonConceptualWord> .
 "cabinet"	rdf:type	<_yagoNonConceptualWord> .
 "composition"	rdf:type	<_yagoNonConceptualWord> .
-"surname"	rdf:type	<_yagoNonConceptualWord> .
 "loanword"	rdf:type	<_yagoNonConceptualWord> .
 "candidate"	rdf:type	<_yagoNonConceptualWord> .
 "member"	rdf:type	<_yagoNonConceptualWord> .
 "climber"	rdf:type	<_yagoNonConceptualWord> .
 #@ <id_20120207175542_31>
 "vega"	rdf:type	<_yagoNonConceptualWord> .
-<id_20120207175542_31>	<_hasComment>	"For 'Las Vegas'" .
+<id_20120207175542_31>	rdfs:comment	"For 'Las Vegas'" .

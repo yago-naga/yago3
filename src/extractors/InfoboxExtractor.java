@@ -72,17 +72,17 @@ public class InfoboxExtractor extends Extractor {
 
   /** normalizes an attribute name */
   public static String normalizeAttribute(String a) {
-    return (a.trim().toLowerCase().replace("_", "").replace(" ", "").replace("-","").replaceAll("\\d", ""));
+    return (a.trim().toLowerCase().replace("_", "").replace(" ", "").replace("-", "").replaceAll("\\d", ""));
   }
 
   /** Extracts a relation from a string */
-  protected void extract(String entity, String string, String relation, Map<String, String> preferredMeanings, FactCollection factCollection,
-      Map<Theme, FactWriter> writers, PatternList replacements) throws IOException {
+  protected void extract(String entity, String string, String relation, String attribute, Map<String, String> preferredMeanings,
+      FactCollection factCollection, Map<Theme, FactWriter> writers, PatternList replacements) throws IOException {
     string = replacements.transform(Char.decodeAmpersand(string));
     string = string.replace("$0", FactComponent.stripBrackets(entity));
     string = string.trim();
     if (string.length() == 0) return;
-
+  
     // Check inverse
     boolean inverse;
     String cls;
@@ -115,21 +115,14 @@ public class InfoboxExtractor extends Extractor {
       if (FactComponent.isLiteral(object)) {
         String datatype = FactComponent.getDatatype(object);
         if (datatype == null) datatype = YAGO.string;
-        if (datatype.equals(YAGO.string)) {
-          if(!factCollection.isSubClassOf(cls,datatype)) {
-            Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
-            continue;            
-          }
-          if(!cls.equals(YAGO.languageString)) object = FactComponent.setDataType(object, cls);
-        } else {
-          if (!factCollection.isSubClassOf(datatype, cls)) {
-            Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
-            continue;
-          }          
+        if (!factCollection.isSubClassOf(datatype, cls)) {
+          if (!cls.equals(YAGO.languageString)) object = FactComponent.setDataType(object, cls);
         }
       }
-      if (inverse) write(writers, DIRTYINFOBOXFACTS, new Fact(object, relation, entity), INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor: from " + string);
-      else write(writers, DIRTYINFOBOXFACTS, new Fact(entity, relation, object), INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor: from " + string);
+      if (inverse) write(writers, DIRTYINFOBOXFACTS, new Fact(object, relation, entity), INFOBOXSOURCES, FactComponent.wikipediaURL(entity),
+          "InfoboxExtractor from " + attribute);
+      else write(writers, DIRTYINFOBOXFACTS, new Fact(entity, relation, object), INFOBOXSOURCES, FactComponent.wikipediaURL(entity),
+          "InfoboxExtractor from " + attribute);
       if (factCollection.contains(relation, RDFS.type, YAGO.function)) break;
     }
   }
@@ -178,8 +171,9 @@ public class InfoboxExtractor extends Extractor {
       String attribute = normalizeAttribute(FileLines.readTo(in, '=', '}').toString());
       if (attribute.length() == 0) return (result);
       StringBuilder value = new StringBuilder();
-      int c = readEnvironment(in, value);      
-      D.addKeyValue(result, attribute, Char.decodeAmpersand(value.toString().trim()), TreeSet.class);
+      int c = readEnvironment(in, value);
+      String valueStr=value.toString().trim();
+      if(!valueStr.isEmpty()) D.addKeyValue(result, attribute, Char.decodeAmpersand(valueStr), TreeSet.class);
       if (c == '}' || c == -1 || c == -2) break;
     }
     // Apply combinations
@@ -229,11 +223,12 @@ public class InfoboxExtractor extends Extractor {
         default:
           if (titleEntity == null) continue;
           String cls = FileLines.readTo(in, '}', '|').toString().trim().toLowerCase();
+          if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
           if (!infoboxFacts.contains(FactComponent.forString(cls), RDFS.type, "<_yagoNonConceptualInfobox>")) {
             String type = preferredMeaning.get(cls);
             if (type != null) {
               write(writers, INFOBOXTYPES, new Fact(null, titleEntity, RDFS.type, type), INFOBOXSOURCES, FactComponent.wikipediaURL(titleEntity),
-                  "InfoboxExtractor: Preferred meaning of infobox type " + cls);
+                  "InfoboxExtractor: Preferred meaning of infobox type");
             }
           }
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
@@ -242,7 +237,7 @@ public class InfoboxExtractor extends Extractor {
             if (relations == null) continue;
             for (String relation : relations) {
               for (String value : attributes.get(attribute)) {
-                extract(titleEntity, value, relation, preferredMeaning, hardWiredFacts, writers, replacements);
+                extract(titleEntity, value, relation, attribute, preferredMeaning, hardWiredFacts, writers, replacements);
               }
             }
           }
@@ -273,8 +268,7 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/temp/np.xml")).extract(new File("c:/fabian/data/yago2s"),
-        "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("c:/fabian/temp/germany.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");

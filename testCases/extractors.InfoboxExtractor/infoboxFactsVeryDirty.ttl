@@ -1,5 +1,6 @@
 # Test of YAGO2s
 # Facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked
+# INTERNAL
 
 @base <http://yago-knowledge/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
@@ -11,8 +12,8 @@
 
 #@ <id_y9qq7a_1b1_h2ic5m>
 <Campania>	<hasArea>	"1.359E10"^^<m^2> .
-#@ <id_y9qq7a_dg9_1nx0f7z>
-<Campania>	<hasPopulation>	"5954882"^^xsd:integer .
+#@ <id_y9qq7a_l7i_1nx0f7z>
+<Campania>	<hasNumberOfPeople>	"5954882"^^xsd:nonNegativeInteger .
 #@ <id_y9qq7a_ice_nhp74y>
 <Campania>	<hasWebsite>	<http://www.regione.campania.it/> .
 #@ <id_y9qq7a_ice_nhp74y>
@@ -119,12 +120,12 @@
 <Lamberto_Dini>	<livesIn>	<Italy> .
 #@ <id_184v0j1_16x_i8dtnf>
 <Lamberto_Dini>	<isMarriedTo>	<Donatella_Zigone> .
-#@ <id_10q4wvf_1b1_i3sd9l>
-<Lazio>	<hasArea>	"1.7236E10"^^<m^2> .
 #@ <id_10q4wvf_z7a_10ot5dv>
 <Lazio>	<isLocatedIn>	<Italy> .
-#@ <id_10q4wvf_dg9_1mxs6nm>
-<Lazio>	<hasPopulation>	"5732212"^^xsd:integer .
+#@ <id_10q4wvf_1b1_i3sd9l>
+<Lazio>	<hasArea>	"1.7236E10"^^<m^2> .
+#@ <id_10q4wvf_l7i_1mxs6nm>
+<Lazio>	<hasNumberOfPeople>	"5732212"^^xsd:nonNegativeInteger .
 #@ <id_10q4wvf_ice_1hmw8d7>
 <Lazio>	<hasWebsite>	<http://www.regione.lazio.it/> .
 #@ <id_10q4wvf_ice_1hmw8d7>
@@ -133,8 +134,8 @@
 <Lazio>	<hasWebsite>	<http://www.regione.lazio.it> .
 #@ <id_1qfjlq_1b1_3dzijn>
 <Lombardy>	<hasArea>	"2.3844E10"^^<m^2> .
-#@ <id_1qfjlq_dg9_1bkgypx>
-<Lombardy>	<hasPopulation>	"9939193"^^xsd:integer .
+#@ <id_1qfjlq_l7i_1bkgypx>
+<Lombardy>	<hasNumberOfPeople>	"9939193"^^xsd:nonNegativeInteger .
 #@ <id_1qfjlq_ice_p231nn>
 <Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it/> .
 #@ <id_1qfjlq_ice_p231nn>
@@ -167,6 +168,8 @@
 <Milan>	<hasLongitude>	"9.183333333333334"^^<degrees> .
 #@ <id_10qtisd_jto_6ovjqx>
 <Milan>	<hasLongitude>	"9.190277777777778"^^<degrees> .
+#@ <id_10qtisd_1b1_jdhp54>
+<Milan>	<hasArea>	"1.8176E8"^^<m^2> .
 #@ <id_10qtisd_1ia_2lmawi>
 <Milan>	rdfs:label	"Milano" .
 #@ <id_10qtisd_1ia_1rzhy7i>
@@ -177,8 +180,8 @@
 <Milan>	<isLocatedIn>	<Lombardy> .
 #@ <id_2ox8i9_1b1_140jveb>
 <Molise>	<hasArea>	"4.438E9"^^<m^2> .
-#@ <id_2ox8i9_dg9_1ofu97i>
-<Molise>	<hasPopulation>	"319834"^^xsd:integer .
+#@ <id_2ox8i9_l7i_1ofu97i>
+<Molise>	<hasNumberOfPeople>	"319834"^^xsd:nonNegativeInteger .
 #@ <id_2ox8i9_ice_1mtl0gd>
 <Molise>	<hasWebsite>	<http://www.regione.molise.it/> .
 #@ <id_2ox8i9_ice_1mtl0gd>
@@ -379,8 +382,8 @@
 <Edinburgh>	rdfs:label	"Dunedin" .
 #@ <id_z038xo_1ia_17475uw>
 <Edinburgh>	rdfs:label	"City of Edinburgh" .
-#@ <id_z038xo_dg9_1p0odkt>
-<Edinburgh>	<hasPopulation>	"486120"^^xsd:integer .
+#@ <id_z038xo_l7i_1p0odkt>
+<Edinburgh>	<hasNumberOfPeople>	"486120"^^xsd:nonNegativeInteger .
 #@ <id_z038xo_z7a_tvx1oo>
 <Edinburgh>	<isLocatedIn>	<City_of_Edinburgh> .
 #@ <id_z038xo_z7a_p6gbcc>
@@ -593,8 +596,12 @@
 <St_John's_College,_Oxford>	<hasWebsite>	<http://www.sjc.ox.ac.uk/> .
 #@ <id_1bx19fo_ice_1vvzutj>
 <St_John's_College,_Oxford>	<hasWebsite>	<http://www.sjc.ox.ac.uk/> .
+#@ <id_1bx19fo_1n8_vzrl9j>
+<St_John's_College,_Oxford>	<hasLatitude>	"51.75612"^^<degrees> .
 #@ <id_1bx19fo_1n8_10fvn9w>
 <St_John's_College,_Oxford>	<hasLatitude>	"-51.75612"^^<degrees> .
+#@ <id_1bx19fo_jto_l1jtn4>
+<St_John's_College,_Oxford>	<hasLongitude>	"-1.258605"^^<degrees> .
 #@ <id_1bx19fo_jto_l1jtn4>
 <St_John's_College,_Oxford>	<hasLongitude>	"-1.258605"^^<degrees> .
 #@ <id_gg7cuf_10x_1bx19fo>
@@ -675,6 +682,8 @@
 <Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/> .
 #@ <id_jr01l4_ice_1894bxa>
 <Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/> .
+#@ <id_tu1ps7_1b1_zik10y>
+<Evangelical_Church_in_Germany>	<hasArea>	"2"^^<m^2> .
 #@ <id_tu1ps7_ice_6nsaxe>
 <Evangelical_Church_in_Germany>	<hasWebsite>	<http://ekd.de/english/index.html> .
 #@ <id_ht3f3u_10x_pfblkl>
@@ -711,12 +720,10 @@
 <Gerhard_Schröder>	rdf:type	<wordnet_lawyer_110249950> .
 #@ <id_107bpbp_16x_i4tzwr>
 <Gerhard_Schröder>	<isMarriedTo>	<Doris_Schröder-Köpf> .
-#@ <id_1ps9evn_1b1_rl4gj>
-<Germany>	<hasArea>	"3.57021E11"^^<m^2> .
-#@ <id_1ps9evn_1b1_rl4gj>
-<Germany>	<hasArea>	"3.57021E11"^^<m^2> .
 #@ <id_1ps9evn_789_1wd5e4i>
 <Germany>	<hasCapital>	<Berlin> .
+#@ <id_1ps9evn_f9j_zil1kf>
+<Germany>	<hasTLD>	".de"^^<yagoTLD> .
 #@ <id_1ps9evn_1ia_1ps9evn>
 <Germany>	rdfs:label	"Germany" .
 #@ <id_1ps9evn_lje_zjuknh>
@@ -749,12 +756,14 @@
 <Germany>	<hasLongitude>	"13.383333333333333"^^<degrees> .
 #@ <id_1ps9evn_jto_122755u>
 <Germany>	<hasLongitude>	"13.383333333333333"^^<degrees> .
-#@ <id_1ps9evn_1kn_3jkg5t>
-<Germany>	<hasOfficialLanguage>	<German_language> .
+#@ <id_1ps9evn_1b1_rl4gj>
+<Germany>	<hasArea>	"3.57021E11"^^<m^2> .
 #@ <id_1ps9evn_ibw_zil3ax>
 <Germany>	<hasPopulationDensity>	"229"^^</km^2> .
-#@ <id_1ps9evn_dg9_1fq3p4o>
-<Germany>	<hasPopulation>	"81799600"^^xsd:integer .
+#@ <id_1ps9evn_1kn_3jkg5t>
+<Germany>	<hasOfficialLanguage>	<German_language> .
+#@ <id_1ps9evn_l7i_1fq3p4o>
+<Germany>	<hasNumberOfPeople>	"81799600"^^xsd:nonNegativeInteger .
 #@ <id_1ps9evn_yrh_zik21y>
 <Germany>	<hasUTCOffset>	"+1"^^xsd:integer .
 #@ <id_18vc8ci_10x_ca61ms>
@@ -775,8 +784,6 @@
 <Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/> .
 #@ <id_18vc8ci_ice_3uctt7>
 <Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/> .
-#@ <id_3gfkn0_1b1_1qaar9m>
-<Hamburg>	<hasArea>	"7.55E8"^^<m^2> .
 #@ <id_3gfkn0_1n8_10cmo6o>
 <Hamburg>	<hasLatitude>	"53.55"^^<degrees> .
 #@ <id_3gfkn0_1n8_uicje6>
@@ -787,8 +794,10 @@
 <Hamburg>	<hasLongitude>	"10.0"^^<degrees> .
 #@ <id_3gfkn0_jto_kf8op3>
 <Hamburg>	<hasLongitude>	"10.001388888888888"^^<degrees> .
-#@ <id_3gfkn0_dg9_bkbxp>
-<Hamburg>	<hasPopulation>	"1796077"^^xsd:integer .
+#@ <id_3gfkn0_1b1_1qaar9m>
+<Hamburg>	<hasArea>	"7.55E8"^^<m^2> .
+#@ <id_3gfkn0_l7i_bkbxp>
+<Hamburg>	<hasNumberOfPeople>	"1796077"^^xsd:nonNegativeInteger .
 #@ <id_3gfkn0_ice_xkzcpf>
 <Hamburg>	<hasWebsite>	<http://www.hamburg.de/> .
 #@ <id_3gfkn0_ice_xkzcpf>
@@ -879,6 +888,8 @@
 <University_of_Leipzig>	<hasWebsite>	<http://www.uni-leipzig.de/> .
 #@ <id_py5vtt_ice_1l6natu>
 <University_of_Leipzig>	<hasWebsite>	<http://www.uni-leipzig.de/> .
+#@ <id_1dmdk4j_f9j_zil1kf>
+<West_Germany>	<hasTLD>	".de"^^<yagoTLD> .
 #@ <id_1dmdk4j_1ia_9jv2o2>
 <West_Germany>	rdfs:label	"West Germany" .
 #@ <id_1dmdk4j_lje_163xu3j>
@@ -993,6 +1004,8 @@
 <French_Fourth_Republic>	rdfs:label	"France" .
 #@ <id_1fvzpek_lje_lsx6ed>
 <French_Fourth_Republic>	<hasCurrency>	<French_Franc> .
+#@ <id_1fvzpek_11k_pzy696>
+<French_Fourth_Republic>	<hasMotto>	"Liberté, égalité, fraternité" .
 #@ <id_1fvzpek_1ia_1qv016u>
 <French_Fourth_Republic>	rdfs:label	"République française" .
 #@ <id_jfqfk4_siu_1a3nezm>
@@ -1055,16 +1068,18 @@
 <Joan_Enric_Vives_Sicília>	<wasBornOnDate>	"1949-07-24"^^xsd:date .
 #@ <id_5iwrwt_oyl_n2w2ob>
 <Joan_Enric_Vives_Sicília>	<wasBornIn>	<Barcelona> .
-#@ <id_1tccrte_1b1_fyig9d>
-<Neuilly-sur-Seine>	<hasArea>	"3730000.0"^^<m^2> .
-#@ <id_1tccrte_1b1_fyig9d>
-<Neuilly-sur-Seine>	<hasArea>	"3730000.0"^^<m^2> .
+#@ <id_1tccrte_1n8_18nsieb>
+<Neuilly-sur-Seine>	<hasLatitude>	"48.8881"^^<degrees> .
 #@ <id_1tccrte_1n8_1r4uul2>
 <Neuilly-sur-Seine>	<hasLatitude>	"-48.8881"^^<degrees> .
+#@ <id_1tccrte_jto_1nx0qri>
+<Neuilly-sur-Seine>	<hasLongitude>	"2.2686"^^<degrees> .
 #@ <id_1tccrte_jto_a3qz1n>
 <Neuilly-sur-Seine>	<hasLongitude>	"-2.2686"^^<degrees> .
-#@ <id_1tccrte_dg9_10d4o9l>
-<Neuilly-sur-Seine>	<hasPopulation>	"60454"^^xsd:integer .
+#@ <id_1tccrte_1b1_fyig9d>
+<Neuilly-sur-Seine>	<hasArea>	"3730000.0"^^<m^2> .
+#@ <id_1tccrte_l7i_10d4o9l>
+<Neuilly-sur-Seine>	<hasNumberOfPeople>	"60454"^^xsd:nonNegativeInteger .
 #@ <id_vkf2e7_10x_17gzuo3>
 <Nicolas_Sarkozy>	<graduatedFrom>	<Paris_West_University_Nanterre_La_Défense> .
 #@ <id_vkf2e7_1xk_2svknh>
@@ -1265,8 +1280,12 @@
 <Valladolid>	<hasLongitude>	"-4.716666666666667"^^<degrees> .
 #@ <id_13dzdeu_jto_6stck6>
 <Valladolid>	<hasLongitude>	"-4.716666666666667"^^<degrees> .
-#@ <id_13dzdeu_dg9_1ofqcbn>
-<Valladolid>	<hasPopulation>	"313437"^^xsd:integer .
+#@ <id_13dzdeu_1b1_jxv9d2>
+<Valladolid>	<hasArea>	"1.9791E8"^^<m^2> .
+#@ <id_13dzdeu_ibw_zik10y>
+<Valladolid>	<hasPopulationDensity>	"2"^^</km^2> .
+#@ <id_13dzdeu_l7i_1ofqcbn>
+<Valladolid>	<hasNumberOfPeople>	"313437"^^xsd:nonNegativeInteger .
 #@ <id_13dzdeu_z7a_1ei90d>
 <Valladolid>	<isLocatedIn>	<Campiña_del_Pisuerga> .
 #@ <id_13dzdeu_z7a_hhmpze>

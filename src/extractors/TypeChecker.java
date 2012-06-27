@@ -69,6 +69,9 @@ public class TypeChecker extends FollowUpExtractor {
 		  // Type is entity, just check it's not a literal
 		  return(!FactComponent.isLiteral(entity));
 		}
+		if(type.equals(RDFS.statement)) {
+		  return(FactComponent.isFactId(entity));
+		}
 		Set<String> myTypes=types.get(entity);
 		return (myTypes!=null && myTypes.contains(type));
 	}

@@ -16,12 +16,14 @@
 
 # --------- Bad Infobox --------------
 "weather"	rdf:type	<_yagoNonConceptualInfobox> .
+"family name"	rdf:type	<_yagoNonConceptualInfobox> .
+"given name"	rdf:type	<_yagoNonConceptualInfobox> .
 
 # --------- Combinations of Infobox attributes --------------
-"<dir1> /km^2"	<_infoboxCombine>	"population_density" .
-"<population_density_km2> /km^2"	<_infoboxCombine>	"population_density" .
-"<area> km^2"	<_infoboxCombine>	"area" .
-"<areakm2> km^2"	<_infoboxCombine>	"area" .
+"<population_density_km2> /km^2"	<_infoboxCombine>	"my_population_density" .
+"<areakm2> km^2"	<_infoboxCombine>	"myarea" .
+"<areatotalkm2> km^2"	<_infoboxCombine>	"myarea" .
+"<area> km^2"	<_infoboxCombine>	"myarea" .
 "<latitude> degrees 0 minutes 0 seconds W"	<_infoboxCombine>	"_latitude" .
 "<longitude> degrees 0 minutes 0 seconds S"	<_infoboxCombine>	"_longitude" .
 "<latd> degrees <latm> minutes <lats> seconds <latNS>"	<_infoboxCombine>	"_latitude" .
@@ -47,31 +49,29 @@
 "fullname"	<_infoboxPattern>	rdfs:label .
 #@ <infoBoxId0>
 "binomial"	<_infoboxPattern>	rdfs:label .
-<infoBoxId0>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId0>	rdfs:comment	"Added by Fabian 2011-05-26" .
 #@ <infoBoxId1>
 "playername"	<_infoboxPattern>	rdfs:label .
-<infoBoxId1>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId1>	rdfs:comment	"Added by Fabian 2011-05-26" .
 #@ <infoBoxId2>
 "synonyms"	<_infoboxPattern>	rdfs:label .
-<infoBoxId2>	<_hasComment>	"Added by Fabian 2011-05-27" .
+<infoBoxId2>	rdfs:comment	"Added by Fabian 2011-05-27" .
 "ICD10"  <_infoboxPattern> <hasICD10> .
 "Capital"	<_infoboxPattern>	<hasCapital> .
 "OfficialLang"	<_infoboxPattern>	<hasOfficialLanguage> .
 "Governor"	<_infoboxPattern>	<isLeaderOf-> .
 "Senators"	<_infoboxPattern>	<isPoliticianOf-> .
-"TotalArea"	<_infoboxPattern>	<hasArea> .
 "Motto"	<_infoboxPattern>	<hasMotto> .
 "nationalMotto"	<_infoboxPattern>	<hasMotto> .
 "governmenttype"	<_infoboxPattern>	rdf:type .
 "leadername"	<_infoboxPattern>	<isLeaderOf-> .
 "establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
-"areakm2"	<_infoboxPattern>	<hasArea> .
+"myarea"	<_infoboxPattern>	<hasArea> .
 "populationestimate"	<_infoboxPattern>	<hasNumberOfPeople> .
-"populationdensity"	<_infoboxPattern>	<hasPopulationDensity> .
+"my_population_density"	<_infoboxPattern>	<hasPopulationDensity> .
 "GDPnominal"	<_infoboxPattern>	<hasGDP> .
 "Gini"	<_infoboxPattern>	<hasGini> .
 "utcoffset"	<_infoboxPattern>	<hasUTCOffset> .
-"area"	<_infoboxPattern>	<hasArea>.
 "cctld"	<_infoboxPattern>	<hasTLD> .
 "currency"	<_infoboxPattern>	<hasCurrency> .
 "expenses"	<_infoboxPattern>	<hasExpenses> .
@@ -88,16 +88,16 @@
 "location"	<_infoboxPattern>	<isLocatedIn> .
 #@ <infoBoxId3>
 "county"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId3>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<infoBoxId3>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <infoBoxId4>
 "roof"	<_infoboxPattern>	<hasHeight> .
-<infoBoxId4>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<infoBoxId4>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <infoBoxId5>
 "subdivision_name1"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId5>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<infoBoxId5>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 #@ <infoBoxId6>
 "subdivision_name"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId6>	<_hasComment>	"Added 2011-04-26 for jeopardy" .
+<infoBoxId6>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
 "locationcity"	<_infoboxPattern>	<isLocatedIn> .
 "officiallanguages"	<_infoboxPattern>	<hasOfficialLanguage> .
 "officialname"	<_infoboxPattern>	rdfs:label .
@@ -107,25 +107,25 @@
 "unemployment"	<_infoboxPattern>	<hasUnemployment> .
 #@ <infoBoxId7>
 "length"	<_infoboxPattern>	<hasLength> .
-<infoBoxId7>	<_hasComment>	"Added 2011-04-27 for GeoCLEF" .
+<infoBoxId7>	rdfs:comment	"Added 2011-04-27 for GeoCLEF" .
 #@ <infoBoxId8>
 "established"	<_infoboxPattern>	<wasCreatedOnDate> .
-<infoBoxId8>	<_hasComment>	"Added by Fabian 2011-05-27" .
+<infoBoxId8>	rdfs:comment	"Added by Fabian 2011-05-27" .
 #@ <infoBoxId9>
 "architect"	<_infoboxPattern>	<created-> .
-<infoBoxId9>	<_hasComment>	"Added by Fabian 2011-05-27" .
+<infoBoxId9>	rdfs:comment	"Added by Fabian 2011-05-27" .
 #@ <infoBoxId10>
 "department"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId10>	<_hasComment>	"Added by Fabian 2011-05-27" .
+<infoBoxId10>	rdfs:comment	"Added by Fabian 2011-05-27" .
 #@ <infoBoxId11>
 "arondissement"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId11>	<_hasComment>	"Added by Fabian 2011-05-27" .
+<infoBoxId11>	rdfs:comment	"Added by Fabian 2011-05-27" .
 #@ <infoBoxId12>
 "canton"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId12>	<_hasComment>	"Added by Fabian 2011-05-27" .
+<infoBoxId12>	rdfs:comment	"Added by Fabian 2011-05-27" .
 #@ <infoBoxId13>
 "road"	<_infoboxPattern>	<isLocatedIn-> .
-<infoBoxId13>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId13>	rdfs:comment	"Added by Fabian 2011-05-29" .
 "nationality"	<_infoboxPattern>	<isCitizenOf> .
 "citizenship"	<_infoboxPattern>	<isCitizenOf> .
 "birthname"	<_infoboxPattern>	rdfs:label .
@@ -183,25 +183,25 @@
 "url"	<_infoboxPattern>	<hasWebsite> .
 #@ <infoBoxId14>
 "cityofbirth"	<_infoboxPattern>	<wasBornIn> .
-<infoBoxId14>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId14>	rdfs:comment	"Added by Fabian 2011-05-26" .
 #@ <infoBoxId15>
 "countryofbirth"	<_infoboxPattern>	<wasBornIn> .
-<infoBoxId15>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId15>	rdfs:comment	"Added by Fabian 2011-05-26" .
 #@ <infoBoxId16>
 "team"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId16>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId16>	rdfs:comment	"Added by Fabian 2011-05-29" .
 #@ <infoBoxId17>
 "clubs"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId17>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId17>	rdfs:comment	"Added by Fabian 2011-05-29" .
 #@ <infoBoxId18>
 "youthclubs"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId18>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId18>	rdfs:comment	"Added by Fabian 2011-05-29" .
 #@ <infoBoxId19>
 "nationalteam"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId19>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId19>	rdfs:comment	"Added by Fabian 2011-05-29" .
 #@ <infoBoxId20>
 "currentclub"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId20>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId20>	rdfs:comment	"Added by Fabian 2011-05-29" .
 "director"	<_infoboxPattern>	<directed-> .
 "writer"	<_infoboxPattern>	<created-> .
 "composer"	<_infoboxPattern>	<created-> .
@@ -226,32 +226,32 @@
 "slogan"	<_infoboxPattern>	<hasMotto> .
 #@ <infoBoxId21>
 "recorded"	<_infoboxPattern>	<wasCreatedOnDate> .
-<infoBoxId21>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId21>	rdfs:comment	"Added by Fabian 2011-05-26" .
 #@ <infoBoxId22>
 "editing"	<_infoboxPattern>	<edited-> .
-<infoBoxId22>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId22>	rdfs:comment	"Added by Fabian 2011-05-29" .
 #@ <infoBoxId23>
 "music"	<_infoboxPattern>	<wroteMusicFor-> .
-<infoBoxId23>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId23>	rdfs:comment	"Added by Fabian 2011-05-29" .
 "founder"	<_infoboxPattern>	<created-> .
 #@ <infoBoxId24>
 "region"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId24>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId24>	rdfs:comment	"Added by Fabian 2011-05-26" .
 #@ <infoBoxId25>
 "country"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId25>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId25>	rdfs:comment	"Added by Fabian 2011-05-26" .
 #@ <infoBoxId26>
 "city"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId26>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId26>	rdfs:comment	"Added by Fabian 2011-05-26" .
 #@ <infoBoxId27>
 "state"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId27>	<_hasComment>	"Added by Fabian 2011-05-26" .
+<infoBoxId27>	rdfs:comment	"Added by Fabian 2011-05-26" .
 "foundation"	<_infoboxPattern>	<wasCreatedOnDate> .
 "headquarters"	<_infoboxPattern>	<isLocatedIn> .
 "numemployees"	<_infoboxPattern>	<hasNumberOfPeople> .
 #@ <infoBoxId28>
 "owner"	<_infoboxPattern>	<owns-> .
-<infoBoxId28>	<_hasComment>	"Added by Fabian 2011-05-29" .
+<infoBoxId28>	rdfs:comment	"Added by Fabian 2011-05-29" .
 "combatant"	<_infoboxPattern>	<participatedIn-> .
 "place"	<_infoboxPattern>	<happenedIn> .
 "dat" <_infoboxPattern>	<happenedOnDate> .

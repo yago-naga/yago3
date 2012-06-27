@@ -194,7 +194,7 @@ public class RuleExtractor extends Extractor {
 							Rule newRule = r.rest(map, fact.getId());
 							if (newRule.isReadyToGo()) {
 								for (Fact h : newRule.headFacts()) {
-									write(output,RULERESULTS,h, RULESOURCES, FactComponent.forTheme(reader.getKey()),"RuleExtractor: "+r.original.toString());
+									write(output,RULERESULTS,h, RULESOURCES, FactComponent.forTheme(reader.getKey()),"RuleExtractor from "+r.original.toString());
 								}
 							} else {
 								survivingRules.add(newRule);

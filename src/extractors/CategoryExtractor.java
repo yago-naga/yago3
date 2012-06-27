@@ -141,8 +141,8 @@ public class CategoryExtractor extends Extractor {
       Map<String, String> preferredMeaning) throws IOException {
     String concept = category2class(category, nonconceptual, preferredMeaning);
     if (concept == null) return;
-    facts.add(new Fact(titleEntity, RDFS.type, FactComponent.forWikiCategory(category)),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from "+category);
-    categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from "+category);
+    facts.add(new Fact(titleEntity, RDFS.type, FactComponent.forWikiCategory(category)),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from category");
+    categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from category");
     String name = new NounGroup(category).stemmed().replace('_', ' ');
     if (!name.isEmpty()) categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent.forStringWithLanguage(name,"en")),FactComponent.wikipediaURL(titleEntity),"CategoryExtractor from stemmed name");
   }
@@ -229,7 +229,10 @@ public class CategoryExtractor extends Extractor {
     if (entity == null) return;
     String yagoBranch = yagoBranch(entity, facts, categoryClasses, wordnetClasses);
     Announce.debug("Branch of", entity, "is", yagoBranch);
-    if (yagoBranch == null) return;
+    if (yagoBranch == null) {
+      facts.clear();
+      return;
+    }
     for (Fact fact : facts) {
       switch (fact.getRelation()) {
         case RDFS.type:
