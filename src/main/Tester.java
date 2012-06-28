@@ -10,6 +10,7 @@ import javatools.filehandlers.FileSet;
 import basics.FactCollection;
 import basics.Theme;
 import extractors.Extractor;
+import extractors.RelationChecker;
 
 /**
  * YAGO2s - Tester
@@ -50,6 +51,7 @@ public class Tester {
     if (singleTest != null) {
       runTest(singleTest, yagoFolder, outputFolder);
     } else {
+      new RelationChecker().extract(yagoFolder, "Check relations");
       File testCases = new File("testCases");
       for (File testCase : testCases.listFiles()) {
         runTest(testCase, yagoFolder, outputFolder);
