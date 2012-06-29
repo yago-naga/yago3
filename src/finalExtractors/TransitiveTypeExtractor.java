@@ -37,7 +37,7 @@ public class TransitiveTypeExtractor extends Extractor {
   
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES, SimpleTypeExtractor.SIMPLETAXONOMY /* Just to make sure that we don't use the memory in parallel...*/);
+    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES);
   }
 
   /** All type facts*/
