@@ -20,7 +20,6 @@ import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
-import extractors.Extractor.FollowUpExtractor;
 
 /**
  * Extracts all redirects from Wikipedia
@@ -28,7 +27,7 @@ import extractors.Extractor.FollowUpExtractor;
  * @author Johannes Hoffart
  * 
  */
-public class RedirectExtractor extends FollowUpExtractor {
+public class RedirectExtractor extends Extractor {
 
 	/** Input file */
 	private File wikipedia;
