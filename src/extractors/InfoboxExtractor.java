@@ -36,38 +36,35 @@ public class InfoboxExtractor extends Extractor {
   protected File wikipedia;
 
   @Override
-  public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(DIRTYINFOBOXFACTS, REDIRECTEDINFOBOXFACTS), new TypeChecker(REDIRECTEDINFOBOXFACTS,
-        INFOBOXFACTS)));
+  public Set<Theme> input() {
+    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.TITLEPATTERNS, 
+        HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS));
   }
 
   @Override
-  public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.CATEGORYPATTERNS,
-        WordnetExtractor.WORDNETWORDS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS));
+  public Set<Extractor> followUp() {
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(INFOBOXFACTS_TOREDIRECT, INFOBOXFACTS_TOTYPECHECK), new TypeChecker(
+        INFOBOXFACTS_TOTYPECHECK, INFOBOXFACTS)));
   }
 
-  /** Infobox facts, non-checked */
-  public static final Theme DIRTYINFOBOXFACTS = new Theme("infoboxFactsVeryDirty",
-      "Facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked");
-
-  /** Redirected Infobox facts, non-checked */
-  public static final Theme REDIRECTEDINFOBOXFACTS = new Theme("infoboxFactsDirty",
-      "Facts extracted from the Wikipedia infoboxes with redirects resolved - still to be type-checked");
-
-  /** Final Infobox facts */
+  /** Infobox facts */
   public static final Theme INFOBOXFACTS = new Theme("infoboxFacts",
       "Facts extracted from the Wikipedia infoboxes, type-checked and with redirects resolved");
+
+  /** Infobox facts */
+  public static final Theme INFOBOXFACTS_TOREDIRECT = new Theme("infoboxFactsToBeRedirected",
+      "Facts extracted from the Wikipedia infoboxes, redirects to be resolved");
+
+  /** Infobox facts */
+  public static final Theme INFOBOXFACTS_TOTYPECHECK = new Theme("infoboxFactsToBeTypeChecked",
+      "Facts extracted from the Wikipedia infoboxes, redirects resolved, to be type checked");
 
   /** Infobox sources */
   public static final Theme INFOBOXSOURCES = new Theme("infoboxSources", "Source information for the facts extracted from the Wikipedia infoboxes");
 
-  /** Types derived from infoboxes */
-  public static final Theme INFOBOXTYPES = new Theme("infoboxTypes", "Types extracted from Wikipedia infoboxes");
-
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(DIRTYINFOBOXFACTS, INFOBOXTYPES, INFOBOXSOURCES);
+    return new FinalSet<Theme>(INFOBOXFACTS_TOREDIRECT, INFOBOXSOURCES);
   }
 
   /** normalizes an attribute name */
@@ -119,10 +116,13 @@ public class InfoboxExtractor extends Extractor {
           if (!cls.equals(YAGO.languageString)) object = FactComponent.setDataType(object, cls);
         }
       }
-      if (inverse) write(writers, DIRTYINFOBOXFACTS, new Fact(object, relation, entity), INFOBOXSOURCES, FactComponent.wikipediaURL(entity),
-          "InfoboxExtractor from " + attribute);
-      else write(writers, DIRTYINFOBOXFACTS, new Fact(entity, relation, object), INFOBOXSOURCES, FactComponent.wikipediaURL(entity),
-          "InfoboxExtractor from " + attribute);
+      if (inverse) {
+        Fact fact = new Fact(object, relation, entity);
+        write(writers, INFOBOXFACTS_TOREDIRECT, fact, INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
+      } else {
+        Fact fact = new Fact(entity, relation, object);
+        write(writers, INFOBOXFACTS_TOREDIRECT, fact, INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
+      }
       if (factCollection.contains(relation, RDFS.type, YAGO.function)) break;
     }
   }
@@ -172,8 +172,8 @@ public class InfoboxExtractor extends Extractor {
       if (attribute.length() == 0) return (result);
       StringBuilder value = new StringBuilder();
       int c = readEnvironment(in, value);
-      String valueStr=value.toString().trim();
-      if(!valueStr.isEmpty()) D.addKeyValue(result, attribute, Char.decodeAmpersand(valueStr), TreeSet.class);
+      String valueStr = value.toString().trim();
+      if (!valueStr.isEmpty()) D.addKeyValue(result, attribute, Char.decodeAmpersand(valueStr), TreeSet.class);
       if (c == '}' || c == -1 || c == -2) break;
     }
     // Apply combinations
@@ -222,15 +222,7 @@ public class InfoboxExtractor extends Extractor {
           break;
         default:
           if (titleEntity == null) continue;
-          String cls = FileLines.readTo(in, '}', '|').toString().trim().toLowerCase();
-          if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
-          if (!infoboxFacts.contains(FactComponent.forString(cls), RDFS.type, "<_yagoNonConceptualInfobox>")) {
-            String type = preferredMeaning.get(cls);
-            if (type != null) {
-              write(writers, INFOBOXTYPES, new Fact(null, titleEntity, RDFS.type, type), INFOBOXSOURCES, FactComponent.wikipediaURL(titleEntity),
-                  "InfoboxExtractor: Preferred meaning of infobox type");
-            }
-          }
+          FileLines.readTo(in, '}', '|');
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
           for (String attribute : attributes.keySet()) {
             Set<String> relations = patterns.get(attribute);

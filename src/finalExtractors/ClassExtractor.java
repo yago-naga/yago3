@@ -15,6 +15,7 @@ import basics.Theme.ThemeGroup;
 import extractors.CategoryExtractor;
 import extractors.Extractor;
 import extractors.HardExtractor;
+import extractors.WikipediaTypeExtractor;
 import extractors.WordnetExtractor;
 
 /**
@@ -32,7 +33,7 @@ public class ClassExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYCLASSES,
+    return new FinalSet<>(WikipediaTypeExtractor.WIKIPEDIACLASSES,
         HardExtractor.HARDWIREDFACTS,         
         WordnetExtractor.WORDNETCLASSES);
   }

@@ -33,8 +33,8 @@
 
 # --------- Infobox patterns --------------
 
-"clubs"	<_infoboxPattern>	<playsFor>
-"pages"	<_infoboxPattern>	<hasPages>
+"clubs"	<_infoboxPattern>	<playsFor> .
+"pages"	<_infoboxPattern>	<hasPages> .
 "_latitude"	<_infoboxPattern>	<hasLatitude> .
 "_longitude"	<_infoboxPattern>	<hasLongitude> .
 "latitude"	<_infoboxPattern>	<hasLatitude> .

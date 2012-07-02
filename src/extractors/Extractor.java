@@ -113,8 +113,8 @@ public abstract class Extractor {
 				extractor = (Extractor) Class.forName(className).newInstance();
 			}
 		} catch (Exception ex) {
-			Announce.message(ex);
-			Announce.message(ex.getMessage());
+			Announce.warning(ex);
+			Announce.warning(ex.getMessage());
 			Announce.failed();
 			return (null);
 		}

@@ -12,6 +12,7 @@ import extractors.DisambiguationPageExtractor;
 import extractors.HardExtractor;
 import extractors.InfoboxExtractor;
 import extractors.PersonNameExtractor;
+import extractors.WikipediaLabelExtractor;
 import extractors.WordnetExtractor;
 
 /**
@@ -27,7 +28,7 @@ public class LabelExtractor extends SimpleDeduplicator {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
-        HardExtractor.HARDWIREDFACTS, 
+        HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, 
         InfoboxExtractor.INFOBOXFACTS,
         PersonNameExtractor.PERSONNAMES,
           WordnetExtractor.WORDNETWORDS,

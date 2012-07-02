@@ -96,9 +96,6 @@ public class Caller {
     for (String extractorName : extractorNames) {
       Extractor e = extractorForCall(extractorName);
       if (e != null) extractors.add(e);
-      else {
-        Announce.error("Could not build extractor", extractorName);
-      }
     }
     Announce.done();
     return (extractors);
@@ -117,7 +114,10 @@ public class Caller {
     if(m.group(2)!=null && !m.group(2).isEmpty()) {
       String inputDataFileName=Parameters.get(m.group(2),m.group(2));
       File inputDataFile=new File(inputDataFileName);
-      if(!inputDataFile.exists()) Announce.error("Input data file not found:",inputDataFile);
+      if(!inputDataFile.exists()) {
+        Announce.warning("Input data file not found:",inputDataFile);
+        return(null);
+      }
       extractor=Extractor.forName(m.group(1),inputDataFile);
     } else {
      extractor= Extractor.forName(m.group(1),null);

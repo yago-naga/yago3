@@ -17,6 +17,8 @@ import extractors.InfoboxExtractor;
 import extractors.PersonNameExtractor;
 import extractors.RuleExtractor;
 import extractors.TemporalInfoboxExtractor;
+import extractors.WikipediaLabelExtractor;
+import extractors.WikipediaTypeExtractor;
 
 /**
  * YAGO2s - SourceExtractor
@@ -31,7 +33,8 @@ public class SourceExtractor extends Extractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(InfoboxExtractor.INFOBOXSOURCES,PersonNameExtractor.PERSONNAMESOURCES,
-        RuleExtractor.RULESOURCES,CategoryExtractor.CATEGORYSOURCES,
+        RuleExtractor.RULESOURCES,CategoryExtractor.CATEGORYSOURCES,WikipediaTypeExtractor.WIKIPEDIATYPESOURCES,
+        WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, 
         TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES);
   }
 

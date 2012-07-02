@@ -30,7 +30,7 @@ public class PersonNameExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYTYPES, InfoboxExtractor.INFOBOXTYPES, TransitiveTypeExtractor.TRANSITIVETYPE);
+    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE);
   }
 
   /** Names of people */

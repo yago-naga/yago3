@@ -72,7 +72,7 @@ public class ParallelCaller {
       if (extractorsRunning.size() >= numThreads) break;
       Extractor ex = extractorsToDo.get(i);
       if (ex.input().isEmpty() || themesWeHave.containsAll(ex.input())) {
-        if (themesWeHave.containsAll(ex.output())) {
+        if (!ex.output().isEmpty() && themesWeHave.containsAll(ex.output())) {
           D.p("Skipping", ex);
         } else {
           D.p("Starting", ex);

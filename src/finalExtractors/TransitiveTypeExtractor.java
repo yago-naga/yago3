@@ -19,6 +19,7 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import extractors.Extractor;
+import extractors.WikipediaTypeExtractor;
 
 /**
  * YAGO2s - TransitiveTypeExtractor
@@ -34,14 +35,15 @@ public class TransitiveTypeExtractor extends Extractor {
 
   /** We cache the entire YAGO taxonomy here for later calls. This may be too large. Call freeMamory() to free cache*/
   protected static Map<String, Set<String>> yagoTaxonomy = null;
-  
+
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, TypeExtractor.YAGOTYPES);
+    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, WikipediaTypeExtractor.YAGOTYPES);
   }
 
   /** All type facts*/
-  public static final Theme TRANSITIVETYPE = new Theme("yagoTransitiveType", "Transitive closure of all rdf:type/rdfs:subClassOf facts", ThemeGroup.TAXONOMY);
+  public static final Theme TRANSITIVETYPE = new Theme("yagoTransitiveType", "Transitive closure of all rdf:type/rdfs:subClassOf facts",
+      ThemeGroup.TAXONOMY);
 
   @Override
   public Set<Theme> output() {
@@ -52,27 +54,24 @@ public class TransitiveTypeExtractor extends Extractor {
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
     FactCollection classes = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY));
-    Announce.warning(classes.size(),"classes");
+    Announce.warning(classes.size(), "classes");
     Announce.setLevel(Announce.Level.WARNING);
     yagoTaxonomy = new HashMap<>();
     Announce.doing("Computing the transitive closure");
-    for (Theme theme : Arrays.asList(TypeExtractor.YAGOTYPES)) {
-      Announce.doing("Treating entities in", theme);
-      for (Fact f : input.get(theme)) {
-        if (f.getRelation().equals(RDFS.type)) {
-          D.addKeyValue(yagoTaxonomy, f.getArg(1), f.getArg(2), TreeSet.class);          
-          for(String c : classes.superClasses(f.getArg(2))) {
-            D.addKeyValue(yagoTaxonomy, f.getArg(1), c, TreeSet.class);
-          }
+    for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES)) {
+      if (f.getRelation().equals(RDFS.type)) {
+        D.addKeyValue(yagoTaxonomy, f.getArg(1), f.getArg(2), TreeSet.class);
+        for (String c : classes.superClasses(f.getArg(2))) {
+          D.addKeyValue(yagoTaxonomy, f.getArg(1), c, TreeSet.class);
         }
       }
-      Announce.done();
     }
+    Announce.done();
     Announce.doing("Writing data");
-    FactWriter w=output.get(TRANSITIVETYPE);
-    for(Entry<String,Set<String>> type : yagoTaxonomy.entrySet()) {
-      for(String c : type.getValue()) {
-        w.write(new Fact(type.getKey(),RDFS.type,c));
+    FactWriter w = output.get(TRANSITIVETYPE);
+    for (Entry<String, Set<String>> type : yagoTaxonomy.entrySet()) {
+      for (String c : type.getValue()) {
+        w.write(new Fact(type.getKey(), RDFS.type, c));
       }
     }
     Announce.done();

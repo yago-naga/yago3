@@ -37,8 +37,8 @@ public class DisambiguationPageExtractor extends Extractor {
 	
   @Override
  public Set<Extractor> followUp() {
-   return new HashSet<Extractor>(Arrays.asList(new Redirector(DIRTYDISAMBIGUATIONMEANSFACTS, REDIRECTEDDISAMBIGUATIONMEANSFACTS), new TypeChecker(
-       REDIRECTEDDISAMBIGUATIONMEANSFACTS, DISAMBIGUATIONMEANSFACTS)));
+   return new HashSet<Extractor>(Arrays.asList((Extractor)new Redirector(DIRTYDISAMBIGUATIONMEANSFACTS, REDIRECTEDDISAMBIGUATIONMEANSFACTS), 
+       (Extractor)new TypeChecker(REDIRECTEDDISAMBIGUATIONMEANSFACTS, DISAMBIGUATIONMEANSFACTS)));
  }
 
   /** Means facts from disambiguation pages */

@@ -56,6 +56,6 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
   public boolean isMyRelation(Fact fact) {
     if(fact.getRelation().startsWith("<_")) return(false);
     if (relationsExcluded.contains(fact.getRelation())) return (false);
-    return (FactComponent.isLiteral(fact.getArg(2)));
+    return (!FactComponent.isFactId(fact.getArg(1)) && FactComponent.isLiteral(fact.getArg(2)));
   }
 }

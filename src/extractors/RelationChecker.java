@@ -34,6 +34,7 @@ public class RelationChecker extends Extractor {
     for (Fact f : hardFacts) {
       relations.add(f.getRelation());
       if (relationsAboutRelations.contains(f.getRelation())) relations.add(f.getArg(1));
+      if(f.getRelation().equals(YAGO.hasGloss) && f.getArg(2).contains("$")) relations.add(f.getArg(1)); 
     }
     Announce.message(relations.size(), "relations");
     for (String relation : relations) {
