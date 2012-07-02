@@ -4,13 +4,15 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
 
+import fromThemes.RelationChecker;
+import fromWikipedia.Extractor;
+
+
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
 import javatools.filehandlers.FileSet;
 import basics.FactCollection;
 import basics.Theme;
-import extractors.Extractor;
-import extractors.RelationChecker;
 
 /**
  * YAGO2s - Tester

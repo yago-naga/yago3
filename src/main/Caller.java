@@ -13,11 +13,13 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import fromWikipedia.Extractor;
+
+
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
 import basics.Theme;
-import extractors.Extractor;
 
 /**
  * Caller - YAGO2s
@@ -103,6 +105,7 @@ public class Caller {
 
   /** Creates an extractor for a call of the form "extractorName(File)" */
   public static Extractor extractorForCall(String extractorName) {
+    if(extractorName==null || extractorName.isEmpty()) return(null);
     Announce.doing("Creating", extractorName);
     Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z_0-9\\-:/\\.]*)\\)").matcher(extractorName);
     if (!m.matches()) {

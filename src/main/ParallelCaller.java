@@ -7,12 +7,14 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
+import fromWikipedia.Extractor;
+
+
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
 import basics.Theme;
-import extractors.Extractor;
 
 /**
  * YAGO2s -- ParallelCaller
