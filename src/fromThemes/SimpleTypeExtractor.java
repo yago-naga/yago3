@@ -60,7 +60,6 @@ public class SimpleTypeExtractor extends Extractor {
       leafClasses.add(clss);
       types.add(new Fact(f.getArg(1), RDFS.type, clss));
     }
-    Announce.setLevel(null);
     Announce.done();
 
     Announce.doing("Writing types");
