@@ -6,6 +6,8 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import fromWikipedia.Extractor;
 
@@ -21,8 +23,8 @@ import basics.Theme;
  * 
  * Calls the extractors in parallel
  * as given in the ini-file. The format in the ini-file
- * is: extractors = extractors.HardExtractor(./mydatafolder),
- * extractors.WikipediaExtractor(myWikipediaFile), ...
+ * is: extractors = fromOtherSources.HardExtractor(./mydatafolder),
+ * fromWikipedia.WikipediaExtractor(myWikipediaFile), ...
  * 
  * Optionally, the ini-file can contain the parameter
  * reuse=true
@@ -120,7 +122,7 @@ public class ParallelCaller {
     public void run() {
       boolean success;
       try {
-        ex.extract(outputFolder, Caller.header);
+        ex.extract(outputFolder, ParallelCaller.header);
         success = true;
       } catch (Exception e) {
         e.printStackTrace();
@@ -141,7 +143,7 @@ public class ParallelCaller {
     numThreads = Parameters.getInt("numThreads", numThreads);
     boolean reuse = Parameters.getBoolean("reuse", false);
     outputFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "the folder where YAGO should be created");
-    extractorsToDo = Caller.extractors(Parameters.getList("extractors"));
+    extractorsToDo = ParallelCaller.extractors(Parameters.getList("extractors"));
     if (reuse) {
       D.p("Reusing existing themes");
       for (File f : outputFolder.listFiles()) {
@@ -156,6 +158,57 @@ public class ParallelCaller {
     }
     time = System.currentTimeMillis();
     callNext(null, true);
+  }
+
+  /** Header for the YAGO files */
+  public static String header = "This file is part of the ontology YAGO2s\nIt is licensed under a Creative-Commons Attribution License by the YAGO team\nat the Max Planck Institute for Informatics/Germany.\nSee http://yago-knowledge.org for all details.\n\n";
+
+  /** Creates extractors as given by the names */
+  public static List<Extractor> extractors(List<String> extractorNames) {
+    Announce.doing("Creating extractors");
+    if (extractorNames == null) {
+      Announce.error("No extractors given\nThe ini file should contain:\nextractors = extractorClass(fileName), ...");
+    }
+    if (extractorNames.isEmpty()) {
+      Announce.error("Empty extractor list\nThe ini file should contain:\nextractors = extractorClass(fileName), ...");
+    }
+    List<Extractor> extractors = new ArrayList<Extractor>();
+    for (String extractorName : extractorNames) {
+      Extractor e = ParallelCaller.extractorForCall(extractorName);
+      if (e != null) extractors.add(e);
+    }
+    Announce.done();
+    return (extractors);
+  }
+
+  /** Creates an extractor for a call of the form "extractorName(File)" */
+  public static Extractor extractorForCall(String extractorName) {
+    if(extractorName==null || extractorName.isEmpty()) return(null);
+    Announce.doing("Creating", extractorName);
+    Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z_0-9\\-:/\\.]*)\\)").matcher(extractorName);
+    if (!m.matches()) {
+      Announce.error("Cannot understand extractor call:", extractorName);
+      Announce.failed();
+      return (null);
+    }
+    Extractor extractor;
+    if(m.group(2)!=null && !m.group(2).isEmpty()) {
+      String inputDataFileName=Parameters.get(m.group(2),m.group(2));
+      File inputDataFile=new File(inputDataFileName);
+      if(!inputDataFile.exists()) {
+        Announce.warning("Input data file not found:",inputDataFile);
+        return(null);
+      }
+      extractor=Extractor.forName(m.group(1),inputDataFile);
+    } else {
+     extractor= Extractor.forName(m.group(1),null);
+    }
+    if (extractor == null) {
+      Announce.failed();
+      return (null);
+    }
+    Announce.done();
+    return (extractor);
   }
 
 }
