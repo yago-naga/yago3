@@ -7,14 +7,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import utils.TitleExtractor;
-
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
+import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -22,6 +20,7 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import basics.YAGO;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.TransitiveTypeExtractor;
@@ -79,6 +78,11 @@ public class WikipediaLabelExtractor extends Extractor {
               write(writers, WIKIPEDIALABELS, new Fact(titleEntity, RDFS.label, name), WIKIPEDIALABELSOURCES,
                   FactComponent.wikipediaURL(titleEntity), "CategoryExtractor from simple name heuristics");
             }
+            String name=FactComponent.forStringWithLanguage(preferredName(titleEntity),"en");
+            write(writers, WIKIPEDIALABELS, new Fact(titleEntity, YAGO.hasPreferredName, name), WIKIPEDIALABELSOURCES,
+                FactComponent.wikipediaURL(titleEntity), "CategoryExtractor from title");            
+            write(writers, WIKIPEDIALABELS, new Fact(titleEntity, YAGO.isPreferredMeaningOf, name), WIKIPEDIALABELSOURCES,
+                FactComponent.wikipediaURL(titleEntity), "CategoryExtractor from title");            
           }
           break;
         case 1:
@@ -98,9 +102,7 @@ public class WikipediaLabelExtractor extends Extractor {
   /** returns the (trivial) names of an entity */
   public static Set<String> namesOf(String titleEntity) {
     Set<String> result = new TreeSet<>();
-    if (titleEntity.startsWith("<")) titleEntity = titleEntity.substring(1);
-    if (titleEntity.endsWith(">")) titleEntity = Char.cutLast(titleEntity);
-    String name = Char.decode(titleEntity.replace('_', ' '));
+    String name=preferredName(titleEntity);
     result.add(FactComponent.forStringWithLanguage(name, "en"));
     String norm = Char.normalize(name);
     if (!norm.contains("[?]")) result.add(FactComponent.forStringWithLanguage(norm, "en"));
@@ -113,6 +115,13 @@ public class WikipediaLabelExtractor extends Extractor {
     return (result);
   }
 
+  /** returns the preferred name*/
+  public static String preferredName(String titleEntity) {
+    if (titleEntity.startsWith("<")) titleEntity = titleEntity.substring(1);
+    if (titleEntity.endsWith(">")) titleEntity = Char.cutLast(titleEntity);
+    return(Char.decode(titleEntity.replace('_', ' ')));
+  }
+  
   /** Constructor from source file */
   public WikipediaLabelExtractor(File wikipedia) {
     this.wikipedia = wikipedia;
