@@ -1,15 +1,12 @@
 #!/bin/sh
-if [ `hostname` != "d5blade05" ]; then
+if [ `hostname` != "d5blade09" ]; then
   echo We should not run this on contact!
   exit
 fi
 echo Loading YAGO into the database
 echo This process runs in the background and logs to db.log.
 echo Pressing CTRL+C will not stop the process.
-cd /local/users/yago
-echo Enter the password: yago2itnyago
-psql -a -d yago2s -h postgres0 -U yago -f ~/workspace/converters2s/scripts/postgres.sql > ~/workspace/db.log &
-disown -h %1
-sleep 5s
-tail -f ~/workspace/db.log
-
+echo *:*:yago2s:*:yago2itnyago > ~/.pgpass
+chmod 0600 ~/.pgpass
+cd /local/suchanek/yago2s
+nohup psql -a -d yago2s -h postgres0 -U yago -f ~/workspace/converters2s/scripts/postgres.sql > ~/workspace/db.log &
