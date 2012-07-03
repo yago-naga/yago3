@@ -11,7 +11,6 @@ import java.util.regex.Pattern;
 
 import fromWikipedia.Extractor;
 
-
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.administrative.Parameters;
@@ -64,7 +63,7 @@ public class ParallelCaller {
       if (success) {
         D.p("Finished", finished);
         themesWeHave.addAll(finished.output());
-        extractorsToDo.addAll(finished.followUp());       
+        extractorsToDo.addAll(finished.followUp());
       } else {
         D.p("Failed", finished);
         extractorsFailed.add(finished);
@@ -122,7 +121,7 @@ public class ParallelCaller {
     public void run() {
       boolean success;
       try {
-        ex.extract(outputFolder, ParallelCaller.header);
+        ex.extract(outputFolder, ParallelCaller.header+NumberFormatter.ISOtime()+".\n\n");
         success = true;
       } catch (Exception e) {
         e.printStackTrace();
@@ -161,7 +160,11 @@ public class ParallelCaller {
   }
 
   /** Header for the YAGO files */
-  public static String header = "This file is part of the ontology YAGO2s\nIt is licensed under a Creative-Commons Attribution License by the YAGO team\nat the Max Planck Institute for Informatics/Germany.\nSee http://yago-knowledge.org for all details.\n\n";
+  public static String header = "This file is part of the ontology YAGO2s\n" +
+  		"It is licensed under a Creative-Commons Attribution License by the YAGO team\n" +
+  		"at the Max Planck Institute for Informatics/Germany.\n" +
+  		"See http://yago-knowledge.org for all details.\n" +
+  		"This file was generated on ";
 
   /** Creates extractors as given by the names */
   public static List<Extractor> extractors(List<String> extractorNames) {
@@ -183,7 +186,7 @@ public class ParallelCaller {
 
   /** Creates an extractor for a call of the form "extractorName(File)" */
   public static Extractor extractorForCall(String extractorName) {
-    if(extractorName==null || extractorName.isEmpty()) return(null);
+    if (extractorName == null || extractorName.isEmpty()) return (null);
     Announce.doing("Creating", extractorName);
     Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z_0-9\\-:/\\.]*)\\)").matcher(extractorName);
     if (!m.matches()) {
@@ -192,16 +195,16 @@ public class ParallelCaller {
       return (null);
     }
     Extractor extractor;
-    if(m.group(2)!=null && !m.group(2).isEmpty()) {
-      String inputDataFileName=Parameters.get(m.group(2),m.group(2));
-      File inputDataFile=new File(inputDataFileName);
-      if(!inputDataFile.exists()) {
-        Announce.warning("Input data file not found:",inputDataFile);
-        return(null);
+    if (m.group(2) != null && !m.group(2).isEmpty()) {
+      String inputDataFileName = Parameters.get(m.group(2), m.group(2));
+      File inputDataFile = new File(inputDataFileName);
+      if (!inputDataFile.exists()) {
+        Announce.warning("Input data file not found:", inputDataFile);
+        return (null);
       }
-      extractor=Extractor.forName(m.group(1),inputDataFile);
+      extractor = Extractor.forName(m.group(1), inputDataFile);
     } else {
-     extractor= Extractor.forName(m.group(1),null);
+      extractor = Extractor.forName(m.group(1), null);
     }
     if (extractor == null) {
       Announce.failed();
