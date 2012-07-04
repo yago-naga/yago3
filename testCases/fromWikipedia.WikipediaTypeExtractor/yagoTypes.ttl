@@ -1,0 +1,1379 @@
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# 
+# 
+# All rdf:type facts of YAGO
+# TAXONOMY
+
+@base <http://yago-knowledge/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_10onaxx_88c_1rmjah>
+<Berlusconi_I_Cabinet>	rdf:type	<wikicategory_Governments_of_Italy> .
+#@ <id_y9qq7a_88c_11yu31c>
+<Campania>	rdf:type	<wikicategory_Wine_regions_of_Italy> .
+#@ <id_y9qq7a_88c_1bmc0ks>
+<Campania>	rdf:type	<wikicategory_Regions_of_Italy> .
+#@ <id_y9qq7a_88c_i4iypo>
+<Campania>	rdf:type	<wikicategory_NUTS_2_statistical_regions_of_the_European_Union> .
+#@ <id_1gaoy63_88c_n87zzo>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Italian_Life_Senators> .
+#@ <id_1gaoy63_88c_lpwl6l>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
+#@ <id_1gaoy63_88c_14rp0oq>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Italian_bankers> .
+#@ <id_1gaoy63_88c_1jupm55>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Knights_of_the_Order_of_Vittorio_Veneto> .
+#@ <id_1gaoy63_88c_1uqrk31>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Action_Party_(Italy)_politicians> .
+#@ <id_1gaoy63_88c_1b160xb>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Central_bankers> .
+#@ <id_zskfq5_88c_gtlqig>
+<Catholic_Church>	rdf:type	<wikicategory_Apostolic_sees> .
+#@ <id_7r55ul_88c_1y1zid8>
+<Forza_Italia>	rdf:type	<wordnet_party_108256968> .
+#@ <id_7r55ul_88c_13pvp2v>
+<Forza_Italia>	rdf:type	<wikicategory_Liberal_parties_in_Italy> .
+#@ <id_7r55ul_88c_1wxj1bv>
+<Forza_Italia>	rdf:type	<wikicategory_Christian_democratic_parties> .
+#@ <id_7r55ul_88c_17l09ju>
+<Forza_Italia>	rdf:type	<wikicategory_Political_parties_disestablished_in_2009> .
+#@ <id_7r55ul_88c_95tk7b>
+<Forza_Italia>	rdf:type	<wikicategory_Political_parties_established_in_1993> .
+#@ <id_7r55ul_88c_1b2kp4j>
+<Forza_Italia>	rdf:type	<wikicategory_Liberal-conservative_parties> .
+#@ <id_7r55ul_88c_9ojf3v>
+<Forza_Italia>	rdf:type	<wikicategory_Defunct_Christian_political_parties> .
+#@ <id_7r55ul_88c_mbsbk5>
+<Forza_Italia>	rdf:type	<wikicategory_Social_democratic_parties> .
+#@ <id_7r55ul_88c_163xx0d>
+<Forza_Italia>	rdf:type	<wikicategory_Catholic_political_parties> .
+#@ <id_1qqn7vt_88c_1600th4>
+<Gianfranco_Fini>	rdf:type	<wikicategory_Italian_Ministers_of_Foreign_Affairs> .
+#@ <id_1qqn7vt_88c_1f9igqp>
+<Gianfranco_Fini>	rdf:type	<wikicategory_Italian_Social_Movement_politicians> .
+#@ <id_1qqn7vt_88c_1gz0hf6>
+<Gianfranco_Fini>	rdf:type	<wikicategory_National_Alliance_(Italy)_politicians> .
+#@ <id_1qqn7vt_88c_vafydj>
+<Gianfranco_Fini>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1vo5vis_88c_jlr39>
+<Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_Ministers_of_the_Interior> .
+#@ <id_1vo5vis_88c_n87zzo>
+<Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_Life_Senators> .
+#@ <id_1vo5vis_88c_jblfux>
+<Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_atheists> .
+#@ <id_1vo5vis_88c_a942ok>
+<Giorgio_Napolitano>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_1vo5vis_88c_19quaek>
+<Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_Communist_Party_politicians> .
+#@ <id_1vo5vis_88c_vafydj>
+<Giorgio_Napolitano>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1rnvp37_88c_lpwl6l>
+<Giuliano_Amato>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
+#@ <id_1rnvp37_88c_jlr39>
+<Giuliano_Amato>	rdf:type	<wikicategory_Italian_Ministers_of_the_Interior> .
+#@ <id_1rnvp37_88c_dzn7g8>
+<Giuliano_Amato>	rdf:type	<wikicategory_Italian_Ministers_of_the_Treasury> .
+#@ <id_1rnvp37_88c_15a8ujw>
+<Giuliano_Amato>	rdf:type	<wikicategory_Italian_Christian_socialists> .
+#@ <id_1rnvp37_88c_1ug2kra>
+<Giuliano_Amato>	rdf:type	<wikicategory_Democratic_Party_(Italy)_politicians> .
+#@ <id_1rnvp37_88c_jq99ic>
+<Giuliano_Amato>	rdf:type	<wikicategory_Italian_Socialist_Party_politicians> .
+#@ <id_1rnvp37_88c_vafydj>
+<Giuliano_Amato>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1rnvp37_88c_1i8jl1c>
+<Giuliano_Amato>	rdf:type	<wikicategory_Columbia_Law_School_alumni> .
+#@ <id_1bclsii_88c_165alh2>
+<Giulio_Tremonti>	rdf:type	<wikicategory_Italian_essayists> .
+#@ <id_1bclsii_88c_jq99ic>
+<Giulio_Tremonti>	rdf:type	<wikicategory_Italian_Socialist_Party_politicians> .
+#@ <id_1bclsii_88c_vafydj>
+<Giulio_Tremonti>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1bclsii_88c_8v7rjo>
+<Giulio_Tremonti>	rdf:type	<wikicategory_Italian_economists> .
+#@ <id_1bclsii_88c_1edc9j2>
+<Giulio_Tremonti>	rdf:type	<wikicategory_Forza_Italia_politicians> .
+#@ <id_1q29rbl_88c_1ltacv0>
+<Italian_Chamber_of_Deputies>	rdf:type	<wordnet_parliament_108319198> .
+#@ <id_184v0j1_88c_lpwl6l>
+<Lamberto_Dini>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
+#@ <id_184v0j1_88c_1pwu0d1>
+<Lamberto_Dini>	rdf:type	<wikicategory_Democracy_is_Freedom_–_The_Daisy_politicians> .
+#@ <id_184v0j1_88c_1600th4>
+<Lamberto_Dini>	rdf:type	<wikicategory_Italian_Ministers_of_Foreign_Affairs> .
+#@ <id_184v0j1_88c_8v7rjo>
+<Lamberto_Dini>	rdf:type	<wikicategory_Italian_economists> .
+#@ <id_10q4wvf_88c_11yu31c>
+<Lazio>	rdf:type	<wikicategory_Wine_regions_of_Italy> .
+#@ <id_10q4wvf_88c_1bmc0ks>
+<Lazio>	rdf:type	<wikicategory_Regions_of_Italy> .
+#@ <id_10q4wvf_88c_i4iypo>
+<Lazio>	rdf:type	<wikicategory_NUTS_2_statistical_regions_of_the_European_Union> .
+#@ <id_1qfjlq_88c_11yu31c>
+<Lombardy>	rdf:type	<wikicategory_Wine_regions_of_Italy> .
+#@ <id_1qfjlq_88c_1bmc0ks>
+<Lombardy>	rdf:type	<wikicategory_Regions_of_Italy> .
+#@ <id_1qfjlq_88c_i4iypo>
+<Lombardy>	rdf:type	<wikicategory_NUTS_2_statistical_regions_of_the_European_Union> .
+#@ <id_1yo7s3q_88c_znrj7x>
+<Marco_Follini>	rdf:type	<wikicategory_Christian_Democracy_(Italy)_politicians> .
+#@ <id_sb1d5v_88c_1p4k65y>
+<Marina_Berlusconi>	rdf:type	<wikicategory_Children_of_national_leaders> .
+#@ <id_sb1d5v_88c_fogrx2>
+<Marina_Berlusconi>	rdf:type	<wikicategory_Italian_mass_media_owners> .
+#@ <id_4o2xc6_88c_i8ixxk>
+<Mario_Monti>	rdf:type	<wikicategory_21st-century_politicians> .
+#@ <id_4o2xc6_88c_1esos97>
+<Mario_Monti>	rdf:type	<wikicategory_21st-century_economists> .
+#@ <id_4o2xc6_88c_ntx2hg>
+<Mario_Monti>	rdf:type	<wikicategory_21st-century_scholars> .
+#@ <id_4o2xc6_88c_a942ok>
+<Mario_Monti>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_4o2xc6_88c_j6k9nz>
+<Mario_Monti>	rdf:type	<wikicategory_21st-century_men> .
+#@ <id_4o2xc6_88c_1bzbazs>
+<Mario_Monti>	rdf:type	<wikicategory_Alumni_of_Bocconi_University> .
+#@ <id_4o2xc6_88c_1s2909m>
+<Mario_Monti>	rdf:type	<wikicategory_20th-century_politicians> .
+#@ <id_4o2xc6_88c_lpwl6l>
+<Mario_Monti>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
+#@ <id_4o2xc6_88c_n87zzo>
+<Mario_Monti>	rdf:type	<wikicategory_Italian_Life_Senators> .
+#@ <id_4o2xc6_88c_yy7arm>
+<Mario_Monti>	rdf:type	<wikicategory_Yale_University_alumni> .
+#@ <id_4o2xc6_88c_r2jji1>
+<Mario_Monti>	rdf:type	<wikicategory_20th-century_economists> .
+#@ <id_4o2xc6_88c_vafydj>
+<Mario_Monti>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_4o2xc6_88c_gob89n>
+<Mario_Monti>	rdf:type	<wikicategory_Italian_European_Commissioners> .
+#@ <id_4o2xc6_88c_8v7rjo>
+<Mario_Monti>	rdf:type	<wikicategory_Italian_economists> .
+#@ <id_4o2xc6_88c_1848281>
+<Mario_Monti>	rdf:type	<wikicategory_20th-century_men> .
+#@ <id_2ox8i9_88c_1bmc0ks>
+<Molise>	rdf:type	<wikicategory_Regions_of_Italy> .
+#@ <id_1re08hr_88c_18jb85f>
+<Oscar_Luigi_Scalfaro>	rdf:type	<wikicategory_Knights_of_Grace_of_the_Order_of_St_John> .
+#@ <id_1re08hr_88c_1jupm55>
+<Oscar_Luigi_Scalfaro>	rdf:type	<wikicategory_Knights_of_the_Order_of_Vittorio_Veneto> .
+#@ <id_1re08hr_88c_znrj7x>
+<Oscar_Luigi_Scalfaro>	rdf:type	<wikicategory_Christian_Democracy_(Italy)_politicians> .
+#@ <id_1re08hr_88c_n87zzo>
+<Oscar_Luigi_Scalfaro>	rdf:type	<wikicategory_Italian_Life_Senators> .
+#@ <id_1re08hr_88c_jlr39>
+<Oscar_Luigi_Scalfaro>	rdf:type	<wikicategory_Italian_Ministers_of_the_Interior> .
+#@ <id_1re08hr_88c_1d07p3u>
+<Oscar_Luigi_Scalfaro>	rdf:type	<wikicategory_Università_Cattolica_del_Sacro_Cuore_alumni> .
+#@ <id_1re08hr_88c_1w00dhb>
+<Oscar_Luigi_Scalfaro>	rdf:type	<wikicategory_Italian_politicians> .
+#@ <id_15oiopu_88c_1p4k65y>
+<Pier_Silvio_Berlusconi>	rdf:type	<wikicategory_Children_of_national_leaders> .
+#@ <id_93sgke_88c_1tr9m5r>
+<Roberto_Maroni>	rdf:type	<wikicategory_Italian_politicians_convicted_of_crimes> .
+#@ <id_93sgke_88c_jlr39>
+<Roberto_Maroni>	rdf:type	<wikicategory_Italian_Ministers_of_the_Interior> .
+#@ <id_93sgke_88c_vafydj>
+<Roberto_Maroni>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_93sgke_88c_v90gvy>
+<Roberto_Maroni>	rdf:type	<wikicategory_Lega_Nord_politicians> .
+#@ <id_1uqzhxh_88c_5ppqvw>
+<Romano_Prodi>	rdf:type	<wikicategory_Italian_academics> .
+#@ <id_1uqzhxh_88c_lpwl6l>
+<Romano_Prodi>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
+#@ <id_1uqzhxh_88c_1w00dhb>
+<Romano_Prodi>	rdf:type	<wikicategory_Italian_politicians> .
+#@ <id_1uqzhxh_88c_1d07p3u>
+<Romano_Prodi>	rdf:type	<wikicategory_Università_Cattolica_del_Sacro_Cuore_alumni> .
+#@ <id_1uqzhxh_88c_xhsmlc>
+<Romano_Prodi>	rdf:type	<wikicategory_Alumni_of_the_London_School_of_Economics> .
+#@ <id_1uqzhxh_88c_vafydj>
+<Romano_Prodi>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1uqzhxh_88c_gob89n>
+<Romano_Prodi>	rdf:type	<wikicategory_Italian_European_Commissioners> .
+#@ <id_1uqzhxh_88c_8v7rjo>
+<Romano_Prodi>	rdf:type	<wikicategory_Italian_economists> .
+#@ <id_wz05y3_88c_p0wz8n>
+<Silvio_Berlusconi>	rdf:type	<wikicategory_Italian_billionaires> .
+#@ <id_wz05y3_88c_1edc9j2>
+<Silvio_Berlusconi>	rdf:type	<wikicategory_Forza_Italia_politicians> .
+#@ <id_wz05y3_88c_lpwl6l>
+<Silvio_Berlusconi>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
+#@ <id_wz05y3_88c_vafydj>
+<Silvio_Berlusconi>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_wz05y3_88c_fogrx2>
+<Silvio_Berlusconi>	rdf:type	<wikicategory_Italian_mass_media_owners> .
+#@ <id_zuuepc_88c_1y1zid8>
+<The_People_of_Freedom>	rdf:type	<wordnet_party_108256968> .
+#@ <id_zuuepc_88c_95u0b0>
+<The_People_of_Freedom>	rdf:type	<wikicategory_Political_parties_established_in_2009> .
+#@ <id_zuuepc_88c_1kd8f87>
+<The_People_of_Freedom>	rdf:type	<wikicategory_Political_parties_in_Italy> .
+#@ <id_prkzmu_88c_1tj1s7q>
+<University_of_Milan>	rdf:type	<wikicategory_Educational_institutions_established_in_1924> .
+#@ <id_7qjadl_88c_16yyuz>
+<Veronica_Lario>	rdf:type	<wikicategory_Italian_television_actors> .
+#@ <id_7qjadl_88c_19wddft>
+<Veronica_Lario>	rdf:type	<wikicategory_Italian_film_actors> .
+#@ <id_11qatgv_88c_1p3b8b>
+<Cherie_Blair>	rdf:type	<wikicategory_English_barristers> .
+#@ <id_11qatgv_88c_1jii959>
+<Cherie_Blair>	rdf:type	<wikicategory_Female_lawyers> .
+#@ <id_11qatgv_88c_xhsmlc>
+<Cherie_Blair>	rdf:type	<wikicategory_Alumni_of_the_London_School_of_Economics> .
+#@ <id_11qatgv_88c_r154bn>
+<Cherie_Blair>	rdf:type	<wikicategory_Labour_Party_(UK)_politicians> .
+#@ <id_11qatgv_88c_1sbzwfc>
+<Cherie_Blair>	rdf:type	<wikicategory_Academics_of_the_University_of_Westminster> .
+#@ <id_11qatgv_88c_vafydj>
+<Cherie_Blair>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1ks0wcp_88c_13dmcfr>
+<Connaught_Square>	rdf:type	<wikicategory_Streets_in_Westminster> .
+#@ <id_z038xo_88c_5jv04g>
+<Edinburgh>	rdf:type	<wikicategory_Council_areas_of_Scotland> .
+#@ <id_z038xo_88c_tp8boy>
+<Edinburgh>	rdf:type	<wikicategory_Lieutenancy_areas_of_Scotland> .
+#@ <id_z038xo_88c_7go0pp>
+<Edinburgh>	rdf:type	<wikicategory_Districts_of_Scotland> .
+#@ <id_13977z3_88c_7ewc0q>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Belize> .
+#@ <id_13977z3_88c_x61tvf>
+<Elizabeth_II>	rdf:type	<wikicategory_Auxiliary_Territorial_Service_officers> .
+#@ <id_13977z3_88c_g6og84>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Tuvalu> .
+#@ <id_13977z3_88c_a15a3c>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Guyana> .
+#@ <id_13977z3_88c_10ndkdh>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Barbados> .
+#@ <id_13977z3_88c_bw0gfn>
+<Elizabeth_II>	rdf:type	<wikicategory_British_philanthropists> .
+#@ <id_13977z3_88c_wheu5y>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Malta> .
+#@ <id_13977z3_88c_we8b7o>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Ghana> .
+#@ <id_13977z3_88c_a942ok>
+<Elizabeth_II>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_13977z3_88c_1frg589>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Trinidad_and_Tobago> .
+#@ <id_13977z3_88c_1gmeabm>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Nigeria> .
+#@ <id_13977z3_88c_vg3va6>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Antigua_and_Barbuda> .
+#@ <id_13977z3_88c_mc137u>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Saint_Kitts_and_Nevis> .
+#@ <id_13977z3_88c_1a683lh>
+<Elizabeth_II>	rdf:type	<wikicategory_Monarchs_of_Australia> .
+#@ <id_13977z3_88c_1akpn7u>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_the_Bahamas> .
+#@ <id_13977z3_88c_asaw24>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Pakistan> .
+#@ <id_13977z3_88c_11b0oqa>
+<Elizabeth_II>	rdf:type	<wikicategory_Knights_of_the_Golden_Fleece> .
+#@ <id_13977z3_88c_ck6tze>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Malawi> .
+#@ <id_13977z3_88c_ns1ubb>
+<Elizabeth_II>	rdf:type	<wikicategory_Protestant_monarchs> .
+#@ <id_13977z3_88c_1xctdn3>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_the_Solomon_Islands> .
+#@ <id_13977z3_88c_76s9df>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_New_Zealand> .
+#@ <id_13977z3_88c_7trvjx>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Canada> .
+#@ <id_13977z3_88c_wgduj1>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Kenya> .
+#@ <id_13977z3_88c_odhu2w>
+<Elizabeth_II>	rdf:type	<wikicategory_Monarchs_of_the_United_Kingdom> .
+#@ <id_13977z3_88c_zfdydh>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Saint_Lucia> .
+#@ <id_13977z3_88c_6oowf0>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Mauritius> .
+#@ <id_13977z3_88c_gfnt0r>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Uganda> .
+#@ <id_13977z3_88c_1qvc8i4>
+<Elizabeth_II>	rdf:type	<wikicategory_Women_in_World_War_II> .
+#@ <id_13977z3_88c_134yls9>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Saint_Vincent_and_the_Grenadines> .
+#@ <id_13977z3_88c_l9p181>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Papua_New_Guinea> .
+#@ <id_13977z3_88c_1wamvy5>
+<Elizabeth_II>	rdf:type	<wikicategory_Knights_of_the_Elephant> .
+#@ <id_13977z3_88c_jdi4dt>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Fiji> .
+#@ <id_13977z3_88c_128pq10>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_the_Gambia> .
+#@ <id_13977z3_88c_1266agn>
+<Elizabeth_II>	rdf:type	<wikicategory_Monarchs_of_South_Africa> .
+#@ <id_13977z3_88c_df8wc6>
+<Elizabeth_II>	rdf:type	<wikicategory_Dames_of_the_Order_of_the_Royal_House_of_Chakri> .
+#@ <id_13977z3_88c_uvozx1>
+<Elizabeth_II>	rdf:type	<wikicategory_Canadian_philanthropists> .
+#@ <id_13977z3_88c_1a27dof>
+<Elizabeth_II>	rdf:type	<wikicategory_Monarchs_of_Ceylon> .
+#@ <id_13977z3_88c_npgvtb>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Sierra_Leone> .
+#@ <id_13977z3_88c_1p8s91p>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Jamaica> .
+#@ <id_13977z3_88c_go9e4k>
+<Elizabeth_II>	rdf:type	<wikicategory_British_princesses> .
+#@ <id_13977z3_88c_13i0bt4>
+<Elizabeth_II>	rdf:type	<wikicategory_Women_in_the_Canadian_armed_services> .
+#@ <id_13977z3_88c_yl56oq>
+<Elizabeth_II>	rdf:type	<wikicategory_Reigning_monarchs> .
+#@ <id_13977z3_88c_p56r97>
+<Elizabeth_II>	rdf:type	<wikicategory_Heads_of_state_of_Grenada> .
+#@ <id_1e3a5c8_88c_1svd4xo>
+<Frank_Dobson>	rdf:type	<wikicategory_Secretaries_of_State_for_Health_(UK)> .
+#@ <id_1e3a5c8_88c_xhsmlc>
+<Frank_Dobson>	rdf:type	<wikicategory_Alumni_of_the_London_School_of_Economics> .
+#@ <id_1e3a5c8_88c_1x5jd8t>
+<Frank_Dobson>	rdf:type	<wikicategory_Councillors_in_Camden> .
+#@ <id_1e3a5c8_88c_vafydj>
+<Frank_Dobson>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1e3a5c8_88c_1ucmlcv>
+<Frank_Dobson>	rdf:type	<wikicategory_British_Secretaries_of_State> .
+#@ <id_max52o_88c_1wixp37>
+<Gordon_Brown>	rdf:type	<wikicategory_Prime_Ministers_of_the_United_Kingdom> .
+#@ <id_max52o_88c_1s13qes>
+<Gordon_Brown>	rdf:type	<wikicategory_Leaders_of_the_Labour_Party_(UK)> .
+#@ <id_max52o_88c_v89ro1>
+<Gordon_Brown>	rdf:type	<wikicategory_Academics_of_the_Open_University> .
+#@ <id_max52o_88c_b43ymn>
+<Gordon_Brown>	rdf:type	<wikicategory_Youth_rights_individuals> .
+#@ <id_max52o_88c_gxz7ch>
+<Gordon_Brown>	rdf:type	<wikicategory_Scottish_journalists> .
+#@ <id_max52o_88c_1tsjdqw>
+<Gordon_Brown>	rdf:type	<wikicategory_Academics_of_Glasgow_Caledonian_University> .
+#@ <id_max52o_88c_177pt0z>
+<Gordon_Brown>	rdf:type	<wikicategory_Rectors_of_the_University_of_Edinburgh> .
+#@ <id_max52o_88c_kxvav3>
+<Gordon_Brown>	rdf:type	<wikicategory_Alumni_of_the_University_of_Edinburgh> .
+#@ <id_max52o_88c_163x8ld>
+<Gordon_Brown>	rdf:type	<wikicategory_Scottish_scholars_and_academics> .
+#@ <id_177pmny_88c_1fqm846>
+<Inns_of_Court_School_of_Law>	rdf:type	<wordnet_law_school_108283051> .
+#@ <id_177pmny_88c_1tj1rjk>
+<Inns_of_Court_School_of_Law>	rdf:type	<wikicategory_Educational_institutions_established_in_1852> .
+#@ <id_177pmny_88c_1lovxlp>
+<Inns_of_Court_School_of_Law>	rdf:type	<wikicategory_Law_schools_in_England> .
+#@ <id_g6y5dz_88c_1p3b8b>
+<Jack_Straw>	rdf:type	<wikicategory_English_barristers> .
+#@ <id_g6y5dz_88c_p7h9ua>
+<Jack_Straw>	rdf:type	<wikicategory_Secretaries_of_State_for_the_Home_Department> .
+#@ <id_g6y5dz_88c_t00t1r>
+<Jack_Straw>	rdf:type	<wikicategory_Leaders_of_the_House_of_Commons> .
+#@ <id_g6y5dz_88c_hzmnd8>
+<Jack_Straw>	rdf:type	<wikicategory_British_Secretaries_of_State_for_Foreign_and_Commonwealth_Affairs> .
+#@ <id_g6y5dz_88c_vafydj>
+<Jack_Straw>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_g6y5dz_88c_1ucmlcv>
+<Jack_Straw>	rdf:type	<wikicategory_British_Secretaries_of_State> .
+#@ <id_g6y5dz_88c_rmnj5q>
+<Jack_Straw>	rdf:type	<wikicategory_Alumni_of_the_University_of_Leeds> .
+#@ <id_1xvi8at_88c_1wixp37>
+<John_Major>	rdf:type	<wikicategory_Prime_Ministers_of_the_United_Kingdom> .
+#@ <id_1xvi8at_88c_12mjo8l>
+<John_Major>	rdf:type	<wikicategory_Knights_of_the_Garter> .
+#@ <id_1xvi8at_88c_2vlxmo>
+<John_Major>	rdf:type	<wikicategory_Councillors_in_Lambeth> .
+#@ <id_1xvi8at_88c_hzmnd8>
+<John_Major>	rdf:type	<wikicategory_British_Secretaries_of_State_for_Foreign_and_Commonwealth_Affairs> .
+#@ <id_1xvi8at_88c_ew05ra>
+<John_Major>	rdf:type	<wikicategory_Leaders_of_the_Conservative_Party_(UK)> .
+#@ <id_1xvi8at_88c_117613r>
+<John_Major>	rdf:type	<wikicategory_Leaders_of_the_Opposition_(United_Kingdom)> .
+#@ <id_1xvi8at_88c_vafydj>
+<John_Major>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1xvi8at_88c_i01v5m>
+<John_Major>	rdf:type	<wikicategory_Cricket_historians_and_writers> .
+#@ <id_1xvi8at_88c_1ld2pje>
+<John_Major>	rdf:type	<wikicategory_Attempted_assassination_survivors> .
+#@ <id_1x8chcg_88c_1wu4u9d>
+<John_Prescott>	rdf:type	<wikicategory_Deputy_Prime_Ministers_of_the_United_Kingdom> .
+#@ <id_1x8chcg_88c_2exna0>
+<John_Prescott>	rdf:type	<wikicategory_First_Secretaries_of_State_of_the_United_Kingdom> .
+#@ <id_1x8chcg_88c_9ozf68>
+<John_Prescott>	rdf:type	<wikicategory_Alumni_of_Ruskin_College> .
+#@ <id_1x8chcg_88c_109dyp8>
+<John_Prescott>	rdf:type	<wikicategory_Trade_unionists_from_Kingston_upon_Hull> .
+#@ <id_1x8chcg_88c_uod0i2>
+<John_Prescott>	rdf:type	<wikicategory_Alumni_of_the_University_of_Hull> .
+#@ <id_1x8chcg_88c_khabq2>
+<John_Prescott>	rdf:type	<wikicategory_Labour_Party_(UK)_life_peers> .
+#@ <id_1x8chcg_88c_ifhxua>
+<John_Prescott>	rdf:type	<wikicategory_British_sailors> .
+#@ <id_1x8chcg_88c_5es2ta>
+<John_Prescott>	rdf:type	<wikicategory_Politicians_from_Kingston_upon_Hull> .
+#@ <id_4ftjb3_88c_1s13qes>
+<John_Smith_(Labour_Party_leader)>	rdf:type	<wikicategory_Leaders_of_the_Labour_Party_(UK)> .
+#@ <id_4ftjb3_88c_zmmd>
+<John_Smith_(Labour_Party_leader)>	rdf:type	<wikicategory_Scottish_Labour_Party_politicians> .
+#@ <id_4ftjb3_88c_1m3o6uz>
+<John_Smith_(Labour_Party_leader)>	rdf:type	<wikicategory_Alumni_of_the_University_of_Glasgow> .
+#@ <id_4ftjb3_88c_1m6eo22>
+<John_Smith_(Labour_Party_leader)>	rdf:type	<wikicategory_Scottish_solicitors> .
+#@ <id_4ftjb3_88c_117613r>
+<John_Smith_(Labour_Party_leader)>	rdf:type	<wikicategory_Leaders_of_the_Opposition_(United_Kingdom)> .
+#@ <id_4ftjb3_88c_vafydj>
+<John_Smith_(Labour_Party_leader)>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_4ftjb3_88c_1ucmlcv>
+<John_Smith_(Labour_Party_leader)>	rdf:type	<wikicategory_British_Secretaries_of_State> .
+#@ <id_10cbk3o_88c_1065ae5>
+<Labour_Party_(UK)>	rdf:type	<wikicategory_Social_democratic_parties_in_the_United_Kingdom> .
+#@ <id_10cbk3o_88c_7cezp1>
+<Labour_Party_(UK)>	rdf:type	<wikicategory_Labour_parties> .
+#@ <id_10cbk3o_88c_1y1zid8>
+<Labour_Party_(UK)>	rdf:type	<wordnet_party_108256968> .
+#@ <id_10cbk3o_88c_95tjzh>
+<Labour_Party_(UK)>	rdf:type	<wikicategory_Political_parties_established_in_1900> .
+#@ <id_16vp284_88c_13xdotb>
+<Margaret_Beckett>	rdf:type	<wikicategory_Alumni_of_the_University_of_Manchester_Institute_of_Science_and_Technology> .
+#@ <id_16vp284_88c_t00t1r>
+<Margaret_Beckett>	rdf:type	<wikicategory_Leaders_of_the_House_of_Commons> .
+#@ <id_16vp284_88c_hzmnd8>
+<Margaret_Beckett>	rdf:type	<wikicategory_British_Secretaries_of_State_for_Foreign_and_Commonwealth_Affairs> .
+#@ <id_16vp284_88c_1s13qes>
+<Margaret_Beckett>	rdf:type	<wikicategory_Leaders_of_the_Labour_Party_(UK)> .
+#@ <id_16vp284_88c_117613r>
+<Margaret_Beckett>	rdf:type	<wikicategory_Leaders_of_the_Opposition_(United_Kingdom)> .
+#@ <id_16vp284_88c_vafydj>
+<Margaret_Beckett>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_16vp284_88c_1ucmlcv>
+<Margaret_Beckett>	rdf:type	<wikicategory_British_Secretaries_of_State> .
+#@ <id_16vp284_88c_1flbin5>
+<Margaret_Beckett>	rdf:type	<wikicategory_Female_foreign_ministers> .
+#@ <id_27r2yr_88c_1hxttov>
+<Michael_Meacher>	rdf:type	<wikicategory_Academics_of_the_University_of_Essex> .
+#@ <id_27r2yr_88c_81izjr>
+<Michael_Meacher>	rdf:type	<wikicategory_Alumni_of_New_College,_Oxford> .
+#@ <id_27r2yr_88c_1twn49k>
+<Michael_Meacher>	rdf:type	<wikicategory_Academics_of_the_University_of_York> .
+#@ <id_27r2yr_88c_orpv1h>
+<Michael_Meacher>	rdf:type	<wikicategory_9/11_conspiracy_theorists> .
+#@ <id_27r2yr_88c_xhsmlc>
+<Michael_Meacher>	rdf:type	<wikicategory_Alumni_of_the_London_School_of_Economics> .
+#@ <id_27r2yr_88c_vafydj>
+<Michael_Meacher>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_7fm9w4_88c_tjpxxg>
+<Neil_Kinnock>	rdf:type	<wikicategory_British_agnostics> .
+#@ <id_7fm9w4_88c_1shgwtv>
+<Neil_Kinnock>	rdf:type	<wikicategory_Welsh_socialists> .
+#@ <id_7fm9w4_88c_1kbo50g>
+<Neil_Kinnock>	rdf:type	<wordnet_politician_110451263> .
+#@ <id_7fm9w4_88c_1s13qes>
+<Neil_Kinnock>	rdf:type	<wikicategory_Leaders_of_the_Labour_Party_(UK)> .
+#@ <id_7fm9w4_88c_khabq2>
+<Neil_Kinnock>	rdf:type	<wikicategory_Labour_Party_(UK)_life_peers> .
+#@ <id_7fm9w4_88c_1i65qzw>
+<Neil_Kinnock>	rdf:type	<wikicategory_Alumni_of_Cardiff_University> .
+#@ <id_7fm9w4_88c_16i21i0>
+<Neil_Kinnock>	rdf:type	<wikicategory_British_European_Commissioners> .
+#@ <id_7fm9w4_88c_117613r>
+<Neil_Kinnock>	rdf:type	<wikicategory_Leaders_of_the_Opposition_(United_Kingdom)> .
+#@ <id_7fm9w4_88c_10ms6gi>
+<Neil_Kinnock>	rdf:type	<wikicategory_Welsh_politicians> .
+#@ <id_1jce2gm_88c_uod0i2>
+<Roy_Hattersley>	rdf:type	<wikicategory_Alumni_of_the_University_of_Hull> .
+#@ <id_1jce2gm_88c_enauut>
+<Roy_Hattersley>	rdf:type	<wikicategory_Councillors_in_Sheffield> .
+#@ <id_1jce2gm_88c_su938v>
+<Roy_Hattersley>	rdf:type	<wikicategory_Daily_Mail_journalists> .
+#@ <id_1jce2gm_88c_khabq2>
+<Roy_Hattersley>	rdf:type	<wikicategory_Labour_Party_(UK)_life_peers> .
+#@ <id_1jce2gm_88c_1gqnnv7>
+<Roy_Hattersley>	rdf:type	<wikicategory_British_journalists> .
+#@ <id_1jce2gm_88c_vafydj>
+<Roy_Hattersley>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1jce2gm_88c_1ucmlcv>
+<Roy_Hattersley>	rdf:type	<wikicategory_British_Secretaries_of_State> .
+#@ <id_1jce2gm_88c_1xew5bl>
+<Roy_Hattersley>	rdf:type	<wikicategory_The_Guardian_journalists> .
+#@ <id_1jce2gm_88c_1odhjk9>
+<Roy_Hattersley>	rdf:type	<wikicategory_British_humanists> .
+#@ <id_lwoiij_88c_zuvxfy>
+<Sedgefield_(UK_Parliament_constituency)>	rdf:type	<wikicategory_United_Kingdom_Parliamentary_constituencies_disestablished_in_1974> .
+#@ <id_lwoiij_88c_1ww53ds>
+<Sedgefield_(UK_Parliament_constituency)>	rdf:type	<wikicategory_Parliamentary_constituencies_in_County_Durham> .
+#@ <id_lwoiij_88c_tyzlya>
+<Sedgefield_(UK_Parliament_constituency)>	rdf:type	<wikicategory_United_Kingdom_Parliamentary_constituencies_represented_by_a_sitting_Prime_Minister> .
+#@ <id_lwoiij_88c_ulgvry>
+<Sedgefield_(UK_Parliament_constituency)>	rdf:type	<wikicategory_United_Kingdom_Parliamentary_constituencies_established_in_1918> .
+#@ <id_lwoiij_88c_ulgvxu>
+<Sedgefield_(UK_Parliament_constituency)>	rdf:type	<wikicategory_United_Kingdom_Parliamentary_constituencies_established_in_1983> .
+#@ <id_1bx19fo_88c_yjcvl7>
+<St_John's_College,_Oxford>	rdf:type	<wikicategory_Buildings_and_structures_of_the_University_of_Oxford> .
+#@ <id_1bx19fo_88c_18iwv4b>
+<St_John's_College,_Oxford>	rdf:type	<wikicategory_Grade_I_listed_buildings_in_Oxford> .
+#@ <id_1bx19fo_88c_1pxz8g0>
+<St_John's_College,_Oxford>	rdf:type	<wikicategory_Grade_I_listed_educational_buildings> .
+#@ <id_gg7cuf_88c_14kxum0>
+<Tony_Blair>	rdf:type	<wikicategory_Alumni_of_the_Inns_of_Court_School_of_Law> .
+#@ <id_gg7cuf_88c_1wixp37>
+<Tony_Blair>	rdf:type	<wikicategory_Prime_Ministers_of_the_United_Kingdom> .
+#@ <id_gg7cuf_88c_1a0o5qk>
+<Tony_Blair>	rdf:type	<wikicategory_Alumni_of_St_John's_College,_Oxford> .
+#@ <id_gg7cuf_88c_1s13qes>
+<Tony_Blair>	rdf:type	<wikicategory_Leaders_of_the_Labour_Party_(UK)> .
+#@ <id_gg7cuf_88c_117613r>
+<Tony_Blair>	rdf:type	<wikicategory_Leaders_of_the_Opposition_(United_Kingdom)> .
+#@ <id_gg7cuf_88c_vafydj>
+<Tony_Blair>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_gg7cuf_88c_j2aclu>
+<Tony_Blair>	rdf:type	<wikicategory_Converts_to_Roman_Catholicism_from_Anglicanism> .
+#@ <id_17c51vo_88c_1yzg43p>
+<World_Economic_Forum>	rdf:type	<wikicategory_Foundations_based_in_Switzerland> .
+#@ <id_1fpq28n_88c_80c9op>
+<Angela_Merkel>	rdf:type	<wikicategory_Ministers_for_children,_young_people_and_families> .
+#@ <id_1fpq28n_88c_15r6g7m>
+<Angela_Merkel>	rdf:type	<wikicategory_German_women_in_politics> .
+#@ <id_1fpq28n_88c_a942ok>
+<Angela_Merkel>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_1fpq28n_88c_k6b4t4>
+<Angela_Merkel>	rdf:type	<wikicategory_Leaders_of_political_parties_in_Germany> .
+#@ <id_1fpq28n_88c_a1tiqd>
+<Angela_Merkel>	rdf:type	<wikicategory_Christian_Democratic_Union_(Germany)_politicians> .
+#@ <id_1fpq28n_88c_n371zt>
+<Angela_Merkel>	rdf:type	<wikicategory_Environment_ministers_of_Germany> .
+#@ <id_1fpq28n_88c_wpfece>
+<Angela_Merkel>	rdf:type	<wikicategory_German_chemists> .
+#@ <id_1fpq28n_88c_vafydj>
+<Angela_Merkel>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1fpq28n_88c_1c6dxm0>
+<Angela_Merkel>	rdf:type	<wikicategory_Women_chemists> .
+#@ <id_18367vn_88c_1onkqum>
+<Bundestag>	rdf:type	<wikicategory_National_legislatures> .
+#@ <id_18367vn_88c_1rd7oto>
+<Bundestag>	rdf:type	<wikicategory_Parliaments_by_country> .
+#@ <id_18367vn_88c_15zg5an>
+<Bundestag>	rdf:type	<wordnet_legislature_108163273> .
+#@ <id_t9jepg_88c_95tk32>
+<Christian_Democratic_Union_(Germany)>	rdf:type	<wikicategory_Political_parties_established_in_1945> .
+#@ <id_t9jepg_88c_7iwi7b>
+<Christian_Democratic_Union_(Germany)>	rdf:type	<wikicategory_Political_parties_in_Germany> .
+#@ <id_t9jepg_88c_1y1zid8>
+<Christian_Democratic_Union_(Germany)>	rdf:type	<wordnet_party_108256968> .
+#@ <id_t9jepg_88c_1wxj1bv>
+<Christian_Democratic_Union_(Germany)>	rdf:type	<wikicategory_Christian_democratic_parties> .
+#@ <id_t9jepg_88c_1w61njb>
+<Christian_Democratic_Union_(Germany)>	rdf:type	<wikicategory_International_Democrat_Union_member_parties> .
+#@ <id_jr01l4_88c_106cutj>
+<Christian_Wulff>	rdf:type	<wikicategory_German_lawyers> .
+#@ <id_jr01l4_88c_eajhhj>
+<Christian_Wulff>	rdf:type	<wikicategory_German_politicians> .
+#@ <id_jr01l4_88c_a1tiqd>
+<Christian_Wulff>	rdf:type	<wikicategory_Christian_Democratic_Union_(Germany)_politicians> .
+#@ <id_jr01l4_88c_vafydj>
+<Christian_Wulff>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_w0lfr0_88c_80c9op>
+<Claudia_Nolte>	rdf:type	<wikicategory_Ministers_for_children,_young_people_and_families> .
+#@ <id_w0lfr0_88c_15r6g7m>
+<Claudia_Nolte>	rdf:type	<wikicategory_German_women_in_politics> .
+#@ <id_w0lfr0_88c_a1tiqd>
+<Claudia_Nolte>	rdf:type	<wikicategory_Christian_Democratic_Union_(Germany)_politicians> .
+#@ <id_w0lfr0_88c_twiqgp>
+<Claudia_Nolte>	rdf:type	<wikicategory_Government_ministers_of_Germany> .
+#@ <id_1o4heop_88c_95tk6m>
+<Democratic_Awakening>	rdf:type	<wikicategory_Political_parties_established_in_1989> .
+#@ <id_1o4heop_88c_17kztg2>
+<Democratic_Awakening>	rdf:type	<wikicategory_Political_parties_disestablished_in_1990> .
+#@ <id_1o4heop_88c_8kbvb>
+<Democratic_Awakening>	rdf:type	<wikicategory_Defunct_political_parties_in_Germany> .
+#@ <id_1o4heop_88c_10mtlp>
+<Democratic_Awakening>	rdf:type	<wikicategory_Political_parties_in_East_Germany> .
+#@ <id_ht3f3u_88c_xu7m1k>
+<Frank-Walter_Steinmeier>	rdf:type	<wikicategory_Foreign_Ministers_of_Germany> .
+#@ <id_ht3f3u_88c_vafydj>
+<Frank-Walter_Steinmeier>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_gh6929_88c_kbr2pe>
+<Franz_Müntefering>	rdf:type	<wikicategory_Social_Affairs_ministers_of_Germany> .
+#@ <id_gh6929_88c_1kbo50g>
+<Franz_Müntefering>	rdf:type	<wordnet_politician_110451263> .
+#@ <id_gh6929_88c_1ansi4j>
+<Franz_Müntefering>	rdf:type	<wikicategory_Transport_ministers_of_Germany> .
+#@ <id_107bpbp_88c_1ld0sra>
+<Gerhard_Schröder>	rdf:type	<wikicategory_Grand_Crosses_of_the_Order_of_the_Star_of_Romania> .
+#@ <id_1ps9evn_88c_10ijhq9>
+<Germany>	rdf:type	<wikicategory_G20_nations> .
+#@ <id_1ps9evn_88c_mvnmj3>
+<Germany>	rdf:type	<wikicategory_G8_nations> .
+#@ <id_18vc8ci_88c_1qg9z9z>
+<Guido_Westerwelle>	rdf:type	<wikicategory_Free_Democratic_Party_(Germany)_politicians> .
+#@ <id_18vc8ci_88c_106cutj>
+<Guido_Westerwelle>	rdf:type	<wikicategory_German_lawyers> .
+#@ <id_18vc8ci_88c_xu7m1k>
+<Guido_Westerwelle>	rdf:type	<wikicategory_Foreign_Ministers_of_Germany> .
+#@ <id_18vc8ci_88c_cpbpr2>
+<Guido_Westerwelle>	rdf:type	<wikicategory_Gay_politicians> .
+#@ <id_18vc8ci_88c_vafydj>
+<Guido_Westerwelle>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_18vc8ci_88c_ranepb>
+<Guido_Westerwelle>	rdf:type	<wikicategory_LGBT_politicians_from_Germany> .
+#@ <id_3gfkn0_88c_pjo397>
+<Hamburg>	rdf:type	<wikicategory_NUTS_1_statistical_regions_of_the_European_Union> .
+#@ <id_3gfkn0_88c_hjs82p>
+<Hamburg>	rdf:type	<wikicategory_German_state_capitals> .
+#@ <id_zycb9m_88c_a1tiqd>
+<Helmut_Kohl>	rdf:type	<wikicategory_Christian_Democratic_Union_(Germany)_politicians> .
+#@ <id_zycb9m_88c_y01ps9>
+<Helmut_Kohl>	rdf:type	<wikicategory_Cold_War_leaders> .
+#@ <id_zycb9m_88c_vafydj>
+<Helmut_Kohl>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1pj249b_88c_1ugfs52>
+<Horst_Köhler>	rdf:type	<wikicategory_German_refugees> .
+#@ <id_1pj249b_88c_eajhhj>
+<Horst_Köhler>	rdf:type	<wikicategory_German_politicians> .
+#@ <id_1pj249b_88c_vafydj>
+<Horst_Köhler>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1pj249b_88c_vyuy8k>
+<Horst_Köhler>	rdf:type	<wikicategory_Managing_directors_of_the_International_Monetary_Fund> .
+#@ <id_1ck1v4q_88c_wpfece>
+<Joachim_Sauer>	rdf:type	<wikicategory_German_chemists> .
+#@ <id_1ck1v4q_88c_vafydj>
+<Joachim_Sauer>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1cm9d6p_88c_i6e93q>
+<Jürgen_Trittin>	rdf:type	<wikicategory_Alliance_'90/The_Greens_politicians> .
+#@ <id_1cm9d6p_88c_xzyf11>
+<Jürgen_Trittin>	rdf:type	<wordnet_curate_109983572> .
+#@ <id_1cm9d6p_88c_n371zt>
+<Jürgen_Trittin>	rdf:type	<wikicategory_Environment_ministers_of_Germany> .
+#@ <id_1kyrcau_88c_a1tiqd>
+<Klaus_Töpfer>	rdf:type	<wikicategory_Christian_Democratic_Union_(Germany)_politicians> .
+#@ <id_1kyrcau_88c_n371zt>
+<Klaus_Töpfer>	rdf:type	<wikicategory_Environment_ministers_of_Germany> .
+#@ <id_1kyrcau_88c_8pv74a>
+<Klaus_Töpfer>	rdf:type	<wikicategory_United_Nations_officials> .
+#@ <id_1czrim3_88c_1qg9z9z>
+<Philipp_Rösler>	rdf:type	<wikicategory_Free_Democratic_Party_(Germany)_politicians> .
+#@ <id_1czrim3_88c_nl43as>
+<Philipp_Rösler>	rdf:type	<wikicategory_Adoptees> .
+#@ <id_1czrim3_88c_vafydj>
+<Philipp_Rösler>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1czrim3_88c_fmybu6>
+<Philipp_Rösler>	rdf:type	<wikicategory_Health_ministers_of_Germany> .
+#@ <id_1czrim3_88c_lligu9>
+<Philipp_Rösler>	rdf:type	<wikicategory_Politicians_of_Vietnamese_descent> .
+#@ <id_75rcea_88c_1l4nn6s>
+<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	rdf:type	<wikicategory_Federal_electoral_districts_in_Mecklenburg-Vorpommern> .
+#@ <id_py5vtt_88c_18wanl3>
+<University_of_Leipzig>	rdf:type	<wikicategory_Educational_institutions_established_in_the_15th_century> .
+#@ <id_1dmdk4j_88c_x9wkqc>
+<West_Germany>	rdf:type	<wikicategory_Borders_of_Germany> .
+#@ <id_1dmdk4j_88c_2o3jfe>
+<West_Germany>	rdf:type	<wikicategory_Divided_regions> .
+#@ <id_1p52ns4_88c_16n2ezf>
+<Achille_Peretti>	rdf:type	<wikicategory_French_politicians> .
+#@ <id_1wkzd0h_88c_gx06zz>
+<Albert_Pintat>	rdf:type	<wikicategory_Government_ministers_of_Andorra> .
+#@ <id_s193uj_88c_a942ok>
+<Antoni_Martí>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_s193uj_88c_vafydj>
+<Antoni_Martí>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_14lrmcq_88c_dqcrbi>
+<Carla_Bruni>	rdf:type	<wikicategory_Italian-language_singers> .
+#@ <id_14lrmcq_88c_1dkz74o>
+<Carla_Bruni>	rdf:type	<wikicategory_French_female_singers> .
+#@ <id_14lrmcq_88c_1yg0nhk>
+<Carla_Bruni>	rdf:type	<wikicategory_Italian_emigrants_to_France> .
+#@ <id_14lrmcq_88c_8ndg59>
+<Carla_Bruni>	rdf:type	<wordnet_first_lady_110092880> .
+#@ <id_14lrmcq_88c_jlagzt>
+<Carla_Bruni>	rdf:type	<wikicategory_Audiogram_artists> .
+#@ <id_14lrmcq_88c_1qll9rm>
+<Carla_Bruni>	rdf:type	<wikicategory_French-language_singers> .
+#@ <id_14lrmcq_88c_116hfj2>
+<Carla_Bruni>	rdf:type	<wikicategory_English-language_singers> .
+#@ <id_14lrmcq_88c_lmeex2>
+<Carla_Bruni>	rdf:type	<wikicategory_Naturalized_citizens_of_France> .
+#@ <id_4h2ou9_88c_vafydj>
+<Cécilia_Attias>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1dmj8jj_88c_a942ok>
+<Christian_Frémont>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_1dmj8jj_88c_vafydj>
+<Christian_Frémont>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1dmj8jj_88c_16n2ezf>
+<Christian_Frémont>	rdf:type	<wikicategory_French_politicians> .
+#@ <id_5mn6i1_88c_1ns3dis>
+<Daniel_Vaillant>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_sb8eld_88c_h3sf4d>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_French_diplomats> .
+#@ <id_sb8eld_88c_100mj38>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_Alumni_of_the_École_Nationale_d'Administration> .
+#@ <id_sb8eld_88c_wktbk1>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_Prime_Ministers_of_France> .
+#@ <id_sb8eld_88c_1cier9x>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_Lycée_Français_de_New_York_alumni> .
+#@ <id_sb8eld_88c_18ltz3n>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_French_interior_ministers> .
+#@ <id_sb8eld_88c_1ommf1z>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_Alumni_of_Sciences_Po> .
+#@ <id_sb8eld_88c_158097z>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_French_Foreign_Ministers> .
+#@ <id_sb8eld_88c_1ns3dis>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_sb8eld_88c_npp1zr>
+<Dominique_de_Villepin>	rdf:type	<wikicategory_United_Republic_politicians> .
+#@ <id_18ttf26_88c_16n2ezf>
+<Emmanuelle_Mignon>	rdf:type	<wikicategory_French_politicians> .
+#@ <id_18ttf26_88c_l9usos>
+<Emmanuelle_Mignon>	rdf:type	<wordnet_governor_110140314> .
+#@ <id_1qrqo30_88c_100mj38>
+<Édouard_Balladur>	rdf:type	<wikicategory_Alumni_of_the_École_Nationale_d'Administration> .
+#@ <id_1qrqo30_88c_wktbk1>
+<Édouard_Balladur>	rdf:type	<wikicategory_Prime_Ministers_of_France> .
+#@ <id_1qrqo30_88c_1vmfvko>
+<Édouard_Balladur>	rdf:type	<wikicategory_French_economists> .
+#@ <id_1qrqo30_88c_1ommf1z>
+<Édouard_Balladur>	rdf:type	<wikicategory_Alumni_of_Sciences_Po> .
+#@ <id_1qrqo30_88c_1ns3dis>
+<Édouard_Balladur>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_hchqjy_88c_1x95yav>
+<Élysée_Palace>	rdf:type	<wordnet_building_102913152> .
+#@ <id_hchqjy_88c_65qi7q>
+<Élysée_Palace>	rdf:type	<wikicategory_Palaces_in_Paris> .
+#@ <id_hchqjy_88c_139hjgx>
+<Élysée_Palace>	rdf:type	<wikicategory_Presidential_palaces> .
+#@ <id_1yni7tb_88c_1ns3dis>
+<Francis_Mer>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_cfajyt_88c_1tko63i>
+<François_Baroin>	rdf:type	<wikicategory_Government_spokespersons_of_France> .
+#@ <id_cfajyt_88c_18ltz3n>
+<François_Baroin>	rdf:type	<wikicategory_French_interior_ministers> .
+#@ <id_cfajyt_88c_osovrv>
+<François_Baroin>	rdf:type	<wikicategory_Mayors_of_Troyes> .
+#@ <id_cfajyt_88c_1nkhi5z>
+<François_Baroin>	rdf:type	<wikicategory_French_Ministers_of_Finance> .
+#@ <id_cfajyt_88c_vafydj>
+<François_Baroin>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_cfajyt_88c_1ns3dis>
+<François_Baroin>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_cfajyt_88c_9edalt>
+<François_Baroin>	rdf:type	<wikicategory_21st-century_French_politicians> .
+#@ <id_cfajyt_88c_pt2m1n>
+<François_Baroin>	rdf:type	<wikicategory_French_lawyers> .
+#@ <id_efriae_88c_wktbk1>
+<François_Fillon>	rdf:type	<wikicategory_Prime_Ministers_of_France> .
+#@ <id_efriae_88c_a942ok>
+<François_Fillon>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_efriae_88c_vafydj>
+<François_Fillon>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_efriae_88c_1ns3dis>
+<François_Fillon>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_efriae_88c_pt2m1n>
+<François_Fillon>	rdf:type	<wikicategory_French_lawyers> .
+#@ <id_15kw2wg_88c_100mj38>
+<François_d'Aubert>	rdf:type	<wikicategory_Alumni_of_the_École_Nationale_d'Administration> .
+#@ <id_15kw2wg_88c_17qoll4>
+<François_d'Aubert>	rdf:type	<wikicategory_French_Ministers_of_Budget> .
+#@ <id_15kw2wg_88c_1ns3dis>
+<François_d'Aubert>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_15kw2wg_88c_1j4ha1d>
+<François_d'Aubert>	rdf:type	<wikicategory_Alumni_of_HEC_School_of_Management> .
+#@ <id_1fvzpek_88c_19td829>
+<French_Fourth_Republic>	rdf:type	<wikicategory_Numbered_republics> .
+#@ <id_1fvzpek_88c_a9q66y>
+<French_Fourth_Republic>	rdf:type	<wikicategory_Former_republics> .
+#@ <id_pq3wku_88c_100mj38>
+<Hervé_Gaymard>	rdf:type	<wikicategory_Alumni_of_the_École_Nationale_d'Administration> .
+#@ <id_pq3wku_88c_1ommf1z>
+<Hervé_Gaymard>	rdf:type	<wikicategory_Alumni_of_Sciences_Po> .
+#@ <id_pq3wku_88c_1nkhi5z>
+<Hervé_Gaymard>	rdf:type	<wikicategory_French_Ministers_of_Finance> .
+#@ <id_pq3wku_88c_9edalt>
+<Hervé_Gaymard>	rdf:type	<wikicategory_21st-century_French_politicians> .
+#@ <id_jfqfk4_88c_1tj1rla>
+<Institut_d'Études_Politiques_de_Paris>	rdf:type	<wikicategory_Educational_institutions_established_in_1872> .
+#@ <id_jfqfk4_88c_65jajz>
+<Institut_d'Études_Politiques_de_Paris>	rdf:type	<wikicategory_Schools_of_international_relations> .
+#@ <id_1ilv35d_88c_1woxq0w>
+<Jacques_Chirac>	rdf:type	<wikicategory_Ig_Nobel_Prize_winners> .
+#@ <id_1ilv35d_88c_100mj38>
+<Jacques_Chirac>	rdf:type	<wikicategory_Alumni_of_the_École_Nationale_d'Administration> .
+#@ <id_1ilv35d_88c_1l0w4z2>
+<Jacques_Chirac>	rdf:type	<wikicategory_Officers_of_the_National_Order_of_Quebec> .
+#@ <id_1ilv35d_88c_wktbk1>
+<Jacques_Chirac>	rdf:type	<wikicategory_Prime_Ministers_of_France> .
+#@ <id_1ilv35d_88c_1cuj8va>
+<Jacques_Chirac>	rdf:type	<wikicategory_Mayors_of_Paris> .
+#@ <id_1ilv35d_88c_k0ue0m>
+<Jacques_Chirac>	rdf:type	<wikicategory_Lycée_Louis-le-Grand_alumni> .
+#@ <id_1ilv35d_88c_1ommf1z>
+<Jacques_Chirac>	rdf:type	<wikicategory_Alumni_of_Sciences_Po> .
+#@ <id_1ilv35d_88c_1n9jl9x>
+<Jacques_Chirac>	rdf:type	<wikicategory_Harvard_University_alumni> .
+#@ <id_1ilv35d_88c_1mq441s>
+<Jacques_Chirac>	rdf:type	<wikicategory_Lycée_Carnot_alumni> .
+#@ <id_1ilv35d_88c_1toa0yz>
+<Jacques_Chirac>	rdf:type	<wikicategory_French_Army_officers> .
+#@ <id_1ilv35d_88c_1ns3dis>
+<Jacques_Chirac>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_1ilv35d_88c_1ld2pje>
+<Jacques_Chirac>	rdf:type	<wikicategory_Attempted_assassination_survivors> .
+#@ <id_1ilv35d_88c_16n2ezf>
+<Jacques_Chirac>	rdf:type	<wikicategory_French_politicians> .
+#@ <id_1ilv35d_88c_1l73yi3>
+<Jacques_Chirac>	rdf:type	<wikicategory_Knights_of_the_Order_of_the_Black_Star> .
+#@ <id_1ilv35d_88c_ngcj9j>
+<Jacques_Chirac>	rdf:type	<wikicategory_Stroke_survivors> .
+#@ <id_1ilv35d_88c_1b1vdsb>
+<Jacques_Chirac>	rdf:type	<wikicategory_French_politicians_convicted_of_crimes> .
+#@ <id_64w4aa_88c_19ykfcw>
+<Jaume_Bartumeu>	rdf:type	<wikicategory_Social_Democratic_Party_(Andorra)_politicians> .
+#@ <id_64w4aa_88c_yxmali>
+<Jaume_Bartumeu>	rdf:type	<wikicategory_Andorran_lawyers> .
+#@ <id_64w4aa_88c_vafydj>
+<Jaume_Bartumeu>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_7rtptc_88c_1qas0ff>
+<Jean_Sarkozy>	rdf:type	<wikicategory_Lycée_Pasteur_alumni> .
+#@ <id_7rtptc_88c_1p4k65y>
+<Jean_Sarkozy>	rdf:type	<wikicategory_Children_of_national_leaders> .
+#@ <id_7rtptc_88c_1ns3dis>
+<Jean_Sarkozy>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
+#@ <id_ppnh9i_88c_1l0w4z2>
+<Jean-Pierre_Raffarin>	rdf:type	<wikicategory_Officers_of_the_National_Order_of_Quebec> .
+#@ <id_ppnh9i_88c_wktbk1>
+<Jean-Pierre_Raffarin>	rdf:type	<wikicategory_Prime_Ministers_of_France> .
+#@ <id_ppnh9i_88c_pt2m1n>
+<Jean-Pierre_Raffarin>	rdf:type	<wikicategory_French_lawyers> .
+#@ <id_5iwrwt_88c_19l7p2h>
+<Joan_Enric_Vives_Sicília>	rdf:type	<wikicategory_21st-century_Roman_Catholic_bishops> .
+#@ <id_5iwrwt_88c_a942ok>
+<Joan_Enric_Vives_Sicília>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_5iwrwt_88c_raac6s>
+<Joan_Enric_Vives_Sicília>	rdf:type	<wikicategory_Roman_Catholic_monarchs> .
+#@ <id_5iwrwt_88c_1g8p0tl>
+<Joan_Enric_Vives_Sicília>	rdf:type	<wikicategory_Bishops_of_Urgell> .
+#@ <id_5iwrwt_88c_vafydj>
+<Joan_Enric_Vives_Sicília>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_5iwrwt_88c_yl56oq>
+<Joan_Enric_Vives_Sicília>	rdf:type	<wikicategory_Reigning_monarchs> .
+#@ <id_1dwhis1_88c_13ri3tc>
+<Michel_Charasse>	rdf:type	<wikicategory_French_Senators_of_the_Fifth_Republic> .
+#@ <id_1dwhis1_88c_16n2ezf>
+<Michel_Charasse>	rdf:type	<wikicategory_French_politicians> .
+#@ <id_hrf5tl_88c_i3gdzy>
+<Minister_of_the_Interior_(France)>	rdf:type	<wikicategory_Government_ministries_of_France> .
+#@ <id_1tccrte_88c_156ey2p>
+<Neuilly-sur-Seine>	rdf:type	<wikicategory_Communes_of_Hauts-de-Seine> .
+#@ <id_vkf2e7_88c_17qoll4>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_French_Ministers_of_Budget> .
+#@ <id_vkf2e7_88c_185bzk8>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_Commanders_of_the_Order_of_Leopold_(Belgium)> .
+#@ <id_vkf2e7_88c_a942ok>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_vkf2e7_88c_1tko63i>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_Government_spokespersons_of_France> .
+#@ <id_vkf2e7_88c_18ltz3n>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_French_interior_ministers> .
+#@ <id_vkf2e7_88c_1ommf1z>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_Alumni_of_Sciences_Po> .
+#@ <id_vkf2e7_88c_raac6s>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_Roman_Catholic_monarchs> .
+#@ <id_vkf2e7_88c_vafydj>
+<Nicolas_Sarkozy>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_vkf2e7_88c_pt2m1n>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_French_lawyers> .
+#@ <id_vkf2e7_88c_yl56oq>
+<Nicolas_Sarkozy>	rdf:type	<wikicategory_Reigning_monarchs> .
+#@ <id_17gzuo3_88c_1tj1sb6>
+<Paris_West_University_Nanterre_La_Défense>	rdf:type	<wikicategory_Educational_institutions_established_in_1964> .
+#@ <id_1isx97r_88c_19ykfcw>
+<Pere_López_Agràs>	rdf:type	<wikicategory_Social_Democratic_Party_(Andorra)_politicians> .
+#@ <id_1isx97r_88c_vafydj>
+<Pere_López_Agràs>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_13n9nse_88c_16n2ezf>
+<Philippe_Massoni>	rdf:type	<wikicategory_French_politicians> .
+#@ <id_13n9nse_88c_l9usos>
+<Philippe_Massoni>	rdf:type	<wordnet_governor_110140314> .
+#@ <id_13n9nse_88c_148cv23>
+<Philippe_Massoni>	rdf:type	<wikicategory_French_police_chiefs> .
+#@ <id_1snxdw5_88c_95tk5o>
+<Rally_for_the_Republic>	rdf:type	<wikicategory_Political_parties_established_in_1976> .
+#@ <id_1snxdw5_88c_1qe20nc>
+<Rally_for_the_Republic>	rdf:type	<wikicategory_Right-wing_parties_in_France> .
+#@ <id_1snxdw5_88c_17l09jn>
+<Rally_for_the_Republic>	rdf:type	<wikicategory_Political_parties_disestablished_in_2002> .
+#@ <id_1snxdw5_88c_1y1zid8>
+<Rally_for_the_Republic>	rdf:type	<wordnet_party_108256968> .
+#@ <id_1snxdw5_88c_k67yjw>
+<Rally_for_the_Republic>	rdf:type	<wikicategory_Political_parties_of_the_Fifth_Republic> .
+#@ <id_1as8dix_88c_1y1zid8>
+<Union_for_a_Popular_Movement>	rdf:type	<wordnet_party_108256968> .
+#@ <id_1as8dix_88c_95u0at>
+<Union_for_a_Popular_Movement>	rdf:type	<wikicategory_Political_parties_established_in_2002> .
+#@ <id_1as8dix_88c_1w61njb>
+<Union_for_a_Popular_Movement>	rdf:type	<wikicategory_International_Democrat_Union_member_parties> .
+#@ <id_j2lde8_88c_h2l3bj>
+<Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Government_ministers_of_Spain> .
+#@ <id_j2lde8_88c_y30m22>
+<Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Cantabrian_politicians> .
+#@ <id_j2lde8_88c_16m1wj6>
+<Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Spanish_chemists> .
+#@ <id_j2lde8_88c_19olslq>
+<Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Academics_of_the_Complutense_University_of_Madrid> .
+#@ <id_j2lde8_88c_vafydj>
+<Alfredo_Pérez_Rubalcaba>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_j2lde8_88c_7r9uo7>
+<Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Spanish_Socialist_Workers'_Party_politicians> .
+#@ <id_j2lde8_88c_1vgy2r2>
+<Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Leaders_of_political_parties_in_Spain> .
+#@ <id_w2djwz_88c_15zg5an>
+<Congress_of_Deputies_(Spain)>	rdf:type	<wordnet_legislature_108163273> .
+#@ <id_krjrbp_88c_h2l3bj>
+<Elena_Salgado>	rdf:type	<wikicategory_Government_ministers_of_Spain> .
+#@ <id_krjrbp_88c_1ymxe2m>
+<Elena_Salgado>	rdf:type	<wikicategory_Spanish_women_in_politics> .
+#@ <id_krjrbp_88c_1a7bj6z>
+<Elena_Salgado>	rdf:type	<wikicategory_Galician_politicians> .
+#@ <id_krjrbp_88c_vafydj>
+<Elena_Salgado>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_krjrbp_88c_7r9uo7>
+<Elena_Salgado>	rdf:type	<wikicategory_Spanish_Socialist_Workers'_Party_politicians> .
+#@ <id_krjrbp_88c_10t17ti>
+<Elena_Salgado>	rdf:type	<wikicategory_Spanish_Ministers_of_Economy_and_Finance> .
+#@ <id_1u5uyhb_88c_1wyt8jh>
+<Francoist_Spain>	rdf:type	<wikicategory_Former_monarchies_of_Europe> .
+#@ <id_1m0lrpx_88c_w2ky07>
+<Joaquín_Almunia>	rdf:type	<wikicategory_Spanish_European_Commissioners> .
+#@ <id_1m0lrpx_88c_cue3b>
+<Joaquín_Almunia>	rdf:type	<wikicategory_Alumni_of_the_University_of_Deusto> .
+#@ <id_1m0lrpx_88c_vafydj>
+<Joaquín_Almunia>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1m0lrpx_88c_7r9uo7>
+<Joaquín_Almunia>	rdf:type	<wikicategory_Spanish_Socialist_Workers'_Party_politicians> .
+#@ <id_1m0lrpx_88c_1vgy2r2>
+<Joaquín_Almunia>	rdf:type	<wikicategory_Leaders_of_political_parties_in_Spain> .
+#@ <id_1ng0idk_88c_lvbz37>
+<José_Luis_Rodríguez_Zapatero>	rdf:type	<wikicategory_Prime_Ministers_of_Spain> .
+#@ <id_1ng0idk_88c_vafydj>
+<José_Luis_Rodríguez_Zapatero>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1ng0idk_88c_7r9uo7>
+<José_Luis_Rodríguez_Zapatero>	rdf:type	<wikicategory_Spanish_Socialist_Workers'_Party_politicians> .
+#@ <id_1ng0idk_88c_1vgy2r2>
+<José_Luis_Rodríguez_Zapatero>	rdf:type	<wikicategory_Leaders_of_political_parties_in_Spain> .
+#@ <id_1ng0idk_88c_1sj5ms5>
+<José_Luis_Rodríguez_Zapatero>	rdf:type	<wikicategory_Spanish_agnostics> .
+#@ <id_lb8qid_88c_lvbz37>
+<José_María_Aznar>	rdf:type	<wikicategory_Prime_Ministers_of_Spain> .
+#@ <id_lb8qid_88c_6y7gp8>
+<José_María_Aznar>	rdf:type	<wikicategory_People's_Party_(Spain)_politicians> .
+#@ <id_lb8qid_88c_vafydj>
+<José_María_Aznar>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_lb8qid_88c_1ld2pje>
+<José_María_Aznar>	rdf:type	<wikicategory_Attempted_assassination_survivors> .
+#@ <id_lb8qid_88c_1vgy2r2>
+<José_María_Aznar>	rdf:type	<wikicategory_Leaders_of_political_parties_in_Spain> .
+#@ <id_1cx2d3n_88c_1slwphy>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Knights_of_the_Order_of_Alcántara> .
+#@ <id_1cx2d3n_88c_bhcs0d>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Spanish_monarchs> .
+#@ <id_1cx2d3n_88c_a942ok>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_1cx2d3n_88c_1ookixp>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Knights_of_the_Order_of_the_Most_Holy_Annunciation> .
+#@ <id_1cx2d3n_88c_11b0oqa>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Knights_of_the_Golden_Fleece> .
+#@ <id_1cx2d3n_88c_9dadjx>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Knights_of_the_Order_of_the_Rajamitrabhorn> .
+#@ <id_1cx2d3n_88c_1d9xpkf>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Knights_of_the_Order_of_Saint_Januarius> .
+#@ <id_1cx2d3n_88c_18l3df6>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Knights_of_Santiago> .
+#@ <id_1cx2d3n_88c_1p71jxz>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Sailors_at_the_1972_Summer_Olympics> .
+#@ <id_1cx2d3n_88c_raac6s>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Roman_Catholic_monarchs> .
+#@ <id_1cx2d3n_88c_g93t0m>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Claimant_Kings_of_Jerusalem> .
+#@ <id_1cx2d3n_88c_5qhvi5>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Grand_Masters_of_the_Order_of_the_Golden_Fleece> .
+#@ <id_1cx2d3n_88c_1wamvy5>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Knights_of_the_Elephant> .
+#@ <id_1cx2d3n_88c_1nv2r8n>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Knights_of_Malta> .
+#@ <id_1cx2d3n_88c_yl56oq>
+<Juan_Carlos_I_of_Spain>	rdf:type	<wikicategory_Reigning_monarchs> .
+#@ <id_1lrkwvu_88c_9fidh8>
+<León_(Spanish_Congress_Electoral_District)>	rdf:type	<wikicategory_Electoral_Districts_of_the_Congress_of_Deputies_(Spain)> .
+#@ <id_ngfbkz_88c_9fidh8>
+<Madrid_(Spanish_Congress_Electoral_District)>	rdf:type	<wikicategory_Electoral_Districts_of_the_Congress_of_Deputies_(Spain)> .
+#@ <id_45ua65_88c_h2l3bj>
+<Mariano_Rajoy>	rdf:type	<wikicategory_Government_ministers_of_Spain> .
+#@ <id_45ua65_88c_a942ok>
+<Mariano_Rajoy>	rdf:type	<wikicategory_Current_national_leaders> .
+#@ <id_45ua65_88c_lvbz37>
+<Mariano_Rajoy>	rdf:type	<wikicategory_Prime_Ministers_of_Spain> .
+#@ <id_45ua65_88c_1a7bj6z>
+<Mariano_Rajoy>	rdf:type	<wikicategory_Galician_politicians> .
+#@ <id_45ua65_88c_6y7gp8>
+<Mariano_Rajoy>	rdf:type	<wikicategory_People's_Party_(Spain)_politicians> .
+#@ <id_45ua65_88c_vafydj>
+<Mariano_Rajoy>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_45ua65_88c_1vgy2r2>
+<Mariano_Rajoy>	rdf:type	<wikicategory_Leaders_of_political_parties_in_Spain> .
+#@ <id_1vmvigz_88c_h2l3bj>
+<María_Teresa_Fernández_de_la_Vega>	rdf:type	<wikicategory_Government_ministers_of_Spain> .
+#@ <id_1vmvigz_88c_1ymxe2m>
+<María_Teresa_Fernández_de_la_Vega>	rdf:type	<wikicategory_Spanish_women_in_politics> .
+#@ <id_1vmvigz_88c_1nw1okc>
+<María_Teresa_Fernández_de_la_Vega>	rdf:type	<wikicategory_Valencian_politicians> .
+#@ <id_1vmvigz_88c_vafydj>
+<María_Teresa_Fernández_de_la_Vega>	rdf:type	<wordnet_officeholder_110371450> .
+#@ <id_1vmvigz_88c_7r9uo7>
+<María_Teresa_Fernández_de_la_Vega>	rdf:type	<wikicategory_Spanish_Socialist_Workers'_Party_politicians> .
+#@ <id_gbjwix_88c_rbwstv>
+<Sonsoles_Espinosa>	rdf:type	<wikicategory_Spanish_lawyers> .
+#@ <id_gbjwix_88c_17k0muj>
+<Sonsoles_Espinosa>	rdf:type	<wikicategory_Spanish_sopranos> .
+#@ <id_1i5m33a_88c_mbsbk5>
+<Spanish_Socialist_Workers'_Party>	rdf:type	<wikicategory_Social_democratic_parties> .
+#@ <id_1i5m33a_88c_1y1zid8>
+<Spanish_Socialist_Workers'_Party>	rdf:type	<wordnet_party_108256968> .
+#@ <id_1i5m33a_88c_95tjf2>
+<Spanish_Socialist_Workers'_Party>	rdf:type	<wikicategory_Political_parties_established_in_1879> .
+#@ <id_1i5m33a_88c_1kint4t>
+<Spanish_Socialist_Workers'_Party>	rdf:type	<wikicategory_Political_parties_in_Spain> .
+#@ <id_cacb9n_88c_1tj1sc6>
+<University_of_León>	rdf:type	<wikicategory_Educational_institutions_established_in_1979> .
+#@ <id_13dzdeu_88c_15xagoj>
+<Valladolid>	rdf:type	<wikicategory_Municipalities_in_the_Province_of_Valladolid> .
+#@ <id_ziluom_88c_ltohsj>
+<Ulm>	rdf:type	<wordnet_city_108524735> .
+#@ <id_uhbc9d_88c_18z0oh1>
+<Nobel_Prize_in_Physics>	rdf:type	<wordnet_award_106696483> .
+#@ <id_1fk0j4l_88c_sizq73>
+<Paul_McCartney>	rdf:type	<wikicategory_The_Beatles_members> .
+#@ <id_ysjl8s_88c_sizq73>
+<John_Lennon>	rdf:type	<wikicategory_The_Beatles_members> .
+#@ <id_y5lm3k_88c_sizq73>
+<Ringo_Starr>	rdf:type	<wikicategory_The_Beatles_members> .
+#@ <id_1fo6x5u_88c_sizq73>
+<George_Harrison>	rdf:type	<wikicategory_The_Beatles_members> .
+#@ <id_7t65wn_88c_1y6jbs5>
+<hasExternalWikipediaLinkTo>	rdf:type	<yagoExtendedRelation> .
+#@ <id_pgsrss_88c_1y6jbs5>
+<hasAnchorText>	rdf:type	<yagoExtendedRelation> .
+#@ <id_5kn8ir_88c_1y6jbs5>
+<hasContextPrecedingAnchor>	rdf:type	<yagoExtendedRelation> .
+#@ <id_1bv6gp6_88c_1y6jbs5>
+<hasContextSucceedingAnchor>	rdf:type	<yagoExtendedRelation> .
+#@ <id_1skpjkr_88c_1y6jbs5>
+<hasWikipediaCategory>	rdf:type	<yagoExtendedRelation> .
+#@ <id_3ydllr_88c_1y6jbs5>
+<hasWikipediaAnchorText>	rdf:type	<yagoExtendedRelation> .
+#@ <id_1aldj5r_88c_1y6jbs5>
+<hasWikipediaArticleLength>	rdf:type	<yagoExtendedRelation> .
+#@ <id_ld8wan_88c_1y6jbs5>
+<hasWikipediaAbstract>	rdf:type	<yagoExtendedRelation> .
+#@ <id_d6gucc_88c_1y6jbs5>
+<hasNumberOfWikipediaLinks>	rdf:type	<yagoExtendedRelation> .
+#@ <id_1g9fj1z_88c_1y6jbs5>
+<hasCitationTitle>	rdf:type	<yagoExtendedRelation> .
+#@ <id_1h9fp63_88c_1y6jbs5>
+<hasTitleText>	rdf:type	<yagoExtendedRelation> .
+#@ <id_zkjp59_88c_860aj6>
+<male>	rdf:type	<wordnet_sex_105006898> .
+#@ <id_edkbbg_88c_860aj6>
+<female>	rdf:type	<wordnet_sex_105006898> .
+#@ <id_10ma71m_88c_zq43us>
+<Earth>	rdf:type	<yagoGeoEntity> .
+#@ <id_1vwnhy2_88c_zq43us>
+<Africa>	rdf:type	<yagoGeoEntity> .
+#@ <id_u3fjyj_88c_zq43us>
+<Antartica>	rdf:type	<yagoGeoEntity> .
+#@ <id_zjryzu_88c_zq43us>
+<Asia>	rdf:type	<yagoGeoEntity> .
+#@ <id_1y1316q_88c_zq43us>
+<Europe>	rdf:type	<yagoGeoEntity> .
+#@ <id_x780pg_88c_zq43us>
+<North_America>	rdf:type	<yagoGeoEntity> .
+#@ <id_zzrlva_88c_zq43us>
+<Oceania>	rdf:type	<yagoGeoEntity> .
+#@ <id_1pug6zg_88c_zq43us>
+<South_America>	rdf:type	<yagoGeoEntity> .
+#@ <id_1ho7065_88c_lvxk21>
+rdfs:Class	rdf:type	rdfs:Resource .
+#@ <id_q9k3wp_88c_lvxk21>
+rdf:Statement	rdf:type	rdfs:Resource .
+#@ <id_1kkdc1n_88c_lvxk21>
+rdf:Property	rdf:type	rdfs:Resource .
+#@ <id_1jiutt0_88c_1kkdc1n>
+rdfs:comment	rdf:type	rdf:Property .
+#@ <id_88cvi8_88c_1kkdc1n>
+rdf:type	rdf:type	rdf:Property .
+#@ <id_88cvi8_88c_ezd9jb>
+rdf:type	rdf:type	<permanentRelationToSubject> .
+#@ <id_1m6z6qy_88c_1kkdc1n>
+rdfs:subClassOf	rdf:type	rdf:Property .
+#@ <id_1m6z6qy_88c_13ju7o1>
+rdfs:subClassOf	rdf:type	<yagoTransitiveRelation> .
+#@ <id_19ss2zj_88c_x0pmg8>
+rdfs:domain	rdf:type	<yagoFunction> .
+#@ <id_1idukjm_88c_x0pmg8>
+rdfs:range	rdf:type	<yagoFunction> .
+#@ <id_1pg7xv5_88c_1kkdc1n>
+rdfs:subPropertyOf	rdf:type	rdf:Property .
+#@ <id_1pg7xv5_88c_13ju7o1>
+rdfs:subPropertyOf	rdf:type	<yagoTransitiveRelation> .
+#@ <id_1wv06v1_88c_1hnalex>
+<_hasTypeCheckPattern>	rdf:type	<yagoInternalRelation> .
+#@ <id_1omrgzo_88c_1kkdc1n>
+<hasConfidence>	rdf:type	rdf:Property .
+#@ <id_1coonlf_88c_x0pmg8>
+<occursSince>	rdf:type	<yagoFunction> .
+#@ <id_1cpvkbb_88c_x0pmg8>
+<occursUntil>	rdf:type	<yagoFunction> .
+#@ <id_tyts95_88c_x0pmg8>
+<startsExistingOnDate>	rdf:type	<yagoFunction> .
+#@ <id_1r5imr4_88c_x0pmg8>
+<endsExistingOnDate>	rdf:type	<yagoFunction> .
+#@ <id_qkxqya_88c_1kkdc1n>
+<subjectStartRelation>	rdf:type	rdf:Property .
+#@ <id_1wbuwiz_88c_1kkdc1n>
+<subjectEndRelation>	rdf:type	rdf:Property .
+#@ <id_zjmw73_88c_1kkdc1n>
+<objectStartRelation>	rdf:type	rdf:Property .
+#@ <id_1il9ovs_88c_1kkdc1n>
+<objectEndRelation>	rdf:type	rdf:Property .
+#@ <id_ezd9jb_88c_1kkdc1n>
+<permanentRelationToSubject>	rdf:type	rdf:Property .
+#@ <id_1af5cas_88c_1kkdc1n>
+<permanentRelationToObject>	rdf:type	rdf:Property .
+#@ <id_z7axal_88c_x0pmg8>
+<isLocatedIn>	rdf:type	<yagoFunction> .
+#@ <id_z7axal_88c_13ju7o1>
+<isLocatedIn>	rdf:type	<yagoTransitiveRelation> .
+#@ <id_1cmkuj0_88c_1kkdc1n>
+<occursIn>	rdf:type	rdf:Property .
+#@ <id_1u9bm82_88c_x0pmg8>
+<placedIn>	rdf:type	<yagoFunction> .
+#@ <id_1upx82k_88c_1kkdc1n>
+<_timeToLocation>	rdf:type	rdf:Property .
+#@ <id_j4tc24_88c_1kkdc1n>
+<relationLocatedByObject>	rdf:type	rdf:Property .
+#@ <id_dtzovp_88c_1kkdc1n>
+<hasContext>	rdf:type	rdf:Property .
+#@ <id_1b1ayjg_88c_x0pmg8>
+<hasImdb>	rdf:type	<yagoFunction> .
+#@ <id_o47u9e_88c_x0pmg8>
+<hasWikipediaUrl>	rdf:type	<yagoFunction> .
+#@ <id_11550iq_88c_b3paj4>
+<extractionSource>	rdf:type	rdfs:Property .
+#@ <id_1gu7pd5_88c_b3paj4>
+<extractionTechnique>	rdf:type	rdfs:Property .
+#@ <id_nyggzh_88c_x0pmg8>
+<isPreferredMeaningOf>	rdf:type	<yagoFunction> .
+#@ <id_nyggzh_88c_1af5cas>
+<isPreferredMeaningOf>	rdf:type	<permanentRelationToObject> .
+#@ <id_1szyp5f_88c_x0pmg8>
+skos:prefLabel	rdf:type	<yagoFunction> .
+#@ <id_1szyp5f_88c_ezd9jb>
+skos:prefLabel	rdf:type	<permanentRelationToSubject> .
+#@ <id_16bk6bz_88c_x0pmg8>
+<hasSynsetId>	rdf:type	<yagoFunction> .
+#@ <id_czss2q_88c_x0pmg8>
+<hasGeonamesClassId>	rdf:type	<yagoFunction> .
+#@ <id_1gfsnj_88c_x0pmg8>
+<hasGeonamesEntityId>	rdf:type	<yagoFunction> .
+#@ <id_1aum7sf_88c_1kkdc1n>
+<hasThreeLetterLanguageCode>	rdf:type	rdf:Property .
+#@ <id_k0bmzj_88c_1kkdc1n>
+<hasLanguageCode>	rdf:type	rdf:Property .
+#@ <id_11h2nps_88c_x0pmg8>
+<hasGloss>	rdf:type	<yagoFunction> .
+#@ <id_1iajk1l_88c_1kkdc1n>
+rdfs:label	rdf:type	rdf:Property .
+#@ <id_1iajk1l_88c_1af5cas>
+rdfs:label	rdf:type	<permanentRelationToObject> .
+#@ <id_p3m12z_88c_x0pmg8>
+<hasGender>	rdf:type	<yagoFunction> .
+#@ <id_garqnq_88c_1kkdc1n>
+<actedIn>	rdf:type	rdf:Property .
+#@ <id_oylqv_88c_x0pmg8>
+<wasBornIn>	rdf:type	<yagoFunction> .
+#@ <id_oylqv_88c_qkxqya>
+<wasBornIn>	rdf:type	<subjectStartRelation> .
+#@ <id_oylqv_88c_j4tc24>
+<wasBornIn>	rdf:type	<relationLocatedByObject> .
+#@ <id_1xko9lr_88c_x0pmg8>
+<wasBornOnDate>	rdf:type	<yagoFunction> .
+#@ <id_1gixip4_88c_zjmw73>
+<created>	rdf:type	<objectStartRelation> .
+#@ <id_gcl2vk_88c_1kkdc1n>
+<isKnownFor>	rdf:type	rdf:Property .
+#@ <id_dhj6eh_88c_x0pmg8>
+<diedIn>	rdf:type	<yagoFunction> .
+#@ <id_dhj6eh_88c_1wbuwiz>
+<diedIn>	rdf:type	<subjectEndRelation> .
+#@ <id_dhj6eh_88c_j4tc24>
+<diedIn>	rdf:type	<relationLocatedByObject> .
+#@ <id_1ughn3l_88c_x0pmg8>
+<diedOnDate>	rdf:type	<yagoFunction> .
+#@ <id_13l1l54_88c_zjmw73>
+<directed>	rdf:type	<objectStartRelation> .
+#@ <id_dvwqax_88c_1kkdc1n>
+<edited>	rdf:type	rdf:Property .
+#@ <id_1hpv4kp_88c_1kkdc1n>
+<wroteMusicFor>	rdf:type	rdf:Property .
+#@ <id_1o4hiyx_88c_x0pmg8>
+<hasFamilyName>	rdf:type	<yagoFunction> .
+#@ <id_1o4hiyx_88c_ezd9jb>
+<hasFamilyName>	rdf:type	<permanentRelationToSubject> .
+#@ <id_15uj3fy_88c_x0pmg8>
+<hasGivenName>	rdf:type	<yagoFunction> .
+#@ <id_15uj3fy_88c_ezd9jb>
+<hasGivenName>	rdf:type	<permanentRelationToSubject> .
+#@ <id_10x8m9v_88c_x0pmg8>
+<graduatedFrom>	rdf:type	<yagoFunction> .
+#@ <id_10x8m9v_88c_j4tc24>
+<graduatedFrom>	rdf:type	<relationLocatedByObject> .
+#@ <id_1an7e7z_88c_x0pmg8>
+<hasAcademicAdvisor>	rdf:type	<yagoFunction> .
+#@ <id_11essrm_88c_1kkdc1n>
+<hasChild>	rdf:type	rdf:Property .
+#@ <id_ab2jfa_88c_1kkdc1n>
+<hasWonPrize>	rdf:type	rdf:Property .
+#@ <id_1sv8s9q_88c_1kkdc1n>
+<influences>	rdf:type	rdf:Property .
+#@ <id_147tz88_88c_1kkdc1n>
+<isInterestedIn>	rdf:type	rdf:Property .
+#@ <id_1s2g89o_88c_1kkdc1n>
+<isAffiliatedTo>	rdf:type	rdf:Property .
+#@ <id_tjes7p_88c_x0pmg8>
+<isCitizenOf>	rdf:type	<yagoFunction> .
+#@ <id_1c7ng22_88c_1kkdc1n>
+<isLeaderOf>	rdf:type	rdf:Property .
+#@ <id_16xgjd1_88c_1kkdc1n>
+<isMarriedTo>	rdf:type	rdf:Property .
+#@ <id_16xgjd1_88c_1ef6vyb>
+<isMarriedTo>	rdf:type	<yagoSymmetricRelation> .
+#@ <id_12kadu4_88c_1kkdc1n>
+<livesIn>	rdf:type	rdf:Property .
+#@ <id_1oy3fe4_88c_1kkdc1n>
+<hasMusicalRole>	rdf:type	rdf:Property .
+#@ <id_12c8qh7_88c_1kkdc1n>
+<participatedIn>	rdf:type	rdf:Property .
+#@ <id_12c8qh7_88c_j4tc24>
+<participatedIn>	rdf:type	<relationLocatedByObject> .
+#@ <id_14hhlol_88c_x0pmg8>
+<isPoliticianOf>	rdf:type	<yagoFunction> .
+#@ <id_iwxxfo_88c_zjmw73>
+<produced>	rdf:type	<objectStartRelation> .
+#@ <id_1oqls2d_88c_x0pmg8>
+<worksAt>	rdf:type	<yagoFunction> .
+#@ <id_1oqls2d_88c_j4tc24>
+<worksAt>	rdf:type	<relationLocatedByObject> .
+#@ <id_zklfhp_88c_1kkdc1n>
+<owns>	rdf:type	rdf:Property .
+#@ <id_1n8lvza_88c_x0pmg8>
+<hasLatitude>	rdf:type	<yagoFunction> .
+#@ <id_1n8lvza_88c_ezd9jb>
+<hasLatitude>	rdf:type	<permanentRelationToSubject> .
+#@ <id_jtojzp_88c_x0pmg8>
+<hasLongitude>	rdf:type	<yagoFunction> .
+#@ <id_jtojzp_88c_ezd9jb>
+<hasLongitude>	rdf:type	<permanentRelationToSubject> .
+#@ <id_klquc_88c_x0pmg8>
+<hasGeoCoordinates>	rdf:type	<yagoFunction> .
+#@ <id_klquc_88c_ezd9jb>
+<hasGeoCoordinates>	rdf:type	<permanentRelationToSubject> .
+#@ <id_dhdgq5_88c_1kkdc1n>
+<dealsWith>	rdf:type	rdf:Property .
+#@ <id_dv6erj_88c_1kkdc1n>
+<exports>	rdf:type	rdf:Property .
+#@ <id_1b15ydj_88c_x0pmg8>
+<hasArea>	rdf:type	<yagoFunction> .
+#@ <id_789u9a_88c_x0pmg8>
+<hasCapital>	rdf:type	<yagoFunction> .
+#@ <id_ljefgr_88c_x0pmg8>
+<hasCurrency>	rdf:type	<yagoFunction> .
+#@ <id_afjlna_88c_x0pmg8>
+<hasEconomicGrowth>	rdf:type	<yagoFunction> .
+#@ <id_1f1nget_88c_9gxx22>
+<hasExpenses>	rdf:type	<yagoFunctionInTime> .
+#@ <id_og0e0e_88c_x0pmg8>
+<hasExport>	rdf:type	<yagoFunction> .
+#@ <id_1b19luf_88c_x0pmg8>
+<hasGini>	rdf:type	<yagoFunction> .
+#@ <id_f9jo4z_88c_9gxx22>
+<hasHDI>	rdf:type	<yagoFunctionInTime> .
+#@ <id_q65527_88c_x0pmg8>
+<hasImport>	rdf:type	<yagoFunction> .
+#@ <id_10j5g34_88c_9gxx22>
+<hasInflation>	rdf:type	<yagoFunctionInTime> .
+#@ <id_11kffyr_88c_1kkdc1n>
+<hasMotto>	rdf:type	rdf:Property .
+#@ <id_f9jneh_88c_9gxx22>
+<hasGDP>	rdf:type	<yagoFunctionInTime> .
+#@ <id_l7ia5l_88c_9gxx22>
+<hasNumberOfPeople>	rdf:type	<yagoFunctionInTime> .
+#@ <id_1knx0yl_88c_1kkdc1n>
+<hasOfficialLanguage>	rdf:type	rdf:Property .
+#@ <id_ibw3mp_88c_9gxx22>
+<hasPopulationDensity>	rdf:type	<yagoFunctionInTime> .
+#@ <id_1qp2bbj_88c_x0pmg8>
+<hasPoverty>	rdf:type	<yagoFunction> .
+#@ <id_f9jx82_88c_x0pmg8>
+<hasTLD>	rdf:type	<yagoFunction> .
+#@ <id_lgaadb_88c_9gxx22>
+<hasUnemployment>	rdf:type	<yagoFunctionInTime> .
+#@ <id_yrhdjx_88c_x0pmg8>
+<hasUTCOffset>	rdf:type	<yagoFunction> .
+#@ <id_iceu8x_88c_1kkdc1n>
+<hasWebsite>	rdf:type	rdf:Property .
+#@ <id_1vd9pbi_88c_1kkdc1n>
+<imports>	rdf:type	rdf:Property .
+#@ <id_saedv0_88c_1kkdc1n>
+<hasNeighbor>	rdf:type	rdf:Property .
+#@ <id_siusp8_88c_x0pmg8>
+<wasCreatedOnDate>	rdf:type	<yagoFunction> .
+#@ <id_1qltcvx_88c_x0pmg8>
+<wasDestroyedOnDate>	rdf:type	<yagoFunction> .
+#@ <id_mz0ayn_88c_x0pmg8>
+<hasBudget>	rdf:type	<yagoFunction> .
+#@ <id_1e3xvta_88c_x0pmg8>
+<hasDuration>	rdf:type	<yagoFunction> .
+#@ <id_pkkiu9_88c_x0pmg8>
+<hasHeight>	rdf:type	<yagoFunction> .
+#@ <id_rgu7mo_88c_x0pmg8>
+<hasLength>	rdf:type	<yagoFunction> .
+#@ <id_1b1aefk_88c_x0pmg8>
+<hasISBN>	rdf:type	<yagoFunction> .
+#@ <id_1b1aefk_88c_ezd9jb>
+<hasISBN>	rdf:type	<permanentRelationToSubject> .
+#@ <id_11ltlxm_88c_x0pmg8>
+<hasPages>	rdf:type	<yagoFunction> .
+#@ <id_gaaiw2_88c_x0pmg8>
+<hasRevenue>	rdf:type	<yagoFunction> .
+#@ <id_wo8ur6_88c_x0pmg8>
+<hasWeight>	rdf:type	<yagoFunction> .
+#@ <id_11hf4xb_88c_x0pmg8>
+<hasICD10>	rdf:type	<yagoFunction> .
+#@ <id_11hf4xb_88c_ezd9jb>
+<hasICD10>	rdf:type	<permanentRelationToSubject> .
+#@ <id_evcrba_88c_j4tc24>
+<happenedIn>	rdf:type	<relationLocatedByObject> .
+#@ <id_u5fk5q_88c_x0pmg8>
+<happenedOnDate>	rdf:type	<yagoFunction> .
+#@ <id_1emswlq_88c_x0pmg8>
+<startedOnDate>	rdf:type	<yagoFunction> .
+#@ <id_n3uzd3_88c_x0pmg8>
+<endedOnDate>	rdf:type	<yagoFunction> .
+#@ <id_1qylhzg_88c_x0pmg8>
+<hasGeonamesId>	rdf:type	<yagoFunction> .
+#@ <id_1qylhzg_88c_ezd9jb>
+<hasGeonamesId>	rdf:type	<permanentRelationToSubject> .
+#@ <id_19yw7wy_88c_1kkdc1n>
+<holdsPoliticalPosition>	rdf:type	rdf:Property .
+#@ <id_x77y5o_88c_x0pmg8>
+<hasSuccessor>	rdf:type	<yagoFunction> .
+#@ <id_204qof_88c_x0pmg8>
+<hasPredecessor>	rdf:type	<yagoFunction> .
+#@ <id_1ulnfre_88c_1kkdc1n>
+<playsFor>	rdf:type	rdf:Property .

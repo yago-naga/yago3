@@ -38,7 +38,7 @@ public class Tester {
 
   /** Runs the tester*/
   public static void main(String[] args) throws Exception {
-    Writer w=new FileWriter(new File("c:/fabian/temp/.t.txt"));
+    Writer w=new FileWriter(new File("c:/fabian/temp/yago_test.log"));
     Announce.setWriter(w);
     Announce.doing("Testing YAGO extractors");
     String initFile = args.length == 0 ? "yago.ini" : args[0];

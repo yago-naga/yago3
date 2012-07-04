@@ -298,7 +298,7 @@ public class WikipediaTypeExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new WikipediaTypeExtractor(new File("c:/fabian/temp/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"),
+    new WikipediaTypeExtractor(new File("c:/fabian/temp/phil.xml")).extract(new File("c:/fabian/data/yago2s"),
         "Test on 1 wikipedia article");
   }
 }

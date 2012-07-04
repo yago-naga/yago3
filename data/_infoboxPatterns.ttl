@@ -211,7 +211,6 @@
 "author"	<_infoboxPattern>	<created-> .
 "released"	<_infoboxPattern>	<wasCreatedOnDate> .
 "releasedate"	<_infoboxPattern>	<wasCreatedOnDate> .
-"pages"	<_infoboxPattern>	<hasPages> .
 "runtime"	<_infoboxPattern>	<hasDuration> .
 "duration"	<_infoboxPattern>	<hasDuration> .
 "budget"	<_infoboxPattern>	<hasBudget> .

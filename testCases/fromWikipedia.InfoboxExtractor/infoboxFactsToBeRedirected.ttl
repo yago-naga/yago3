@@ -1,5 +1,10 @@
-# Test of YAGO2s
-# Facts extracted from the Wikipedia infoboxes - still to be redirect-checked and type-checked
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# 
+# 
+# Facts extracted from the Wikipedia infoboxes, redirects to be resolved
 # INTERNAL
 
 @base <http://yago-knowledge/resource/> .
@@ -926,8 +931,6 @@
 <Carla_Bruni>	<hasChild>	<Giulia_Sarkozy> .
 #@ <id_14lrmcq_tje_16dbfh6>
 <Carla_Bruni>	<isCitizenOf>	<French_nationality_law> .
-#@ <id_14lrmcq_88c_1y7wfoo>
-<Carla_Bruni>	rdf:type	<wordnet_model_110324560> .
 #@ <id_14lrmcq_12k_hchqjy>
 <Carla_Bruni>	<livesIn>	<Élysée_Palace> .
 #@ <id_14lrmcq_12k_1s0yiym>

@@ -1,15 +1,8 @@
 package fromThemes;
 
+import java.io.File;
 import java.util.Map;
 import java.util.Set;
-
-import fromOtherSources.HardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromWikipedia.CategoryExtractor;
-import fromWikipedia.Extractor;
-import fromWikipedia.WikipediaTypeExtractor;
-
-
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -20,6 +13,10 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromOtherSources.HardExtractor;
+import fromOtherSources.WordnetExtractor;
+import fromWikipedia.Extractor;
+import fromWikipedia.WikipediaTypeExtractor;
 
 /**
  * YAGO2s - ClassExtractor
@@ -70,4 +67,8 @@ public class ClassExtractor extends Extractor {
         w.write(fact);
       Announce.done();
     }
+  
+  public static void main(String[] args) throws Exception {
+    new ClassExtractor().extract(new File("c:/fabian/data/yago2s"),"test");
+  }
 }
