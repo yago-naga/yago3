@@ -103,10 +103,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 		Map<String, String> combinations = infoboxFacts
 				.asStringMap("<_infoboxCombine>");
 		Map<String, String> preferredMeaning = WordnetExtractor
-				.preferredMeanings(
-						hardWiredFacts,
-						new FactCollection(input
-								.get(WordnetExtractor.WORDNETWORDS)));
+				.preferredMeanings(input);
 		TitleExtractor titleExtractor = new TitleExtractor(input);
 
 		// Extract the information

@@ -120,7 +120,7 @@ public class WikipediaTypeExtractor extends Extractor {
     // Try head
     String wordnet = preferredMeaning.get(stemmedHead);
     if (wordnet != null) return (wordnet);
-    Announce.debug("Could not find type in", categoryName, "(no wordnet match)");
+    Announce.debug("Could not find type in", categoryName, "("+stemmedHead+") (no wordnet match)");
     return (null);
   }
 
@@ -165,7 +165,7 @@ public class WikipediaTypeExtractor extends Extractor {
     for (Fact f : new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS)).getBySecondArgSlow(RDFS.type, "<_yagoNonConceptualInfobox>")) {
       nonConceptualInfoboxes.add(f.getArg(1));
     }
-    Set<String> nonconceptual = nonConceptualWords(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)));
+    Set<String> nonConceptualCategories = nonConceptualWords(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)));
     Map<String, String> preferredMeanings = WordnetExtractor.preferredMeanings(input);
     TitleExtractor titleExtractor = new TitleExtractor(input);
     FactCollection wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
@@ -183,14 +183,14 @@ public class WikipediaTypeExtractor extends Extractor {
           break loop;
         case 0: // New entity
           Announce.progressStep();
-          flush(titleEntity, types, writers, categoryClasses, wordnetClasses);
+          flush(titleEntity, types, writers, categoryClasses, wordnetClasses);          
           titleEntity = titleExtractor.getTitleEntity(in);
           break;
         case 1: // Category
           if (titleEntity == null) continue;
           String category = FileLines.readTo(in, ']', '|').toString();
           category = category.trim();
-          extractType(titleEntity, category, types, categoryClasses, nonconceptual, preferredMeanings);
+          extractType(titleEntity, category, types, categoryClasses, nonConceptualCategories, preferredMeanings);
           break;
         case 2: // Infobox
         case 3:// Infobox
@@ -202,7 +202,6 @@ public class WikipediaTypeExtractor extends Extractor {
           }
       }
     }
-    flush(titleEntity, types, writers, categoryClasses, wordnetClasses);
     Announce.progressDone();
 
     Announce.doing("Writing classes");
@@ -298,7 +297,7 @@ public class WikipediaTypeExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new WikipediaTypeExtractor(new File("c:/fabian/temp/phil.xml")).extract(new File("c:/fabian/data/yago2s"),
+    new WikipediaTypeExtractor(new File("./testCases/fromWikipedia.InfoboxExtractor/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"),
         "Test on 1 wikipedia article");
   }
 }

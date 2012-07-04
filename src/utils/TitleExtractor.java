@@ -2,22 +2,23 @@ package utils;
 
 import java.io.IOException;
 import java.io.Reader;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
-
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromThemes.TransitiveTypeExtractor;
-
 
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
+import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.Theme;
+import basics.YAGO;
+import fromOtherSources.HardExtractor;
+import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
+import fromThemes.TransitiveTypeExtractor;
 
 /**
  * Extracts Wikipedia title
@@ -62,7 +63,10 @@ public class TitleExtractor {
     if (input.get(TransitiveTypeExtractor.TRANSITIVETYPE) != null) {
       this.entities=TransitiveTypeExtractor.entities(input);
     } else {
-      this.wordnetWords = WordnetExtractor.preferredMeanings(new FactCollection(input.get(WordnetExtractor.WORDNETWORDS))).keySet();
+      this.wordnetWords = new HashSet<>();
+      for(Fact f : input.get(WordnetExtractor.WORDNETWORDS)) {
+        if(f.getRelation().equals(YAGO.isPreferredMeaningOf)) this.wordnetWords.add(f.getArgJavaString(2));
+      }
     }
   }
 

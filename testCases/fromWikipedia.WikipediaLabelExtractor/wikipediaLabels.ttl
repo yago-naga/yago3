@@ -106,6 +106,12 @@
 <Mario_Monti>	skos:prefLabel	"Mario Monti"@en .
 #@ <id_4o2xc6_nyg_19vcsh1>
 <Mario_Monti>	<isPreferredMeaningOf>	"Mario Monti"@en .
+#@ <id_10qtisd_1ia_10qtisd>
+<Milan>	rdfs:label	"Milan"@en .
+#@ <id_10qtisd_1sz_10qtisd>
+<Milan>	skos:prefLabel	"Milan"@en .
+#@ <id_10qtisd_nyg_10qtisd>
+<Milan>	<isPreferredMeaningOf>	"Milan"@en .
 #@ <id_2ox8i9_1ia_2ox8i9>
 <Molise>	rdfs:label	"Molise"@en .
 #@ <id_2ox8i9_1sz_2ox8i9>
@@ -254,6 +260,14 @@
 <Neil_Kinnock>	skos:prefLabel	"Neil Kinnock"@en .
 #@ <id_7fm9w4_nyg_12e7uer>
 <Neil_Kinnock>	<isPreferredMeaningOf>	"Neil Kinnock"@en .
+#@ <id_104s7no_1ia_hvir0j>
+<Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson (British politician)"@en .
+#@ <id_104s7no_1ia_8rhsm5>
+<Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson"@en .
+#@ <id_104s7no_1sz_hvir0j>
+<Phil_Wilson_(British_politician)>	skos:prefLabel	"Phil Wilson (British politician)"@en .
+#@ <id_104s7no_nyg_hvir0j>
+<Phil_Wilson_(British_politician)>	<isPreferredMeaningOf>	"Phil Wilson (British politician)"@en .
 #@ <id_1jce2gm_1ia_9rfjav>
 <Roy_Hattersley>	rdfs:label	"Roy Hattersley"@en .
 #@ <id_1jce2gm_1sz_9rfjav>
@@ -326,6 +340,12 @@
 <Democratic_Awakening>	skos:prefLabel	"Democratic Awakening"@en .
 #@ <id_1o4heop_nyg_1fs34l4>
 <Democratic_Awakening>	<isPreferredMeaningOf>	"Democratic Awakening"@en .
+#@ <id_tu1ps7_1ia_1nmvefa>
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelical Church in Germany"@en .
+#@ <id_tu1ps7_1sz_1nmvefa>
+<Evangelical_Church_in_Germany>	skos:prefLabel	"Evangelical Church in Germany"@en .
+#@ <id_tu1ps7_nyg_1nmvefa>
+<Evangelical_Church_in_Germany>	<isPreferredMeaningOf>	"Evangelical Church in Germany"@en .
 #@ <id_ht3f3u_1ia_1798xx7>
 <Frank-Walter_Steinmeier>	rdfs:label	"Frank-Walter Steinmeier"@en .
 #@ <id_ht3f3u_1sz_1798xx7>
@@ -544,6 +564,12 @@
 <French_Fourth_Republic>	skos:prefLabel	"French Fourth Republic"@en .
 #@ <id_1fvzpek_nyg_1fylxks>
 <French_Fourth_Republic>	<isPreferredMeaningOf>	"French Fourth Republic"@en .
+#@ <id_3dnf2x_1ia_yc8zlk>
+<Giulia_Sarkozy>	rdfs:label	"Giulia Sarkozy"@en .
+#@ <id_3dnf2x_1sz_yc8zlk>
+<Giulia_Sarkozy>	skos:prefLabel	"Giulia Sarkozy"@en .
+#@ <id_3dnf2x_nyg_yc8zlk>
+<Giulia_Sarkozy>	<isPreferredMeaningOf>	"Giulia Sarkozy"@en .
 #@ <id_pq3wku_1ia_op5ao9>
 <Hervé_Gaymard>	rdfs:label	"Herve Gaymard"@en .
 #@ <id_pq3wku_1ia_1koph3h>

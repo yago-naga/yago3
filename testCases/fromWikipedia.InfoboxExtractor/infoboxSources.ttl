@@ -1,9 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Source information for the facts extracted from the Wikipedia infoboxes
 # INTERNAL
 
@@ -1389,6 +1384,9 @@
 #@ <id_gx06xc_115_1pmhj9c>
 <id_14lrmcq_tje_16dbfh6>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni> .
 <id_gx06xc_115_1pmhj9c>	<extractionTechnique>	"InfoboxExtractor from nationality" .
+#@ <id_1sh6lxt_115_1pmhj9c>
+<id_14lrmcq_88c_1y7wfoo>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni> .
+<id_1sh6lxt_115_1pmhj9c>	<extractionTechnique>	"InfoboxExtractor from profession" .
 #@ <id_dopvqx_115_1pmhj9c>
 <id_14lrmcq_12k_hchqjy>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni> .
 <id_dopvqx_115_1pmhj9c>	<extractionTechnique>	"InfoboxExtractor from residence" .

@@ -208,8 +208,7 @@ public class InfoboxExtractor extends Extractor {
     Map<String, Set<String>> patterns = infoboxPatterns(infoboxFacts);
     PatternList replacements = new PatternList(infoboxFacts, "<_infoboxReplace>");
     Map<String, String> combinations = infoboxFacts.asStringMap("<_infoboxCombine>");
-    Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(hardWiredFacts,
-        new FactCollection(input.get(WordnetExtractor.WORDNETWORDS)));
+    Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(input);
     TitleExtractor titleExtractor = new TitleExtractor(input);
 
     // Extract the information
@@ -266,7 +265,7 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/temp/economy.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("c:/fabian/temp/carla.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");

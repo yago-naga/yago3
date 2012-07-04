@@ -56,6 +56,7 @@ public class Tester {
       new RelationChecker().extract(yagoFolder, "Check relations");
       File testCases = new File("testCases");
       for (File testCase : testCases.listFiles()) {
+        //if(!testCase.getName().endsWith("WikipediaTypeExtractor")) continue;
         runTest(testCase, yagoFolder, outputFolder);
       }
     }
@@ -68,6 +69,7 @@ public class Tester {
   private static void runTest(File testCase, File yagoFolder, File outputFolder) throws Exception {
     if (!testCase.isDirectory() || testCase.getName().startsWith(".")) return;
     Announce.doing("Testing", testCase.getName());
+    Announce.message(testCase, yagoFolder, outputFolder);
     Extractor extractor = null;
     try {
       if (inputFolder(testCase) != null) {

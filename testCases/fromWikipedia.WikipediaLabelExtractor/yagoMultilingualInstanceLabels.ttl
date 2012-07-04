@@ -1,9 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Names for the Wikipedia instances in multiple languages
 # MULTILINGUAL
 
@@ -708,6 +703,123 @@
 <Mario_Monti>	rdfs:label	"מאריא מאנטי"@yi .
 <Mario_Monti>	rdfs:label	"Mario Monti"@yo .
 <Mario_Monti>	rdfs:label	"马里奥·蒙蒂"@zh .
+<Milan>	rdfs:label	"Milaan"@af .
+<Milan>	rdfs:label	"Mailand"@als .
+<Milan>	rdfs:label	"ሚላኖ"@am .
+<Milan>	rdfs:label	"Megelan"@ang .
+<Milan>	rdfs:label	"ميلانو"@ar .
+<Milan>	rdfs:label	"Milán"@an .
+<Milan>	rdfs:label	"Milano"@ay .
+<Milan>	rdfs:label	"Milan"@az .
+<Milan>	rdfs:label	"মিলান"@bn .
+<Milan>	rdfs:label	"Горад Мілан"@be .
+<Milan>	rdfs:label	"Милано"@bg .
+<Milan>	rdfs:label	"Mailand"@bar .
+<Milan>	rdfs:label	"མི་ལཱན།"@bo .
+<Milan>	rdfs:label	"Milano"@bs .
+<Milan>	rdfs:label	"Milano"@br .
+<Milan>	rdfs:label	"Milà"@ca .
+<Milan>	rdfs:label	"Милан"@cv .
+<Milan>	rdfs:label	"Milán"@cs .
+<Milan>	rdfs:label	"Milanu"@co .
+<Milan>	rdfs:label	"Milan"@cy .
+<Milan>	rdfs:label	"Milano"@da .
+<Milan>	rdfs:label	"Mailand"@de .
+<Milan>	rdfs:label	"Milano"@et .
+<Milan>	rdfs:label	"Μιλάνο"@el .
+<Milan>	rdfs:label	"Milàn"@eml .
+<Milan>	rdfs:label	"Milán"@es .
+<Milan>	rdfs:label	"Milano"@eo .
+<Milan>	rdfs:label	"Milán"@ext .
+<Milan>	rdfs:label	"Milan"@eu .
+<Milan>	rdfs:label	"میلان"@fa .
+<Milan>	rdfs:label	"Milan"@fr .
+<Milan>	rdfs:label	"Milaan"@fy .
+<Milan>	rdfs:label	"Milan"@fur .
+<Milan>	rdfs:label	"Milano"@ga .
+<Milan>	rdfs:label	"Milano"@gd .
+<Milan>	rdfs:label	"Milán - Milano"@gl .
+<Milan>	rdfs:label	"મિલાન"@gu .
+<Milan>	rdfs:label	"밀라노"@ko .
+<Milan>	rdfs:label	"Միլան"@hy .
+<Milan>	rdfs:label	"मिलानो"@hi .
+<Milan>	rdfs:label	"Milano"@hr .
+<Milan>	rdfs:label	"Milano"@io .
+<Milan>	rdfs:label	"Milan"@id .
+<Milan>	rdfs:label	"Milano"@ia .
+<Milan>	rdfs:label	"Milano"@ie .
+<Milan>	rdfs:label	"Милан"@os .
+<Milan>	rdfs:label	"Mílanó"@is .
+<Milan>	rdfs:label	"Milano"@it .
+<Milan>	rdfs:label	"מילאנו"@he .
+<Milan>	rdfs:label	"Milan"@jv .
+<Milan>	rdfs:label	"ಮಿಲನ್‌"@kn .
+<Milan>	rdfs:label	"Milan"@pam .
+<Milan>	rdfs:label	"Милан"@krc .
+<Milan>	rdfs:label	"მილანი"@ka .
+<Milan>	rdfs:label	"Милан"@kk .
+<Milan>	rdfs:label	"Milano"@kw .
+<Milan>	rdfs:label	"Milano"@sw .
+<Milan>	rdfs:label	"Милан"@kv .
+<Milan>	rdfs:label	"Mîlano"@ku .
+<Milan>	rdfs:label	"Mediolanum"@la .
+<Milan>	rdfs:label	"Milāna"@lv .
+<Milan>	rdfs:label	"Mailand"@lb .
+<Milan>	rdfs:label	"Milanas"@lt .
+<Milan>	rdfs:label	"Milan"@lij .
+<Milan>	rdfs:label	"Milan (città)"@lmo .
+<Milan>	rdfs:label	"Milánó"@hu .
+<Milan>	rdfs:label	"Милано"@mk .
+<Milan>	rdfs:label	"मिलान"@mr .
+<Milan>	rdfs:label	"ميلانو"@arz .
+<Milan>	rdfs:label	"Milan"@ms .
+<Milan>	rdfs:label	"Милан"@mn .
+<Milan>	rdfs:label	"မီလန်မြို့"@my .
+<Milan>	rdfs:label	"Milano"@nah .
+<Milan>	rdfs:label	"Milaan (stad)"@nl .
+<Milan>	rdfs:label	"ミラノ"@ja .
+<Milan>	rdfs:label	"Milano"@nap .
+<Milan>	rdfs:label	"Milano"@no .
+<Milan>	rdfs:label	"Milano"@nn .
+<Milan>	rdfs:label	"Milan"@oc .
+<Milan>	rdfs:label	"میلان"@pnb .
+<Milan>	rdfs:label	"Milan"@pms .
+<Milan>	rdfs:label	"Mediolan"@pl .
+<Milan>	rdfs:label	"Milão"@pt .
+<Milan>	rdfs:label	"Milano"@ro .
+<Milan>	rdfs:label	"Milano"@qu .
+<Milan>	rdfs:label	"Милан"@ru .
+<Milan>	rdfs:label	"Милан"@sah .
+<Milan>	rdfs:label	"Milanu"@sc .
+<Milan>	rdfs:label	"Milan"@sco .
+<Milan>	rdfs:label	"Milanoja"@sq .
+<Milan>	rdfs:label	"Milanu"@scn .
+<Milan>	rdfs:label	"Milan"@simple .
+<Milan>	rdfs:label	"Miláno"@sk .
+<Milan>	rdfs:label	"Milano"@sl .
+<Milan>	rdfs:label	"Милано"@sr .
+<Milan>	rdfs:label	"Milano"@sh .
+<Milan>	rdfs:label	"Milano"@fi .
+<Milan>	rdfs:label	"Milano"@sv .
+<Milan>	rdfs:label	"Lungsod ng Milano"@tl .
+<Milan>	rdfs:label	"மிலன்"@ta .
+<Milan>	rdfs:label	"మిలన్"@te .
+<Milan>	rdfs:label	"มิลาน"@th .
+<Milan>	rdfs:label	"Milano"@tr .
+<Milan>	rdfs:label	"Мілан"@uk .
+<Milan>	rdfs:label	"میلان"@ur .
+<Milan>	rdfs:label	"Milan"@ug .
+<Milan>	rdfs:label	"Miłàn"@vec .
+<Milan>	rdfs:label	"Milano"@vi .
+<Milan>	rdfs:label	"Milano"@vo .
+<Milan>	rdfs:label	"Milaan"@vls .
+<Milan>	rdfs:label	"Milan"@war .
+<Milan>	rdfs:label	"米蘭"@wuu .
+<Milan>	rdfs:label	"מילאן"@yi .
+<Milan>	rdfs:label	"米蘭"@zh-yue .
+<Milan>	rdfs:label	"Milano"@diq .
+<Milan>	rdfs:label	"Mėlans"@bat-smg .
+<Milan>	rdfs:label	"米蘭"@zh .
 <Molise>	rdfs:label	"صوبہ مولیزے"@pnb .
 <Molise>	rdfs:label	"موليزي"@ar .
 <Molise>	rdfs:label	"Molise"@an .
@@ -2046,6 +2158,25 @@
 <Democratic_Awakening>	rdfs:label	"Demokratischer Aufbruch"@no .
 <Democratic_Awakening>	rdfs:label	"Демократический прорыв"@ru .
 <Democratic_Awakening>	rdfs:label	"Demokratischer Aufbruch"@sv .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangeliese Kerk in Duitsland"@af .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelische Kirche in Deutschland"@da .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelische Kirche in Deutschland"@de .
+<Evangelical_Church_in_Germany>	rdfs:label	"Ευαγγελική Εκκλησία στη Γερμανία"@el .
+<Evangelical_Church_in_Germany>	rdfs:label	"Iglesia evangélica en Alemania"@es .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelia Eklezio en Germanio"@eo .
+<Evangelical_Church_in_Germany>	rdfs:label	"Église évangélique en Allemagne"@fr .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelička Crkva u Njemačkoj"@hr .
+<Evangelical_Church_in_Germany>	rdfs:label	"독일 개신교회"@ko .
+<Evangelical_Church_in_Germany>	rdfs:label	"Chiesa Evangelica in Germania"@it .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelische Kerk in Duitsland"@nl .
+<Evangelical_Church_in_Germany>	rdfs:label	"ドイツ福音主義教会"@ja .
+<Evangelical_Church_in_Germany>	rdfs:label	"Kościół Ewangelicki w Niemczech"@pl .
+<Evangelical_Church_in_Germany>	rdfs:label	"Евангелическая церковь Германии"@ru .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelical Church in Germany"@simple .
+<Evangelical_Church_in_Germany>	rdfs:label	"Saksan evankelinen kirkko"@fi .
+<Evangelical_Church_in_Germany>	rdfs:label	"Tysklands evangeliska kyrka"@sv .
+<Evangelical_Church_in_Germany>	rdfs:label	"คริสตจักรอีแวนเจลิกในเยอรมนี"@th .
+<Evangelical_Church_in_Germany>	rdfs:label	"Євангелічна церква Німеччини"@uk .
 <Frank-Walter_Steinmeier>	rdfs:label	"فرانك-فالتر شتاينماير"@ar .
 <Frank-Walter_Steinmeier>	rdfs:label	"Frank-Valter Ştaynmayer"@az .
 <Frank-Walter_Steinmeier>	rdfs:label	"Франк-Вальтэр Штайнмаер"@be .

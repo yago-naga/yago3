@@ -1,9 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Sources for the Wikipedia labels
 # INTERNAL
 
@@ -18,225 +13,633 @@
 #@ <id_13phri4_115_55w1lb>
 <id_10onaxx_1ia_1naulcz>	<extractionSource>	<http://en.wikipedia.org/wiki/Berlusconi_I_Cabinet> .
 <id_13phri4_115_55w1lb>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_158y5l7_115_55w1lb>
+<id_10onaxx_1sz_1naulcz>	<extractionSource>	<http://en.wikipedia.org/wiki/Berlusconi_I_Cabinet> .
+<id_158y5l7_115_55w1lb>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1jfqmb3_115_55w1lb>
+<id_10onaxx_nyg_1naulcz>	<extractionSource>	<http://en.wikipedia.org/wiki/Berlusconi_I_Cabinet> .
+<id_1jfqmb3_115_55w1lb>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_kzdkq9_115_14objtc>
 <id_y9qq7a_1ia_y9qq7a>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania> .
 <id_kzdkq9_115_14objtc>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_gg6via_115_14objtc>
+<id_y9qq7a_1sz_y9qq7a>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania> .
+<id_gg6via_115_14objtc>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_em6i1q_115_14objtc>
+<id_y9qq7a_nyg_y9qq7a>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania> .
+<id_em6i1q_115_14objtc>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1kr6aaz_115_krxoth>
 <id_1gaoy63_1ia_16yiqrh>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
 <id_1kr6aaz_115_krxoth>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1mamoe2_115_krxoth>
+<id_1gaoy63_1sz_16yiqrh>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
+<id_1mamoe2_115_krxoth>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1gb34u_115_krxoth>
+<id_1gaoy63_nyg_16yiqrh>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
+<id_1gb34u_115_krxoth>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_18rkvs3_115_1fdfucz>
 <id_zskfq5_1ia_yi19cu>	<extractionSource>	<http://en.wikipedia.org/wiki/Catholic_Church> .
 <id_18rkvs3_115_1fdfucz>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_148e6k4_115_1fdfucz>
+<id_zskfq5_1sz_yi19cu>	<extractionSource>	<http://en.wikipedia.org/wiki/Catholic_Church> .
+<id_148e6k4_115_1fdfucz>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_12edt3k_115_1fdfucz>
+<id_zskfq5_nyg_yi19cu>	<extractionSource>	<http://en.wikipedia.org/wiki/Catholic_Church> .
+<id_12edt3k_115_1fdfucz>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_rbhdqv_115_k3g05j>
 <id_7r55ul_1ia_6glzha>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
 <id_rbhdqv_115_k3g05j>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_msaoiw_115_k3g05j>
+<id_7r55ul_1sz_6glzha>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
+<id_msaoiw_115_k3g05j>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_kyab2c_115_k3g05j>
+<id_7r55ul_nyg_6glzha>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
+<id_kyab2c_115_k3g05j>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1qp8mhu_115_7aekjj>
 <id_1qqn7vt_1ia_1ps06i2>	<extractionSource>	<http://en.wikipedia.org/wiki/Gianfranco_Fini> .
 <id_1qp8mhu_115_7aekjj>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1s8p0kx_115_7aekjj>
+<id_1qqn7vt_1sz_1ps06i2>	<extractionSource>	<http://en.wikipedia.org/wiki/Gianfranco_Fini> .
+<id_1s8p0kx_115_7aekjj>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_7edfbp_115_7aekjj>
+<id_1qqn7vt_nyg_1ps06i2>	<extractionSource>	<http://en.wikipedia.org/wiki/Gianfranco_Fini> .
+<id_7edfbp_115_7aekjj>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_18tb3vn_115_i6uk3i>
 <id_1vo5vis_1ia_m37cd1>	<extractionSource>	<http://en.wikipedia.org/wiki/Giorgio_Napolitano> .
 <id_18tb3vn_115_i6uk3i>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_14a4eno_115_i6uk3i>
+<id_1vo5vis_1sz_m37cd1>	<extractionSource>	<http://en.wikipedia.org/wiki/Giorgio_Napolitano> .
+<id_14a4eno_115_i6uk3i>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_12g4174_115_i6uk3i>
+<id_1vo5vis_nyg_m37cd1>	<extractionSource>	<http://en.wikipedia.org/wiki/Giorgio_Napolitano> .
+<id_12g4174_115_i6uk3i>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1xwdcf8_115_1pvhhd9>
 <id_1rnvp37_1ia_xu1i8y>	<extractionSource>	<http://en.wikipedia.org/wiki/Giuliano_Amato> .
 <id_1xwdcf8_115_1pvhhd9>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1td6n79_115_1pvhhd9>
+<id_1rnvp37_1sz_xu1i8y>	<extractionSource>	<http://en.wikipedia.org/wiki/Giuliano_Amato> .
+<id_1td6n79_115_1pvhhd9>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1rj69qp_115_1pvhhd9>
+<id_1rnvp37_nyg_xu1i8y>	<extractionSource>	<http://en.wikipedia.org/wiki/Giuliano_Amato> .
+<id_1rj69qp_115_1pvhhd9>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_49rsp7_115_1qxh75c>
 <id_1bclsii_1ia_cplowr>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
 <id_49rsp7_115_1qxh75c>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1yrp5gc_115_1qxh75c>
+<id_1bclsii_1sz_cplowr>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
+<id_1yrp5gc_115_1qxh75c>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1wxorzs_115_1qxh75c>
+<id_1bclsii_nyg_cplowr>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
+<id_1wxorzs_115_1qxh75c>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_12kdxd3_115_15b7bzb>
 <id_1q29rbl_1ia_yrit8w>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies> .
 <id_12kdxd3_115_15b7bzb>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_y17854_115_15b7bzb>
+<id_1q29rbl_1sz_yrit8w>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies> .
+<id_y17854_115_15b7bzb>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_w76uok_115_15b7bzb>
+<id_1q29rbl_nyg_yrit8w>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies> .
+<id_w76uok_115_15b7bzb>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_5wlcus_115_jis3n>
 <id_184v0j1_1ia_1767z5a>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini> .
 <id_5wlcus_115_jis3n>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_7g1qxv_115_jis3n>
+<id_184v0j1_1sz_1767z5a>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini> .
+<id_7g1qxv_115_jis3n>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_lmu7nr_115_jis3n>
+<id_184v0j1_nyg_1767z5a>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini> .
+<id_lmu7nr_115_jis3n>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1p46yi9_115_1a1l5mp>
 <id_10q4wvf_1ia_10q4wvf>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio> .
 <id_1p46yi9_115_1a1l5mp>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1qnnclc_115_1a1l5mp>
+<id_10q4wvf_1sz_10q4wvf>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio> .
+<id_1qnnclc_115_1a1l5mp>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_5tbrc4_115_1a1l5mp>
+<id_10q4wvf_nyg_10q4wvf>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio> .
+<id_5tbrc4_115_1a1l5mp>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_lu1exd_115_850d7s>
 <id_1qfjlq_1ia_1qfjlq>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy> .
 <id_lu1exd_115_850d7s>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_hauppe_115_850d7s>
+<id_1qfjlq_1sz_1qfjlq>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy> .
+<id_hauppe_115_850d7s>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_fguc8u_115_850d7s>
+<id_1qfjlq_nyg_1qfjlq>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy> .
+<id_fguc8u_115_850d7s>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_n5vycr_115_r2vjoc>
 <id_1yo7s3q_1ia_ulpan9>	<extractionSource>	<http://en.wikipedia.org/wiki/Marco_Follini> .
 <id_n5vycr_115_r2vjoc>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_imp94s_115_r2vjoc>
+<id_1yo7s3q_1sz_ulpan9>	<extractionSource>	<http://en.wikipedia.org/wiki/Marco_Follini> .
+<id_imp94s_115_r2vjoc>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_gsovo8_115_r2vjoc>
+<id_1yo7s3q_nyg_ulpan9>	<extractionSource>	<http://en.wikipedia.org/wiki/Marco_Follini> .
+<id_gsovo8_115_r2vjoc>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1h8xhij_115_cynfw9>
 <id_sb1d5v_1ia_1hr6vz8>	<extractionSource>	<http://en.wikipedia.org/wiki/Marina_Berlusconi> .
 <id_1h8xhij_115_cynfw9>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1isdvlm_115_cynfw9>
+<id_sb1d5v_1sz_1hr6vz8>	<extractionSource>	<http://en.wikipedia.org/wiki/Marina_Berlusconi> .
+<id_1isdvlm_115_cynfw9>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1wz6cbi_115_cynfw9>
+<id_sb1d5v_nyg_1hr6vz8>	<extractionSource>	<http://en.wikipedia.org/wiki/Marina_Berlusconi> .
+<id_1wz6cbi_115_cynfw9>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_19cj3e_115_posu8s>
 <id_4o2xc6_1ia_19vcsh1>	<extractionSource>	<http://en.wikipedia.org/wiki/Mario_Monti> .
 <id_19cj3e_115_posu8s>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_2ssx6h_115_posu8s>
+<id_4o2xc6_1sz_19vcsh1>	<extractionSource>	<http://en.wikipedia.org/wiki/Mario_Monti> .
+<id_2ssx6h_115_posu8s>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_gzldwd_115_posu8s>
+<id_4o2xc6_nyg_19vcsh1>	<extractionSource>	<http://en.wikipedia.org/wiki/Mario_Monti> .
+<id_gzldwd_115_posu8s>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1mvuxqv_115_1a29rjn>
+<id_10qtisd_1ia_10qtisd>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan> .
+<id_1mvuxqv_115_1a29rjn>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1ofbbty_115_1a29rjn>
+<id_10qtisd_1sz_10qtisd>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan> .
+<id_1ofbbty_115_1a29rjn>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_3kzqkq_115_1a29rjn>
+<id_10qtisd_nyg_10qtisd>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan> .
+<id_3kzqkq_115_1a29rjn>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_161uq8h_115_7fgk3f>
 <id_2ox8i9_1ia_2ox8i9>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise> .
 <id_161uq8h_115_7fgk3f>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_11io10i_115_7fgk3f>
+<id_2ox8i9_1sz_2ox8i9>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise> .
+<id_11io10i_115_7fgk3f>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_zonnjy_115_7fgk3f>
+<id_2ox8i9_nyg_2ox8i9>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise> .
+<id_zonnjy_115_7fgk3f>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_9zdd1u_115_vv8z55>
 <id_1re08hr_1ia_kpd3up>	<extractionSource>	<http://en.wikipedia.org/wiki/Oscar_Luigi_Scalfaro> .
 <id_9zdd1u_115_vv8z55>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_5g6ntv_115_vv8z55>
+<id_1re08hr_1sz_kpd3up>	<extractionSource>	<http://en.wikipedia.org/wiki/Oscar_Luigi_Scalfaro> .
+<id_5g6ntv_115_vv8z55>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_3m6adb_115_vv8z55>
+<id_1re08hr_nyg_kpd3up>	<extractionSource>	<http://en.wikipedia.org/wiki/Oscar_Luigi_Scalfaro> .
+<id_3m6adb_115_vv8z55>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1bh48mp_115_94tgjw>
 <id_15oiopu_1ia_14iqsua>	<extractionSource>	<http://en.wikipedia.org/wiki/Pier_Silvio_Berlusconi> .
 <id_1bh48mp_115_94tgjw>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1d0kmps_115_94tgjw>
+<id_15oiopu_1sz_14iqsua>	<extractionSource>	<http://en.wikipedia.org/wiki/Pier_Silvio_Berlusconi> .
+<id_1d0kmps_115_94tgjw>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1r7d3fo_115_94tgjw>
+<id_15oiopu_nyg_14iqsua>	<extractionSource>	<http://en.wikipedia.org/wiki/Pier_Silvio_Berlusconi> .
+<id_1r7d3fo_115_94tgjw>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1p8iuei_115_7be8ug>
 <id_93sgke_1ia_7t9a73>	<extractionSource>	<http://en.wikipedia.org/wiki/Roberto_Maroni> .
 <id_1p8iuei_115_7be8ug>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1kpc56j_115_7be8ug>
+<id_93sgke_1sz_7t9a73>	<extractionSource>	<http://en.wikipedia.org/wiki/Roberto_Maroni> .
+<id_1kpc56j_115_7be8ug>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1ivbrpz_115_7be8ug>
+<id_93sgke_nyg_7t9a73>	<extractionSource>	<http://en.wikipedia.org/wiki/Roberto_Maroni> .
+<id_1ivbrpz_115_7be8ug>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1qx16t9_115_826a9b>
 <id_1uqzhxh_1ia_10x5b38>	<extractionSource>	<http://en.wikipedia.org/wiki/Romano_Prodi> .
 <id_1qx16t9_115_826a9b>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1sghkwc_115_826a9b>
+<id_1uqzhxh_1sz_10x5b38>	<extractionSource>	<http://en.wikipedia.org/wiki/Romano_Prodi> .
+<id_1sghkwc_115_826a9b>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_7m5zn4_115_826a9b>
+<id_1uqzhxh_nyg_10x5b38>	<extractionSource>	<http://en.wikipedia.org/wiki/Romano_Prodi> .
+<id_7m5zn4_115_826a9b>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_177r2dm_115_hmm8oh>
 <id_wz05y3_1ia_1mf5org>	<extractionSource>	<http://en.wikipedia.org/wiki/Silvio_Berlusconi> .
 <id_177r2dm_115_hmm8oh>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_18r7ggp_115_hmm8oh>
+<id_wz05y3_1sz_1mf5org>	<extractionSource>	<http://en.wikipedia.org/wiki/Silvio_Berlusconi> .
+<id_18r7ggp_115_hmm8oh>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1mxzx6l_115_hmm8oh>
+<id_wz05y3_nyg_1mf5org>	<extractionSource>	<http://en.wikipedia.org/wiki/Silvio_Berlusconi> .
+<id_1mxzx6l_115_hmm8oh>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1lo6wgv_115_1h4y4hy>
 <id_zuuepc_1ia_1tno3cf>	<extractionSource>	<http://en.wikipedia.org/wiki/The_People_of_Freedom> .
 <id_1lo6wgv_115_1h4y4hy>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1n7najy_115_1h4y4hy>
+<id_zuuepc_1sz_1tno3cf>	<extractionSource>	<http://en.wikipedia.org/wiki/The_People_of_Freedom> .
+<id_1n7najy_115_1h4y4hy>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_2dbpaq_115_1h4y4hy>
+<id_zuuepc_nyg_1tno3cf>	<extractionSource>	<http://en.wikipedia.org/wiki/The_People_of_Freedom> .
+<id_2dbpaq_115_1h4y4hy>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_uaacqs_115_1ijbcxo>
 <id_prkzmu_1ia_wbur5y>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan> .
 <id_uaacqs_115_1ijbcxo>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_pr3nit_115_1ijbcxo>
+<id_prkzmu_1sz_wbur5y>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan> .
+<id_pr3nit_115_1ijbcxo>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_nx3a29_115_1ijbcxo>
+<id_prkzmu_nyg_wbur5y>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan> .
+<id_nx3a29_115_1ijbcxo>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1detn0t_115_5y52nn>
 <id_7qjadl_1ia_1cxt5ig>	<extractionSource>	<http://en.wikipedia.org/wiki/Veronica_Lario> .
 <id_1detn0t_115_5y52nn>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1eya13w_115_5y52nn>
+<id_7qjadl_1sz_1cxt5ig>	<extractionSource>	<http://en.wikipedia.org/wiki/Veronica_Lario> .
+<id_1eya13w_115_5y52nn>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1t52hts_115_5y52nn>
+<id_7qjadl_nyg_1cxt5ig>	<extractionSource>	<http://en.wikipedia.org/wiki/Veronica_Lario> .
+<id_1t52hts_115_5y52nn>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_f598b0_115_1e2lnrt>
 <id_11qatgv_1ia_7wgmmm>	<extractionSource>	<http://en.wikipedia.org/wiki/Cherie_Blair> .
 <id_f598b0_115_1e2lnrt>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_am2j31_115_1e2lnrt>
+<id_11qatgv_1sz_7wgmmm>	<extractionSource>	<http://en.wikipedia.org/wiki/Cherie_Blair> .
+<id_am2j31_115_1e2lnrt>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_8s25mh_115_1e2lnrt>
+<id_11qatgv_nyg_7wgmmm>	<extractionSource>	<http://en.wikipedia.org/wiki/Cherie_Blair> .
+<id_8s25mh_115_1e2lnrt>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_er1hjq_115_16ja46r>
 <id_1ks0wcp_1ia_1jhhpze>	<extractionSource>	<http://en.wikipedia.org/wiki/Connaught_Square> .
 <id_er1hjq_115_16ja46r>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_gahvmt_115_16ja46r>
+<id_1ks0wcp_1sz_1jhhpze>	<extractionSource>	<http://en.wikipedia.org/wiki/Connaught_Square> .
+<id_gahvmt_115_16ja46r>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_uhaccp_115_16ja46r>
+<id_1ks0wcp_nyg_1jhhpze>	<extractionSource>	<http://en.wikipedia.org/wiki/Connaught_Square> .
+<id_uhaccp_115_16ja46r>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_17hemup_115_kgol02>
 <id_z038xo_1ia_z038xo>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
 <id_17hemup_115_kgol02>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_12y7xmq_115_kgol02>
+<id_z038xo_1sz_z038xo>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
+<id_12y7xmq_115_kgol02>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1147k66_115_kgol02>
+<id_z038xo_nyg_z038xo>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
+<id_1147k66_115_kgol02>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1f2ohjv_115_1fli2a1>
 <id_13977z3_1ia_1395x9c>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
 <id_1f2ohjv_115_1fli2a1>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1gm4vmy_115_1fli2a1>
+<id_13977z3_1sz_1395x9c>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
+<id_1gm4vmy_115_1fli2a1>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1usxccu_115_1fli2a1>
+<id_13977z3_nyg_1395x9c>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
+<id_1usxccu_115_1fli2a1>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_fzsv13_115_1qfkzn6>
 <id_1e3a5c8_1ia_1csqyyx>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank_Dobson> .
 <id_fzsv13_115_1qfkzn6>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_hj9946_115_1qfkzn6>
+<id_1e3a5c8_1sz_1csqyyx>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank_Dobson> .
+<id_hj9946_115_1qfkzn6>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_vq1pu2_115_1qfkzn6>
+<id_1e3a5c8_nyg_1csqyyx>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank_Dobson> .
+<id_vq1pu2_115_1qfkzn6>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1jvkahd_115_yn7zdm>
 <id_max52o_1ia_1ri707j>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
 <id_1jvkahd_115_yn7zdm>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1lf0okg_115_yn7zdm>
+<id_max52o_1sz_1ri707j>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
+<id_1lf0okg_115_yn7zdm>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_kp3b8_115_yn7zdm>
+<id_max52o_nyg_1ri707j>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
+<id_kp3b8_115_yn7zdm>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_ndyp04_115_mgn7bo>
 <id_177pmny_1ia_1gthbtp>	<extractionSource>	<http://en.wikipedia.org/wiki/Inns_of_Court_School_of_Law> .
 <id_ndyp04_115_mgn7bo>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_oxf337_115_mgn7bo>
+<id_177pmny_1sz_1gthbtp>	<extractionSource>	<http://en.wikipedia.org/wiki/Inns_of_Court_School_of_Law> .
+<id_oxf337_115_mgn7bo>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1347jt3_115_mgn7bo>
+<id_177pmny_nyg_1gthbtp>	<extractionSource>	<http://en.wikipedia.org/wiki/Inns_of_Court_School_of_Law> .
+<id_1347jt3_115_mgn7bo>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1n8ipge_115_1qp3x9t>
 <id_g6y5dz_1ia_1le80iu>	<extractionSource>	<http://en.wikipedia.org/wiki/Jack_Straw> .
 <id_1n8ipge_115_1qp3x9t>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1orz3jh_115_1qp3x9t>
+<id_g6y5dz_1sz_1le80iu>	<extractionSource>	<http://en.wikipedia.org/wiki/Jack_Straw> .
+<id_1orz3jh_115_1qp3x9t>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_3xnia9_115_1qp3x9t>
+<id_g6y5dz_nyg_1le80iu>	<extractionSource>	<http://en.wikipedia.org/wiki/Jack_Straw> .
+<id_3xnia9_115_1qp3x9t>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1nfigto_115_19cjy7j>
 <id_1xvi8at_1ia_141o1gk>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Major> .
 <id_1nfigto_115_19cjy7j>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1oyyuwr_115_19cjy7j>
+<id_1xvi8at_1sz_141o1gk>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Major> .
+<id_1oyyuwr_115_19cjy7j>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_44n9nj_115_19cjy7j>
+<id_1xvi8at_nyg_141o1gk>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Major> .
+<id_44n9nj_115_19cjy7j>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1g6tc7m_115_pn08x2>
 <id_1x8chcg_1ia_ylcdqp>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Prescott> .
 <id_1g6tc7m_115_pn08x2>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1bnmmzn_115_pn08x2>
+<id_1x8chcg_1sz_ylcdqp>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Prescott> .
+<id_1bnmmzn_115_pn08x2>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_19tm9j3_115_pn08x2>
+<id_1x8chcg_nyg_ylcdqp>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Prescott> .
+<id_19tm9j3_115_pn08x2>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1djvvnu_115_1uokdex>
 <id_4ftjb3_1ia_12qz0jf>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)> .
 <id_1djvvnu_115_1uokdex>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1djt5bs_115_1uokdex>
 <id_4ftjb3_1ia_1456g8e>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)> .
 <id_1djt5bs_115_1uokdex>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1f3c9qx_115_1uokdex>
+<id_4ftjb3_1sz_12qz0jf>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)> .
+<id_1f3c9qx_115_1uokdex>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1ta4qgt_115_1uokdex>
+<id_4ftjb3_nyg_12qz0jf>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)> .
+<id_1ta4qgt_115_1uokdex>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_wt4djt_115_kzxmu2>
 <id_10cbk3o_1ia_1otu1ja>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)> .
 <id_wt4djt_115_kzxmu2>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_19g8b3s_115_kzxmu2>
 <id_10cbk3o_1ia_j3ab6t>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)> .
 <id_19g8b3s_115_kzxmu2>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_yckrmw_115_kzxmu2>
+<id_10cbk3o_1sz_1otu1ja>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)> .
+<id_yckrmw_115_kzxmu2>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1cjd8cs_115_kzxmu2>
+<id_10cbk3o_nyg_1otu1ja>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)> .
+<id_1cjd8cs_115_kzxmu2>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_twp57h_115_smya26>
 <id_16vp284_1ia_2t6krn>	<extractionSource>	<http://en.wikipedia.org/wiki/Margaret_Beckett> .
 <id_twp57h_115_smya26>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_pdifzi_115_smya26>
+<id_16vp284_1sz_2t6krn>	<extractionSource>	<http://en.wikipedia.org/wiki/Margaret_Beckett> .
+<id_pdifzi_115_smya26>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_nji2iy_115_smya26>
+<id_16vp284_nyg_2t6krn>	<extractionSource>	<http://en.wikipedia.org/wiki/Margaret_Beckett> .
+<id_nji2iy_115_smya26>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1tkmcs9_115_hsmhll>
 <id_27r2yr_1ia_x6cnhe>	<extractionSource>	<http://en.wikipedia.org/wiki/Michael_Meacher> .
 <id_1tkmcs9_115_hsmhll>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1p1fnka_115_hsmhll>
+<id_27r2yr_1sz_x6cnhe>	<extractionSource>	<http://en.wikipedia.org/wiki/Michael_Meacher> .
+<id_1p1fnka_115_hsmhll>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1n7fa3q_115_hsmhll>
+<id_27r2yr_nyg_x6cnhe>	<extractionSource>	<http://en.wikipedia.org/wiki/Michael_Meacher> .
+<id_1n7fa3q_115_hsmhll>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_6g660m_115_jrx472>
 <id_7fm9w4_1ia_12e7uer>	<extractionSource>	<http://en.wikipedia.org/wiki/Neil_Kinnock> .
 <id_6g660m_115_jrx472>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_7zmk3p_115_jrx472>
+<id_7fm9w4_1sz_12e7uer>	<extractionSource>	<http://en.wikipedia.org/wiki/Neil_Kinnock> .
+<id_7zmk3p_115_jrx472>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_m6f0tl_115_jrx472>
+<id_7fm9w4_nyg_12e7uer>	<extractionSource>	<http://en.wikipedia.org/wiki/Neil_Kinnock> .
+<id_m6f0tl_115_jrx472>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_k9j00g_115_rcezse>
+<id_104s7no_1ia_hvir0j>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)> .
+<id_k9j00g_115_rcezse>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1wi9fv0_115_rcezse>
+<id_104s7no_1ia_8rhsm5>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)> .
+<id_1wi9fv0_115_rcezse>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_fqcash_115_rcezse>
+<id_104s7no_1sz_hvir0j>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)> .
+<id_fqcash_115_rcezse>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_dwbxbx_115_rcezse>
+<id_104s7no_nyg_hvir0j>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)> .
+<id_dwbxbx_115_rcezse>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1hfjfe6_115_1hjzuqo>
 <id_1jce2gm_1ia_9rfjav>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley> .
 <id_1hfjfe6_115_1hjzuqo>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1cwcq67_115_1hjzuqo>
+<id_1jce2gm_1sz_9rfjav>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley> .
+<id_1cwcq67_115_1hjzuqo>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1b2ccpn_115_1hjzuqo>
+<id_1jce2gm_nyg_9rfjav>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley> .
+<id_1b2ccpn_115_1hjzuqo>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_wgau4f_115_1cmy7pt>
 <id_lwoiij_1ia_1w7o9o>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
 <id_wgau4f_115_1cmy7pt>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_5d9mtr_115_1cmy7pt>
 <id_lwoiij_1ia_1hpeelm>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
 <id_5d9mtr_115_1cmy7pt>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_rx44wg_115_1cmy7pt>
+<id_lwoiij_1sz_1w7o9o>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
+<id_rx44wg_115_1cmy7pt>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_q33rfw_115_1cmy7pt>
+<id_lwoiij_nyg_1w7o9o>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
+<id_q33rfw_115_1cmy7pt>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_9hxcgc_115_4vmd7e>
 <id_1bx19fo_1ia_mpjbe5>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
 <id_9hxcgc_115_4vmd7e>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1hri9la_115_4vmd7e>
 <id_1bx19fo_1ia_1qyt5wl>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
 <id_1hri9la_115_4vmd7e>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1jaynod_115_4vmd7e>
+<id_1bx19fo_1sz_1qyt5wl>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
+<id_1jaynod_115_4vmd7e>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1xhr4e9_115_4vmd7e>
+<id_1bx19fo_nyg_1qyt5wl>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
+<id_1xhr4e9_115_4vmd7e>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_18x5xp1_115_1qyd4q9>
 <id_gg7cuf_1ia_1lnh7za>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
 <id_18x5xp1_115_1qyd4q9>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1agmbs4_115_1qyd4q9>
+<id_gg7cuf_1sz_1lnh7za>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
+<id_1agmbs4_115_1qyd4q9>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1onesi0_115_1qyd4q9>
+<id_gg7cuf_nyg_1lnh7za>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
+<id_1onesi0_115_1qyd4q9>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1w2yfic_115_btdsj2>
 <id_17c51vo_1ia_5gnu04>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum> .
 <id_1w2yfic_115_btdsj2>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1rjrqad_115_btdsj2>
+<id_17c51vo_1sz_5gnu04>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum> .
+<id_1rjrqad_115_btdsj2>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1pprctt_115_btdsj2>
+<id_17c51vo_nyg_5gnu04>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum> .
+<id_1pprctt_115_btdsj2>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_19ka9fc_115_84dtt9>
 <id_1fpq28n_1ia_1ef6vvc>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
 <id_19ka9fc_115_84dtt9>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1b3qnif_115_84dtt9>
+<id_1fpq28n_1sz_1ef6vvc>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
+<id_1b3qnif_115_84dtt9>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1paj48b_115_84dtt9>
+<id_1fpq28n_nyg_1ef6vvc>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
+<id_1paj48b_115_84dtt9>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_ieb54h_115_tjrjy1>
 <id_18367vn_1ia_18367vn>	<extractionSource>	<http://en.wikipedia.org/wiki/Bundestag> .
 <id_ieb54h_115_tjrjy1>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_jxrj7k_115_tjrjy1>
+<id_18367vn_1sz_18367vn>	<extractionSource>	<http://en.wikipedia.org/wiki/Bundestag> .
+<id_jxrj7k_115_tjrjy1>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_y4jzxg_115_tjrjy1>
+<id_18367vn_nyg_18367vn>	<extractionSource>	<http://en.wikipedia.org/wiki/Bundestag> .
+<id_y4jzxg_115_tjrjy1>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_erwida_115_1w15wda>
 <id_t9jepg_1ia_1c5ki7n>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)> .
 <id_erwida_115_1w15wda>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1oisadb_115_1w15wda>
 <id_t9jepg_1ia_gj7gc5>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)> .
 <id_1oisadb_115_1w15wda>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_gbcwgd_115_1w15wda>
+<id_t9jepg_1sz_1c5ki7n>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)> .
+<id_gbcwgd_115_1w15wda>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_ui5d69_115_1w15wda>
+<id_t9jepg_nyg_1c5ki7n>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)> .
+<id_ui5d69_115_1w15wda>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_cuox4z_115_zbvg7y>
 <id_jr01l4_1ia_1oy9wpz>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff> .
 <id_cuox4z_115_zbvg7y>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_ee5b82_115_zbvg7y>
+<id_jr01l4_1sz_1oy9wpz>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff> .
+<id_ee5b82_115_zbvg7y>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_skxrxy_115_zbvg7y>
+<id_jr01l4_nyg_1oy9wpz>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff> .
+<id_skxrxy_115_zbvg7y>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_l5dpid_115_1ngd9aq>
 <id_w0lfr0_1ia_26r8wr>	<extractionSource>	<http://en.wikipedia.org/wiki/Claudia_Nolte> .
 <id_l5dpid_115_1ngd9aq>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_gm70ae_115_1ngd9aq>
+<id_w0lfr0_1sz_26r8wr>	<extractionSource>	<http://en.wikipedia.org/wiki/Claudia_Nolte> .
+<id_gm70ae_115_1ngd9aq>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_es6mtu_115_1ngd9aq>
+<id_w0lfr0_nyg_26r8wr>	<extractionSource>	<http://en.wikipedia.org/wiki/Claudia_Nolte> .
+<id_es6mtu_115_1ngd9aq>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_15y3wi_115_slq5c3>
 <id_1o4heop_1ia_1fs34l4>	<extractionSource>	<http://en.wikipedia.org/wiki/Democratic_Awakening> .
 <id_15y3wi_115_slq5c3>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_2pehzl_115_slq5c3>
+<id_1o4heop_1sz_1fs34l4>	<extractionSource>	<http://en.wikipedia.org/wiki/Democratic_Awakening> .
+<id_2pehzl_115_slq5c3>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_gw6yph_115_slq5c3>
+<id_1o4heop_nyg_1fs34l4>	<extractionSource>	<http://en.wikipedia.org/wiki/Democratic_Awakening> .
+<id_gw6yph_115_slq5c3>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1i2z3yl_115_1ayxm3h>
+<id_tu1ps7_1ia_1nmvefa>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany> .
+<id_1i2z3yl_115_1ayxm3h>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1jmfi1o_115_1ayxm3h>
+<id_tu1ps7_1sz_1nmvefa>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany> .
+<id_1jmfi1o_115_1ayxm3h>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1xt7yrk_115_1ayxm3h>
+<id_tu1ps7_nyg_1nmvefa>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany> .
+<id_1xt7yrk_115_1ayxm3h>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_spa77m_115_39y5n4>
 <id_ht3f3u_1ia_1798xx7>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank-Walter_Steinmeier> .
 <id_spa77m_115_39y5n4>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_u8qlap_115_39y5n4>
+<id_ht3f3u_1sz_1798xx7>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank-Walter_Steinmeier> .
+<id_u8qlap_115_39y5n4>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_18fj20l_115_39y5n4>
+<id_ht3f3u_nyg_1798xx7>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank-Walter_Steinmeier> .
+<id_18fj20l_115_39y5n4>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_jrcxax_115_14sbsn>
 <id_gh6929_1ia_1knivv4>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering> .
 <id_jrcxax_115_14sbsn>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1ycndjt_115_14sbsn>
 <id_gh6929_1ia_o1oum8>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering> .
 <id_1ycndjt_115_14sbsn>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1ttgobu_115_14sbsn>
+<id_gh6929_1sz_o1oum8>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering> .
+<id_1ttgobu_115_14sbsn>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1rzgava_115_14sbsn>
+<id_gh6929_nyg_o1oum8>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering> .
+<id_1rzgava_115_14sbsn>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1al4cxn_115_lykx5r>
 <id_107bpbp_1ia_1afs39c>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder> .
 <id_1al4cxn_115_lykx5r>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1g290ia_115_lykx5r>
 <id_107bpbp_1ia_1kblpy>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder> .
 <id_1g290ia_115_lykx5r>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1bj2bab_115_lykx5r>
+<id_107bpbp_1sz_1kblpy>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder> .
+<id_1bj2bab_115_lykx5r>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_19p1xtr_115_lykx5r>
+<id_107bpbp_nyg_1kblpy>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder> .
+<id_19p1xtr_115_lykx5r>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_16pdhav_115_1ukoa5l>
 <id_1ps9evn_1ia_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
 <id_16pdhav_115_1ukoa5l>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_188tvdy_115_1ukoa5l>
+<id_1ps9evn_1sz_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
+<id_188tvdy_115_1ukoa5l>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1mfmc3u_115_1ukoa5l>
+<id_1ps9evn_nyg_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
+<id_1mfmc3u_115_1ukoa5l>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_jiv629_115_tiyb2w>
 <id_18vc8ci_1ia_1gfutwh>	<extractionSource>	<http://en.wikipedia.org/wiki/Guido_Westerwelle> .
 <id_jiv629_115_tiyb2w>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_l2bk5c_115_tiyb2w>
+<id_18vc8ci_1sz_1gfutwh>	<extractionSource>	<http://en.wikipedia.org/wiki/Guido_Westerwelle> .
+<id_l2bk5c_115_tiyb2w>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_z940v8_115_tiyb2w>
+<id_18vc8ci_nyg_1gfutwh>	<extractionSource>	<http://en.wikipedia.org/wiki/Guido_Westerwelle> .
+<id_z940v8_115_tiyb2w>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1u1068h_115_88ufwy>
 <id_3gfkn0_1ia_3gfkn0>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg> .
 <id_1u1068h_115_88ufwy>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1phth0i_115_88ufwy>
+<id_3gfkn0_1sz_3gfkn0>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg> .
+<id_1phth0i_115_88ufwy>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1nnt3jy_115_88ufwy>
+<id_3gfkn0_nyg_3gfkn0>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg> .
+<id_1nnt3jy_115_88ufwy>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_6kk38p_115_1kz2868>
 <id_zycb9m_1ia_yzp9vv>	<extractionSource>	<http://en.wikipedia.org/wiki/Helmut_Kohl> .
 <id_6kk38p_115_1kz2868>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_21de0q_115_1kz2868>
+<id_zycb9m_1sz_yzp9vv>	<extractionSource>	<http://en.wikipedia.org/wiki/Helmut_Kohl> .
+<id_21de0q_115_1kz2868>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_7d0k6_115_1kz2868>
+<id_zycb9m_nyg_yzp9vv>	<extractionSource>	<http://en.wikipedia.org/wiki/Helmut_Kohl> .
+<id_7d0k6_115_1kz2868>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1pev1yt_115_2u8wl5>
 <id_1pj249b_1ia_rlp16m>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler> .
 <id_1pev1yt_115_2u8wl5>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_qxv18f_115_2u8wl5>
 <id_1pj249b_1ia_1o8ixw0>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler> .
 <id_qxv18f_115_2u8wl5>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_shbfbi_115_2u8wl5>
+<id_1pj249b_1sz_1o8ixw0>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler> .
+<id_shbfbi_115_2u8wl5>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_16o3w1e_115_2u8wl5>
+<id_1pj249b_nyg_1o8ixw0>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler> .
+<id_16o3w1e_115_2u8wl5>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_inyiv9_115_4ypmpc>
 <id_1ck1v4q_1ia_iq7oah>	<extractionSource>	<http://en.wikipedia.org/wiki/Joachim_Sauer> .
 <id_inyiv9_115_4ypmpc>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_e4rtna_115_4ypmpc>
+<id_1ck1v4q_1sz_iq7oah>	<extractionSource>	<http://en.wikipedia.org/wiki/Joachim_Sauer> .
+<id_e4rtna_115_4ypmpc>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_carg6q_115_4ypmpc>
+<id_1ck1v4q_nyg_iq7oah>	<extractionSource>	<http://en.wikipedia.org/wiki/Joachim_Sauer> .
+<id_carg6q_115_4ypmpc>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1mmgrrm_115_1atv5gr>
 <id_1cm9d6p_1ia_or0ubs>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
 <id_1mmgrrm_115_1atv5gr>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_whqqjb_115_1atv5gr>
 <id_1cm9d6p_1ia_8jqvq8>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
 <id_whqqjb_115_1atv5gr>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_ryk1bc_115_1atv5gr>
+<id_1cm9d6p_1sz_8jqvq8>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
+<id_ryk1bc_115_1atv5gr>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_q4jnus_115_1atv5gr>
+<id_1cm9d6p_nyg_8jqvq8>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
+<id_q4jnus_115_1atv5gr>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_j872vi_115_1xb26ls>
 <id_1kyrcau_1ia_s2hj2j>	<extractionSource>	<http://en.wikipedia.org/wiki/Klaus_Töpfer> .
 <id_j872vi_115_1xb26ls>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_92yjtc_115_1xb26ls>
 <id_1kyrcau_1ia_1jo85xj>	<extractionSource>	<http://en.wikipedia.org/wiki/Klaus_Töpfer> .
 <id_92yjtc_115_1xb26ls>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_amexwf_115_1xb26ls>
+<id_1kyrcau_1sz_1jo85xj>	<extractionSource>	<http://en.wikipedia.org/wiki/Klaus_Töpfer> .
+<id_amexwf_115_1xb26ls>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_ot7emb_115_1xb26ls>
+<id_1kyrcau_nyg_1jo85xj>	<extractionSource>	<http://en.wikipedia.org/wiki/Klaus_Töpfer> .
+<id_ot7emb_115_1xb26ls>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_13h4aqg_115_1b7daw5>
 <id_1czrim3_1ia_1t0e0d8>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler> .
 <id_13h4aqg_115_1b7daw5>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_vwq80h_115_1b7daw5>
 <id_1czrim3_1ia_1bp8c8s>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler> .
 <id_vwq80h_115_1b7daw5>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_xg6m3k_115_1b7daw5>
+<id_1czrim3_1sz_1bp8c8s>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler> .
+<id_xg6m3k_115_1b7daw5>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1bmz2tg_115_1b7daw5>
+<id_1czrim3_nyg_1bp8c8s>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler> .
+<id_1bmz2tg_115_1b7daw5>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_pwp36q_115_fvaic8>
 <id_75rcea_1ia_1wsnje>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
 <id_pwp36q_115_fvaic8>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
@@ -246,189 +649,456 @@
 #@ <id_qzpmxr_115_fvaic8>
 <id_75rcea_1ia_4c4dke>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
 <id_qzpmxr_115_fvaic8>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_oevx6w_115_fvaic8>
+<id_75rcea_1sz_1yzw38i>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
+<id_oevx6w_115_fvaic8>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_12lodws_115_fvaic8>
+<id_75rcea_nyg_1yzw38i>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
+<id_12lodws_115_fvaic8>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_wv39pi_115_1789lmf>
 <id_py5vtt_1ia_bbsx6p>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Leipzig> .
 <id_wv39pi_115_1789lmf>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_sbwkhj_115_1789lmf>
+<id_py5vtt_1sz_bbsx6p>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Leipzig> .
+<id_sbwkhj_115_1789lmf>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_qhw70z_115_1789lmf>
+<id_py5vtt_nyg_bbsx6p>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Leipzig> .
+<id_qhw70z_115_1789lmf>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_c4csy_115_1pyoefh>
 <id_1dmdk4j_1ia_9jv2o2>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany> .
 <id_c4csy_115_1pyoefh>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1uu1pk3_115_1pyoefh>
+<id_1dmdk4j_1sz_9jv2o2>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany> .
+<id_1uu1pk3_115_1pyoefh>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1t01c3j_115_1pyoefh>
+<id_1dmdk4j_nyg_9jv2o2>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany> .
+<id_1t01c3j_115_1pyoefh>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1use2v7_115_5ou0fu>
 <id_1p52ns4_1ia_l2k6bn>	<extractionSource>	<http://en.wikipedia.org/wiki/Achille_Peretti> .
 <id_1use2v7_115_5ou0fu>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1q97dn8_115_5ou0fu>
+<id_1p52ns4_1sz_l2k6bn>	<extractionSource>	<http://en.wikipedia.org/wiki/Achille_Peretti> .
+<id_1q97dn8_115_5ou0fu>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1of706o_115_5ou0fu>
+<id_1p52ns4_nyg_l2k6bn>	<extractionSource>	<http://en.wikipedia.org/wiki/Achille_Peretti> .
+<id_1of706o_115_5ou0fu>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_4jmt29_115_ozn4l3>
 <id_1wkzd0h_1ia_1vag6n6>	<extractionSource>	<http://en.wikipedia.org/wiki/Albert_Pintat> .
 <id_4jmt29_115_ozn4l3>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_63375c_115_ozn4l3>
+<id_1wkzd0h_1sz_1vag6n6>	<extractionSource>	<http://en.wikipedia.org/wiki/Albert_Pintat> .
+<id_63375c_115_ozn4l3>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_k9vnv8_115_ozn4l3>
+<id_1wkzd0h_nyg_1vag6n6>	<extractionSource>	<http://en.wikipedia.org/wiki/Albert_Pintat> .
+<id_k9vnv8_115_ozn4l3>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_12f2dg8_115_14djy5h>
 <id_s193uj_1ia_1x8iyvq>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí> .
 <id_12f2dg8_115_14djy5h>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_12f2djc_115_14djy5h>
 <id_s193uj_1ia_1x8iyze>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí> .
 <id_12f2djc_115_14djy5h>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_13yirmf_115_14djy5h>
+<id_s193uj_1sz_1x8iyze>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí> .
+<id_13yirmf_115_14djy5h>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1i5b8cb_115_14djy5h>
+<id_s193uj_nyg_1x8iyze>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí> .
+<id_1i5b8cb_115_14djy5h>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1v6p0rp_115_1pmhj9c>
 <id_14lrmcq_1ia_arxfih>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni> .
 <id_1v6p0rp_115_1pmhj9c>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1qnibjq_115_1pmhj9c>
+<id_14lrmcq_1sz_arxfih>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni> .
+<id_1qnibjq_115_1pmhj9c>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1othy36_115_1pmhj9c>
+<id_14lrmcq_nyg_arxfih>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni> .
+<id_1othy36_115_1pmhj9c>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_eax7sm_115_2ooh4b>
 <id_4h2ou9_1ia_4ew4am>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias> .
 <id_eax7sm_115_2ooh4b>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_d3u24w_115_2ooh4b>
 <id_4h2ou9_1ia_36jigy>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias> .
 <id_d3u24w_115_2ooh4b>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_8kncwx_115_2ooh4b>
+<id_4h2ou9_1sz_36jigy>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias> .
+<id_8kncwx_115_2ooh4b>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_6qmzgd_115_2ooh4b>
+<id_4h2ou9_nyg_36jigy>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias> .
+<id_6qmzgd_115_2ooh4b>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_t8jcy0_115_ya5b9x>
 <id_1dmj8jj_1ia_7jfwre>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont> .
 <id_t8jcy0_115_ya5b9x>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_u67rs4_115_ya5b9x>
 <id_1dmj8jj_1ia_9k0r32>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont> .
 <id_u67rs4_115_ya5b9x>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_pn12k5_115_ya5b9x>
+<id_1dmj8jj_1sz_9k0r32>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont> .
+<id_pn12k5_115_ya5b9x>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_nt0p3l_115_ya5b9x>
+<id_1dmj8jj_nyg_9k0r32>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont> .
+<id_nt0p3l_115_ya5b9x>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_whlis3_115_l7il4v>
 <id_5mn6i1_1ia_160r4ve>	<extractionSource>	<http://en.wikipedia.org/wiki/Daniel_Vaillant> .
 <id_whlis3_115_l7il4v>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_y11wv6_115_l7il4v>
+<id_5mn6i1_1sz_160r4ve>	<extractionSource>	<http://en.wikipedia.org/wiki/Daniel_Vaillant> .
+<id_y11wv6_115_l7il4v>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1c7udl2_115_l7il4v>
+<id_5mn6i1_nyg_160r4ve>	<extractionSource>	<http://en.wikipedia.org/wiki/Daniel_Vaillant> .
+<id_1c7udl2_115_l7il4v>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1trrcjw_115_19lc4dz>
 <id_sb8eld_1ia_18qwjl>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin> .
 <id_1trrcjw_115_19lc4dz>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1p8knbx_115_19lc4dz>
+<id_sb8eld_1sz_18qwjl>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin> .
+<id_1p8knbx_115_19lc4dz>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1nek9vd_115_19lc4dz>
+<id_sb8eld_nyg_18qwjl>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin> .
+<id_1nek9vd_115_19lc4dz>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1dwo31o_115_thfhsk>
 <id_18ttf26_1ia_17ja8ov>	<extractionSource>	<http://en.wikipedia.org/wiki/Emmanuelle_Mignon> .
 <id_1dwo31o_115_thfhsk>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1fg4h4r_115_thfhsk>
+<id_18ttf26_1sz_17ja8ov>	<extractionSource>	<http://en.wikipedia.org/wiki/Emmanuelle_Mignon> .
+<id_1fg4h4r_115_thfhsk>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1tmwxun_115_thfhsk>
+<id_18ttf26_nyg_17ja8ov>	<extractionSource>	<http://en.wikipedia.org/wiki/Emmanuelle_Mignon> .
+<id_1tmwxun_115_thfhsk>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1re6vfu_115_1cizvx2>
 <id_1qrqo30_1ia_65i88h>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur> .
 <id_1re6vfu_115_1cizvx2>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_l8g5qw_115_1cizvx2>
 <id_1qrqo30_1ia_s4qkh9>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur> .
 <id_l8g5qw_115_1cizvx2>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_gp9gix_115_1cizvx2>
+<id_1qrqo30_1sz_s4qkh9>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur> .
+<id_gp9gix_115_1cizvx2>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_ev932d_115_1cizvx2>
+<id_1qrqo30_nyg_s4qkh9>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur> .
+<id_ev932d_115_1cizvx2>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_ff8d81_115_18s9k3o>
 <id_hchqjy_1ia_1kbv1k7>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
 <id_ff8d81_115_18s9k3o>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1s554j6_115_18s9k3o>
 <id_hchqjy_1ia_g1yk6n>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
 <id_1s554j6_115_18s9k3o>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1nlyfb7_115_18s9k3o>
+<id_hchqjy_1sz_g1yk6n>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
+<id_1nlyfb7_115_18s9k3o>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1lry1un_115_18s9k3o>
+<id_hchqjy_nyg_g1yk6n>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
+<id_1lry1un_115_18s9k3o>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_e46voo_115_kn42qt>
 <id_1yni7tb_1ia_1ymdzn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Francis_Mer> .
 <id_e46voo_115_kn42qt>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_fnn9rr_115_kn42qt>
+<id_1yni7tb_1sz_1ymdzn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Francis_Mer> .
+<id_fnn9rr_115_kn42qt>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_tufqhn_115_kn42qt>
+<id_1yni7tb_nyg_1ymdzn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Francis_Mer> .
+<id_tufqhn_115_kn42qt>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_gvxb68_115_s05yln>
 <id_cfajyt_1ia_r8vok2>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin> .
 <id_gvxb68_115_s05yln>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_98xegb_115_s05yln>
 <id_cfajyt_1ia_b4rdli>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin> .
 <id_98xegb_115_s05yln>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_4pqp8c_115_s05yln>
+<id_cfajyt_1sz_b4rdli>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin> .
+<id_4pqp8c_115_s05yln>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_2vqbrs_115_s05yln>
+<id_cfajyt_nyg_b4rdli>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin> .
+<id_2vqbrs_115_s05yln>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_azw4gs_115_u0mwx8>
 <id_efriae_1ia_t9cmvn>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon> .
 <id_azw4gs_115_u0mwx8>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_3c7b6z_115_u0mwx8>
 <id_efriae_1ia_d58bx3>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon> .
 <id_3c7b6z_115_u0mwx8>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1xu4ny4_115_u0mwx8>
+<id_efriae_1sz_d58bx3>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon> .
+<id_1xu4ny4_115_u0mwx8>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1w04ahk_115_u0mwx8>
+<id_efriae_nyg_d58bx3>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon> .
+<id_1w04ahk_115_u0mwx8>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_8yvi09_115_q8i5mu>
 <id_15kw2wg_1ia_868l4d>	<extractionSource>	<http://en.wikipedia.org/wiki/François_d'Aubert> .
 <id_8yvi09_115_q8i5mu>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_926l18_115_q8i5mu>
 <id_15kw2wg_1ia_6xvzap>	<extractionSource>	<http://en.wikipedia.org/wiki/François_d'Aubert> .
 <id_926l18_115_q8i5mu>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_4izvt9_115_q8i5mu>
+<id_15kw2wg_1sz_6xvzap>	<extractionSource>	<http://en.wikipedia.org/wiki/François_d'Aubert> .
+<id_4izvt9_115_q8i5mu>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_2ozicp_115_q8i5mu>
+<id_15kw2wg_nyg_6xvzap>	<extractionSource>	<http://en.wikipedia.org/wiki/François_d'Aubert> .
+<id_2ozicp_115_q8i5mu>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_a779a4_115_jcah8m>
 <id_1fvzpek_1ia_1fylxks>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic> .
 <id_a779a4_115_jcah8m>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_bqnnd7_115_jcah8m>
+<id_1fvzpek_1sz_1fylxks>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic> .
+<id_bqnnd7_115_jcah8m>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_pxg433_115_jcah8m>
+<id_1fvzpek_nyg_1fylxks>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic> .
+<id_pxg433_115_jcah8m>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_t6or9p_115_1l97cz>
+<id_3dnf2x_1ia_yc8zlk>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulia_Sarkozy> .
+<id_t6or9p_115_1l97cz>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_oni21q_115_1l97cz>
+<id_3dnf2x_1sz_yc8zlk>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulia_Sarkozy> .
+<id_oni21q_115_1l97cz>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_mthol6_115_1l97cz>
+<id_3dnf2x_nyg_yc8zlk>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulia_Sarkozy> .
+<id_mthol6_115_1l97cz>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_naq15l_115_1h5vq4k>
 <id_pq3wku_1ia_op5ao9>	<extractionSource>	<http://en.wikipedia.org/wiki/Hervé_Gaymard> .
 <id_naq15l_115_1h5vq4k>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_nu2xwg_115_1h5vq4k>
 <id_pq3wku_1ia_1koph3h>	<extractionSource>	<http://en.wikipedia.org/wiki/Hervé_Gaymard> .
 <id_nu2xwg_115_1h5vq4k>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_pdjbzj_115_1h5vq4k>
+<id_pq3wku_1sz_1koph3h>	<extractionSource>	<http://en.wikipedia.org/wiki/Hervé_Gaymard> .
+<id_pdjbzj_115_1h5vq4k>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_13kbspf_115_1h5vq4k>
+<id_pq3wku_nyg_1koph3h>	<extractionSource>	<http://en.wikipedia.org/wiki/Hervé_Gaymard> .
+<id_13kbspf_115_1h5vq4k>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_z9pd11_115_dp6pi2>
 <id_jfqfk4_1ia_h8wceg>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris> .
 <id_z9pd11_115_dp6pi2>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_yciavd_115_dp6pi2>
 <id_jfqfk4_1ia_dxm37o>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris> .
 <id_yciavd_115_dp6pi2>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_ttblne_115_dp6pi2>
+<id_jfqfk4_1sz_dxm37o>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris> .
+<id_ttblne_115_dp6pi2>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_rzb86u_115_dp6pi2>
+<id_jfqfk4_nyg_dxm37o>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris> .
+<id_rzb86u_115_dp6pi2>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_zax09y_115_1gtgvff>
 <id_1ilv35d_1ia_1hbbws2>	<extractionSource>	<http://en.wikipedia.org/wiki/Jacques_Chirac> .
 <id_zax09y_115_1gtgvff>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_10uded1_115_1gtgvff>
+<id_1ilv35d_1sz_1hbbws2>	<extractionSource>	<http://en.wikipedia.org/wiki/Jacques_Chirac> .
+<id_10uded1_115_1gtgvff>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1f15v2x_115_1gtgvff>
+<id_1ilv35d_nyg_1hbbws2>	<extractionSource>	<http://en.wikipedia.org/wiki/Jacques_Chirac> .
+<id_1f15v2x_115_1gtgvff>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_bx63o1_115_4chwkc>
 <id_64w4aa_1ia_16j02nn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jaume_Bartumeu> .
 <id_bx63o1_115_4chwkc>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_dgmhr4_115_4chwkc>
+<id_64w4aa_1sz_16j02nn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jaume_Bartumeu> .
+<id_dgmhr4_115_4chwkc>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_rneyh0_115_4chwkc>
+<id_64w4aa_nyg_16j02nn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jaume_Bartumeu> .
+<id_rneyh0_115_4chwkc>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_ytx4hk_115_k44k4a>
 <id_7rtptc_1ia_12qfabz>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean_Sarkozy> .
 <id_ytx4hk_115_k44k4a>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_10ddikn_115_k44k4a>
+<id_7rtptc_1sz_12qfabz>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean_Sarkozy> .
+<id_10ddikn_115_k44k4a>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1ek5zaj_115_k44k4a>
+<id_7rtptc_nyg_12qfabz>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean_Sarkozy> .
+<id_1ek5zaj_115_k44k4a>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_xpgdwp_115_1t809w0>
 <id_ppnh9i_1ia_1q3rfmv>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean-Pierre_Raffarin> .
 <id_xpgdwp_115_1t809w0>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_z8wrzs_115_1t809w0>
+<id_ppnh9i_1sz_1q3rfmv>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean-Pierre_Raffarin> .
+<id_z8wrzs_115_1t809w0>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1dfp8po_115_1t809w0>
+<id_ppnh9i_nyg_1q3rfmv>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean-Pierre_Raffarin> .
+<id_1dfp8po_115_1t809w0>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_robti0_115_1g960c7>
 <id_5iwrwt_1ia_1tpwesu>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília> .
 <id_robti0_115_1g960c7>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_rov5p6_115_1g960c7>
 <id_5iwrwt_1ia_1ts8p2i>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília> .
 <id_rov5p6_115_1g960c7>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_t8bjs9_115_1g960c7>
+<id_5iwrwt_1sz_1ts8p2i>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília> .
+<id_t8bjs9_115_1g960c7>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_17f40i5_115_1g960c7>
+<id_5iwrwt_nyg_1ts8p2i>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília> .
+<id_17f40i5_115_1g960c7>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1fpkp6a_115_1thcxev>
 <id_1dwhis1_1ia_f9hf6a>	<extractionSource>	<http://en.wikipedia.org/wiki/Michel_Charasse> .
 <id_1fpkp6a_115_1thcxev>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1b6dzyb_115_1thcxev>
+<id_1dwhis1_1sz_f9hf6a>	<extractionSource>	<http://en.wikipedia.org/wiki/Michel_Charasse> .
+<id_1b6dzyb_115_1thcxev>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_19cdmhr_115_1thcxev>
+<id_1dwhis1_nyg_f9hf6a>	<extractionSource>	<http://en.wikipedia.org/wiki/Michel_Charasse> .
+<id_19cdmhr_115_1thcxev>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1lps011_115_tghlsf>
 <id_hrf5tl_1ia_1hel5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
 <id_1lps011_115_tghlsf>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_zzqnzh_115_tghlsf>
 <id_hrf5tl_1ia_toyv3h>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
 <id_zzqnzh_115_tghlsf>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1n98e44_115_tghlsf>
+<id_hrf5tl_1sz_1hel5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
+<id_1n98e44_115_tghlsf>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_2ewsuw_115_tghlsf>
+<id_hrf5tl_nyg_1hel5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
+<id_2ewsuw_115_tghlsf>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_5d2dpj_115_1dzyujs>
 <id_1tccrte_1ia_1tccrte>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
 <id_5d2dpj_115_1dzyujs>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_6wirsm_115_1dzyujs>
+<id_1tccrte_1sz_1tccrte>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
+<id_6wirsm_115_1dzyujs>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_l3b8ii_115_1dzyujs>
+<id_1tccrte_nyg_1tccrte>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
+<id_l3b8ii_115_1dzyujs>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1hbnm87_115_1b5ah11>
 <id_vkf2e7_1ia_1qj0mwu>	<extractionSource>	<http://en.wikipedia.org/wiki/Nicolas_Sarkozy> .
 <id_1hbnm87_115_1b5ah11>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1iv40ba_115_1b5ah11>
+<id_vkf2e7_1sz_1qj0mwu>	<extractionSource>	<http://en.wikipedia.org/wiki/Nicolas_Sarkozy> .
+<id_1iv40ba_115_1b5ah11>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1x1wh16_115_1b5ah11>
+<id_vkf2e7_nyg_1qj0mwu>	<extractionSource>	<http://en.wikipedia.org/wiki/Nicolas_Sarkozy> .
+<id_1x1wh16_115_1b5ah11>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1h8i4b7_115_hj5qvt>
 <id_17gzuo3_1ia_1iodrza>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense> .
 <id_1h8i4b7_115_hj5qvt>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1cjgctq_115_hj5qvt>
 <id_17gzuo3_1ia_1a57u1u>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense> .
 <id_1cjgctq_115_hj5qvt>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1e2wqwt_115_hj5qvt>
+<id_17gzuo3_1sz_1a57u1u>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense> .
+<id_1e2wqwt_115_hj5qvt>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1s9p7mp_115_hj5qvt>
+<id_17gzuo3_nyg_1a57u1u>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense> .
+<id_1s9p7mp_115_hj5qvt>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_h184s9_115_14k6h1t>
 <id_1isx97r_1ia_zcstfs>	<extractionSource>	<http://en.wikipedia.org/wiki/Pere_López_Agràs> .
 <id_h184s9_115_14k6h1t>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_fpt8tj_115_14k6h1t>
 <id_1isx97r_1ia_wjlnxh>	<extractionSource>	<http://en.wikipedia.org/wiki/Pere_López_Agràs> .
 <id_fpt8tj_115_14k6h1t>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_b6mjlk_115_14k6h1t>
+<id_1isx97r_1sz_wjlnxh>	<extractionSource>	<http://en.wikipedia.org/wiki/Pere_López_Agràs> .
+<id_b6mjlk_115_14k6h1t>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_9cm650_115_14k6h1t>
+<id_1isx97r_nyg_wjlnxh>	<extractionSource>	<http://en.wikipedia.org/wiki/Pere_López_Agràs> .
+<id_9cm650_115_14k6h1t>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_qh3zhr_115_peivmg>
 <id_13n9nse_1ia_1ylv8b1>	<extractionSource>	<http://en.wikipedia.org/wiki/Philippe_Massoni> .
 <id_qh3zhr_115_peivmg>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_s0kdku_115_peivmg>
+<id_13n9nse_1sz_1ylv8b1>	<extractionSource>	<http://en.wikipedia.org/wiki/Philippe_Massoni> .
+<id_s0kdku_115_peivmg>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_167cuaq_115_peivmg>
+<id_13n9nse_nyg_1ylv8b1>	<extractionSource>	<http://en.wikipedia.org/wiki/Philippe_Massoni> .
+<id_167cuaq_115_peivmg>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_ifjeb2_115_w485q7>
 <id_1snxdw5_1ia_1q7500o>	<extractionSource>	<http://en.wikipedia.org/wiki/Rally_for_the_Republic> .
 <id_ifjeb2_115_w485q7>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_jyzse5_115_w485q7>
+<id_1snxdw5_1sz_1q7500o>	<extractionSource>	<http://en.wikipedia.org/wiki/Rally_for_the_Republic> .
+<id_jyzse5_115_w485q7>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_y5s941_115_w485q7>
+<id_1snxdw5_nyg_1q7500o>	<extractionSource>	<http://en.wikipedia.org/wiki/Rally_for_the_Republic> .
+<id_y5s941_115_w485q7>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1uep2ia_115_16r5nqb>
 <id_1as8dix_1ia_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Union_for_a_Popular_Movement> .
 <id_1uep2ia_115_16r5nqb>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1pvidab_115_16r5nqb>
+<id_1as8dix_1sz_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Union_for_a_Popular_Movement> .
+<id_1pvidab_115_16r5nqb>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1o1hztr_115_16r5nqb>
+<id_1as8dix_nyg_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Union_for_a_Popular_Movement> .
+<id_1o1hztr_115_16r5nqb>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1baupx5_115_4jg3xi>
 <id_j2lde8_1ia_clk5n6>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
 <id_1baupx5_115_4jg3xi>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1wznzrh_115_4jg3xi>
 <id_j2lde8_1ia_19ftf2m>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
 <id_1wznzrh_115_4jg3xi>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1yj4duk_115_4jg3xi>
+<id_j2lde8_1sz_19ftf2m>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
+<id_1yj4duk_115_4jg3xi>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_dosslc_115_4jg3xi>
+<id_j2lde8_nyg_19ftf2m>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
+<id_dosslc_115_4jg3xi>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1bt4vy6_115_s1au4d>
 <id_w2djwz_1ia_2d4xw2>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
 <id_1bt4vy6_115_s1au4d>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_5ud0c1_115_s1au4d>
 <id_w2djwz_1ia_onrje2>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
 <id_5ud0c1_115_s1au4d>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_179y6q7_115_s1au4d>
+<id_w2djwz_1sz_2d4xw2>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
+<id_179y6q7_115_s1au4d>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_15fxt9n_115_s1au4d>
+<id_w2djwz_nyg_2d4xw2>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
+<id_15fxt9n_115_s1au4d>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1qybxqb_115_1c7bkvf>
 <id_krjrbp_1ia_1fq5buc>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado> .
 <id_1qybxqb_115_1c7bkvf>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1shsbte_115_1c7bkvf>
+<id_krjrbp_1sz_1fq5buc>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado> .
+<id_1shsbte_115_1c7bkvf>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_7ngqk6_115_1c7bkvf>
+<id_krjrbp_nyg_1fq5buc>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado> .
+<id_7ngqk6_115_1c7bkvf>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1mzbg3k_115_apmb51>
 <id_1u5uyhb_1ia_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain> .
 <id_1mzbg3k_115_apmb51>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1oiru6n_115_apmb51>
+<id_1u5uyhb_1sz_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain> .
+<id_1oiru6n_115_apmb51>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_3og8xf_115_apmb51>
+<id_1u5uyhb_nyg_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain> .
+<id_3og8xf_115_apmb51>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1g0wa1y_115_2kd4dn>
 <id_1m0lrpx_1ia_krait4>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia> .
 <id_1g0wa1y_115_2kd4dn>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_1eosebo_115_2kd4dn>
 <id_1m0lrpx_1ia_hy3a9g>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia> .
 <id_1eosebo_115_2kd4dn>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1a5lp3p_115_2kd4dn>
+<id_1m0lrpx_1sz_hy3a9g>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia> .
+<id_1a5lp3p_115_2kd4dn>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_18blbn5_115_2kd4dn>
+<id_1m0lrpx_nyg_hy3a9g>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia> .
+<id_18blbn5_115_2kd4dn>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_15lphsn_115_1jexsky>
 <id_1ng0idk_1ia_6vyo6h>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero> .
 <id_15lphsn_115_1jexsky>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_4dt1d_115_1jexsky>
 <id_1ng0idk_1ia_1f2t5rd>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero> .
 <id_4dt1d_115_1jexsky>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1nu74g_115_1jexsky>
+<id_1ng0idk_1sz_1f2t5rd>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero> .
+<id_1nu74g_115_1jexsky>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_fumnuc_115_1jexsky>
+<id_1ng0idk_nyg_1f2t5rd>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero> .
+<id_fumnuc_115_1jexsky>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1xqf3rn_115_72hycf>
 <id_lb8qid_1ia_vby5o3>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar> .
 <id_1xqf3rn_115_72hycf>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_mb9s0a_115_72hycf>
 <id_lb8qid_1ia_1y31777>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar> .
 <id_mb9s0a_115_72hycf>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_nuq63d_115_72hycf>
+<id_lb8qid_1sz_1y31777>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar> .
+<id_nuq63d_115_72hycf>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_121imt9_115_72hycf>
+<id_lb8qid_nyg_1y31777>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar> .
+<id_121imt9_115_72hycf>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_10dv592_115_gdd4xp>
 <id_1cx2d3n_1ia_1ibk8r7>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain> .
 <id_10dv592_115_gdd4xp>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_11xbjc5_115_gdd4xp>
+<id_1cx2d3n_1sz_1ibk8r7>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain> .
+<id_11xbjc5_115_gdd4xp>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1g44021_115_gdd4xp>
+<id_1cx2d3n_nyg_1ibk8r7>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain> .
+<id_1g44021_115_gdd4xp>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_p9xdl_115_yyw99g>
 <id_1lrkwvu_1ia_1akqd24>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
 <id_p9xdl_115_yyw99g>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
@@ -438,33 +1108,81 @@
 #@ <id_geei0y_115_yyw99g>
 <id_1lrkwvu_1ia_zjyss4>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
 <id_geei0y_115_yyw99g>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1g4maus_115_yyw99g>
+<id_1lrkwvu_1sz_14vchp4>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
+<id_1g4maus_115_yyw99g>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1uberko_115_yyw99g>
+<id_1lrkwvu_nyg_14vchp4>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
+<id_1uberko_115_yyw99g>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_21tr93_115_1sa1pal>
 <id_ngfbkz_1ia_6k6we9>	<extractionSource>	<http://en.wikipedia.org/wiki/Madrid_(Spanish_Congress_Electoral_District)> .
 <id_21tr93_115_1sa1pal>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_3wn29_115_1sa1pal>
 <id_ngfbkz_1ia_2h36ql>	<extractionSource>	<http://en.wikipedia.org/wiki/Madrid_(Spanish_Congress_Electoral_District)> .
 <id_3wn29_115_1sa1pal>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1wjr408_115_1sa1pal>
+<id_ngfbkz_1sz_6k6we9>	<extractionSource>	<http://en.wikipedia.org/wiki/Madrid_(Spanish_Congress_Electoral_District)> .
+<id_1wjr408_115_1sa1pal>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1upqqjo_115_1sa1pal>
+<id_ngfbkz_nyg_6k6we9>	<extractionSource>	<http://en.wikipedia.org/wiki/Madrid_(Spanish_Congress_Electoral_District)> .
+<id_1upqqjo_115_1sa1pal>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_4p83gm_115_vlm3pv>
 <id_45ua65_1ia_19d45b0>	<extractionSource>	<http://en.wikipedia.org/wiki/Mariano_Rajoy> .
 <id_4p83gm_115_vlm3pv>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_68ohjp_115_vlm3pv>
+<id_45ua65_1sz_19d45b0>	<extractionSource>	<http://en.wikipedia.org/wiki/Mariano_Rajoy> .
+<id_68ohjp_115_vlm3pv>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_kfgy9l_115_vlm3pv>
+<id_45ua65_nyg_19d45b0>	<extractionSource>	<http://en.wikipedia.org/wiki/Mariano_Rajoy> .
+<id_kfgy9l_115_vlm3pv>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_120xo83_115_8atwgp>
 <id_1vmvigz_1ia_gstaq0>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega> .
 <id_120xo83_115_8atwgp>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_15tsm4d_115_8atwgp>
 <id_1vmvigz_1ia_q83g90>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega> .
 <id_15tsm4d_115_8atwgp>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_11alwwe_115_8atwgp>
+<id_1vmvigz_1sz_q83g90>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega> .
+<id_11alwwe_115_8atwgp>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_zgljfu_115_8atwgp>
+<id_1vmvigz_nyg_q83g90>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega> .
+<id_zgljfu_115_8atwgp>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_bpfo8h_115_z5z9b>
 <id_gbjwix_1ia_1gpnuwa>	<extractionSource>	<http://en.wikipedia.org/wiki/Sonsoles_Espinosa> .
 <id_bpfo8h_115_z5z9b>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_d8w2bk_115_z5z9b>
+<id_gbjwix_1sz_1gpnuwa>	<extractionSource>	<http://en.wikipedia.org/wiki/Sonsoles_Espinosa> .
+<id_d8w2bk_115_z5z9b>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_rfoj1g_115_z5z9b>
+<id_gbjwix_nyg_1gpnuwa>	<extractionSource>	<http://en.wikipedia.org/wiki/Sonsoles_Espinosa> .
+<id_rfoj1g_115_z5z9b>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_1ad6bf1_115_19d8v80>
 <id_1i5m33a_1ia_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party> .
 <id_1ad6bf1_115_19d8v80>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_1bwmpi4_115_19d8v80>
+<id_1i5m33a_1sz_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party> .
+<id_1bwmpi4_115_19d8v80>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_1q3f680_115_19d8v80>
+<id_1i5m33a_nyg_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party> .
+<id_1q3f680_115_19d8v80>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_h88cgc_115_xu51th>
 <id_cacb9n_1ia_16aar8v>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León> .
 <id_h88cgc_115_xu51th>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
 #@ <id_h88fqu_115_xu51th>
 <id_cacb9n_1ia_16aauej>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León> .
 <id_h88fqu_115_xu51th>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_irottx_115_xu51th>
+<id_cacb9n_1sz_16aauej>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León> .
+<id_irottx_115_xu51th>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_wyhajt_115_xu51th>
+<id_cacb9n_nyg_16aauej>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León> .
+<id_wyhajt_115_xu51th>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_542ly7_115_ev13bk>
 <id_13dzdeu_1ia_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
 <id_542ly7_115_ev13bk>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
+#@ <id_6nj01a_115_ev13bk>
+<id_13dzdeu_1sz_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
+<id_6nj01a_115_ev13bk>	<extractionTechnique>	"CategoryExtractor from title" .
+#@ <id_kubgr6_115_ev13bk>
+<id_13dzdeu_nyg_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
+<id_kubgr6_115_ev13bk>	<extractionTechnique>	"CategoryExtractor from title" .
