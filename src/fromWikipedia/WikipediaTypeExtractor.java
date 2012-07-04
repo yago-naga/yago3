@@ -166,6 +166,7 @@ public class WikipediaTypeExtractor extends Extractor {
     nonConceptualCategories = new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)).asStringSet("<_yagoNonConceptualWord>");
     preferredMeanings = WordnetExtractor.preferredMeanings(input);
     wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
+    wordnetClasses.load(input.get(HardExtractor.HARDWIREDFACTS));
     categoryClassFacts = new FactCollection();
     yagoBranches = new HashMap<String, String>();
     TitleExtractor titleExtractor = new TitleExtractor(input);
@@ -275,7 +276,8 @@ public class WikipediaTypeExtractor extends Extractor {
       String yagoBranch = yagoBranchForClass(type);
       if (yagoBranch != null) {
         Announce.debug(entity, type, yagoBranch);
-        D.addKeyValue(branches, yagoBranch, 1);
+        // Give higher priority to the stuff extracted from infoboxes
+        D.addKeyValue(branches, yagoBranch, type.startsWith("<wordnet")?2:1);
       }
     }
     String bestSoFar = null;
@@ -295,6 +297,6 @@ public class WikipediaTypeExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new WikipediaTypeExtractor(new File("c:/fabian/temp/minister.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new WikipediaTypeExtractor(new File("c:/fabian/temp/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
   }
 }

@@ -18,18 +18,16 @@
 <Campania>	rdf:type	<wikicategory_Regions_of_Italy> .
 #@ <id_y9qq7a_88c_i4iypo>
 <Campania>	rdf:type	<wikicategory_NUTS_2_statistical_regions_of_the_European_Union> .
-#@ <id_1gaoy63_88c_1jupm55>
-<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Knights_of_the_Order_of_Vittorio_Veneto> .
-#@ <id_1gaoy63_88c_1cwc4rn>
-<Carlo_Azeglio_Ciampi>	rdf:type	<wordnet_president_110467179> .
-#@ <id_1gaoy63_88c_h0gx53>
-<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_People_from_Livorno> .
-#@ <id_1gaoy63_88c_lpwl6l>
-<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
 #@ <id_1gaoy63_88c_n87zzo>
 <Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Italian_Life_Senators> .
+#@ <id_1gaoy63_88c_lpwl6l>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
+#@ <id_1gaoy63_88c_h0gx53>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_People_from_Livorno> .
 #@ <id_1gaoy63_88c_14rp0oq>
 <Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Italian_bankers> .
+#@ <id_1gaoy63_88c_1jupm55>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Knights_of_the_Order_of_Vittorio_Veneto> .
 #@ <id_1gaoy63_88c_1uqrk31>
 <Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Action_Party_(Italy)_politicians> .
 #@ <id_1gaoy63_88c_1b160xb>
@@ -38,14 +36,12 @@
 <Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Living_people> .
 #@ <id_1gaoy63_88c_j672ly>
 <Carlo_Azeglio_Ciampi>	rdf:type	<wikicategory_Presidents_of_Italy> .
+#@ <id_1gaoy63_88c_1cwc4rn>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wordnet_president_110467179> .
 #@ <id_zskfq5_88c_gtlqig>
 <Catholic_Church>	rdf:type	<wikicategory_Apostolic_sees> .
 #@ <id_7r55ul_88c_1y1zid8>
 <Forza_Italia>	rdf:type	<wordnet_party_108256968> .
-#@ <id_7r55ul_88c_1b2kp4j>
-<Forza_Italia>	rdf:type	<wikicategory_Liberal-conservative_parties> .
-#@ <id_7r55ul_88c_9ojf3v>
-<Forza_Italia>	rdf:type	<wikicategory_Defunct_Christian_political_parties> .
 #@ <id_7r55ul_88c_13pvp2v>
 <Forza_Italia>	rdf:type	<wikicategory_Liberal_parties_in_Italy> .
 #@ <id_7r55ul_88c_1wxj1bv>
@@ -54,16 +50,18 @@
 <Forza_Italia>	rdf:type	<wikicategory_Political_parties_disestablished_in_2009> .
 #@ <id_7r55ul_88c_95tk7b>
 <Forza_Italia>	rdf:type	<wikicategory_Political_parties_established_in_1993> .
+#@ <id_7r55ul_88c_1b2kp4j>
+<Forza_Italia>	rdf:type	<wikicategory_Liberal-conservative_parties> .
+#@ <id_7r55ul_88c_9ojf3v>
+<Forza_Italia>	rdf:type	<wikicategory_Defunct_Christian_political_parties> .
 #@ <id_7r55ul_88c_mbsbk5>
 <Forza_Italia>	rdf:type	<wikicategory_Social_democratic_parties> .
 #@ <id_7r55ul_88c_163xx0d>
 <Forza_Italia>	rdf:type	<wikicategory_Catholic_political_parties> .
-#@ <id_1qqn7vt_88c_1600th4>
-<Gianfranco_Fini>	rdf:type	<wikicategory_Italian_Ministers_of_Foreign_Affairs> .
-#@ <id_1qqn7vt_88c_ezhr4k>
-<Gianfranco_Fini>	rdf:type	<wikicategory_People_from_Bologna> .
 #@ <id_1qqn7vt_88c_1wzrlsf>
 <Gianfranco_Fini>	rdf:type	<wikicategory_The_People_of_Freedom_politicians> .
+#@ <id_1qqn7vt_88c_1600th4>
+<Gianfranco_Fini>	rdf:type	<wikicategory_Italian_Ministers_of_Foreign_Affairs> .
 #@ <id_1qqn7vt_88c_1f9igqp>
 <Gianfranco_Fini>	rdf:type	<wikicategory_Italian_Social_Movement_politicians> .
 #@ <id_1qqn7vt_88c_1gz0hf6>
@@ -72,20 +70,22 @@
 <Gianfranco_Fini>	rdf:type	<wikicategory_Living_people> .
 #@ <id_1qqn7vt_88c_vafydj>
 <Gianfranco_Fini>	rdf:type	<wordnet_officeholder_110371450> .
-#@ <id_1vo5vis_88c_a942ok>
-<Giorgio_Napolitano>	rdf:type	<wikicategory_Current_national_leaders> .
-#@ <id_1vo5vis_88c_1fs2cib>
-<Giorgio_Napolitano>	rdf:type	<wikicategory_People_from_Naples> .
-#@ <id_1vo5vis_88c_xj4hi>
-<Giorgio_Napolitano>	rdf:type	<wikicategory_Presidents_of_the_Italian_Chamber_of_Deputies> .
+#@ <id_1qqn7vt_88c_ezhr4k>
+<Gianfranco_Fini>	rdf:type	<wikicategory_People_from_Bologna> .
 #@ <id_1vo5vis_88c_jlr39>
 <Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_Ministers_of_the_Interior> .
 #@ <id_1vo5vis_88c_n87zzo>
 <Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_Life_Senators> .
 #@ <id_1vo5vis_88c_jblfux>
 <Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_atheists> .
+#@ <id_1vo5vis_88c_a942ok>
+<Giorgio_Napolitano>	rdf:type	<wikicategory_Current_national_leaders> .
 #@ <id_1vo5vis_88c_19quaek>
 <Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_Communist_Party_politicians> .
+#@ <id_1vo5vis_88c_1fs2cib>
+<Giorgio_Napolitano>	rdf:type	<wikicategory_People_from_Naples> .
+#@ <id_1vo5vis_88c_xj4hi>
+<Giorgio_Napolitano>	rdf:type	<wikicategory_Presidents_of_the_Italian_Chamber_of_Deputies> .
 #@ <id_1vo5vis_88c_1fvtmno>
 <Giorgio_Napolitano>	rdf:type	<wikicategory_Living_people> .
 #@ <id_1vo5vis_88c_vafydj>
@@ -94,12 +94,6 @@
 <Giorgio_Napolitano>	rdf:type	<wikicategory_Presidents_of_Italy> .
 #@ <id_1vo5vis_88c_10zm9e4>
 <Giorgio_Napolitano>	rdf:type	<wikicategory_Italian_people_of_World_War_II> .
-#@ <id_1rnvp37_88c_1ug2kra>
-<Giuliano_Amato>	rdf:type	<wikicategory_Democratic_Party_(Italy)_politicians> .
-#@ <id_1rnvp37_88c_12fl3k0>
-<Giuliano_Amato>	rdf:type	<wikicategory_People_from_Turin> .
-#@ <id_1rnvp37_88c_1i8jl1c>
-<Giuliano_Amato>	rdf:type	<wikicategory_Columbia_Law_School_alumni> .
 #@ <id_1rnvp37_88c_lpwl6l>
 <Giuliano_Amato>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
 #@ <id_1rnvp37_88c_jlr39>
@@ -110,16 +104,20 @@
 <Giuliano_Amato>	rdf:type	<wikicategory_Italian_Christian_socialists> .
 #@ <id_1rnvp37_88c_1ovc1fu>
 <Giuliano_Amato>	rdf:type	<wikicategory_People_of_Sicilian_descent> .
+#@ <id_1rnvp37_88c_1ug2kra>
+<Giuliano_Amato>	rdf:type	<wikicategory_Democratic_Party_(Italy)_politicians> .
 #@ <id_1rnvp37_88c_jq99ic>
 <Giuliano_Amato>	rdf:type	<wikicategory_Italian_Socialist_Party_politicians> .
+#@ <id_1rnvp37_88c_12fl3k0>
+<Giuliano_Amato>	rdf:type	<wikicategory_People_from_Turin> .
 #@ <id_1rnvp37_88c_1fvtmno>
 <Giuliano_Amato>	rdf:type	<wikicategory_Living_people> .
 #@ <id_1rnvp37_88c_vafydj>
 <Giuliano_Amato>	rdf:type	<wordnet_officeholder_110371450> .
 #@ <id_1rnvp37_88c_38b2ny>
 <Giuliano_Amato>	rdf:type	<wikicategory_Fellows_of_the_American_Academy_of_Arts_and_Sciences> .
-#@ <id_1bclsii_88c_1edc9j2>
-<Giulio_Tremonti>	rdf:type	<wikicategory_Forza_Italia_politicians> .
+#@ <id_1rnvp37_88c_1i8jl1c>
+<Giuliano_Amato>	rdf:type	<wikicategory_Columbia_Law_School_alumni> .
 #@ <id_1bclsii_88c_165alh2>
 <Giulio_Tremonti>	rdf:type	<wikicategory_Italian_essayists> .
 #@ <id_1bclsii_88c_jq99ic>
@@ -132,32 +130,34 @@
 <Giulio_Tremonti>	rdf:type	<wordnet_officeholder_110371450> .
 #@ <id_1bclsii_88c_8v7rjo>
 <Giulio_Tremonti>	rdf:type	<wikicategory_Italian_economists> .
-#@ <id_1q29rbl_88c_14twwct>
-<Italian_Chamber_of_Deputies>	rdf:type	<wikicategory_National_lower_houses> .
-#@ <id_184v0j1_88c_1600th4>
-<Lamberto_Dini>	rdf:type	<wikicategory_Italian_Ministers_of_Foreign_Affairs> .
+#@ <id_1bclsii_88c_1edc9j2>
+<Giulio_Tremonti>	rdf:type	<wikicategory_Forza_Italia_politicians> .
+#@ <id_1q29rbl_88c_1ltacv0>
+<Italian_Chamber_of_Deputies>	rdf:type	<wordnet_parliament_108319198> .
 #@ <id_184v0j1_88c_lpwl6l>
 <Lamberto_Dini>	rdf:type	<wikicategory_Prime_Ministers_of_Italy> .
 #@ <id_184v0j1_88c_1pwu0d1>
 <Lamberto_Dini>	rdf:type	<wikicategory_Democracy_is_Freedom_–_The_Daisy_politicians> .
 #@ <id_184v0j1_88c_142jzsa>
 <Lamberto_Dini>	rdf:type	<wikicategory_People_from_Florence> .
+#@ <id_184v0j1_88c_1600th4>
+<Lamberto_Dini>	rdf:type	<wikicategory_Italian_Ministers_of_Foreign_Affairs> .
 #@ <id_184v0j1_88c_1fvtmno>
 <Lamberto_Dini>	rdf:type	<wikicategory_Living_people> .
 #@ <id_184v0j1_88c_8v7rjo>
 <Lamberto_Dini>	rdf:type	<wikicategory_Italian_economists> .
+#@ <id_10q4wvf_88c_11yu31c>
+<Lazio>	rdf:type	<wikicategory_Wine_regions_of_Italy> .
 #@ <id_10q4wvf_88c_1bmc0ks>
 <Lazio>	rdf:type	<wikicategory_Regions_of_Italy> .
 #@ <id_10q4wvf_88c_i4iypo>
 <Lazio>	rdf:type	<wikicategory_NUTS_2_statistical_regions_of_the_European_Union> .
-#@ <id_10q4wvf_88c_11yu31c>
-<Lazio>	rdf:type	<wikicategory_Wine_regions_of_Italy> .
+#@ <id_1qfjlq_88c_11yu31c>
+<Lombardy>	rdf:type	<wikicategory_Wine_regions_of_Italy> .
 #@ <id_1qfjlq_88c_1bmc0ks>
 <Lombardy>	rdf:type	<wikicategory_Regions_of_Italy> .
 #@ <id_1qfjlq_88c_i4iypo>
 <Lombardy>	rdf:type	<wikicategory_NUTS_2_statistical_regions_of_the_European_Union> .
-#@ <id_1qfjlq_88c_11yu31c>
-<Lombardy>	rdf:type	<wikicategory_Wine_regions_of_Italy> .
 #@ <id_1yo7s3q_88c_znrj7x>
 <Marco_Follini>	rdf:type	<wikicategory_Christian_Democracy_(Italy)_politicians> .
 #@ <id_1yo7s3q_88c_luzaiz>
@@ -178,10 +178,10 @@
 <Mario_Monti>	rdf:type	<wikicategory_Coca-Cola_people> .
 #@ <id_4o2xc6_88c_1esos97>
 <Mario_Monti>	rdf:type	<wikicategory_21st-century_economists> .
-#@ <id_4o2xc6_88c_a942ok>
-<Mario_Monti>	rdf:type	<wikicategory_Current_national_leaders> .
 #@ <id_4o2xc6_88c_ntx2hg>
 <Mario_Monti>	rdf:type	<wikicategory_21st-century_scholars> .
+#@ <id_4o2xc6_88c_a942ok>
+<Mario_Monti>	rdf:type	<wikicategory_Current_national_leaders> .
 #@ <id_4o2xc6_88c_okj32>
 <Mario_Monti>	rdf:type	<wikicategory_Italian_people_of_Argentine_descent> .
 #@ <id_4o2xc6_88c_j6k9nz>
@@ -348,6 +348,8 @@
 <Cherie_Blair>	rdf:type	<wordnet_officeholder_110371450> .
 #@ <id_1ks0wcp_88c_13dmcfr>
 <Connaught_Square>	rdf:type	<wikicategory_Streets_in_Westminster> .
+#@ <id_1ks0wcp_88c_blpua9>
+<Connaught_Square>	rdf:type	<wikicategory_Squares_in_Westminster> .
 #@ <id_z038xo_88c_g15v8g>
 <Edinburgh>	rdf:type	<wikicategory_Host_cities_of_the_Commonwealth_Games> .
 #@ <id_z038xo_88c_5jv04g>
@@ -356,6 +358,8 @@
 <Edinburgh>	rdf:type	<wikicategory_Lieutenancy_areas_of_Scotland> .
 #@ <id_z038xo_88c_1unfsqh>
 <Edinburgh>	rdf:type	<wikicategory_Capitals_in_Europe> .
+#@ <id_z038xo_88c_d4hm1h>
+<Edinburgh>	rdf:type	<wikicategory_Trading_posts_of_the_Hanseatic_League> .
 #@ <id_z038xo_88c_1lrx44u>
 <Edinburgh>	rdf:type	<wikicategory_Port_cities_and_towns_of_the_North_Sea> .
 #@ <id_z038xo_88c_7go0pp>
@@ -1192,10 +1196,10 @@
 <François_d'Aubert>	rdf:type	<wikicategory_Politicians_of_the_French_Fifth_Republic> .
 #@ <id_15kw2wg_88c_1j4ha1d>
 <François_d'Aubert>	rdf:type	<wikicategory_Alumni_of_HEC_School_of_Management> .
-#@ <id_1fvzpek_88c_19td829>
-<French_Fourth_Republic>	rdf:type	<wikicategory_Numbered_republics> .
-#@ <id_1fvzpek_88c_a9q66y>
-<French_Fourth_Republic>	rdf:type	<wikicategory_Former_republics> .
+#@ <id_1fvzpek_88c_1feld5g>
+<French_Fourth_Republic>	rdf:type	<wikicategory_Former_countries_in_Europe> .
+#@ <id_1fvzpek_88c_r34v42>
+<French_Fourth_Republic>	rdf:type	<wikicategory_States_and_territories_established_in_1946> .
 #@ <id_3dnf2x_88c_1fvtmno>
 <Giulia_Sarkozy>	rdf:type	<wikicategory_Living_people> .
 #@ <id_pq3wku_88c_100mj38>
@@ -1416,8 +1420,8 @@
 <Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Spanish_Socialist_Workers'_Party_politicians> .
 #@ <id_j2lde8_88c_1vgy2r2>
 <Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Leaders_of_political_parties_in_Spain> .
-#@ <id_w2djwz_88c_14twwct>
-<Congress_of_Deputies_(Spain)>	rdf:type	<wikicategory_National_lower_houses> .
+#@ <id_w2djwz_88c_15zg5an>
+<Congress_of_Deputies_(Spain)>	rdf:type	<wordnet_legislature_108163273> .
 #@ <id_krjrbp_88c_1untlg1>
 <Elena_Salgado>	rdf:type	<wikicategory_People_from_Ourense> .
 #@ <id_krjrbp_88c_h2l3bj>
@@ -1434,8 +1438,8 @@
 <Elena_Salgado>	rdf:type	<wikicategory_Spanish_Socialist_Workers'_Party_politicians> .
 #@ <id_krjrbp_88c_10t17ti>
 <Elena_Salgado>	rdf:type	<wikicategory_Spanish_Ministers_of_Economy_and_Finance> .
-#@ <id_1u5uyhb_88c_1wyt8jh>
-<Francoist_Spain>	rdf:type	<wikicategory_Former_monarchies_of_Europe> .
+#@ <id_1u5uyhb_88c_r34v3a>
+<Francoist_Spain>	rdf:type	<wikicategory_States_and_territories_established_in_1939> .
 #@ <id_1m0lrpx_88c_1fvtmno>
 <Joaquín_Almunia>	rdf:type	<wikicategory_Living_people> .
 #@ <id_1m0lrpx_88c_w2ky07>

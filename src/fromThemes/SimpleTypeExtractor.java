@@ -25,7 +25,7 @@ import basics.YAGO;
 public class SimpleTypeExtractor extends Extractor {
 
   /** Branches of YAGO, order matters! */
-  public static final List<String> yagoBranches = Arrays.asList(YAGO.person, YAGO.organization, YAGO.building, YAGO.artifact, YAGO.location, YAGO.abstraction,
+  public static final List<String> yagoBranches = Arrays.asList(YAGO.person, YAGO.organization, YAGO.building, YAGO.location, YAGO.artifact, YAGO.abstraction,
       YAGO.physicalEntity);
 
   @Override
