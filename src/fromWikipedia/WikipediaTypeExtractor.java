@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -11,7 +12,6 @@ import java.util.TreeMap;
 import java.util.TreeSet;
 
 import utils.TitleExtractor;
-
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -65,13 +65,31 @@ public class WikipediaTypeExtractor extends Extractor {
   public static final Theme WIKIPEDIACLASSES = new Theme("wikipediaClasses",
       "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
 
+  /** Holds the nonconceptual infoboxes*/
+  protected Set<String> nonConceptualInfoboxes;
+
+  /** Holds the nonconceptual categories*/
+  protected Set<String> nonConceptualCategories;
+
+  /** Holds the preferred meanings*/
+  private Map<String, String> preferredMeanings;
+
+  /** Caches the YAGO branches*/
+  private Map<String, String> yagoBranches;
+
+  /** Holds the facts about categories that we accumulate*/
+  private FactCollection categoryClassFacts;
+
+  /** Holds all the classes from Wordnet*/
+  protected FactCollection wordnetClasses;
+
   @Override
   public Set<Theme> output() {
     return new FinalSet<Theme>(WIKIPEDIATYPESOURCES, YAGOTYPES, WIKIPEDIACLASSES);
   }
 
   /** Maps a category to a wordnet class */
-  public static String category2class(String categoryName, Set<String> nonconceptual, Map<String, String> preferredMeaning) {
+  public String category2class(String categoryName) {
     // Check out whether the new category is worth being added
     NounGroup category = new NounGroup(categoryName);
     if (category.head() == null) {
@@ -94,7 +112,7 @@ public class WikipediaTypeExtractor extends Extractor {
     String stemmedHead = PlingStemmer.stem(category.head());
 
     // Exclude the bad guys
-    if (nonconceptual.contains(stemmedHead)) {
+    if (nonConceptualCategories.contains(stemmedHead)) {
       Announce.debug("Could not find type in", categoryName, "(is non-conceptual)");
       return (null);
     }
@@ -105,7 +123,7 @@ public class WikipediaTypeExtractor extends Extractor {
       String preModifier = category.preModifier().replace('_', ' ');
 
       for (int start = 0; start != -1 && start < preModifier.length() - 2; start = preModifier.indexOf(' ', start + 1)) {
-        wordnet = preferredMeaning.get((start == 0 ? preModifier : preModifier.substring(start + 1)) + " " + stemmedHead);
+        wordnet = preferredMeanings.get((start == 0 ? preModifier : preModifier.substring(start + 1)) + " " + stemmedHead);
         // take the longest matching sequence
         if (wordnet != null) return (wordnet);
       }
@@ -113,14 +131,14 @@ public class WikipediaTypeExtractor extends Extractor {
 
     // Try postmodifiers to catch "head of state"
     if (category.postModifier() != null && category.preposition() != null && category.preposition().equals("of")) {
-      String wordnet = preferredMeaning.get(stemmedHead + " of " + category.postModifier().head());
+      String wordnet = preferredMeanings.get(stemmedHead + " of " + category.postModifier().head());
       if (wordnet != null) return (wordnet);
     }
 
     // Try head
-    String wordnet = preferredMeaning.get(stemmedHead);
+    String wordnet = preferredMeanings.get(stemmedHead);
     if (wordnet != null) return (wordnet);
-    Announce.debug("Could not find type in", categoryName, "("+stemmedHead+") (no wordnet match)");
+    Announce.debug("Could not find type in", categoryName, "(" + stemmedHead + ") (no wordnet match)");
     return (null);
   }
 
@@ -129,68 +147,51 @@ public class WikipediaTypeExtractor extends Extractor {
    * 
    * @param classWriter
    */
-  protected void extractType(String titleEntity, String category, Set<String> types, FactCollection categoryFacts, Set<String> nonconceptual,
-      Map<String, String> preferredMeaning) throws IOException {
-    String concept = category2class(category, nonconceptual, preferredMeaning);
+  protected void extractType(String titleEntity, String category, Set<String> types) throws IOException {
+    String concept = category2class(category);
     if (concept == null) return;
     types.add(FactComponent.forWikiCategory(category));
-    categoryFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept), FactComponent.wikipediaURL(titleEntity),
-        "WikipediaTypeExtractor from category");
+    categoryClassFacts.add(new Fact(null, FactComponent.forWikiCategory(category), RDFS.subclassOf, concept),
+        FactComponent.wikipediaURL(titleEntity), "WikipediaTypeExtractor from category");
     String name = new NounGroup(category).stemmed().replace('_', ' ');
-    if (!name.isEmpty()) categoryFacts.add(
+    if (!name.isEmpty()) categoryClassFacts.add(
         new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent.forStringWithLanguage(name, "en")),
         FactComponent.wikipediaURL(titleEntity), "WikipediaTypeExtractor from stemmed name");
   }
 
-  /** Returns the set of non-conceptual words */
-  public static Set<String> nonConceptualWords(FactCollection categoryPatterns) {
-    return (categoryPatterns.asStringSet("<_yagoNonConceptualWord>"));
-  }
-
-  /** Returns the set of non-conceptual words 
-   * @throws IOException */
-  public static Set<String> nonConceptualWords(FactSource categoryPatterns) throws IOException {
-    return (nonConceptualWords(new FactCollection(categoryPatterns)));
-  }
-
-  /** Returns the set of non-conceptual words 
-   * @throws IOException */
-  public static Set<String> nonConceptualWords(Map<Theme, FactSource> themes) throws IOException {
-    return (nonConceptualWords(themes.get(PatternHardExtractor.CATEGORYPATTERNS)));
-  }
-
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-    Set<String> nonConceptualInfoboxes = new HashSet<>();
+    nonConceptualInfoboxes = new HashSet<>();
     for (Fact f : new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS)).getBySecondArgSlow(RDFS.type, "<_yagoNonConceptualInfobox>")) {
       nonConceptualInfoboxes.add(f.getArg(1));
     }
-    Set<String> nonConceptualCategories = nonConceptualWords(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)));
-    Map<String, String> preferredMeanings = WordnetExtractor.preferredMeanings(input);
+    nonConceptualCategories = new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)).asStringSet("<_yagoNonConceptualWord>");
+    preferredMeanings = WordnetExtractor.preferredMeanings(input);
+    wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
+    categoryClassFacts = new FactCollection();
+    yagoBranches = new HashMap<String, String>();
     TitleExtractor titleExtractor = new TitleExtractor(input);
-    FactCollection wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
-    FactCollection categoryClasses = new FactCollection();
 
     // Extract the information
     Announce.progressStart("Extracting", 3_900_000);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-    String titleEntity = null;
-    Set<String> types = new HashSet<>();
+    String currentEntity = null;
+    Set<String> typesOfCurrentEntity = new HashSet<>();
     loop: while (true) {
       switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "{{Infobox", "{{ Infobox")) {
         case -1: // End of file
-          flush(titleEntity, types, writers, categoryClasses, wordnetClasses);
+          flush(currentEntity, typesOfCurrentEntity, writers);
           break loop;
         case 0: // New entity
           Announce.progressStep();
-          flush(titleEntity, types, writers, categoryClasses, wordnetClasses);          
-          titleEntity = titleExtractor.getTitleEntity(in);
+          flush(currentEntity, typesOfCurrentEntity, writers);
+          currentEntity = titleExtractor.getTitleEntity(in);
           break;
         case 1: // Category
-          if (titleEntity == null) continue;
+          if (currentEntity == null) continue;
           String category = FileLines.readTo(in, ']', '|').toString();
           category = category.trim();
-          extractType(titleEntity, category, types, categoryClasses, nonConceptualCategories, preferredMeanings);
+          extractType(currentEntity, category, typesOfCurrentEntity);
           break;
         case 2: // Infobox
         case 3:// Infobox
@@ -198,14 +199,14 @@ public class WikipediaTypeExtractor extends Extractor {
           if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
           if (!nonConceptualInfoboxes.contains(cls)) {
             String type = preferredMeanings.get(cls);
-            if (type != null) types.add(type);
+            if (type != null) typesOfCurrentEntity.add(type);
           }
       }
     }
     Announce.progressDone();
 
     Announce.doing("Writing classes");
-    for (Fact f : categoryClasses) {
+    for (Fact f : categoryClassFacts) {
       if (FactComponent.isFactId(f.getArg(1))) writers.get(WIKIPEDIATYPESOURCES).write(f);
       else writers.get(WIKIPEDIACLASSES).write(f);
     }
@@ -216,25 +217,24 @@ public class WikipediaTypeExtractor extends Extractor {
       if (f.getRelation().equals(RDFS.type)) write(writers, YAGOTYPES, f, WIKIPEDIATYPESOURCES, YAGO.yago, "Manual");
     }
     Announce.done();
-    
+
     in.close();
   }
 
   /** Writes the facts */
-  public void flush(String entity, Set<String> types, Map<Theme, FactWriter> writers, FactCollection categoryClasses, FactCollection wordnetClasses)
-      throws IOException {
+  public void flush(String entity, Set<String> types, Map<Theme, FactWriter> writers) throws IOException {
     if (entity == null || types.isEmpty()) {
       types.clear();
       return;
     }
-    String yagoBranch = yagoBranch(entity, types, categoryClasses, wordnetClasses);
+    String yagoBranch = yagoBranchForEntity(entity, types);
     Announce.debug("Branch of", entity, "is", yagoBranch);
     if (yagoBranch == null) {
       types.clear();
       return;
     }
     for (String type : types) {
-      String branch = yagoBranch(type, categoryClasses, wordnetClasses);
+      String branch = yagoBranchForClass(type);
       if (branch == null || !branch.equals(yagoBranch)) {
         Announce.debug("Wrong branch:", type, branch);
       } else {
@@ -246,46 +246,40 @@ public class WikipediaTypeExtractor extends Extractor {
   }
 
   /** Returns the YAGO branch for a category class */
-  public static String yagoBranch(String arg, FactCollection categoryClasses, FactCollection wordnetClasses) {
+  public String yagoBranchForClass(String arg) {
+    if (yagoBranches.containsKey(arg)) return (yagoBranches.get(arg));
     String yagoBranch = SimpleTypeExtractor.yagoBranch(arg, wordnetClasses);
-    if (yagoBranch != null) return (yagoBranch);
-    for (String sup : categoryClasses.getArg2s(arg, RDFS.subclassOf)) {
+    if (yagoBranch != null) {
+      yagoBranches.put(arg, yagoBranch);
+      return (yagoBranch);
+    }
+    String sup = categoryClassFacts.getArg2(arg, RDFS.subclassOf);
+    if (sup != null) {
       yagoBranch = SimpleTypeExtractor.yagoBranch(sup, wordnetClasses);
-      if (yagoBranch != null) return (yagoBranch);
+      if (yagoBranch != null) {
+        yagoBranches.put(arg, yagoBranch);
+        return (yagoBranch);
+      }
     }
     return null;
   }
 
   /** Returns the YAGO branch for a an entity */
-  public static String yagoBranch(String entity, Set<String> types, FactCollection categoryClasses, FactCollection wordnetClasses) {
-    Map<String, Integer> branches = new TreeMap<>();
+  public String yagoBranchForEntity(String entity, Set<String> types) {
+    Map<String, Integer> branches = new HashMap<>();
     for (String type : types) {
-      String yagoBranch = yagoBranch(type, categoryClasses, wordnetClasses);
-      if (yagoBranch != null) D.addKeyValue(branches, yagoBranch, 1);
+      String yagoBranch = yagoBranchForClass(type);
+      if (yagoBranch != null) {
+        Announce.debug(entity, type, yagoBranch);
+        D.addKeyValue(branches, yagoBranch, 1);
+      }
     }
-    String yagoBranch = null;
-    for (String b : branches.keySet()) {
-      if (yagoBranch == null || branches.get(b) > branches.get(yagoBranch)) yagoBranch = b;
+    String bestSoFar = null;
+    for (String candidate : branches.keySet()) {
+      if (bestSoFar == null || branches.get(candidate) > branches.get(bestSoFar) || branches.get(candidate) == branches.get(bestSoFar)
+          && SimpleTypeExtractor.yagoBranches.indexOf(candidate) < SimpleTypeExtractor.yagoBranches.indexOf(bestSoFar)) bestSoFar = candidate;
     }
-    return (yagoBranch);
-  }
-
-  /** returns the (trivial) names of an entity */
-  public static Set<String> namesOf(String titleEntity) {
-    Set<String> result = new TreeSet<>();
-    if (titleEntity.startsWith("<")) titleEntity = titleEntity.substring(1);
-    if (titleEntity.endsWith(">")) titleEntity = Char.cutLast(titleEntity);
-    String name = Char.decode(titleEntity.replace('_', ' '));
-    result.add(FactComponent.forStringWithLanguage(name, "en"));
-    String norm = Char.normalize(name);
-    if (!norm.contains("[?]")) result.add(FactComponent.forStringWithLanguage(norm, "en"));
-    if (name.contains(" (")) {
-      result.add(FactComponent.forStringWithLanguage(name.substring(0, name.indexOf(" (")).trim(), "en"));
-    }
-    if (name.contains(",") && !name.contains("(")) {
-      result.add(FactComponent.forStringWithLanguage(name.substring(0, name.indexOf(",")).trim(), "en"));
-    }
-    return (result);
+    return (bestSoFar);
   }
 
   /** Constructor from source file */
@@ -297,7 +291,6 @@ public class WikipediaTypeExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new WikipediaTypeExtractor(new File("./testCases/fromWikipedia.InfoboxExtractor/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"),
-        "Test on 1 wikipedia article");
+    new WikipediaTypeExtractor(new File("c:/fabian/temp/minister.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
   }
 }

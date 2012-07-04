@@ -61,11 +61,15 @@ public class TitleExtractor {
     }
     replacer = new PatternList(input.get(PatternHardExtractor.TITLEPATTERNS), "<_titleReplace>");
     if (input.get(TransitiveTypeExtractor.TRANSITIVETYPE) != null) {
-      this.entities=TransitiveTypeExtractor.entities(input);
+      this.entities = TransitiveTypeExtractor.entities(input);
     } else {
-      this.wordnetWords = new HashSet<>();
-      for(Fact f : input.get(WordnetExtractor.WORDNETWORDS)) {
-        if(f.getRelation().equals(YAGO.isPreferredMeaningOf)) this.wordnetWords.add(f.getArgJavaString(2));
+      if (input.containsKey(HardExtractor.HARDWIREDFACTS)) {
+        this.wordnetWords = WordnetExtractor.preferredMeanings(input).keySet();
+      } else {
+        this.wordnetWords = new HashSet<>();
+        for (Fact f : input.get(WordnetExtractor.WORDNETWORDS)) {
+          if (f.getRelation().equals(YAGO.isPreferredMeaningOf)) this.wordnetWords.add(f.getArgJavaString(2));
+        }
       }
     }
   }
@@ -75,10 +79,10 @@ public class TitleExtractor {
     String title = FileLines.readToBoundary(in, "</title>");
     title = replacer.transform(Char.decodeAmpersand(title));
     if (title == null) return (null);
-    if (wordnetWords!=null && wordnetWords.contains(title.toLowerCase())) return (null);
-    String entity=FactComponent.forYagoEntity(title.replace(' ', '_'));
-    if(entities!=null && !entities.contains(entity)) return(null);
-    return(entity);
+    if (wordnetWords != null && wordnetWords.contains(title.toLowerCase())) return (null);
+    String entity = FactComponent.forYagoEntity(title.replace(' ', '_'));
+    if (entities != null && !entities.contains(entity)) return (null);
+    return (entity);
   }
-  
+
 }

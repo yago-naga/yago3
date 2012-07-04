@@ -1,4 +1,10 @@
-# Test of YAGO2s
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# This file was generated on 2012-07-04 T 14:18:12.0733.
+# 
+# 
 # Names for the Wikipedia instances in multiple languages
 # MULTILINGUAL
 
@@ -3541,17 +3547,6 @@
 <Joan_Enric_Vives_Sicília>	rdfs:label	"Joan Enric Vives Sicília"@yo .
 <Joan_Enric_Vives_Sicília>	rdfs:label	"霍安·恩里克·比韦斯·西西利亚"@zh .
 <Michel_Charasse>	rdfs:label	"Michel Charasse"@fr .
-<Minister_of_the_Interior_(France)>	rdfs:label	"وزارة الداخلية (فرنسا)"@ar .
-<Minister_of_the_Interior_(France)>	rdfs:label	"Innenministerium (Frankreich)"@de .
-<Minister_of_the_Interior_(France)>	rdfs:label	"Prantsusmaa siseminister"@et .
-<Minister_of_the_Interior_(France)>	rdfs:label	"Ministerio del Interior de Francia"@es .
-<Minister_of_the_Interior_(France)>	rdfs:label	"Ministère de l'Intérieur (France)"@fr .
-<Minister_of_the_Interior_(France)>	rdfs:label	"Daftar Menteri Dalam Negeri Perancis"@id .
-<Minister_of_the_Interior_(France)>	rdfs:label	"Ministero dell'Interno (Francia)"@it .
-<Minister_of_the_Interior_(France)>	rdfs:label	"フランス内務省"@ja .
-<Minister_of_the_Interior_(France)>	rdfs:label	"Ministerstwo Spraw Wewnętrznych Francji"@pl .
-<Minister_of_the_Interior_(France)>	rdfs:label	"Министр внутренних дел Франции"@ru .
-<Minister_of_the_Interior_(France)>	rdfs:label	"กระทรวงมหาดไทย (ฝรั่งเศส)"@th .
 <Neuilly-sur-Seine>	rdfs:label	"Neuilly-sur-Seine"@af .
 <Neuilly-sur-Seine>	rdfs:label	"نويي سور سين"@ar .
 <Neuilly-sur-Seine>	rdfs:label	"Камуна Нёі-сюр-Сен"@be .

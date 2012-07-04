@@ -1,4 +1,10 @@
-# Test of YAGO2s
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# This file was generated on 2012-07-04 T 14:18:12.0733.
+# 
+# 
 # Sources for the Wikipedia labels
 # INTERNAL
 
@@ -931,18 +937,6 @@
 #@ <id_19cdmhr_115_1thcxev>
 <id_1dwhis1_nyg_f9hf6a>	<extractionSource>	<http://en.wikipedia.org/wiki/Michel_Charasse> .
 <id_19cdmhr_115_1thcxev>	<extractionTechnique>	"CategoryExtractor from title" .
-#@ <id_1lps011_115_tghlsf>
-<id_hrf5tl_1ia_1hel5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
-<id_1lps011_115_tghlsf>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
-#@ <id_zzqnzh_115_tghlsf>
-<id_hrf5tl_1ia_toyv3h>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
-<id_zzqnzh_115_tghlsf>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .
-#@ <id_1n98e44_115_tghlsf>
-<id_hrf5tl_1sz_1hel5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
-<id_1n98e44_115_tghlsf>	<extractionTechnique>	"CategoryExtractor from title" .
-#@ <id_2ewsuw_115_tghlsf>
-<id_hrf5tl_nyg_1hel5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
-<id_2ewsuw_115_tghlsf>	<extractionTechnique>	"CategoryExtractor from title" .
 #@ <id_5d2dpj_115_1dzyujs>
 <id_1tccrte_1ia_1tccrte>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
 <id_5d2dpj_115_1dzyujs>	<extractionTechnique>	"CategoryExtractor from simple name heuristics" .

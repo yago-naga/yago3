@@ -17,6 +17,7 @@
 
 # Fabian: Let's avoid inferring types, as this is sometimes erroneous (for horses which have a birthdate)
 # and as it might screw up the type coherence checking
+# Anyway, the rule extractor runs after the type checker, which already discards these facts.
 # "$0 <wasBornOnDate> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
 # "$0 <diedOnDate> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .
 # "$0 <isMarriedTo> $1"	<_implies>	"$0 rdf:type <wordnet_person_100007846>" .

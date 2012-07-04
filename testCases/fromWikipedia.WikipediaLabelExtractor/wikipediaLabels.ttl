@@ -1,4 +1,10 @@
-# Test of YAGO2s
+# This file is part of the ontology YAGO2s
+# It is licensed under a Creative-Commons Attribution License by the YAGO team
+# at the Max Planck Institute for Informatics/Germany.
+# See http://yago-knowledge.org for all details.
+# This file was generated on 2012-07-04 T 14:18:12.0733.
+# 
+# 
 # Labels derived from the name of the instance in Wikipedia
 # INTERNAL
 
@@ -624,14 +630,6 @@
 <Michel_Charasse>	skos:prefLabel	"Michel Charasse"@en .
 #@ <id_1dwhis1_nyg_f9hf6a>
 <Michel_Charasse>	<isPreferredMeaningOf>	"Michel Charasse"@en .
-#@ <id_hrf5tl_1ia_1hel5vd>
-<Minister_of_the_Interior_(France)>	rdfs:label	"Minister of the Interior (France)"@en .
-#@ <id_hrf5tl_1ia_toyv3h>
-<Minister_of_the_Interior_(France)>	rdfs:label	"Minister of the Interior"@en .
-#@ <id_hrf5tl_1sz_1hel5vd>
-<Minister_of_the_Interior_(France)>	skos:prefLabel	"Minister of the Interior (France)"@en .
-#@ <id_hrf5tl_nyg_1hel5vd>
-<Minister_of_the_Interior_(France)>	<isPreferredMeaningOf>	"Minister of the Interior (France)"@en .
 #@ <id_1tccrte_1ia_1tccrte>
 <Neuilly-sur-Seine>	rdfs:label	"Neuilly-sur-Seine"@en .
 #@ <id_1tccrte_1sz_1tccrte>

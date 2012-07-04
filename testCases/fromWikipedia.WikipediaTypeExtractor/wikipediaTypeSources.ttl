@@ -193,9 +193,9 @@
 #@ <id_1qyo6o4_115_1qxh75c>
 <id_1bclsii_88c_8v7rjo>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
 <id_1qyo6o4_115_1qxh75c>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_rim0wb_115_15b7bzb>
-<id_1q29rbl_88c_1ltacv0>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies> .
-<id_rim0wb_115_15b7bzb>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
+#@ <id_10hmyg_115_15b7bzb>
+<id_1q29rbl_88c_14twwct>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies> .
+<id_10hmyg_115_15b7bzb>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_12u2i22_115_jis3n>
 <id_184v0j1_88c_1600th4>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini> .
 <id_12u2i22_115_jis3n>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -1978,9 +1978,6 @@
 #@ <id_4vnqss_115_1thcxev>
 <id_1dwhis1_88c_16n2ezf>	<extractionSource>	<http://en.wikipedia.org/wiki/Michel_Charasse> .
 <id_4vnqss_115_1thcxev>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_11tagfg_115_tghlsf>
-<id_hrf5tl_88c_i3gdzy>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
-<id_11tagfg_115_tghlsf>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_8cgx39_115_1dzyujs>
 <id_1tccrte_88c_156ey2p>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
 <id_8cgx39_115_1dzyujs>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -2122,9 +2119,9 @@
 #@ <id_1ocuxmf_115_4jg3xi>
 <id_j2lde8_88c_1vgy2r2>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
 <id_1ocuxmf_115_4jg3xi>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_1n3jeim_115_s1au4d>
-<id_w2djwz_88c_15zg5an>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
-<id_1n3jeim_115_s1au4d>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
+#@ <id_1mjilcf_115_s1au4d>
+<id_w2djwz_88c_14twwct>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
+<id_1mjilcf_115_s1au4d>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_wibcfm_115_1c7bkvf>
 <id_krjrbp_88c_1untlg1>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado> .
 <id_wibcfm_115_1c7bkvf>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -2997,8 +2994,6 @@
 <id_1apak80_115_tiyb2w>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1azmv03_115_1t809w0>
 <id_edbjnh_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean-Pierre_Raffarin> .
-#@ <id_1rw3yjn_115_tghlsf>
-<id_i3gdzy_1m6_hvcqiv>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
 #@ <id_a0gy7z_115_ozn4l3>
 <id_hyw7fo_1m6_1uc0vtt>	<extractionSource>	<http://en.wikipedia.org/wiki/Albert_Pintat> .
 <id_1kqqn7d_115_18s9k3o>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -4621,7 +4616,6 @@
 <id_1wixp37_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
 #@ <id_jk0wop_115_lykx5r>
 <id_1orb0i8_1ia_1rxgag7>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder> .
-<id_df0bow_115_tghlsf>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_10giae5_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_11zkkx2_115_1gtgvff>
 <id_1cuj8va_1ia_1sdlkoq>	<extractionSource>	<http://en.wikipedia.org/wiki/Jacques_Chirac> .
@@ -4719,8 +4713,6 @@
 #@ <id_kj15ls_115_k3g05j>
 <id_1b2kp4j_1m6_1y1zid8>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
 <id_jk0wop_115_lykx5r>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-#@ <id_df0bow_115_tghlsf>
-<id_i3gdzy_1ia_190g9de>	<extractionSource>	<http://en.wikipedia.org/wiki/Minister_of_the_Interior_(France)> .
 <id_416ill_115_1w15wda>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1rwichr_115_kgol02>
 <id_tp8boy_1m6_10g61f2>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
@@ -5104,7 +5096,6 @@
 #@ <id_dxtkia_115_1qxh75c>
 <id_8v7rjo_1m6_1x9tonu>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
 <id_1azmv03_115_1t809w0>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-<id_1rw3yjn_115_tghlsf>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1awn38t_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1r55yup_115_kgol02>
 <id_5jv04g_1m6_10g61f2>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .

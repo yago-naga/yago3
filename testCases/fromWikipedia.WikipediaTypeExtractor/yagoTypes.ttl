@@ -132,8 +132,8 @@
 <Giulio_Tremonti>	rdf:type	<wordnet_officeholder_110371450> .
 #@ <id_1bclsii_88c_8v7rjo>
 <Giulio_Tremonti>	rdf:type	<wikicategory_Italian_economists> .
-#@ <id_1q29rbl_88c_1ltacv0>
-<Italian_Chamber_of_Deputies>	rdf:type	<wordnet_parliament_108319198> .
+#@ <id_1q29rbl_88c_14twwct>
+<Italian_Chamber_of_Deputies>	rdf:type	<wikicategory_National_lower_houses> .
 #@ <id_184v0j1_88c_1600th4>
 <Lamberto_Dini>	rdf:type	<wikicategory_Italian_Ministers_of_Foreign_Affairs> .
 #@ <id_184v0j1_88c_lpwl6l>
@@ -1322,8 +1322,6 @@
 <Michel_Charasse>	rdf:type	<wikicategory_Living_people> .
 #@ <id_1dwhis1_88c_16n2ezf>
 <Michel_Charasse>	rdf:type	<wikicategory_French_politicians> .
-#@ <id_hrf5tl_88c_i3gdzy>
-<Minister_of_the_Interior_(France)>	rdf:type	<wikicategory_Government_ministries_of_France> .
 #@ <id_1tccrte_88c_156ey2p>
 <Neuilly-sur-Seine>	rdf:type	<wikicategory_Communes_of_Hauts-de-Seine> .
 #@ <id_vkf2e7_88c_17qoll4>
@@ -1418,8 +1416,8 @@
 <Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Spanish_Socialist_Workers'_Party_politicians> .
 #@ <id_j2lde8_88c_1vgy2r2>
 <Alfredo_Pérez_Rubalcaba>	rdf:type	<wikicategory_Leaders_of_political_parties_in_Spain> .
-#@ <id_w2djwz_88c_15zg5an>
-<Congress_of_Deputies_(Spain)>	rdf:type	<wordnet_legislature_108163273> .
+#@ <id_w2djwz_88c_14twwct>
+<Congress_of_Deputies_(Spain)>	rdf:type	<wikicategory_National_lower_houses> .
 #@ <id_krjrbp_88c_1untlg1>
 <Elena_Salgado>	rdf:type	<wikicategory_People_from_Ourense> .
 #@ <id_krjrbp_88c_h2l3bj>

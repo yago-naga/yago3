@@ -1734,8 +1734,6 @@
 <wikicategory_Presidents_of_France>	rdfs:label	"president of France"@en .
 #@ <id_m69jvb_1ia_11thvie>
 <wikicategory_Recipients_of_the_Royal_Victorian_Chain>	rdfs:label	"recipient of the Royal Victorian Chain"@en .
-#@ <id_i3gdzy_1ia_190g9de>
-<wikicategory_Government_ministries_of_France>	rdfs:label	"Government ministry of France"@en .
 #@ <id_d63zim_1ia_h3w7ud>
 <wikicategory_French_people_of_Hungarian_descent>	rdfs:label	"French person of Hungarian descent"@en .
 #@ <id_1g7n65i_1m6_18cw5te>
@@ -2142,8 +2140,6 @@
 <wikicategory_Italian_film_actors>	rdfs:subClassOf	<wordnet_actor_109765278> .
 #@ <id_1l0w4z2_1m6_7shbzz>
 <wikicategory_Officers_of_the_National_Order_of_Quebec>	rdfs:subClassOf	<wordnet_military_officer_110317007> .
-#@ <id_i3gdzy_1m6_hvcqiv>
-<wikicategory_Government_ministries_of_France>	rdfs:subClassOf	<wordnet_ministry_108113797> .
 #@ <id_1pwu0d1_1m6_1kbo50g>
 <wikicategory_Democracy_is_Freedom_–_The_Daisy_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_gob89n_1m6_d9kgm7>
