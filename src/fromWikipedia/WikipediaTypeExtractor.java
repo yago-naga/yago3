@@ -8,10 +8,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 import java.util.TreeSet;
-
-import utils.TitleExtractor;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -22,6 +19,7 @@ import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
 import javatools.util.FileUtils;
+import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -218,6 +216,12 @@ public class WikipediaTypeExtractor extends Extractor {
     }
     Announce.done();
 
+    this.categoryClassFacts=null;
+    this.nonConceptualCategories=null;
+    this.nonConceptualInfoboxes=null;
+    this.preferredMeanings=null;
+    this.wordnetClasses=null;
+    this.yagoBranches=null;
     in.close();
   }
 
