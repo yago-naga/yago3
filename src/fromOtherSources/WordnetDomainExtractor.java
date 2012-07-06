@@ -1,14 +1,12 @@
 package fromOtherSources;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.io.Writer;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-
-import fromWikipedia.Extractor;
-
-
 
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -20,6 +18,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import fromWikipedia.Extractor;
 
 /**
  * YAGO2s - WordnetDomainExtractor
@@ -70,6 +69,8 @@ public class WordnetDomainExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+    //Writer w=new FileWriter("c:/fabian/data/wordnetdomains/wordnetdomains.tsv");
+    //w.write("# "+WORDNETDOMAINS.description+"\n");
     Map<String, String> mappings = new HashMap<String, String>();
     Set<String> labels = new HashSet<>();
     Map<String, String> words = new FactCollection(input.get(WordnetExtractor.WORDNETIDS)).getReverseMap("<hasSynsetId>");
@@ -84,7 +85,8 @@ public class WordnetDomainExtractor extends Extractor {
       String subject = Char.cutLast(Char.cutLast(split[0]));
       subject = mappings.get(subject);
       if (subject == null) continue;
-      subject = FactComponent.forString("1" + subject);
+      String id="1" + subject;
+      subject = FactComponent.forString(id);
       subject = words.get(subject);
       if (subject == null) continue;
       for (int i = 1; i < split.length; i++) {
@@ -92,8 +94,10 @@ public class WordnetDomainExtractor extends Extractor {
         labels.add(label);
         write(output, WORDNETDOMAINS, new Fact(subject, "<hasWordnetDomain>", label), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>",
             "Wordnet Domain Mapper");
-      }
+        //if(FactComponent.wordnetWord(subject)!=null) w.write(FactComponent.wordnetWord(subject)+"\t"+id+"\t<http://yago-knowledge.org/resource/"+FactComponent.stripBrackets(subject)+">\t"+split[i]+"\n");
+      }      
     }
+    //w.close();
     for (String label : labels) {
       write(output, WORDNETDOMAINS, new Fact(label, RDFS.type, "<wordnetDomain>"), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>",
           "Wordnet Domain Mapper");
