@@ -76,13 +76,13 @@ public class WikipediaLabelExtractor extends Extractor {
           if (titleEntity != null) {
             for (String name : namesOf(titleEntity)) {
               write(writers, WIKIPEDIALABELS, new Fact(titleEntity, RDFS.label, name), WIKIPEDIALABELSOURCES,
-                  FactComponent.wikipediaURL(titleEntity), "CategoryExtractor from simple name heuristics");
+                  FactComponent.wikipediaURL(titleEntity), "WikipediaLabelExtractor from simple name heuristics");
             }
             String name=FactComponent.forStringWithLanguage(preferredName(titleEntity),"en");
             write(writers, WIKIPEDIALABELS, new Fact(titleEntity, YAGO.hasPreferredName, name), WIKIPEDIALABELSOURCES,
-                FactComponent.wikipediaURL(titleEntity), "CategoryExtractor from title");            
+                FactComponent.wikipediaURL(titleEntity), "WikipediaLabelExtractor from title");            
             write(writers, WIKIPEDIALABELS, new Fact(titleEntity, YAGO.isPreferredMeaningOf, name), WIKIPEDIALABELSOURCES,
-                FactComponent.wikipediaURL(titleEntity), "CategoryExtractor from title");            
+                FactComponent.wikipediaURL(titleEntity), "WikipediaLabelExtractor from title");            
           }
           break;
         case 1:
