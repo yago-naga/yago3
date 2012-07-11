@@ -18,6 +18,7 @@ import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactCollection;
+import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
@@ -91,7 +92,7 @@ public class ConteXtExtractor extends Extractor {
 
 				for (Pair<Fact, String> fact : contextPatterns.extractWithProvenance(normalizedPage, titleEntity)) {
 				  if (fact.first != null)
-				    write(out, fact.first, outSources, titleEntity, "ConteXtExtractor from: " + fact.second);
+				    write(out, fact.first, outSources, FactComponent.wikipediaURL(titleEntity), "ConteXtExtractor from: " + fact.second);
 				}
 			}
 		}
