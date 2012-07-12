@@ -161,7 +161,7 @@ public class WikipediaTypeExtractor extends Extractor {
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
     nonConceptualInfoboxes = new HashSet<>();
     for (Fact f : new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS)).getBySecondArgSlow(RDFS.type, "<_yagoNonConceptualInfobox>")) {
-      nonConceptualInfoboxes.add(f.getArg(1));
+      nonConceptualInfoboxes.add(f.getArgJavaString(1));
     }
     nonConceptualCategories = new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)).asStringSet("<_yagoNonConceptualWord>");
     preferredMeanings = WordnetExtractor.preferredMeanings(input);
@@ -297,6 +297,6 @@ public class WikipediaTypeExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new WikipediaTypeExtractor(new File("c:/fabian/temp/wikitest.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new WikipediaTypeExtractor(new File("c:/fabian/temp/presley.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
   }
 }

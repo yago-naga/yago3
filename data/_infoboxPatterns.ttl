@@ -17,6 +17,7 @@
 # --------- Bad Infobox --------------
 "weather"	rdf:type	<_yagoNonConceptualInfobox> .
 "family name"	rdf:type	<_yagoNonConceptualInfobox> .
+"surname"	rdf:type	<_yagoNonConceptualInfobox> .
 "given name"	rdf:type	<_yagoNonConceptualInfobox> .
 
 # --------- Combinations of Infobox attributes --------------
