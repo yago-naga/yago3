@@ -53,8 +53,8 @@ public class StatisticsExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    TransitiveTypeExtractor.freeMemory();
-    WordnetExtractor.freeMemory();
+    //TransitiveTypeExtractor.freeMemory();
+    //WordnetExtractor.freeMemory();
     Set<String> definedRelations=new HashSet<>();
     Map<String, Integer> relations = new HashMap<>();
     Set<String> instances = new HashSet<>(15_000_000);
