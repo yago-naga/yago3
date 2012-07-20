@@ -11,6 +11,8 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import main.ParallelCaller;
+
 import fromWikipedia.Extractor;
 
 import javatools.administrative.Announce;
@@ -151,7 +153,7 @@ public class WordnetExtractor extends Extractor {
         continue;
       }
 
-      arg2 = FactComponent.forStringWithLanguage(arg2.substring(1, arg2.length() - 1), "en");//.replace("''", "'"));
+      arg2 = FactComponent.forStringWithLanguage(arg2.substring(1, arg2.length() - 1).replace('"', '\''), "en");
       Fact fact = new Fact(null, id2class.get(arg1), "<hasGloss>", arg2);
       writers.get(WORDNETGLOSSES).write(fact);
     }
@@ -182,5 +184,9 @@ public class WordnetExtractor extends Extractor {
     for (Fact fact : fc.get("<isPreferredMeaningOf>")) {
       preferredMeanings.put(fact.getArgJavaString(2), fact.getArg(1));
     }
+  }
+  
+  public static void main(String[] args) throws Exception {
+    new WordnetExtractor(new File("c:/fabian/data/wordnet")).extract(new File("c:/fabian/data/yago2s"),ParallelCaller.header);
   }
 }
