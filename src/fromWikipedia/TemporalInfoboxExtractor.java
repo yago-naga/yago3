@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -96,7 +97,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 				input.get(PatternHardExtractor.INFOBOXTEMPORALPATTERNS));
 		FactCollection hardWiredFacts = new FactCollection(
 				input.get(HardExtractor.HARDWIREDFACTS));
-		Map<String, Set<String>> patterns = InfoboxExtractor
+		Map<String, Set<String>> patterns = TemporalInfoboxExtractor
 				.infoboxPatterns(infoboxFacts);
 		PatternList replacements = new PatternList(infoboxFacts,
 				"<_infoboxReplace>");
@@ -194,8 +195,8 @@ public class TemporalInfoboxExtractor extends Extractor {
 
 			// Extract all terms
 			List<String> objects = extractor.extractList(valueString);
-			// extract multivlaues, such as, //spouse=[[[Shawn Andrews
-			// (actor)|Shawn Andrews]] (1992-1993)\n[[Luc Besson]] (1997-1999)
+			// extract multivalues, such as, 
+			//spouse=[[[Shawn Andrews(actor)|Shawn Andrews]] (1992-1993)\n[[Luc Besson]] (1997-1999)
 			String[] multiValues = valueString.split("\\n");
 			ArrayList<List<String>> dateObjectsList = new ArrayList<>(10);
 			if (multiValues.length > 1) {
@@ -204,6 +205,14 @@ public class TemporalInfoboxExtractor extends Extractor {
 							.extractList(multiValues[i]));
 
 				}
+			} 
+			else if(valueString.contains("\t"))
+			{
+					multiValues=new String[]{valueString};
+					for (int i = 0; i < multiValues.length; i++) {
+						dateObjectsList.add(extractor.forDate
+								.extractList(multiValues[i].substring(multiValues[i].indexOf('\t'))));
+					}
 			}
 
 
@@ -255,7 +264,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 					try {
 						List<String> dates = dateObjectsList.get(i);
 						if (dates.size() > 0
-								&& FactComponent.isUri(baseFact.getArg(2))) {
+								&& (FactComponent.isUri(baseFact.getArg(2)) || FactComponent.isLiteral(baseFact.getArg(2)))) {
 							write(writers, TEMPORALDIRTYINFOBOXFACTS, baseFact,
 									TEMPORALINFOBOXSOURCES, entity,
 									"TemporalInfoboxExtractor: from " + valueString);
@@ -346,13 +355,10 @@ public class TemporalInfoboxExtractor extends Extractor {
 					continue;
 				}
 				// Check data type
-				if (FactComponent.isLiteral(object)) {
+				if (FactComponent.isLiteral(object)&& i==0) {
 					String[] value = FactComponent.literalAndDatatypeAndLanguage(object);
-					if (value.length != 2
-							|| !factCollection.isSubClassOf(value[1], cls)
-							&& !(value.length == 1 && cls.equals(YAGO.string))) {
-						Announce.debug("Extraction", object, "for", entity,
-								relation, "does not match typecheck", cls);
+					if (value.length != 2|| !factCollection.isSubClassOf(value[1], cls)&& !(value.length == 1 && cls.equals(YAGO.string))) {
+						Announce.debug("Extraction", object, "for", entity,relation, "does not match typecheck", cls);
 						continue;
 					}
 					FactComponent.setDataType(object, cls);
@@ -400,8 +406,34 @@ public class TemporalInfoboxExtractor extends Extractor {
 		while (true) {
 			String attribute = FileLines.readTo(in, '=', '}').toString();
 			String normalizedAttribute = normalizeAttribute(attribute);
+			
 			if (normalizedAttribute.length() == 0)
-				return (result);
+				{
+				next: for (String code : combinations.keySet()) {
+					StringBuilder val = new StringBuilder();
+					for (String attr : code.split(">")) {
+						int scanTo = attr.indexOf('<');
+						if (scanTo != -1) {
+							val.append(attr.substring(0, scanTo));
+							String temp = attr.substring(scanTo + 1);
+							String newVal = D.pick(resultUnNormalized
+									.get(normalizeAttribute2(temp)));
+							if (newVal == null)
+								continue next;
+							val.append(newVal);
+						} else {
+							val.append(attr);
+						}
+					}
+					D.addKeyValue(resultUnNormalized,
+							normalizeAttribute2(combinations.get(code)),
+							val.toString(), TreeSet.class);
+				}
+				
+				result.putAll(resultUnNormalized);
+
+					return (result);
+				}
 			StringBuilder value = new StringBuilder();
 			int c = InfoboxExtractor.readEnvironment(in, value);
 			D.addKeyValue(result, normalizedAttribute, value.toString().trim(),
@@ -412,26 +444,27 @@ public class TemporalInfoboxExtractor extends Extractor {
 			if (c == '}' || c == -1 || c == -2)
 				break;
 		}
+		
+
 		// Apply combinations
-		next: for (String code : combinations.keySet()) {
-			StringBuilder val = new StringBuilder();
-			for (String attribute : code.split(">")) {
-				int scanTo = attribute.indexOf('<');
-				if (scanTo != -1) {
-					val.append(attribute.substring(0, scanTo));
-					String temp = attribute.substring(scanTo + 1);
-					String newVal = D
-							.pick(result.get(normalizeAttribute(temp)));
-					if (newVal == null)
-						continue next;
-					val.append(newVal);
-				} else {
-					val.append(attribute);
-				}
-			}
-			D.addKeyValue(result, normalizeAttribute(combinations.get(code)),
-					val.toString(), TreeSet.class);
-		}
+//		next: for (String code : combinations.keySet()) {
+//			StringBuilder val = new StringBuilder();
+//			for (String attribute : code.split(">")) {
+//				int scanTo = attribute.indexOf('<');
+//				if (scanTo != -1) {
+//					val.append(attribute.substring(0, scanTo));
+//					String temp = attribute.substring(scanTo + 1);
+//					String newVal = D.pick(result.get(normalizeAttribute(temp)));
+//					if (newVal == null)
+//						continue next;
+//					val.append(newVal);
+//				} else {
+//					val.append(attribute);
+//				}
+//			}
+//			D.addKeyValue(result, normalizeAttribute(combinations.get(code)),
+//					val.toString(), TreeSet.class);
+//		}
 
 		// Apply combinations
 		next: for (String code : combinations.keySet()) {
@@ -454,13 +487,32 @@ public class TemporalInfoboxExtractor extends Extractor {
 					normalizeAttribute2(combinations.get(code)),
 					val.toString(), TreeSet.class);
 		}
+		
 		result.putAll(resultUnNormalized);
 		return (result);
+		
 
 	}
-
+	  public static Map<String, Set<String>> infoboxPatterns(FactCollection infoboxFacts) {
+		    Map<String, Set<String>> patterns = new HashMap<String, Set<String>>();
+		    Announce.doing("Compiling infobox patterns");
+		    for (Fact fact : infoboxFacts.get("<_infoboxPattern>")) {
+		      D.addKeyValue(patterns, normalizeAttribute2(fact.getArgJavaString(1)), fact.getArg(2), TreeSet.class);
+		    }
+		    if (patterns.isEmpty()) {
+		      Announce.warning("No infobox patterns found");
+		    }
+		    Announce.done();
+		    return (patterns);
+		  }
 	public TemporalInfoboxExtractor(File wikipedia) {
 		this.wikipedia = wikipedia;
 	}
 
+	public static void main(String[] args) throws Exception {
+	    Announce.setLevel(Announce.Level.DEBUG);
+	    new PatternHardExtractor(new File("./data")).extract(new File("/var/tmp/test/facts"), "test");
+	    new HardExtractor(new File("./basics2s/data")).extract(new File("/var/tmp/test/facts"), "test");
+	    new TemporalInfoboxExtractor(new File("/var/tmp/test/wikitest.xml")).extract(new File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
+	}
 }
