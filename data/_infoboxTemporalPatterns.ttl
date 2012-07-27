@@ -164,7 +164,6 @@
 "music"	<_infoboxPattern>	<wroteMusicFor-> .
 "founder"	<_infoboxPattern>	<founded-> .
 "founder"	<_infoboxPattern>	<wasFoundedBy> .
-
 "owner"	<_infoboxPattern>	<owns-> .
 "owner"	<_infoboxPattern>	<ownedBy> .
 "combatant"	<_infoboxPattern>	<participatedIn-> .
