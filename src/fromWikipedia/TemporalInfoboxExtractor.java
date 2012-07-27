@@ -513,6 +513,8 @@ public class TemporalInfoboxExtractor extends Extractor {
 	    Announce.setLevel(Announce.Level.DEBUG);
 	    new PatternHardExtractor(new File("./data")).extract(new File("/var/tmp/test/facts"), "test");
 	    new HardExtractor(new File("./basics2s/data")).extract(new File("/var/tmp/test/facts"), "test");
-	    new TemporalInfoboxExtractor(new File("/var/tmp/test/wikitest.xml")).extract(new File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
+//	    new TemporalInfoboxExtractor(new File("/var/tmp/test/wikitest.xml")).extract(new File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
+	    new TemporalInfoboxExtractor(new File("/var/tmp/Wikipedia_Archive/DavidBeckham.xml")).extract(new File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
+
 	}
 }
