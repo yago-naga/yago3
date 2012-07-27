@@ -12,7 +12,6 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-
 import utils.PatternList;
 import utils.TermExtractor;
 import utils.TitleExtractor;
@@ -43,8 +42,8 @@ public class InfoboxExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.TITLEPATTERNS, 
-        HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS));
+    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS,
+        WordnetExtractor.WORDNETWORDS));
   }
 
   @Override
@@ -117,9 +116,17 @@ public class InfoboxExtractor extends Extractor {
       // Check data type
       if (FactComponent.isLiteral(object)) {
         String datatype = FactComponent.getDatatype(object);
-        if (datatype == null) datatype = YAGO.string;
-        if (!factCollection.isSubClassOf(datatype, cls)) {
-          if (!cls.equals(YAGO.languageString)) object = FactComponent.setDataType(object, cls);
+        if (factCollection.isSubClassOf(cls, YAGO.string) && (datatype == null  || datatype.equals(YAGO.string))
+            || factCollection.isSubClassOf(cls, YAGO.integer) && datatype.equals(YAGO.integer)
+            || factCollection.isSubClassOf(cls, YAGO.decimal) && datatype.equals(YAGO.decimal)) {
+          // For strings, integers, and decimals, we set the more specific data type, because we passed the type check
+          object=FactComponent.setDataType(object, cls);
+        } else {
+          // For other stuff, we check if the datatype is OK
+          if (!factCollection.isSubClassOf(datatype, cls)) {
+            Announce.debug("Extraction", object, "for", entity, relation, "does not match type check", cls);
+            continue;
+          }
         }
       }
       if (inverse) {
@@ -265,7 +272,7 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/temp/carla.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/germany.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
