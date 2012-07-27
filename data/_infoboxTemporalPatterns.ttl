@@ -15,6 +15,7 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # --------- Combinations of Infobox attributes --------------
+"<office>	<termstart>	<termend>	<predecessor>	<successor>"	<_infoboxCombine>	"-office" .
 "<office0>	<termstart0>	<termend0>	<predecessor0>	<successor0>"	<_infoboxCombine>	"-office0" .
 "<office1>	<termstart1>	<termend1>	<predecessor1>	<successor1>"	<_infoboxCombine>	"-office1" .
 "<office2>	<termstart2>	<termend2>	<predecessor2>	<successor2>"	<_infoboxCombine>	"-office2" .
@@ -23,10 +24,61 @@
 "<office5>	<termstart5>	<termend5>	<predecessor5>	<successor5>"	<_infoboxCombine>	"-office5" .
 "<office6>	<termstart6>	<termend6>	<predecessor6>	<successor6>"	<_infoboxCombine>	"-office6" .
 "<office7>	<termstart7>	<termend7>	<predecessor7>	<successor7>"	<_infoboxCombine>	"-office7" .
-
+"<office8>	<termstart8>	<termend8>	<predecessor8>	<successor8>"	<_infoboxCombine>	"-office8" .
+"<office9>	<termstart9>	<termend9>	<predecessor9>	<successor9>"	<_infoboxCombine>	"-office9" .
+"<office10>	<termstart10>	<termend10>	<predecessor10>	<successor10>"	<_infoboxCombine>	"-office10" .
 
 #"<office>	<termstart>	<termend>"	<_infoboxCombine>	"office" .
-# --------- Infobox patterns --------------
+"<clubs1>	<years1>"	<_infoboxCombine>	"playFor1" .
+"<clubs2>	<years2>"	<_infoboxCombine>	"playFor2" .
+"<clubs3>	<years3>"	<_infoboxCombine>	"playFor3" .
+"<clubs4>	<years4>"	<_infoboxCombine>	"playFor4" .
+"<clubs5>	<years5>"	<_infoboxCombine>	"playFor5" .
+"<clubs6>	<years6>"	<_infoboxCombine>	"playFor6" .
+"<clubs7>	<years7>"	<_infoboxCombine>	"playFor7" .
+"<clubs8>	<years8>"	<_infoboxCombine>	"playFor8" .
+"<clubs9>	<years9>"	<_infoboxCombine>	"playFor9" .
+"<clubs10>	<years10>"	<_infoboxCombine>	"playFor10" .
+"<youthclubs1>	<youthyears1>"	<_infoboxCombine>	"playForYouth1" .
+"<youthclubs2>	<youthyears2>"	<_infoboxCombine>	"playForYouth2" .
+"<youthclubs3>	<youthyears3>"	<_infoboxCombine>	"playForYouth3" .
+"<nationalteam>	<nationalyears>"	<_infoboxCombine>	"playForNation" .
+"<nationalteam1>	<nationalyears1>"	<_infoboxCombine>	"playForNation1" .
+"<nationalteam2>	<nationalyears2>"	<_infoboxCombine>	"playForNation2" .
+"<nationalteam3>	<nationalyears3>"	<_infoboxCombine>	"playForNation3" .
+"<populationestimate>	<populationestimateyear>"	<_infoboxCombine>	"populationEstimate1" .
+"<GDPnominal>	<GDPnominalyear>"	<_infoboxCombine>	"gdp1" .
+"<hdi>	<hdiyear>"	<_infoboxCombine>	"hdi1" .
+"<gini>	<giniyear>"	<_infoboxCombine>	"gini1" .
+
+
+# --------- Infobox patterns for Time Metafacts --------------
+"populationEstimate1"	<_infoboxPattern>	<hasNumberOfPeople> .
+"gdp1"	<_infoboxPattern>	<hasGDP> .
+"hdi1"	<_infoboxPattern>	<hasHDI> .
+"gini1"	<_infoboxPattern>	<hasGini> .
+
+"playFor1"	<_infoboxPattern>	<playsFor> .
+"playFor2"	<_infoboxPattern>	<playsFor> .
+"playFor3"	<_infoboxPattern>	<playsFor> .
+"playFor4"	<_infoboxPattern>	<playsFor> .
+"playFor5"	<_infoboxPattern>	<playsFor> .
+"playFor6"	<_infoboxPattern>	<playsFor> .
+"playFor7"	<_infoboxPattern>	<playsFor> .
+"playFor8"	<_infoboxPattern>	<playsFor> .
+"playFor9"	<_infoboxPattern>	<playsFor> .
+"playFor10"	<_infoboxPattern>	<playsFor> .
+
+"playForYouth1"	<_infoboxPattern>	<playsFor> .
+"playForYouth2"	<_infoboxPattern>	<playsFor> .
+"playForYouth3"	<_infoboxPattern>	<playsFor> .
+"playForNation"	<_infoboxPattern>	<playsFor> .
+"playForNation1"	<_infoboxPattern>	<playsFor> .
+"playForNation2"	<_infoboxPattern>	<playsFor> .
+"playForNation3"	<_infoboxPattern>	<playsFor> .
+
+
+"-office"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
 "-office0"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
 "-office1"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
 "-office2"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
@@ -35,9 +87,13 @@
 "-office5"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
 "-office6"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
 "-office7"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
+"-office8"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
+"-office9"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
+"-office10"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
 
-"establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
-"established"	<_infoboxPattern>	<wasCreatedOnDate> .
+#-----For Binary T-facts-----
+"establisheddate"	<_infoboxPattern>	<wasEstablishedOnDate> .
+"established"	<_infoboxPattern>	<wasEstablishedOnDate> .
 "birthdate"	<_infoboxPattern>	<wasBornOnDate> .
 "dateofbirth"	<_infoboxPattern>	<wasBornOnDate> .
 "born"	<_infoboxPattern>	<wasBornOnDate> .
@@ -45,14 +101,15 @@
 "dateofdeath"	<_infoboxPattern>	<diedOnDate> .
 "died"	<_infoboxPattern>	<diedOnDate> .
 "spouse"	<_infoboxPattern>	<isMarriedTo> .
-"founded"	<_infoboxPattern>	<wasCreatedOnDate> .
-"published"	<_infoboxPattern>	<wasCreatedOnDate> .
-"released"	<_infoboxPattern>	<wasCreatedOnDate> .
-"releasedate"	<_infoboxPattern>	<wasCreatedOnDate> .
+"founded"	<_infoboxPattern>	<wasFoundedOnDate> .
+"published"	<_infoboxPattern>	<wasPublishedOnDate> .
+"released"	<_infoboxPattern>	<wasReleasedOnDate> .
+"releasedate"	<_infoboxPattern>	<wasReleasedOnDate> .
 "datecreated"	<_infoboxPattern>	<wasCreatedOnDate> .
-"recorded"	<_infoboxPattern>	<wasCreatedOnDate> .
-"foundation"	<_infoboxPattern>	<wasCreatedOnDate> .
+"recorded"	<_infoboxPattern>	<wasRecordedOnDate> .
+"foundation"	<_infoboxPattern>	<wasFoundedOnDate> .
 "date" <_infoboxPattern>	<happenedOnDate> .
+"date y" <_infoboxPattern>	<happenedOnDate> .
 "year"	<_infoboxPattern>	<happenedOnDate> .
 
 #------------ New Patterns ------------
@@ -93,15 +150,23 @@
 "premier"	<_infoboxPattern>	<isLeaderOf-> .
 "writer"	<_infoboxPattern>	<created-> .
 "composer"	<_infoboxPattern>	<created-> .
+"writer"	<_infoboxPattern>	<wasWrittenBy> .
+"composer"	<_infoboxPattern>	<wasComposedBy> .
 "starring"	<_infoboxPattern>	<actedIn-> .
 "producer"	<_infoboxPattern>	<produced-> .
+"producer"	<_infoboxPattern>	<wasProducedBy> .
 "creator"	<_infoboxPattern>	<created-> .
-"designer"	<_infoboxPattern>	<created-> .
-"developer"	<_infoboxPattern>	<created-> .
+"designer"	<_infoboxPattern>	<designed-> .
+"designer"	<_infoboxPattern>	<wasDesignedBy> .
+"developer"	<_infoboxPattern>	<developed-> .
+"developer"	<_infoboxPattern>	<wasDevelopedBy> .
 "production company"	<_infoboxPattern>	<produced-> .
 "music"	<_infoboxPattern>	<wroteMusicFor-> .
-"founder"	<_infoboxPattern>	<created-> .
+"founder"	<_infoboxPattern>	<founded-> .
+"founder"	<_infoboxPattern>	<wasFoundedBy> .
+
 "owner"	<_infoboxPattern>	<owns-> .
+"owner"	<_infoboxPattern>	<ownedBy> .
 "combatant"	<_infoboxPattern>	<participatedIn-> .
 
 # ------------ Replacements ----------
