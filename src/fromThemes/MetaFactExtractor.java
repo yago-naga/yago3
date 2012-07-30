@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Set;
 
 import fromOtherSources.HardExtractor;
+import fromWikipedia.FlightExtractor;
 import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
@@ -30,7 +31,8 @@ public class MetaFactExtractor extends SimpleDeduplicator {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(HardExtractor.HARDWIREDFACTS, 
-                RuleExtractor.RULERESULTS,                 
+                RuleExtractor.RULERESULTS,        
+                FlightExtractor.FLIGHTS,
                 TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }

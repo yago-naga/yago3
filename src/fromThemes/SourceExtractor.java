@@ -5,6 +5,7 @@ import java.util.Set;
 
 import fromWikipedia.CategoryExtractor;
 import fromWikipedia.Extractor;
+import fromWikipedia.FlightExtractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
@@ -35,7 +36,7 @@ public class SourceExtractor extends Extractor {
   public Set<Theme> input() {
     return new FinalSet<>(InfoboxExtractor.INFOBOXSOURCES,PersonNameExtractor.PERSONNAMESOURCES,
         RuleExtractor.RULESOURCES,CategoryExtractor.CATEGORYSOURCES,WikipediaTypeExtractor.WIKIPEDIATYPESOURCES,
-        WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, 
+        WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, FlightExtractor.FLIGHTSOURCE, 
         TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES);
   }
 

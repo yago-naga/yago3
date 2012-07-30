@@ -5,6 +5,7 @@ import java.util.Set;
 
 import fromOtherSources.HardExtractor;
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.FlightExtractor;
 import fromWikipedia.GenderExtractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.TemporalCategoryExtractor;
@@ -36,7 +37,8 @@ public class FactExtractor extends SimpleDeduplicator {
         GenderExtractor.PERSONS_GENDER,        
         HardExtractor.HARDWIREDFACTS, 
         InfoboxExtractor.INFOBOXFACTS,        
-        RuleExtractor.RULERESULTS,      
+        RuleExtractor.RULERESULTS,  
+        FlightExtractor.FLIGHTS,
         //GeoNamesDataImporter.GEONAMESDATA,
         TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
