@@ -68,7 +68,9 @@ public abstract class TermExtractor {
       case "<g>":
       case "<m>":
       case "<s>":
+      case "<yago0to100>":
       case "xsd:nonNegativeInteger":
+      case "<yagoFraction>":
         return (forNumber);
     }
     return (forWikiLink);
@@ -165,6 +167,7 @@ public abstract class TermExtractor {
       }
       for (String w : s.split(";|,?\n|'''|''|, ?;|\"")) {
         w=w.replaceAll("\\(.*\\)",""); //Remove bracketed parts
+        w=w.replace("(","").replace(")",""); // remove remaining brackets
         w = w.trim();
         if (w.length() > 2 && !w.contains("{{") && !w.contains("[[")) result.add(FactComponent.forStringWithDatatype(Char.decodeAmpersand(w), YAGO.string));
       }

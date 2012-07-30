@@ -1,0 +1,2967 @@
+# test
+# Flights from airport to airport, need redirecting
+# INTERNAL
+
+@base <http://yago-knowledge/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_4ola6b_14p_r8ccej>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ljubljana> .
+<id_4ola6b_14p_r8ccej>	<byTransport>	<Adria_Airways> .
+#@ <id_4ola6b_14p_zjt685>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Cork> .
+<id_4ola6b_14p_zjt685>	<byTransport>	<Aer_Lingus> .
+#@ <id_4ola6b_14p_1xjr4m8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dublin> .
+<id_4ola6b_14p_1xjr4m8>	<byTransport>	<Aer_Lingus> .
+#@ <id_4ola6b_14p_11t2lwx>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Moscow-Sheremetyevo> .
+<id_4ola6b_14p_11t2lwx>	<byTransport>	<Aeroflot> .
+#@ <id_4ola6b_14p_10r81w4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nador> .
+<id_4ola6b_14p_10r81w4>	<byTransport>	<Air_Arabia_Maroc> .
+#@ <id_4ola6b_14p_11jllow>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tangier> .
+<id_4ola6b_14p_11jllow>	<byTransport>	<Air_Arabia_Maroc> .
+#@ <id_4ola6b_14p_1w4h9sw>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Atyrau> .
+<id_4ola6b_14p_1w4h9sw>	<byTransport>	<Air_Astana> .
+#@ <id_4ola6b_14p_2h36ql>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Madrid> .
+<id_4ola6b_14p_2h36ql>	<byTransport>	<Air_Europa> .
+#@ <id_4ola6b_14p_1kzw2y4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Marseille> .
+<id_4ola6b_14p_1kzw2y4>	<byTransport>	<Air_France> .
+#@ <id_4ola6b_14p_1luzvij>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Paris-Charles_de_Gaulle> .
+<id_4ola6b_14p_1luzvij>	<byTransport>	<Air_France> .
+#@ <id_4ola6b_14p_15yosg0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-City> .
+<id_4ola6b_14p_15yosg0>	<byTransport>	<CityJet> .
+#@ <id_4ola6b_14p_ckqzhl>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Clermont-Ferrand> .
+<id_4ola6b_14p_ckqzhl>	<byTransport>	<CityJet> .
+#@ <id_4ola6b_14p_zjz4gc>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lyon> .
+<id_4ola6b_14p_zjz4gc>	<byTransport>	<CityJet> .
+#@ <id_4ola6b_14p_2yb8ef>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nantes> .
+<id_4ola6b_14p_2yb8ef>	<byTransport>	<CityJet> .
+#@ <id_4ola6b_14p_1xeutay>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Strasbourg> .
+<id_4ola6b_14p_1xeutay>	<byTransport>	<CityJet> .
+#@ <id_4ola6b_14p_10qofc5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Malta> .
+<id_4ola6b_14p_10qofc5>	<byTransport>	<Air_Malta> .
+#@ <id_4ola6b_14p_1sp6lhs>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Toronto-Pearson> .
+<id_4ola6b_14p_1sp6lhs>	<byTransport>	<Air_Transat> .
+#@ <id_4ola6b_14p_5yqtkt>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Vancouver> .
+<id_4ola6b_14p_5yqtkt>	<byTransport>	<Air_Transat> .
+#@ <id_4ola6b_14p_zk2mb5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Riga> .
+<id_4ola6b_14p_zk2mb5>	<byTransport>	<AirBaltic> .
+#@ <id_4ola6b_14p_1y2whp0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Florence> .
+<id_4ola6b_14p_1y2whp0>	<byTransport>	<Alitalia> .
+#@ <id_4ola6b_14p_15mqi29>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Milan-Linate> .
+<id_4ola6b_14p_15mqi29>	<byTransport>	<Alitalia> .
+#@ <id_4ola6b_14p_lbzc7x>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rome-Fiumicino> .
+<id_4ola6b_14p_lbzc7x>	<byTransport>	<Alitalia> .
+#@ <id_4ola6b_14p_10uvvfa>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Turin> .
+<id_4ola6b_14p_10uvvfa>	<byTransport>	<Alitalia_CityLiner> .
+#@ <id_4ola6b_14p_1w0x87m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ankara> .
+<id_4ola6b_14p_1w0x87m>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1d1ait6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
+<id_4ola6b_14p_1d1ait6>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_10kdx8j>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Aruba> .
+<id_4ola6b_14p_10kdx8j>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_17xt781>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bangkok-Suvarnabhumi> .
+<id_4ola6b_14p_17xt781>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1wavmlu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Banjul> .
+<id_4ola6b_14p_1wavmlu>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_ww6jgi>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Boa_Vista> .
+<id_4ola6b_14p_ww6jgi>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1wieiz7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bodrum> .
+<id_4ola6b_14p_1wieiz7>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1s3flh8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bonaire> .
+<id_4ola6b_14p_1s3flh8>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1wlxzq2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Burgas> .
+<id_4ola6b_14p_1wlxzq2>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1wrx3t8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Cancun> .
+<id_4ola6b_14p_1wrx3t8>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_7pv8y3>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Colombo> .
+<id_4ola6b_14p_7pv8y3>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_an9bhw>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Curaçao> .
+<id_4ola6b_14p_an9bhw>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_frdvt4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dalaman> .
+<id_4ola6b_14p_frdvt4>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_10m2tvd>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dubai> .
+<id_4ola6b_14p_10m2tvd>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1lcboja>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Eilat-Ovda> .
+<id_4ola6b_14p_1lcboja>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_zjust4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Faro> .
+<id_4ola6b_14p_zjust4>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_uwalo6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Fortaleza> .
+<id_4ola6b_14p_uwalo6>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_t71aij>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Heraklion> .
+<id_4ola6b_14p_t71aij>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_a2loag>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Holguin> .
+<id_4ola6b_14p_a2loag>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1bzilw8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hurghada> .
+<id_4ola6b_14p_1bzilw8>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1q8yx5a>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Larnaca> .
+<id_4ola6b_14p_1q8yx5a>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1rj0jh2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Las_Palmas_de_Gran_Canaria> .
+<id_4ola6b_14p_1rj0jh2>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_10qhn9u>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Luxor> .
+<id_4ola6b_14p_10qhn9u>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1y0k2td>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kathmandu> .
+<id_4ola6b_14p_1y0k2td>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_4fllxf>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Málaga> .
+<id_4ola6b_14p_4fllxf>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_10qtawx>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Miami> .
+<id_4ola6b_14p_10qtawx>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_147ujeo>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Montego_Bay> .
+<id_4ola6b_14p_147ujeo>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_10r8df0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Natal> .
+<id_4ola6b_14p_10r8df0>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_8ii8of>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Orlando-Sanford> .
+<id_4ola6b_14p_8ii8of>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_3wfii5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Paphos> .
+<id_4ola6b_14p_3wfii5>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_40dbkt>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Phuket> .
+<id_4ola6b_14p_40dbkt>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_183e022>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Preveza/Lefkada> .
+<id_4ola6b_14p_183e022>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_14j45c>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Puerto_Plata> .
+<id_4ola6b_14p_14j45c>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_uhrg0r>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Puerto_Vallarta> .
+<id_4ola6b_14p_uhrg0r>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1q7azp6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Punta_Cana> .
+<id_4ola6b_14p_1q7azp6>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_4ycl95>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rhodes> .
+<id_4ola6b_14p_4ycl95>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_uz2gdg>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Sharm_el-Sheikh> .
+<id_4ola6b_14p_uz2gdg>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1ukg76m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tenerife-South> .
+<id_4ola6b_14p_1ukg76m>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_fsq854>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Varadero> .
+<id_4ola6b_14p_fsq854>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_13x2tg6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Essaouira> .
+<id_4ola6b_14p_13x2tg6>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_ku2bah>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Las_Vegas> .
+<id_4ola6b_14p_ku2bah>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1wjtuf4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Los_Angeles> .
+<id_4ola6b_14p_1wjtuf4>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_zjz9o1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Malé> .
+<id_4ola6b_14p_zjz9o1>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_z55vz8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Oakland> .
+<id_4ola6b_14p_z55vz8>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_10szh0f>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ponta_Delgada> .
+<id_4ola6b_14p_10szh0f>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_zk1lcq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Pula> .
+<id_4ola6b_14p_zk1lcq>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_4yv7se>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rimini> .
+<id_4ola6b_14p_4yv7se>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_10u8rga>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Split> .
+<id_4ola6b_14p_10u8rga>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_gw6q1h>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Terceira> .
+<id_4ola6b_14p_gw6q1h>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_1sp6lhs>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Toronto-Pearson> .
+<id_4ola6b_14p_1sp6lhs>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_ty64k8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Venice-Marco_Polo> .
+<id_4ola6b_14p_ty64k8>	<byTransport>	<Arkefly> .
+#@ <id_4ola6b_14p_dz337q>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tel_Aviv> .
+<id_4ola6b_14p_dz337q>	<byTransport>	<Arkia_Israel_Airlines> .
+#@ <id_4ola6b_14p_6uwp67>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Vienna> .
+<id_4ola6b_14p_6uwp67>	<byTransport>	<Austrian_Airlines> .
+#@ <id_4ola6b_14p_6uwp67>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Vienna> .
+<id_4ola6b_14p_6uwp67>	<byTransport>	<Tyrolean_Airways> .
+#@ <id_4ola6b_14p_zjs8p5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Baku> .
+<id_4ola6b_14p_zjs8p5>	<byTransport>	<Azerbaijan_Airlines> .
+#@ <id_4ola6b_14p_d2oy9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Sarajevo> .
+<id_4ola6b_14p_d2oy9>	<byTransport>	<B&H_Airlines> .
+#@ <id_4ola6b_14p_10qtkp6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Minsk> .
+<id_4ola6b_14p_10qtkp6>	<byTransport>	<Belavia> .
+#@ <id_4ola6b_14p_j0xkib>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Belfast-City> .
+<id_4ola6b_14p_j0xkib>	<byTransport>	<Bmibaby> .
+#@ <id_4ola6b_14p_1ksxdjo>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Birmingham> .
+<id_4ola6b_14p_1ksxdjo>	<byTransport>	<Bmibaby> .
+#@ <id_4ola6b_14p_1xsosiu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nottingham/East_Midlands> .
+<id_4ola6b_14p_1xsosiu>	<byTransport>	<Bmibaby> .
+#@ <id_4ola6b_14p_1brdz33>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-Gatwick> .
+<id_4ola6b_14p_1brdz33>	<byTransport>	<British_Airways> .
+#@ <id_4ola6b_14p_1vfd56f>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-Heathrow> .
+<id_4ola6b_14p_1vfd56f>	<byTransport>	<British_Airways> .
+#@ <id_4ola6b_14p_15yosg0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-City> .
+<id_4ola6b_14p_15yosg0>	<byTransport>	<BA_CityFlyer> .
+#@ <id_4ola6b_14p_1c9fzek>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hong_Kong> .
+<id_4ola6b_14p_1c9fzek>	<byTransport>	<Cathay_Pacific> .
+#@ <id_4ola6b_14p_17xt781>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bangkok-Suvarnabhumi> .
+<id_4ola6b_14p_17xt781>	<byTransport>	<China_Airlines> .
+#@ <id_4ola6b_14p_1i7fpjq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Taipei-Taoyuan> .
+<id_4ola6b_14p_1i7fpjq>	<byTransport>	<China_Airlines> .
+#@ <id_4ola6b_14p_ib21i1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Beijing-Capital> .
+<id_4ola6b_14p_ib21i1>	<byTransport>	<China_Southern_Airlines> .
+#@ <id_4ola6b_14p_1rqoqe8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Guangzhou> .
+<id_4ola6b_14p_1rqoqe8>	<byTransport>	<China_Southern_Airlines> .
+#@ <id_4ola6b_14p_1w0x87m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ankara> .
+<id_4ola6b_14p_1w0x87m>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_1d1ait6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
+<id_4ola6b_14p_1d1ait6>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_1wieiz7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bodrum> .
+<id_4ola6b_14p_1wieiz7>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_frdvt4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dalaman> .
+<id_4ola6b_14p_frdvt4>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_1rl2gh0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Istanbul-Atatürk> .
+<id_4ola6b_14p_1rl2gh0>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_19o1e9m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Istanbul-Sabiha_Gökçen> .
+<id_4ola6b_14p_19o1e9m>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_10ox84l>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Izmir> .
+<id_4ola6b_14p_10ox84l>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_1boihcc>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kayseri> .
+<id_4ola6b_14p_1boihcc>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_10pttki>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Konya> .
+<id_4ola6b_14p_10pttki>	<byTransport>	<Corendon_Airlines> .
+#@ <id_4ola6b_14p_1d1ait6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
+<id_4ola6b_14p_1d1ait6>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_1wieiz7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bodrum> .
+<id_4ola6b_14p_1wieiz7>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_10mkq8z>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ercan> .
+<id_4ola6b_14p_10mkq8z>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_1xvudue>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Elazıg> .
+<id_4ola6b_14p_1xvudue>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_1bzilw8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hurghada> .
+<id_4ola6b_14p_1bzilw8>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_1kgoer0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Marrakech> .
+<id_4ola6b_14p_1kgoer0>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_10r81w4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nador> .
+<id_4ola6b_14p_10r81w4>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_t71aij>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Heraklion> .
+<id_4ola6b_14p_t71aij>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_19o1e9m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Istanbul-Sabiha_Gökçen> .
+<id_4ola6b_14p_19o1e9m>	<byTransport>	<Corendon_Dutch_Airlines> .
+#@ <id_4ola6b_14p_zk1lcq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Pula> .
+<id_4ola6b_14p_zk1lcq>	<byTransport>	<Croatia_Airlines> .
+#@ <id_4ola6b_14p_10u8rga>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Split> .
+<id_4ola6b_14p_10u8rga>	<byTransport>	<Croatia_Airlines> .
+#@ <id_4ola6b_14p_45if6g>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Prague> .
+<id_4ola6b_14p_45if6g>	<byTransport>	<Czech_Airlines> .
+#@ <id_4ola6b_14p_1fr5xsj>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Atlanta> .
+<id_4ola6b_14p_1fr5xsj>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_1wio54d>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Boston> .
+<id_4ola6b_14p_1wio54d>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_hs9ml7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Detroit> .
+<id_4ola6b_14p_hs9ml7>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_7pq3br>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Memphis> .
+<id_4ola6b_14p_7pq3br>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_ck6tfu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Minneapolis/St._Paul> .
+<id_4ola6b_14p_ck6tfu>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_2s8hfp>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Mumbai> .
+<id_4ola6b_14p_2s8hfp>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_1yw6ufk>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<New_York-JFK> .
+<id_4ola6b_14p_1yw6ufk>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_30nrve>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Newark> .
+<id_4ola6b_14p_30nrve>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_1dfkrm9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Portland_(OR)> .
+<id_4ola6b_14p_1dfkrm9>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_1g2hd1w>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Seattle/Tacoma> .
+<id_4ola6b_14p_1g2hd1w>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_4ola6b_14p_n2w2ob>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Barcelona> .
+<id_4ola6b_14p_n2w2ob>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_e88pgm>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Belfast-International> .
+<id_4ola6b_14p_e88pgm>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_g6pp1z>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Berlin-Schönefeld> .
+<id_4ola6b_14p_g6pp1z>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_d6m6x9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Berlin-Brandenburg> .
+<id_4ola6b_14p_d6m6x9>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_1tg57jr>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bristol> .
+<id_4ola6b_14p_1tg57jr>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_z038xo>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Edinburgh> .
+<id_4ola6b_14p_z038xo>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_ofk3o9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Glasgow-International> .
+<id_4ola6b_14p_ofk3o9>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_24p66j>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lisbon> .
+<id_4ola6b_14p_24p66j>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_elnwn6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Liverpool> .
+<id_4ola6b_14p_elnwn6>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_1brdz33>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-Gatwick> .
+<id_4ola6b_14p_1brdz33>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_mghb91>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-Luton> .
+<id_4ola6b_14p_mghb91>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_17iazgj>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-Southend> .
+<id_4ola6b_14p_17iazgj>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_10b6gwz>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-Stansted> .
+<id_4ola6b_14p_10b6gwz>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_2h36ql>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Madrid> .
+<id_4ola6b_14p_2h36ql>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_1wjpdro>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Manchester> .
+<id_4ola6b_14p_1wjpdro>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_1y9lxzz>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Milan-Malpensa> .
+<id_4ola6b_14p_1y9lxzz>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_45if6g>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Prague> .
+<id_4ola6b_14p_45if6g>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_lbzc7x>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rome-Fiumicino> .
+<id_4ola6b_14p_lbzc7x>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_10u8rga>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Split> .
+<id_4ola6b_14p_10u8rga>	<byTransport>	<EasyJet> .
+#@ <id_4ola6b_14p_1h5mh9s>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Basel/Mulhouse> .
+<id_4ola6b_14p_1h5mh9s>	<byTransport>	<EasyJet_Switzerland> .
+#@ <id_4ola6b_14p_1yqat9c>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Geneva> .
+<id_4ola6b_14p_1yqat9c>	<byTransport>	<EasyJet_Switzerland> .
+#@ <id_4ola6b_14p_10l6f54>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Cairo> .
+<id_4ola6b_14p_10l6f54>	<byTransport>	<EgyptAir> .
+#@ <id_4ola6b_14p_1y6odlr>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tel_Aviv-Ben_Gurion> .
+<id_4ola6b_14p_1y6odlr>	<byTransport>	<El_Al> .
+#@ <id_4ola6b_14p_lw7hyq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Emirates]]> .
+<id_4ola6b_14p_lw7hyq>	<byTransport>	<El_Al> .
+#@ <id_4ola6b_14p_10m2tvd>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dubai> .
+<id_4ola6b_14p_10m2tvd>	<byTransport>	<El_Al> .
+#@ <id_4ola6b_14p_11il7ng>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tallinn> .
+<id_4ola6b_14p_11il7ng>	<byTransport>	<Estonian_Air> .
+#@ <id_4ola6b_14p_1rj0jh2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Las_Palmas_de_Gran_Canaria> .
+<id_4ola6b_14p_1rj0jh2>	<byTransport>	<Europe_Airpost> .
+#@ <id_4ola6b_14p_4fllxf>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Málaga> .
+<id_4ola6b_14p_4fllxf>	<byTransport>	<Europe_Airpost> .
+#@ <id_4ola6b_14p_10r81w4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nador> .
+<id_4ola6b_14p_10r81w4>	<byTransport>	<Europe_Airpost> .
+#@ <id_4ola6b_14p_17xt781>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bangkok-Suvarnabhumi> .
+<id_4ola6b_14p_17xt781>	<byTransport>	<EVA_Air> .
+#@ <id_4ola6b_14p_1i7fpjq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Taipei-Taoyuan> .
+<id_4ola6b_14p_1i7fpjq>	<byTransport>	<EVA_Air> .
+#@ <id_4ola6b_14p_nkuxt3>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Helsinki> .
+<id_4ola6b_14p_nkuxt3>	<byTransport>	<Finnair> .
+#@ <id_4ola6b_14p_1y2i7lb>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Exeter> .
+<id_4ola6b_14p_1y2i7lb>	<byTransport>	<Flybe> .
+#@ <id_4ola6b_14p_zaqp3p>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Inverness> .
+<id_4ola6b_14p_zaqp3p>	<byTransport>	<Flybe> .
+#@ <id_4ola6b_14p_1czmnss>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Southampton> .
+<id_4ola6b_14p_1czmnss>	<byTransport>	<Flybe> .
+#@ <id_4ola6b_14p_10m2tvd>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dubai> .
+<id_4ola6b_14p_10m2tvd>	<byTransport>	<Garuda_Indonesia> .
+#@ <id_4ola6b_14p_19q4ssq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Jakarta-Soekarno-Hatta> .
+<id_4ola6b_14p_19q4ssq>	<byTransport>	<Garuda_Indonesia> .
+#@ <id_4ola6b_14p_11xzgdq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tbilisi> .
+<id_4ola6b_14p_11xzgdq>	<byTransport>	<Georgian_Airways> .
+#@ <id_4ola6b_14p_51f4v2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Iberia]]> .
+<id_4ola6b_14p_51f4v2>	<byTransport>	<Georgian_Airways> .
+#@ <id_4ola6b_14p_2h36ql>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Madrid> .
+<id_4ola6b_14p_2h36ql>	<byTransport>	<Georgian_Airways> .
+#@ <id_4ola6b_14p_amb9tw>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Reykjavik-Keflavík> .
+<id_4ola6b_14p_amb9tw>	<byTransport>	<Icelandair> .
+#@ <id_4ola6b_14p_1902s2s>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tehran-Imam_Khomeini> .
+<id_4ola6b_14p_1902s2s>	<byTransport>	<Iran_Air> .
+#@ <id_4ola6b_14p_1rk07bi>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Belgrade> .
+<id_4ola6b_14p_1rk07bi>	<byTransport>	<Jat_Airways> .
+#@ <id_4ola6b_14p_1m2q1gi>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Leeds/Bradford> .
+<id_4ola6b_14p_1m2q1gi>	<byTransport>	<Jet2.com> .
+#@ <id_4ola6b_14p_kfs4l6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nairobi> .
+<id_4ola6b_14p_kfs4l6>	<byTransport>	<Kenya_Airways> .
+#@ <id_4ola6b_14p_16rbrzi>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Aalborg> .
+<id_4ola6b_14p_16rbrzi>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1mksgig>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Aberdeen> .
+<id_4ola6b_14p_1mksgig>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1geatg9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Abu_Dhabi> .
+<id_4ola6b_14p_1geatg9>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10k3pmz>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Abuja> .
+<id_4ola6b_14p_10k3pmz>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10k3zgw>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Accra> .
+<id_4ola6b_14p_10k3zgw>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1b7glnv>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Addis_Ababa> .
+<id_4ola6b_14p_1b7glnv>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1vzux2c>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Almaty> .
+<id_4ola6b_14p_1vzux2c>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10kdx8j>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Aruba> .
+<id_4ola6b_14p_10kdx8j>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1w465p1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Athens> .
+<id_4ola6b_14p_1w465p1>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1fr5xsj>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Atlanta> .
+<id_4ola6b_14p_1fr5xsj>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1ldst19>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bahrain> .
+<id_4ola6b_14p_1ldst19>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_17xt781>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bangkok-Suvarnabhumi> .
+<id_4ola6b_14p_17xt781>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_n2w2ob>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Barcelona> .
+<id_4ola6b_14p_n2w2ob>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_ib21i1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Beijing-Capital> .
+<id_4ola6b_14p_ib21i1>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1wd5abl>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bergen> .
+<id_4ola6b_14p_1wd5abl>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_fe8j82>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Berlin-Tegel> .
+<id_4ola6b_14p_fe8j82>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_d6m6x9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Berlin-Brandenburg> .
+<id_4ola6b_14p_d6m6x9>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1p89jl0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Billund> .
+<id_4ola6b_14p_1p89jl0>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1ksxdjo>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Birmingham> .
+<id_4ola6b_14p_1ksxdjo>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1s3flh8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bonaire> .
+<id_4ola6b_14p_1s3flh8>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1tg57jr>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bristol> .
+<id_4ola6b_14p_1tg57jr>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1ebu22n>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bucharest-Henri_Coandă> .
+<id_4ola6b_14p_1ebu22n>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_ae7lmu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Budapest> .
+<id_4ola6b_14p_ae7lmu>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1krcdsk>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Buenos_Aires-Ezeiza> .
+<id_4ola6b_14p_1krcdsk>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10l6f54>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Cairo> .
+<id_4ola6b_14p_10l6f54>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_13370v>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Calgary> .
+<id_4ola6b_14p_13370v>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_zpgp6m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Cape_Town> .
+<id_4ola6b_14p_zpgp6m>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_16c795>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Cardiff> .
+<id_4ola6b_14p_16c795>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_4aokne>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Chengdu> .
+<id_4ola6b_14p_4aokne>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_nwdeav>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Chicago-O'Hare> .
+<id_4ola6b_14p_nwdeav>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1kk7tu2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Copenhagen> .
+<id_4ola6b_14p_1kk7tu2>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_an9bhw>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Curaçao> .
+<id_4ola6b_14p_an9bhw>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1x8ya5l>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dammam> .
+<id_4ola6b_14p_1x8ya5l>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_6nfvhy>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dar_es_Salaam> .
+<id_4ola6b_14p_6nfvhy>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10lstnw>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Delhi> .
+<id_4ola6b_14p_10lstnw>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1f8w03q>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Denpasar> .
+<id_4ola6b_14p_1f8w03q>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_zjtsys>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Doha> .
+<id_4ola6b_14p_zjtsys>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10m2tvd>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dubai> .
+<id_4ola6b_14p_10m2tvd>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_z038xo>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Edinburgh> .
+<id_4ola6b_14p_z038xo>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10ptxpn>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Entebbe> .
+<id_4ola6b_14p_10ptxpn>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1yqat9c>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Geneva> .
+<id_4ola6b_14p_1yqat9c>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_ofk3o9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Glasgow-International> .
+<id_4ola6b_14p_ofk3o9>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_a6inwn>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Gothenburg-Landvetter> .
+<id_4ola6b_14p_a6inwn>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1wuqbs2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Guayaquil> .
+<id_4ola6b_14p_1wuqbs2>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_3gfkn0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hamburg> .
+<id_4ola6b_14p_3gfkn0>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10o6azq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hangzhou> .
+<id_4ola6b_14p_10o6azq>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_4681j>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Havana> .
+<id_4ola6b_14p_4681j>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_nkuxt3>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Helsinki> .
+<id_4ola6b_14p_nkuxt3>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1c9fzek>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hong_Kong> .
+<id_4ola6b_14p_1c9fzek>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_38m76>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Houston-Intercontinental> .
+<id_4ola6b_14p_38m76>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1rl2gh0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Istanbul-Atatürk> .
+<id_4ola6b_14p_1rl2gh0>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_19q4ssq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Jakarta-Soekarno-Hatta> .
+<id_4ola6b_14p_19q4ssq>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1ilzyvo>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Johannesburg> .
+<id_4ola6b_14p_1ilzyvo>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_zjxznb>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kano> .
+<id_4ola6b_14p_zjxznb>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_6suim9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Khartoum> .
+<id_4ola6b_14p_6suim9>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_vj5hjm>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kiev-Boryspil> .
+<id_4ola6b_14p_vj5hjm>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1nfv4l>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kigali> .
+<id_4ola6b_14p_1nfv4l>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1bhlg6r>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kilimanjaro> .
+<id_4ola6b_14p_1bhlg6r>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_v694e4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kuala_Lumpur> .
+<id_4ola6b_14p_v694e4>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1ublz3>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kuwait> .
+<id_4ola6b_14p_1ublz3>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10q4ixi>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lagos> .
+<id_4ola6b_14p_10q4ixi>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_zjysj5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lima> .
+<id_4ola6b_14p_zjysj5>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_24p66j>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lisbon> .
+<id_4ola6b_14p_24p66j>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_elnwn6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Liverpool> .
+<id_4ola6b_14p_elnwn6>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1vfd56f>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-Heathrow> .
+<id_4ola6b_14p_1vfd56f>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1wjtuf4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Los_Angeles> .
+<id_4ola6b_14p_1wjtuf4>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_2azg5v>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Luanda> .
+<id_4ola6b_14p_2azg5v>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_2baogd>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lusaka> .
+<id_4ola6b_14p_2baogd>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_2h36ql>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Madrid> .
+<id_4ola6b_14p_2h36ql>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1wjpdro>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Manchester> .
+<id_4ola6b_14p_1wjpdro>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_2h9e04>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Manila> .
+<id_4ola6b_14p_2h9e04>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1y75whh>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Mexico_City> .
+<id_4ola6b_14p_1y75whh>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_15mqi29>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Milan-Linate> .
+<id_4ola6b_14p_15mqi29>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1y9lxzz>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Milan-Malpensa> .
+<id_4ola6b_14p_1y9lxzz>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_8ln339>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Montreal-Trudeau> .
+<id_4ola6b_14p_8ln339>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_11t2lwx>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Moscow-Sheremetyevo> .
+<id_4ola6b_14p_11t2lwx>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_2s99ns>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Munich> .
+<id_4ola6b_14p_2s99ns>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_2scc3v>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Muscat> .
+<id_4ola6b_14p_2scc3v>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_kfs4l6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nairobi> .
+<id_4ola6b_14p_kfs4l6>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_14tibui>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Newcastle_upon_Tyne> .
+<id_4ola6b_14p_14tibui>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1yw6ufk>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<New_York-JFK> .
+<id_4ola6b_14p_1yw6ufk>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_xnn6t9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Osaka-Kansai> .
+<id_4ola6b_14p_xnn6t9>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_zk0ww7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Oslo> .
+<id_4ola6b_14p_zk0ww7>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1ogti6q>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Panama_City> .
+<id_4ola6b_14p_1ogti6q>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_4z6rmg>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Paramaribo> .
+<id_4ola6b_14p_4z6rmg>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1luzvij>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Paris-Charles_de_Gaulle> .
+<id_4ola6b_14p_1luzvij>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1q7azp6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Punta_Cana> .
+<id_4ola6b_14p_1q7azp6>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10t8b8g>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Quito> .
+<id_4ola6b_14p_10t8b8g>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_jtgmcr>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rio_de_Janeiro-Galeão> .
+<id_4ola6b_14p_jtgmcr>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_lbzc7x>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rome-Fiumicino> .
+<id_4ola6b_14p_lbzc7x>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_7qwqz1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Saint_Petersburg> .
+<id_4ola6b_14p_7qwqz1>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1xc1pz5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<San_Francisco> .
+<id_4ola6b_14p_1xc1pz5>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_ltey8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<São_Paulo-Guarulhos> .
+<id_4ola6b_14p_ltey8>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1f9dsm9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Seoul-Incheon> .
+<id_4ola6b_14p_1f9dsm9>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1pb5x57>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Shanghai-Pudong> .
+<id_4ola6b_14p_1pb5x57>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_17s0hz8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Singapore> .
+<id_4ola6b_14p_17s0hz8>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_odhaxh>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Sint_Maarten> .
+<id_4ola6b_14p_odhaxh>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_z24si9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Stavanger> .
+<id_4ola6b_14p_z24si9>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_ez9vrq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Stockholm-Arlanda> .
+<id_4ola6b_14p_ez9vrq>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1i7fpjq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Taipei-Taoyuan> .
+<id_4ola6b_14p_1i7fpjq>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1902s2s>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tehran-Imam_Khomeini> .
+<id_4ola6b_14p_1902s2s>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_dz337q>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tel_Aviv> .
+<id_4ola6b_14p_dz337q>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1a4m3dq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tokyo-Narita> .
+<id_4ola6b_14p_1a4m3dq>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1sp6lhs>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Toronto-Pearson> .
+<id_4ola6b_14p_1sp6lhs>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_19is2x3>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tripoli> .
+<id_4ola6b_14p_19is2x3>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_5yqtkt>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Vancouver> .
+<id_4ola6b_14p_5yqtkt>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_ty64k8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Venice-Marco_Polo> .
+<id_4ola6b_14p_ty64k8>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_6uwp67>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Vienna> .
+<id_4ola6b_14p_6uwp67>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_77sd29>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Warsaw> .
+<id_4ola6b_14p_77sd29>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_1urc4kc>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Washington-Dulles> .
+<id_4ola6b_14p_1urc4kc>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_7sxd2e>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Xiamen> .
+<id_4ola6b_14p_7sxd2e>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_10qtawx>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Miami> .
+<id_4ola6b_14p_10qtawx>	<byTransport>	<KLM> .
+#@ <id_4ola6b_14p_16rbrzi>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Aalborg> .
+<id_4ola6b_14p_16rbrzi>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1mksgig>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Aberdeen> .
+<id_4ola6b_14p_1mksgig>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1h5mh9s>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Basel/Mulhouse> .
+<id_4ola6b_14p_1h5mh9s>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1wd5abl>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bergen> .
+<id_4ola6b_14p_1wd5abl>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_fe8j82>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Berlin-Tegel> .
+<id_4ola6b_14p_fe8j82>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_d6m6x9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Berlin-Brandenburg> .
+<id_4ola6b_14p_d6m6x9>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1p89jl0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Billund> .
+<id_4ola6b_14p_1p89jl0>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1ksxdjo>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Birmingham> .
+<id_4ola6b_14p_1ksxdjo>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1s2kwiy>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bologna> .
+<id_4ola6b_14p_1s2kwiy>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_10xsu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bordeaux> .
+<id_4ola6b_14p_10xsu>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1wk2fnl>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bremen> .
+<id_4ola6b_14p_1wk2fnl>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1tg57jr>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bristol> .
+<id_4ola6b_14p_1tg57jr>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_19pul47>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Brussels> .
+<id_4ola6b_14p_19pul47>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_16c795>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Cardiff> .
+<id_4ola6b_14p_16c795>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_18n5ki5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Cologne/Bonn> .
+<id_4ola6b_14p_18n5ki5>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1kk7tu2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Copenhagen> .
+<id_4ola6b_14p_1kk7tu2>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1xk198z>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Durham> .
+<id_4ola6b_14p_1xk198z>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_wzxupq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Düsseldorf> .
+<id_4ola6b_14p_wzxupq>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_z038xo>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Edinburgh> .
+<id_4ola6b_14p_z038xo>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_77s0cj>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Frankfurt> .
+<id_4ola6b_14p_77s0cj>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1yqat9c>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Geneva> .
+<id_4ola6b_14p_1yqat9c>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_ofk3o9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Glasgow-International> .
+<id_4ola6b_14p_ofk3o9>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_a6inwn>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Gothenburg-Landvetter> .
+<id_4ola6b_14p_a6inwn>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_3gfkn0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hamburg> .
+<id_4ola6b_14p_3gfkn0>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_3h7oi1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hanover> .
+<id_4ola6b_14p_3h7oi1>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_nkuxt3>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Helsinki> .
+<id_4ola6b_14p_nkuxt3>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1as6kei>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kingston_upon_Hull> .
+<id_4ola6b_14p_1as6kei>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_l36dhz>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kristiansand> .
+<id_4ola6b_14p_l36dhz>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1m2q1gi>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Leeds/Bradford> .
+<id_4ola6b_14p_1m2q1gi>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_183k70u>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Linköping> .
+<id_4ola6b_14p_183k70u>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_elnwn6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Liverpool> .
+<id_4ola6b_14p_elnwn6>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1vfd56f>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-Heathrow> .
+<id_4ola6b_14p_1vfd56f>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_6ycl1i>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Luxembourg> .
+<id_4ola6b_14p_6ycl1i>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1wjpdro>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Manchester> .
+<id_4ola6b_14p_1wjpdro>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1kzw2y4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Marseille> .
+<id_4ola6b_14p_1kzw2y4>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_2s99ns>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Munich> .
+<id_4ola6b_14p_2s99ns>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_14tibui>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Newcastle_upon_Tyne> .
+<id_4ola6b_14p_14tibui>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_zk029p>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nice> .
+<id_4ola6b_14p_zk029p>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_r7g1yg>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Norwich> .
+<id_4ola6b_14p_r7g1yg>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_st04uj>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nuremberg> .
+<id_4ola6b_14p_st04uj>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_zk0ww7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Oslo> .
+<id_4ola6b_14p_zk0ww7>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_45if6g>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Prague> .
+<id_4ola6b_14p_45if6g>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_1qbcyd8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Sandefjord> .
+<id_4ola6b_14p_1qbcyd8>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_z24si9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Stavanger> .
+<id_4ola6b_14p_z24si9>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_17tuii8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Stuttgart> .
+<id_4ola6b_14p_17tuii8>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_n673my>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Toulouse> .
+<id_4ola6b_14p_n673my>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_77a82w>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Trondheim> .
+<id_4ola6b_14p_77a82w>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_ty64k8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Venice-Marco_Polo> .
+<id_4ola6b_14p_ty64k8>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_6uwp67>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Vienna> .
+<id_4ola6b_14p_6uwp67>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_77sd29>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Warsaw> .
+<id_4ola6b_14p_77sd29>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_8xwwqf>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Zurich> .
+<id_4ola6b_14p_8xwwqf>	<byTransport>	<KLM_Cityhopper> .
+#@ <id_4ola6b_14p_2h36ql>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Madrid> .
+<id_4ola6b_14p_2h36ql>	<byTransport>	<Korean_Air> .
+#@ <id_4ola6b_14p_1f9dsm9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Seoul-Incheon> .
+<id_4ola6b_14p_1f9dsm9>	<byTransport>	<Korean_Air> .
+#@ <id_4ola6b_14p_77sd29>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Warsaw> .
+<id_4ola6b_14p_77sd29>	<byTransport>	<LOT_Polish_Airlines> .
+#@ <id_4ola6b_14p_77s0cj>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Frankfurt> .
+<id_4ola6b_14p_77s0cj>	<byTransport>	<Lufthansa> .
+#@ <id_4ola6b_14p_3gfkn0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hamburg> .
+<id_4ola6b_14p_3gfkn0>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_4ola6b_14p_2s99ns>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Munich> .
+<id_4ola6b_14p_2s99ns>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_4ola6b_14p_v694e4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kuala_Lumpur> .
+<id_4ola6b_14p_v694e4>	<byTransport>	<Malaysia_Airlines> .
+#@ <id_4ola6b_14p_ae7lmu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Budapest> .
+<id_4ola6b_14p_ae7lmu>	<byTransport>	<Malév_Hungarian_Airlines> .
+#@ <id_4ola6b_14p_1kk7tu2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Copenhagen> .
+<id_4ola6b_14p_1kk7tu2>	<byTransport>	<Norwegian_Air_Shuttle> .
+#@ <id_4ola6b_14p_zk0ww7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Oslo> .
+<id_4ola6b_14p_zk0ww7>	<byTransport>	<Norwegian_Air_Shuttle> .
+#@ <id_4ola6b_14p_ez9vrq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Stockholm-Arlanda> .
+<id_4ola6b_14p_ez9vrq>	<byTransport>	<Norwegian_Air_Shuttle> .
+#@ <id_4ola6b_14p_1w465p1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Athens> .
+<id_4ola6b_14p_1w465p1>	<byTransport>	<Olympic_Air> .
+#@ <id_4ola6b_14p_1d1ait6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
+<id_4ola6b_14p_1d1ait6>	<byTransport>	<Onur_Air> .
+#@ <id_4ola6b_14p_15kr2ej>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<{{nowrap> .
+<id_4ola6b_14p_15kr2ej>	<byTransport>	<Onur_Air> .
+#@ <id_4ola6b_14p_unqe4y>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Islamabad> .
+<id_4ola6b_14p_unqe4y>	<byTransport>	<Pakistan_International_Airlines> .
+#@ <id_4ola6b_14p_2042a7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lahore> .
+<id_4ola6b_14p_2042a7>	<byTransport>	<Pakistan_International_Airlines> .
+#@ <id_4ola6b_14p_1d1ait6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
+<id_4ola6b_14p_1d1ait6>	<byTransport>	<Pegasus_Airlines> .
+#@ <id_4ola6b_14p_1wieiz7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bodrum> .
+<id_4ola6b_14p_1wieiz7>	<byTransport>	<Pegasus_Airlines> .
+#@ <id_4ola6b_14p_frdvt4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dalaman> .
+<id_4ola6b_14p_frdvt4>	<byTransport>	<Pegasus_Airlines> .
+#@ <id_4ola6b_14p_19o1e9m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Istanbul-Sabiha_Gökçen> .
+<id_4ola6b_14p_19o1e9m>	<byTransport>	<Pegasus_Airlines> .
+#@ <id_4ola6b_14p_10pttki>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Konya> .
+<id_4ola6b_14p_10pttki>	<byTransport>	<Pegasus_Airlines> .
+#@ <id_4ola6b_14p_1boihcc>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kayseri> .
+<id_4ola6b_14p_1boihcc>	<byTransport>	<Pegasus_Airlines> .
+#@ <id_4ola6b_14p_10ox84l>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Izmir> .
+<id_4ola6b_14p_10ox84l>	<byTransport>	<Izair> .
+#@ <id_4ola6b_14p_15ohttg>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rossiya]]> .
+<id_4ola6b_14p_15ohttg>	<byTransport>	<Izair> .
+#@ <id_4ola6b_14p_7qwqz1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Saint_Petersburg> .
+<id_4ola6b_14p_7qwqz1>	<byTransport>	<Izair> .
+#@ <id_4ola6b_14p_1z01y3l>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Casablanca> .
+<id_4ola6b_14p_1z01y3l>	<byTransport>	<Royal_Air_Maroc> .
+#@ <id_4ola6b_14p_10r81w4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nador> .
+<id_4ola6b_14p_10r81w4>	<byTransport>	<Royal_Air_Maroc> .
+#@ <id_4ola6b_14p_10s4qe9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Oujda> .
+<id_4ola6b_14p_10s4qe9>	<byTransport>	<Royal_Air_Maroc> .
+#@ <id_4ola6b_14p_1f53047>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Amman-Queen_Alia> .
+<id_4ola6b_14p_1f53047>	<byTransport>	<Royal_Jordanian> .
+#@ <id_4ola6b_14p_1kk7tu2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Copenhagen> .
+<id_4ola6b_14p_1kk7tu2>	<byTransport>	<Scandinavian_Airlines> .
+#@ <id_4ola6b_14p_zk0ww7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Oslo> .
+<id_4ola6b_14p_zk0ww7>	<byTransport>	<Scandinavian_Airlines> .
+#@ <id_4ola6b_14p_ez9vrq>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Stockholm-Arlanda> .
+<id_4ola6b_14p_ez9vrq>	<byTransport>	<Scandinavian_Airlines> .
+#@ <id_4ola6b_14p_17s0hz8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Singapore> .
+<id_4ola6b_14p_17s0hz8>	<byTransport>	<Singapore_Airlines> .
+#@ <id_4ola6b_14p_1d1ait6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
+<id_4ola6b_14p_1d1ait6>	<byTransport>	<Sky_Airlines> .
+#@ <id_4ola6b_14p_zjsbtr>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bern> .
+<id_4ola6b_14p_zjsbtr>	<byTransport>	<Sky_Work_Airlines> .
+#@ <id_4ola6b_14p_1boihcc>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kayseri> .
+<id_4ola6b_14p_1boihcc>	<byTransport>	<Strategic_Airlines> .
+#@ <id_4ola6b_14p_1kgoer0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Marrakech> .
+<id_4ola6b_14p_1kgoer0>	<byTransport>	<Strategic_Airlines> .
+#@ <id_4ola6b_14p_10r81w4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nador> .
+<id_4ola6b_14p_10r81w4>	<byTransport>	<Strategic_Airlines> .
+#@ <id_4ola6b_14p_10s4qe9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Oujda> .
+<id_4ola6b_14p_10s4qe9>	<byTransport>	<Strategic_Airlines> .
+#@ <id_4ola6b_14p_11jllow>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tangier> .
+<id_4ola6b_14p_11jllow>	<byTransport>	<Strategic_Airlines> .
+#@ <id_4ola6b_14p_1d1ait6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
+<id_4ola6b_14p_1d1ait6>	<byTransport>	<SunExpress> .
+#@ <id_4ola6b_14p_19o1e9m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Istanbul-Sabiha_Gökçen> .
+<id_4ola6b_14p_19o1e9m>	<byTransport>	<SunExpress> .
+#@ <id_4ola6b_14p_10ox84l>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Izmir> .
+<id_4ola6b_14p_10ox84l>	<byTransport>	<SunExpress> .
+#@ <id_4ola6b_14p_4z6rmg>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Paramaribo> .
+<id_4ola6b_14p_4z6rmg>	<byTransport>	<Surinam_Airways> .
+#@ <id_4ola6b_14p_8xwwqf>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Zurich> .
+<id_4ola6b_14p_8xwwqf>	<byTransport>	<Swiss_International_Air_Lines> .
+#@ <id_4ola6b_14p_1vzq46t>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Aleppo> .
+<id_4ola6b_14p_1vzq46t>	<byTransport>	<Syrian_Air> .
+#@ <id_4ola6b_14p_1qvfk9r>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Damascus> .
+<id_4ola6b_14p_1qvfk9r>	<byTransport>	<Syrian_Air> .
+#@ <id_4ola6b_14p_1ebu28a>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bucharest-Henri_Coandǎ> .
+<id_4ola6b_14p_1ebu28a>	<byTransport>	<TAROM> .
+#@ <id_4ola6b_14p_10k4kvl>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Adana> .
+<id_4ola6b_14p_10k4kvl>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1vwwc7m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Agadir> .
+<id_4ola6b_14p_1vwwc7m>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1x3uckp>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Alanya-Gazipaşa> .
+<id_4ola6b_14p_1x3uckp>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1syf1j7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Alicante> .
+<id_4ola6b_14p_1syf1j7>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1bzfdvr>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Almeria> .
+<id_4ola6b_14p_1bzfdvr>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1w0x87m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ankara> .
+<id_4ola6b_14p_1w0x87m>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1d1ait6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
+<id_4ola6b_14p_1d1ait6>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1w465p1>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Athens> .
+<id_4ola6b_14p_1w465p1>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_n2w2ob>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Barcelona> .
+<id_4ola6b_14p_n2w2ob>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_fe8j82>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Berlin-Tegel> .
+<id_4ola6b_14p_fe8j82>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_d6m6x9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Berlin-Brandenburg> .
+<id_4ola6b_14p_d6m6x9>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1wieiz7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bodrum> .
+<id_4ola6b_14p_1wieiz7>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_17dz97>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Catania> .
+<id_4ola6b_14p_17dz97>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_frdvt4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dalaman> .
+<id_4ola6b_14p_frdvt4>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1xdrfbm>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Djerba> .
+<id_4ola6b_14p_1xdrfbm>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10i7ez5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Enfidha> .
+<id_4ola6b_14p_10i7ez5>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_zjust4>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Faro> .
+<id_4ola6b_14p_zjust4>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_pcioy>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Fuerteventura> .
+<id_4ola6b_14p_pcioy>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1im7nlb>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Funchal> .
+<id_4ola6b_14p_1im7nlb>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1bzilw8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Hurghada> .
+<id_4ola6b_14p_1bzilw8>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1ubpepv>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Innsbruck> .
+<id_4ola6b_14p_1ubpepv>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_19o1e9m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Istanbul-Sabiha_Gökçen> .
+<id_4ola6b_14p_19o1e9m>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10ox84l>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Izmir> .
+<id_4ola6b_14p_10ox84l>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_7o957u>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Jerez_de_la_Frontera> .
+<id_4ola6b_14p_7o957u>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1rj0jh2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Las_Palmas_de_Gran_Canaria> .
+<id_4ola6b_14p_1rj0jh2>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_24p66j>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lisbon> .
+<id_4ola6b_14p_24p66j>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10qhn9u>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Luxor> .
+<id_4ola6b_14p_10qhn9u>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_4fllxf>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Málaga> .
+<id_4ola6b_14p_4fllxf>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1kgoer0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Marrakech> .
+<id_4ola6b_14p_1kgoer0>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1o3hc0a>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Marsa_Alam> .
+<id_4ola6b_14p_1o3hc0a>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_9mfxrn>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Minorca> .
+<id_4ola6b_14p_9mfxrn>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1mmi16h>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Montpellier> .
+<id_4ola6b_14p_1mmi16h>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_2yccfx>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Naples> .
+<id_4ola6b_14p_2yccfx>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_zk029p>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Nice> .
+<id_4ola6b_14p_zk029p>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_zk1cmf>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Pisa> .
+<id_4ola6b_14p_zk1cmf>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10rytp9>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Olbia> .
+<id_4ola6b_14p_10rytp9>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1s9jfd6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Santa_Cruz_de_la_Palma> .
+<id_4ola6b_14p_1s9jfd6>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_ovti5c>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Seville> .
+<id_4ola6b_14p_ovti5c>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_uz2gdg>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Sharm_el-Sheikh> .
+<id_4ola6b_14p_uz2gdg>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_zk3q8c>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Taba> .
+<id_4ola6b_14p_zk3q8c>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1ukg76m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tenerife-South> .
+<id_4ola6b_14p_1ukg76m>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_d0u0b5>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Valencia> .
+<id_4ola6b_14p_d0u0b5>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1wlxzq2>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Burgas> .
+<id_4ola6b_14p_1wlxzq2>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1wvjkzu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Chania> .
+<id_4ola6b_14p_1wvjkzu>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10lavzc>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Chios> .
+<id_4ola6b_14p_10lavzc>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10lfjcl>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Corfu> .
+<id_4ola6b_14p_10lfjcl>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_t71aij>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Heraklion> .
+<id_4ola6b_14p_t71aij>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10ohtvb>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ibiza> .
+<id_4ola6b_14p_10ohtvb>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1bizuha>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kefalonia> .
+<id_4ola6b_14p_1bizuha>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1fdxjmu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kithira> .
+<id_4ola6b_14p_1fdxjmu>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_22hzt8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Lesbos> .
+<id_4ola6b_14p_22hzt8>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_5k4k3n>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Palma_de_Mallorca> .
+<id_4ola6b_14p_5k4k3n>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_183e022>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Preveza/Lefkada> .
+<id_4ola6b_14p_183e022>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_4ycl95>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rhodes> .
+<id_4ola6b_14p_4ycl95>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_6889y6>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rovaniemi> .
+<id_4ola6b_14p_6889y6>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1wxj39g>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Salzburg> .
+<id_4ola6b_14p_1wxj39g>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10tz7j7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Samos> .
+<id_4ola6b_14p_10tz7j7>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1ved8x8>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Thessaloniki> .
+<id_4ola6b_14p_1ved8x8>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10vmoze>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Varna> .
+<id_4ola6b_14p_10vmoze>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10vvidz>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Volos> .
+<id_4ola6b_14p_10vvidz>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_1tuv0mp>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Zakynthos> .
+<id_4ola6b_14p_1tuv0mp>	<byTransport>	<Transavia.com> .
+#@ <id_4ola6b_14p_10uvsgn>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tunis> .
+<id_4ola6b_14p_10uvsgn>	<byTransport>	<Tunisair> .
+#@ <id_4ola6b_14p_1rl2gh0>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Istanbul-Atatürk> .
+<id_4ola6b_14p_1rl2gh0>	<byTransport>	<Turkish_Airlines> .
+#@ <id_4ola6b_14p_1w0x87m>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ankara> .
+<id_4ola6b_14p_1w0x87m>	<byTransport>	<AnadoluJet> .
+#@ <id_4ola6b_14p_vj5hjm>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Kiev-Boryspil> .
+<id_4ola6b_14p_vj5hjm>	<byTransport>	<Ukraine_International_Airlines> .
+#@ <id_4ola6b_14p_nwdeav>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Chicago-O'Hare> .
+<id_4ola6b_14p_nwdeav>	<byTransport>	<United_Airlines> .
+#@ <id_4ola6b_14p_38m76>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Houston-Intercontinental> .
+<id_4ola6b_14p_38m76>	<byTransport>	<United_Airlines> .
+#@ <id_4ola6b_14p_30nrve>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Newark> .
+<id_4ola6b_14p_30nrve>	<byTransport>	<United_Airlines> .
+#@ <id_4ola6b_14p_1urc4kc>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Washington-Dulles> .
+<id_4ola6b_14p_1urc4kc>	<byTransport>	<United_Airlines> .
+#@ <id_4ola6b_14p_1p37txx>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Philadelphia> .
+<id_4ola6b_14p_1p37txx>	<byTransport>	<US_Airways> .
+#@ <id_4ola6b_14p_1syf1j7>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Alicante> .
+<id_4ola6b_14p_1syf1j7>	<byTransport>	<Vueling_Airlines> .
+#@ <id_4ola6b_14p_n2w2ob>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Barcelona> .
+<id_4ola6b_14p_n2w2ob>	<byTransport>	<Vueling_Airlines> .
+#@ <id_4ola6b_14p_1wf8iyz>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Bilbao> .
+<id_4ola6b_14p_1wf8iyz>	<byTransport>	<Vueling_Airlines> .
+#@ <id_4ola6b_14p_2h36ql>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Madrid> .
+<id_4ola6b_14p_2h36ql>	<byTransport>	<Vueling_Airlines> .
+#@ <id_4ola6b_14p_4fllxf>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Málaga> .
+<id_4ola6b_14p_4fllxf>	<byTransport>	<Vueling_Airlines> .
+#@ <id_4ola6b_14p_5k4k3n>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Palma_de_Mallorca> .
+<id_4ola6b_14p_5k4k3n>	<byTransport>	<Vueling_Airlines> .
+#@ <id_4ola6b_14p_10ohtvb>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Ibiza> .
+<id_4ola6b_14p_10ohtvb>	<byTransport>	<Vueling_Airlines> .
+#@ <id_4ola6b_14p_ovti5c>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Seville> .
+<id_4ola6b_14p_ovti5c>	<byTransport>	<Vueling_Airlines> .
+#@ <id_15fa8fj_14p_r8ccej>
+<Frankfurt_Airport>	<isConnectedTo>	<Ljubljana> .
+<id_15fa8fj_14p_r8ccej>	<byTransport>	<Adria_Airways> .
+#@ <id_15fa8fj_14p_hde5dg>
+<Frankfurt_Airport>	<isConnectedTo>	<Pristina> .
+<id_15fa8fj_14p_hde5dg>	<byTransport>	<Adria_Airways> .
+#@ <id_15fa8fj_14p_1w465p1>
+<Frankfurt_Airport>	<isConnectedTo>	<Athens> .
+<id_15fa8fj_14p_1w465p1>	<byTransport>	<Aegean_Airlines> .
+#@ <id_15fa8fj_14p_1ved8x8>
+<Frankfurt_Airport>	<isConnectedTo>	<Thessaloniki> .
+<id_15fa8fj_14p_1ved8x8>	<byTransport>	<Aegean_Airlines> .
+#@ <id_15fa8fj_14p_1xjr4m8>
+<Frankfurt_Airport>	<isConnectedTo>	<Dublin> .
+<id_15fa8fj_14p_1xjr4m8>	<byTransport>	<Aer_Lingus> .
+#@ <id_15fa8fj_14p_11t2lwx>
+<Frankfurt_Airport>	<isConnectedTo>	<Moscow-Sheremetyevo> .
+<id_15fa8fj_14p_11t2lwx>	<byTransport>	<Aeroflot> .
+#@ <id_15fa8fj_14p_1bw6wux>
+<Frankfurt_Airport>	<isConnectedTo>	<Algiers> .
+<id_15fa8fj_14p_1bw6wux>	<byTransport>	<Air_Algérie> .
+#@ <id_15fa8fj_14p_1w3txyq>
+<Frankfurt_Airport>	<isConnectedTo>	<Astana> .
+<id_15fa8fj_14p_1w3txyq>	<byTransport>	<Air_Astana> .
+#@ <id_15fa8fj_14p_1d1ait6>
+<Frankfurt_Airport>	<isConnectedTo>	<Antalya> .
+<id_15fa8fj_14p_1d1ait6>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_fe8j82>
+<Frankfurt_Airport>	<isConnectedTo>	<Berlin-Tegel> .
+<id_15fa8fj_14p_fe8j82>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_17dz97>
+<Frankfurt_Airport>	<isConnectedTo>	<Catania> .
+<id_15fa8fj_14p_17dz97>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_pcioy>
+<Frankfurt_Airport>	<isConnectedTo>	<Fuerteventura> .
+<id_15fa8fj_14p_pcioy>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_1bzilw8>
+<Frankfurt_Airport>	<isConnectedTo>	<Hurghada> .
+<id_15fa8fj_14p_1bzilw8>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_10lfjcl>
+<Frankfurt_Airport>	<isConnectedTo>	<Corfu> .
+<id_15fa8fj_14p_10lfjcl>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_1mwxe85>
+<Frankfurt_Airport>	<isConnectedTo>	<Heringsdorf> .
+<id_15fa8fj_14p_1mwxe85>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_10ohtvb>
+<Frankfurt_Airport>	<isConnectedTo>	<Ibiza> .
+<id_15fa8fj_14p_10ohtvb>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_1jb36e>
+<Frankfurt_Airport>	<isConnectedTo>	<Kavala> .
+<id_15fa8fj_14p_1jb36e>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_1w63hr3>
+<Frankfurt_Airport>	<isConnectedTo>	<Lamezia_Terme> .
+<id_15fa8fj_14p_1w63hr3>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_10rytp9>
+<Frankfurt_Airport>	<isConnectedTo>	<Olbia> .
+<id_15fa8fj_14p_10rytp9>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_4ycl95>
+<Frankfurt_Airport>	<isConnectedTo>	<Rhodes> .
+<id_15fa8fj_14p_4ycl95>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_10tz7j7>
+<Frankfurt_Airport>	<isConnectedTo>	<Samos> .
+<id_15fa8fj_14p_10tz7j7>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_1ved8x8>
+<Frankfurt_Airport>	<isConnectedTo>	<Thessaloniki> .
+<id_15fa8fj_14p_1ved8x8>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_1tuv0mp>
+<Frankfurt_Airport>	<isConnectedTo>	<Zakynthos> .
+<id_15fa8fj_14p_1tuv0mp>	<byTransport>	<Air_Berlin> .
+#@ <id_15fa8fj_14p_13370v>
+<Frankfurt_Airport>	<isConnectedTo>	<Calgary> .
+<id_15fa8fj_14p_13370v>	<byTransport>	<Air_Canada> .
+#@ <id_15fa8fj_14p_1rimu3t>
+<Frankfurt_Airport>	<isConnectedTo>	<Montréal-Trudeau> .
+<id_15fa8fj_14p_1rimu3t>	<byTransport>	<Air_Canada> .
+#@ <id_15fa8fj_14p_3pwebg>
+<Frankfurt_Airport>	<isConnectedTo>	<Ottawa> .
+<id_15fa8fj_14p_3pwebg>	<byTransport>	<Air_Canada> .
+#@ <id_15fa8fj_14p_1sp6lhs>
+<Frankfurt_Airport>	<isConnectedTo>	<Toronto-Pearson> .
+<id_15fa8fj_14p_1sp6lhs>	<byTransport>	<Air_Canada> .
+#@ <id_15fa8fj_14p_ib21i1>
+<Frankfurt_Airport>	<isConnectedTo>	<Beijing-Capital> .
+<id_15fa8fj_14p_ib21i1>	<byTransport>	<Air_China> .
+#@ <id_15fa8fj_14p_1pb5x57>
+<Frankfurt_Airport>	<isConnectedTo>	<Shanghai-Pudong> .
+<id_15fa8fj_14p_1pb5x57>	<byTransport>	<Air_China> .
+#@ <id_15fa8fj_14p_bzawhk>
+<Frankfurt_Airport>	<isConnectedTo>	<Milan-Orio_al_Serio> .
+<id_15fa8fj_14p_bzawhk>	<byTransport>	<Air_Dolomiti> .
+#@ <id_15fa8fj_14p_1luzvij>
+<Frankfurt_Airport>	<isConnectedTo>	<Paris-Charles_de_Gaulle> .
+<id_15fa8fj_14p_1luzvij>	<byTransport>	<Air_France> .
+#@ <id_15fa8fj_14p_10lstnw>
+<Frankfurt_Airport>	<isConnectedTo>	<Delhi> .
+<id_15fa8fj_14p_10lstnw>	<byTransport>	<Air_India> .
+#@ <id_15fa8fj_14p_17dz97>
+<Frankfurt_Airport>	<isConnectedTo>	<Catania> .
+<id_15fa8fj_14p_17dz97>	<byTransport>	<Air_Malta> .
+#@ <id_15fa8fj_14p_10qofc5>
+<Frankfurt_Airport>	<isConnectedTo>	<Malta> .
+<id_15fa8fj_14p_10qofc5>	<byTransport>	<Air_Malta> .
+#@ <id_15fa8fj_14p_tlbeh7>
+<Frankfurt_Airport>	<isConnectedTo>	<Mauritius> .
+<id_15fa8fj_14p_tlbeh7>	<byTransport>	<Air_Mauritius> .
+#@ <id_15fa8fj_14p_i4uiad>
+<Frankfurt_Airport>	<isConnectedTo>	<Windhoek> .
+<id_15fa8fj_14p_i4uiad>	<byTransport>	<Air_Namibia> .
+#@ <id_15fa8fj_14p_1sp6lhs>
+<Frankfurt_Airport>	<isConnectedTo>	<Toronto-Pearson> .
+<id_15fa8fj_14p_1sp6lhs>	<byTransport>	<Air_Transat> .
+#@ <id_15fa8fj_14p_5yqtkt>
+<Frankfurt_Airport>	<isConnectedTo>	<Vancouver> .
+<id_15fa8fj_14p_5yqtkt>	<byTransport>	<Air_Transat> .
+#@ <id_15fa8fj_14p_10vmoze>
+<Frankfurt_Airport>	<isConnectedTo>	<Varna> .
+<id_15fa8fj_14p_10vmoze>	<byTransport>	<Air_VIA> .
+#@ <id_15fa8fj_14p_zk2mb5>
+<Frankfurt_Airport>	<isConnectedTo>	<Riga> .
+<id_15fa8fj_14p_zk2mb5>	<byTransport>	<airBaltic> .
+#@ <id_15fa8fj_14p_lbzc7x>
+<Frankfurt_Airport>	<isConnectedTo>	<Rome-Fiumicino> .
+<id_15fa8fj_14p_lbzc7x>	<byTransport>	<Alitalia> .
+#@ <id_15fa8fj_14p_15mqi29>
+<Frankfurt_Airport>	<isConnectedTo>	<Milan-Linate> .
+<id_15fa8fj_14p_15mqi29>	<byTransport>	<Alitalia_CityLiner> .
+#@ <id_15fa8fj_14p_17a9ppw>
+<Frankfurt_Airport>	<isConnectedTo>	<Tokyo-Haneda> .
+<id_15fa8fj_14p_17a9ppw>	<byTransport>	<All_Nippon_Airways> .
+#@ <id_15fa8fj_14p_1fg1pay>
+<Frankfurt_Airport>	<isConnectedTo>	<Dallas/Fort_Worth> .
+<id_15fa8fj_14p_1fg1pay>	<byTransport>	<American_Airlines> .
+#@ <id_15fa8fj_14p_1f9dsm9>
+<Frankfurt_Airport>	<isConnectedTo>	<Seoul-Incheon> .
+<id_15fa8fj_14p_1f9dsm9>	<byTransport>	<Asiana_Airlines> .
+#@ <id_15fa8fj_14p_1rkzod9>
+<Frankfurt_Airport>	<isConnectedTo>	<Istanbul-Ataturk> .
+<id_15fa8fj_14p_1rkzod9>	<byTransport>	<Atlasjet> .
+#@ <id_15fa8fj_14p_6uwp67>
+<Frankfurt_Airport>	<isConnectedTo>	<Vienna> .
+<id_15fa8fj_14p_6uwp67>	<byTransport>	<Austrian_Airlines> .
+#@ <id_15fa8fj_14p_6uwp67>
+<Frankfurt_Airport>	<isConnectedTo>	<Vienna> .
+<id_15fa8fj_14p_6uwp67>	<byTransport>	<Tyrolean_Airways> .
+#@ <id_15fa8fj_14p_1ld2olj>
+<Frankfurt_Airport>	<isConnectedTo>	<Baghdad> .
+<id_15fa8fj_14p_1ld2olj>	<byTransport>	<AVE.com> .
+#@ <id_15fa8fj_14p_zjs8p5>
+<Frankfurt_Airport>	<isConnectedTo>	<Baku> .
+<id_15fa8fj_14p_zjs8p5>	<byTransport>	<Azerbaijan_Airlines> .
+#@ <id_15fa8fj_14p_10qtkp6>
+<Frankfurt_Airport>	<isConnectedTo>	<Minsk> .
+<id_15fa8fj_14p_10qtkp6>	<byTransport>	<Belavia> .
+#@ <id_15fa8fj_14p_1xsosiu>
+<Frankfurt_Airport>	<isConnectedTo>	<Nottingham/East_Midlands> .
+<id_15fa8fj_14p_1xsosiu>	<byTransport>	<bmi_regional> .
+#@ <id_15fa8fj_14p_1vfd56f>
+<Frankfurt_Airport>	<isConnectedTo>	<London-Heathrow> .
+<id_15fa8fj_14p_1vfd56f>	<byTransport>	<British_Airways> .
+#@ <id_15fa8fj_14p_15yosg0>
+<Frankfurt_Airport>	<isConnectedTo>	<London-City> .
+<id_15fa8fj_14p_15yosg0>	<byTransport>	<BA_CityFlyer> .
+#@ <id_15fa8fj_14p_10u8002>
+<Frankfurt_Airport>	<isConnectedTo>	<Sofia> .
+<id_15fa8fj_14p_10u8002>	<byTransport>	<Bulgaria_Air> .
+#@ <id_15fa8fj_14p_10vmoze>
+<Frankfurt_Airport>	<isConnectedTo>	<Varna> .
+<id_15fa8fj_14p_10vmoze>	<byTransport>	<Bulgarian_Air_Charter> .
+#@ <id_15fa8fj_14p_1c9fzek>
+<Frankfurt_Airport>	<isConnectedTo>	<Hong_Kong> .
+<id_15fa8fj_14p_1c9fzek>	<byTransport>	<Cathay_Pacific> .
+#@ <id_15fa8fj_14p_1i7fpjq>
+<Frankfurt_Airport>	<isConnectedTo>	<Taipei-Taoyuan> .
+<id_15fa8fj_14p_1i7fpjq>	<byTransport>	<China_Airlines> .
+#@ <id_15fa8fj_14p_at3js9>
+<Frankfurt_Airport>	<isConnectedTo>	<Hof/Plauen> .
+<id_15fa8fj_14p_at3js9>	<byTransport>	<Cirrus_Airlines> .
+#@ <id_15fa8fj_14p_1vwwc7m>
+<Frankfurt_Airport>	<isConnectedTo>	<Agadir> .
+<id_15fa8fj_14p_1vwwc7m>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1d1ait6>
+<Frankfurt_Airport>	<isConnectedTo>	<Antalya> .
+<id_15fa8fj_14p_1d1ait6>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_f93zl5>
+<Frankfurt_Airport>	<isConnectedTo>	<Arrecife> .
+<id_15fa8fj_14p_f93zl5>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1wavmlu>
+<Frankfurt_Airport>	<isConnectedTo>	<Banjul> .
+<id_15fa8fj_14p_1wavmlu>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_7ln1jq>
+<Frankfurt_Airport>	<isConnectedTo>	<Barbados> .
+<id_15fa8fj_14p_7ln1jq>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1wrx6zr>
+<Frankfurt_Airport>	<isConnectedTo>	<Cancún> .
+<id_15fa8fj_14p_1wrx6zr>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_frdvt4>
+<Frankfurt_Airport>	<isConnectedTo>	<Dalaman> .
+<id_15fa8fj_14p_frdvt4>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_zb69i3>
+<Frankfurt_Airport>	<isConnectedTo>	<Fort_Lauderdale> .
+<id_15fa8fj_14p_zb69i3>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_pcioy>
+<Frankfurt_Airport>	<isConnectedTo>	<Fuerteventura> .
+<id_15fa8fj_14p_pcioy>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1im7nlb>
+<Frankfurt_Airport>	<isConnectedTo>	<Funchal> .
+<id_15fa8fj_14p_1im7nlb>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_4681j>
+<Frankfurt_Airport>	<isConnectedTo>	<Havana> .
+<id_15fa8fj_14p_4681j>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_a2lrg4>
+<Frankfurt_Airport>	<isConnectedTo>	<Holguín> .
+<id_15fa8fj_14p_a2lrg4>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1bzilw8>
+<Frankfurt_Airport>	<isConnectedTo>	<Hurghada> .
+<id_15fa8fj_14p_1bzilw8>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1bhlg6r>
+<Frankfurt_Airport>	<isConnectedTo>	<Kilimanjaro> .
+<id_15fa8fj_14p_1bhlg6r>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1q8yx5a>
+<Frankfurt_Airport>	<isConnectedTo>	<Larnaca> .
+<id_15fa8fj_14p_1q8yx5a>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1rj0jh2>
+<Frankfurt_Airport>	<isConnectedTo>	<Las_Palmas_de_Gran_Canaria> .
+<id_15fa8fj_14p_1rj0jh2>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_ku2bah>
+<Frankfurt_Airport>	<isConnectedTo>	<Las_Vegas> .
+<id_15fa8fj_14p_ku2bah>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_4fllxf>
+<Frankfurt_Airport>	<isConnectedTo>	<Málaga> .
+<id_15fa8fj_14p_4fllxf>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_zjz9kl>
+<Frankfurt_Airport>	<isConnectedTo>	<Mahé> .
+<id_15fa8fj_14p_zjz9kl>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_zjz9o1>
+<Frankfurt_Airport>	<isConnectedTo>	<Malé> .
+<id_15fa8fj_14p_zjz9o1>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_tlbeh7>
+<Frankfurt_Airport>	<isConnectedTo>	<Mauritius> .
+<id_15fa8fj_14p_tlbeh7>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_cfx8hk>
+<Frankfurt_Airport>	<isConnectedTo>	<Mombasa> .
+<id_15fa8fj_14p_cfx8hk>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_147ujeo>
+<Frankfurt_Airport>	<isConnectedTo>	<Montego_Bay> .
+<id_15fa8fj_14p_147ujeo>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_kfs4l6>
+<Frankfurt_Airport>	<isConnectedTo>	<Nairobi> .
+<id_15fa8fj_14p_kfs4l6>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_177ahtt>
+<Frankfurt_Airport>	<isConnectedTo>	<Orlando> .
+<id_15fa8fj_14p_177ahtt>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_5k4k3n>
+<Frankfurt_Airport>	<isConnectedTo>	<Palma_de_Mallorca> .
+<id_15fa8fj_14p_5k4k3n>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1ogti6q>
+<Frankfurt_Airport>	<isConnectedTo>	<Panama_City> .
+<id_15fa8fj_14p_1ogti6q>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_3wfii5>
+<Frankfurt_Airport>	<isConnectedTo>	<Paphos> .
+<id_15fa8fj_14p_3wfii5>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1cijbzq>
+<Frankfurt_Airport>	<isConnectedTo>	<Porlamar> .
+<id_15fa8fj_14p_1cijbzq>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_14j45c>
+<Frankfurt_Airport>	<isConnectedTo>	<Puerto_Plata> .
+<id_15fa8fj_14p_14j45c>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1q7azp6>
+<Frankfurt_Airport>	<isConnectedTo>	<Punta_Cana> .
+<id_15fa8fj_14p_1q7azp6>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_4whnco>
+<Frankfurt_Airport>	<isConnectedTo>	<Recife> .
+<id_15fa8fj_14p_4whnco>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_sr52lw>
+<Frankfurt_Airport>	<isConnectedTo>	<Saint_Lucia> .
+<id_15fa8fj_14p_sr52lw>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_az5334>
+<Frankfurt_Airport>	<isConnectedTo>	<Salvador_da_Bahia> .
+<id_15fa8fj_14p_az5334>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_vv6w61>
+<Frankfurt_Airport>	<isConnectedTo>	<San_José_de_Costa_Rica> .
+<id_15fa8fj_14p_vv6w61>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1xgcjxz>
+<Frankfurt_Airport>	<isConnectedTo>	<San_Juan> .
+<id_15fa8fj_14p_1xgcjxz>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1s9jfd6>
+<Frankfurt_Airport>	<isConnectedTo>	<Santa_Cruz_de_la_Palma> .
+<id_15fa8fj_14p_1s9jfd6>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_4t5gbv>
+<Frankfurt_Airport>	<isConnectedTo>	<Santo_Domingo> .
+<id_15fa8fj_14p_4t5gbv>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_uz2gdg>
+<Frankfurt_Airport>	<isConnectedTo>	<Sharm_el-Sheikh> .
+<id_15fa8fj_14p_uz2gdg>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1ukg76m>
+<Frankfurt_Airport>	<isConnectedTo>	<Tenerife-South> .
+<id_15fa8fj_14p_1ukg76m>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_fsq854>
+<Frankfurt_Airport>	<isConnectedTo>	<Varadero> .
+<id_15fa8fj_14p_fsq854>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1d1fiwh>
+<Frankfurt_Airport>	<isConnectedTo>	<Antigua> .
+<id_15fa8fj_14p_1d1fiwh>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_e5lth3>
+<Frankfurt_Airport>	<isConnectedTo>	<Baltimore> .
+<id_15fa8fj_14p_e5lth3>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_13370v>
+<Frankfurt_Airport>	<isConnectedTo>	<Calgary> .
+<id_15fa8fj_14p_13370v>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1wvjkzu>
+<Frankfurt_Airport>	<isConnectedTo>	<Chania> .
+<id_15fa8fj_14p_1wvjkzu>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_7pv8y3>
+<Frankfurt_Airport>	<isConnectedTo>	<Colombo> .
+<id_15fa8fj_14p_7pv8y3>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1po95p9>
+<Frankfurt_Airport>	<isConnectedTo>	<Constanta> .
+<id_15fa8fj_14p_1po95p9>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_10lfjcl>
+<Frankfurt_Airport>	<isConnectedTo>	<Corfu> .
+<id_15fa8fj_14p_10lfjcl>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1xdrfbm>
+<Frankfurt_Airport>	<isConnectedTo>	<Djerba> .
+<id_15fa8fj_14p_1xdrfbm>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_10m2tvd>
+<Frankfurt_Airport>	<isConnectedTo>	<Dubai> .
+<id_15fa8fj_14p_10m2tvd>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_s1pdpk>
+<Frankfurt_Airport>	<isConnectedTo>	<Dubrovnik> .
+<id_15fa8fj_14p_s1pdpk>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1ql5jw3>
+<Frankfurt_Airport>	<isConnectedTo>	<Fairbanks> .
+<id_15fa8fj_14p_1ql5jw3>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_3fzxfr>
+<Frankfurt_Airport>	<isConnectedTo>	<Halifax> .
+<id_15fa8fj_14p_3fzxfr>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_t71aij>
+<Frankfurt_Airport>	<isConnectedTo>	<Heraklion> .
+<id_15fa8fj_14p_t71aij>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_10ohtvb>
+<Frankfurt_Airport>	<isConnectedTo>	<Ibiza> .
+<id_15fa8fj_14p_10ohtvb>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1rl2gh0>
+<Frankfurt_Airport>	<isConnectedTo>	<Istanbul-Atatürk> .
+<id_15fa8fj_14p_1rl2gh0>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_7o957u>
+<Frankfurt_Airport>	<isConnectedTo>	<Jerez_de_la_Frontera> .
+<id_15fa8fj_14p_7o957u>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_5mvm6m>
+<Frankfurt_Airport>	<isConnectedTo>	<La_Romana> .
+<id_15fa8fj_14p_5mvm6m>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_10qhn9u>
+<Frankfurt_Airport>	<isConnectedTo>	<Luxor> .
+<id_15fa8fj_14p_10qhn9u>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1o3hc0a>
+<Frankfurt_Airport>	<isConnectedTo>	<Marsa_Alam> .
+<id_15fa8fj_14p_1o3hc0a>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_40dbkt>
+<Frankfurt_Airport>	<isConnectedTo>	<Phuket> .
+<id_15fa8fj_14p_40dbkt>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1ctii21>
+<Frankfurt_Airport>	<isConnectedTo>	<Pointe-à-Pitre> .
+<id_15fa8fj_14p_1ctii21>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_4ycl95>
+<Frankfurt_Airport>	<isConnectedTo>	<Rhodes> .
+<id_15fa8fj_14p_4ycl95>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_4yt7s8>
+<Frankfurt_Airport>	<isConnectedTo>	<Rijeka> .
+<id_15fa8fj_14p_4yt7s8>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_wno8a5>
+<Frankfurt_Airport>	<isConnectedTo>	<Santorini> .
+<id_15fa8fj_14p_wno8a5>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1g2hd1w>
+<Frankfurt_Airport>	<isConnectedTo>	<Seattle/Tacoma> .
+<id_15fa8fj_14p_1g2hd1w>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_10u8rga>
+<Frankfurt_Airport>	<isConnectedTo>	<Split> .
+<id_15fa8fj_14p_10u8rga>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_10uoad0>
+<Frankfurt_Airport>	<isConnectedTo>	<Tivat> .
+<id_15fa8fj_14p_10uoad0>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_60216q>
+<Frankfurt_Airport>	<isConnectedTo>	<Tobago> .
+<id_15fa8fj_14p_60216q>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1sp6lhs>
+<Frankfurt_Airport>	<isConnectedTo>	<Toronto-Pearson> .
+<id_15fa8fj_14p_1sp6lhs>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_5yqtkt>
+<Frankfurt_Airport>	<isConnectedTo>	<Vancouver> .
+<id_15fa8fj_14p_5yqtkt>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_1v40ac>
+<Frankfurt_Airport>	<isConnectedTo>	<Whitehorse> .
+<id_15fa8fj_14p_1v40ac>	<byTransport>	<Condor_Flugdienst> .
+#@ <id_15fa8fj_14p_s1pdpk>
+<Frankfurt_Airport>	<isConnectedTo>	<Dubrovnik> .
+<id_15fa8fj_14p_s1pdpk>	<byTransport>	<Croatia_Airlines> .
+#@ <id_15fa8fj_14p_10u8rga>
+<Frankfurt_Airport>	<isConnectedTo>	<Split> .
+<id_15fa8fj_14p_10u8rga>	<byTransport>	<Croatia_Airlines> .
+#@ <id_15fa8fj_14p_8mq6q7>
+<Frankfurt_Airport>	<isConnectedTo>	<Zagreb> .
+<id_15fa8fj_14p_8mq6q7>	<byTransport>	<Croatia_Airlines> .
+#@ <id_15fa8fj_14p_1q8yx5a>
+<Frankfurt_Airport>	<isConnectedTo>	<Larnaca> .
+<id_15fa8fj_14p_1q8yx5a>	<byTransport>	<Cyprus_Airways> .
+#@ <id_15fa8fj_14p_45if6g>
+<Frankfurt_Airport>	<isConnectedTo>	<Prague> .
+<id_15fa8fj_14p_45if6g>	<byTransport>	<Czech_Airlines> .
+#@ <id_15fa8fj_14p_1fr5xsj>
+<Frankfurt_Airport>	<isConnectedTo>	<Atlanta> .
+<id_15fa8fj_14p_1fr5xsj>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_15fa8fj_14p_hs9ml7>
+<Frankfurt_Airport>	<isConnectedTo>	<Detroit> .
+<id_15fa8fj_14p_hs9ml7>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_15fa8fj_14p_1yw6ufk>
+<Frankfurt_Airport>	<isConnectedTo>	<New_York-JFK> .
+<id_15fa8fj_14p_1yw6ufk>	<byTransport>	<Delta_Air_Lines> .
+#@ <id_15fa8fj_14p_10l6f54>
+<Frankfurt_Airport>	<isConnectedTo>	<Cairo> .
+<id_15fa8fj_14p_10l6f54>	<byTransport>	<EgyptAir> .
+#@ <id_15fa8fj_14p_1y6odlr>
+<Frankfurt_Airport>	<isConnectedTo>	<Tel_Aviv-Ben_Gurion> .
+<id_15fa8fj_14p_1y6odlr>	<byTransport>	<El_Al> .
+#@ <id_15fa8fj_14p_lw7hyq>
+<Frankfurt_Airport>	<isConnectedTo>	<Emirates]]> .
+<id_15fa8fj_14p_lw7hyq>	<byTransport>	<El_Al> .
+#@ <id_15fa8fj_14p_10m2tvd>
+<Frankfurt_Airport>	<isConnectedTo>	<Dubai> .
+<id_15fa8fj_14p_10m2tvd>	<byTransport>	<El_Al> .
+#@ <id_15fa8fj_14p_1b7glnv>
+<Frankfurt_Airport>	<isConnectedTo>	<Addis_Ababa> .
+<id_15fa8fj_14p_1b7glnv>	<byTransport>	<Ethiopian_Airlines> .
+#@ <id_15fa8fj_14p_1geatg9>
+<Frankfurt_Airport>	<isConnectedTo>	<Abu_Dhabi> .
+<id_15fa8fj_14p_1geatg9>	<byTransport>	<Etihad_Airways> .
+#@ <id_15fa8fj_14p_nkuxt3>
+<Frankfurt_Airport>	<isConnectedTo>	<Helsinki> .
+<id_15fa8fj_14p_nkuxt3>	<byTransport>	<Finnair> .
+#@ <id_15fa8fj_14p_ofk3o9>
+<Frankfurt_Airport>	<isConnectedTo>	<Glasgow-International> .
+<id_15fa8fj_14p_ofk3o9>	<byTransport>	<Flybe> .
+#@ <id_15fa8fj_14p_1czmnss>
+<Frankfurt_Airport>	<isConnectedTo>	<Southampton> .
+<id_15fa8fj_14p_1czmnss>	<byTransport>	<Flybe> .
+#@ <id_15fa8fj_14p_11xzgdq>
+<Frankfurt_Airport>	<isConnectedTo>	<Tbilisi> .
+<id_15fa8fj_14p_11xzgdq>	<byTransport>	<Georgian_Airways> .
+#@ <id_15fa8fj_14p_hde5dg>
+<Frankfurt_Airport>	<isConnectedTo>	<Pristina> .
+<id_15fa8fj_14p_hde5dg>	<byTransport>	<Germanwings> .
+#@ <id_15fa8fj_14p_1ldst19>
+<Frankfurt_Airport>	<isConnectedTo>	<Bahrain> .
+<id_15fa8fj_14p_1ldst19>	<byTransport>	<Gulf_Air> .
+#@ <id_15fa8fj_14p_51f4v2>
+<Frankfurt_Airport>	<isConnectedTo>	<Iberia]]> .
+<id_15fa8fj_14p_51f4v2>	<byTransport>	<Gulf_Air> .
+#@ <id_15fa8fj_14p_2h36ql>
+<Frankfurt_Airport>	<isConnectedTo>	<Madrid> .
+<id_15fa8fj_14p_2h36ql>	<byTransport>	<Gulf_Air> .
+#@ <id_15fa8fj_14p_1tjb0ug>
+<Frankfurt_Airport>	<isConnectedTo>	<Reykjavík-Keflavík> .
+<id_15fa8fj_14p_1tjb0ug>	<byTransport>	<Icelandair> .
+#@ <id_15fa8fj_14p_1902s2s>
+<Frankfurt_Airport>	<isConnectedTo>	<Tehran-Imam_Khomeini> .
+<id_15fa8fj_14p_1902s2s>	<byTransport>	<Iran_Air> .
+#@ <id_15fa8fj_14p_1a4m3dq>
+<Frankfurt_Airport>	<isConnectedTo>	<Tokyo-Narita> .
+<id_15fa8fj_14p_1a4m3dq>	<byTransport>	<Japan_Airlines> .
+#@ <id_15fa8fj_14p_1rk07bi>
+<Frankfurt_Airport>	<isConnectedTo>	<Belgrade> .
+<id_15fa8fj_14p_1rk07bi>	<byTransport>	<Jat_Airways> .
+#@ <id_15fa8fj_14p_1vwwc7m>
+<Frankfurt_Airport>	<isConnectedTo>	<Agadir> .
+<id_15fa8fj_14p_1vwwc7m>	<byTransport>	<Jet4you> .
+#@ <id_15fa8fj_14p_1kgoer0>
+<Frankfurt_Airport>	<isConnectedTo>	<Marrakech> .
+<id_15fa8fj_14p_1kgoer0>	<byTransport>	<Jet4you> .
+#@ <id_15fa8fj_14p_1uf6ypi>
+<Frankfurt_Airport>	<isConnectedTo>	<Amsterdam> .
+<id_15fa8fj_14p_1uf6ypi>	<byTransport>	<KLM> .
+#@ <id_15fa8fj_14p_1f9dsm9>
+<Frankfurt_Airport>	<isConnectedTo>	<Seoul-Incheon> .
+<id_15fa8fj_14p_1f9dsm9>	<byTransport>	<Korean_Air> .
+#@ <id_15fa8fj_14p_1ublz3>
+<Frankfurt_Airport>	<isConnectedTo>	<Kuwait> .
+<id_15fa8fj_14p_1ublz3>	<byTransport>	<Kuwait_Airways> .
+#@ <id_15fa8fj_14p_1yqat9c>
+<Frankfurt_Airport>	<isConnectedTo>	<Geneva> .
+<id_15fa8fj_14p_1yqat9c>	<byTransport>	<Kuwait_Airways> .
+#@ <id_15fa8fj_14p_2h36ql>
+<Frankfurt_Airport>	<isConnectedTo>	<Madrid> .
+<id_15fa8fj_14p_2h36ql>	<byTransport>	<LAN_Airlines> .
+#@ <id_15fa8fj_14p_1ifw2qy>
+<Frankfurt_Airport>	<isConnectedTo>	<Santiago_de_Chile> .
+<id_15fa8fj_14p_1ifw2qy>	<byTransport>	<LAN_Airlines> .
+#@ <id_15fa8fj_14p_1ypnb4o>
+<Frankfurt_Airport>	<isConnectedTo>	<Gdańsk> .
+<id_15fa8fj_14p_1ypnb4o>	<byTransport>	<LOT_Polish_Airlines> .
+#@ <id_15fa8fj_14p_1sah79>
+<Frankfurt_Airport>	<isConnectedTo>	<Kraków> .
+<id_15fa8fj_14p_1sah79>	<byTransport>	<LOT_Polish_Airlines> .
+#@ <id_15fa8fj_14p_44b4ye>
+<Frankfurt_Airport>	<isConnectedTo>	<Poznań> .
+<id_15fa8fj_14p_44b4ye>	<byTransport>	<LOT_Polish_Airlines> .
+#@ <id_15fa8fj_14p_77sd29>
+<Frankfurt_Airport>	<isConnectedTo>	<Warsaw> .
+<id_15fa8fj_14p_77sd29>	<byTransport>	<LOT_Polish_Airlines> .
+#@ <id_15fa8fj_14p_44b4ye>
+<Frankfurt_Airport>	<isConnectedTo>	<Poznań> .
+<id_15fa8fj_14p_44b4ye>	<byTransport>	<EuroLOT> .
+#@ <id_15fa8fj_14p_im1ojt>
+<Frankfurt_Airport>	<isConnectedTo>	<Wrocław> .
+<id_15fa8fj_14p_im1ojt>	<byTransport>	<EuroLOT> .
+#@ <id_15fa8fj_14p_1geatg9>
+<Frankfurt_Airport>	<isConnectedTo>	<Abu_Dhabi> .
+<id_15fa8fj_14p_1geatg9>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10k3pmz>
+<Frankfurt_Airport>	<isConnectedTo>	<Abuja> .
+<id_15fa8fj_14p_10k3pmz>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1b7glnv>
+<Frankfurt_Airport>	<isConnectedTo>	<Addis_Ababa> .
+<id_15fa8fj_14p_1b7glnv>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1bw6wux>
+<Frankfurt_Airport>	<isConnectedTo>	<Algiers> .
+<id_15fa8fj_14p_1bw6wux>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1vzux2c>
+<Frankfurt_Airport>	<isConnectedTo>	<Almaty> .
+<id_15fa8fj_14p_1vzux2c>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1f53047>
+<Frankfurt_Airport>	<isConnectedTo>	<Amman-Queen_Alia> .
+<id_15fa8fj_14p_1f53047>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1uf6ypi>
+<Frankfurt_Airport>	<isConnectedTo>	<Amsterdam> .
+<id_15fa8fj_14p_1uf6ypi>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1w0x87m>
+<Frankfurt_Airport>	<isConnectedTo>	<Ankara> .
+<id_15fa8fj_14p_1w0x87m>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10kdjbo>
+<Frankfurt_Airport>	<isConnectedTo>	<Arbil> .
+<id_15fa8fj_14p_10kdjbo>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_p847s5>
+<Frankfurt_Airport>	<isConnectedTo>	<Ashgabat> .
+<id_15fa8fj_14p_p847s5>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1w3ph5h>
+<Frankfurt_Airport>	<isConnectedTo>	<Asmara> .
+<id_15fa8fj_14p_1w3ph5h>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1w3txyq>
+<Frankfurt_Airport>	<isConnectedTo>	<Astana> .
+<id_15fa8fj_14p_1w3txyq>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1w465p1>
+<Frankfurt_Airport>	<isConnectedTo>	<Athens> .
+<id_15fa8fj_14p_1w465p1>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1fr5xsj>
+<Frankfurt_Airport>	<isConnectedTo>	<Atlanta> .
+<id_15fa8fj_14p_1fr5xsj>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1ldst19>
+<Frankfurt_Airport>	<isConnectedTo>	<Bahrain> .
+<id_15fa8fj_14p_1ldst19>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zjs8p5>
+<Frankfurt_Airport>	<isConnectedTo>	<Baku> .
+<id_15fa8fj_14p_zjs8p5>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_118eb27>
+<Frankfurt_Airport>	<isConnectedTo>	<Bangalore> .
+<id_15fa8fj_14p_118eb27>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_17xt781>
+<Frankfurt_Airport>	<isConnectedTo>	<Bangkok-Suvarnabhumi> .
+<id_15fa8fj_14p_17xt781>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_n2w2ob>
+<Frankfurt_Airport>	<isConnectedTo>	<Barcelona> .
+<id_15fa8fj_14p_n2w2ob>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_ib21i1>
+<Frankfurt_Airport>	<isConnectedTo>	<Beijing-Capital> .
+<id_15fa8fj_14p_ib21i1>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wczrzf>
+<Frankfurt_Airport>	<isConnectedTo>	<Beirut> .
+<id_15fa8fj_14p_1wczrzf>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1rk07bi>
+<Frankfurt_Airport>	<isConnectedTo>	<Belgrade> .
+<id_15fa8fj_14p_1rk07bi>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_fe8j82>
+<Frankfurt_Airport>	<isConnectedTo>	<Berlin-Tegel> .
+<id_15fa8fj_14p_fe8j82>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wf8iyz>
+<Frankfurt_Airport>	<isConnectedTo>	<Bilbao> .
+<id_15fa8fj_14p_1wf8iyz>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1p89jl0>
+<Frankfurt_Airport>	<isConnectedTo>	<Billund> .
+<id_15fa8fj_14p_1p89jl0>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1ksxdjo>
+<Frankfurt_Airport>	<isConnectedTo>	<Birmingham> .
+<id_15fa8fj_14p_1ksxdjo>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wigds2>
+<Frankfurt_Airport>	<isConnectedTo>	<Bogotá> .
+<id_15fa8fj_14p_1wigds2>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1s2kwiy>
+<Frankfurt_Airport>	<isConnectedTo>	<Bologna> .
+<id_15fa8fj_14p_1s2kwiy>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wio54d>
+<Frankfurt_Airport>	<isConnectedTo>	<Boston> .
+<id_15fa8fj_14p_1wio54d>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wk2fnl>
+<Frankfurt_Airport>	<isConnectedTo>	<Bremen> .
+<id_15fa8fj_14p_1wk2fnl>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_19pul47>
+<Frankfurt_Airport>	<isConnectedTo>	<Brussels> .
+<id_15fa8fj_14p_19pul47>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1gspvt6>
+<Frankfurt_Airport>	<isConnectedTo>	<Bucharest-Otopeni> .
+<id_15fa8fj_14p_1gspvt6>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_ae7lmu>
+<Frankfurt_Airport>	<isConnectedTo>	<Budapest> .
+<id_15fa8fj_14p_ae7lmu>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1krcdsk>
+<Frankfurt_Airport>	<isConnectedTo>	<Buenos_Aires-Ezeiza> .
+<id_15fa8fj_14p_1krcdsk>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10l6f54>
+<Frankfurt_Airport>	<isConnectedTo>	<Cairo> .
+<id_15fa8fj_14p_10l6f54>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_13370v>
+<Frankfurt_Airport>	<isConnectedTo>	<Calgary> .
+<id_15fa8fj_14p_13370v>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_16a5qg>
+<Frankfurt_Airport>	<isConnectedTo>	<Caracas> .
+<id_15fa8fj_14p_16a5qg>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1z01y3l>
+<Frankfurt_Airport>	<isConnectedTo>	<Casablanca> .
+<id_15fa8fj_14p_1z01y3l>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_4aoprc>
+<Frankfurt_Airport>	<isConnectedTo>	<Chennai> .
+<id_15fa8fj_14p_4aoprc>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_nwdeav>
+<Frankfurt_Airport>	<isConnectedTo>	<Chicago-O'Hare> .
+<id_15fa8fj_14p_nwdeav>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1kk7tu2>
+<Frankfurt_Airport>	<isConnectedTo>	<Copenhagen> .
+<id_15fa8fj_14p_1kk7tu2>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1fg1pay>
+<Frankfurt_Airport>	<isConnectedTo>	<Dallas/Fort_Worth> .
+<id_15fa8fj_14p_1fg1pay>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10lstnw>
+<Frankfurt_Airport>	<isConnectedTo>	<Delhi> .
+<id_15fa8fj_14p_10lstnw>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1xb6aae>
+<Frankfurt_Airport>	<isConnectedTo>	<Denver> .
+<id_15fa8fj_14p_1xb6aae>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_hs9ml7>
+<Frankfurt_Airport>	<isConnectedTo>	<Detroit> .
+<id_15fa8fj_14p_hs9ml7>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zjtsys>
+<Frankfurt_Airport>	<isConnectedTo>	<Doha> .
+<id_15fa8fj_14p_zjtsys>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_npm7jl>
+<Frankfurt_Airport>	<isConnectedTo>	<Dresden> .
+<id_15fa8fj_14p_npm7jl>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10m2tvd>
+<Frankfurt_Airport>	<isConnectedTo>	<Dubai> .
+<id_15fa8fj_14p_10m2tvd>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1xjr4m8>
+<Frankfurt_Airport>	<isConnectedTo>	<Dublin> .
+<id_15fa8fj_14p_1xjr4m8>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_wzxupq>
+<Frankfurt_Airport>	<isConnectedTo>	<Düsseldorf> .
+<id_15fa8fj_14p_wzxupq>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_z038xo>
+<Frankfurt_Airport>	<isConnectedTo>	<Edinburgh> .
+<id_15fa8fj_14p_z038xo>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zjust4>
+<Frankfurt_Airport>	<isConnectedTo>	<Faro> .
+<id_15fa8fj_14p_zjust4>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1yqat9c>
+<Frankfurt_Airport>	<isConnectedTo>	<Geneva> .
+<id_15fa8fj_14p_1yqat9c>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_a6inwn>
+<Frankfurt_Airport>	<isConnectedTo>	<Gothenburg-Landvetter> .
+<id_15fa8fj_14p_a6inwn>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zjvs04>
+<Frankfurt_Airport>	<isConnectedTo>	<Graz> .
+<id_15fa8fj_14p_zjvs04>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1rqoqe8>
+<Frankfurt_Airport>	<isConnectedTo>	<Guangzhou> .
+<id_15fa8fj_14p_1rqoqe8>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_3gfkn0>
+<Frankfurt_Airport>	<isConnectedTo>	<Hamburg> .
+<id_15fa8fj_14p_3gfkn0>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_3h7oi1>
+<Frankfurt_Airport>	<isConnectedTo>	<Hanover> .
+<id_15fa8fj_14p_3h7oi1>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_nkuxt3>
+<Frankfurt_Airport>	<isConnectedTo>	<Helsinki> .
+<id_15fa8fj_14p_nkuxt3>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_19ew4gx>
+<Frankfurt_Airport>	<isConnectedTo>	<Ho_Chi_Minh_City> .
+<id_15fa8fj_14p_19ew4gx>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1c9fzek>
+<Frankfurt_Airport>	<isConnectedTo>	<Hong_Kong> .
+<id_15fa8fj_14p_1c9fzek>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_38m76>
+<Frankfurt_Airport>	<isConnectedTo>	<Houston-Intercontinental> .
+<id_15fa8fj_14p_38m76>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1rl2gh0>
+<Frankfurt_Airport>	<isConnectedTo>	<Istanbul-Atatürk> .
+<id_15fa8fj_14p_1rl2gh0>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1457cy>
+<Frankfurt_Airport>	<isConnectedTo>	<Jeddah> .
+<id_15fa8fj_14p_1457cy>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1ilzyvo>
+<Frankfurt_Airport>	<isConnectedTo>	<Johannesburg> .
+<id_15fa8fj_14p_1ilzyvo>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10pl435>
+<Frankfurt_Airport>	<isConnectedTo>	<Kazan> .
+<id_15fa8fj_14p_10pl435>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_6suim9>
+<Frankfurt_Airport>	<isConnectedTo>	<Khartoum> .
+<id_15fa8fj_14p_6suim9>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_vj5hjm>
+<Frankfurt_Airport>	<isConnectedTo>	<Kiev-Boryspil> .
+<id_15fa8fj_14p_vj5hjm>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1i3uobv>
+<Frankfurt_Airport>	<isConnectedTo>	<Kolkata> .
+<id_15fa8fj_14p_1i3uobv>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_v694e4>
+<Frankfurt_Airport>	<isConnectedTo>	<Kuala_Lumpur> .
+<id_15fa8fj_14p_v694e4>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1ublz3>
+<Frankfurt_Airport>	<isConnectedTo>	<Kuwait> .
+<id_15fa8fj_14p_1ublz3>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10q4ixi>
+<Frankfurt_Airport>	<isConnectedTo>	<Lagos> .
+<id_15fa8fj_14p_10q4ixi>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1q8yx5a>
+<Frankfurt_Airport>	<isConnectedTo>	<Larnaca> .
+<id_15fa8fj_14p_1q8yx5a>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_bw5pmd>
+<Frankfurt_Airport>	<isConnectedTo>	<Leipzig/Halle> .
+<id_15fa8fj_14p_bw5pmd>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zjyskp>
+<Frankfurt_Airport>	<isConnectedTo>	<Linz> .
+<id_15fa8fj_14p_zjyskp>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_24p66j>
+<Frankfurt_Airport>	<isConnectedTo>	<Lisbon> .
+<id_15fa8fj_14p_24p66j>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1brdz33>
+<Frankfurt_Airport>	<isConnectedTo>	<London-Gatwick> .
+<id_15fa8fj_14p_1brdz33>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1vfd56f>
+<Frankfurt_Airport>	<isConnectedTo>	<London-Heathrow> .
+<id_15fa8fj_14p_1vfd56f>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wjtuf4>
+<Frankfurt_Airport>	<isConnectedTo>	<Los_Angeles> .
+<id_15fa8fj_14p_1wjtuf4>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_2azg5v>
+<Frankfurt_Airport>	<isConnectedTo>	<Luanda> .
+<id_15fa8fj_14p_2azg5v>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zjz4gc>
+<Frankfurt_Airport>	<isConnectedTo>	<Lyon> .
+<id_15fa8fj_14p_zjz4gc>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_2h36ql>
+<Frankfurt_Airport>	<isConnectedTo>	<Madrid> .
+<id_15fa8fj_14p_2h36ql>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_2h7xva>
+<Frankfurt_Airport>	<isConnectedTo>	<Malabo> .
+<id_15fa8fj_14p_2h7xva>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_4fllxf>
+<Frankfurt_Airport>	<isConnectedTo>	<Málaga> .
+<id_15fa8fj_14p_4fllxf>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10qofc5>
+<Frankfurt_Airport>	<isConnectedTo>	<Malta> .
+<id_15fa8fj_14p_10qofc5>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wjpdro>
+<Frankfurt_Airport>	<isConnectedTo>	<Manchester> .
+<id_15fa8fj_14p_1wjpdro>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1kzw2y4>
+<Frankfurt_Airport>	<isConnectedTo>	<Marseille> .
+<id_15fa8fj_14p_1kzw2y4>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1y75whh>
+<Frankfurt_Airport>	<isConnectedTo>	<Mexico_City> .
+<id_15fa8fj_14p_1y75whh>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10qtawx>
+<Frankfurt_Airport>	<isConnectedTo>	<Miami> .
+<id_15fa8fj_14p_10qtawx>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_15mqi29>
+<Frankfurt_Airport>	<isConnectedTo>	<Milan-Linate> .
+<id_15fa8fj_14p_15mqi29>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1y9lxzz>
+<Frankfurt_Airport>	<isConnectedTo>	<Milan-Malpensa> .
+<id_15fa8fj_14p_1y9lxzz>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_xzymf9>
+<Frankfurt_Airport>	<isConnectedTo>	<Moscow-Domodedovo> .
+<id_15fa8fj_14p_xzymf9>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_113dvfr>
+<Frankfurt_Airport>	<isConnectedTo>	<Moscow-Vnukovo> .
+<id_15fa8fj_14p_113dvfr>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_2s99ns>
+<Frankfurt_Airport>	<isConnectedTo>	<Munich> .
+<id_15fa8fj_14p_2s99ns>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_2scc3v>
+<Frankfurt_Airport>	<isConnectedTo>	<Muscat> .
+<id_15fa8fj_14p_2scc3v>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_14yv162>
+<Frankfurt_Airport>	<isConnectedTo>	<Nagoya-Centrair> .
+<id_15fa8fj_14p_14yv162>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_kidvhv>
+<Frankfurt_Airport>	<isConnectedTo>	<Nanjing> .
+<id_15fa8fj_14p_kidvhv>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_2yccfx>
+<Frankfurt_Airport>	<isConnectedTo>	<Naples> .
+<id_15fa8fj_14p_2yccfx>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1yw6ufk>
+<Frankfurt_Airport>	<isConnectedTo>	<New_York-JFK> .
+<id_15fa8fj_14p_1yw6ufk>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_30nrve>
+<Frankfurt_Airport>	<isConnectedTo>	<Newark> .
+<id_15fa8fj_14p_30nrve>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zk029p>
+<Frankfurt_Airport>	<isConnectedTo>	<Nice> .
+<id_15fa8fj_14p_zk029p>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1q87384>
+<Frankfurt_Airport>	<isConnectedTo>	<Nizhniy_Novgorod> .
+<id_15fa8fj_14p_1q87384>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_st04uj>
+<Frankfurt_Airport>	<isConnectedTo>	<Nuremberg> .
+<id_15fa8fj_14p_st04uj>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_177ahtt>
+<Frankfurt_Airport>	<isConnectedTo>	<Orlando> .
+<id_15fa8fj_14p_177ahtt>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_xnn6t9>
+<Frankfurt_Airport>	<isConnectedTo>	<Osaka-Kansai> .
+<id_15fa8fj_14p_xnn6t9>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_qoo5nu>
+<Frankfurt_Airport>	<isConnectedTo>	<Oslo-Gardermoen> .
+<id_15fa8fj_14p_qoo5nu>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_5k4k3n>
+<Frankfurt_Airport>	<isConnectedTo>	<Palma_de_Mallorca> .
+<id_15fa8fj_14p_5k4k3n>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1luzvij>
+<Frankfurt_Airport>	<isConnectedTo>	<Paris-Charles_de_Gaulle> .
+<id_15fa8fj_14p_1luzvij>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zk19n4>
+<Frankfurt_Airport>	<isConnectedTo>	<Perm> .
+<id_15fa8fj_14p_zk19n4>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1p37txx>
+<Frankfurt_Airport>	<isConnectedTo>	<Philadelphia> .
+<id_15fa8fj_14p_1p37txx>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_ul5x8w>
+<Frankfurt_Airport>	<isConnectedTo>	<Port_Harcourt> .
+<id_15fa8fj_14p_ul5x8w>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10skve6>
+<Frankfurt_Airport>	<isConnectedTo>	<Porto> .
+<id_15fa8fj_14p_10skve6>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_45if6g>
+<Frankfurt_Airport>	<isConnectedTo>	<Prague> .
+<id_15fa8fj_14p_45if6g>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_zk2mb5>
+<Frankfurt_Airport>	<isConnectedTo>	<Riga> .
+<id_15fa8fj_14p_zk2mb5>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wbvoch>
+<Frankfurt_Airport>	<isConnectedTo>	<Qingdao> .
+<id_15fa8fj_14p_1wbvoch>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_4z2pgj>
+<Frankfurt_Airport>	<isConnectedTo>	<Riyadh> .
+<id_15fa8fj_14p_4z2pgj>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_lbzc7x>
+<Frankfurt_Airport>	<isConnectedTo>	<Rome-Fiumicino> .
+<id_15fa8fj_14p_lbzc7x>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1dpe6vq>
+<Frankfurt_Airport>	<isConnectedTo>	<Rostock-Laage> .
+<id_15fa8fj_14p_1dpe6vq>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_7qwqz1>
+<Frankfurt_Airport>	<isConnectedTo>	<Saint_Petersburg> .
+<id_15fa8fj_14p_7qwqz1>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_5bibld>
+<Frankfurt_Airport>	<isConnectedTo>	<Samara> .
+<id_15fa8fj_14p_5bibld>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1xc1pz5>
+<Frankfurt_Airport>	<isConnectedTo>	<San_Francisco> .
+<id_15fa8fj_14p_1xc1pz5>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_ltey8>
+<Frankfurt_Airport>	<isConnectedTo>	<São_Paulo-Guarulhos> .
+<id_15fa8fj_14p_ltey8>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1g2hd1w>
+<Frankfurt_Airport>	<isConnectedTo>	<Seattle/Tacoma> .
+<id_15fa8fj_14p_1g2hd1w>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1f9dsm9>
+<Frankfurt_Airport>	<isConnectedTo>	<Seoul-Incheon> .
+<id_15fa8fj_14p_1f9dsm9>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1pb5x57>
+<Frankfurt_Airport>	<isConnectedTo>	<Shanghai-Pudong> .
+<id_15fa8fj_14p_1pb5x57>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_q4kcrj>
+<Frankfurt_Airport>	<isConnectedTo>	<Shenyang> .
+<id_15fa8fj_14p_q4kcrj>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10u8002>
+<Frankfurt_Airport>	<isConnectedTo>	<Sofia> .
+<id_15fa8fj_14p_10u8002>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_ez9vrq>
+<Frankfurt_Airport>	<isConnectedTo>	<Stockholm-Arlanda> .
+<id_15fa8fj_14p_ez9vrq>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_17tuii8>
+<Frankfurt_Airport>	<isConnectedTo>	<Stuttgart> .
+<id_15fa8fj_14p_17tuii8>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_11il7ng>
+<Frankfurt_Airport>	<isConnectedTo>	<Tallinn> .
+<id_15fa8fj_14p_11il7ng>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1902s2s>
+<Frankfurt_Airport>	<isConnectedTo>	<Tehran-Imam_Khomeini> .
+<id_15fa8fj_14p_1902s2s>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1y6odlr>
+<Frankfurt_Airport>	<isConnectedTo>	<Tel_Aviv-Ben_Gurion> .
+<id_15fa8fj_14p_1y6odlr>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1a4m3dq>
+<Frankfurt_Airport>	<isConnectedTo>	<Tokyo-Narita> .
+<id_15fa8fj_14p_1a4m3dq>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1sp6lhs>
+<Frankfurt_Airport>	<isConnectedTo>	<Toronto-Pearson> .
+<id_15fa8fj_14p_1sp6lhs>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_n673my>
+<Frankfurt_Airport>	<isConnectedTo>	<Toulouse> .
+<id_15fa8fj_14p_n673my>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_19is2x3>
+<Frankfurt_Airport>	<isConnectedTo>	<Tripoli> .
+<id_15fa8fj_14p_19is2x3>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10uvsgn>
+<Frankfurt_Airport>	<isConnectedTo>	<Tunis> .
+<id_15fa8fj_14p_10uvsgn>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10uvvfa>
+<Frankfurt_Airport>	<isConnectedTo>	<Turin> .
+<id_15fa8fj_14p_10uvvfa>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_5yqtkt>
+<Frankfurt_Airport>	<isConnectedTo>	<Vancouver> .
+<id_15fa8fj_14p_5yqtkt>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_ty64k8>
+<Frankfurt_Airport>	<isConnectedTo>	<Venice-Marco_Polo> .
+<id_15fa8fj_14p_ty64k8>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_6uwp67>
+<Frankfurt_Airport>	<isConnectedTo>	<Vienna> .
+<id_15fa8fj_14p_6uwp67>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1yns1ea>
+<Frankfurt_Airport>	<isConnectedTo>	<Vilnius> .
+<id_15fa8fj_14p_1yns1ea>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_77sd29>
+<Frankfurt_Airport>	<isConnectedTo>	<Warsaw> .
+<id_15fa8fj_14p_77sd29>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1urc4kc>
+<Frankfurt_Airport>	<isConnectedTo>	<Washington-Dulles> .
+<id_15fa8fj_14p_1urc4kc>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1dmdcwc>
+<Frankfurt_Airport>	<isConnectedTo>	<Yekaterinburg> .
+<id_15fa8fj_14p_1dmdcwc>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_8mq6q7>
+<Frankfurt_Airport>	<isConnectedTo>	<Zagreb> .
+<id_15fa8fj_14p_8mq6q7>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10k96ke>
+<Frankfurt_Airport>	<isConnectedTo>	<BMI]]> .
+<id_15fa8fj_14p_10k96ke>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1ksxdjo>
+<Frankfurt_Airport>	<isConnectedTo>	<Birmingham> .
+<id_15fa8fj_14p_1ksxdjo>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1wjpdro>
+<Frankfurt_Airport>	<isConnectedTo>	<Manchester> .
+<id_15fa8fj_14p_1wjpdro>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_10k3zgw>
+<Frankfurt_Airport>	<isConnectedTo>	<Accra> .
+<id_15fa8fj_14p_10k3zgw>	<byTransport>	<PrivatAir> .
+#@ <id_15fa8fj_14p_1x8ya5l>
+<Frankfurt_Airport>	<isConnectedTo>	<Dammam> .
+<id_15fa8fj_14p_1x8ya5l>	<byTransport>	<PrivatAir> .
+#@ <id_15fa8fj_14p_1oxv3zu>
+<Frankfurt_Airport>	<isConnectedTo>	<Libreville> .
+<id_15fa8fj_14p_1oxv3zu>	<byTransport>	<PrivatAir> .
+#@ <id_15fa8fj_14p_18hr94z>
+<Frankfurt_Airport>	<isConnectedTo>	<Pointe-Noire> .
+<id_15fa8fj_14p_18hr94z>	<byTransport>	<PrivatAir> .
+#@ <id_15fa8fj_14p_zk1lek>
+<Frankfurt_Airport>	<isConnectedTo>	<Pune> .
+<id_15fa8fj_14p_zk1lek>	<byTransport>	<PrivatAir> .
+#@ <id_15fa8fj_14p_1ubpepv>
+<Frankfurt_Airport>	<isConnectedTo>	<Innsbruck> .
+<id_15fa8fj_14p_1ubpepv>	<byTransport>	<Tyrolean_Airways> .
+#@ <id_15fa8fj_14p_1wxj39g>
+<Frankfurt_Airport>	<isConnectedTo>	<Salzburg> .
+<id_15fa8fj_14p_1wxj39g>	<byTransport>	<Tyrolean_Airways> .
+#@ <id_15fa8fj_14p_10uvvfa>
+<Frankfurt_Airport>	<isConnectedTo>	<Turin> .
+<id_15fa8fj_14p_10uvvfa>	<byTransport>	<Lufthansa_Regional> .
+#@ <id_15fa8fj_14p_6sxudb>
+<Frankfurt_Airport>	<isConnectedTo>	<Verona> .
+<id_15fa8fj_14p_6sxudb>	<byTransport>	<Lufthansa_Regional> .
+#@ <id_15fa8fj_14p_1mksgig>
+<Frankfurt_Airport>	<isConnectedTo>	<Aberdeen> .
+<id_15fa8fj_14p_1mksgig>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1h5mh9s>
+<Frankfurt_Airport>	<isConnectedTo>	<Basel/Mulhouse> .
+<id_15fa8fj_14p_1h5mh9s>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1wd5abl>
+<Frankfurt_Airport>	<isConnectedTo>	<Bergen> .
+<id_15fa8fj_14p_1wd5abl>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1p89jl0>
+<Frankfurt_Airport>	<isConnectedTo>	<Billund> .
+<id_15fa8fj_14p_1p89jl0>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_19pul47>
+<Frankfurt_Airport>	<isConnectedTo>	<Brussels> .
+<id_15fa8fj_14p_19pul47>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1y2whp0>
+<Frankfurt_Airport>	<isConnectedTo>	<Florence> .
+<id_15fa8fj_14p_1y2whp0>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1fgezdn>
+<Frankfurt_Airport>	<isConnectedTo>	<Friedrichshafen> .
+<id_15fa8fj_14p_1fgezdn>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1ypnb4o>
+<Frankfurt_Airport>	<isConnectedTo>	<Gdańsk> .
+<id_15fa8fj_14p_1ypnb4o>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_zjvs04>
+<Frankfurt_Airport>	<isConnectedTo>	<Graz> .
+<id_15fa8fj_14p_zjvs04>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1j2jusl>
+<Frankfurt_Airport>	<isConnectedTo>	<Katowice> .
+<id_15fa8fj_14p_1j2jusl>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_bw5pmd>
+<Frankfurt_Airport>	<isConnectedTo>	<Leipzig/Halle> .
+<id_15fa8fj_14p_bw5pmd>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_zjyskp>
+<Frankfurt_Airport>	<isConnectedTo>	<Linz> .
+<id_15fa8fj_14p_zjyskp>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_15yosg0>
+<Frankfurt_Airport>	<isConnectedTo>	<London-City> .
+<id_15fa8fj_14p_15yosg0>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_10qtkp6>
+<Frankfurt_Airport>	<isConnectedTo>	<Minsk> .
+<id_15fa8fj_14p_10qtkp6>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1wgb1bv>
+<Frankfurt_Airport>	<isConnectedTo>	<Münster/Osnabrück> .
+<id_15fa8fj_14p_1wgb1bv>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_st04uj>
+<Frankfurt_Airport>	<isConnectedTo>	<Nuremberg> .
+<id_15fa8fj_14p_st04uj>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_36u2ot>
+<Frankfurt_Airport>	<isConnectedTo>	<Rostov-on-Don> .
+<id_15fa8fj_14p_36u2ot>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_44b4ye>
+<Frankfurt_Airport>	<isConnectedTo>	<Poznań> .
+<id_15fa8fj_14p_44b4ye>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_jw7jm0>
+<Frankfurt_Airport>	<isConnectedTo>	<Rzeszów> .
+<id_15fa8fj_14p_jw7jm0>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_10u8rga>
+<Frankfurt_Airport>	<isConnectedTo>	<Split> .
+<id_15fa8fj_14p_10u8rga>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_z24si9>
+<Frankfurt_Airport>	<isConnectedTo>	<Stavanger> .
+<id_15fa8fj_14p_z24si9>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_17tuii8>
+<Frankfurt_Airport>	<isConnectedTo>	<Stuttgart> .
+<id_15fa8fj_14p_17tuii8>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_10uvvfa>
+<Frankfurt_Airport>	<isConnectedTo>	<Turin> .
+<id_15fa8fj_14p_10uvvfa>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_1dtzuh6>
+<Frankfurt_Airport>	<isConnectedTo>	<Palermo> .
+<id_15fa8fj_14p_1dtzuh6>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_77a82w>
+<Frankfurt_Airport>	<isConnectedTo>	<Trondheim> .
+<id_15fa8fj_14p_77a82w>	<byTransport>	<Lufthansa_CityLine> .
+#@ <id_15fa8fj_14p_6ycl1i>
+<Frankfurt_Airport>	<isConnectedTo>	<Luxembourg> .
+<id_15fa8fj_14p_6ycl1i>	<byTransport>	<Luxair> .
+#@ <id_15fa8fj_14p_v694e4>
+<Frankfurt_Airport>	<isConnectedTo>	<Kuala_Lumpur> .
+<id_15fa8fj_14p_v694e4>	<byTransport>	<Malaysia_Airlines> .
+#@ <id_15fa8fj_14p_ae7lmu>
+<Frankfurt_Airport>	<isConnectedTo>	<Budapest> .
+<id_15fa8fj_14p_ae7lmu>	<byTransport>	<Malév_Hungarian_Airlines> .
+#@ <id_15fa8fj_14p_1wczrzf>
+<Frankfurt_Airport>	<isConnectedTo>	<Beirut> .
+<id_15fa8fj_14p_1wczrzf>	<byTransport>	<Middle_East_Airlines> .
+#@ <id_15fa8fj_14p_hrmq02>
+<Frankfurt_Airport>	<isConnectedTo>	<Podgorica> .
+<id_15fa8fj_14p_hrmq02>	<byTransport>	<Montenegro_Airlines> .
+#@ <id_15fa8fj_14p_32nftl>
+<Frankfurt_Airport>	<isConnectedTo>	<Niki]]> .
+<id_15fa8fj_14p_32nftl>	<byTransport>	<Montenegro_Airlines> .
+#@ <id_15fa8fj_14p_6uwp67>
+<Frankfurt_Airport>	<isConnectedTo>	<Vienna> .
+<id_15fa8fj_14p_6uwp67>	<byTransport>	<Montenegro_Airlines> .
+#@ <id_15fa8fj_14p_2scc3v>
+<Frankfurt_Airport>	<isConnectedTo>	<Muscat> .
+<id_15fa8fj_14p_2scc3v>	<byTransport>	<Oman_Air> .
+#@ <id_15fa8fj_14p_unqe4y>
+<Frankfurt_Airport>	<isConnectedTo>	<Islamabad> .
+<id_15fa8fj_14p_unqe4y>	<byTransport>	<Pakistan_International_Airlines> .
+#@ <id_15fa8fj_14p_17s0hz8>
+<Frankfurt_Airport>	<isConnectedTo>	<Singapore> .
+<id_15fa8fj_14p_17s0hz8>	<byTransport>	<Qantas> .
+#@ <id_15fa8fj_14p_5ojwas>
+<Frankfurt_Airport>	<isConnectedTo>	<Sydney> .
+<id_15fa8fj_14p_5ojwas>	<byTransport>	<Qantas> .
+#@ <id_15fa8fj_14p_zjtsys>
+<Frankfurt_Airport>	<isConnectedTo>	<Doha> .
+<id_15fa8fj_14p_zjtsys>	<byTransport>	<Qatar_Airways> .
+#@ <id_15fa8fj_14p_15ohttg>
+<Frankfurt_Airport>	<isConnectedTo>	<Rossiya]]> .
+<id_15fa8fj_14p_15ohttg>	<byTransport>	<RAK_Airways> .
+#@ <id_15fa8fj_14p_7qwqz1>
+<Frankfurt_Airport>	<isConnectedTo>	<Saint_Petersburg> .
+<id_15fa8fj_14p_7qwqz1>	<byTransport>	<RAK_Airways> .
+#@ <id_15fa8fj_14p_1z01y3l>
+<Frankfurt_Airport>	<isConnectedTo>	<Casablanca> .
+<id_15fa8fj_14p_1z01y3l>	<byTransport>	<Royal_Air_Maroc> .
+#@ <id_15fa8fj_14p_10r81w4>
+<Frankfurt_Airport>	<isConnectedTo>	<Nador> .
+<id_15fa8fj_14p_10r81w4>	<byTransport>	<Royal_Air_Maroc> .
+#@ <id_15fa8fj_14p_1f53047>
+<Frankfurt_Airport>	<isConnectedTo>	<Amman-Queen_Alia> .
+<id_15fa8fj_14p_1f53047>	<byTransport>	<Royal_Jordanian> .
+#@ <id_15fa8fj_14p_xzymf9>
+<Frankfurt_Airport>	<isConnectedTo>	<Moscow-Domodedovo> .
+<id_15fa8fj_14p_xzymf9>	<byTransport>	<S7_Airlines> .
+#@ <id_15fa8fj_14p_1al0j8z>
+<Frankfurt_Airport>	<isConnectedTo>	<Novosibirsk> .
+<id_15fa8fj_14p_1al0j8z>	<byTransport>	<S7_Airlines> .
+#@ <id_15fa8fj_14p_10szh0f>
+<Frankfurt_Airport>	<isConnectedTo>	<Ponta_Delgada> .
+<id_15fa8fj_14p_10szh0f>	<byTransport>	<SATA_International> .
+#@ <id_15fa8fj_14p_1457cy>
+<Frankfurt_Airport>	<isConnectedTo>	<Jeddah> .
+<id_15fa8fj_14p_1457cy>	<byTransport>	<Saudi_Arabian_Airlines> .
+#@ <id_15fa8fj_14p_4z2pgj>
+<Frankfurt_Airport>	<isConnectedTo>	<Riyadh> .
+<id_15fa8fj_14p_4z2pgj>	<byTransport>	<Saudi_Arabian_Airlines> .
+#@ <id_15fa8fj_14p_1kk7tu2>
+<Frankfurt_Airport>	<isConnectedTo>	<Copenhagen> .
+<id_15fa8fj_14p_1kk7tu2>	<byTransport>	<Scandinavian_Airlines> .
+#@ <id_15fa8fj_14p_a6inwn>
+<Frankfurt_Airport>	<isConnectedTo>	<Gothenburg-Landvetter> .
+<id_15fa8fj_14p_a6inwn>	<byTransport>	<Scandinavian_Airlines> .
+#@ <id_15fa8fj_14p_qoo5nu>
+<Frankfurt_Airport>	<isConnectedTo>	<Oslo-Gardermoen> .
+<id_15fa8fj_14p_qoo5nu>	<byTransport>	<Scandinavian_Airlines> .
+#@ <id_15fa8fj_14p_ez9vrq>
+<Frankfurt_Airport>	<isConnectedTo>	<Stockholm-Arlanda> .
+<id_15fa8fj_14p_ez9vrq>	<byTransport>	<Scandinavian_Airlines> .
+#@ <id_15fa8fj_14p_1yw6ufk>
+<Frankfurt_Airport>	<isConnectedTo>	<New_York-JFK> .
+<id_15fa8fj_14p_1yw6ufk>	<byTransport>	<Singapore_Airlines> .
+#@ <id_15fa8fj_14p_17s0hz8>
+<Frankfurt_Airport>	<isConnectedTo>	<Singapore> .
+<id_15fa8fj_14p_17s0hz8>	<byTransport>	<Singapore_Airlines> .
+#@ <id_15fa8fj_14p_47lzau>
+<Frankfurt_Airport>	<isConnectedTo>	<Dushanbe> .
+<id_15fa8fj_14p_47lzau>	<byTransport>	<Somon_Air> .
+#@ <id_15fa8fj_14p_1ilzyvo>
+<Frankfurt_Airport>	<isConnectedTo>	<Johannesburg> .
+<id_15fa8fj_14p_1ilzyvo>	<byTransport>	<South_African_Airways> .
+#@ <id_15fa8fj_14p_2h36ql>
+<Frankfurt_Airport>	<isConnectedTo>	<Madrid> .
+<id_15fa8fj_14p_2h36ql>	<byTransport>	<Spanair> .
+#@ <id_15fa8fj_14p_7pv8y3>
+<Frankfurt_Airport>	<isConnectedTo>	<Colombo> .
+<id_15fa8fj_14p_7pv8y3>	<byTransport>	<SriLankan_Airlines> .
+#@ <id_15fa8fj_14p_1d1ait6>
+<Frankfurt_Airport>	<isConnectedTo>	<Antalya> .
+<id_15fa8fj_14p_1d1ait6>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_19o1e9m>
+<Frankfurt_Airport>	<isConnectedTo>	<Istanbul-Sabiha_Gökçen> .
+<id_15fa8fj_14p_19o1e9m>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_147xp70>
+<Frankfurt_Airport>	<isConnectedTo>	<İzmir> .
+<id_15fa8fj_14p_147xp70>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_1qko614>
+<Frankfurt_Airport>	<isConnectedTo>	<SunExpress_Deutschland]]> .
+<id_15fa8fj_14p_1qko614>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_10k4kvl>
+<Frankfurt_Airport>	<isConnectedTo>	<Adana> .
+<id_15fa8fj_14p_10k4kvl>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_1w0x87m>
+<Frankfurt_Airport>	<isConnectedTo>	<Ankara> .
+<id_15fa8fj_14p_1w0x87m>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_1d1ait6>
+<Frankfurt_Airport>	<isConnectedTo>	<Antalya> .
+<id_15fa8fj_14p_1d1ait6>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_1suq7yh>
+<Frankfurt_Airport>	<isConnectedTo>	<Gaziantep> .
+<id_15fa8fj_14p_1suq7yh>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_1boihcc>
+<Frankfurt_Airport>	<isConnectedTo>	<Kayseri> .
+<id_15fa8fj_14p_1boihcc>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_19e50l6>
+<Frankfurt_Airport>	<isConnectedTo>	<Trabzon> .
+<id_15fa8fj_14p_19e50l6>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_b054u6>
+<Frankfurt_Airport>	<isConnectedTo>	<Zürich> .
+<id_15fa8fj_14p_b054u6>	<byTransport>	<Swiss_International_Air_Lines> .
+#@ <id_15fa8fj_14p_b054u6>
+<Frankfurt_Airport>	<isConnectedTo>	<Zürich> .
+<id_15fa8fj_14p_b054u6>	<byTransport>	<Swiss_European_Air_Lines> .
+#@ <id_15fa8fj_14p_1vzq46t>
+<Frankfurt_Airport>	<isConnectedTo>	<Aleppo> .
+<id_15fa8fj_14p_1vzq46t>	<byTransport>	<Syrianair> .
+#@ <id_15fa8fj_14p_1qvfk9r>
+<Frankfurt_Airport>	<isConnectedTo>	<Damascus> .
+<id_15fa8fj_14p_1qvfk9r>	<byTransport>	<Syrianair> .
+#@ <id_15fa8fj_14p_jtgmcr>
+<Frankfurt_Airport>	<isConnectedTo>	<Rio_de_Janeiro-Galeão> .
+<id_15fa8fj_14p_jtgmcr>	<byTransport>	<TAM_Airlines> .
+#@ <id_15fa8fj_14p_ltey8>
+<Frankfurt_Airport>	<isConnectedTo>	<São_Paulo-Guarulhos> .
+<id_15fa8fj_14p_ltey8>	<byTransport>	<TAM_Airlines> .
+#@ <id_15fa8fj_14p_24p66j>
+<Frankfurt_Airport>	<isConnectedTo>	<Lisbon> .
+<id_15fa8fj_14p_24p66j>	<byTransport>	<TAP_Portugal> .
+#@ <id_15fa8fj_14p_1gspvt6>
+<Frankfurt_Airport>	<isConnectedTo>	<Bucharest-Otopeni> .
+<id_15fa8fj_14p_1gspvt6>	<byTransport>	<TAROM> .
+#@ <id_15fa8fj_14p_a49k8v>
+<Frankfurt_Airport>	<isConnectedTo>	<Cluj-Napoca> .
+<id_15fa8fj_14p_a49k8v>	<byTransport>	<TAROM> .
+#@ <id_15fa8fj_14p_17xt781>
+<Frankfurt_Airport>	<isConnectedTo>	<Bangkok-Suvarnabhumi> .
+<id_15fa8fj_14p_17xt781>	<byTransport>	<Thai_Airways_International> .
+#@ <id_15fa8fj_14p_xzymf9>
+<Frankfurt_Airport>	<isConnectedTo>	<Moscow-Domodedovo> .
+<id_15fa8fj_14p_xzymf9>	<byTransport>	<Transaero_Airlines> .
+#@ <id_15fa8fj_14p_f93zl5>
+<Frankfurt_Airport>	<isConnectedTo>	<Arrecife> .
+<id_15fa8fj_14p_f93zl5>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_ww6jgi>
+<Frankfurt_Airport>	<isConnectedTo>	<Boa_Vista> .
+<id_15fa8fj_14p_ww6jgi>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_pcioy>
+<Frankfurt_Airport>	<isConnectedTo>	<Fuerteventura> .
+<id_15fa8fj_14p_pcioy>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_1bzilw8>
+<Frankfurt_Airport>	<isConnectedTo>	<Hurghada> .
+<id_15fa8fj_14p_1bzilw8>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_1rj0jh2>
+<Frankfurt_Airport>	<isConnectedTo>	<Las_Palmas_de_Gran_Canaria> .
+<id_15fa8fj_14p_1rj0jh2>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_1o3hc0a>
+<Frankfurt_Airport>	<isConnectedTo>	<Marsa_Alam> .
+<id_15fa8fj_14p_1o3hc0a>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_1d1ait6>
+<Frankfurt_Airport>	<isConnectedTo>	<Antalya> .
+<id_15fa8fj_14p_1d1ait6>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_10lfjcl>
+<Frankfurt_Airport>	<isConnectedTo>	<Corfu> .
+<id_15fa8fj_14p_10lfjcl>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_frdvt4>
+<Frankfurt_Airport>	<isConnectedTo>	<Dalaman> .
+<id_15fa8fj_14p_frdvt4>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_10i7ez5>
+<Frankfurt_Airport>	<isConnectedTo>	<Enfidha> .
+<id_15fa8fj_14p_10i7ez5>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_zjust4>
+<Frankfurt_Airport>	<isConnectedTo>	<Faro> .
+<id_15fa8fj_14p_zjust4>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_1im7nlb>
+<Frankfurt_Airport>	<isConnectedTo>	<Funchal> .
+<id_15fa8fj_14p_1im7nlb>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_t71aij>
+<Frankfurt_Airport>	<isConnectedTo>	<Heraklion> .
+<id_15fa8fj_14p_t71aij>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_10ohtvb>
+<Frankfurt_Airport>	<isConnectedTo>	<Ibiza> .
+<id_15fa8fj_14p_10ohtvb>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_7o957u>
+<Frankfurt_Airport>	<isConnectedTo>	<Jerez_de_la_Frontera> .
+<id_15fa8fj_14p_7o957u>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_10qhn9u>
+<Frankfurt_Airport>	<isConnectedTo>	<Luxor> .
+<id_15fa8fj_14p_10qhn9u>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_9mfxrn>
+<Frankfurt_Airport>	<isConnectedTo>	<Minorca> .
+<id_15fa8fj_14p_9mfxrn>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_5k4k3n>
+<Frankfurt_Airport>	<isConnectedTo>	<Palma_de_Mallorca> .
+<id_15fa8fj_14p_5k4k3n>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_fcisl6>
+<Frankfurt_Airport>	<isConnectedTo>	<Patras/Araxos> .
+<id_15fa8fj_14p_fcisl6>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_4ycl95>
+<Frankfurt_Airport>	<isConnectedTo>	<Rhodes> .
+<id_15fa8fj_14p_4ycl95>	<byTransport>	<TUIfly> .
+#@ <id_15fa8fj_14p_1xdrfbm>
+<Frankfurt_Airport>	<isConnectedTo>	<Djerba> .
+<id_15fa8fj_14p_1xdrfbm>	<byTransport>	<Tunisair> .
+#@ <id_15fa8fj_14p_10i7ez5>
+<Frankfurt_Airport>	<isConnectedTo>	<Enfidha> .
+<id_15fa8fj_14p_10i7ez5>	<byTransport>	<Tunisair> .
+#@ <id_15fa8fj_14p_10uvsgn>
+<Frankfurt_Airport>	<isConnectedTo>	<Tunis> .
+<id_15fa8fj_14p_10uvsgn>	<byTransport>	<Tunisair> .
+#@ <id_15fa8fj_14p_1rl2gh0>
+<Frankfurt_Airport>	<isConnectedTo>	<Istanbul-Atatürk> .
+<id_15fa8fj_14p_1rl2gh0>	<byTransport>	<Turkish_Airlines> .
+#@ <id_15fa8fj_14p_1w0x87m>
+<Frankfurt_Airport>	<isConnectedTo>	<Ankara> .
+<id_15fa8fj_14p_1w0x87m>	<byTransport>	<Anadolujet> .
+#@ <id_15fa8fj_14p_p847s5>
+<Frankfurt_Airport>	<isConnectedTo>	<Ashgabat> .
+<id_15fa8fj_14p_p847s5>	<byTransport>	<Turkmenistan_Airlines> .
+#@ <id_15fa8fj_14p_nwdeav>
+<Frankfurt_Airport>	<isConnectedTo>	<Chicago-O'Hare> .
+<id_15fa8fj_14p_nwdeav>	<byTransport>	<United_Airlines> .
+#@ <id_15fa8fj_14p_38m76>
+<Frankfurt_Airport>	<isConnectedTo>	<Houston-Intercontinental> .
+<id_15fa8fj_14p_38m76>	<byTransport>	<United_Airlines> .
+#@ <id_15fa8fj_14p_30nrve>
+<Frankfurt_Airport>	<isConnectedTo>	<Newark> .
+<id_15fa8fj_14p_30nrve>	<byTransport>	<United_Airlines> .
+#@ <id_15fa8fj_14p_1xc1pz5>
+<Frankfurt_Airport>	<isConnectedTo>	<San_Francisco> .
+<id_15fa8fj_14p_1xc1pz5>	<byTransport>	<United_Airlines> .
+#@ <id_15fa8fj_14p_1urc4kc>
+<Frankfurt_Airport>	<isConnectedTo>	<Washington-Dulles> .
+<id_15fa8fj_14p_1urc4kc>	<byTransport>	<United_Airlines> .
+#@ <id_15fa8fj_14p_no3ido>
+<Frankfurt_Airport>	<isConnectedTo>	<Charlotte> .
+<id_15fa8fj_14p_no3ido>	<byTransport>	<US_Airways> .
+#@ <id_15fa8fj_14p_1p37txx>
+<Frankfurt_Airport>	<isConnectedTo>	<Philadelphia> .
+<id_15fa8fj_14p_1p37txx>	<byTransport>	<US_Airways> .
+#@ <id_15fa8fj_14p_trlzcy>
+<Frankfurt_Airport>	<isConnectedTo>	<Tashkent> .
+<id_15fa8fj_14p_trlzcy>	<byTransport>	<Uzbekistan_Airways> .
+#@ <id_15fa8fj_14p_10nxhqn>
+<Frankfurt_Airport>	<isConnectedTo>	<Hanoi> .
+<id_15fa8fj_14p_10nxhqn>	<byTransport>	<Vietnam_Airlines> .
+#@ <id_15fa8fj_14p_19ew4gx>
+<Frankfurt_Airport>	<isConnectedTo>	<Ho_Chi_Minh_City> .
+<id_15fa8fj_14p_19ew4gx>	<byTransport>	<Vietnam_Airlines> .
+#@ <id_15fa8fj_14p_10kdjbo>
+<Frankfurt_Airport>	<isConnectedTo>	<Arbil> .
+<id_15fa8fj_14p_10kdjbo>	<byTransport>	<Viking_Hellas> .
+#@ <id_15fa8fj_14p_a6inwn>
+<Frankfurt_Airport>	<isConnectedTo>	<Gothenburg-Landvetter> .
+<id_15fa8fj_14p_a6inwn>	<byTransport>	<Viking_Hellas> .
+#@ <id_15fa8fj_14p_10qofa9>
+<Frankfurt_Airport>	<isConnectedTo>	<Malmö> .
+<id_15fa8fj_14p_10qofa9>	<byTransport>	<Viking_Hellas> .
+#@ <id_15fa8fj_14p_d6gzjo>
+<Frankfurt_Airport>	<isConnectedTo>	<Guernsey> .
+<id_15fa8fj_14p_d6gzjo>	<byTransport>	<VLM_Airlines> .
+#@ <id_15fa8fj_14p_14egeo>
+<Frankfurt_Airport>	<isConnectedTo>	<Jersey> .
+<id_15fa8fj_14p_14egeo>	<byTransport>	<VLM_Airlines> .
+#@ <id_15fa8fj_14p_10k4kvl>
+<Frankfurt_Airport>	<isConnectedTo>	<Adana> .
+<id_15fa8fj_14p_10k4kvl>	<byTransport>	<XL_Airways_Germany> .
+#@ <id_15fa8fj_14p_1w0x87m>
+<Frankfurt_Airport>	<isConnectedTo>	<Ankara> .
+<id_15fa8fj_14p_1w0x87m>	<byTransport>	<XL_Airways_Germany> .
+#@ <id_15fa8fj_14p_1d1ait6>
+<Frankfurt_Airport>	<isConnectedTo>	<Antalya> .
+<id_15fa8fj_14p_1d1ait6>	<byTransport>	<XL_Airways_Germany> .
+#@ <id_15fa8fj_14p_1boihcc>
+<Frankfurt_Airport>	<isConnectedTo>	<Kayseri> .
+<id_15fa8fj_14p_1boihcc>	<byTransport>	<XL_Airways_Germany> .
+#@ <id_15fa8fj_14p_5sqhmb>
+<Frankfurt_Airport>	<isConnectedTo>	<Malatya> .
+<id_15fa8fj_14p_5sqhmb>	<byTransport>	<XL_Airways_Germany> .
+#@ <id_15fa8fj_14p_1kgoer0>
+<Frankfurt_Airport>	<isConnectedTo>	<Marrakech> .
+<id_15fa8fj_14p_1kgoer0>	<byTransport>	<XL_Airways_Germany> .
+#@ <id_15fa8fj_14p_5bip0t>
+<Frankfurt_Airport>	<isConnectedTo>	<Samsun> .
+<id_15fa8fj_14p_5bip0t>	<byTransport>	<XL_Airways_Germany> .
+#@ <id_15fa8fj_14p_5biwsb>
+<Frankfurt_Airport>	<isConnectedTo>	<Sana'a> .
+<id_15fa8fj_14p_5biwsb>	<byTransport>	<Yemenia> .
+#@ <id_pqs3ol_14p_1luzvij>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Paris-Charles_de_Gaulle> .
+<id_pqs3ol_14p_1luzvij>	<byTransport>	<Air_France> .
+#@ <id_pqs3ol_14p_17dz97>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Catania> .
+<id_pqs3ol_14p_17dz97>	<byTransport>	<Air_One> .
+#@ <id_pqs3ol_14p_1w63hr3>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Lamezia_Terme> .
+<id_pqs3ol_14p_1w63hr3>	<byTransport>	<Air_One> .
+#@ <id_pqs3ol_14p_45if6g>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Prague> .
+<id_pqs3ol_14p_45if6g>	<byTransport>	<Air_One> .
+#@ <id_pqs3ol_14p_1w465p1>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Athens> .
+<id_pqs3ol_14p_1w465p1>	<byTransport>	<Air_One> .
+#@ <id_pqs3ol_14p_70bn1k>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Palma_de_Maiorca> .
+<id_pqs3ol_14p_70bn1k>	<byTransport>	<Air_One> .
+#@ <id_pqs3ol_14p_lbzc7x>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Rome-Fiumicino> .
+<id_pqs3ol_14p_lbzc7x>	<byTransport>	<Alitalia> .
+#@ <id_pqs3ol_14p_5x1hkn>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Tirana> .
+<id_pqs3ol_14p_5x1hkn>	<byTransport>	<Belle_Air> .
+#@ <id_pqs3ol_14p_gj4ri>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Berlin-Sch�nefeld> .
+<id_pqs3ol_14p_gj4ri>	<byTransport>	<easyJet> .
+#@ <id_pqs3ol_14p_d6m6x9>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Berlin-Brandenburg> .
+<id_pqs3ol_14p_d6m6x9>	<byTransport>	<easyJet> .
+#@ <id_pqs3ol_14p_1brdz33>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<London-Gatwick> .
+<id_pqs3ol_14p_1brdz33>	<byTransport>	<easyJet> .
+#@ <id_pqs3ol_14p_mghb91>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<London-Luton> .
+<id_pqs3ol_14p_mghb91>	<byTransport>	<easyJet> .
+#@ <id_pqs3ol_14p_18n5ki5>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Cologne/Bonn> .
+<id_pqs3ol_14p_18n5ki5>	<byTransport>	<Germanwings> .
+#@ <id_pqs3ol_14p_2h36ql>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Madrid> .
+<id_pqs3ol_14p_2h36ql>	<byTransport>	<Air_Nostrum> .
+#@ <id_pqs3ol_14p_1uax9k2>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<East_Midlands> .
+<id_pqs3ol_14p_1uax9k2>	<byTransport>	<Jet2.com> .
+#@ <id_pqs3ol_14p_1m2q1gi>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Leeds/Bradford> .
+<id_pqs3ol_14p_1m2q1gi>	<byTransport>	<Jet2.com> .
+#@ <id_pqs3ol_14p_1wjpdro>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Manchester> .
+<id_pqs3ol_14p_1wjpdro>	<byTransport>	<Jet2.com> .
+#@ <id_pqs3ol_14p_14tibui>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Newcastle_upon_Tyne> .
+<id_pqs3ol_14p_14tibui>	<byTransport>	<Jet2.com> .
+#@ <id_pqs3ol_14p_2s99ns>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Munich> .
+<id_pqs3ol_14p_2s99ns>	<byTransport>	<Lufthansa> .
+#@ <id_pqs3ol_14p_uz2gdg>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Sharm_el-Sheikh> .
+<id_pqs3ol_14p_uz2gdg>	<byTransport>	<Meridiana_Fly> .
+#@ <id_pqs3ol_14p_qoo5nu>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Oslo-Gardermoen> .
+<id_pqs3ol_14p_qoo5nu>	<byTransport>	<Norwegian_Air_Shuttle> .
+#@ <id_pqs3ol_14p_1bw69va>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Alghero> .
+<id_pqs3ol_14p_1bw69va>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_zjs8uu>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Bari> .
+<id_pqs3ol_14p_zjs8uu>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1mka1d8>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Beauvais> .
+<id_pqs3ol_14p_1mka1d8>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_13yanqo>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Brindisi> .
+<id_pqs3ol_14p_13yanqo>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_vdenxu>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Cagliari> .
+<id_pqs3ol_14p_vdenxu>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1wvjkzu>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Chania> .
+<id_pqs3ol_14p_1wvjkzu>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_nnx2wt>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Charleroi> .
+<id_pqs3ol_14p_nnx2wt>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1po95p9>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Constanta> .
+<id_pqs3ol_14p_1po95p9>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_zjt685>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Cork> .
+<id_pqs3ol_14p_zjt685>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1xjr4m8>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Dublin> .
+<id_pqs3ol_14p_1xjr4m8>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_yrlo1q>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Eindhoven> .
+<id_pqs3ol_14p_yrlo1q>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_pcioy>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Fuerteventura> .
+<id_pqs3ol_14p_pcioy>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1yskqsy>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Girona> .
+<id_pqs3ol_14p_1yskqsy>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_zjw2jj>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Hahn> .
+<id_pqs3ol_14p_zjw2jj>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_vpxzhu>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Haugesund> .
+<id_pqs3ol_14p_vpxzhu>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1bizuha>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Kefalonia> .
+<id_pqs3ol_14p_1bizuha>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_zilncf>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Kos> .
+<id_pqs3ol_14p_zilncf>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1w63hr3>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Lamezia_Terme> .
+<id_pqs3ol_14p_1w63hr3>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1rj0jh2>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Las_Palmas_de_Gran_Canaria> .
+<id_pqs3ol_14p_1rj0jh2>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_10qof6i>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Malmo> .
+<id_pqs3ol_14p_10qof6i>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_10b6gwz>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<London-Stansted> .
+<id_pqs3ol_14p_10b6gwz>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_2h36ql>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Madrid> .
+<id_pqs3ol_14p_2h36ql>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_10qofc5>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Malta> .
+<id_pqs3ol_14p_10qofc5>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1kgoer0>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Marrakech> .
+<id_pqs3ol_14p_1kgoer0>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1dtzuh6>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Palermo> .
+<id_pqs3ol_14p_1dtzuh6>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_ovti5c>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Seville> .
+<id_pqs3ol_14p_ovti5c>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1ukg76m>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Tenerife-South> .
+<id_pqs3ol_14p_1ukg76m>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_19edfu7>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Trapani> .
+<id_pqs3ol_14p_19edfu7>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_d0u0b5>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Valencia> .
+<id_pqs3ol_14p_d0u0b5>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_i9m7vq>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Bournemouth> .
+<id_pqs3ol_14p_i9m7vq>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1uax9k2>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<East_Midlands> .
+<id_pqs3ol_14p_1uax9k2>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_z038xo>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Edinburgh> .
+<id_pqs3ol_14p_z038xo>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_hyf24p>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Glasgow-Prestwick> .
+<id_pqs3ol_14p_hyf24p>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1hn92p7>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Gothenburg-City> .
+<id_pqs3ol_14p_1hn92p7>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_10ohtvb>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Ibiza> .
+<id_pqs3ol_14p_10ohtvb>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1thux7>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Krak�w> .
+<id_pqs3ol_14p_1thux7>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_6zsgbg>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<L�beck> .
+<id_pqs3ol_14p_6zsgbg>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1m2q1gi>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Leeds/Bradford> .
+<id_pqs3ol_14p_1m2q1gi>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_elnwn6>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Liverpool> .
+<id_pqs3ol_14p_elnwn6>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_5ljvka>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Maastricht> .
+<id_pqs3ol_14p_5ljvka>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_3nmdjz>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Oporto> .
+<id_pqs3ol_14p_3nmdjz>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_4ycl95>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Rhodes> .
+<id_pqs3ol_14p_4ycl95>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_vy00ne>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Sandefjord-Torp> .
+<id_pqs3ol_14p_vy00ne>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1qm39dw>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Stockholm-Skavsta> .
+<id_pqs3ol_14p_1qm39dw>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_11j7hbc>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Tampere> .
+<id_pqs3ol_14p_11j7hbc>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_10w8s6a>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Weeze> .
+<id_pqs3ol_14p_10w8s6a>	<byTransport>	<Ryanair> .
+#@ <id_pqs3ol_14p_1uf6ypi>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Amsterdam> .
+<id_pqs3ol_14p_1uf6ypi>	<byTransport>	<Transavia.com> .
+#@ <id_pqs3ol_14p_n2w2ob>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Barcelona> .
+<id_pqs3ol_14p_n2w2ob>	<byTransport>	<Vueling_Airlines> .
+#@ <id_pqs3ol_14p_17dz97>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Catania> .
+<id_pqs3ol_14p_17dz97>	<byTransport>	<Wind_Jet> .
+#@ <id_pqs3ol_14p_9co8ul>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<St_Petersburg> .
+<id_pqs3ol_14p_9co8ul>	<byTransport>	<Wind_Jet> .
+#@ <id_pqs3ol_14p_1u2an1l>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Bucharest-Baneasa> .
+<id_pqs3ol_14p_1u2an1l>	<byTransport>	<Wizz_Air> .
+#@ <id_pqs3ol_14p_ae7lmu>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Budapest> .
+<id_pqs3ol_14p_ae7lmu>	<byTransport>	<Wizz_Air> .

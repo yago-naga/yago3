@@ -87,23 +87,23 @@ public class InfoboxExtractor extends Extractor {
 
     // Check inverse
     boolean inverse;
-    String cls;
+    String expectedDatatype;
     if (relation.endsWith("->")) {
       inverse = true;
       relation = Char.cutLast(Char.cutLast(relation)) + '>';
-      cls = factCollection.getArg2(relation, RDFS.domain);
+      expectedDatatype = factCollection.getArg2(relation, RDFS.domain);
     } else {
       inverse = false;
-      cls = factCollection.getArg2(relation, RDFS.range);
+      expectedDatatype = factCollection.getArg2(relation, RDFS.range);
     }
-    if (cls == null) {
+    if (expectedDatatype == null) {
       Announce.warning("Unknown relation to extract:", relation);
-      cls = YAGO.entity;
+      expectedDatatype = YAGO.entity;
     }
 
     // Get the term extractor
-    TermExtractor extractor = cls.equals(RDFS.clss) ? new TermExtractor.ForClass(preferredMeanings) : TermExtractor.forType(cls);
-    String syntaxChecker = FactComponent.asJavaString(factCollection.getArg2(cls, "<_hasTypeCheckPattern>"));
+    TermExtractor extractor = expectedDatatype.equals(RDFS.clss) ? new TermExtractor.ForClass(preferredMeanings) : TermExtractor.forType(expectedDatatype);
+    String syntaxChecker = FactComponent.asJavaString(factCollection.getArg2(expectedDatatype, "<_hasTypeCheckPattern>"));
 
     // Extract all terms
     List<String> objects = extractor.extractList(string);
@@ -115,16 +115,15 @@ public class InfoboxExtractor extends Extractor {
       }
       // Check data type
       if (FactComponent.isLiteral(object)) {
-        String datatype = FactComponent.getDatatype(object);
-        if (factCollection.isSubClassOf(cls, YAGO.string) && (datatype == null  || datatype.equals(YAGO.string))
-            || factCollection.isSubClassOf(cls, YAGO.integer) && datatype.equals(YAGO.integer)
-            || factCollection.isSubClassOf(cls, YAGO.decimal) && datatype.equals(YAGO.decimal)) {
-          // For strings, integers, and decimals, we set the more specific data type, because we passed the type check
-          object=FactComponent.setDataType(object, cls);
+        String parsedDatatype = FactComponent.getDatatype(object);
+        if(parsedDatatype==null) parsedDatatype=YAGO.string;
+        if (syntaxChecker!=null && factCollection.isSubClassOf(expectedDatatype, parsedDatatype)) {
+          // If the syntax check went through, we are fine
+          object=FactComponent.setDataType(object, expectedDatatype);
         } else {
           // For other stuff, we check if the datatype is OK
-          if (!factCollection.isSubClassOf(datatype, cls)) {
-            Announce.debug("Extraction", object, "for", entity, relation, "does not match type check", cls);
+          if (!factCollection.isSubClassOf(parsedDatatype, expectedDatatype)) {
+            Announce.debug("Extraction", object, "for", entity, relation, "does not match type check", expectedDatatype);
             continue;
           }
         }
@@ -272,7 +271,7 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/germany.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/honduras.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");

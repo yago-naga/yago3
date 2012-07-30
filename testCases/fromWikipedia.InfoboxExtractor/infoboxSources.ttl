@@ -235,6 +235,9 @@
 #@ <id_1ofo0c5_115_1a29rjn>
 <id_10qtisd_1n8_10c45ji>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan> .
 <id_1ofo0c5_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from latitude" .
+#@ <id_1ofo0c5_115_1a29rjn>
+<id_10qtisd_1n8_10c45ji>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan> .
+<id_1ofo0c5_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from latitude" .
 #@ <id_5d0nco_115_1a29rjn>
 <id_10qtisd_1n8_gc6mbx>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan> .
 <id_5d0nco_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from latitude" .
@@ -499,6 +502,9 @@
 #@ <id_1tzbibj_115_kgol02>
 <id_z038xo_1n8_10cny96>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
 <id_1tzbibj_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from latitude" .
+#@ <id_1tzbibj_115_kgol02>
+<id_z038xo_1n8_10cny96>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
+<id_1tzbibj_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from latitude" .
 #@ <id_1iozqbv_115_kgol02>
 <id_z038xo_1n8_ii3dk8>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
 <id_1iozqbv_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from latitude" .
@@ -583,9 +589,6 @@
 #@ <id_1xxco98_115_kgol02>
 <id_z038xo_z7a_1blrg33>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
 <id_1xxco98_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from subdivisionname" .
-#@ <id_r8m92u_115_kgol02>
-<id_z038xo_yrh_zik21x>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
-<id_r8m92u_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from utcoffset" .
 #@ <id_1g8w5cu_115_kgol02>
 <id_z038xo_ice_3b85a6>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
 <id_1g8w5cu_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from website" .
@@ -853,6 +856,9 @@
 #@ <id_1a1g9gu_115_rcezse>
 <id_104s7no_1s2_3dgoro>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)> .
 <id_1a1g9gu_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from party" .
+#@ <id_8d9r03_115_rcezse>
+<id_104s7no_16x_nk07z4>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)> .
+<id_8d9r03_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from spouse" .
 #@ <id_or6y45_115_1hjzuqo>
 <id_1jce2gm_10x_ca9zyc>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley> .
 <id_or6y45_115_1hjzuqo>	<extractionTechnique>	"InfoboxExtractor from almamater" .
@@ -892,15 +898,9 @@
 #@ <id_wayobi_115_4vmd7e>
 <id_1bx19fo_1n8_vzrl9j>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
 <id_wayobi_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from latitude" .
-#@ <id_ohvaa6_115_4vmd7e>
-<id_1bx19fo_1n8_10fvn9w>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
-<id_ohvaa6_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from latitude" .
-#@ <id_13l1ha2_115_4vmd7e>
-<id_1bx19fo_jto_l1jtn4>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
-<id_13l1ha2_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from longitude" .
-#@ <id_13l1ha2_115_4vmd7e>
-<id_1bx19fo_jto_l1jtn4>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
-<id_13l1ha2_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from longitude" .
+#@ <id_1246mwr_115_4vmd7e>
+<id_1bx19fo_jto_glfrmr>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
+<id_1246mwr_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from longitude" .
 #@ <id_z9ej6c_115_1qyd4q9>
 <id_gg7cuf_10x_1bx19fo>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
 <id_z9ej6c_115_1qyd4q9>	<extractionTechnique>	"InfoboxExtractor from almamater" .
@@ -1018,9 +1018,6 @@
 #@ <id_1wcbrpn_115_zbvg7y>
 <id_jr01l4_ice_1894bxa>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff> .
 <id_1wcbrpn_115_zbvg7y>	<extractionTechnique>	"InfoboxExtractor from website" .
-#@ <id_pyqlf8_115_1ayxm3h>
-<id_tu1ps7_1b1_zik10y>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany> .
-<id_pyqlf8_115_1ayxm3h>	<extractionTechnique>	"InfoboxExtractor from myarea" .
 #@ <id_26yxb2_115_1ayxm3h>
 <id_tu1ps7_ice_6nsaxe>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany> .
 <id_26yxb2_115_1ayxm3h>	<extractionTechnique>	"InfoboxExtractor from website" .
@@ -1102,12 +1099,9 @@
 #@ <id_1h42c0u_115_1ukoa5l>
 <id_1ps9evn_f9j_1clozfr>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
 <id_1h42c0u_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from gdpnominal" .
-#@ <id_e3x1fh_115_1ukoa5l>
-<id_1ps9evn_1b1_zik285>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
-<id_e3x1fh_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from gini" .
-#@ <id_s6sgtq_115_1ukoa5l>
-<id_1ps9evn_f9j_109sqbk>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
-<id_s6sgtq_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from hdi" .
+#@ <id_19pvdu8_115_1ukoa5l>
+<id_1ps9evn_1n8_1sdnf49>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
+<id_19pvdu8_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from latitude" .
 #@ <id_19pvdu8_115_1ukoa5l>
 <id_1ps9evn_1n8_1sdnf49>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
 <id_19pvdu8_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from latitude" .
@@ -1141,9 +1135,6 @@
 #@ <id_1iq29ew_115_1ukoa5l>
 <id_1ps9evn_l7i_1fq3p4o>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
 <id_1iq29ew_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from populationestimate" .
-#@ <id_yq6ie1_115_1ukoa5l>
-<id_1ps9evn_yrh_zik21y>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
-<id_yq6ie1_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from utcoffset" .
 #@ <id_5oyy7y_115_tiyb2w>
 <id_18vc8ci_10x_ca61ms>	<extractionSource>	<http://en.wikipedia.org/wiki/Guido_Westerwelle> .
 <id_5oyy7y_115_tiyb2w>	<extractionTechnique>	"InfoboxExtractor from almamater" .
@@ -1171,6 +1162,9 @@
 #@ <id_25qlvn_115_tiyb2w>
 <id_18vc8ci_ice_3uctt7>	<extractionSource>	<http://en.wikipedia.org/wiki/Guido_Westerwelle> .
 <id_25qlvn_115_tiyb2w>	<extractionTechnique>	"InfoboxExtractor from website" .
+#@ <id_4cs3uj_115_88ufwy>
+<id_3gfkn0_1n8_10cmo6o>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg> .
+<id_4cs3uj_115_88ufwy>	<extractionTechnique>	"InfoboxExtractor from latitude" .
 #@ <id_4cs3uj_115_88ufwy>
 <id_3gfkn0_1n8_10cmo6o>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg> .
 <id_4cs3uj_115_88ufwy>	<extractionTechnique>	"InfoboxExtractor from latitude" .
@@ -1339,6 +1333,9 @@
 #@ <id_wfgsrz_115_1pyoefh>
 <id_1dmdk4j_1n8_1ahpjd1>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany> .
 <id_wfgsrz_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from latitude" .
+#@ <id_wfgsrz_115_1pyoefh>
+<id_1dmdk4j_1n8_1ahpjd1>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany> .
+<id_wfgsrz_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from latitude" .
 #@ <id_1qm447t_115_1pyoefh>
 <id_1dmdk4j_jto_zil6wq>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany> .
 <id_1qm447t_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from longitude" .
@@ -1348,9 +1345,6 @@
 #@ <id_ojc3sk_115_1pyoefh>
 <id_1dmdk4j_1ia_lndspq>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany> .
 <id_ojc3sk_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from nativename" .
-#@ <id_dy6ou2_115_1pyoefh>
-<id_1dmdk4j_yrh_zik21y>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany> .
-<id_dy6ou2_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from utcoffset" .
 #@ <id_13ip5r7_115_ozn4l3>
 <id_1wkzd0h_10x_14qcrjr>	<extractionSource>	<http://en.wikipedia.org/wiki/Albert_Pintat> .
 <id_13ip5r7_115_ozn4l3>	<extractionTechnique>	"InfoboxExtractor from almamater" .
@@ -1600,15 +1594,9 @@
 #@ <id_1dyh04z_115_1dzyujs>
 <id_1tccrte_1n8_18nsieb>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
 <id_1dyh04z_115_1dzyujs>	<extractionTechnique>	"InfoboxExtractor from latitude" .
-#@ <id_5i4hma_115_1dzyujs>
-<id_1tccrte_1n8_1r4uul2>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
-<id_5i4hma_115_1dzyujs>	<extractionTechnique>	"InfoboxExtractor from latitude" .
 #@ <id_1klfz92_115_1dzyujs>
 <id_1tccrte_jto_1nx0qri>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
 <id_1klfz92_115_1dzyujs>	<extractionTechnique>	"InfoboxExtractor from longitude" .
-#@ <id_grwf85_115_1dzyujs>
-<id_1tccrte_jto_a3qz1n>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
-<id_grwf85_115_1dzyujs>	<extractionTechnique>	"InfoboxExtractor from longitude" .
 #@ <id_lyek2m_115_1dzyujs>
 <id_1tccrte_1b1_fyig9d>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
 <id_lyek2m_115_1dzyujs>	<extractionTechnique>	"InfoboxExtractor from myarea" .
@@ -1909,6 +1897,9 @@
 #@ <id_1js42ju_115_ev13bk>
 <id_13dzdeu_1n8_ov1wcu>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
 <id_1js42ju_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from latitude" .
+#@ <id_1js42ju_115_ev13bk>
+<id_13dzdeu_1n8_ov1wcu>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
+<id_1js42ju_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from latitude" .
 #@ <id_15wvioo_115_ev13bk>
 <id_13dzdeu_jto_6stck6>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
 <id_15wvioo_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from longitude" .
@@ -1918,9 +1909,6 @@
 #@ <id_1wcx5yd_115_ev13bk>
 <id_13dzdeu_1b1_jxv9d2>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
 <id_1wcx5yd_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from myarea" .
-#@ <id_1si0m06_115_ev13bk>
-<id_13dzdeu_ibw_zik10y>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
-<id_1si0m06_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from mypopulationdensity" .
 #@ <id_1ec1zoe_115_ev13bk>
 <id_13dzdeu_l7i_1ofqcbn>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
 <id_1ec1zoe_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from populationtotal" .
@@ -1933,9 +1921,6 @@
 #@ <id_1kvo5al_115_ev13bk>
 <id_13dzdeu_z7a_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
 <id_1kvo5al_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from subdivisionname" .
-#@ <id_pacf91_115_ev13bk>
-<id_13dzdeu_yrh_zik21y>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
-<id_pacf91_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from utcoffset" .
 #@ <id_1daywj3_115_ev13bk>
 <id_13dzdeu_ice_1xgqqoy>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
 <id_1daywj3_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from website" .

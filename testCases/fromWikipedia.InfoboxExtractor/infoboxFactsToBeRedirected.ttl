@@ -160,6 +160,8 @@
 <Milan>	<wasCreatedOnDate>	"396-##-##"^^xsd:date .
 #@ <id_10qtisd_1n8_10c45ji>
 <Milan>	<hasLatitude>	"45.45"^^<degrees> .
+#@ <id_10qtisd_1n8_10c45ji>
+<Milan>	<hasLatitude>	"45.45"^^<degrees> .
 #@ <id_10qtisd_1n8_gc6mbx>
 <Milan>	<hasLatitude>	"45.46416666666667"^^<degrees> .
 #@ <id_10qtisd_jto_72wcxk>
@@ -336,6 +338,8 @@
 <Edinburgh>	<wasCreatedOnDate>	"6##-##-##"^^xsd:date .
 #@ <id_z038xo_1n8_10cny96>
 <Edinburgh>	<hasLatitude>	"55.95"^^<degrees> .
+#@ <id_z038xo_1n8_10cny96>
+<Edinburgh>	<hasLatitude>	"55.95"^^<degrees> .
 #@ <id_z038xo_1n8_ii3dk8>
 <Edinburgh>	<hasLatitude>	"55.95305555555556"^^<degrees> .
 #@ <id_19cww22_1c7_z038xo>
@@ -392,8 +396,6 @@
 <Edinburgh>	<isLocatedIn>	<Scotland> .
 #@ <id_z038xo_z7a_1blrg33>
 <Edinburgh>	<isLocatedIn>	<United_Kingdom> .
-#@ <id_z038xo_yrh_zik21x>
-<Edinburgh>	<hasUTCOffset>	"+0"^^xsd:integer .
 #@ <id_z038xo_ice_3b85a6>
 <Edinburgh>	<hasWebsite>	<http://www.edinburgh.gov.uk/> .
 #@ <id_z038xo_ice_o7m35>
@@ -572,6 +574,8 @@
 <Phil_Wilson_(British_politician)>	<isCitizenOf>	<United_Kingdom> .
 #@ <id_104s7no_1s2_3dgoro>
 <Phil_Wilson_(British_politician)>	<isAffiliatedTo>	<Labour_party_(UK)> .
+#@ <id_104s7no_16x_nk07z4>
+<Phil_Wilson_(British_politician)>	<isMarriedTo>	<Margaret_Brown> .
 #@ <id_1jce2gm_10x_ca9zyc>
 <Roy_Hattersley>	<graduatedFrom>	<University_of_Hull> .
 #@ <id_1jce2gm_1xk_1778be4>
@@ -598,12 +602,8 @@
 <St_John's_College,_Oxford>	<hasWebsite>	<http://www.sjc.ox.ac.uk/> .
 #@ <id_1bx19fo_1n8_vzrl9j>
 <St_John's_College,_Oxford>	<hasLatitude>	"51.75612"^^<degrees> .
-#@ <id_1bx19fo_1n8_10fvn9w>
-<St_John's_College,_Oxford>	<hasLatitude>	"-51.75612"^^<degrees> .
-#@ <id_1bx19fo_jto_l1jtn4>
-<St_John's_College,_Oxford>	<hasLongitude>	"-1.258605"^^<degrees> .
-#@ <id_1bx19fo_jto_l1jtn4>
-<St_John's_College,_Oxford>	<hasLongitude>	"-1.258605"^^<degrees> .
+#@ <id_1bx19fo_jto_glfrmr>
+<St_John's_College,_Oxford>	<hasLongitude>	"1.258605"^^<degrees> .
 #@ <id_gg7cuf_10x_1bx19fo>
 <Tony_Blair>	<graduatedFrom>	<St_John's_College,_Oxford> .
 #@ <id_gg7cuf_1xk_18h9m2v>
@@ -682,8 +682,6 @@
 <Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/> .
 #@ <id_jr01l4_ice_1894bxa>
 <Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/> .
-#@ <id_tu1ps7_1b1_zik10y>
-<Evangelical_Church_in_Germany>	<hasArea>	"2"^^<m^2> .
 #@ <id_tu1ps7_ice_6nsaxe>
 <Evangelical_Church_in_Germany>	<hasWebsite>	<http://ekd.de/english/index.html> .
 #@ <id_ht3f3u_10x_pfblkl>
@@ -738,10 +736,8 @@
 <Germany>	<wasCreatedOnDate>	"1990-10-03"^^xsd:date .
 #@ <id_1ps9evn_f9j_1clozfr>
 <Germany>	<hasGDP>	"3628000000000"^^<dollar> .
-#@ <id_1ps9evn_1b1_zik285>
-<Germany>	<hasGini>	"27"^^xsd:integer .
-#@ <id_1ps9evn_f9j_109sqbk>
-<Germany>	<hasHDI>	"0.905"^^xsd:decimal .
+#@ <id_1ps9evn_1n8_1sdnf49>
+<Germany>	<hasLatitude>	"52.516666666666666"^^<degrees> .
 #@ <id_1ps9evn_1n8_1sdnf49>
 <Germany>	<hasLatitude>	"52.516666666666666"^^<degrees> .
 #@ <id_1cdgbyh_1c7_1ps9evn>
@@ -764,8 +760,6 @@
 <Germany>	<hasOfficialLanguage>	<German_language> .
 #@ <id_1ps9evn_l7i_1fq3p4o>
 <Germany>	<hasNumberOfPeople>	"81799600"^^xsd:nonNegativeInteger .
-#@ <id_1ps9evn_yrh_zik21y>
-<Germany>	<hasUTCOffset>	"+1"^^xsd:integer .
 #@ <id_18vc8ci_10x_ca61ms>
 <Guido_Westerwelle>	<graduatedFrom>	<University_of_Bonn> .
 #@ <id_18vc8ci_1xk_17yledj>
@@ -784,6 +778,8 @@
 <Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/> .
 #@ <id_18vc8ci_ice_3uctt7>
 <Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/> .
+#@ <id_3gfkn0_1n8_10cmo6o>
+<Hamburg>	<hasLatitude>	"53.55"^^<degrees> .
 #@ <id_3gfkn0_1n8_10cmo6o>
 <Hamburg>	<hasLatitude>	"53.55"^^<degrees> .
 #@ <id_3gfkn0_1n8_uicje6>
@@ -896,14 +892,14 @@
 <West_Germany>	<hasCurrency>	<Deutsche_Mark> .
 #@ <id_1dmdk4j_1n8_1ahpjd1>
 <West_Germany>	<hasLatitude>	"50.733333333333334"^^<degrees> .
+#@ <id_1dmdk4j_1n8_1ahpjd1>
+<West_Germany>	<hasLatitude>	"50.733333333333334"^^<degrees> .
 #@ <id_1dmdk4j_jto_zil6wq>
 <West_Germany>	<hasLongitude>	"7.1"^^<degrees> .
 #@ <id_1dmdk4j_jto_zil6wq>
 <West_Germany>	<hasLongitude>	"7.1"^^<degrees> .
 #@ <id_1dmdk4j_1ia_lndspq>
 <West_Germany>	rdfs:label	"Bundesrepublik Deutschland" .
-#@ <id_1dmdk4j_yrh_zik21y>
-<West_Germany>	<hasUTCOffset>	"+1"^^xsd:integer .
 #@ <id_1wkzd0h_10x_14qcrjr>
 <Albert_Pintat>	<graduatedFrom>	<University_of_Fribourg> .
 #@ <id_1wkzd0h_1xk_fnns1u>
@@ -1070,12 +1066,8 @@
 <Joan_Enric_Vives_Sicília>	<wasBornIn>	<Barcelona> .
 #@ <id_1tccrte_1n8_18nsieb>
 <Neuilly-sur-Seine>	<hasLatitude>	"48.8881"^^<degrees> .
-#@ <id_1tccrte_1n8_1r4uul2>
-<Neuilly-sur-Seine>	<hasLatitude>	"-48.8881"^^<degrees> .
 #@ <id_1tccrte_jto_1nx0qri>
 <Neuilly-sur-Seine>	<hasLongitude>	"2.2686"^^<degrees> .
-#@ <id_1tccrte_jto_a3qz1n>
-<Neuilly-sur-Seine>	<hasLongitude>	"-2.2686"^^<degrees> .
 #@ <id_1tccrte_1b1_fyig9d>
 <Neuilly-sur-Seine>	<hasArea>	"3730000.0"^^<m^2> .
 #@ <id_1tccrte_l7i_10d4o9l>
@@ -1276,14 +1268,14 @@
 <Valladolid>	<wasCreatedOnDate>	"1072-##-##"^^xsd:date .
 #@ <id_13dzdeu_1n8_ov1wcu>
 <Valladolid>	<hasLatitude>	"41.63333333333333"^^<degrees> .
+#@ <id_13dzdeu_1n8_ov1wcu>
+<Valladolid>	<hasLatitude>	"41.63333333333333"^^<degrees> .
 #@ <id_13dzdeu_jto_6stck6>
 <Valladolid>	<hasLongitude>	"-4.716666666666667"^^<degrees> .
 #@ <id_13dzdeu_jto_6stck6>
 <Valladolid>	<hasLongitude>	"-4.716666666666667"^^<degrees> .
 #@ <id_13dzdeu_1b1_jxv9d2>
 <Valladolid>	<hasArea>	"1.9791E8"^^<m^2> .
-#@ <id_13dzdeu_ibw_zik10y>
-<Valladolid>	<hasPopulationDensity>	"2"^^</km^2> .
 #@ <id_13dzdeu_l7i_1ofqcbn>
 <Valladolid>	<hasNumberOfPeople>	"313437"^^xsd:nonNegativeInteger .
 #@ <id_13dzdeu_z7a_1ei90d>
@@ -1292,8 +1284,6 @@
 <Valladolid>	<isLocatedIn>	<Valladolid_(province)> .
 #@ <id_13dzdeu_z7a_10u8jah>
 <Valladolid>	<isLocatedIn>	<Spain> .
-#@ <id_13dzdeu_yrh_zik21y>
-<Valladolid>	<hasUTCOffset>	"+1"^^xsd:integer .
 #@ <id_13dzdeu_ice_1xgqqoy>
 <Valladolid>	<hasWebsite>	<http://www.valladolid.es/> .
 #@ <id_13dzdeu_ice_1xgqqoy>

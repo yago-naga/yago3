@@ -19,14 +19,15 @@
 "family name"	rdf:type	<_yagoNonConceptualInfobox> .
 "surname"	rdf:type	<_yagoNonConceptualInfobox> .
 "given name"	rdf:type	<_yagoNonConceptualInfobox> .
+"baseball biography"	rdf:type	<_yagoNonConceptualInfobox> . # Has multiple biographie son one page
 
 # --------- Combinations of Infobox attributes --------------
 "<population_density_km2> /km^2"	<_infoboxCombine>	"my_population_density" .
 "<areakm2> km^2"	<_infoboxCombine>	"myarea" .
 "<areatotalkm2> km^2"	<_infoboxCombine>	"myarea" .
 "<area> km^2"	<_infoboxCombine>	"myarea" .
-"<latitude> degrees 0 minutes 0 seconds W"	<_infoboxCombine>	"_latitude" .
-"<longitude> degrees 0 minutes 0 seconds S"	<_infoboxCombine>	"_longitude" .
+"<latitude> degrees 0 minutes 0 seconds E"	<_infoboxCombine>	"_latitude" .
+"<longitude> degrees 0 minutes 0 seconds N"	<_infoboxCombine>	"_longitude" .
 "<latd> degrees <latm> minutes <lats> seconds <latNS>"	<_infoboxCombine>	"_latitude" .
 "<longd> degrees <longm> minutes <longs> seconds <longEW>"	<_infoboxCombine>	"_longitude" .
 "<latd> degrees <latm> minutes 0 seconds <latNS>"	<_infoboxCombine>	"latitude" .
@@ -72,7 +73,7 @@
 "my_population_density"	<_infoboxPattern>	<hasPopulationDensity> .
 "GDPnominal"	<_infoboxPattern>	<hasGDP> .
 "Gini"	<_infoboxPattern>	<hasGini> .
-"utcoffset"	<_infoboxPattern>	<hasUTCOffset> .
+#"utcoffset"	<_infoboxPattern>	<hasUTCOffset> .
 "cctld"	<_infoboxPattern>	<hasTLD> .
 "currency"	<_infoboxPattern>	<hasCurrency> .
 "expenses"	<_infoboxPattern>	<hasExpenses> .
@@ -80,7 +81,7 @@
 "export-partners"	<_infoboxPattern>	<dealsWith> .
 "exports"	<_infoboxPattern>	<hasExport> .
 "growth"	<_infoboxPattern>	<hasEconomicGrowth> .
-"hdi"	<_infoboxPattern>	<hasHDI> .
+#"hdi"	<_infoboxPattern>	<hasHDI> .
 "import-goods"	<_infoboxPattern>	<imports> .
 "import-partners"	<_infoboxPattern>	<dealsWith> .
 "imports"	<_infoboxPattern>	<hasImport> .
@@ -266,6 +267,7 @@
 "\\[\\[File:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[Image:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[wp:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
+"\\[\\[minute\\]\\]s?"	<_infoboxReplace>	" minutes " .
 "\\[\\[1000000000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" trillion " .
 "\\[\\[1000000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" billion " .
 "\\[\\[1000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" million " .
@@ -303,3 +305,4 @@
 "<small>.*</small>"	<_infoboxReplace>	"" .
 "<!--.*-->"	<_infoboxReplace>	"" .
 "</?span[^>]*>"	<_infoboxReplace>	"" .
+"<ref.+?</ref>"	<_infoboxReplace>	"" .

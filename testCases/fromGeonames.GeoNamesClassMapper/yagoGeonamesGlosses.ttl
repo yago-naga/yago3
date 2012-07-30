@@ -1,10 +1,6 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Glosses from GeoNames
+# GEONAMES
 
 @base <http://yago-knowledge/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
@@ -347,7 +343,7 @@
 <geoclass_mosque>	<hasGloss>	"a building for public Islamic worship" .
 <geoclass_mission>	<hasGloss>	"a place characterized by dwellings, school, church, hospital and other facilities operated by a religious group for the purpose of providing charitable services and to propagate religion" .
 <geoclass_monastery>	<hasGloss>	"a building and grounds where a community of monks lives in seclusion" .
-<geoclass_metro_station>	<hasGloss>	"metro station (Underground, Tube, or Métro) " .
+<geoclass_metro_station>	<hasGloss>	"metro station (Underground, Tube, or MÃ©tro) " .
 <geoclass_museum>	<hasGloss>	"a building where objects of permanent interest in one or more of the arts and sciences are preserved and exhibited" .
 <geoclass_novitiate>	<hasGloss>	"a religious house or school where novices are trained" .
 <geoclass_nursery>	<hasGloss>	"a place where plants are propagated for transplanting or grafting" .

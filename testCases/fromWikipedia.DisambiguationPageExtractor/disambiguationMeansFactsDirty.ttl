@@ -1,10 +1,6 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Means facts from disambiguation pages - needs redirecting and typechecking
+# INTERNAL
 
 @base <http://yago-knowledge/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
@@ -14,42 +10,42 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-"Ark"	<means>	<Ark_(2004_film)> .
-"Ark"	<means>	<The_Ark_(Doctor_Who)> .
-"Ark"	<means>	<The_Ark_(Stargate_Atlantis)> .
-"Ark"	<means>	<Ark_(Baxter_novel)> .
-"Ark"	<means>	<Ark_(L'Arc-en-Ciel_album)> .
-"Ark"	<means>	<Ark_(The_Animals_album)> .
-"Ark"	<means>	<The_Ark_(album)> .
-"Ark"	<means>	<The_Ark_(Halo)> .
-"Ark"	<means>	<The_Ark_(ship)> .
-"Ark"	<means>	<The_Ark_(newspaper)> .
-"Ark"	<means>	<Ark_(synagogue)> .
-"Ark"	<means>	<Ark_of_the_Covenant> .
-"Ark"	<means>	<Ark_of_bulrushes> .
-"Ark"	<means>	<Noah's_Ark> .
-"Ark"	<means>	<Blessed_Virgin_Mary> .
-"Ark"	<means>	<Ark,_Virginia> .
-"Ark"	<means>	<The_Ark_(fortress)> .
-"Ark"	<means>	<The_Ark_(Antarctica)> .
-"Ark"	<means>	<The_London_Ark> .
-"Ark"	<means>	<Ark_(computing)> .
-"Ark"	<means>	<Ark_Linux> .
-"Ark"	<means>	<Interstellar_ark> .
-"Ark"	<means>	<Ark_(river_boat)> .
-"Ark"	<means>	<Ark_(scooter)> .
-"Ark"	<means>	<Chicken_ark> .
-"Ark"	<means>	<Ark_(Transformers)> .
-"Ark"	<means>	<Ark_(Noon_Universe)> .
-"Ark"	<means>	<Ark_II> .
-"Ark"	<means>	<Ark_(Brendan_Perry_album)> .
-"Ark"	<means>	<The_Ark_(folk_venue)> .
-"Ark"	<means>	<The_Ark_(band)> .
-"Ark"	<means>	<Ark_(UK_band)> .
-"Ark"	<means>	<ARK_(band)> .
-"Ark"	<means>	<Ark_(toy_company)> .
-"Ark"	<means>	<Arc> .
-"Ark"	<means>	<Arch> .
-"Ark"	<means>	<ARK> .
-"Ark"	<means>	<Arkana> .
-"Ark"	<means>	<ARRC> .
+<Ark_(2004_film)>	rdfs:label	"Ark"@en .
+<The_Ark_(Doctor_Who)>	rdfs:label	"Ark"@en .
+<The_Ark_(Stargate_Atlantis)>	rdfs:label	"Ark"@en .
+<Ark_(Baxter_novel)>	rdfs:label	"Ark"@en .
+<Ark_(L'Arc-en-Ciel_album)>	rdfs:label	"Ark"@en .
+<Ark_(The_Animals_album)>	rdfs:label	"Ark"@en .
+<The_Ark_(album)>	rdfs:label	"Ark"@en .
+<The_Ark_(Halo)>	rdfs:label	"Ark"@en .
+<The_Ark_(ship)>	rdfs:label	"Ark"@en .
+<The_Ark_(newspaper)>	rdfs:label	"Ark"@en .
+<Ark_(synagogue)>	rdfs:label	"Ark"@en .
+<Ark_of_the_Covenant>	rdfs:label	"Ark"@en .
+<Ark_of_bulrushes>	rdfs:label	"Ark"@en .
+<Noah's_Ark>	rdfs:label	"Ark"@en .
+<Blessed_Virgin_Mary>	rdfs:label	"Ark"@en .
+<Ark,_Virginia>	rdfs:label	"Ark"@en .
+<The_Ark_(fortress)>	rdfs:label	"Ark"@en .
+<The_Ark_(Antarctica)>	rdfs:label	"Ark"@en .
+<The_London_Ark>	rdfs:label	"Ark"@en .
+<Ark_(computing)>	rdfs:label	"Ark"@en .
+<Ark_Linux>	rdfs:label	"Ark"@en .
+<Interstellar_ark>	rdfs:label	"Ark"@en .
+<Ark_(river_boat)>	rdfs:label	"Ark"@en .
+<Ark_(scooter)>	rdfs:label	"Ark"@en .
+<Chicken_ark>	rdfs:label	"Ark"@en .
+<Ark_(Transformers)>	rdfs:label	"Ark"@en .
+<Ark_(Noon_Universe)>	rdfs:label	"Ark"@en .
+<Ark_II>	rdfs:label	"Ark"@en .
+<Ark_(Brendan_Perry_album)>	rdfs:label	"Ark"@en .
+<The_Ark_(folk_venue)>	rdfs:label	"Ark"@en .
+<The_Ark_(band)>	rdfs:label	"Ark"@en .
+<Ark_(UK_band)>	rdfs:label	"Ark"@en .
+<ARK_(band)>	rdfs:label	"Ark"@en .
+<Ark_(toy_company)>	rdfs:label	"Ark"@en .
+<Arc>	rdfs:label	"Ark"@en .
+<Arch>	rdfs:label	"Ark"@en .
+<ARK>	rdfs:label	"Ark"@en .
+<Arkana>	rdfs:label	"Ark"@en .
+<ARRC>	rdfs:label	"Ark"@en .

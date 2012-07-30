@@ -1,0 +1,2028 @@
+# Test of YAGO2s
+# Source information for the facts extracted from GeoNames
+# INTERNAL
+
+@base <http://yago-knowledge/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_1g2jpp3_115_1umzv6f>
+<id_z2h3a0_1m6_1aw92kp>	<extractionSource>	<GeoNames> .
+<id_1g2jpp3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1w5pxgh_115_1umzv6f>
+<id_s7i3yk_1m6_1awn77h>	<extractionSource>	<GeoNames> .
+<id_1w5pxgh_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_p6uf5k_115_1umzv6f>
+<id_17s72of_1m6_1awn77h>	<extractionSource>	<GeoNames> .
+<id_p6uf5k_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_l7wub8_115_1umzv6f>
+<id_1l06z02_1m6_1awn77h>	<extractionSource>	<GeoNames> .
+<id_l7wub8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1998x6m_115_1umzv6f>
+<id_j8b9k6_1m6_1kvveil>	<extractionSource>	<GeoNames> .
+<id_1998x6m_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_107g0yc_115_1umzv6f>
+<id_11oenl6_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_107g0yc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_141efkx_115_1umzv6f>
+<id_97bizh_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_141efkx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1tborzs_115_1umzv6f>
+<id_mh0zz1_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1tborzs_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1doxyev_115_1umzv6f>
+<id_704ena_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1doxyev_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1bsqszp_115_1umzv6f>
+<id_18nhb7m_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1bsqszp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1tm8il1_115_1umzv6f>
+<id_14tncww_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_1tm8il1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ko2ur4_115_1umzv6f>
+<id_cul5ox_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_ko2ur4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19gyppz_115_1umzv6f>
+<id_ebg8mt_1m6_1ombtq2>	<extractionSource>	<GeoNames> .
+<id_19gyppz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_181557u_115_1umzv6f>
+<id_9crg6a_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_181557u_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_hhb24a_115_1umzv6f>
+<id_1ydvwo4_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_hhb24a_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ej1pvq_115_1umzv6f>
+<id_1dguspf_1m6_ig89qx>	<extractionSource>	<GeoNames> .
+<id_1ej1pvq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_13prhp2_115_1umzv6f>
+<id_j75n7z_1m6_a9n3xz>	<extractionSource>	<GeoNames> .
+<id_13prhp2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_gh0duu_115_1umzv6f>
+<id_17ngek2_1m6_lc7prm>	<extractionSource>	<GeoNames> .
+<id_gh0duu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_q763x3_115_1umzv6f>
+<id_ib4xb6_1m6_151h0uf>	<extractionSource>	<GeoNames> .
+<id_q763x3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_13h1xgq_115_1umzv6f>
+<id_1ydgavl_1m6_151h0uf>	<extractionSource>	<GeoNames> .
+<id_13h1xgq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_135gjp4_115_1umzv6f>
+<id_1ensgb8_1m6_tc23n2>	<extractionSource>	<GeoNames> .
+<id_135gjp4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qdypj8_115_1umzv6f>
+<id_1ydgalw_1m6_1nb2nlv>	<extractionSource>	<GeoNames> .
+<id_qdypj8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1pxk7ot_115_1umzv6f>
+<id_maiihv_1m6_1nb2nlv>	<extractionSource>	<GeoNames> .
+<id_1pxk7ot_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1h40og6_115_1umzv6f>
+<id_ohqr4i_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_1h40og6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_248l0y_115_1umzv6f>
+<id_ib4xmq_1m6_11midnw>	<extractionSource>	<GeoNames> .
+<id_248l0y_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1a7d79v_115_1umzv6f>
+<id_b101cv_1m6_18grve1>	<extractionSource>	<GeoNames> .
+<id_1a7d79v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_x07idp_115_1umzv6f>
+<id_170jiq3_1m6_19fh3w8>	<extractionSource>	<GeoNames> .
+<id_x07idp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19svzby_115_1umzv6f>
+<id_1wwkkwb_1m6_19fh3w8>	<extractionSource>	<GeoNames> .
+<id_19svzby_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ejz9cl_115_1umzv6f>
+<id_1nzfzsu_1m6_19fh3w8>	<extractionSource>	<GeoNames> .
+<id_1ejz9cl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1i6eor4_115_1umzv6f>
+<id_r1ei4w_1m6_19fh3w8>	<extractionSource>	<GeoNames> .
+<id_1i6eor4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_17q8n7h_115_1umzv6f>
+<id_14g78fk_1m6_kbsesi>	<extractionSource>	<GeoNames> .
+<id_17q8n7h_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_wj9vfv_115_1umzv6f>
+<id_1eo7a0z_1m6_qcu6vu>	<extractionSource>	<GeoNames> .
+<id_wj9vfv_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1cccbby_115_1umzv6f>
+<id_1vnrx8a_1m6_wqyrhc>	<extractionSource>	<GeoNames> .
+<id_1cccbby_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_zbw324_115_1umzv6f>
+<id_u22a2d_1m6_5z9or1>	<extractionSource>	<GeoNames> .
+<id_zbw324_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1rwlzch_115_1umzv6f>
+<id_10kf1a3_1m6_qcu6vu>	<extractionSource>	<GeoNames> .
+<id_1rwlzch_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_b3dxgq_115_1umzv6f>
+<id_s1cphe_1m6_qcu6vu>	<extractionSource>	<GeoNames> .
+<id_b3dxgq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1jd9d3i_115_1umzv6f>
+<id_pqvuko_1m6_qcu6vu>	<extractionSource>	<GeoNames> .
+<id_1jd9d3i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ioifvn_115_1umzv6f>
+<id_12my7vc_1m6_qcu6vu>	<extractionSource>	<GeoNames> .
+<id_ioifvn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_kq6of6_115_1umzv6f>
+<id_145168y_1m6_qcu6vu>	<extractionSource>	<GeoNames> .
+<id_kq6of6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1lxomdi_115_1umzv6f>
+<id_1czglk5_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_1lxomdi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1yfhfpg_115_1umzv6f>
+<id_1ydh85v_1m6_10eid5s>	<extractionSource>	<GeoNames> .
+<id_1yfhfpg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_oqe245_115_1umzv6f>
+<id_1o897gf_1m6_dfuiwe>	<extractionSource>	<GeoNames> .
+<id_oqe245_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_rcinyj_115_1umzv6f>
+<id_1dfjhfl_1m6_1fpjiwy>	<extractionSource>	<GeoNames> .
+<id_rcinyj_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qbl4ha_115_1umzv6f>
+<id_8gwfhh_1m6_1y9z955>	<extractionSource>	<GeoNames> .
+<id_qbl4ha_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_8acg41_115_1umzv6f>
+<id_1ydhup7_1m6_560ntn>	<extractionSource>	<GeoNames> .
+<id_8acg41_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_xeno5q_115_1umzv6f>
+<id_a9mb81_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_xeno5q_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_795uux_115_1umzv6f>
+<id_1vtg98j_1m6_1qrwt43>	<extractionSource>	<GeoNames> .
+<id_795uux_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1rnzsjf_115_1umzv6f>
+<id_3p13a_1m6_irf8x2>	<extractionSource>	<GeoNames> .
+<id_1rnzsjf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ckm4wt_115_1umzv6f>
+<id_1eowb0c_1m6_ztslje>	<extractionSource>	<GeoNames> .
+<id_ckm4wt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_tqbjj0_115_1umzv6f>
+<id_10l429g_1m6_1away7c>	<extractionSource>	<GeoNames> .
+<id_tqbjj0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_tmhfkp_115_1umzv6f>
+<id_s21qgr_1m6_3lrh2f>	<extractionSource>	<GeoNames> .
+<id_tmhfkp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1jrmz7b_115_1umzv6f>
+<id_1kjbhxg_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1jrmz7b_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_tgtead_115_1umzv6f>
+<id_6ua6e9_1m6_1a0ep7y>	<extractionSource>	<GeoNames> .
+<id_tgtead_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_pkll1a_115_1umzv6f>
+<id_9s9qca_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_pkll1a_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_2pnwo_115_1umzv6f>
+<id_1eq0ftx_1m6_13f7is6>	<extractionSource>	<GeoNames> .
+<id_2pnwo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_kaghsg_115_1umzv6f>
+<id_9pwfe6_1m6_13f7is6>	<extractionSource>	<GeoNames> .
+<id_kaghsg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_17ti64k_115_1umzv6f>
+<id_14t61sq_1m6_15peql6>	<extractionSource>	<GeoNames> .
+<id_17ti64k_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_u5de6v_115_1umzv6f>
+<id_we7qkc_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_u5de6v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7stl45_115_1umzv6f>
+<id_11x55zo_1m6_skd5t5>	<extractionSource>	<GeoNames> .
+<id_7stl45_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ox2nj2_115_1umzv6f>
+<id_fox2c6_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_ox2nj2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_wql4ja_115_1umzv6f>
+<id_wkzynr_1m6_13649j0>	<extractionSource>	<GeoNames> .
+<id_wql4ja_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1iu7nrw_115_1umzv6f>
+<id_1ydjwbk_1m6_1swfpe8>	<extractionSource>	<GeoNames> .
+<id_1iu7nrw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_wuxi6f_115_1umzv6f>
+<id_a4dhgd_1m6_s7b1iq>	<extractionSource>	<GeoNames> .
+<id_wuxi6f_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1usklxo_115_1umzv6f>
+<id_aj3478_1m6_16fncyd>	<extractionSource>	<GeoNames> .
+<id_1usklxo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_z5s1f5_115_1umzv6f>
+<id_t983oi_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_z5s1f5_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_xg3qfv_115_1umzv6f>
+<id_1erqb1a_1m6_in1i6k>	<extractionSource>	<GeoNames> .
+<id_xg3qfv_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_9k8ns9_115_1umzv6f>
+<id_1f8ovls_1m6_in1i6k>	<extractionSource>	<GeoNames> .
+<id_9k8ns9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_w29ycr_115_1umzv6f>
+<id_32iog9_1m6_86jibg>	<extractionSource>	<GeoNames> .
+<id_w29ycr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19rdl2f_115_1umzv6f>
+<id_cf2uk4_1m6_1ipft8j>	<extractionSource>	<GeoNames> .
+<id_19rdl2f_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_fywvqz_115_1umzv6f>
+<id_ttw1j3_1m6_1ipft8j>	<extractionSource>	<GeoNames> .
+<id_fywvqz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_18imcp4_115_1umzv6f>
+<id_v57u1e_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_18imcp4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1h3nc4r_115_1umzv6f>
+<id_1ydmoef_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_1h3nc4r_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1barzuk_115_1umzv6f>
+<id_e84v9j_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_1barzuk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_115ob7t_115_1umzv6f>
+<id_3hqxur_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_115ob7t_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mrm7bm_115_1umzv6f>
+<id_1drrxpc_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_mrm7bm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_x2kr2k_115_1umzv6f>
+<id_1x5n3lw_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_x2kr2k_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ug1ca2_115_1umzv6f>
+<id_kql9ol_1m6_x169v4>	<extractionSource>	<GeoNames> .
+<id_ug1ca2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_8g46to_115_1umzv6f>
+<id_1hfiwwx_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_8g46to_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19z0oio_115_1umzv6f>
+<id_1et5d8s_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_19z0oio_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_93e8s6_115_1umzv6f>
+<id_o45q7b_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_93e8s6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_18swkzj_115_1umzv6f>
+<id_etilfw_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_18swkzj_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_lw8jiy_115_1umzv6f>
+<id_11933lc_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_lw8jiy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_j4pbpq_115_1umzv6f>
+<id_1f9ovf7_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_j4pbpq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1y667dk_115_1umzv6f>
+<id_cxigof_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_1y667dk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1x8cwf9_115_1umzv6f>
+<id_ohx4x1_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_1x8cwf9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1mnnohm_115_1umzv6f>
+<id_9w01xc_1m6_bwy4qe>	<extractionSource>	<GeoNames> .
+<id_1mnnohm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_11p02u2_115_1umzv6f>
+<id_1p2r9xu_1m6_rf3c3x>	<extractionSource>	<GeoNames> .
+<id_11p02u2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_c8dnxt_115_1umzv6f>
+<id_1ydnlvh_1m6_1d79nxl>	<extractionSource>	<GeoNames> .
+<id_c8dnxt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1vo729v_115_1umzv6f>
+<id_1etpbcr_1m6_g96b6t>	<extractionSource>	<GeoNames> .
+<id_1vo729v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ftltg1_115_1umzv6f>
+<id_1fa8tj6_1m6_1hdpscx>	<extractionSource>	<GeoNames> .
+<id_1ftltg1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_13jgxjl_115_1umzv6f>
+<id_1ncs9og_1m6_j1hmkl>	<extractionSource>	<GeoNames> .
+<id_13jgxjl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_cej6jd_115_1umzv6f>
+<id_1eutwg6_1m6_11ujy8b>	<extractionSource>	<GeoNames> .
+<id_cej6jd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1u9c3kh_115_1umzv6f>
+<id_vr40i4_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1u9c3kh_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jw2eba_115_1umzv6f>
+<id_1ydpist_1m6_bwy4qe>	<extractionSource>	<GeoNames> .
+<id_jw2eba_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ghlams_115_1umzv6f>
+<id_3hts95_1m6_bwy4qe>	<extractionSource>	<GeoNames> .
+<id_1ghlams_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ozxir5_115_1umzv6f>
+<id_1drus3q_1m6_bwy4qe>	<extractionSource>	<GeoNames> .
+<id_1ozxir5_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1bwcco4_115_1umzv6f>
+<id_1x5py0a_1m6_bwy4qe>	<extractionSource>	<GeoNames> .
+<id_1bwcco4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hr5jlw_115_1umzv6f>
+<id_1evljmu_1m6_bwy4qe>	<extractionSource>	<GeoNames> .
+<id_1hr5jlw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_v8b89c_115_1umzv6f>
+<id_1jyqo26_1m6_zzk885>	<extractionSource>	<GeoNames> .
+<id_v8b89c_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_voweq8_115_1umzv6f>
+<id_11bj9ze_1m6_bwy4qe>	<extractionSource>	<GeoNames> .
+<id_voweq8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_w6ngt9_115_1umzv6f>
+<id_1fc51t9_1m6_bwy4qe>	<extractionSource>	<GeoNames> .
+<id_w6ngt9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_chud57_115_1umzv6f>
+<id_1ydpitw_1m6_1ofdv67>	<extractionSource>	<GeoNames> .
+<id_chud57_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_i3jrzd_115_1umzv6f>
+<id_3htsa8_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_i3jrzd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_fswu96_115_1umzv6f>
+<id_1ewiha3_1m6_1wih7k7>	<extractionSource>	<GeoNames> .
+<id_fswu96_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_iny1ci_115_1umzv6f>
+<id_16obgwb_1m6_1ruknn7>	<extractionSource>	<GeoNames> .
+<id_iny1ci_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_a258km_115_1umzv6f>
+<id_uc8d67_1m6_iahaaq>	<extractionSource>	<GeoNames> .
+<id_a258km_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_t3f2dd_115_1umzv6f>
+<id_1ydql58_1m6_10flrwy>	<extractionSource>	<GeoNames> .
+<id_t3f2dd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1b0ieqw_115_1umzv6f>
+<id_azqaqi_1m6_1x4npkc>	<extractionSource>	<GeoNames> .
+<id_1b0ieqw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_escbyw_115_1umzv6f>
+<id_oi11nu_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_escbyw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hpqeez_115_1umzv6f>
+<id_f9i73j_1m6_zgpkg2>	<extractionSource>	<GeoNames> .
+<id_1hpqeez_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_188r8un_115_1umzv6f>
+<id_6ro1yv_1m6_1mphi2q>	<extractionSource>	<GeoNames> .
+<id_188r8un_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1oilprp_115_1umzv6f>
+<id_q5j7vf_1m6_1mphi2q>	<extractionSource>	<GeoNames> .
+<id_1oilprp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_prq5ve_115_1umzv6f>
+<id_1lhryq2_1m6_3el5l8>	<extractionSource>	<GeoNames> .
+<id_prq5ve_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1t9ucfm_115_1umzv6f>
+<id_f9m18x_1m6_vgdvrx>	<extractionSource>	<GeoNames> .
+<id_1t9ucfm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_w0yi63_115_1umzv6f>
+<id_fqax8o_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_w0yi63_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1i6ijwu_115_1umzv6f>
+<id_1ex92tz_1m6_15kfx6p>	<extractionSource>	<GeoNames> .
+<id_1i6ijwu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_fkwd59_115_1umzv6f>
+<id_ib59zr_1m6_160hq59>	<extractionSource>	<GeoNames> .
+<id_fkwd59_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jp7bu1_115_1umzv6f>
+<id_1ex4h65_1m6_102co6q>	<extractionSource>	<GeoNames> .
+<id_jp7bu1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1neaspk_115_1umzv6f>
+<id_1ydrb9q_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1neaspk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_75ucfa_115_1umzv6f>
+<id_fyu0lh_1m6_fwnmnn>	<extractionSource>	<GeoNames> .
+<id_75ucfa_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_45erwi_115_1umzv6f>
+<id_bne4f9_1m6_fwnmnn>	<extractionSource>	<GeoNames> .
+<id_45erwi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_hssjnw_115_1umzv6f>
+<id_qlushj_1m6_8olj2d>	<extractionSource>	<GeoNames> .
+<id_hssjnw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_yaivvr_115_1umzv6f>
+<id_g113p4_1m6_lavx>	<extractionSource>	<GeoNames> .
+<id_yaivvr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_9ghnng_115_1umzv6f>
+<id_bhqwam_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_9ghnng_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1psbbwj_115_1umzv6f>
+<id_mailgg_1m6_5z9or1>	<extractionSource>	<GeoNames> .
+<id_1psbbwj_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_3yrxwp_115_1umzv6f>
+<id_1v28re4_1m6_lavx>	<extractionSource>	<GeoNames> .
+<id_3yrxwp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_121kfvy_115_1umzv6f>
+<id_17we924_1m6_clnlio>	<extractionSource>	<GeoNames> .
+<id_121kfvy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_y2ybqa_115_1umzv6f>
+<id_1u1ed1w_1m6_1pbvs4l>	<extractionSource>	<GeoNames> .
+<id_y2ybqa_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1buvv19_115_1umzv6f>
+<id_lxr4d0_1m6_lavx>	<extractionSource>	<GeoNames> .
+<id_1buvv19_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_z8opvq_115_1umzv6f>
+<id_51zqie_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_z8opvq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_110jr3w_115_1umzv6f>
+<id_1fy89fk_1m6_sv982n>	<extractionSource>	<GeoNames> .
+<id_110jr3w_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1lcldz0_115_1umzv6f>
+<id_3vn7gv_1m6_lavx>	<extractionSource>	<GeoNames> .
+<id_1lcldz0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ugs34m_115_1umzv6f>
+<id_1yp9uuz_1m6_lavx>	<extractionSource>	<GeoNames> .
+<id_1ugs34m_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_b6s356_115_1umzv6f>
+<id_1yh9wvd_1m6_c3gwyg>	<extractionSource>	<GeoNames> .
+<id_b6s356_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_10kqp5o_115_1umzv6f>
+<id_yr636e_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_10kqp5o_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_185wr9m_115_1umzv6f>
+<id_g110xf_1m6_15kfx6p>	<extractionSource>	<GeoNames> .
+<id_185wr9m_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_dzjof6_115_1umzv6f>
+<id_1exdrvs_1m6_rf3c3x>	<extractionSource>	<GeoNames> .
+<id_dzjof6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qbmy42_115_1umzv6f>
+<id_oqlvrc_1m6_11div1u>	<extractionSource>	<GeoNames> .
+<id_qbmy42_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1rgmi89_115_1umzv6f>
+<id_1jaqlk4_1m6_1695b59>	<extractionSource>	<GeoNames> .
+<id_1rgmi89_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jfq0k7_115_1umzv6f>
+<id_1ydtp3b_1m6_1swytck>	<extractionSource>	<GeoNames> .
+<id_jfq0k7_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1cylw1k_115_1umzv6f>
+<id_kntlip_1m6_5z9or1>	<extractionSource>	<GeoNames> .
+<id_1cylw1k_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ys8vbr_115_1umzv6f>
+<id_1c47m18_1m6_1im2wk1>	<extractionSource>	<GeoNames> .
+<id_ys8vbr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_195bq6o_115_1umzv6f>
+<id_1epbdb_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_195bq6o_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_17bshua_115_1umzv6f>
+<id_hmin91_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_17bshua_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_kbit1a_115_1umzv6f>
+<id_oi45lx_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_kbit1a_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1vr74f1_115_1umzv6f>
+<id_g5j6om_1m6_rif0xl>	<extractionSource>	<GeoNames> .
+<id_1vr74f1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_yteuyl_115_1umzv6f>
+<id_1ydts92_1m6_16kq5cj>	<extractionSource>	<GeoNames> .
+<id_yteuyl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_zfsmbx_115_1umzv6f>
+<id_lvm3m9_1m6_16kq5cj>	<extractionSource>	<GeoNames> .
+<id_zfsmbx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16011c4_115_1umzv6f>
+<id_1ez9oml_1m6_16kq5cj>	<extractionSource>	<GeoNames> .
+<id_16011c4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1j69h2v_115_1umzv6f>
+<id_1fbanyx_1m6_1fapl97>	<extractionSource>	<GeoNames> .
+<id_1j69h2v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_w4eb1x_115_1umzv6f>
+<id_led2m5_1m6_1fapl97>	<extractionSource>	<GeoNames> .
+<id_w4eb1x_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1u070wc_115_1umzv6f>
+<id_8d1wmy_1m6_1rttl36>	<extractionSource>	<GeoNames> .
+<id_1u070wc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_t2214_115_1umzv6f>
+<id_14t7m5b_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_t2214_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_d7je1i_115_1umzv6f>
+<id_6m38wy_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_d7je1i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mlvapl_115_1umzv6f>
+<id_chy8mg_1m6_115vewn>	<extractionSource>	<GeoNames> .
+<id_mlvapl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_14ob2zw_115_1umzv6f>
+<id_1ydg005_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_14ob2zw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_624een_115_1umzv6f>
+<id_10jvcl5_1m6_ugnmul>	<extractionSource>	<GeoNames> .
+<id_624een_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ycwlj6_115_1umzv6f>
+<id_1vo244v_1m6_ugnmul>	<extractionSource>	<GeoNames> .
+<id_1ycwlj6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1li0708_115_1umzv6f>
+<id_1i4iqq2_1m6_slxlgo>	<extractionSource>	<GeoNames> .
+<id_1li0708_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_15tika7_115_1umzv6f>
+<id_18ad0q5_1m6_678va3>	<extractionSource>	<GeoNames> .
+<id_15tika7_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hj3non_115_1umzv6f>
+<id_8dh5r7_1m6_91gngm>	<extractionSource>	<GeoNames> .
+<id_1hj3non_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7lytxo_115_1umzv6f>
+<id_1jvvf74_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_7lytxo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_gdjg8y_115_1umzv6f>
+<id_1k4900b_1m6_1idml62>	<extractionSource>	<GeoNames> .
+<id_gdjg8y_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1rvhp9q_115_1umzv6f>
+<id_11o62ws_1m6_1tfijl7>	<extractionSource>	<GeoNames> .
+<id_1rvhp9q_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1kcw2y2_115_1umzv6f>
+<id_1eofyn2_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1kcw2y2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_180tdt7_115_1umzv6f>
+<id_8qk1fg_1m6_1sp4ed0>	<extractionSource>	<GeoNames> .
+<id_180tdt7_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_epw4l_115_1umzv6f>
+<id_3qdtgh_1m6_2wv4d5>	<extractionSource>	<GeoNames> .
+<id_epw4l_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_v66dca_115_1umzv6f>
+<id_1epzlaa_1m6_o1r0br>	<extractionSource>	<GeoNames> .
+<id_v66dca_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_oshhi8_115_1umzv6f>
+<id_1afhr0_1m6_o1r0br>	<extractionSource>	<GeoNames> .
+<id_oshhi8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_d8irte_115_1umzv6f>
+<id_4tpn3t_1m6_mln7zc>	<extractionSource>	<GeoNames> .
+<id_d8irte_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_u73esg_115_1umzv6f>
+<id_1a8lw2u_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_u73esg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_89u4pl_115_1umzv6f>
+<id_l6lufh_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_89u4pl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ftsteg_115_1umzv6f>
+<id_1o3f197_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_ftsteg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_bwjk57_115_1umzv6f>
+<id_1thjfti_1m6_1hie3hu>	<extractionSource>	<GeoNames> .
+<id_bwjk57_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jaw7rx_115_1umzv6f>
+<id_1qniuhn_1m6_1s79we7>	<extractionSource>	<GeoNames> .
+<id_jaw7rx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1xhzgny_115_1umzv6f>
+<id_feilvv_1m6_ll6qpu>	<extractionSource>	<GeoNames> .
+<id_1xhzgny_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16qsn1v_115_1umzv6f>
+<id_jwgq04_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_16qsn1v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_w5bcnf_115_1umzv6f>
+<id_1d11i9n_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_w5bcnf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_xk05k3_115_1umzv6f>
+<id_bsq72y_1m6_5z715w>	<extractionSource>	<GeoNames> .
+<id_xk05k3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1yx2qt0_115_1umzv6f>
+<id_1eusx1v_1m6_1idob4f>	<extractionSource>	<GeoNames> .
+<id_1yx2qt0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1sg5z7n_115_1umzv6f>
+<id_1te44ps_1m6_1lt01k7>	<extractionSource>	<GeoNames> .
+<id_1sg5z7n_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_sy3wp8_115_1umzv6f>
+<id_smq4l7_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_sy3wp8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_p0vybl_115_1umzv6f>
+<id_1ydp8iq_1m6_91gngm>	<extractionSource>	<GeoNames> .
+<id_p0vybl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1yz1hr6_115_1umzv6f>
+<id_1ydpiwp_1m6_sts758>	<extractionSource>	<GeoNames> .
+<id_1yz1hr6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_8ujtjd_115_1umzv6f>
+<id_1tvclfd_1m6_mazl1f>	<extractionSource>	<GeoNames> .
+<id_8ujtjd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_wgchbe_115_1umzv6f>
+<id_o8lfpw_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_wgchbe_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_o79n71_115_1umzv6f>
+<id_1cxre4k_1m6_1uzaj1w>	<extractionSource>	<GeoNames> .
+<id_o79n71_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1wunid8_115_1umzv6f>
+<id_1teep5g_1m6_1uzaj1w>	<extractionSource>	<GeoNames> .
+<id_1wunid8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_cksqu6_115_1umzv6f>
+<id_1twdp8y_1m6_1uzaj1w>	<extractionSource>	<GeoNames> .
+<id_cksqu6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1rqiftr_115_1umzv6f>
+<id_wjgktw_1m6_1uzaj1w>	<extractionSource>	<GeoNames> .
+<id_1rqiftr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_p66chp_115_1umzv6f>
+<id_1bcmxlo_1m6_1uzaj1w>	<extractionSource>	<GeoNames> .
+<id_p66chp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_wicn2u_115_1umzv6f>
+<id_69hcpc_1m6_1uzaj1w>	<extractionSource>	<GeoNames> .
+<id_wicn2u_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_84r9wo_115_1umzv6f>
+<id_14kdcgk_1m6_1uzaj1w>	<extractionSource>	<GeoNames> .
+<id_84r9wo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1lu5jsy_115_1umzv6f>
+<id_8t0ce3_1m6_1uzaj1w>	<extractionSource>	<GeoNames> .
+<id_1lu5jsy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_sfxc0v_115_1umzv6f>
+<id_fbjmuk_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_sfxc0v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19hc7r3_115_1umzv6f>
+<id_1h8zojq_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_19hc7r3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ywjpcn_115_1umzv6f>
+<id_1c8foz0_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1ywjpcn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_v7sfak_115_1umzv6f>
+<id_sys0wc_1m6_1wihosf>	<extractionSource>	<GeoNames> .
+<id_v7sfak_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_y6wyyi_115_1umzv6f>
+<id_1drl9b2_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_y6wyyi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_18n9z41_115_1umzv6f>
+<id_17uc7of_1m6_ajj6u3>	<extractionSource>	<GeoNames> .
+<id_18n9z41_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1dyz20l_115_1umzv6f>
+<id_133iaia_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_1dyz20l_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1by0z21_115_1umzv6f>
+<id_18k8f4e_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1by0z21_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_10vyrrf_115_1umzv6f>
+<id_gr2d3e_1m6_x5qn0p>	<extractionSource>	<GeoNames> .
+<id_10vyrrf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1sm09qv_115_1umzv6f>
+<id_mjf898_1m6_f4ap1y>	<extractionSource>	<GeoNames> .
+<id_1sm09qv_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1pal59c_115_1umzv6f>
+<id_1tzkq54_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1pal59c_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_198p0y7_115_1umzv6f>
+<id_v957nn_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_198p0y7_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1v35fpl_115_1umzv6f>
+<id_nr5j7i_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1v35fpl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1knf390_115_1umzv6f>
+<id_av6wnw_1m6_s3mkuj>	<extractionSource>	<GeoNames> .
+<id_1knf390_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_wexp64_115_1umzv6f>
+<id_2p1nh7_1m6_lex2qt>	<extractionSource>	<GeoNames> .
+<id_wexp64_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_66zrkz_115_1umzv6f>
+<id_5f9xab_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_66zrkz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1kem322_115_1umzv6f>
+<id_1q5rohs_1m6_1s79we7>	<extractionSource>	<GeoNames> .
+<id_1kem322_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19ru053_115_1umzv6f>
+<id_qrpysf_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_19ru053_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_9hyyl4_115_1umzv6f>
+<id_ef15mu_1m6_1g9zoqd>	<extractionSource>	<GeoNames> .
+<id_9hyyl4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1aemmn7_115_1umzv6f>
+<id_m38w6h_1m6_x5qn0p>	<extractionSource>	<GeoNames> .
+<id_1aemmn7_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_sx6vbq_115_1umzv6f>
+<id_1j1hpr8_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_sx6vbq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_j83hhf_115_1umzv6f>
+<id_1srtlgs_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_j83hhf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1gpo8je_115_1umzv6f>
+<id_1qsao3b_1m6_1pkybv3>	<extractionSource>	<GeoNames> .
+<id_1gpo8je_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_10agdgi_115_1umzv6f>
+<id_wqm8gu_1m6_xws99i>	<extractionSource>	<GeoNames> .
+<id_10agdgi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1q0tyf4_115_1umzv6f>
+<id_3r35oc_1m6_xws99i>	<extractionSource>	<GeoNames> .
+<id_1q0tyf4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1cbhri0_115_1umzv6f>
+<id_rbjopz_1m6_qy8er4>	<extractionSource>	<GeoNames> .
+<id_1cbhri0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_9zjtoy_115_1umzv6f>
+<id_uyx3lt_1m6_17j8zuz>	<extractionSource>	<GeoNames> .
+<id_9zjtoy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_83nhy0_115_1umzv6f>
+<id_ob4gva_1m6_1ob9wdi>	<extractionSource>	<GeoNames> .
+<id_83nhy0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jja1b0_115_1umzv6f>
+<id_1ydqsgo_1m6_yoyith>	<extractionSource>	<GeoNames> .
+<id_jja1b0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_pnwre_115_1umzv6f>
+<id_1bmfef3_1m6_yoyith>	<extractionSource>	<GeoNames> .
+<id_pnwre_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1icyc2q_115_1umzv6f>
+<id_u0wzuo_1m6_5z9or1>	<extractionSource>	<GeoNames> .
+<id_1icyc2q_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ugxik1_115_1umzv6f>
+<id_ll98nv_1m6_1vyqm0j>	<extractionSource>	<GeoNames> .
+<id_ugxik1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ehny5d_115_1umzv6f>
+<id_1tlwxsr_1m6_1im2wk1>	<extractionSource>	<GeoNames> .
+<id_1ehny5d_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_104jxb2_115_1umzv6f>
+<id_b8po09_1m6_1im2wk1>	<extractionSource>	<GeoNames> .
+<id_104jxb2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1u6few_115_1umzv6f>
+<id_x454iy_1m6_16vx1bu>	<extractionSource>	<GeoNames> .
+<id_1u6few_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_g8sz21_115_1umzv6f>
+<id_1xcefjp_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_g8sz21_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ca6mnf_115_1umzv6f>
+<id_1c5jia0_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_ca6mnf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ei6ja7_115_1umzv6f>
+<id_1886zan_1m6_c2qb4m>	<extractionSource>	<GeoNames> .
+<id_1ei6ja7_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_12fcjbm_115_1umzv6f>
+<id_g113sr_1m6_art6i3>	<extractionSource>	<GeoNames> .
+<id_12fcjbm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7v9apo_115_1umzv6f>
+<id_1gpegko_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_7v9apo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_27sv6o_115_1umzv6f>
+<id_gik5i8_1m6_1695b59>	<extractionSource>	<GeoNames> .
+<id_27sv6o_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_dtiuqi_115_1umzv6f>
+<id_1ks9706_1m6_1695b59>	<extractionSource>	<GeoNames> .
+<id_dtiuqi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_17rh47g_115_1umzv6f>
+<id_oooy5r_1m6_1695b59>	<extractionSource>	<GeoNames> .
+<id_17rh47g_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_s0fsme_115_1umzv6f>
+<id_o6ovml_1m6_10w8of0>	<extractionSource>	<GeoNames> .
+<id_s0fsme_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1fhynhv_115_1umzv6f>
+<id_erkcyb_1m6_1695b59>	<extractionSource>	<GeoNames> .
+<id_1fhynhv_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_j9zo4b_115_1umzv6f>
+<id_1exudfy_1m6_1o36kdw>	<extractionSource>	<GeoNames> .
+<id_j9zo4b_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_zqgpu6_115_1umzv6f>
+<id_lhiplo_1m6_jtr0am>	<extractionSource>	<GeoNames> .
+<id_zqgpu6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qvcdhf_115_1umzv6f>
+<id_1gmgrkb_1m6_jtr0am>	<extractionSource>	<GeoNames> .
+<id_qvcdhf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_l82wj2_115_1umzv6f>
+<id_edx5lv_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_l82wj2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_b5mjp2_115_1umzv6f>
+<id_jv7i3s_1m6_7x3c25>	<extractionSource>	<GeoNames> .
+<id_b5mjp2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19m42se_115_1umzv6f>
+<id_i29wkz_1m6_c26lcr>	<extractionSource>	<GeoNames> .
+<id_19m42se_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_yqavnm_115_1umzv6f>
+<id_ee6dsj_1m6_cp4w1h>	<extractionSource>	<GeoNames> .
+<id_yqavnm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1vvwurk_115_1umzv6f>
+<id_1k3gt4j_1m6_7x3c25>	<extractionSource>	<GeoNames> .
+<id_1vvwurk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_773xsu_115_1umzv6f>
+<id_1dneqzo_1m6_1fx450v>	<extractionSource>	<GeoNames> .
+<id_773xsu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ciiakd_115_1umzv6f>
+<id_1bmfxeu_1m6_1kqv7tc>	<extractionSource>	<GeoNames> .
+<id_1ciiakd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_f31lcx_115_1umzv6f>
+<id_1ydfzym_1m6_ljb0xi>	<extractionSource>	<GeoNames> .
+<id_f31lcx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1mvvsmu_115_1umzv6f>
+<id_rvht5r_1m6_uy3m0u>	<extractionSource>	<GeoNames> .
+<id_1mvvsmu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_v3e128_115_1umzv6f>
+<id_7hsql1_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_v3e128_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1nosynk_115_1umzv6f>
+<id_zmfwqb_1m6_16edmtf>	<extractionSource>	<GeoNames> .
+<id_1nosynk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_q3vnxw_115_1umzv6f>
+<id_hm60j6_1m6_8ekjsf>	<extractionSource>	<GeoNames> .
+<id_q3vnxw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1gradbn_115_1umzv6f>
+<id_1ydgalw_1m6_u2jzlk>	<extractionSource>	<GeoNames> .
+<id_1gradbn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_5s39ed_115_1umzv6f>
+<id_7qpq64_1m6_xrxw9n>	<extractionSource>	<GeoNames> .
+<id_5s39ed_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ns2tnb_115_1umzv6f>
+<id_7y06bl_1m6_13g4895>	<extractionSource>	<GeoNames> .
+<id_1ns2tnb_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1d754sh_115_1umzv6f>
+<id_1ewzzt5_1m6_13g4895>	<extractionSource>	<GeoNames> .
+<id_1d754sh_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_grsy4h_115_1umzv6f>
+<id_7k2a0c_1m6_1x95yav>	<extractionSource>	<GeoNames> .
+<id_grsy4h_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_875gdc_115_1umzv6f>
+<id_9ba7av_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_875gdc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_gbc40v_115_1umzv6f>
+<id_2h8535_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_gbc40v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19nhszu_115_1umzv6f>
+<id_1ayxbe8_1m6_15vmkkg>	<extractionSource>	<GeoNames> .
+<id_19nhszu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_w1o8e3_115_1umzv6f>
+<id_zrlyqq_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_w1o8e3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_3rwv07_115_1umzv6f>
+<id_1lwbb3m_1m6_kfil07>	<extractionSource>	<GeoNames> .
+<id_3rwv07_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_n4x51d_115_1umzv6f>
+<id_1ytoe5b_1m6_x9wfay>	<extractionSource>	<GeoNames> .
+<id_n4x51d_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_htxefw_115_1umzv6f>
+<id_kq8bnh_1m6_ojinio>	<extractionSource>	<GeoNames> .
+<id_htxefw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_4x4plp_115_1umzv6f>
+<id_c3mz89_1m6_d2dmu9>	<extractionSource>	<GeoNames> .
+<id_4x4plp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_4qxeh8_115_1umzv6f>
+<id_1eo76q7_1m6_qk6b5s>	<extractionSource>	<GeoNames> .
+<id_4qxeh8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16a2plt_115_1umzv6f>
+<id_1ydgxs5_1m6_x9wfay>	<extractionSource>	<GeoNames> .
+<id_16a2plt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1deddfe_115_1umzv6f>
+<id_1xbb8te_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1deddfe_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ypniva_115_1umzv6f>
+<id_89rswv_1m6_nq10o4>	<extractionSource>	<GeoNames> .
+<id_1ypniva_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1kh2jk2_115_1umzv6f>
+<id_1ydgxkp_1m6_dxh6is>	<extractionSource>	<GeoNames> .
+<id_1kh2jk2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ejjvxz_115_1umzv6f>
+<id_1j8l42h_1m6_dxh6is>	<extractionSource>	<GeoNames> .
+<id_1ejjvxz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_33kt2g_115_1umzv6f>
+<id_5bn9ns_1m6_bm4wkb>	<extractionSource>	<GeoNames> .
+<id_33kt2g_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_8qb5h_115_1umzv6f>
+<id_jwhnko_1m6_dxh6is>	<extractionSource>	<GeoNames> .
+<id_8qb5h_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1a91t5w_115_1umzv6f>
+<id_1ta5npi_1m6_dxh6is>	<extractionSource>	<GeoNames> .
+<id_1a91t5w_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1wgwylg_115_1umzv6f>
+<id_lv98xw_1m6_dxh6is>	<extractionSource>	<GeoNames> .
+<id_1wgwylg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1fcpf96_115_1umzv6f>
+<id_17f9feb_1m6_dxhthd>	<extractionSource>	<GeoNames> .
+<id_1fcpf96_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1umuc07_115_1umzv6f>
+<id_gfafsa_1m6_1wagh5n>	<extractionSource>	<GeoNames> .
+<id_1umuc07_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1jofgs4_115_1umzv6f>
+<id_14scoye_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1jofgs4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jomlsi_115_1umzv6f>
+<id_8dkg27_1m6_5bmobr>	<extractionSource>	<GeoNames> .
+<id_jomlsi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_g87nni_115_1umzv6f>
+<id_85vsdp_1m6_1xuyh4o>	<extractionSource>	<GeoNames> .
+<id_g87nni_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_14y0rre_115_1umzv6f>
+<id_85w0hc_1m6_paa1mg>	<extractionSource>	<GeoNames> .
+<id_14y0rre_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1urmu13_115_1umzv6f>
+<id_1nhlxl7_1m6_1a52uin>	<extractionSource>	<GeoNames> .
+<id_1urmu13_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_11cylpa_115_1umzv6f>
+<id_1us5vjh_1m6_1d9fpo7>	<extractionSource>	<GeoNames> .
+<id_11cylpa_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1tlp6lf_115_1umzv6f>
+<id_l6w86p_1m6_1dof22h>	<extractionSource>	<GeoNames> .
+<id_1tlp6lf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1q9snrj_115_1umzv6f>
+<id_f0x5gj_1m6_1aqu11y>	<extractionSource>	<GeoNames> .
+<id_1q9snrj_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ivqnmy_115_1umzv6f>
+<id_19l8ird_1m6_1sp4ed0>	<extractionSource>	<GeoNames> .
+<id_1ivqnmy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ktdh2m_115_1umzv6f>
+<id_1hi1cmz_1m6_12h21qp>	<extractionSource>	<GeoNames> .
+<id_ktdh2m_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_hvppjp_115_1umzv6f>
+<id_1oezpsh_1m6_1sp4ed0>	<extractionSource>	<GeoNames> .
+<id_hvppjp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ee4ha8_115_1umzv6f>
+<id_1jdcmjq_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_ee4ha8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_nul3qd_115_1umzv6f>
+<id_1aj54n3_1m6_1esjcsj>	<extractionSource>	<GeoNames> .
+<id_nul3qd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_vqbkl2_115_1umzv6f>
+<id_ib4ys8_1m6_fd6qyy>	<extractionSource>	<GeoNames> .
+<id_vqbkl2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_2zq0o2_115_1umzv6f>
+<id_1u79tzk_1m6_fd6qyy>	<extractionSource>	<GeoNames> .
+<id_2zq0o2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_hujivk_115_1umzv6f>
+<id_czzcl5_1m6_fd6qyy>	<extractionSource>	<GeoNames> .
+<id_hujivk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_l7yxzx_115_1umzv6f>
+<id_1eoqzbv_1m6_kj84se>	<extractionSource>	<GeoNames> .
+<id_l7yxzx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_11g3y3u_115_1umzv6f>
+<id_sjp48v_1m6_1o6lc4v>	<extractionSource>	<GeoNames> .
+<id_11g3y3u_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_gamtsk_115_1umzv6f>
+<id_19blap1_1m6_1ad8gkt>	<extractionSource>	<GeoNames> .
+<id_gamtsk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_r0qw8g_115_1umzv6f>
+<id_1ydhqfr_1m6_fd6qyy>	<extractionSource>	<GeoNames> .
+<id_r0qw8g_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ct2d0i_115_1umzv6f>
+<id_sqxdk3_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1ct2d0i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1p0d7tc_115_1umzv6f>
+<id_9dvt1g_1m6_tyxryi>	<extractionSource>	<GeoNames> .
+<id_1p0d7tc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_4v4nrg_115_1umzv6f>
+<id_1j763nw_1m6_1fv42du>	<extractionSource>	<GeoNames> .
+<id_4v4nrg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_p9kulh_115_1umzv6f>
+<id_181e3ty_1m6_1fv42du>	<extractionSource>	<GeoNames> .
+<id_p9kulh_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_10rmrp3_115_1umzv6f>
+<id_kwo2ia_1m6_1fv42du>	<extractionSource>	<GeoNames> .
+<id_10rmrp3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1xeq6rt_115_1umzv6f>
+<id_gukjxd_1m6_1fv42du>	<extractionSource>	<GeoNames> .
+<id_1xeq6rt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1d2biwu_115_1umzv6f>
+<id_19yit8r_1m6_1fv42du>	<extractionSource>	<GeoNames> .
+<id_1d2biwu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_c9uuh8_115_1umzv6f>
+<id_1ntfohl_1m6_1fv42du>	<extractionSource>	<GeoNames> .
+<id_c9uuh8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1u7tmc4_115_1umzv6f>
+<id_12vylpt_1m6_1fv42du>	<extractionSource>	<GeoNames> .
+<id_1u7tmc4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1fm5hnn_115_1umzv6f>
+<id_s40siq_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_1fm5hnn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1nzaaao_115_1umzv6f>
+<id_13i6nmj_1m6_jtr0am>	<extractionSource>	<GeoNames> .
+<id_1nzaaao_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_10gqa2x_115_1umzv6f>
+<id_jmxcy9_1m6_cglrg4>	<extractionSource>	<GeoNames> .
+<id_10gqa2x_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_126jnh6_115_1umzv6f>
+<id_1ydiuni_1m6_tg76tw>	<extractionSource>	<GeoNames> .
+<id_126jnh6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_sic4jb_115_1umzv6f>
+<id_lvb60p_1m6_tg76tw>	<extractionSource>	<GeoNames> .
+<id_sic4jb_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mxwk5u_115_1umzv6f>
+<id_1epur2d_1m6_tg76tw>	<extractionSource>	<GeoNames> .
+<id_mxwk5u_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_lxqmxv_115_1umzv6f>
+<id_q7n97d_1m6_1v977uf>	<extractionSource>	<GeoNames> .
+<id_lxqmxv_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1avzjck_115_1umzv6f>
+<id_1ydj51f_1m6_1m1oi4e>	<extractionSource>	<GeoNames> .
+<id_1avzjck_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_17h9vqf_115_1umzv6f>
+<id_1epxb4y_1m6_1t7qwf0>	<extractionSource>	<GeoNames> .
+<id_17h9vqf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1vdkrus_115_1umzv6f>
+<id_1ydjhoj_1m6_1ehkm8y>	<extractionSource>	<GeoNames> .
+<id_1vdkrus_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_14h9ob3_115_1umzv6f>
+<id_a21j1p_1m6_kehf00>	<extractionSource>	<GeoNames> .
+<id_14h9ob3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_18d1d4_115_1umzv6f>
+<id_jjurnl_1m6_1a52uin>	<extractionSource>	<GeoNames> .
+<id_18d1d4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1o6o6zh_115_1umzv6f>
+<id_199eqpk_1m6_1j9236b>	<extractionSource>	<GeoNames> .
+<id_1o6o6zh_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1gluxz3_115_1umzv6f>
+<id_1eqp219_1m6_s367pm>	<extractionSource>	<GeoNames> .
+<id_1gluxz3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_tb13hv_115_1umzv6f>
+<id_ajb150_1m6_1i8wd2e>	<extractionSource>	<GeoNames> .
+<id_tb13hv_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qa02yk_115_1umzv6f>
+<id_jmo9u9_1m6_1g9zoqd>	<extractionSource>	<GeoNames> .
+<id_qa02yk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1libfxo_115_1umzv6f>
+<id_1er7cfc_1m6_1a52uin>	<extractionSource>	<GeoNames> .
+<id_1libfxo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1mt5m4i_115_1umzv6f>
+<id_iflosf_1m6_1a88z38>	<extractionSource>	<GeoNames> .
+<id_1mt5m4i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_p92sc4_115_1umzv6f>
+<id_q7265u_1m6_it9o63>	<extractionSource>	<GeoNames> .
+<id_p92sc4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1l2x13o_115_1umzv6f>
+<id_8br8m8_1m6_1dgt7bd>	<extractionSource>	<GeoNames> .
+<id_1l2x13o_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_nulh9e_115_1umzv6f>
+<id_6t8zq0_1m6_dmc0y>	<extractionSource>	<GeoNames> .
+<id_nulh9e_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_8bucuq_115_1umzv6f>
+<id_1xjpke1_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_8bucuq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_fbiwps_115_1umzv6f>
+<id_afe1ic_1m6_1kp8m8b>	<extractionSource>	<GeoNames> .
+<id_fbiwps_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ju39xs_115_1umzv6f>
+<id_1er7bcs_1m6_q63s8t>	<extractionSource>	<GeoNames> .
+<id_ju39xs_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_14wgd6j_115_1umzv6f>
+<id_ib528f_1m6_ggtml2>	<extractionSource>	<GeoNames> .
+<id_14wgd6j_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_17a8doy_115_1umzv6f>
+<id_1ydkjic_1m6_ggtml2>	<extractionSource>	<GeoNames> .
+<id_17a8doy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_161nwoy_115_1umzv6f>
+<id_108p0hg_1m6_dwlk5u>	<extractionSource>	<GeoNames> .
+<id_161nwoy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1tbio02_115_1umzv6f>
+<id_uf7aax_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1tbio02_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_yobdm9_115_1umzv6f>
+<id_1es4j1i_1m6_15vmkkg>	<extractionSource>	<GeoNames> .
+<id_yobdm9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_77sa0k_115_1umzv6f>
+<id_txjgdb_1m6_128gbkn>	<extractionSource>	<GeoNames> .
+<id_77sa0k_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ajraxf_115_1umzv6f>
+<id_1teahhp_1m6_nrzwxs>	<extractionSource>	<GeoNames> .
+<id_ajraxf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1q4h2v4_115_1umzv6f>
+<id_xjjoeb_1m6_1pcnurs>	<extractionSource>	<GeoNames> .
+<id_1q4h2v4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_15i2syn_115_1umzv6f>
+<id_4h8dba_1m6_1wt7go1>	<extractionSource>	<GeoNames> .
+<id_15i2syn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_s4wnt9_115_1umzv6f>
+<id_1ydmylf_1m6_bb4oi5>	<extractionSource>	<GeoNames> .
+<id_s4wnt9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1opkwam_115_1umzv6f>
+<id_lqp3ya_1m6_xrxw9n>	<extractionSource>	<GeoNames> .
+<id_1opkwam_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ups7dx_115_1umzv6f>
+<id_1ydnbf0_1m6_69441e>	<extractionSource>	<GeoNames> .
+<id_1ups7dx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1cwp0mn_115_1umzv6f>
+<id_cwbdbq_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1cwp0mn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_bkuc8f_115_1umzv6f>
+<id_cqietu_1m6_4fak6t>	<extractionSource>	<GeoNames> .
+<id_bkuc8f_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1lq61j9_115_1umzv6f>
+<id_x4y7ci_1m6_19kn4z6>	<extractionSource>	<GeoNames> .
+<id_1lq61j9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1b4tgoa_115_1umzv6f>
+<id_13wdbbq_1m6_ebl4ih>	<extractionSource>	<GeoNames> .
+<id_1b4tgoa_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_b513oe_115_1umzv6f>
+<id_wwmm38_1m6_fs9j2w>	<extractionSource>	<GeoNames> .
+<id_b513oe_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_o4qxfj_115_1umzv6f>
+<id_1eevy99_1m6_md6u1f>	<extractionSource>	<GeoNames> .
+<id_o4qxfj_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_9dmlj6_115_1umzv6f>
+<id_s2hf80_1m6_1j9236b>	<extractionSource>	<GeoNames> .
+<id_9dmlj6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_q0ok6s_115_1umzv6f>
+<id_pwxayx_1m6_fs9j2w>	<extractionSource>	<GeoNames> .
+<id_q0ok6s_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ng0qyq_115_1umzv6f>
+<id_pd0s9z_1m6_4fak6t>	<extractionSource>	<GeoNames> .
+<id_ng0qyq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_163309v_115_1umzv6f>
+<id_h6jlcl_1m6_u6a5gn>	<extractionSource>	<GeoNames> .
+<id_163309v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1wysobt_115_1umzv6f>
+<id_cwbelw_1m6_1i1wahl>	<extractionSource>	<GeoNames> .
+<id_1wysobt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_erew1w_115_1umzv6f>
+<id_1ydnhck_1m6_4fak6t>	<extractionSource>	<GeoNames> .
+<id_erew1w_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_cepw9y_115_1umzv6f>
+<id_dum1vz_1m6_1j9236b>	<extractionSource>	<GeoNames> .
+<id_cepw9y_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_zjt3mm_115_1umzv6f>
+<id_1nwq8qt_1m6_4fak6t>	<extractionSource>	<GeoNames> .
+<id_zjt3mm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1u2dja2_115_1umzv6f>
+<id_xoak1p_1m6_4fak6t>	<extractionSource>	<GeoNames> .
+<id_1u2dja2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1dkkers_115_1umzv6f>
+<id_lc6jkr_1m6_4fak6t>	<extractionSource>	<GeoNames> .
+<id_1dkkers_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_115d32d_115_1umzv6f>
+<id_1psba4t_1m6_1ex6dnv>	<extractionSource>	<GeoNames> .
+<id_115d32d_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1pbz6x4_115_1umzv6f>
+<id_crpzto_1m6_6m3giz>	<extractionSource>	<GeoNames> .
+<id_1pbz6x4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_hmgkka_115_1umzv6f>
+<id_1lhnnp8_1m6_1sg91yi>	<extractionSource>	<GeoNames> .
+<id_hmgkka_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hdbl34_115_1umzv6f>
+<id_1ydnhe3_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_1hdbl34_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1fl0sgw_115_1umzv6f>
+<id_n2x2ze_1m6_1egllim>	<extractionSource>	<GeoNames> .
+<id_1fl0sgw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1vgwjyt_115_1umzv6f>
+<id_1k0h2tf_1m6_9fzloo>	<extractionSource>	<GeoNames> .
+<id_1vgwjyt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_6fcuan_115_1umzv6f>
+<id_2xi5xc_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_6fcuan_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ca3s70_115_1umzv6f>
+<id_sjvsch_1m6_wz4gv5>	<extractionSource>	<GeoNames> .
+<id_ca3s70_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1lcowf1_115_1umzv6f>
+<id_r4u9pi_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_1lcowf1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1xpepee_115_1umzv6f>
+<id_ri3h82_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_1xpepee_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_98si6m_115_1umzv6f>
+<id_pyjjnj_1m6_1h7jlu>	<extractionSource>	<GeoNames> .
+<id_98si6m_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_kjatcz_115_1umzv6f>
+<id_1drsqp0_1m6_1wjqkcs>	<extractionSource>	<GeoNames> .
+<id_kjatcz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_h26ii6_115_1umzv6f>
+<id_xtlvow_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_h26ii6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1smjm5w_115_1umzv6f>
+<id_1r7rlr2_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_1smjm5w_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1vfxpag_115_1umzv6f>
+<id_9rqbm7_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_1vfxpag_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16s6h1y_115_1umzv6f>
+<id_lvfsra_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_16s6h1y_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ln50on_115_1umzv6f>
+<id_f372s4_1m6_1i2nl5k>	<extractionSource>	<GeoNames> .
+<id_1ln50on_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1597l09_115_1umzv6f>
+<id_1wabpo1_1m6_l7gtcg>	<extractionSource>	<GeoNames> .
+<id_1597l09_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_6cfxqt_115_1umzv6f>
+<id_1ydnlsj_1m6_15vmkkg>	<extractionSource>	<GeoNames> .
+<id_6cfxqt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_m8hxja_115_1umzv6f>
+<id_d41aq0_1m6_1ha7tbb>	<extractionSource>	<GeoNames> .
+<id_m8hxja_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1efpd9h_115_1umzv6f>
+<id_1chb9jo_1m6_17gh7mx>	<extractionSource>	<GeoNames> .
+<id_1efpd9h_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1qn6wk5_115_1umzv6f>
+<id_1p3tmzt_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1qn6wk5_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_xbj1yy_115_1umzv6f>
+<id_e191dq_1m6_1nn48e9>	<extractionSource>	<GeoNames> .
+<id_xbj1yy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_12556fe_115_1umzv6f>
+<id_1l4hnrq_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_12556fe_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_131g5pa_115_1umzv6f>
+<id_d7bte2_1m6_npeynh>	<extractionSource>	<GeoNames> .
+<id_131g5pa_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mo26i1_115_1umzv6f>
+<id_ybwwcx_1m6_ojxwe2>	<extractionSource>	<GeoNames> .
+<id_mo26i1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7wkeb3_115_1umzv6f>
+<id_1wtp50s_1m6_5bszyb>	<extractionSource>	<GeoNames> .
+<id_7wkeb3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1y3n1ba_115_1umzv6f>
+<id_d0tyyt_1m6_1qerivt>	<extractionSource>	<GeoNames> .
+<id_1y3n1ba_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1yk4uui_115_1umzv6f>
+<id_1wfu10i_1m6_aa0j85>	<extractionSource>	<GeoNames> .
+<id_1yk4uui_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1w2wwq0_115_1umzv6f>
+<id_1dv60ke_1m6_aa0j85>	<extractionSource>	<GeoNames> .
+<id_1w2wwq0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1r6njby_115_1umzv6f>
+<id_yjxb58_1m6_1im2wk1>	<extractionSource>	<GeoNames> .
+<id_1r6njby_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_126rlcb_115_1umzv6f>
+<id_uhnrfi_1m6_16kq5cj>	<extractionSource>	<GeoNames> .
+<id_126rlcb_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mgi168_115_1umzv6f>
+<id_lkzni1_1m6_2onvek>	<extractionSource>	<GeoNames> .
+<id_mgi168_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1xjwye8_115_1umzv6f>
+<id_18yy22b_1m6_xkdbhj>	<extractionSource>	<GeoNames> .
+<id_1xjwye8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1i528mp_115_1umzv6f>
+<id_1taiidv_1m6_o9nw28>	<extractionSource>	<GeoNames> .
+<id_1i528mp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1uapfbl_115_1umzv6f>
+<id_1mlpxrw_1m6_1gy5yxm>	<extractionSource>	<GeoNames> .
+<id_1uapfbl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_aq7oh4_115_1umzv6f>
+<id_ebc8e8_1m6_1p82crk>	<extractionSource>	<GeoNames> .
+<id_aq7oh4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_hhebc5_115_1umzv6f>
+<id_eb9bv2_1m6_e1gjay>	<extractionSource>	<GeoNames> .
+<id_hhebc5_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_w6ztkz_115_1umzv6f>
+<id_1ydpe5a_1m6_hno9ai>	<extractionSource>	<GeoNames> .
+<id_w6ztkz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ymoyfw_115_1umzv6f>
+<id_11ypnte_1m6_ulnkp>	<extractionSource>	<GeoNames> .
+<id_ymoyfw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_lns496_115_1umzv6f>
+<id_dvro96_1m6_c2lpn1>	<extractionSource>	<GeoNames> .
+<id_lns496_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1v3tgp0_115_1umzv6f>
+<id_gb0dzj_1m6_knda69>	<extractionSource>	<GeoNames> .
+<id_1v3tgp0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_11ps1z3_115_1umzv6f>
+<id_4mrphf_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_11ps1z3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1rctkfr_115_1umzv6f>
+<id_lq9ktl_1m6_1xgn2n2>	<extractionSource>	<GeoNames> .
+<id_1rctkfr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_h8vvs8_115_1umzv6f>
+<id_h8uvni_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_h8vvs8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jdfwqz_115_1umzv6f>
+<id_a5nr7s_1m6_1ehkm8y>	<extractionSource>	<GeoNames> .
+<id_jdfwqz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1jkn3yp_115_1umzv6f>
+<id_n0e04_1m6_2m1h0n>	<extractionSource>	<GeoNames> .
+<id_1jkn3yp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1byjzhm_115_1umzv6f>
+<id_ekn75v_1m6_1domiln>	<extractionSource>	<GeoNames> .
+<id_1byjzhm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_40fjg6_115_1umzv6f>
+<id_2tjck4_1m6_x1ak2i>	<extractionSource>	<GeoNames> .
+<id_40fjg6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_26kyym_115_1umzv6f>
+<id_1voio5q_1m6_1domiln>	<extractionSource>	<GeoNames> .
+<id_26kyym_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1053cwr_115_1umzv6f>
+<id_1xe9j0i_1m6_1g5xqwz>	<extractionSource>	<GeoNames> .
+<id_1053cwr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_beozoa_115_1umzv6f>
+<id_16occsw_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_beozoa_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_c6onq9_115_1umzv6f>
+<id_7rn9zv_1m6_uy3m0u>	<extractionSource>	<GeoNames> .
+<id_c6onq9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mp2q7g_115_1umzv6f>
+<id_k94jdh_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_mp2q7g_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_vfc07x_115_1umzv6f>
+<id_1hupsmz_1m6_uy3m0u>	<extractionSource>	<GeoNames> .
+<id_vfc07x_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1cqgdxm_115_1umzv6f>
+<id_t18t08_1m6_1w6m6d4>	<extractionSource>	<GeoNames> .
+<id_1cqgdxm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1urrok1_115_1umzv6f>
+<id_1bp8bkr_1m6_1w6m6d4>	<extractionSource>	<GeoNames> .
+<id_1urrok1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_dch449_115_1umzv6f>
+<id_1ydq9xw_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_dch449_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_5dtth8_115_1umzv6f>
+<id_193rj4_1m6_1rdj8x2>	<extractionSource>	<GeoNames> .
+<id_5dtth8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_e59pl0_115_1umzv6f>
+<id_btemqq_1m6_15xnd55>	<extractionSource>	<GeoNames> .
+<id_e59pl0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mdk43f_115_1umzv6f>
+<id_1uru27p_1m6_1ui7gg1>	<extractionSource>	<GeoNames> .
+<id_mdk43f_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_6ki5tr_115_1umzv6f>
+<id_dpq3pw_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_6ki5tr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1961c3p_115_1umzv6f>
+<id_1hm3zwb_1m6_dbst4z>	<extractionSource>	<GeoNames> .
+<id_1961c3p_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16hx7nl_115_1umzv6f>
+<id_1ffv6f7_1m6_1kqv7tc>	<extractionSource>	<GeoNames> .
+<id_16hx7nl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_pyh0nk_115_1umzv6f>
+<id_1cyj7f3_1m6_1r3n3kk>	<extractionSource>	<GeoNames> .
+<id_pyh0nk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_43t5jm_115_1umzv6f>
+<id_1ewg6z0_1m6_1fdefdf>	<extractionSource>	<GeoNames> .
+<id_43t5jm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_9a1uht_115_1umzv6f>
+<id_niv8qx_1m6_q49c1i>	<extractionSource>	<GeoNames> .
+<id_9a1uht_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1r4muvu_115_1umzv6f>
+<id_nix93x_1m6_figu8b>	<extractionSource>	<GeoNames> .
+<id_1r4muvu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_106oydl_115_1umzv6f>
+<id_fbrf7t_1m6_veeae0>	<extractionSource>	<GeoNames> .
+<id_106oydl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1k7xy3y_115_1umzv6f>
+<id_o3tden_1m6_1tend92>	<extractionSource>	<GeoNames> .
+<id_1k7xy3y_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1prl1o_115_1umzv6f>
+<id_1ejou22_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_1prl1o_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_6twdnc_115_1umzv6f>
+<id_1883jef_1m6_kyablv>	<extractionSource>	<GeoNames> .
+<id_6twdnc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hkqgfi_115_1umzv6f>
+<id_1wel0i4_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1hkqgfi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1oixha2_115_1umzv6f>
+<id_1ydqx40_1m6_9y80y2>	<extractionSource>	<GeoNames> .
+<id_1oixha2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1qlhorv_115_1umzv6f>
+<id_frifho_1m6_m8jqxa>	<extractionSource>	<GeoNames> .
+<id_1qlhorv_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ct5s5v_115_1umzv6f>
+<id_e05464_1m6_m8jqxa>	<extractionSource>	<GeoNames> .
+<id_1ct5s5v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jp8dci_115_1umzv6f>
+<id_1ahv5en_1m6_i3uzz5>	<extractionSource>	<GeoNames> .
+<id_jp8dci_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1k275x0_115_1umzv6f>
+<id_1wqm92c_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1k275x0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_2gy93d_115_1umzv6f>
+<id_1ywnkcj_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_2gy93d_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mr36hb_115_1umzv6f>
+<id_105z7u6_1m6_m8jqxa>	<extractionSource>	<GeoNames> .
+<id_mr36hb_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_156q998_115_1umzv6f>
+<id_1b4ll37_1m6_m8jqxa>	<extractionSource>	<GeoNames> .
+<id_156q998_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1dqpo2c_115_1umzv6f>
+<id_cy5r7y_1m6_1uqmox>	<extractionSource>	<GeoNames> .
+<id_1dqpo2c_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1fmmy8e_115_1umzv6f>
+<id_6kdunn_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1fmmy8e_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16wffyp_115_1umzv6f>
+<id_1ywtu90_1m6_35pj8l>	<extractionSource>	<GeoNames> .
+<id_16wffyp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_vxaz3v_115_1umzv6f>
+<id_fufnuj_1m6_elh30e>	<extractionSource>	<GeoNames> .
+<id_vxaz3v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_syqnlt_115_1umzv6f>
+<id_14frejb_1m6_15fs7yn>	<extractionSource>	<GeoNames> .
+<id_syqnlt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ik4lhd_115_1umzv6f>
+<id_fwoqx3_1m6_1tt22ac>	<extractionSource>	<GeoNames> .
+<id_ik4lhd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qakb4b_115_1umzv6f>
+<id_1h4muyr_1m6_2i40we>	<extractionSource>	<GeoNames> .
+<id_qakb4b_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jk2vm8_115_1umzv6f>
+<id_ib5a98_1m6_1pzjg3g>	<extractionSource>	<GeoNames> .
+<id_jk2vm8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_14txsf3_115_1umzv6f>
+<id_1x0a117_1m6_352sk>	<extractionSource>	<GeoNames> .
+<id_14txsf3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_j6ppbt_115_1umzv6f>
+<id_fzfkb9_1m6_1ht66fr>	<extractionSource>	<GeoNames> .
+<id_j6ppbt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_o6u00k_115_1umzv6f>
+<id_g0q6yb_1m6_1njzlca>	<extractionSource>	<GeoNames> .
+<id_o6u00k_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1s7w73q_115_1umzv6f>
+<id_1yfwvwl_1m6_1l34zsa>	<extractionSource>	<GeoNames> .
+<id_1s7w73q_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1u7qgtk_115_1umzv6f>
+<id_gnbduf_1m6_5z73cd>	<extractionSource>	<GeoNames> .
+<id_1u7qgtk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qofara_115_1umzv6f>
+<id_l8f8e1_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_qofara_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_gvr543_115_1umzv6f>
+<id_13fmr1m_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_gvr543_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_tn2p7u_115_1umzv6f>
+<id_gdpcp6_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_tn2p7u_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_2a12dx_115_1umzv6f>
+<id_1ui5cdd_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_2a12dx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_wuk75b_115_1umzv6f>
+<id_kefl5f_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_wuk75b_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1m7epgp_115_1umzv6f>
+<id_vulg8o_1m6_qs4q3n>	<extractionSource>	<GeoNames> .
+<id_1m7epgp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_5ch7cx_115_1umzv6f>
+<id_2lrbnc_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_5ch7cx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_6djtn5_115_1umzv6f>
+<id_ehe3hf_1m6_n6jzm5>	<extractionSource>	<GeoNames> .
+<id_6djtn5_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mrsgoo_115_1umzv6f>
+<id_1exbxyn_1m6_afx12s>	<extractionSource>	<GeoNames> .
+<id_mrsgoo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7jeceb_115_1umzv6f>
+<id_s3vel3_1m6_1j9236b>	<extractionSource>	<GeoNames> .
+<id_7jeceb_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_p5rxw9_115_1umzv6f>
+<id_8gt4m1_1m6_1yauqte>	<extractionSource>	<GeoNames> .
+<id_p5rxw9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ywko30_115_1umzv6f>
+<id_1yds2q0_1m6_s367pm>	<extractionSource>	<GeoNames> .
+<id_1ywko30_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_v7nnhx_115_1umzv6f>
+<id_g9quo5_1m6_6w3u7e>	<extractionSource>	<GeoNames> .
+<id_v7nnhx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1f9z4ti_115_1umzv6f>
+<id_14hzows_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1f9z4ti_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_txi8in_115_1umzv6f>
+<id_1exswpd_1m6_4ns20j>	<extractionSource>	<GeoNames> .
+<id_txi8in_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_kl84qe_115_1umzv6f>
+<id_ixmig0_1m6_88xlv>	<extractionSource>	<GeoNames> .
+<id_kl84qe_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_i4x9j1_115_1umzv6f>
+<id_7kqznw_1m6_uy3m0u>	<extractionSource>	<GeoNames> .
+<id_i4x9j1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_3g1e8s_115_1umzv6f>
+<id_iy6y8k_1m6_pv0mfe>	<extractionSource>	<GeoNames> .
+<id_3g1e8s_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1n4zszb_115_1umzv6f>
+<id_13mqt3_1m6_1rkbgvy>	<extractionSource>	<GeoNames> .
+<id_1n4zszb_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_xpzy38_115_1umzv6f>
+<id_1hthad6_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_xpzy38_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1g3byg9_115_1umzv6f>
+<id_1kvy425_1m6_m8jqxa>	<extractionSource>	<GeoNames> .
+<id_1g3byg9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_sitphm_115_1umzv6f>
+<id_s6q39i_1m6_1i0bnsd>	<extractionSource>	<GeoNames> .
+<id_sitphm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ekjp7h_115_1umzv6f>
+<id_wzi72a_1m6_1v3cmp5>	<extractionSource>	<GeoNames> .
+<id_1ekjp7h_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_sp99hr_115_1umzv6f>
+<id_ibakbd_1m6_jtr0am>	<extractionSource>	<GeoNames> .
+<id_sp99hr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1sgm6fu_115_1umzv6f>
+<id_1ydtpaa_1m6_1pxwkxu>	<extractionSource>	<GeoNames> .
+<id_1sgm6fu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1uu8c8e_115_1umzv6f>
+<id_1bmib8p_1m6_5zz9xg>	<extractionSource>	<GeoNames> .
+<id_1uu8c8e_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ds4vu1_115_1umzv6f>
+<id_1ydts6n_1m6_1yyc7z3>	<extractionSource>	<GeoNames> .
+<id_ds4vu1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7w8d40_115_1umzv6f>
+<id_1ezbdkc_1m6_hno9ai>	<extractionSource>	<GeoNames> .
+<id_7w8d40_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16jtr59_115_1umzv6f>
+<id_1ezhu1m_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_16jtr59_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1y8a3o_115_1umzv6f>
+<id_1luw6kj_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1y8a3o_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_8ns1zi_115_1umzv6f>
+<id_x8h3vm_1m6_qs4ona>	<extractionSource>	<GeoNames> .
+<id_8ns1zi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_9obsje_115_1umzv6f>
+<id_ib5ffm_1m6_1tkd87d>	<extractionSource>	<GeoNames> .
+<id_9obsje_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_126g0ye_115_1umzv6f>
+<id_q5azd3_1m6_615tqy>	<extractionSource>	<GeoNames> .
+<id_126g0ye_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1attpa9_115_1umzv6f>
+<id_1enfulg_1m6_6oabvy>	<extractionSource>	<GeoNames> .
+<id_1attpa9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1t1iu7x_115_1umzv6f>
+<id_ib4xaz_1m6_zz4f9z>	<extractionSource>	<GeoNames> .
+<id_1t1iu7x_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_khg3mg_115_1umzv6f>
+<id_1enprsb_1m6_14ht33d>	<extractionSource>	<GeoNames> .
+<id_khg3mg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1xzjv1b_115_1umzv6f>
+<id_qwt80p_1m6_14ht33d>	<extractionSource>	<GeoNames> .
+<id_1xzjv1b_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_129a3fd_115_1umzv6f>
+<id_1usexyz_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_129a3fd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_134s5d0_115_1umzv6f>
+<id_ukypps_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_134s5d0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1qf1x8s_115_1umzv6f>
+<id_kj3z6y_1m6_uh7wfh>	<extractionSource>	<GeoNames> .
+<id_1qf1x8s_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_9fmlhp_115_1umzv6f>
+<id_ug6mec_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_9fmlhp_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1nnsg7l_115_1umzv6f>
+<id_1enq1fc_1m6_17zf4xx>	<extractionSource>	<GeoNames> .
+<id_1nnsg7l_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1isly85_115_1umzv6f>
+<id_1eo0e2i_1m6_b10g3q>	<extractionSource>	<GeoNames> .
+<id_1isly85_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_57ysm_115_1umzv6f>
+<id_1ydgxmz_1m6_kgp1oj>	<extractionSource>	<GeoNames> .
+<id_57ysm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1qp1l79_115_1umzv6f>
+<id_1eoe4c2_1m6_9pa2y7>	<extractionSource>	<GeoNames> .
+<id_1qp1l79_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_565g9i_115_1umzv6f>
+<id_13v3c92_1m6_8c2hn8>	<extractionSource>	<GeoNames> .
+<id_565g9i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1cdjbo0_115_1umzv6f>
+<id_1eoe7ag_1m6_xytj59>	<extractionSource>	<GeoNames> .
+<id_1cdjbo0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ycrbt6_115_1umzv6f>
+<id_85sxc0_1m6_n6ntoz>	<extractionSource>	<GeoNames> .
+<id_ycrbt6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_kbnupc_115_1umzv6f>
+<id_1ydh7yz_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_kbnupc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_fcsyfh_115_1umzv6f>
+<id_np7k2q_1m6_ftbqkp>	<extractionSource>	<GeoNames> .
+<id_fcsyfh_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qk22fw_115_1umzv6f>
+<id_8a9o8d_1m6_b3902q>	<extractionSource>	<GeoNames> .
+<id_qk22fw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1a85a2o_115_1umzv6f>
+<id_17qzpd2_1m6_b3902q>	<extractionSource>	<GeoNames> .
+<id_1a85a2o_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1e0if7a_115_1umzv6f>
+<id_8ex0nb_1m6_dm33p6>	<extractionSource>	<GeoNames> .
+<id_1e0if7a_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_g1bsuz_115_1umzv6f>
+<id_8gmxz9_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_g1bsuz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1bhcqks_115_1umzv6f>
+<id_1eotlj4_1m6_1wa97ki>	<extractionSource>	<GeoNames> .
+<id_1bhcqks_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_873fy_115_1umzv6f>
+<id_1xcdcym_1m6_irf8x2>	<extractionSource>	<GeoNames> .
+<id_873fy_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_vdyub3_115_1umzv6f>
+<id_8p4ia5_1m6_1jjaahe>	<extractionSource>	<GeoNames> .
+<id_vdyub3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_pbjsmt_115_1umzv6f>
+<id_1ydhzeo_1m6_1gwo9nh>	<extractionSource>	<GeoNames> .
+<id_pbjsmt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_u0d2cr_115_1umzv6f>
+<id_8rdo8h_1m6_1137ppz>	<extractionSource>	<GeoNames> .
+<id_u0d2cr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16k3md3_115_1umzv6f>
+<id_bi5tp3_1m6_1jjaahe>	<extractionSource>	<GeoNames> .
+<id_16k3md3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7xnnhn_115_1umzv6f>
+<id_ib509n_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_7xnnhn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_dg2rag_115_1umzv6f>
+<id_1ydj50z_1m6_wjjong>	<extractionSource>	<GeoNames> .
+<id_dg2rag_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_m6easd_115_1umzv6f>
+<id_grnkx9_1m6_9pa2y7>	<extractionSource>	<GeoNames> .
+<id_m6easd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_o15d2i_115_1umzv6f>
+<id_ib510e_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_o15d2i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1lpqsjt_115_1umzv6f>
+<id_1eqnhbk_1m6_mvw25r>	<extractionSource>	<GeoNames> .
+<id_1lpqsjt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_mkpifh_115_1umzv6f>
+<id_cry8ub_1m6_4fegzn>	<extractionSource>	<GeoNames> .
+<id_mkpifh_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_i6hy7b_115_1umzv6f>
+<id_1ydkaex_1m6_7tnqei>	<extractionSource>	<GeoNames> .
+<id_i6hy7b_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_a25tv1_115_1umzv6f>
+<id_1er3boa_1m6_7tnqei>	<extractionSource>	<GeoNames> .
+<id_a25tv1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1krajot_115_1umzv6f>
+<id_168ofxi_1m6_mj38t2>	<extractionSource>	<GeoNames> .
+<id_1krajot_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_15nb0q9_115_1umzv6f>
+<id_gs6gtz_1m6_1jjaahe>	<extractionSource>	<GeoNames> .
+<id_15nb0q9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ttgrto_115_1umzv6f>
+<id_1xnlcoq_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_ttgrto_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1xw2ips_115_1umzv6f>
+<id_b9x6kt_1m6_1wmuu7r>	<extractionSource>	<GeoNames> .
+<id_1xw2ips_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_6mtzpc_115_1umzv6f>
+<id_1webj9e_1m6_1gnjly4>	<extractionSource>	<GeoNames> .
+<id_6mtzpc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_c2bn4b_115_1umzv6f>
+<id_15s3ig3_1m6_1wmuu7r>	<extractionSource>	<GeoNames> .
+<id_c2bn4b_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_10fgj3i_115_1umzv6f>
+<id_1tf4g3q_1m6_1wmuu7r>	<extractionSource>	<GeoNames> .
+<id_10fgj3i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_kkibgr_115_1umzv6f>
+<id_1qu2lbq_1m6_1gnjly4>	<extractionSource>	<GeoNames> .
+<id_kkibgr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_4fo7uf_115_1umzv6f>
+<id_u02623_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_4fo7uf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_f3c6lz_115_1umzv6f>
+<id_1tjn9f9_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_f3c6lz_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_v3c81z_115_1umzv6f>
+<id_w6hvpj_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_v3c81z_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1u989qo_115_1umzv6f>
+<id_15mx5p0_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_1u989qo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1exv744_115_1umzv6f>
+<id_1et85c5_1m6_1h62vvp>	<extractionSource>	<GeoNames> .
+<id_1exv744_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hydx4t_115_1umzv6f>
+<id_1ydneji_1m6_1783dcs>	<extractionSource>	<GeoNames> .
+<id_1hydx4t_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_6i0nic_115_1umzv6f>
+<id_1etyb9t_1m6_mj38t2>	<extractionSource>	<GeoNames> .
+<id_6i0nic_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1fnyq1v_115_1umzv6f>
+<id_1fappiv_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1fnyq1v_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_k18iuw_115_1umzv6f>
+<id_t64q2t_1m6_1koge48>	<extractionSource>	<GeoNames> .
+<id_k18iuw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_m8sp92_115_1umzv6f>
+<id_1fwpssu_1m6_1koge48>	<extractionSource>	<GeoNames> .
+<id_m8sp92_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_14l9w93_115_1umzv6f>
+<id_zvgm4q_1m6_1mp39k9>	<extractionSource>	<GeoNames> .
+<id_14l9w93_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_shwmrs_115_1umzv6f>
+<id_1wr6rl8_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_shwmrs_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ea00yw_115_1umzv6f>
+<id_hg43r_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1ea00yw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_3retam_115_1umzv6f>
+<id_ib57ol_1m6_1sn3vu>	<extractionSource>	<GeoNames> .
+<id_3retam_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jq52kn_115_1umzv6f>
+<id_1ydp8fi_1m6_1sn3vu>	<extractionSource>	<GeoNames> .
+<id_jq52kn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ugr7lr_115_1umzv6f>
+<id_1ydp8jt_1m6_1yx11p9>	<extractionSource>	<GeoNames> .
+<id_ugr7lr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1h89wxw_115_1umzv6f>
+<id_1u0y95p_1m6_1whhhn1>	<extractionSource>	<GeoNames> .
+<id_1h89wxw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1b6kfxk_115_1umzv6f>
+<id_1llzxxb_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_1b6kfxk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1csheyq_115_1umzv6f>
+<id_1ydpb2v_1m6_oddsbj>	<extractionSource>	<GeoNames> .
+<id_1csheyq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qd4k1i_115_1umzv6f>
+<id_1evewak_1m6_oddsbj>	<extractionSource>	<GeoNames> .
+<id_qd4k1i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ys6r5s_115_1umzv6f>
+<id_mmn6fm_1m6_1ll2s32>	<extractionSource>	<GeoNames> .
+<id_1ys6r5s_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1whzysf_115_1umzv6f>
+<id_yw1aic_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_1whzysf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_13m76a4_115_1umzv6f>
+<id_ej1ezg_1m6_schh57>	<extractionSource>	<GeoNames> .
+<id_13m76a4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_cl8fbg_115_1umzv6f>
+<id_1evjd5e_1m6_o1r0br>	<extractionSource>	<GeoNames> .
+<id_cl8fbg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_18bul1m_115_1umzv6f>
+<id_1d6sook_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_18bul1m_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1kubsf0_115_1umzv6f>
+<id_15etzcp_1m6_4fegzn>	<extractionSource>	<GeoNames> .
+<id_1kubsf0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_yvl89l_115_1umzv6f>
+<id_1evlg60_1m6_5lsao2>	<extractionSource>	<GeoNames> .
+<id_yvl89l_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_sll7cf_115_1umzv6f>
+<id_eizpsr_1m6_5lsao2>	<extractionSource>	<GeoNames> .
+<id_sll7cf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1n02jzq_115_1umzv6f>
+<id_1lprviv_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1n02jzq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_a3al52_115_1umzv6f>
+<id_1ewl3jn_1m6_1ruknn7>	<extractionSource>	<GeoNames> .
+<id_a3al52_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ym4pfo_115_1umzv6f>
+<id_1w376dv_1m6_1jjaahe>	<extractionSource>	<GeoNames> .
+<id_1ym4pfo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1151qdl_115_1umzv6f>
+<id_1ydqsil_1m6_1c5n8o2>	<extractionSource>	<GeoNames> .
+<id_1151qdl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_z15ib2_115_1umzv6f>
+<id_mnbgt4_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_z15ib2_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1w978ek_115_1umzv6f>
+<id_1ewowty_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1w978ek_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_17451xv_115_1umzv6f>
+<id_ijtgw_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_17451xv_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_10cjvr5_115_1umzv6f>
+<id_1bwn83y_1m6_ydxjtf>	<extractionSource>	<GeoNames> .
+<id_10cjvr5_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_df63e0_115_1umzv6f>
+<id_nxcnmo_1m6_1g6aofi>	<extractionSource>	<GeoNames> .
+<id_df63e0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1gsdmvk_115_1umzv6f>
+<id_fqc24f_1m6_1115dpt>	<extractionSource>	<GeoNames> .
+<id_1gsdmvk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1huypgc_115_1umzv6f>
+<id_1ex4hkl_1m6_1vaimze>	<extractionSource>	<GeoNames> .
+<id_1huypgc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_11mcpb7_115_1umzv6f>
+<id_13n7p6z_1m6_17fruv5>	<extractionSource>	<GeoNames> .
+<id_11mcpb7_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_h9hacr_115_1umzv6f>
+<id_1ex6wqh_1m6_1erzccs>	<extractionSource>	<GeoNames> .
+<id_h9hacr_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_lib36e_115_1umzv6f>
+<id_1ex71gz_1m6_tkwb3p>	<extractionSource>	<GeoNames> .
+<id_lib36e_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_nm1zsk_115_1umzv6f>
+<id_1ydrge8_1m6_1sgdvpq>	<extractionSource>	<GeoNames> .
+<id_nm1zsk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ob76ri_115_1umzv6f>
+<id_1ydrgoi_1m6_4chrqy>	<extractionSource>	<GeoNames> .
+<id_1ob76ri_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1k8rbnk_115_1umzv6f>
+<id_tbixo1_1m6_tkwb3p>	<extractionSource>	<GeoNames> .
+<id_1k8rbnk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_11vuuqu_115_1umzv6f>
+<id_1urpss8_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_11vuuqu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1xh8j2c_115_1umzv6f>
+<id_7941ru_1m6_17zf4xx>	<extractionSource>	<GeoNames> .
+<id_1xh8j2c_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ybojg7_115_1umzv6f>
+<id_gwt9j2_1m6_1rztx4q>	<extractionSource>	<GeoNames> .
+<id_ybojg7_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_e72htk_115_1umzv6f>
+<id_h5m6zb_1m6_lhvfgq>	<extractionSource>	<GeoNames> .
+<id_e72htk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_fpnysd_115_1umzv6f>
+<id_7dm1mu_1m6_lhvfgq>	<extractionSource>	<GeoNames> .
+<id_fpnysd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_140e5q_115_1umzv6f>
+<id_ymbmnw_1m6_lhvfgq>	<extractionSource>	<GeoNames> .
+<id_140e5q_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_fhroxo_115_1umzv6f>
+<id_zvr6gl_1m6_1aso9f0>	<extractionSource>	<GeoNames> .
+<id_fhroxo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_xpbfh5_115_1umzv6f>
+<id_158si2i_1m6_1pm9uzp>	<extractionSource>	<GeoNames> .
+<id_xpbfh5_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qvwzg_115_1umzv6f>
+<id_1endcy2_1m6_tyd9bn>	<extractionSource>	<GeoNames> .
+<id_qvwzg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_f321l3_115_1umzv6f>
+<id_1ydfzym_1m6_ljag6u>	<extractionSource>	<GeoNames> .
+<id_f321l3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hmoez3_115_1umzv6f>
+<id_a4rhxt_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1hmoez3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ka1eha_115_1umzv6f>
+<id_1j8xy1b_1m6_tew71w>	<extractionSource>	<GeoNames> .
+<id_1ka1eha_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_16ijzbi_115_1umzv6f>
+<id_1ennhof_1m6_1nb2nlv>	<extractionSource>	<GeoNames> .
+<id_16ijzbi_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1nnsg7l_115_1umzv6f>
+<id_1enq1fc_1m6_17zf4xx>	<extractionSource>	<GeoNames> .
+<id_1nnsg7l_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qdypj8_115_1umzv6f>
+<id_1ydgalw_1m6_1nb2nlv>	<extractionSource>	<GeoNames> .
+<id_qdypj8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1vp0b90_115_1umzv6f>
+<id_1ennlc1_1m6_y6qmtm>	<extractionSource>	<GeoNames> .
+<id_1vp0b90_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_vpnvef_115_1umzv6f>
+<id_1hstsbl_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_vpnvef_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ww2phb_115_1umzv6f>
+<id_13wkjhv_1m6_n6ntoz>	<extractionSource>	<GeoNames> .
+<id_1ww2phb_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ycrbt6_115_1umzv6f>
+<id_85sxc0_1m6_n6ntoz>	<extractionSource>	<GeoNames> .
+<id_ycrbt6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1904e4k_115_1umzv6f>
+<id_sueu8x_1m6_5vqpr>	<extractionSource>	<GeoNames> .
+<id_1904e4k_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_10ipge3_115_1umzv6f>
+<id_1ydhnc4_1m6_1wjgs7w>	<extractionSource>	<GeoNames> .
+<id_10ipge3_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_31do89_115_1umzv6f>
+<id_n6dycq_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_31do89_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_rdgrw1_115_1umzv6f>
+<id_nxcnmo_1m6_z65xn7>	<extractionSource>	<GeoNames> .
+<id_rdgrw1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7xnnhn_115_1umzv6f>
+<id_ib509n_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_7xnnhn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_183qvbn_115_1umzv6f>
+<id_1ydj2ep_1m6_wj4h9l>	<extractionSource>	<GeoNames> .
+<id_183qvbn_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1w7vkyo_115_1umzv6f>
+<id_1ydj516_1m6_1p7m474>	<extractionSource>	<GeoNames> .
+<id_1w7vkyo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1u9i6tl_115_1umzv6f>
+<id_1eq3ou1_1m6_1p7m474>	<extractionSource>	<GeoNames> .
+<id_1u9i6tl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_197h4dl_115_1umzv6f>
+<id_1mkz0fl_1m6_rdjzbl>	<extractionSource>	<GeoNames> .
+<id_197h4dl_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_76s4ri_115_1umzv6f>
+<id_9w035b_1m6_bwjx3>	<extractionSource>	<GeoNames> .
+<id_76s4ri_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_o15d2i_115_1umzv6f>
+<id_ib510e_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_o15d2i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_xaru8u_115_1umzv6f>
+<id_1eqr6xf_1m6_1opgzb4>	<extractionSource>	<GeoNames> .
+<id_xaru8u_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_i6hy7b_115_1umzv6f>
+<id_1ydkaex_1m6_7tnqei>	<extractionSource>	<GeoNames> .
+<id_i6hy7b_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_a25tv1_115_1umzv6f>
+<id_1er3boa_1m6_7tnqei>	<extractionSource>	<GeoNames> .
+<id_a25tv1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1qs392j_115_1umzv6f>
+<id_1ydkeuw_1m6_18ocvaa>	<extractionSource>	<GeoNames> .
+<id_1qs392j_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_p5tbll_115_1umzv6f>
+<id_1estylw_1m6_mj38t2>	<extractionSource>	<GeoNames> .
+<id_p5tbll_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_19ozjd6_115_1umzv6f>
+<id_c5blhb_1m6_mj38t2>	<extractionSource>	<GeoNames> .
+<id_19ozjd6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1wb4mv6_115_1umzv6f>
+<id_1et7s1d_1m6_iaw8i9>	<extractionSource>	<GeoNames> .
+<id_1wb4mv6_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1exv744_115_1umzv6f>
+<id_1et85c5_1m6_1h62vvp>	<extractionSource>	<GeoNames> .
+<id_1exv744_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_13pd00z_115_1umzv6f>
+<id_1imgxbw_1m6_lhvfgq>	<extractionSource>	<GeoNames> .
+<id_13pd00z_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hydx4t_115_1umzv6f>
+<id_1ydneji_1m6_1783dcs>	<extractionSource>	<GeoNames> .
+<id_1hydx4t_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_6i0nic_115_1umzv6f>
+<id_1etyb9t_1m6_mj38t2>	<extractionSource>	<GeoNames> .
+<id_6i0nic_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_zutuva_115_1umzv6f>
+<id_1ydnljh_1m6_fsp8yz>	<extractionSource>	<GeoNames> .
+<id_zutuva_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_m8sp92_115_1umzv6f>
+<id_1fwpssu_1m6_1koge48>	<extractionSource>	<GeoNames> .
+<id_m8sp92_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_k18iuw_115_1umzv6f>
+<id_t64q2t_1m6_1koge48>	<extractionSource>	<GeoNames> .
+<id_k18iuw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_qd4k1i_115_1umzv6f>
+<id_1evewak_1m6_oddsbj>	<extractionSource>	<GeoNames> .
+<id_qd4k1i_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1csheyq_115_1umzv6f>
+<id_1ydpb2v_1m6_oddsbj>	<extractionSource>	<GeoNames> .
+<id_1csheyq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_gbaqzk_115_1umzv6f>
+<id_1q7yz1n_1m6_1m9s4qf>	<extractionSource>	<GeoNames> .
+<id_gbaqzk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_cl8fbg_115_1umzv6f>
+<id_1evjd5e_1m6_o1r0br>	<extractionSource>	<GeoNames> .
+<id_cl8fbg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ys6r5s_115_1umzv6f>
+<id_mmn6fm_1m6_1ll2s32>	<extractionSource>	<GeoNames> .
+<id_1ys6r5s_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_kg0ywb_115_1umzv6f>
+<id_o8yzyk_1m6_1kpnsvj>	<extractionSource>	<GeoNames> .
+<id_kg0ywb_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_18sok2y_115_1umzv6f>
+<id_evwqzs_1m6_pgnpav>	<extractionSource>	<GeoNames> .
+<id_18sok2y_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1t9ucfm_115_1umzv6f>
+<id_f9m18x_1m6_vgdvrx>	<extractionSource>	<GeoNames> .
+<id_1t9ucfm_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_a3al52_115_1umzv6f>
+<id_1ewl3jn_1m6_1ruknn7>	<extractionSource>	<GeoNames> .
+<id_a3al52_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_yoh99z_115_1umzv6f>
+<id_fdoujk_1m6_1rukp81>	<extractionSource>	<GeoNames> .
+<id_yoh99z_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_r05zz0_115_1umzv6f>
+<id_1ewikbr_1m6_10flrwy>	<extractionSource>	<GeoNames> .
+<id_r05zz0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_t3f2dd_115_1umzv6f>
+<id_1ydql58_1m6_10flrwy>	<extractionSource>	<GeoNames> .
+<id_t3f2dd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1fe90dq_115_1umzv6f>
+<id_1ydqog1_1m6_5vqpr>	<extractionSource>	<GeoNames> .
+<id_1fe90dq_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_17d4y2n_115_1umzv6f>
+<id_1ydqidm_1m6_1mgs387>	<extractionSource>	<GeoNames> .
+<id_17d4y2n_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_rt7ps5_115_1umzv6f>
+<id_1ewg72d_1m6_b6hdfx>	<extractionSource>	<GeoNames> .
+<id_rt7ps5_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_15rxf2z_115_1umzv6f>
+<id_8i8gng_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_15rxf2z_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ihs56k_115_1umzv6f>
+<id_1ely6cn_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_ihs56k_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1gsdmvk_115_1umzv6f>
+<id_fqc24f_1m6_1115dpt>	<extractionSource>	<GeoNames> .
+<id_1gsdmvk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1iqe5yf_115_1umzv6f>
+<id_1ex4a0i_1m6_iaw8i9>	<extractionSource>	<GeoNames> .
+<id_1iqe5yf_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_jp7bu1_115_1umzv6f>
+<id_1ex4h65_1m6_102co6q>	<extractionSource>	<GeoNames> .
+<id_jp7bu1_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_utc7fu_115_1umzv6f>
+<id_fudkx2_1m6_102co6q>	<extractionSource>	<GeoNames> .
+<id_utc7fu_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ci6t4f_115_1umzv6f>
+<id_1cuggwc_1m6_lhvfgq>	<extractionSource>	<GeoNames> .
+<id_1ci6t4f_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1neaspk_115_1umzv6f>
+<id_1ydrb9q_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1neaspk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_lib36e_115_1umzv6f>
+<id_1ex71gz_1m6_tkwb3p>	<extractionSource>	<GeoNames> .
+<id_lib36e_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_icpg9p_115_1umzv6f>
+<id_jk2z5_1m6_akcvt8>	<extractionSource>	<GeoNames> .
+<id_icpg9p_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_hyrazw_115_1umzv6f>
+<id_19udpr6_1m6_akcvt8>	<extractionSource>	<GeoNames> .
+<id_hyrazw_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ob76ri_115_1umzv6f>
+<id_1ydrgoi_1m6_4chrqy>	<extractionSource>	<GeoNames> .
+<id_1ob76ri_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1xh8j2c_115_1umzv6f>
+<id_7941ru_1m6_17zf4xx>	<extractionSource>	<GeoNames> .
+<id_1xh8j2c_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_15qiyh9_115_1umzv6f>
+<id_bzaa8g_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_15qiyh9_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_wmkpht_115_1umzv6f>
+<id_dwuir_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_wmkpht_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_453k7q_115_1umzv6f>
+<id_gf994s_1m6_1sgdvpq>	<extractionSource>	<GeoNames> .
+<id_453k7q_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_7go1jo_115_1umzv6f>
+<id_ggxjy5_1m6_1ekygr3>	<extractionSource>	<GeoNames> .
+<id_7go1jo_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_8v7bna_115_1umzv6f>
+<id_ggr0sk_1m6_hk2517>	<extractionSource>	<GeoNames> .
+<id_8v7bna_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_e72htk_115_1umzv6f>
+<id_h5m6zb_1m6_lhvfgq>	<extractionSource>	<GeoNames> .
+<id_e72htk_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_140e5q_115_1umzv6f>
+<id_ymbmnw_1m6_lhvfgq>	<extractionSource>	<GeoNames> .
+<id_140e5q_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1214nas_115_1umzv6f>
+<id_1ydgpk0_1m6_1ctfvvv>	<extractionSource>	<GeoNames> .
+<id_1214nas_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_lizxg_115_1umzv6f>
+<id_1mfvsgr_1m6_kqpane>	<extractionSource>	<GeoNames> .
+<id_lizxg_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1hisu0q_115_1umzv6f>
+<id_9sp21h_1m6_rpzaqy>	<extractionSource>	<GeoNames> .
+<id_1hisu0q_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1tm4i7j_115_1umzv6f>
+<id_ysjqg_1m6_rpzaqy>	<extractionSource>	<GeoNames> .
+<id_1tm4i7j_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1ccqm4_115_1umzv6f>
+<id_qj6ujt_1m6_1y6ivwv>	<extractionSource>	<GeoNames> .
+<id_1ccqm4_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_eryou8_115_1umzv6f>
+<id_w7zksx_1m6_v77xb6>	<extractionSource>	<GeoNames> .
+<id_eryou8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1gxl13g_115_1umzv6f>
+<id_1izqoxj_1m6_v77xb6>	<extractionSource>	<GeoNames> .
+<id_1gxl13g_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_190l4n0_115_1umzv6f>
+<id_t8ktdq_1m6_v77xb6>	<extractionSource>	<GeoNames> .
+<id_190l4n0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ufu4gj_115_1umzv6f>
+<id_eg7jb0_1m6_v77xb6>	<extractionSource>	<GeoNames> .
+<id_ufu4gj_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_u01gqc_115_1umzv6f>
+<id_1er0jr4_1m6_g29t>	<extractionSource>	<GeoNames> .
+<id_u01gqc_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_seo8ju_115_1umzv6f>
+<id_cy7l97_1m6_q19myx>	<extractionSource>	<GeoNames> .
+<id_seo8ju_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1c96bbt_115_1umzv6f>
+<id_atehcj_1m6_v77xb6>	<extractionSource>	<GeoNames> .
+<id_1c96bbt_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_l422pa_115_1umzv6f>
+<id_1hxvhgi_1m6_j1qp8m>	<extractionSource>	<GeoNames> .
+<id_l422pa_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1j91tcx_115_1umzv6f>
+<id_1yds4ra_1m6_imm7k>	<extractionSource>	<GeoNames> .
+<id_1j91tcx_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1q9vt1g_115_1umzv6f>
+<id_gijye6_1m6_ljzmpe>	<extractionSource>	<GeoNames> .
+<id_1q9vt1g_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_eodr8d_115_1umzv6f>
+<id_1izyvdo_1m6_nwoe2r>	<extractionSource>	<GeoNames> .
+<id_eodr8d_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_dna6pd_115_1umzv6f>
+<id_8bpg7_1m6_nwoe2r>	<extractionSource>	<GeoNames> .
+<id_dna6pd_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_ifvs40_115_1umzv6f>
+<id_o4ua5h_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_ifvs40_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .

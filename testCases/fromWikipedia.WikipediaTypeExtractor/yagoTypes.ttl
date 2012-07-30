@@ -1672,6 +1672,10 @@ rdfs:subPropertyOf	rdf:type	<yagoTransitiveRelation> .
 <occursSince>	rdf:type	<yagoFunction> .
 #@ <id_1cpvkbb_88c_x0pmg8>
 <occursUntil>	rdf:type	<yagoFunction> .
+#@ <id_14prkyi_88c_1kkdc1n>
+<isConnectedTo>	rdf:type	rdf:Property .
+#@ <id_1buqpaq_88c_1kkdc1n>
+<byTransport>	rdf:type	rdf:Property .
 #@ <id_12fzv9w_88c_1kkdc1n>
 <linksTo>	rdf:type	rdf:Property .
 #@ <id_tyts95_88c_x0pmg8>
@@ -1868,8 +1872,6 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <hasTLD>	rdf:type	<yagoFunction> .
 #@ <id_lgaadb_88c_9gxx22>
 <hasUnemployment>	rdf:type	<yagoFunctionInTime> .
-#@ <id_yrhdjx_88c_x0pmg8>
-<hasUTCOffset>	rdf:type	<yagoFunction> .
 #@ <id_iceu8x_88c_1kkdc1n>
 <hasWebsite>	rdf:type	rdf:Property .
 #@ <id_1vd9pbi_88c_1kkdc1n>
