@@ -109,7 +109,7 @@ public class InfoboxExtractor extends Extractor {
     List<String> objects = extractor.extractList(string);
     for (String object : objects) {
       // Check syntax
-      if (syntaxChecker != null && !FactComponent.asJavaString(object).matches(syntaxChecker)) {
+      if (syntaxChecker != null && FactComponent.asJavaString(object)!=null && !FactComponent.asJavaString(object).matches(syntaxChecker)) {
         Announce.debug("Extraction", object, "for", entity, relation, "does not match syntax check", syntaxChecker);
         continue;
       }
