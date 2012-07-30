@@ -69,6 +69,7 @@
 "playFor9"	<_infoboxPattern>	<playsFor> .
 "playFor10"	<_infoboxPattern>	<playsFor> .
 
+"playForYouth"	<_infoboxPattern>	<playsFor> .
 "playForYouth1"	<_infoboxPattern>	<playsFor> .
 "playForYouth2"	<_infoboxPattern>	<playsFor> .
 "playForYouth3"	<_infoboxPattern>	<playsFor> .
@@ -92,8 +93,8 @@
 "-office10"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
 
 #-----For Binary T-facts-----
-"establisheddate"	<_infoboxPattern>	<wasEstablishedOnDate> .
-"established"	<_infoboxPattern>	<wasEstablishedOnDate> .
+"establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
+"established"	<_infoboxPattern>	<wasCreatedOnDate> .
 "birthdate"	<_infoboxPattern>	<wasBornOnDate> .
 "dateofbirth"	<_infoboxPattern>	<wasBornOnDate> .
 "born"	<_infoboxPattern>	<wasBornOnDate> .
@@ -101,15 +102,14 @@
 "dateofdeath"	<_infoboxPattern>	<diedOnDate> .
 "died"	<_infoboxPattern>	<diedOnDate> .
 "spouse"	<_infoboxPattern>	<isMarriedTo> .
-"founded"	<_infoboxPattern>	<wasFoundedOnDate> .
-"published"	<_infoboxPattern>	<wasPublishedOnDate> .
-"released"	<_infoboxPattern>	<wasReleasedOnDate> .
-"releasedate"	<_infoboxPattern>	<wasReleasedOnDate> .
+"founded"	<_infoboxPattern>	<wasCreatedOnDate> .
+"published"	<_infoboxPattern>	<wasCreatedOnDate> .
+"released"	<_infoboxPattern>	<wasCreatedOnDate> .
+"releasedate"	<_infoboxPattern>	<wasCreatedOnDate> .
 "datecreated"	<_infoboxPattern>	<wasCreatedOnDate> .
-"recorded"	<_infoboxPattern>	<wasRecordedOnDate> .
-"foundation"	<_infoboxPattern>	<wasFoundedOnDate> .
+"recorded"	<_infoboxPattern>	<wasCreatedOnDate> .
+"foundation"	<_infoboxPattern>	<wasCreatedOnDate> .
 "date" <_infoboxPattern>	<happenedOnDate> .
-"date y" <_infoboxPattern>	<happenedOnDate> .
 "year"	<_infoboxPattern>	<happenedOnDate> .
 
 #------------ New Patterns ------------
@@ -150,22 +150,15 @@
 "premier"	<_infoboxPattern>	<isLeaderOf-> .
 "writer"	<_infoboxPattern>	<created-> .
 "composer"	<_infoboxPattern>	<created-> .
-"writer"	<_infoboxPattern>	<wasWrittenBy> .
-"composer"	<_infoboxPattern>	<wasComposedBy> .
 "starring"	<_infoboxPattern>	<actedIn-> .
 "producer"	<_infoboxPattern>	<produced-> .
-"producer"	<_infoboxPattern>	<wasProducedBy> .
 "creator"	<_infoboxPattern>	<created-> .
-"designer"	<_infoboxPattern>	<designed-> .
-"designer"	<_infoboxPattern>	<wasDesignedBy> .
-"developer"	<_infoboxPattern>	<developed-> .
-"developer"	<_infoboxPattern>	<wasDevelopedBy> .
+"designer"	<_infoboxPattern>	<created-> .
+"developer"	<_infoboxPattern>	<created-> .
 "production company"	<_infoboxPattern>	<produced-> .
 "music"	<_infoboxPattern>	<wroteMusicFor-> .
-"founder"	<_infoboxPattern>	<founded-> .
-"founder"	<_infoboxPattern>	<wasFoundedBy> .
+"founder"	<_infoboxPattern>	<created-> .
 "owner"	<_infoboxPattern>	<owns-> .
-"owner"	<_infoboxPattern>	<ownedBy> .
 "combatant"	<_infoboxPattern>	<participatedIn-> .
 
 # ------------ Replacements ----------
