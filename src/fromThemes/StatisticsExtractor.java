@@ -1,21 +1,14 @@
 package fromThemes;
 
 import java.io.File;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import fromOtherSources.WordnetExtractor;
-import fromWikipedia.Extractor;
-import fromWikipedia.WikiInfoExtractor;
-import fromWikipedia.WikipediaTypeExtractor;
-
-
-
 import javatools.administrative.Announce;
-import javatools.administrative.D;
+import javatools.datatypes.ByteString;
 import javatools.datatypes.FinalSet;
+import javatools.datatypes.IntHashMap;
 import javatools.parsers.NumberFormatter;
 import basics.Fact;
 import basics.FactComponent;
@@ -25,6 +18,10 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
+import fromOtherSources.WordnetExtractor;
+import fromWikipedia.Extractor;
+import fromWikipedia.WikiInfoExtractor;
+import fromWikipedia.WikipediaTypeExtractor;
 
 /**
  * YAGO2s - StatisticsExtractor
@@ -55,9 +52,9 @@ public class StatisticsExtractor extends Extractor {
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     //TransitiveTypeExtractor.freeMemory();
     //WordnetExtractor.freeMemory();
-    Set<String> definedRelations=new HashSet<>();
-    Map<String, Integer> relations = new HashMap<>();
-    Set<String> instances = new HashSet<>(15_000_000);
+    Set<String> definedRelations=new IntHashMap<>();
+    IntHashMap<String> relations = new IntHashMap<>();
+    Set<ByteString> instances = new IntHashMap<>();
     FactWriter out = output.get(STATISTICS);
     Announce.doing("Making YAGO statistics");
     for (Theme t : input.keySet()) {
@@ -65,20 +62,21 @@ public class StatisticsExtractor extends Extractor {
       int counter = 0;
       for (Fact f : input.get(t)) {
         counter++;
+        ByteString arg1=new ByteString(f.getArg(1)).intern();
         if ((f.getRelation().equals(RDFS.domain) || f.getRelation().equals(RDFS.range))) {
           definedRelations.add(f.getArg(1));
         }
-        D.addKeyValue(relations, f.getRelation(), 1);
+        relations.increase(f.getRelation());
         if (f.getRelation().equals(RDFS.type)) {
-          instances.add(f.getArg(1));
+          instances.add(arg1);
         }
       }
       out.write(new Fact(FactComponent.forTheme(t), YAGO.hasNumber, FactComponent.forNumber(counter)));
       Announce.done();
     }
     Announce.doing("Writing results");
-    for (String rel : relations.keySet()) {
-      out.write(new Fact(rel, YAGO.hasNumber, FactComponent.forNumber(relations.get(rel))));
+    for (String rel : relations.keys()) {
+      out.write(new Fact(rel.toString(), YAGO.hasNumber, FactComponent.forNumber(relations.get(rel))));
       if(!definedRelations.contains(rel)) Announce.warning("Undefined relation:",rel);
     }
     for(String rel :definedRelations) {

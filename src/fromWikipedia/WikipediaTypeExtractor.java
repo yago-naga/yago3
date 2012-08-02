@@ -13,6 +13,7 @@ import java.util.TreeSet;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
+import javatools.datatypes.IntHashMap;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.parsers.Name;
@@ -271,17 +272,18 @@ public class WikipediaTypeExtractor extends Extractor {
 
   /** Returns the YAGO branch for a an entity */
   public String yagoBranchForEntity(String entity, Set<String> types) {
-    Map<String, Integer> branches = new HashMap<>();
+    IntHashMap<String> branches = new IntHashMap<>();
     for (String type : types) {
       String yagoBranch = yagoBranchForClass(type);
       if (yagoBranch != null) {
         Announce.debug(entity, type, yagoBranch);
         // Give higher priority to the stuff extracted from infoboxes
-        D.addKeyValue(branches, yagoBranch, type.startsWith("<wordnet")?2:1);
+        branches.increase(yagoBranch);
+        if(type.startsWith("<wordnet")) branches.increase(yagoBranch);
       }
     }
     String bestSoFar = null;
-    for (String candidate : branches.keySet()) {
+    for (String candidate : branches.keys()) {
       if (bestSoFar == null || branches.get(candidate) > branches.get(bestSoFar) || branches.get(candidate) == branches.get(bestSoFar)
           && SimpleTypeExtractor.yagoBranches.indexOf(candidate) < SimpleTypeExtractor.yagoBranches.indexOf(bestSoFar)) bestSoFar = candidate;
     }
