@@ -93,7 +93,8 @@ public class FlightExtractor extends Extractor {
             }
             if (airline == null) continue;
             s = Char.decodeAmpersand(s).replaceAll("\\[.*\\]", "");
-            if (s.length() < 4 || s.contains("[[") || s.contains("<") || s.contains("'''") || s.contains("\n")) continue;
+            if (s.length() < 4 || s.contains("<") || s.contains("'''") || s.contains("\n") || s.contains("]]") || s.contains("=")) continue;
+            s=s.replace("[[","").replace("]]", "");
             s = FactComponent.forWikipediaTitle(s);
             Fact f = new Fact(titleEntity, "<isConnectedTo>", s);
             Fact by = f.metaFact("<byTransport>", airline);
@@ -106,7 +107,7 @@ public class FlightExtractor extends Extractor {
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    new FlightExtractor(new File("./testCases/fromWikipedia.FlightExtractor/flightTest.xml")).extract(new File("c:/fabian/data/yago2s"),"test");
-    //new FlightExtractor(new File("c:/fabian/data/wikipedia/testset/airpisa.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
+    //new FlightExtractor(new File("./testCases/fromWikipedia.FlightExtractor/flightTest.xml")).extract(new File("c:/fabian/data/yago2s"),"test");
+    new FlightExtractor(new File("c:/fabian/data/wikipedia/testset/la_airport2.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
   }
 }
