@@ -22,6 +22,7 @@ import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.WikiInfoExtractor;
 import fromWikipedia.WikipediaTypeExtractor;
+import fromWikipedia.FlightExtractor;
 
 /**
  * YAGO2s - StatisticsExtractor
@@ -37,7 +38,7 @@ public class StatisticsExtractor extends Extractor {
   public Set<Theme> input() {
     return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, WikipediaTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
         MetaFactExtractor.YAGOMETAFACTS, SchemaExtractor.YAGOSCHEMA, LiteralFactExtractor.YAGOLITERALFACTS, 
-        WordnetExtractor.WORDNETIDS, WikiInfoExtractor.WIKIINFO);
+        WordnetExtractor.WORDNETIDS, WikiInfoExtractor.WIKIINFO, FlightExtractor.FLIGHTS);
   }
 
   /** YAGO statistics theme */
