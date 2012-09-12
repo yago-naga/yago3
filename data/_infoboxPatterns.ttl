@@ -63,7 +63,7 @@
 "ICD10"  <_infoboxPattern> <hasICD10> .
 "Capital"	<_infoboxPattern>	<hasCapital> .
 "OfficialLang"	<_infoboxPattern>	<hasOfficialLanguage> .
-"Governor"	<_infoboxPattern>	<isLeaderOf-> .
+# "---Governor"	<_infoboxPattern>	<isLeaderOf-> . // Often goes for the president with his governor
 "Senators"	<_infoboxPattern>	<isPoliticianOf-> .
 "Motto"	<_infoboxPattern>	<hasMotto> .
 "nationalMotto"	<_infoboxPattern>	<hasMotto> .
@@ -83,7 +83,7 @@
 "export-partners"	<_infoboxPattern>	<dealsWith> .
 "exports"	<_infoboxPattern>	<hasExport> .
 "growth"	<_infoboxPattern>	<hasEconomicGrowth> .
-#"hdi"	<_infoboxPattern>	<hasHDI> .
+#"hdi"	<_infoboxPattern>	<hasHDI> . # Bad results here
 "import-goods"	<_infoboxPattern>	<imports> .
 "import-partners"	<_infoboxPattern>	<dealsWith> .
 "imports"	<_infoboxPattern>	<hasImport> .
@@ -210,7 +210,7 @@
 "writer"	<_infoboxPattern>	<created-> .
 "composer"	<_infoboxPattern>	<created-> .
 "starring"	<_infoboxPattern>	<actedIn-> .
-"producer"	<_infoboxPattern>	<produced-> .
+# "producer"	<_infoboxPattern>	<produced-> . # Had bad results here
 "published"	<_infoboxPattern>	<wasCreatedOnDate> .
 "author"	<_infoboxPattern>	<created-> .
 "released"	<_infoboxPattern>	<wasCreatedOnDate> .
@@ -224,7 +224,7 @@
 "designer"	<_infoboxPattern>	<created-> .
 "developer"	<_infoboxPattern>	<created-> .
 "imdbid"	<_infoboxPattern>	<hasImdb> .
-"production company"	<_infoboxPattern>	<produced-> .
+# "production company"	<_infoboxPattern>	<produced-> . # Had bad results here
 "revenue"	<_infoboxPattern>	<hasRevenue> .
 "slogan"	<_infoboxPattern>	<hasMotto> .
 #@ <infoBoxId21>
