@@ -151,11 +151,11 @@
 "writer"	<_infoboxPattern>	<created-> .
 "composer"	<_infoboxPattern>	<created-> .
 "starring"	<_infoboxPattern>	<actedIn-> .
-"producer"	<_infoboxPattern>	<produced-> .
+# "producer"	<_infoboxPattern>	<produced-> . # Bad results here
 "creator"	<_infoboxPattern>	<created-> .
 "designer"	<_infoboxPattern>	<created-> .
 "developer"	<_infoboxPattern>	<created-> .
-"production company"	<_infoboxPattern>	<produced-> .
+# "production company"	<_infoboxPattern>	<produced-> . # Bad results here
 "music"	<_infoboxPattern>	<wroteMusicFor-> .
 "founder"	<_infoboxPattern>	<created-> .
 "owner"	<_infoboxPattern>	<owns-> .
