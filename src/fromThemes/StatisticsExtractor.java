@@ -1,7 +1,6 @@
 package fromThemes;
 
 import java.io.File;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -63,7 +62,7 @@ public class StatisticsExtractor extends Extractor {
       int counter = 0;
       for (Fact f : input.get(t)) {
         counter++;
-        ByteString arg1=new ByteString(f.getArg(1)).intern();
+        ByteString arg1=ByteString.of(f.getArg(1));
         if ((f.getRelation().equals(RDFS.domain) || f.getRelation().equals(RDFS.range))) {
           definedRelations.add(f.getArg(1));
         }
