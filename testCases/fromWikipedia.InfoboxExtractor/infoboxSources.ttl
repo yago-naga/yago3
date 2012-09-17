@@ -433,9 +433,6 @@
 #@ <id_yizk4t_115_5y52nn>
 <id_7qjadl_oyl_1s2kwiy>	<extractionSource>	<http://en.wikipedia.org/wiki/Veronica_Lario> .
 <id_yizk4t_115_5y52nn>	<extractionTechnique>	"InfoboxExtractor from birthplace" .
-#@ <id_33dqz7_115_5y52nn>
-<id_7qjadl_gcl_wz05y3>	<extractionSource>	<http://en.wikipedia.org/wiki/Veronica_Lario> .
-<id_33dqz7_115_5y52nn>	<extractionTechnique>	"InfoboxExtractor from knownfor" .
 #@ <id_keua03_115_5y52nn>
 <id_7qjadl_88c_1uyhsab>	<extractionSource>	<http://en.wikipedia.org/wiki/Veronica_Lario> .
 <id_keua03_115_5y52nn>	<extractionTechnique>	"InfoboxExtractor from occupation" .
@@ -1558,9 +1555,6 @@
 #@ <id_r7nye4_115_k44k4a>
 <id_7rtptc_11e_14u1nmi>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean_Sarkozy> .
 <id_r7nye4_115_k44k4a>	<extractionTechnique>	"InfoboxExtractor from children" .
-#@ <id_l133p3_115_k44k4a>
-<id_7rtptc_gcl_vkf2e7>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean_Sarkozy> .
-<id_l133p3_115_k44k4a>	<extractionTechnique>	"InfoboxExtractor from knownfor" .
 #@ <id_7jmjv0_115_k44k4a>
 <id_7rtptc_tje_1kbjt10>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean_Sarkozy> .
 <id_7jmjv0_115_k44k4a>	<extractionTechnique>	"InfoboxExtractor from nationality" .

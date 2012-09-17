@@ -74,6 +74,12 @@ public class TypeChecker extends FollowUpExtractor {
     if (type.equals(RDFS.statement)) {
       return (FactComponent.isFactId(entity));
     }
+    if(type.equals(RDFS.clss)) {
+      return(entity.startsWith("<wordnet_"));
+    }
+    if(type.equals(YAGO.url)) {
+      return(entity.startsWith("<http"));
+    }
     // Is it a literal?
     String[] literal = FactComponent.literalAndDatatypeAndLanguage(entity);
     if (literal != null) {

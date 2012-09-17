@@ -1,4 +1,4 @@
-# test
+# Test of YAGO2s
 # Flights from airport to airport, need redirecting
 # INTERNAL
 
@@ -43,6 +43,9 @@
 #@ <id_4ola6b_14p_15yosg0>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<London-City> .
 <id_4ola6b_14p_15yosg0>	<byTransport>	<CityJet> .
+#@ <id_4ola6b_14p_1vvajjd>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<operated_by_Régional_Compagnie_Aérienne_Européenne> .
+<id_4ola6b_14p_1vvajjd>	<byTransport>	<CityJet> .
 #@ <id_4ola6b_14p_ckqzhl>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Clermont-Ferrand> .
 <id_4ola6b_14p_ckqzhl>	<byTransport>	<CityJet> .
@@ -445,9 +448,9 @@
 #@ <id_4ola6b_14p_1y6odlr>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tel_Aviv-Ben_Gurion> .
 <id_4ola6b_14p_1y6odlr>	<byTransport>	<El_Al> .
-#@ <id_4ola6b_14p_lw7hyq>
-<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Emirates]]> .
-<id_4ola6b_14p_lw7hyq>	<byTransport>	<El_Al> .
+#@ <id_4ola6b_14p_16o2wyu>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Emirates_(airline)> .
+<id_4ola6b_14p_16o2wyu>	<byTransport>	<El_Al> .
 #@ <id_4ola6b_14p_10m2tvd>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Dubai> .
 <id_4ola6b_14p_10m2tvd>	<byTransport>	<El_Al> .
@@ -490,9 +493,9 @@
 #@ <id_4ola6b_14p_11xzgdq>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Tbilisi> .
 <id_4ola6b_14p_11xzgdq>	<byTransport>	<Georgian_Airways> .
-#@ <id_4ola6b_14p_51f4v2>
-<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Iberia]]> .
-<id_4ola6b_14p_51f4v2>	<byTransport>	<Georgian_Airways> .
+#@ <id_4ola6b_14p_1jb09oy>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Iberia_(airline)> .
+<id_4ola6b_14p_1jb09oy>	<byTransport>	<Georgian_Airways> .
 #@ <id_4ola6b_14p_2h36ql>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Madrid> .
 <id_4ola6b_14p_2h36ql>	<byTransport>	<Georgian_Airways> .
@@ -1069,9 +1072,9 @@
 #@ <id_4ola6b_14p_10ox84l>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Izmir> .
 <id_4ola6b_14p_10ox84l>	<byTransport>	<Izair> .
-#@ <id_4ola6b_14p_15ohttg>
-<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rossiya]]> .
-<id_4ola6b_14p_15ohttg>	<byTransport>	<Izair> .
+#@ <id_4ola6b_14p_10icwyw>
+<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Rossiya_(airline)> .
+<id_4ola6b_14p_10icwyw>	<byTransport>	<Izair> .
 #@ <id_4ola6b_14p_7qwqz1>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Saint_Petersburg> .
 <id_4ola6b_14p_7qwqz1>	<byTransport>	<Izair> .
@@ -1801,9 +1804,9 @@
 #@ <id_15fa8fj_14p_1y6odlr>
 <Frankfurt_Airport>	<isConnectedTo>	<Tel_Aviv-Ben_Gurion> .
 <id_15fa8fj_14p_1y6odlr>	<byTransport>	<El_Al> .
-#@ <id_15fa8fj_14p_lw7hyq>
-<Frankfurt_Airport>	<isConnectedTo>	<Emirates]]> .
-<id_15fa8fj_14p_lw7hyq>	<byTransport>	<El_Al> .
+#@ <id_15fa8fj_14p_16o2wyu>
+<Frankfurt_Airport>	<isConnectedTo>	<Emirates_(airline)> .
+<id_15fa8fj_14p_16o2wyu>	<byTransport>	<El_Al> .
 #@ <id_15fa8fj_14p_10m2tvd>
 <Frankfurt_Airport>	<isConnectedTo>	<Dubai> .
 <id_15fa8fj_14p_10m2tvd>	<byTransport>	<El_Al> .
@@ -1831,9 +1834,9 @@
 #@ <id_15fa8fj_14p_1ldst19>
 <Frankfurt_Airport>	<isConnectedTo>	<Bahrain> .
 <id_15fa8fj_14p_1ldst19>	<byTransport>	<Gulf_Air> .
-#@ <id_15fa8fj_14p_51f4v2>
-<Frankfurt_Airport>	<isConnectedTo>	<Iberia]]> .
-<id_15fa8fj_14p_51f4v2>	<byTransport>	<Gulf_Air> .
+#@ <id_15fa8fj_14p_1jb09oy>
+<Frankfurt_Airport>	<isConnectedTo>	<Iberia_(airline)> .
+<id_15fa8fj_14p_1jb09oy>	<byTransport>	<Gulf_Air> .
 #@ <id_15fa8fj_14p_2h36ql>
 <Frankfurt_Airport>	<isConnectedTo>	<Madrid> .
 <id_15fa8fj_14p_2h36ql>	<byTransport>	<Gulf_Air> .
@@ -2329,9 +2332,9 @@
 #@ <id_15fa8fj_14p_8mq6q7>
 <Frankfurt_Airport>	<isConnectedTo>	<Zagreb> .
 <id_15fa8fj_14p_8mq6q7>	<byTransport>	<Lufthansa> .
-#@ <id_15fa8fj_14p_10k96ke>
-<Frankfurt_Airport>	<isConnectedTo>	<BMI]]> .
-<id_15fa8fj_14p_10k96ke>	<byTransport>	<Lufthansa> .
+#@ <id_15fa8fj_14p_1l7msuu>
+<Frankfurt_Airport>	<isConnectedTo>	<Lufthansa_operated_by_BMI_(airline)> .
+<id_15fa8fj_14p_1l7msuu>	<byTransport>	<Lufthansa> .
 #@ <id_15fa8fj_14p_1ksxdjo>
 <Frankfurt_Airport>	<isConnectedTo>	<Birmingham> .
 <id_15fa8fj_14p_1ksxdjo>	<byTransport>	<Lufthansa> .
@@ -2455,9 +2458,9 @@
 #@ <id_15fa8fj_14p_hrmq02>
 <Frankfurt_Airport>	<isConnectedTo>	<Podgorica> .
 <id_15fa8fj_14p_hrmq02>	<byTransport>	<Montenegro_Airlines> .
-#@ <id_15fa8fj_14p_32nftl>
-<Frankfurt_Airport>	<isConnectedTo>	<Niki]]> .
-<id_15fa8fj_14p_32nftl>	<byTransport>	<Montenegro_Airlines> .
+#@ <id_15fa8fj_14p_6l41vx>
+<Frankfurt_Airport>	<isConnectedTo>	<Niki_(airline)> .
+<id_15fa8fj_14p_6l41vx>	<byTransport>	<Montenegro_Airlines> .
 #@ <id_15fa8fj_14p_6uwp67>
 <Frankfurt_Airport>	<isConnectedTo>	<Vienna> .
 <id_15fa8fj_14p_6uwp67>	<byTransport>	<Montenegro_Airlines> .
@@ -2476,9 +2479,9 @@
 #@ <id_15fa8fj_14p_zjtsys>
 <Frankfurt_Airport>	<isConnectedTo>	<Doha> .
 <id_15fa8fj_14p_zjtsys>	<byTransport>	<Qatar_Airways> .
-#@ <id_15fa8fj_14p_15ohttg>
-<Frankfurt_Airport>	<isConnectedTo>	<Rossiya]]> .
-<id_15fa8fj_14p_15ohttg>	<byTransport>	<RAK_Airways> .
+#@ <id_15fa8fj_14p_10icwyw>
+<Frankfurt_Airport>	<isConnectedTo>	<Rossiya_(airline)> .
+<id_15fa8fj_14p_10icwyw>	<byTransport>	<RAK_Airways> .
 #@ <id_15fa8fj_14p_7qwqz1>
 <Frankfurt_Airport>	<isConnectedTo>	<Saint_Petersburg> .
 <id_15fa8fj_14p_7qwqz1>	<byTransport>	<RAK_Airways> .
@@ -2545,9 +2548,9 @@
 #@ <id_15fa8fj_14p_147xp70>
 <Frankfurt_Airport>	<isConnectedTo>	<İzmir> .
 <id_15fa8fj_14p_147xp70>	<byTransport>	<SunExpress> .
-#@ <id_15fa8fj_14p_1qko614>
-<Frankfurt_Airport>	<isConnectedTo>	<SunExpress_Deutschland]]> .
-<id_15fa8fj_14p_1qko614>	<byTransport>	<SunExpress> .
+#@ <id_15fa8fj_14p_v8h4h4>
+<Frankfurt_Airport>	<isConnectedTo>	<SunExpress_operated_by_SunExpress> .
+<id_15fa8fj_14p_v8h4h4>	<byTransport>	<SunExpress> .
 #@ <id_15fa8fj_14p_10k4kvl>
 <Frankfurt_Airport>	<isConnectedTo>	<Adana> .
 <id_15fa8fj_14p_10k4kvl>	<byTransport>	<SunExpress> .
@@ -2785,6 +2788,9 @@
 #@ <id_pqs3ol_14p_18n5ki5>
 <Galileo_Galilei_Airport>	<isConnectedTo>	<Cologne/Bonn> .
 <id_pqs3ol_14p_18n5ki5>	<byTransport>	<Germanwings> .
+#@ <id_pqs3ol_14p_189x9me>
+<Galileo_Galilei_Airport>	<isConnectedTo>	<Iberia_Airlines> .
+<id_pqs3ol_14p_189x9me>	<byTransport>	<Germanwings> .
 #@ <id_pqs3ol_14p_2h36ql>
 <Galileo_Galilei_Airport>	<isConnectedTo>	<Madrid> .
 <id_pqs3ol_14p_2h36ql>	<byTransport>	<Air_Nostrum> .

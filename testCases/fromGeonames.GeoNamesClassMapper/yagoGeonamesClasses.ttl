@@ -1,10 +1,6 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Classes from GeoNames
+# GEONAMES
 
 @base <http://yago-knowledge/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
@@ -14,675 +10,1347 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+#@ <id_z2h3a0_1m6_1aw92kp>
 <geoclass_first-order_administrative_division>	rdfs:subClassOf	<wordnet_division_108219330> .
+#@ <id_s7i3yk_1m6_1awn77h>
 <geoclass_second-order_administrative_division>	rdfs:subClassOf	<wordnet_division_108220714> .
+#@ <id_17s72of_1m6_1awn77h>
 <geoclass_third-order_administrative_division>	rdfs:subClassOf	<wordnet_division_108220714> .
+#@ <id_1l06z02_1m6_1awn77h>
 <geoclass_fourth-order_administrative_division>	rdfs:subClassOf	<wordnet_division_108220714> .
+#@ <id_j8b9k6_1m6_1kvveil>
 <geoclass_administrative_division>	rdfs:subClassOf	<wordnet_administrative_district_108491826> .
+#@ <id_11oenl6_1m6_kqpane>
 <geoclass_leased_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_97bizh_1m6_zq43us>
 <geoclass_political_entity>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_mh0zz1_1m6_zq43us>
 <geoclass_dependent_political_entity>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_704ena_1m6_zq43us>
 <geoclass_freely_associated_state>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_18nhb7m_1m6_zq43us>
 <geoclass_independent_political_entity>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_14tncww_1m6_1aso9f0>
 <geoclass_section_of_independent_political_entity>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_cul5ox_1m6_zq43us>
 <geoclass_semi-independent_political_entity>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_ebg8mt_1m6_1ombtq2>
 <geoclass_parish>	rdfs:subClassOf	<wordnet_parish_108615001> .
+#@ <id_9crg6a_1m6_zq43us>
 <geoclass_territory>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ydvwo4_1m6_zq43us>
 <geoclass_zone>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1dguspf_1m6_ig89qx>
 <geoclass_buffer_zone>	rdfs:subClassOf	<wordnet_buffer_zone_108688424> .
+#@ <id_j75n7z_1m6_a9n3xz>
 <geoclass_seaplane_landing_area>	rdfs:subClassOf	<wordnet_seaplane_104160586> .
+#@ <id_17ngek2_1m6_lc7prm>
 <geoclass_anchorage>	rdfs:subClassOf	<wordnet_anchorage_108639776> .
+#@ <id_ib4xb6_1m6_151h0uf>
 <geoclass_bay>	rdfs:subClassOf	<wordnet_bay_109215664> .
+#@ <id_1ydgavl_1m6_151h0uf>
 <geoclass_bays>	rdfs:subClassOf	<wordnet_bay_109215664> .
+#@ <id_1ensgb8_1m6_tc23n2>
 <geoclass_bight>	rdfs:subClassOf	<wordnet_bight_102837567> .
+#@ <id_1ydgalw_1m6_1nb2nlv>
 <geoclass_bank>	rdfs:subClassOf	<wordnet_bank_109213565> .
+#@ <id_maiihv_1m6_1nb2nlv>
 <geoclass_stream_bank>	rdfs:subClassOf	<wordnet_bank_109213565> .
+#@ <id_ohqr4i_1m6_1aso9f0>
 <geoclass_section_of_bank>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_ib4xmq_1m6_11midnw>
 <geoclass_bog>	rdfs:subClassOf	<wordnet_bog_109225943> .
+#@ <id_b101cv_1m6_18grve1>
 <geoclass_icecap>	rdfs:subClassOf	<wordnet_icecap_109308743> .
+#@ <id_170jiq3_1m6_19fh3w8>
 <geoclass_channel>	rdfs:subClassOf	<wordnet_channel_109241247> .
+#@ <id_1wwkkwb_1m6_19fh3w8>
 <geoclass_lake_channel>	rdfs:subClassOf	<wordnet_channel_109241247> .
+#@ <id_1nzfzsu_1m6_19fh3w8>
 <geoclass_marine_channel>	rdfs:subClassOf	<wordnet_channel_109241247> .
+#@ <id_r1ei4w_1m6_19fh3w8>
 <geoclass_navigation_channel>	rdfs:subClassOf	<wordnet_channel_109241247> .
+#@ <id_14g78fk_1m6_kbsesi>
 <geoclass_confluence>	rdfs:subClassOf	<wordnet_confluence_108542634> .
+#@ <id_1eo7a0z_1m6_qcu6vu>
 <geoclass_canal>	rdfs:subClassOf	<wordnet_canal_102947212> .
+#@ <id_1vnrx8a_1m6_wqyrhc>
 <geoclass_aqueduct>	rdfs:subClassOf	<wordnet_aqueduct_102732433> .
+#@ <id_u22a2d_1m6_5z9or1>
 <geoclass_canal_bend>	rdfs:subClassOf	<wordnet_bend_102829696> .
+#@ <id_10kf1a3_1m6_qcu6vu>
 <geoclass_drainage_canal>	rdfs:subClassOf	<wordnet_canal_102947212> .
+#@ <id_s1cphe_1m6_qcu6vu>
 <geoclass_irrigation_canal>	rdfs:subClassOf	<wordnet_canal_102947212> .
+#@ <id_pqvuko_1m6_qcu6vu>
 <geoclass_navigation_canal>	rdfs:subClassOf	<wordnet_canal_102947212> .
+#@ <id_12my7vc_1m6_qcu6vu>
 <geoclass_abandoned_canal>	rdfs:subClassOf	<wordnet_canal_102947212> .
+#@ <id_145168y_1m6_qcu6vu>
 <geoclass_underground_irrigation_canal>	rdfs:subClassOf	<wordnet_canal_102947212> .
+#@ <id_1czglk5_1m6_1aso9f0>
 <geoclass_section_of_canal>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_1ydh85v_1m6_10eid5s>
 <geoclass_cove>	rdfs:subClassOf	<wordnet_cove_109257761> .
+#@ <id_1o897gf_1m6_dfuiwe>
 <geoclass_tidal_creek>	rdfs:subClassOf	<wordnet_brook_109229409> .
+#@ <id_1dfjhfl_1m6_1fpjiwy>
 <geoclass_current>	rdfs:subClassOf	<wordnet_current_107406765> .
+#@ <id_8gwfhh_1m6_1y9z955>
 <geoclass_cutoff>	rdfs:subClassOf	<wordnet_shortcut_104204953> .
+#@ <id_1ydhup7_1m6_560ntn>
 <geoclass_dock>	rdfs:subClassOf	<wordnet_dock_103216828> .
+#@ <id_a9mb81_1m6_zq43us>
 <geoclass_docking_basin>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1vtg98j_1m6_1qrwt43>
 <geoclass_icecap_dome>	rdfs:subClassOf	<wordnet_dome_103220692> .
+#@ <id_3p13a_1m6_irf8x2>
 <geoclass_icecap_depression>	rdfs:subClassOf	<wordnet_natural_depression_109366017> .
+#@ <id_1eowb0c_1m6_ztslje>
 <geoclass_ditch>	rdfs:subClassOf	<wordnet_ditch_109267758> .
+#@ <id_10l429g_1m6_1away7c>
 <geoclass_drainage_ditch>	rdfs:subClassOf	<wordnet_drainage_ditch_103232309> .
+#@ <id_s21qgr_1m6_3lrh2f>
 <geoclass_irrigation_ditch>	rdfs:subClassOf	<wordnet_irrigation_ditch_103587205> .
+#@ <id_1kjbhxg_1m6_zq43us>
 <geoclass_ditch_mouth>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_6ua6e9_1m6_1a0ep7y>
 <geoclass_estuary>	rdfs:subClassOf	<wordnet_estuary_109274500> .
+#@ <id_9s9qca_1m6_kqpane>
 <geoclass_fishing_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_1eq0ftx_1m6_13f7is6>
 <geoclass_fjord>	rdfs:subClassOf	<wordnet_fjord_109281104> .
+#@ <id_9pwfe6_1m6_13f7is6>
 <geoclass_fjords>	rdfs:subClassOf	<wordnet_fjord_109281104> .
+#@ <id_14t61sq_1m6_15peql6>
 <geoclass_waterfall>	rdfs:subClassOf	<wordnet_waterfall_109475292> .
+#@ <id_we7qkc_1m6_1aso9f0>
 <geoclass_section_of_waterfall>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_11x55zo_1m6_skd5t5>
 <geoclass_mud_flat>	rdfs:subClassOf	<wordnet_mud_flat_108600618> .
+#@ <id_fox2c6_1m6_zq43us>
 <geoclass_tidal_flat>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_wkzynr_1m6_13649j0>
 <geoclass_glacier>	rdfs:subClassOf	<wordnet_glacier_109289331> .
+#@ <id_1ydjwbk_1m6_1swfpe8>
 <geoclass_gulf>	rdfs:subClassOf	<wordnet_gulf_109296121> .
+#@ <id_a4dhgd_1m6_s7b1iq>
 <geoclass_geyser>	rdfs:subClassOf	<wordnet_geyser_109288635> .
+#@ <id_aj3478_1m6_16fncyd>
 <geoclass_harbor>	rdfs:subClassOf	<wordnet_seaport_108639058> .
+#@ <id_t983oi_1m6_1aso9f0>
 <geoclass_section_of_harbor>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_1erqb1a_1m6_in1i6k>
 <geoclass_inlet>	rdfs:subClassOf	<wordnet_inlet_109313716> .
+#@ <id_1f8ovls_1m6_in1i6k>
 <geoclass_former_inlet>	rdfs:subClassOf	<wordnet_inlet_109313716> .
+#@ <id_32iog9_1m6_86jibg>
 <geoclass_lake_bed>	rdfs:subClassOf	<wordnet_lake_bed_109330378> .
+#@ <id_cf2uk4_1m6_1ipft8j>
 <geoclass_lagoon>	rdfs:subClassOf	<wordnet_lagoon_109328746> .
+#@ <id_ttw1j3_1m6_1ipft8j>
 <geoclass_lagoons>	rdfs:subClassOf	<wordnet_lagoon_109328746> .
+#@ <id_v57u1e_1m6_1aso9f0>
 <geoclass_section_of_lagoon>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_1ydmoef_1m6_615tqy>
 <geoclass_lake>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_e84v9j_1m6_615tqy>
 <geoclass_crater_lake>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_3hqxur_1m6_615tqy>
 <geoclass_intermittent_lake>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_1drrxpc_1m6_615tqy>
 <geoclass_salt_lake>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_1x5n3lw_1m6_615tqy>
 <geoclass_intermittent_salt_lake>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_kql9ol_1m6_x169v4>
 <geoclass_oxbow_lake>	rdfs:subClassOf	<wordnet_oxbow_lake_109382191> .
+#@ <id_1hfiwwx_1m6_615tqy>
 <geoclass_intermittent_oxbow_lake>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_1et5d8s_1m6_615tqy>
 <geoclass_lakes>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_o45q7b_1m6_615tqy>
 <geoclass_underground_lake>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_etilfw_1m6_615tqy>
 <geoclass_crater_lakes>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_11933lc_1m6_615tqy>
 <geoclass_intermittent_lakes>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_1f9ovf7_1m6_615tqy>
 <geoclass_salt_lakes>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_cxigof_1m6_615tqy>
 <geoclass_intermittent_salt_lakes>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_ohx4x1_1m6_1aso9f0>
 <geoclass_section_of_lake>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_9w01xc_1m6_bwy4qe>
 <geoclass_salt_evaporation_ponds>	rdfs:subClassOf	<wordnet_pond_109397391> .
+#@ <id_1p2r9xu_1m6_rf3c3x>
 <geoclass_mangrove_swamp>	rdfs:subClassOf	<wordnet_swamp_109452395> .
+#@ <id_1ydnlvh_1m6_1d79nxl>
 <geoclass_moor>	rdfs:subClassOf	<wordnet_moor_109358751> .
+#@ <id_1etpbcr_1m6_g96b6t>
 <geoclass_marsh>	rdfs:subClassOf	<wordnet_marsh_109347779> .
+#@ <id_1fa8tj6_1m6_1hdpscx>
 <geoclass_salt_marsh>	rdfs:subClassOf	<wordnet_salt_marsh_109420794> .
+#@ <id_1ncs9og_1m6_j1hmkl>
 <geoclass_narrows>	rdfs:subClassOf	<wordnet_narrow_109365863> .
+#@ <id_1eutwg6_1m6_11ujy8b>
 <geoclass_ocean>	rdfs:subClassOf	<wordnet_ocean_109376198> .
+#@ <id_vr40i4_1m6_zq43us>
 <geoclass_overfalls>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ydpist_1m6_bwy4qe>
 <geoclass_pond>	rdfs:subClassOf	<wordnet_pond_109397391> .
+#@ <id_3hts95_1m6_bwy4qe>
 <geoclass_intermittent_pond>	rdfs:subClassOf	<wordnet_pond_109397391> .
+#@ <id_1drus3q_1m6_bwy4qe>
 <geoclass_salt_pond>	rdfs:subClassOf	<wordnet_pond_109397391> .
+#@ <id_1x5py0a_1m6_bwy4qe>
 <geoclass_intermittent_salt_pond>	rdfs:subClassOf	<wordnet_pond_109397391> .
+#@ <id_1evljmu_1m6_bwy4qe>
 <geoclass_ponds>	rdfs:subClassOf	<wordnet_pond_109397391> .
+#@ <id_1jyqo26_1m6_zzk885>
 <geoclass_fishponds>	rdfs:subClassOf	<wordnet_fishpond_109280913> .
+#@ <id_11bj9ze_1m6_bwy4qe>
 <geoclass_intermittent_ponds>	rdfs:subClassOf	<wordnet_pond_109397391> .
+#@ <id_1fc51t9_1m6_bwy4qe>
 <geoclass_salt_ponds>	rdfs:subClassOf	<wordnet_pond_109397391> .
+#@ <id_1ydpitw_1m6_1ofdv67>
 <geoclass_pool>	rdfs:subClassOf	<wordnet_pool_109397607> .
+#@ <id_3htsa8_1m6_zq43us>
 <geoclass_intermittent_pool>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ewiha3_1m6_1wih7k7>
 <geoclass_reach>	rdfs:subClassOf	<wordnet_range_108628921> .
+#@ <id_16obgwb_1m6_1ruknn7>
 <geoclass_icecap_ridge>	rdfs:subClassOf	<wordnet_ridge_109409512> .
+#@ <id_uc8d67_1m6_iahaaq>
 <geoclass_roadstead>	rdfs:subClassOf	<wordnet_roads_108640300> .
+#@ <id_1ydql58_1m6_10flrwy>
 <geoclass_reef>	rdfs:subClassOf	<wordnet_reef_109406793> .
+#@ <id_azqaqi_1m6_1x4npkc>
 <geoclass_coral_reef>	rdfs:subClassOf	<wordnet_coral_reef_109256479> .
+#@ <id_oi11nu_1m6_1aso9f0>
 <geoclass_section_of_reef>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_f9i73j_1m6_zgpkg2>
 <geoclass_rapids>	rdfs:subClassOf	<wordnet_rapid_109405396> .
+#@ <id_6ro1yv_1m6_1mphi2q>
 <geoclass_reservoir>	rdfs:subClassOf	<wordnet_reservoir_104078747> .
+#@ <id_q5j7vf_1m6_1mphi2q>
 <geoclass_intermittent_reservoir>	rdfs:subClassOf	<wordnet_reservoir_104078747> .
+#@ <id_1lhryq2_1m6_3el5l8>
 <geoclass_water_tank>	rdfs:subClassOf	<wordnet_cistern_103035715> .
+#@ <id_f9m18x_1m6_vgdvrx>
 <geoclass_ravine>	rdfs:subClassOf	<wordnet_ravine_109405787> .
+#@ <id_fqax8o_1m6_zq43us>
 <geoclass_sabkha>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ex92tz_1m6_15kfx6p>
 <geoclass_sound>	rdfs:subClassOf	<wordnet_strait_109446115> .
+#@ <id_ib59zr_1m6_160hq59>
 <geoclass_sea>	rdfs:subClassOf	<wordnet_sea_109426788> .
+#@ <id_1ex4h65_1m6_102co6q>
 <geoclass_shoal>	rdfs:subClassOf	<wordnet_shoal_109433134> .
+#@ <id_1ydrb9q_1m6_zq43us>
 <geoclass_sill>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_fyu0lh_1m6_fwnmnn>
 <geoclass_spring>	rdfs:subClassOf	<wordnet_spring_109443453> .
+#@ <id_bne4f9_1m6_fwnmnn>
 <geoclass_sulphur_spring>	rdfs:subClassOf	<wordnet_spring_109443453> .
+#@ <id_qlushj_1m6_8olj2d>
 <geoclass_hot_spring>	rdfs:subClassOf	<wordnet_hot_spring_109305898> .
+#@ <id_g113p4_1m6_lavx>
 <geoclass_stream>	rdfs:subClassOf	<wordnet_stream_109448361> .
+#@ <id_bhqwam_1m6_zq43us>
 <geoclass_anabranch>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_mailgg_1m6_5z9or1>
 <geoclass_stream_bend>	rdfs:subClassOf	<wordnet_bend_102829696> .
+#@ <id_1v28re4_1m6_lavx>
 <geoclass_canalized_stream>	rdfs:subClassOf	<wordnet_stream_109448361> .
+#@ <id_17we924_1m6_clnlio>
 <geoclass_distributary>	rdfs:subClassOf	<wordnet_distributary_109267602> .
+#@ <id_1u1ed1w_1m6_1pbvs4l>
 <geoclass_headwaters>	rdfs:subClassOf	<wordnet_headwater_108508629> .
+#@ <id_lxr4d0_1m6_lavx>
 <geoclass_intermittent_stream>	rdfs:subClassOf	<wordnet_stream_109448361> .
+#@ <id_51zqie_1m6_1aso9f0>
 <geoclass_section_of_intermittent_stream>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_1fy89fk_1m6_sv982n>
 <geoclass_stream_mouth>	rdfs:subClassOf	<wordnet_mouth_109362316> .
+#@ <id_3vn7gv_1m6_lavx>
 <geoclass_abandoned_watercourse>	rdfs:subClassOf	<wordnet_stream_109448361> .
+#@ <id_1yp9uuz_1m6_lavx>
 <geoclass_streams>	rdfs:subClassOf	<wordnet_stream_109448361> .
+#@ <id_1yh9wvd_1m6_c3gwyg>
 <geoclass_lost_river>	rdfs:subClassOf	<wordnet_river_109411430> .
+#@ <id_yr636e_1m6_1aso9f0>
 <geoclass_section_of_stream>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_g110xf_1m6_15kfx6p>
 <geoclass_strait>	rdfs:subClassOf	<wordnet_strait_109446115> .
+#@ <id_1exdrvs_1m6_rf3c3x>
 <geoclass_swamp>	rdfs:subClassOf	<wordnet_swamp_109452395> .
+#@ <id_oqlvrc_1m6_11div1u>
 <geoclass_irrigation_system>	rdfs:subClassOf	<wordnet_system_108435388> .
+#@ <id_1jaqlk4_1m6_1695b59>
 <geoclass_canal_tunnel>	rdfs:subClassOf	<wordnet_tunnel_104497962> .
+#@ <id_1ydtp3b_1m6_1swytck>
 <geoclass_wadi>	rdfs:subClassOf	<wordnet_wadi_109474010> .
+#@ <id_kntlip_1m6_5z9or1>
 <geoclass_wadi_bend>	rdfs:subClassOf	<wordnet_bend_102829696> .
+#@ <id_1c47m18_1m6_1im2wk1>
 <geoclass_wadi_junction>	rdfs:subClassOf	<wordnet_junction_103605722> .
+#@ <id_1epbdb_1m6_zq43us>
 <geoclass_wadi_mouth>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_hmin91_1m6_zq43us>
 <geoclass_wadies>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_oi45lx_1m6_1aso9f0>
 <geoclass_section_of_wadi>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_g5j6om_1m6_rif0xl>
 <geoclass_whirlpool>	rdfs:subClassOf	<wordnet_whirlpool_107433145> .
+#@ <id_1ydts92_1m6_16kq5cj>
 <geoclass_well>	rdfs:subClassOf	<wordnet_well_104572344> .
+#@ <id_lvm3m9_1m6_16kq5cj>
 <geoclass_abandoned_well>	rdfs:subClassOf	<wordnet_well_104572344> .
+#@ <id_1ez9oml_1m6_16kq5cj>
 <geoclass_wells>	rdfs:subClassOf	<wordnet_well_104572344> .
+#@ <id_1fbanyx_1m6_1fapl97>
 <geoclass_wetland>	rdfs:subClassOf	<wordnet_wetland_109477890> .
+#@ <id_led2m5_1m6_1fapl97>
 <geoclass_intermittent_wetland>	rdfs:subClassOf	<wordnet_wetland_109477890> .
+#@ <id_8d1wmy_1m6_1rttl36>
 <geoclass_watercourse>	rdfs:subClassOf	<wordnet_watercourse_109475179> .
+#@ <id_14t7m5b_1m6_zq43us>
 <geoclass_waterhole>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_6m38wy_1m6_zq43us>
 <geoclass_agricultural_colony>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_chy8mg_1m6_115vewn>
 <geoclass_amusement_park>	rdfs:subClassOf	<wordnet_amusement_park_108494231> .
+#@ <id_1ydg005_1m6_kqpane>
 <geoclass_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_10jvcl5_1m6_ugnmul>
 <geoclass_drainage_basin>	rdfs:subClassOf	<wordnet_river_basin_108518940> .
+#@ <id_1vo244v_1m6_ugnmul>
 <geoclass_petroleum_basin>	rdfs:subClassOf	<wordnet_river_basin_108518940> .
+#@ <id_1i4iqq2_1m6_slxlgo>
 <geoclass_battlefield>	rdfs:subClassOf	<wordnet_battlefield_108506641> .
+#@ <id_18ad0q5_1m6_678va3>
 <geoclass_clearing>	rdfs:subClassOf	<wordnet_clearing_108541288> .
+#@ <id_8dh5r7_1m6_91gngm>
 <geoclass_common>	rdfs:subClassOf	<wordnet_park_108615374> .
+#@ <id_1jvvf74_1m6_kqpane>
 <geoclass_concession_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_1k4900b_1m6_1idml62>
 <geoclass_coalfield>	rdfs:subClassOf	<wordnet_coalfield_108659663> .
+#@ <id_11o62ws_1m6_1tfijl7>
 <geoclass_continent>	rdfs:subClassOf	<wordnet_continent_109254614> .
+#@ <id_1eofyn2_1m6_zq43us>
 <geoclass_coast>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_8qk1fg_1m6_1sp4ed0>
 <geoclass_business_center>	rdfs:subClassOf	<wordnet_center_108514034> .
+#@ <id_3qdtgh_1m6_2wv4d5>
 <geoclass_housing_development>	rdfs:subClassOf	<wordnet_housing_development_108549480> .
+#@ <id_1epzlaa_1m6_o1r0br>
 <geoclass_field>	rdfs:subClassOf	<wordnet_plain_109393605> .
+#@ <id_1afhr0_1m6_o1r0br>
 <geoclass_irrigated_field>	rdfs:subClassOf	<wordnet_plain_109393605> .
+#@ <id_4tpn3t_1m6_mln7zc>
 <geoclass_gasfield>	rdfs:subClassOf	<wordnet_gasfield_108659759> .
+#@ <id_1a8lw2u_1m6_kqpane>
 <geoclass_grazing_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_l6lufh_1m6_kqpane>
 <geoclass_gravel_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_1o3f197_1m6_kqpane>
 <geoclass_industrial_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_1thjfti_1m6_1hie3hu>
 <geoclass_arctic_land>	rdfs:subClassOf	<wordnet_land_113250048> .
+#@ <id_1qniuhn_1m6_1s79we7>
 <geoclass_locality>	rdfs:subClassOf	<wordnet_vicinity_108641113> .
+#@ <id_feilvv_1m6_ll6qpu>
 <geoclass_military_base>	rdfs:subClassOf	<wordnet_base_108490402> .
+#@ <id_jwgq04_1m6_kqpane>
 <geoclass_mining_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_1d11i9n_1m6_kqpane>
 <geoclass_maneuver_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_bsq72y_1m6_5z715w>
 <geoclass_naval_base>	rdfs:subClassOf	<wordnet_base_102798290> .
+#@ <id_1eusx1v_1m6_1idob4f>
 <geoclass_oasis>	rdfs:subClassOf	<wordnet_oasis_108506496> .
+#@ <id_1te44ps_1m6_1lt01k7>
 <geoclass_oilfield>	rdfs:subClassOf	<wordnet_oilfield_108659861> .
+#@ <id_smq4l7_1m6_zq43us>
 <geoclass_peat_cutting_area>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ydp8iq_1m6_91gngm>
 <geoclass_park>	rdfs:subClassOf	<wordnet_park_108615374> .
+#@ <id_1ydpiwp_1m6_sts758>
 <geoclass_port>	rdfs:subClassOf	<wordnet_port_108633957> .
+#@ <id_1tvclfd_1m6_mazl1f>
 <geoclass_quicksand>	rdfs:subClassOf	<wordnet_quicksand_109402944> .
+#@ <id_o8lfpw_1m6_zq43us>
 <geoclass_republic>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1cxre4k_1m6_1uzaj1w>
 <geoclass_reserve>	rdfs:subClassOf	<wordnet_reservation_108587174> .
+#@ <id_1teep5g_1m6_1uzaj1w>
 <geoclass_agricultural_reserve>	rdfs:subClassOf	<wordnet_reservation_108587174> .
+#@ <id_1twdp8y_1m6_1uzaj1w>
 <geoclass_forest_reserve>	rdfs:subClassOf	<wordnet_reservation_108587174> .
+#@ <id_wjgktw_1m6_1uzaj1w>
 <geoclass_hunting_reserve>	rdfs:subClassOf	<wordnet_reservation_108587174> .
+#@ <id_1bcmxlo_1m6_1uzaj1w>
 <geoclass_nature_reserve>	rdfs:subClassOf	<wordnet_reservation_108587174> .
+#@ <id_69hcpc_1m6_1uzaj1w>
 <geoclass_palm_tree_reserve>	rdfs:subClassOf	<wordnet_reservation_108587174> .
+#@ <id_14kdcgk_1m6_1uzaj1w>
 <geoclass_reservation>	rdfs:subClassOf	<wordnet_reservation_108587174> .
+#@ <id_8t0ce3_1m6_1uzaj1w>
 <geoclass_wildlife_reserve>	rdfs:subClassOf	<wordnet_reservation_108587174> .
+#@ <id_fbjmuk_1m6_zq43us>
 <geoclass_region>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1h8zojq_1m6_zq43us>
 <geoclass_economic_region>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1c8foz0_1m6_zq43us>
 <geoclass_lake_region>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_sys0wc_1m6_1wihosf>
 <geoclass_artillery_range>	rdfs:subClassOf	<wordnet_range_108629199> .
+#@ <id_1drl9b2_1m6_kqpane>
 <geoclass_salt_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_17uc7of_1m6_ajj6u3>
 <geoclass_snowfield>	rdfs:subClassOf	<wordnet_snowfield_109439032> .
+#@ <id_133iaia_1m6_kqpane>
 <geoclass_tribal_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_18k8f4e_1m6_zq43us>
 <geoclass_master_source_holdings_list>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_gr2d3e_1m6_x5qn0p>
 <geoclass_populated_place>	rdfs:subClassOf	<wordnet_home_108559508> .
+#@ <id_mjf898_1m6_f4ap1y>
 <geoclass_seat_of_a_first-order_administrative_division>	rdfs:subClassOf	<wordnet_seat_108490039> .
+#@ <id_1tzkq54_1m6_zq43us>
 <geoclass_seat_of_a_second-order_administrative_division>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_v957nn_1m6_zq43us>
 <geoclass_seat_of_a_third-order_administrative_division>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_nr5j7i_1m6_zq43us>
 <geoclass_seat_of_a_fourth-order_administrative_division>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_av6wnw_1m6_s3mkuj>
 <geoclass_capital_of_a_political_entity>	rdfs:subClassOf	<wordnet_capital_102956247> .
+#@ <id_2p1nh7_1m6_lex2qt>
 <geoclass_farm_village>	rdfs:subClassOf	<wordnet_village_108672738> .
+#@ <id_5f9xab_1m6_zq43us>
 <geoclass_seat_of_government_of_a_political_entity>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1q5rohs_1m6_1s79we7>
 <geoclass_populated_locality>	rdfs:subClassOf	<wordnet_vicinity_108641113> .
+#@ <id_qrpysf_1m6_zq43us>
 <geoclass_abandoned_populated_place>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_ef15mu_1m6_1g9zoqd>
 <geoclass_religious_populated_place>	rdfs:subClassOf	<wordnet_place_108642037> .
+#@ <id_m38w6h_1m6_x5qn0p>
 <geoclass_populated_places>	rdfs:subClassOf	<wordnet_home_108559508> .
+#@ <id_1j1hpr8_1m6_zq43us>
 <geoclass_destroyed_populated_place>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1srtlgs_1m6_1aso9f0>
 <geoclass_section_of_populated_place>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_1qsao3b_1m6_1pkybv3>
 <geoclass_israeli_settlement>	rdfs:subClassOf	<wordnet_settlement_108672562> .
+#@ <id_wqm8gu_1m6_xws99i>
 <geoclass_causeway>	rdfs:subClassOf	<wordnet_causeway_102986920> .
+#@ <id_3r35oc_1m6_xws99i>
 <geoclass_former_causeway>	rdfs:subClassOf	<wordnet_causeway_102986920> .
+#@ <id_rbjopz_1m6_qy8er4>
 <geoclass_oil_pipeline>	rdfs:subClassOf	<wordnet_oil_pipeline_103844459> .
+#@ <id_uyx3lt_1m6_17j8zuz>
 <geoclass_promenade>	rdfs:subClassOf	<wordnet_promenade_104010205> .
+#@ <id_ob4gva_1m6_1ob9wdi>
 <geoclass_portage>	rdfs:subClassOf	<wordnet_portage_103985588> .
+#@ <id_1ydqsgo_1m6_yoyith>
 <geoclass_road>	rdfs:subClassOf	<wordnet_road_104096066> .
+#@ <id_1bmfef3_1m6_yoyith>
 <geoclass_ancient_road>	rdfs:subClassOf	<wordnet_road_104096066> .
+#@ <id_u0wzuo_1m6_5z9or1>
 <geoclass_road_bend>	rdfs:subClassOf	<wordnet_bend_102829696> .
+#@ <id_ll98nv_1m6_1vyqm0j>
 <geoclass_road_cut>	rdfs:subClassOf	<wordnet_cut_103152743> .
+#@ <id_1tlwxsr_1m6_1im2wk1>
 <geoclass_road_junction>	rdfs:subClassOf	<wordnet_junction_103605722> .
+#@ <id_b8po09_1m6_1im2wk1>
 <geoclass_railroad_junction>	rdfs:subClassOf	<wordnet_junction_103605722> .
+#@ <id_x454iy_1m6_16vx1bu>
 <geoclass_railroad>	rdfs:subClassOf	<wordnet_railroad_track_104048075> .
+#@ <id_1xcefjp_1m6_zq43us>
 <geoclass_abandoned_railroad>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1c5jia0_1m6_zq43us>
 <geoclass_caravan_route>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1886zan_1m6_c2qb4m>
 <geoclass_railroad_yard>	rdfs:subClassOf	<wordnet_yard_104611154> .
+#@ <id_g113sr_1m6_art6i3>
 <geoclass_street>	rdfs:subClassOf	<wordnet_street_104335209> .
+#@ <id_1gpegko_1m6_zq43us>
 <geoclass_stock_route>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_gik5i8_1m6_1695b59>
 <geoclass_tunnel>	rdfs:subClassOf	<wordnet_tunnel_104497962> .
+#@ <id_1ks9706_1m6_1695b59>
 <geoclass_natural_tunnel>	rdfs:subClassOf	<wordnet_tunnel_104497962> .
+#@ <id_oooy5r_1m6_1695b59>
 <geoclass_road_tunnel>	rdfs:subClassOf	<wordnet_tunnel_104497962> .
+#@ <id_o6ovml_1m6_10w8of0>
 <geoclass_railroad_tunnel>	rdfs:subClassOf	<wordnet_railroad_tunnel_104048441> .
+#@ <id_erkcyb_1m6_1695b59>
 <geoclass_tunnels>	rdfs:subClassOf	<wordnet_tunnel_104497962> .
+#@ <id_1exudfy_1m6_1o36kdw>
 <geoclass_trail>	rdfs:subClassOf	<wordnet_trail_104466613> .
+#@ <id_lhiplo_1m6_jtr0am>
 <geoclass_administrative_facility>	rdfs:subClassOf	<wordnet_facility_103315023> .
+#@ <id_1gmgrkb_1m6_jtr0am>
 <geoclass_agricultural_facility>	rdfs:subClassOf	<wordnet_facility_103315023> .
+#@ <id_edx5lv_1m6_zq43us>
 <geoclass_airbase>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_jv7i3s_1m6_7x3c25>
 <geoclass_airfield>	rdfs:subClassOf	<wordnet_airfield_102687992> .
+#@ <id_i29wkz_1m6_c26lcr>
 <geoclass_heliport>	rdfs:subClassOf	<wordnet_heliport_103512830> .
+#@ <id_ee6dsj_1m6_cp4w1h>
 <geoclass_airport>	rdfs:subClassOf	<wordnet_airport_102692232> .
+#@ <id_1k3gt4j_1m6_7x3c25>
 <geoclass_abandoned_airfield>	rdfs:subClassOf	<wordnet_airfield_102687992> .
+#@ <id_1dneqzo_1m6_1fx450v>
 <geoclass_amphitheater>	rdfs:subClassOf	<wordnet_amphitheater_102704949> .
+#@ <id_1bmfxeu_1m6_1kqv7tc>
 <geoclass_ancient_site>	rdfs:subClassOf	<wordnet_site_108651247> .
+#@ <id_1ydfzym_1m6_ljb0xi>
 <geoclass_arch>	rdfs:subClassOf	<wordnet_arch_102734217> .
+#@ <id_rvht5r_1m6_uy3m0u>
 <geoclass_astronomical_station>	rdfs:subClassOf	<wordnet_post_108624385> .
+#@ <id_7hsql1_1m6_zq43us>
 <geoclass_asylum>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_zmfwqb_1m6_16edmtf>
 <geoclass_athletic_field>	rdfs:subClassOf	<wordnet_playing_field_108570758> .
+#@ <id_hm60j6_1m6_8ekjsf>
 <geoclass_automatic_teller_machine>	rdfs:subClassOf	<wordnet_machine_110278666> .
+#@ <id_1ydgalw_1m6_u2jzlk>
 <geoclass_bank>	rdfs:subClassOf	<wordnet_bank_102787772> .
+#@ <id_7qpq64_1m6_xrxw9n>
 <geoclass_beacon>	rdfs:subClassOf	<wordnet_beacon_102814860> .
+#@ <id_7y06bl_1m6_13g4895>
 <geoclass_bridge>	rdfs:subClassOf	<wordnet_bridge_102898711> .
+#@ <id_1ewzzt5_1m6_13g4895>
 <geoclass_ruined_bridge>	rdfs:subClassOf	<wordnet_bridge_102898711> .
+#@ <id_7k2a0c_1m6_1x95yav>
 <geoclass_building>	rdfs:subClassOf	<wordnet_building_102913152> .
+#@ <id_9ba7av_1m6_zq43us>
 <geoclass_boundary_marker>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_2h8535_1m6_zq43us>
 <geoclass_barracks>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ayxbe8_1m6_15vmkkg>
 <geoclass_breakwater>	rdfs:subClassOf	<wordnet_breakwater_102894605> .
+#@ <id_zrlyqq_1m6_n6jzm5>
 <geoclass_baling_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_1lwbb3m_1m6_kfil07>
 <geoclass_boatyard>	rdfs:subClassOf	<wordnet_boatyard_102859955> .
+#@ <id_1ytoe5b_1m6_x9wfay>
 <geoclass_burial_cave>	rdfs:subClassOf	<wordnet_cave_109238926> .
+#@ <id_kq8bnh_1m6_ojinio>
 <geoclass_bus_station>	rdfs:subClassOf	<wordnet_bus_terminal_102926288> .
+#@ <id_c3mz89_1m6_d2dmu9>
 <geoclass_bus_stop>	rdfs:subClassOf	<wordnet_bus_stop_108517676> .
+#@ <id_1eo76q7_1m6_qk6b5s>
 <geoclass_cairn>	rdfs:subClassOf	<wordnet_cairn_107273802> .
+#@ <id_1ydgxs5_1m6_x9wfay>
 <geoclass_cave>	rdfs:subClassOf	<wordnet_cave_109238926> .
+#@ <id_1xbb8te_1m6_zq43us>
 <geoclass_centre_continuous_learning>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_89rswv_1m6_nq10o4>
 <geoclass_church>	rdfs:subClassOf	<wordnet_church_103028079> .
+#@ <id_1ydgxkp_1m6_dxh6is>
 <geoclass_camp>	rdfs:subClassOf	<wordnet_camp_102944826> .
+#@ <id_1j8l42h_1m6_dxh6is>
 <geoclass_logging_camp>	rdfs:subClassOf	<wordnet_camp_102944826> .
+#@ <id_5bn9ns_1m6_bm4wkb>
 <geoclass_labor_camp>	rdfs:subClassOf	<wordnet_labor_camp_103630849> .
+#@ <id_jwhnko_1m6_dxh6is>
 <geoclass_mining_camp>	rdfs:subClassOf	<wordnet_camp_102944826> .
+#@ <id_1ta5npi_1m6_dxh6is>
 <geoclass_oil_camp>	rdfs:subClassOf	<wordnet_camp_102944826> .
+#@ <id_lv98xw_1m6_dxh6is>
 <geoclass_abandoned_camp>	rdfs:subClassOf	<wordnet_camp_102944826> .
+#@ <id_17f9feb_1m6_dxhthd>
 <geoclass_refugee_camp>	rdfs:subClassOf	<wordnet_camp_102945813> .
+#@ <id_gfafsa_1m6_1wagh5n>
 <geoclass_cemetery>	rdfs:subClassOf	<wordnet_cemetery_108521623> .
+#@ <id_14scoye_1m6_zq43us>
 <geoclass_communication_center>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_8dkg27_1m6_5bmobr>
 <geoclass_corral>	rdfs:subClassOf	<wordnet_cow_pen_103124590> .
+#@ <id_85vsdp_1m6_1xuyh4o>
 <geoclass_casino>	rdfs:subClassOf	<wordnet_casino_102977936> .
+#@ <id_85w0hc_1m6_paa1mg>
 <geoclass_castle>	rdfs:subClassOf	<wordnet_castle_102980441> .
+#@ <id_1nhlxl7_1m6_1a52uin>
 <geoclass_customs_house>	rdfs:subClassOf	<wordnet_house_103545150> .
+#@ <id_1us5vjh_1m6_1d9fpo7>
 <geoclass_courthouse>	rdfs:subClassOf	<wordnet_courthouse_103121298> .
+#@ <id_l6w86p_1m6_1dof22h>
 <geoclass_atomic_center>	rdfs:subClassOf	<wordnet_center_102993546> .
+#@ <id_f0x5gj_1m6_1aqu11y>
 <geoclass_community_center>	rdfs:subClassOf	<wordnet_community_center_103078506> .
+#@ <id_19l8ird_1m6_1sp4ed0>
 <geoclass_facility_center>	rdfs:subClassOf	<wordnet_center_108514034> .
+#@ <id_1hi1cmz_1m6_12h21qp>
 <geoclass_medical_center>	rdfs:subClassOf	<wordnet_medical_center_108571139> .
+#@ <id_1oezpsh_1m6_1sp4ed0>
 <geoclass_religious_center>	rdfs:subClassOf	<wordnet_center_108514034> .
+#@ <id_1jdcmjq_1m6_zq43us>
 <geoclass_space_center>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1aj54n3_1m6_1esjcsj>
 <geoclass_convent>	rdfs:subClassOf	<wordnet_convent_103099454> .
+#@ <id_ib4ys8_1m6_fd6qyy>
 <geoclass_dam>	rdfs:subClassOf	<wordnet_dam_103160309> .
+#@ <id_1u79tzk_1m6_fd6qyy>
 <geoclass_ruined_dam>	rdfs:subClassOf	<wordnet_dam_103160309> .
+#@ <id_czzcl5_1m6_fd6qyy>
 <geoclass_sub-surface_dam>	rdfs:subClassOf	<wordnet_dam_103160309> .
+#@ <id_1eoqzbv_1m6_kj84se>
 <geoclass_dairy>	rdfs:subClassOf	<wordnet_dairy_103159535> .
+#@ <id_sjp48v_1m6_1o6lc4v>
 <geoclass_dry_dock>	rdfs:subClassOf	<wordnet_dry_dock_103251533> .
+#@ <id_19blap1_1m6_1ad8gkt>
 <geoclass_dockyard>	rdfs:subClassOf	<wordnet_dockyard_108640392> .
+#@ <id_1ydhqfr_1m6_fd6qyy>
 <geoclass_dike>	rdfs:subClassOf	<wordnet_dam_103160309> .
+#@ <id_sqxdk3_1m6_zq43us>
 <geoclass_fuel_depot>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_9dvt1g_1m6_tyxryi>
 <geoclass_estate>	rdfs:subClassOf	<wordnet_estate_113246662> .
+#@ <id_1j763nw_1m6_1fv42du>
 <geoclass_banana_plantation>	rdfs:subClassOf	<wordnet_plantation_113252513> .
+#@ <id_181e3ty_1m6_1fv42du>
 <geoclass_cotton_plantation>	rdfs:subClassOf	<wordnet_plantation_113252513> .
+#@ <id_kwo2ia_1m6_1fv42du>
 <geoclass_oil_palm_plantation>	rdfs:subClassOf	<wordnet_plantation_113252513> .
+#@ <id_gukjxd_1m6_1fv42du>
 <geoclass_rubber_plantation>	rdfs:subClassOf	<wordnet_plantation_113252513> .
+#@ <id_19yit8r_1m6_1fv42du>
 <geoclass_sugar_plantation>	rdfs:subClassOf	<wordnet_plantation_113252513> .
+#@ <id_1ntfohl_1m6_1fv42du>
 <geoclass_sisal_plantation>	rdfs:subClassOf	<wordnet_plantation_113252513> .
+#@ <id_12vylpt_1m6_1fv42du>
 <geoclass_tea_plantation>	rdfs:subClassOf	<wordnet_plantation_113252513> .
+#@ <id_s40siq_1m6_1aso9f0>
 <geoclass_section_of_estate>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_13i6nmj_1m6_jtr0am>
 <geoclass_facility>	rdfs:subClassOf	<wordnet_facility_103315023> .
+#@ <id_jmxcy9_1m6_cglrg4>
 <geoclass_foundry>	rdfs:subClassOf	<wordnet_foundry_103387653> .
+#@ <id_1ydiuni_1m6_tg76tw>
 <geoclass_farm>	rdfs:subClassOf	<wordnet_farm_103322099> .
+#@ <id_lvb60p_1m6_tg76tw>
 <geoclass_abandoned_farm>	rdfs:subClassOf	<wordnet_farm_103322099> .
+#@ <id_1epur2d_1m6_tg76tw>
 <geoclass_farms>	rdfs:subClassOf	<wordnet_farm_103322099> .
+#@ <id_q7n97d_1m6_1v977uf>
 <geoclass_farmstead>	rdfs:subClassOf	<wordnet_farmstead_113249599> .
+#@ <id_1ydj51f_1m6_1m1oi4e>
 <geoclass_fort>	rdfs:subClassOf	<wordnet_fortress_103386011> .
+#@ <id_1epxb4y_1m6_1t7qwf0>
 <geoclass_ferry>	rdfs:subClassOf	<wordnet_ferry_103329663> .
+#@ <id_1ydjhoj_1m6_1ehkm8y>
 <geoclass_gate>	rdfs:subClassOf	<wordnet_gate_103427296> .
+#@ <id_a21j1p_1m6_kehf00>
 <geoclass_garden>	rdfs:subClassOf	<wordnet_garden_103417345> .
+#@ <id_jjurnl_1m6_1a52uin>
 <geoclass_guest_house>	rdfs:subClassOf	<wordnet_house_103545150> .
+#@ <id_199eqpk_1m6_1j9236b>
 <geoclass_gas-oil_separator_plant>	rdfs:subClassOf	<wordnet_plant_103956922> .
+#@ <id_1eqp219_1m6_s367pm>
 <geoclass_grave>	rdfs:subClassOf	<wordnet_grave_103455033> .
+#@ <id_ajb150_1m6_1i8wd2e>
 <geoclass_hermitage>	rdfs:subClassOf	<wordnet_hermitage_103515934> .
+#@ <id_jmo9u9_1m6_1g9zoqd>
 <geoclass_halting_place>	rdfs:subClassOf	<wordnet_place_108642037> .
+#@ <id_1er7cfc_1m6_1a52uin>
 <geoclass_house>	rdfs:subClassOf	<wordnet_house_103545150> .
+#@ <id_iflosf_1m6_1a88z38>
 <geoclass_country_house>	rdfs:subClassOf	<wordnet_country_house_103118969> .
+#@ <id_q7265u_1m6_it9o63>
 <geoclass_hospital>	rdfs:subClassOf	<wordnet_hospital_103540595> .
+#@ <id_8br8m8_1m6_1dgt7bd>
 <geoclass_clinic>	rdfs:subClassOf	<wordnet_clinic_103043274> .
+#@ <id_6t8zq0_1m6_dmc0y>
 <geoclass_dispensary>	rdfs:subClassOf	<wordnet_dispensary_103210552> .
+#@ <id_1xjpke1_1m6_zq43us>
 <geoclass_leprosarium>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_afe1ic_1m6_1kp8m8b>
 <geoclass_historical_site>	rdfs:subClassOf	<wordnet_site_108622950> .
+#@ <id_1er7bcs_1m6_q63s8t>
 <geoclass_hotel>	rdfs:subClassOf	<wordnet_hotel_103542333> .
+#@ <id_ib528f_1m6_ggtml2>
 <geoclass_hut>	rdfs:subClassOf	<wordnet_hovel_103547054> .
+#@ <id_1ydkjic_1m6_ggtml2>
 <geoclass_huts>	rdfs:subClassOf	<wordnet_hovel_103547054> .
+#@ <id_108p0hg_1m6_dwlk5u>
 <geoclass_military_installation>	rdfs:subClassOf	<wordnet_military_installation_103763133> .
+#@ <id_uf7aax_1m6_zq43us>
 <geoclass_research_institute>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1es4j1i_1m6_15vmkkg>
 <geoclass_jetty>	rdfs:subClassOf	<wordnet_breakwater_102894605> .
+#@ <id_txjgdb_1m6_128gbkn>
 <geoclass_landing>	rdfs:subClassOf	<wordnet_landing_103638321> .
+#@ <id_1teahhp_1m6_nrzwxs>
 <geoclass_leper_colony>	rdfs:subClassOf	<wordnet_colony_108499840> .
+#@ <id_xjjoeb_1m6_1pcnurs>
 <geoclass_library>	rdfs:subClassOf	<wordnet_library_103660664> .
+#@ <id_4h8dba_1m6_1wt7go1>
 <geoclass_landfill>	rdfs:subClassOf	<wordnet_landfill_109335809> .
+#@ <id_1ydmylf_1m6_bb4oi5>
 <geoclass_lock>	rdfs:subClassOf	<wordnet_lock_103683079> .
+#@ <id_lqp3ya_1m6_xrxw9n>
 <geoclass_lighthouse>	rdfs:subClassOf	<wordnet_beacon_102814860> .
+#@ <id_1ydnbf0_1m6_69441e>
 <geoclass_mall>	rdfs:subClassOf	<wordnet_plaza_103965456> .
+#@ <id_cwbdbq_1m6_zq43us>
 <geoclass_marina>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_cqietu_1m6_4fak6t>
 <geoclass_factory>	rdfs:subClassOf	<wordnet_factory_103316406> .
+#@ <id_x4y7ci_1m6_19kn4z6>
 <geoclass_brewery>	rdfs:subClassOf	<wordnet_brewery_102897237> .
+#@ <id_13wdbbq_1m6_ebl4ih>
 <geoclass_cannery>	rdfs:subClassOf	<wordnet_cannery_102950018> .
+#@ <id_wwmm38_1m6_fs9j2w>
 <geoclass_copper_works>	rdfs:subClassOf	<wordnet_workplace_104602044> .
+#@ <id_1eevy99_1m6_md6u1f>
 <geoclass_limekiln>	rdfs:subClassOf	<wordnet_limekiln_103669534> .
+#@ <id_s2hf80_1m6_1j9236b>
 <geoclass_munitions_plant>	rdfs:subClassOf	<wordnet_plant_103956922> .
+#@ <id_pwxayx_1m6_fs9j2w>
 <geoclass_phosphate_works>	rdfs:subClassOf	<wordnet_workplace_104602044> .
+#@ <id_pd0s9z_1m6_4fak6t>
 <geoclass_abandoned_factory>	rdfs:subClassOf	<wordnet_factory_103316406> .
+#@ <id_h6jlcl_1m6_u6a5gn>
 <geoclass_sugar_refinery>	rdfs:subClassOf	<wordnet_sugar_refinery_104350688> .
+#@ <id_cwbelw_1m6_1i1wahl>
 <geoclass_market>	rdfs:subClassOf	<wordnet_grocery_store_103461385> .
+#@ <id_1ydnhck_1m6_4fak6t>
 <geoclass_mill>	rdfs:subClassOf	<wordnet_factory_103316406> .
+#@ <id_dum1vz_1m6_1j9236b>
 <geoclass_ore_treatment_plant>	rdfs:subClassOf	<wordnet_plant_103956922> .
+#@ <id_1nwq8qt_1m6_4fak6t>
 <geoclass_olive_oil_mill>	rdfs:subClassOf	<wordnet_factory_103316406> .
+#@ <id_xoak1p_1m6_4fak6t>
 <geoclass_sugar_mill>	rdfs:subClassOf	<wordnet_factory_103316406> .
+#@ <id_lc6jkr_1m6_4fak6t>
 <geoclass_former_sugar_mill>	rdfs:subClassOf	<wordnet_factory_103316406> .
+#@ <id_1psba4t_1m6_1ex6dnv>
 <geoclass_sawmill>	rdfs:subClassOf	<wordnet_lumbermill_103697007> .
+#@ <id_crpzto_1m6_6m3giz>
 <geoclass_windmill>	rdfs:subClassOf	<wordnet_windmill_104587559> .
+#@ <id_1lhnnp8_1m6_1sg91yi>
 <geoclass_water_mill>	rdfs:subClassOf	<wordnet_water_mill_104561422> .
+#@ <id_1ydnhe3_1m6_l7gtcg>
 <geoclass_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_n2x2ze_1m6_1egllim>
 <geoclass_gold_mine>	rdfs:subClassOf	<wordnet_goldmine_103445120> .
+#@ <id_1k0h2tf_1m6_9fzloo>
 <geoclass_coal_mine>	rdfs:subClassOf	<wordnet_coal_mine_103056368> .
+#@ <id_2xi5xc_1m6_l7gtcg>
 <geoclass_chrome_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_sjvsch_1m6_wz4gv5>
 <geoclass_copper_mine>	rdfs:subClassOf	<wordnet_copper_mine_103104147> .
+#@ <id_r4u9pi_1m6_l7gtcg>
 <geoclass_diatomite_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_ri3h82_1m6_l7gtcg>
 <geoclass_iron_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_pyjjnj_1m6_1h7jlu>
 <geoclass_monument>	rdfs:subClassOf	<wordnet_memorial_103743902> .
+#@ <id_1drsqp0_1m6_1wjqkcs>
 <geoclass_salt_mine>	rdfs:subClassOf	<wordnet_salt_mine_104131610> .
+#@ <id_xtlvow_1m6_l7gtcg>
 <geoclass_nickel_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_1r7rlr2_1m6_l7gtcg>
 <geoclass_lead_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_9rqbm7_1m6_l7gtcg>
 <geoclass_placer_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_lvfsra_1m6_l7gtcg>
 <geoclass_abandoned_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_f372s4_1m6_1i2nl5k>
 <geoclass_quarry>	rdfs:subClassOf	<wordnet_pit_103949442> .
+#@ <id_1wabpo1_1m6_l7gtcg>
 <geoclass_tin_mine>	rdfs:subClassOf	<wordnet_mine_103768346> .
+#@ <id_1ydnlsj_1m6_15vmkkg>
 <geoclass_mole>	rdfs:subClassOf	<wordnet_breakwater_102894605> .
+#@ <id_d41aq0_1m6_1ha7tbb>
 <geoclass_mosque>	rdfs:subClassOf	<wordnet_mosque_103788195> .
+#@ <id_1chb9jo_1m6_17gh7mx>
 <geoclass_mission>	rdfs:subClassOf	<wordnet_deputation_108402442> .
+#@ <id_1p3tmzt_1m6_zq43us>
 <geoclass_abandoned_mission>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_e191dq_1m6_1nn48e9>
 <geoclass_monastery>	rdfs:subClassOf	<wordnet_monastery_103781244> .
+#@ <id_1l4hnrq_1m6_n6jzm5>
 <geoclass_metro_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_d7bte2_1m6_npeynh>
 <geoclass_museum>	rdfs:subClassOf	<wordnet_museum_103800563> .
+#@ <id_ybwwcx_1m6_ojxwe2>
 <geoclass_novitiate>	rdfs:subClassOf	<wordnet_novitiate_115294884> .
+#@ <id_1wtp50s_1m6_5bszyb>
 <geoclass_nursery>	rdfs:subClassOf	<wordnet_greenhouse_103457902> .
+#@ <id_d0tyyt_1m6_1qerivt>
 <geoclass_observation_point>	rdfs:subClassOf	<wordnet_point_103974215> .
+#@ <id_1wfu10i_1m6_aa0j85>
 <geoclass_observatory>	rdfs:subClassOf	<wordnet_observatory_103839671> .
+#@ <id_1dv60ke_1m6_aa0j85>
 <geoclass_radio_observatory>	rdfs:subClassOf	<wordnet_observatory_103839671> .
+#@ <id_yjxb58_1m6_1im2wk1>
 <geoclass_oil_pipeline_junction>	rdfs:subClassOf	<wordnet_junction_103605722> .
+#@ <id_uhnrfi_1m6_16kq5cj>
 <geoclass_abandoned_oil_well>	rdfs:subClassOf	<wordnet_well_104572344> .
+#@ <id_lkzni1_1m6_2onvek>
 <geoclass_oil_refinery>	rdfs:subClassOf	<wordnet_oil_refinery_103844673> .
+#@ <id_18yy22b_1m6_xkdbhj>
 <geoclass_tank_farm>	rdfs:subClassOf	<wordnet_tank_farm_108660817> .
+#@ <id_1taiidv_1m6_o9nw28>
 <geoclass_oil_well>	rdfs:subClassOf	<wordnet_oil_well_103845360> .
+#@ <id_1mlpxrw_1m6_1gy5yxm>
 <geoclass_opera_house>	rdfs:subClassOf	<wordnet_opera_103849814> .
+#@ <id_ebc8e8_1m6_1p82crk>
 <geoclass_palace>	rdfs:subClassOf	<wordnet_palace_103878066> .
+#@ <id_eb9bv2_1m6_e1gjay>
 <geoclass_pagoda>	rdfs:subClassOf	<wordnet_pagoda_103874965> .
+#@ <id_1ydpe5a_1m6_hno9ai>
 <geoclass_pier>	rdfs:subClassOf	<wordnet_pier_103933529> .
+#@ <id_11ypnte_1m6_ulnkp>
 <geoclass_parking_lot>	rdfs:subClassOf	<wordnet_parking_lot_108615638> .
+#@ <id_dvro96_1m6_c2lpn1>
 <geoclass_oil_pumping_station>	rdfs:subClassOf	<wordnet_oil_103843092> .
+#@ <id_gb0dzj_1m6_knda69>
 <geoclass_water_pumping_station>	rdfs:subClassOf	<wordnet_water_system_104562658> .
+#@ <id_4mrphf_1m6_zq43us>
 <geoclass_post_office>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_lq9ktl_1m6_1xgn2n2>
 <geoclass_police_post>	rdfs:subClassOf	<wordnet_military_post_103763403> .
+#@ <id_h8uvni_1m6_zq43us>
 <geoclass_abandoned_police_post>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_a5nr7s_1m6_1ehkm8y>
 <geoclass_park_gate>	rdfs:subClassOf	<wordnet_gate_103427296> .
+#@ <id_n0e04_1m6_2m1h0n>
 <geoclass_park_headquarters>	rdfs:subClassOf	<wordnet_headquarters_103504723> .
+#@ <id_ekn75v_1m6_1domiln>
 <geoclass_prison>	rdfs:subClassOf	<wordnet_prison_104005630> .
+#@ <id_2tjck4_1m6_x1ak2i>
 <geoclass_reformatory>	rdfs:subClassOf	<wordnet_reformatory_104069777> .
+#@ <id_1voio5q_1m6_1domiln>
 <geoclass_abandoned_prison>	rdfs:subClassOf	<wordnet_prison_104005630> .
+#@ <id_1xe9j0i_1m6_1g5xqwz>
 <geoclass_power_station>	rdfs:subClassOf	<wordnet_power_station_103996655> .
+#@ <id_16occsw_1m6_n6jzm5>
 <geoclass_hydroelectric_power_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_7rn9zv_1m6_uy3m0u>
 <geoclass_border_post>	rdfs:subClassOf	<wordnet_post_108624385> .
+#@ <id_k94jdh_1m6_zq43us>
 <geoclass_customs_post>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1hupsmz_1m6_uy3m0u>
 <geoclass_patrol_post>	rdfs:subClassOf	<wordnet_post_108624385> .
+#@ <id_t18t08_1m6_1w6m6d4>
 <geoclass_pyramid>	rdfs:subClassOf	<wordnet_pyramid_113914837> .
+#@ <id_1bp8bkr_1m6_1w6m6d4>
 <geoclass_pyramids>	rdfs:subClassOf	<wordnet_pyramid_113914837> .
+#@ <id_1ydq9xw_1m6_zq43us>
 <geoclass_quay>	rdfs:subClassOf	<yagoGeoEntity> .
-<geoclass_golf_course>	rdfs:subClassOf	<wordnet_golf_course_103446528> .
+#@ <id_193rj4_1m6_zq43us>
+<geoclass_golf_course>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_btemqq_1m6_15xnd55>
 <geoclass_racetrack>	rdfs:subClassOf	<wordnet_racetrack_104037625> .
+#@ <id_1uru27p_1m6_1ui7gg1>
 <geoclass_restaurant>	rdfs:subClassOf	<wordnet_restaurant_104081281> .
+#@ <id_dpq3pw_1m6_zq43us>
 <geoclass_resthouse>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1hm3zwb_1m6_dbst4z>
 <geoclass_rookery>	rdfs:subClassOf	<wordnet_rookery_108644426> .
+#@ <id_1ffv6f7_1m6_1kqv7tc>
 <geoclass_religious_site>	rdfs:subClassOf	<wordnet_site_108651247> .
+#@ <id_1cyj7f3_1m6_1r3n3kk>
 <geoclass_retreat>	rdfs:subClassOf	<wordnet_retreat_108643015> .
+#@ <id_1ewg6z0_1m6_1fdefdf>
 <geoclass_ranch>	rdfs:subClassOf	<wordnet_ranch_104052442> .
+#@ <id_niv8qx_1m6_q49c1i>
 <geoclass_railroad_siding>	rdfs:subClassOf	<wordnet_siding_104216106> .
+#@ <id_nix93x_1m6_figu8b>
 <geoclass_railroad_signal>	rdfs:subClassOf	<wordnet_signal_109185280> .
+#@ <id_fbrf7t_1m6_veeae0>
 <geoclass_resort>	rdfs:subClassOf	<wordnet_resort_108640531> .
+#@ <id_o3tden_1m6_1tend92>
 <geoclass_railroad_station>	rdfs:subClassOf	<wordnet_railway_station_104049098> .
+#@ <id_1ejou22_1m6_n6jzm5>
 <geoclass_abandoned_railroad_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_1883jef_1m6_kyablv>
 <geoclass_railroad_stop>	rdfs:subClassOf	<wordnet_stop_108656893> .
+#@ <id_1wel0i4_1m6_zq43us>
 <geoclass_abandoned_railroad_stop>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ydqx40_1m6_9y80y2>
 <geoclass_ruin>	rdfs:subClassOf	<wordnet_ruin_104118635> .
+#@ <id_frifho_1m6_m8jqxa>
 <geoclass_school>	rdfs:subClassOf	<wordnet_school_104146050> .
+#@ <id_e05464_1m6_m8jqxa>
 <geoclass_agricultural_school>	rdfs:subClassOf	<wordnet_school_104146050> .
+#@ <id_1ahv5en_1m6_i3uzz5>
 <geoclass_college>	rdfs:subClassOf	<wordnet_college_103069752> .
+#@ <id_1wqm92c_1m6_zq43us>
 <geoclass_driving_school>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ywnkcj_1m6_zq43us>
 <geoclass_language_school>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_105z7u6_1m6_m8jqxa>
 <geoclass_military_school>	rdfs:subClassOf	<wordnet_school_104146050> .
+#@ <id_1b4ll37_1m6_m8jqxa>
 <geoclass_maritime_school>	rdfs:subClassOf	<wordnet_school_104146050> .
+#@ <id_cy5r7y_1m6_1uqmox>
 <geoclass_technical_school>	rdfs:subClassOf	<wordnet_technical_school_108285246> .
+#@ <id_6kdunn_1m6_zq43us>
 <geoclass_state_exam_prep_centre>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ywtu90_1m6_35pj8l>
 <geoclass_sheepfold>	rdfs:subClassOf	<wordnet_fold_103376159> .
+#@ <id_fufnuj_1m6_elh30e>
 <geoclass_shrine>	rdfs:subClassOf	<wordnet_shrine_104210390> .
+#@ <id_14frejb_1m6_15fs7yn>
 <geoclass_storehouse>	rdfs:subClassOf	<wordnet_storehouse_104329190> .
+#@ <id_fwoqx3_1m6_1tt22ac>
 <geoclass_sluice>	rdfs:subClassOf	<wordnet_sluice_104244379> .
+#@ <id_1h4muyr_1m6_2i40we>
 <geoclass_sanatorium>	rdfs:subClassOf	<wordnet_sanatorium_104133497> .
+#@ <id_ib5a98_1m6_1pzjg3g>
 <geoclass_spa>	rdfs:subClassOf	<wordnet_resort_hotel_104080705> .
+#@ <id_1x0a117_1m6_352sk>
 <geoclass_spillway>	rdfs:subClassOf	<wordnet_spillway_104277034> .
+#@ <id_fzfkb9_1m6_1ht66fr>
 <geoclass_square>	rdfs:subClassOf	<wordnet_public_square_108619620> .
+#@ <id_g0q6yb_1m6_1njzlca>
 <geoclass_stable>	rdfs:subClassOf	<wordnet_stable_104294879> .
+#@ <id_1yfwvwl_1m6_1l34zsa>
 <geoclass_stadium>	rdfs:subClassOf	<wordnet_stadium_104295881> .
+#@ <id_gnbduf_1m6_5z73cd>
 <geoclass_scientific_research_base>	rdfs:subClassOf	<wordnet_base_102798574> .
+#@ <id_l8f8e1_1m6_n6jzm5>
 <geoclass_coast_guard_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_13fmr1m_1m6_n6jzm5>
 <geoclass_experiment_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_gdpcp6_1m6_n6jzm5>
 <geoclass_forest_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_1ui5cdd_1m6_n6jzm5>
 <geoclass_inspection_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_kefl5f_1m6_n6jzm5>
 <geoclass_meteorological_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_vulg8o_1m6_qs4q3n>
 <geoclass_radio_station>	rdfs:subClassOf	<wordnet_radio_station_104044119> .
+#@ <id_2lrbnc_1m6_n6jzm5>
 <geoclass_satellite_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_ehe3hf_1m6_n6jzm5>
 <geoclass_whaling_station>	rdfs:subClassOf	<wordnet_station_104306080> .
+#@ <id_1exbxyn_1m6_afx12s>
 <geoclass_steps>	rdfs:subClassOf	<wordnet_step_104314914> .
+#@ <id_s3vel3_1m6_1j9236b>
 <geoclass_sewage_treatment_plant>	rdfs:subClassOf	<wordnet_plant_103956922> .
+#@ <id_8gt4m1_1m6_1yauqte>
 <geoclass_theater>	rdfs:subClassOf	<wordnet_theater_104417809> .
+#@ <id_1yds2q0_1m6_s367pm>
 <geoclass_tomb>	rdfs:subClassOf	<wordnet_grave_103455033> .
+#@ <id_g9quo5_1m6_6w3u7e>
 <geoclass_temple>	rdfs:subClassOf	<wordnet_temple_104407435> .
+#@ <id_14hzows_1m6_zq43us>
 <geoclass_cattle_dipping_tank>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1exswpd_1m6_4ns20j>
 <geoclass_tower>	rdfs:subClassOf	<wordnet_tower_104460130> .
+#@ <id_ixmig0_1m6_88xlv>
 <geoclass_transit_terminal>	rdfs:subClassOf	<wordnet_terminal_104412901> .
+#@ <id_7kqznw_1m6_uy3m0u>
 <geoclass_triangulation_station>	rdfs:subClassOf	<wordnet_post_108624385> .
+#@ <id_iy6y8k_1m6_pv0mfe>
 <geoclass_oil_pipeline_terminal>	rdfs:subClassOf	<wordnet_end_108566028> .
+#@ <id_13mqt3_1m6_1rkbgvy>
 <geoclass_temp_work_office>	rdfs:subClassOf	<wordnet_office_103841666> .
+#@ <id_1hthad6_1m6_zq43us>
 <geoclass_postgrad_&_mba>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1kvy425_1m6_m8jqxa>
 <geoclass_university_prep_school>	rdfs:subClassOf	<wordnet_school_104146050> .
+#@ <id_s6q39i_1m6_1i0bnsd>
 <geoclass_university>	rdfs:subClassOf	<wordnet_university_104511002> .
+#@ <id_wzi72a_1m6_1v3cmp5>
 <geoclass_united_states_government_establishment>	rdfs:subClassOf	<wordnet_establishment_103297735> .
+#@ <id_ibakbd_1m6_jtr0am>
 <geoclass_veterinary_facility>	rdfs:subClassOf	<wordnet_facility_103315023> .
+#@ <id_1ydtpaa_1m6_1pxwkxu>
 <geoclass_wall>	rdfs:subClassOf	<wordnet_wall_104547592> .
+#@ <id_1bmib8p_1m6_5zz9xg>
 <geoclass_ancient_wall>	rdfs:subClassOf	<wordnet_wall_105604254> .
+#@ <id_1ydts6n_1m6_1yyc7z3>
 <geoclass_weir>	rdfs:subClassOf	<wordnet_weir_104571566> .
+#@ <id_1ezbdkc_1m6_hno9ai>
 <geoclass_wharf>	rdfs:subClassOf	<wordnet_pier_103933529> .
+#@ <id_1ezhu1m_1m6_zq43us>
 <geoclass_wreck>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1luw6kj_1m6_zq43us>
 <geoclass_waterworks>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_x8h3vm_1m6_qs4ona>
 <geoclass_free_trade_zone>	rdfs:subClassOf	<wordnet_zone_108509442> .
+#@ <id_ib5ffm_1m6_1tkd87d>
 <geoclass_zoo>	rdfs:subClassOf	<wordnet_menagerie_103745146> .
+#@ <id_q5azd3_1m6_615tqy>
 <geoclass_asphalt_lake>	rdfs:subClassOf	<wordnet_lake_109328904> .
+#@ <id_1enfulg_1m6_6oabvy>
 <geoclass_atoll>	rdfs:subClassOf	<wordnet_atoll_109210862> .
+#@ <id_ib4xaz_1m6_zz4f9z>
 <geoclass_bar>	rdfs:subClassOf	<wordnet_bar_109214060> .
+#@ <id_1enprsb_1m6_14ht33d>
 <geoclass_beach>	rdfs:subClassOf	<wordnet_beach_109217230> .
+#@ <id_qwt80p_1m6_14ht33d>
 <geoclass_beaches>	rdfs:subClassOf	<wordnet_beach_109217230> .
+#@ <id_1usexyz_1m6_zq43us>
 <geoclass_badlands>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_ukypps_1m6_zq43us>
 <geoclass_boulder_field>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_kj3z6y_1m6_uh7wfh>
 <geoclass_blowhole>	rdfs:subClassOf	<wordnet_vent_104526241> .
+#@ <id_ug6mec_1m6_zq43us>
 <geoclass_blowout>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1enq1fc_1m6_17zf4xx>
 <geoclass_bench>	rdfs:subClassOf	<wordnet_terrace_109456207> .
+#@ <id_1eo0e2i_1m6_b10g3q>
 <geoclass_butte>	rdfs:subClassOf	<wordnet_butte_109230202> .
+#@ <id_1ydgxmz_1m6_kgp1oj>
 <geoclass_cape>	rdfs:subClassOf	<wordnet_cape_109233715> .
+#@ <id_1eoe4c2_1m6_9pa2y7>
 <geoclass_cleft>	rdfs:subClassOf	<wordnet_crack_109258715> .
+#@ <id_13v3c92_1m6_8c2hn8>
 <geoclass_caldera>	rdfs:subClassOf	<wordnet_caldera_109231117> .
+#@ <id_1eoe7ag_1m6_xytj59>
 <geoclass_cliff>	rdfs:subClassOf	<wordnet_cliff_109246464> .
+#@ <id_85sxc0_1m6_n6ntoz>
 <geoclass_canyon>	rdfs:subClassOf	<wordnet_canyon_109233446> .
+#@ <id_1ydh7yz_1m6_zq43us>
 <geoclass_cone>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_np7k2q_1m6_ftbqkp>
 <geoclass_corridor>	rdfs:subClassOf	<wordnet_corridor_103112099> .
+#@ <id_8a9o8d_1m6_b3902q>
 <geoclass_cirque>	rdfs:subClassOf	<wordnet_cirque_109245515> .
+#@ <id_17qzpd2_1m6_b3902q>
 <geoclass_cirques>	rdfs:subClassOf	<wordnet_cirque_109245515> .
+#@ <id_8ex0nb_1m6_dm33p6>
 <geoclass_crater>	rdfs:subClassOf	<wordnet_crater_109259219> .
+#@ <id_8gmxz9_1m6_zq43us>
 <geoclass_cuesta>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1eotlj4_1m6_1wa97ki>
 <geoclass_delta>	rdfs:subClassOf	<wordnet_delta_109264803> .
+#@ <id_1xcdcym_1m6_irf8x2>
 <geoclass_depression>	rdfs:subClassOf	<wordnet_natural_depression_109366017> .
+#@ <id_8p4ia5_1m6_1jjaahe>
 <geoclass_desert>	rdfs:subClassOf	<wordnet_desert_108505573> .
+#@ <id_1ydhzeo_1m6_1gwo9nh>
 <geoclass_dune>	rdfs:subClassOf	<wordnet_dune_109270735> .
+#@ <id_8rdo8h_1m6_1137ppz>
 <geoclass_divide>	rdfs:subClassOf	<wordnet_watershed_108679369> .
+#@ <id_bi5tp3_1m6_1jjaahe>
 <geoclass_sandy_desert>	rdfs:subClassOf	<wordnet_desert_108505573> .
+#@ <id_ib509n_1m6_zq43us>
 <geoclass_fan>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ydj50z_1m6_wjjong>
 <geoclass_ford>	rdfs:subClassOf	<wordnet_ford_109283623> .
+#@ <id_grnkx9_1m6_9pa2y7>
 <geoclass_fissure>	rdfs:subClassOf	<wordnet_crack_109258715> .
+#@ <id_ib510e_1m6_zq43us>
 <geoclass_gap>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1eqnhbk_1m6_mvw25r>
 <geoclass_gorge>	rdfs:subClassOf	<wordnet_defile_109263912> .
+#@ <id_cry8ub_1m6_4fegzn>
 <geoclass_headland>	rdfs:subClassOf	<wordnet_promontory_109399592> .
+#@ <id_1ydkaex_1m6_7tnqei>
 <geoclass_hill>	rdfs:subClassOf	<wordnet_hill_109303008> .
+#@ <id_1er3boa_1m6_7tnqei>
 <geoclass_hills>	rdfs:subClassOf	<wordnet_hill_109303008> .
+#@ <id_168ofxi_1m6_mj38t2>
 <geoclass_hammock>	rdfs:subClassOf	<wordnet_knoll_109326662> .
+#@ <id_gs6gtz_1m6_1jjaahe>
 <geoclass_rock_desert>	rdfs:subClassOf	<wordnet_desert_108505573> .
+#@ <id_1xnlcoq_1m6_zq43us>
 <geoclass_interfluve>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_b9x6kt_1m6_1wmuu7r>
 <geoclass_island>	rdfs:subClassOf	<wordnet_island_109316454> .
+#@ <id_1webj9e_1m6_1gnjly4>
 <geoclass_artificial_island>	rdfs:subClassOf	<wordnet_island_103587318> .
+#@ <id_15s3ig3_1m6_1wmuu7r>
 <geoclass_mangrove_island>	rdfs:subClassOf	<wordnet_island_109316454> .
+#@ <id_1tf4g3q_1m6_1wmuu7r>
 <geoclass_islands>	rdfs:subClassOf	<wordnet_island_109316454> .
+#@ <id_1qu2lbq_1m6_1gnjly4>
 <geoclass_land-tied_island>	rdfs:subClassOf	<wordnet_island_103587318> .
+#@ <id_u02623_1m6_1aso9f0>
 <geoclass_section_of_island>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_1tjn9f9_1m6_zq43us>
 <geoclass_isthmus>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_w6hvpj_1m6_kqpane>
 <geoclass_karst_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_15mx5p0_1m6_kqpane>
 <geoclass_lava_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_1et85c5_1m6_1h62vvp>
 <geoclass_levee>	rdfs:subClassOf	<wordnet_levee_103658635> .
+#@ <id_1ydneji_1m6_1783dcs>
 <geoclass_mesa>	rdfs:subClassOf	<wordnet_mesa_109351905> .
+#@ <id_1etyb9t_1m6_mj38t2>
 <geoclass_mound>	rdfs:subClassOf	<wordnet_knoll_109326662> .
+#@ <id_1fappiv_1m6_zq43us>
 <geoclass_moraine>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_t64q2t_1m6_1koge48>
 <geoclass_mountain>	rdfs:subClassOf	<wordnet_mountain_109359803> .
+#@ <id_1fwpssu_1m6_1koge48>
 <geoclass_mountains>	rdfs:subClassOf	<wordnet_mountain_109359803> .
+#@ <id_zvgm4q_1m6_1mp39k9>
 <geoclass_meander_neck>	rdfs:subClassOf	<wordnet_neck_109367733> .
+#@ <id_1wr6rl8_1m6_zq43us>
 <geoclass_nunatak>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_hg43r_1m6_zq43us>
 <geoclass_nunataks>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_ib57ol_1m6_1sn3vu>
 <geoclass_pan>	rdfs:subClassOf	<wordnet_pan_103880323> .
+#@ <id_1ydp8fi_1m6_1sn3vu>
 <geoclass_pans>	rdfs:subClassOf	<wordnet_pan_103880323> .
+#@ <id_1ydp8jt_1m6_1yx11p9>
 <geoclass_pass>	rdfs:subClassOf	<wordnet_pass_109386842> .
+#@ <id_1u0y95p_1m6_1whhhn1>
 <geoclass_peninsula>	rdfs:subClassOf	<wordnet_peninsula_109388848> .
+#@ <id_1llzxxb_1m6_1aso9f0>
 <geoclass_section_of_peninsula>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_1ydpb2v_1m6_oddsbj>
 <geoclass_peak>	rdfs:subClassOf	<wordnet_peak_108617963> .
+#@ <id_1evewak_1m6_oddsbj>
 <geoclass_peaks>	rdfs:subClassOf	<wordnet_peak_108617963> .
+#@ <id_mmn6fm_1m6_1ll2s32>
 <geoclass_plateau>	rdfs:subClassOf	<wordnet_tableland_109453008> .
+#@ <id_yw1aic_1m6_1aso9f0>
 <geoclass_section_of_plateau>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_ej1ezg_1m6_schh57>
 <geoclass_polder>	rdfs:subClassOf	<wordnet_polder_109397001> .
+#@ <id_1evjd5e_1m6_o1r0br>
 <geoclass_plain>	rdfs:subClassOf	<wordnet_plain_109393605> .
+#@ <id_1d6sook_1m6_1aso9f0>
 <geoclass_section_of_plain>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_15etzcp_1m6_4fegzn>
 <geoclass_promontory>	rdfs:subClassOf	<wordnet_promontory_109399592> .
+#@ <id_1evlg60_1m6_5lsao2>
 <geoclass_point>	rdfs:subClassOf	<wordnet_point_109396465> .
+#@ <id_eizpsr_1m6_5lsao2>
 <geoclass_points>	rdfs:subClassOf	<wordnet_point_109396465> .
+#@ <id_1lprviv_1m6_zq43us>
 <geoclass_beach_ridge>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ewl3jn_1m6_1ruknn7>
 <geoclass_ridge>	rdfs:subClassOf	<wordnet_ridge_109409512> .
+#@ <id_1w376dv_1m6_1jjaahe>
 <geoclass_stony_desert>	rdfs:subClassOf	<wordnet_desert_108505573> .
+#@ <id_1ydqsil_1m6_1c5n8o2>
 <geoclass_rock>	rdfs:subClassOf	<wordnet_rock_109416076> .
+#@ <id_mnbgt4_1m6_zq43us>
 <geoclass_rockfall>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ewowty_1m6_zq43us>
 <geoclass_rocks>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_ijtgw_1m6_kqpane>
 <geoclass_sand_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_1bwn83y_1m6_ydxjtf>
 <geoclass_dry_stream_bed>	rdfs:subClassOf	<wordnet_bed_109217638> .
+#@ <id_nxcnmo_1m6_1g6aofi>
 <geoclass_escarpment>	rdfs:subClassOf	<wordnet_escarpment_109274152> .
+#@ <id_fqc24f_1m6_1115dpt>
 <geoclass_saddle>	rdfs:subClassOf	<wordnet_saddleback_109418810> .
+#@ <id_1ex4hkl_1m6_1vaimze>
 <geoclass_shore>	rdfs:subClassOf	<wordnet_shore_109433442> .
+#@ <id_13n7p6z_1m6_17fruv5>
 <geoclass_sinkhole>	rdfs:subClassOf	<wordnet_sinkhole_109435739> .
+#@ <id_1ex6wqh_1m6_1erzccs>
 <geoclass_slide>	rdfs:subClassOf	<wordnet_chute_103029603> .
+#@ <id_1ex71gz_1m6_tkwb3p>
 <geoclass_slope>	rdfs:subClassOf	<wordnet_slope_109437454> .
+#@ <id_1ydrge8_1m6_1sgdvpq>
 <geoclass_spit>	rdfs:subClassOf	<wordnet_spit_109442595> .
+#@ <id_1ydrgoi_1m6_4chrqy>
 <geoclass_spur>	rdfs:subClassOf	<wordnet_branch_line_102891430> .
+#@ <id_tbixo1_1m6_tkwb3p>
 <geoclass_talus_slope>	rdfs:subClassOf	<wordnet_slope_109437454> .
+#@ <id_1urpss8_1m6_zq43us>
 <geoclass_interdune_trough>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_7941ru_1m6_17zf4xx>
 <geoclass_terrace>	rdfs:subClassOf	<wordnet_terrace_109456207> .
+#@ <id_gwt9j2_1m6_1rztx4q>
 <geoclass_upland>	rdfs:subClassOf	<wordnet_highland_109302616> .
+#@ <id_h5m6zb_1m6_lhvfgq>
 <geoclass_valley>	rdfs:subClassOf	<wordnet_valley_109468604> .
+#@ <id_7dm1mu_1m6_lhvfgq>
 <geoclass_hanging_valley>	rdfs:subClassOf	<wordnet_valley_109468604> .
+#@ <id_ymbmnw_1m6_lhvfgq>
 <geoclass_valleys>	rdfs:subClassOf	<wordnet_valley_109468604> .
+#@ <id_zvr6gl_1m6_1aso9f0>
 <geoclass_section_of_valley>	rdfs:subClassOf	<wordnet_section_108648322> .
+#@ <id_158si2i_1m6_1pm9uzp>
 <geoclass_volcano>	rdfs:subClassOf	<wordnet_volcano_109472597> .
+#@ <id_1endcy2_1m6_tyd9bn>
 <geoclass_apron>	rdfs:subClassOf	<wordnet_apron_108496334> .
+#@ <id_1ydfzym_1m6_ljag6u>
 <geoclass_arch>	rdfs:subClassOf	<wordnet_arch_102733524> .
+#@ <id_a4rhxt_1m6_zq43us>
 <geoclass_arrugado>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1j8xy1b_1m6_tew71w>
 <geoclass_borderland>	rdfs:subClassOf	<wordnet_borderland_108513163> .
+#@ <id_1ennhof_1m6_1nb2nlv>
 <geoclass_banks>	rdfs:subClassOf	<wordnet_bank_109213565> .
+#@ <id_1enq1fc_1m6_17zf4xx>
 <geoclass_bench>	rdfs:subClassOf	<wordnet_terrace_109456207> .
+#@ <id_1ydgalw_1m6_1nb2nlv>
 <geoclass_bank>	rdfs:subClassOf	<wordnet_bank_109213565> .
+#@ <id_1ennlc1_1m6_y6qmtm>
 <geoclass_basin>	rdfs:subClassOf	<wordnet_basin_109215437> .
+#@ <id_1hstsbl_1m6_zq43us>
 <geoclass_cordillera>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_13wkjhv_1m6_n6ntoz>
 <geoclass_canyons>	rdfs:subClassOf	<wordnet_canyon_109233446> .
+#@ <id_85sxc0_1m6_n6ntoz>
 <geoclass_canyon>	rdfs:subClassOf	<wordnet_canyon_109233446> .
+#@ <id_sueu8x_1m6_5vqpr>
 <geoclass_continental_rise>	rdfs:subClassOf	<wordnet_ascent_109206985> .
+#@ <id_1ydhnc4_1m6_1wjgs7w>
 <geoclass_deep>	rdfs:subClassOf	<wordnet_deep_109263811> .
+#@ <id_n6dycq_1m6_zq43us>
 <geoclass_shelf_edge>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_nxcnmo_1m6_z65xn7>
 <geoclass_escarpment>	rdfs:subClassOf	<wordnet_escarpment_103296328> .
+#@ <id_ib509n_1m6_zq43us>
 <geoclass_fan>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ydj2ep_1m6_wj4h9l>
 <geoclass_flat>	rdfs:subClassOf	<wordnet_flat_109281411> .
+#@ <id_1ydj516_1m6_1p7m474>
 <geoclass_fork>	rdfs:subClassOf	<wordnet_crotch_105597436> .
+#@ <id_1eq3ou1_1m6_1p7m474>
 <geoclass_forks>	rdfs:subClassOf	<wordnet_crotch_105597436> .
+#@ <id_1mkz0fl_1m6_rdjzbl>
 <geoclass_fracture_zone>	rdfs:subClassOf	<wordnet_zone_108688247> .
+#@ <id_9w035b_1m6_bwjx3>
 <geoclass_furrow>	rdfs:subClassOf	<wordnet_furrow_103406966> .
+#@ <id_ib510e_1m6_zq43us>
 <geoclass_gap>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1eqr6xf_1m6_1opgzb4>
 <geoclass_gully>	rdfs:subClassOf	<wordnet_gully_109300306> .
+#@ <id_1ydkaex_1m6_7tnqei>
 <geoclass_hill>	rdfs:subClassOf	<wordnet_hill_109303008> .
+#@ <id_1er3boa_1m6_7tnqei>
 <geoclass_hills>	rdfs:subClassOf	<wordnet_hill_109303008> .
+#@ <id_1ydkeuw_1m6_18ocvaa>
 <geoclass_hole>	rdfs:subClassOf	<wordnet_hole_109304750> .
+#@ <id_1estylw_1m6_mj38t2>
 <geoclass_knoll>	rdfs:subClassOf	<wordnet_knoll_109326662> .
+#@ <id_c5blhb_1m6_mj38t2>
 <geoclass_knolls>	rdfs:subClassOf	<wordnet_knoll_109326662> .
+#@ <id_1et7s1d_1m6_iaw8i9>
 <geoclass_ledge>	rdfs:subClassOf	<wordnet_ledge_109337253> .
+#@ <id_1et85c5_1m6_1h62vvp>
 <geoclass_levee>	rdfs:subClassOf	<wordnet_levee_103658635> .
+#@ <id_1imgxbw_1m6_lhvfgq>
 <geoclass_median_valley>	rdfs:subClassOf	<wordnet_valley_109468604> .
+#@ <id_1ydneji_1m6_1783dcs>
 <geoclass_mesa>	rdfs:subClassOf	<wordnet_mesa_109351905> .
+#@ <id_1etyb9t_1m6_mj38t2>
 <geoclass_mound>	rdfs:subClassOf	<wordnet_knoll_109326662> .
+#@ <id_1ydnljh_1m6_fsp8yz>
 <geoclass_moat>	rdfs:subClassOf	<wordnet_moat_103776050> .
+#@ <id_1fwpssu_1m6_1koge48>
 <geoclass_mountains>	rdfs:subClassOf	<wordnet_mountain_109359803> .
+#@ <id_t64q2t_1m6_1koge48>
 <geoclass_mountain>	rdfs:subClassOf	<wordnet_mountain_109359803> .
+#@ <id_1evewak_1m6_oddsbj>
 <geoclass_peaks>	rdfs:subClassOf	<wordnet_peak_108617963> .
+#@ <id_1ydpb2v_1m6_oddsbj>
 <geoclass_peak>	rdfs:subClassOf	<wordnet_peak_108617963> .
+#@ <id_1q7yz1n_1m6_1m9s4qf>
 <geoclass_platform>	rdfs:subClassOf	<wordnet_platform_103962525> .
+#@ <id_1evjd5e_1m6_o1r0br>
 <geoclass_plain>	rdfs:subClassOf	<wordnet_plain_109393605> .
+#@ <id_mmn6fm_1m6_1ll2s32>
 <geoclass_plateau>	rdfs:subClassOf	<wordnet_tableland_109453008> .
+#@ <id_o8yzyk_1m6_1kpnsvj>
 <geoclass_pinnacle>	rdfs:subClassOf	<wordnet_pinnacle_103943266> .
+#@ <id_evwqzs_1m6_pgnpav>
 <geoclass_province>	rdfs:subClassOf	<wordnet_state_108654360> .
+#@ <id_f9m18x_1m6_vgdvrx>
 <geoclass_ravine>	rdfs:subClassOf	<wordnet_ravine_109405787> .
+#@ <id_1ewl3jn_1m6_1ruknn7>
 <geoclass_ridge>	rdfs:subClassOf	<wordnet_ridge_109409512> .
+#@ <id_fdoujk_1m6_1rukp81>
 <geoclass_ridges>	rdfs:subClassOf	<wordnet_ridge_109409752> .
+#@ <id_1ewikbr_1m6_10flrwy>
 <geoclass_reefs>	rdfs:subClassOf	<wordnet_reef_109406793> .
+#@ <id_1ydql58_1m6_10flrwy>
 <geoclass_reef>	rdfs:subClassOf	<wordnet_reef_109406793> .
+#@ <id_1ydqog1_1m6_5vqpr>
 <geoclass_rise>	rdfs:subClassOf	<wordnet_ascent_109206985> .
+#@ <id_1ydqidm_1m6_1mgs387>
 <geoclass_ramp>	rdfs:subClassOf	<wordnet_ramp_104615728> .
+#@ <id_1ewg72d_1m6_b6hdfx>
 <geoclass_range>	rdfs:subClassOf	<wordnet_range_109403734> .
+#@ <id_8i8gng_1m6_zq43us>
 <geoclass_seachannel>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ely6cn_1m6_zq43us>
 <geoclass_seachannels>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_fqc24f_1m6_1115dpt>
 <geoclass_saddle>	rdfs:subClassOf	<wordnet_saddleback_109418810> .
+#@ <id_1ex4a0i_1m6_iaw8i9>
 <geoclass_shelf>	rdfs:subClassOf	<wordnet_ledge_109337253> .
+#@ <id_1ex4h65_1m6_102co6q>
 <geoclass_shoal>	rdfs:subClassOf	<wordnet_shoal_109433134> .
+#@ <id_fudkx2_1m6_102co6q>
 <geoclass_shoals>	rdfs:subClassOf	<wordnet_shoal_109433134> .
+#@ <id_1cuggwc_1m6_lhvfgq>
 <geoclass_shelf_valley>	rdfs:subClassOf	<wordnet_valley_109468604> .
+#@ <id_1ydrb9q_1m6_zq43us>
 <geoclass_sill>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_1ex71gz_1m6_tkwb3p>
 <geoclass_slope>	rdfs:subClassOf	<wordnet_slope_109437454> .
+#@ <id_jk2z5_1m6_akcvt8>
 <geoclass_seamounts>	rdfs:subClassOf	<wordnet_seamount_109427752> .
+#@ <id_19udpr6_1m6_akcvt8>
 <geoclass_seamount>	rdfs:subClassOf	<wordnet_seamount_109427752> .
+#@ <id_1ydrgoi_1m6_4chrqy>
 <geoclass_spur>	rdfs:subClassOf	<wordnet_branch_line_102891430> .
+#@ <id_7941ru_1m6_17zf4xx>
 <geoclass_terrace>	rdfs:subClassOf	<wordnet_terrace_109456207> .
+#@ <id_bzaa8g_1m6_zq43us>
 <geoclass_tablemounts>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_dwuir_1m6_zq43us>
 <geoclass_tablemount>	rdfs:subClassOf	<yagoGeoEntity> .
+#@ <id_gf994s_1m6_1sgdvpq>
 <geoclass_tongue>	rdfs:subClassOf	<wordnet_spit_109442595> .
+#@ <id_ggxjy5_1m6_1ekygr3>
 <geoclass_trough>	rdfs:subClassOf	<wordnet_trough_109462773> .
+#@ <id_ggr0sk_1m6_hk2517>
 <geoclass_trench>	rdfs:subClassOf	<wordnet_trench_109461315> .
+#@ <id_h5m6zb_1m6_lhvfgq>
 <geoclass_valley>	rdfs:subClassOf	<wordnet_valley_109468604> .
+#@ <id_ymbmnw_1m6_lhvfgq>
 <geoclass_valleys>	rdfs:subClassOf	<wordnet_valley_109468604> .
+#@ <id_1ydgpk0_1m6_1ctfvvv>
 <geoclass_bush>	rdfs:subClassOf	<wordnet_bush_108505018> .
+#@ <id_1mfvsgr_1m6_kqpane>
 <geoclass_cultivated_area>	rdfs:subClassOf	<wordnet_area_102735688> .
+#@ <id_9sp21h_1m6_rpzaqy>
 <geoclass_forest>	rdfs:subClassOf	<wordnet_forest_109284015> .
+#@ <id_ysjqg_1m6_rpzaqy>
 <geoclass_fossilized_forest>	rdfs:subClassOf	<wordnet_forest_109284015> .
+#@ <id_qj6ujt_1m6_1y6ivwv>
 <geoclass_grassland>	rdfs:subClassOf	<wordnet_grassland_108598301> .
+#@ <id_w7zksx_1m6_v77xb6>
 <geoclass_coconut_grove>	rdfs:subClassOf	<wordnet_grove_103463832> .
+#@ <id_1izqoxj_1m6_v77xb6>
 <geoclass_olive_grove>	rdfs:subClassOf	<wordnet_grove_103463832> .
+#@ <id_t8ktdq_1m6_v77xb6>
 <geoclass_palm_grove>	rdfs:subClassOf	<wordnet_grove_103463832> .
+#@ <id_eg7jb0_1m6_v77xb6>
 <geoclass_pine_grove>	rdfs:subClassOf	<wordnet_grove_103463832> .
+#@ <id_1er0jr4_1m6_g29t>
 <geoclass_heath>	rdfs:subClassOf	<wordnet_heath_108504851> .
+#@ <id_cy7l97_1m6_q19myx>
 <geoclass_meadow>	rdfs:subClassOf	<wordnet_hayfield_108570634> .
+#@ <id_atehcj_1m6_v77xb6>
 <geoclass_orchard>	rdfs:subClassOf	<wordnet_grove_103463832> .
+#@ <id_1hxvhgi_1m6_j1qp8m>
 <geoclass_scrubland>	rdfs:subClassOf	<wordnet_scrubland_108645104> .
+#@ <id_1yds4ra_1m6_imm7k>
 <geoclass_tree>	rdfs:subClassOf	<wordnet_tree_113912260> .
+#@ <id_gijye6_1m6_ljzmpe>
 <geoclass_tundra>	rdfs:subClassOf	<wordnet_tundra_109463226> .
+#@ <id_1izyvdo_1m6_nwoe2r>
 <geoclass_vineyard>	rdfs:subClassOf	<wordnet_vineyard_104536038> .
+#@ <id_8bpg7_1m6_nwoe2r>
 <geoclass_vineyards>	rdfs:subClassOf	<wordnet_vineyard_104536038> .
+#@ <id_o4ua5h_1m6_zq43us>
 <geoclass_not_available>	rdfs:subClassOf	<yagoGeoEntity> .

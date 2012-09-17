@@ -292,8 +292,6 @@
 <Veronica_Lario>	rdfs:label	"Miriam Raffaella Bartolini" .
 #@ <id_7qjadl_oyl_1s2kwiy>
 <Veronica_Lario>	<wasBornIn>	<Bologna> .
-#@ <id_7qjadl_gcl_wz05y3>
-<Veronica_Lario>	<isKnownFor>	<Silvio_Berlusconi> .
 #@ <id_7qjadl_88c_1uyhsab>
 <Veronica_Lario>	rdf:type	<wordnet_actress_109767700> .
 #@ <id_7qjadl_16x_wz05y3>
@@ -1042,8 +1040,6 @@
 <Jean_Sarkozy>	<wasBornOnDate>	"1986-09-01"^^xsd:date .
 #@ <id_7rtptc_11e_14u1nmi>
 <Jean_Sarkozy>	<hasChild>	<Solal_Sasha> .
-#@ <id_7rtptc_gcl_vkf2e7>
-<Jean_Sarkozy>	<isKnownFor>	<Nicolas_Sarkozy> .
 #@ <id_7rtptc_tje_1kbjt10>
 <Jean_Sarkozy>	<isCitizenOf>	<French_people> .
 #@ <id_vkf2e7_11e_7rtptc>

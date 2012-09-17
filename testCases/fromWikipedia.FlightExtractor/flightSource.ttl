@@ -1,4 +1,4 @@
-# test
+# Test of YAGO2s
 # Sources for flights
 # INTERNAL
 
@@ -43,6 +43,9 @@
 #@ <id_ueiaoh_115_4ola6b>
 <id_4ola6b_14p_15yosg0>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
 <id_ueiaoh_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_1p4j85f_115_4ola6b>
+<id_4ola6b_14p_1vvajjd>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
+<id_1p4j85f_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_17t0jpi_115_4ola6b>
 <id_4ola6b_14p_ckqzhl>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
 <id_17t0jpi_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
@@ -445,9 +448,9 @@
 #@ <id_1pkq2s8_115_4ola6b>
 <id_4ola6b_14p_1y6odlr>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
 <id_1pkq2s8_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_1c7za79_115_4ola6b>
-<id_4ola6b_14p_lw7hyq>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
-<id_1c7za79_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_uoz4e2_115_4ola6b>
+<id_4ola6b_14p_16o2wyu>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
+<id_uoz4e2_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_rtlqj1_115_4ola6b>
 <id_4ola6b_14p_10m2tvd>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
 <id_rtlqj1_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
@@ -490,9 +493,9 @@
 #@ <id_shysg1_115_4ola6b>
 <id_4ola6b_14p_11xzgdq>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
 <id_shysg1_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_l4teon_115_4ola6b>
-<id_4ola6b_14p_51f4v2>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
-<id_l4teon_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_1j43kzv_115_4ola6b>
+<id_4ola6b_14p_1jb09oy>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
+<id_1j43kzv_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_kj0p7p_115_4ola6b>
 <id_4ola6b_14p_2h36ql>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
 <id_kj0p7p_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
@@ -1069,9 +1072,9 @@
 #@ <id_rvwqqf_115_4ola6b>
 <id_4ola6b_14p_10ox84l>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
 <id_rvwqqf_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_u8vwxl_115_4ola6b>
-<id_4ola6b_14p_15ohttg>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
-<id_u8vwxl_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_rs9wtn_115_4ola6b>
+<id_4ola6b_14p_10icwyw>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
+<id_rs9wtn_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_n2fljw_115_4ola6b>
 <id_4ola6b_14p_7qwqz1>	<extractionSource>	<Amsterdam_Airport_Schiphol> .
 <id_n2fljw_115_4ola6b>	<extractionTechnique>	"FlightExtractor" .
@@ -1801,9 +1804,9 @@
 #@ <id_1wrzesx_115_15fa8fj>
 <id_15fa8fj_14p_1y6odlr>	<extractionSource>	<Frankfurt_Airport> .
 <id_1wrzesx_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_kyhr8s_115_15fa8fj>
-<id_15fa8fj_14p_lw7hyq>	<extractionSource>	<Frankfurt_Airport> .
-<id_kyhr8s_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_11w8ger_115_15fa8fj>
+<id_15fa8fj_14p_16o2wyu>	<extractionSource>	<Frankfurt_Airport> .
+<id_11w8ger_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_z0v2jq_115_15fa8fj>
 <id_15fa8fj_14p_10m2tvd>	<extractionSource>	<Frankfurt_Airport> .
 <id_z0v2jq_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
@@ -1831,9 +1834,9 @@
 #@ <id_1rbrpbu_115_15fa8fj>
 <id_15fa8fj_14p_1ldst19>	<extractionSource>	<Frankfurt_Airport> .
 <id_1rbrpbu_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_1swfxpa_115_15fa8fj>
-<id_15fa8fj_14p_51f4v2>	<extractionSource>	<Frankfurt_Airport> .
-<id_1swfxpa_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_1qbcx0k_115_15fa8fj>
+<id_15fa8fj_14p_1jb09oy>	<extractionSource>	<Frankfurt_Airport> .
+<id_1qbcx0k_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_1san88c_115_15fa8fj>
 <id_15fa8fj_14p_2h36ql>	<extractionSource>	<Frankfurt_Airport> .
 <id_1san88c_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
@@ -2329,9 +2332,9 @@
 #@ <id_1v8ripk_115_15fa8fj>
 <id_15fa8fj_14p_8mq6q7>	<extractionSource>	<Frankfurt_Airport> .
 <id_1v8ripk_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_yzuo17_115_15fa8fj>
-<id_15fa8fj_14p_10k96ke>	<extractionSource>	<Frankfurt_Airport> .
-<id_yzuo17_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_1qmx5my_115_15fa8fj>
+<id_15fa8fj_14p_1l7msuu>	<extractionSource>	<Frankfurt_Airport> .
+<id_1qmx5my_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_1r31wb6_115_15fa8fj>
 <id_15fa8fj_14p_1ksxdjo>	<extractionSource>	<Frankfurt_Airport> .
 <id_1r31wb6_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
@@ -2455,9 +2458,9 @@
 #@ <id_j0iwvc_115_15fa8fj>
 <id_15fa8fj_14p_hrmq02>	<extractionSource>	<Frankfurt_Airport> .
 <id_j0iwvc_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_1rz2mh3_115_15fa8fj>
-<id_15fa8fj_14p_32nftl>	<extractionSource>	<Frankfurt_Airport> .
-<id_1rz2mh3_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_1u91fl9_115_15fa8fj>
+<id_15fa8fj_14p_6l41vx>	<extractionSource>	<Frankfurt_Airport> .
+<id_1u91fl9_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_1uf7m6p_115_15fa8fj>
 <id_15fa8fj_14p_6uwp67>	<extractionSource>	<Frankfurt_Airport> .
 <id_1uf7m6p_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
@@ -2476,9 +2479,9 @@
 #@ <id_rf2bep_115_15fa8fj>
 <id_15fa8fj_14p_zjtsys>	<extractionSource>	<Frankfurt_Airport> .
 <id_rf2bep_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_11g58ya_115_15fa8fj>
-<id_15fa8fj_14p_15ohttg>	<extractionSource>	<Frankfurt_Airport> .
-<id_11g58ya_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_yzj8uc_115_15fa8fj>
+<id_15fa8fj_14p_10icwyw>	<extractionSource>	<Frankfurt_Airport> .
+<id_yzj8uc_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_1uu24kj_115_15fa8fj>
 <id_15fa8fj_14p_7qwqz1>	<extractionSource>	<Frankfurt_Airport> .
 <id_1uu24kj_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
@@ -2545,9 +2548,9 @@
 #@ <id_104l8nh_115_15fa8fj>
 <id_15fa8fj_14p_147xp70>	<extractionSource>	<Frankfurt_Airport> .
 <id_104l8nh_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
-#@ <id_1tsqjj1_115_15fa8fj>
-<id_15fa8fj_14p_1qko614>	<extractionSource>	<Frankfurt_Airport> .
-<id_1tsqjj1_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_or555e_115_15fa8fj>
+<id_15fa8fj_14p_v8h4h4>	<extractionSource>	<Frankfurt_Airport> .
+<id_or555e_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_yzsko1_115_15fa8fj>
 <id_15fa8fj_14p_10k4kvl>	<extractionSource>	<Frankfurt_Airport> .
 <id_yzsko1_115_15fa8fj>	<extractionTechnique>	"FlightExtractor" .
@@ -2785,6 +2788,9 @@
 #@ <id_1j3f7i2_115_pqs3ol>
 <id_pqs3ol_14p_18n5ki5>	<extractionSource>	<Galileo_Galilei_Airport> .
 <id_1j3f7i2_115_pqs3ol>	<extractionTechnique>	"FlightExtractor" .
+#@ <id_1ibfv8c_115_pqs3ol>
+<id_pqs3ol_14p_189x9me>	<extractionSource>	<Galileo_Galilei_Airport> .
+<id_1ibfv8c_115_pqs3ol>	<extractionTechnique>	"FlightExtractor" .
 #@ <id_gpaq83_115_pqs3ol>
 <id_pqs3ol_14p_2h36ql>	<extractionSource>	<Galileo_Galilei_Airport> .
 <id_gpaq83_115_pqs3ol>	<extractionTechnique>	"FlightExtractor" .

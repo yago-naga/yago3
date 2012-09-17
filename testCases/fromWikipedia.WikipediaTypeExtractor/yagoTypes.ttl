@@ -1812,8 +1812,6 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <participatedIn>	rdf:type	<relationLocatedByObject> .
 #@ <id_14hhlol_88c_x0pmg8>
 <isPoliticianOf>	rdf:type	<yagoFunction> .
-#@ <id_iwxxfo_88c_zjmw73>
-<produced>	rdf:type	<objectStartRelation> .
 #@ <id_1oqls2d_88c_x0pmg8>
 <worksAt>	rdf:type	<yagoFunction> .
 #@ <id_1oqls2d_88c_j4tc24>
@@ -1850,8 +1848,6 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <hasExport>	rdf:type	<yagoFunction> .
 #@ <id_1b19luf_88c_x0pmg8>
 <hasGini>	rdf:type	<yagoFunction> .
-#@ <id_f9jo4z_88c_9gxx22>
-<hasHDI>	rdf:type	<yagoFunctionInTime> .
 #@ <id_q65527_88c_x0pmg8>
 <hasImport>	rdf:type	<yagoFunction> .
 #@ <id_10j5g34_88c_9gxx22>
@@ -1900,10 +1896,6 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <hasRevenue>	rdf:type	<yagoFunction> .
 #@ <id_wo8ur6_88c_x0pmg8>
 <hasWeight>	rdf:type	<yagoFunction> .
-#@ <id_11hf4xb_88c_x0pmg8>
-<hasICD10>	rdf:type	<yagoFunction> .
-#@ <id_11hf4xb_88c_ezd9jb>
-<hasICD10>	rdf:type	<permanentRelationToSubject> .
 #@ <id_evcrba_88c_j4tc24>
 <happenedIn>	rdf:type	<relationLocatedByObject> .
 #@ <id_u5fk5q_88c_x0pmg8>
@@ -1916,8 +1908,8 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <hasGeonamesId>	rdf:type	<yagoFunction> .
 #@ <id_1qylhzg_88c_ezd9jb>
 <hasGeonamesId>	rdf:type	<permanentRelationToSubject> .
-#@ <id_19yw7wy_88c_1kkdc1n>
-<holdsPoliticalPosition>	rdf:type	rdf:Property .
+#@ <id_19yw7wy_88c_1ho7065>
+<holdsPoliticalPosition>	rdf:type	rdfs:Class .
 #@ <id_x77y5o_88c_x0pmg8>
 <hasSuccessor>	rdf:type	<yagoFunction> .
 #@ <id_204qof_88c_x0pmg8>

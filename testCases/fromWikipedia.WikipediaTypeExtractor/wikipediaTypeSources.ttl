@@ -5707,9 +5707,6 @@
 #@ <id_m0sav3_115_zk68s0>
 <id_14hhlol_88c_x0pmg8>	<extractionSource>	<YAGO> .
 <id_m0sav3_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1otv3jq_115_zk68s0>
-<id_iwxxfo_88c_zjmw73>	<extractionSource>	<YAGO> .
-<id_1otv3jq_115_zk68s0>	<extractionTechnique>	"Manual" .
 #@ <id_nyon95_115_zk68s0>
 <id_1oqls2d_88c_x0pmg8>	<extractionSource>	<YAGO> .
 <id_nyon95_115_zk68s0>	<extractionTechnique>	"Manual" .
@@ -5764,9 +5761,6 @@
 #@ <id_i315b5_115_zk68s0>
 <id_1b19luf_88c_x0pmg8>	<extractionSource>	<YAGO> .
 <id_i315b5_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1ggul6v_115_zk68s0>
-<id_f9jo4z_88c_9gxx22>	<extractionSource>	<YAGO> .
-<id_1ggul6v_115_zk68s0>	<extractionTechnique>	"Manual" .
 #@ <id_mgoghf_115_zk68s0>
 <id_q65527_88c_x0pmg8>	<extractionSource>	<YAGO> .
 <id_mgoghf_115_zk68s0>	<extractionTechnique>	"Manual" .
@@ -5839,12 +5833,6 @@
 #@ <id_12zeoas_115_zk68s0>
 <id_wo8ur6_88c_x0pmg8>	<extractionSource>	<YAGO> .
 <id_12zeoas_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_o35x1h_115_zk68s0>
-<id_11hf4xb_88c_x0pmg8>	<extractionSource>	<YAGO> .
-<id_o35x1h_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_g7r55t_115_zk68s0>
-<id_11hf4xb_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_g7r55t_115_zk68s0>	<extractionTechnique>	"Manual" .
 #@ <id_1jpliz7_115_zk68s0>
 <id_evcrba_88c_j4tc24>	<extractionSource>	<YAGO> .
 <id_1jpliz7_115_zk68s0>	<extractionTechnique>	"Manual" .
@@ -5863,9 +5851,9 @@
 #@ <id_qfqh0f_115_zk68s0>
 <id_1qylhzg_88c_ezd9jb>	<extractionSource>	<YAGO> .
 <id_qfqh0f_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_m4x3wh_115_zk68s0>
-<id_19yw7wy_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_m4x3wh_115_zk68s0>	<extractionTechnique>	"Manual" .
+#@ <id_kr5mxw_115_zk68s0>
+<id_19yw7wy_88c_1ho7065>	<extractionSource>	<YAGO> .
+<id_kr5mxw_115_zk68s0>	<extractionTechnique>	"Manual" .
 #@ <id_154ac82_115_zk68s0>
 <id_x77y5o_88c_x0pmg8>	<extractionSource>	<YAGO> .
 <id_154ac82_115_zk68s0>	<extractionTechnique>	"Manual" .

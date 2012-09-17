@@ -60,7 +60,7 @@
 #@ <infoBoxId2>
 "synonyms"	<_infoboxPattern>	rdfs:label .
 <infoBoxId2>	rdfs:comment	"Added by Fabian 2011-05-27" .
-"ICD10"  <_infoboxPattern> <hasICD10> .
+#"ICD10"  <_infoboxPattern> <hasICD10> .
 "Capital"	<_infoboxPattern>	<hasCapital> .
 "OfficialLang"	<_infoboxPattern>	<hasOfficialLanguage> .
 # "---Governor"	<_infoboxPattern>	<isLeaderOf-> . // Often goes for the president with his governor
