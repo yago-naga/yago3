@@ -82,7 +82,7 @@ public class CategoryExtractor extends Extractor {
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
     while (true) {
-      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:")) {
+      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:","#REDIRECT")) {
         case -1:
           Announce.progressDone();
           in.close();
@@ -100,6 +100,11 @@ public class CategoryExtractor extends Extractor {
               write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(titleEntity), "CategoryExtractor");
             }
           }
+          break;
+        case 2:
+          // Redirect pages have to go away
+          titleEntity=null;
+          break;
       }
     }
   }
@@ -113,6 +118,6 @@ public class CategoryExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new CategoryExtractor(new File("c:/fabian/temp/np.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new CategoryExtractor(new File("c:/fabian/data/wikipedia/testset/puettlingen.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
   }
 }
