@@ -239,9 +239,6 @@ public class InfoboxExtractor extends Extractor {
             Set<String> relations = patterns.get(attribute);
             if (relations == null) continue;
             for (String relation : relations) {
-              if(relation.equals("<hasRevenue>")) {
-                D.p("here");
-              }
               for (String value : attributes.get(attribute)) {
                 extract(titleEntity, value, relation, attribute, preferredMeaning, hardWiredFacts, writers, replacements);
               }
