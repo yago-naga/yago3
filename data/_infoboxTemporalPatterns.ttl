@@ -55,7 +55,7 @@
 # --------- Infobox patterns for Time Metafacts --------------
 "populationEstimate1"	<_infoboxPattern>	<hasNumberOfPeople> .
 "gdp1"	<_infoboxPattern>	<hasGDP> .
-"hdi1"	<_infoboxPattern>	<hasHDI> .
+#"hdi1"	<_infoboxPattern>	<hasHDI> . # Usually gives bad results, so I removed the relation altogether (Fabian)
 "gini1"	<_infoboxPattern>	<hasGini> .
 
 "playFor1"	<_infoboxPattern>	<playsFor> .
