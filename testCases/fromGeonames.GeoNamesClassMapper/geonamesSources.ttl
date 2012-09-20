@@ -1264,9 +1264,9 @@
 #@ <id_dch449_115_1umzv6f>
 <id_1ydq9xw_1m6_zq43us>	<extractionSource>	<GeoNames> .
 <id_dch449_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
-#@ <id_5dtth8_115_1umzv6f>
-<id_193rj4_1m6_1rdj8x2>	<extractionSource>	<GeoNames> .
-<id_5dtth8_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
+#@ <id_1jbhx0j_115_1umzv6f>
+<id_193rj4_1m6_zq43us>	<extractionSource>	<GeoNames> .
+<id_1jbhx0j_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .
 #@ <id_e59pl0_115_1umzv6f>
 <id_btemqq_1m6_15xnd55>	<extractionSource>	<GeoNames> .
 <id_e59pl0_115_1umzv6f>	<extractionTechnique>	"GeoNamesClassMapper" .

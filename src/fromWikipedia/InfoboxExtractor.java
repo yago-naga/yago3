@@ -271,7 +271,7 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/chanel.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/angie.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");

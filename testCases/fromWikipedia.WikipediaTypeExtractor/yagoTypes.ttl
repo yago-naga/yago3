@@ -1654,34 +1654,34 @@ rdf:type	rdf:type	rdf:Property .
 rdf:type	rdf:type	<permanentRelationToSubject> .
 #@ <id_1m6z6qy_88c_1kkdc1n>
 rdfs:subClassOf	rdf:type	rdf:Property .
-#@ <id_1m6z6qy_88c_13ju7o1>
-rdfs:subClassOf	rdf:type	<yagoTransitiveRelation> .
-#@ <id_19ss2zj_88c_x0pmg8>
-rdfs:domain	rdf:type	<yagoFunction> .
-#@ <id_1idukjm_88c_x0pmg8>
-rdfs:range	rdf:type	<yagoFunction> .
+#@ <id_1m6z6qy_88c_g5dm9c>
+rdfs:subClassOf	rdf:type	owl:TransitiveProperty .
+#@ <id_19ss2zj_88c_1bp47ny>
+rdfs:domain	rdf:type	owl:FunctionalProperty .
+#@ <id_1idukjm_88c_1bp47ny>
+rdfs:range	rdf:type	owl:FunctionalProperty .
 #@ <id_1pg7xv5_88c_1kkdc1n>
 rdfs:subPropertyOf	rdf:type	rdf:Property .
-#@ <id_1pg7xv5_88c_13ju7o1>
-rdfs:subPropertyOf	rdf:type	<yagoTransitiveRelation> .
+#@ <id_1pg7xv5_88c_g5dm9c>
+rdfs:subPropertyOf	rdf:type	owl:TransitiveProperty .
 #@ <id_1wv06v1_88c_1hnalex>
 <_hasTypeCheckPattern>	rdf:type	<yagoInternalRelation> .
 #@ <id_1omrgzo_88c_1kkdc1n>
 <hasConfidence>	rdf:type	rdf:Property .
-#@ <id_1coonlf_88c_x0pmg8>
-<occursSince>	rdf:type	<yagoFunction> .
-#@ <id_1cpvkbb_88c_x0pmg8>
-<occursUntil>	rdf:type	<yagoFunction> .
+#@ <id_1coonlf_88c_1bp47ny>
+<occursSince>	rdf:type	owl:FunctionalProperty .
+#@ <id_1cpvkbb_88c_1bp47ny>
+<occursUntil>	rdf:type	owl:FunctionalProperty .
 #@ <id_14prkyi_88c_1kkdc1n>
 <isConnectedTo>	rdf:type	rdf:Property .
 #@ <id_1buqpaq_88c_1kkdc1n>
 <byTransport>	rdf:type	rdf:Property .
 #@ <id_12fzv9w_88c_1kkdc1n>
 <linksTo>	rdf:type	rdf:Property .
-#@ <id_tyts95_88c_x0pmg8>
-<startsExistingOnDate>	rdf:type	<yagoFunction> .
-#@ <id_1r5imr4_88c_x0pmg8>
-<endsExistingOnDate>	rdf:type	<yagoFunction> .
+#@ <id_tyts95_88c_1bp47ny>
+<startsExistingOnDate>	rdf:type	owl:FunctionalProperty .
+#@ <id_1r5imr4_88c_1bp47ny>
+<endsExistingOnDate>	rdf:type	owl:FunctionalProperty .
 #@ <id_qkxqya_88c_1kkdc1n>
 <subjectStartRelation>	rdf:type	rdf:Property .
 #@ <id_1wbuwiz_88c_1kkdc1n>
@@ -1694,96 +1694,96 @@ rdfs:subPropertyOf	rdf:type	<yagoTransitiveRelation> .
 <permanentRelationToSubject>	rdf:type	rdf:Property .
 #@ <id_1af5cas_88c_1kkdc1n>
 <permanentRelationToObject>	rdf:type	rdf:Property .
-#@ <id_z7axal_88c_x0pmg8>
-<isLocatedIn>	rdf:type	<yagoFunction> .
-#@ <id_z7axal_88c_13ju7o1>
-<isLocatedIn>	rdf:type	<yagoTransitiveRelation> .
+#@ <id_z7axal_88c_1bp47ny>
+<isLocatedIn>	rdf:type	owl:FunctionalProperty .
+#@ <id_z7axal_88c_g5dm9c>
+<isLocatedIn>	rdf:type	owl:TransitiveProperty .
 #@ <id_1cmkuj0_88c_1kkdc1n>
 <occursIn>	rdf:type	rdf:Property .
-#@ <id_1u9bm82_88c_x0pmg8>
-<placedIn>	rdf:type	<yagoFunction> .
+#@ <id_1u9bm82_88c_1bp47ny>
+<placedIn>	rdf:type	owl:FunctionalProperty .
 #@ <id_1upx82k_88c_1kkdc1n>
 <_timeToLocation>	rdf:type	rdf:Property .
 #@ <id_j4tc24_88c_1kkdc1n>
 <relationLocatedByObject>	rdf:type	rdf:Property .
 #@ <id_dtzovp_88c_1kkdc1n>
 <hasContext>	rdf:type	rdf:Property .
-#@ <id_1b1ayjg_88c_x0pmg8>
-<hasImdb>	rdf:type	<yagoFunction> .
-#@ <id_o47u9e_88c_x0pmg8>
-<hasWikipediaUrl>	rdf:type	<yagoFunction> .
+#@ <id_1b1ayjg_88c_1bp47ny>
+<hasImdb>	rdf:type	owl:FunctionalProperty .
+#@ <id_o47u9e_88c_1bp47ny>
+<hasWikipediaUrl>	rdf:type	owl:FunctionalProperty .
 #@ <id_11550iq_88c_b3paj4>
 <extractionSource>	rdf:type	rdfs:Property .
 #@ <id_1gu7pd5_88c_b3paj4>
 <extractionTechnique>	rdf:type	rdfs:Property .
-#@ <id_nyggzh_88c_x0pmg8>
-<isPreferredMeaningOf>	rdf:type	<yagoFunction> .
+#@ <id_nyggzh_88c_1bp47ny>
+<isPreferredMeaningOf>	rdf:type	owl:FunctionalProperty .
 #@ <id_nyggzh_88c_1af5cas>
 <isPreferredMeaningOf>	rdf:type	<permanentRelationToObject> .
-#@ <id_1szyp5f_88c_x0pmg8>
-skos:prefLabel	rdf:type	<yagoFunction> .
+#@ <id_1szyp5f_88c_1bp47ny>
+skos:prefLabel	rdf:type	owl:FunctionalProperty .
 #@ <id_1szyp5f_88c_ezd9jb>
 skos:prefLabel	rdf:type	<permanentRelationToSubject> .
-#@ <id_16bk6bz_88c_x0pmg8>
-<hasSynsetId>	rdf:type	<yagoFunction> .
-#@ <id_czss2q_88c_x0pmg8>
-<hasGeonamesClassId>	rdf:type	<yagoFunction> .
-#@ <id_1gfsnj_88c_x0pmg8>
-<hasGeonamesEntityId>	rdf:type	<yagoFunction> .
+#@ <id_16bk6bz_88c_1bp47ny>
+<hasSynsetId>	rdf:type	owl:FunctionalProperty .
+#@ <id_czss2q_88c_1bp47ny>
+<hasGeonamesClassId>	rdf:type	owl:FunctionalProperty .
+#@ <id_1gfsnj_88c_1bp47ny>
+<hasGeonamesEntityId>	rdf:type	owl:FunctionalProperty .
 #@ <id_1aum7sf_88c_1kkdc1n>
 <hasThreeLetterLanguageCode>	rdf:type	rdf:Property .
 #@ <id_k0bmzj_88c_1kkdc1n>
 <hasLanguageCode>	rdf:type	rdf:Property .
-#@ <id_11h2nps_88c_x0pmg8>
-<hasGloss>	rdf:type	<yagoFunction> .
+#@ <id_11h2nps_88c_1bp47ny>
+<hasGloss>	rdf:type	owl:FunctionalProperty .
 #@ <id_1iajk1l_88c_1kkdc1n>
 rdfs:label	rdf:type	rdf:Property .
 #@ <id_1iajk1l_88c_1af5cas>
 rdfs:label	rdf:type	<permanentRelationToObject> .
-#@ <id_p3m12z_88c_x0pmg8>
-<hasGender>	rdf:type	<yagoFunction> .
+#@ <id_p3m12z_88c_1bp47ny>
+<hasGender>	rdf:type	owl:FunctionalProperty .
 #@ <id_garqnq_88c_1kkdc1n>
 <actedIn>	rdf:type	rdf:Property .
-#@ <id_oylqv_88c_x0pmg8>
-<wasBornIn>	rdf:type	<yagoFunction> .
+#@ <id_oylqv_88c_1bp47ny>
+<wasBornIn>	rdf:type	owl:FunctionalProperty .
 #@ <id_oylqv_88c_qkxqya>
 <wasBornIn>	rdf:type	<subjectStartRelation> .
 #@ <id_oylqv_88c_j4tc24>
 <wasBornIn>	rdf:type	<relationLocatedByObject> .
-#@ <id_1xko9lr_88c_x0pmg8>
-<wasBornOnDate>	rdf:type	<yagoFunction> .
+#@ <id_1xko9lr_88c_1bp47ny>
+<wasBornOnDate>	rdf:type	owl:FunctionalProperty .
 #@ <id_1gixip4_88c_zjmw73>
 <created>	rdf:type	<objectStartRelation> .
 #@ <id_gcl2vk_88c_1kkdc1n>
 <isKnownFor>	rdf:type	rdf:Property .
-#@ <id_dhj6eh_88c_x0pmg8>
-<diedIn>	rdf:type	<yagoFunction> .
+#@ <id_dhj6eh_88c_1bp47ny>
+<diedIn>	rdf:type	owl:FunctionalProperty .
 #@ <id_dhj6eh_88c_1wbuwiz>
 <diedIn>	rdf:type	<subjectEndRelation> .
 #@ <id_dhj6eh_88c_j4tc24>
 <diedIn>	rdf:type	<relationLocatedByObject> .
-#@ <id_1ughn3l_88c_x0pmg8>
-<diedOnDate>	rdf:type	<yagoFunction> .
+#@ <id_1ughn3l_88c_1bp47ny>
+<diedOnDate>	rdf:type	owl:FunctionalProperty .
 #@ <id_13l1l54_88c_zjmw73>
 <directed>	rdf:type	<objectStartRelation> .
 #@ <id_dvwqax_88c_1kkdc1n>
 <edited>	rdf:type	rdf:Property .
 #@ <id_1hpv4kp_88c_1kkdc1n>
 <wroteMusicFor>	rdf:type	rdf:Property .
-#@ <id_1o4hiyx_88c_x0pmg8>
-<hasFamilyName>	rdf:type	<yagoFunction> .
+#@ <id_1o4hiyx_88c_1bp47ny>
+<hasFamilyName>	rdf:type	owl:FunctionalProperty .
 #@ <id_1o4hiyx_88c_ezd9jb>
 <hasFamilyName>	rdf:type	<permanentRelationToSubject> .
-#@ <id_15uj3fy_88c_x0pmg8>
-<hasGivenName>	rdf:type	<yagoFunction> .
+#@ <id_15uj3fy_88c_1bp47ny>
+<hasGivenName>	rdf:type	owl:FunctionalProperty .
 #@ <id_15uj3fy_88c_ezd9jb>
 <hasGivenName>	rdf:type	<permanentRelationToSubject> .
-#@ <id_10x8m9v_88c_x0pmg8>
-<graduatedFrom>	rdf:type	<yagoFunction> .
+#@ <id_10x8m9v_88c_1bp47ny>
+<graduatedFrom>	rdf:type	owl:FunctionalProperty .
 #@ <id_10x8m9v_88c_j4tc24>
 <graduatedFrom>	rdf:type	<relationLocatedByObject> .
-#@ <id_1an7e7z_88c_x0pmg8>
-<hasAcademicAdvisor>	rdf:type	<yagoFunction> .
+#@ <id_1an7e7z_88c_1bp47ny>
+<hasAcademicAdvisor>	rdf:type	owl:FunctionalProperty .
 #@ <id_11essrm_88c_1kkdc1n>
 <hasChild>	rdf:type	rdf:Property .
 #@ <id_ab2jfa_88c_1kkdc1n>
@@ -1794,14 +1794,14 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <isInterestedIn>	rdf:type	rdf:Property .
 #@ <id_1s2g89o_88c_1kkdc1n>
 <isAffiliatedTo>	rdf:type	rdf:Property .
-#@ <id_tjes7p_88c_x0pmg8>
-<isCitizenOf>	rdf:type	<yagoFunction> .
+#@ <id_tjes7p_88c_1bp47ny>
+<isCitizenOf>	rdf:type	owl:FunctionalProperty .
 #@ <id_1c7ng22_88c_1kkdc1n>
 <isLeaderOf>	rdf:type	rdf:Property .
 #@ <id_16xgjd1_88c_1kkdc1n>
 <isMarriedTo>	rdf:type	rdf:Property .
-#@ <id_16xgjd1_88c_1ef6vyb>
-<isMarriedTo>	rdf:type	<yagoSymmetricRelation> .
+#@ <id_16xgjd1_88c_obchp2>
+<isMarriedTo>	rdf:type	owl:SymmetricProperty .
 #@ <id_12kadu4_88c_1kkdc1n>
 <livesIn>	rdf:type	rdf:Property .
 #@ <id_1oy3fe4_88c_1kkdc1n>
@@ -1810,46 +1810,46 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <participatedIn>	rdf:type	rdf:Property .
 #@ <id_12c8qh7_88c_j4tc24>
 <participatedIn>	rdf:type	<relationLocatedByObject> .
-#@ <id_14hhlol_88c_x0pmg8>
-<isPoliticianOf>	rdf:type	<yagoFunction> .
-#@ <id_1oqls2d_88c_x0pmg8>
-<worksAt>	rdf:type	<yagoFunction> .
+#@ <id_14hhlol_88c_1bp47ny>
+<isPoliticianOf>	rdf:type	owl:FunctionalProperty .
+#@ <id_1oqls2d_88c_1bp47ny>
+<worksAt>	rdf:type	owl:FunctionalProperty .
 #@ <id_1oqls2d_88c_j4tc24>
 <worksAt>	rdf:type	<relationLocatedByObject> .
 #@ <id_zklfhp_88c_1kkdc1n>
 <owns>	rdf:type	rdf:Property .
-#@ <id_1n8lvza_88c_x0pmg8>
-<hasLatitude>	rdf:type	<yagoFunction> .
+#@ <id_1n8lvza_88c_1bp47ny>
+<hasLatitude>	rdf:type	owl:FunctionalProperty .
 #@ <id_1n8lvza_88c_ezd9jb>
 <hasLatitude>	rdf:type	<permanentRelationToSubject> .
-#@ <id_jtojzp_88c_x0pmg8>
-<hasLongitude>	rdf:type	<yagoFunction> .
+#@ <id_jtojzp_88c_1bp47ny>
+<hasLongitude>	rdf:type	owl:FunctionalProperty .
 #@ <id_jtojzp_88c_ezd9jb>
 <hasLongitude>	rdf:type	<permanentRelationToSubject> .
-#@ <id_klquc_88c_x0pmg8>
-<hasGeoCoordinates>	rdf:type	<yagoFunction> .
+#@ <id_klquc_88c_1bp47ny>
+<hasGeoCoordinates>	rdf:type	owl:FunctionalProperty .
 #@ <id_klquc_88c_ezd9jb>
 <hasGeoCoordinates>	rdf:type	<permanentRelationToSubject> .
 #@ <id_dhdgq5_88c_1kkdc1n>
 <dealsWith>	rdf:type	rdf:Property .
 #@ <id_dv6erj_88c_1kkdc1n>
 <exports>	rdf:type	rdf:Property .
-#@ <id_1b15ydj_88c_x0pmg8>
-<hasArea>	rdf:type	<yagoFunction> .
-#@ <id_789u9a_88c_x0pmg8>
-<hasCapital>	rdf:type	<yagoFunction> .
-#@ <id_ljefgr_88c_x0pmg8>
-<hasCurrency>	rdf:type	<yagoFunction> .
-#@ <id_afjlna_88c_x0pmg8>
-<hasEconomicGrowth>	rdf:type	<yagoFunction> .
+#@ <id_1b15ydj_88c_1bp47ny>
+<hasArea>	rdf:type	owl:FunctionalProperty .
+#@ <id_789u9a_88c_1bp47ny>
+<hasCapital>	rdf:type	owl:FunctionalProperty .
+#@ <id_ljefgr_88c_1bp47ny>
+<hasCurrency>	rdf:type	owl:FunctionalProperty .
+#@ <id_afjlna_88c_1bp47ny>
+<hasEconomicGrowth>	rdf:type	owl:FunctionalProperty .
 #@ <id_1f1nget_88c_9gxx22>
 <hasExpenses>	rdf:type	<yagoFunctionInTime> .
-#@ <id_og0e0e_88c_x0pmg8>
-<hasExport>	rdf:type	<yagoFunction> .
-#@ <id_1b19luf_88c_x0pmg8>
-<hasGini>	rdf:type	<yagoFunction> .
-#@ <id_q65527_88c_x0pmg8>
-<hasImport>	rdf:type	<yagoFunction> .
+#@ <id_og0e0e_88c_1bp47ny>
+<hasExport>	rdf:type	owl:FunctionalProperty .
+#@ <id_1b19luf_88c_1bp47ny>
+<hasGini>	rdf:type	owl:FunctionalProperty .
+#@ <id_q65527_88c_1bp47ny>
+<hasImport>	rdf:type	owl:FunctionalProperty .
 #@ <id_10j5g34_88c_9gxx22>
 <hasInflation>	rdf:type	<yagoFunctionInTime> .
 #@ <id_11kffyr_88c_1kkdc1n>
@@ -1862,10 +1862,10 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <hasOfficialLanguage>	rdf:type	rdf:Property .
 #@ <id_ibw3mp_88c_9gxx22>
 <hasPopulationDensity>	rdf:type	<yagoFunctionInTime> .
-#@ <id_1qp2bbj_88c_x0pmg8>
-<hasPoverty>	rdf:type	<yagoFunction> .
-#@ <id_f9jx82_88c_x0pmg8>
-<hasTLD>	rdf:type	<yagoFunction> .
+#@ <id_1qp2bbj_88c_1bp47ny>
+<hasPoverty>	rdf:type	owl:FunctionalProperty .
+#@ <id_f9jx82_88c_1bp47ny>
+<hasTLD>	rdf:type	owl:FunctionalProperty .
 #@ <id_lgaadb_88c_9gxx22>
 <hasUnemployment>	rdf:type	<yagoFunctionInTime> .
 #@ <id_iceu8x_88c_1kkdc1n>
@@ -1874,45 +1874,45 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <imports>	rdf:type	rdf:Property .
 #@ <id_saedv0_88c_1kkdc1n>
 <hasNeighbor>	rdf:type	rdf:Property .
-#@ <id_siusp8_88c_x0pmg8>
-<wasCreatedOnDate>	rdf:type	<yagoFunction> .
-#@ <id_1qltcvx_88c_x0pmg8>
-<wasDestroyedOnDate>	rdf:type	<yagoFunction> .
-#@ <id_mz0ayn_88c_x0pmg8>
-<hasBudget>	rdf:type	<yagoFunction> .
-#@ <id_1e3xvta_88c_x0pmg8>
-<hasDuration>	rdf:type	<yagoFunction> .
-#@ <id_pkkiu9_88c_x0pmg8>
-<hasHeight>	rdf:type	<yagoFunction> .
-#@ <id_rgu7mo_88c_x0pmg8>
-<hasLength>	rdf:type	<yagoFunction> .
-#@ <id_1b1aefk_88c_x0pmg8>
-<hasISBN>	rdf:type	<yagoFunction> .
+#@ <id_siusp8_88c_1bp47ny>
+<wasCreatedOnDate>	rdf:type	owl:FunctionalProperty .
+#@ <id_1qltcvx_88c_1bp47ny>
+<wasDestroyedOnDate>	rdf:type	owl:FunctionalProperty .
+#@ <id_mz0ayn_88c_1bp47ny>
+<hasBudget>	rdf:type	owl:FunctionalProperty .
+#@ <id_1e3xvta_88c_1bp47ny>
+<hasDuration>	rdf:type	owl:FunctionalProperty .
+#@ <id_pkkiu9_88c_1bp47ny>
+<hasHeight>	rdf:type	owl:FunctionalProperty .
+#@ <id_rgu7mo_88c_1bp47ny>
+<hasLength>	rdf:type	owl:FunctionalProperty .
+#@ <id_1b1aefk_88c_1bp47ny>
+<hasISBN>	rdf:type	owl:FunctionalProperty .
 #@ <id_1b1aefk_88c_ezd9jb>
 <hasISBN>	rdf:type	<permanentRelationToSubject> .
-#@ <id_11ltlxm_88c_x0pmg8>
-<hasPages>	rdf:type	<yagoFunction> .
-#@ <id_gaaiw2_88c_x0pmg8>
-<hasRevenue>	rdf:type	<yagoFunction> .
-#@ <id_wo8ur6_88c_x0pmg8>
-<hasWeight>	rdf:type	<yagoFunction> .
+#@ <id_11ltlxm_88c_1bp47ny>
+<hasPages>	rdf:type	owl:FunctionalProperty .
+#@ <id_gaaiw2_88c_1bp47ny>
+<hasRevenue>	rdf:type	owl:FunctionalProperty .
+#@ <id_wo8ur6_88c_1bp47ny>
+<hasWeight>	rdf:type	owl:FunctionalProperty .
 #@ <id_evcrba_88c_j4tc24>
 <happenedIn>	rdf:type	<relationLocatedByObject> .
-#@ <id_u5fk5q_88c_x0pmg8>
-<happenedOnDate>	rdf:type	<yagoFunction> .
-#@ <id_1emswlq_88c_x0pmg8>
-<startedOnDate>	rdf:type	<yagoFunction> .
-#@ <id_n3uzd3_88c_x0pmg8>
-<endedOnDate>	rdf:type	<yagoFunction> .
-#@ <id_1qylhzg_88c_x0pmg8>
-<hasGeonamesId>	rdf:type	<yagoFunction> .
+#@ <id_u5fk5q_88c_1bp47ny>
+<happenedOnDate>	rdf:type	owl:FunctionalProperty .
+#@ <id_1emswlq_88c_1bp47ny>
+<startedOnDate>	rdf:type	owl:FunctionalProperty .
+#@ <id_n3uzd3_88c_1bp47ny>
+<endedOnDate>	rdf:type	owl:FunctionalProperty .
+#@ <id_1qylhzg_88c_1bp47ny>
+<hasGeonamesId>	rdf:type	owl:FunctionalProperty .
 #@ <id_1qylhzg_88c_ezd9jb>
 <hasGeonamesId>	rdf:type	<permanentRelationToSubject> .
 #@ <id_19yw7wy_88c_1ho7065>
 <holdsPoliticalPosition>	rdf:type	rdfs:Class .
-#@ <id_x77y5o_88c_x0pmg8>
-<hasSuccessor>	rdf:type	<yagoFunction> .
-#@ <id_204qof_88c_x0pmg8>
-<hasPredecessor>	rdf:type	<yagoFunction> .
+#@ <id_x77y5o_88c_1bp47ny>
+<hasSuccessor>	rdf:type	owl:FunctionalProperty .
+#@ <id_204qof_88c_1bp47ny>
+<hasPredecessor>	rdf:type	owl:FunctionalProperty .
 #@ <id_1ulnfre_88c_1kkdc1n>
 <playsFor>	rdf:type	rdf:Property .

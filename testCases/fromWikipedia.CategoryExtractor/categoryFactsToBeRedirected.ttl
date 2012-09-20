@@ -1,9 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected
 # INTERNAL
 
@@ -465,8 +460,6 @@
 <French_Fourth_Republic>	<wasCreatedOnDate>	"1946-##-##"^^xsd:date .
 #@ <id_1fvzpek_siu_1nhd5vu>
 <French_Fourth_Republic>	<wasCreatedOnDate>	"1946-##-##"^^xsd:date .
-#@ <id_3dnf2x_1xk_ncafy6>
-<Giulia_Sarkozy>	<wasBornOnDate>	"2011-##-##"^^xsd:date .
 #@ <id_pq3wku_1xk_t28eo2>
 <Hervé_Gaymard>	<wasBornOnDate>	"1960-##-##"^^xsd:date .
 #@ <id_pq3wku_14h_1cxn1dm>

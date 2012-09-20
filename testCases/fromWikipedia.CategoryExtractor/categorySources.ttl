@@ -1,9 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# 
-# 
+# Test of YAGO2s
 # The sources of category facts
 # INTERNAL
 
@@ -690,9 +685,6 @@
 #@ <id_bl74k5_115_jcah8m>
 <id_1fvzpek_siu_1nhd5vu>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic> .
 <id_bl74k5_115_jcah8m>	<extractionTechnique>	"CategoryExtractor" .
-#@ <id_5wp7jy_115_1l97cz>
-<id_3dnf2x_1xk_ncafy6>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulia_Sarkozy> .
-<id_5wp7jy_115_1l97cz>	<extractionTechnique>	"CategoryExtractor" .
 #@ <id_6mpez9_115_1h5vq4k>
 <id_pq3wku_1xk_t28eo2>	<extractionSource>	<http://en.wikipedia.org/wiki/Hervé_Gaymard> .
 <id_6mpez9_115_1h5vq4k>	<extractionTechnique>	"CategoryExtractor" .

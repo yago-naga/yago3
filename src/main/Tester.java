@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.Writer;
 
+import fromOtherSources.HardExtractor;
+import fromOtherSources.PatternHardExtractor;
 import fromThemes.RelationChecker;
 import fromWikipedia.Extractor;
 
@@ -50,6 +52,10 @@ public class Tester {
     File yagoFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "Enter the folder where the real version of YAGO lives (for the inputs):");
     File outputFolder = Parameters.getOrRequestAndAddFile("testYagoFolder", "Enter the folder where the test version of YAGO should be created:");
     File singleTest = Parameters.getFile("singleTest", null);
+    // Run hard extractors to update patterns and relations
+    new PatternHardExtractor(new File("./data")).extract(yagoFolder, "test");
+    new HardExtractor(new File("../basics2s/data")).extract(yagoFolder, "test");
+
     if (singleTest != null) {
       runTest(singleTest, yagoFolder, outputFolder);
     } else {

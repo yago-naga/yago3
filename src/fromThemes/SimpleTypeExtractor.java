@@ -70,8 +70,14 @@ public class SimpleTypeExtractor extends Extractor {
     types = null;
 
     Announce.doing("Writing classes");
-    for (String branch : yagoBranches)
+    for (String branch : yagoBranches) {
       output.get(SIMPLETAXONOMY).write(new Fact(branch, RDFS.subclassOf, YAGO.entity));
+      for(String branch2 : yagoBranches) {
+        if(branch!=branch2) {
+          output.get(SIMPLETAXONOMY).write(new Fact(branch, RDFS.disjoint, branch2));
+        }
+      }
+    }
     for (String clss : leafClasses) {
       String branch = yagoBranch(clss, taxonomy);
       if (branch == null) {
