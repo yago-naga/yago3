@@ -181,7 +181,7 @@
 "magnumopus"	<_infoboxPattern>	<created> .
 "placeofbirth"	<_infoboxPattern>	<wasBornIn> .
 "placeofdeath"	<_infoboxPattern>	<diedIn> .
-"premier"	<_infoboxPattern>	<isLeaderOf-> .
+# "premier"	<_infoboxPattern>	<isLeaderOf-> . # This attribute is often given to the governing *person*
 "prizes"	<_infoboxPattern>	<hasWonPrize> .
 "residence"	<_infoboxPattern>	<livesIn> .
 "url"	<_infoboxPattern>	<hasWebsite> .
