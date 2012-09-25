@@ -99,7 +99,7 @@ public class FlightExtractor extends Extractor {
             Fact f = new Fact(titleEntity, "<isConnectedTo>", s);
             Fact by = f.metaFact("<byTransport>", airline);
             write(output.get(FLIGHTSNEEDRED), f, output.get(FLIGHTSOURCE), titleEntity, "FlightExtractor");
-            output.get(FLIGHTSNEEDRED).write(by);
+            write(output.get(FLIGHTSNEEDRED), by, output.get(FLIGHTSOURCE), titleEntity, "FlightExtractor");
           }
       }
     }
