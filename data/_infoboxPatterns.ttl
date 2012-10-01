@@ -150,7 +150,7 @@
 "maininterests"	<_infoboxPattern>	<isInterestedIn> .
 "notableideas"	<_infoboxPattern>	<isKnownFor> .
 "contributions"	<_infoboxPattern>	<isKnownFor> .
-# "knownfor"	<_infoboxPattern>	<isKnownFor> .
+# "knownfor"	<_infoboxPattern>	<isKnownFor> . // Often gives themes/affairs instead of noteable ideas
 "awards"	<_infoboxPattern>	<hasWonPrize> .
 "notableworks"	<_infoboxPattern>	<created> .
 "workinstitutions"	<_infoboxPattern>	<worksAt> .

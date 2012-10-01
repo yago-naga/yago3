@@ -147,7 +147,7 @@
 "commander-in-chief"	<_infoboxPattern>	<isLeaderOf-> .
 "famousworks"	<_infoboxPattern>	<created> .
 "magnumopus"	<_infoboxPattern>	<created> .
-"premier"	<_infoboxPattern>	<isLeaderOf-> .
+# "premier"	<_infoboxPattern>	<isLeaderOf-> . // Bad results, because is found on the page of the president
 "writer"	<_infoboxPattern>	<created-> .
 "composer"	<_infoboxPattern>	<created-> .
 "starring"	<_infoboxPattern>	<actedIn-> .
