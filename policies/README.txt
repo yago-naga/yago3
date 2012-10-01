@@ -85,4 +85,9 @@ The YAGO Web presence consists of the following parts:
   This HTML document shall become part of the Web page.
 * Code tools
   We should make available at least the postgres-script from converters2s/scripts
-  The other tools are maybe not necessary any more... 
+  The other tools are maybe not necessary any more...
+* Browsers
+  We have a cool SVG-based browser, which should be online.
+  Edwin takes care of this.
+  The flight planner should go online too before the BTW deadline,
+  so that reviewers can try it out. Edwin is taking care of this.
