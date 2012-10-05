@@ -282,12 +282,14 @@ public abstract class TermExtractor {
       List<String> result = new ArrayList<String>(3);
       for (String word : s.split(",|\n")) {
         word = word.trim().replace("[", "").replace("]", "");
+        //Announce.debug(word);
         if (word.length() < 4) continue;
         String meaning = preferredMeanings.get(word);
         if (meaning == null) meaning = preferredMeanings.get(PlingStemmer.stem(word));
         if (meaning == null) meaning = preferredMeanings.get(word.toLowerCase());
         if (meaning == null) meaning = preferredMeanings.get(PlingStemmer.stem(word.toLowerCase()));
         if (meaning == null) continue;
+        //Announce.debug("Match",meaning);
         result.add(meaning);
       }
       if (result.size() == 0) Announce.debug("Could not find class in", s);

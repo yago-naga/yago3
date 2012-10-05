@@ -62,7 +62,7 @@ public class DBpediaLinker extends Extractor {
     	   if(!fact.getRelation().equals(RDFS.subclassOf) || instances.contains(fact.getArg(1))) continue;
     	   if(!fact.getArg(1).startsWith("<")) continue;
     	   String dbp=FactComponent.forUri("http://dbpedia.org/class/yago/"+FactComponent.stripBrackets(fact.getArg(1)));
-    	   output.get(YAGODBPEDIACLASSES).write(new Fact(fact.getArg(1),"owl:sameAs",dbp));
+    	   output.get(YAGODBPEDIACLASSES).write(new Fact(fact.getArg(1),"owl:equivalentClass",dbp));
     	   instances.add(fact.getArg(1));
        }
        Announce.done();
