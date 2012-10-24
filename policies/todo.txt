@@ -83,8 +83,12 @@ responsible: Johannes?
 todo: to write
 responsible: Johannes?
 
-* Temporal extractor
-todo: to write
+* Temporal infobox extractor
+todo: done
+responsible: Erdal
+
+* Temporal category extractor
+todo: done
 responsible: Erdal
 
 * Set up test beds and test frames
@@ -93,9 +97,9 @@ Do this with JUnit tests?
 responsible: Fabian
 
 * Web page
-- make a FAQ
-- offer YAGO Themes as separate downloads
-- make a news point
+- make a FAQ: done
+- offer YAGO Themes as separate downloads : done
+- make a news point: TODO
 - link to the new DBpedia mappings at http://webdam.inria.fr/paris
 - general cleanup
 
