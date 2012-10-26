@@ -1,0 +1,1551 @@
+# Test of YAGO2s
+# Sources for airport code
+# INTERNAL
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_712lr5_115_a0y219>
+<id_1qdiv89_k56_zilesh>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_712lr5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_u95fig_115_a0y219>
+<id_lr6wli_k56_zilesi>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_u95fig_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1j59xg9_115_a0y219>
+<id_si99v4_k56_zilesj>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1j59xg9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_57d3gg_115_a0y219>
+<id_6rg4dj_k56_zilesl>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_57d3gg_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ocvi2d_115_a0y219>
+<id_1nfav3x_k56_zilesm>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ocvi2d_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_gres8b_115_a0y219>
+<id_sv2vdc_k56_zilesn>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_gres8b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_oyje3d_115_a0y219>
+<id_1osol8g_k56_zileso>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_oyje3d_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1yhfzys_115_a0y219>
+<id_1wl0a6f_k56_zilesp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1yhfzys_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1puun2r_115_a0y219>
+<id_1betkz8_k56_zilesq>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1puun2r_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wn1z9j_115_a0y219>
+<id_17mzvuh_k56_zilesr>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wn1z9j_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8uwy16_115_a0y219>
+<id_byjv8a_k56_ziless>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8uwy16_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ab1pbn_115_a0y219>
+<id_1sg0e0b_k56_zilest>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ab1pbn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3x4oio_115_a0y219>
+<id_ldk4ul_k56_zilesu>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3x4oio_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_tgf1l8_115_a0y219>
+<id_hhbpu4_k56_zilesv>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_tgf1l8_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_98pq3j_115_a0y219>
+<id_1bwb5yc_k56_zilesw>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_98pq3j_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1vgb6ym_115_a0y219>
+<id_12kc6q9_k56_zilesx>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1vgb6ym_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1vtmeeq_115_a0y219>
+<id_6naxhc_k56_zilesy>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1vtmeeq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_14lsr59_115_a0y219>
+<id_80ia3s_k56_zilesz>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_14lsr59_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1n0uq87_115_a0y219>
+<id_8ijj71_k56_zilet0>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1n0uq87_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_7wgsgr_115_a0y219>
+<id_q94ghe_k56_zilet1>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_7wgsgr_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1859n2c_115_a0y219>
+<id_1za2si_k56_zilet2>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1859n2c_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1fe3ic4_115_a0y219>
+<id_8lppdq_k56_zilet3>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1fe3ic4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1e7jd6t_115_a0y219>
+<id_uljdhh_k56_zilet4>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1e7jd6t_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_70kq0r_115_a0y219>
+<id_zixsoa_k56_zilet5>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_70kq0r_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_19iaaeq_115_a0y219>
+<id_kn4ymk_k56_zilet6>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_19iaaeq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_md8iey_115_a0y219>
+<id_jrz7r8_k56_ziletc>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_md8iey_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_udc3uq_115_a0y219>
+<id_128iq7d_k56_ziletd>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_udc3uq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qgrcbs_115_a0y219>
+<id_epndml_k56_ziletf>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qgrcbs_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8fw0qu_115_a0y219>
+<id_1jz03ry_k56_ziletg>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8fw0qu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18ogxqv_115_a0y219>
+<id_lfrhru_k56_zileth>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18ogxqv_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_12qsmd9_115_a0y219>
+<id_1r9qyoe_k56_zileti>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_12qsmd9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1kepklr_115_a0y219>
+<id_14pfb1m_k56_ziletj>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1kepklr_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_s0xq8f_115_a0y219>
+<id_bh04b6_k56_ziletk>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_s0xq8f_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_g5p175_115_a0y219>
+<id_270vc5_k56_ziletl>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_g5p175_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_fot6sj_115_a0y219>
+<id_7jj1c5_k56_ziletm>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_fot6sj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_5i5mns_115_a0y219>
+<id_jcc4dr_k56_ziletn>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_5i5mns_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jnfvbf_115_a0y219>
+<id_ouasuc_k56_zileto>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jnfvbf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3p29d5_115_a0y219>
+<id_o0lppt_k56_ziletp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3p29d5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_wy5k0f_115_a0y219>
+<id_1wwtgow_k56_ziletq>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_wy5k0f_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8sot7n_115_a0y219>
+<id_4jlgzz_k56_ziletr>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8sot7n_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ymnpja_115_a0y219>
+<id_11n63nz_k56_zilets>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ymnpja_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_t8dl3p_115_a0y219>
+<id_6s96k2_k56_zilett>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_t8dl3p_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1cecvgp_115_a0y219>
+<id_1d94e21_k56_ziletu>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1cecvgp_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_p4km8b_115_a0y219>
+<id_1fk1zlb_k56_ziletv>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_p4km8b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_q4l132_115_a0y219>
+<id_9s3ik6_k56_ziletw>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_q4l132_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_dmys1f_115_a0y219>
+<id_24rngp_k56_ziletx>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_dmys1f_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ydp6mw_115_a0y219>
+<id_y8xfvl_k56_zilety>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ydp6mw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1e9tw0w_115_a0y219>
+<id_2gbaq9_k56_ziletz>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1e9tw0w_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1qp1lb0_115_a0y219>
+<id_nnul8v_k56_zileu0>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1qp1lb0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hb24gn_115_a0y219>
+<id_2ngiro_k56_zileu1>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hb24gn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_16n0bul_115_a0y219>
+<id_1ytwcal_k56_zileu7>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_16n0bul_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1fcb5qt_115_a0y219>
+<id_1u4xkpy_k56_zileu8>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1fcb5qt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ekqauk_115_a0y219>
+<id_yg6g8g_k56_zileu9>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ekqauk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1qtfmld_115_a0y219>
+<id_1o0rabj_k56_zileua>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1qtfmld_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jumjmw_115_a0y219>
+<id_tu7sca_k56_zileub>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jumjmw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qy7wdr_115_a0y219>
+<id_q1swxk_k56_zileue>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qy7wdr_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1rj8t03_115_a0y219>
+<id_155cync_k56_zileuf>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1rj8t03_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_td395y_115_a0y219>
+<id_147e8gk_k56_zileuh>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_td395y_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_k35op3_115_a0y219>
+<id_9qiavi_k56_zileui>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_k35op3_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ksq68h_115_a0y219>
+<id_1sp7g1u_k56_zileuj>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ksq68h_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_numrou_115_a0y219>
+<id_lbnno7_k56_zileuk>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_numrou_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_dbjacu_115_a0y219>
+<id_gsjr4b_k56_zileuo>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_dbjacu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_199a1nm_115_a0y219>
+<id_7isfm7_k56_zileup>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_199a1nm_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18xusq4_115_a0y219>
+<id_1jvvyes_k56_zileuq>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18xusq4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_o18bjg_115_a0y219>
+<id_1d7oeez_k56_zileur>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_o18bjg_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1gcc2q4_115_a0y219>
+<id_1fdpkgm_k56_zileus>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1gcc2q4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_6het1o_115_a0y219>
+<id_156ipnh_k56_zileuv>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_6het1o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1siodsn_115_a0y219>
+<id_vfuao4_k56_zileuw>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1siodsn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ogtr8e_115_a0y219>
+<id_1n5wv4y_k56_zilev2>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ogtr8e_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wxd8ao_115_a0y219>
+<id_1xktgt8_k56_zilev3>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wxd8ao_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1pfunhf_115_a0y219>
+<id_1fqyv1q_k56_zilev4>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1pfunhf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1cw4jvb_115_a0y219>
+<id_1pcjta9_k56_zilev5>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1cw4jvb_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xfx8wc_115_a0y219>
+<id_1ri8a9z_k56_zilev6>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xfx8wc_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1c34qbb_115_a0y219>
+<id_1ym7k8g_k56_zilev7>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1c34qbb_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_103j3k4_115_a0y219>
+<id_1s910p6_k56_zilev8>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_103j3k4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1lipmc2_115_a0y219>
+<id_vh9mtu_k56_zilev9>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1lipmc2_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_6gr7u7_115_a0y219>
+<id_haksfw_k56_zileva>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_6gr7u7_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xn7h1z_115_a0y219>
+<id_1g1rvfz_k56_zilevb>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xn7h1z_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18jvihy_115_a0y219>
+<id_zf8inn_k56_zilevc>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18jvihy_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1a9ex9h_115_a0y219>
+<id_17jt9wu_k56_zilevd>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1a9ex9h_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8zf6po_115_a0y219>
+<id_e5a1mv_k56_zileve>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8zf6po_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jc3zla_115_a0y219>
+<id_fcn5e9_k56_zilevf>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jc3zla_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_sac5ju_115_a0y219>
+<id_1w83lx_k56_zilevg>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_sac5ju_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_m5507c_115_a0y219>
+<id_gcb2au_k56_zilevh>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_m5507c_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_28rmt5_115_a0y219>
+<id_slq0rj_k56_zilevi>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_28rmt5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_oy68pp_115_a0y219>
+<id_4aodoz_k56_zilevj>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_oy68pp_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_htv6wo_115_a0y219>
+<id_6e8kxi_k56_zilevk>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_htv6wo_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1we8rat_115_a0y219>
+<id_r4szh_k56_zilevl>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1we8rat_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1pef6yf_115_a0y219>
+<id_uklo9v_k56_zilevm>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1pef6yf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_16ovj6d_115_a0y219>
+<id_ezpgxf_k56_zilevo>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_16ovj6d_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1pfafmt_115_a0y219>
+<id_71xl7t_k56_zilevp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1pfafmt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_6gy8sb_115_a0y219>
+<id_tw3ao4_k56_zilevq>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_6gy8sb_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1bu1t0p_115_a0y219>
+<id_1ni585w_k56_zilevr>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1bu1t0p_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_lcxa8p_115_a0y219>
+<id_16l73dh_k56_zilevx>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_lcxa8p_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_nzccln_115_a0y219>
+<id_7em52j_k56_zilevy>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_nzccln_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_19ikil5_115_a0y219>
+<id_gx70co_k56_zilew0>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_19ikil5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_152otwx_115_a0y219>
+<id_1blxf5u_k56_zilew3>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_152otwx_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ll3i4a_115_a0y219>
+<id_18s4ds8_k56_zilew4>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ll3i4a_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ochbq4_115_a0y219>
+<id_1qmtye5_k56_zilew7>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ochbq4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jdm5n8_115_a0y219>
+<id_sn87js_k56_zilew8>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jdm5n8_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1kc42gt_115_a0y219>
+<id_1vhtpvc_k56_zilewb>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1kc42gt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hthegf_115_a0y219>
+<id_se2a0b_k56_zilewc>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hthegf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_196jxvd_115_a0y219>
+<id_1i7a71o_k56_zilewe>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_196jxvd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1yri8t0_115_a0y219>
+<id_14j1pfy_k56_zilewf>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1yri8t0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1avm5sj_115_a0y219>
+<id_1glsii8_k56_zilewg>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1avm5sj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ccohgl_115_a0y219>
+<id_1tk88sx_k56_zilewk>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ccohgl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1pwktbj_115_a0y219>
+<id_yfglku_k56_zilewl>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1pwktbj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_x0wprf_115_a0y219>
+<id_e17981_k56_zilews>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_x0wprf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1n0i596_115_a0y219>
+<id_1mc6nsw_k56_zilewv>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1n0i596_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1osd6_115_a0y219>
+<id_gbbste_k56_zilewx>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1osd6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1dmaz2x_115_a0y219>
+<id_w63gv8_k56_zilex0>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1dmaz2x_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1bh5c6w_115_a0y219>
+<id_ie8j7b_k56_zilex3>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1bh5c6w_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3ery4o_115_a0y219>
+<id_16zkye5_k56_zilex5>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3ery4o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1e4987i_115_a0y219>
+<id_p5oppp_k56_zilex6>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1e4987i_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_11udpv4_115_a0y219>
+<id_1blyfah_k56_zilex9>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_11udpv4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_vxj7p_115_a0y219>
+<id_1r3niqg_k56_zilexb>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_vxj7p_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_mwvjmu_115_a0y219>
+<id_1g54u2w_k56_zilexe>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_mwvjmu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_4420xn_115_a0y219>
+<id_1ne9ixr_k56_zilexg>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_4420xn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1mu4yqq_115_a0y219>
+<id_6u3oe4_k56_zilexn>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1mu4yqq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1p46jv9_115_a0y219>
+<id_1yzm3ck_k56_zilexo>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1p46jv9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_144ram0_115_a0y219>
+<id_1uaqv1m_k56_zilexp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_144ram0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1052ar3_115_a0y219>
+<id_5iuk5k_k56_zilexq>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1052ar3_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_r0mrjx_115_a0y219>
+<id_1adp8vu_k56_zilexr>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_r0mrjx_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_17ak6w9_115_a0y219>
+<id_1n0ytbd_k56_zilexs>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_17ak6w9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1tvsat_115_a0y219>
+<id_1f10yh8_k56_zilext>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1tvsat_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_136bk6z_115_a0y219>
+<id_1m5ophn_k56_zilexu>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_136bk6z_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1h572ke_115_a0y219>
+<id_1w5lzwx_k56_zilexv>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1h572ke_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_objwfq_115_a0y219>
+<id_1cznot2_k56_zilexw>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_objwfq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1iviasc_115_a0y219>
+<id_1fupq3t_k56_zilexx>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1iviasc_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1i155a0_115_a0y219>
+<id_1plwhk4_k56_zilexy>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1i155a0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_nhakr7_115_a0y219>
+<id_17llrno_k56_zilexz>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_nhakr7_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1eintfn_115_a0y219>
+<id_1x9qprs_k56_ziley0>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1eintfn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_o5eay6_115_a0y219>
+<id_1rl0yvj_k56_ziley1>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_o5eay6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_88avmh_115_a0y219>
+<id_13fkpsh_k56_ziley2>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_88avmh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_pts3o5_115_a0y219>
+<id_3anydf_k56_ziley3>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_pts3o5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_pe5hb2_115_a0y219>
+<id_227lnl_k56_ziley4>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_pe5hb2_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_dwtn34_115_a0y219>
+<id_xtvkfg_k56_ziley5>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_dwtn34_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_g04x74_115_a0y219>
+<id_oj1xw8_k56_ziley6>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_g04x74_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1nwcpep_115_a0y219>
+<id_6ytc78_k56_ziley7>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1nwcpep_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_nx2llo_115_a0y219>
+<id_btx1bp_k56_ziley8>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_nx2llo_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1s5ne4b_115_a0y219>
+<id_9ubime_k56_ziley9>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1s5ne4b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_m03fq7_115_a0y219>
+<id_7wp9si_k56_zileya>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_m03fq7_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1k0j23t_115_a0y219>
+<id_1fgl6oq_k56_zileyb>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1k0j23t_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_pknc1m_115_a0y219>
+<id_1fl90dd_k56_zileyc>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_pknc1m_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qnx596_115_a0y219>
+<id_1q800nk_k56_zileyj>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qnx596_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_xkfjja_115_a0y219>
+<id_1tz0na6_k56_zileyk>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_xkfjja_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1kvswum_115_a0y219>
+<id_oxcbk_k56_zileyl>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1kvswum_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_yyntcz_115_a0y219>
+<id_1h5lz6y_k56_zileym>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_yyntcz_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_11zvn38_115_a0y219>
+<id_oru60s_k56_zileyn>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_11zvn38_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jvufuy_115_a0y219>
+<id_1o3dun3_k56_zileyp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jvufuy_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ox1c87_115_a0y219>
+<id_1qycu2v_k56_zileyq>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ox1c87_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_yzcwfk_115_a0y219>
+<id_39jodz_k56_zileyt>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_yzcwfk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_lvvwh9_115_a0y219>
+<id_fmywxy_k56_zileyv>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_lvvwh9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_136eadl_115_a0y219>
+<id_o1lxvs_k56_zileyw>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_136eadl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_9oy6xy_115_a0y219>
+<id_7jpvzg_k56_zilez0>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_9oy6xy_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1om28xq_115_a0y219>
+<id_14662hq_k56_zilez2>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1om28xq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_13izuns_115_a0y219>
+<id_171c648_k56_zilez6>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_13izuns_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_rqk24m_115_a0y219>
+<id_1kq31ww_k56_zilez7>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_rqk24m_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_wofi9c_115_a0y219>
+<id_yn7mty_k56_zilezd>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_wofi9c_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ugjfb6_115_a0y219>
+<id_8clpte_k56_zilezf>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ugjfb6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1i85m65_115_a0y219>
+<id_1hif7al_k56_zilezg>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1i85m65_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1gelp2c_115_a0y219>
+<id_1y9ibu3_k56_zilezh>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1gelp2c_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8m4w57_115_a0y219>
+<id_1sgtk8n_k56_zilezi>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8m4w57_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_163q3zc_115_a0y219>
+<id_hq2bn3_k56_zilezj>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_163q3zc_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_192c9aj_115_a0y219>
+<id_1ntqf7o_k56_zilezk>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_192c9aj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1vhiqkc_115_a0y219>
+<id_1d34kz7_k56_zilezl>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1vhiqkc_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1qz0nn9_115_a0y219>
+<id_v84a17_k56_zilezn>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1qz0nn9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_7pp3xq_115_a0y219>
+<id_1o9qz34_k56_zilezo>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_7pp3xq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_rnrjyu_115_a0y219>
+<id_p3j8di_k56_zilezp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_rnrjyu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1un9mvy_115_a0y219>
+<id_1dmi8dr_k56_zilezq>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1un9mvy_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_16212g5_115_a0y219>
+<id_hnvig7_k56_zilezr>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_16212g5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_11cfmb0_115_a0y219>
+<id_1g5xlqi_k56_zilezs>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_11cfmb0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_w5f4xo_115_a0y219>
+<id_1opgu3p_k56_zilezu>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_w5f4xo_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1vqyit3_115_a0y219>
+<id_ispprc_k56_zilezv>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1vqyit3_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1azqs3e_115_a0y219>
+<id_a0qmb0_k56_zilezw>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1azqs3e_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wv0i3j_115_a0y219>
+<id_89kw0x_k56_zilezx>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wv0i3j_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1by3nvh_115_a0y219>
+<id_1wagpzv_k56_zilezy>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1by3nvh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_7nu8e0_115_a0y219>
+<id_o3w782_k56_zilezz>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_7nu8e0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_r77qiw_115_a0y219>
+<id_k0mqk2_k56_zilf01>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_r77qiw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_sfuiv0_115_a0y219>
+<id_7dxlws_k56_zilf02>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_sfuiv0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_124aurd_115_a0y219>
+<id_tbc0k6_k56_zilf08>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_124aurd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1if9ecv_115_a0y219>
+<id_o8z1d_k56_zilf0d>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1if9ecv_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_809odb_115_a0y219>
+<id_10glrl5_k56_zilf0g>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_809odb_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_eallpr_115_a0y219>
+<id_1s6fw58_k56_zilf0h>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_eallpr_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_110ys2a_115_a0y219>
+<id_14ivkkw_k56_zilf0j>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_110ys2a_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_12tlv2n_115_a0y219>
+<id_1129z0i_k56_zilf0l>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_12tlv2n_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wnom3r_115_a0y219>
+<id_19qa7rh_k56_zilf0m>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wnom3r_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_9d0kqd_115_a0y219>
+<id_10fv977_k56_zilf0p>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_9d0kqd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_dd48jl_115_a0y219>
+<id_54i3dr_k56_zilf0q>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_dd48jl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1k7se5z_115_a0y219>
+<id_ufemm7_k56_zilf0s>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1k7se5z_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1bx5ds9_115_a0y219>
+<id_1no4v1z_k56_zilf0w>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1bx5ds9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1552e7p_115_a0y219>
+<id_kvzop4_k56_zilf13>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1552e7p_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1sdrwd4_115_a0y219>
+<id_1snpxzp_k56_zilf14>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1sdrwd4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wmllqj_115_a0y219>
+<id_1l7cgtl_k56_zilf15>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wmllqj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_143dgfd_115_a0y219>
+<id_1jafnk6_k56_zilf16>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_143dgfd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ylb5ec_115_a0y219>
+<id_1tm0qrx_k56_zilf17>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ylb5ec_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_mnbwdw_115_a0y219>
+<id_1qziabb_k56_zilf18>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_mnbwdw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1643z4k_115_a0y219>
+<id_r5flu7_k56_zilf19>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1643z4k_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1lngak2_115_a0y219>
+<id_15gkjlh_k56_zilf1b>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1lngak2_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_13xczi6_115_a0y219>
+<id_16svq4_k56_zilf1c>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_13xczi6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1fdn6qu_115_a0y219>
+<id_nmqjbn_k56_zilf1d>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1fdn6qu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1tf0qsq_115_a0y219>
+<id_99r0gj_k56_zilf1e>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1tf0qsq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_10btpno_115_a0y219>
+<id_19vr7u2_k56_zilf1f>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_10btpno_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1got4f9_115_a0y219>
+<id_1f8f7uq_k56_zilf1g>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1got4f9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_7sa88o_115_a0y219>
+<id_1jjzs6j_k56_zilf1h>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_7sa88o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_yyodbm_115_a0y219>
+<id_13s23xk_k56_zilf1i>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_yyodbm_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1umc8pt_115_a0y219>
+<id_vp9zth_k56_zilf1j>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1umc8pt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_eldebv_115_a0y219>
+<id_m1akay_k56_zilf1k>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_eldebv_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_h1nbq4_115_a0y219>
+<id_12ts2m9_k56_zilf1l>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_h1nbq4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_o9d2k2_115_a0y219>
+<id_1oykshn_k56_zilf1m>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_o9d2k2_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_wusjvu_115_a0y219>
+<id_1rfs6mw_k56_zilf1n>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_wusjvu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_sd77vs_115_a0y219>
+<id_1no7jh8_k56_zilf1o>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_sd77vs_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_vdmdol_115_a0y219>
+<id_lid1h0_k56_zilf1q>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_vdmdol_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ege28v_115_a0y219>
+<id_j130vk_k56_zilf1r>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ege28v_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_19fpgeh_115_a0y219>
+<id_1uwwxxb_k56_zilf1y>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_19fpgeh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_nf356s_115_a0y219>
+<id_1vx4kz4_k56_zilf1z>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_nf356s_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1c96fyl_115_a0y219>
+<id_1457wmk_k56_zilf20>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1c96fyl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_16yuq6t_115_a0y219>
+<id_rkw2kx_k56_zilf21>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_16yuq6t_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1g18w0b_115_a0y219>
+<id_k1gavb_k56_zilf22>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1g18w0b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qyprhd_115_a0y219>
+<id_1o29bac_k56_zilf23>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qyprhd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_xb23h2_115_a0y219>
+<id_88fza0_k56_zilf24>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_xb23h2_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1kwwp9o_115_a0y219>
+<id_1ff1wfe_k56_zilf25>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1kwwp9o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_nnsdcq_115_a0y219>
+<id_1i5cpx7_k56_zilf26>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_nnsdcq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_rmbk57_115_a0y219>
+<id_13s3v8m_k56_zilf27>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_rmbk57_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1vpe6dg_115_a0y219>
+<id_1jv0lqy_k56_zilf28>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1vpe6dg_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_rka8cq_115_a0y219>
+<id_278uvh_k56_zilf29>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_rka8cq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18910r4_115_a0y219>
+<id_uaecm9_k56_zilf2a>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18910r4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_aa5he8_115_a0y219>
+<id_ejgrq8_k56_zilf2b>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_aa5he8_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1upkkkk_115_a0y219>
+<id_1lmxz91_k56_zilf2c>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1upkkkk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3sc0cl_115_a0y219>
+<id_1ke41cg_k56_zilf2d>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3sc0cl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_85icgv_115_a0y219>
+<id_1maq9rx_k56_zilf2e>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_85icgv_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_gjf0w6_115_a0y219>
+<id_1xld6b8_k56_zilf2f>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_gjf0w6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xvzuls_115_a0y219>
+<id_1yvz1zy_k56_zilf2g>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xvzuls_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1rlufe4_115_a0y219>
+<id_1n88h2p_k56_zilf2h>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1rlufe4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_13pibbd_115_a0y219>
+<id_l6d14b_k56_zilf2i>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_13pibbd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1gwal01_115_a0y219>
+<id_jjlwbu_k56_zilf2j>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1gwal01_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_76dzyl_115_a0y219>
+<id_13ajjjv_k56_zilf2k>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_76dzyl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1p2vbgw_115_a0y219>
+<id_14iohyc_k56_zilf2l>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1p2vbgw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_19i1lns_115_a0y219>
+<id_1clnbtx_k56_zilf2m>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_19i1lns_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_id94np_115_a0y219>
+<id_6g2pxg_k56_zilf2n>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_id94np_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1l1tu5p_115_a0y219>
+<id_16zjvm_k56_zilf2t>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1l1tu5p_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_nj7ur6_115_a0y219>
+<id_1o7j1xh_k56_zilf2u>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_nj7ur6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3ovdai_115_a0y219>
+<id_19h5s2m_k56_zilf2v>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3ovdai_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1kp4mkn_115_a0y219>
+<id_1wuklxe_k56_zilf2w>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1kp4mkn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_efgpdo_115_a0y219>
+<id_crif7l_k56_zilf2x>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_efgpdo_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_u3y839_115_a0y219>
+<id_eeu4g1_k56_zilf2y>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_u3y839_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_yzqieu_115_a0y219>
+<id_10r7mqy_k56_zilf2z>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_yzqieu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_6a7ycx_115_a0y219>
+<id_1mxg1jo_k56_zilf30>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_6a7ycx_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_vc5ek0_115_a0y219>
+<id_18g688c_k56_zilf31>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_vc5ek0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1uu9hta_115_a0y219>
+<id_of99gx_k56_zilf32>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1uu9hta_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_uwfr57_115_a0y219>
+<id_zi0l23_k56_zilf33>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_uwfr57_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1dr1fxn_115_a0y219>
+<id_qj1k1k_k56_zilf34>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1dr1fxn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_9p7qbe_115_a0y219>
+<id_auiger_k56_zilf35>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_9p7qbe_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1omfy1_115_a0y219>
+<id_s6w22u_k56_zilf36>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1omfy1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_7cuok_115_a0y219>
+<id_1nn763r_k56_zilf37>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_7cuok_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_161fz57_115_a0y219>
+<id_18fgwfp_k56_zilf38>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_161fz57_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_13e3e6f_115_a0y219>
+<id_4anrej_k56_zilf39>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_13e3e6f_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qbatb0_115_a0y219>
+<id_1f0ftj2_k56_zilf3a>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qbatb0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1uggw6m_115_a0y219>
+<id_1hde_k56_zilf3b>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1uggw6m_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1dg4t09_115_a0y219>
+<id_nfhmpa_k56_zilf3c>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1dg4t09_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_32abqg_115_a0y219>
+<id_muvidi_k56_zilf3d>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_32abqg_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1j05dlq_115_a0y219>
+<id_1rapu6d_k56_zilf3e>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1j05dlq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_7v1p25_115_a0y219>
+<id_1djps1l_k56_zilf3f>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_7v1p25_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_nf6v26_115_a0y219>
+<id_ca9d26_k56_zilf3g>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_nf6v26_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_190axa1_115_a0y219>
+<id_1jtjcg_k56_zilf3h>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_190axa1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_vfpgbw_115_a0y219>
+<id_16dogyk_k56_zilf3i>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_vfpgbw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1hje4bk_115_a0y219>
+<id_aiwczz_k56_zilf3p>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1hje4bk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1lns1uj_115_a0y219>
+<id_gtbgya_k56_zilf3q>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1lns1uj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jtafm7_115_a0y219>
+<id_clm15o_k56_zilf3r>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jtafm7_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1bqkqk6_115_a0y219>
+<id_ak9p8x_k56_zilf3s>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1bqkqk6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_yszgox_115_a0y219>
+<id_u91vxf_k56_zilf3t>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_yszgox_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_cjqd69_115_a0y219>
+<id_1q6jxj6_k56_zilf3u>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_cjqd69_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1gy20v7_115_a0y219>
+<id_1ma2u5l_k56_zilf3v>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1gy20v7_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1051xje_115_a0y219>
+<id_1bv4m6q_k56_zilf3w>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1051xje_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ggmzm_115_a0y219>
+<id_cf330g_k56_zilf3x>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ggmzm_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wnpb1h_115_a0y219>
+<id_xvalf5_k56_zilf3y>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wnpb1h_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_17okspk_115_a0y219>
+<id_vbb6rx_k56_zilf3z>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_17okspk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_omyx7b_115_a0y219>
+<id_1tio33m_k56_zilf40>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_omyx7b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_12v3818_115_a0y219>
+<id_zu2hof_k56_zilf41>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_12v3818_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1dx4ye5_115_a0y219>
+<id_1d11ypj_k56_zilf42>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1dx4ye5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3b1qm6_115_a0y219>
+<id_k4m5i0_k56_zilf43>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3b1qm6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_11e6fcx_115_a0y219>
+<id_dm8xmz_k56_zilf44>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_11e6fcx_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_zkv3uh_115_a0y219>
+<id_83sz8u_k56_zilf45>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_zkv3uh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jd999l_115_a0y219>
+<id_160dezf_k56_zilf46>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jd999l_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ar2uhx_115_a0y219>
+<id_z93dk0_k56_zilf47>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ar2uhx_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xua7vh_115_a0y219>
+<id_1qlec40_k56_zilf48>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xua7vh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1s3bb6e_115_a0y219>
+<id_1ppngnr_k56_zilf49>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1s3bb6e_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3kczl4_115_a0y219>
+<id_1alx3c0_k56_zilf4a>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3kczl4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xr4iuj_115_a0y219>
+<id_1d2qpae_k56_zilf4b>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xr4iuj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_b8r50o_115_a0y219>
+<id_1f48iqg_k56_zilf4c>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_b8r50o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_zx62k5_115_a0y219>
+<id_6n3l12_k56_zilf4d>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_zx62k5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1uurfx6_115_a0y219>
+<id_142btxr_k56_zilf4j>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1uurfx6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1x6q6p6_115_a0y219>
+<id_tki2mq_k56_zilf4k>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1x6q6p6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_zcnils_115_a0y219>
+<id_1oxkkkx_k56_zilf4l>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_zcnils_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_cjxodg_115_a0y219>
+<id_mdjjez_k56_zilf4m>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_cjxodg_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3ukzek_115_a0y219>
+<id_1n51tv8_k56_zilf4n>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3ukzek_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1o3lqax_115_a0y219>
+<id_1uo3hxj_k56_zilf4p>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1o3lqax_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1btx9z1_115_a0y219>
+<id_vki061_k56_zilf4q>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1btx9z1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1i9rqll_115_a0y219>
+<id_6fck6j_k56_zilf4r>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1i9rqll_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_19pzdzr_115_a0y219>
+<id_sok8pf_k56_zilf4s>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_19pzdzr_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_h670po_115_a0y219>
+<id_utxbl_k56_zilf4t>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_h670po_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_52niky_115_a0y219>
+<id_yn15xe_k56_zilf4u>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_52niky_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_5mq694_115_a0y219>
+<id_1rqek0t_k56_zilf4w>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_5mq694_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_892io5_115_a0y219>
+<id_1atxc6e_k56_zilf4x>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_892io5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1mql15e_115_a0y219>
+<id_ufpoeu_k56_zilf50>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1mql15e_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_x0la83_115_a0y219>
+<id_1wph1lq_k56_zilf51>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_x0la83_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1cxl7ga_115_a0y219>
+<id_pa2v5z_k56_zilf52>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1cxl7ga_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_5sblc1_115_a0y219>
+<id_4bou66_k56_zilf53>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_5sblc1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qphtjq_115_a0y219>
+<id_ebhdvn_k56_zilf5e>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qphtjq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1go47uh_115_a0y219>
+<id_2mp2pb_k56_zilf5f>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1go47uh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qe94y5_115_a0y219>
+<id_hzeqnl_k56_zilf5g>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qe94y5_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hfdvsl_115_a0y219>
+<id_1nkeuff_k56_zilf5i>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hfdvsl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1qi4ybn_115_a0y219>
+<id_h597r0_k56_zilf5j>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1qi4ybn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_iaj9fy_115_a0y219>
+<id_26v11q_k56_zilf5k>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_iaj9fy_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1f23l_115_a0y219>
+<id_q9d79k_k56_zilf5l>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1f23l_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ofx7oi_115_a0y219>
+<id_ua4qr6_k56_zilf5m>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ofx7oi_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1klxfbr_115_a0y219>
+<id_27pcrt_k56_zilf5o>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1klxfbr_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1e34wuo_115_a0y219>
+<id_qhzzxc_k56_zilf5p>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1e34wuo_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_pife4h_115_a0y219>
+<id_5hk3x0_k56_zilf5r>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_pife4h_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_2kv1jt_115_a0y219>
+<id_kj58lf_k56_zilf5s>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_2kv1jt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ncqkex_115_a0y219>
+<id_1d8ln1o_k56_zilf5t>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ncqkex_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1kr9tiq_115_a0y219>
+<id_moqk0y_k56_zilf5u>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1kr9tiq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_u1e9fi_115_a0y219>
+<id_cpglrz_k56_zilf5v>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_u1e9fi_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1bh9ttd_115_a0y219>
+<id_1s9k6i7_k56_zilf5w>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1bh9ttd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qdw172_115_a0y219>
+<id_18obtmg_k56_zilf5x>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qdw172_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_mamar8_115_a0y219>
+<id_ap8cxe_k56_zilf5y>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_mamar8_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18h11qw_115_a0y219>
+<id_1k86bv8_k56_zilf5z>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18h11qw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1f8bh3s_115_a0y219>
+<id_1gfvurd_k56_zilf60>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1f8bh3s_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1q8e0ka_115_a0y219>
+<id_1kian5y_k56_zilf61>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1q8e0ka_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1p07dod_115_a0y219>
+<id_12bx1q5_k56_zilf62>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1p07dod_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_jhv6xi_115_a0y219>
+<id_fsms9_k56_zilf63>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_jhv6xi_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_jgvxsh_115_a0y219>
+<id_jw2s61_k56_zilf69>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_jgvxsh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_a38v6h_115_a0y219>
+<id_16ru3m3_k56_zilf6a>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_a38v6h_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xz1o1j_115_a0y219>
+<id_qcoaj6_k56_zilf6f>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xz1o1j_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1tr4alw_115_a0y219>
+<id_60f3f4_k56_zilf6h>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1tr4alw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_14c7wdc_115_a0y219>
+<id_1npr1ww_k56_zilf6i>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_14c7wdc_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_b2zl94_115_a0y219>
+<id_7ytxjy_k56_zilf6l>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_b2zl94_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_enczsz_115_a0y219>
+<id_1g2irbr_k56_zilf6o>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_enczsz_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_2iqqrp_115_a0y219>
+<id_sk2ied_k56_zilf6r>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_2iqqrp_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_183j0f8_115_a0y219>
+<id_v6ui1m_k56_zilf74>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_183j0f8_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1v7c8o3_115_a0y219>
+<id_1adjy1h_k56_zilf75>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1v7c8o3_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_lx7f4e_115_a0y219>
+<id_bgfu8l_k56_zilf76>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_lx7f4e_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hndkx1_115_a0y219>
+<id_foeqhe_k56_zilf77>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hndkx1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1gpsim6_115_a0y219>
+<id_5yddcy_k56_zilf78>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1gpsim6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_k15yly_115_a0y219>
+<id_14dd81g_k56_zilf79>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_k15yly_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_s3adzk_115_a0y219>
+<id_t4otg3_k56_zilf7a>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_s3adzk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_a8szqx_115_a0y219>
+<id_w9sy34_k56_zilf7b>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_a8szqx_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1h3hpyh_115_a0y219>
+<id_1j8lhsz_k56_zilf7c>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1h3hpyh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_l0mxyq_115_a0y219>
+<id_yrfzkp_k56_zilf7d>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_l0mxyq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hctfom_115_a0y219>
+<id_15wjy38_k56_zilf7e>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hctfom_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_dba7ee_115_a0y219>
+<id_16prr4a_k56_zilf7f>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_dba7ee_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_esar4x_115_a0y219>
+<id_x6vw3z_k56_zilf7g>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_esar4x_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1k9ji10_115_a0y219>
+<id_ubjp8i_k56_zilf7h>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1k9ji10_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_6bi8zt_115_a0y219>
+<id_1hymtsr_k56_zilf7i>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_6bi8zt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3ibyde_115_a0y219>
+<id_1a9csne_k56_zilf7j>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3ibyde_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_iz1knl_115_a0y219>
+<id_amjpdl_k56_zilf7k>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_iz1knl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_tje6ar_115_a0y219>
+<id_1crq9j3_k56_zilf7l>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_tje6ar_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8qjk9g_115_a0y219>
+<id_qv4en1_k56_zilf7m>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8qjk9g_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1rtvcpf_115_a0y219>
+<id_jlv1us_k56_zilf7n>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1rtvcpf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xzi735_115_a0y219>
+<id_16dmyk6_k56_zilf7o>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xzi735_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_i4h7a4_115_a0y219>
+<id_j97b7q_k56_zilf7p>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_i4h7a4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xk6e9m_115_a0y219>
+<id_kes0zz_k56_zilf7q>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xk6e9m_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8ydpg7_115_a0y219>
+<id_1itzluj_k56_zilf7r>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8ydpg7_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8at2gy_115_a0y219>
+<id_1fz4tpd_k56_zilf7s>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8at2gy_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wcnrz6_115_a0y219>
+<id_1habyaz_k56_zilf7t>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wcnrz6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_p4i0bd_115_a0y219>
+<id_9tihel_k56_zilf7z>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_p4i0bd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1hq46fl_115_a0y219>
+<id_g1987l_k56_zilf80>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1hq46fl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_zmvuqq_115_a0y219>
+<id_158lt6p_k56_zilf81>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_zmvuqq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ll08v2_115_a0y219>
+<id_1fxe7bh_k56_zilf82>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ll08v2_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_14g8eo1_115_a0y219>
+<id_1m4tst6_k56_zilf83>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_14g8eo1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_9j7yqm_115_a0y219>
+<id_iqlg5g_k56_zilf84>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_9j7yqm_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wok659_115_a0y219>
+<id_10owkvq_k56_zilf85>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wok659_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_d1wtap_115_a0y219>
+<id_sc7vxm_k56_zilf86>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_d1wtap_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_4fgg3v_115_a0y219>
+<id_1wzj3rh_k56_zilf87>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_4fgg3v_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_phe2mj_115_a0y219>
+<id_k4xdul_k56_zilf88>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_phe2mj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wutagf_115_a0y219>
+<id_yzilmr_k56_zilf89>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wutagf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1o0x2pa_115_a0y219>
+<id_121zkyr_k56_zilf8a>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1o0x2pa_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_6xlldg_115_a0y219>
+<id_15jhq28_k56_zilf8b>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_6xlldg_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_zsmmeb_115_a0y219>
+<id_1h16fda_k56_zilf8c>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_zsmmeb_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_d8qt9v_115_a0y219>
+<id_1dm9exj_k56_zilf8d>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_d8qt9v_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1k1qwh6_115_a0y219>
+<id_fb41v7_k56_zilf8e>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1k1qwh6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1w1z2lu_115_a0y219>
+<id_rp5szq_k56_zilf8f>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1w1z2lu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_kbyh3k_115_a0y219>
+<id_r6zmsr_k56_zilf8g>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_kbyh3k_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_2gir40_115_a0y219>
+<id_1d1wr9p_k56_zilf8i>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_2gir40_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_10zf40o_115_a0y219>
+<id_1jh6nyk_k56_zilf8j>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_10zf40o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_13wysyu_115_a0y219>
+<id_1d3b74k_k56_zilf8k>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_13wysyu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_12owirf_115_a0y219>
+<id_1ceqoj1_k56_zilf8l>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_12owirf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_zeb3q9_115_a0y219>
+<id_x71iui_k56_zilf8m>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_zeb3q9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_wqeu1x_115_a0y219>
+<id_jpdljd_k56_zilf8n>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_wqeu1x_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_wcrbc_115_a0y219>
+<id_ycpyob_k56_zilf8o>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_wcrbc_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hnma0t_115_a0y219>
+<id_19uk0zg_k56_zilf8u>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hnma0t_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_10i7c37_115_a0y219>
+<id_1vvrt9p_k56_zilf8v>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_10i7c37_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wyy8w_115_a0y219>
+<id_1tuhm3z_k56_zilf8w>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wyy8w_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_109d2x4_115_a0y219>
+<id_cwn97g_k56_zilf8x>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_109d2x4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8rfws0_115_a0y219>
+<id_94fy9s_k56_zilf8y>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8rfws0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_sv225w_115_a0y219>
+<id_10z2pc7_k56_zilf8z>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_sv225w_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_bf224m_115_a0y219>
+<id_8bvazm_k56_zilf90>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_bf224m_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1tvphz4_115_a0y219>
+<id_8bqnow_k56_zilf91>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1tvphz4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_s8rpqm_115_a0y219>
+<id_1uzrupa_k56_zilf92>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_s8rpqm_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_41xig1_115_a0y219>
+<id_xm5vy3_k56_zilf93>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_41xig1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_lp7i9o_115_a0y219>
+<id_4ryzxo_k56_zilf94>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_lp7i9o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_16v0q8c_115_a0y219>
+<id_172ruy9_k56_zilf95>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_16v0q8c_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1424ktm_115_a0y219>
+<id_tjr0a7_k56_zilf96>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1424ktm_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_2uz75b_115_a0y219>
+<id_v2szvy_k56_zilf97>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_2uz75b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_sq0tgh_115_a0y219>
+<id_bco8ze_k56_zilf98>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_sq0tgh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_122594j_115_a0y219>
+<id_ojo3mr_k56_zilf99>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_122594j_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_qe0gj_115_a0y219>
+<id_3f51fc_k56_zilf9a>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_qe0gj_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_71f4rd_115_a0y219>
+<id_qteyzj_k56_zilf9b>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_71f4rd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3rz67b_115_a0y219>
+<id_xk2weg_k56_zilf9c>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3rz67b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_vucng3_115_a0y219>
+<id_1r52bqd_k56_zilf9d>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_vucng3_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_2vcamb_115_a0y219>
+<id_p53iej_k56_zilf9e>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_2vcamb_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_133wqsw_115_a0y219>
+<id_10neehu_k56_zilf9f>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_133wqsw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_6pdakl_115_a0y219>
+<id_17r8u65_k56_zilf9g>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_6pdakl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1pn0t0y_115_a0y219>
+<id_49pxry_k56_zilf9h>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1pn0t0y_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ad7g3y_115_a0y219>
+<id_iof9y9_k56_zilf9i>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ad7g3y_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_xcvtgg_115_a0y219>
+<id_3w3777_k56_zilf9j>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_xcvtgg_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_wbtzux_115_a0y219>
+<id_v0l0ah_k56_zilf9p>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_wbtzux_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_zeqgpc_115_a0y219>
+<id_oqnxre_k56_zilf9q>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_zeqgpc_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1k669iw_115_a0y219>
+<id_1t8kgwf_k56_zilf9r>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1k669iw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_13foyoq_115_a0y219>
+<id_1sxbxcv_k56_zilf9s>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_13foyoq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ld53p2_115_a0y219>
+<id_nxfuv9_k56_zilf9t>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ld53p2_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1s6i9_115_a0y219>
+<id_owqgae_k56_zilf9u>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1s6i9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1lkdlyq_115_a0y219>
+<id_15qv3ss_k56_zilf9v>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1lkdlyq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jw0bym_115_a0y219>
+<id_int9ro_k56_zilf9w>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jw0bym_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_16ulkbf_115_a0y219>
+<id_1rjrgr7_k56_zilf9x>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_16ulkbf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1b0l6mt_115_a0y219>
+<id_z6dwpc_k56_zilf9y>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1b0l6mt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_lpxfbf_115_a0y219>
+<id_c5rjtw_k56_zilf9z>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_lpxfbf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18wjhod_115_a0y219>
+<id_1chugi2_k56_zilfa0>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18wjhod_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1us6lh1_115_a0y219>
+<id_1lr1kgp_k56_zilfa1>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1us6lh1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1aq9pbq_115_a0y219>
+<id_1w12zi0_k56_zilfa2>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1aq9pbq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1pf3pl_115_a0y219>
+<id_2h2qmx_k56_zilfa3>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1pf3pl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18bc248_115_a0y219>
+<id_18ylkbk_k56_zilfa4>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18bc248_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ce4qmz_115_a0y219>
+<id_1ojif4c_k56_zilfa5>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ce4qmz_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_179t9hq_115_a0y219>
+<id_1szi4ux_k56_zilfa6>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_179t9hq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_8nfnqe_115_a0y219>
+<id_nz7e5b_k56_zilfa7>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_8nfnqe_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hlco6o_115_a0y219>
+<id_1bbri5s_k56_zilfa8>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hlco6o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1n885qv_115_a0y219>
+<id_146tdx5_k56_zilfa9>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1n885qv_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1dpao5m_115_a0y219>
+<id_1nplzrf_k56_zilfaa>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1dpao5m_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_166nwyh_115_a0y219>
+<id_14dxvfn_k56_zilfab>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_166nwyh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1wdwvk0_115_a0y219>
+<id_1wyl2i1_k56_zilfac>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1wdwvk0_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18iswnn_115_a0y219>
+<id_xmq3yi_k56_zilfad>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18iswnn_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_51ilh1_115_a0y219>
+<id_pzpbk5_k56_zilfae>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_51ilh1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1if78kk_115_a0y219>
+<id_7kbplg_k56_zilfak>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1if78kk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1dz5suq_115_a0y219>
+<id_1uv6ul3_k56_zilfal>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1dz5suq_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hdptkz_115_a0y219>
+<id_it0es6_k56_zilfap>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hdptkz_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_t0mn7u_115_a0y219>
+<id_17094yy_k56_zilfaq>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_t0mn7u_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_vakl2z_115_a0y219>
+<id_14oo1ai_k56_zilfas>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_vakl2z_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_o6sf8w_115_a0y219>
+<id_1az76ic_k56_zilfau>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_o6sf8w_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_nd8dmw_115_a0y219>
+<id_1cldsp3_k56_zilfav>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_nd8dmw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_10d1mn4_115_a0y219>
+<id_18lo9pw_k56_zilfax>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_10d1mn4_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1sqnsqv_115_a0y219>
+<id_12vu4mi_k56_zilfay>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1sqnsqv_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ds82r6_115_a0y219>
+<id_slnceu_k56_zilfaz>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ds82r6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1pjnezl_115_a0y219>
+<id_bjpgkt_k56_zilfb4>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1pjnezl_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1h423dy_115_a0y219>
+<id_1ols1vv_k56_zilfb5>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1h423dy_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_15aq7h8_115_a0y219>
+<id_yte1h0_k56_zilfb6>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_15aq7h8_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_5lwjlf_115_a0y219>
+<id_1c10i4l_k56_zilfbf>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_5lwjlf_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_q5pa5a_115_a0y219>
+<id_w8vvli_k56_zilfbg>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_q5pa5a_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1jgbhr3_115_a0y219>
+<id_1q6xer6_k56_zilfbi>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1jgbhr3_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_7hn9x1_115_a0y219>
+<id_1862qim_k56_zilfbj>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_7hn9x1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_bsiyvv_115_a0y219>
+<id_i9hq3a_k56_zilfbm>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_bsiyvv_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_19sy00l_115_a0y219>
+<id_1gnhzdr_k56_zilfbp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_19sy00l_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1y62vce_115_a0y219>
+<id_1shglwm_k56_zilfbr>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1y62vce_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1rlw1gd_115_a0y219>
+<id_czglo_k56_zilfbs>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1rlw1gd_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_cqh3t1_115_a0y219>
+<id_mkh4fa_k56_zilfbu>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_cqh3t1_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1i3o5xe_115_a0y219>
+<id_1w34ynn_k56_zilfbw>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1i3o5xe_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_zkyl6e_115_a0y219>
+<id_mzo59x_k56_zilfc4>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_zkyl6e_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_a97yl2_115_a0y219>
+<id_1ok4aer_k56_zilfca>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_a97yl2_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_16wp5w6_115_a0y219>
+<id_1iqw31d_k56_zilfcb>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_16wp5w6_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1bd3ew_115_a0y219>
+<id_1xgb823_k56_zilfcc>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1bd3ew_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1dt46lv_115_a0y219>
+<id_jjuz55_k56_zilfcd>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1dt46lv_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_c60mjm_115_a0y219>
+<id_1k83osx_k56_zilfce>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_c60mjm_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_a5pb13_115_a0y219>
+<id_1g2d411_k56_zilfcg>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_a5pb13_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hz0puz_115_a0y219>
+<id_192ll4f_k56_zilfck>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hz0puz_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_tbb0am_115_a0y219>
+<id_9tvnfu_k56_zilfcl>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_tbb0am_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1ctvjb8_115_a0y219>
+<id_1pabd9z_k56_zilfcm>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1ctvjb8_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ediw8v_115_a0y219>
+<id_147pc1u_k56_zilfcn>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ediw8v_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_iuserk_115_a0y219>
+<id_1r8o0ui_k56_zilfcp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_iuserk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_jshjor_115_a0y219>
+<id_14ytj8o_k56_zilfcr>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_jshjor_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_aml3ys_115_a0y219>
+<id_1bl8plt_k56_zilfcs>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_aml3ys_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1f6qg1o_115_a0y219>
+<id_1tjd8jc_k56_zilfct>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1f6qg1o_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_121rnbw_115_a0y219>
+<id_1fsqs9n_k56_zilfcu>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_121rnbw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1elmjux_115_a0y219>
+<id_f9pym2_k56_zilfcv>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1elmjux_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_elthsy_115_a0y219>
+<id_gpm7a8_k56_zilfcx>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_elthsy_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1o514t3_115_a0y219>
+<id_jgi7kq_k56_zilfd5>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1o514t3_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1gyelh_115_a0y219>
+<id_s3ibjv_k56_zilfd7>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1gyelh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_hvj7xh_115_a0y219>
+<id_1nvrknj_k56_zilfd8>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_hvj7xh_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_h49ik9_115_a0y219>
+<id_hu2pf_k56_zilfd9>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_h49ik9_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_l91kac_115_a0y219>
+<id_1r1boiu_k56_zilfdb>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_l91kac_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_162daxu_115_a0y219>
+<id_1smkbjd_k56_zilfdc>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_162daxu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ybp593_115_a0y219>
+<id_1ri1haj_k56_zilfdd>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ybp593_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_3cl9sa_115_a0y219>
+<id_wgwyeb_k56_zilfdf>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_3cl9sa_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1rxbksz_115_a0y219>
+<id_1oggeem_k56_zilfdg>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1rxbksz_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_n825ot_115_a0y219>
+<id_1erxcsa_k56_zilfdi>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_n825ot_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_ww2umx_115_a0y219>
+<id_70wy8a_k56_zilfdj>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_ww2umx_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_15ged0b_115_a0y219>
+<id_fr6ojh_k56_zilfdk>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_15ged0b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1plpu4b_115_a0y219>
+<id_1czuema_k56_zilfdl>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1plpu4b_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_10ni9xk_115_a0y219>
+<id_zhulc6_k56_zilfdm>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_10ni9xk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1q5fof8_115_a0y219>
+<id_rgu5ks_k56_zilfdn>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1q5fof8_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1eu24tk_115_a0y219>
+<id_111enmu_k56_zilfdo>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1eu24tk_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1lkhrgw_115_a0y219>
+<id_26f1fj_k56_zilfdp>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1lkhrgw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_16gz4zt_115_a0y219>
+<id_1dfix79_k56_zilfdr>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_16gz4zt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_mfn6nw_115_a0y219>
+<id_12g08hh_k56_zilfe0>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_mfn6nw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1pkoyoo_115_a0y219>
+<id_3ztxvv_k56_zilfe1>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1pkoyoo_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1k8f7wt_115_a0y219>
+<id_wfuc61_k56_zilfe3>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1k8f7wt_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xqwi3k_115_a0y219>
+<id_1jncdzt_k56_zilfe6>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xqwi3k_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_jg4vmb_115_a0y219>
+<id_91oi05_k56_zilfe8>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_jg4vmb_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1qvjlgw_115_a0y219>
+<id_14k14ux_k56_zilfed>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1qvjlgw_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1voprda_115_a0y219>
+<id_kn9c84_k56_zilfee>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1voprda_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_18u1r23_115_a0y219>
+<id_1mv0x58_k56_zilfef>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_18u1r23_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1djxpeu_115_a0y219>
+<id_1b6eo5b_k56_zilfeh>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1djxpeu_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1xq9l1x_115_a0y219>
+<id_w0rriv_k56_zilfei>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1xq9l1x_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1bl5rwo_115_a0y219>
+<id_vac4xp_k56_zilfej>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1bl5rwo_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
+#@ <id_1mvsl2l_115_a0y219>
+<id_f2yzi1_k56_zilfep>	<extractionSource>	<List_of_airports_by_IATA_code:_A> .
+<id_1mvsl2l_115_a0y219>	<extractionTechnique>	"FlightIATAcodeExtractor" .
