@@ -11,14 +11,12 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import main.ParallelCaller;
-
-import fromWikipedia.Extractor;
-
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Name;
+import main.ParallelCaller;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -28,6 +26,7 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
+import fromWikipedia.Extractor;
 
 /**
  * YAGO2s - WordNetExtractor

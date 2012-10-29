@@ -112,4 +112,9 @@ public class GenderExtractor extends Extractor {
       }
     }
   }
+  
+  public static void main(String[] args) throws Exception {
+    Announce.setLevel(Announce.Level.DEBUG);
+    new GenderExtractor(new File("c:/fabian/data/wikipedia/testset/angie.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
+  }
 }

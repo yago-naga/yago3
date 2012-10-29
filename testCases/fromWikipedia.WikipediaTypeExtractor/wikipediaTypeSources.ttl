@@ -2,7 +2,7 @@
 # The sources of category type facts
 # INTERNAL
 
-@base <http://yago-knowledge/resource/> .
+@base <http://yago-knowledge.org/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -1462,9 +1462,6 @@
 #@ <id_1quh29q_115_1atv5gr>
 <id_1cm9d6p_88c_i6e93q>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
 <id_1quh29q_115_1atv5gr>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_1yzx3ji_115_1atv5gr>
-<id_1cm9d6p_88c_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
-<id_1yzx3ji_115_1atv5gr>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_ct9ejg_115_1atv5gr>
 <id_1cm9d6p_88c_1fvtmno>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
 <id_ct9ejg_115_1atv5gr>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -1474,6 +1471,9 @@
 #@ <id_1t58au0_115_1atv5gr>
 <id_1cm9d6p_88c_n371zt>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
 <id_1t58au0_115_1atv5gr>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
+#@ <id_1ngah2t_115_1atv5gr>
+<id_1cm9d6p_88c_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
+<id_1ngah2t_115_1atv5gr>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_14to680_115_1xb26ls>
 <id_1kyrcau_88c_1fvtmno>	<extractionSource>	<http://en.wikipedia.org/wiki/Klaus_Töpfer> .
 <id_14to680_115_1xb26ls>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -2464,8 +2464,8 @@
 <id_1tcabv9_115_1pyoefh>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1q3bsxk_115_gdd4xp>
 <id_ba9gx2_1ia_11km4sc>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain> .
-#@ <id_18s6c1s_115_krxoth>
-<id_lpwl6l_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
+#@ <id_1khk50j_115_84dtt9>
+<id_80c9op_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
 <id_7l3jgv_115_yn7zdm>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_liysju_115_1fli2a1>
 <id_odhu2w_1ia_hisqrs>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
@@ -2473,8 +2473,6 @@
 <id_88koe1_115_posu8s>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_125i2p6_115_1qp3x9t>
 <id_hzmnd8_1m6_18h7ig7>	<extractionSource>	<http://en.wikipedia.org/wiki/Jack_Straw> .
-#@ <id_1fjfzco_115_yn7zdm>
-<id_1wixp37_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
 #@ <id_61m0o1_115_1kz2868>
 <id_9crsk3_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Helmut_Kohl> .
 #@ <id_uo696_115_88ufwy>
@@ -2648,8 +2646,6 @@
 <id_wivctm_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_m0llb8_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_18ooj4j_115_1hjzuqo>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_1g1gfd9_115_14sbsn>
-<id_1ansi4j_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering> .
 #@ <id_1lwe7ez_115_posu8s>
 <id_1jkggrq_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Mario_Monti> .
 <id_dyphir_115_posu8s>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -2687,6 +2683,8 @@
 <id_f4lo1m_115_posu8s>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1txf9re_115_1ukoa5l>
 <id_p2khed_1m6_czeqp5>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
+#@ <id_140u3hy_115_14sbsn>
+<id_1ansi4j_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering> .
 #@ <id_1qske3s_115_1fli2a1>
 <id_mc137u_1ia_lzzb1h>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
 <id_1s02j5u_115_88ufwy>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -2702,7 +2700,6 @@
 <id_j6k9nz_1m6_1xc3fnm>	<extractionSource>	<http://en.wikipedia.org/wiki/Mario_Monti> .
 #@ <id_kj15ls_115_k3g05j>
 <id_1b2kp4j_1m6_1y1zid8>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
-<id_108vh7t_115_1jexsky>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1vvf1gz_115_1c7bkvf>
 <id_10t17ti_1ia_mzwe9h>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado> .
 #@ <id_v0eh90_115_4chwkc>
@@ -2712,7 +2709,6 @@
 <id_vgd12w_115_yn7zdm>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_16hpq37_115_2ooh4b>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_a0j0gh_115_s05yln>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-<id_1uivjgn_115_q8i5mu>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1l0etwj_115_1fli2a1>
 <id_13i0bt4_1ia_1mcdd84>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
 <id_1ck9uul_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -2733,6 +2729,7 @@
 <id_vg8fk8_115_5ou0fu>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1hdrlfo_115_1hjzuqo>
 <id_1kjsz2w_1ia_1l0dluy>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley> .
+<id_oigazv_115_yn7zdm>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_19bn6mj_115_84dtt9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1rx46jk_115_krxoth>
 <id_14rp0oq_1m6_x7p9pq>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
@@ -2756,6 +2753,8 @@
 #@ <id_1pu8c49_115_gdd4xp>
 <id_bhcs0d_1ia_vidwye>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain> .
 <id_1olibot_115_2ooh4b>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+#@ <id_1atvvj0_115_1c7bkvf>
+<id_10t17ti_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado> .
 #@ <id_5noqo3_115_19cjy7j>
 <id_12mjo8l_1ia_x0v0y6>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Major> .
 <id_16rod0u_115_8atwgp>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -2862,6 +2861,7 @@
 <id_ieuvxb_115_14sbsn>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_nwqnhv_115_1789lmf>
 <id_18wanl3_1m6_w2cgyi>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Leipzig> .
+<id_1bml2my_115_1jexsky>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_n6gvgw_115_k3g05j>
 <id_95tk7b_1ia_o3lwyg>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
 #@ <id_xnxofc_115_1fli2a1>
@@ -3080,10 +3080,14 @@
 <id_ptffb_115_4vmd7e>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1kt2jme_115_krxoth>
 <id_n87zzo_1m6_5jhr9r>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
+#@ <id_a8ci4y_115_19lc4dz>
+<id_18ltz3n_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin> .
 #@ <id_10ep2m1_115_2ooh4b>
 <id_1yrqs9s_1ia_14bd56>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias> .
 <id_2mw1js_115_19lc4dz>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_4armxg_115_jis3n>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+#@ <id_q7knyd_115_1b7daw5>
+<id_fmybu6_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler> .
 <id_1cua7x_115_smya26>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_8err1x_115_1ukoa5l>
 <id_1w0mou3_1ia_e2c0i5>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
@@ -3102,6 +3106,8 @@
 <id_18ex8ak_1ia_1224nb>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean_Sarkozy> .
 <id_4mkmqv_115_posu8s>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1op77dj_115_2ooh4b>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+#@ <id_1qu6akc_115_q8i5mu>
+<id_17qoll4_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/François_d'Aubert> .
 <id_7noqgr_115_19cjy7j>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_19tgtwr_115_1ukoa5l>
 <id_1oeycoc_1m6_czeqp5>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
@@ -3158,6 +3164,8 @@
 <id_l2t7tu_115_4jg3xi>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1w0ej7y_115_s05yln>
 <id_1tko63i_1m6_11uq1v2>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin> .
+#@ <id_45t84t_115_84dtt9>
+<id_n371zt_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
 #@ <id_14vuozr_115_btdsj2>
 <id_1kt1p1z_1ia_c7slk>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum> .
 <id_df9il7_115_peivmg>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -3181,8 +3189,6 @@
 <id_oawu4w_115_2ooh4b>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_vc5ba6_115_84dtt9>
 <id_opd6q4_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
-#@ <id_1jr4drw_115_pn08x2>
-<id_1wu4u9d_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Prescott> .
 #@ <id_633qvg_115_1dzyujs>
 <id_156ey2p_1ia_kgb0gt>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
 <id_ugzlh8_115_1atv5gr>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -3247,8 +3253,6 @@
 <id_65qi7q_1m6_1p82crk>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
 #@ <id_1087nfh_115_72hycf>
 <id_jhfkb_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar> .
-#@ <id_3h6eou_115_1b7daw5>
-<id_fmybu6_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler> .
 #@ <id_47vu2p_115_zbvg7y>
 <id_eajhhj_1m6_1kbo50g>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff> .
 #@ <id_wktq07_115_1b7daw5>
@@ -3308,6 +3312,7 @@
 <id_1fzv2vl_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Oscar_Luigi_Scalfaro> .
 <id_jyvze3_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1gacwzo_115_2u8wl5>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+<id_1ajby04_115_1pvhhd9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_jz1gut_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_zfl19u_115_1fli2a1>
 <id_19sd34v_1m6_17x0mu>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
@@ -3344,7 +3349,6 @@
 #@ <id_ydeof1_115_1qyd4q9>
 <id_18ovtib_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
 <id_1o16vkt_115_1jexsky>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-<id_4gc740_115_84dtt9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_10rtqn6_115_1e2lnrt>
 <id_1p3b8b_1m6_1ozxwix>	<extractionSource>	<http://en.wikipedia.org/wiki/Cherie_Blair> .
 <id_7dhleq_115_2ooh4b>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -3383,8 +3387,6 @@
 <id_1t07a5h_115_yn7zdm>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_tg0ho9_115_4jg3xi>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_8pk76b_115_2u8wl5>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-#@ <id_twrzev_115_19lc4dz>
-<id_wktbk1_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin> .
 #@ <id_108ju76_115_1qyd4q9>
 <id_14kxum0_1m6_ic10aj>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
 #@ <id_1p9u18_115_kzxmu2>
@@ -3409,7 +3411,6 @@
 #@ <id_1j4g0rl_115_39y5n4>
 <id_xu7m1k_1m6_1120ssr>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank-Walter_Steinmeier> .
 <id_nxru4j_115_1kz2868>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-<id_15wwr75_115_19lc4dz>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_633qvg_115_1dzyujs>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_qctigc_115_1gtgvff>
 <id_k0ue0m_1ia_1q807kw>	<extractionSource>	<http://en.wikipedia.org/wiki/Jacques_Chirac> .
@@ -3433,8 +3434,6 @@
 <id_gxz7ch_1m6_1x4861e>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
 #@ <id_7h0dgc_115_88ufwy>
 <id_89h05a_1m6_1kqv7tc>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg> .
-#@ <id_147tbq4_115_7aekjj>
-<id_1600th4_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Gianfranco_Fini> .
 <id_1wr7p6l_115_k3g05j>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1s8vhlg_115_1cmy7pt>
 <id_zuvxfy_1ia_umefzt>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
@@ -3449,7 +3448,6 @@
 <id_1x2csl1_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_wlvpa5_115_19cjy7j>
 <id_ew05ra_1ia_1corbsn>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Major> .
-<id_twrzev_115_19lc4dz>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1yxrdyw_115_q8i5mu>
 <id_17qoll4_1ia_p04oxl>	<extractionSource>	<http://en.wikipedia.org/wiki/François_d'Aubert> .
 <id_1yq5mdi_115_z5z9b>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -3481,6 +3479,7 @@
 #@ <id_z1veg4_115_88ufwy>
 <id_1gja4fk_1m6_czeqp5>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg> .
 <id_1bklu3z_115_1ukoa5l>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+<id_a8ci4y_115_19lc4dz>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1mou14c_115_1ijbcxo>
 <id_17yff9h_1m6_14dlqgs>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan> .
 #@ <id_14c7b2d_115_hsmhll>
@@ -3541,8 +3540,6 @@
 <id_z7jwyw_115_dp6pi2>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1kqqn7d_115_18s9k3o>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_dxtkia_115_1qxh75c>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_1rpsr1j_115_1c7bkvf>
-<id_10t17ti_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado> .
 #@ <id_1nxrgk0_115_k3g05j>
 <id_13pvp2v_1m6_1y1zid8>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
 <id_jk0wop_115_lykx5r>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -3553,6 +3550,7 @@
 <id_11zkkx2_115_1gtgvff>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_4lqokn_115_1cmy7pt>
 <id_1ww53ds_1m6_gpo87b>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
+<id_sni8g7_115_7aekjj>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1tp9uhe_115_19cjy7j>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_nk1n43_115_1xb26ls>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1oh77kl_115_gdd4xp>
@@ -3682,6 +3680,8 @@
 <id_13cj78d_115_1dzyujs>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1ibeb9q_115_1jexsky>
 <id_1sj5ms5_1ia_gj959q>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero> .
+#@ <id_1ajby04_115_1pvhhd9>
+<id_dzn7g8_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Giuliano_Amato> .
 #@ <id_7l3jgv_115_yn7zdm>
 <id_1girb7a_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
 #@ <id_1to83lu_115_1pmhj9c>
@@ -3709,7 +3709,6 @@
 #@ <id_1xglmq_115_2kd4dn>
 <id_cue3b_1ia_ov04aa>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia> .
 <id_t8ze6f_115_peivmg>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-<id_147tbq4_115_7aekjj>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_ajl98s_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_bsxl3l_115_1ukoa5l>
 <id_2i2lr8_1m6_czeqp5>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
@@ -3782,8 +3781,6 @@
 <id_1c0tg9v_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_10wqzej_115_1h4y4hy>
 <id_1kd8f87_1m6_1y1zid8>	<extractionSource>	<http://en.wikipedia.org/wiki/The_People_of_Freedom> .
-#@ <id_efe04h_115_i6uk3i>
-<id_jlr39_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Giorgio_Napolitano> .
 #@ <id_eukrvk_115_4jg3xi>
 <id_16m1wj6_1m6_1880c8b>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
 <id_l57so5_115_1qp3x9t>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -3806,6 +3803,7 @@
 <id_etcfzf_115_gdd4xp>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_91ndjb_115_krxoth>
 <id_1e8ah8u_1m6_e77g05>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
+<id_1atvvj0_115_1c7bkvf>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_14z262y_115_1qyd4q9>
 <id_1a0o5qk_1m6_ic10aj>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
 <id_1p1flf5_115_dp6pi2>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -3818,7 +3816,6 @@
 <id_ulgvxu_1m6_gpo87b>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
 <id_xiykui_115_19lc4dz>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_yo2cp9_115_zbvg7y>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-<id_1qfzlwj_115_14sbsn>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_19am0it_115_18s9k3o>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_xu66rb_115_xu51th>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_72pyt8_115_yn7zdm>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -3843,6 +3840,8 @@
 <id_1k5re77_1ia_flkrvp>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg> .
 #@ <id_4z3wgk_115_1fli2a1>
 <id_1a683lh_1ia_1xirr6d>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
+#@ <id_s4hejn_115_krxoth>
+<id_lpwl6l_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
 #@ <id_1crfo4m_115_ev13bk>
 <id_15xagoj_1ia_wakcxx>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid> .
 #@ <id_1qarzqb_115_88ufwy>
@@ -3869,6 +3868,8 @@
 #@ <id_ca0hs3_115_1pmhj9c>
 <id_1yg0nhk_1ia_4eoj4r>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni> .
 <id_uo696_115_88ufwy>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+#@ <id_1sawwn0_115_19lc4dz>
+<id_wktbk1_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin> .
 #@ <id_kr02vt_115_kgol02>
 <id_1unfsqh_1ia_clv1h>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
 #@ <id_cmu8wu_115_gdd4xp>
@@ -3965,8 +3966,6 @@
 <id_10mtlp_1ia_1fhy8a6>	<extractionSource>	<http://en.wikipedia.org/wiki/Democratic_Awakening> .
 #@ <id_1fhe6bt_115_fvaic8>
 <id_1l4nn6s_1m6_abuyew>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
-#@ <id_4gc740_115_84dtt9>
-<id_80c9op_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
 <id_11evgfi_115_1qp3x9t>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_fget1z_115_cynfw9>
 <id_fogrx2_1ia_1y2e7pn>	<extractionSource>	<http://en.wikipedia.org/wiki/Marina_Berlusconi> .
@@ -3981,6 +3980,7 @@
 <id_12yz22y_115_1789lmf>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_151jndf_115_2u8wl5>
 <id_1n6mf6m_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler> .
+<id_s4hejn_115_krxoth>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_864ekl_115_krxoth>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_19yssi8_115_xu51th>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1prapbj_115_gdd4xp>
@@ -4030,7 +4030,6 @@
 <id_165alh2_1ia_oz7i99>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
 #@ <id_8syi56_115_hj5qvt>
 <id_1tj1sb6_1m6_w2cgyi>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense> .
-<id_1fjfzco_115_yn7zdm>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_qqgw1n_115_826a9b>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1hfdwjb_115_1fli2a1>
 <id_1yxs923_1m6_17x0mu>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
@@ -4102,6 +4101,7 @@
 <id_1gmeabm_1ia_1h5dl34>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
 <id_owgsq9_115_posu8s>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_1rvmo26_115_i6uk3i>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
+<id_d28m5j_115_pn08x2>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1x9zyck_115_posu8s>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_8a5vwo_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1ofrmpm_115_dp6pi2>
@@ -4111,6 +4111,8 @@
 #@ <id_l2t7tu_115_4jg3xi>
 <id_16m1wj6_1ia_ncl64x>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
 <id_1n4pako_115_1pvhhd9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
+#@ <id_d28m5j_115_pn08x2>
+<id_1wu4u9d_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Prescott> .
 #@ <id_3f6m20_115_1b7daw5>
 <id_lligu9_1ia_v8nvra>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler> .
 #@ <id_1eqjguj_115_8atwgp>
@@ -4124,8 +4126,6 @@
 #@ <id_1lfxg93_115_1qp3x9t>
 <id_hzmnd8_1ia_pxhmtd>	<extractionSource>	<http://en.wikipedia.org/wiki/Jack_Straw> .
 <id_1iqmbq6_115_pn08x2>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_6f9qov_115_1pvhhd9>
-<id_dzn7g8_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Giuliano_Amato> .
 <id_nb9qd0_115_r2vjoc>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_ydeof1_115_1qyd4q9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1bklu3z_115_1ukoa5l>
@@ -4194,15 +4194,10 @@
 <id_1shgwtv_1ia_5ddovk>	<extractionSource>	<http://en.wikipedia.org/wiki/Neil_Kinnock> .
 #@ <id_1f8n2cv_115_1uokdex>
 <id_zmmd_1m6_1kbo50g>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)> .
-#@ <id_15wwr75_115_19lc4dz>
-<id_18ltz3n_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin> .
 <id_cgnuoy_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_1uivjgn_115_q8i5mu>
-<id_17qoll4_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/François_d'Aubert> .
 #@ <id_l6sv2_115_18s9k3o>
 <id_1g7n65i_1ia_98c5ev>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
 <id_q9moef_115_yn7zdm>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-<id_1jr4drw_115_pn08x2>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_3fl5iz_115_pn08x2>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1ajge0w_115_btdsj2>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1l0fkip_115_pn08x2>
@@ -4237,10 +4232,14 @@
 #@ <id_3guouy_115_gdd4xp>
 <id_5qhvi5_1ia_1toscmf>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain> .
 <id_11x9q2g_115_1jexsky>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+#@ <id_1bml2my_115_1jexsky>
+<id_lvbz37_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero> .
 <id_1qske3s_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_1hu3plo_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_lcopui_115_19lc4dz>
 <id_npp1zr_1ia_gtdf9n>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin> .
+#@ <id_7dsg80_115_14sbsn>
+<id_kbr2pe_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering> .
 <id_1jc0wmw_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_a0gy7z_115_ozn4l3>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_f6er33_115_1qp3x9t>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -4276,6 +4275,7 @@
 #@ <id_lgjwtx_115_4chwkc>
 <id_19ykfcw_1ia_1t1uukk>	<extractionSource>	<http://en.wikipedia.org/wiki/Jaume_Bartumeu> .
 <id_3f6m20_115_1b7daw5>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+<id_1sawwn0_115_19lc4dz>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1dx810n_115_l7il4v>
 <id_1ns3dis_1ia_7fix67>	<extractionSource>	<http://en.wikipedia.org/wiki/Daniel_Vaillant> .
 <id_1yxrdyw_115_q8i5mu>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -4335,6 +4335,7 @@
 #@ <id_g1yi31_115_pn08x2>
 <id_uod0i2_1ia_11vdvmt>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Prescott> .
 <id_5jkyj6_115_hmm8oh>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+<id_45t84t_115_84dtt9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_t1r4vp_115_1789lmf>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1qf0uc3_115_u0mwx8>
 <id_er13rd_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon> .
@@ -4370,8 +4371,6 @@
 <id_1tsjdqw_1ia_1r27xo>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
 #@ <id_1fwe8qm_115_1qp3x9t>
 <id_nv64ll_1ia_so64xq>	<extractionSource>	<http://en.wikipedia.org/wiki/Jack_Straw> .
-<id_3h6eou_115_1b7daw5>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-<id_15puz06_115_84dtt9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_dwbr6u_115_tiyb2w>
 <id_1qg9z9z_1m6_1kbo50g>	<extractionSource>	<http://en.wikipedia.org/wiki/Guido_Westerwelle> .
 #@ <id_xxfp71_115_1789lmf>
@@ -4383,8 +4382,6 @@
 #@ <id_1qbkj50_115_1ukoa5l>
 <id_10ijhq9_1ia_3vrria>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany> .
 <id_1rscgox_115_1789lmf>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-#@ <id_1qfzlwj_115_14sbsn>
-<id_kbr2pe_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering> .
 <id_1v49201_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1alex5c_115_1ijbcxo>
 <id_17yff9h_1ia_r47r3o>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan> .
@@ -4400,6 +4397,7 @@
 <id_1liht3z_115_5ou0fu>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_fzxqyk_115_39y5n4>
 <id_13q7caf_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank-Walter_Steinmeier> .
+<id_1khk50j_115_84dtt9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_7jqtuu_115_w485q7>
 <id_k67yjw_1m6_1y1zid8>	<extractionSource>	<http://en.wikipedia.org/wiki/Rally_for_the_Republic> .
 <id_ofun8u_115_ozn4l3>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -4503,7 +4501,6 @@
 #@ <id_1dp8jby_115_l7il4v>
 <id_1fyljea_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Daniel_Vaillant> .
 <id_10wqzej_115_1h4y4hy>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-<id_6f9qov_115_1pvhhd9>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_bjv6pp_115_1fli2a1>
 <id_we8b7o_1ia_4b432a>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
 #@ <id_10gsh78_115_1ijbcxo>
@@ -4529,8 +4526,6 @@
 <id_11zli28_115_k44k4a>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_fokvkk_115_2ooh4b>
 <id_1ayl5cy_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias> .
-#@ <id_108vh7t_115_1jexsky>
-<id_lvbz37_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero> .
 <id_144et7j_115_i6uk3i>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_ped4oj_115_1kz2868>
 <id_n0pklf_1ia_107sgt5>	<extractionSource>	<http://en.wikipedia.org/wiki/Helmut_Kohl> .
@@ -4583,6 +4578,8 @@
 <id_jvnm67_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_6bi0nu_115_4vmd7e>
 <id_yjcvl7_1m6_1x95yav>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
+#@ <id_sni8g7_115_7aekjj>
+<id_1600th4_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Gianfranco_Fini> .
 #@ <id_ufefhf_115_72hycf>
 <id_1fat6sz_1ia_ku824o>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar> .
 #@ <id_h5lir5_115_k3g05j>
@@ -4612,7 +4609,7 @@
 #@ <id_k7bhhm_115_smya26>
 <id_nw9bzn_1ia_1fkiabi>	<extractionSource>	<http://en.wikipedia.org/wiki/Margaret_Beckett> .
 <id_1neucgn_115_88ufwy>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-<id_18s6c1s_115_krxoth>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
+<id_140u3hy_115_14sbsn>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_bqq4sd_115_4chwkc>
 <id_19ykfcw_1m6_1kbo50g>	<extractionSource>	<http://en.wikipedia.org/wiki/Jaume_Bartumeu> .
 #@ <id_n8eqqg_115_1gtgvff>
@@ -4812,6 +4809,7 @@
 <id_1p4rbsu_115_1qp3x9t>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_10bw3hz_115_2u8wl5>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1u33ql2_115_cynfw9>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
+<id_1qu6akc_115_q8i5mu>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_19wd2ud_115_1hjzuqo>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_6rtl8u_115_1ukoa5l>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_6eu0ft_115_19lc4dz>
@@ -4821,6 +4819,8 @@
 <id_clcsfd_1m6_1y7wfoo>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni> .
 <id_elwzwm_115_5y52nn>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1kyxy6l_115_kgol02>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
+#@ <id_aijujm_115_i6uk3i>
+<id_jlr39_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Giorgio_Napolitano> .
 #@ <id_1nw7zze_115_1e2lnrt>
 <id_qiy4wn_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Cherie_Blair> .
 #@ <id_1oq7zp0_115_14sbsn>
@@ -4836,6 +4836,7 @@
 <id_m5jx1i_115_1fli2a1>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1n4pako_115_1pvhhd9>
 <id_1ug2kra_1m6_1kbo50g>	<extractionSource>	<http://en.wikipedia.org/wiki/Giuliano_Amato> .
+<id_q7knyd_115_1b7daw5>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_oywvyj_115_1qyd4q9>
 <id_j2aclu_1ia_1wmtxw5>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
 <id_15xsq7h_115_1gtgvff>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -4903,6 +4904,8 @@
 <id_n6gvgw_115_k3g05j>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 <id_1dhfht9_115_krxoth>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1nnhywt_115_1ukoa5l>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
+#@ <id_oigazv_115_yn7zdm>
+<id_1wixp37_1m6_13h7dhi>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
 #@ <id_197oawm_115_s05yln>
 <id_9edalt_1m6_1kbo50g>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin> .
 <id_d111tl_115_1cizvx2>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -4958,7 +4961,6 @@
 <id_df8wc6_1ia_jjwtnh>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
 #@ <id_kf9ppk_115_1fli2a1>
 <id_1f1mscu_1m6_hsj9sm>	<extractionSource>	<http://en.wikipedia.org/wiki/Elizabeth_II> .
-<id_1g1gfd9_115_14sbsn>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_etcfzf_115_gdd4xp>
 <id_g93t0m_1m6_vwaifx>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain> .
 <id_ww7kuq_115_jcah8m>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
@@ -5075,11 +5077,11 @@
 <id_1fargkq_115_btdsj2>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_tsjx15_115_15b7bzb>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_ssxtqg_115_1uokdex>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
-<id_1rpsr1j_115_1c7bkvf>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_ohsnyx_115_k44k4a>
 <id_t47kwr_1ia_1u2w2wi>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean_Sarkozy> .
 #@ <id_ad2c7a_115_1qxh75c>
 <id_8v7rjo_1ia_1bcpbyn>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
+<id_7dsg80_115_14sbsn>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 <id_1v53j88_115_posu8s>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_1cqu3er_115_1atv5gr>
 <id_i6e93q_1ia_oammx7>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin> .
@@ -5111,7 +5113,6 @@
 <id_phnjqn_1ia_u8zabo>	<extractionSource>	<http://en.wikipedia.org/wiki/Neil_Kinnock> .
 #@ <id_we0azm_115_btdsj2>
 <id_3qziqt_1ia_1df0obs>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum> .
-<id_efe04h_115_i6uk3i>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_f2cp0k_115_1hjzuqo>
 <id_enauut_1m6_165fvqy>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley> .
 #@ <id_g369ow_115_16ja46r>
@@ -5145,6 +5146,7 @@
 <id_nqbje2_115_16ja46r>	<extractionTechnique>	"WikipediaTypeExtractor from stemmed name" .
 #@ <id_1azcsqm_115_fvaic8>
 <id_1l4nn6s_1ia_1fijx54>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
+<id_aijujm_115_i6uk3i>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
 #@ <id_qy3wmo_115_1gtgvff>
 <id_k0ue0m_1m6_ic10aj>	<extractionSource>	<http://en.wikipedia.org/wiki/Jacques_Chirac> .
 #@ <id_ofun8u_115_ozn4l3>
@@ -5333,8 +5335,6 @@
 #@ <id_x7gdgq_115_1hjzuqo>
 <id_enauut_1ia_22t56j>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley> .
 <id_wik68_115_19lc4dz>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_15puz06_115_84dtt9>
-<id_n371zt_1m6_xzyf11>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
 #@ <id_1e93n9z_115_kgol02>
 <id_g15v8g_1ia_1wf2o2c>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh> .
 <id_112ravt_115_yn7zdm>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
@@ -5368,498 +5368,498 @@
 #@ <id_junyx7_115_w485q7>
 <id_17l09jn_1ia_16qi482>	<extractionSource>	<http://en.wikipedia.org/wiki/Rally_for_the_Republic> .
 <id_1i1s5yu_115_2ooh4b>	<extractionTechnique>	"WikipediaTypeExtractor from category" .
-#@ <id_hwm6k9_115_zk68s0>
-<id_ziluom_88c_ltohsj>	<extractionSource>	<YAGO> .
-<id_hwm6k9_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1stc737_115_zk68s0>
-<id_uhbc9d_88c_18z0oh1>	<extractionSource>	<YAGO> .
-<id_1stc737_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_l2njfk_115_zk68s0>
-<id_1fk0j4l_88c_sizq73>	<extractionSource>	<YAGO> .
-<id_l2njfk_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_681u6h_115_zk68s0>
-<id_ysjl8s_88c_sizq73>	<extractionSource>	<YAGO> .
-<id_681u6h_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_a5bjqj_115_zk68s0>
-<id_y5lm3k_88c_sizq73>	<extractionSource>	<YAGO> .
-<id_a5bjqj_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_y776b0_115_zk68s0>
-<id_1fo6x5u_88c_sizq73>	<extractionSource>	<YAGO> .
-<id_y776b0_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_178nkmc_115_zk68s0>
-<id_7t65wn_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_178nkmc_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_14gnr1j_115_zk68s0>
-<id_pgsrss_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_14gnr1j_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_l91h6_115_zk68s0>
-<id_5kn8ir_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_l91h6_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1sc8wpx_115_zk68s0>
-<id_1bv6gp6_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_1sc8wpx_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_a2ayhf_115_zk68s0>
-<id_1skpjkr_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_a2ayhf_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1x0o0dh_115_zk68s0>
-<id_3ydllr_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_1x0o0dh_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_tpcxd4_115_zk68s0>
-<id_1aldj5r_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_tpcxd4_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1jihmc5_115_zk68s0>
-<id_ld8wan_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_1jihmc5_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_qejhw1_115_zk68s0>
-<id_d6gucc_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_qejhw1_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_19m6lkp_115_zk68s0>
-<id_1g9fj1z_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_19m6lkp_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1j8uche_115_zk68s0>
-<id_1h9fp63_88c_1y6jbs5>	<extractionSource>	<YAGO> .
-<id_1j8uche_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1ur9uc7_115_zk68s0>
-<id_zkjp59_88c_860aj6>	<extractionSource>	<YAGO> .
-<id_1ur9uc7_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_wu88vr_115_zk68s0>
-<id_edkbbg_88c_860aj6>	<extractionSource>	<YAGO> .
-<id_wu88vr_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_11lcvcj_115_zk68s0>
-<id_10ma71m_88c_zq43us>	<extractionSource>	<YAGO> .
-<id_11lcvcj_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_zjxeby_115_zk68s0>
-<id_1vwnhy2_88c_zq43us>	<extractionSource>	<YAGO> .
-<id_zjxeby_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_16ujpp4_115_zk68s0>
-<id_u3fjyj_88c_zq43us>	<extractionSource>	<YAGO> .
-<id_16ujpp4_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_ou3i61_115_zk68s0>
-<id_zjryzu_88c_zq43us>	<extractionSource>	<YAGO> .
-<id_ou3i61_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_4hx01_115_zk68s0>
-<id_1y1316q_88c_zq43us>	<extractionSource>	<YAGO> .
-<id_4hx01_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_jsjvul_115_zk68s0>
-<id_x780pg_88c_zq43us>	<extractionSource>	<YAGO> .
-<id_jsjvul_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1a6iejq_115_zk68s0>
-<id_zzrlva_88c_zq43us>	<extractionSource>	<YAGO> .
-<id_1a6iejq_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1kvktb5_115_zk68s0>
-<id_1pug6zg_88c_zq43us>	<extractionSource>	<YAGO> .
-<id_1kvktb5_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1s2pw0b_115_zk68s0>
-<id_1ho7065_88c_lvxk21>	<extractionSource>	<YAGO> .
-<id_1s2pw0b_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_5yjgay_115_zk68s0>
-<id_q9k3wp_88c_lvxk21>	<extractionSource>	<YAGO> .
-<id_5yjgay_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_c1fij2_115_zk68s0>
-<id_1kkdc1n_88c_lvxk21>	<extractionSource>	<YAGO> .
-<id_c1fij2_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1qs53ax_115_zk68s0>
-<id_1jiutt0_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1qs53ax_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_dnfu6w_115_zk68s0>
-<id_88cvi8_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_dnfu6w_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1j2mrnb_115_zk68s0>
-<id_88cvi8_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_1j2mrnb_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_91qsh8_115_zk68s0>
-<id_1m6z6qy_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_91qsh8_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_249676_115_zk68s0>
-<id_1m6z6qy_88c_g5dm9c>	<extractionSource>	<YAGO> .
-<id_249676_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1hjp694_115_zk68s0>
-<id_19ss2zj_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1hjp694_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_nll9ir_115_zk68s0>
-<id_1idukjm_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_nll9ir_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_43dmd2_115_zk68s0>
-<id_1pg7xv5_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_43dmd2_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_y1bqmw_115_zk68s0>
-<id_1pg7xv5_88c_g5dm9c>	<extractionSource>	<YAGO> .
-<id_y1bqmw_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_5l42ef_115_zk68s0>
-<id_1wv06v1_88c_1hnalex>	<extractionSource>	<YAGO> .
-<id_5l42ef_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1ihfacn_115_zk68s0>
-<id_1omrgzo_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1ihfacn_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_e7sn44_115_zk68s0>
-<id_1coonlf_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_e7sn44_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_5pu9lt_115_zk68s0>
-<id_1cpvkbb_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_5pu9lt_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_o799pg_115_zk68s0>
-<id_14prkyi_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_o799pg_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_rolpxd_115_zk68s0>
-<id_1buqpaq_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_rolpxd_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_a14pil_115_zk68s0>
-<id_12fzv9w_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_a14pil_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_x43x9y_115_zk68s0>
-<id_tyts95_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_x43x9y_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_10itqjs_115_zk68s0>
-<id_1r5imr4_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_10itqjs_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_6o7osx_115_zk68s0>
-<id_qkxqya_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_6o7osx_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1voqf99_115_zk68s0>
-<id_1wbuwiz_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1voqf99_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_10lzxo_115_zk68s0>
-<id_zjmw73_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_10lzxo_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_18glxzp_115_zk68s0>
-<id_1il9ovs_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_18glxzp_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1qsqrc_115_zk68s0>
-<id_ezd9jb_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1qsqrc_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_nahosk_115_zk68s0>
-<id_1af5cas_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_nahosk_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1mlyn05_115_zk68s0>
-<id_z7axal_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1mlyn05_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1p4vw61_115_zk68s0>
-<id_z7axal_88c_g5dm9c>	<extractionSource>	<YAGO> .
-<id_1p4vw61_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_yiwbjt_115_zk68s0>
-<id_1cmkuj0_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_yiwbjt_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1q2tcrs_115_zk68s0>
-<id_1u9bm82_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1q2tcrs_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1owd6yb_115_zk68s0>
-<id_1upx82k_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1owd6yb_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_r4brsh_115_zk68s0>
-<id_j4tc24_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_r4brsh_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_nw6qid_115_zk68s0>
-<id_dtzovp_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_nw6qid_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_15tvlab_115_zk68s0>
-<id_1b1ayjg_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_15tvlab_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_13qqqxx_115_zk68s0>
-<id_o47u9e_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_13qqqxx_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_6gl03_115_zk68s0>
-<id_11550iq_88c_b3paj4>	<extractionSource>	<YAGO> .
-<id_6gl03_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_8arttu_115_zk68s0>
-<id_1gu7pd5_88c_b3paj4>	<extractionSource>	<YAGO> .
-<id_8arttu_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_42c1f3_115_zk68s0>
-<id_nyggzh_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_42c1f3_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_3fu0e0_115_zk68s0>
-<id_nyggzh_88c_1af5cas>	<extractionSource>	<YAGO> .
-<id_3fu0e0_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1upgb2m_115_zk68s0>
-<id_1szyp5f_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1upgb2m_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_ddvd7l_115_zk68s0>
-<id_1szyp5f_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_ddvd7l_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_cu4d66_115_zk68s0>
-<id_16bk6bz_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_cu4d66_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_14mb7sc_115_zk68s0>
-<id_czss2q_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_14mb7sc_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_awfkhh_115_zk68s0>
-<id_1gfsnj_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_awfkhh_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1fc95w0_115_zk68s0>
-<id_1aum7sf_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1fc95w0_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_qmt4ye_115_zk68s0>
-<id_k0bmzj_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_qmt4ye_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_z36sb9_115_zk68s0>
-<id_11h2nps_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_z36sb9_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_11r6xlf_115_zk68s0>
-<id_1iajk1l_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_11r6xlf_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_wx5rgc_115_zk68s0>
-<id_1iajk1l_88c_1af5cas>	<extractionSource>	<YAGO> .
-<id_wx5rgc_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_84sl51_115_zk68s0>
-<id_p3m12z_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_84sl51_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_cr13iq_115_zk68s0>
-<id_garqnq_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_cr13iq_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_y5w5f9_115_zk68s0>
-<id_oylqv_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_y5w5f9_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1bl3hdf_115_zk68s0>
-<id_oylqv_88c_qkxqya>	<extractionSource>	<YAGO> .
-<id_1bl3hdf_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_17fgjwz_115_zk68s0>
-<id_oylqv_88c_j4tc24>	<extractionSource>	<YAGO> .
-<id_17fgjwz_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_19kt4wy_115_zk68s0>
-<id_1xko9lr_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_19kt4wy_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_ztzxn1_115_zk68s0>
-<id_1gixip4_88c_zjmw73>	<extractionSource>	<YAGO> .
-<id_ztzxn1_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1qcqaj1_115_zk68s0>
-<id_gcl2vk_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1qcqaj1_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1un6qdl_115_zk68s0>
-<id_dhj6eh_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1un6qdl_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_5difuz_115_zk68s0>
-<id_dhj6eh_88c_1wbuwiz>	<extractionSource>	<YAGO> .
-<id_5difuz_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1arnzr3_115_zk68s0>
-<id_dhj6eh_88c_j4tc24>	<extractionSource>	<YAGO> .
-<id_1arnzr3_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_18x1dbk_115_zk68s0>
-<id_1ughn3l_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_18x1dbk_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_10vhocx_115_zk68s0>
-<id_13l1l54_88c_zjmw73>	<extractionSource>	<YAGO> .
-<id_10vhocx_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1viqqvt_115_zk68s0>
-<id_dvwqax_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1viqqvt_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1aqlgju_115_zk68s0>
-<id_1hpv4kp_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1aqlgju_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_a0vdvo_115_zk68s0>
-<id_1o4hiyx_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_a0vdvo_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_3lwq3_115_zk68s0>
-<id_1o4hiyx_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_3lwq3_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_4gym7v_115_zk68s0>
-<id_15uj3fy_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_4gym7v_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_rf0cus_115_zk68s0>
-<id_15uj3fy_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_rf0cus_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1x2qzo9_115_zk68s0>
-<id_10x8m9v_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1x2qzo9_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_5lprxr_115_zk68s0>
-<id_10x8m9v_88c_j4tc24>	<extractionSource>	<YAGO> .
-<id_5lprxr_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1f38iql_115_zk68s0>
-<id_1an7e7z_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1f38iql_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1llwn7y_115_zk68s0>
-<id_11essrm_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1llwn7y_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_55x4ui_115_zk68s0>
-<id_ab2jfa_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_55x4ui_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_kyrxed_115_zk68s0>
-<id_1sv8s9q_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_kyrxed_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_suvu08_115_zk68s0>
-<id_147tz88_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_suvu08_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1ee930l_115_zk68s0>
-<id_1s2g89o_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1ee930l_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1fozyj7_115_zk68s0>
-<id_tjes7p_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1fozyj7_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1ak9si4_115_zk68s0>
-<id_1c7ng22_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1ak9si4_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1a91gnl_115_zk68s0>
-<id_16xgjd1_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1a91gnl_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1ohr5ee_115_zk68s0>
-<id_16xgjd1_88c_obchp2>	<extractionSource>	<YAGO> .
-<id_1ohr5ee_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1quc0gq_115_zk68s0>
-<id_12kadu4_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1quc0gq_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_dd9utn_115_zk68s0>
-<id_1oy3fe4_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_dd9utn_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_8xz594_115_zk68s0>
-<id_12c8qh7_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_8xz594_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_18rrrxs_115_zk68s0>
-<id_12c8qh7_88c_j4tc24>	<extractionSource>	<YAGO> .
-<id_18rrrxs_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_jcz82c_115_zk68s0>
-<id_14hhlol_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_jcz82c_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_8ipu6y_115_zk68s0>
-<id_1oqls2d_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_8ipu6y_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_hebfda_115_zk68s0>
-<id_1oqls2d_88c_j4tc24>	<extractionSource>	<YAGO> .
-<id_hebfda_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_12t14q1_115_zk68s0>
-<id_zklfhp_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_12t14q1_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_ceryre_115_zk68s0>
-<id_1n8lvza_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_ceryre_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_n3965x_115_zk68s0>
-<id_1n8lvza_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_n3965x_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1wlzb01_115_zk68s0>
-<id_jtojzp_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1wlzb01_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_12nfzz2_115_zk68s0>
-<id_jtojzp_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_12nfzz2_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_opxbnw_115_zk68s0>
-<id_klquc_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_opxbnw_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_55ne77_115_zk68s0>
-<id_klquc_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_55ne77_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1xphk0x_115_zk68s0>
-<id_dhdgq5_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1xphk0x_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_tuonsf_115_zk68s0>
-<id_dv6erj_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_tuonsf_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_mrbfg8_115_zk68s0>
-<id_1b15ydj_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_mrbfg8_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1os8dsr_115_zk68s0>
-<id_789u9a_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1os8dsr_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_gphyjk_115_zk68s0>
-<id_ljefgr_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_gphyjk_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_qtev74_115_zk68s0>
-<id_afjlna_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_qtev74_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1lpj7k9_115_zk68s0>
-<id_1f1nget_88c_9gxx22>	<extractionSource>	<YAGO> .
-<id_1lpj7k9_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1s95tug_115_zk68s0>
-<id_og0e0e_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1s95tug_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_13ctjua_115_zk68s0>
-<id_1b19luf_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_13ctjua_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_x1o2ao_115_zk68s0>
-<id_q65527_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_x1o2ao_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_100bg9b_115_zk68s0>
-<id_10j5g34_88c_9gxx22>	<extractionSource>	<YAGO> .
-<id_100bg9b_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_10tb0lu_115_zk68s0>
-<id_11kffyr_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_10tb0lu_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1wrenu3_115_zk68s0>
-<id_f9jneh_88c_9gxx22>	<extractionSource>	<YAGO> .
-<id_1wrenu3_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1bxk31n_115_zk68s0>
-<id_l7ia5l_88c_9gxx22>	<extractionSource>	<YAGO> .
-<id_1bxk31n_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_mdca19_115_zk68s0>
-<id_1knx0yl_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_mdca19_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_h5r825_115_zk68s0>
-<id_ibw3mp_88c_9gxx22>	<extractionSource>	<YAGO> .
-<id_h5r825_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_erlnx2_115_zk68s0>
-<id_1qp2bbj_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_erlnx2_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1m0i7xt_115_zk68s0>
-<id_f9jx82_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1m0i7xt_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1a5q2p8_115_zk68s0>
-<id_lgaadb_88c_9gxx22>	<extractionSource>	<YAGO> .
-<id_1a5q2p8_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_c9x7nk_115_zk68s0>
-<id_iceu8x_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_c9x7nk_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_xs5q5n_115_zk68s0>
-<id_1vd9pbi_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_xs5q5n_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1q4jdwd_115_zk68s0>
-<id_saedv0_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1q4jdwd_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1p0np8y_115_zk68s0>
-<id_siusp8_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1p0np8y_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_a4t30r_115_zk68s0>
-<id_1qltcvx_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_a4t30r_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1guitqh_115_zk68s0>
-<id_mz0ayn_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1guitqh_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1wsewyg_115_zk68s0>
-<id_1e3xvta_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1wsewyg_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_eqgntf_115_zk68s0>
-<id_pkkiu9_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_eqgntf_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1ysjojz_115_zk68s0>
-<id_rgu7mo_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1ysjojz_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1ifrjzr_115_zk68s0>
-<id_1b1aefk_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1ifrjzr_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_czmftk_115_zk68s0>
-<id_1b1aefk_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_czmftk_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1byq6dj_115_zk68s0>
-<id_11ltlxm_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1byq6dj_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1509v8z_115_zk68s0>
-<id_gaaiw2_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1509v8z_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1byger3_115_zk68s0>
-<id_wo8ur6_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1byger3_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1jpliz7_115_zk68s0>
-<id_evcrba_88c_j4tc24>	<extractionSource>	<YAGO> .
-<id_1jpliz7_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_2jxsbb_115_zk68s0>
-<id_u5fk5q_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_2jxsbb_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_2omc28_115_zk68s0>
-<id_1emswlq_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_2omc28_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_fc5g27_115_zk68s0>
-<id_n3uzd3_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_fc5g27_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_194k91s_115_zk68s0>
-<id_1qylhzg_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_194k91s_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_qfqh0f_115_zk68s0>
-<id_1qylhzg_88c_ezd9jb>	<extractionSource>	<YAGO> .
-<id_qfqh0f_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_kr5mxw_115_zk68s0>
-<id_19yw7wy_88c_1ho7065>	<extractionSource>	<YAGO> .
-<id_kr5mxw_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_174lyfl_115_zk68s0>
-<id_x77y5o_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_174lyfl_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1y6xaso_115_zk68s0>
-<id_204qof_88c_1bp47ny>	<extractionSource>	<YAGO> .
-<id_1y6xaso_115_zk68s0>	<extractionTechnique>	"Manual" .
-#@ <id_1lf0aw1_115_zk68s0>
-<id_1ulnfre_88c_1kkdc1n>	<extractionSource>	<YAGO> .
-<id_1lf0aw1_115_zk68s0>	<extractionTechnique>	"Manual" .
+#@ <id_hwm6k9_115_1vkyjrp>
+<id_ziluom_88c_ltohsj>	<extractionSource>	<YAGO_(database)> .
+<id_hwm6k9_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1stc737_115_1vkyjrp>
+<id_uhbc9d_88c_18z0oh1>	<extractionSource>	<YAGO_(database)> .
+<id_1stc737_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_l2njfk_115_1vkyjrp>
+<id_1fk0j4l_88c_sizq73>	<extractionSource>	<YAGO_(database)> .
+<id_l2njfk_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_681u6h_115_1vkyjrp>
+<id_ysjl8s_88c_sizq73>	<extractionSource>	<YAGO_(database)> .
+<id_681u6h_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_a5bjqj_115_1vkyjrp>
+<id_y5lm3k_88c_sizq73>	<extractionSource>	<YAGO_(database)> .
+<id_a5bjqj_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_y776b0_115_1vkyjrp>
+<id_1fo6x5u_88c_sizq73>	<extractionSource>	<YAGO_(database)> .
+<id_y776b0_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_178nkmc_115_1vkyjrp>
+<id_7t65wn_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_178nkmc_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_14gnr1j_115_1vkyjrp>
+<id_pgsrss_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_14gnr1j_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_l91h6_115_1vkyjrp>
+<id_5kn8ir_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_l91h6_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1sc8wpx_115_1vkyjrp>
+<id_1bv6gp6_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_1sc8wpx_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_a2ayhf_115_1vkyjrp>
+<id_1skpjkr_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_a2ayhf_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1x0o0dh_115_1vkyjrp>
+<id_3ydllr_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_1x0o0dh_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_tpcxd4_115_1vkyjrp>
+<id_1aldj5r_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_tpcxd4_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1jihmc5_115_1vkyjrp>
+<id_ld8wan_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_1jihmc5_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_qejhw1_115_1vkyjrp>
+<id_d6gucc_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_qejhw1_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_19m6lkp_115_1vkyjrp>
+<id_1g9fj1z_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_19m6lkp_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1j8uche_115_1vkyjrp>
+<id_1h9fp63_88c_1y6jbs5>	<extractionSource>	<YAGO_(database)> .
+<id_1j8uche_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1ur9uc7_115_1vkyjrp>
+<id_zkjp59_88c_860aj6>	<extractionSource>	<YAGO_(database)> .
+<id_1ur9uc7_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_wu88vr_115_1vkyjrp>
+<id_edkbbg_88c_860aj6>	<extractionSource>	<YAGO_(database)> .
+<id_wu88vr_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_11lcvcj_115_1vkyjrp>
+<id_10ma71m_88c_zq43us>	<extractionSource>	<YAGO_(database)> .
+<id_11lcvcj_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_zjxeby_115_1vkyjrp>
+<id_1vwnhy2_88c_zq43us>	<extractionSource>	<YAGO_(database)> .
+<id_zjxeby_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_16ujpp4_115_1vkyjrp>
+<id_u3fjyj_88c_zq43us>	<extractionSource>	<YAGO_(database)> .
+<id_16ujpp4_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_ou3i61_115_1vkyjrp>
+<id_zjryzu_88c_zq43us>	<extractionSource>	<YAGO_(database)> .
+<id_ou3i61_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_4hx01_115_1vkyjrp>
+<id_1y1316q_88c_zq43us>	<extractionSource>	<YAGO_(database)> .
+<id_4hx01_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_jsjvul_115_1vkyjrp>
+<id_x780pg_88c_zq43us>	<extractionSource>	<YAGO_(database)> .
+<id_jsjvul_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1a6iejq_115_1vkyjrp>
+<id_zzrlva_88c_zq43us>	<extractionSource>	<YAGO_(database)> .
+<id_1a6iejq_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1kvktb5_115_1vkyjrp>
+<id_1pug6zg_88c_zq43us>	<extractionSource>	<YAGO_(database)> .
+<id_1kvktb5_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1s2pw0b_115_1vkyjrp>
+<id_1ho7065_88c_lvxk21>	<extractionSource>	<YAGO_(database)> .
+<id_1s2pw0b_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_5yjgay_115_1vkyjrp>
+<id_q9k3wp_88c_lvxk21>	<extractionSource>	<YAGO_(database)> .
+<id_5yjgay_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_c1fij2_115_1vkyjrp>
+<id_1kkdc1n_88c_lvxk21>	<extractionSource>	<YAGO_(database)> .
+<id_c1fij2_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1qs53ax_115_1vkyjrp>
+<id_1jiutt0_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1qs53ax_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_dnfu6w_115_1vkyjrp>
+<id_88cvi8_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_dnfu6w_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1j2mrnb_115_1vkyjrp>
+<id_88cvi8_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_1j2mrnb_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_91qsh8_115_1vkyjrp>
+<id_1m6z6qy_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_91qsh8_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_249676_115_1vkyjrp>
+<id_1m6z6qy_88c_g5dm9c>	<extractionSource>	<YAGO_(database)> .
+<id_249676_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1hjp694_115_1vkyjrp>
+<id_19ss2zj_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1hjp694_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_nll9ir_115_1vkyjrp>
+<id_1idukjm_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_nll9ir_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_43dmd2_115_1vkyjrp>
+<id_1pg7xv5_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_43dmd2_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_y1bqmw_115_1vkyjrp>
+<id_1pg7xv5_88c_g5dm9c>	<extractionSource>	<YAGO_(database)> .
+<id_y1bqmw_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_5l42ef_115_1vkyjrp>
+<id_1wv06v1_88c_1hnalex>	<extractionSource>	<YAGO_(database)> .
+<id_5l42ef_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1ihfacn_115_1vkyjrp>
+<id_1omrgzo_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1ihfacn_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_e7sn44_115_1vkyjrp>
+<id_1coonlf_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_e7sn44_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_5pu9lt_115_1vkyjrp>
+<id_1cpvkbb_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_5pu9lt_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_o799pg_115_1vkyjrp>
+<id_14prkyi_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_o799pg_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_rolpxd_115_1vkyjrp>
+<id_1buqpaq_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_rolpxd_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_a14pil_115_1vkyjrp>
+<id_12fzv9w_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_a14pil_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_x43x9y_115_1vkyjrp>
+<id_tyts95_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_x43x9y_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_10itqjs_115_1vkyjrp>
+<id_1r5imr4_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_10itqjs_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_6o7osx_115_1vkyjrp>
+<id_qkxqya_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_6o7osx_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1voqf99_115_1vkyjrp>
+<id_1wbuwiz_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1voqf99_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_10lzxo_115_1vkyjrp>
+<id_zjmw73_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_10lzxo_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_18glxzp_115_1vkyjrp>
+<id_1il9ovs_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_18glxzp_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1qsqrc_115_1vkyjrp>
+<id_ezd9jb_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1qsqrc_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_nahosk_115_1vkyjrp>
+<id_1af5cas_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_nahosk_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1mlyn05_115_1vkyjrp>
+<id_z7axal_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1mlyn05_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1p4vw61_115_1vkyjrp>
+<id_z7axal_88c_g5dm9c>	<extractionSource>	<YAGO_(database)> .
+<id_1p4vw61_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_yiwbjt_115_1vkyjrp>
+<id_1cmkuj0_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_yiwbjt_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1q2tcrs_115_1vkyjrp>
+<id_1u9bm82_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1q2tcrs_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1owd6yb_115_1vkyjrp>
+<id_1upx82k_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1owd6yb_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_r4brsh_115_1vkyjrp>
+<id_j4tc24_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_r4brsh_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_nw6qid_115_1vkyjrp>
+<id_dtzovp_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_nw6qid_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_15tvlab_115_1vkyjrp>
+<id_1b1ayjg_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_15tvlab_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_13qqqxx_115_1vkyjrp>
+<id_o47u9e_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_13qqqxx_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_6gl03_115_1vkyjrp>
+<id_11550iq_88c_b3paj4>	<extractionSource>	<YAGO_(database)> .
+<id_6gl03_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_8arttu_115_1vkyjrp>
+<id_1gu7pd5_88c_b3paj4>	<extractionSource>	<YAGO_(database)> .
+<id_8arttu_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_42c1f3_115_1vkyjrp>
+<id_nyggzh_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_42c1f3_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_3fu0e0_115_1vkyjrp>
+<id_nyggzh_88c_1af5cas>	<extractionSource>	<YAGO_(database)> .
+<id_3fu0e0_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1upgb2m_115_1vkyjrp>
+<id_1szyp5f_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1upgb2m_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_ddvd7l_115_1vkyjrp>
+<id_1szyp5f_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_ddvd7l_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_cu4d66_115_1vkyjrp>
+<id_16bk6bz_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_cu4d66_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_14mb7sc_115_1vkyjrp>
+<id_czss2q_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_14mb7sc_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_awfkhh_115_1vkyjrp>
+<id_1gfsnj_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_awfkhh_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1fc95w0_115_1vkyjrp>
+<id_1aum7sf_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1fc95w0_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_qmt4ye_115_1vkyjrp>
+<id_k0bmzj_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_qmt4ye_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_z36sb9_115_1vkyjrp>
+<id_11h2nps_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_z36sb9_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_11r6xlf_115_1vkyjrp>
+<id_1iajk1l_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_11r6xlf_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_wx5rgc_115_1vkyjrp>
+<id_1iajk1l_88c_1af5cas>	<extractionSource>	<YAGO_(database)> .
+<id_wx5rgc_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_84sl51_115_1vkyjrp>
+<id_p3m12z_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_84sl51_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_cr13iq_115_1vkyjrp>
+<id_garqnq_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_cr13iq_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_y5w5f9_115_1vkyjrp>
+<id_oylqv_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_y5w5f9_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1bl3hdf_115_1vkyjrp>
+<id_oylqv_88c_qkxqya>	<extractionSource>	<YAGO_(database)> .
+<id_1bl3hdf_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_17fgjwz_115_1vkyjrp>
+<id_oylqv_88c_j4tc24>	<extractionSource>	<YAGO_(database)> .
+<id_17fgjwz_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_19kt4wy_115_1vkyjrp>
+<id_1xko9lr_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_19kt4wy_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_ztzxn1_115_1vkyjrp>
+<id_1gixip4_88c_zjmw73>	<extractionSource>	<YAGO_(database)> .
+<id_ztzxn1_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1qcqaj1_115_1vkyjrp>
+<id_gcl2vk_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1qcqaj1_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1un6qdl_115_1vkyjrp>
+<id_dhj6eh_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1un6qdl_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_5difuz_115_1vkyjrp>
+<id_dhj6eh_88c_1wbuwiz>	<extractionSource>	<YAGO_(database)> .
+<id_5difuz_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1arnzr3_115_1vkyjrp>
+<id_dhj6eh_88c_j4tc24>	<extractionSource>	<YAGO_(database)> .
+<id_1arnzr3_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_18x1dbk_115_1vkyjrp>
+<id_1ughn3l_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_18x1dbk_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_10vhocx_115_1vkyjrp>
+<id_13l1l54_88c_zjmw73>	<extractionSource>	<YAGO_(database)> .
+<id_10vhocx_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1viqqvt_115_1vkyjrp>
+<id_dvwqax_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1viqqvt_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1aqlgju_115_1vkyjrp>
+<id_1hpv4kp_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1aqlgju_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_a0vdvo_115_1vkyjrp>
+<id_1o4hiyx_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_a0vdvo_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_3lwq3_115_1vkyjrp>
+<id_1o4hiyx_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_3lwq3_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_4gym7v_115_1vkyjrp>
+<id_15uj3fy_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_4gym7v_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_rf0cus_115_1vkyjrp>
+<id_15uj3fy_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_rf0cus_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1x2qzo9_115_1vkyjrp>
+<id_10x8m9v_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1x2qzo9_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_5lprxr_115_1vkyjrp>
+<id_10x8m9v_88c_j4tc24>	<extractionSource>	<YAGO_(database)> .
+<id_5lprxr_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1f38iql_115_1vkyjrp>
+<id_1an7e7z_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1f38iql_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1llwn7y_115_1vkyjrp>
+<id_11essrm_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1llwn7y_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_55x4ui_115_1vkyjrp>
+<id_ab2jfa_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_55x4ui_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_kyrxed_115_1vkyjrp>
+<id_1sv8s9q_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_kyrxed_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_suvu08_115_1vkyjrp>
+<id_147tz88_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_suvu08_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1ee930l_115_1vkyjrp>
+<id_1s2g89o_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1ee930l_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1fozyj7_115_1vkyjrp>
+<id_tjes7p_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1fozyj7_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1ak9si4_115_1vkyjrp>
+<id_1c7ng22_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1ak9si4_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1a91gnl_115_1vkyjrp>
+<id_16xgjd1_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1a91gnl_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1ohr5ee_115_1vkyjrp>
+<id_16xgjd1_88c_obchp2>	<extractionSource>	<YAGO_(database)> .
+<id_1ohr5ee_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1quc0gq_115_1vkyjrp>
+<id_12kadu4_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1quc0gq_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_dd9utn_115_1vkyjrp>
+<id_1oy3fe4_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_dd9utn_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_8xz594_115_1vkyjrp>
+<id_12c8qh7_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_8xz594_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_18rrrxs_115_1vkyjrp>
+<id_12c8qh7_88c_j4tc24>	<extractionSource>	<YAGO_(database)> .
+<id_18rrrxs_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_jcz82c_115_1vkyjrp>
+<id_14hhlol_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_jcz82c_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_8ipu6y_115_1vkyjrp>
+<id_1oqls2d_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_8ipu6y_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_hebfda_115_1vkyjrp>
+<id_1oqls2d_88c_j4tc24>	<extractionSource>	<YAGO_(database)> .
+<id_hebfda_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_12t14q1_115_1vkyjrp>
+<id_zklfhp_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_12t14q1_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_ceryre_115_1vkyjrp>
+<id_1n8lvza_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_ceryre_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_n3965x_115_1vkyjrp>
+<id_1n8lvza_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_n3965x_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1wlzb01_115_1vkyjrp>
+<id_jtojzp_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1wlzb01_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_12nfzz2_115_1vkyjrp>
+<id_jtojzp_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_12nfzz2_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_opxbnw_115_1vkyjrp>
+<id_klquc_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_opxbnw_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_55ne77_115_1vkyjrp>
+<id_klquc_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_55ne77_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1xphk0x_115_1vkyjrp>
+<id_dhdgq5_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1xphk0x_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_tuonsf_115_1vkyjrp>
+<id_dv6erj_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_tuonsf_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_mrbfg8_115_1vkyjrp>
+<id_1b15ydj_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_mrbfg8_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1os8dsr_115_1vkyjrp>
+<id_789u9a_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1os8dsr_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_gphyjk_115_1vkyjrp>
+<id_ljefgr_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_gphyjk_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_qtev74_115_1vkyjrp>
+<id_afjlna_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_qtev74_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1lpj7k9_115_1vkyjrp>
+<id_1f1nget_88c_9gxx22>	<extractionSource>	<YAGO_(database)> .
+<id_1lpj7k9_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1s95tug_115_1vkyjrp>
+<id_og0e0e_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1s95tug_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_13ctjua_115_1vkyjrp>
+<id_1b19luf_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_13ctjua_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_x1o2ao_115_1vkyjrp>
+<id_q65527_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_x1o2ao_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_100bg9b_115_1vkyjrp>
+<id_10j5g34_88c_9gxx22>	<extractionSource>	<YAGO_(database)> .
+<id_100bg9b_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_10tb0lu_115_1vkyjrp>
+<id_11kffyr_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_10tb0lu_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1wrenu3_115_1vkyjrp>
+<id_f9jneh_88c_9gxx22>	<extractionSource>	<YAGO_(database)> .
+<id_1wrenu3_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1bxk31n_115_1vkyjrp>
+<id_l7ia5l_88c_9gxx22>	<extractionSource>	<YAGO_(database)> .
+<id_1bxk31n_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_mdca19_115_1vkyjrp>
+<id_1knx0yl_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_mdca19_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_h5r825_115_1vkyjrp>
+<id_ibw3mp_88c_9gxx22>	<extractionSource>	<YAGO_(database)> .
+<id_h5r825_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_erlnx2_115_1vkyjrp>
+<id_1qp2bbj_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_erlnx2_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1m0i7xt_115_1vkyjrp>
+<id_f9jx82_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1m0i7xt_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1a5q2p8_115_1vkyjrp>
+<id_lgaadb_88c_9gxx22>	<extractionSource>	<YAGO_(database)> .
+<id_1a5q2p8_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_c9x7nk_115_1vkyjrp>
+<id_iceu8x_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_c9x7nk_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_xs5q5n_115_1vkyjrp>
+<id_1vd9pbi_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_xs5q5n_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1q4jdwd_115_1vkyjrp>
+<id_saedv0_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1q4jdwd_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1p0np8y_115_1vkyjrp>
+<id_siusp8_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1p0np8y_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_a4t30r_115_1vkyjrp>
+<id_1qltcvx_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_a4t30r_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1guitqh_115_1vkyjrp>
+<id_mz0ayn_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1guitqh_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1wsewyg_115_1vkyjrp>
+<id_1e3xvta_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1wsewyg_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_eqgntf_115_1vkyjrp>
+<id_pkkiu9_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_eqgntf_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1ysjojz_115_1vkyjrp>
+<id_rgu7mo_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1ysjojz_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1ifrjzr_115_1vkyjrp>
+<id_1b1aefk_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1ifrjzr_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_czmftk_115_1vkyjrp>
+<id_1b1aefk_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_czmftk_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1byq6dj_115_1vkyjrp>
+<id_11ltlxm_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1byq6dj_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1509v8z_115_1vkyjrp>
+<id_gaaiw2_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1509v8z_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1byger3_115_1vkyjrp>
+<id_wo8ur6_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1byger3_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1jpliz7_115_1vkyjrp>
+<id_evcrba_88c_j4tc24>	<extractionSource>	<YAGO_(database)> .
+<id_1jpliz7_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_2jxsbb_115_1vkyjrp>
+<id_u5fk5q_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_2jxsbb_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_2omc28_115_1vkyjrp>
+<id_1emswlq_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_2omc28_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_fc5g27_115_1vkyjrp>
+<id_n3uzd3_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_fc5g27_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_194k91s_115_1vkyjrp>
+<id_1qylhzg_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_194k91s_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_qfqh0f_115_1vkyjrp>
+<id_1qylhzg_88c_ezd9jb>	<extractionSource>	<YAGO_(database)> .
+<id_qfqh0f_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_kr5mxw_115_1vkyjrp>
+<id_19yw7wy_88c_1ho7065>	<extractionSource>	<YAGO_(database)> .
+<id_kr5mxw_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_174lyfl_115_1vkyjrp>
+<id_x77y5o_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_174lyfl_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1y6xaso_115_1vkyjrp>
+<id_204qof_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_1y6xaso_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_1lf0aw1_115_1vkyjrp>
+<id_1ulnfre_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
+<id_1lf0aw1_115_1vkyjrp>	<extractionTechnique>	"Manual" .

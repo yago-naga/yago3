@@ -195,7 +195,14 @@ public class InfoboxExtractor extends Extractor {
         int scanTo = attribute.indexOf('<');
         if (scanTo != -1) {
           val.append(attribute.substring(0, scanTo));
-          String newVal = D.pick(result.get(normalizeAttribute(attribute.substring(scanTo + 1))));
+          String attr=attribute.substring(scanTo + 1);
+          // Do we want to exclude the existence of an attribute?
+          if(attr.startsWith("~")) {
+            attr=attr.substring(1);
+            if(result.get(normalizeAttribute(attr))!=null) continue next;
+            continue;
+          } 
+          String newVal = D.pick(result.get(normalizeAttribute(attr)));
           if (newVal == null) continue next;
           val.append(newVal);
         } else {
@@ -271,7 +278,7 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/angie.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/comoros.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");

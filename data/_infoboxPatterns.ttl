@@ -4,7 +4,7 @@
 # It is used by the InfoboxExtractor.
 # Infobox patterns are not case sensitive.
 
-@base <http://yago-knowledge/resource/> .
+@base <http://yago-knowledge.org/resource/> .
 @prefix dc: <http://purl.org/dc/terms/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
@@ -30,10 +30,12 @@
 "<longitude> degrees 0 minutes 0 seconds N"	<_infoboxCombine>	"_longitude" .
 "<latd> degrees <latm> minutes <lats> seconds <latNS>"	<_infoboxCombine>	"_latitude" .
 "<longd> degrees <longm> minutes <longs> seconds <longEW>"	<_infoboxCombine>	"_longitude" .
+"<latd> degrees <latm> minutes <lats> seconds N <~latNS>"	<_infoboxCombine>	"_latitude" .
+"<longd> degrees <longm> minutes <longs> seconds E <~longEW>"	<_infoboxCombine>	"_longitude" .
 "<latd> degrees <latm> minutes 0 seconds <latNS>"	<_infoboxCombine>	"latitude" .
 "<longd> degrees <longm> minutes 0 seconds <longEW>"	<_infoboxCombine>	"longitude" .
-"<latdeg> degrees <latmin> minutes 0 seconds N"	<_infoboxCombine>	"_latitude" .
-"<londeg> degrees <lonmin> minutes 0 seconds E"	<_infoboxCombine>	"_longitude" .
+"<latdeg> degrees <latmin> minutes 0 seconds N <~latNS>"	<_infoboxCombine>	"_latitude" .
+"<londeg> degrees <lonmin> minutes 0 seconds E <~longEW>"	<_infoboxCombine>	"_longitude" .
 
 # --------- Infobox patterns --------------
 

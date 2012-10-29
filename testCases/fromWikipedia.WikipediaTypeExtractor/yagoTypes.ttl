@@ -2,7 +2,7 @@
 # All rdf:type facts of YAGO
 # TAXONOMY
 
-@base <http://yago-knowledge/resource/> .
+@base <http://yago-knowledge.org/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
@@ -978,14 +978,14 @@
 <Joachim_Sauer>	rdf:type	<wikicategory_People_from_Brandenburg> .
 #@ <id_1cm9d6p_88c_i6e93q>
 <Jürgen_Trittin>	rdf:type	<wikicategory_Alliance_'90/The_Greens_politicians> .
-#@ <id_1cm9d6p_88c_xzyf11>
-<Jürgen_Trittin>	rdf:type	<wordnet_curate_109983572> .
 #@ <id_1cm9d6p_88c_1fvtmno>
 <Jürgen_Trittin>	rdf:type	<wikicategory_Living_people> .
 #@ <id_1cm9d6p_88c_1acodqv>
 <Jürgen_Trittin>	rdf:type	<wikicategory_People_from_Bremen> .
 #@ <id_1cm9d6p_88c_n371zt>
 <Jürgen_Trittin>	rdf:type	<wikicategory_Environment_ministers_of_Germany> .
+#@ <id_1cm9d6p_88c_13h7dhi>
+<Jürgen_Trittin>	rdf:type	<wordnet_minister_110320863> .
 #@ <id_1kyrcau_88c_1fvtmno>
 <Klaus_Töpfer>	rdf:type	<wikicategory_Living_people> .
 #@ <id_1kyrcau_88c_1beb4o1>

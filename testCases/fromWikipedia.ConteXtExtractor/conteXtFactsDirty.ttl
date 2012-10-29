@@ -2,7 +2,7 @@
 # Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs typechecking to throw away entities not in the final version
 # INTERNAL
 
-@base <http://yago-knowledge/resource/> .
+@base <http://yago-knowledge.org/resource/> .
 @prefix dbp: <http://dbpedia.org/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
