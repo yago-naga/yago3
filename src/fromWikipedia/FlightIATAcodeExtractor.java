@@ -53,9 +53,9 @@ public class FlightIATAcodeExtractor extends Extractor {
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(AIRPORT_CODE_NEEDRED, AIRPORT_CODE_NEEDTYPE), new TypeChecker(AIRPORT_CODE_NEEDTYPE, AIRPORT_CODE)));
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(AIRPORT_CODE_NEEDRED, AIRPORT_CODE_NEEDTYPE), new TypeChecker(AIRPORT_CODE_NEEDTYPE,
+        AIRPORT_CODE)));
   }
-  
 
   /** Constructor from source file */
   public FlightIATAcodeExtractor(File wikipedia) {
@@ -65,12 +65,12 @@ public class FlightIATAcodeExtractor extends Extractor {
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     // Extract the information
-    Announce.progressStart("Extracting", 4_500_000);
+    Announce.doing("Extracting");
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     while (true) {
       switch (FileLines.findIgnoreCase(in, "{{Lists of airports by IATA code}}")) {
         case -1:
-          Announce.progressDone();
+          Announce.done();
           in.close();
           return;
         default:
@@ -104,6 +104,7 @@ public class FlightIATAcodeExtractor extends Extractor {
               if (start < 0 || end < 0) {
                 continue;
               }
+              if (data[2].indexOf('|') != -1 && data[2].indexOf('|') < end) end = data[2].indexOf('|');
               String entity = FactComponent.forYagoEntity(data[2].substring(start, end).replace(' ', '_'));
               Fact f = new Fact(entity, "<hasAirportCode>", IATA);
               write(output.get(AIRPORT_CODE_NEEDRED), f, output.get(AIRPORT_CODE_SOURCE), source, "FlightIATAcodeExtractor");
