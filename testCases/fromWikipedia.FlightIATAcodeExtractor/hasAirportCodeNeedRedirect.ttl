@@ -1,5 +1,5 @@
-# Test of YAGO2s
-# The airport code for each airport
+# test
+# Airports need redirecting check
 # INTERNAL
 
 @base <http://yago-knowledge.org/resource/> .
