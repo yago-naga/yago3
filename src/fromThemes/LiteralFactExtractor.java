@@ -5,11 +5,10 @@ import java.util.Set;
 
 import fromOtherSources.HardExtractor;
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
-
-
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -32,13 +31,14 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXFACTS, RuleExtractor.RULERESULTS,
-        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS 
-        //GeoNamesDataImporter.GEONAMESDATA
-        );
+        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, FlightIATAcodeExtractor.AIRPORT_CODE
+    //GeoNamesDataImporter.GEONAMESDATA
+    );
   }
 
   /** All facts of YAGO */
-  public static final Theme YAGOLITERALFACTS = new Theme("yagoLiteralFacts", "All facts of YAGO that contain literals (except labels)", ThemeGroup.CORE);
+  public static final Theme YAGOLITERALFACTS = new Theme("yagoLiteralFacts", "All facts of YAGO that contain literals (except labels)",
+      ThemeGroup.CORE);
 
   /** relations that we exclude, because they are treated elsewhere */
   public static final Set<String> relationsExcluded = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range, RDFS.subpropertyOf,
@@ -56,7 +56,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 
   @Override
   public boolean isMyRelation(Fact fact) {
-    if(fact.getRelation().startsWith("<_")) return(false);
+    if (fact.getRelation().startsWith("<_")) return (false);
     if (relationsExcluded.contains(fact.getRelation())) return (false);
     return (!FactComponent.isFactId(fact.getArg(1)) && FactComponent.isLiteral(fact.getArg(2)));
   }

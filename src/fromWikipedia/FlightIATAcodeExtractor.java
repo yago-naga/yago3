@@ -2,10 +2,14 @@ package fromWikipedia;
 
 import java.io.File;
 import java.io.Reader;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import fromThemes.TypeChecker;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -17,11 +21,23 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 
+/**
+ * YAGO2s - FlightIATAcodeExtractor
+ * 
+ * Extracts all the IATA airport codes from "List of airports by IATA code" wikipedia pages.
+ * 
+ * @author Edwin Lewis-Kelham
+ * 
+ */
 public class FlightIATAcodeExtractor extends Extractor {
 
   public static final Theme AIRPORT_CODE = new Theme("hasAirportCode", "The airport code for each airport");
 
   public static final Theme AIRPORT_CODE_SOURCE = new Theme("hasAirportCodeSource", "Sources for airport code");
+
+  public static final Theme AIRPORT_CODE_NEEDRED = new Theme("hasAirportCodeNeedRedirect", "Airports need redirecting check");
+
+  public static final Theme AIRPORT_CODE_NEEDTYPE = new Theme("hasAirportCodeNeedTypeCheck", "Airports need type checking");
 
   protected File wikipedia;
 
@@ -32,8 +48,14 @@ public class FlightIATAcodeExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(AIRPORT_CODE, AIRPORT_CODE_SOURCE);
+    return new FinalSet<>(AIRPORT_CODE_NEEDRED, AIRPORT_CODE_SOURCE);
   }
+
+  @Override
+  public Set<Extractor> followUp() {
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(AIRPORT_CODE_NEEDRED, AIRPORT_CODE_NEEDTYPE), new TypeChecker(AIRPORT_CODE_NEEDTYPE, AIRPORT_CODE)));
+  }
+  
 
   /** Constructor from source file */
   public FlightIATAcodeExtractor(File wikipedia) {
@@ -55,15 +77,17 @@ public class FlightIATAcodeExtractor extends Extractor {
           String IATAlist = FileLines.readTo(in, "</page>").toString();
           Pattern p = Pattern.compile("==[A-Z]==");
           Matcher m = p.matcher(IATAlist);
+          // get source page info
           String source = "List of airports by IATA code: ";
           try {
             while (m.find()) {
               source = source + m.group().substring(2, 3);
             }
           } catch (Exception e) {
-            //ignore
+            Announce.warning("Was not able to parse the ID for the List of airports by IATA code.");
           }
-          source = source.trim().replace(' ', '_');
+          source = FactComponent.wikipediaURL(source.trim().replace(' ', '_'));
+          // get each line that contains a IATA code and a airport
           p = Pattern.compile("\\|\\s*(?:[A-Z][A-Z][A-Z]\\s*\\|\\|.*||\\s\\[\\[.*\\]\\])\\s*\\|\\|");
           m = p.matcher(IATAlist);
           while (m.find()) {
@@ -82,7 +106,7 @@ public class FlightIATAcodeExtractor extends Extractor {
               }
               String entity = FactComponent.forYagoEntity(data[2].substring(start, end).replace(' ', '_'));
               Fact f = new Fact(entity, "<hasAirportCode>", IATA);
-              write(output.get(AIRPORT_CODE), f, output.get(AIRPORT_CODE_SOURCE), source, "FlightIATAcodeExtractor");
+              write(output.get(AIRPORT_CODE_NEEDRED), f, output.get(AIRPORT_CODE_SOURCE), source, "FlightIATAcodeExtractor");
             }
           }
       }
