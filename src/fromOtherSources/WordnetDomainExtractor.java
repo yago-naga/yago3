@@ -101,7 +101,7 @@ public class WordnetDomainExtractor extends Extractor {
     for (String label : labels) {
       write(output, WORDNETDOMAINS, new Fact(label, RDFS.type, "<wordnetDomain>"), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>",
           "Wordnet Domain Mapper");
-      write(output, WORDNETDOMAINS, new Fact(label, RDFS.label, FactComponent.forString(label.substring(15, label.length() - 1))),
+      write(output, WORDNETDOMAINS, new Fact(label, RDFS.label, FactComponent.forStringWithLanguage(label.substring(15, label.length() - 1),"en")),
           WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>", "Wordnet Domain Mapper");
     }
   }
