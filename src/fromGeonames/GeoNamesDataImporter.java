@@ -24,6 +24,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 
 /**
  * The GeoNamesEntityMapper maps geonames entities to Wikipedia entities.
@@ -42,7 +43,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
     
   /** geonames entity links */
   public static final Theme GEONAMESDATA = new Theme("yagoGeonamesData", 
-      "Data from GeoNames, e.g. coordinates, alternative names, locatedIn hierarchy, neighbor of");
+      "Data from GeoNames, e.g. coordinates, alternative names, locatedIn hierarchy, neighbor of",ThemeGroup.GEONAMES);
 
   @Override
   public Set<Theme> input() {
