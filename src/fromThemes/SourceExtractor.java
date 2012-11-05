@@ -6,6 +6,7 @@ import java.util.Set;
 import fromWikipedia.CategoryExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.FlightExtractor;
+import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
@@ -37,7 +38,7 @@ public class SourceExtractor extends Extractor {
     return new FinalSet<>(InfoboxExtractor.INFOBOXSOURCES,PersonNameExtractor.PERSONNAMESOURCES,
         RuleExtractor.RULESOURCES,CategoryExtractor.CATEGORYSOURCES,WikipediaTypeExtractor.WIKIPEDIATYPESOURCES,
         WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, FlightExtractor.FLIGHTSOURCE, 
-        TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES);
+        TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES, FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE);
   }
 
   /** All source facts of YAGO */

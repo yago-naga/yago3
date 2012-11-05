@@ -220,18 +220,18 @@
 <Ålesund_Airport,_Vigra>	<hasAirportCode>	"AES" .
 #@ <id_1glsii8_k56_zilewg>
 <Allakaket_Airport>	<hasAirportCode>	"AET" .
-#@ <id_1tk88sx_k56_zilewk>
-<Alexandria_International_Airport_(Louisiana)|Alexandria_International_Airport>	<hasAirportCode>	"AEX" .
+#@ <id_bzzr07_k56_zilewk>
+<Alexandria_International_Airport_(Louisiana)>	<hasAirportCode>	"AEX" .
 #@ <id_yfglku_k56_zilewl>
 <Akureyri_Airport>	<hasAirportCode>	"AEY" .
-#@ <id_e17981_k56_zilews>
-<San_Rafael_Airport_(Argentina)|San_Rafael_Airport>	<hasAirportCode>	"AFA" .
+#@ <id_nclbdz_k56_zilews>
+<San_Rafael_Airport_(Argentina)>	<hasAirportCode>	"AFA" .
 #@ <id_1mc6nsw_k56_zilewv>
 <Port_Alfred_Airport>	<hasAirportCode>	"AFD" .
 #@ <id_gbbste_k56_zilewx>
 <United_States_Air_Force_Academy>	<hasAirportCode>	"AFF" .
-#@ <id_w63gv8_k56_zilex0>
-<Amalfi_Airport_(Colombia)|Amalfi_Airport>	<hasAirportCode>	"AFI" .
+#@ <id_m6te9q_k56_zilex0>
+<Amalfi_Airport_(Colombia)>	<hasAirportCode>	"AFI" .
 #@ <id_ie8j7b_k56_zilex3>
 <Alta_Floresta_Airport>	<hasAirportCode>	"AFL" .
 #@ <id_16zkye5_k56_zilex5>
@@ -276,8 +276,8 @@
 <Angoon_Seaplane_Base>	<hasAirportCode>	"AGN" .
 #@ <id_1rl0yvj_k56_ziley1>
 <Magnolia_Municipal_Airport>	<hasAirportCode>	"AGO" .
-#@ <id_13fkpsh_k56_ziley2>
-<Málaga_Airport|Pablo_Ruiz_Picasso_Airport>	<hasAirportCode>	"AGP" .
+#@ <id_1rzm08f_k56_ziley2>
+<Málaga_Airport>	<hasAirportCode>	"AGP" .
 #@ <id_3anydf_k56_ziley3>
 <Agrinion_Airport>	<hasAirportCode>	"AGQ" .
 #@ <id_227lnl_k56_ziley4>
@@ -348,8 +348,8 @@
 <Ailigandi_Airport>	<hasAirportCode>	"AIL" .
 #@ <id_p3j8di_k56_zilezp>
 <Ailuk_Airport>	<hasAirportCode>	"AIM" .
-#@ <id_1dmi8dr_k56_zilezq>
-<Wainwright_Airport_(Alaska)|Wainwright_Airport>	<hasAirportCode>	"AIN" .
+#@ <id_m0hhyl_k56_zilezq>
+<Wainwright_Airport_(Alaska)>	<hasAirportCode>	"AIN" .
 #@ <id_hnvig7_k56_zilezr>
 <Atlantic_Municipal_Airport>	<hasAirportCode>	"AIO" .
 #@ <id_1g5xlqi_k56_zilezs>
@@ -366,8 +366,8 @@
 <George_Downer_Airport>	<hasAirportCode>	"AIV" .
 #@ <id_o3w782_k56_zilezz>
 <Ai-Ais_Airport>	<hasAirportCode>	"AIW" .
-#@ <id_k0mqk2_k56_zilf01>
-<Bader_Field|Atlantic_City_Municipal_Airport>	<hasAirportCode>	"AIY" .
+#@ <id_13et225_k56_zilf01>
+<Bader_Field>	<hasAirportCode>	"AIY" .
 #@ <id_7dxlws_k56_zilf02>
 <Lee_C._Fine_Memorial_Airport>	<hasAirportCode>	"AIZ" .
 #@ <id_tbc0k6_k56_zilf08>
@@ -388,8 +388,8 @@
 <Arvidsjaur_Airport>	<hasAirportCode>	"AJR" .
 #@ <id_54i3dr_k56_zilf0q>
 <Abreojos_Airport>	<hasAirportCode>	"AJS" .
-#@ <id_ufemm7_k56_zilf0s>
-<Santa_Maria_Airport_(Sergipe)|Santa_Maria_Airport>	<hasAirportCode>	"AJU" .
+#@ <id_k46evf_k56_zilf0s>
+<Santa_Maria_Airport_(Sergipe)>	<hasAirportCode>	"AJU" .
 #@ <id_1no4v1z_k56_zilf0w>
 <Mano_Dayak_International_Airport>	<hasAirportCode>	"AJY" .
 #@ <id_kvzop4_k56_zilf13>
@@ -452,8 +452,8 @@
 <Alta_Airport>	<hasAirportCode>	"ALF" .
 #@ <id_88fza0_k56_zilf24>
 <Houari_Boumediene_Airport>	<hasAirportCode>	"ALG" .
-#@ <id_1ff1wfe_k56_zilf25>
-<Albany_Airport_(Australia)|Albany_Airport>	<hasAirportCode>	"ALH" .
+#@ <id_ufyjar_k56_zilf25>
+<Albany_Airport_(Australia)>	<hasAirportCode>	"ALH" .
 #@ <id_1i5cpx7_k56_zilf26>
 <Alice_International_Airport>	<hasAirportCode>	"ALI" .
 #@ <id_13s3v8m_k56_zilf27>
@@ -486,8 +486,8 @@
 <Walla_Walla_Regional_Airport>	<hasAirportCode>	"ALW" .
 #@ <id_14iohyc_k56_zilf2l>
 <Thomas_C._Russell_Field>	<hasAirportCode>	"ALX" .
-#@ <id_1clnbtx_k56_zilf2m>
-<Alexandria_International_Airport_(Egypt)|Alexandria_International_Airport>	<hasAirportCode>	"ALY" .
+#@ <id_v80d0j_k56_zilf2m>
+<Alexandria_International_Airport_(Egypt)>	<hasAirportCode>	"ALY" .
 #@ <id_6g2pxg_k56_zilf2n>
 <Alitak_Seaplane_Base>	<hasAirportCode>	"ALZ" .
 #@ <id_16zjvm_k56_zilf2t>
@@ -540,8 +540,8 @@
 <Ammaroo_Airport>	<hasAirportCode>	"AMX" .
 #@ <id_1jtjcg_k56_zilf3h>
 <Ambatomainty_Airport>	<hasAirportCode>	"AMY" .
-#@ <id_16dogyk_k56_zilf3i>
-<Ardmore_Airport_(New_Zealand)|Ardmore_Airport>	<hasAirportCode>	"AMZ" .
+#@ <id_1q20h9g_k56_zilf3i>
+<Ardmore_Airport_(New_Zealand)>	<hasAirportCode>	"AMZ" .
 #@ <id_aiwczz_k56_zilf3p>
 <Anniston_Metropolitan_Airport>	<hasAirportCode>	"ANB" .
 #@ <id_gtbgya_k56_zilf3q>
@@ -658,12 +658,12 @@
 <April_River_Airport>	<hasAirportCode>	"APR" .
 #@ <id_1s9k6i7_k56_zilf5w>
 <Anápolis_Airport>	<hasAirportCode>	"APS" .
-#@ <id_18obtmg_k56_zilf5x>
-<Marion_County_Airport_(Tennessee)|Marion_County_Airport>	<hasAirportCode>	"APT" .
+#@ <id_1mv2bbd_k56_zilf5x>
+<Marion_County_Airport_(Tennessee)>	<hasAirportCode>	"APT" .
 #@ <id_ap8cxe_k56_zilf5y>
 <Apucarana_Airport>	<hasAirportCode>	"APU" .
-#@ <id_1k86bv8_k56_zilf5z>
-<Apple_Valley_Airport_(California)|Apple_Valley_Airport>	<hasAirportCode>	"APV" .
+#@ <id_7220zc_k56_zilf5z>
+<Apple_Valley_Airport_(California)>	<hasAirportCode>	"APV" .
 #@ <id_1gfvurd_k56_zilf60>
 <Faleolo_International_Airport>	<hasAirportCode>	"APW" .
 #@ <id_1kian5y_k56_zilf61>
@@ -762,8 +762,8 @@
 <Amami_Airport>	<hasAirportCode>	"ASJ" .
 #@ <id_yzilmr_k56_zilf89>
 <Yamoussoukro_Airport>	<hasAirportCode>	"ASK" .
-#@ <id_121zkyr_k56_zilf8a>
-<Harrison_County_Airport_(Texas)|Harrison_County_Airport>	<hasAirportCode>	"ASL" .
+#@ <id_109yzpo_k56_zilf8a>
+<Harrison_County_Airport_(Texas)>	<hasAirportCode>	"ASL" .
 #@ <id_15jhq28_k56_zilf8b>
 <Asmara_International_Airport>	<hasAirportCode>	"ASM" .
 #@ <id_1h16fda_k56_zilf8c>
@@ -842,8 +842,8 @@
 <Watertown_Regional_Airport>	<hasAirportCode>	"ATY" .
 #@ <id_3w3777_k56_zilf9j>
 <Assiut_Airport>	<hasAirportCode>	"ATZ" .
-#@ <id_v0l0ah_k56_zilf9p>
-<Aeropuerto_Internacional_Reina_Beatrix|Queen_Beatrix_International_Airport>	<hasAirportCode>	"AUA" .
+#@ <id_1n8gh6s_k56_zilf9p>
+<Aeropuerto_Internacional_Reina_Beatrix>	<hasAirportCode>	"AUA" .
 #@ <id_oqnxre_k56_zilf9q>
 <Itauba_Airport>	<hasAirportCode>	"AUB" .
 #@ <id_1t8kgwf_k56_zilf9r>
@@ -868,8 +868,8 @@
 <Aur_Airport>	<hasAirportCode>	"AUL" .
 #@ <id_1lr1kgp_k56_zilfa1>
 <Austin_Municipal_Airport>	<hasAirportCode>	"AUM" .
-#@ <id_1w12zi0_k56_zilfa2>
-<Auburn_Municipal_Airport_(California)|Auburn_Municipal_Airport>	<hasAirportCode>	"AUN" .
+#@ <id_v10y06_k56_zilfa2>
+<Auburn_Municipal_Airport_(California)>	<hasAirportCode>	"AUN" .
 #@ <id_2h2qmx_k56_zilfa3>
 <Auburn-Opelika_Robert_G._Pitts_Airport>	<hasAirportCode>	"AUO" .
 #@ <id_18ylkbk_k56_zilfa4>
@@ -892,16 +892,16 @@
 <Araguaína_Airport>	<hasAirportCode>	"AUX" .
 #@ <id_xmq3yi_k56_zilfad>
 <Anatom_Airport>	<hasAirportCode>	"AUY" .
-#@ <id_pzpbk5_k56_zilfae>
-<Aurora_Municipal_Airport_(Illinois)|Aurora_Municipal_Airport>	<hasAirportCode>	"AUZ" .
+#@ <id_1cxx0ae_k56_zilfae>
+<Aurora_Municipal_Airport_(Illinois)>	<hasAirportCode>	"AUZ" .
 #@ <id_7kbplg_k56_zilfak>
 <Anshun_Huangguoshu_Airport>	<hasAirportCode>	"AVA" .
 #@ <id_1uv6ul3_k56_zilfal>
 <Aviano_Air_Base>	<hasAirportCode>	"AVB" .
 #@ <id_it0es6_k56_zilfap>
 <Avoriaz_Airport>	<hasAirportCode>	"AVF" .
-#@ <id_17094yy_k56_zilfaq>
-<Auvergne_Airport_(Australia)|Auvergne_Airport>	<hasAirportCode>	"AVG" .
+#@ <id_304mdp_k56_zilfaq>
+<Auvergne_Airport_(Australia)>	<hasAirportCode>	"AVG" .
 #@ <id_14oo1ai_k56_zilfas>
 <Máximo_Gómez_Airport>	<hasAirportCode>	"AVI" .
 #@ <id_1az76ic_k56_zilfau>
@@ -956,8 +956,8 @@
 <Algona_Municipal_Airport>	<hasAirportCode>	"AXG" .
 #@ <id_192ll4f_k56_zilfck>
 <Ataq_Airport>	<hasAirportCode>	"AXK" .
-#@ <id_9tvnfu_k56_zilfcl>
-<Alexandria_Airport_(Australia)|Alexandria_Airport>	<hasAirportCode>	"AXL" .
+#@ <id_i7klnz_k56_zilfcl>
+<Alexandria_Airport_(Australia)>	<hasAirportCode>	"AXL" .
 #@ <id_1pabd9z_k56_zilfcm>
 <El_Edén_International_Airport>	<hasAirportCode>	"AXM" .
 #@ <id_147pc1u_k56_zilfcn>
