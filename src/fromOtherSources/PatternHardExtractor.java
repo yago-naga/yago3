@@ -21,9 +21,12 @@ import basics.Theme;
  */
 public class PatternHardExtractor extends HardExtractor {
 
-	/** Patterns of infoboxes */
-	public static final Theme INFOBOXPATTERNS = new Theme("_infoboxPatterns",
-			"The Wikipedia infobox patterns used in YAGO");
+  /** Patterns of infoboxes */
+  public static final Theme INFOBOXPATTERNS = new Theme("_infoboxPatterns",
+      "The Wikipedia infobox patterns used in YAGO");
+  /** Language codes */
+  public static final Theme LANGUAGECODEMAPPING= new Theme("_languageCodeMappings",
+      "Mappings from ISO 639-1 codes to ISO 639-2/T codes.");
 	public static final Theme INFOBOXTEMPORALPATTERNS = new Theme("_infoboxTemporalPatterns",
 			"The Wikipedia infobox patterns used in YAGO");
 	/** Patterns of titles */
@@ -43,13 +46,13 @@ public class PatternHardExtractor extends HardExtractor {
   /** Patterns of entity keyphrases */
  public static final Theme STRUCTUREPATTERNS = new Theme("_extendedStructureWikiPatterns",
      "Patterns for extracting regular structure from Wikipedia (e.g. links)");
-	/** Patterns of categories */
+	/** Implication rules of YAGO*/
 	public static final Theme RULES = new Theme("_rules", "These are the implication rules of YAGO");
 
 	public Set<Theme> output() {
 		return (new FinalSet<Theme>(
 		    INFOBOXPATTERNS,INFOBOXTEMPORALPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS,TEMPORALCATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES, 
-		    CONTEXTPATTERNS, STRUCTUREPATTERNS));
+		    CONTEXTPATTERNS, STRUCTUREPATTERNS, LANGUAGECODEMAPPING));
 	}
 
 	@Override

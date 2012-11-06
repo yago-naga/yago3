@@ -10,212 +10,202 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-#@ <id_clcsfd_1ia_jjgwzf>
-<wikicategory_French_female_models>	rdfs:label	"French female model"@en .
-#@ <id_1m6eo22_1ia_kaa5iv>
-<wikicategory_Scottish_solicitors>	rdfs:label	"Scottish solicitor"@en .
 #@ <id_14rp0oq_1m6_x7p9pq>
 <wikicategory_Italian_bankers>	rdfs:subClassOf	<wordnet_banker_109837824> .
-#@ <id_1oqng8n_1ia_5qo8je>
-<wikicategory_States_of_the_Holy_Roman_Empire>	rdfs:label	"state of the Holy Roman Empire"@en .
-#@ <id_jhfkb_1ia_p76p7l>
-<wikicategory_Spanish_people>	rdfs:label	"Spanish person"@en .
-#@ <id_x9wkqc_1ia_1t6rmwu>
-<wikicategory_Borders_of_Germany>	rdfs:label	"border of Germany"@en .
+#@ <id_1ns3dis_1ia_7fix67>
+<wikicategory_Politicians_of_the_French_Fifth_Republic>	rdfs:label	"politician of the French Fifth Republic"@eng .
+#@ <id_1xctdn3_1ia_1pxj9hn>
+<wikicategory_Heads_of_state_of_the_Solomon_Islands>	rdfs:label	"head of state of the Solomon Islands"@eng .
 #@ <id_18905gj_1m6_hsj9sm>
 <wikicategory_People_illustrated_on_sterling_banknotes>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1848281_1ia_1dn5rlf>
-<wikicategory_20th-century_men>	rdfs:label	"20th-century man"@en .
-#@ <id_163x8ld_1ia_11k75vs>
-<wikicategory_Scottish_scholars_and_academics>	rdfs:label	"Scottish scholar and academics"@en .
-#@ <id_142lafb_1ia_leko1u>
-<wikicategory_Presidents_of_Surrey_CCC>	rdfs:label	"president of Surrey CCC"@en .
+#@ <id_pux5xa_1ia_1dz766s>
+<wikicategory_Lord_Presidents_of_the_Council>	rdfs:label	"Lord president of the Council"@eng .
+#@ <id_1d07p3u_1ia_4gk4fr>
+<wikicategory_Università_Cattolica_del_Sacro_Cuore_alumni>	rdfs:label	"Università Cattolica del Sacro Cuore alumnus"@eng .
 #@ <id_80c9op_1m6_13h7dhi>
 <wikicategory_Ministers_for_children,_young_people_and_families>	rdfs:subClassOf	<wordnet_minister_110320863> .
 #@ <id_1b1vdsb_1m6_1kbo50g>
 <wikicategory_French_politicians_convicted_of_crimes>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_8pv74a_1ia_udm9r0>
-<wikicategory_United_Nations_officials>	rdfs:label	"United Nations official"@en .
-#@ <id_1xctdn3_1ia_1pxj9hn>
-<wikicategory_Heads_of_state_of_the_Solomon_Islands>	rdfs:label	"head of state of the Solomon Islands"@en .
-#@ <id_me6by4_1ia_xcirql>
-<wikicategory_Universities_and_colleges_in_France>	rdfs:label	"university and colleges in France"@en .
+#@ <id_1qg9z9z_1ia_1eay8lp>
+<wikicategory_Free_Democratic_Party_(Germany)_politicians>	rdfs:label	"Free Democratic Party (Germany) politician"@eng .
+#@ <id_95tk7b_1ia_o3lwyg>
+<wikicategory_Political_parties_established_in_1993>	rdfs:label	"Political party established in 1993"@eng .
+#@ <id_1acodqv_1ia_fw392k>
+<wikicategory_People_from_Bremen>	rdfs:label	"person from Bremen"@eng .
 #@ <id_ezhr4k_1m6_hsj9sm>
 <wikicategory_People_from_Bologna>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_7trvjx_1ia_1ojlklb>
-<wikicategory_Heads_of_state_of_Canada>	rdfs:label	"head of state of Canada"@en .
-#@ <id_1i5ecpl_1ia_not81a>
-<wikicategory_People_from_Savoie>	rdfs:label	"person from Savoie"@en .
+#@ <id_kbr2pe_1ia_1qc44d8>
+<wikicategory_Social_Affairs_ministers_of_Germany>	rdfs:label	"Social Affairs minister of Germany"@eng .
+#@ <id_7ewc0q_1ia_1o4q124>
+<wikicategory_Heads_of_state_of_Belize>	rdfs:label	"head of state of Belize"@eng .
 #@ <id_8pv74a_1m6_8qvcrt>
 <wikicategory_United_Nations_officials>	rdfs:subClassOf	<wordnet_official_110372373> .
-#@ <id_1a0o5qk_1ia_1pgalo3>
-<wikicategory_Alumni_of_St_John's_College,_Oxford>	rdfs:label	"alumnus of St John's College, Oxford"@en .
 #@ <id_r2jji1_1m6_1x9tonu>
 <wikicategory_20th-century_economists>	rdfs:subClassOf	<wordnet_economist_110043643> .
-#@ <id_5ppqvw_1ia_lietzb>
-<wikicategory_Italian_academics>	rdfs:label	"Italian academic"@en .
+#@ <id_1d5driz_1ia_1heyi29>
+<wikicategory_Coca-Cola_people>	rdfs:label	"Coca-Cola person"@eng .
 #@ <id_1kjsz2w_1m6_1i9drdf>
 <wikicategory_Fellows_of_the_Royal_Society_of_Literature>	rdfs:subClassOf	<wordnet_colleague_109935990> .
-#@ <id_5es2ta_1ia_zmvd0>
-<wikicategory_Politicians_from_Kingston_upon_Hull>	rdfs:label	"politician from Kingston upon Hull"@en .
 #@ <id_k0ue0m_1m6_ic10aj>
 <wikicategory_Lycée_Louis-le-Grand_alumni>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_xj4hi_1ia_rfphmg>
-<wikicategory_Presidents_of_the_Italian_Chamber_of_Deputies>	rdfs:label	"president of the Italian Chamber of Deputies"@en .
-#@ <id_177pt0z_1ia_1tfgtgm>
-<wikicategory_Rectors_of_the_University_of_Edinburgh>	rdfs:label	"rector of the University of Edinburgh"@en .
+#@ <id_n371zt_1ia_1x75z3s>
+<wikicategory_Environment_ministers_of_Germany>	rdfs:label	"Environment minister of Germany"@eng .
 #@ <id_pt2m1n_1m6_1inhq0u>
 <wikicategory_French_lawyers>	rdfs:subClassOf	<wordnet_lawyer_110249950> .
-#@ <id_j0cm4p_1ia_1967sww>
-<wikicategory_French_people_of_Jewish_descent>	rdfs:label	"French person of Jewish descent"@en .
-#@ <id_er13rd_1ia_1rxrt3p>
-<wikicategory_People_from_Le_Mans>	rdfs:label	"person from Le Mans"@en .
-#@ <id_lligu9_1ia_v8nvra>
-<wikicategory_Politicians_of_Vietnamese_descent>	rdfs:label	"politician of Vietnamese descent"@en .
-#@ <id_14kxum0_1ia_1wk9yt8>
-<wikicategory_Alumni_of_the_Inns_of_Court_School_of_Law>	rdfs:label	"alumnus of the Inns of Court School of Law"@en .
+#@ <id_1fvtmno_1ia_ch6xl8>
+<wikicategory_Living_people>	rdfs:label	"Living person"@eng .
+#@ <id_9crsk3_1ia_1oxm1m0>
+<wikicategory_People_from_Ludwigshafen>	rdfs:label	"person from Ludwigshafen"@eng .
+#@ <id_16m1wj6_1ia_ncl64x>
+<wikicategory_Spanish_chemists>	rdfs:label	"Spanish chemist"@eng .
+#@ <id_1s2909m_1ia_1mqmt57>
+<wikicategory_20th-century_politicians>	rdfs:label	"20th-century politician"@eng .
 #@ <id_61gwyo_1m6_hsj9sm>
 <wikicategory_French_people_of_Romanian_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1twn49k_1m6_1a4iuye>
 <wikicategory_Academics_of_the_University_of_York>	rdfs:subClassOf	<wordnet_academician_109759069> .
-#@ <id_1kjsz2w_1ia_1l0dluy>
-<wikicategory_Fellows_of_the_Royal_Society_of_Literature>	rdfs:label	"fellow of the Royal Society of Literature"@en .
+#@ <id_hmbjgu_1ia_1gbsqhl>
+<wikicategory_People_from_Sheffield>	rdfs:label	"person from Sheffield"@eng .
 #@ <id_blpua9_1m6_1ht66fr>
 <wikicategory_Squares_in_Westminster>	rdfs:subClassOf	<wordnet_public_square_108619620> .
-#@ <id_jlagzt_1ia_17uk5oa>
-<wikicategory_Audiogram_artists>	rdfs:label	"Audiogram artist"@en .
+#@ <id_7trvjx_1ia_1ojlklb>
+<wikicategory_Heads_of_state_of_Canada>	rdfs:label	"head of state of Canada"@eng .
+#@ <id_2xqhkk_1ia_13wezkb>
+<wikicategory_German_people_of_Romanian_descent>	rdfs:label	"German person of Romanian descent"@eng .
+#@ <id_1m3o6uz_1ia_10ed54w>
+<wikicategory_Alumni_of_the_University_of_Glasgow>	rdfs:label	"alumnus of the University of Glasgow"@eng .
+#@ <id_r34uft_1ia_8vz990>
+<wikicategory_States_and_territories_established_in_1871>	rdfs:label	"state and territories established in 1871"@eng .
 #@ <id_1esos97_1m6_1x9tonu>
 <wikicategory_21st-century_economists>	rdfs:subClassOf	<wordnet_economist_110043643> .
+#@ <id_1woxq0w_1ia_1gs8lt3>
+<wikicategory_Ig_Nobel_Prize_winners>	rdfs:label	"Ig Nobel Prize winner"@eng .
 #@ <id_ku59pv_1m6_1094moe>
 <wikicategory_City-states>	rdfs:subClassOf	<wordnet_city_state_108177958> .
-#@ <id_18wanl3_1ia_1tx9izd>
-<wikicategory_Educational_institutions_established_in_the_15th_century>	rdfs:label	"Educational institution established in the 15th century"@en .
+#@ <id_1p71jxz_1ia_1ukl0ny>
+<wikicategory_Sailors_at_the_1972_Summer_Olympics>	rdfs:label	"sailor at the 1972 Summer Olympics"@eng .
 #@ <id_1pxz8g0_1m6_1x95yav>
 <wikicategory_Grade_I_listed_educational_buildings>	rdfs:subClassOf	<wordnet_building_102913152> .
-#@ <id_zzrlfk_1ia_xvqmk4>
-<wikicategory_Former_polities_of_the_Cold_War>	rdfs:label	"Former polity of the Cold War"@en .
 #@ <id_1ymxe2m_1m6_1vthrwe>
 <wikicategory_Spanish_women_in_politics>	rdfs:subClassOf	<wordnet_woman_110787470> .
-#@ <id_142jzsa_1ia_w0wssf>
-<wikicategory_People_from_Florence>	rdfs:label	"person from Florence"@en .
 #@ <id_k6b4t4_1m6_1c55dny>
 <wikicategory_Leaders_of_political_parties_in_Germany>	rdfs:subClassOf	<wordnet_leader_109623038> .
-#@ <id_qiy4wn_1ia_1lhgk8d>
-<wikicategory_People_from_Crosby,_Merseyside>	rdfs:label	"person from Crosby, Merseyside"@en .
-#@ <id_19ykfcw_1ia_1t1uukk>
-<wikicategory_Social_Democratic_Party_(Andorra)_politicians>	rdfs:label	"Social Democratic Party (Andorra) politician"@en .
 #@ <id_1i5ecpl_1m6_hsj9sm>
 <wikicategory_People_from_Savoie>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_16n2ezf_1m6_1kbo50g>
 <wikicategory_French_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_pu10w8_1m6_ltohsj>
 <wikicategory_Port_cities_and_towns_in_Germany>	rdfs:subClassOf	<wordnet_city_108524735> .
+#@ <id_1s13qes_1ia_1kb6kg5>
+<wikicategory_Leaders_of_the_Labour_Party_(UK)>	rdfs:label	"leader of the Labour Party (UK)"@eng .
 #@ <id_17sph8y_1m6_5kujp2>
 <wikicategory_Political_science_organizations>	rdfs:subClassOf	<wordnet_organization_108008335> .
-#@ <id_j2aclu_1ia_1wmtxw5>
-<wikicategory_Converts_to_Roman_Catholicism_from_Anglicanism>	rdfs:label	"convert to Roman Catholicism from Anglicanism"@en .
+#@ <id_1svd4xo_1ia_k9wyi0>
+<wikicategory_Secretaries_of_State_for_Health_(UK)>	rdfs:label	"secretary of State for Health (UK)"@eng .
+#@ <id_1xew5bl_1ia_1a4nvlu>
+<wikicategory_The_Guardian_journalists>	rdfs:label	"Guardian journalist"@eng .
 #@ <id_y01ps9_1ia_8737h>
-<wikicategory_Cold_War_leaders>	rdfs:label	"Cold War leader"@en .
+<wikicategory_Cold_War_leaders>	rdfs:label	"Cold War leader"@eng .
 #@ <id_16i21i0_1m6_d9kgm7>
 <wikicategory_British_European_Commissioners>	rdfs:subClassOf	<wordnet_commissioner_109943811> .
-#@ <id_139hjgx_1ia_1ywbz78>
-<wikicategory_Presidential_palaces>	rdfs:label	"Presidential palace"@en .
-#@ <id_1m3o6uz_1ia_10ed54w>
-<wikicategory_Alumni_of_the_University_of_Glasgow>	rdfs:label	"alumnus of the University of Glasgow"@en .
+#@ <id_ba9gx2_1ia_11km4sc>
+<wikicategory_Spanish_yacht_racers>	rdfs:label	"Spanish yacht racer"@eng .
 #@ <id_1feld5g_1m6_czeqp5>
 <wikicategory_Former_countries_in_Europe>	rdfs:subClassOf	<wordnet_country_108544813> .
-#@ <id_17sph8y_1ia_15q1p02>
-<wikicategory_Political_science_organizations>	rdfs:label	"Political science organization"@en .
 #@ <id_q3ay46_1m6_hsj9sm>
 <wikicategory_People_from_Wałbrzych>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_mbsbk5_1ia_clwmvs>
-<wikicategory_Social_democratic_parties>	rdfs:label	"Social democratic party"@en .
+#@ <id_1cier9x_1ia_ah608y>
+<wikicategory_Lycée_Français_de_New_York_alumni>	rdfs:label	"Lycée Français de New York alumnus"@eng .
 #@ <id_1oqng8n_1m6_czeqp5>
 <wikicategory_States_of_the_Holy_Roman_Empire>	rdfs:subClassOf	<wordnet_country_108544813> .
-#@ <id_19lflq8_1ia_1efj70k>
-<wikicategory_Presidents_of_the_European_Commission>	rdfs:label	"president of the European Commission"@en .
-#@ <id_1l73yi3_1ia_u416s4>
-<wikicategory_Knights_of_the_Order_of_the_Black_Star>	rdfs:label	"knight of the Order of the Black Star"@en .
-#@ <id_1gww55i_1ia_vn07p9>
-<wikicategory_Member_states_of_the_Union_for_the_Mediterranean>	rdfs:label	"Member state of the Union for the Mediterranean"@en .
+#@ <id_1f1mscu_1ia_kl1noj>
+<wikicategory_People_from_London>	rdfs:label	"person from London"@eng .
 #@ <id_v89ro1_1m6_1a4iuye>
 <wikicategory_Academics_of_the_Open_University>	rdfs:subClassOf	<wordnet_academician_109759069> .
-#@ <id_1r4wouv_1ia_1k5tozn>
-<wikicategory_Fellows_of_Fitzwilliam_College,_Cambridge>	rdfs:label	"fellow of Fitzwilliam College, Cambridge"@en .
+#@ <id_prea9k_1ia_yxzbwu>
+<wikicategory_People_from_Bad_Honnef>	rdfs:label	"person from Bad Honnef"@eng .
+#@ <id_ezhr4k_1ia_1t4vhun>
+<wikicategory_People_from_Bologna>	rdfs:label	"person from Bologna"@eng .
 #@ <id_1s2909m_1m6_1kbo50g>
 <wikicategory_20th-century_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_1s2909m_1ia_1mqmt57>
-<wikicategory_20th-century_politicians>	rdfs:label	"20th-century politician"@en .
 #@ <id_1i8jl1c_1m6_ic10aj>
 <wikicategory_Columbia_Law_School_alumni>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
+#@ <id_1j4ha1d_1ia_26ho8c>
+<wikicategory_Alumni_of_HEC_School_of_Management>	rdfs:label	"alumnus of HEC School of Management"@eng .
 #@ <id_1tj1sb6_1m6_w2cgyi>
 <wikicategory_Educational_institutions_established_in_1964>	rdfs:subClassOf	<wordnet_educational_institution_108276342> .
 #@ <id_g6ld6d_1m6_hsj9sm>
 <wikicategory_People_from_Barcelona>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1fvtmno_1ia_ch6xl8>
-<wikicategory_Living_people>	rdfs:label	"Living person"@en .
-#@ <id_1sbzwfc_1ia_kjn5jv>
-<wikicategory_Academics_of_the_University_of_Westminster>	rdfs:label	"academic of the University of Westminster"@en .
+#@ <id_1slwphy_1ia_1dd6jwv>
+<wikicategory_Knights_of_the_Order_of_Alcántara>	rdfs:label	"knight of the Order of Alcántara"@eng .
+#@ <id_zmmd_1ia_eo74ke>
+<wikicategory_Scottish_Labour_Party_politicians>	rdfs:label	"Scottish Labour Party politician"@eng .
+#@ <id_1wyt8jh_1ia_nhif81>
+<wikicategory_Former_monarchies_of_Europe>	rdfs:label	"Former monarchy of Europe"@eng .
 #@ <id_6y7gp8_1m6_1kbo50g>
 <wikicategory_People's_Party_(Spain)_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
+#@ <id_8pv74a_1ia_udm9r0>
+<wikicategory_United_Nations_officials>	rdfs:label	"United Nations official"@eng .
 #@ <id_h0gx53_1m6_hsj9sm>
 <wikicategory_People_from_Livorno>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1fb1fkl_1ia_15vm48e>
-<wikicategory_21st-century_Italian_people>	rdfs:label	"21st-century Italian person"@en .
-#@ <id_aeylw2_1ia_194fswt>
-<wikicategory_People_from_Trasmiera>	rdfs:label	"person from Trasmiera"@en .
+#@ <id_14kxum0_1ia_1wk9yt8>
+<wikicategory_Alumni_of_the_Inns_of_Court_School_of_Law>	rdfs:label	"alumnus of the Inns of Court School of Law"@eng .
+#@ <id_jhfkb_1ia_p76p7l>
+<wikicategory_Spanish_people>	rdfs:label	"Spanish person"@eng .
 #@ <id_10ijhq9_1m6_n422cm>
 <wikicategory_G20_nations>	rdfs:subClassOf	<wordnet_state_108168978> .
 #@ <id_15xagoj_1m6_esw3kl>
 <wikicategory_Municipalities_in_the_Province_of_Valladolid>	rdfs:subClassOf	<wordnet_municipality_108626283> .
-#@ <id_yxmali_1ia_96fszj>
-<wikicategory_Andorran_lawyers>	rdfs:label	"Andorran lawyer"@en .
 #@ <id_jydyj7_1m6_hsj9sm>
 <wikicategory_People_associated_with_Cardiff_University>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_7r9uo7_1m6_1kbo50g>
 <wikicategory_Spanish_Socialist_Workers'_Party_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_1bgham0_1m6_hsj9sm>
 <wikicategory_People_educated_at_Archbishop_Holgate's_School>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_55h4il_1ia_tze2wb>
-<wikicategory_Turkish_communities_in_Germany>	rdfs:label	"Turkish community in Germany"@en .
 #@ <id_wktbk1_1m6_13h7dhi>
 <wikicategory_Prime_Ministers_of_France>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_95u0b0_1ia_o3md25>
-<wikicategory_Political_parties_established_in_2009>	rdfs:label	"Political party established in 2009"@en .
+#@ <id_1ug2kra_1ia_wsj4nl>
+<wikicategory_Democratic_Party_(Italy)_politicians>	rdfs:label	"Democratic Party (Italy) politician"@eng .
 #@ <id_ucc52m_1m6_17x0mu>
 <wikicategory_Grand_Collars_of_the_Order_of_Saint_James_of_the_Sword>	rdfs:subClassOf	<wordnet_collar_103068181> .
+#@ <id_1gww55i_1ia_vn07p9>
+<wikicategory_Member_states_of_the_Union_for_the_Mediterranean>	rdfs:label	"Member state of the Union for the Mediterranean"@eng .
 #@ <id_1woxq0w_1m6_gyw0d3>
 <wikicategory_Ig_Nobel_Prize_winners>	rdfs:subClassOf	<wordnet_prize_winner_109627807> .
+#@ <id_1beb4o1_1ia_1lqylze>
+<wikicategory_People_from_the_Province_of_Lower_Silesia>	rdfs:label	"person from the Province of Lower Silesia"@eng .
 #@ <id_kjshxr_1m6_hsj9sm>
 <wikicategory_People_educated_at_Dunoon_Grammar_School>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_pegh7q_1ia_4iq5yp>
-<wikicategory_People_from_Hamburg>	rdfs:label	"person from Hamburg"@en .
-#@ <id_enauut_1ia_22t56j>
-<wikicategory_Councillors_in_Sheffield>	rdfs:label	"councillor in Sheffield"@en .
 #@ <id_tyzlya_1m6_gpo87b>
 <wikicategory_United_Kingdom_Parliamentary_constituencies_represented_by_a_sitting_Prime_Minister>	rdfs:subClassOf	<wordnet_constituency_108238156> .
-#@ <id_p0wz8n_1ia_1oyy3wc>
-<wikicategory_Italian_billionaires>	rdfs:label	"Italian billionaire"@en .
-#@ <id_10t17ti_1ia_mzwe9h>
-<wikicategory_Spanish_Ministers_of_Economy_and_Finance>	rdfs:label	"Spanish minister of Economy and Finance"@en .
-#@ <id_zuvxfy_1ia_umefzt>
-<wikicategory_United_Kingdom_Parliamentary_constituencies_disestablished_in_1974>	rdfs:label	"United Kingdom Parliamentary constituency disestablished in 1974"@en .
+#@ <id_1ymxe2m_1ia_b5kc9e>
+<wikicategory_Spanish_women_in_politics>	rdfs:label	"Spanish woman in politics"@eng .
 #@ <id_19td829_1m6_sd82zj>
 <wikicategory_Numbered_republics>	rdfs:subClassOf	<wordnet_democracy_108361329> .
-#@ <id_1q8mbt2_1ia_1qefn3e>
-<wikicategory_Presidents_of_Germany>	rdfs:label	"president of Germany"@en .
-#@ <id_1kt1p1z_1ia_c7slk>
-<wikicategory_Organisations_based_in_Geneva>	rdfs:label	"organisation based in Geneva"@en .
+#@ <id_pjo397_1ia_13obvy0>
+<wikicategory_NUTS_1_statistical_regions_of_the_European_Union>	rdfs:label	"NUTS 1 statistical region of the European Union"@eng .
+#@ <id_1tj1sb6_1ia_167ke5g>
+<wikicategory_Educational_institutions_established_in_1964>	rdfs:label	"Educational institution established in 1964"@eng .
 #@ <id_znrj7x_1m6_1kbo50g>
 <wikicategory_Christian_Democracy_(Italy)_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_1tj1rjk_1m6_w2cgyi>
 <wikicategory_Educational_institutions_established_in_1852>	rdfs:subClassOf	<wordnet_educational_institution_108276342> .
 #@ <id_ulgvry_1m6_gpo87b>
 <wikicategory_United_Kingdom_Parliamentary_constituencies_established_in_1918>	rdfs:subClassOf	<wordnet_constituency_108238156> .
+#@ <id_95u0at_1ia_o3md1y>
+<wikicategory_Political_parties_established_in_2002>	rdfs:label	"Political party established in 2002"@eng .
 #@ <id_o6fytl_1m6_hsj9sm>
 <wikicategory_People_from_Hemel_Hempstead>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_1f9igqp_1ia_1d36leq>
+<wikicategory_Italian_Social_Movement_politicians>	rdfs:label	"Italian Social Movement politician"@eng .
+#@ <id_14twwct_1ia_ceqrjn>
+<wikicategory_National_lower_houses>	rdfs:label	"National lower house"@eng .
+#@ <id_g6ld6d_1ia_1ew2k74>
+<wikicategory_People_from_Barcelona>	rdfs:label	"person from Barcelona"@eng .
 #@ <id_tkix1t_1m6_17x0mu>
 <wikicategory_Grand_Collars_of_the_Order_of_the_Southern_Cross>	rdfs:subClassOf	<wordnet_collar_103068181> .
+#@ <id_1ww53ds_1ia_1l9vci7>
+<wikicategory_Parliamentary_constituencies_in_County_Durham>	rdfs:label	"Parliamentary constituency in County Durham"@eng .
 #@ <id_i4iypo_1m6_1cm1whp>
 <wikicategory_NUTS_2_statistical_regions_of_the_European_Union>	rdfs:subClassOf	<wordnet_region_108630039> .
 #@ <id_1p71jxz_1m6_1ke0ez4>
@@ -224,486 +214,474 @@
 <wikicategory_Heads_of_state_of_Canada>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_5n0u98_1m6_hsj9sm>
 <wikicategory_People_from_the_Province_of_Reggio_Emilia>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_11b0oqa_1ia_mhdmuy>
-<wikicategory_Knights_of_the_Golden_Fleece>	rdfs:label	"knight of the Golden Fleece"@en .
+#@ <id_mvnmj3_1ia_1ekovhy>
+<wikicategory_G8_nations>	rdfs:label	"G8 nation"@eng .
+#@ <id_38b2ny_1ia_97xd9w>
+<wikicategory_Fellows_of_the_American_Academy_of_Arts_and_Sciences>	rdfs:label	"fellow of the American Academy of Arts and Sciences"@eng .
+#@ <id_1w0mou3_1ia_e2c0i5>
+<wikicategory_German-speaking_countries>	rdfs:label	"German-speaking country"@eng .
+#@ <id_1r4wouv_1ia_1k5tozn>
+<wikicategory_Fellows_of_Fitzwilliam_College,_Cambridge>	rdfs:label	"fellow of Fitzwilliam College, Cambridge"@eng .
 #@ <id_7go0pp_1m6_abuyew>
 <wikicategory_Districts_of_Scotland>	rdfs:subClassOf	<wordnet_district_108552138> .
-#@ <id_bw0gfn_1ia_16hcpc>
-<wikicategory_British_philanthropists>	rdfs:label	"British philanthropist"@en .
 #@ <id_177pt0z_1m6_xzyf11>
 <wikicategory_Rectors_of_the_University_of_Edinburgh>	rdfs:subClassOf	<wordnet_curate_109983572> .
-#@ <id_nl43as_1ia_gp9rgw>
-<wikicategory_Adoptees>	rdfs:label	"adoptee"@en .
 #@ <id_khabq2_1m6_ccgo1i>
 <wikicategory_Labour_Party_(UK)_life_peers>	rdfs:subClassOf	<wordnet_life_peer_110260943> .
-#@ <id_17yoam7_1ia_a35cdz>
-<wikicategory_Collars_of_the_Order_of_the_Chrysanthemum>	rdfs:label	"collar of the Order of the Chrysanthemum"@en .
+#@ <id_p7h9ua_1ia_3ruj8d>
+<wikicategory_Secretaries_of_State_for_the_Home_Department>	rdfs:label	"secretary of State for the Home Department"@eng .
+#@ <id_19td829_1ia_1mm94k>
+<wikicategory_Numbered_republics>	rdfs:label	"Numbered republic"@eng .
+#@ <id_1ildgpw_1ia_1ajq9q1>
+<wikicategory_People_from_Arnsberg>	rdfs:label	"person from Arnsberg"@eng .
+#@ <id_19aed5d_1ia_oeo1wc>
+<wikicategory_People_from_Ilmenau>	rdfs:label	"person from Ilmenau"@eng .
 #@ <id_p56r97_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Grenada>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
+#@ <id_yjcvl7_1ia_8a6zt4>
+<wikicategory_Buildings_and_structures_of_the_University_of_Oxford>	rdfs:label	"building and structures of the University of Oxford"@eng .
 #@ <id_65jajz_1m6_afpz4u>
 <wikicategory_Schools_of_international_relations>	rdfs:subClassOf	<wordnet_school_108276720> .
+#@ <id_kjshxr_1ia_khvudh>
+<wikicategory_People_educated_at_Dunoon_Grammar_School>	rdfs:label	"person educated at Dunoon Grammar School"@eng .
 #@ <id_7cezp1_1m6_1y1zid8>
 <wikicategory_Labour_parties>	rdfs:subClassOf	<wordnet_party_108256968> .
 #@ <id_1j4ha1d_1m6_ic10aj>
 <wikicategory_Alumni_of_HEC_School_of_Management>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
 #@ <id_ew05ra_1m6_1c55dny>
 <wikicategory_Leaders_of_the_Conservative_Party_(UK)>	rdfs:subClassOf	<wordnet_leader_109623038> .
-#@ <id_1acodqv_1ia_fw392k>
-<wikicategory_People_from_Bremen>	rdfs:label	"person from Bremen"@en .
+#@ <id_1ld2pje_1ia_i1kniy>
+<wikicategory_Attempted_assassination_survivors>	rdfs:label	"Attempted assassination survivor"@eng .
 #@ <id_7ewc0q_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Belize>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_3v7crn_1ia_pm7ezb>
-<wikicategory_People_from_Ávila,_Spain>	rdfs:label	"person from Ávila, Spain"@en .
+#@ <id_9ozf68_1ia_1vfk8yx>
+<wikicategory_Alumni_of_Ruskin_College>	rdfs:label	"alumnus of Ruskin College"@eng .
+#@ <id_11yu31c_1ia_1eisotr>
+<wikicategory_Wine_regions_of_Italy>	rdfs:label	"Wine region of Italy"@eng .
 #@ <id_kxvav3_1m6_ic10aj>
 <wikicategory_Alumni_of_the_University_of_Edinburgh>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_nv64ll_1ia_so64xq>
-<wikicategory_People_from_Epping_Forest_(district)>	rdfs:label	"person from Epping Forest (district)"@en .
-#@ <id_14twwct_1ia_ceqrjn>
-<wikicategory_National_lower_houses>	rdfs:label	"National lower house"@en .
+#@ <id_24snyu_1ia_1nbc1as>
+<wikicategory_States_of_the_German_Confederation>	rdfs:label	"state of the German Confederation"@eng .
 #@ <id_16m1wj6_1m6_1880c8b>
 <wikicategory_Spanish_chemists>	rdfs:subClassOf	<wordnet_chemist_109913824> .
-#@ <id_1rd7oto_1ia_16wbkfg>
-<wikicategory_Parliaments_by_country>	rdfs:label	"parliament by country"@en .
-#@ <id_i8ixxk_1ia_bfnzx9>
-<wikicategory_21st-century_politicians>	rdfs:label	"21st-century politician"@en .
-#@ <id_1tj1sc6_1ia_167ke6g>
-<wikicategory_Educational_institutions_established_in_1979>	rdfs:label	"Educational institution established in 1979"@en .
-#@ <id_1unfsqh_1ia_clv1h>
-<wikicategory_Capitals_in_Europe>	rdfs:label	"capital in Europe"@en .
+#@ <id_edbjnh_1ia_6bocnm>
+<wikicategory_People_from_Poitiers>	rdfs:label	"person from Poitiers"@eng .
+#@ <id_16yyuz_1ia_1wwinqf>
+<wikicategory_Italian_television_actors>	rdfs:label	"Italian television actor"@eng .
 #@ <id_1ejm1zj_1m6_hsj9sm>
 <wikicategory_People_from_Valencia,_Spain>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_i82zd5_1m6_ltohsj>
 <wikicategory_Imperial_free_cities>	rdfs:subClassOf	<wordnet_city_108524735> .
 #@ <id_ck6tze_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Malawi>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_q3ay46_1ia_1oss54x>
-<wikicategory_People_from_Wałbrzych>	rdfs:label	"person from Wałbrzych"@en .
+#@ <id_15r6g7m_1ia_1u2x7xg>
+<wikicategory_German_women_in_politics>	rdfs:label	"German woman in politics"@eng .
 #@ <id_1ug2kra_1m6_1kbo50g>
 <wikicategory_Democratic_Party_(Italy)_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
+#@ <id_19e5arz_1ia_1xo95h2>
+<wikicategory_French_people_of_Italian_descent>	rdfs:label	"French person of Italian descent"@eng .
+#@ <id_i82zd5_1ia_16atkii>
+<wikicategory_Imperial_free_cities>	rdfs:label	"Imperial free city"@eng .
+#@ <id_1b2kp4j_1ia_18cork3>
+<wikicategory_Liberal-conservative_parties>	rdfs:label	"Liberal-conservative party"@eng .
 #@ <id_1d9xpkf_1m6_15cgb38>
 <wikicategory_Knights_of_the_Order_of_Saint_Januarius>	rdfs:subClassOf	<wordnet_knight_110238375> .
-#@ <id_1i65qzw_1ia_1fqh7vr>
-<wikicategory_Alumni_of_Cardiff_University>	rdfs:label	"alumnus of Cardiff University"@en .
-#@ <id_ngcj9j_1ia_ladygu>
-<wikicategory_Stroke_survivors>	rdfs:label	"Stroke survivor"@en .
-#@ <id_95u0at_1ia_o3md1y>
-<wikicategory_Political_parties_established_in_2002>	rdfs:label	"Political party established in 2002"@en .
-#@ <id_gxz7ch_1ia_1o9armc>
-<wikicategory_Scottish_journalists>	rdfs:label	"Scottish journalist"@en .
+#@ <id_okj32_1ia_1ii0k5j>
+<wikicategory_Italian_people_of_Argentine_descent>	rdfs:label	"Italian person of Argentine descent"@eng .
+#@ <id_y20alq_1ia_1f84m28>
+<wikicategory_States_of_the_Weimar_Republic>	rdfs:label	"state of the Weimar Republic"@eng .
+#@ <id_13xdotb_1ia_1mhmhq3>
+<wikicategory_Alumni_of_the_University_of_Manchester_Institute_of_Science_and_Technology>	rdfs:label	"alumnus of the University of Manchester Institute of Science and Technology"@eng .
 #@ <id_18jb85f_1m6_15cgb38>
 <wikicategory_Knights_of_Grace_of_the_Order_of_St_John>	rdfs:subClassOf	<wordnet_knight_110238375> .
 #@ <id_4ri7mt_1m6_17x0mu>
 <wikicategory_Grand_Collars_of_the_Order_of_Liberty‎>	rdfs:subClassOf	<wordnet_collar_103068181> .
-#@ <id_t00t1r_1ia_mi7ls0>
-<wikicategory_Leaders_of_the_House_of_Commons>	rdfs:label	"leader of the House of Commons"@en .
-#@ <id_d63zim_1ia_h3w7ud>
-<wikicategory_French_people_of_Hungarian_descent>	rdfs:label	"French person of Hungarian descent"@en .
+#@ <id_1p8s91p_1ia_1prrjt7>
+<wikicategory_Heads_of_state_of_Jamaica>	rdfs:label	"head of state of Jamaica"@eng .
 #@ <id_1g7n65i_1m6_18cw5te>
 <wikicategory_Official_residences_in_France>	rdfs:subClassOf	<wordnet_residence_108558963> .
 #@ <id_1yg0nhk_1m6_s3vl4z>
 <wikicategory_Italian_emigrants_to_France>	rdfs:subClassOf	<wordnet_emigrant_110051975> .
 #@ <id_edbjnh_1m6_hsj9sm>
 <wikicategory_People_from_Poitiers>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1esos97_1ia_1nf3g2e>
-<wikicategory_21st-century_economists>	rdfs:label	"21st-century economist"@en .
-#@ <id_gtlqig_1ia_1y36evf>
-<wikicategory_Apostolic_sees>	rdfs:label	"Apostolic see"@en .
-#@ <id_1odhjk9_1ia_n9vzju>
-<wikicategory_British_humanists>	rdfs:label	"British humanist"@en .
-#@ <id_ntx2hg_1ia_1jwz0rx>
-<wikicategory_21st-century_scholars>	rdfs:label	"21st-century scholar"@en .
 #@ <id_r34v5p_1m6_czeqp5>
 <wikicategory_States_and_territories_established_in_1963>	rdfs:subClassOf	<wordnet_country_108544813> .
-#@ <id_hmbjgu_1ia_1gbsqhl>
-<wikicategory_People_from_Sheffield>	rdfs:label	"person from Sheffield"@en .
 #@ <id_9crsk3_1m6_hsj9sm>
 <wikicategory_People_from_Ludwigshafen>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_bhcs0d_1ia_vidwye>
-<wikicategory_Spanish_monarchs>	rdfs:label	"Spanish monarch"@en .
-#@ <id_65jajz_1ia_1m5l1hk>
-<wikicategory_Schools_of_international_relations>	rdfs:label	"school of international relations"@en .
-#@ <id_a942ok_1ia_1m3m7hs>
-<wikicategory_Current_national_leaders>	rdfs:label	"Current national leader"@en .
+#@ <id_pegh7q_1ia_4iq5yp>
+<wikicategory_People_from_Hamburg>	rdfs:label	"person from Hamburg"@eng .
+#@ <id_6oowf0_1ia_g56uoq>
+<wikicategory_Heads_of_state_of_Mauritius>	rdfs:label	"head of state of Mauritius"@eng .
 #@ <id_89qtvz_1m6_d307i>
 <wikicategory_Grand_Cordons_of_the_Order_of_the_Rising_Sun>	rdfs:subClassOf	<wordnet_cordon_108376948> .
 #@ <id_1l4nn6s_1m6_abuyew>
 <wikicategory_Federal_electoral_districts_in_Mecklenburg-Vorpommern>	rdfs:subClassOf	<wordnet_district_108552138> .
-#@ <id_1n6mf6m_1ia_n4js16>
-<wikicategory_People_from_Zamość_County>	rdfs:label	"person from Zamość County"@en .
-#@ <id_9dadjx_1ia_2xms5h>
-<wikicategory_Knights_of_the_Order_of_the_Rajamitrabhorn>	rdfs:label	"knight of the Order of the Rajamitrabhorn"@en .
-#@ <id_wktbk1_1ia_1cdg3m2>
-<wikicategory_Prime_Ministers_of_France>	rdfs:label	"Prime minister of France"@en .
 #@ <id_13pvp2v_1m6_1y1zid8>
 <wikicategory_Liberal_parties_in_Italy>	rdfs:subClassOf	<wordnet_party_108256968> .
+#@ <id_1a0o5qk_1ia_1pgalo3>
+<wikicategory_Alumni_of_St_John's_College,_Oxford>	rdfs:label	"alumnus of St John's College, Oxford"@eng .
+#@ <id_5jv04g_1ia_1f5fk45>
+<wikicategory_Council_areas_of_Scotland>	rdfs:label	"Council area of Scotland"@eng .
 #@ <id_2exna0_1m6_18h7ig7>
 <wikicategory_First_Secretaries_of_State_of_the_United_Kingdom>	rdfs:subClassOf	<wordnet_secretary_110570019> .
-#@ <id_143c9vs_1ia_1xjxgfp>
-<wikicategory_Libraries_in_Paris>	rdfs:label	"library in Paris"@en .
+#@ <id_mbsbk5_1ia_clwmvs>
+<wikicategory_Social_democratic_parties>	rdfs:label	"Social democratic party"@eng .
+#@ <id_g93t0m_1ia_1v9ggmr>
+<wikicategory_Claimant_Kings_of_Jerusalem>	rdfs:label	"Claimant king of Jerusalem"@eng .
 #@ <id_2o3jfe_1m6_1cm1whp>
 <wikicategory_Divided_regions>	rdfs:subClassOf	<wordnet_region_108630039> .
 #@ <id_xj4hi_1m6_1cwc4rn>
 <wikicategory_Presidents_of_the_Italian_Chamber_of_Deputies>	rdfs:subClassOf	<wordnet_president_110467179> .
 #@ <id_16u62t9_1m6_czeqp5>
 <wikicategory_Member_states_of_the_United_Nations>	rdfs:subClassOf	<wordnet_country_108544813> .
+#@ <id_12biqx3_1ia_1hdk55e>
+<wikicategory_People_from_Milan>	rdfs:label	"person from Milan"@eng .
 #@ <id_76s9df_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_New_Zealand>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_1wzrlsf_1m6_hsj9sm>
 <wikicategory_The_People_of_Freedom_politicians>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_r3f9hf_1ia_1fdj46i>
-<wikicategory_French_people_of_Spanish_descent>	rdfs:label	"French person of Spanish descent"@en .
+#@ <id_1pwu0d1_1ia_1otf4yb>
+<wikicategory_Democracy_is_Freedom_–_The_Daisy_politicians>	rdfs:label	"Democracy is Freedom – The Daisy politician"@eng .
 #@ <id_gtlqig_1m6_1f38c95>
 <wikicategory_Apostolic_sees>	rdfs:subClassOf	<wordnet_see_108586825> .
+#@ <id_4vafr3_1ia_6skwnf>
+<wikicategory_People_associated_with_the_campaign_for_Scottish_devolution>	rdfs:label	"person associated with the campaign for Scottish devolution"@eng .
 #@ <id_1dkz74o_1m6_3xunia>
 <wikicategory_French_female_singers>	rdfs:subClassOf	<wordnet_singer_110599806> .
 #@ <id_95tk32_1m6_1y1zid8>
 <wikicategory_Political_parties_established_in_1945>	rdfs:subClassOf	<wordnet_party_108256968> .
 #@ <id_thqgo6_1m6_hsj9sm>
 <wikicategory_People_from_Tredegar>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_ns1ubb_1ia_1vna42y>
-<wikicategory_Protestant_monarchs>	rdfs:label	"Protestant monarch"@en .
 #@ <id_1r4wouv_1m6_1i9drdf>
 <wikicategory_Fellows_of_Fitzwilliam_College,_Cambridge>	rdfs:subClassOf	<wordnet_colleague_109935990> .
 #@ <id_b43ymn_1m6_hsj9sm>
 <wikicategory_Youth_rights_individuals>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1f1mscu_1ia_kl1noj>
-<wikicategory_People_from_London>	rdfs:label	"person from London"@en .
+#@ <id_tyzlya_1ia_14hzgpm>
+<wikicategory_United_Kingdom_Parliamentary_constituencies_represented_by_a_sitting_Prime_Minister>	rdfs:label	"United Kingdom Parliamentary constituency represented by a sitting Prime Minister"@eng .
+#@ <id_95u0b0_1ia_o3md25>
+<wikicategory_Political_parties_established_in_2009>	rdfs:label	"Political party established in 2009"@eng .
 #@ <id_1n6mf6m_1m6_hsj9sm>
 <wikicategory_People_from_Zamość_County>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1w61njb_1m6_1y1zid8>
 <wikicategory_International_Democrat_Union_member_parties>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_7ewc0q_1ia_1o4q124>
-<wikicategory_Heads_of_state_of_Belize>	rdfs:label	"head of state of Belize"@en .
 #@ <id_a1tiqd_1m6_1kbo50g>
 <wikicategory_Christian_Democratic_Union_(Germany)_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_1girb7a_1m6_hsj9sm>
 <wikicategory_People_from_Kirkcaldy>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_fogrx2_1ia_1y2e7pn>
-<wikicategory_Italian_mass_media_owners>	rdfs:label	"Italian mass media owner"@en .
 #@ <id_1frg589_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Trinidad_and_Tobago>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_gxz7ch_1m6_1x4861e>
 <wikicategory_Scottish_journalists>	rdfs:subClassOf	<wordnet_journalist_110224578> .
 #@ <id_1gz0hf6_1m6_1kbo50g>
 <wikicategory_National_Alliance_(Italy)_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
+#@ <id_1fs2cib_1ia_lbh7u0>
+<wikicategory_People_from_Naples>	rdfs:label	"person from Naples"@eng .
+#@ <id_1848281_1ia_1dn5rlf>
+<wikicategory_20th-century_men>	rdfs:label	"20th-century man"@eng .
 #@ <id_1orb0i8_1m6_hsj9sm>
 <wikicategory_People_from_Blomberg,_North_Rhine-Westphalia>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_2o3jfe_1ia_1n424zt>
-<wikicategory_Divided_regions>	rdfs:label	"Divided region"@en .
 #@ <id_1rd7oto_1m6_1ltacv0>
 <wikicategory_Parliaments_by_country>	rdfs:subClassOf	<wordnet_parliament_108319198> .
-#@ <id_17l09jn_1ia_16qi482>
-<wikicategory_Political_parties_disestablished_in_2002>	rdfs:label	"Political party disestablished in 2002"@en .
-#@ <id_uod0i2_1ia_11vdvmt>
-<wikicategory_Alumni_of_the_University_of_Hull>	rdfs:label	"alumnus of the University of Hull"@en .
-#@ <id_1bgham0_1ia_1gonpf2>
-<wikicategory_People_educated_at_Archbishop_Holgate's_School>	rdfs:label	"person educated at Archbishop Holgate's School"@en .
 #@ <id_wgduj1_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Kenya>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
+#@ <id_1x5jd8t_1ia_w5mbif>
+<wikicategory_Councillors_in_Camden>	rdfs:label	"councillor in Camden"@eng .
 #@ <id_1cier9x_1m6_ic10aj>
 <wikicategory_Lycée_Français_de_New_York_alumni>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
 #@ <id_v90gvy_1m6_1kbo50g>
 <wikicategory_Lega_Nord_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
+#@ <id_1girb7a_1ia_g74g8x>
+<wikicategory_People_from_Kirkcaldy>	rdfs:label	"person from Kirkcaldy"@eng .
+#@ <id_19olslq_1ia_1g7cwzg>
+<wikicategory_Academics_of_the_Complutense_University_of_Madrid>	rdfs:label	"academic of the Complutense University of Madrid"@eng .
 #@ <id_17k0muj_1m6_8g1u13>
 <wikicategory_Spanish_sopranos>	rdfs:subClassOf	<wordnet_soprano_110625546> .
-#@ <id_g6og84_1ia_1wwi59i>
-<wikicategory_Heads_of_state_of_Tuvalu>	rdfs:label	"head of state of Tuvalu"@en .
-#@ <id_r34uft_1ia_8vz990>
-<wikicategory_States_and_territories_established_in_1871>	rdfs:label	"state and territories established in 1871"@en .
+#@ <id_1p3m35u_1ia_1alizv1>
+<wikicategory_People_educated_at_The_City_School,_Sheffield>	rdfs:label	"person educated at The City School, Sheffield"@eng .
 #@ <id_1czp4uo_1m6_14dlqgs>
 <wikicategory_Universities_in_Castile_and_León>	rdfs:subClassOf	<wordnet_university_108286569> .
 #@ <id_1w0mou3_1m6_czeqp5>
 <wikicategory_German-speaking_countries>	rdfs:subClassOf	<wordnet_country_108544813> .
-#@ <id_1tko63i_1ia_hk4t0v>
-<wikicategory_Government_spokespersons_of_France>	rdfs:label	"Government spokesperson of France"@en .
-#@ <id_1vgy2r2_1ia_g8ctb3>
-<wikicategory_Leaders_of_political_parties_in_Spain>	rdfs:label	"leader of political parties in Spain"@en .
-#@ <id_1ommf1z_1ia_1ydljum>
-<wikicategory_Alumni_of_Sciences_Po>	rdfs:label	"alumnus of Sciences Po"@en .
+#@ <id_1n6mf6m_1ia_n4js16>
+<wikicategory_People_from_Zamość_County>	rdfs:label	"person from Zamość County"@eng .
+#@ <id_1wixp37_1ia_1xmfj3g>
+<wikicategory_Prime_Ministers_of_the_United_Kingdom>	rdfs:label	"Prime minister of the United Kingdom"@eng .
+#@ <id_1kint4t_1ia_jtpua3>
+<wikicategory_Political_parties_in_Spain>	rdfs:label	"Political party in Spain"@eng .
 #@ <id_lmeex2_1m6_bxqhzj>
 <wikicategory_Naturalized_citizens_of_France>	rdfs:subClassOf	<wordnet_citizen_109923673> .
+#@ <id_t00t1r_1ia_mi7ls0>
+<wikicategory_Leaders_of_the_House_of_Commons>	rdfs:label	"leader of the House of Commons"@eng .
 #@ <id_1nkhi5z_1m6_179850n>
 <wikicategory_French_Ministers_of_Finance>	rdfs:subClassOf	<wordnet_finance_minister_110089892> .
 #@ <id_ngcj9j_1m6_rz7e5s>
 <wikicategory_Stroke_survivors>	rdfs:subClassOf	<wordnet_survivor_110681194> .
-#@ <id_1fs2cib_1ia_lbh7u0>
-<wikicategory_People_from_Naples>	rdfs:label	"person from Naples"@en .
-#@ <id_19aed5d_1ia_oeo1wc>
-<wikicategory_People_from_Ilmenau>	rdfs:label	"person from Ilmenau"@en .
-#@ <id_11yu31c_1ia_1eisotr>
-<wikicategory_Wine_regions_of_Italy>	rdfs:label	"Wine region of Italy"@en .
 #@ <id_65qi7q_1m6_1p82crk>
 <wikicategory_Palaces_in_Paris>	rdfs:subClassOf	<wordnet_palace_103878066> .
-#@ <id_1wixp37_1ia_1xmfj3g>
-<wikicategory_Prime_Ministers_of_the_United_Kingdom>	rdfs:label	"Prime minister of the United Kingdom"@en .
+#@ <id_h2l3bj_1ia_1v1eup8>
+<wikicategory_Government_ministers_of_Spain>	rdfs:label	"Government minister of Spain"@eng .
+#@ <id_ydqkf3_1ia_1w63y22>
+<wikicategory_Colleges_of_the_University_of_Oxford>	rdfs:label	"college of the University of Oxford"@eng .
+#@ <id_a1tiqd_1ia_odc9u9>
+<wikicategory_Christian_Democratic_Union_(Germany)_politicians>	rdfs:label	"Christian Democratic Union (Germany) politician"@eng .
+#@ <id_17wf1uz_1ia_r27dp6>
+<wikicategory_Universities_in_Italy>	rdfs:label	"university in Italy"@eng .
+#@ <id_gtlqig_1ia_1y36evf>
+<wikicategory_Apostolic_sees>	rdfs:label	"Apostolic see"@eng .
+#@ <id_1l4nn6s_1ia_1fijx54>
+<wikicategory_Federal_electoral_districts_in_Mecklenburg-Vorpommern>	rdfs:label	"Federal electoral district in Mecklenburg-Vorpommern"@eng .
 #@ <id_a9q66y_1m6_sd82zj>
 <wikicategory_Former_republics>	rdfs:subClassOf	<wordnet_democracy_108361329> .
-#@ <id_i6e93q_1ia_oammx7>
-<wikicategory_Alliance_'90/The_Greens_politicians>	rdfs:label	"Alliance '90/The Greens politician"@en .
+#@ <id_1m6eo22_1ia_kaa5iv>
+<wikicategory_Scottish_solicitors>	rdfs:label	"Scottish solicitor"@eng .
 #@ <id_95tjzh_1m6_1y1zid8>
 <wikicategory_Political_parties_established_in_1900>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_1p3b8b_1ia_qhzmh4>
-<wikicategory_English_barristers>	rdfs:label	"English barrister"@en .
-#@ <id_13pvp2v_1ia_13lghqd>
-<wikicategory_Liberal_parties_in_Italy>	rdfs:label	"Liberal party in Italy"@en .
-#@ <id_1k5re77_1ia_flkrvp>
-<wikicategory_States_of_the_German_Empire>	rdfs:label	"state of the German Empire"@en .
-#@ <id_12o3kvw_1ia_1d57swh>
-<wikicategory_People_from_Valladolid>	rdfs:label	"person from Valladolid"@en .
+#@ <id_1akpn7u_1ia_3yzyg7>
+<wikicategory_Heads_of_state_of_the_Bahamas>	rdfs:label	"head of state of the Bahamas"@eng .
+#@ <id_1tj1sc6_1ia_167ke6g>
+<wikicategory_Educational_institutions_established_in_1979>	rdfs:label	"Educational institution established in 1979"@eng .
 #@ <id_1q8mbt2_1m6_1cwc4rn>
 <wikicategory_Presidents_of_Germany>	rdfs:subClassOf	<wordnet_president_110467179> .
+#@ <id_go9e4k_1ia_1u28jqe>
+<wikicategory_British_princesses>	rdfs:label	"British princess"@eng .
+#@ <id_16r13lu_1ia_3pr46v>
+<wikicategory_People_from_Santiago_de_Compostela>	rdfs:label	"person from Santiago de Compostela"@eng .
+#@ <id_1wu4u9d_1ia_1bkmqkh>
+<wikicategory_Deputy_Prime_Ministers_of_the_United_Kingdom>	rdfs:label	"Deputy Prime minister of the United Kingdom"@eng .
+#@ <id_8v7rjo_1ia_1bcpbyn>
+<wikicategory_Italian_economists>	rdfs:label	"Italian economist"@eng .
+#@ <id_1d9xpkf_1ia_4vpr47>
+<wikicategory_Knights_of_the_Order_of_Saint_Januarius>	rdfs:label	"knight of the Order of Saint Januarius"@eng .
+#@ <id_uod0i2_1ia_11vdvmt>
+<wikicategory_Alumni_of_the_University_of_Hull>	rdfs:label	"alumnus of the University of Hull"@eng .
 #@ <id_14kxum0_1m6_ic10aj>
 <wikicategory_Alumni_of_the_Inns_of_Court_School_of_Law>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_8kbvb_1ia_bhb59i>
-<wikicategory_Defunct_political_parties_in_Germany>	rdfs:label	"Defunct political party in Germany"@en .
-#@ <id_2vlxmo_1ia_1rh2dhi>
-<wikicategory_Councillors_in_Lambeth>	rdfs:label	"councillor in Lambeth"@en .
-#@ <id_gu9ul6_1ia_72aucn>
-<wikicategory_Educational_institutions_established_in_the_1550s>	rdfs:label	"Educational institution established in the 1550s"@en .
+#@ <id_bhcs0d_1ia_vidwye>
+<wikicategory_Spanish_monarchs>	rdfs:label	"Spanish monarch"@eng .
 #@ <id_1odhjk9_1m6_1f6qf6j>
 <wikicategory_British_humanists>	rdfs:subClassOf	<wordnet_humanist_110191192> .
-#@ <id_hkvjtt_1ia_pfbhv>
-<wikicategory_Federal_countries>	rdfs:label	"Federal country"@en .
+#@ <id_1tj1s7q_1ia_167ke20>
+<wikicategory_Educational_institutions_established_in_1924>	rdfs:label	"Educational institution established in 1924"@eng .
+#@ <id_ifhxua_1ia_1wsb975>
+<wikicategory_British_sailors>	rdfs:label	"British sailor"@eng .
 #@ <id_1unfsqh_1m6_176jwd0>
 <wikicategory_Capitals_in_Europe>	rdfs:subClassOf	<wordnet_capital_108518505> .
-#@ <id_a15a3c_1ia_1qqyz4q>
-<wikicategory_Heads_of_state_of_Guyana>	rdfs:label	"head of state of Guyana"@en .
-#@ <id_1tr9m5r_1ia_we8x4j>
-<wikicategory_Italian_politicians_convicted_of_crimes>	rdfs:label	"Italian politician convicted of crimes"@en .
+#@ <id_tp8boy_1ia_1yyw6bn>
+<wikicategory_Lieutenancy_areas_of_Scotland>	rdfs:label	"Lieutenancy area of Scotland"@eng .
+#@ <id_12o3kvw_1ia_1d57swh>
+<wikicategory_People_from_Valladolid>	rdfs:label	"person from Valladolid"@eng .
 #@ <id_jblfux_1ia_i0kdlm>
-<wikicategory_Italian_atheists>	rdfs:label	"Italian atheist"@en .
-#@ <id_81izjr_1ia_tf34t9>
-<wikicategory_Alumni_of_New_College,_Oxford>	rdfs:label	"alumnus of New College, Oxford"@en .
-#@ <id_g93t0m_1ia_1v9ggmr>
-<wikicategory_Claimant_Kings_of_Jerusalem>	rdfs:label	"Claimant king of Jerusalem"@en .
+<wikicategory_Italian_atheists>	rdfs:label	"Italian atheist"@eng .
+#@ <id_15a8ujw_1ia_1ij503a>
+<wikicategory_Italian_Christian_socialists>	rdfs:label	"Italian Christian socialist"@eng .
 #@ <id_1gja4fk_1m6_czeqp5>
 <wikicategory_States_of_the_North_German_Confederation>	rdfs:subClassOf	<wordnet_country_108544813> .
 #@ <id_1848281_1m6_1xc3fnm>
 <wikicategory_20th-century_men>	rdfs:subClassOf	<wordnet_man_110287213> .
 #@ <id_a942ok_1m6_1bp5v95>
 <wikicategory_Current_national_leaders>	rdfs:subClassOf	<wordnet_statesman_110650162> .
+#@ <id_185bzk8_1ia_f9kwno>
+<wikicategory_Commanders_of_the_Order_of_Leopold_(Belgium)>	rdfs:label	"commander of the Order of Leopold (Belgium)"@eng .
 #@ <id_10mtlp_1m6_1y1zid8>
 <wikicategory_Political_parties_in_East_Germany>	rdfs:subClassOf	<wordnet_party_108256968> .
+#@ <id_19lflq8_1ia_1efj70k>
+<wikicategory_Presidents_of_the_European_Commission>	rdfs:label	"president of the European Commission"@eng .
+#@ <id_589ck7_1ia_1t58m3c>
+<wikicategory_Populated_places_established_in_the_1st_millennium_BC>	rdfs:label	"Populated place established in the 1st millennium BC"@eng .
 #@ <id_1akpn7u_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_the_Bahamas>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_cue3b_1m6_ic10aj>
 <wikicategory_Alumni_of_the_University_of_Deusto>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
+#@ <id_wgduj1_1ia_4d9mdn>
+<wikicategory_Heads_of_state_of_Kenya>	rdfs:label	"head of state of Kenya"@eng .
 #@ <id_t47kwr_1m6_hsj9sm>
 <wikicategory_French_people_of_Corsican_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1hwku4u_1ia_1a10971>
-<wikicategory_Grand_Cordons_of_the_Order_of_Leopold_(Belgium)>	rdfs:label	"Grand cordon of the Order of Leopold (Belgium)"@en .
-#@ <id_x61tvf_1ia_39i0ti>
-<wikicategory_Auxiliary_Territorial_Service_officers>	rdfs:label	"Auxiliary Territorial Service officer"@en .
-#@ <id_3qziqt_1ia_1df0obs>
-<wikicategory_Organizations_established_in_1971>	rdfs:label	"organization established in 1971"@en .
-#@ <id_185bzk8_1ia_f9kwno>
-<wikicategory_Commanders_of_the_Order_of_Leopold_(Belgium)>	rdfs:label	"commander of the Order of Leopold (Belgium)"@en .
-#@ <id_7r9uo7_1ia_k4nd19>
-<wikicategory_Spanish_Socialist_Workers'_Party_politicians>	rdfs:label	"Spanish Socialist Workers' Party politician"@en .
+#@ <id_dk9oqz_1ia_1fwriku>
+<wikicategory_Female_heads_of_government>	rdfs:label	"Female head of government"@eng .
+#@ <id_16u62t9_1ia_1uvwwya>
+<wikicategory_Member_states_of_the_United_Nations>	rdfs:label	"Member state of the United Nations"@eng .
+#@ <id_t47kwr_1ia_1u2w2wi>
+<wikicategory_French_people_of_Corsican_descent>	rdfs:label	"French person of Corsican descent"@eng .
 #@ <id_11vvqbm_1m6_hsj9sm>
 <wikicategory_People_from_Brandenburg>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_tjpxxg_1ia_16wh6e7>
-<wikicategory_British_agnostics>	rdfs:label	"British agnostic"@en .
+#@ <id_j0cm4p_1ia_1967sww>
+<wikicategory_French_people_of_Jewish_descent>	rdfs:label	"French person of Jewish descent"@eng .
+#@ <id_12e4ekw_1ia_1hg5st7>
+<wikicategory_People_from_Rabat>	rdfs:label	"person from Rabat"@eng .
 #@ <id_6oowf0_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Mauritius>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_89h05a_1ia_ztf6gu>
-<wikicategory_Populated_places_established_in_the_9th_century>	rdfs:label	"Populated place established in the 9th century"@en .
-#@ <id_yl56oq_1ia_5jzrxj>
-<wikicategory_Reigning_monarchs>	rdfs:label	"Reigning monarch"@en .
+#@ <id_100mj38_1ia_10fj71d>
+<wikicategory_Alumni_of_the_École_Nationale_d'Administration>	rdfs:label	"alumnus of the École Nationale d'Administration"@eng .
+#@ <id_11b0oqa_1ia_mhdmuy>
+<wikicategory_Knights_of_the_Golden_Fleece>	rdfs:label	"knight of the Golden Fleece"@eng .
 #@ <id_dzn7g8_1m6_13h7dhi>
 <wikicategory_Italian_Ministers_of_the_Treasury>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_1bzbazs_1ia_19jmrvn>
-<wikicategory_Alumni_of_Bocconi_University>	rdfs:label	"alumnus of Bocconi University"@en .
 #@ <id_18l3df6_1m6_15cgb38>
 <wikicategory_Knights_of_Santiago>	rdfs:subClassOf	<wordnet_knight_110238375> .
-#@ <id_i01v5m_1ia_uuz9cp>
-<wikicategory_Cricket_historians_and_writers>	rdfs:label	"Cricket historian and writers"@en .
 #@ <id_1qe20nc_1m6_1y1zid8>
 <wikicategory_Right-wing_parties_in_France>	rdfs:subClassOf	<wordnet_party_108256968> .
 #@ <id_185bzk8_1m6_1m25l3q>
 <wikicategory_Commanders_of_the_Order_of_Leopold_(Belgium)>	rdfs:subClassOf	<wordnet_commanding_officer_109941964> .
-#@ <id_16yyuz_1ia_1wwinqf>
-<wikicategory_Italian_television_actors>	rdfs:label	"Italian television actor"@en .
-#@ <id_1onkqum_1ia_1dr2dhv>
-<wikicategory_National_legislatures>	rdfs:label	"National legislature"@en .
+#@ <id_luzaiz_1ia_fh03ts>
+<wikicategory_People_from_Rome>	rdfs:label	"person from Rome"@eng .
+#@ <id_i8ixxk_1ia_bfnzx9>
+<wikicategory_21st-century_politicians>	rdfs:label	"21st-century politician"@eng .
 #@ <id_1tsjdqw_1m6_1a4iuye>
 <wikicategory_Academics_of_Glasgow_Caledonian_University>	rdfs:subClassOf	<wordnet_academician_109759069> .
-#@ <id_1hmmu5x_1ia_15vm0qy>
-<wikicategory_English_people_of_Jewish_descent>	rdfs:label	"English person of Jewish descent"@en .
-#@ <id_1l4nn6s_1ia_1fijx54>
-<wikicategory_Federal_electoral_districts_in_Mecklenburg-Vorpommern>	rdfs:label	"Federal electoral district in Mecklenburg-Vorpommern"@en .
-#@ <id_13xdotb_1ia_1mhmhq3>
-<wikicategory_Alumni_of_the_University_of_Manchester_Institute_of_Science_and_Technology>	rdfs:label	"alumnus of the University of Manchester Institute of Science and Technology"@en .
-#@ <id_1hxttov_1ia_1qhvy6a>
-<wikicategory_Academics_of_the_University_of_Essex>	rdfs:label	"academic of the University of Essex"@en .
-#@ <id_1edc9j2_1ia_1yn3ccm>
-<wikicategory_Forza_Italia_politicians>	rdfs:label	"Forza Italia politician"@en .
+#@ <id_18ex8ak_1ia_1224nb>
+<wikicategory_People_from_Neuilly-sur-Seine>	rdfs:label	"person from Neuilly-sur-Seine"@eng .
+#@ <id_1ommf1z_1ia_1ydljum>
+<wikicategory_Alumni_of_Sciences_Po>	rdfs:label	"alumnus of Sciences Po"@eng .
+#@ <id_1600th4_1ia_kbvmz4>
+<wikicategory_Italian_Ministers_of_Foreign_Affairs>	rdfs:label	"Italian minister of Foreign Affairs"@eng .
+#@ <id_1yxs923_1ia_16koqn8>
+<wikicategory_Collars_of_the_Order_of_the_White_Lion>	rdfs:label	"collar of the Order of the White Lion"@eng .
 #@ <id_1a7uh29_1m6_hsj9sm>
 <wikicategory_People_from_Bilbao>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1a27dof_1ia_1lspom7>
-<wikicategory_Monarchs_of_Ceylon>	rdfs:label	"monarch of Ceylon"@en .
-#@ <id_158097z_1ia_glyalz>
-<wikicategory_French_Foreign_Ministers>	rdfs:label	"French Foreign minister"@en .
-#@ <id_156ey2p_1ia_kgb0gt>
-<wikicategory_Communes_of_Hauts-de-Seine>	rdfs:label	"commune of Hauts-de-Seine"@en .
+#@ <id_9edalt_1ia_12qpfxt>
+<wikicategory_21st-century_French_politicians>	rdfs:label	"21st-century French politician"@eng .
+#@ <id_1266agn_1ia_6co314>
+<wikicategory_Monarchs_of_South_Africa>	rdfs:label	"monarch of South Africa"@eng .
+#@ <id_d4hm1h_1ia_1tiaec2>
+<wikicategory_Trading_posts_of_the_Hanseatic_League>	rdfs:label	"Trading post of the Hanseatic League"@eng .
 #@ <id_yxmali_1m6_1inhq0u>
 <wikicategory_Andorran_lawyers>	rdfs:subClassOf	<wordnet_lawyer_110249950> .
-#@ <id_1fzv2vl_1ia_lj9y7a>
-<wikicategory_People_from_Novara>	rdfs:label	"person from Novara"@en .
-#@ <id_ulgvxu_1ia_tqrkdj>
-<wikicategory_United_Kingdom_Parliamentary_constituencies_established_in_1983>	rdfs:label	"United Kingdom Parliamentary constituency established in 1983"@en .
-#@ <id_1wxwoys_1ia_1dhmw1l>
-<wikicategory_People_from_Renfrewshire>	rdfs:label	"person from Renfrewshire"@en .
+#@ <id_15xagoj_1ia_wakcxx>
+<wikicategory_Municipalities_in_the_Province_of_Valladolid>	rdfs:label	"municipality in the Province of Valladolid"@eng .
+#@ <id_qiy4wn_1ia_1lhgk8d>
+<wikicategory_People_from_Crosby,_Merseyside>	rdfs:label	"person from Crosby, Merseyside"@eng .
 #@ <id_19quaek_1m6_1kbo50g>
 <wikicategory_Italian_Communist_Party_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_vg3va6_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Antigua_and_Barbuda>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
+#@ <id_17k0muj_1ia_1cl1ny0>
+<wikicategory_Spanish_sopranos>	rdfs:label	"Spanish soprano"@eng .
 #@ <id_1gqnnv7_1m6_1x4861e>
 <wikicategory_British_journalists>	rdfs:subClassOf	<wordnet_journalist_110224578> .
-#@ <id_dk9oqz_1ia_1fwriku>
-<wikicategory_Female_heads_of_government>	rdfs:label	"Female head of government"@en .
-#@ <id_1hqc2nn_1ia_1sze6ck>
-<wikicategory_Visitor_attractions_in_Leipzig>	rdfs:label	"Visitor attraction in Leipzig"@en .
 #@ <id_1ngx4zm_1m6_hsj9sm>
 <wikicategory_People_associated_with_Liverpool_John_Moores_University>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_pjo397_1m6_1cm1whp>
 <wikicategory_NUTS_1_statistical_regions_of_the_European_Union>	rdfs:subClassOf	<wordnet_region_108630039> .
-#@ <id_uvozx1_1ia_3jx2wg>
-<wikicategory_Canadian_philanthropists>	rdfs:label	"Canadian philanthropist"@en .
+#@ <id_10t17ti_1ia_mzwe9h>
+<wikicategory_Spanish_Ministers_of_Economy_and_Finance>	rdfs:label	"Spanish minister of Economy and Finance"@eng .
 #@ <id_1jupm55_1m6_15cgb38>
 <wikicategory_Knights_of_the_Order_of_Vittorio_Veneto>	rdfs:subClassOf	<wordnet_knight_110238375> .
-#@ <id_1shgwtv_1ia_5ddovk>
-<wikicategory_Welsh_socialists>	rdfs:label	"Welsh socialist"@en .
-#@ <id_jydyj7_1ia_1j1tlsw>
-<wikicategory_People_associated_with_Cardiff_University>	rdfs:label	"person associated with Cardiff University"@en .
+#@ <id_1nw1okc_1ia_5qnh3b>
+<wikicategory_Valencian_politicians>	rdfs:label	"Valencian politician"@eng .
+#@ <id_1sbzwfc_1ia_kjn5jv>
+<wikicategory_Academics_of_the_University_of_Westminster>	rdfs:label	"academic of the University of Westminster"@eng .
+#@ <id_gob89n_1ia_t0tx9l>
+<wikicategory_Italian_European_Commissioners>	rdfs:label	"Italian European commissioner"@eng .
+#@ <id_4ri7mt_1ia_9757ph>
+<wikicategory_Grand_Collars_of_the_Order_of_Liberty‎>	rdfs:label	"Grand collar of the Order of Liberty‎"@eng .
+#@ <id_r34v3a_1ia_8vz9wh>
+<wikicategory_States_and_territories_established_in_1939>	rdfs:label	"state and territories established in 1939"@eng .
 #@ <id_r154bn_1m6_1kbo50g>
 <wikicategory_Labour_Party_(UK)_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_x61tvf_1m6_7shbzz>
 <wikicategory_Auxiliary_Territorial_Service_officers>	rdfs:subClassOf	<wordnet_military_officer_110317007> .
-#@ <id_n87zzo_1ia_mg0bn2>
-<wikicategory_Italian_Life_Senators>	rdfs:label	"Italian Life senator"@en .
-#@ <id_kbr2pe_1ia_1qc44d8>
-<wikicategory_Social_Affairs_ministers_of_Germany>	rdfs:label	"Social Affairs minister of Germany"@en .
-#@ <id_17kztg2_1ia_16qho4h>
-<wikicategory_Political_parties_disestablished_in_1990>	rdfs:label	"Political party disestablished in 1990"@en .
-#@ <id_opd6q4_1ia_1ev8dib>
-<wikicategory_German_people_of_Polish_descent>	rdfs:label	"German person of Polish descent"@en .
+#@ <id_5n0u98_1ia_1irnmnr>
+<wikicategory_People_from_the_Province_of_Reggio_Emilia>	rdfs:label	"person from the Province of Reggio Emilia"@eng .
 #@ <id_9edalt_1m6_1kbo50g>
 <wikicategory_21st-century_French_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_16r13lu_1m6_hsj9sm>
 <wikicategory_People_from_Santiago_de_Compostela>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1nkhi5z_1ia_1ay8tpi>
-<wikicategory_French_Ministers_of_Finance>	rdfs:label	"French minister of Finance"@en .
-#@ <id_24snyu_1ia_1nbc1as>
-<wikicategory_States_of_the_German_Confederation>	rdfs:label	"state of the German Confederation"@en .
 #@ <id_1amfkfq_1m6_hsj9sm>
 <wikicategory_People_from_Loughton>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_gob89n_1ia_t0tx9l>
-<wikicategory_Italian_European_Commissioners>	rdfs:label	"Italian European commissioner"@en .
+#@ <id_blpua9_1ia_1787dl>
+<wikicategory_Squares_in_Westminster>	rdfs:label	"square in Westminster"@eng .
 #@ <id_1yrqs9s_1m6_hsj9sm>
 <wikicategory_People_of_Catalan_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_1lovxlp_1ia_itkw58>
+<wikicategory_Law_schools_in_England>	rdfs:label	"Law school in England"@eng .
+#@ <id_hkvjtt_1ia_pfbhv>
+<wikicategory_Federal_countries>	rdfs:label	"Federal country"@eng .
+#@ <id_osovrv_1ia_8zwoav>
+<wikicategory_Mayors_of_Troyes>	rdfs:label	"mayor of Troyes"@eng .
+#@ <id_raac6s_1ia_unqzpq>
+<wikicategory_Roman_Catholic_monarchs>	rdfs:label	"Roman Catholic monarch"@eng .
+#@ <id_xhsmlc_1ia_afcrmi>
+<wikicategory_Alumni_of_the_London_School_of_Economics>	rdfs:label	"alumnus of the London School of Economics"@eng .
+#@ <id_5qhvi5_1ia_1toscmf>
+<wikicategory_Grand_Masters_of_the_Order_of_the_Golden_Fleece>	rdfs:label	"Grand master of the Order of the Golden Fleece"@eng .
 #@ <id_1qll9rm_1m6_3xunia>
 <wikicategory_French-language_singers>	rdfs:subClassOf	<wordnet_singer_110599806> .
 #@ <id_1xew5bl_1m6_1x4861e>
 <wikicategory_The_Guardian_journalists>	rdfs:subClassOf	<wordnet_journalist_110224578> .
-#@ <id_1mq441s_1ia_1sbj82e>
-<wikicategory_Lycée_Carnot_alumni>	rdfs:label	"Lycée Carnot alumnus"@en .
 #@ <id_1qvc8i4_1m6_1vthrwe>
 <wikicategory_Women_in_World_War_II>	rdfs:subClassOf	<wordnet_woman_110787470> .
-#@ <id_95tk5o_1ia_o3lwwt>
-<wikicategory_Political_parties_established_in_1976>	rdfs:label	"Political party established in 1976"@en .
+#@ <id_1elsiej_1ia_1xswblp>
+<wikicategory_Port_cities_and_towns_in_Scotland>	rdfs:label	"Port city and towns in Scotland"@eng .
 #@ <id_1ommf1z_1m6_ic10aj>
 <wikicategory_Alumni_of_Sciences_Po>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_p56r97_1ia_po620p>
-<wikicategory_Heads_of_state_of_Grenada>	rdfs:label	"head of state of Grenada"@en .
+#@ <id_omydrc_1ia_vils90>
+<wikicategory_Presidents_of_France>	rdfs:label	"president of France"@eng .
+#@ <id_1nv2r8n_1ia_6ra05r>
+<wikicategory_Knights_of_Malta>	rdfs:label	"knight of Malta"@eng .
 #@ <id_brzz0x_1m6_nq10o4>
 <wikicategory_National_churches>	rdfs:subClassOf	<wordnet_church_103028079> .
 #@ <id_nl43as_1m6_1evocrh>
 <wikicategory_Adoptees>	rdfs:subClassOf	<wordnet_adoptee_109772330> .
-#@ <id_1aqhhjq_1ia_aeumld>
-<wikicategory_People_from_Prestatyn>	rdfs:label	"person from Prestatyn"@en .
 #@ <id_1kint4t_1m6_1y1zid8>
 <wikicategory_Political_parties_in_Spain>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_1gja4fk_1ia_i0gz73>
-<wikicategory_States_of_the_North_German_Confederation>	rdfs:label	"state of the North German Confederation"@en .
 #@ <id_2vlxmo_1m6_165fvqy>
 <wikicategory_Councillors_in_Lambeth>	rdfs:subClassOf	<wordnet_council_member_109944763> .
-#@ <id_16r13lu_1ia_3pr46v>
-<wikicategory_People_from_Santiago_de_Compostela>	rdfs:label	"person from Santiago de Compostela"@en .
-#@ <id_1lovxlp_1ia_itkw58>
-<wikicategory_Law_schools_in_England>	rdfs:label	"Law school in England"@en .
-#@ <id_1xew5bl_1ia_1a4nvlu>
-<wikicategory_The_Guardian_journalists>	rdfs:label	"Guardian journalist"@en .
+#@ <id_k6b4t4_1ia_49s2bt>
+<wikicategory_Leaders_of_political_parties_in_Germany>	rdfs:label	"leader of political parties in Germany"@eng .
+#@ <id_lvbz37_1ia_hsp7zu>
+<wikicategory_Prime_Ministers_of_Spain>	rdfs:label	"Prime minister of Spain"@eng .
 #@ <id_1ookixp_1m6_15cgb38>
 <wikicategory_Knights_of_the_Order_of_the_Most_Holy_Annunciation>	rdfs:subClassOf	<wordnet_knight_110238375> .
-#@ <id_t47kwr_1ia_1u2w2wi>
-<wikicategory_French_people_of_Corsican_descent>	rdfs:label	"French person of Corsican descent"@en .
+#@ <id_1p4k65y_1ia_ea894x>
+<wikicategory_Children_of_national_leaders>	rdfs:label	"child of national leaders"@eng .
 #@ <id_1ww53ds_1m6_gpo87b>
 <wikicategory_Parliamentary_constituencies_in_County_Durham>	rdfs:subClassOf	<wordnet_constituency_108238156> .
+#@ <id_10ijhq9_1ia_3vrria>
+<wikicategory_G20_nations>	rdfs:label	"G20 nation"@eng .
+#@ <id_19quaek_1ia_5wc6x>
+<wikicategory_Italian_Communist_Party_politicians>	rdfs:label	"Italian Communist Party politician"@eng .
 #@ <id_aeylw2_1m6_hsj9sm>
 <wikicategory_People_from_Trasmiera>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_tql0g3_1ia_kb5p3w>
-<wikicategory_20th-century_Italian_people>	rdfs:label	"20th-century Italian person"@en .
-#@ <id_14rp0oq_1ia_rmnmx>
-<wikicategory_Italian_bankers>	rdfs:label	"Italian banker"@en .
+#@ <id_65qi7q_1ia_1yhrdfs>
+<wikicategory_Palaces_in_Paris>	rdfs:label	"palace in Paris"@eng .
 #@ <id_5es2ta_1m6_1kbo50g>
 <wikicategory_Politicians_from_Kingston_upon_Hull>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_1i8jl1c_1ia_qxe9nd>
-<wikicategory_Columbia_Law_School_alumni>	rdfs:label	"Columbia Law School alumnus"@en .
-#@ <id_1uqrk31_1ia_1f6h44a>
-<wikicategory_Action_Party_(Italy)_politicians>	rdfs:label	"Action Party (Italy) politician"@en .
-#@ <id_1wyt8jh_1ia_nhif81>
-<wikicategory_Former_monarchies_of_Europe>	rdfs:label	"Former monarchy of Europe"@en .
 #@ <id_1bzbazs_1m6_ic10aj>
 <wikicategory_Alumni_of_Bocconi_University>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_1etg1m4_1ia_1o0wrgn>
-<wikicategory_Political_scandals_in_the_United_Kingdom>	rdfs:label	"Political scandal in the United Kingdom"@en .
-#@ <id_s3sjfq_1ia_1qt9qgh>
-<wikicategory_People_from_Edinburgh>	rdfs:label	"person from Edinburgh"@en .
-#@ <id_17wf1uz_1ia_r27dp6>
-<wikicategory_Universities_in_Italy>	rdfs:label	"university in Italy"@en .
 #@ <id_19e5arz_1m6_hsj9sm>
 <wikicategory_French_people_of_Italian_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_ewp06t_1ia_1n14v2k>
-<wikicategory_Collars_of_the_Order_of_the_Aztec_Eagle>	rdfs:label	"collar of the Order of the Aztec Eagle"@en .
-#@ <id_1kd8f87_1ia_joagdh>
-<wikicategory_Political_parties_in_Italy>	rdfs:label	"Political party in Italy"@en .
-#@ <id_12e4ekw_1ia_1hg5st7>
-<wikicategory_People_from_Rabat>	rdfs:label	"person from Rabat"@en .
+#@ <id_ucc52m_1ia_uasedq>
+<wikicategory_Grand_Collars_of_the_Order_of_Saint_James_of_the_Sword>	rdfs:label	"Grand collar of the Order of Saint James of the Sword"@eng .
+#@ <id_1wamvy5_1ia_br5b12>
+<wikicategory_Knights_of_the_Elephant>	rdfs:label	"knight of the Elephant"@eng .
 #@ <id_8v7rjo_1m6_1x9tonu>
 <wikicategory_Italian_economists>	rdfs:subClassOf	<wordnet_economist_110043643> .
-#@ <id_11twadq_1ia_1n4rw2d>
-<wikicategory_Economics_organizations>	rdfs:label	"Economics organization"@en .
+#@ <id_1rmjah_1ia_1p9wy89>
+<wikicategory_Governments_of_Italy>	rdfs:label	"government of Italy"@eng .
+#@ <id_ntx2hg_1ia_1jwz0rx>
+<wikicategory_21st-century_scholars>	rdfs:label	"21st-century scholar"@eng .
 #@ <id_1b2kp4j_1m6_1y1zid8>
 <wikicategory_Liberal-conservative_parties>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_13kwjdj_1ia_ef29tl>
-<wikicategory_States_of_Germany>	rdfs:label	"state of Germany"@en .
+#@ <id_khabq2_1ia_1i08o8c>
+<wikicategory_Labour_Party_(UK)_life_peers>	rdfs:label	"Labour Party (UK) life peer"@eng .
+#@ <id_12mjo8l_1ia_x0v0y6>
+<wikicategory_Knights_of_the_Garter>	rdfs:label	"knight of the Garter"@eng .
 #@ <id_95u0at_1m6_1y1zid8>
 <wikicategory_Political_parties_established_in_2002>	rdfs:subClassOf	<wordnet_party_108256968> .
+#@ <id_1b1vdsb_1ia_4kphuh>
+<wikicategory_French_politicians_convicted_of_crimes>	rdfs:label	"French politician convicted of crimes"@eng .
+#@ <id_1vmfvko_1ia_aumhwp>
+<wikicategory_French_economists>	rdfs:label	"French economist"@eng .
+#@ <id_gx06zz_1ia_ipb098>
+<wikicategory_Government_ministers_of_Andorra>	rdfs:label	"Government minister of Andorra"@eng .
 #@ <id_143c9vs_1m6_1pcnwuu>
 <wikicategory_Libraries_in_Paris>	rdfs:subClassOf	<wordnet_library_103660909> .
 #@ <id_1jii959_1m6_1inhq0u>
 <wikicategory_Female_lawyers>	rdfs:subClassOf	<wordnet_lawyer_110249950> .
-#@ <id_a9q66y_1ia_wbij9n>
-<wikicategory_Former_republics>	rdfs:label	"Former republic"@en .
-#@ <id_b43ymn_1ia_1v30mdx>
-<wikicategory_Youth_rights_individuals>	rdfs:label	"Youth rights individual"@en .
-#@ <id_p08z4m_1ia_1cmal9c>
-<wikicategory_People_of_the_Year_Awards_winners>	rdfs:label	"person of the Year Awards winners"@en .
 #@ <id_123zwlm_1m6_1kqv7tc>
 <wikicategory_Populated_places_in_the_Province_of_Valladolid>	rdfs:subClassOf	<wordnet_site_108651247> .
-#@ <id_17qoll4_1ia_p04oxl>
-<wikicategory_French_Ministers_of_Budget>	rdfs:label	"French minister of Budget"@en .
-#@ <id_ezhr4k_1ia_1t4vhun>
-<wikicategory_People_from_Bologna>	rdfs:label	"person from Bologna"@en .
-#@ <id_df8wc6_1ia_jjwtnh>
-<wikicategory_Dames_of_the_Order_of_the_Royal_House_of_Chakri>	rdfs:label	"dame of the Order of the Royal House of Chakri"@en .
-#@ <id_80c9op_1ia_rulzlb>
-<wikicategory_Ministers_for_children,_young_people_and_families>	rdfs:label	"minister for children, young people and families"@en .
-#@ <id_1600th4_1ia_kbvmz4>
-<wikicategory_Italian_Ministers_of_Foreign_Affairs>	rdfs:label	"Italian minister of Foreign Affairs"@en .
-#@ <id_95tk6m_1ia_o3lwxr>
-<wikicategory_Political_parties_established_in_1989>	rdfs:label	"Political party established in 1989"@en .
+#@ <id_qkbh1v_1ia_164kg2v>
+<wikicategory_People_educated_at_Kirkcaldy_High_School>	rdfs:label	"person educated at Kirkcaldy High School"@eng .
 #@ <id_1kd8f87_1m6_1y1zid8>
 <wikicategory_Political_parties_in_Italy>	rdfs:subClassOf	<wordnet_party_108256968> .
 #@ <id_1fb1fkl_1m6_hsj9sm>
@@ -712,274 +690,300 @@
 <wikicategory_Scottish_scholars_and_academics>	rdfs:subClassOf	<wordnet_scholar_110557854> .
 #@ <id_lvbz37_1m6_13h7dhi>
 <wikicategory_Prime_Ministers_of_Spain>	rdfs:subClassOf	<wordnet_minister_110320863> .
+#@ <id_1hxttov_1ia_1qhvy6a>
+<wikicategory_Academics_of_the_University_of_Essex>	rdfs:label	"academic of the University of Essex"@eng .
+#@ <id_p08z4m_1ia_1cmal9c>
+<wikicategory_People_of_the_Year_Awards_winners>	rdfs:label	"person of the Year Awards winners"@eng .
 #@ <id_1a16zn1_1m6_czeqp5>
 <wikicategory_Member_states_of_NATO>	rdfs:subClassOf	<wordnet_country_108544813> .
 #@ <id_1a27dof_1m6_1rnonu9>
 <wikicategory_Monarchs_of_Ceylon>	rdfs:subClassOf	<wordnet_sovereign_110628644> .
-#@ <id_1l0w4z2_1ia_1k8f3hy>
-<wikicategory_Officers_of_the_National_Order_of_Quebec>	rdfs:label	"officer of the National Order of Quebec"@en .
-#@ <id_fo4isn_1ia_1edlpte>
-<wikicategory_People_from_Osnabrück>	rdfs:label	"person from Osnabrück"@en .
 #@ <id_19wddft_1m6_q4dun5>
 <wikicategory_Italian_film_actors>	rdfs:subClassOf	<wordnet_actor_109765278> .
-#@ <id_1csjgg3_1ia_1qo0xjl>
-<wikicategory_People_educated_at_Lewis_School,_Pengam>	rdfs:label	"person educated at Lewis School, Pengam"@en .
 #@ <id_106cutj_1m6_1inhq0u>
 <wikicategory_German_lawyers>	rdfs:subClassOf	<wordnet_lawyer_110249950> .
 #@ <id_odhu2w_1m6_1rnonu9>
 <wikicategory_Monarchs_of_the_United_Kingdom>	rdfs:subClassOf	<wordnet_sovereign_110628644> .
-#@ <id_1g7n65i_1ia_98c5ev>
-<wikicategory_Official_residences_in_France>	rdfs:label	"Official residence in France"@en .
-#@ <id_lup7bk_1ia_fgq0md>
-<wikicategory_People_from_Bury>	rdfs:label	"person from Bury"@en .
+#@ <id_gfnt0r_1ia_1x5hi25>
+<wikicategory_Heads_of_state_of_Uganda>	rdfs:label	"head of state of Uganda"@eng .
+#@ <id_1onkqum_1ia_1dr2dhv>
+<wikicategory_National_legislatures>	rdfs:label	"National legislature"@eng .
 #@ <id_h2l3bj_1m6_13h7dhi>
 <wikicategory_Government_ministers_of_Spain>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_r34v42_1ia_8vz9x9>
-<wikicategory_States_and_territories_established_in_1946>	rdfs:label	"state and territories established in 1946"@en .
 #@ <id_95u0b0_1m6_1y1zid8>
 <wikicategory_Political_parties_established_in_2009>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_1266agn_1ia_6co314>
-<wikicategory_Monarchs_of_South_Africa>	rdfs:label	"monarch of South Africa"@en .
 #@ <id_1ovc1fu_1m6_hsj9sm>
 <wikicategory_People_of_Sicilian_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_ifhxua_1ia_1wsb975>
-<wikicategory_British_sailors>	rdfs:label	"British sailor"@en .
-#@ <id_1yxs923_1ia_16koqn8>
-<wikicategory_Collars_of_the_Order_of_the_White_Lion>	rdfs:label	"collar of the Order of the White Lion"@en .
-#@ <id_ydqkf3_1ia_1w63y22>
-<wikicategory_Colleges_of_the_University_of_Oxford>	rdfs:label	"college of the University of Oxford"@en .
-#@ <id_tp8boy_1ia_1yyw6bn>
-<wikicategory_Lieutenancy_areas_of_Scotland>	rdfs:label	"Lieutenancy area of Scotland"@en .
+#@ <id_18l3df6_1ia_1dgjtu2>
+<wikicategory_Knights_of_Santiago>	rdfs:label	"knight of Santiago"@eng .
+#@ <id_1a7bj6z_1ia_1g1bswq>
+<wikicategory_Galician_politicians>	rdfs:label	"Galician politician"@eng .
 #@ <id_11yu31c_1m6_1cm1whp>
 <wikicategory_Wine_regions_of_Italy>	rdfs:subClassOf	<wordnet_region_108630039> .
-#@ <id_yy7arm_1ia_1uf36za>
-<wikicategory_Yale_University_alumni>	rdfs:label	"Yale University alumnus"@en .
-#@ <id_1qzom2c_1ia_fge3vt>
-<wikicategory_People_from_Andorra_la_Vella>	rdfs:label	"person from Andorra la Vella"@en .
-#@ <id_1ookixp_1ia_x7rwx1>
-<wikicategory_Knights_of_the_Order_of_the_Most_Holy_Annunciation>	rdfs:label	"knight of the Order of the Most Holy Annunciation"@en .
+#@ <id_odhu2w_1ia_hisqrs>
+<wikicategory_Monarchs_of_the_United_Kingdom>	rdfs:label	"monarch of the United Kingdom"@eng .
+#@ <id_ewp06t_1ia_1n14v2k>
+<wikicategory_Collars_of_the_Order_of_the_Aztec_Eagle>	rdfs:label	"collar of the Order of the Aztec Eagle"@eng .
 #@ <id_81izjr_1m6_ic10aj>
 <wikicategory_Alumni_of_New_College,_Oxford>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_a1tiqd_1ia_odc9u9>
-<wikicategory_Christian_Democratic_Union_(Germany)_politicians>	rdfs:label	"Christian Democratic Union (Germany) politician"@en .
-#@ <id_1nw1okc_1ia_5qnh3b>
-<wikicategory_Valencian_politicians>	rdfs:label	"Valencian politician"@en .
+#@ <id_fmybu6_1ia_13qth4x>
+<wikicategory_Health_ministers_of_Germany>	rdfs:label	"Health minister of Germany"@eng .
+#@ <id_10ms6gi_1ia_iftn8x>
+<wikicategory_Welsh_politicians>	rdfs:label	"Welsh politician"@eng .
+#@ <id_1js3ahb_1ia_taxiie>
+<wikicategory_French_people_of_Greek_descent>	rdfs:label	"French person of Greek descent"@eng .
+#@ <id_1tr9m5r_1ia_we8x4j>
+<wikicategory_Italian_politicians_convicted_of_crimes>	rdfs:label	"Italian politician convicted of crimes"@eng .
 #@ <id_163xx0d_1m6_1y1zid8>
 <wikicategory_Catholic_political_parties>	rdfs:subClassOf	<wordnet_party_108256968> .
 #@ <id_p7h9ua_1m6_18h7ig7>
 <wikicategory_Secretaries_of_State_for_the_Home_Department>	rdfs:subClassOf	<wordnet_secretary_110570019> .
 #@ <id_1tj1sc6_1m6_w2cgyi>
 <wikicategory_Educational_institutions_established_in_1979>	rdfs:subClassOf	<wordnet_educational_institution_108276342> .
-#@ <id_pbys8q_1ia_1yynij5>
-<wikicategory_German_people_of_Vietnamese_descent>	rdfs:label	"German person of Vietnamese descent"@en .
 #@ <id_zuvxfy_1m6_gpo87b>
 <wikicategory_United_Kingdom_Parliamentary_constituencies_disestablished_in_1974>	rdfs:subClassOf	<wordnet_constituency_108238156> .
-#@ <id_hjs82p_1ia_u8z07z>
-<wikicategory_German_state_capitals>	rdfs:label	"German state capital"@en .
-#@ <id_1ww53ds_1ia_1l9vci7>
-<wikicategory_Parliamentary_constituencies_in_County_Durham>	rdfs:label	"Parliamentary constituency in County Durham"@en .
+#@ <id_1hmmu5x_1ia_15vm0qy>
+<wikicategory_English_people_of_Jewish_descent>	rdfs:label	"English person of Jewish descent"@eng .
+#@ <id_1qll9rm_1ia_1lops8h>
+<wikicategory_French-language_singers>	rdfs:label	"French-language singer"@eng .
+#@ <id_r34v42_1ia_8vz9x9>
+<wikicategory_States_and_territories_established_in_1946>	rdfs:label	"state and territories established in 1946"@eng .
 #@ <id_1fvtmno_1m6_hsj9sm>
 <wikicategory_Living_people>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1tj1sb6_1ia_167ke5g>
-<wikicategory_Educational_institutions_established_in_1964>	rdfs:label	"Educational institution established in 1964"@en .
-#@ <id_vg3va6_1ia_1vwu2vu>
-<wikicategory_Heads_of_state_of_Antigua_and_Barbuda>	rdfs:label	"head of state of Antigua and Barbuda"@en .
-#@ <id_1w61njb_1ia_1dqamqi>
-<wikicategory_International_Democrat_Union_member_parties>	rdfs:label	"International Democrat Union member party"@en .
-#@ <id_19wddft_1ia_a3t4t5>
-<wikicategory_Italian_film_actors>	rdfs:label	"Italian film actor"@en .
-#@ <id_cue3b_1ia_ov04aa>
-<wikicategory_Alumni_of_the_University_of_Deusto>	rdfs:label	"alumnus of the University of Deusto"@en .
+#@ <id_q3ay46_1ia_1oss54x>
+<wikicategory_People_from_Wałbrzych>	rdfs:label	"person from Wałbrzych"@eng .
 #@ <id_13xdotb_1m6_ic10aj>
 <wikicategory_Alumni_of_the_University_of_Manchester_Institute_of_Science_and_Technology>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
 #@ <id_1beb4o1_1m6_hsj9sm>
 <wikicategory_People_from_the_Province_of_Lower_Silesia>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_xu7m1k_1m6_1120ssr>
 <wikicategory_Foreign_Ministers_of_Germany>	rdfs:subClassOf	<wordnet_foreign_minister_110103794> .
+#@ <id_1tj1rjk_1ia_167kddu>
+<wikicategory_Educational_institutions_established_in_1852>	rdfs:label	"Educational institution established in 1852"@eng .
+#@ <id_163xx0d_1ia_1kibc3w>
+<wikicategory_Catholic_political_parties>	rdfs:label	"Catholic political party"@eng .
 #@ <id_1toa0yz_1m6_1tw0nx2>
 <wikicategory_French_Army_officers>	rdfs:subClassOf	<wordnet_army_officer_109809749> .
-#@ <id_163xx0d_1ia_1kibc3w>
-<wikicategory_Catholic_political_parties>	rdfs:label	"Catholic political party"@en .
+#@ <id_1ugfs52_1ia_14q1y6j>
+<wikicategory_German_refugees>	rdfs:label	"German refugee"@eng .
+#@ <id_1orb0i8_1ia_1rxgag7>
+<wikicategory_People_from_Blomberg,_North_Rhine-Westphalia>	rdfs:label	"person from Blomberg, North Rhine-Westphalia"@eng .
 #@ <id_lligu9_1m6_1kbo50g>
 <wikicategory_Politicians_of_Vietnamese_descent>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_hmbjgu_1m6_hsj9sm>
 <wikicategory_People_from_Sheffield>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1d9xpkf_1ia_4vpr47>
-<wikicategory_Knights_of_the_Order_of_Saint_Januarius>	rdfs:label	"knight of the Order of Saint Januarius"@en .
-#@ <id_n371zt_1ia_1x75z3s>
-<wikicategory_Environment_ministers_of_Germany>	rdfs:label	"Environment minister of Germany"@en .
+#@ <id_9ojf3v_1ia_1m5u0ln>
+<wikicategory_Defunct_Christian_political_parties>	rdfs:label	"Defunct Christian political party"@eng .
 #@ <id_13q7caf_1m6_hsj9sm>
 <wikicategory_People_from_Detmold>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_prea9k_1m6_hsj9sm>
 <wikicategory_People_from_Bad_Honnef>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1qe20nc_1ia_f6imew>
-<wikicategory_Right-wing_parties_in_France>	rdfs:label	"Right-wing party in France"@en .
-#@ <id_qkbh1v_1ia_164kg2v>
-<wikicategory_People_educated_at_Kirkcaldy_High_School>	rdfs:label	"person educated at Kirkcaldy High School"@en .
-#@ <id_1amfkfq_1ia_12ksdfv>
-<wikicategory_People_from_Loughton>	rdfs:label	"person from Loughton"@en .
+#@ <id_wheu5y_1ia_4eam0k>
+<wikicategory_Heads_of_state_of_Malta>	rdfs:label	"head of state of Malta"@eng .
+#@ <id_1wxj1bv_1ia_uvle30>
+<wikicategory_Christian_democratic_parties>	rdfs:label	"Christian democratic party"@eng .
+#@ <id_1065ae5_1ia_1ig3dyo>
+<wikicategory_Social_democratic_parties_in_the_United_Kingdom>	rdfs:label	"Social democratic party in the United Kingdom"@eng .
 #@ <id_117613r_1m6_1c55dny>
 <wikicategory_Leaders_of_the_Opposition_(United_Kingdom)>	rdfs:subClassOf	<wordnet_leader_109623038> .
-#@ <id_19olslq_1ia_1g7cwzg>
-<wikicategory_Academics_of_the_Complutense_University_of_Madrid>	rdfs:label	"academic of the Complutense University of Madrid"@en .
+#@ <id_xu7m1k_1ia_1hvvxvd>
+<wikicategory_Foreign_Ministers_of_Germany>	rdfs:label	"Foreign minister of Germany"@eng .
+#@ <id_1tj1rla_1ia_167kdfk>
+<wikicategory_Educational_institutions_established_in_1872>	rdfs:label	"Educational institution established in 1872"@eng .
 #@ <id_5jv04g_1m6_10g61f2>
 <wikicategory_Council_areas_of_Scotland>	rdfs:subClassOf	<wordnet_area_108497294> .
+#@ <id_it36zl_1ia_151e4s1>
+<wikicategory_Alpine_countries>	rdfs:label	"Alpine country"@eng .
 #@ <id_1tr9m5r_1m6_1kbo50g>
 <wikicategory_Italian_politicians_convicted_of_crimes>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_19e5arz_1ia_1xo95h2>
-<wikicategory_French_people_of_Italian_descent>	rdfs:label	"French person of Italian descent"@en .
-#@ <id_o6fytl_1ia_1q7gjxv>
-<wikicategory_People_from_Hemel_Hempstead>	rdfs:label	"person from Hemel Hempstead"@en .
 #@ <id_12fl3k0_1m6_hsj9sm>
 <wikicategory_People_from_Turin>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_h2l3bj_1ia_1v1eup8>
-<wikicategory_Government_ministers_of_Spain>	rdfs:label	"Government minister of Spain"@en .
+#@ <id_16n2ezf_1ia_1whjsh6>
+<wikicategory_French_politicians>	rdfs:label	"French politician"@eng .
 #@ <id_zzrlfk_1m6_4lt4x7>
 <wikicategory_Former_polities_of_the_Cold_War>	rdfs:subClassOf	<wordnet_civil_order_113968859> .
-#@ <id_1g8p0tl_1ia_1w5lech>
-<wikicategory_Bishops_of_Urgell>	rdfs:label	"bishop of Urgell"@en .
-#@ <id_tkix1t_1ia_1udj7ip>
-<wikicategory_Grand_Collars_of_the_Order_of_the_Southern_Cross>	rdfs:label	"Grand collar of the Order of the Southern Cross"@en .
+#@ <id_npp1zr_1ia_gtdf9n>
+<wikicategory_United_Republic_politicians>	rdfs:label	"United Republic politician"@eng .
+#@ <id_1flbin5_1ia_b50pt1>
+<wikicategory_Female_foreign_ministers>	rdfs:label	"Female foreign minister"@eng .
 #@ <id_9dadjx_1m6_15cgb38>
 <wikicategory_Knights_of_the_Order_of_the_Rajamitrabhorn>	rdfs:subClassOf	<wordnet_knight_110238375> .
-#@ <id_phnjqn_1ia_u8zabo>
-<wikicategory_Welsh_people_of_Scottish_descent>	rdfs:label	"Welsh person of Scottish descent"@en .
+#@ <id_pbys8q_1ia_1yynij5>
+<wikicategory_German_people_of_Vietnamese_descent>	rdfs:label	"German person of Vietnamese descent"@eng .
 #@ <id_19aed5d_1m6_hsj9sm>
 <wikicategory_People_from_Ilmenau>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_1ejm1zj_1ia_1v36qd5>
+<wikicategory_People_from_Valencia,_Spain>	rdfs:label	"person from Valencia, Spain"@eng .
+#@ <id_1etg1m4_1ia_1o0wrgn>
+<wikicategory_Political_scandals_in_the_United_Kingdom>	rdfs:label	"Political scandal in the United Kingdom"@eng .
 #@ <id_vyuy8k_1m6_1u0g8mt>
 <wikicategory_Managing_directors_of_the_International_Monetary_Fund>	rdfs:subClassOf	<wordnet_director_110014939> .
-#@ <id_1fat6sz_1ia_ku824o>
-<wikicategory_People_from_Madrid>	rdfs:label	"person from Madrid"@en .
-#@ <id_pu10w8_1ia_lvchyu>
-<wikicategory_Port_cities_and_towns_in_Germany>	rdfs:label	"Port city and towns in Germany"@en .
-#@ <id_d4hm1h_1ia_1tiaec2>
-<wikicategory_Trading_posts_of_the_Hanseatic_League>	rdfs:label	"Trading post of the Hanseatic League"@en .
+#@ <id_1untlg1_1ia_19s3a70>
+<wikicategory_People_from_Ourense>	rdfs:label	"person from Ourense"@eng .
+#@ <id_v90gvy_1ia_1qfvz2c>
+<wikicategory_Lega_Nord_politicians>	rdfs:label	"Lega Nord politician"@eng .
+#@ <id_vg3va6_1ia_1vwu2vu>
+<wikicategory_Heads_of_state_of_Antigua_and_Barbuda>	rdfs:label	"head of state of Antigua and Barbuda"@eng .
+#@ <id_90fbib_1ia_1bna7uo>
+<wikicategory_Grand_Collars_of_the_Order_of_the_Tower_and_Sword>	rdfs:label	"Grand collar of the Order of the Tower and Sword"@eng .
+#@ <id_106cutj_1ia_c61ubi>
+<wikicategory_German_lawyers>	rdfs:label	"German lawyer"@eng .
+#@ <id_a942ok_1ia_1m3m7hs>
+<wikicategory_Current_national_leaders>	rdfs:label	"Current national leader"@eng .
+#@ <id_nw9bzn_1ia_1fkiabi>
+<wikicategory_People_from_Ashton-under-Lyne>	rdfs:label	"person from Ashton-under-Lyne"@eng .
+#@ <id_61gwyo_1ia_1705eyf>
+<wikicategory_French_people_of_Romanian_descent>	rdfs:label	"French person of Romanian descent"@eng .
+#@ <id_1dkz74o_1ia_149tcru>
+<wikicategory_French_female_singers>	rdfs:label	"French female singer"@eng .
 #@ <id_raac6s_1m6_1rnonu9>
 <wikicategory_Roman_Catholic_monarchs>	rdfs:subClassOf	<wordnet_sovereign_110628644> .
-#@ <id_117613r_1ia_9w1h2g>
-<wikicategory_Leaders_of_the_Opposition_(United_Kingdom)>	rdfs:label	"leader of the Opposition (United Kingdom)"@en .
+#@ <id_143c9vs_1ia_1xjxgfp>
+<wikicategory_Libraries_in_Paris>	rdfs:label	"library in Paris"@eng .
+#@ <id_11vvqbm_1ia_7gycy5>
+<wikicategory_People_from_Brandenburg>	rdfs:label	"person from Brandenburg"@eng .
+#@ <id_tjpxxg_1ia_16wh6e7>
+<wikicategory_British_agnostics>	rdfs:label	"British agnostic"@eng .
+#@ <id_3qziqt_1ia_1df0obs>
+<wikicategory_Organizations_established_in_1971>	rdfs:label	"organization established in 1971"@eng .
 #@ <id_1wxwoys_1m6_hsj9sm>
 <wikicategory_People_from_Renfrewshire>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_y30m22_1m6_1kbo50g>
 <wikicategory_Cantabrian_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_1jupm55_1ia_iicrf7>
-<wikicategory_Knights_of_the_Order_of_Vittorio_Veneto>	rdfs:label	"knight of the Order of Vittorio Veneto"@en .
+#@ <id_1amfkfq_1ia_12ksdfv>
+<wikicategory_People_from_Loughton>	rdfs:label	"person from Loughton"@eng .
 #@ <id_yy7arm_1m6_ic10aj>
 <wikicategory_Yale_University_alumni>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_1ildgpw_1ia_1ajq9q1>
-<wikicategory_People_from_Arnsberg>	rdfs:label	"person from Arnsberg"@en .
-#@ <id_12d15g5_1ia_1hf2jog>
-<wikicategory_People_from_Paris>	rdfs:label	"person from Paris"@en .
+#@ <id_1feld5g_1ia_x90210>
+<wikicategory_Former_countries_in_Europe>	rdfs:label	"Former country in Europe"@eng .
+#@ <id_7cezp1_1ia_jkvq6d>
+<wikicategory_Labour_parties>	rdfs:label	"Labour party"@eng .
+#@ <id_nv64ll_1ia_so64xq>
+<wikicategory_People_from_Epping_Forest_(district)>	rdfs:label	"person from Epping Forest (district)"@eng .
 #@ <id_uvozx1_1m6_n161qv>
 <wikicategory_Canadian_philanthropists>	rdfs:subClassOf	<wordnet_philanthropist_110421956> .
 #@ <id_12e4ekw_1m6_hsj9sm>
 <wikicategory_People_from_Rabat>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_4ri7mt_1ia_9757ph>
-<wikicategory_Grand_Collars_of_the_Order_of_Liberty‎>	rdfs:label	"Grand collar of the Order of Liberty‎"@en .
 #@ <id_89h05a_1m6_1kqv7tc>
 <wikicategory_Populated_places_established_in_the_9th_century>	rdfs:subClassOf	<wordnet_site_108651247> .
+#@ <id_9fidh8_1ia_1meygzf>
+<wikicategory_Electoral_Districts_of_the_Congress_of_Deputies_(Spain)>	rdfs:label	"Electoral district of the Congress of Deputies (Spain)"@eng .
 #@ <id_1vgy2r2_1m6_1c55dny>
 <wikicategory_Leaders_of_political_parties_in_Spain>	rdfs:subClassOf	<wordnet_leader_109623038> .
-#@ <id_gx06zz_1ia_ipb098>
-<wikicategory_Government_ministers_of_Andorra>	rdfs:label	"Government minister of Andorra"@en .
-#@ <id_15a8ujw_1ia_1ij503a>
-<wikicategory_Italian_Christian_socialists>	rdfs:label	"Italian Christian socialist"@en .
-#@ <id_luzaiz_1ia_fh03ts>
-<wikicategory_People_from_Rome>	rdfs:label	"person from Rome"@en .
+#@ <id_p56r97_1ia_po620p>
+<wikicategory_Heads_of_state_of_Grenada>	rdfs:label	"head of state of Grenada"@eng .
+#@ <id_uvozx1_1ia_3jx2wg>
+<wikicategory_Canadian_philanthropists>	rdfs:label	"Canadian philanthropist"@eng .
+#@ <id_n0pklf_1ia_107sgt5>
+<wikicategory_People_from_the_Palatinate>	rdfs:label	"person from the Palatinate"@eng .
+#@ <id_1unfsqh_1ia_clv1h>
+<wikicategory_Capitals_in_Europe>	rdfs:label	"capital in Europe"@eng .
+#@ <id_95tjzh_1ia_o3lwqm>
+<wikicategory_Political_parties_established_in_1900>	rdfs:label	"Political party established in 1900"@eng .
 #@ <id_df8wc6_1m6_93b437>
 <wikicategory_Dames_of_the_Order_of_the_Royal_House_of_Chakri>	rdfs:subClassOf	<wordnet_dame_109989045> .
-#@ <id_9ojf3v_1ia_1m5u0ln>
-<wikicategory_Defunct_Christian_political_parties>	rdfs:label	"Defunct Christian political party"@en .
+#@ <id_10ndkdh_1ia_1gzru1z>
+<wikicategory_Heads_of_state_of_Barbados>	rdfs:label	"head of state of Barbados"@eng .
 #@ <id_134yls9_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Saint_Vincent_and_the_Grenadines>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_12biqx3_1ia_1hdk55e>
-<wikicategory_People_from_Milan>	rdfs:label	"person from Milan"@en .
-#@ <id_1qg9z9z_1ia_1eay8lp>
-<wikicategory_Free_Democratic_Party_(Germany)_politicians>	rdfs:label	"Free Democratic Party (Germany) politician"@en .
-#@ <id_38b2ny_1ia_97xd9w>
-<wikicategory_Fellows_of_the_American_Academy_of_Arts_and_Sciences>	rdfs:label	"fellow of the American Academy of Arts and Sciences"@en .
-#@ <id_1lsxl5f_1ia_pjxb54>
-<wikicategory_People_from_Boulogne-Billancourt>	rdfs:label	"person from Boulogne-Billancourt"@en .
+#@ <id_er13rd_1ia_1rxrt3p>
+<wikicategory_People_from_Le_Mans>	rdfs:label	"person from Le Mans"@eng .
 #@ <id_cpbpr2_1m6_1kbo50g>
 <wikicategory_Gay_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_l9p181_1ia_12w4inp>
-<wikicategory_Heads_of_state_of_Papua_New_Guinea>	rdfs:label	"head of state of Papua New Guinea"@en .
 #@ <id_1s13qes_1m6_1c55dny>
 <wikicategory_Leaders_of_the_Labour_Party_(UK)>	rdfs:subClassOf	<wordnet_leader_109623038> .
 #@ <id_y20alq_1m6_czeqp5>
 <wikicategory_States_of_the_Weimar_Republic>	rdfs:subClassOf	<wordnet_country_108544813> .
 #@ <id_1lsxl5f_1m6_hsj9sm>
 <wikicategory_People_from_Boulogne-Billancourt>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_dzn7g8_1ia_1smgwm8>
-<wikicategory_Italian_Ministers_of_the_Treasury>	rdfs:label	"Italian minister of the Treasury"@en .
+#@ <id_1h3mt5z_1ia_1xhzd3x>
+<wikicategory_People_from_the_Province_of_Westphalia>	rdfs:label	"person from the Province of Westphalia"@eng .
+#@ <id_1jjqaxu_1ia_17sphiv>
+<wikicategory_British_people_of_Jewish_descent>	rdfs:label	"British person of Jewish descent"@eng .
 #@ <id_dqcrbi_1m6_3xunia>
 <wikicategory_Italian-language_singers>	rdfs:subClassOf	<wordnet_singer_110599806> .
 #@ <id_uod0i2_1m6_ic10aj>
 <wikicategory_Alumni_of_the_University_of_Hull>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
 #@ <id_1yzg43p_1m6_rd5g59>
 <wikicategory_Foundations_based_in_Switzerland>	rdfs:subClassOf	<wordnet_foundation_113790712> .
+#@ <id_7iwi7b_1ia_1c14dth>
+<wikicategory_Political_parties_in_Germany>	rdfs:label	"Political party in Germany"@eng .
+#@ <id_xj4hi_1ia_rfphmg>
+<wikicategory_Presidents_of_the_Italian_Chamber_of_Deputies>	rdfs:label	"president of the Italian Chamber of Deputies"@eng .
 #@ <id_npgvtb_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Sierra_Leone>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_1slwphy_1m6_15cgb38>
 <wikicategory_Knights_of_the_Order_of_Alcántara>	rdfs:subClassOf	<wordnet_knight_110238375> .
 #@ <id_1tj1s7q_1m6_w2cgyi>
 <wikicategory_Educational_institutions_established_in_1924>	rdfs:subClassOf	<wordnet_educational_institution_108276342> .
-#@ <id_1e8ah8u_1ia_zt2y6n>
-<wikicategory_Sashes_of_the_Order_of_the_Star_of_Romania>	rdfs:label	"sash of the Order of the Star of Romania"@en .
-#@ <id_89qtvz_1ia_1kledlb>
-<wikicategory_Grand_Cordons_of_the_Order_of_the_Rising_Sun>	rdfs:label	"Grand cordon of the Order of the Rising Sun"@en .
 #@ <id_3v7crn_1m6_hsj9sm>
 <wikicategory_People_from_Ávila,_Spain>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1h3mt5z_1m6_hsj9sm>
 <wikicategory_People_from_the_Province_of_Westphalia>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_rmnj5q_1m6_ic10aj>
 <wikicategory_Alumni_of_the_University_of_Leeds>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
+#@ <id_1oeycoc_1ia_no9fgh>
+<wikicategory_Member_states_of_the_European_Union>	rdfs:label	"Member state of the European Union"@eng .
 #@ <id_1ansi4j_1m6_13h7dhi>
 <wikicategory_Transport_ministers_of_Germany>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_13q7caf_1ia_iuh11e>
-<wikicategory_People_from_Detmold>	rdfs:label	"person from Detmold"@en .
-#@ <id_1n9jl9x_1ia_13p2fsx>
-<wikicategory_Harvard_University_alumni>	rdfs:label	"Harvard University alumnus"@en .
-#@ <id_16f3bco_1ia_1eu7osr>
-<wikicategory_British_capitals>	rdfs:label	"British capital"@en .
+#@ <id_wktbk1_1ia_1cdg3m2>
+<wikicategory_Prime_Ministers_of_France>	rdfs:label	"Prime minister of France"@eng .
+#@ <id_13dmcfr_1ia_10gsmur>
+<wikicategory_Streets_in_Westminster>	rdfs:label	"street in Westminster"@eng .
+#@ <id_j672ly_1ia_ciq0ka>
+<wikicategory_Presidents_of_Italy>	rdfs:label	"president of Italy"@eng .
 #@ <id_zmmd_1m6_1kbo50g>
 <wikicategory_Scottish_Labour_Party_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_wheu5y_1ia_4eam0k>
-<wikicategory_Heads_of_state_of_Malta>	rdfs:label	"head of state of Malta"@en .
+#@ <id_j6k9nz_1ia_ophz1d>
+<wikicategory_21st-century_men>	rdfs:label	"21st-century man"@eng .
+#@ <id_1vgy2r2_1ia_g8ctb3>
+<wikicategory_Leaders_of_political_parties_in_Spain>	rdfs:label	"leader of political parties in Spain"@eng .
+#@ <id_12d15g5_1ia_1hf2jog>
+<wikicategory_People_from_Paris>	rdfs:label	"person from Paris"@eng .
+#@ <id_1jupm55_1ia_iicrf7>
+<wikicategory_Knights_of_the_Order_of_Vittorio_Veneto>	rdfs:label	"knight of the Order of Vittorio Veneto"@eng .
 #@ <id_156ey2p_1m6_1bpeipn>
 <wikicategory_Communes_of_Hauts-de-Seine>	rdfs:subClassOf	<wordnet_commune_108541609> .
-#@ <id_1065ae5_1ia_1ig3dyo>
-<wikicategory_Social_democratic_parties_in_the_United_Kingdom>	rdfs:label	"Social democratic party in the United Kingdom"@en .
+#@ <id_1ookixp_1ia_x7rwx1>
+<wikicategory_Knights_of_the_Order_of_the_Most_Holy_Annunciation>	rdfs:label	"knight of the Order of the Most Holy Annunciation"@eng .
 #@ <id_clcsfd_1m6_1y7wfoo>
 <wikicategory_French_female_models>	rdfs:subClassOf	<wordnet_model_110324560> .
-#@ <id_1jkggrq_1ia_p3vc3f>
-<wikicategory_People_from_Varese>	rdfs:label	"person from Varese"@en .
 #@ <id_x9wkqc_1m6_5q5xmj>
 <wikicategory_Borders_of_Germany>	rdfs:subClassOf	<wordnet_boundary_line_108512736> .
 #@ <id_1266agn_1m6_1rnonu9>
 <wikicategory_Monarchs_of_South_Africa>	rdfs:subClassOf	<wordnet_sovereign_110628644> .
+#@ <id_5es2ta_1ia_zmvd0>
+<wikicategory_Politicians_from_Kingston_upon_Hull>	rdfs:label	"politician from Kingston upon Hull"@eng .
 #@ <id_10ms6gi_1m6_1kbo50g>
 <wikicategory_Welsh_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_15ud01e_1ia_1gm4q9r>
-<wikicategory_People_from_Argyll_and_Bute>	rdfs:label	"person from Argyll and Bute"@en .
 #@ <id_su938v_1m6_1x4861e>
 <wikicategory_Daily_Mail_journalists>	rdfs:subClassOf	<wordnet_journalist_110224578> .
+#@ <id_zzrlfk_1ia_xvqmk4>
+<wikicategory_Former_polities_of_the_Cold_War>	rdfs:label	"Former polity of the Cold War"@eng .
+#@ <id_me6by4_1ia_xcirql>
+<wikicategory_Universities_and_colleges_in_France>	rdfs:label	"university and colleges in France"@eng .
+#@ <id_10mtlp_1ia_1fhy8a6>
+<wikicategory_Political_parties_in_East_Germany>	rdfs:label	"Political party in East Germany"@eng .
+#@ <id_h0gx53_1ia_1v5unv6>
+<wikicategory_People_from_Livorno>	rdfs:label	"person from Livorno"@eng .
 #@ <id_1d5driz_1m6_hsj9sm>
 <wikicategory_Coca-Cola_people>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_8v7rjo_1ia_1bcpbyn>
-<wikicategory_Italian_economists>	rdfs:label	"Italian economist"@en .
+#@ <id_1e8ah8u_1ia_zt2y6n>
+<wikicategory_Sashes_of_the_Order_of_the_Star_of_Romania>	rdfs:label	"sash of the Order of the Star of Romania"@eng .
+#@ <id_l9p181_1ia_12w4inp>
+<wikicategory_Heads_of_state_of_Papua_New_Guinea>	rdfs:label	"head of state of Papua New Guinea"@eng .
 #@ <id_2i2lr8_1m6_czeqp5>
 <wikicategory_Countries_bordering_the_Baltic_Sea>	rdfs:subClassOf	<wordnet_country_108544813> .
-#@ <id_ucc52m_1ia_uasedq>
-<wikicategory_Grand_Collars_of_the_Order_of_Saint_James_of_the_Sword>	rdfs:label	"Grand collar of the Order of Saint James of the Sword"@en .
+#@ <id_1c6dxm0_1ia_11xnnff>
+<wikicategory_Women_chemists>	rdfs:label	"Women chemist"@eng .
+#@ <id_dzn7g8_1ia_1smgwm8>
+<wikicategory_Italian_Ministers_of_the_Treasury>	rdfs:label	"Italian minister of the Treasury"@eng .
 #@ <id_k67yjw_1m6_1y1zid8>
 <wikicategory_Political_parties_of_the_Fifth_Republic>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_blpua9_1ia_1787dl>
-<wikicategory_Squares_in_Westminster>	rdfs:label	"square in Westminster"@en .
-#@ <id_kjshxr_1ia_khvudh>
-<wikicategory_People_educated_at_Dunoon_Grammar_School>	rdfs:label	"person educated at Dunoon Grammar School"@en .
-#@ <id_2exna0_1ia_16r31qe>
-<wikicategory_First_Secretaries_of_State_of_the_United_Kingdom>	rdfs:label	"First secretary of State of the United Kingdom"@en .
+#@ <id_1aqhhjq_1ia_aeumld>
+<wikicategory_People_from_Prestatyn>	rdfs:label	"person from Prestatyn"@eng .
+#@ <id_rbwstv_1ia_n8wceo>
+<wikicategory_Spanish_lawyers>	rdfs:label	"Spanish lawyer"@eng .
 #@ <id_24snyu_1m6_czeqp5>
 <wikicategory_States_of_the_German_Confederation>	rdfs:subClassOf	<wordnet_country_108544813> .
 #@ <id_hkvjtt_1m6_czeqp5>
@@ -988,232 +992,208 @@
 <wikicategory_Female_heads_of_government>	rdfs:subClassOf	<wordnet_head_110162991> .
 #@ <id_1wspxgo_1m6_hsj9sm>
 <wikicategory_People_from_Ajaccio>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1tj1rla_1ia_167kdfk>
-<wikicategory_Educational_institutions_established_in_1872>	rdfs:label	"Educational institution established in 1872"@en .
+#@ <id_18ovtib_1ia_da04aa>
+<wikicategory_People_educated_at_the_Chorister_School,_Durham>	rdfs:label	"person educated at the Chorister School, Durham"@eng .
+#@ <id_n87zzo_1ia_mg0bn2>
+<wikicategory_Italian_Life_Senators>	rdfs:label	"Italian Life senator"@eng .
 #@ <id_hyw7fo_1m6_1uc0vtt>
 <wikicategory_Heads_of_Government_of_Andorra>	rdfs:subClassOf	<wordnet_head_110162991> .
-#@ <id_ranepb_1ia_148ew2u>
-<wikicategory_LGBT_politicians_from_Germany>	rdfs:label	"LGBT politician from Germany"@en .
-#@ <id_148cv23_1ia_tlilpl>
-<wikicategory_French_police_chiefs>	rdfs:label	"French police chief"@en .
+#@ <id_yy7arm_1ia_1uf36za>
+<wikicategory_Yale_University_alumni>	rdfs:label	"Yale University alumnus"@eng .
+#@ <id_1p3b8b_1ia_qhzmh4>
+<wikicategory_English_barristers>	rdfs:label	"English barrister"@eng .
 #@ <id_we8b7o_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Ghana>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_15r6g7m_1ia_1u2x7xg>
-<wikicategory_German_women_in_politics>	rdfs:label	"German woman in politics"@en .
-#@ <id_v90gvy_1ia_1qfvz2c>
-<wikicategory_Lega_Nord_politicians>	rdfs:label	"Lega Nord politician"@en .
+#@ <id_mc137u_1ia_lzzb1h>
+<wikicategory_Heads_of_state_of_Saint_Kitts_and_Nevis>	rdfs:label	"head of state of Saint Kitts and Nevis"@eng .
 #@ <id_95tk7b_1m6_1y1zid8>
 <wikicategory_Political_parties_established_in_1993>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_khabq2_1ia_1i08o8c>
-<wikicategory_Labour_Party_(UK)_life_peers>	rdfs:label	"Labour Party (UK) life peer"@en .
-#@ <id_kxvav3_1ia_1bh2ebo>
-<wikicategory_Alumni_of_the_University_of_Edinburgh>	rdfs:label	"alumnus of the University of Edinburgh"@en .
+#@ <id_vyuy8k_1ia_1phpzt0>
+<wikicategory_Managing_directors_of_the_International_Monetary_Fund>	rdfs:label	"Managing director of the International Monetary Fund"@eng .
+#@ <id_18905gj_1ia_13cocja>
+<wikicategory_People_illustrated_on_sterling_banknotes>	rdfs:label	"person illustrated on sterling banknotes"@eng .
+#@ <id_17yoam7_1ia_a35cdz>
+<wikicategory_Collars_of_the_Order_of_the_Chrysanthemum>	rdfs:label	"collar of the Order of the Chrysanthemum"@eng .
 #@ <id_jhfkb_1m6_hsj9sm>
 <wikicategory_Spanish_people>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1toa0yz_1ia_mgvibd>
-<wikicategory_French_Army_officers>	rdfs:label	"French Army officer"@en .
 #@ <id_1ildgpw_1m6_hsj9sm>
 <wikicategory_People_from_Arnsberg>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_2ry6p_1ia_10sslv4>
+<wikicategory_Heads_of_the_Commonwealth>	rdfs:label	"head of the Commonwealth"@eng .
 #@ <id_1lovxlp_1m6_1fqm846>
 <wikicategory_Law_schools_in_England>	rdfs:subClassOf	<wordnet_law_school_108283051> .
 #@ <id_jblfux_1m6_13d55wj>
 <wikicategory_Italian_atheists>	rdfs:subClassOf	<wordnet_atheist_109820044> .
 #@ <id_165alh2_1ia_oz7i99>
-<wikicategory_Italian_essayists>	rdfs:label	"Italian essayist"@en .
-#@ <id_okj32_1ia_1ii0k5j>
-<wikicategory_Italian_people_of_Argentine_descent>	rdfs:label	"Italian person of Argentine descent"@en .
-#@ <id_1wu4u9d_1ia_1bkmqkh>
-<wikicategory_Deputy_Prime_Ministers_of_the_United_Kingdom>	rdfs:label	"Deputy Prime minister of the United Kingdom"@en .
-#@ <id_1b2kp4j_1ia_18cork3>
-<wikicategory_Liberal-conservative_parties>	rdfs:label	"Liberal-conservative party"@en .
-#@ <id_hzmnd8_1ia_pxhmtd>
-<wikicategory_British_Secretaries_of_State_for_Foreign_and_Commonwealth_Affairs>	rdfs:label	"British secretary of State for Foreign and Commonwealth Affairs"@en .
+<wikicategory_Italian_essayists>	rdfs:label	"Italian essayist"@eng .
+#@ <id_1bzbazs_1ia_19jmrvn>
+<wikicategory_Alumni_of_Bocconi_University>	rdfs:label	"alumnus of Bocconi University"@eng .
+#@ <id_df8wc6_1ia_jjwtnh>
+<wikicategory_Dames_of_the_Order_of_the_Royal_House_of_Chakri>	rdfs:label	"dame of the Order of the Royal House of Chakri"@eng .
+#@ <id_kxvav3_1ia_1bh2ebo>
+<wikicategory_Alumni_of_the_University_of_Edinburgh>	rdfs:label	"alumnus of the University of Edinburgh"@eng .
+#@ <id_95tk32_1ia_o3lwu7>
+<wikicategory_Political_parties_established_in_1945>	rdfs:label	"Political party established in 1945"@eng .
 #@ <id_17qoll4_1m6_13h7dhi>
 <wikicategory_French_Ministers_of_Budget>	rdfs:subClassOf	<wordnet_minister_110320863> .
 #@ <id_589ck7_1m6_1kqv7tc>
 <wikicategory_Populated_places_established_in_the_1st_millennium_BC>	rdfs:subClassOf	<wordnet_site_108651247> .
 #@ <id_me6by4_1m6_14dlqgs>
 <wikicategory_Universities_and_colleges_in_France>	rdfs:subClassOf	<wordnet_university_108286569> .
-#@ <id_1wzrlsf_1ia_br95ev>
-<wikicategory_The_People_of_Freedom_politicians>	rdfs:label	"person of Freedom politicians"@en .
 #@ <id_9fidh8_1m6_abuyew>
 <wikicategory_Electoral_Districts_of_the_Congress_of_Deputies_(Spain)>	rdfs:subClassOf	<wordnet_district_108552138> .
-#@ <id_pt2m1n_1ia_1h2s94a>
-<wikicategory_French_lawyers>	rdfs:label	"French lawyer"@en .
+#@ <id_1q8mbt2_1ia_1qefn3e>
+<wikicategory_Presidents_of_Germany>	rdfs:label	"president of Germany"@eng .
+#@ <id_gu9ul6_1ia_72aucn>
+<wikicategory_Educational_institutions_established_in_the_1550s>	rdfs:label	"Educational institution established in the 1550s"@eng .
+#@ <id_cpbpr2_1ia_hfrtmt>
+<wikicategory_Gay_politicians>	rdfs:label	"Gay politician"@eng .
+#@ <id_9w6p6t_1ia_pwnegf>
+<wikicategory_People_of_Calabrian_descent>	rdfs:label	"person of Calabrian descent"@eng .
 #@ <id_1qg9z9z_1m6_1kbo50g>
 <wikicategory_Free_Democratic_Party_(Germany)_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_sllb2o_1ia_9x1uqq>
-<wikicategory_Liberal_democracies>	rdfs:label	"Liberal democracy"@en .
 #@ <id_10ndkdh_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Barbados>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_k0ue0m_1ia_1q807kw>
-<wikicategory_Lycée_Louis-le-Grand_alumni>	rdfs:label	"Lycée Louis-le-Grand alumnus"@en .
-#@ <id_95tk32_1ia_o3lwu7>
-<wikicategory_Political_parties_established_in_1945>	rdfs:label	"Political party established in 1945"@en .
-#@ <id_11vvqbm_1ia_7gycy5>
-<wikicategory_People_from_Brandenburg>	rdfs:label	"person from Brandenburg"@en .
-#@ <id_15xagoj_1ia_wakcxx>
-<wikicategory_Municipalities_in_the_Province_of_Valladolid>	rdfs:label	"municipality in the Province of Valladolid"@en .
 #@ <id_18ltz3n_1m6_13h7dhi>
 <wikicategory_French_interior_ministers>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_19quaek_1ia_5wc6x>
-<wikicategory_Italian_Communist_Party_politicians>	rdfs:label	"Italian Communist Party politician"@en .
-#@ <id_4vafr3_1ia_6skwnf>
-<wikicategory_People_associated_with_the_campaign_for_Scottish_devolution>	rdfs:label	"person associated with the campaign for Scottish devolution"@en .
-#@ <id_1c6dxm0_1ia_11xnnff>
-<wikicategory_Women_chemists>	rdfs:label	"Women chemist"@en .
 #@ <id_j6k9nz_1m6_1xc3fnm>
 <wikicategory_21st-century_men>	rdfs:subClassOf	<wordnet_man_110287213> .
 #@ <id_1p3b8b_1m6_1ozxwix>
 <wikicategory_English_barristers>	rdfs:subClassOf	<wordnet_barrister_109840963> .
-#@ <id_1g2puuc_1ia_1x1rm2j>
-<wikicategory_Goldman_Sachs_people>	rdfs:label	"Goldman Sachs person"@en .
-#@ <id_1a7uh29_1ia_fr9cdy>
-<wikicategory_People_from_Bilbao>	rdfs:label	"person from Bilbao"@en .
-#@ <id_vyuy8k_1ia_1phpzt0>
-<wikicategory_Managing_directors_of_the_International_Monetary_Fund>	rdfs:label	"Managing director of the International Monetary Fund"@en .
+#@ <id_su938v_1ia_1gfke5x>
+<wikicategory_Daily_Mail_journalists>	rdfs:label	"Daily Mail journalist"@eng .
+#@ <id_177pt0z_1ia_1tfgtgm>
+<wikicategory_Rectors_of_the_University_of_Edinburgh>	rdfs:label	"rector of the University of Edinburgh"@eng .
 #@ <id_lpwl6l_1m6_13h7dhi>
 <wikicategory_Prime_Ministers_of_Italy>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_mc137u_1ia_lzzb1h>
-<wikicategory_Heads_of_state_of_Saint_Kitts_and_Nevis>	rdfs:label	"head of state of Saint Kitts and Nevis"@en .
-#@ <id_g6ld6d_1ia_1ew2k74>
-<wikicategory_People_from_Barcelona>	rdfs:label	"person from Barcelona"@en .
+#@ <id_80c9op_1ia_rulzlb>
+<wikicategory_Ministers_for_children,_young_people_and_families>	rdfs:label	"minister for children, young people and families"@eng .
+#@ <id_y30m22_1ia_orhxdn>
+<wikicategory_Cantabrian_politicians>	rdfs:label	"Cantabrian politician"@eng .
+#@ <id_1oqng8n_1ia_5qo8je>
+<wikicategory_States_of_the_Holy_Roman_Empire>	rdfs:label	"state of the Holy Roman Empire"@eng .
+#@ <id_1gmeabm_1ia_1h5dl34>
+<wikicategory_Heads_of_state_of_Nigeria>	rdfs:label	"head of state of Nigeria"@eng .
+#@ <id_hjs82p_1ia_u8z07z>
+<wikicategory_German_state_capitals>	rdfs:label	"German state capital"@eng .
+#@ <id_i01v5m_1ia_uuz9cp>
+<wikicategory_Cricket_historians_and_writers>	rdfs:label	"Cricket historian and writers"@eng .
 #@ <id_1ns3dis_1m6_1kbo50g>
 <wikicategory_Politicians_of_the_French_Fifth_Republic>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_1fft7dc_1m6_hsj9sm>
 <wikicategory_People_from_Sondrio>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_142lafb_1m6_1cwc4rn>
 <wikicategory_Presidents_of_Surrey_CCC>	rdfs:subClassOf	<wordnet_president_110467179> .
+#@ <id_6y7gp8_1ia_bgof8b>
+<wikicategory_People's_Party_(Spain)_politicians>	rdfs:label	"People's Party (Spain) politician"@eng .
 #@ <id_sosrcm_1m6_1cwc4rn>
 <wikicategory_Presidents_of_the_United_Nations_Security_Council>	rdfs:subClassOf	<wordnet_president_110467179> .
-#@ <id_1qvc8i4_1ia_1f0c09v>
-<wikicategory_Women_in_World_War_II>	rdfs:label	"woman in World War II"@en .
-#@ <id_1yrqs9s_1ia_14bd56>
-<wikicategory_People_of_Catalan_descent>	rdfs:label	"person of Catalan descent"@en .
-#@ <id_hyw7fo_1ia_al9c2u>
-<wikicategory_Heads_of_Government_of_Andorra>	rdfs:label	"head of Government of Andorra"@en .
 #@ <id_1jjqaxu_1m6_hsj9sm>
 <wikicategory_British_people_of_Jewish_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1bmc0ks_1ia_aw861y>
-<wikicategory_Regions_of_Italy>	rdfs:label	"region of Italy"@en .
-#@ <id_39ih5z_1ia_rjmbv2>
-<wikicategory_French_people_of_Belgian_descent>	rdfs:label	"French person of Belgian descent"@en .
 #@ <id_1sbzwfc_1m6_1a4iuye>
 <wikicategory_Academics_of_the_University_of_Westminster>	rdfs:subClassOf	<wordnet_academician_109759069> .
 #@ <id_1nv2r8n_1m6_15cgb38>
 <wikicategory_Knights_of_Malta>	rdfs:subClassOf	<wordnet_knight_110238375> .
+#@ <id_1fyljea_1ia_li0epz>
+<wikicategory_People_from_Nièvre>	rdfs:label	"person from Nièvre"@eng .
 #@ <id_lv3rk5_1m6_hsj9sm>
 <wikicategory_People_from_York>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_5n0u98_1ia_1irnmnr>
-<wikicategory_People_from_the_Province_of_Reggio_Emilia>	rdfs:label	"person from the Province of Reggio Emilia"@en .
-#@ <id_1s13qes_1ia_1kb6kg5>
-<wikicategory_Leaders_of_the_Labour_Party_(UK)>	rdfs:label	"leader of the Labour Party (UK)"@en .
+#@ <id_enauut_1ia_22t56j>
+<wikicategory_Councillors_in_Sheffield>	rdfs:label	"councillor in Sheffield"@eng .
 #@ <id_nv64ll_1m6_hsj9sm>
 <wikicategory_People_from_Epping_Forest_(district)>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1js3ahb_1m6_hsj9sm>
 <wikicategory_French_people_of_Greek_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_18ltz3n_1ia_saayi7>
-<wikicategory_French_interior_ministers>	rdfs:label	"French interior minister"@en .
-#@ <id_76s9df_1ia_zm6mkw>
-<wikicategory_Heads_of_state_of_New_Zealand>	rdfs:label	"head of state of New Zealand"@en .
+#@ <id_brzz0x_1ia_10qqi0l>
+<wikicategory_National_churches>	rdfs:label	"National church"@eng .
+#@ <id_sllb2o_1ia_9x1uqq>
+<wikicategory_Liberal_democracies>	rdfs:label	"Liberal democracy"@eng .
 #@ <id_15ud01e_1m6_hsj9sm>
 <wikicategory_People_from_Argyll_and_Bute>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_o7nq2d_1m6_hsj9sm>
 <wikicategory_People_from_Carshalton>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_95tk7b_1ia_o3lwyg>
-<wikicategory_Political_parties_established_in_1993>	rdfs:label	"Political party established in 1993"@en .
 #@ <id_1fs2cib_1m6_hsj9sm>
 <wikicategory_People_from_Naples>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1ejm1zj_1ia_1v36qd5>
-<wikicategory_People_from_Valencia,_Spain>	rdfs:label	"person from Valencia, Spain"@en .
 #@ <id_1sj5ms5_1m6_1ddmzib>
 <wikicategory_Spanish_agnostics>	rdfs:subClassOf	<wordnet_agnostic_109779124> .
 #@ <id_phnjqn_1m6_hsj9sm>
 <wikicategory_Welsh_people_of_Scottish_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_134yls9_1ia_1vmh0pb>
-<wikicategory_Heads_of_state_of_Saint_Vincent_and_the_Grenadines>	rdfs:label	"head of state of Saint Vincent and the Grenadines"@en .
-#@ <id_9edalt_1ia_12qpfxt>
-<wikicategory_21st-century_French_politicians>	rdfs:label	"21st-century French politician"@en .
-#@ <id_18jb85f_1ia_12as4t>
-<wikicategory_Knights_of_Grace_of_the_Order_of_St_John>	rdfs:label	"knight of Grace of the Order of St John"@en .
+#@ <id_142jzsa_1ia_w0wssf>
+<wikicategory_People_from_Florence>	rdfs:label	"person from Florence"@eng .
 #@ <id_16f3bco_1m6_176jwd0>
 <wikicategory_British_capitals>	rdfs:subClassOf	<wordnet_capital_108518505> .
+#@ <id_r3f9hf_1ia_1fdj46i>
+<wikicategory_French_people_of_Spanish_descent>	rdfs:label	"French person of Spanish descent"@eng .
 #@ <id_13ri3tc_1m6_5jhr9r>
 <wikicategory_French_Senators_of_the_Fifth_Republic>	rdfs:subClassOf	<wordnet_senator_110578471> .
-#@ <id_jq99ic_1ia_zzhhtt>
-<wikicategory_Italian_Socialist_Party_politicians>	rdfs:label	"Italian Socialist Party politician"@en .
 #@ <id_gfnt0r_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Uganda>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
+#@ <id_fo4isn_1ia_1edlpte>
+<wikicategory_People_from_Osnabrück>	rdfs:label	"person from Osnabrück"@eng .
 #@ <id_1oeycoc_1m6_czeqp5>
 <wikicategory_Member_states_of_the_European_Union>	rdfs:subClassOf	<wordnet_country_108544813> .
+#@ <id_1czp4uo_1ia_19ejcz>
+<wikicategory_Universities_in_Castile_and_León>	rdfs:label	"university in Castile and León"@eng .
 #@ <id_5qhvi5_1m6_1eh3la0>
 <wikicategory_Grand_Masters_of_the_Order_of_the_Golden_Fleece>	rdfs:subClassOf	<wordnet_maestro_110280130> .
-#@ <id_18ovtib_1ia_da04aa>
-<wikicategory_People_educated_at_the_Chorister_School,_Durham>	rdfs:label	"person educated at the Chorister School, Durham"@en .
 #@ <id_l9p181_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Papua_New_Guinea>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_1065ae5_1m6_1y1zid8>
 <wikicategory_Social_democratic_parties_in_the_United_Kingdom>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_1ugfs52_1ia_14q1y6j>
-<wikicategory_German_refugees>	rdfs:label	"German refugee"@en .
-#@ <id_61gwyo_1ia_1705eyf>
-<wikicategory_French_people_of_Romanian_descent>	rdfs:label	"French person of Romanian descent"@en .
-#@ <id_i82zd5_1ia_16atkii>
-<wikicategory_Imperial_free_cities>	rdfs:label	"Imperial free city"@en .
-#@ <id_1d5driz_1ia_1heyi29>
-<wikicategory_Coca-Cola_people>	rdfs:label	"Coca-Cola person"@en .
 #@ <id_1p8s91p_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Jamaica>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_1g8p0tl_1m6_244bjw>
 <wikicategory_Bishops_of_Urgell>	rdfs:subClassOf	<wordnet_bishop_109857200> .
 #@ <id_1pwu0d1_1m6_1kbo50g>
 <wikicategory_Democracy_is_Freedom_–_The_Daisy_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_1b1vdsb_1ia_4kphuh>
-<wikicategory_French_politicians_convicted_of_crimes>	rdfs:label	"French politician convicted of crimes"@en .
 #@ <id_1etg1m4_1m6_u5s9z8>
 <wikicategory_Political_scandals_in_the_United_Kingdom>	rdfs:subClassOf	<wordnet_scandal_107223811> .
 #@ <id_1kt1p1z_1m6_5kujp2>
 <wikicategory_Organisations_based_in_Geneva>	rdfs:subClassOf	<wordnet_organization_108008335> .
-#@ <id_gfnt0r_1ia_1x5hi25>
-<wikicategory_Heads_of_state_of_Uganda>	rdfs:label	"head of state of Uganda"@en .
+#@ <id_1l0w4z2_1ia_1k8f3hy>
+<wikicategory_Officers_of_the_National_Order_of_Quebec>	rdfs:label	"officer of the National Order of Quebec"@eng .
+#@ <id_116hfj2_1ia_1r7jydj>
+<wikicategory_English-language_singers>	rdfs:label	"English-language singer"@eng .
+#@ <id_1g2puuc_1ia_1x1rm2j>
+<wikicategory_Goldman_Sachs_people>	rdfs:label	"Goldman Sachs person"@eng .
 #@ <id_1a683lh_1m6_1rnonu9>
 <wikicategory_Monarchs_of_Australia>	rdfs:subClassOf	<wordnet_sovereign_110628644> .
-#@ <id_o6jier_1ia_1uq92ft>
-<wikicategory_Presidents_of_the_National_Union_of_Students_(United_Kingdom)>	rdfs:label	"president of the National Union of Students (United Kingdom)"@en .
+#@ <id_lpwl6l_1ia_hn9u38>
+<wikicategory_Prime_Ministers_of_Italy>	rdfs:label	"Prime minister of Italy"@eng .
+#@ <id_89h05a_1ia_ztf6gu>
+<wikicategory_Populated_places_established_in_the_9th_century>	rdfs:label	"Populated place established in the 9th century"@eng .
+#@ <id_1jii959_1ia_16kufco>
+<wikicategory_Female_lawyers>	rdfs:label	"Female lawyer"@eng .
 #@ <id_i6e93q_1m6_1kbo50g>
 <wikicategory_Alliance_'90/The_Greens_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_sllb2o_1m6_1xhurjh>
 <wikicategory_Liberal_democracies>	rdfs:subClassOf	<wordnet_democracy_106217103> .
-#@ <id_j6k9nz_1ia_ophz1d>
-<wikicategory_21st-century_men>	rdfs:label	"21st-century man"@en .
-#@ <id_1ymxe2m_1ia_b5kc9e>
-<wikicategory_Spanish_women_in_politics>	rdfs:label	"Spanish woman in politics"@en .
 #@ <id_osovrv_1m6_1yfyl02>
 <wikicategory_Mayors_of_Troyes>	rdfs:subClassOf	<wordnet_mayor_110303814> .
 #@ <id_a15a3c_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Guyana>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_yjcvl7_1m6_1x95yav>
 <wikicategory_Buildings_and_structures_of_the_University_of_Oxford>	rdfs:subClassOf	<wordnet_building_102913152> .
-#@ <id_1p4k65y_1ia_ea894x>
-<wikicategory_Children_of_national_leaders>	rdfs:label	"child of national leaders"@en .
-#@ <id_95tjf2_1ia_o3lw67>
-<wikicategory_Political_parties_established_in_1879>	rdfs:label	"Political party established in 1879"@en .
-#@ <id_129mg9b_1ia_1hbnuhm>
-<wikicategory_People_from_Izmir>	rdfs:label	"person from Izmir"@en .
 #@ <id_go9e4k_1m6_1wdsaxv>
 <wikicategory_British_princesses>	rdfs:subClassOf	<wordnet_princess_110474064> .
 #@ <id_2ry6p_1m6_1uc0vtt>
 <wikicategory_Heads_of_the_Commonwealth>	rdfs:subClassOf	<wordnet_head_110162991> .
-#@ <id_106cutj_1ia_c61ubi>
-<wikicategory_German_lawyers>	rdfs:label	"German lawyer"@en .
+#@ <id_jlr39_1ia_1f6fg99>
+<wikicategory_Italian_Ministers_of_the_Interior>	rdfs:label	"Italian minister of the Interior"@eng .
+#@ <id_clcsfd_1ia_jjgwzf>
+<wikicategory_French_female_models>	rdfs:label	"French female model"@eng .
 #@ <id_wheu5y_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Malta>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_sosrcm_1ia_xtqxm>
-<wikicategory_Presidents_of_the_United_Nations_Security_Council>	rdfs:label	"president of the United Nations Security Council"@en .
-#@ <id_1a683lh_1ia_1xirr6d>
-<wikicategory_Monarchs_of_Australia>	rdfs:label	"monarch of Australia"@en .
+#@ <id_r154bn_1ia_1cfc0ri>
+<wikicategory_Labour_Party_(UK)_politicians>	rdfs:label	"Labour Party (UK) politician"@eng .
+#@ <id_95tk6m_1ia_o3lwxr>
+<wikicategory_Political_parties_established_in_1989>	rdfs:label	"Political party established in 1989"@eng .
 #@ <id_j0cm4p_1m6_hsj9sm>
 <wikicategory_French_people_of_Jewish_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_jq99ic_1ia_zzhhtt>
+<wikicategory_Italian_Socialist_Party_politicians>	rdfs:label	"Italian Socialist Party politician"@eng .
+#@ <id_h3sf4d_1ia_wjga9k>
+<wikicategory_French_diplomats>	rdfs:label	"French diplomat"@eng .
 #@ <id_p0wz8n_1m6_1tzj4t3>
 <wikicategory_Italian_billionaires>	rdfs:subClassOf	<wordnet_billionaire_110529684> .
 #@ <id_12o3kvw_1m6_hsj9sm>
@@ -1222,154 +1202,162 @@
 <wikicategory_Academics_of_the_Complutense_University_of_Madrid>	rdfs:subClassOf	<wordnet_academician_109759069> .
 #@ <id_1g2puuc_1m6_hsj9sm>
 <wikicategory_Goldman_Sachs_people>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1gzim2o_1ia_1rgmu39>
-<wikicategory_People_from_Sedgefield>	rdfs:label	"person from Sedgefield"@en .
 #@ <id_19l7p2h_1m6_244bjw>
 <wikicategory_21st-century_Roman_Catholic_bishops>	rdfs:subClassOf	<wordnet_bishop_109857200> .
-#@ <id_1m28h4g_1ia_gui0tr>
-<wikicategory_Grand_Collars_of_the_Order_of_Prince_Henry>	rdfs:label	"Grand collar of the Order of Prince Henry"@en .
-#@ <id_orpv1h_1ia_1bpz25>
-<wikicategory_9/11_conspiracy_theorists>	rdfs:label	"9/11 conspiracy theorist"@en .
-#@ <id_2xqhkk_1ia_13wezkb>
-<wikicategory_German_people_of_Romanian_descent>	rdfs:label	"German person of Romanian descent"@en .
-#@ <id_13dmcfr_1ia_10gsmur>
-<wikicategory_Streets_in_Westminster>	rdfs:label	"street in Westminster"@en .
+#@ <id_rmnj5q_1ia_11l26bn>
+<wikicategory_Alumni_of_the_University_of_Leeds>	rdfs:label	"alumnus of the University of Leeds"@eng .
+#@ <id_123zwlm_1ia_13oapfu>
+<wikicategory_Populated_places_in_the_Province_of_Valladolid>	rdfs:label	"Populated place in the Province of Valladolid"@eng .
+#@ <id_j2aclu_1ia_1wmtxw5>
+<wikicategory_Converts_to_Roman_Catholicism_from_Anglicanism>	rdfs:label	"convert to Roman Catholicism from Anglicanism"@eng .
+#@ <id_ew05ra_1ia_1corbsn>
+<wikicategory_Leaders_of_the_Conservative_Party_(UK)>	rdfs:label	"leader of the Conservative Party (UK)"@eng .
+#@ <id_d63zim_1ia_h3w7ud>
+<wikicategory_French_people_of_Hungarian_descent>	rdfs:label	"French person of Hungarian descent"@eng .
+#@ <id_1cuj8va_1ia_1sdlkoq>
+<wikicategory_Mayors_of_Paris>	rdfs:label	"mayor of Paris"@eng .
+#@ <id_1uqrk31_1ia_1f6h44a>
+<wikicategory_Action_Party_(Italy)_politicians>	rdfs:label	"Action Party (Italy) politician"@eng .
+#@ <id_11twadq_1ia_1n4rw2d>
+<wikicategory_Economics_organizations>	rdfs:label	"Economics organization"@eng .
 #@ <id_i01v5m_1m6_1twfx2p>
 <wikicategory_Cricket_historians_and_writers>	rdfs:subClassOf	<wordnet_historian_110177150> .
-#@ <id_18ex8ak_1ia_1224nb>
-<wikicategory_People_from_Neuilly-sur-Seine>	rdfs:label	"person from Neuilly-sur-Seine"@en .
+#@ <id_18ltz3n_1ia_saayi7>
+<wikicategory_French_interior_ministers>	rdfs:label	"French interior minister"@eng .
+#@ <id_39ih5z_1ia_rjmbv2>
+<wikicategory_French_people_of_Belgian_descent>	rdfs:label	"French person of Belgian descent"@eng .
 #@ <id_1flbin5_1m6_1120ssr>
 <wikicategory_Female_foreign_ministers>	rdfs:subClassOf	<wordnet_foreign_minister_110103794> .
-#@ <id_19td829_1ia_1mm94k>
-<wikicategory_Numbered_republics>	rdfs:label	"Numbered republic"@en .
-#@ <id_6y7gp8_1ia_bgof8b>
-<wikicategory_People's_Party_(Spain)_politicians>	rdfs:label	"People's Party (Spain) politician"@en .
+#@ <id_b43ymn_1ia_1v30mdx>
+<wikicategory_Youth_rights_individuals>	rdfs:label	"Youth rights individual"@eng .
+#@ <id_ulgvxu_1ia_tqrkdj>
+<wikicategory_United_Kingdom_Parliamentary_constituencies_established_in_1983>	rdfs:label	"United Kingdom Parliamentary constituency established in 1983"@eng .
+#@ <id_2i2lr8_1ia_177pker>
+<wikicategory_Countries_bordering_the_Baltic_Sea>	rdfs:label	"country bordering the Baltic Sea"@eng .
 #@ <id_mvnmj3_1m6_n422cm>
 <wikicategory_G8_nations>	rdfs:subClassOf	<wordnet_state_108168978> .
-#@ <id_1svd4xo_1ia_k9wyi0>
-<wikicategory_Secretaries_of_State_for_Health_(UK)>	rdfs:label	"secretary of State for Health (UK)"@en .
+#@ <id_ns1ubb_1ia_1vna42y>
+<wikicategory_Protestant_monarchs>	rdfs:label	"Protestant monarch"@eng .
 #@ <id_1n9jl9x_1m6_ic10aj>
 <wikicategory_Harvard_University_alumni>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
+#@ <id_1toa0yz_1ia_mgvibd>
+<wikicategory_French_Army_officers>	rdfs:label	"French Army officer"@eng .
 #@ <id_158097z_1m6_1120ssr>
 <wikicategory_French_Foreign_Ministers>	rdfs:subClassOf	<wordnet_foreign_minister_110103794> .
-#@ <id_pux5xa_1ia_1dz766s>
-<wikicategory_Lord_Presidents_of_the_Council>	rdfs:label	"Lord president of the Council"@en .
 #@ <id_18u7phy_1m6_1i9drdf>
 <wikicategory_Royal_Fellows_of_the_Royal_Society>	rdfs:subClassOf	<wordnet_colleague_109935990> .
 #@ <id_hzmnd8_1m6_18h7ig7>
 <wikicategory_British_Secretaries_of_State_for_Foreign_and_Commonwealth_Affairs>	rdfs:subClassOf	<wordnet_secretary_110570019> .
-#@ <id_lpwl6l_1ia_hn9u38>
-<wikicategory_Prime_Ministers_of_Italy>	rdfs:label	"Prime minister of Italy"@en .
 #@ <id_1b160xb_1m6_x7p9pq>
 <wikicategory_Central_bankers>	rdfs:subClassOf	<wordnet_banker_109837824> .
-#@ <id_fmybu6_1ia_13qth4x>
-<wikicategory_Health_ministers_of_Germany>	rdfs:label	"Health minister of Germany"@en .
+#@ <id_jlagzt_1ia_17uk5oa>
+<wikicategory_Audiogram_artists>	rdfs:label	"Audiogram artist"@eng .
 #@ <id_tql0g3_1m6_hsj9sm>
 <wikicategory_20th-century_Italian_people>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_100mj38_1ia_10fj71d>
-<wikicategory_Alumni_of_the_École_Nationale_d'Administration>	rdfs:label	"alumnus of the École Nationale d'Administration"@en .
+#@ <id_g15v8g_1ia_1wf2o2c>
+<wikicategory_Host_cities_of_the_Commonwealth_Games>	rdfs:label	"Host city of the Commonwealth Games"@eng .
 #@ <id_sovesz_1m6_7dz8cf>
 <wikicategory_Burials_at_Iona>	rdfs:subClassOf	<wordnet_burial_107451687> .
-#@ <id_19l7p2h_1ia_1neoafs>
-<wikicategory_21st-century_Roman_Catholic_bishops>	rdfs:label	"21st-century Roman Catholic bishop"@en .
 #@ <id_pbys8q_1m6_hsj9sm>
 <wikicategory_German_people_of_Vietnamese_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_9yd698_1ia_1s5ei94>
-<wikicategory_Presidents_of_the_European_Council>	rdfs:label	"president of the European Council"@en .
-#@ <id_pjo397_1ia_13obvy0>
-<wikicategory_NUTS_1_statistical_regions_of_the_European_Union>	rdfs:label	"NUTS 1 statistical region of the European Union"@en .
-#@ <id_17yff9h_1ia_r47r3o>
-<wikicategory_Universities_in_Milan>	rdfs:label	"university in Milan"@en .
-#@ <id_yjcvl7_1ia_8a6zt4>
-<wikicategory_Buildings_and_structures_of_the_University_of_Oxford>	rdfs:label	"building and structures of the University of Oxford"@en .
+#@ <id_1twn49k_1ia_r8aif9>
+<wikicategory_Academics_of_the_University_of_York>	rdfs:label	"academic of the University of York"@eng .
 #@ <id_qiy4wn_1m6_hsj9sm>
 <wikicategory_People_from_Crosby,_Merseyside>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1wixp37_1m6_13h7dhi>
 <wikicategory_Prime_Ministers_of_the_United_Kingdom>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_1sj5ms5_1ia_gj959q>
-<wikicategory_Spanish_agnostics>	rdfs:label	"Spanish agnostic"@en .
+#@ <id_yxmali_1ia_96fszj>
+<wikicategory_Andorran_lawyers>	rdfs:label	"Andorran lawyer"@eng .
+#@ <id_1b160xb_1ia_13x6uj8>
+<wikicategory_Central_bankers>	rdfs:label	"Central banker"@eng .
 #@ <id_95tk6m_1m6_1y1zid8>
 <wikicategory_Political_parties_established_in_1989>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_90fbib_1ia_1bna7uo>
-<wikicategory_Grand_Collars_of_the_Order_of_the_Tower_and_Sword>	rdfs:label	"Grand collar of the Order of the Tower and Sword"@en .
-#@ <id_k6b4t4_1ia_49s2bt>
-<wikicategory_Leaders_of_political_parties_in_Germany>	rdfs:label	"leader of political parties in Germany"@en .
 #@ <id_1hqc2nn_1m6_193sli9>
 <wikicategory_Visitor_attractions_in_Leipzig>	rdfs:subClassOf	<wordnet_attraction_106615561> .
+#@ <id_1pxz8g0_1ia_g6rysk>
+<wikicategory_Grade_I_listed_educational_buildings>	rdfs:label	"Grade I listed educational building"@eng .
+#@ <id_1ngx4zm_1ia_1henjhr>
+<wikicategory_People_associated_with_Liverpool_John_Moores_University>	rdfs:label	"person associated with Liverpool John Moores University"@eng .
 #@ <id_npp1zr_1m6_1kbo50g>
 <wikicategory_United_Republic_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_1k5re77_1m6_czeqp5>
 <wikicategory_States_of_the_German_Empire>	rdfs:subClassOf	<wordnet_country_108544813> .
+#@ <id_1gzim2o_1ia_1rgmu39>
+<wikicategory_People_from_Sedgefield>	rdfs:label	"person from Sedgefield"@eng .
+#@ <id_18wanl3_1ia_1tx9izd>
+<wikicategory_Educational_institutions_established_in_the_15th_century>	rdfs:label	"Educational institution established in the 15th century"@eng .
 #@ <id_1aqhhjq_1m6_hsj9sm>
 <wikicategory_People_from_Prestatyn>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_1tko63i_1ia_hk4t0v>
+<wikicategory_Government_spokespersons_of_France>	rdfs:label	"Government spokesperson of France"@eng .
+#@ <id_134yls9_1ia_1vmh0pb>
+<wikicategory_Heads_of_state_of_Saint_Vincent_and_the_Grenadines>	rdfs:label	"head of state of Saint Vincent and the Grenadines"@eng .
+#@ <id_lup7bk_1ia_fgq0md>
+<wikicategory_People_from_Bury>	rdfs:label	"person from Bury"@eng .
 #@ <id_55h4il_1m6_ibvh7i>
 <wikicategory_Turkish_communities_in_Germany>	rdfs:subClassOf	<wordnet_community_108223802> .
-#@ <id_1yzg43p_1ia_b8057m>
-<wikicategory_Foundations_based_in_Switzerland>	rdfs:label	"foundation based in Switzerland"@en .
+#@ <id_1a683lh_1ia_1xirr6d>
+<wikicategory_Monarchs_of_Australia>	rdfs:label	"monarch of Australia"@eng .
+#@ <id_r2jji1_1ia_3nubxk>
+<wikicategory_20th-century_economists>	rdfs:label	"20th-century economist"@eng .
 #@ <id_i8ixxk_1m6_1kbo50g>
 <wikicategory_21st-century_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_di404b_1ia_ab46l8>
-<wikicategory_Grand_Cordons_of_the_Order_of_the_Star_of_Jordan>	rdfs:label	"Grand cordon of the Order of the Star of Jordan"@en .
-#@ <id_16n2ezf_1ia_1whjsh6>
-<wikicategory_French_politicians>	rdfs:label	"French politician"@en .
 #@ <id_10zm9e4_1m6_hsj9sm>
 <wikicategory_Italian_people_of_World_War_II>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_17l09ju_1ia_16qi489>
-<wikicategory_Political_parties_disestablished_in_2009>	rdfs:label	"Political party disestablished in 2009"@en .
 #@ <id_1rmjah_1m6_ib2qwz>
 <wikicategory_Governments_of_Italy>	rdfs:subClassOf	<wordnet_government_108050678> .
 #@ <id_it36zl_1m6_czeqp5>
 <wikicategory_Alpine_countries>	rdfs:subClassOf	<wordnet_country_108544813> .
 #@ <id_1m6eo22_1m6_ot907s>
 <wikicategory_Scottish_solicitors>	rdfs:subClassOf	<wordnet_solicitor_110623354> .
-#@ <id_1p3m35u_1ia_1alizv1>
-<wikicategory_People_educated_at_The_City_School,_Sheffield>	rdfs:label	"person educated at The City School, Sheffield"@en .
+#@ <id_1ovc1fu_1ia_r6x9vi>
+<wikicategory_People_of_Sicilian_descent>	rdfs:label	"person of Sicilian descent"@eng .
+#@ <id_opd6q4_1ia_1ev8dib>
+<wikicategory_German_people_of_Polish_descent>	rdfs:label	"German person of Polish descent"@eng .
+#@ <id_o6fytl_1ia_1q7gjxv>
+<wikicategory_People_from_Hemel_Hempstead>	rdfs:label	"person from Hemel Hempstead"@eng .
 #@ <id_13kwjdj_1m6_czeqp5>
 <wikicategory_States_of_Germany>	rdfs:subClassOf	<wordnet_country_108544813> .
-#@ <id_1wamvy5_1ia_br5b12>
-<wikicategory_Knights_of_the_Elephant>	rdfs:label	"knight of the Elephant"@en .
 #@ <id_t00t1r_1m6_1c55dny>
 <wikicategory_Leaders_of_the_House_of_Commons>	rdfs:subClassOf	<wordnet_leader_109623038> .
 #@ <id_tp8boy_1m6_10g61f2>
 <wikicategory_Lieutenancy_areas_of_Scotland>	rdfs:subClassOf	<wordnet_area_108497294> .
+#@ <id_81izjr_1ia_tf34t9>
+<wikicategory_Alumni_of_New_College,_Oxford>	rdfs:label	"alumnus of New College, Oxford"@eng .
 #@ <id_24uvi2_1m6_czeqp5>
 <wikicategory_Countries_bordering_the_Atlantic_Ocean>	rdfs:subClassOf	<wordnet_country_108544813> .
+#@ <id_17kztg2_1ia_16qho4h>
+<wikicategory_Political_parties_disestablished_in_1990>	rdfs:label	"Political party disestablished in 1990"@eng .
 #@ <id_1vmfvko_1m6_1x9tonu>
 <wikicategory_French_economists>	rdfs:subClassOf	<wordnet_economist_110043643> .
-#@ <id_npgvtb_1ia_1lenib4>
-<wikicategory_Heads_of_state_of_Sierra_Leone>	rdfs:label	"head of state of Sierra Leone"@en .
 #@ <id_15a8ujw_1m6_z0twdd>
 <wikicategory_Italian_Christian_socialists>	rdfs:subClassOf	<wordnet_socialist_110618848> .
 #@ <id_d4hm1h_1m6_lj7s71>
 <wikicategory_Trading_posts_of_the_Hanseatic_League>	rdfs:subClassOf	<wordnet_country_store_103119203> .
-#@ <id_eajhhj_1ia_1meogou>
-<wikicategory_German_politicians>	rdfs:label	"German politician"@en .
-#@ <id_1dkz74o_1ia_149tcru>
-<wikicategory_French_female_singers>	rdfs:label	"French female singer"@en .
-#@ <id_9ozf68_1ia_1vfk8yx>
-<wikicategory_Alumni_of_Ruskin_College>	rdfs:label	"alumnus of Ruskin College"@en .
+#@ <id_1fzv2vl_1ia_lj9y7a>
+<wikicategory_People_from_Novara>	rdfs:label	"person from Novara"@eng .
 #@ <id_g6og84_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Tuvalu>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_edbjnh_1ia_6bocnm>
-<wikicategory_People_from_Poitiers>	rdfs:label	"person from Poitiers"@en .
 #@ <id_165alh2_1m6_1it1nw5>
 <wikicategory_Italian_essayists>	rdfs:subClassOf	<wordnet_essayist_110064405> .
-#@ <id_it36zl_1ia_151e4s1>
-<wikicategory_Alpine_countries>	rdfs:label	"Alpine country"@en .
-#@ <id_r34v5p_1ia_8vz9yw>
-<wikicategory_States_and_territories_established_in_1963>	rdfs:label	"state and territories established in 1963"@en .
-#@ <id_lv3rk5_1ia_fh4kuy>
-<wikicategory_People_from_York>	rdfs:label	"person from York"@en .
-#@ <id_10ms6gi_1ia_iftn8x>
-<wikicategory_Welsh_politicians>	rdfs:label	"Welsh politician"@en .
+#@ <id_1yzg43p_1ia_b8057m>
+<wikicategory_Foundations_based_in_Switzerland>	rdfs:label	"foundation based in Switzerland"@eng .
+#@ <id_phnjqn_1ia_u8zabo>
+<wikicategory_Welsh_people_of_Scottish_descent>	rdfs:label	"Welsh person of Scottish descent"@eng .
+#@ <id_1wspxgo_1ia_1bwzm7n>
+<wikicategory_People_from_Ajaccio>	rdfs:label	"person from Ajaccio"@eng .
 #@ <id_jlagzt_1m6_14azo3x>
 <wikicategory_Audiogram_artists>	rdfs:subClassOf	<wordnet_artist_109812338> .
-#@ <id_2ry6p_1ia_10sslv4>
-<wikicategory_Heads_of_the_Commonwealth>	rdfs:label	"head of the Commonwealth"@en .
 #@ <id_satmpd_1m6_14dlqgs>
 <wikicategory_Universities_and_colleges_in_Saxony>	rdfs:subClassOf	<wordnet_university_108286569> .
+#@ <id_15ud01e_1ia_1gm4q9r>
+<wikicategory_People_from_Argyll_and_Bute>	rdfs:label	"person from Argyll and Bute"@eng .
 #@ <id_mc137u_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Saint_Kitts_and_Nevis>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
+#@ <id_16f3bco_1ia_1eu7osr>
+<wikicategory_British_capitals>	rdfs:label	"British capital"@eng .
+#@ <id_10zm9e4_1ia_1i20dms>
+<wikicategory_Italian_people_of_World_War_II>	rdfs:label	"Italian person of World War II"@eng .
 #@ <id_1nw1okc_1m6_1kbo50g>
 <wikicategory_Valencian_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_9w6p6t_1m6_hsj9sm>
@@ -1388,26 +1376,30 @@
 <wikicategory_Academics_of_the_University_of_Essex>	rdfs:subClassOf	<wordnet_academician_109759069> .
 #@ <id_142jzsa_1m6_hsj9sm>
 <wikicategory_People_from_Florence>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_twiqgp_1ia_votjpy>
-<wikicategory_Government_ministers_of_Germany>	rdfs:label	"Government minister of Germany"@en .
+#@ <id_ngcj9j_1ia_ladygu>
+<wikicategory_Stroke_survivors>	rdfs:label	"Stroke survivor"@eng .
 #@ <id_14twwct_1m6_1a5291d>
 <wikicategory_National_lower_houses>	rdfs:subClassOf	<wordnet_house_103544360> .
-#@ <id_ulgvry_1ia_tqrk7n>
-<wikicategory_United_Kingdom_Parliamentary_constituencies_established_in_1918>	rdfs:label	"United Kingdom Parliamentary constituency established in 1918"@en .
+#@ <id_s3sjfq_1ia_1qt9qgh>
+<wikicategory_People_from_Edinburgh>	rdfs:label	"person from Edinburgh"@eng .
 #@ <id_r34v45_1m6_czeqp5>
 <wikicategory_States_and_territories_established_in_1949>	rdfs:subClassOf	<wordnet_country_108544813> .
+#@ <id_aeylw2_1ia_194fswt>
+<wikicategory_People_from_Trasmiera>	rdfs:label	"person from Trasmiera"@eng .
 #@ <id_1hwku4u_1m6_d307i>
 <wikicategory_Grand_Cordons_of_the_Order_of_Leopold_(Belgium)>	rdfs:subClassOf	<wordnet_cordon_108376948> .
+#@ <id_lv3rk5_1ia_fh4kuy>
+<wikicategory_People_from_York>	rdfs:label	"person from York"@eng .
 #@ <id_bw0gfn_1m6_n161qv>
 <wikicategory_British_philanthropists>	rdfs:subClassOf	<wordnet_philanthropist_110421956> .
-#@ <id_h3sf4d_1ia_wjga9k>
-<wikicategory_French_diplomats>	rdfs:label	"French diplomat"@en .
-#@ <id_jlr39_1ia_1f6fg99>
-<wikicategory_Italian_Ministers_of_the_Interior>	rdfs:label	"Italian minister of the Interior"@en .
+#@ <id_1fb1fkl_1ia_15vm48e>
+<wikicategory_21st-century_Italian_people>	rdfs:label	"21st-century Italian person"@eng .
+#@ <id_13pvp2v_1ia_13lghqd>
+<wikicategory_Liberal_parties_in_Italy>	rdfs:label	"Liberal party in Italy"@eng .
 #@ <id_1wamvy5_1m6_15cgb38>
 <wikicategory_Knights_of_the_Elephant>	rdfs:subClassOf	<wordnet_knight_110238375> .
-#@ <id_nw9bzn_1ia_1fkiabi>
-<wikicategory_People_from_Ashton-under-Lyne>	rdfs:label	"person from Ashton-under-Lyne"@en .
+#@ <id_1csjgg3_1ia_1qo0xjl>
+<wikicategory_People_educated_at_Lewis_School,_Pengam>	rdfs:label	"person educated at Lewis School, Pengam"@eng .
 #@ <id_1c6dxm0_1m6_1880c8b>
 <wikicategory_Women_chemists>	rdfs:subClassOf	<wordnet_chemist_109913824> .
 #@ <id_1cuj8va_1m6_1yfyl02>
@@ -1416,134 +1408,138 @@
 <wikicategory_People_from_Izmir>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1gzim2o_1m6_hsj9sm>
 <wikicategory_People_from_Sedgefield>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_rbwstv_1ia_n8wceo>
-<wikicategory_Spanish_lawyers>	rdfs:label	"Spanish lawyer"@en .
-#@ <id_1x5jd8t_1ia_w5mbif>
-<wikicategory_Councillors_in_Camden>	rdfs:label	"councillor in Camden"@en .
-#@ <id_sovesz_1ia_rn2wez>
-<wikicategory_Burials_at_Iona>	rdfs:label	"burial at Iona"@en .
-#@ <id_tyzlya_1ia_14hzgpm>
-<wikicategory_United_Kingdom_Parliamentary_constituencies_represented_by_a_sitting_Prime_Minister>	rdfs:label	"United Kingdom Parliamentary constituency represented by a sitting Prime Minister"@en .
+#@ <id_1tsjdqw_1ia_1r27xo>
+<wikicategory_Academics_of_Glasgow_Caledonian_University>	rdfs:label	"academic of Glasgow Caledonian University"@eng .
 #@ <id_1yxs923_1m6_17x0mu>
 <wikicategory_Collars_of_the_Order_of_the_White_Lion>	rdfs:subClassOf	<wordnet_collar_103068181> .
-#@ <id_12fl3k0_1ia_1hhmhsb>
-<wikicategory_People_from_Turin>	rdfs:label	"person from Turin"@en .
-#@ <id_1ns3dis_1ia_7fix67>
-<wikicategory_Politicians_of_the_French_Fifth_Republic>	rdfs:label	"politician of the French Fifth Republic"@en .
+#@ <id_1n9jl9x_1ia_13p2fsx>
+<wikicategory_Harvard_University_alumni>	rdfs:label	"Harvard University alumnus"@eng .
 #@ <id_1lrx44u_1m6_ltohsj>
 <wikicategory_Port_cities_and_towns_of_the_North_Sea>	rdfs:subClassOf	<wordnet_city_108524735> .
 #@ <id_hjs82p_1m6_1fylvm9>
 <wikicategory_German_state_capitals>	rdfs:subClassOf	<wordnet_state_capital_108695539> .
-#@ <id_9crsk3_1ia_1oxm1m0>
-<wikicategory_People_from_Ludwigshafen>	rdfs:label	"person from Ludwigshafen"@en .
+#@ <id_19l7p2h_1ia_1neoafs>
+<wikicategory_21st-century_Roman_Catholic_bishops>	rdfs:label	"21st-century Roman Catholic bishop"@eng .
+#@ <id_cue3b_1ia_ov04aa>
+<wikicategory_Alumni_of_the_University_of_Deusto>	rdfs:label	"alumnus of the University of Deusto"@eng .
 #@ <id_11twadq_1m6_5kujp2>
 <wikicategory_Economics_organizations>	rdfs:subClassOf	<wordnet_organization_108008335> .
+#@ <id_lligu9_1ia_v8nvra>
+<wikicategory_Politicians_of_Vietnamese_descent>	rdfs:label	"politician of Vietnamese descent"@eng .
 #@ <id_gx06zz_1m6_13h7dhi>
 <wikicategory_Government_ministers_of_Andorra>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_odhu2w_1ia_hisqrs>
-<wikicategory_Monarchs_of_the_United_Kingdom>	rdfs:label	"monarch of the United Kingdom"@en .
+#@ <id_ku59pv_1ia_cy0jov>
+<wikicategory_City-states>	rdfs:label	"city-state"@eng .
 #@ <id_17yoam7_1m6_17x0mu>
 <wikicategory_Collars_of_the_Order_of_the_Chrysanthemum>	rdfs:subClassOf	<wordnet_collar_103068181> .
+#@ <id_1edc9j2_1ia_1yn3ccm>
+<wikicategory_Forza_Italia_politicians>	rdfs:label	"Forza Italia politician"@eng .
+#@ <id_1odhjk9_1ia_n9vzju>
+<wikicategory_British_humanists>	rdfs:label	"British humanist"@eng .
 #@ <id_g93t0m_1m6_vwaifx>
 <wikicategory_Claimant_Kings_of_Jerusalem>	rdfs:subClassOf	<wordnet_king_110231515> .
-#@ <id_1feld5g_1ia_x90210>
-<wikicategory_Former_countries_in_Europe>	rdfs:label	"Former country in Europe"@en .
+#@ <id_x9wkqc_1ia_1t6rmwu>
+<wikicategory_Borders_of_Germany>	rdfs:label	"border of Germany"@eng .
+#@ <id_19wddft_1ia_a3t4t5>
+<wikicategory_Italian_film_actors>	rdfs:label	"Italian film actor"@eng .
+#@ <id_109dyp8_1ia_c9bv3r>
+<wikicategory_Trade_unionists_from_Kingston_upon_Hull>	rdfs:label	"Trade unionist from Kingston upon Hull"@eng .
 #@ <id_tjpxxg_1m6_1ddmzib>
 <wikicategory_British_agnostics>	rdfs:subClassOf	<wordnet_agnostic_109779124> .
 #@ <id_r34uft_1m6_czeqp5>
 <wikicategory_States_and_territories_established_in_1871>	rdfs:subClassOf	<wordnet_country_108544813> .
-#@ <id_1cier9x_1ia_ah608y>
-<wikicategory_Lycée_Français_de_New_York_alumni>	rdfs:label	"Lycée Français de New York alumnus"@en .
 #@ <id_39ih5z_1m6_hsj9sm>
 <wikicategory_French_people_of_Belgian_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1b160xb_1ia_13x6uj8>
-<wikicategory_Central_bankers>	rdfs:label	"Central banker"@en .
 #@ <id_3qziqt_1m6_5kujp2>
 <wikicategory_Organizations_established_in_1971>	rdfs:subClassOf	<wordnet_organization_108008335> .
-#@ <id_1pxz8g0_1ia_g6rysk>
-<wikicategory_Grade_I_listed_educational_buildings>	rdfs:label	"Grade I listed educational building"@en .
-#@ <id_1qas0ff_1ia_1bjq4h7>
-<wikicategory_Lycée_Pasteur_alumni>	rdfs:label	"Lycée Pasteur alumnus"@en .
 #@ <id_100mj38_1m6_ic10aj>
 <wikicategory_Alumni_of_the_École_Nationale_d'Administration>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
+#@ <id_18iwv4b_1ia_1gw8mly>
+<wikicategory_Grade_I_listed_buildings_in_Oxford>	rdfs:label	"Grade I listed building in Oxford"@eng .
 #@ <id_1acodqv_1m6_hsj9sm>
 <wikicategory_People_from_Bremen>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1woxq0w_1ia_1gs8lt3>
-<wikicategory_Ig_Nobel_Prize_winners>	rdfs:label	"Ig Nobel Prize winner"@en .
-#@ <id_24uvi2_1ia_17rl8h5>
-<wikicategory_Countries_bordering_the_Atlantic_Ocean>	rdfs:label	"country bordering the Atlantic Ocean"@en .
 #@ <id_90fbib_1m6_17x0mu>
 <wikicategory_Grand_Collars_of_the_Order_of_the_Tower_and_Sword>	rdfs:subClassOf	<wordnet_collar_103068181> .
-#@ <id_1frg589_1ia_2tkh89>
-<wikicategory_Heads_of_state_of_Trinidad_and_Tobago>	rdfs:label	"head of state of Trinidad and Tobago"@en .
+#@ <id_nl43as_1ia_gp9rgw>
+<wikicategory_Adoptees>	rdfs:label	"adoptee"@eng .
 #@ <id_r34v42_1m6_czeqp5>
 <wikicategory_States_and_territories_established_in_1946>	rdfs:subClassOf	<wordnet_country_108544813> .
 #@ <id_1wu4u9d_1m6_13h7dhi>
 <wikicategory_Deputy_Prime_Ministers_of_the_United_Kingdom>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_1twn49k_1ia_r8aif9>
-<wikicategory_Academics_of_the_University_of_York>	rdfs:label	"academic of the University of York"@en .
-#@ <id_mvnmj3_1ia_1ekovhy>
-<wikicategory_G8_nations>	rdfs:label	"G8 nation"@en .
+#@ <id_17l09jn_1ia_16qi482>
+<wikicategory_Political_parties_disestablished_in_2002>	rdfs:label	"Political party disestablished in 2002"@eng .
 #@ <id_n0pklf_1m6_hsj9sm>
 <wikicategory_People_from_the_Palatinate>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_jdi4dt_1ia_yiarsj>
-<wikicategory_Heads_of_state_of_Fiji>	rdfs:label	"head of state of Fiji"@en .
+#@ <id_89qtvz_1ia_1kledlb>
+<wikicategory_Grand_Cordons_of_the_Order_of_the_Rising_Sun>	rdfs:label	"Grand cordon of the Order of the Rising Sun"@eng .
+#@ <id_1i8jl1c_1ia_qxe9nd>
+<wikicategory_Columbia_Law_School_alumni>	rdfs:label	"Columbia Law School alumnus"@eng .
+#@ <id_r34v5p_1ia_8vz9yw>
+<wikicategory_States_and_territories_established_in_1963>	rdfs:label	"state and territories established in 1963"@eng .
 #@ <id_1fat6sz_1m6_hsj9sm>
 <wikicategory_People_from_Madrid>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_r34v45_1ia_8vz9xc>
+<wikicategory_States_and_territories_established_in_1949>	rdfs:label	"state and territories established in 1949"@eng .
 #@ <id_1s4wleh_1m6_hsj9sm>
 <wikicategory_Bessarabia-German_people>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_95tjf2_1m6_1y1zid8>
 <wikicategory_Political_parties_established_in_1879>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_109dyp8_1ia_c9bv3r>
-<wikicategory_Trade_unionists_from_Kingston_upon_Hull>	rdfs:label	"Trade unionist from Kingston upon Hull"@en .
+#@ <id_17qoll4_1ia_p04oxl>
+<wikicategory_French_Ministers_of_Budget>	rdfs:label	"French minister of Budget"@eng .
+#@ <id_5ppqvw_1ia_lietzb>
+<wikicategory_Italian_academics>	rdfs:label	"Italian academic"@eng .
+#@ <id_1l73yi3_1ia_u416s4>
+<wikicategory_Knights_of_the_Order_of_the_Black_Star>	rdfs:label	"knight of the Order of the Black Star"@eng .
+#@ <id_1a16zn1_1ia_1x5lzmq>
+<wikicategory_Member_states_of_NATO>	rdfs:label	"Member state of NATO"@eng .
 #@ <id_1wxj1bv_1m6_1y1zid8>
 <wikicategory_Christian_democratic_parties>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_10zm9e4_1ia_1i20dms>
-<wikicategory_Italian_people_of_World_War_II>	rdfs:label	"Italian person of World War II"@en .
-#@ <id_6oowf0_1ia_g56uoq>
-<wikicategory_Heads_of_state_of_Mauritius>	rdfs:label	"head of state of Mauritius"@en .
-#@ <id_18iwv4b_1ia_1gw8mly>
-<wikicategory_Grade_I_listed_buildings_in_Oxford>	rdfs:label	"Grade I listed building in Oxford"@en .
+#@ <id_fogrx2_1ia_1y2e7pn>
+<wikicategory_Italian_mass_media_owners>	rdfs:label	"Italian mass media owner"@eng .
+#@ <id_13i0bt4_1ia_1mcdd84>
+<wikicategory_Women_in_the_Canadian_armed_services>	rdfs:label	"woman in the Canadian armed services"@eng .
+#@ <id_95tjf2_1ia_o3lw67>
+<wikicategory_Political_parties_established_in_1879>	rdfs:label	"Political party established in 1879"@eng .
 #@ <id_o6jier_1m6_1cwc4rn>
 <wikicategory_Presidents_of_the_National_Union_of_Students_(United_Kingdom)>	rdfs:subClassOf	<wordnet_president_110467179> .
-#@ <id_raac6s_1ia_unqzpq>
-<wikicategory_Roman_Catholic_monarchs>	rdfs:label	"Roman Catholic monarch"@en .
+#@ <id_1qzom2c_1ia_fge3vt>
+<wikicategory_People_from_Andorra_la_Vella>	rdfs:label	"person from Andorra la Vella"@eng .
+#@ <id_a9q66y_1ia_wbij9n>
+<wikicategory_Former_republics>	rdfs:label	"Former republic"@eng .
 #@ <id_1i65qzw_1m6_ic10aj>
 <wikicategory_Alumni_of_Cardiff_University>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
 #@ <id_d63zim_1m6_hsj9sm>
 <wikicategory_French_people_of_Hungarian_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1f1mscu_1m6_hsj9sm>
 <wikicategory_People_from_London>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1elsiej_1ia_1xswblp>
-<wikicategory_Port_cities_and_towns_in_Scotland>	rdfs:label	"Port city and towns in Scotland"@en .
 #@ <id_18ex8ak_1m6_hsj9sm>
 <wikicategory_People_from_Neuilly-sur-Seine>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1fyljea_1ia_li0epz>
-<wikicategory_People_from_Nièvre>	rdfs:label	"person from Nièvre"@en .
-#@ <id_10mtlp_1ia_1fhy8a6>
-<wikicategory_Political_parties_in_East_Germany>	rdfs:label	"Political party in East Germany"@en .
+#@ <id_13ri3tc_1ia_1j60wax>
+<wikicategory_French_Senators_of_the_Fifth_Republic>	rdfs:label	"French senator of the Fifth Republic"@eng .
 #@ <id_1p3m35u_1m6_hsj9sm>
 <wikicategory_People_educated_at_The_City_School,_Sheffield>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_9ojf3v_1m6_1y1zid8>
 <wikicategory_Defunct_Christian_political_parties>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_1beb4o1_1ia_1lqylze>
-<wikicategory_People_from_the_Province_of_Lower_Silesia>	rdfs:label	"person from the Province of Lower Silesia"@en .
+#@ <id_1yg0nhk_1ia_4eoj4r>
+<wikicategory_Italian_emigrants_to_France>	rdfs:label	"Italian emigrant to France"@eng .
+#@ <id_1w61njb_1ia_1dqamqi>
+<wikicategory_International_Democrat_Union_member_parties>	rdfs:label	"International Democrat Union member party"@eng .
 #@ <id_1qzom2c_1m6_hsj9sm>
 <wikicategory_People_from_Andorra_la_Vella>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_65qi7q_1ia_1yhrdfs>
-<wikicategory_Palaces_in_Paris>	rdfs:label	"palace in Paris"@en .
 #@ <id_1jkggrq_1m6_hsj9sm>
 <wikicategory_People_from_Varese>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1a0o5qk_1m6_ic10aj>
 <wikicategory_Alumni_of_St_John's_College,_Oxford>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
+#@ <id_13kwjdj_1ia_ef29tl>
+<wikicategory_States_of_Germany>	rdfs:label	"state of Germany"@eng .
 #@ <id_17l09jn_1m6_1y1zid8>
 <wikicategory_Political_parties_disestablished_in_2002>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_y20alq_1ia_1f84m28>
-<wikicategory_States_of_the_Weimar_Republic>	rdfs:label	"state of the Weimar Republic"@en .
-#@ <id_1w00dhb_1ia_1rk6sjo>
-<wikicategory_Italian_politicians>	rdfs:label	"Italian politician"@en .
 #@ <id_ranepb_1m6_1kbo50g>
 <wikicategory_LGBT_politicians_from_Germany>	rdfs:subClassOf	<wordnet_politician_110451263> .
+#@ <id_17yff9h_1ia_r47r3o>
+<wikicategory_Universities_in_Milan>	rdfs:label	"university in Milan"@eng .
+#@ <id_1fat6sz_1ia_ku824o>
+<wikicategory_People_from_Madrid>	rdfs:label	"person from Madrid"@eng .
 #@ <id_1l73yi3_1m6_15cgb38>
 <wikicategory_Knights_of_the_Order_of_the_Black_Star>	rdfs:subClassOf	<wordnet_knight_110238375> .
 #@ <id_wpfece_1m6_1880c8b>
@@ -1552,188 +1548,176 @@
 <wikicategory_21st-century_scholars>	rdfs:subClassOf	<wordnet_scholar_110557854> .
 #@ <id_1gww55i_1m6_czeqp5>
 <wikicategory_Member_states_of_the_Union_for_the_Mediterranean>	rdfs:subClassOf	<wordnet_country_108544813> .
+#@ <id_1fft7dc_1ia_uk2w4b>
+<wikicategory_People_from_Sondrio>	rdfs:label	"person from Sondrio"@eng .
 #@ <id_pux5xa_1m6_1cwc4rn>
 <wikicategory_Lord_Presidents_of_the_Council>	rdfs:subClassOf	<wordnet_president_110467179> .
-#@ <id_prea9k_1ia_yxzbwu>
-<wikicategory_People_from_Bad_Honnef>	rdfs:label	"person from Bad Honnef"@en .
+#@ <id_we8b7o_1ia_4b432a>
+<wikicategory_Heads_of_state_of_Ghana>	rdfs:label	"head of state of Ghana"@eng .
 #@ <id_r3f9hf_1m6_hsj9sm>
 <wikicategory_French_people_of_Spanish_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_brzz0x_1ia_10qqi0l>
-<wikicategory_National_churches>	rdfs:label	"National church"@en .
-#@ <id_7cezp1_1ia_jkvq6d>
-<wikicategory_Labour_parties>	rdfs:label	"Labour party"@en .
+#@ <id_1kjsz2w_1ia_1l0dluy>
+<wikicategory_Fellows_of_the_Royal_Society_of_Literature>	rdfs:label	"fellow of the Royal Society of Literature"@eng .
+#@ <id_65jajz_1ia_1m5l1hk>
+<wikicategory_Schools_of_international_relations>	rdfs:label	"school of international relations"@eng .
+#@ <id_1i65qzw_1ia_1fqh7vr>
+<wikicategory_Alumni_of_Cardiff_University>	rdfs:label	"alumnus of Cardiff University"@eng .
+#@ <id_1shgwtv_1ia_5ddovk>
+<wikicategory_Welsh_socialists>	rdfs:label	"Welsh socialist"@eng .
 #@ <id_38b2ny_1m6_1i9drdf>
 <wikicategory_Fellows_of_the_American_Academy_of_Arts_and_Sciences>	rdfs:subClassOf	<wordnet_colleague_109935990> .
-#@ <id_19sd34v_1ia_14o9x5j>
-<wikicategory_Collars_of_the_Order_of_Merit_(Chile)>	rdfs:label	"collar of the Order of Merit (Chile)"@en .
+#@ <id_139hjgx_1ia_1ywbz78>
+<wikicategory_Presidential_palaces>	rdfs:label	"Presidential palace"@eng .
 #@ <id_luzaiz_1m6_hsj9sm>
 <wikicategory_People_from_Rome>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1fft7dc_1ia_uk2w4b>
-<wikicategory_People_from_Sondrio>	rdfs:label	"person from Sondrio"@en .
+#@ <id_2exna0_1ia_16r31qe>
+<wikicategory_First_Secretaries_of_State_of_the_United_Kingdom>	rdfs:label	"First secretary of State of the United Kingdom"@eng .
+#@ <id_148cv23_1ia_tlilpl>
+<wikicategory_French_police_chiefs>	rdfs:label	"French police chief"@eng .
+#@ <id_1i5ecpl_1ia_not81a>
+<wikicategory_People_from_Savoie>	rdfs:label	"person from Savoie"@eng .
 #@ <id_1ayl5cy_1m6_hsj9sm>
 <wikicategory_French_people_of_Russian_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_v89ro1_1ia_dz4det>
-<wikicategory_Academics_of_the_Open_University>	rdfs:label	"academic of the Open University"@en .
-#@ <id_1j4ha1d_1ia_26ho8c>
-<wikicategory_Alumni_of_HEC_School_of_Management>	rdfs:label	"alumnus of HEC School of Management"@en .
+#@ <id_npgvtb_1ia_1lenib4>
+<wikicategory_Heads_of_state_of_Sierra_Leone>	rdfs:label	"head of state of Sierra Leone"@eng .
+#@ <id_znrj7x_1ia_aybjy0>
+<wikicategory_Christian_Democracy_(Italy)_politicians>	rdfs:label	"Christian Democracy (Italy) politician"@eng .
+#@ <id_17l09ju_1ia_16qi489>
+<wikicategory_Political_parties_disestablished_in_2009>	rdfs:label	"Political party disestablished in 2009"@eng .
+#@ <id_2o3jfe_1ia_1n424zt>
+<wikicategory_Divided_regions>	rdfs:label	"Divided region"@eng .
+#@ <id_129mg9b_1ia_1hbnuhm>
+<wikicategory_People_from_Izmir>	rdfs:label	"person from Izmir"@eng .
 #@ <id_asaw24_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Pakistan>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_p08z4m_1m6_hsj9sm>
 <wikicategory_People_of_the_Year_Awards_winners>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_n0pklf_1ia_107sgt5>
-<wikicategory_People_from_the_Palatinate>	rdfs:label	"person from the Palatinate"@en .
+#@ <id_jydyj7_1ia_1j1tlsw>
+<wikicategory_People_associated_with_Cardiff_University>	rdfs:label	"person associated with Cardiff University"@eng .
 #@ <id_16yyuz_1m6_q4dun5>
 <wikicategory_Italian_television_actors>	rdfs:subClassOf	<wordnet_actor_109765278> .
+#@ <id_163x8ld_1ia_11k75vs>
+<wikicategory_Scottish_scholars_and_academics>	rdfs:label	"Scottish scholar and academics"@eng .
+#@ <id_zfdydh_1ia_32ck82>
+<wikicategory_Heads_of_state_of_Saint_Lucia>	rdfs:label	"head of state of Saint Lucia"@eng .
 #@ <id_j672ly_1m6_1cwc4rn>
 <wikicategory_Presidents_of_Italy>	rdfs:subClassOf	<wordnet_president_110467179> .
-#@ <id_1rmjah_1ia_1p9wy89>
-<wikicategory_Governments_of_Italy>	rdfs:label	"government of Italy"@en .
 #@ <id_1m3o6uz_1m6_ic10aj>
 <wikicategory_Alumni_of_the_University_of_Glasgow>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
 #@ <id_1e8ah8u_1m6_e77g05>
 <wikicategory_Sashes_of_the_Order_of_the_Star_of_Romania>	rdfs:subClassOf	<wordnet_sash_104136510> .
 #@ <id_n87zzo_1m6_5jhr9r>
 <wikicategory_Italian_Life_Senators>	rdfs:subClassOf	<wordnet_senator_110578471> .
-#@ <id_r34v3a_1ia_8vz9wh>
-<wikicategory_States_and_territories_established_in_1939>	rdfs:label	"state and territories established in 1939"@en .
-#@ <id_omydrc_1ia_vils90>
-<wikicategory_Presidents_of_France>	rdfs:label	"president of France"@en .
-#@ <id_17k0muj_1ia_1cl1ny0>
-<wikicategory_Spanish_sopranos>	rdfs:label	"Spanish soprano"@en .
 #@ <id_jdi4dt_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Fiji>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_1ngx4zm_1ia_1henjhr>
-<wikicategory_People_associated_with_Liverpool_John_Moores_University>	rdfs:label	"person associated with Liverpool John Moores University"@en .
-#@ <id_18905gj_1ia_13cocja>
-<wikicategory_People_illustrated_on_sterling_banknotes>	rdfs:label	"person illustrated on sterling banknotes"@en .
-#@ <id_1yg0nhk_1ia_4eoj4r>
-<wikicategory_Italian_emigrants_to_France>	rdfs:label	"Italian emigrant to France"@en .
-#@ <id_osovrv_1ia_8zwoav>
-<wikicategory_Mayors_of_Troyes>	rdfs:label	"mayor of Troyes"@en .
+#@ <id_di404b_1ia_ab46l8>
+<wikicategory_Grand_Cordons_of_the_Order_of_the_Star_of_Jordan>	rdfs:label	"Grand cordon of the Order of the Star of Jordan"@eng .
 #@ <id_pegh7q_1m6_hsj9sm>
 <wikicategory_People_from_Hamburg>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_9fidh8_1ia_1meygzf>
-<wikicategory_Electoral_Districts_of_the_Congress_of_Deputies_(Spain)>	rdfs:label	"Electoral district of the Congress of Deputies (Spain)"@en .
+#@ <id_k67yjw_1ia_mb8o2o>
+<wikicategory_Political_parties_of_the_Fifth_Republic>	rdfs:label	"Political party of the Fifth Republic"@eng .
 #@ <id_mbsbk5_1m6_1y1zid8>
 <wikicategory_Social_democratic_parties>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_7go0pp_1ia_eol1ef>
-<wikicategory_Districts_of_Scotland>	rdfs:label	"district of Scotland"@en .
+#@ <id_1g7n65i_1ia_98c5ev>
+<wikicategory_Official_residences_in_France>	rdfs:label	"Official residence in France"@eng .
+#@ <id_24uvi2_1ia_17rl8h5>
+<wikicategory_Countries_bordering_the_Atlantic_Ocean>	rdfs:label	"country bordering the Atlantic Ocean"@eng .
 #@ <id_1w00dhb_1m6_1kbo50g>
 <wikicategory_Italian_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_1tko63i_1m6_11uq1v2>
 <wikicategory_Government_spokespersons_of_France>	rdfs:subClassOf	<wordnet_spokesperson_110638385> .
-#@ <id_1oeycoc_1ia_no9fgh>
-<wikicategory_Member_states_of_the_European_Union>	rdfs:label	"Member state of the European Union"@en .
 #@ <id_13dmcfr_1m6_arslye>
 <wikicategory_Streets_in_Westminster>	rdfs:subClassOf	<wordnet_street_104334599> .
-#@ <id_1p8s91p_1ia_1prrjt7>
-<wikicategory_Heads_of_state_of_Jamaica>	rdfs:label	"head of state of Jamaica"@en .
+#@ <id_k0ue0m_1ia_1q807kw>
+<wikicategory_Lycée_Louis-le-Grand_alumni>	rdfs:label	"Lycée Louis-le-Grand alumnus"@eng .
+#@ <id_1gz0hf6_1ia_1coie4x>
+<wikicategory_National_Alliance_(Italy)_politicians>	rdfs:label	"National Alliance (Italy) politician"@eng .
 #@ <id_12mjo8l_1m6_15cgb38>
 <wikicategory_Knights_of_the_Garter>	rdfs:subClassOf	<wordnet_knight_110238375> .
+#@ <id_sosrcm_1ia_xtqxm>
+<wikicategory_Presidents_of_the_United_Nations_Security_Council>	rdfs:label	"president of the United Nations Security Council"@eng .
 #@ <id_18ovtib_1m6_hsj9sm>
 <wikicategory_People_educated_at_the_Chorister_School,_Durham>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_2xqhkk_1m6_hsj9sm>
 <wikicategory_German_people_of_Romanian_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_589ck7_1ia_1t58m3c>
-<wikicategory_Populated_places_established_in_the_1st_millennium_BC>	rdfs:label	"Populated place established in the 1st millennium BC"@en .
-#@ <id_1akpn7u_1ia_3yzyg7>
-<wikicategory_Heads_of_state_of_the_Bahamas>	rdfs:label	"head of state of the Bahamas"@en .
+#@ <id_1kt1p1z_1ia_c7slk>
+<wikicategory_Organisations_based_in_Geneva>	rdfs:label	"organisation based in Geneva"@eng .
 #@ <id_11b0oqa_1m6_15cgb38>
 <wikicategory_Knights_of_the_Golden_Fleece>	rdfs:subClassOf	<wordnet_knight_110238375> .
-#@ <id_1p71jxz_1ia_1ukl0ny>
-<wikicategory_Sailors_at_the_1972_Summer_Olympics>	rdfs:label	"sailor at the 1972 Summer Olympics"@en .
 #@ <id_1600th4_1m6_13h7dhi>
 <wikicategory_Italian_Ministers_of_Foreign_Affairs>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_18u7phy_1ia_s72i2f>
-<wikicategory_Royal_Fellows_of_the_Royal_Society>	rdfs:label	"Royal fellow of the Royal Society"@en .
+#@ <id_eajhhj_1ia_1meogou>
+<wikicategory_German_politicians>	rdfs:label	"German politician"@eng .
+#@ <id_1bmc0ks_1ia_aw861y>
+<wikicategory_Regions_of_Italy>	rdfs:label	"region of Italy"@eng .
+#@ <id_16i21i0_1ia_g3wbrg>
+<wikicategory_British_European_Commissioners>	rdfs:label	"British European commissioner"@eng .
 #@ <id_5ppqvw_1m6_1a4iuye>
 <wikicategory_Italian_academics>	rdfs:subClassOf	<wordnet_academician_109759069> .
+#@ <id_tkix1t_1ia_1udj7ip>
+<wikicategory_Grand_Collars_of_the_Order_of_the_Southern_Cross>	rdfs:label	"Grand collar of the Order of the Southern Cross"@eng .
 #@ <id_1a7bj6z_1m6_1kbo50g>
 <wikicategory_Galician_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_13i0bt4_1ia_1mcdd84>
-<wikicategory_Women_in_the_Canadian_armed_services>	rdfs:label	"woman in the Canadian armed services"@en .
-#@ <id_ba9gx2_1ia_11km4sc>
-<wikicategory_Spanish_yacht_racers>	rdfs:label	"Spanish yacht racer"@en .
-#@ <id_16i21i0_1ia_g3wbrg>
-<wikicategory_British_European_Commissioners>	rdfs:label	"British European commissioner"@en .
-#@ <id_1orb0i8_1ia_1rxgag7>
-<wikicategory_People_from_Blomberg,_North_Rhine-Westphalia>	rdfs:label	"person from Blomberg, North Rhine-Westphalia"@en .
+#@ <id_g6og84_1ia_1wwi59i>
+<wikicategory_Heads_of_state_of_Tuvalu>	rdfs:label	"head of state of Tuvalu"@eng .
+#@ <id_pt2m1n_1ia_1h2s94a>
+<wikicategory_French_lawyers>	rdfs:label	"French lawyer"@eng .
 #@ <id_1shgwtv_1m6_z0twdd>
 <wikicategory_Welsh_socialists>	rdfs:subClassOf	<wordnet_socialist_110618848> .
+#@ <id_1mq441s_1ia_1sbj82e>
+<wikicategory_Lycée_Carnot_alumni>	rdfs:label	"Lycée Carnot alumnus"@eng .
+#@ <id_1ansi4j_1ia_1h9e5u6>
+<wikicategory_Transport_ministers_of_Germany>	rdfs:label	"Transport minister of Germany"@eng .
 #@ <id_gob89n_1m6_d9kgm7>
 <wikicategory_Italian_European_Commissioners>	rdfs:subClassOf	<wordnet_commissioner_109943811> .
 #@ <id_1x5jd8t_1m6_165fvqy>
 <wikicategory_Councillors_in_Camden>	rdfs:subClassOf	<wordnet_council_member_109944763> .
-#@ <id_wpfece_1ia_z1vvab>
-<wikicategory_German_chemists>	rdfs:label	"German chemist"@en .
-#@ <id_r34v45_1ia_8vz9xc>
-<wikicategory_States_and_territories_established_in_1949>	rdfs:label	"state and territories established in 1949"@en .
-#@ <id_1gqnnv7_1ia_5sa2wg>
-<wikicategory_British_journalists>	rdfs:label	"British journalist"@en .
-#@ <id_1ayl5cy_1ia_7ky2x>
-<wikicategory_French_people_of_Russian_descent>	rdfs:label	"French person of Russian descent"@en .
-#@ <id_1tsjdqw_1ia_1r27xo>
-<wikicategory_Academics_of_Glasgow_Caledonian_University>	rdfs:label	"academic of Glasgow Caledonian University"@en .
-#@ <id_1czp4uo_1ia_19ejcz>
-<wikicategory_Universities_in_Castile_and_León>	rdfs:label	"university in Castile and León"@en .
-#@ <id_2i2lr8_1ia_177pker>
-<wikicategory_Countries_bordering_the_Baltic_Sea>	rdfs:label	"country bordering the Baltic Sea"@en .
+#@ <id_p0wz8n_1ia_1oyy3wc>
+<wikicategory_Italian_billionaires>	rdfs:label	"Italian billionaire"@eng .
+#@ <id_1jkggrq_1ia_p3vc3f>
+<wikicategory_People_from_Varese>	rdfs:label	"person from Varese"@eng .
+#@ <id_w2ky07_1ia_i29ual>
+<wikicategory_Spanish_European_Commissioners>	rdfs:label	"Spanish European commissioner"@eng .
 #@ <id_1wyt8jh_1m6_n873l2>
 <wikicategory_Former_monarchies_of_Europe>	rdfs:subClassOf	<wordnet_monarchy_108363812> .
 #@ <id_1ugfs52_1m6_18gkobp>
 <wikicategory_German_refugees>	rdfs:subClassOf	<wordnet_refugee_110516016> .
-#@ <id_1tj1s7q_1ia_167ke20>
-<wikicategory_Educational_institutions_established_in_1924>	rdfs:label	"Educational institution established in 1924"@en .
 #@ <id_12biqx3_1m6_hsj9sm>
 <wikicategory_People_from_Milan>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_116hfj2_1m6_3xunia>
 <wikicategory_English-language_singers>	rdfs:subClassOf	<wordnet_singer_110599806> .
 #@ <id_ns1ubb_1m6_1rnonu9>
 <wikicategory_Protestant_monarchs>	rdfs:subClassOf	<wordnet_sovereign_110628644> .
-#@ <id_1flbin5_1ia_b50pt1>
-<wikicategory_Female_foreign_ministers>	rdfs:label	"Female foreign minister"@en .
-#@ <id_k67yjw_1ia_mb8o2o>
-<wikicategory_Political_parties_of_the_Fifth_Republic>	rdfs:label	"Political party of the Fifth Republic"@en .
-#@ <id_1lrx44u_1ia_1efl32y>
-<wikicategory_Port_cities_and_towns_of_the_North_Sea>	rdfs:label	"Port city and towns of the North Sea"@en .
-#@ <id_1cuj8va_1ia_1sdlkoq>
-<wikicategory_Mayors_of_Paris>	rdfs:label	"mayor of Paris"@en .
-#@ <id_r2jji1_1ia_3nubxk>
-<wikicategory_20th-century_economists>	rdfs:label	"20th-century economist"@en .
 #@ <id_opd6q4_1m6_hsj9sm>
 <wikicategory_German_people_of_Polish_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1slwphy_1ia_1dd6jwv>
-<wikicategory_Knights_of_the_Order_of_Alcántara>	rdfs:label	"knight of the Order of Alcántara"@en .
 #@ <id_1elsiej_1m6_ltohsj>
 <wikicategory_Port_cities_and_towns_in_Scotland>	rdfs:subClassOf	<wordnet_city_108524735> .
+#@ <id_yl56oq_1ia_5jzrxj>
+<wikicategory_Reigning_monarchs>	rdfs:label	"Reigning monarch"@eng .
 #@ <id_di404b_1m6_d307i>
 <wikicategory_Grand_Cordons_of_the_Order_of_the_Star_of_Jordan>	rdfs:subClassOf	<wordnet_cordon_108376948> .
-#@ <id_1vmfvko_1ia_aumhwp>
-<wikicategory_French_economists>	rdfs:label	"French economist"@en .
-#@ <id_1js3ahb_1ia_taxiie>
-<wikicategory_French_people_of_Greek_descent>	rdfs:label	"French person of Greek descent"@en .
-#@ <id_go9e4k_1ia_1u28jqe>
-<wikicategory_British_princesses>	rdfs:label	"British princess"@en .
-#@ <id_su938v_1ia_1gfke5x>
-<wikicategory_Daily_Mail_journalists>	rdfs:label	"Daily Mail journalist"@en .
-#@ <id_1wxj1bv_1ia_uvle30>
-<wikicategory_Christian_democratic_parties>	rdfs:label	"Christian democratic party"@en .
-#@ <id_1nv2r8n_1ia_6ra05r>
-<wikicategory_Knights_of_Malta>	rdfs:label	"knight of Malta"@en .
+#@ <id_117613r_1ia_9w1h2g>
+<wikicategory_Leaders_of_the_Opposition_(United_Kingdom)>	rdfs:label	"leader of the Opposition (United Kingdom)"@eng .
+#@ <id_twiqgp_1ia_votjpy>
+<wikicategory_Government_ministers_of_Germany>	rdfs:label	"Government minister of Germany"@eng .
+#@ <id_1s4wleh_1ia_10dhinj>
+<wikicategory_Bessarabia-German_people>	rdfs:label	"Bessarabia-German person"@eng .
+#@ <id_o6jier_1ia_1uq92ft>
+<wikicategory_Presidents_of_the_National_Union_of_Students_(United_Kingdom)>	rdfs:label	"president of the National Union of Students (United Kingdom)"@eng .
+#@ <id_55h4il_1ia_tze2wb>
+<wikicategory_Turkish_communities_in_Germany>	rdfs:label	"Turkish community in Germany"@eng .
 #@ <id_1edc9j2_1m6_1kbo50g>
 <wikicategory_Forza_Italia_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_1untlg1_1ia_19s3a70>
-<wikicategory_People_from_Ourense>	rdfs:label	"person from Ourense"@en .
+#@ <id_1wzrlsf_1ia_br95ev>
+<wikicategory_The_People_of_Freedom_politicians>	rdfs:label	"person of Freedom politicians"@eng .
 #@ <id_1onkqum_1m6_15zg5an>
 <wikicategory_National_legislatures>	rdfs:subClassOf	<wordnet_legislature_108163273> .
-#@ <id_1jjqaxu_1ia_17sphiv>
-<wikicategory_British_people_of_Jewish_descent>	rdfs:label	"British person of Jewish descent"@en .
-#@ <id_cpbpr2_1ia_hfrtmt>
-<wikicategory_Gay_politicians>	rdfs:label	"Gay politician"@en .
+#@ <id_1frg589_1ia_2tkh89>
+<wikicategory_Heads_of_state_of_Trinidad_and_Tobago>	rdfs:label	"head of state of Trinidad and Tobago"@eng .
+#@ <id_zuvxfy_1ia_umefzt>
+<wikicategory_United_Kingdom_Parliamentary_constituencies_disestablished_in_1974>	rdfs:label	"United Kingdom Parliamentary constituency disestablished in 1974"@eng .
 #@ <id_1m28h4g_1m6_17x0mu>
 <wikicategory_Grand_Collars_of_the_Order_of_Prince_Henry>	rdfs:subClassOf	<wordnet_collar_103068181> .
-#@ <id_10ndkdh_1ia_1gzru1z>
-<wikicategory_Heads_of_state_of_Barbados>	rdfs:label	"head of state of Barbados"@en .
 #@ <id_17wf1uz_1m6_14dlqgs>
 <wikicategory_Universities_in_Italy>	rdfs:subClassOf	<wordnet_university_108286569> .
 #@ <id_19ykfcw_1m6_1kbo50g>
@@ -1742,22 +1726,24 @@
 <wikicategory_Cold_War_leaders>	rdfs:subClassOf	<wordnet_leader_109623038> .
 #@ <id_lup7bk_1m6_hsj9sm>
 <wikicategory_People_from_Bury>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_wgduj1_1ia_4d9mdn>
-<wikicategory_Heads_of_state_of_Kenya>	rdfs:label	"head of state of Kenya"@en .
-#@ <id_r154bn_1ia_1cfc0ri>
-<wikicategory_Labour_Party_(UK)_politicians>	rdfs:label	"Labour Party (UK) politician"@en .
+#@ <id_o7nq2d_1ia_yory2y>
+<wikicategory_People_from_Carshalton>	rdfs:label	"person from Carshalton"@eng .
 #@ <id_w2ky07_1m6_d9kgm7>
 <wikicategory_Spanish_European_Commissioners>	rdfs:subClassOf	<wordnet_commissioner_109943811> .
 #@ <id_nw9bzn_1m6_hsj9sm>
 <wikicategory_People_from_Ashton-under-Lyne>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_14rp0oq_1ia_rmnmx>
+<wikicategory_Italian_bankers>	rdfs:label	"Italian banker"@eng .
 #@ <id_17l09ju_1m6_1y1zid8>
 <wikicategory_Political_parties_disestablished_in_2009>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_xu7m1k_1ia_1hvvxvd>
-<wikicategory_Foreign_Ministers_of_Germany>	rdfs:label	"Foreign minister of Germany"@en .
-#@ <id_zmmd_1ia_eo74ke>
-<wikicategory_Scottish_Labour_Party_politicians>	rdfs:label	"Scottish Labour Party politician"@en .
-#@ <id_ck6tze_1ia_1ta0j0s>
-<wikicategory_Heads_of_state_of_Malawi>	rdfs:label	"head of state of Malawi"@en .
+#@ <id_1nkhi5z_1ia_1ay8tpi>
+<wikicategory_French_Ministers_of_Finance>	rdfs:label	"French minister of Finance"@eng .
+#@ <id_1k5re77_1ia_flkrvp>
+<wikicategory_States_of_the_German_Empire>	rdfs:label	"state of the German Empire"@eng .
+#@ <id_dqcrbi_1ia_1xbsbpz>
+<wikicategory_Italian-language_singers>	rdfs:label	"Italian-language singer"@eng .
+#@ <id_1rd7oto_1ia_16wbkfg>
+<wikicategory_Parliaments_by_country>	rdfs:label	"parliament by country"@eng .
 #@ <id_fo4isn_1m6_hsj9sm>
 <wikicategory_People_from_Osnabrück>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_n371zt_1m6_13h7dhi>
@@ -1766,243 +1752,257 @@
 <wikicategory_Heads_of_state_of_Nigeria>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
 #@ <id_okj32_1m6_hsj9sm>
 <wikicategory_Italian_people_of_Argentine_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1f9igqp_1ia_1d36leq>
-<wikicategory_Italian_Social_Movement_politicians>	rdfs:label	"Italian Social Movement politician"@en .
-#@ <id_we8b7o_1ia_4b432a>
-<wikicategory_Heads_of_state_of_Ghana>	rdfs:label	"head of state of Ghana"@en .
-#@ <id_1gmeabm_1ia_1h5dl34>
-<wikicategory_Heads_of_state_of_Nigeria>	rdfs:label	"head of state of Nigeria"@en .
-#@ <id_1ld2pje_1ia_i1kniy>
-<wikicategory_Attempted_assassination_survivors>	rdfs:label	"Attempted assassination survivor"@en .
+#@ <id_p2khed_1ia_1vl5xid>
+<wikicategory_European_countries>	rdfs:label	"European country"@eng .
+#@ <id_1a27dof_1ia_1lspom7>
+<wikicategory_Monarchs_of_Ceylon>	rdfs:label	"monarch of Ceylon"@eng .
 #@ <id_13i0bt4_1m6_1vthrwe>
 <wikicategory_Women_in_the_Canadian_armed_services>	rdfs:subClassOf	<wordnet_woman_110787470> .
-#@ <id_1ansi4j_1ia_1h9e5u6>
-<wikicategory_Transport_ministers_of_Germany>	rdfs:label	"Transport minister of Germany"@en .
 #@ <id_zfdydh_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_Saint_Lucia>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_1qll9rm_1ia_1lops8h>
-<wikicategory_French-language_singers>	rdfs:label	"French-language singer"@en .
-#@ <id_1ovc1fu_1ia_r6x9vi>
-<wikicategory_People_of_Sicilian_descent>	rdfs:label	"person of Sicilian descent"@en .
+#@ <id_19ykfcw_1ia_1t1uukk>
+<wikicategory_Social_Democratic_Party_(Andorra)_politicians>	rdfs:label	"Social Democratic Party (Andorra) politician"@eng .
+#@ <id_asaw24_1ia_r4p5qm>
+<wikicategory_Heads_of_state_of_Pakistan>	rdfs:label	"head of state of Pakistan"@eng .
+#@ <id_1m28h4g_1ia_gui0tr>
+<wikicategory_Grand_Collars_of_the_Order_of_Prince_Henry>	rdfs:label	"Grand collar of the Order of Prince Henry"@eng .
+#@ <id_1w00dhb_1ia_1rk6sjo>
+<wikicategory_Italian_politicians>	rdfs:label	"Italian politician"@eng .
+#@ <id_hzmnd8_1ia_pxhmtd>
+<wikicategory_British_Secretaries_of_State_for_Foreign_and_Commonwealth_Affairs>	rdfs:label	"British secretary of State for Foreign and Commonwealth Affairs"@eng .
 #@ <id_yl56oq_1m6_1rnonu9>
 <wikicategory_Reigning_monarchs>	rdfs:subClassOf	<wordnet_sovereign_110628644> .
 #@ <id_95tk5o_1m6_1y1zid8>
 <wikicategory_Political_parties_established_in_1976>	rdfs:subClassOf	<wordnet_party_108256968> .
+#@ <id_1hwku4u_1ia_1a10971>
+<wikicategory_Grand_Cordons_of_the_Order_of_Leopold_(Belgium)>	rdfs:label	"Grand cordon of the Order of Leopold (Belgium)"@eng .
 #@ <id_9ozf68_1m6_ic10aj>
 <wikicategory_Alumni_of_Ruskin_College>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
 #@ <id_1l0w4z2_1m6_7shbzz>
 <wikicategory_Officers_of_the_National_Order_of_Quebec>	rdfs:subClassOf	<wordnet_military_officer_110317007> .
-#@ <id_1gz0hf6_1ia_1coie4x>
-<wikicategory_National_Alliance_(Italy)_politicians>	rdfs:label	"National Alliance (Italy) politician"@en .
 #@ <id_18wanl3_1m6_w2cgyi>
 <wikicategory_Educational_institutions_established_in_the_15th_century>	rdfs:subClassOf	<wordnet_educational_institution_108276342> .
 #@ <id_j2aclu_1m6_9jqgec>
 <wikicategory_Converts_to_Roman_Catholicism_from_Anglicanism>	rdfs:subClassOf	<wordnet_convert_109962414> .
-#@ <id_znrj7x_1ia_aybjy0>
-<wikicategory_Christian_Democracy_(Italy)_politicians>	rdfs:label	"Christian Democracy (Italy) politician"@en .
+#@ <id_a15a3c_1ia_1qqyz4q>
+<wikicategory_Heads_of_state_of_Guyana>	rdfs:label	"head of state of Guyana"@eng .
+#@ <id_wpfece_1ia_z1vvab>
+<wikicategory_German_chemists>	rdfs:label	"German chemist"@eng .
 #@ <id_148cv23_1m6_h9jfud>
 <wikicategory_French_police_chiefs>	rdfs:subClassOf	<wordnet_captain_109893015> .
 #@ <id_s3sjfq_1m6_hsj9sm>
 <wikicategory_People_from_Edinburgh>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_ew05ra_1ia_1corbsn>
-<wikicategory_Leaders_of_the_Conservative_Party_(UK)>	rdfs:label	"leader of the Conservative Party (UK)"@en .
-#@ <id_dqcrbi_1ia_1xbsbpz>
-<wikicategory_Italian-language_singers>	rdfs:label	"Italian-language singer"@en .
-#@ <id_10ijhq9_1ia_3vrria>
-<wikicategory_G20_nations>	rdfs:label	"G20 nation"@en .
-#@ <id_lmeex2_1ia_oepqjp>
-<wikicategory_Naturalized_citizens_of_France>	rdfs:label	"Naturalized citizen of France"@en .
+#@ <id_x61tvf_1ia_39i0ti>
+<wikicategory_Auxiliary_Territorial_Service_officers>	rdfs:label	"Auxiliary Territorial Service officer"@eng .
+#@ <id_8kbvb_1ia_bhb59i>
+<wikicategory_Defunct_political_parties_in_Germany>	rdfs:label	"Defunct political party in Germany"@eng .
 #@ <id_fmybu6_1m6_13h7dhi>
 <wikicategory_Health_ministers_of_Germany>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_12mjo8l_1ia_x0v0y6>
-<wikicategory_Knights_of_the_Garter>	rdfs:label	"knight of the Garter"@en .
-#@ <id_1kint4t_1ia_jtpua3>
-<wikicategory_Political_parties_in_Spain>	rdfs:label	"Political party in Spain"@en .
+#@ <id_7r9uo7_1ia_k4nd19>
+<wikicategory_Spanish_Socialist_Workers'_Party_politicians>	rdfs:label	"Spanish Socialist Workers' Party politician"@eng .
+#@ <id_12fl3k0_1ia_1hhmhsb>
+<wikicategory_People_from_Turin>	rdfs:label	"person from Turin"@eng .
+#@ <id_pu10w8_1ia_lvchyu>
+<wikicategory_Port_cities_and_towns_in_Germany>	rdfs:label	"Port city and towns in Germany"@eng .
+#@ <id_1qas0ff_1ia_1bjq4h7>
+<wikicategory_Lycée_Pasteur_alumni>	rdfs:label	"Lycée Pasteur alumnus"@eng .
+#@ <id_lmeex2_1ia_oepqjp>
+<wikicategory_Naturalized_citizens_of_France>	rdfs:label	"Naturalized citizen of France"@eng .
 #@ <id_ifhxua_1m6_1ke0ez4>
 <wikicategory_British_sailors>	rdfs:subClassOf	<wordnet_sailor_110546633> .
-#@ <id_1d07p3u_1ia_4gk4fr>
-<wikicategory_Università_Cattolica_del_Sacro_Cuore_alumni>	rdfs:label	"Università Cattolica del Sacro Cuore alumnus"@en .
+#@ <id_1esos97_1ia_1nf3g2e>
+<wikicategory_21st-century_economists>	rdfs:label	"21st-century economist"@eng .
 #@ <id_1untlg1_1m6_hsj9sm>
 <wikicategory_People_from_Ourense>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1jii959_1ia_16kufco>
-<wikicategory_Female_lawyers>	rdfs:label	"Female lawyer"@en .
-#@ <id_1h3mt5z_1ia_1xhzd3x>
-<wikicategory_People_from_the_Province_of_Westphalia>	rdfs:label	"person from the Province of Westphalia"@en .
-#@ <id_p2khed_1ia_1vl5xid>
-<wikicategory_European_countries>	rdfs:label	"European country"@en .
+#@ <id_7go0pp_1ia_eol1ef>
+<wikicategory_Districts_of_Scotland>	rdfs:label	"district of Scotland"@eng .
 #@ <id_orpv1h_1m6_j8qq7j>
 <wikicategory_9/11_conspiracy_theorists>	rdfs:subClassOf	<wordnet_theorist_110706812> .
 #@ <id_1tj1rla_1m6_w2cgyi>
 <wikicategory_Educational_institutions_established_in_1872>	rdfs:subClassOf	<wordnet_educational_institution_108276342> .
-#@ <id_g15v8g_1ia_1wf2o2c>
-<wikicategory_Host_cities_of_the_Commonwealth_Games>	rdfs:label	"Host city of the Commonwealth Games"@en .
-#@ <id_asaw24_1ia_r4p5qm>
-<wikicategory_Heads_of_state_of_Pakistan>	rdfs:label	"head of state of Pakistan"@en .
-#@ <id_9w6p6t_1ia_pwnegf>
-<wikicategory_People_of_Calabrian_descent>	rdfs:label	"person of Calabrian descent"@en .
+#@ <id_1sj5ms5_1ia_gj959q>
+<wikicategory_Spanish_agnostics>	rdfs:label	"Spanish agnostic"@eng .
+#@ <id_1qvc8i4_1ia_1f0c09v>
+<wikicategory_Women_in_World_War_II>	rdfs:label	"woman in World War II"@eng .
 #@ <id_1hmmu5x_1m6_hsj9sm>
 <wikicategory_English_people_of_Jewish_descent>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_satmpd_1ia_13962hu>
-<wikicategory_Universities_and_colleges_in_Saxony>	rdfs:label	"university and colleges in Saxony"@en .
-#@ <id_w2ky07_1ia_i29ual>
-<wikicategory_Spanish_European_Commissioners>	rdfs:label	"Spanish European commissioner"@en .
-#@ <id_lvbz37_1ia_hsp7zu>
-<wikicategory_Prime_Ministers_of_Spain>	rdfs:label	"Prime minister of Spain"@en .
+#@ <id_i6e93q_1ia_oammx7>
+<wikicategory_Alliance_'90/The_Greens_politicians>	rdfs:label	"Alliance '90/The Greens politician"@eng .
+#@ <id_18u7phy_1ia_s72i2f>
+<wikicategory_Royal_Fellows_of_the_Royal_Society>	rdfs:label	"Royal fellow of the Royal Society"@eng .
+#@ <id_1hqc2nn_1ia_1sze6ck>
+<wikicategory_Visitor_attractions_in_Leipzig>	rdfs:label	"Visitor attraction in Leipzig"@eng .
 #@ <id_7iwi7b_1m6_1y1zid8>
 <wikicategory_Political_parties_in_Germany>	rdfs:subClassOf	<wordnet_party_108256968> .
+#@ <id_1g8p0tl_1ia_1w5lech>
+<wikicategory_Bishops_of_Urgell>	rdfs:label	"bishop of Urgell"@eng .
 #@ <id_1svd4xo_1m6_18h7ig7>
 <wikicategory_Secretaries_of_State_for_Health_(UK)>	rdfs:subClassOf	<wordnet_secretary_110570019> .
+#@ <id_tql0g3_1ia_kb5p3w>
+<wikicategory_20th-century_Italian_people>	rdfs:label	"20th-century Italian person"@eng .
 #@ <id_ulgvxu_1m6_gpo87b>
 <wikicategory_United_Kingdom_Parliamentary_constituencies_established_in_1983>	rdfs:subClassOf	<wordnet_constituency_108238156> .
+#@ <id_1a7uh29_1ia_fr9cdy>
+<wikicategory_People_from_Bilbao>	rdfs:label	"person from Bilbao"@eng .
 #@ <id_jq99ic_1m6_1kbo50g>
 <wikicategory_Italian_Socialist_Party_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_zfdydh_1ia_32ck82>
-<wikicategory_Heads_of_state_of_Saint_Lucia>	rdfs:label	"head of state of Saint Lucia"@en .
 #@ <id_12d15g5_1m6_hsj9sm>
 <wikicategory_People_from_Paris>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_orpv1h_1ia_1bpz25>
+<wikicategory_9/11_conspiracy_theorists>	rdfs:label	"9/11 conspiracy theorist"@eng .
 #@ <id_18iwv4b_1m6_1x95yav>
 <wikicategory_Grade_I_listed_buildings_in_Oxford>	rdfs:subClassOf	<wordnet_building_102913152> .
+#@ <id_i4iypo_1ia_15q77h3>
+<wikicategory_NUTS_2_statistical_regions_of_the_European_Union>	rdfs:label	"NUTS 2 statistical region of the European Union"@eng .
 #@ <id_109dyp8_1m6_85bzg5>
 <wikicategory_Trade_unionists_from_Kingston_upon_Hull>	rdfs:subClassOf	<wordnet_trade_unionist_110720964> .
 #@ <id_ba9gx2_1m6_1wd0kv7>
 <wikicategory_Spanish_yacht_racers>	rdfs:subClassOf	<wordnet_racer_110502576> .
-#@ <id_1ug2kra_1ia_wsj4nl>
-<wikicategory_Democratic_Party_(Italy)_politicians>	rdfs:label	"Democratic Party (Italy) politician"@en .
-#@ <id_5jv04g_1ia_1f5fk45>
-<wikicategory_Council_areas_of_Scotland>	rdfs:label	"Council area of Scotland"@en .
+#@ <id_158097z_1ia_glyalz>
+<wikicategory_French_Foreign_Ministers>	rdfs:label	"French Foreign minister"@eng .
+#@ <id_1lrx44u_1ia_1efl32y>
+<wikicategory_Port_cities_and_towns_of_the_North_Sea>	rdfs:label	"Port city and towns of the North Sea"@eng .
 #@ <id_1d07p3u_1m6_ic10aj>
 <wikicategory_Università_Cattolica_del_Sacro_Cuore_alumni>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
+#@ <id_1gja4fk_1ia_i0gz73>
+<wikicategory_States_of_the_North_German_Confederation>	rdfs:label	"state of the North German Confederation"@eng .
 #@ <id_8kbvb_1m6_1y1zid8>
 <wikicategory_Defunct_political_parties_in_Germany>	rdfs:subClassOf	<wordnet_party_108256968> .
-#@ <id_xhsmlc_1ia_afcrmi>
-<wikicategory_Alumni_of_the_London_School_of_Economics>	rdfs:label	"alumnus of the London School of Economics"@en .
+#@ <id_ranepb_1ia_148ew2u>
+<wikicategory_LGBT_politicians_from_Germany>	rdfs:label	"LGBT politician from Germany"@eng .
 #@ <id_1bmc0ks_1m6_1cm1whp>
 <wikicategory_Regions_of_Italy>	rdfs:subClassOf	<wordnet_region_108630039> .
-#@ <id_1wspxgo_1ia_1bwzm7n>
-<wikicategory_People_from_Ajaccio>	rdfs:label	"person from Ajaccio"@en .
+#@ <id_jdi4dt_1ia_yiarsj>
+<wikicategory_Heads_of_state_of_Fiji>	rdfs:label	"head of state of Fiji"@eng .
 #@ <id_g15v8g_1m6_ltohsj>
 <wikicategory_Host_cities_of_the_Commonwealth_Games>	rdfs:subClassOf	<wordnet_city_108524735> .
-#@ <id_ku59pv_1ia_cy0jov>
-<wikicategory_City-states>	rdfs:label	"city-state"@en .
-#@ <id_rmnj5q_1ia_11l26bn>
-<wikicategory_Alumni_of_the_University_of_Leeds>	rdfs:label	"alumnus of the University of Leeds"@en .
 #@ <id_gu9ul6_1m6_w2cgyi>
 <wikicategory_Educational_institutions_established_in_the_1550s>	rdfs:subClassOf	<wordnet_educational_institution_108276342> .
 #@ <id_139hjgx_1m6_1p82crk>
 <wikicategory_Presidential_palaces>	rdfs:subClassOf	<wordnet_palace_103878066> .
+#@ <id_v89ro1_1ia_dz4det>
+<wikicategory_Academics_of_the_Open_University>	rdfs:label	"academic of the Open University"@eng .
 #@ <id_xhsmlc_1m6_ic10aj>
 <wikicategory_Alumni_of_the_London_School_of_Economics>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
 #@ <id_bhcs0d_1m6_1rnonu9>
 <wikicategory_Spanish_monarchs>	rdfs:subClassOf	<wordnet_sovereign_110628644> .
 #@ <id_19lflq8_1m6_1cwc4rn>
 <wikicategory_Presidents_of_the_European_Commission>	rdfs:subClassOf	<wordnet_president_110467179> .
-#@ <id_o7nq2d_1ia_yory2y>
-<wikicategory_People_from_Carshalton>	rdfs:label	"person from Carshalton"@en .
+#@ <id_3v7crn_1ia_pm7ezb>
+<wikicategory_People_from_Ávila,_Spain>	rdfs:label	"person from Ávila, Spain"@eng .
+#@ <id_95tk5o_1ia_o3lwwt>
+<wikicategory_Political_parties_established_in_1976>	rdfs:label	"Political party established in 1976"@eng .
+#@ <id_1bgham0_1ia_1gonpf2>
+<wikicategory_People_educated_at_Archbishop_Holgate's_School>	rdfs:label	"person educated at Archbishop Holgate's School"@eng .
 #@ <id_r34v3a_1m6_czeqp5>
 <wikicategory_States_and_territories_established_in_1939>	rdfs:subClassOf	<wordnet_country_108544813> .
 #@ <id_er13rd_1m6_hsj9sm>
 <wikicategory_People_from_Le_Mans>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_1ucmlcv_1m6_18h7ig7>
 <wikicategory_British_Secretaries_of_State>	rdfs:subClassOf	<wordnet_secretary_110570019> .
-#@ <id_18l3df6_1ia_1dgjtu2>
-<wikicategory_Knights_of_Santiago>	rdfs:label	"knight of Santiago"@en .
+#@ <id_1gqnnv7_1ia_5sa2wg>
+<wikicategory_British_journalists>	rdfs:label	"British journalist"@eng .
 #@ <id_15r6g7m_1m6_1vthrwe>
 <wikicategory_German_women_in_politics>	rdfs:subClassOf	<wordnet_woman_110787470> .
-#@ <id_1pwu0d1_1ia_1otf4yb>
-<wikicategory_Democracy_is_Freedom_–_The_Daisy_politicians>	rdfs:label	"Democracy is Freedom – The Daisy politician"@en .
+#@ <id_9dadjx_1ia_2xms5h>
+<wikicategory_Knights_of_the_Order_of_the_Rajamitrabhorn>	rdfs:label	"knight of the Order of the Rajamitrabhorn"@eng .
+#@ <id_1kd8f87_1ia_joagdh>
+<wikicategory_Political_parties_in_Italy>	rdfs:label	"Political party in Italy"@eng .
 #@ <id_omydrc_1m6_1cwc4rn>
 <wikicategory_Presidents_of_France>	rdfs:subClassOf	<wordnet_president_110467179> .
-#@ <id_j672ly_1ia_ciq0ka>
-<wikicategory_Presidents_of_Italy>	rdfs:label	"president of Italy"@en .
+#@ <id_17sph8y_1ia_15q1p02>
+<wikicategory_Political_science_organizations>	rdfs:label	"Political science organization"@eng .
 #@ <id_128pq10_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_the_Gambia>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
-#@ <id_h0gx53_1ia_1v5unv6>
-<wikicategory_People_from_Livorno>	rdfs:label	"person from Livorno"@en .
-#@ <id_95tjzh_1ia_o3lwqm>
-<wikicategory_Political_parties_established_in_1900>	rdfs:label	"Political party established in 1900"@en .
-#@ <id_16u62t9_1ia_1uvwwya>
-<wikicategory_Member_states_of_the_United_Nations>	rdfs:label	"Member state of the United Nations"@en .
+#@ <id_1wxwoys_1ia_1dhmw1l>
+<wikicategory_People_from_Renfrewshire>	rdfs:label	"person from Renfrewshire"@eng .
+#@ <id_18jb85f_1ia_12as4t>
+<wikicategory_Knights_of_Grace_of_the_Order_of_St_John>	rdfs:label	"knight of Grace of the Order of St John"@eng .
 #@ <id_1fyljea_1m6_hsj9sm>
 <wikicategory_People_from_Nièvre>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_17kztg2_1m6_1y1zid8>
 <wikicategory_Political_parties_disestablished_in_1990>	rdfs:subClassOf	<wordnet_party_108256968> .
+#@ <id_156ey2p_1ia_kgb0gt>
+<wikicategory_Communes_of_Hauts-de-Seine>	rdfs:label	"commune of Hauts-de-Seine"@eng .
 #@ <id_ydqkf3_1m6_lfcn3a>
 <wikicategory_Colleges_of_the_University_of_Oxford>	rdfs:subClassOf	<wordnet_college_108278169> .
-#@ <id_5qhvi5_1ia_1toscmf>
-<wikicategory_Grand_Masters_of_the_Order_of_the_Golden_Fleece>	rdfs:label	"Grand master of the Order of the Golden Fleece"@en .
+#@ <id_19sd34v_1ia_14o9x5j>
+<wikicategory_Collars_of_the_Order_of_Merit_(Chile)>	rdfs:label	"collar of the Order of Merit (Chile)"@eng .
+#@ <id_76s9df_1ia_zm6mkw>
+<wikicategory_Heads_of_state_of_New_Zealand>	rdfs:label	"head of state of New Zealand"@eng .
 #@ <id_10t17ti_1m6_13h7dhi>
 <wikicategory_Spanish_Ministers_of_Economy_and_Finance>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_16m1wj6_1ia_ncl64x>
-<wikicategory_Spanish_chemists>	rdfs:label	"Spanish chemist"@en .
 #@ <id_h3sf4d_1m6_upbkvv>
 <wikicategory_French_diplomats>	rdfs:subClassOf	<wordnet_diplomat_110013927> .
 #@ <id_1ld2pje_1m6_rz7e5s>
 <wikicategory_Attempted_assassination_survivors>	rdfs:subClassOf	<wordnet_survivor_110681194> .
-#@ <id_1w0mou3_1ia_e2c0i5>
-<wikicategory_German-speaking_countries>	rdfs:label	"German-speaking country"@en .
 #@ <id_1f9igqp_1m6_1kbo50g>
 <wikicategory_Italian_Social_Movement_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
 #@ <id_1uqrk31_1m6_1kbo50g>
 <wikicategory_Action_Party_(Italy)_politicians>	rdfs:subClassOf	<wordnet_politician_110451263> .
-#@ <id_1a16zn1_1ia_1x5lzmq>
-<wikicategory_Member_states_of_NATO>	rdfs:label	"Member state of NATO"@en .
 #@ <id_1xctdn3_1m6_7ma9fc>
 <wikicategory_Heads_of_state_of_the_Solomon_Islands>	rdfs:subClassOf	<wordnet_head_of_state_110164747> .
+#@ <id_13q7caf_1ia_iuh11e>
+<wikicategory_People_from_Detmold>	rdfs:label	"person from Detmold"@eng .
 #@ <id_1mq441s_1m6_ic10aj>
 <wikicategory_Lycée_Carnot_alumni>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_13ri3tc_1ia_1j60wax>
-<wikicategory_French_Senators_of_the_Fifth_Republic>	rdfs:label	"French senator of the Fifth Republic"@en .
 #@ <id_17yff9h_1m6_14dlqgs>
 <wikicategory_Universities_in_Milan>	rdfs:subClassOf	<wordnet_university_108286569> .
-#@ <id_p7h9ua_1ia_3ruj8d>
-<wikicategory_Secretaries_of_State_for_the_Home_Department>	rdfs:label	"secretary of State for the Home Department"@en .
 #@ <id_1p4k65y_1m6_v3id7>
 <wikicategory_Children_of_national_leaders>	rdfs:subClassOf	<wordnet_child_109917593> .
 #@ <id_1qas0ff_1m6_ic10aj>
 <wikicategory_Lycée_Pasteur_alumni>	rdfs:subClassOf	<wordnet_alumnus_109786338> .
-#@ <id_1tj1rjk_1ia_167kddu>
-<wikicategory_Educational_institutions_established_in_1852>	rdfs:label	"Educational institution established in 1852"@en .
+#@ <id_thqgo6_1ia_lg39ob>
+<wikicategory_People_from_Tredegar>	rdfs:label	"person from Tredegar"@eng .
+#@ <id_bw0gfn_1ia_16hcpc>
+<wikicategory_British_philanthropists>	rdfs:label	"British philanthropist"@eng .
 #@ <id_ewp06t_1m6_17x0mu>
 <wikicategory_Collars_of_the_Order_of_the_Aztec_Eagle>	rdfs:subClassOf	<wordnet_collar_103068181> .
+#@ <id_1ucmlcv_1ia_1660sy5>
+<wikicategory_British_Secretaries_of_State>	rdfs:label	"British secretary of State"@eng .
+#@ <id_1lsxl5f_1ia_pjxb54>
+<wikicategory_People_from_Boulogne-Billancourt>	rdfs:label	"person from Boulogne-Billancourt"@eng .
 #@ <id_qkbh1v_1m6_hsj9sm>
 <wikicategory_People_educated_at_Kirkcaldy_High_School>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_y30m22_1ia_orhxdn>
-<wikicategory_Cantabrian_politicians>	rdfs:label	"Cantabrian politician"@en .
 #@ <id_9yd698_1m6_1cwc4rn>
 <wikicategory_Presidents_of_the_European_Council>	rdfs:subClassOf	<wordnet_president_110467179> .
+#@ <id_1yrqs9s_1ia_14bd56>
+<wikicategory_People_of_Catalan_descent>	rdfs:label	"person of Catalan descent"@eng .
 #@ <id_1csjgg3_1m6_hsj9sm>
 <wikicategory_People_educated_at_Lewis_School,_Pengam>	rdfs:subClassOf	<wordnet_person_100007846> .
 #@ <id_rbwstv_1m6_1inhq0u>
 <wikicategory_Spanish_lawyers>	rdfs:subClassOf	<wordnet_lawyer_110249950> .
 #@ <id_kbr2pe_1m6_13h7dhi>
 <wikicategory_Social_Affairs_ministers_of_Germany>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_116hfj2_1ia_1r7jydj>
-<wikicategory_English-language_singers>	rdfs:label	"English-language singer"@en .
-#@ <id_128pq10_1ia_1a16u4n>
-<wikicategory_Heads_of_state_of_the_Gambia>	rdfs:label	"head of state of the Gambia"@en .
-#@ <id_7iwi7b_1ia_1c14dth>
-<wikicategory_Political_parties_in_Germany>	rdfs:label	"Political party in Germany"@en .
-#@ <id_1s4wleh_1ia_10dhinj>
-<wikicategory_Bessarabia-German_people>	rdfs:label	"Bessarabia-German person"@en .
+#@ <id_1ayl5cy_1ia_7ky2x>
+<wikicategory_French_people_of_Russian_descent>	rdfs:label	"French person of Russian descent"@eng .
+#@ <id_hyw7fo_1ia_al9c2u>
+<wikicategory_Heads_of_Government_of_Andorra>	rdfs:label	"head of Government of Andorra"@eng .
+#@ <id_satmpd_1ia_13962hu>
+<wikicategory_Universities_and_colleges_in_Saxony>	rdfs:label	"university and colleges in Saxony"@eng .
 #@ <id_1fzv2vl_1m6_hsj9sm>
 <wikicategory_People_from_Novara>	rdfs:subClassOf	<wordnet_person_100007846> .
-#@ <id_1a7bj6z_1ia_1g1bswq>
-<wikicategory_Galician_politicians>	rdfs:label	"Galician politician"@en .
-#@ <id_123zwlm_1ia_13oapfu>
-<wikicategory_Populated_places_in_the_Province_of_Valladolid>	rdfs:label	"Populated place in the Province of Valladolid"@en .
+#@ <id_ck6tze_1ia_1ta0j0s>
+<wikicategory_Heads_of_state_of_Malawi>	rdfs:label	"head of state of Malawi"@eng .
+#@ <id_9yd698_1ia_1s5ei94>
+<wikicategory_Presidents_of_the_European_Council>	rdfs:label	"president of the European Council"@eng .
 #@ <id_4vafr3_1m6_hsj9sm>
 <wikicategory_People_associated_with_the_campaign_for_Scottish_devolution>	rdfs:subClassOf	<wordnet_person_100007846> .
+#@ <id_sovesz_1ia_rn2wez>
+<wikicategory_Burials_at_Iona>	rdfs:label	"burial at Iona"@eng .
 #@ <id_p2khed_1m6_czeqp5>
 <wikicategory_European_countries>	rdfs:subClassOf	<wordnet_country_108544813> .
 #@ <id_jlr39_1m6_13h7dhi>
 <wikicategory_Italian_Ministers_of_the_Interior>	rdfs:subClassOf	<wordnet_minister_110320863> .
-#@ <id_i4iypo_1ia_15q77h3>
-<wikicategory_NUTS_2_statistical_regions_of_the_European_Union>	rdfs:label	"NUTS 2 statistical region of the European Union"@en .
-#@ <id_1girb7a_1ia_g74g8x>
-<wikicategory_People_from_Kirkcaldy>	rdfs:label	"person from Kirkcaldy"@en .
-#@ <id_npp1zr_1ia_gtdf9n>
-<wikicategory_United_Republic_politicians>	rdfs:label	"United Republic politician"@en .
-#@ <id_1ucmlcv_1ia_1660sy5>
-<wikicategory_British_Secretaries_of_State>	rdfs:label	"British secretary of State"@en .
-#@ <id_thqgo6_1ia_lg39ob>
-<wikicategory_People_from_Tredegar>	rdfs:label	"person from Tredegar"@en .
+#@ <id_128pq10_1ia_1a16u4n>
+<wikicategory_Heads_of_state_of_the_Gambia>	rdfs:label	"head of state of the Gambia"@eng .
+#@ <id_1qe20nc_1ia_f6imew>
+<wikicategory_Right-wing_parties_in_France>	rdfs:label	"Right-wing party in France"@eng .
+#@ <id_142lafb_1ia_leko1u>
+<wikicategory_Presidents_of_Surrey_CCC>	rdfs:label	"president of Surrey CCC"@eng .
+#@ <id_2vlxmo_1ia_1rh2dhi>
+<wikicategory_Councillors_in_Lambeth>	rdfs:label	"councillor in Lambeth"@eng .
+#@ <id_ulgvry_1ia_tqrk7n>
+<wikicategory_United_Kingdom_Parliamentary_constituencies_established_in_1918>	rdfs:label	"United Kingdom Parliamentary constituency established in 1918"@eng .
+#@ <id_gxz7ch_1ia_1o9armc>
+<wikicategory_Scottish_journalists>	rdfs:label	"Scottish journalist"@eng .

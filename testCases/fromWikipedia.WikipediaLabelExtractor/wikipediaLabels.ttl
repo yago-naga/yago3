@@ -1,10 +1,4 @@
-# This file is part of the ontology YAGO2s
-# It is licensed under a Creative-Commons Attribution License by the YAGO team
-# at the Max Planck Institute for Informatics/Germany.
-# See http://yago-knowledge.org for all details.
-# This file was generated on 2012-07-04 T 14:18:12.0733.
-# 
-# 
+# Test of YAGO2s
 # Labels derived from the name of the instance in Wikipedia
 # INTERNAL
 
@@ -16,779 +10,613 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-#@ <id_10onaxx_1ia_1naulcz>
-<Berlusconi_I_Cabinet>	rdfs:label	"Berlusconi I Cabinet"@en .
-#@ <id_10onaxx_1sz_1naulcz>
-<Berlusconi_I_Cabinet>	skos:prefLabel	"Berlusconi I Cabinet"@en .
-#@ <id_10onaxx_nyg_1naulcz>
-<Berlusconi_I_Cabinet>	<isPreferredMeaningOf>	"Berlusconi I Cabinet"@en .
-#@ <id_y9qq7a_1ia_y9qq7a>
-<Campania>	rdfs:label	"Campania"@en .
-#@ <id_y9qq7a_1sz_y9qq7a>
-<Campania>	skos:prefLabel	"Campania"@en .
-#@ <id_y9qq7a_nyg_y9qq7a>
-<Campania>	<isPreferredMeaningOf>	"Campania"@en .
 #@ <id_1gaoy63_1ia_16yiqrh>
-<Carlo_Azeglio_Ciampi>	rdfs:label	"Carlo Azeglio Ciampi"@en .
+<Carlo_Azeglio_Ciampi>	rdfs:label	"Carlo Azeglio Ciampi"@eng .
 #@ <id_1gaoy63_1sz_16yiqrh>
-<Carlo_Azeglio_Ciampi>	skos:prefLabel	"Carlo Azeglio Ciampi"@en .
+<Carlo_Azeglio_Ciampi>	skos:prefLabel	"Carlo Azeglio Ciampi"@eng .
 #@ <id_1gaoy63_nyg_16yiqrh>
-<Carlo_Azeglio_Ciampi>	<isPreferredMeaningOf>	"Carlo Azeglio Ciampi"@en .
-#@ <id_zskfq5_1ia_yi19cu>
-<Catholic_Church>	rdfs:label	"Catholic Church"@en .
-#@ <id_zskfq5_1sz_yi19cu>
-<Catholic_Church>	skos:prefLabel	"Catholic Church"@en .
-#@ <id_zskfq5_nyg_yi19cu>
-<Catholic_Church>	<isPreferredMeaningOf>	"Catholic Church"@en .
-#@ <id_7r55ul_1ia_6glzha>
-<Forza_Italia>	rdfs:label	"Forza Italia"@en .
-#@ <id_7r55ul_1sz_6glzha>
-<Forza_Italia>	skos:prefLabel	"Forza Italia"@en .
-#@ <id_7r55ul_nyg_6glzha>
-<Forza_Italia>	<isPreferredMeaningOf>	"Forza Italia"@en .
+<Carlo_Azeglio_Ciampi>	<isPreferredMeaningOf>	"Carlo Azeglio Ciampi"@eng .
 #@ <id_1qqn7vt_1ia_1ps06i2>
-<Gianfranco_Fini>	rdfs:label	"Gianfranco Fini"@en .
+<Gianfranco_Fini>	rdfs:label	"Gianfranco Fini"@eng .
 #@ <id_1qqn7vt_1sz_1ps06i2>
-<Gianfranco_Fini>	skos:prefLabel	"Gianfranco Fini"@en .
+<Gianfranco_Fini>	skos:prefLabel	"Gianfranco Fini"@eng .
 #@ <id_1qqn7vt_nyg_1ps06i2>
-<Gianfranco_Fini>	<isPreferredMeaningOf>	"Gianfranco Fini"@en .
+<Gianfranco_Fini>	<isPreferredMeaningOf>	"Gianfranco Fini"@eng .
 #@ <id_1vo5vis_1ia_m37cd1>
-<Giorgio_Napolitano>	rdfs:label	"Giorgio Napolitano"@en .
+<Giorgio_Napolitano>	rdfs:label	"Giorgio Napolitano"@eng .
 #@ <id_1vo5vis_1sz_m37cd1>
-<Giorgio_Napolitano>	skos:prefLabel	"Giorgio Napolitano"@en .
+<Giorgio_Napolitano>	skos:prefLabel	"Giorgio Napolitano"@eng .
 #@ <id_1vo5vis_nyg_m37cd1>
-<Giorgio_Napolitano>	<isPreferredMeaningOf>	"Giorgio Napolitano"@en .
+<Giorgio_Napolitano>	<isPreferredMeaningOf>	"Giorgio Napolitano"@eng .
 #@ <id_1rnvp37_1ia_xu1i8y>
-<Giuliano_Amato>	rdfs:label	"Giuliano Amato"@en .
+<Giuliano_Amato>	rdfs:label	"Giuliano Amato"@eng .
 #@ <id_1rnvp37_1sz_xu1i8y>
-<Giuliano_Amato>	skos:prefLabel	"Giuliano Amato"@en .
+<Giuliano_Amato>	skos:prefLabel	"Giuliano Amato"@eng .
 #@ <id_1rnvp37_nyg_xu1i8y>
-<Giuliano_Amato>	<isPreferredMeaningOf>	"Giuliano Amato"@en .
+<Giuliano_Amato>	<isPreferredMeaningOf>	"Giuliano Amato"@eng .
 #@ <id_1bclsii_1ia_cplowr>
-<Giulio_Tremonti>	rdfs:label	"Giulio Tremonti"@en .
+<Giulio_Tremonti>	rdfs:label	"Giulio Tremonti"@eng .
 #@ <id_1bclsii_1sz_cplowr>
-<Giulio_Tremonti>	skos:prefLabel	"Giulio Tremonti"@en .
+<Giulio_Tremonti>	skos:prefLabel	"Giulio Tremonti"@eng .
 #@ <id_1bclsii_nyg_cplowr>
-<Giulio_Tremonti>	<isPreferredMeaningOf>	"Giulio Tremonti"@en .
-#@ <id_1q29rbl_1ia_yrit8w>
-<Italian_Chamber_of_Deputies>	rdfs:label	"Italian Chamber of Deputies"@en .
-#@ <id_1q29rbl_1sz_yrit8w>
-<Italian_Chamber_of_Deputies>	skos:prefLabel	"Italian Chamber of Deputies"@en .
-#@ <id_1q29rbl_nyg_yrit8w>
-<Italian_Chamber_of_Deputies>	<isPreferredMeaningOf>	"Italian Chamber of Deputies"@en .
+<Giulio_Tremonti>	<isPreferredMeaningOf>	"Giulio Tremonti"@eng .
 #@ <id_184v0j1_1ia_1767z5a>
-<Lamberto_Dini>	rdfs:label	"Lamberto Dini"@en .
+<Lamberto_Dini>	rdfs:label	"Lamberto Dini"@eng .
 #@ <id_184v0j1_1sz_1767z5a>
-<Lamberto_Dini>	skos:prefLabel	"Lamberto Dini"@en .
+<Lamberto_Dini>	skos:prefLabel	"Lamberto Dini"@eng .
 #@ <id_184v0j1_nyg_1767z5a>
-<Lamberto_Dini>	<isPreferredMeaningOf>	"Lamberto Dini"@en .
-#@ <id_10q4wvf_1ia_10q4wvf>
-<Lazio>	rdfs:label	"Lazio"@en .
-#@ <id_10q4wvf_1sz_10q4wvf>
-<Lazio>	skos:prefLabel	"Lazio"@en .
-#@ <id_10q4wvf_nyg_10q4wvf>
-<Lazio>	<isPreferredMeaningOf>	"Lazio"@en .
-#@ <id_1qfjlq_1ia_1qfjlq>
-<Lombardy>	rdfs:label	"Lombardy"@en .
-#@ <id_1qfjlq_1sz_1qfjlq>
-<Lombardy>	skos:prefLabel	"Lombardy"@en .
-#@ <id_1qfjlq_nyg_1qfjlq>
-<Lombardy>	<isPreferredMeaningOf>	"Lombardy"@en .
+<Lamberto_Dini>	<isPreferredMeaningOf>	"Lamberto Dini"@eng .
 #@ <id_1yo7s3q_1ia_ulpan9>
-<Marco_Follini>	rdfs:label	"Marco Follini"@en .
+<Marco_Follini>	rdfs:label	"Marco Follini"@eng .
 #@ <id_1yo7s3q_1sz_ulpan9>
-<Marco_Follini>	skos:prefLabel	"Marco Follini"@en .
+<Marco_Follini>	skos:prefLabel	"Marco Follini"@eng .
 #@ <id_1yo7s3q_nyg_ulpan9>
-<Marco_Follini>	<isPreferredMeaningOf>	"Marco Follini"@en .
+<Marco_Follini>	<isPreferredMeaningOf>	"Marco Follini"@eng .
 #@ <id_sb1d5v_1ia_1hr6vz8>
-<Marina_Berlusconi>	rdfs:label	"Marina Berlusconi"@en .
+<Marina_Berlusconi>	rdfs:label	"Marina Berlusconi"@eng .
 #@ <id_sb1d5v_1sz_1hr6vz8>
-<Marina_Berlusconi>	skos:prefLabel	"Marina Berlusconi"@en .
+<Marina_Berlusconi>	skos:prefLabel	"Marina Berlusconi"@eng .
 #@ <id_sb1d5v_nyg_1hr6vz8>
-<Marina_Berlusconi>	<isPreferredMeaningOf>	"Marina Berlusconi"@en .
+<Marina_Berlusconi>	<isPreferredMeaningOf>	"Marina Berlusconi"@eng .
 #@ <id_4o2xc6_1ia_19vcsh1>
-<Mario_Monti>	rdfs:label	"Mario Monti"@en .
+<Mario_Monti>	rdfs:label	"Mario Monti"@eng .
 #@ <id_4o2xc6_1sz_19vcsh1>
-<Mario_Monti>	skos:prefLabel	"Mario Monti"@en .
+<Mario_Monti>	skos:prefLabel	"Mario Monti"@eng .
 #@ <id_4o2xc6_nyg_19vcsh1>
-<Mario_Monti>	<isPreferredMeaningOf>	"Mario Monti"@en .
+<Mario_Monti>	<isPreferredMeaningOf>	"Mario Monti"@eng .
 #@ <id_10qtisd_1ia_10qtisd>
-<Milan>	rdfs:label	"Milan"@en .
+<Milan>	rdfs:label	"Milan"@eng .
 #@ <id_10qtisd_1sz_10qtisd>
-<Milan>	skos:prefLabel	"Milan"@en .
+<Milan>	skos:prefLabel	"Milan"@eng .
 #@ <id_10qtisd_nyg_10qtisd>
-<Milan>	<isPreferredMeaningOf>	"Milan"@en .
+<Milan>	<isPreferredMeaningOf>	"Milan"@eng .
 #@ <id_2ox8i9_1ia_2ox8i9>
-<Molise>	rdfs:label	"Molise"@en .
+<Molise>	rdfs:label	"Molise"@eng .
 #@ <id_2ox8i9_1sz_2ox8i9>
-<Molise>	skos:prefLabel	"Molise"@en .
+<Molise>	skos:prefLabel	"Molise"@eng .
 #@ <id_2ox8i9_nyg_2ox8i9>
-<Molise>	<isPreferredMeaningOf>	"Molise"@en .
+<Molise>	<isPreferredMeaningOf>	"Molise"@eng .
 #@ <id_1re08hr_1ia_kpd3up>
-<Oscar_Luigi_Scalfaro>	rdfs:label	"Oscar Luigi Scalfaro"@en .
+<Oscar_Luigi_Scalfaro>	rdfs:label	"Oscar Luigi Scalfaro"@eng .
 #@ <id_1re08hr_1sz_kpd3up>
-<Oscar_Luigi_Scalfaro>	skos:prefLabel	"Oscar Luigi Scalfaro"@en .
+<Oscar_Luigi_Scalfaro>	skos:prefLabel	"Oscar Luigi Scalfaro"@eng .
 #@ <id_1re08hr_nyg_kpd3up>
-<Oscar_Luigi_Scalfaro>	<isPreferredMeaningOf>	"Oscar Luigi Scalfaro"@en .
+<Oscar_Luigi_Scalfaro>	<isPreferredMeaningOf>	"Oscar Luigi Scalfaro"@eng .
 #@ <id_15oiopu_1ia_14iqsua>
-<Pier_Silvio_Berlusconi>	rdfs:label	"Pier Silvio Berlusconi"@en .
+<Pier_Silvio_Berlusconi>	rdfs:label	"Pier Silvio Berlusconi"@eng .
 #@ <id_15oiopu_1sz_14iqsua>
-<Pier_Silvio_Berlusconi>	skos:prefLabel	"Pier Silvio Berlusconi"@en .
+<Pier_Silvio_Berlusconi>	skos:prefLabel	"Pier Silvio Berlusconi"@eng .
 #@ <id_15oiopu_nyg_14iqsua>
-<Pier_Silvio_Berlusconi>	<isPreferredMeaningOf>	"Pier Silvio Berlusconi"@en .
+<Pier_Silvio_Berlusconi>	<isPreferredMeaningOf>	"Pier Silvio Berlusconi"@eng .
 #@ <id_93sgke_1ia_7t9a73>
-<Roberto_Maroni>	rdfs:label	"Roberto Maroni"@en .
+<Roberto_Maroni>	rdfs:label	"Roberto Maroni"@eng .
 #@ <id_93sgke_1sz_7t9a73>
-<Roberto_Maroni>	skos:prefLabel	"Roberto Maroni"@en .
+<Roberto_Maroni>	skos:prefLabel	"Roberto Maroni"@eng .
 #@ <id_93sgke_nyg_7t9a73>
-<Roberto_Maroni>	<isPreferredMeaningOf>	"Roberto Maroni"@en .
+<Roberto_Maroni>	<isPreferredMeaningOf>	"Roberto Maroni"@eng .
 #@ <id_1uqzhxh_1ia_10x5b38>
-<Romano_Prodi>	rdfs:label	"Romano Prodi"@en .
+<Romano_Prodi>	rdfs:label	"Romano Prodi"@eng .
 #@ <id_1uqzhxh_1sz_10x5b38>
-<Romano_Prodi>	skos:prefLabel	"Romano Prodi"@en .
+<Romano_Prodi>	skos:prefLabel	"Romano Prodi"@eng .
 #@ <id_1uqzhxh_nyg_10x5b38>
-<Romano_Prodi>	<isPreferredMeaningOf>	"Romano Prodi"@en .
+<Romano_Prodi>	<isPreferredMeaningOf>	"Romano Prodi"@eng .
 #@ <id_wz05y3_1ia_1mf5org>
-<Silvio_Berlusconi>	rdfs:label	"Silvio Berlusconi"@en .
+<Silvio_Berlusconi>	rdfs:label	"Silvio Berlusconi"@eng .
 #@ <id_wz05y3_1sz_1mf5org>
-<Silvio_Berlusconi>	skos:prefLabel	"Silvio Berlusconi"@en .
+<Silvio_Berlusconi>	skos:prefLabel	"Silvio Berlusconi"@eng .
 #@ <id_wz05y3_nyg_1mf5org>
-<Silvio_Berlusconi>	<isPreferredMeaningOf>	"Silvio Berlusconi"@en .
-#@ <id_zuuepc_1ia_1tno3cf>
-<The_People_of_Freedom>	rdfs:label	"The People of Freedom"@en .
-#@ <id_zuuepc_1sz_1tno3cf>
-<The_People_of_Freedom>	skos:prefLabel	"The People of Freedom"@en .
-#@ <id_zuuepc_nyg_1tno3cf>
-<The_People_of_Freedom>	<isPreferredMeaningOf>	"The People of Freedom"@en .
+<Silvio_Berlusconi>	<isPreferredMeaningOf>	"Silvio Berlusconi"@eng .
 #@ <id_prkzmu_1ia_wbur5y>
-<University_of_Milan>	rdfs:label	"University of Milan"@en .
+<University_of_Milan>	rdfs:label	"University of Milan"@eng .
 #@ <id_prkzmu_1sz_wbur5y>
-<University_of_Milan>	skos:prefLabel	"University of Milan"@en .
+<University_of_Milan>	skos:prefLabel	"University of Milan"@eng .
 #@ <id_prkzmu_nyg_wbur5y>
-<University_of_Milan>	<isPreferredMeaningOf>	"University of Milan"@en .
+<University_of_Milan>	<isPreferredMeaningOf>	"University of Milan"@eng .
 #@ <id_7qjadl_1ia_1cxt5ig>
-<Veronica_Lario>	rdfs:label	"Veronica Lario"@en .
+<Veronica_Lario>	rdfs:label	"Veronica Lario"@eng .
 #@ <id_7qjadl_1sz_1cxt5ig>
-<Veronica_Lario>	skos:prefLabel	"Veronica Lario"@en .
+<Veronica_Lario>	skos:prefLabel	"Veronica Lario"@eng .
 #@ <id_7qjadl_nyg_1cxt5ig>
-<Veronica_Lario>	<isPreferredMeaningOf>	"Veronica Lario"@en .
+<Veronica_Lario>	<isPreferredMeaningOf>	"Veronica Lario"@eng .
 #@ <id_11qatgv_1ia_7wgmmm>
-<Cherie_Blair>	rdfs:label	"Cherie Blair"@en .
+<Cherie_Blair>	rdfs:label	"Cherie Blair"@eng .
 #@ <id_11qatgv_1sz_7wgmmm>
-<Cherie_Blair>	skos:prefLabel	"Cherie Blair"@en .
+<Cherie_Blair>	skos:prefLabel	"Cherie Blair"@eng .
 #@ <id_11qatgv_nyg_7wgmmm>
-<Cherie_Blair>	<isPreferredMeaningOf>	"Cherie Blair"@en .
+<Cherie_Blair>	<isPreferredMeaningOf>	"Cherie Blair"@eng .
 #@ <id_1ks0wcp_1ia_1jhhpze>
-<Connaught_Square>	rdfs:label	"Connaught Square"@en .
+<Connaught_Square>	rdfs:label	"Connaught Square"@eng .
 #@ <id_1ks0wcp_1sz_1jhhpze>
-<Connaught_Square>	skos:prefLabel	"Connaught Square"@en .
+<Connaught_Square>	skos:prefLabel	"Connaught Square"@eng .
 #@ <id_1ks0wcp_nyg_1jhhpze>
-<Connaught_Square>	<isPreferredMeaningOf>	"Connaught Square"@en .
+<Connaught_Square>	<isPreferredMeaningOf>	"Connaught Square"@eng .
 #@ <id_z038xo_1ia_z038xo>
-<Edinburgh>	rdfs:label	"Edinburgh"@en .
+<Edinburgh>	rdfs:label	"Edinburgh"@eng .
 #@ <id_z038xo_1sz_z038xo>
-<Edinburgh>	skos:prefLabel	"Edinburgh"@en .
+<Edinburgh>	skos:prefLabel	"Edinburgh"@eng .
 #@ <id_z038xo_nyg_z038xo>
-<Edinburgh>	<isPreferredMeaningOf>	"Edinburgh"@en .
+<Edinburgh>	<isPreferredMeaningOf>	"Edinburgh"@eng .
 #@ <id_13977z3_1ia_1395x9c>
-<Elizabeth_II>	rdfs:label	"Elizabeth II"@en .
+<Elizabeth_II>	rdfs:label	"Elizabeth II"@eng .
 #@ <id_13977z3_1sz_1395x9c>
-<Elizabeth_II>	skos:prefLabel	"Elizabeth II"@en .
+<Elizabeth_II>	skos:prefLabel	"Elizabeth II"@eng .
 #@ <id_13977z3_nyg_1395x9c>
-<Elizabeth_II>	<isPreferredMeaningOf>	"Elizabeth II"@en .
+<Elizabeth_II>	<isPreferredMeaningOf>	"Elizabeth II"@eng .
 #@ <id_1e3a5c8_1ia_1csqyyx>
-<Frank_Dobson>	rdfs:label	"Frank Dobson"@en .
+<Frank_Dobson>	rdfs:label	"Frank Dobson"@eng .
 #@ <id_1e3a5c8_1sz_1csqyyx>
-<Frank_Dobson>	skos:prefLabel	"Frank Dobson"@en .
+<Frank_Dobson>	skos:prefLabel	"Frank Dobson"@eng .
 #@ <id_1e3a5c8_nyg_1csqyyx>
-<Frank_Dobson>	<isPreferredMeaningOf>	"Frank Dobson"@en .
+<Frank_Dobson>	<isPreferredMeaningOf>	"Frank Dobson"@eng .
 #@ <id_max52o_1ia_1ri707j>
-<Gordon_Brown>	rdfs:label	"Gordon Brown"@en .
+<Gordon_Brown>	rdfs:label	"Gordon Brown"@eng .
 #@ <id_max52o_1sz_1ri707j>
-<Gordon_Brown>	skos:prefLabel	"Gordon Brown"@en .
+<Gordon_Brown>	skos:prefLabel	"Gordon Brown"@eng .
 #@ <id_max52o_nyg_1ri707j>
-<Gordon_Brown>	<isPreferredMeaningOf>	"Gordon Brown"@en .
-#@ <id_177pmny_1ia_1gthbtp>
-<Inns_of_Court_School_of_Law>	rdfs:label	"Inns of Court School of Law"@en .
-#@ <id_177pmny_1sz_1gthbtp>
-<Inns_of_Court_School_of_Law>	skos:prefLabel	"Inns of Court School of Law"@en .
-#@ <id_177pmny_nyg_1gthbtp>
-<Inns_of_Court_School_of_Law>	<isPreferredMeaningOf>	"Inns of Court School of Law"@en .
+<Gordon_Brown>	<isPreferredMeaningOf>	"Gordon Brown"@eng .
 #@ <id_g6y5dz_1ia_1le80iu>
-<Jack_Straw>	rdfs:label	"Jack Straw"@en .
+<Jack_Straw>	rdfs:label	"Jack Straw"@eng .
 #@ <id_g6y5dz_1sz_1le80iu>
-<Jack_Straw>	skos:prefLabel	"Jack Straw"@en .
+<Jack_Straw>	skos:prefLabel	"Jack Straw"@eng .
 #@ <id_g6y5dz_nyg_1le80iu>
-<Jack_Straw>	<isPreferredMeaningOf>	"Jack Straw"@en .
+<Jack_Straw>	<isPreferredMeaningOf>	"Jack Straw"@eng .
 #@ <id_1xvi8at_1ia_141o1gk>
-<John_Major>	rdfs:label	"John Major"@en .
+<John_Major>	rdfs:label	"John Major"@eng .
 #@ <id_1xvi8at_1sz_141o1gk>
-<John_Major>	skos:prefLabel	"John Major"@en .
+<John_Major>	skos:prefLabel	"John Major"@eng .
 #@ <id_1xvi8at_nyg_141o1gk>
-<John_Major>	<isPreferredMeaningOf>	"John Major"@en .
+<John_Major>	<isPreferredMeaningOf>	"John Major"@eng .
 #@ <id_1x8chcg_1ia_ylcdqp>
-<John_Prescott>	rdfs:label	"John Prescott"@en .
+<John_Prescott>	rdfs:label	"John Prescott"@eng .
 #@ <id_1x8chcg_1sz_ylcdqp>
-<John_Prescott>	skos:prefLabel	"John Prescott"@en .
+<John_Prescott>	skos:prefLabel	"John Prescott"@eng .
 #@ <id_1x8chcg_nyg_ylcdqp>
-<John_Prescott>	<isPreferredMeaningOf>	"John Prescott"@en .
+<John_Prescott>	<isPreferredMeaningOf>	"John Prescott"@eng .
 #@ <id_4ftjb3_1ia_12qz0jf>
-<John_Smith_(Labour_Party_leader)>	rdfs:label	"John Smith (Labour Party leader)"@en .
+<John_Smith_(Labour_Party_leader)>	rdfs:label	"John Smith (Labour Party leader)"@eng .
 #@ <id_4ftjb3_1ia_1456g8e>
-<John_Smith_(Labour_Party_leader)>	rdfs:label	"John Smith"@en .
+<John_Smith_(Labour_Party_leader)>	rdfs:label	"John Smith"@eng .
 #@ <id_4ftjb3_1sz_12qz0jf>
-<John_Smith_(Labour_Party_leader)>	skos:prefLabel	"John Smith (Labour Party leader)"@en .
+<John_Smith_(Labour_Party_leader)>	skos:prefLabel	"John Smith (Labour Party leader)"@eng .
 #@ <id_4ftjb3_nyg_12qz0jf>
-<John_Smith_(Labour_Party_leader)>	<isPreferredMeaningOf>	"John Smith (Labour Party leader)"@en .
-#@ <id_10cbk3o_1ia_1otu1ja>
-<Labour_Party_(UK)>	rdfs:label	"Labour Party (UK)"@en .
-#@ <id_10cbk3o_1ia_j3ab6t>
-<Labour_Party_(UK)>	rdfs:label	"Labour Party"@en .
-#@ <id_10cbk3o_1sz_1otu1ja>
-<Labour_Party_(UK)>	skos:prefLabel	"Labour Party (UK)"@en .
-#@ <id_10cbk3o_nyg_1otu1ja>
-<Labour_Party_(UK)>	<isPreferredMeaningOf>	"Labour Party (UK)"@en .
+<John_Smith_(Labour_Party_leader)>	<isPreferredMeaningOf>	"John Smith (Labour Party leader)"@eng .
 #@ <id_16vp284_1ia_2t6krn>
-<Margaret_Beckett>	rdfs:label	"Margaret Beckett"@en .
+<Margaret_Beckett>	rdfs:label	"Margaret Beckett"@eng .
 #@ <id_16vp284_1sz_2t6krn>
-<Margaret_Beckett>	skos:prefLabel	"Margaret Beckett"@en .
+<Margaret_Beckett>	skos:prefLabel	"Margaret Beckett"@eng .
 #@ <id_16vp284_nyg_2t6krn>
-<Margaret_Beckett>	<isPreferredMeaningOf>	"Margaret Beckett"@en .
+<Margaret_Beckett>	<isPreferredMeaningOf>	"Margaret Beckett"@eng .
 #@ <id_27r2yr_1ia_x6cnhe>
-<Michael_Meacher>	rdfs:label	"Michael Meacher"@en .
+<Michael_Meacher>	rdfs:label	"Michael Meacher"@eng .
 #@ <id_27r2yr_1sz_x6cnhe>
-<Michael_Meacher>	skos:prefLabel	"Michael Meacher"@en .
+<Michael_Meacher>	skos:prefLabel	"Michael Meacher"@eng .
 #@ <id_27r2yr_nyg_x6cnhe>
-<Michael_Meacher>	<isPreferredMeaningOf>	"Michael Meacher"@en .
+<Michael_Meacher>	<isPreferredMeaningOf>	"Michael Meacher"@eng .
 #@ <id_7fm9w4_1ia_12e7uer>
-<Neil_Kinnock>	rdfs:label	"Neil Kinnock"@en .
+<Neil_Kinnock>	rdfs:label	"Neil Kinnock"@eng .
 #@ <id_7fm9w4_1sz_12e7uer>
-<Neil_Kinnock>	skos:prefLabel	"Neil Kinnock"@en .
+<Neil_Kinnock>	skos:prefLabel	"Neil Kinnock"@eng .
 #@ <id_7fm9w4_nyg_12e7uer>
-<Neil_Kinnock>	<isPreferredMeaningOf>	"Neil Kinnock"@en .
+<Neil_Kinnock>	<isPreferredMeaningOf>	"Neil Kinnock"@eng .
 #@ <id_104s7no_1ia_hvir0j>
-<Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson (British politician)"@en .
+<Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson (British politician)"@eng .
 #@ <id_104s7no_1ia_8rhsm5>
-<Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson"@en .
+<Phil_Wilson_(British_politician)>	rdfs:label	"Phil Wilson"@eng .
 #@ <id_104s7no_1sz_hvir0j>
-<Phil_Wilson_(British_politician)>	skos:prefLabel	"Phil Wilson (British politician)"@en .
+<Phil_Wilson_(British_politician)>	skos:prefLabel	"Phil Wilson (British politician)"@eng .
 #@ <id_104s7no_nyg_hvir0j>
-<Phil_Wilson_(British_politician)>	<isPreferredMeaningOf>	"Phil Wilson (British politician)"@en .
+<Phil_Wilson_(British_politician)>	<isPreferredMeaningOf>	"Phil Wilson (British politician)"@eng .
 #@ <id_1jce2gm_1ia_9rfjav>
-<Roy_Hattersley>	rdfs:label	"Roy Hattersley"@en .
+<Roy_Hattersley>	rdfs:label	"Roy Hattersley"@eng .
 #@ <id_1jce2gm_1sz_9rfjav>
-<Roy_Hattersley>	skos:prefLabel	"Roy Hattersley"@en .
+<Roy_Hattersley>	skos:prefLabel	"Roy Hattersley"@eng .
 #@ <id_1jce2gm_nyg_9rfjav>
-<Roy_Hattersley>	<isPreferredMeaningOf>	"Roy Hattersley"@en .
-#@ <id_lwoiij_1ia_1w7o9o>
-<Sedgefield_(UK_Parliament_constituency)>	rdfs:label	"Sedgefield (UK Parliament constituency)"@en .
-#@ <id_lwoiij_1ia_1hpeelm>
-<Sedgefield_(UK_Parliament_constituency)>	rdfs:label	"Sedgefield"@en .
-#@ <id_lwoiij_1sz_1w7o9o>
-<Sedgefield_(UK_Parliament_constituency)>	skos:prefLabel	"Sedgefield (UK Parliament constituency)"@en .
-#@ <id_lwoiij_nyg_1w7o9o>
-<Sedgefield_(UK_Parliament_constituency)>	<isPreferredMeaningOf>	"Sedgefield (UK Parliament constituency)"@en .
-#@ <id_1bx19fo_1ia_mpjbe5>
-<St_John's_College,_Oxford>	rdfs:label	"St John's College"@en .
-#@ <id_1bx19fo_1ia_1qyt5wl>
-<St_John's_College,_Oxford>	rdfs:label	"St John's College, Oxford"@en .
-#@ <id_1bx19fo_1sz_1qyt5wl>
-<St_John's_College,_Oxford>	skos:prefLabel	"St John's College, Oxford"@en .
-#@ <id_1bx19fo_nyg_1qyt5wl>
-<St_John's_College,_Oxford>	<isPreferredMeaningOf>	"St John's College, Oxford"@en .
+<Roy_Hattersley>	<isPreferredMeaningOf>	"Roy Hattersley"@eng .
 #@ <id_gg7cuf_1ia_1lnh7za>
-<Tony_Blair>	rdfs:label	"Tony Blair"@en .
+<Tony_Blair>	rdfs:label	"Tony Blair"@eng .
 #@ <id_gg7cuf_1sz_1lnh7za>
-<Tony_Blair>	skos:prefLabel	"Tony Blair"@en .
+<Tony_Blair>	skos:prefLabel	"Tony Blair"@eng .
 #@ <id_gg7cuf_nyg_1lnh7za>
-<Tony_Blair>	<isPreferredMeaningOf>	"Tony Blair"@en .
+<Tony_Blair>	<isPreferredMeaningOf>	"Tony Blair"@eng .
 #@ <id_17c51vo_1ia_5gnu04>
-<World_Economic_Forum>	rdfs:label	"World Economic Forum"@en .
+<World_Economic_Forum>	rdfs:label	"World Economic Forum"@eng .
 #@ <id_17c51vo_1sz_5gnu04>
-<World_Economic_Forum>	skos:prefLabel	"World Economic Forum"@en .
+<World_Economic_Forum>	skos:prefLabel	"World Economic Forum"@eng .
 #@ <id_17c51vo_nyg_5gnu04>
-<World_Economic_Forum>	<isPreferredMeaningOf>	"World Economic Forum"@en .
+<World_Economic_Forum>	<isPreferredMeaningOf>	"World Economic Forum"@eng .
 #@ <id_1fpq28n_1ia_1ef6vvc>
-<Angela_Merkel>	rdfs:label	"Angela Merkel"@en .
+<Angela_Merkel>	rdfs:label	"Angela Merkel"@eng .
 #@ <id_1fpq28n_1sz_1ef6vvc>
-<Angela_Merkel>	skos:prefLabel	"Angela Merkel"@en .
+<Angela_Merkel>	skos:prefLabel	"Angela Merkel"@eng .
 #@ <id_1fpq28n_nyg_1ef6vvc>
-<Angela_Merkel>	<isPreferredMeaningOf>	"Angela Merkel"@en .
-#@ <id_18367vn_1ia_18367vn>
-<Bundestag>	rdfs:label	"Bundestag"@en .
-#@ <id_18367vn_1sz_18367vn>
-<Bundestag>	skos:prefLabel	"Bundestag"@en .
-#@ <id_18367vn_nyg_18367vn>
-<Bundestag>	<isPreferredMeaningOf>	"Bundestag"@en .
-#@ <id_t9jepg_1ia_1c5ki7n>
-<Christian_Democratic_Union_(Germany)>	rdfs:label	"Christian Democratic Union (Germany)"@en .
-#@ <id_t9jepg_1ia_gj7gc5>
-<Christian_Democratic_Union_(Germany)>	rdfs:label	"Christian Democratic Union"@en .
-#@ <id_t9jepg_1sz_1c5ki7n>
-<Christian_Democratic_Union_(Germany)>	skos:prefLabel	"Christian Democratic Union (Germany)"@en .
-#@ <id_t9jepg_nyg_1c5ki7n>
-<Christian_Democratic_Union_(Germany)>	<isPreferredMeaningOf>	"Christian Democratic Union (Germany)"@en .
+<Angela_Merkel>	<isPreferredMeaningOf>	"Angela Merkel"@eng .
 #@ <id_jr01l4_1ia_1oy9wpz>
-<Christian_Wulff>	rdfs:label	"Christian Wulff"@en .
+<Christian_Wulff>	rdfs:label	"Christian Wulff"@eng .
 #@ <id_jr01l4_1sz_1oy9wpz>
-<Christian_Wulff>	skos:prefLabel	"Christian Wulff"@en .
+<Christian_Wulff>	skos:prefLabel	"Christian Wulff"@eng .
 #@ <id_jr01l4_nyg_1oy9wpz>
-<Christian_Wulff>	<isPreferredMeaningOf>	"Christian Wulff"@en .
+<Christian_Wulff>	<isPreferredMeaningOf>	"Christian Wulff"@eng .
 #@ <id_w0lfr0_1ia_26r8wr>
-<Claudia_Nolte>	rdfs:label	"Claudia Nolte"@en .
+<Claudia_Nolte>	rdfs:label	"Claudia Nolte"@eng .
 #@ <id_w0lfr0_1sz_26r8wr>
-<Claudia_Nolte>	skos:prefLabel	"Claudia Nolte"@en .
+<Claudia_Nolte>	skos:prefLabel	"Claudia Nolte"@eng .
 #@ <id_w0lfr0_nyg_26r8wr>
-<Claudia_Nolte>	<isPreferredMeaningOf>	"Claudia Nolte"@en .
-#@ <id_1o4heop_1ia_1fs34l4>
-<Democratic_Awakening>	rdfs:label	"Democratic Awakening"@en .
-#@ <id_1o4heop_1sz_1fs34l4>
-<Democratic_Awakening>	skos:prefLabel	"Democratic Awakening"@en .
-#@ <id_1o4heop_nyg_1fs34l4>
-<Democratic_Awakening>	<isPreferredMeaningOf>	"Democratic Awakening"@en .
+<Claudia_Nolte>	<isPreferredMeaningOf>	"Claudia Nolte"@eng .
 #@ <id_tu1ps7_1ia_1nmvefa>
-<Evangelical_Church_in_Germany>	rdfs:label	"Evangelical Church in Germany"@en .
+<Evangelical_Church_in_Germany>	rdfs:label	"Evangelical Church in Germany"@eng .
 #@ <id_tu1ps7_1sz_1nmvefa>
-<Evangelical_Church_in_Germany>	skos:prefLabel	"Evangelical Church in Germany"@en .
+<Evangelical_Church_in_Germany>	skos:prefLabel	"Evangelical Church in Germany"@eng .
 #@ <id_tu1ps7_nyg_1nmvefa>
-<Evangelical_Church_in_Germany>	<isPreferredMeaningOf>	"Evangelical Church in Germany"@en .
+<Evangelical_Church_in_Germany>	<isPreferredMeaningOf>	"Evangelical Church in Germany"@eng .
 #@ <id_ht3f3u_1ia_1798xx7>
-<Frank-Walter_Steinmeier>	rdfs:label	"Frank-Walter Steinmeier"@en .
+<Frank-Walter_Steinmeier>	rdfs:label	"Frank-Walter Steinmeier"@eng .
 #@ <id_ht3f3u_1sz_1798xx7>
-<Frank-Walter_Steinmeier>	skos:prefLabel	"Frank-Walter Steinmeier"@en .
+<Frank-Walter_Steinmeier>	skos:prefLabel	"Frank-Walter Steinmeier"@eng .
 #@ <id_ht3f3u_nyg_1798xx7>
-<Frank-Walter_Steinmeier>	<isPreferredMeaningOf>	"Frank-Walter Steinmeier"@en .
+<Frank-Walter_Steinmeier>	<isPreferredMeaningOf>	"Frank-Walter Steinmeier"@eng .
 #@ <id_gh6929_1ia_1knivv4>
-<Franz_Müntefering>	rdfs:label	"Franz Muentefering"@en .
+<Franz_Müntefering>	rdfs:label	"Franz Muentefering"@eng .
 #@ <id_gh6929_1ia_o1oum8>
-<Franz_Müntefering>	rdfs:label	"Franz Müntefering"@en .
+<Franz_Müntefering>	rdfs:label	"Franz Müntefering"@eng .
 #@ <id_gh6929_1sz_o1oum8>
-<Franz_Müntefering>	skos:prefLabel	"Franz Müntefering"@en .
+<Franz_Müntefering>	skos:prefLabel	"Franz Müntefering"@eng .
 #@ <id_gh6929_nyg_o1oum8>
-<Franz_Müntefering>	<isPreferredMeaningOf>	"Franz Müntefering"@en .
+<Franz_Müntefering>	<isPreferredMeaningOf>	"Franz Müntefering"@eng .
 #@ <id_107bpbp_1ia_1afs39c>
-<Gerhard_Schröder>	rdfs:label	"Gerhard Schroeder"@en .
+<Gerhard_Schröder>	rdfs:label	"Gerhard Schroeder"@eng .
 #@ <id_107bpbp_1ia_1kblpy>
-<Gerhard_Schröder>	rdfs:label	"Gerhard Schröder"@en .
+<Gerhard_Schröder>	rdfs:label	"Gerhard Schröder"@eng .
 #@ <id_107bpbp_1sz_1kblpy>
-<Gerhard_Schröder>	skos:prefLabel	"Gerhard Schröder"@en .
+<Gerhard_Schröder>	skos:prefLabel	"Gerhard Schröder"@eng .
 #@ <id_107bpbp_nyg_1kblpy>
-<Gerhard_Schröder>	<isPreferredMeaningOf>	"Gerhard Schröder"@en .
+<Gerhard_Schröder>	<isPreferredMeaningOf>	"Gerhard Schröder"@eng .
 #@ <id_1ps9evn_1ia_1ps9evn>
-<Germany>	rdfs:label	"Germany"@en .
+<Germany>	rdfs:label	"Germany"@eng .
 #@ <id_1ps9evn_1sz_1ps9evn>
-<Germany>	skos:prefLabel	"Germany"@en .
+<Germany>	skos:prefLabel	"Germany"@eng .
 #@ <id_1ps9evn_nyg_1ps9evn>
-<Germany>	<isPreferredMeaningOf>	"Germany"@en .
+<Germany>	<isPreferredMeaningOf>	"Germany"@eng .
 #@ <id_18vc8ci_1ia_1gfutwh>
-<Guido_Westerwelle>	rdfs:label	"Guido Westerwelle"@en .
+<Guido_Westerwelle>	rdfs:label	"Guido Westerwelle"@eng .
 #@ <id_18vc8ci_1sz_1gfutwh>
-<Guido_Westerwelle>	skos:prefLabel	"Guido Westerwelle"@en .
+<Guido_Westerwelle>	skos:prefLabel	"Guido Westerwelle"@eng .
 #@ <id_18vc8ci_nyg_1gfutwh>
-<Guido_Westerwelle>	<isPreferredMeaningOf>	"Guido Westerwelle"@en .
+<Guido_Westerwelle>	<isPreferredMeaningOf>	"Guido Westerwelle"@eng .
 #@ <id_3gfkn0_1ia_3gfkn0>
-<Hamburg>	rdfs:label	"Hamburg"@en .
+<Hamburg>	rdfs:label	"Hamburg"@eng .
 #@ <id_3gfkn0_1sz_3gfkn0>
-<Hamburg>	skos:prefLabel	"Hamburg"@en .
+<Hamburg>	skos:prefLabel	"Hamburg"@eng .
 #@ <id_3gfkn0_nyg_3gfkn0>
-<Hamburg>	<isPreferredMeaningOf>	"Hamburg"@en .
+<Hamburg>	<isPreferredMeaningOf>	"Hamburg"@eng .
 #@ <id_zycb9m_1ia_yzp9vv>
-<Helmut_Kohl>	rdfs:label	"Helmut Kohl"@en .
+<Helmut_Kohl>	rdfs:label	"Helmut Kohl"@eng .
 #@ <id_zycb9m_1sz_yzp9vv>
-<Helmut_Kohl>	skos:prefLabel	"Helmut Kohl"@en .
+<Helmut_Kohl>	skos:prefLabel	"Helmut Kohl"@eng .
 #@ <id_zycb9m_nyg_yzp9vv>
-<Helmut_Kohl>	<isPreferredMeaningOf>	"Helmut Kohl"@en .
+<Helmut_Kohl>	<isPreferredMeaningOf>	"Helmut Kohl"@eng .
 #@ <id_1pj249b_1ia_rlp16m>
-<Horst_Köhler>	rdfs:label	"Horst Koehler"@en .
+<Horst_Köhler>	rdfs:label	"Horst Koehler"@eng .
 #@ <id_1pj249b_1ia_1o8ixw0>
-<Horst_Köhler>	rdfs:label	"Horst Köhler"@en .
+<Horst_Köhler>	rdfs:label	"Horst Köhler"@eng .
 #@ <id_1pj249b_1sz_1o8ixw0>
-<Horst_Köhler>	skos:prefLabel	"Horst Köhler"@en .
+<Horst_Köhler>	skos:prefLabel	"Horst Köhler"@eng .
 #@ <id_1pj249b_nyg_1o8ixw0>
-<Horst_Köhler>	<isPreferredMeaningOf>	"Horst Köhler"@en .
+<Horst_Köhler>	<isPreferredMeaningOf>	"Horst Köhler"@eng .
 #@ <id_1ck1v4q_1ia_iq7oah>
-<Joachim_Sauer>	rdfs:label	"Joachim Sauer"@en .
+<Joachim_Sauer>	rdfs:label	"Joachim Sauer"@eng .
 #@ <id_1ck1v4q_1sz_iq7oah>
-<Joachim_Sauer>	skos:prefLabel	"Joachim Sauer"@en .
+<Joachim_Sauer>	skos:prefLabel	"Joachim Sauer"@eng .
 #@ <id_1ck1v4q_nyg_iq7oah>
-<Joachim_Sauer>	<isPreferredMeaningOf>	"Joachim Sauer"@en .
+<Joachim_Sauer>	<isPreferredMeaningOf>	"Joachim Sauer"@eng .
 #@ <id_1cm9d6p_1ia_or0ubs>
-<Jürgen_Trittin>	rdfs:label	"Juergen Trittin"@en .
+<Jürgen_Trittin>	rdfs:label	"Juergen Trittin"@eng .
 #@ <id_1cm9d6p_1ia_8jqvq8>
-<Jürgen_Trittin>	rdfs:label	"Jürgen Trittin"@en .
+<Jürgen_Trittin>	rdfs:label	"Jürgen Trittin"@eng .
 #@ <id_1cm9d6p_1sz_8jqvq8>
-<Jürgen_Trittin>	skos:prefLabel	"Jürgen Trittin"@en .
+<Jürgen_Trittin>	skos:prefLabel	"Jürgen Trittin"@eng .
 #@ <id_1cm9d6p_nyg_8jqvq8>
-<Jürgen_Trittin>	<isPreferredMeaningOf>	"Jürgen Trittin"@en .
+<Jürgen_Trittin>	<isPreferredMeaningOf>	"Jürgen Trittin"@eng .
 #@ <id_1kyrcau_1ia_s2hj2j>
-<Klaus_Töpfer>	rdfs:label	"Klaus Toepfer"@en .
+<Klaus_Töpfer>	rdfs:label	"Klaus Toepfer"@eng .
 #@ <id_1kyrcau_1ia_1jo85xj>
-<Klaus_Töpfer>	rdfs:label	"Klaus Töpfer"@en .
+<Klaus_Töpfer>	rdfs:label	"Klaus Töpfer"@eng .
 #@ <id_1kyrcau_1sz_1jo85xj>
-<Klaus_Töpfer>	skos:prefLabel	"Klaus Töpfer"@en .
+<Klaus_Töpfer>	skos:prefLabel	"Klaus Töpfer"@eng .
 #@ <id_1kyrcau_nyg_1jo85xj>
-<Klaus_Töpfer>	<isPreferredMeaningOf>	"Klaus Töpfer"@en .
+<Klaus_Töpfer>	<isPreferredMeaningOf>	"Klaus Töpfer"@eng .
 #@ <id_1czrim3_1ia_1t0e0d8>
-<Philipp_Rösler>	rdfs:label	"Philipp Roesler"@en .
+<Philipp_Rösler>	rdfs:label	"Philipp Roesler"@eng .
 #@ <id_1czrim3_1ia_1bp8c8s>
-<Philipp_Rösler>	rdfs:label	"Philipp Rösler"@en .
+<Philipp_Rösler>	rdfs:label	"Philipp Rösler"@eng .
 #@ <id_1czrim3_1sz_1bp8c8s>
-<Philipp_Rösler>	skos:prefLabel	"Philipp Rösler"@en .
+<Philipp_Rösler>	skos:prefLabel	"Philipp Rösler"@eng .
 #@ <id_1czrim3_nyg_1bp8c8s>
-<Philipp_Rösler>	<isPreferredMeaningOf>	"Philipp Rösler"@en .
-#@ <id_75rcea_1ia_1wsnje>
-<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	rdfs:label	"Stralsund - Nordvorpommern - Ruegen (electoral district)"@en .
-#@ <id_75rcea_1ia_1yzw38i>
-<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	rdfs:label	"Stralsund – Nordvorpommern – Rügen (electoral district)"@en .
-#@ <id_75rcea_1ia_4c4dke>
-<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	rdfs:label	"Stralsund – Nordvorpommern – Rügen"@en .
-#@ <id_75rcea_1sz_1yzw38i>
-<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	skos:prefLabel	"Stralsund – Nordvorpommern – Rügen (electoral district)"@en .
-#@ <id_75rcea_nyg_1yzw38i>
-<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	<isPreferredMeaningOf>	"Stralsund – Nordvorpommern – Rügen (electoral district)"@en .
+<Philipp_Rösler>	<isPreferredMeaningOf>	"Philipp Rösler"@eng .
 #@ <id_py5vtt_1ia_bbsx6p>
-<University_of_Leipzig>	rdfs:label	"University of Leipzig"@en .
+<University_of_Leipzig>	rdfs:label	"University of Leipzig"@eng .
 #@ <id_py5vtt_1sz_bbsx6p>
-<University_of_Leipzig>	skos:prefLabel	"University of Leipzig"@en .
+<University_of_Leipzig>	skos:prefLabel	"University of Leipzig"@eng .
 #@ <id_py5vtt_nyg_bbsx6p>
-<University_of_Leipzig>	<isPreferredMeaningOf>	"University of Leipzig"@en .
+<University_of_Leipzig>	<isPreferredMeaningOf>	"University of Leipzig"@eng .
 #@ <id_1dmdk4j_1ia_9jv2o2>
-<West_Germany>	rdfs:label	"West Germany"@en .
+<West_Germany>	rdfs:label	"West Germany"@eng .
 #@ <id_1dmdk4j_1sz_9jv2o2>
-<West_Germany>	skos:prefLabel	"West Germany"@en .
+<West_Germany>	skos:prefLabel	"West Germany"@eng .
 #@ <id_1dmdk4j_nyg_9jv2o2>
-<West_Germany>	<isPreferredMeaningOf>	"West Germany"@en .
+<West_Germany>	<isPreferredMeaningOf>	"West Germany"@eng .
 #@ <id_1p52ns4_1ia_l2k6bn>
-<Achille_Peretti>	rdfs:label	"Achille Peretti"@en .
+<Achille_Peretti>	rdfs:label	"Achille Peretti"@eng .
 #@ <id_1p52ns4_1sz_l2k6bn>
-<Achille_Peretti>	skos:prefLabel	"Achille Peretti"@en .
+<Achille_Peretti>	skos:prefLabel	"Achille Peretti"@eng .
 #@ <id_1p52ns4_nyg_l2k6bn>
-<Achille_Peretti>	<isPreferredMeaningOf>	"Achille Peretti"@en .
+<Achille_Peretti>	<isPreferredMeaningOf>	"Achille Peretti"@eng .
 #@ <id_1wkzd0h_1ia_1vag6n6>
-<Albert_Pintat>	rdfs:label	"Albert Pintat"@en .
+<Albert_Pintat>	rdfs:label	"Albert Pintat"@eng .
 #@ <id_1wkzd0h_1sz_1vag6n6>
-<Albert_Pintat>	skos:prefLabel	"Albert Pintat"@en .
+<Albert_Pintat>	skos:prefLabel	"Albert Pintat"@eng .
 #@ <id_1wkzd0h_nyg_1vag6n6>
-<Albert_Pintat>	<isPreferredMeaningOf>	"Albert Pintat"@en .
+<Albert_Pintat>	<isPreferredMeaningOf>	"Albert Pintat"@eng .
 #@ <id_s193uj_1ia_1x8iyvq>
-<Antoni_Martí>	rdfs:label	"Antoni Marti"@en .
+<Antoni_Martí>	rdfs:label	"Antoni Marti"@eng .
 #@ <id_s193uj_1ia_1x8iyze>
-<Antoni_Martí>	rdfs:label	"Antoni Martí"@en .
+<Antoni_Martí>	rdfs:label	"Antoni Martí"@eng .
 #@ <id_s193uj_1sz_1x8iyze>
-<Antoni_Martí>	skos:prefLabel	"Antoni Martí"@en .
+<Antoni_Martí>	skos:prefLabel	"Antoni Martí"@eng .
 #@ <id_s193uj_nyg_1x8iyze>
-<Antoni_Martí>	<isPreferredMeaningOf>	"Antoni Martí"@en .
+<Antoni_Martí>	<isPreferredMeaningOf>	"Antoni Martí"@eng .
 #@ <id_14lrmcq_1ia_arxfih>
-<Carla_Bruni>	rdfs:label	"Carla Bruni"@en .
+<Carla_Bruni>	rdfs:label	"Carla Bruni"@eng .
 #@ <id_14lrmcq_1sz_arxfih>
-<Carla_Bruni>	skos:prefLabel	"Carla Bruni"@en .
+<Carla_Bruni>	skos:prefLabel	"Carla Bruni"@eng .
 #@ <id_14lrmcq_nyg_arxfih>
-<Carla_Bruni>	<isPreferredMeaningOf>	"Carla Bruni"@en .
+<Carla_Bruni>	<isPreferredMeaningOf>	"Carla Bruni"@eng .
 #@ <id_4h2ou9_1ia_4ew4am>
-<Cécilia_Attias>	rdfs:label	"Cecilia Attias"@en .
+<Cécilia_Attias>	rdfs:label	"Cecilia Attias"@eng .
 #@ <id_4h2ou9_1ia_36jigy>
-<Cécilia_Attias>	rdfs:label	"Cécilia Attias"@en .
+<Cécilia_Attias>	rdfs:label	"Cécilia Attias"@eng .
 #@ <id_4h2ou9_1sz_36jigy>
-<Cécilia_Attias>	skos:prefLabel	"Cécilia Attias"@en .
+<Cécilia_Attias>	skos:prefLabel	"Cécilia Attias"@eng .
 #@ <id_4h2ou9_nyg_36jigy>
-<Cécilia_Attias>	<isPreferredMeaningOf>	"Cécilia Attias"@en .
+<Cécilia_Attias>	<isPreferredMeaningOf>	"Cécilia Attias"@eng .
 #@ <id_1dmj8jj_1ia_7jfwre>
-<Christian_Frémont>	rdfs:label	"Christian Fremont"@en .
+<Christian_Frémont>	rdfs:label	"Christian Fremont"@eng .
 #@ <id_1dmj8jj_1ia_9k0r32>
-<Christian_Frémont>	rdfs:label	"Christian Frémont"@en .
+<Christian_Frémont>	rdfs:label	"Christian Frémont"@eng .
 #@ <id_1dmj8jj_1sz_9k0r32>
-<Christian_Frémont>	skos:prefLabel	"Christian Frémont"@en .
+<Christian_Frémont>	skos:prefLabel	"Christian Frémont"@eng .
 #@ <id_1dmj8jj_nyg_9k0r32>
-<Christian_Frémont>	<isPreferredMeaningOf>	"Christian Frémont"@en .
+<Christian_Frémont>	<isPreferredMeaningOf>	"Christian Frémont"@eng .
 #@ <id_5mn6i1_1ia_160r4ve>
-<Daniel_Vaillant>	rdfs:label	"Daniel Vaillant"@en .
+<Daniel_Vaillant>	rdfs:label	"Daniel Vaillant"@eng .
 #@ <id_5mn6i1_1sz_160r4ve>
-<Daniel_Vaillant>	skos:prefLabel	"Daniel Vaillant"@en .
+<Daniel_Vaillant>	skos:prefLabel	"Daniel Vaillant"@eng .
 #@ <id_5mn6i1_nyg_160r4ve>
-<Daniel_Vaillant>	<isPreferredMeaningOf>	"Daniel Vaillant"@en .
+<Daniel_Vaillant>	<isPreferredMeaningOf>	"Daniel Vaillant"@eng .
 #@ <id_sb8eld_1ia_18qwjl>
-<Dominique_de_Villepin>	rdfs:label	"Dominique de Villepin"@en .
+<Dominique_de_Villepin>	rdfs:label	"Dominique de Villepin"@eng .
 #@ <id_sb8eld_1sz_18qwjl>
-<Dominique_de_Villepin>	skos:prefLabel	"Dominique de Villepin"@en .
+<Dominique_de_Villepin>	skos:prefLabel	"Dominique de Villepin"@eng .
 #@ <id_sb8eld_nyg_18qwjl>
-<Dominique_de_Villepin>	<isPreferredMeaningOf>	"Dominique de Villepin"@en .
+<Dominique_de_Villepin>	<isPreferredMeaningOf>	"Dominique de Villepin"@eng .
 #@ <id_18ttf26_1ia_17ja8ov>
-<Emmanuelle_Mignon>	rdfs:label	"Emmanuelle Mignon"@en .
+<Emmanuelle_Mignon>	rdfs:label	"Emmanuelle Mignon"@eng .
 #@ <id_18ttf26_1sz_17ja8ov>
-<Emmanuelle_Mignon>	skos:prefLabel	"Emmanuelle Mignon"@en .
+<Emmanuelle_Mignon>	skos:prefLabel	"Emmanuelle Mignon"@eng .
 #@ <id_18ttf26_nyg_17ja8ov>
-<Emmanuelle_Mignon>	<isPreferredMeaningOf>	"Emmanuelle Mignon"@en .
+<Emmanuelle_Mignon>	<isPreferredMeaningOf>	"Emmanuelle Mignon"@eng .
 #@ <id_1qrqo30_1ia_65i88h>
-<Édouard_Balladur>	rdfs:label	"Edouard Balladur"@en .
+<Édouard_Balladur>	rdfs:label	"Edouard Balladur"@eng .
 #@ <id_1qrqo30_1ia_s4qkh9>
-<Édouard_Balladur>	rdfs:label	"Édouard Balladur"@en .
+<Édouard_Balladur>	rdfs:label	"Édouard Balladur"@eng .
 #@ <id_1qrqo30_1sz_s4qkh9>
-<Édouard_Balladur>	skos:prefLabel	"Édouard Balladur"@en .
+<Édouard_Balladur>	skos:prefLabel	"Édouard Balladur"@eng .
 #@ <id_1qrqo30_nyg_s4qkh9>
-<Édouard_Balladur>	<isPreferredMeaningOf>	"Édouard Balladur"@en .
-#@ <id_hchqjy_1ia_1kbv1k7>
-<Élysée_Palace>	rdfs:label	"Elysee Palace"@en .
-#@ <id_hchqjy_1ia_g1yk6n>
-<Élysée_Palace>	rdfs:label	"Élysée Palace"@en .
-#@ <id_hchqjy_1sz_g1yk6n>
-<Élysée_Palace>	skos:prefLabel	"Élysée Palace"@en .
-#@ <id_hchqjy_nyg_g1yk6n>
-<Élysée_Palace>	<isPreferredMeaningOf>	"Élysée Palace"@en .
+<Édouard_Balladur>	<isPreferredMeaningOf>	"Édouard Balladur"@eng .
 #@ <id_1yni7tb_1ia_1ymdzn2>
-<Francis_Mer>	rdfs:label	"Francis Mer"@en .
+<Francis_Mer>	rdfs:label	"Francis Mer"@eng .
 #@ <id_1yni7tb_1sz_1ymdzn2>
-<Francis_Mer>	skos:prefLabel	"Francis Mer"@en .
+<Francis_Mer>	skos:prefLabel	"Francis Mer"@eng .
 #@ <id_1yni7tb_nyg_1ymdzn2>
-<Francis_Mer>	<isPreferredMeaningOf>	"Francis Mer"@en .
+<Francis_Mer>	<isPreferredMeaningOf>	"Francis Mer"@eng .
 #@ <id_cfajyt_1ia_r8vok2>
-<François_Baroin>	rdfs:label	"Francois Baroin"@en .
+<François_Baroin>	rdfs:label	"Francois Baroin"@eng .
 #@ <id_cfajyt_1ia_b4rdli>
-<François_Baroin>	rdfs:label	"François Baroin"@en .
+<François_Baroin>	rdfs:label	"François Baroin"@eng .
 #@ <id_cfajyt_1sz_b4rdli>
-<François_Baroin>	skos:prefLabel	"François Baroin"@en .
+<François_Baroin>	skos:prefLabel	"François Baroin"@eng .
 #@ <id_cfajyt_nyg_b4rdli>
-<François_Baroin>	<isPreferredMeaningOf>	"François Baroin"@en .
+<François_Baroin>	<isPreferredMeaningOf>	"François Baroin"@eng .
 #@ <id_efriae_1ia_t9cmvn>
-<François_Fillon>	rdfs:label	"Francois Fillon"@en .
+<François_Fillon>	rdfs:label	"Francois Fillon"@eng .
 #@ <id_efriae_1ia_d58bx3>
-<François_Fillon>	rdfs:label	"François Fillon"@en .
+<François_Fillon>	rdfs:label	"François Fillon"@eng .
 #@ <id_efriae_1sz_d58bx3>
-<François_Fillon>	skos:prefLabel	"François Fillon"@en .
+<François_Fillon>	skos:prefLabel	"François Fillon"@eng .
 #@ <id_efriae_nyg_d58bx3>
-<François_Fillon>	<isPreferredMeaningOf>	"François Fillon"@en .
+<François_Fillon>	<isPreferredMeaningOf>	"François Fillon"@eng .
 #@ <id_15kw2wg_1ia_868l4d>
-<François_d'Aubert>	rdfs:label	"Francois d'Aubert"@en .
+<François_d'Aubert>	rdfs:label	"Francois d'Aubert"@eng .
 #@ <id_15kw2wg_1ia_6xvzap>
-<François_d'Aubert>	rdfs:label	"François d'Aubert"@en .
+<François_d'Aubert>	rdfs:label	"François d'Aubert"@eng .
 #@ <id_15kw2wg_1sz_6xvzap>
-<François_d'Aubert>	skos:prefLabel	"François d'Aubert"@en .
+<François_d'Aubert>	skos:prefLabel	"François d'Aubert"@eng .
 #@ <id_15kw2wg_nyg_6xvzap>
-<François_d'Aubert>	<isPreferredMeaningOf>	"François d'Aubert"@en .
+<François_d'Aubert>	<isPreferredMeaningOf>	"François d'Aubert"@eng .
 #@ <id_1fvzpek_1ia_1fylxks>
-<French_Fourth_Republic>	rdfs:label	"French Fourth Republic"@en .
+<French_Fourth_Republic>	rdfs:label	"French Fourth Republic"@eng .
 #@ <id_1fvzpek_1sz_1fylxks>
-<French_Fourth_Republic>	skos:prefLabel	"French Fourth Republic"@en .
+<French_Fourth_Republic>	skos:prefLabel	"French Fourth Republic"@eng .
 #@ <id_1fvzpek_nyg_1fylxks>
-<French_Fourth_Republic>	<isPreferredMeaningOf>	"French Fourth Republic"@en .
+<French_Fourth_Republic>	<isPreferredMeaningOf>	"French Fourth Republic"@eng .
 #@ <id_3dnf2x_1ia_yc8zlk>
-<Giulia_Sarkozy>	rdfs:label	"Giulia Sarkozy"@en .
+<Giulia_Sarkozy>	rdfs:label	"Giulia Sarkozy"@eng .
 #@ <id_3dnf2x_1sz_yc8zlk>
-<Giulia_Sarkozy>	skos:prefLabel	"Giulia Sarkozy"@en .
+<Giulia_Sarkozy>	skos:prefLabel	"Giulia Sarkozy"@eng .
 #@ <id_3dnf2x_nyg_yc8zlk>
-<Giulia_Sarkozy>	<isPreferredMeaningOf>	"Giulia Sarkozy"@en .
+<Giulia_Sarkozy>	<isPreferredMeaningOf>	"Giulia Sarkozy"@eng .
 #@ <id_pq3wku_1ia_op5ao9>
-<Hervé_Gaymard>	rdfs:label	"Herve Gaymard"@en .
+<Hervé_Gaymard>	rdfs:label	"Herve Gaymard"@eng .
 #@ <id_pq3wku_1ia_1koph3h>
-<Hervé_Gaymard>	rdfs:label	"Hervé Gaymard"@en .
+<Hervé_Gaymard>	rdfs:label	"Hervé Gaymard"@eng .
 #@ <id_pq3wku_1sz_1koph3h>
-<Hervé_Gaymard>	skos:prefLabel	"Hervé Gaymard"@en .
+<Hervé_Gaymard>	skos:prefLabel	"Hervé Gaymard"@eng .
 #@ <id_pq3wku_nyg_1koph3h>
-<Hervé_Gaymard>	<isPreferredMeaningOf>	"Hervé Gaymard"@en .
+<Hervé_Gaymard>	<isPreferredMeaningOf>	"Hervé Gaymard"@eng .
 #@ <id_jfqfk4_1ia_h8wceg>
-<Institut_d'Études_Politiques_de_Paris>	rdfs:label	"Institut d'Etudes Politiques de Paris"@en .
+<Institut_d'Études_Politiques_de_Paris>	rdfs:label	"Institut d'Etudes Politiques de Paris"@eng .
 #@ <id_jfqfk4_1ia_dxm37o>
-<Institut_d'Études_Politiques_de_Paris>	rdfs:label	"Institut d'Études Politiques de Paris"@en .
+<Institut_d'Études_Politiques_de_Paris>	rdfs:label	"Institut d'Études Politiques de Paris"@eng .
 #@ <id_jfqfk4_1sz_dxm37o>
-<Institut_d'Études_Politiques_de_Paris>	skos:prefLabel	"Institut d'Études Politiques de Paris"@en .
+<Institut_d'Études_Politiques_de_Paris>	skos:prefLabel	"Institut d'Études Politiques de Paris"@eng .
 #@ <id_jfqfk4_nyg_dxm37o>
-<Institut_d'Études_Politiques_de_Paris>	<isPreferredMeaningOf>	"Institut d'Études Politiques de Paris"@en .
+<Institut_d'Études_Politiques_de_Paris>	<isPreferredMeaningOf>	"Institut d'Études Politiques de Paris"@eng .
 #@ <id_1ilv35d_1ia_1hbbws2>
-<Jacques_Chirac>	rdfs:label	"Jacques Chirac"@en .
+<Jacques_Chirac>	rdfs:label	"Jacques Chirac"@eng .
 #@ <id_1ilv35d_1sz_1hbbws2>
-<Jacques_Chirac>	skos:prefLabel	"Jacques Chirac"@en .
+<Jacques_Chirac>	skos:prefLabel	"Jacques Chirac"@eng .
 #@ <id_1ilv35d_nyg_1hbbws2>
-<Jacques_Chirac>	<isPreferredMeaningOf>	"Jacques Chirac"@en .
+<Jacques_Chirac>	<isPreferredMeaningOf>	"Jacques Chirac"@eng .
 #@ <id_64w4aa_1ia_16j02nn>
-<Jaume_Bartumeu>	rdfs:label	"Jaume Bartumeu"@en .
+<Jaume_Bartumeu>	rdfs:label	"Jaume Bartumeu"@eng .
 #@ <id_64w4aa_1sz_16j02nn>
-<Jaume_Bartumeu>	skos:prefLabel	"Jaume Bartumeu"@en .
+<Jaume_Bartumeu>	skos:prefLabel	"Jaume Bartumeu"@eng .
 #@ <id_64w4aa_nyg_16j02nn>
-<Jaume_Bartumeu>	<isPreferredMeaningOf>	"Jaume Bartumeu"@en .
+<Jaume_Bartumeu>	<isPreferredMeaningOf>	"Jaume Bartumeu"@eng .
 #@ <id_7rtptc_1ia_12qfabz>
-<Jean_Sarkozy>	rdfs:label	"Jean Sarkozy"@en .
+<Jean_Sarkozy>	rdfs:label	"Jean Sarkozy"@eng .
 #@ <id_7rtptc_1sz_12qfabz>
-<Jean_Sarkozy>	skos:prefLabel	"Jean Sarkozy"@en .
+<Jean_Sarkozy>	skos:prefLabel	"Jean Sarkozy"@eng .
 #@ <id_7rtptc_nyg_12qfabz>
-<Jean_Sarkozy>	<isPreferredMeaningOf>	"Jean Sarkozy"@en .
+<Jean_Sarkozy>	<isPreferredMeaningOf>	"Jean Sarkozy"@eng .
 #@ <id_ppnh9i_1ia_1q3rfmv>
-<Jean-Pierre_Raffarin>	rdfs:label	"Jean-Pierre Raffarin"@en .
+<Jean-Pierre_Raffarin>	rdfs:label	"Jean-Pierre Raffarin"@eng .
 #@ <id_ppnh9i_1sz_1q3rfmv>
-<Jean-Pierre_Raffarin>	skos:prefLabel	"Jean-Pierre Raffarin"@en .
+<Jean-Pierre_Raffarin>	skos:prefLabel	"Jean-Pierre Raffarin"@eng .
 #@ <id_ppnh9i_nyg_1q3rfmv>
-<Jean-Pierre_Raffarin>	<isPreferredMeaningOf>	"Jean-Pierre Raffarin"@en .
+<Jean-Pierre_Raffarin>	<isPreferredMeaningOf>	"Jean-Pierre Raffarin"@eng .
 #@ <id_5iwrwt_1ia_1tpwesu>
-<Joan_Enric_Vives_Sicília>	rdfs:label	"Joan Enric Vives Sicilia"@en .
+<Joan_Enric_Vives_Sicília>	rdfs:label	"Joan Enric Vives Sicilia"@eng .
 #@ <id_5iwrwt_1ia_1ts8p2i>
-<Joan_Enric_Vives_Sicília>	rdfs:label	"Joan Enric Vives Sicília"@en .
+<Joan_Enric_Vives_Sicília>	rdfs:label	"Joan Enric Vives Sicília"@eng .
 #@ <id_5iwrwt_1sz_1ts8p2i>
-<Joan_Enric_Vives_Sicília>	skos:prefLabel	"Joan Enric Vives Sicília"@en .
+<Joan_Enric_Vives_Sicília>	skos:prefLabel	"Joan Enric Vives Sicília"@eng .
 #@ <id_5iwrwt_nyg_1ts8p2i>
-<Joan_Enric_Vives_Sicília>	<isPreferredMeaningOf>	"Joan Enric Vives Sicília"@en .
+<Joan_Enric_Vives_Sicília>	<isPreferredMeaningOf>	"Joan Enric Vives Sicília"@eng .
 #@ <id_1dwhis1_1ia_f9hf6a>
-<Michel_Charasse>	rdfs:label	"Michel Charasse"@en .
+<Michel_Charasse>	rdfs:label	"Michel Charasse"@eng .
 #@ <id_1dwhis1_1sz_f9hf6a>
-<Michel_Charasse>	skos:prefLabel	"Michel Charasse"@en .
+<Michel_Charasse>	skos:prefLabel	"Michel Charasse"@eng .
 #@ <id_1dwhis1_nyg_f9hf6a>
-<Michel_Charasse>	<isPreferredMeaningOf>	"Michel Charasse"@en .
-#@ <id_1tccrte_1ia_1tccrte>
-<Neuilly-sur-Seine>	rdfs:label	"Neuilly-sur-Seine"@en .
-#@ <id_1tccrte_1sz_1tccrte>
-<Neuilly-sur-Seine>	skos:prefLabel	"Neuilly-sur-Seine"@en .
-#@ <id_1tccrte_nyg_1tccrte>
-<Neuilly-sur-Seine>	<isPreferredMeaningOf>	"Neuilly-sur-Seine"@en .
+<Michel_Charasse>	<isPreferredMeaningOf>	"Michel Charasse"@eng .
 #@ <id_vkf2e7_1ia_1qj0mwu>
-<Nicolas_Sarkozy>	rdfs:label	"Nicolas Sarkozy"@en .
+<Nicolas_Sarkozy>	rdfs:label	"Nicolas Sarkozy"@eng .
 #@ <id_vkf2e7_1sz_1qj0mwu>
-<Nicolas_Sarkozy>	skos:prefLabel	"Nicolas Sarkozy"@en .
+<Nicolas_Sarkozy>	skos:prefLabel	"Nicolas Sarkozy"@eng .
 #@ <id_vkf2e7_nyg_1qj0mwu>
-<Nicolas_Sarkozy>	<isPreferredMeaningOf>	"Nicolas Sarkozy"@en .
+<Nicolas_Sarkozy>	<isPreferredMeaningOf>	"Nicolas Sarkozy"@eng .
 #@ <id_17gzuo3_1ia_1iodrza>
-<Paris_West_University_Nanterre_La_Défense>	rdfs:label	"Paris West University Nanterre La Defense"@en .
+<Paris_West_University_Nanterre_La_Défense>	rdfs:label	"Paris West University Nanterre La Defense"@eng .
 #@ <id_17gzuo3_1ia_1a57u1u>
-<Paris_West_University_Nanterre_La_Défense>	rdfs:label	"Paris West University Nanterre La Défense"@en .
+<Paris_West_University_Nanterre_La_Défense>	rdfs:label	"Paris West University Nanterre La Défense"@eng .
 #@ <id_17gzuo3_1sz_1a57u1u>
-<Paris_West_University_Nanterre_La_Défense>	skos:prefLabel	"Paris West University Nanterre La Défense"@en .
+<Paris_West_University_Nanterre_La_Défense>	skos:prefLabel	"Paris West University Nanterre La Défense"@eng .
 #@ <id_17gzuo3_nyg_1a57u1u>
-<Paris_West_University_Nanterre_La_Défense>	<isPreferredMeaningOf>	"Paris West University Nanterre La Défense"@en .
+<Paris_West_University_Nanterre_La_Défense>	<isPreferredMeaningOf>	"Paris West University Nanterre La Défense"@eng .
 #@ <id_1isx97r_1ia_zcstfs>
-<Pere_López_Agràs>	rdfs:label	"Pere Lopez Agras"@en .
+<Pere_López_Agràs>	rdfs:label	"Pere Lopez Agras"@eng .
 #@ <id_1isx97r_1ia_wjlnxh>
-<Pere_López_Agràs>	rdfs:label	"Pere López Agràs"@en .
+<Pere_López_Agràs>	rdfs:label	"Pere López Agràs"@eng .
 #@ <id_1isx97r_1sz_wjlnxh>
-<Pere_López_Agràs>	skos:prefLabel	"Pere López Agràs"@en .
+<Pere_López_Agràs>	skos:prefLabel	"Pere López Agràs"@eng .
 #@ <id_1isx97r_nyg_wjlnxh>
-<Pere_López_Agràs>	<isPreferredMeaningOf>	"Pere López Agràs"@en .
+<Pere_López_Agràs>	<isPreferredMeaningOf>	"Pere López Agràs"@eng .
 #@ <id_13n9nse_1ia_1ylv8b1>
-<Philippe_Massoni>	rdfs:label	"Philippe Massoni"@en .
+<Philippe_Massoni>	rdfs:label	"Philippe Massoni"@eng .
 #@ <id_13n9nse_1sz_1ylv8b1>
-<Philippe_Massoni>	skos:prefLabel	"Philippe Massoni"@en .
+<Philippe_Massoni>	skos:prefLabel	"Philippe Massoni"@eng .
 #@ <id_13n9nse_nyg_1ylv8b1>
-<Philippe_Massoni>	<isPreferredMeaningOf>	"Philippe Massoni"@en .
-#@ <id_1snxdw5_1ia_1q7500o>
-<Rally_for_the_Republic>	rdfs:label	"Rally for the Republic"@en .
-#@ <id_1snxdw5_1sz_1q7500o>
-<Rally_for_the_Republic>	skos:prefLabel	"Rally for the Republic"@en .
-#@ <id_1snxdw5_nyg_1q7500o>
-<Rally_for_the_Republic>	<isPreferredMeaningOf>	"Rally for the Republic"@en .
-#@ <id_1as8dix_1ia_vv1cot>
-<Union_for_a_Popular_Movement>	rdfs:label	"Union for a Popular Movement"@en .
-#@ <id_1as8dix_1sz_vv1cot>
-<Union_for_a_Popular_Movement>	skos:prefLabel	"Union for a Popular Movement"@en .
-#@ <id_1as8dix_nyg_vv1cot>
-<Union_for_a_Popular_Movement>	<isPreferredMeaningOf>	"Union for a Popular Movement"@en .
+<Philippe_Massoni>	<isPreferredMeaningOf>	"Philippe Massoni"@eng .
 #@ <id_j2lde8_1ia_clk5n6>
-<Alfredo_Pérez_Rubalcaba>	rdfs:label	"Alfredo Perez Rubalcaba"@en .
+<Alfredo_Pérez_Rubalcaba>	rdfs:label	"Alfredo Perez Rubalcaba"@eng .
 #@ <id_j2lde8_1ia_19ftf2m>
-<Alfredo_Pérez_Rubalcaba>	rdfs:label	"Alfredo Pérez Rubalcaba"@en .
+<Alfredo_Pérez_Rubalcaba>	rdfs:label	"Alfredo Pérez Rubalcaba"@eng .
 #@ <id_j2lde8_1sz_19ftf2m>
-<Alfredo_Pérez_Rubalcaba>	skos:prefLabel	"Alfredo Pérez Rubalcaba"@en .
+<Alfredo_Pérez_Rubalcaba>	skos:prefLabel	"Alfredo Pérez Rubalcaba"@eng .
 #@ <id_j2lde8_nyg_19ftf2m>
-<Alfredo_Pérez_Rubalcaba>	<isPreferredMeaningOf>	"Alfredo Pérez Rubalcaba"@en .
-#@ <id_w2djwz_1ia_2d4xw2>
-<Congress_of_Deputies_(Spain)>	rdfs:label	"Congress of Deputies (Spain)"@en .
-#@ <id_w2djwz_1ia_onrje2>
-<Congress_of_Deputies_(Spain)>	rdfs:label	"Congress of Deputies"@en .
-#@ <id_w2djwz_1sz_2d4xw2>
-<Congress_of_Deputies_(Spain)>	skos:prefLabel	"Congress of Deputies (Spain)"@en .
-#@ <id_w2djwz_nyg_2d4xw2>
-<Congress_of_Deputies_(Spain)>	<isPreferredMeaningOf>	"Congress of Deputies (Spain)"@en .
+<Alfredo_Pérez_Rubalcaba>	<isPreferredMeaningOf>	"Alfredo Pérez Rubalcaba"@eng .
 #@ <id_krjrbp_1ia_1fq5buc>
-<Elena_Salgado>	rdfs:label	"Elena Salgado"@en .
+<Elena_Salgado>	rdfs:label	"Elena Salgado"@eng .
 #@ <id_krjrbp_1sz_1fq5buc>
-<Elena_Salgado>	skos:prefLabel	"Elena Salgado"@en .
+<Elena_Salgado>	skos:prefLabel	"Elena Salgado"@eng .
 #@ <id_krjrbp_nyg_1fq5buc>
-<Elena_Salgado>	<isPreferredMeaningOf>	"Elena Salgado"@en .
+<Elena_Salgado>	<isPreferredMeaningOf>	"Elena Salgado"@eng .
 #@ <id_1u5uyhb_1ia_10c0rn2>
-<Francoist_Spain>	rdfs:label	"Francoist Spain"@en .
+<Francoist_Spain>	rdfs:label	"Francoist Spain"@eng .
 #@ <id_1u5uyhb_1sz_10c0rn2>
-<Francoist_Spain>	skos:prefLabel	"Francoist Spain"@en .
+<Francoist_Spain>	skos:prefLabel	"Francoist Spain"@eng .
 #@ <id_1u5uyhb_nyg_10c0rn2>
-<Francoist_Spain>	<isPreferredMeaningOf>	"Francoist Spain"@en .
+<Francoist_Spain>	<isPreferredMeaningOf>	"Francoist Spain"@eng .
 #@ <id_1m0lrpx_1ia_krait4>
-<Joaquín_Almunia>	rdfs:label	"Joaquin Almunia"@en .
+<Joaquín_Almunia>	rdfs:label	"Joaquin Almunia"@eng .
 #@ <id_1m0lrpx_1ia_hy3a9g>
-<Joaquín_Almunia>	rdfs:label	"Joaquín Almunia"@en .
+<Joaquín_Almunia>	rdfs:label	"Joaquín Almunia"@eng .
 #@ <id_1m0lrpx_1sz_hy3a9g>
-<Joaquín_Almunia>	skos:prefLabel	"Joaquín Almunia"@en .
+<Joaquín_Almunia>	skos:prefLabel	"Joaquín Almunia"@eng .
 #@ <id_1m0lrpx_nyg_hy3a9g>
-<Joaquín_Almunia>	<isPreferredMeaningOf>	"Joaquín Almunia"@en .
+<Joaquín_Almunia>	<isPreferredMeaningOf>	"Joaquín Almunia"@eng .
 #@ <id_1ng0idk_1ia_6vyo6h>
-<José_Luis_Rodríguez_Zapatero>	rdfs:label	"Jose Luis Rodriguez Zapatero"@en .
+<José_Luis_Rodríguez_Zapatero>	rdfs:label	"Jose Luis Rodriguez Zapatero"@eng .
 #@ <id_1ng0idk_1ia_1f2t5rd>
-<José_Luis_Rodríguez_Zapatero>	rdfs:label	"José Luis Rodríguez Zapatero"@en .
+<José_Luis_Rodríguez_Zapatero>	rdfs:label	"José Luis Rodríguez Zapatero"@eng .
 #@ <id_1ng0idk_1sz_1f2t5rd>
-<José_Luis_Rodríguez_Zapatero>	skos:prefLabel	"José Luis Rodríguez Zapatero"@en .
+<José_Luis_Rodríguez_Zapatero>	skos:prefLabel	"José Luis Rodríguez Zapatero"@eng .
 #@ <id_1ng0idk_nyg_1f2t5rd>
-<José_Luis_Rodríguez_Zapatero>	<isPreferredMeaningOf>	"José Luis Rodríguez Zapatero"@en .
+<José_Luis_Rodríguez_Zapatero>	<isPreferredMeaningOf>	"José Luis Rodríguez Zapatero"@eng .
 #@ <id_lb8qid_1ia_vby5o3>
-<José_María_Aznar>	rdfs:label	"Jose Maria Aznar"@en .
+<José_María_Aznar>	rdfs:label	"Jose Maria Aznar"@eng .
 #@ <id_lb8qid_1ia_1y31777>
-<José_María_Aznar>	rdfs:label	"José María Aznar"@en .
+<José_María_Aznar>	rdfs:label	"José María Aznar"@eng .
 #@ <id_lb8qid_1sz_1y31777>
-<José_María_Aznar>	skos:prefLabel	"José María Aznar"@en .
+<José_María_Aznar>	skos:prefLabel	"José María Aznar"@eng .
 #@ <id_lb8qid_nyg_1y31777>
-<José_María_Aznar>	<isPreferredMeaningOf>	"José María Aznar"@en .
+<José_María_Aznar>	<isPreferredMeaningOf>	"José María Aznar"@eng .
 #@ <id_1cx2d3n_1ia_1ibk8r7>
-<Juan_Carlos_I_of_Spain>	rdfs:label	"Juan Carlos I of Spain"@en .
+<Juan_Carlos_I_of_Spain>	rdfs:label	"Juan Carlos I of Spain"@eng .
 #@ <id_1cx2d3n_1sz_1ibk8r7>
-<Juan_Carlos_I_of_Spain>	skos:prefLabel	"Juan Carlos I of Spain"@en .
+<Juan_Carlos_I_of_Spain>	skos:prefLabel	"Juan Carlos I of Spain"@eng .
 #@ <id_1cx2d3n_nyg_1ibk8r7>
-<Juan_Carlos_I_of_Spain>	<isPreferredMeaningOf>	"Juan Carlos I of Spain"@en .
-#@ <id_1lrkwvu_1ia_1akqd24>
-<León_(Spanish_Congress_Electoral_District)>	rdfs:label	"Leon (Spanish Congress Electoral District)"@en .
-#@ <id_1lrkwvu_1ia_14vchp4>
-<León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León (Spanish Congress Electoral District)"@en .
-#@ <id_1lrkwvu_1ia_zjyss4>
-<León_(Spanish_Congress_Electoral_District)>	rdfs:label	"León"@en .
-#@ <id_1lrkwvu_1sz_14vchp4>
-<León_(Spanish_Congress_Electoral_District)>	skos:prefLabel	"León (Spanish Congress Electoral District)"@en .
-#@ <id_1lrkwvu_nyg_14vchp4>
-<León_(Spanish_Congress_Electoral_District)>	<isPreferredMeaningOf>	"León (Spanish Congress Electoral District)"@en .
-#@ <id_ngfbkz_1ia_6k6we9>
-<Madrid_(Spanish_Congress_Electoral_District)>	rdfs:label	"Madrid (Spanish Congress Electoral District)"@en .
-#@ <id_ngfbkz_1ia_2h36ql>
-<Madrid_(Spanish_Congress_Electoral_District)>	rdfs:label	"Madrid"@en .
-#@ <id_ngfbkz_1sz_6k6we9>
-<Madrid_(Spanish_Congress_Electoral_District)>	skos:prefLabel	"Madrid (Spanish Congress Electoral District)"@en .
-#@ <id_ngfbkz_nyg_6k6we9>
-<Madrid_(Spanish_Congress_Electoral_District)>	<isPreferredMeaningOf>	"Madrid (Spanish Congress Electoral District)"@en .
+<Juan_Carlos_I_of_Spain>	<isPreferredMeaningOf>	"Juan Carlos I of Spain"@eng .
 #@ <id_45ua65_1ia_19d45b0>
-<Mariano_Rajoy>	rdfs:label	"Mariano Rajoy"@en .
+<Mariano_Rajoy>	rdfs:label	"Mariano Rajoy"@eng .
 #@ <id_45ua65_1sz_19d45b0>
-<Mariano_Rajoy>	skos:prefLabel	"Mariano Rajoy"@en .
+<Mariano_Rajoy>	skos:prefLabel	"Mariano Rajoy"@eng .
 #@ <id_45ua65_nyg_19d45b0>
-<Mariano_Rajoy>	<isPreferredMeaningOf>	"Mariano Rajoy"@en .
+<Mariano_Rajoy>	<isPreferredMeaningOf>	"Mariano Rajoy"@eng .
 #@ <id_1vmvigz_1ia_gstaq0>
-<María_Teresa_Fernández_de_la_Vega>	rdfs:label	"Maria Teresa Fernandez de la Vega"@en .
+<María_Teresa_Fernández_de_la_Vega>	rdfs:label	"Maria Teresa Fernandez de la Vega"@eng .
 #@ <id_1vmvigz_1ia_q83g90>
-<María_Teresa_Fernández_de_la_Vega>	rdfs:label	"María Teresa Fernández de la Vega"@en .
+<María_Teresa_Fernández_de_la_Vega>	rdfs:label	"María Teresa Fernández de la Vega"@eng .
 #@ <id_1vmvigz_1sz_q83g90>
-<María_Teresa_Fernández_de_la_Vega>	skos:prefLabel	"María Teresa Fernández de la Vega"@en .
+<María_Teresa_Fernández_de_la_Vega>	skos:prefLabel	"María Teresa Fernández de la Vega"@eng .
 #@ <id_1vmvigz_nyg_q83g90>
-<María_Teresa_Fernández_de_la_Vega>	<isPreferredMeaningOf>	"María Teresa Fernández de la Vega"@en .
+<María_Teresa_Fernández_de_la_Vega>	<isPreferredMeaningOf>	"María Teresa Fernández de la Vega"@eng .
 #@ <id_gbjwix_1ia_1gpnuwa>
-<Sonsoles_Espinosa>	rdfs:label	"Sonsoles Espinosa"@en .
+<Sonsoles_Espinosa>	rdfs:label	"Sonsoles Espinosa"@eng .
 #@ <id_gbjwix_1sz_1gpnuwa>
-<Sonsoles_Espinosa>	skos:prefLabel	"Sonsoles Espinosa"@en .
+<Sonsoles_Espinosa>	skos:prefLabel	"Sonsoles Espinosa"@eng .
 #@ <id_gbjwix_nyg_1gpnuwa>
-<Sonsoles_Espinosa>	<isPreferredMeaningOf>	"Sonsoles Espinosa"@en .
-#@ <id_1i5m33a_1ia_1dlwy4n>
-<Spanish_Socialist_Workers'_Party>	rdfs:label	"Spanish Socialist Workers' Party"@en .
-#@ <id_1i5m33a_1sz_1dlwy4n>
-<Spanish_Socialist_Workers'_Party>	skos:prefLabel	"Spanish Socialist Workers' Party"@en .
-#@ <id_1i5m33a_nyg_1dlwy4n>
-<Spanish_Socialist_Workers'_Party>	<isPreferredMeaningOf>	"Spanish Socialist Workers' Party"@en .
+<Sonsoles_Espinosa>	<isPreferredMeaningOf>	"Sonsoles Espinosa"@eng .
 #@ <id_cacb9n_1ia_16aar8v>
-<University_of_León>	rdfs:label	"University of Leon"@en .
+<University_of_León>	rdfs:label	"University of Leon"@eng .
 #@ <id_cacb9n_1ia_16aauej>
-<University_of_León>	rdfs:label	"University of León"@en .
+<University_of_León>	rdfs:label	"University of León"@eng .
 #@ <id_cacb9n_1sz_16aauej>
-<University_of_León>	skos:prefLabel	"University of León"@en .
+<University_of_León>	skos:prefLabel	"University of León"@eng .
 #@ <id_cacb9n_nyg_16aauej>
-<University_of_León>	<isPreferredMeaningOf>	"University of León"@en .
+<University_of_León>	<isPreferredMeaningOf>	"University of León"@eng .
 #@ <id_13dzdeu_1ia_13dzdeu>
-<Valladolid>	rdfs:label	"Valladolid"@en .
+<Valladolid>	rdfs:label	"Valladolid"@eng .
 #@ <id_13dzdeu_1sz_13dzdeu>
-<Valladolid>	skos:prefLabel	"Valladolid"@en .
+<Valladolid>	skos:prefLabel	"Valladolid"@eng .
 #@ <id_13dzdeu_nyg_13dzdeu>
-<Valladolid>	<isPreferredMeaningOf>	"Valladolid"@en .
+<Valladolid>	<isPreferredMeaningOf>	"Valladolid"@eng .

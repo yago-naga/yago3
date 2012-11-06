@@ -110,10 +110,10 @@ public class WordnetExtractor extends Extractor {
         if (id.equals("100001740")) lastClass = YAGO.entity;
         else lastClass = FactComponent.forWordnetEntity(word, id);
         id2class.put(lastId = id, lastClass);
-        writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "skos:prefLabel", FactComponent.forStringWithLanguage(word, "en")));
+        writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "skos:prefLabel", FactComponent.forStringWithLanguage(word, "eng")));
         writers.get(WORDNETIDS).write(new Fact(null, lastClass, "<hasSynsetId>", FactComponent.forString(id)));
       }
-      String wordForm = FactComponent.forStringWithLanguage(word, "en");
+      String wordForm = FactComponent.forStringWithLanguage(word, "eng");
       // add additional fact if it is preferred meaning
       if (numMeaning.equals("1")) {
         // First check whether we do not already have such an element
@@ -152,7 +152,7 @@ public class WordnetExtractor extends Extractor {
         continue;
       }
 
-      arg2 = FactComponent.forStringWithLanguage(arg2.substring(1, arg2.length() - 1).replace('"', '\''), "en");
+      arg2 = FactComponent.forStringWithLanguage(arg2.substring(1, arg2.length() - 1).replace('"', '\''), "eng");
       Fact fact = new Fact(null, id2class.get(arg1), "<hasGloss>", arg2);
       writers.get(WORDNETGLOSSES).write(fact);
     }

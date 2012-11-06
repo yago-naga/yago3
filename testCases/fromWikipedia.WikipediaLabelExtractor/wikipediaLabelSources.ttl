@@ -10,24 +10,6 @@
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-#@ <id_13phri4_115_55w1lb>
-<id_10onaxx_1ia_1naulcz>	<extractionSource>	<http://en.wikipedia.org/wiki/Berlusconi_I_Cabinet> .
-<id_13phri4_115_55w1lb>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_158y5l7_115_55w1lb>
-<id_10onaxx_1sz_1naulcz>	<extractionSource>	<http://en.wikipedia.org/wiki/Berlusconi_I_Cabinet> .
-<id_158y5l7_115_55w1lb>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1jfqmb3_115_55w1lb>
-<id_10onaxx_nyg_1naulcz>	<extractionSource>	<http://en.wikipedia.org/wiki/Berlusconi_I_Cabinet> .
-<id_1jfqmb3_115_55w1lb>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_kzdkq9_115_14objtc>
-<id_y9qq7a_1ia_y9qq7a>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania> .
-<id_kzdkq9_115_14objtc>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_gg6via_115_14objtc>
-<id_y9qq7a_1sz_y9qq7a>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania> .
-<id_gg6via_115_14objtc>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_em6i1q_115_14objtc>
-<id_y9qq7a_nyg_y9qq7a>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania> .
-<id_em6i1q_115_14objtc>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_1kr6aaz_115_krxoth>
 <id_1gaoy63_1ia_16yiqrh>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
 <id_1kr6aaz_115_krxoth>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -37,24 +19,6 @@
 #@ <id_1gb34u_115_krxoth>
 <id_1gaoy63_nyg_16yiqrh>	<extractionSource>	<http://en.wikipedia.org/wiki/Carlo_Azeglio_Ciampi> .
 <id_1gb34u_115_krxoth>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_18rkvs3_115_1fdfucz>
-<id_zskfq5_1ia_yi19cu>	<extractionSource>	<http://en.wikipedia.org/wiki/Catholic_Church> .
-<id_18rkvs3_115_1fdfucz>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_148e6k4_115_1fdfucz>
-<id_zskfq5_1sz_yi19cu>	<extractionSource>	<http://en.wikipedia.org/wiki/Catholic_Church> .
-<id_148e6k4_115_1fdfucz>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_12edt3k_115_1fdfucz>
-<id_zskfq5_nyg_yi19cu>	<extractionSource>	<http://en.wikipedia.org/wiki/Catholic_Church> .
-<id_12edt3k_115_1fdfucz>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_rbhdqv_115_k3g05j>
-<id_7r55ul_1ia_6glzha>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
-<id_rbhdqv_115_k3g05j>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_msaoiw_115_k3g05j>
-<id_7r55ul_1sz_6glzha>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
-<id_msaoiw_115_k3g05j>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_kyab2c_115_k3g05j>
-<id_7r55ul_nyg_6glzha>	<extractionSource>	<http://en.wikipedia.org/wiki/Forza_Italia> .
-<id_kyab2c_115_k3g05j>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_1qp8mhu_115_7aekjj>
 <id_1qqn7vt_1ia_1ps06i2>	<extractionSource>	<http://en.wikipedia.org/wiki/Gianfranco_Fini> .
 <id_1qp8mhu_115_7aekjj>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -91,15 +55,6 @@
 #@ <id_1wxorzs_115_1qxh75c>
 <id_1bclsii_nyg_cplowr>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
 <id_1wxorzs_115_1qxh75c>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_12kdxd3_115_15b7bzb>
-<id_1q29rbl_1ia_yrit8w>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies> .
-<id_12kdxd3_115_15b7bzb>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_y17854_115_15b7bzb>
-<id_1q29rbl_1sz_yrit8w>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies> .
-<id_y17854_115_15b7bzb>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_w76uok_115_15b7bzb>
-<id_1q29rbl_nyg_yrit8w>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies> .
-<id_w76uok_115_15b7bzb>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_5wlcus_115_jis3n>
 <id_184v0j1_1ia_1767z5a>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini> .
 <id_5wlcus_115_jis3n>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -109,24 +64,6 @@
 #@ <id_lmu7nr_115_jis3n>
 <id_184v0j1_nyg_1767z5a>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini> .
 <id_lmu7nr_115_jis3n>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1p46yi9_115_1a1l5mp>
-<id_10q4wvf_1ia_10q4wvf>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio> .
-<id_1p46yi9_115_1a1l5mp>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1qnnclc_115_1a1l5mp>
-<id_10q4wvf_1sz_10q4wvf>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio> .
-<id_1qnnclc_115_1a1l5mp>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_5tbrc4_115_1a1l5mp>
-<id_10q4wvf_nyg_10q4wvf>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio> .
-<id_5tbrc4_115_1a1l5mp>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_lu1exd_115_850d7s>
-<id_1qfjlq_1ia_1qfjlq>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy> .
-<id_lu1exd_115_850d7s>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_hauppe_115_850d7s>
-<id_1qfjlq_1sz_1qfjlq>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy> .
-<id_hauppe_115_850d7s>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_fguc8u_115_850d7s>
-<id_1qfjlq_nyg_1qfjlq>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy> .
-<id_fguc8u_115_850d7s>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_n5vycr_115_r2vjoc>
 <id_1yo7s3q_1ia_ulpan9>	<extractionSource>	<http://en.wikipedia.org/wiki/Marco_Follini> .
 <id_n5vycr_115_r2vjoc>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -217,15 +154,6 @@
 #@ <id_1mxzx6l_115_hmm8oh>
 <id_wz05y3_nyg_1mf5org>	<extractionSource>	<http://en.wikipedia.org/wiki/Silvio_Berlusconi> .
 <id_1mxzx6l_115_hmm8oh>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1lo6wgv_115_1h4y4hy>
-<id_zuuepc_1ia_1tno3cf>	<extractionSource>	<http://en.wikipedia.org/wiki/The_People_of_Freedom> .
-<id_1lo6wgv_115_1h4y4hy>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1n7najy_115_1h4y4hy>
-<id_zuuepc_1sz_1tno3cf>	<extractionSource>	<http://en.wikipedia.org/wiki/The_People_of_Freedom> .
-<id_1n7najy_115_1h4y4hy>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_2dbpaq_115_1h4y4hy>
-<id_zuuepc_nyg_1tno3cf>	<extractionSource>	<http://en.wikipedia.org/wiki/The_People_of_Freedom> .
-<id_2dbpaq_115_1h4y4hy>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_uaacqs_115_1ijbcxo>
 <id_prkzmu_1ia_wbur5y>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan> .
 <id_uaacqs_115_1ijbcxo>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -298,15 +226,6 @@
 #@ <id_kp3b8_115_yn7zdm>
 <id_max52o_nyg_1ri707j>	<extractionSource>	<http://en.wikipedia.org/wiki/Gordon_Brown> .
 <id_kp3b8_115_yn7zdm>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_ndyp04_115_mgn7bo>
-<id_177pmny_1ia_1gthbtp>	<extractionSource>	<http://en.wikipedia.org/wiki/Inns_of_Court_School_of_Law> .
-<id_ndyp04_115_mgn7bo>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_oxf337_115_mgn7bo>
-<id_177pmny_1sz_1gthbtp>	<extractionSource>	<http://en.wikipedia.org/wiki/Inns_of_Court_School_of_Law> .
-<id_oxf337_115_mgn7bo>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1347jt3_115_mgn7bo>
-<id_177pmny_nyg_1gthbtp>	<extractionSource>	<http://en.wikipedia.org/wiki/Inns_of_Court_School_of_Law> .
-<id_1347jt3_115_mgn7bo>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_1n8ipge_115_1qp3x9t>
 <id_g6y5dz_1ia_1le80iu>	<extractionSource>	<http://en.wikipedia.org/wiki/Jack_Straw> .
 <id_1n8ipge_115_1qp3x9t>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -346,18 +265,6 @@
 #@ <id_1ta4qgt_115_1uokdex>
 <id_4ftjb3_nyg_12qz0jf>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)> .
 <id_1ta4qgt_115_1uokdex>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_wt4djt_115_kzxmu2>
-<id_10cbk3o_1ia_1otu1ja>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)> .
-<id_wt4djt_115_kzxmu2>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_19g8b3s_115_kzxmu2>
-<id_10cbk3o_1ia_j3ab6t>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)> .
-<id_19g8b3s_115_kzxmu2>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_yckrmw_115_kzxmu2>
-<id_10cbk3o_1sz_1otu1ja>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)> .
-<id_yckrmw_115_kzxmu2>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1cjd8cs_115_kzxmu2>
-<id_10cbk3o_nyg_1otu1ja>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)> .
-<id_1cjd8cs_115_kzxmu2>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_twp57h_115_smya26>
 <id_16vp284_1ia_2t6krn>	<extractionSource>	<http://en.wikipedia.org/wiki/Margaret_Beckett> .
 <id_twp57h_115_smya26>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -406,30 +313,6 @@
 #@ <id_1b2ccpn_115_1hjzuqo>
 <id_1jce2gm_nyg_9rfjav>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley> .
 <id_1b2ccpn_115_1hjzuqo>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_wgau4f_115_1cmy7pt>
-<id_lwoiij_1ia_1w7o9o>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
-<id_wgau4f_115_1cmy7pt>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_5d9mtr_115_1cmy7pt>
-<id_lwoiij_1ia_1hpeelm>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
-<id_5d9mtr_115_1cmy7pt>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_rx44wg_115_1cmy7pt>
-<id_lwoiij_1sz_1w7o9o>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
-<id_rx44wg_115_1cmy7pt>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_q33rfw_115_1cmy7pt>
-<id_lwoiij_nyg_1w7o9o>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)> .
-<id_q33rfw_115_1cmy7pt>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_9hxcgc_115_4vmd7e>
-<id_1bx19fo_1ia_mpjbe5>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
-<id_9hxcgc_115_4vmd7e>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1hri9la_115_4vmd7e>
-<id_1bx19fo_1ia_1qyt5wl>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
-<id_1hri9la_115_4vmd7e>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1jaynod_115_4vmd7e>
-<id_1bx19fo_1sz_1qyt5wl>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
-<id_1jaynod_115_4vmd7e>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1xhr4e9_115_4vmd7e>
-<id_1bx19fo_nyg_1qyt5wl>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford> .
-<id_1xhr4e9_115_4vmd7e>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_18x5xp1_115_1qyd4q9>
 <id_gg7cuf_1ia_1lnh7za>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair> .
 <id_18x5xp1_115_1qyd4q9>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -457,27 +340,6 @@
 #@ <id_1paj48b_115_84dtt9>
 <id_1fpq28n_nyg_1ef6vvc>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
 <id_1paj48b_115_84dtt9>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_ieb54h_115_tjrjy1>
-<id_18367vn_1ia_18367vn>	<extractionSource>	<http://en.wikipedia.org/wiki/Bundestag> .
-<id_ieb54h_115_tjrjy1>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_jxrj7k_115_tjrjy1>
-<id_18367vn_1sz_18367vn>	<extractionSource>	<http://en.wikipedia.org/wiki/Bundestag> .
-<id_jxrj7k_115_tjrjy1>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_y4jzxg_115_tjrjy1>
-<id_18367vn_nyg_18367vn>	<extractionSource>	<http://en.wikipedia.org/wiki/Bundestag> .
-<id_y4jzxg_115_tjrjy1>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_erwida_115_1w15wda>
-<id_t9jepg_1ia_1c5ki7n>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)> .
-<id_erwida_115_1w15wda>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1oisadb_115_1w15wda>
-<id_t9jepg_1ia_gj7gc5>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)> .
-<id_1oisadb_115_1w15wda>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_gbcwgd_115_1w15wda>
-<id_t9jepg_1sz_1c5ki7n>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)> .
-<id_gbcwgd_115_1w15wda>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_ui5d69_115_1w15wda>
-<id_t9jepg_nyg_1c5ki7n>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)> .
-<id_ui5d69_115_1w15wda>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_cuox4z_115_zbvg7y>
 <id_jr01l4_1ia_1oy9wpz>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff> .
 <id_cuox4z_115_zbvg7y>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -496,15 +358,6 @@
 #@ <id_es6mtu_115_1ngd9aq>
 <id_w0lfr0_nyg_26r8wr>	<extractionSource>	<http://en.wikipedia.org/wiki/Claudia_Nolte> .
 <id_es6mtu_115_1ngd9aq>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_15y3wi_115_slq5c3>
-<id_1o4heop_1ia_1fs34l4>	<extractionSource>	<http://en.wikipedia.org/wiki/Democratic_Awakening> .
-<id_15y3wi_115_slq5c3>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_2pehzl_115_slq5c3>
-<id_1o4heop_1sz_1fs34l4>	<extractionSource>	<http://en.wikipedia.org/wiki/Democratic_Awakening> .
-<id_2pehzl_115_slq5c3>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_gw6yph_115_slq5c3>
-<id_1o4heop_nyg_1fs34l4>	<extractionSource>	<http://en.wikipedia.org/wiki/Democratic_Awakening> .
-<id_gw6yph_115_slq5c3>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_1i2z3yl_115_1ayxm3h>
 <id_tu1ps7_1ia_1nmvefa>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany> .
 <id_1i2z3yl_115_1ayxm3h>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -640,21 +493,6 @@
 #@ <id_1bmz2tg_115_1b7daw5>
 <id_1czrim3_nyg_1bp8c8s>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler> .
 <id_1bmz2tg_115_1b7daw5>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_pwp36q_115_fvaic8>
-<id_75rcea_1ia_1wsnje>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
-<id_pwp36q_115_fvaic8>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_mvfj3t_115_fvaic8>
-<id_75rcea_1ia_1yzw38i>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
-<id_mvfj3t_115_fvaic8>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_qzpmxr_115_fvaic8>
-<id_75rcea_1ia_4c4dke>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
-<id_qzpmxr_115_fvaic8>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_oevx6w_115_fvaic8>
-<id_75rcea_1sz_1yzw38i>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
-<id_oevx6w_115_fvaic8>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_12lodws_115_fvaic8>
-<id_75rcea_nyg_1yzw38i>	<extractionSource>	<http://en.wikipedia.org/wiki/Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)> .
-<id_12lodws_115_fvaic8>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_wv39pi_115_1789lmf>
 <id_py5vtt_1ia_bbsx6p>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Leipzig> .
 <id_wv39pi_115_1789lmf>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -775,18 +613,6 @@
 #@ <id_ev932d_115_1cizvx2>
 <id_1qrqo30_nyg_s4qkh9>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur> .
 <id_ev932d_115_1cizvx2>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_ff8d81_115_18s9k3o>
-<id_hchqjy_1ia_1kbv1k7>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
-<id_ff8d81_115_18s9k3o>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1s554j6_115_18s9k3o>
-<id_hchqjy_1ia_g1yk6n>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
-<id_1s554j6_115_18s9k3o>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1nlyfb7_115_18s9k3o>
-<id_hchqjy_1sz_g1yk6n>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
-<id_1nlyfb7_115_18s9k3o>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1lry1un_115_18s9k3o>
-<id_hchqjy_nyg_g1yk6n>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace> .
-<id_1lry1un_115_18s9k3o>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_e46voo_115_kn42qt>
 <id_1yni7tb_1ia_1ymdzn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Francis_Mer> .
 <id_e46voo_115_kn42qt>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -931,15 +757,6 @@
 #@ <id_19cdmhr_115_1thcxev>
 <id_1dwhis1_nyg_f9hf6a>	<extractionSource>	<http://en.wikipedia.org/wiki/Michel_Charasse> .
 <id_19cdmhr_115_1thcxev>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_5d2dpj_115_1dzyujs>
-<id_1tccrte_1ia_1tccrte>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
-<id_5d2dpj_115_1dzyujs>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_6wirsm_115_1dzyujs>
-<id_1tccrte_1sz_1tccrte>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
-<id_6wirsm_115_1dzyujs>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_l3b8ii_115_1dzyujs>
-<id_1tccrte_nyg_1tccrte>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine> .
-<id_l3b8ii_115_1dzyujs>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_1hbnm87_115_1b5ah11>
 <id_vkf2e7_1ia_1qj0mwu>	<extractionSource>	<http://en.wikipedia.org/wiki/Nicolas_Sarkozy> .
 <id_1hbnm87_115_1b5ah11>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -982,24 +799,6 @@
 #@ <id_167cuaq_115_peivmg>
 <id_13n9nse_nyg_1ylv8b1>	<extractionSource>	<http://en.wikipedia.org/wiki/Philippe_Massoni> .
 <id_167cuaq_115_peivmg>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_ifjeb2_115_w485q7>
-<id_1snxdw5_1ia_1q7500o>	<extractionSource>	<http://en.wikipedia.org/wiki/Rally_for_the_Republic> .
-<id_ifjeb2_115_w485q7>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_jyzse5_115_w485q7>
-<id_1snxdw5_1sz_1q7500o>	<extractionSource>	<http://en.wikipedia.org/wiki/Rally_for_the_Republic> .
-<id_jyzse5_115_w485q7>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_y5s941_115_w485q7>
-<id_1snxdw5_nyg_1q7500o>	<extractionSource>	<http://en.wikipedia.org/wiki/Rally_for_the_Republic> .
-<id_y5s941_115_w485q7>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1uep2ia_115_16r5nqb>
-<id_1as8dix_1ia_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Union_for_a_Popular_Movement> .
-<id_1uep2ia_115_16r5nqb>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1pvidab_115_16r5nqb>
-<id_1as8dix_1sz_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Union_for_a_Popular_Movement> .
-<id_1pvidab_115_16r5nqb>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1o1hztr_115_16r5nqb>
-<id_1as8dix_nyg_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Union_for_a_Popular_Movement> .
-<id_1o1hztr_115_16r5nqb>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_1baupx5_115_4jg3xi>
 <id_j2lde8_1ia_clk5n6>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
 <id_1baupx5_115_4jg3xi>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -1012,18 +811,6 @@
 #@ <id_dosslc_115_4jg3xi>
 <id_j2lde8_nyg_19ftf2m>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba> .
 <id_dosslc_115_4jg3xi>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1bt4vy6_115_s1au4d>
-<id_w2djwz_1ia_2d4xw2>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
-<id_1bt4vy6_115_s1au4d>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_5ud0c1_115_s1au4d>
-<id_w2djwz_1ia_onrje2>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
-<id_5ud0c1_115_s1au4d>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_179y6q7_115_s1au4d>
-<id_w2djwz_1sz_2d4xw2>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
-<id_179y6q7_115_s1au4d>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_15fxt9n_115_s1au4d>
-<id_w2djwz_nyg_2d4xw2>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)> .
-<id_15fxt9n_115_s1au4d>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_1qybxqb_115_1c7bkvf>
 <id_krjrbp_1ia_1fq5buc>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado> .
 <id_1qybxqb_115_1c7bkvf>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -1087,33 +874,6 @@
 #@ <id_1g44021_115_gdd4xp>
 <id_1cx2d3n_nyg_1ibk8r7>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain> .
 <id_1g44021_115_gdd4xp>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_p9xdl_115_yyw99g>
-<id_1lrkwvu_1ia_1akqd24>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
-<id_p9xdl_115_yyw99g>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1el5wrp_115_yyw99g>
-<id_1lrkwvu_1ia_14vchp4>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
-<id_1el5wrp_115_yyw99g>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_geei0y_115_yyw99g>
-<id_1lrkwvu_1ia_zjyss4>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
-<id_geei0y_115_yyw99g>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1g4maus_115_yyw99g>
-<id_1lrkwvu_1sz_14vchp4>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
-<id_1g4maus_115_yyw99g>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1uberko_115_yyw99g>
-<id_1lrkwvu_nyg_14vchp4>	<extractionSource>	<http://en.wikipedia.org/wiki/León_(Spanish_Congress_Electoral_District)> .
-<id_1uberko_115_yyw99g>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_21tr93_115_1sa1pal>
-<id_ngfbkz_1ia_6k6we9>	<extractionSource>	<http://en.wikipedia.org/wiki/Madrid_(Spanish_Congress_Electoral_District)> .
-<id_21tr93_115_1sa1pal>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_3wn29_115_1sa1pal>
-<id_ngfbkz_1ia_2h36ql>	<extractionSource>	<http://en.wikipedia.org/wiki/Madrid_(Spanish_Congress_Electoral_District)> .
-<id_3wn29_115_1sa1pal>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1wjr408_115_1sa1pal>
-<id_ngfbkz_1sz_6k6we9>	<extractionSource>	<http://en.wikipedia.org/wiki/Madrid_(Spanish_Congress_Electoral_District)> .
-<id_1wjr408_115_1sa1pal>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1upqqjo_115_1sa1pal>
-<id_ngfbkz_nyg_6k6we9>	<extractionSource>	<http://en.wikipedia.org/wiki/Madrid_(Spanish_Congress_Electoral_District)> .
-<id_1upqqjo_115_1sa1pal>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_4p83gm_115_vlm3pv>
 <id_45ua65_1ia_19d45b0>	<extractionSource>	<http://en.wikipedia.org/wiki/Mariano_Rajoy> .
 <id_4p83gm_115_vlm3pv>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
@@ -1144,15 +904,6 @@
 #@ <id_rfoj1g_115_z5z9b>
 <id_gbjwix_nyg_1gpnuwa>	<extractionSource>	<http://en.wikipedia.org/wiki/Sonsoles_Espinosa> .
 <id_rfoj1g_115_z5z9b>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1ad6bf1_115_19d8v80>
-<id_1i5m33a_1ia_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party> .
-<id_1ad6bf1_115_19d8v80>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .
-#@ <id_1bwmpi4_115_19d8v80>
-<id_1i5m33a_1sz_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party> .
-<id_1bwmpi4_115_19d8v80>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
-#@ <id_1q3f680_115_19d8v80>
-<id_1i5m33a_nyg_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party> .
-<id_1q3f680_115_19d8v80>	<extractionTechnique>	"WikipediaLabelExtractor from title" .
 #@ <id_h88cgc_115_xu51th>
 <id_cacb9n_1ia_16aar8v>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León> .
 <id_h88cgc_115_xu51th>	<extractionTechnique>	"WikipediaLabelExtractor from simple name heuristics" .

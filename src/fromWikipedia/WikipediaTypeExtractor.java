@@ -154,7 +154,7 @@ public class WikipediaTypeExtractor extends Extractor {
         FactComponent.wikipediaURL(titleEntity), "WikipediaTypeExtractor from category");
     String name = new NounGroup(category).stemmed().replace('_', ' ');
     if (!name.isEmpty()) categoryClassFacts.add(
-        new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent.forStringWithLanguage(name, "en")),
+        new Fact(null, FactComponent.forWikiCategory(category), RDFS.label, FactComponent.forStringWithLanguage(name, "eng")),
         FactComponent.wikipediaURL(titleEntity), "WikipediaTypeExtractor from stemmed name");
   }
 

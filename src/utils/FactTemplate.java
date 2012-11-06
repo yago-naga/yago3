@@ -104,7 +104,7 @@ public class FactTemplate {
 		switch (m.group(1)) {
 		case "Text":
 		case "String":
-			return (FactComponent.forStringWithLanguage(thing,"en"));
+			return (FactComponent.forStringWithLanguage(thing,"eng"));
 		case "Url":
 			if (!urlPattern.matcher(thing).matches()) {
 				Announce.debug("Not an URL:", thing);

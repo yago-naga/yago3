@@ -62,10 +62,10 @@ public class PersonNameExtractor extends Extractor {
         String family = name.familyName();
         if (family == null) continue;
         if (!given.endsWith(".") && given.length() > 1) {
-          write(output, PERSONNAMES, new Fact(f.getArg(1), "<hasGivenName>", FactComponent.forStringWithLanguage(given,"en")), PERSONNAMESOURCES,
+          write(output, PERSONNAMES, new Fact(f.getArg(1), "<hasGivenName>", FactComponent.forStringWithLanguage(given,"eng")), PERSONNAMESOURCES,
               FactComponent.forTheme(theme), "PersonNameExtractor");
         }
-        write(output, PERSONNAMES, new Fact(f.getArg(1), "<hasFamilyName>", FactComponent.forStringWithLanguage(family,"en")), PERSONNAMESOURCES,
+        write(output, PERSONNAMES, new Fact(f.getArg(1), "<hasFamilyName>", FactComponent.forStringWithLanguage(family,"eng")), PERSONNAMESOURCES,
             FactComponent.forTheme(theme), "PersonNameExtractor");
       }
       Announce.done();
