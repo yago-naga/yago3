@@ -1676,6 +1676,8 @@ rdfs:subPropertyOf	rdf:type	owl:TransitiveProperty .
 <isConnectedTo>	rdf:type	rdf:Property .
 #@ <id_1buqpaq_88c_1kkdc1n>
 <byTransport>	rdf:type	rdf:Property .
+#@ <id_k56b1a_88c_1bp47ny>
+<hasAirportCode>	rdf:type	owl:FunctionalProperty .
 #@ <id_12fzv9w_88c_1kkdc1n>
 <linksTo>	rdf:type	rdf:Property .
 #@ <id_tyts95_88c_1bp47ny>

@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.TypeChecker;
 
 
 import javatools.administrative.Announce;
@@ -23,6 +24,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
+import basics.RDFS;
 import basics.Theme;
 
 /**
@@ -39,9 +41,13 @@ public class RedirectExtractor extends Extractor {
 	private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
 	 /** Redirect facts from Wikipedia redirect pages */
-  public static final Theme REDIRECTFACTS = new Theme("redirectFacts",
+  public static final Theme RAWREDIRECTFACTS = new Theme("redirectFacts",
       "Redirect facts from Wikipedia redirect pages");
-	
+
+  /** Redirect facts from Wikipedia redirect pages as YAGO facts */
+ public static final Theme REDIRECTLABELS = new Theme("redirectLabels",
+     "Redirect facts from Wikipedia redirect pages");
+
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS,
@@ -50,9 +56,14 @@ public class RedirectExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(REDIRECTFACTS);
+		return new FinalSet<Theme>(RAWREDIRECTFACTS);
 	}
 
+	@Override
+	public Set<Extractor> followUp() {	
+	  return new HashSet<Extractor>(Arrays.asList(new TypeChecker(RAWREDIRECTFACTS, REDIRECTLABELS)));
+	}
+	
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		// Extract the information
@@ -83,10 +94,10 @@ public class RedirectExtractor extends Extractor {
 			}
 		}
 
-		FactWriter out = output.get(REDIRECTFACTS);
+		FactWriter out = output.get(RAWREDIRECTFACTS);
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
-			out.write(new Fact(FactComponent.forString(redirect.getKey()), "<_isWikipediaRedirectTo>", FactComponent.forYagoEntity(redirect.getValue())));
+			out.write(new Fact(FactComponent.forYagoEntity(redirect.getValue().replace(' ','_')), RDFS.label, FactComponent.forStringWithLanguage(redirect.getKey(),"en")));
 		}
 		
 		Announce.done();

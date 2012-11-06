@@ -6,20 +6,17 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromWikipedia.Extractor.FollowUpExtractor;
-
-
-
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
+import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
+import fromWikipedia.Extractor.FollowUpExtractor;
 
 /**
  * Takes the input Themes and checks if any of the entities
@@ -32,7 +29,7 @@ public class Redirector extends FollowUpExtractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(checkMe, RedirectExtractor.REDIRECTFACTS, PatternHardExtractor.TITLEPATTERNS,
+		return new HashSet<Theme>(Arrays.asList(checkMe, RedirectExtractor.RAWREDIRECTFACTS, PatternHardExtractor.TITLEPATTERNS,
 				WordnetExtractor.WORDNETWORDS));
 	}
 
@@ -44,11 +41,12 @@ public class Redirector extends FollowUpExtractor {
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		// Extract the information
-		FactCollection redirectFacts = new FactCollection(input.get(RedirectExtractor.REDIRECTFACTS));
 		Map<String, String> redirects = new HashMap<>();
-		for (Fact f : redirectFacts) {
-		  redirects.put(FactComponent.forYagoEntity(FactComponent.asJavaString(f.getArg(1))), f.getArg(2));
+		for (Fact f : input.get(RedirectExtractor.RAWREDIRECTFACTS)) {
+		  redirects.put(FactComponent.forYagoEntity(FactComponent.asJavaString(f.getArg(2)).replace(' ','_')), f.getArg(1));		  
 		}
+		
+		D.p(redirects);
 		
 		FactWriter out = output.get(checked);
 

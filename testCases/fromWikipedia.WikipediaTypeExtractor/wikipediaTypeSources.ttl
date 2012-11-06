@@ -5503,6 +5503,9 @@
 #@ <id_rolpxd_115_1vkyjrp>
 <id_1buqpaq_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
 <id_rolpxd_115_1vkyjrp>	<extractionTechnique>	"Manual" .
+#@ <id_x8isvw_115_1vkyjrp>
+<id_k56b1a_88c_1bp47ny>	<extractionSource>	<YAGO_(database)> .
+<id_x8isvw_115_1vkyjrp>	<extractionTechnique>	"Manual" .
 #@ <id_a14pil_115_1vkyjrp>
 <id_12fzv9w_88c_1kkdc1n>	<extractionSource>	<YAGO_(database)> .
 <id_a14pil_115_1vkyjrp>	<extractionTechnique>	"Manual" .

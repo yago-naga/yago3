@@ -9,6 +9,7 @@ import fromWikipedia.DisambiguationPageExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.PersonNameExtractor;
+import fromWikipedia.RedirectExtractor;
 import fromWikipedia.WikipediaLabelExtractor;
 
 
@@ -36,7 +37,7 @@ public class LabelExtractor extends SimpleDeduplicator {
         InfoboxExtractor.INFOBOXFACTS,
         PersonNameExtractor.PERSONNAMES,
           WordnetExtractor.WORDNETWORDS,
-        WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE);
+        WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS);
   }
 
   /** Relations that we care for*/
