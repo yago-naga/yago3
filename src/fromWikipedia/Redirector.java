@@ -46,8 +46,6 @@ public class Redirector extends FollowUpExtractor {
 		  redirects.put(FactComponent.forYagoEntity(FactComponent.asJavaString(f.getArg(2)).replace(' ','_')), f.getArg(1));		  
 		}
 		
-		D.p(redirects);
-		
 		FactWriter out = output.get(checked);
 
 		FactSource dirtyFacts = input.get(checkMe);
