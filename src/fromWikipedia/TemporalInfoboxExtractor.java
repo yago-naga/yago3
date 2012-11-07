@@ -232,7 +232,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 			          String datatype = FactComponent.getDatatype(object);
 			          if (datatype == null) datatype = YAGO.string;
 			          if (cls.equals(YAGO.languageString) && datatype.equals(YAGO.string)) {
-			            object = FactComponent.setLanguage(object, "en");
+			            object = FactComponent.setLanguage(object, "eng");
 			          } else {
 			            if (!factCollection.isSubClassOf(datatype, cls)) {
 			              Announce.debug("Extraction", object, "for", entity, relation, "does not match typecheck", cls);
