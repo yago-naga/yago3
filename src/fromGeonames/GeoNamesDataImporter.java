@@ -103,8 +103,8 @@ public abstract class GeoNamesDataImporter extends Extractor {
         // will remain untouched if not mapped
         name = FactComponent.forYagoEntity(getYagoNameForGeonamesId(name, FactComponent.forNumber(geonamesId), geoEntityId2yago));
         
-        out.write(new Fact(name, "<hasLatitude>", FactComponent.forNumber(lati)));
-        out.write(new Fact(name, "<hasLongitude>", FactComponent.forNumber(longi)));
+        out.write(new Fact(name, "<hasLatitude>", FactComponent.forStringWithDatatype(lati.toString(),"<degrees>")));
+        out.write(new Fact(name, "<hasLongitude>", FactComponent.forStringWithDatatype(longi.toString(),"<degrees>")));
         out.write(new Fact(name, RDFS.subclassOf, geoClassId2yago.get(FactComponent.forString(fc))));
         out.write(new Fact(name, "<hasGeonamesEntityId>", geonamesId));
         
