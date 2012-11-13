@@ -190,7 +190,7 @@ public class WikipediaTypeExtractor extends Extractor {
         case 1: // Category
           if (currentEntity == null) continue;
           // Some categories are not correctly terminated by ]]
-          String category = FileLines.readTo(in, ']', '|','\n','[','<').toString();
+          String category = FileLines.readTo(in, ']', '|','\n','[','<','}','{').toString();
           category = category.trim();
           extractType(currentEntity, category, typesOfCurrentEntity);
           break;
