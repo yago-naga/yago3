@@ -189,7 +189,8 @@ public class WikipediaTypeExtractor extends Extractor {
           break;
         case 1: // Category
           if (currentEntity == null) continue;
-          String category = FileLines.readTo(in, ']', '|').toString();
+          // Some categories are not correctly terminated by ]]
+          String category = FileLines.readTo(in, ']', '|','\n','[','<').toString();
           category = category.trim();
           extractType(currentEntity, category, typesOfCurrentEntity);
           break;
@@ -299,6 +300,6 @@ public class WikipediaTypeExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     //new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     //new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new WikipediaTypeExtractor(new File("c:/fabian/data/wikipedia/testset/rodin.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new WikipediaTypeExtractor(new File("c:/fabian/data/wikipedia/testset/esan.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
   }
 }
