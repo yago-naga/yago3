@@ -1,12 +1,9 @@
 package fromThemes;
 
+import java.io.File;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
-import fromWikipedia.Extractor;
-import fromWikipedia.WikipediaTypeExtractor;
-
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -17,6 +14,8 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromWikipedia.Extractor;
+import fromWikipedia.WikipediaTypeExtractor;
 
 /**
  * YAGO2s - DBpediaLinker
@@ -61,11 +60,14 @@ public class DBpediaLinker extends Extractor {
        for(Fact fact : input.get(ClassExtractor.YAGOTAXONOMY)) {
     	   if(!fact.getRelation().equals(RDFS.subclassOf) || instances.contains(fact.getArg(1))) continue;
     	   if(!fact.getArg(1).startsWith("<")) continue;
-    	   String dbp=FactComponent.forUri("http://dbpedia.org/class/yago/"+FactComponent.stripBrackets(fact.getArg(1)));
+    	   String dbp=FactComponent.dbpediaClassForYagoClass(fact.getArg(1));
     	   output.get(YAGODBPEDIACLASSES).write(new Fact(fact.getArg(1),"owl:equivalentClass",dbp));
     	   instances.add(fact.getArg(1));
        }
        Announce.done();
 	}
 
+	public static void main(String[] args) throws Exception {
+    new DBpediaLinker().extract(new File("c:/fabian/data/yago2s"),"test");
+  }
 }
