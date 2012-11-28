@@ -41,7 +41,7 @@ public class FactExtractor extends SimpleDeduplicator {
         FlightExtractor.FLIGHTS,
         //GeoNamesDataImporter.GEONAMESDATA,
         TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
-        TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
+        TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA);
   }
 
   /** All facts of YAGO */

@@ -32,7 +32,7 @@ public class MetaFactExtractor extends SimpleDeduplicator {
   public Set<Theme> input() {
     return new FinalSet<>(HardExtractor.HARDWIREDFACTS, 
                 RuleExtractor.RULERESULTS,        
-                FlightExtractor.FLIGHTS,
+                FlightExtractor.FLIGHTS, SchemaExtractor.YAGOSCHEMA,
                 TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
   }

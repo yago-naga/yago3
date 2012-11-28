@@ -36,7 +36,7 @@ public class LabelExtractor extends SimpleDeduplicator {
         HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, 
         InfoboxExtractor.INFOBOXFACTS,
         PersonNameExtractor.PERSONNAMES,
-          WordnetExtractor.WORDNETWORDS,
+          WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
         WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS);
   }
 

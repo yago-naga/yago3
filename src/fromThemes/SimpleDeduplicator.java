@@ -15,7 +15,9 @@ import basics.Fact;
 import basics.FactCollection;
 import basics.FactSource;
 import basics.FactWriter;
+import basics.RDFS;
 import basics.Theme;
+import basics.YAGO;
 
 /**
  * YAGO2s - SimpleDeduplicator
@@ -41,6 +43,12 @@ public abstract class SimpleDeduplicator extends Extractor {
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     Announce.doing("Deduplicating", this.getClass().getSimpleName());
+    Set<String> functions=null;
+    if(!input.containsKey(SchemaExtractor.YAGOSCHEMA)) {
+      Announce.warning("Deduplicators should have SchemaExtractor.YAGOSCHEMA, in their required input!");
+    } else {
+      functions=new FactCollection(input.get(SchemaExtractor.YAGOSCHEMA)).getArg1sSlow(RDFS.type, YAGO.function);
+    }
 
     // We don't need any more taxonomy beyond this point
     // BUT: due to parallelization, some other extractors might be using it!
@@ -53,7 +61,7 @@ public abstract class SimpleDeduplicator extends Extractor {
     for (Theme theme : input.keySet()) {
       Announce.doing("Loading from", theme);
       for (Fact fact : input.get(theme)) {
-        if (isMyRelation(fact)) batch.add(fact);
+        if (isMyRelation(fact)) batch.add(fact,functions);
       }
       Announce.done();
     }

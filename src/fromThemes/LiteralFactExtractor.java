@@ -31,7 +31,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXFACTS, RuleExtractor.RULERESULTS,
-        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, FlightIATAcodeExtractor.AIRPORT_CODE
+        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA,FlightIATAcodeExtractor.AIRPORT_CODE, SchemaExtractor.YAGOSCHEMA
     //GeoNamesDataImporter.GEONAMESDATA
     );
   }
