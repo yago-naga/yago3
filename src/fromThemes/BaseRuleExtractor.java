@@ -1,6 +1,5 @@
 package fromThemes;
 
-import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -8,7 +7,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import fromOtherSources.PatternHardExtractor;
 import fromWikipedia.Extractor;
 
 import utils.FactTemplate;
@@ -204,11 +202,5 @@ public abstract class BaseRuleExtractor extends Extractor {
       survivingRules = new RuleSet();
     } while (!rules.isEmpty());
     Announce.done();
-  }
-
-  public static void main(String[] args) throws Exception {
-    new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    Announce.setLevel(Announce.Level.DEBUG);
-    new RuleExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
   }
 }
