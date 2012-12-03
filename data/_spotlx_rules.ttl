@@ -1,0 +1,81 @@
+# Manually coded facts of YAGO2s SPOTLX representation.
+#  DO NOT OVERWRITE!
+# This file contains the rules for the SPOTLXRuleExtractor
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#====================== ENTITIES LOCATION RULES ================================
+#===============================================================================
+
+"$0 <happenedIn> $1" <_implies> "$0 <placedIn> $1" .
+"$0 <isLocatedIn> $1" <_implies> "$0 <placedIn> $1" .
+
+#====================== ENTITIES TIME RULES ====================================
+#===============================================================================
+
+"$0 <wasBornOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
+"$0 <wasCreatedOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
+"$0 <startedOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
+
+"$0 <diedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .
+"$0 <wasDestroyedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .
+"$0 <endedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .
+
+#====================== FACTS LOCATION RULES ===================================
+#===============================================================================
+
+#---------Permanent relations---------------------------------------------------
+
+"$0 $1 $2 ; $1 rdf:type <permanentRelationToSubject> ; $0 <placedIn> $3" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
+"$0 $1 $2 ; $1 rdf:type <permanentRelationToSubject> ; $0 rdf:type <yagoGeoEntity>" <_implies> "$0 $1 $2 ; #1 <occursIn> $0" .
+
+"$0 $1 $2 ; $1 rdf:type <permanentRelationToObject> ; $2 <placedIn> $3" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
+"$0 $1 $2 ; $1 rdf:type <permanentRelationToObject> ; $2 rdf:type <yagoGeoEntity>" <_implies> "$0 $1 $2 ; #1 <occursIn> $2" .
+
+#---------Space-bound relations-------------------------------------------------
+
+"$0 $1 $2 ; $1 rdf:type <relationLocatedBySubject> ; $0 <placedIn> $3" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
+"$0 $1 $2 ; $1 rdf:type <relationLocatedBySubject> ; $0 rdf:type <yagoGeoEntity>" <_implies> "$0 $1 $2 ; #1 <occursIn> $0" .
+
+"$0 $1 $2 ; $1 rdf:type <relationLocatedByObject> ; $2 <placedIn> $3" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
+"$0 $1 $2 ; $1 rdf:type <relationLocatedByObject> ; $2 rdf:type <yagoGeoEntity>" <_implies> "$0 $1 $2 ; #1 <occursIn> $2" .
+
+#---------Tandem relations------------------------------------------------------
+
+"$0 $1 $2 ; $1 <timeToLocation> $3 ; $0 $3 $4 " <_implies> "$0 $1 $2 ; #1 <occursIn> $4" .
+
+
+#====================== FACTS TIME RULES =======================================
+#===============================================================================
+
+#---------Permanent relations---------------------------------------------------
+
+"$0 $1 $2 ; $1 rdf:type <permanentRelationToSubject> ; $0 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$0 $1 $2 ; $1 rdf:type <permanentRelationToSubject> ; $0 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+
+"$0 $1 $2 ; $1 rdf:type <permanentRelationToObject> ; $2 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$0 $1 $2 ; $1 rdf:type <permanentRelationToObject> ; $2 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+
+#---------Creation relations----------------------------------------------------
+
+"$0 $1 $2 ; $1 rdf:type <subjectStartRelation> ; $0 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$0 $1 $2 ; $1 rdf:type <subjectStartRelation> ; $0 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+
+"$0 $1 $2 ; $1 rdf:type <objectStartRelation> ; $2 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$0 $1 $2 ; $1 rdf:type <objectStartRelation> ; $2 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+
+#---------Destruction relations-------------------------------------------------
+
+"$0 $1 $2 ; $1 rdf:type <subjectEndRelation> ; $0 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$0 $1 $2 ; $1 rdf:type <subjectEndRelation> ; $0 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+
+"$0 $1 $2 ; $1 rdf:type <objectEndRelation> ; $2 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$0 $1 $2 ; $1 rdf:type <objectEndRelation> ; $2 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
