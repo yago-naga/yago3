@@ -48,11 +48,13 @@ public class PatternHardExtractor extends HardExtractor {
      "Patterns for extracting regular structure from Wikipedia (e.g. links)");
 	/** Implication rules of YAGO*/
 	public static final Theme RULES = new Theme("_rules", "These are the implication rules of YAGO");
+	/** Implication rules of YAGO SPOTLX representation*/
+  public static final Theme SPOTLX_RULES = new Theme("_spotlxRules", "Implication rules for YAGO SPOTLX representation");
 
 	public Set<Theme> output() {
 		return (new FinalSet<Theme>(
 		    INFOBOXPATTERNS,INFOBOXTEMPORALPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS,TEMPORALCATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES, 
-		    CONTEXTPATTERNS, STRUCTUREPATTERNS, LANGUAGECODEMAPPING));
+		    CONTEXTPATTERNS, STRUCTUREPATTERNS, LANGUAGECODEMAPPING, SPOTLX_RULES));
 	}
 
 	@Override
