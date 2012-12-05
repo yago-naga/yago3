@@ -7,6 +7,7 @@ import java.util.Set;
 import basics.FactSource;
 import basics.Theme;
 
+import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 
 import javatools.administrative.Announce;
@@ -24,6 +25,7 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(PatternHardExtractor.SPOTLX_RULES,
+                          PatternHardExtractor.HARDWIREDFACTS,
                           FactExtractor.YAGOFACTS,
                           MetaFactExtractor.YAGOMETAFACTS);
   }
@@ -52,6 +54,7 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
 
   public static void main(String[] args) throws Exception {
     new PatternHardExtractor(new File("./data")).extract(new File("/home/jbiega/data/yago2s"), "test");
+    new HardExtractor(new File("../basics2s/data")).extract(new File("/home/jbiega/data/yago2s"), "test");
     Announce.setLevel(Announce.Level.DEBUG);
     new SPOTLXRuleExtractor().extract(new File("/home/jbiega/data/yago2s"), "test");
   }
