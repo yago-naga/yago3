@@ -1,5 +1,7 @@
 package fromThemes;
 
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.io.File;
 import java.util.Map;
 import java.util.Set;
@@ -27,12 +29,15 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
     return new FinalSet<>(PatternHardExtractor.SPOTLX_RULES,
                           PatternHardExtractor.HARDWIREDFACTS,
                           FactExtractor.YAGOFACTS,
-                          MetaFactExtractor.YAGOMETAFACTS);
+                          MetaFactExtractor.YAGOMETAFACTS,
+                          RULETMPRESULTS);
   }
   
   /** Themes of spotlx deductions */
   public static final Theme RULERESULTS = new Theme("spotlxFacts", "SPOTLX deduced facts");
   public static final Theme RULESOURCES = new Theme("spotlxSources", "SPOTLX deduced facts");
+  
+  public static final Theme RULETMPRESULTS = new Theme("spotlxTmpFacts", "SPOTLX deduced facts");
   
   public Theme getRULERESULTS() {
     return RULERESULTS;
@@ -42,9 +47,33 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
     return RULESOURCES;
   }
   
+  protected int getTransitiveClosureDepth() {
+    return 2;
+  }
+  
   @Override
   public Set<Theme> output() {
     return new FinalSet<>(RULERESULTS, RULESOURCES);
+  }
+  
+  @Override
+  public void extract(File inputFolder, File outputFolder, String header) throws Exception {
+    File inFactFile = RULETMPRESULTS.file(inputFolder);
+    inFactFile.createNewFile();
+    
+    int closureDepthCounter = 0;
+    do {
+      super.extract(inputFolder, outputFolder, header);
+      closureDepthCounter++;
+      
+      //copy results to temp results
+      File outFactFile = RULERESULTS.file(outputFolder);
+      outFactFile = RULERESULTS.file(outputFolder);
+      Files.copy(outFactFile.toPath(), inFactFile.toPath(), StandardCopyOption.REPLACE_EXISTING);
+      
+    } while(closureDepthCounter < getTransitiveClosureDepth());
+    
+    inFactFile.delete();
   }
   
   @Override
