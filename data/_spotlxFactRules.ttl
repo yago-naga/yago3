@@ -12,23 +12,6 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-#====================== ENTITIES LOCATION RULES ================================
-#===============================================================================
-
-"$0 <happenedIn> $1" <_implies> "$0 <placedIn> $1" .
-"$0 <isLocatedIn> $1" <_implies> "$0 <placedIn> $1" .
-
-#====================== ENTITIES TIME RULES ====================================
-#===============================================================================
-
-"$0 <wasBornOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
-"$0 <wasCreatedOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
-"$0 <startedOnDate> $1" <_implies> "$0 <startsExistingOnDate> $1" .
-
-"$0 <diedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .
-"$0 <wasDestroyedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .
-"$0 <endedOnDate> $1" <_implies> "$0 <endsExistingOnDate> $1" .
-
 #====================== FACTS LOCATION RULES ===================================
 #===============================================================================
 

@@ -11,6 +11,7 @@ import fromWikipedia.InfoboxExtractor;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import basics.FactCollection;
 import basics.FactSource;
 import basics.Theme;
 
@@ -49,9 +50,12 @@ public class RuleExtractor extends BaseRuleExtractor {
     return new FinalSet<>(RULERESULTS, RULESOURCES);
   }
   
-  /** Extract rule sources from fact sources */
-  protected FactSource getInputRuleSources(Map<Theme, FactSource> input) throws Exception {
-    return input.get(PatternHardExtractor.RULES);
+  /** Extract rule collection from fact sources */
+  @Override
+  public FactCollection getInputRuleCollection(Map<Theme, FactSource> input) throws Exception {
+    FactSource rules = input.get(PatternHardExtractor.RULES);
+    FactCollection collection = new FactCollection(rules);
+    return collection;
   }
 
   public static void main(String[] args) throws Exception {

@@ -49,12 +49,13 @@ public class PatternHardExtractor extends HardExtractor {
 	/** Implication rules of YAGO*/
 	public static final Theme RULES = new Theme("_rules", "These are the implication rules of YAGO");
 	/** Implication rules of YAGO SPOTLX representation*/
-  public static final Theme SPOTLX_RULES = new Theme("_spotlxRules", "Implication rules for YAGO SPOTLX representation");
+  public static final Theme SPOTLX_ENTITY_RULES = new Theme("_spotlxEntityRules", "Implication rules for YAGO SPOTLX representation");
+  public static final Theme SPOTLX_FACT_RULES = new Theme("_spotlxFactRules", "Implication rules for YAGO SPOTLX representation");
 
 	public Set<Theme> output() {
 		return (new FinalSet<Theme>(
 		    INFOBOXPATTERNS,INFOBOXTEMPORALPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS,TEMPORALCATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES, 
-		    CONTEXTPATTERNS, STRUCTUREPATTERNS, LANGUAGECODEMAPPING, SPOTLX_RULES));
+		    CONTEXTPATTERNS, STRUCTUREPATTERNS, LANGUAGECODEMAPPING, SPOTLX_ENTITY_RULES, SPOTLX_FACT_RULES));
 	}
 
 	@Override

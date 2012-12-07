@@ -154,12 +154,12 @@ public abstract class BaseRuleExtractor extends Extractor {
     }
   }
   
-  /** The themes required */
-  protected abstract FactSource getInputRuleSources(Map<Theme, FactSource> input) throws Exception;
+  /** Fact collection containing implication rules */
+  protected abstract FactCollection getInputRuleCollection(Map<Theme, FactSource> input) throws Exception;
  
   /** Extract implication rules from input facts */
   protected RuleSet initializeRuleSet(Map<Theme, FactSource> input) throws Exception {
-    FactCollection ruleFacts = new FactCollection(getInputRuleSources(input));
+    FactCollection ruleFacts = getInputRuleCollection(input);
     RuleSet rules = new RuleSet();
     for (Fact f : ruleFacts.get("<_implies>")) {
       rules.add(new Rule(f));
