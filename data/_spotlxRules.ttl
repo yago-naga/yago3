@@ -50,7 +50,9 @@
 
 #---------Tandem relations------------------------------------------------------
 
-"$0 $1 $2 ; $1 <timeToLocation> $3 ; $0 $3 $4 " <_implies> "$0 $1 $2 ; #1 <occursIn> $4" .
+"$0 $1 $2 ; $1 <_timeToLocation> $3 ; $0 $3 $4 " <_implies> "$0 $1 $2 ; #1 <occursIn> $4" .
+"$0 $1 $2 ; $1 <_timeToLocation> $3 ; $0 $3 $4 " <_implies> "$0 $3 $4 ; #1 <occursSince> $2" .
+"$0 $1 $2 ; $1 <_timeToLocation> $3 ; $0 $3 $4 " <_implies> "$0 $3 $4 ; #1 <occursUntil> $2" .
 
 
 #====================== FACTS TIME RULES =======================================
