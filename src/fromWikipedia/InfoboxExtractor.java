@@ -11,10 +11,8 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
-
-import utils.PatternList;
-import utils.TermExtractor;
-import utils.TitleExtractor;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -22,6 +20,9 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
+import utils.PatternList;
+import utils.TermExtractor;
+import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -102,24 +103,25 @@ public class InfoboxExtractor extends Extractor {
     }
 
     // Get the term extractor
-    TermExtractor extractor = expectedDatatype.equals(RDFS.clss) ? new TermExtractor.ForClass(preferredMeanings) : TermExtractor.forType(expectedDatatype);
+    TermExtractor extractor = expectedDatatype.equals(RDFS.clss) ? new TermExtractor.ForClass(preferredMeanings) : TermExtractor
+        .forType(expectedDatatype);
     String syntaxChecker = FactComponent.asJavaString(factCollection.getArg2(expectedDatatype, "<_hasTypeCheckPattern>"));
 
     // Extract all terms
     List<String> objects = extractor.extractList(string);
     for (String object : objects) {
       // Check syntax
-      if (syntaxChecker != null && FactComponent.asJavaString(object)!=null && !FactComponent.asJavaString(object).matches(syntaxChecker)) {
+      if (syntaxChecker != null && FactComponent.asJavaString(object) != null && !FactComponent.asJavaString(object).matches(syntaxChecker)) {
         Announce.debug("Extraction", object, "for", entity, relation, "does not match syntax check", syntaxChecker);
         continue;
       }
       // Check data type
       if (FactComponent.isLiteral(object)) {
         String parsedDatatype = FactComponent.getDatatype(object);
-        if(parsedDatatype==null) parsedDatatype=YAGO.string;
-        if (syntaxChecker!=null && factCollection.isSubClassOf(expectedDatatype, parsedDatatype)) {
+        if (parsedDatatype == null) parsedDatatype = YAGO.string;
+        if (syntaxChecker != null && factCollection.isSubClassOf(expectedDatatype, parsedDatatype)) {
           // If the syntax check went through, we are fine
-          object=FactComponent.setDataType(object, expectedDatatype);
+          object = FactComponent.setDataType(object, expectedDatatype);
         } else {
           // For other stuff, we check if the datatype is OK
           if (!factCollection.isSubClassOf(parsedDatatype, expectedDatatype)) {
@@ -195,13 +197,13 @@ public class InfoboxExtractor extends Extractor {
         int scanTo = attribute.indexOf('<');
         if (scanTo != -1) {
           val.append(attribute.substring(0, scanTo));
-          String attr=attribute.substring(scanTo + 1);
+          String attr = attribute.substring(scanTo + 1);
           // Do we want to exclude the existence of an attribute?
-          if(attr.startsWith("~")) {
-            attr=attr.substring(1);
-            if(result.get(normalizeAttribute(attr))!=null) continue next;
+          if (attr.startsWith("~")) {
+            attr = attr.substring(1);
+            if (result.get(normalizeAttribute(attr)) != null) continue next;
             continue;
-          } 
+          }
           String newVal = D.pick(result.get(normalizeAttribute(attr)));
           if (newVal == null) continue next;
           val.append(newVal);
@@ -242,7 +244,7 @@ public class InfoboxExtractor extends Extractor {
           if (titleEntity == null) continue;
           FileLines.readTo(in, '}', '|');
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
-          Announce.debug(attributes);
+          //processCoordinates(attributes);
           for (String attribute : attributes.keySet()) {
             Set<String> relations = patterns.get(attribute);
             if (relations == null) continue;
@@ -255,6 +257,36 @@ public class InfoboxExtractor extends Extractor {
       }
     }
   }
+
+  /*
+   This is too much fuzz at little use
+  public static final String bar = "\\s*\\|\\s*";
+
+  public static final Pattern coordPattern1 = Pattern.compile("coord" + bar + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar + "(.)" + bar
+      + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar + "(.)");
+  public static final Pattern coordPattern2 = Pattern.compile("coord" + bar + "([\\d\\.]+)" + bar + "(.)" + bar
+      + "([\\d\\.]+)" + bar + "(.)");
+
+  /** processes "coordinates" attribute
+  private void processCoordinates(Map<String, Set<String>> attributes) {
+    for (String key : attributes.keySet()) {
+      for (String val : attributes.get(key)) {
+        Matcher m = coordPattern1.matcher(val);
+        if (m.find()) {
+          attributes.put("latitude", new FinalSet<>(m.group(1) + " degrees " + m.group(2) + " minutes " + m.group(3) + " seconds " + m.group(4)));
+          attributes.put("longitude", new FinalSet<>(m.group(5) + " degrees " + m.group(6) + " minutes " + m.group(7) + " seconds " + m.group(8)));
+          return;
+        }
+        m = coordPattern2.matcher(val);
+        if (m.find()) {
+          attributes.put("latitude", new FinalSet<>(m.group(1) + " degrees " + m.group(2)));
+          attributes.put("longitude", new FinalSet<>(m.group(3) + " degrees " + m.group(4)));
+          return;
+        }
+      }
+    }
+  }
+*/
 
   /** returns the infobox patterns */
   public static Map<String, Set<String>> infoboxPatterns(FactCollection infoboxFacts) {
@@ -279,7 +311,8 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/ham.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/ham.xml")).extract(new File("c:/fabian/data/yago2s"),
+        "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
