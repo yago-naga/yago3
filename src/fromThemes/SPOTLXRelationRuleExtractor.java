@@ -8,6 +8,7 @@ import basics.FactSource;
 import basics.Theme;
 
 import fromOtherSources.PatternHardExtractor;
+import fromGeonames.GeoNamesDataImporter;
 
 import javatools.datatypes.FinalSet;
 
@@ -25,7 +26,9 @@ public class SPOTLXRelationRuleExtractor extends BaseRuleExtractor {
     return new FinalSet<>(PatternHardExtractor.SPOTLX_ENTITY_RULES,
                           PatternHardExtractor.HARDWIREDFACTS,
                           FactExtractor.YAGOFACTS,
-                          MetaFactExtractor.YAGOMETAFACTS);
+                          MetaFactExtractor.YAGOMETAFACTS,
+                          LiteralFactExtractor.YAGOLITERALFACTS,
+                          GeoNamesDataImporter.GEONAMESDATA);
   }
   
   /** Themes of spotlx deductions */
