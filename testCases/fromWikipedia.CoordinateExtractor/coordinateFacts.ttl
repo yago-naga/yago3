@@ -1,0 +1,52 @@
+# test
+# Coordinates from Wikipedia articles
+# INTERNAL
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_2ox8i9_1n8_15cfwfm>
+<Molise>	<hasLatitude>	"41.6997"^^<degrees> .
+#@ <id_2ox8i9_jto_1xrhssm>
+<Molise>	<hasLongitude>	"14.6111"^^<degrees> .
+#@ <id_prkzmu_1n8_4uahcp>
+<University_of_Milan>	<hasLatitude>	"45.46098888888889"^^<degrees> .
+#@ <id_prkzmu_jto_aok9wi>
+<University_of_Milan>	<hasLongitude>	"9.194591666666668"^^<degrees> .
+#@ <id_1ks0wcp_1n8_1ckntim>
+<Connaught_Square>	<hasLatitude>	"51.51444444444444"^^<degrees> .
+#@ <id_1ks0wcp_jto_7tbfau>
+<Connaught_Square>	<hasLongitude>	"-0.1638888888888889"^^<degrees> .
+#@ <id_py5vtt_1n8_1pdqdfr>
+<University_of_Leipzig>	<hasLatitude>	"51.339"^^<degrees> .
+#@ <id_py5vtt_jto_1ni3ojs>
+<University_of_Leipzig>	<hasLongitude>	"12.379"^^<degrees> .
+#@ <id_1dmdk4j_1n8_o06fg5>
+<West_Germany>	<hasLatitude>	"50.73388888888889"^^<degrees> .
+#@ <id_1dmdk4j_jto_1xdr8c4>
+<West_Germany>	<hasLongitude>	"7.099722222222222"^^<degrees> .
+#@ <id_jfqfk4_1n8_14d90pi>
+<Institut_d'Études_Politiques_de_Paris>	<hasLatitude>	"48.854172222222225"^^<degrees> .
+#@ <id_jfqfk4_jto_1aumtga>
+<Institut_d'Études_Politiques_de_Paris>	<hasLongitude>	"2.328469444444444"^^<degrees> .
+#@ <id_17gzuo3_1n8_k7i07k>
+<Paris_West_University_Nanterre_La_Défense>	<hasLatitude>	"48.903888888888886"^^<degrees> .
+#@ <id_17gzuo3_jto_1raa0pl>
+<Paris_West_University_Nanterre_La_Défense>	<hasLongitude>	"2.213888888888889"^^<degrees> .
+#@ <id_17gzuo3_1n8_k7i07k>
+<Paris_West_University_Nanterre_La_Défense>	<hasLatitude>	"48.903888888888886"^^<degrees> .
+#@ <id_17gzuo3_jto_1raa0pl>
+<Paris_West_University_Nanterre_La_Défense>	<hasLongitude>	"2.213888888888889"^^<degrees> .
+#@ <id_1u5uyhb_1n8_zji9s2>
+<Francoist_Spain>	<hasLatitude>	"41.3"^^<degrees> .
+#@ <id_1u5uyhb_jto_1lktooh>
+<Francoist_Spain>	<hasLongitude>	"-0.749"^^<degrees> .
+#@ <id_cacb9n_1n8_1byfggc>
+<University_of_León>	<hasLatitude>	"42.612122222222226"^^<degrees> .
+#@ <id_cacb9n_jto_1wqe26b>
+<University_of_León>	<hasLongitude>	"-5.560219444444444"^^<degrees> .

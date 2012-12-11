@@ -17,6 +17,7 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
+import fromGeonames.GeoNamesFullDataImporter;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.WikiInfoExtractor;
@@ -37,7 +38,7 @@ public class StatisticsExtractor extends Extractor {
   public Set<Theme> input() {
     return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, WikipediaTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
         MetaFactExtractor.YAGOMETAFACTS, SchemaExtractor.YAGOSCHEMA, LiteralFactExtractor.YAGOLITERALFACTS, 
-        WordnetExtractor.WORDNETIDS, WikiInfoExtractor.WIKIINFO, FlightExtractor.FLIGHTS);
+        WordnetExtractor.WORDNETIDS, WikiInfoExtractor.WIKIINFO);
   }
 
   /** YAGO statistics theme */

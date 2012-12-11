@@ -244,7 +244,6 @@ public class InfoboxExtractor extends Extractor {
           if (titleEntity == null) continue;
           FileLines.readTo(in, '}', '|');
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
-          //processCoordinates(attributes);
           for (String attribute : attributes.keySet()) {
             Set<String> relations = patterns.get(attribute);
             if (relations == null) continue;
@@ -257,36 +256,6 @@ public class InfoboxExtractor extends Extractor {
       }
     }
   }
-
-  /*
-   This is too much fuzz at little use
-  public static final String bar = "\\s*\\|\\s*";
-
-  public static final Pattern coordPattern1 = Pattern.compile("coord" + bar + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar + "(.)" + bar
-      + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar + "(.)");
-  public static final Pattern coordPattern2 = Pattern.compile("coord" + bar + "([\\d\\.]+)" + bar + "(.)" + bar
-      + "([\\d\\.]+)" + bar + "(.)");
-
-  /** processes "coordinates" attribute
-  private void processCoordinates(Map<String, Set<String>> attributes) {
-    for (String key : attributes.keySet()) {
-      for (String val : attributes.get(key)) {
-        Matcher m = coordPattern1.matcher(val);
-        if (m.find()) {
-          attributes.put("latitude", new FinalSet<>(m.group(1) + " degrees " + m.group(2) + " minutes " + m.group(3) + " seconds " + m.group(4)));
-          attributes.put("longitude", new FinalSet<>(m.group(5) + " degrees " + m.group(6) + " minutes " + m.group(7) + " seconds " + m.group(8)));
-          return;
-        }
-        m = coordPattern2.matcher(val);
-        if (m.find()) {
-          attributes.put("latitude", new FinalSet<>(m.group(1) + " degrees " + m.group(2)));
-          attributes.put("longitude", new FinalSet<>(m.group(3) + " degrees " + m.group(4)));
-          return;
-        }
-      }
-    }
-  }
-*/
 
   /** returns the infobox patterns */
   public static Map<String, Set<String>> infoboxPatterns(FactCollection infoboxFacts) {
