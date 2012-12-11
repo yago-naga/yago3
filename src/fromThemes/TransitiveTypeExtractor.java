@@ -54,7 +54,7 @@ public class TransitiveTypeExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    FactCollection classes = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY));
+    FactCollection classes = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY),true);
     yagoTaxonomy = new HashMap<>();
     Announce.doing("Computing the transitive closure");
     for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES)) {

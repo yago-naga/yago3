@@ -242,6 +242,7 @@ public class InfoboxExtractor extends Extractor {
           if (titleEntity == null) continue;
           FileLines.readTo(in, '}', '|');
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
+          Announce.debug(attributes);
           for (String attribute : attributes.keySet()) {
             Set<String> relations = patterns.get(attribute);
             if (relations == null) continue;
@@ -278,7 +279,7 @@ public class InfoboxExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
     new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
     new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/comoros.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/ham.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
     // new InfoboxExtractor(new
     // File("./testCases/wikitest.xml")).extract(new
     // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");

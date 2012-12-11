@@ -73,7 +73,7 @@ public class WordnetDomainExtractor extends Extractor {
     //w.write("# "+WORDNETDOMAINS.description+"\n");
     Map<String, String> mappings = new HashMap<String, String>();
     Set<String> labels = new HashSet<>();
-    Map<String, String> words = new FactCollection(input.get(WordnetExtractor.WORDNETIDS)).getReverseMap("<hasSynsetId>");
+    Map<String, String> words = new FactCollection(input.get(WordnetExtractor.WORDNETIDS),true).getReverseMap("<hasSynsetId>");
     for (String line : new FileLines(wordnetMappings, "Loading Wordnet Mappings")) {
       String[] split = line.split("\\s");
       if (split.length < 2) continue;

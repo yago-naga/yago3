@@ -10,9 +10,9 @@ public class TransitionChecker {
 
   public static boolean check(File gold, File... result) throws IOException {
     Announce.doing("Checking",gold.getName());
-    FactCollection goldStandard=new FactCollection(gold);
+    FactCollection goldStandard=new FactCollection(gold, true);
     FactCollection results=new FactCollection("results");
-    for(File f : result) results.load(f);
+    for(File f : result) results.loadFast(f);
     if(results.checkEqual(goldStandard)) {
       Announce.done();
       return(true);

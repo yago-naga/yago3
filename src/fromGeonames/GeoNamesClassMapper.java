@@ -80,9 +80,9 @@ public class GeoNamesClassMapper extends Extractor {
       geographicalWordNetClasses.add(f.getArg(1));
     }
     
-    FactCollection wordnetWords = new FactCollection(input.get(WordnetExtractor.WORDNETWORDS));
-    FactCollection wordnetGlosses = new FactCollection(input.get(WordnetExtractor.WORDNETGLOSSES));
-    FactCollection wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
+    FactCollection wordnetWords = new FactCollection(input.get(WordnetExtractor.WORDNETWORDS),true);
+    FactCollection wordnetGlosses = new FactCollection(input.get(WordnetExtractor.WORDNETGLOSSES),true);
+    FactCollection wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES),true);
     
     for (String line : new FileLines(geonamesFeatureCodes, "Loading feature code mappings")) {
       String[] data = line.split("\t");

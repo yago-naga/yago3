@@ -50,7 +50,7 @@ public class SimpleTypeExtractor extends Extractor {
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     FactCollection types = new FactCollection();
-    FactCollection taxonomy = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY));
+    FactCollection taxonomy = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY),true);
     Set<String> leafClasses = new HashSet<>();
     Announce.doing("Loading YAGO types");
     for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES)) {

@@ -173,7 +173,7 @@ public class WordnetExtractor extends Extractor {
     if (preferredMeaning != null) return (preferredMeaning);
     preferredMeaning = new HashMap<String, String>();
     addPreferredMeanings(preferredMeaning, new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)));
-    addPreferredMeanings(preferredMeaning, new FactCollection(input.get(WordnetExtractor.WORDNETWORDS)));
+    addPreferredMeanings(preferredMeaning, new FactCollection(input.get(WordnetExtractor.WORDNETWORDS),true));
     if (preferredMeaning.isEmpty()) Announce.warning("No preferred meanings found");
     return (preferredMeaning);
   }

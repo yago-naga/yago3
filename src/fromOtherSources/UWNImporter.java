@@ -54,7 +54,7 @@ public class UWNImporter extends Extractor {
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     // get wordnet synset id mapping
-    Map<String, String> wnssm = new FactCollection(input.get(WordnetExtractor.WORDNETIDS)).getReverseMap("<hasSynsetId>"); 
+    Map<String, String> wnssm = new FactCollection(input.get(WordnetExtractor.WORDNETIDS),true).getReverseMap("<hasSynsetId>"); 
     Map<String, String> tlc2language = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)).getReverseMap("<hasThreeLetterLanguageCode>");
 
     FactWriter writer = output.get(UWNDATA);

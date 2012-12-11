@@ -166,7 +166,7 @@ public class WikipediaTypeExtractor extends Extractor {
     }
     nonConceptualCategories = new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)).asStringSet("<_yagoNonConceptualWord>");
     preferredMeanings = WordnetExtractor.preferredMeanings(input);
-    wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES));
+    wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES),true);
     wordnetClasses.load(input.get(HardExtractor.HARDWIREDFACTS));
     categoryClassFacts = new FactCollection();
     yagoBranches = new HashMap<String, String>();
