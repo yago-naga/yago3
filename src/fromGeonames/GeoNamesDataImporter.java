@@ -185,7 +185,9 @@ public abstract class GeoNamesDataImporter extends Extractor {
     if (geoEntityId2yago.containsKey(geonamesId)) {
       return geoEntityId2yago.get(geonamesId);
     } else {
-      return name;
+      // To avoid clashes with canoncial Wikipedia names, add the GeoNames id
+      // to unmatched GeoNames entities.
+      return name + "_" + geonamesId;
     }
   }
   
