@@ -36,6 +36,8 @@
 "<longd> degrees <longm> minutes 0 seconds <longEW>"	<_infoboxCombine>	"longitude" .
 "<latdeg> degrees <latmin> minutes 0 seconds N <~latNS>"	<_infoboxCombine>	"_latitude" .
 "<londeg> degrees <lonmin> minutes 0 seconds E <~longEW>"	<_infoboxCombine>	"_longitude" .
+"<latdeg> degrees <latmin> minutes <latsec> seconds <latdir>"	<_infoboxCombine>	"_latitude" .
+"<londeg> degrees <lonmin> minutes <lonsec> seconds <londir>"	<_infoboxCombine>	"_longitude" .
 
 # --------- Infobox patterns --------------
 
