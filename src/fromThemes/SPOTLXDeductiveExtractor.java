@@ -19,9 +19,11 @@ import javatools.datatypes.FinalSet;
 
 
 /**
- * YAGO2s - SPOTLXRuleExtractor
+ * YAGO2s - SPOTLXDeductiveExtractor
  * 
- * Generates the results of rules needed in the SPOTLX representation.
+ * A SPOTLX extractor which follows the SPOTLSRuleExtractor. 
+ * It uses previously generated general creation&destruction facts
+ * and infers time&location facts (occursSince, occursUntil, occursIn).   
  * 
  * @author Joanna Biega
  */

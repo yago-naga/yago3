@@ -21,7 +21,10 @@ import javatools.datatypes.FinalSet;
 /**
  * YAGO2s - SPOTLXRuleExtractor
  * 
- * Generates the results of rules needed in the SPOTLX representation.
+ * The base representative for SPOTLX rule deduction.
+ * It first uses time&space 'entity' rules for infering the more general
+ * creation and destruction facts (i.e. placedIn, startsExistingOnDate and endsExistingOnDate)
+ * and then calls the extractor which continues the deduction process. 
  * 
  * @author Joanna Biega
  */
@@ -43,8 +46,8 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
   }
   
   /** Themes of spotlx deductions */
-  public static final Theme RULERESULTS = new Theme("spotlxRelationFacts", "SPOTLX deduced facts");
-  public static final Theme RULESOURCES = new Theme("spotlxRelationSources", "SPOTLX deduced facts");
+  public static final Theme RULERESULTS = new Theme("spotlxEntityFacts", "SPOTLX deduced facts");
+  public static final Theme RULESOURCES = new Theme("spotlxEntitySources", "SPOTLX deduced facts");
   
   public Theme getRULERESULTS() {
     return RULERESULTS;

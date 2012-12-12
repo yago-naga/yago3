@@ -12,8 +12,9 @@ import basics.Theme;
 /**
  * YAGO2s - SPOTLXDeduplicator
  * 
- * Generates the final results of SPOTLX deduction,
- * extracting only occurs[In, Since, Until] relations
+ * An clean-up extractor for the SPOTLX deduction process.
+ * It produces the final results of SPOTLX deduction,
+ * filtering only occurs[In, Since, Until] relations and removing the duplicates.
  * 
  * @author Joanna Biega
  */
