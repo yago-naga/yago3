@@ -47,6 +47,9 @@ public class GeoNamesClassMapper extends Extractor {
   /** YAGO geo class */
   public static final String GEO_CLASS = "<yagoGeoEntity>";
   
+  /** YAGO geoclass prefix */
+  public static final String GEO_CLASS_PREFIX = "geoclass_";
+  
   private Set<String> geographicalWordNetClasses;
   private BreakIterator bi = BreakIterator.getWordInstance();
   private Pattern NON_WORD_CHAR = Pattern.compile("^[^\\w]*$");
@@ -95,7 +98,8 @@ public class GeoNamesClassMapper extends Extractor {
         featureGloss = data[2];
       }
       
-      String geoClass = FactComponent.forGeoNamesClass(featureClass);
+      String geoClass = 
+          FactComponent.forGeoNamesClass(GEO_CLASS_PREFIX + featureClass);
       String wordNetClass = mapGeonamesCategory(featureClass, featureGloss, wordnetWords, wordnetGlosses, wordnetClasses);
       String parentClass = (wordNetClass != null) ? wordNetClass : GEO_CLASS;
 

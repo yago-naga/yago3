@@ -39,8 +39,10 @@ import basics.Theme.ThemeGroup;
  */
 public abstract class GeoNamesDataImporter extends Extractor {
 
+  public static final String GEO_ENTITY_PREFIX = "geoentity_";
+  
   protected File geonamesFolder;
-    
+  
   /** geonames entity links */
   public static final Theme GEONAMESDATA = new Theme("yagoGeonamesData", 
       "Data from GeoNames, e.g. coordinates, alternative names, locatedIn hierarchy, neighbor of",ThemeGroup.GEONAMES);
@@ -187,7 +189,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
     } else {
       // To avoid clashes with canoncial Wikipedia names, add the GeoNames id
       // to unmatched GeoNames entities.
-      return name + "_" + geonamesId;
+      return GEO_ENTITY_PREFIX + "_" + name + "_" + geonamesId;
     }
   }
   
