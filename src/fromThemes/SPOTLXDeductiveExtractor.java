@@ -1,6 +1,8 @@
 package fromThemes;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -10,6 +12,7 @@ import basics.Theme;
 
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
+import fromWikipedia.Extractor;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -25,6 +28,11 @@ import javatools.datatypes.FinalSet;
 public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
   
   @Override
+  public Set<Extractor> followUp() {
+    return(new HashSet<Extractor> (Arrays.asList(new SPOTLXDeduplicator())));
+  }
+  
+  @Override
   public Set<Theme> input() {
     return new FinalSet<>(PatternHardExtractor.HARDWIREDFACTS,
                           PatternHardExtractor.SPOTLX_ENTITY_RULES,
@@ -35,8 +43,8 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
   }
   
   /** Themes of spotlx deductions */
-  public static final Theme RULERESULTS = new Theme("spotlxFacts", "SPOTLX deduced facts");
-  public static final Theme RULESOURCES = new Theme("spotlxSources", "SPOTLX deduced facts");
+  public static final Theme RULERESULTS = new Theme("spotlxDeducedFacts", "SPOTLX deduced facts");
+  public static final Theme RULESOURCES = new Theme("spotlxDeducedSources", "SPOTLX deduced facts");
   
   public Theme getRULERESULTS() {
     return RULERESULTS;
