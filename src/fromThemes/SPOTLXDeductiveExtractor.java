@@ -10,6 +10,7 @@ import basics.FactSource;
 import basics.FactCollection;
 import basics.Theme;
 
+import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromWikipedia.Extractor;
@@ -41,7 +42,9 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
                           PatternHardExtractor.SPOTLX_FACT_RULES,
                           SPOTLXRuleExtractor.RULERESULTS,
                           FactExtractor.YAGOFACTS,
-                          MetaFactExtractor.YAGOMETAFACTS);
+                          MetaFactExtractor.YAGOMETAFACTS,
+                          LiteralFactExtractor.YAGOLITERALFACTS,
+                          GeoNamesDataImporter.GEONAMESDATA);
   }
   
   /** Themes of spotlx deductions */
