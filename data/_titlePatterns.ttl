@@ -34,4 +34,4 @@
 "Prince of"	<_titleReplace>	"NIL" .
 "Co-Princes of"	<_titleReplace>	"NIL" .
 "Leader of"	<_titleReplace>	"NIL" .
-"\u005cd+"	<_titleReplace>	"NIL" .
+"^\u005cd+"	<_titleReplace>	"NIL" .
