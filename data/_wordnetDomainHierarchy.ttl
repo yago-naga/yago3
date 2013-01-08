@@ -1,0 +1,224 @@
+# This file contains the Wordnet domain hierarchy,> .
+# which is manually scraped from http://wndomains.fbk.eu/hierarchy.html> .
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<wordnetDomain_top> skos:narrower <wordnetDomain_doctrines> .
+<wordnetDomain_top> skos:narrower <wordnetDomain_free_time> .
+<wordnetDomain_top> skos:narrower <wordnetDomain_applied_science> .
+<wordnetDomain_top> skos:narrower <wordnetDomain_pure_science> .
+<wordnetDomain_top> skos:narrower <wordnetDomain_social_science> .
+<wordnetDomain_top> skos:narrower <wordnetDomain_factotum> .
+<wordnetDomain_factotum> skos:narrower <wordnetDomain_number> .
+<wordnetDomain_factotum> skos:narrower <wordnetDomain_color> .
+<wordnetDomain_factotum> skos:narrower <wordnetDomain_time_period> .
+<wordnetDomain_factotum> skos:narrower <wordnetDomain_person> .
+<wordnetDomain_factotum> skos:narrower <wordnetDomain_quality> .
+
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_archeology> .
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_astrology> .
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_history> .
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_linguistics> .
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_literature> .
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_philosophy> .
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_psychology> .
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_art> .
+<wordnetDomain_doctrines> skos:narrower <wordnetDomain_religion> .
+
+<wordnetDomain_art> skos:narrower <wordnetDomain_dance> .
+<wordnetDomain_art> skos:narrower <wordnetDomain_drawing> .
+<wordnetDomain_art> skos:narrower <wordnetDomain_music> .
+<wordnetDomain_art> skos:narrower <wordnetDomain_photography> .
+<wordnetDomain_art> skos:narrower <wordnetDomain_plastic_arts> .
+<wordnetDomain_art> skos:narrower <wordnetDomain_theatre> .
+
+<wordnetDomain_drawing> skos:narrower <wordnetDomain_painting> .
+<wordnetDomain_drawing> skos:narrower <wordnetDomain_philately> .
+
+<wordnetDomain_history> skos:narrower <wordnetDomain_heraldry> .
+
+<wordnetDomain_linguistics> skos:narrower <wordnetDomain_grammar> .
+
+<wordnetDomain_literature> skos:narrower <wordnetDomain_philology> .
+
+<wordnetDomain_plastic_arts> skos:narrower <wordnetDomain_jewellery> .
+<wordnetDomain_plastic_arts> skos:narrower <wordnetDomain_numismatics> .
+<wordnetDomain_plastic_arts> skos:narrower <wordnetDomain_sculpture> .
+
+<wordnetDomain_psychology> skos:narrower <wordnetDomain_psychoanalysis> .
+
+<wordnetDomain_religion> skos:narrower <wordnetDomain_mythology> .
+<wordnetDomain_religion> skos:narrower <wordnetDomain_occultism> .
+<wordnetDomain_religion> skos:narrower <wordnetDomain_theology> .
+
+
+<wordnetDomain_free_time> skos:narrower <wordnetDomain_play> .
+<wordnetDomain_free_time> skos:narrower <wordnetDomain_sport> .
+
+<wordnetDomain_play> skos:narrower <wordnetDomain_betting> .
+<wordnetDomain_play> skos:narrower <wordnetDomain_card> .
+<wordnetDomain_play> skos:narrower <wordnetDomain_chess> .
+
+<wordnetDomain_sport> skos:narrower <wordnetDomain_badminton> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_baseball> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_basketball> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_cricket> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_football> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_golf> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_rugby> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_soccer> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_table_tennis> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_tennis> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_volleyball> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_cycling> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_skating> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_skiing> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_hockey> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_mountaineering> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_rowing> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_swimming> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_sub> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_diving> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_racing> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_athletics> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_wrestling> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_boxing> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_fencing> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_archery> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_fishing> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_hunting> .
+<wordnetDomain_sport> skos:narrower <wordnetDomain_bowling> .
+
+<wordnetDomain_applied_science> skos:narrower <wordnetDomain_agriculture> .
+<wordnetDomain_applied_science> skos:narrower <wordnetDomain_alimentation> .
+<wordnetDomain_applied_science> skos:narrower <wordnetDomain_architecture> .
+<wordnetDomain_applied_science> skos:narrower <wordnetDomain_computer_science> .
+<wordnetDomain_applied_science> skos:narrower <wordnetDomain_engineering> .
+<wordnetDomain_applied_science> skos:narrower <wordnetDomain_medicine> .
+<wordnetDomain_applied_science> skos:narrower <wordnetDomain_veterinary> .
+
+<wordnetDomain_alimentation> skos:narrower <wordnetDomain_gastronomy> .
+
+
+<wordnetDomain_architecture> skos:narrower <wordnetDomain_town_planning> .
+<wordnetDomain_architecture> skos:narrower <wordnetDomain_building_industry> .
+<wordnetDomain_architecture> skos:narrower <wordnetDomain_furniture> .
+
+
+<wordnetDomain_engineering> skos:narrower <wordnetDomain_mechanics> .
+<wordnetDomain_engineering> skos:narrower <wordnetDomain_astronautics> .
+<wordnetDomain_engineering> skos:narrower <wordnetDomain_electrotechnics> .
+<wordnetDomain_engineering> skos:narrower <wordnetDomain_hydraulics> .
+
+
+<wordnetDomain_medicine> skos:narrower <wordnetDomain_dentistry> .
+<wordnetDomain_medicine> skos:narrower <wordnetDomain_pharmacy> .
+<wordnetDomain_medicine> skos:narrower <wordnetDomain_psychiatry> .
+<wordnetDomain_medicine> skos:narrower <wordnetDomain_radiology> .
+<wordnetDomain_medicine> skos:narrower <wordnetDomain_surgery> .
+
+
+<wordnetDomain_veterinary> skos:narrower <wordnetDomain_zootechnics> .
+
+<wordnetDomain_pure_science> skos:narrower <wordnetDomain_astronomy> .
+<wordnetDomain_pure_science> skos:narrower <wordnetDomain_biology> .
+<wordnetDomain_pure_science> skos:narrower <wordnetDomain_chemistry> .
+<wordnetDomain_pure_science> skos:narrower <wordnetDomain_earth> .
+<wordnetDomain_pure_science> skos:narrower <wordnetDomain_mathematics> .
+<wordnetDomain_pure_science> skos:narrower <wordnetDomain_physics> .
+
+
+<wordnetDomain_astronomy> skos:narrower <wordnetDomain_topography> .
+
+
+<wordnetDomain_biology> skos:narrower <wordnetDomain_biochemistry> .
+<wordnetDomain_biology> skos:narrower <wordnetDomain_ecology> .
+<wordnetDomain_biology> skos:narrower <wordnetDomain_botany> .
+<wordnetDomain_biology> skos:narrower <wordnetDomain_zoology> .
+<wordnetDomain_biology> skos:narrower <wordnetDomain_anatomy> .
+<wordnetDomain_biology> skos:narrower <wordnetDomain_physiology> .
+<wordnetDomain_biology> skos:narrower <wordnetDomain_genetics> .
+
+
+<wordnetDomain_earth> skos:narrower <wordnetDomain_geology> .
+<wordnetDomain_earth> skos:narrower <wordnetDomain_meteorology> .
+<wordnetDomain_earth> skos:narrower <wordnetDomain_oceanography> .
+<wordnetDomain_earth> skos:narrower <wordnetDomain_paleontology> .
+<wordnetDomain_earth> skos:narrower <wordnetDomain_geography> .
+
+
+<wordnetDomain_mathematics> skos:narrower <wordnetDomain_geometry> .
+
+
+<wordnetDomain_physics> skos:narrower <wordnetDomain_acoustics> .
+<wordnetDomain_physics> skos:narrower <wordnetDomain_atomic_physic> .
+<wordnetDomain_physics> skos:narrower <wordnetDomain_electricity> .
+<wordnetDomain_physics> skos:narrower <wordnetDomain_optics> .
+
+
+<wordnetDomain_zoology> skos:narrower <wordnetDomain_entomology> .
+
+
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_administration> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_anthropology> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_artisanship> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_body_care> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_commerce> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_economy> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_fashion> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_industry> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_law> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_military> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_pedagogy> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_politics> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_publishing> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_sexuality> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_sociology> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_telecommunication> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_tourism> .
+<wordnetDomain_social_science> skos:narrower <wordnetDomain_transport> .
+
+
+<wordnetDomain_anthropology> skos:narrower <wordnetDomain_ethnology> .
+
+
+<wordnetDomain_ethnology> skos:narrower <wordnetDomain_folklore> .
+
+
+<wordnetDomain_economy> skos:narrower <wordnetDomain_banking> .
+<wordnetDomain_economy> skos:narrower <wordnetDomain_book_keeping> .
+<wordnetDomain_economy> skos:narrower <wordnetDomain_enterprise> .
+<wordnetDomain_economy> skos:narrower <wordnetDomain_exchange> .
+<wordnetDomain_economy> skos:narrower <wordnetDomain_insurance> .
+<wordnetDomain_economy> skos:narrower <wordnetDomain_money> .
+<wordnetDomain_economy> skos:narrower <wordnetDomain_tax> .
+
+
+<wordnetDomain_law> skos:narrower <wordnetDomain_state> .
+
+
+<wordnetDomain_pedagogy> skos:narrower <wordnetDomain_school> .
+<wordnetDomain_pedagogy> skos:narrower <wordnetDomain_university> .
+
+
+<wordnetDomain_politics> skos:narrower <wordnetDomain_diplomacy> .
+
+
+<wordnetDomain_telecommunication> skos:narrower <wordnetDomain_cinema> .
+<wordnetDomain_telecommunication> skos:narrower <wordnetDomain_post> .
+<wordnetDomain_telecommunication> skos:narrower <wordnetDomain_radio> .
+<wordnetDomain_telecommunication> skos:narrower <wordnetDomain_telegraphy> .
+<wordnetDomain_telecommunication> skos:narrower <wordnetDomain_telephony> .
+<wordnetDomain_telecommunication> skos:narrower <wordnetDomain_tv> .
+
+
+<wordnetDomain_transport> skos:narrower <wordnetDomain_aeronautic> .
+<wordnetDomain_transport> skos:narrower <wordnetDomain_auto> .
+<wordnetDomain_transport> skos:narrower <wordnetDomain_merchant_navy> .
+<wordnetDomain_transport> skos:narrower <wordnetDomain_railway> .
