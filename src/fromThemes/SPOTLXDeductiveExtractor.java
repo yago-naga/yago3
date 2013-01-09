@@ -74,4 +74,10 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
     return collection;
   }
   
+  public static void main(String[] args) throws Exception {
+    Announce.setLevel(Announce.Level.DEBUG);
+//    new SPOTLXDeductiveExtractor().extract(new File("/home/jbiega/data/yago2s"), "test");
+    new SPOTLXDeductiveExtractor().extract(new File("/local/jbiega/yagofacts"), "test");
+  }
+  
 }

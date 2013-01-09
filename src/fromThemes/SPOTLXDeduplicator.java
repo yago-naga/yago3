@@ -1,10 +1,12 @@
 package fromThemes;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 
+import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.Theme;
@@ -40,5 +42,11 @@ public class SPOTLXDeduplicator extends SimpleDeduplicator {
   @Override
   public boolean isMyRelation(Fact fact) {
     return SPOTLX_FINAL_RELATIONS.contains(fact.getRelation());
+  }
+  
+  public static void main(String[] args) throws Exception {
+    Announce.setLevel(Announce.Level.DEBUG);
+//    new SPOTLXDeduplicator().extract(new File("/home/jbiega/data/yago2s"), "test");
+    new SPOTLXDeduplicator().extract(new File("/local/jbiega/yagofacts"), "test");
   }
 }
