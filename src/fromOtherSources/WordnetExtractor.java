@@ -117,7 +117,7 @@ public class WordnetExtractor extends Extractor {
       // add additional fact if it is preferred meaning
       if (numMeaning.equals("1")) {
         // First check whether we do not already have such an element
-        if (hardwiredMeanings.get(word) == null && hardwiredMeanings.get(Character.toUpperCase(wordForm.charAt(0)) + wordForm.substring(1)) == null) {
+        if (hardwiredMeanings.get(word) == null && hardwiredMeanings.get(Character.toUpperCase(word.charAt(0)) + word.substring(1)) == null) {
           writers.get(WORDNETWORDS).write(new Fact(null, lastClass, "<isPreferredMeaningOf>", wordForm));
         }
       }
