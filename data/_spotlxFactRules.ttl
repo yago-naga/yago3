@@ -17,25 +17,25 @@
 
 #---------Permanent relations---------------------------------------------------
 
-"$0 $1 $2 ; $1 rdf:type <permanentRelationToSubject> ; $0 <placedIn> $3" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
-"$0 $1 $2 ; $1 rdf:type <permanentRelationToSubject> ; $0 rdf:type <yagoGeoEntity>" <_implies> "$0 $1 $2 ; #1 <occursIn> $0" .
+"$1 rdf:type <permanentRelationToSubject> ; $0 <placedIn> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
+"$1 rdf:type <permanentRelationToSubject> ; $0 rdf:type <yagoGeoEntity> ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $0" .
 
-"$0 $1 $2 ; $1 rdf:type <permanentRelationToObject> ; $2 <placedIn> $3" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
-"$0 $1 $2 ; $1 rdf:type <permanentRelationToObject> ; $2 rdf:type <yagoGeoEntity>" <_implies> "$0 $1 $2 ; #1 <occursIn> $2" .
+"$1 rdf:type <permanentRelationToObject> ; $2 <placedIn> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
+"$1 rdf:type <permanentRelationToObject> ; $2 rdf:type <yagoGeoEntity> ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $2" .
 
 #---------Space-bound relations-------------------------------------------------
 
-"$0 $1 $2 ; $1 rdf:type <relationLocatedBySubject> ; $0 <placedIn> $3" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
-"$0 $1 $2 ; $1 rdf:type <relationLocatedBySubject> ; $0 rdf:type <yagoGeoEntity>" <_implies> "$0 $1 $2 ; #1 <occursIn> $0" .
+"$1 rdf:type <relationLocatedBySubject> ; $0 <placedIn> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
+"$1 rdf:type <relationLocatedBySubject> ; $0 rdf:type <yagoGeoEntity> ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $0" .
 
-"$0 $1 $2 ; $1 rdf:type <relationLocatedByObject> ; $2 <placedIn> $3" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
-"$0 $1 $2 ; $1 rdf:type <relationLocatedByObject> ; $2 rdf:type <yagoGeoEntity>" <_implies> "$0 $1 $2 ; #1 <occursIn> $2" .
+"$1 rdf:type <relationLocatedByObject> ; $2 <placedIn> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
+"$1 rdf:type <relationLocatedByObject> ; $2 rdf:type <yagoGeoEntity> ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $2" .
 
 #---------Tandem relations------------------------------------------------------
 
-"$0 $1 $2 ; $1 <_timeToLocation> $3 ; $0 $3 $4 " <_implies> "$0 $1 $2 ; #1 <occursIn> $4" .
-"$0 $1 $2 ; $1 <_timeToLocation> $3 ; $0 $3 $4 " <_implies> "$0 $3 $4 ; #1 <occursSince> $2" .
-"$0 $1 $2 ; $1 <_timeToLocation> $3 ; $0 $3 $4 " <_implies> "$0 $3 $4 ; #1 <occursUntil> $2" .
+"$1 <_timeToLocation> $3 ; $0 $1 $2 ; $0 $3 $4 " <_implies> "$0 $1 $2 ; #1 <occursIn> $4" .
+"$1 <_timeToLocation> $3 ; $0 $1 $2 ; $0 $3 $4 " <_implies> "$0 $3 $4 ; #1 <occursSince> $2" .
+"$1 <_timeToLocation> $3 ; $0 $1 $2 ; $0 $3 $4 " <_implies> "$0 $3 $4 ; #1 <occursUntil> $2" .
 
 
 #====================== FACTS TIME RULES =======================================
@@ -43,24 +43,24 @@
 
 #---------Permanent relations---------------------------------------------------
 
-"$0 $1 $2 ; $1 rdf:type <permanentRelationToSubject> ; $0 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
-"$0 $1 $2 ; $1 rdf:type <permanentRelationToSubject> ; $0 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+"$1 rdf:type <permanentRelationToSubject> ; $0 <startsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$1 rdf:type <permanentRelationToSubject> ; $0 <endsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
 
-"$0 $1 $2 ; $1 rdf:type <permanentRelationToObject> ; $2 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
-"$0 $1 $2 ; $1 rdf:type <permanentRelationToObject> ; $2 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+"$1 rdf:type <permanentRelationToObject> ; $2 <startsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$1 rdf:type <permanentRelationToObject> ; $2 <endsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
 
 #---------Creation relations----------------------------------------------------
 
-"$0 $1 $2 ; $1 rdf:type <subjectStartRelation> ; $0 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
-"$0 $1 $2 ; $1 rdf:type <subjectStartRelation> ; $0 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+"$1 rdf:type <subjectStartRelation> ; $0 <startsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$1 rdf:type <subjectStartRelation> ; $0 <startsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
 
-"$0 $1 $2 ; $1 rdf:type <objectStartRelation> ; $2 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
-"$0 $1 $2 ; $1 rdf:type <objectStartRelation> ; $2 <startsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+"$1 rdf:type <objectStartRelation> ; $2 <startsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$1 rdf:type <objectStartRelation> ; $2 <startsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
 
 #---------Destruction relations-------------------------------------------------
 
-"$0 $1 $2 ; $1 rdf:type <subjectEndRelation> ; $0 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
-"$0 $1 $2 ; $1 rdf:type <subjectEndRelation> ; $0 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+"$1 rdf:type <subjectEndRelation> ; $0 <endsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$1 rdf:type <subjectEndRelation> ; $0 <endsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
 
-"$0 $1 $2 ; $1 rdf:type <objectEndRelation> ; $2 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
-"$0 $1 $2 ; $1 rdf:type <objectEndRelation> ; $2 <endsExistingOnDate> $3" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
+"$1 rdf:type <objectEndRelation> ; $2 <endsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
+"$1 rdf:type <objectEndRelation> ; $2 <endsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
