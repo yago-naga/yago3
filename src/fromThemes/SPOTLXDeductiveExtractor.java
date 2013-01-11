@@ -66,11 +66,12 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
   
   @Override
   public FactCollection getInputRuleCollection(Map<Theme, FactSource> input) throws Exception {
-    FactSource spotlxRelationRules = input.get(PatternHardExtractor.SPOTLX_ENTITY_RULES);
+//    FactSource spotlxRelationRules = input.get(PatternHardExtractor.SPOTLX_ENTITY_RULES);
     FactSource spotlxFactRules = input.get(PatternHardExtractor.SPOTLX_FACT_RULES);
     
-    FactCollection collection = new FactCollection(spotlxRelationRules);
-    collection.load(spotlxFactRules);
+
+    FactCollection collection = new FactCollection(spotlxFactRules);
+//    collection.load(spotlxFactRules);
     return collection;
   }
   
