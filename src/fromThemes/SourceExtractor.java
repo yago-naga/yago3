@@ -4,6 +4,7 @@ import java.util.Map;
 import java.util.Set;
 
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.CoordinateExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
@@ -37,7 +38,7 @@ public class SourceExtractor extends Extractor {
   public Set<Theme> input() {
     return new FinalSet<>(InfoboxExtractor.INFOBOXSOURCES,PersonNameExtractor.PERSONNAMESOURCES,
         RuleExtractor.RULESOURCES,CategoryExtractor.CATEGORYSOURCES,WikipediaTypeExtractor.WIKIPEDIATYPESOURCES,
-        WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, FlightExtractor.FLIGHTSOURCE, 
+        WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, FlightExtractor.FLIGHTSOURCE, CoordinateExtractor.COORDINATE_SOURCES, 
         TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES, FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE);
   }
 
