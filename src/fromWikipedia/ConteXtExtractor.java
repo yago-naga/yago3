@@ -36,6 +36,11 @@ public class ConteXtExtractor extends Extractor {
 	/** Input file */
 	private File wikipedia;
 
+  @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CONTEXTPATTERNS,

@@ -42,6 +42,11 @@ public class CategoryExtractor extends Extractor {
   protected File wikipedia;
 
   @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+  
+  @Override
   public Set<Theme> input() {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
   }

@@ -40,6 +40,11 @@ public class WordnetDomainExtractor extends Extractor {
   /** Wordnet mappings from http://www.lsi.upc.es/~nlp*/
   protected File wordnetMappings;
 
+  @Override
+  public File inputDataFile() {   
+    return wordnetDomains;
+  }
+  
   /** Output theme*/
   public static final Theme WORDNETDOMAINS = new Theme(
       "yagoWordnetDomains",

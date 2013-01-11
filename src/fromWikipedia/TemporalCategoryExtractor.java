@@ -41,6 +41,11 @@ public class TemporalCategoryExtractor extends Extractor {
 	/** Input file */
 	private File wikipedia;
 
+  @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
 	@Override
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(

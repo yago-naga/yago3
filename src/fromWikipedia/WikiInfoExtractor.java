@@ -36,6 +36,11 @@ public class WikiInfoExtractor extends fromWikipedia.Extractor {
   protected final File wikipedia;
   
   @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
+  @Override
   public Set<Theme> input() {    
     return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.TITLEPATTERNS);
   }

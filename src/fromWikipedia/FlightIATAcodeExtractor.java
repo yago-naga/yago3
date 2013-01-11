@@ -42,6 +42,11 @@ public class FlightIATAcodeExtractor extends Extractor {
   protected File wikipedia;
 
   @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
+  @Override
   public Set<Theme> input() {
     return new FinalSet<>();
   }

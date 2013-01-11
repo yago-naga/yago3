@@ -34,6 +34,11 @@ public class HardExtractor extends Extractor {
 
 	protected File inputFolder;
 
+	@Override
+	public File inputDataFile() {
+	  return inputFolder;
+	}
+	
 	/** Helper */
 	public void extract(File input, FactWriter writer) throws Exception {
 		if (!input.getName().endsWith(".ttl"))

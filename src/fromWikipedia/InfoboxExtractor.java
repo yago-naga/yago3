@@ -42,6 +42,11 @@ public class InfoboxExtractor extends Extractor {
   protected File wikipedia;
 
   @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
+  @Override
   public Set<Theme> input() {
     return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS,
         WordnetExtractor.WORDNETWORDS));

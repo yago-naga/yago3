@@ -37,6 +37,11 @@ public class CoordinateExtractor extends Extractor {
   /** Wikipedia Input file */
   protected File wikipedia;
 
+  @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
   /** gender facts, checked if the entity is a person */
   public static final Theme COORDINATES = new Theme("coordinateFacts", "Coordinates from Wikipedia articles");
 

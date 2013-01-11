@@ -35,6 +35,11 @@ public class UWNImporter extends Extractor {
 
   protected File uwnNouns;
     
+  @Override
+  public File inputDataFile() {   
+    return uwnNouns;
+  }
+  
   /** multi-lingual class names*/
   public static final Theme UWNDATA = new Theme("yagoMultilingualClassLabels", 
       "Multi-lingual labels for classes from Universal WordNet", ThemeGroup.MULTILINGUAL);

@@ -38,6 +38,11 @@ public class RedirectExtractor extends Extractor {
 	/** Input file */
 	private File wikipedia;
 
+  @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
 	private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
 	 /** Redirect facts from Wikipedia redirect pages */

@@ -51,6 +51,11 @@ public class TemporalInfoboxExtractor extends Extractor {
 	/** Input file */
 	protected File wikipedia;
 
+  @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(
 		    new Redirector(TEMPORALDIRTYINFOBOXFACTS, TEMPORALREDIRECTEDINFOBOXFACTS),

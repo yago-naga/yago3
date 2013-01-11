@@ -51,6 +51,11 @@ public class ImportantTypeExtractor extends Extractor {
   /** Points to Wikipedia*/
   protected File wikipedia;
 
+  @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
   public ImportantTypeExtractor(File wikipedia) {
     this.wikipedia = wikipedia;
   }

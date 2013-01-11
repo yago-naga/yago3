@@ -49,6 +49,11 @@ public class WikipediaTypeExtractor extends Extractor {
   protected File wikipedia;
 
   @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
+  @Override
   public Set<Theme> input() {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETCLASSES, PatternHardExtractor.INFOBOXPATTERNS));

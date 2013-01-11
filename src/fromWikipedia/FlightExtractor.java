@@ -37,6 +37,11 @@ public class FlightExtractor extends Extractor {
   protected File wikipedia;
 
   @Override
+  public File inputDataFile() {   
+    return wikipedia;
+  }
+
+  @Override
   public Set<Theme> input() {
     return new FinalSet<>(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS);
   }

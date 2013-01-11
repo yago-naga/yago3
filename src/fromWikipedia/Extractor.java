@@ -59,6 +59,11 @@ public abstract class Extractor {
 		return (this.getClass().getName());
 	}
 
+	/** Returns input data file name (if any)*/
+	public File inputDataFile() {
+	  return(null);
+	}
+	
 	@Override
 	public String toString() {
 		return name();

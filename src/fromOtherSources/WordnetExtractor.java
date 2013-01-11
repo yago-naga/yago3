@@ -44,6 +44,11 @@ public class WordnetExtractor extends Extractor {
   /** Folder where wordnet lives */
   protected File wordnetFolder;
 
+  @Override
+  public File inputDataFile() {   
+    return wordnetFolder;
+  }
+  
   /** wordnet classes */
   public static final Theme WORDNETCLASSES = new Theme("wordnetClasses", "SubclassOf-Hierarchy from WordNet");
 
