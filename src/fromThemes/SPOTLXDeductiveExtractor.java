@@ -11,7 +11,6 @@ import basics.FactCollection;
 import basics.Theme;
 
 import fromGeonames.GeoNamesDataImporter;
-import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromWikipedia.Extractor;
 
