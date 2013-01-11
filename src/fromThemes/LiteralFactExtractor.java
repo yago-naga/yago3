@@ -5,6 +5,7 @@ import java.util.Set;
 
 import fromOtherSources.HardExtractor;
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.CoordinateExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.TemporalCategoryExtractor;
@@ -31,7 +32,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXFACTS, RuleExtractor.RULERESULTS,
-        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA,FlightIATAcodeExtractor.AIRPORT_CODE, SchemaExtractor.YAGOSCHEMA
+        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA,FlightIATAcodeExtractor.AIRPORT_CODE, SchemaExtractor.YAGOSCHEMA, CoordinateExtractor.COORDINATES
     //GeoNamesDataImporter.GEONAMESDATA
     );
   }
