@@ -39,6 +39,7 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
     return new FinalSet<>(PatternHardExtractor.HARDWIREDFACTS,
                           PatternHardExtractor.SPOTLX_ENTITY_RULES,
                           PatternHardExtractor.SPOTLX_FACT_RULES,
+                          TransitiveTypeExtractor.TRANSITIVETYPE,
                           SPOTLXRuleExtractor.RULERESULTS,
                           FactExtractor.YAGOFACTS,
                           MetaFactExtractor.YAGOMETAFACTS,
@@ -76,8 +77,8 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
   
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-//    new SPOTLXDeductiveExtractor().extract(new File("/home/jbiega/data/yago2s"), "test");
-    new SPOTLXDeductiveExtractor().extract(new File("/local/jbiega/yagofacts"), "test");
+    new SPOTLXDeductiveExtractor().extract(new File("/home/jbiega/data/yago2s"), "test");
+//    new SPOTLXDeductiveExtractor().extract(new File("/local/jbiega/yagofacts"), "test");
   }
   
 }
