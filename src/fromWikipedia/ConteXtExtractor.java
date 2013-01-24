@@ -24,6 +24,7 @@ import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.TransitiveTypeExtractor;
+import fromThemes.TypeChecker;
 
 /**
  * Extracts context keyphrases (the X in SPOTLX) facts from Wikipedia
@@ -49,8 +50,11 @@ public class ConteXtExtractor extends Extractor {
 	
 	 /** Context for entities */
   public static final Theme DIRTYCONTEXTFACTS = new Theme("conteXtFactsDirty",
-      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs typechecking to throw away entities not in the final version");
-	
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs redirecting and typechecking");
+
+  public static final Theme REDIRECTEDCONTEXTFACTS = new Theme("conteXtFactsRedirected",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs typechecking");
+  
 	/** Context for entities */
 	public static final Theme CONTEXTFACTS = new Theme("yagoConteXtFacts",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
@@ -63,6 +67,14 @@ public class ConteXtExtractor extends Extractor {
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);
 	}
+	
+  @Override
+ public Set<Extractor> followUp() {
+   return new HashSet<Extractor>(
+       Arrays.asList(
+           (Extractor) new Redirector(DIRTYCONTEXTFACTS, REDIRECTEDCONTEXTFACTS), 
+           (Extractor) new TypeChecker(REDIRECTEDCONTEXTFACTS, CONTEXTFACTS)));
+ }
 
 	@Override
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
