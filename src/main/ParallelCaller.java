@@ -54,9 +54,12 @@ public class ParallelCaller {
 
   /** Starting time */
   protected static long time;
+  
+  protected static boolean isRunning = false;
 
   /** Calls next extractor*/
   public static synchronized void callNext(Extractor finished, boolean success) {
+	isRunning = true;
     D.p(NumberFormatter.ISOtime());
     if (finished != null) {
       extractorsRunning.remove(finished);
@@ -106,6 +109,12 @@ public class ParallelCaller {
         D.p("   ", e.name(), "because of missing", weneed);
       }
     }
+    isRunning = false;
+  }
+  
+  /** Give external information whether the extraction is running */
+  public static boolean isExtractionRunning() {
+	  return isRunning;
   }
 
   /** Thread that runs the caller*/
@@ -143,6 +152,9 @@ public class ParallelCaller {
     boolean reuse = Parameters.getBoolean("reuse", false);
     outputFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "the folder where YAGO should be created");
     extractorsToDo = ParallelCaller.extractors(Parameters.getList("extractors"));
+    extractorsRunning.clear();
+    extractorsFailed.clear();
+    themesWeHave.clear();
     if (reuse) {
       D.p("Reusing existing themes");
       for (File f : outputFolder.listFiles()) {
