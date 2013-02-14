@@ -7,6 +7,7 @@ import java.util.Set;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromWikipedia.CategoryExtractor;
 import fromWikipedia.InfoboxExtractor;
 
 import javatools.administrative.Announce;
@@ -28,7 +29,7 @@ public class RuleExtractor extends BaseRuleExtractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(PatternHardExtractor.RULES, TransitiveTypeExtractor.TRANSITIVETYPE, ClassExtractor.YAGOTAXONOMY,
-        HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXFACTS, WordnetExtractor.WORDNETCLASSES);
+        HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXFACTS, CategoryExtractor.CATEGORYFACTS,WordnetExtractor.WORDNETCLASSES);
   }
 
   /** Theme of deductions */
