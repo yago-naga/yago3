@@ -53,8 +53,8 @@ public class CategoryExtractor extends Extractor {
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(CATEGORYFACTS_TOREDIRECT, CATEGORYFACTS_TOTYPECHECK), new TypeChecker(
-        CATEGORYFACTS_TOTYPECHECK, CATEGORYFACTS)));
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(CATEGORYFACTS_TOREDIRECT, CATEGORYFACTS_TOTYPECHECK, this), new TypeChecker(
+        CATEGORYFACTS_TOTYPECHECK, CATEGORYFACTS, this)));
   }
 
   /** Sources for category facts*/

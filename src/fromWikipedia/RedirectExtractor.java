@@ -66,7 +66,7 @@ public class RedirectExtractor extends Extractor {
 
 	@Override
 	public Set<Extractor> followUp() {	
-	  return new HashSet<Extractor>(Arrays.asList(new TypeChecker(RAWREDIRECTFACTS, REDIRECTLABELS)));
+	  return new HashSet<Extractor>(Arrays.asList(new TypeChecker(RAWREDIRECTFACTS, REDIRECTLABELS, this)));
 	}
 	
 	@Override

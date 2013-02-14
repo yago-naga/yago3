@@ -54,8 +54,8 @@ public class InfoboxExtractor extends Extractor {
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(INFOBOXFACTS_TOREDIRECT, INFOBOXFACTS_TOTYPECHECK), new TypeChecker(
-        INFOBOXFACTS_TOTYPECHECK, INFOBOXFACTS)));
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(INFOBOXFACTS_TOREDIRECT, INFOBOXFACTS_TOTYPECHECK, this), new TypeChecker(
+        INFOBOXFACTS_TOTYPECHECK, INFOBOXFACTS, this)));
   }
 
   /** Infobox facts */

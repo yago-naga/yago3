@@ -42,10 +42,23 @@ public abstract class Extractor {
 		/** This is the theme we produce*/
 		protected Theme checked;
 		
+		/** This is the theme we produce*/
+		protected Extractor parent;
+		
 		@Override
 	  public Set<Theme> output() {
 	    return new FinalSet<>(checked);
 	  }
+		
+		@Override
+		public String name() {
+			if (parent != null ) {
+				return String.format("%s:%s", super.name(), parent.name());
+			}
+			else {
+				return super.name();
+			}
+		}
 	}
 	
 	/** Returns other extractors to be called en suite*/
@@ -55,7 +68,7 @@ public abstract class Extractor {
 	}
 	
 	/** Returns the name */
-	public final String name() {
+	public String name() {
 		return (this.getClass().getName());
 	}
 

@@ -58,8 +58,8 @@ public class TemporalInfoboxExtractor extends Extractor {
 
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(
-		    new Redirector(TEMPORALDIRTYINFOBOXFACTS, TEMPORALREDIRECTEDINFOBOXFACTS),
-				new TypeChecker(TEMPORALREDIRECTEDINFOBOXFACTS, TEMPORALINFOBOXFACTS)));
+		    new Redirector(TEMPORALDIRTYINFOBOXFACTS, TEMPORALREDIRECTEDINFOBOXFACTS, this),
+				new TypeChecker(TEMPORALREDIRECTEDINFOBOXFACTS, TEMPORALINFOBOXFACTS, this)));
 	}
 
 	public Set<Theme> input() {

@@ -49,8 +49,8 @@ public class StructureExtractor extends Extractor {
 	@Override
   public Set<Extractor> followUp() {
     return new HashSet<Extractor>(Arrays.asList(
-        new Redirector(DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS),
-        new TypeChecker(REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS)));
+        new Redirector(DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS, this),
+        new TypeChecker(REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS, this)));
   }
 
   /** Facts representing the Wikipedia structure (e.g. links) */

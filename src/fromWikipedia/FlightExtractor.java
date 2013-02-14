@@ -53,7 +53,7 @@ public class FlightExtractor extends Extractor {
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(FLIGHTSNEEDRED, FLIGHTSNEEDTYPE), new TypeChecker(FLIGHTSNEEDTYPE, FLIGHTS)));
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(FLIGHTSNEEDRED, FLIGHTSNEEDTYPE, this), new TypeChecker(FLIGHTSNEEDTYPE, FLIGHTS, this)));
   }
 
   /** Constructor from source file */

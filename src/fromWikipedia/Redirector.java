@@ -75,9 +75,16 @@ public class Redirector extends FollowUpExtractor {
 		return redirectedFact;
 	}
 
+	public Redirector(Theme in, Theme out, Extractor parent) {
+		this.checkMe=in;
+		this.checked=out;
+		this.parent=parent;
+	}
+	
 	public Redirector(Theme in, Theme out) {
 		this.checkMe=in;
 		this.checked=out;
+		this.parent=null;
 	}
 
 }

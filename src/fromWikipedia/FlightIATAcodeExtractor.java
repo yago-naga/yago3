@@ -58,8 +58,8 @@ public class FlightIATAcodeExtractor extends Extractor {
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(AIRPORT_CODE_NEEDRED, AIRPORT_CODE_NEEDTYPE), new TypeChecker(AIRPORT_CODE_NEEDTYPE,
-        AIRPORT_CODE)));
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(AIRPORT_CODE_NEEDRED, AIRPORT_CODE_NEEDTYPE, this), new TypeChecker(AIRPORT_CODE_NEEDTYPE,
+        AIRPORT_CODE, this)));
   }
 
   /** Constructor from source file */

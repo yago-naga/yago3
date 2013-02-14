@@ -38,9 +38,16 @@ public class TypeChecker extends FollowUpExtractor {
   }
 
   /** Constructor, takes theme to be checked and theme to output*/
+  public TypeChecker(Theme in, Theme out, Extractor parent) {
+    checkMe = in;
+    checked = out;
+    this.parent = parent;
+  }
+  
   public TypeChecker(Theme in, Theme out) {
     checkMe = in;
     checked = out;
+    this.parent = null;
   }
 
   /** Holds the transitive types*/

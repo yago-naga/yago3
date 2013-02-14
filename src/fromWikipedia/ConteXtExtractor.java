@@ -72,8 +72,8 @@ public class ConteXtExtractor extends Extractor {
  public Set<Extractor> followUp() {
    return new HashSet<Extractor>(
        Arrays.asList(
-           (Extractor) new Redirector(DIRTYCONTEXTFACTS, REDIRECTEDCONTEXTFACTS), 
-           (Extractor) new TypeChecker(REDIRECTEDCONTEXTFACTS, CONTEXTFACTS)));
+           (Extractor) new Redirector(DIRTYCONTEXTFACTS, REDIRECTEDCONTEXTFACTS, this), 
+           (Extractor) new TypeChecker(REDIRECTEDCONTEXTFACTS, CONTEXTFACTS, this)));
  }
 
 	@Override

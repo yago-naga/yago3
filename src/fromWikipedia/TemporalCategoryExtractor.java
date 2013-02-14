@@ -49,7 +49,7 @@ public class TemporalCategoryExtractor extends Extractor {
 	@Override
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(
-				DIRTYCATEGORYFACTS, TEMPORALCATEGORYFACTS)));
+				DIRTYCATEGORYFACTS, TEMPORALCATEGORYFACTS, this)));
 	}
 
 	@Override
