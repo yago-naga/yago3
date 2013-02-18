@@ -2,6 +2,8 @@ YAGO2s: Todos
 
 * Why does YAGO not have the group "Black Sabbath"?
 
+* rdfs:labels got endings of @en while skos:prefLabels only got @eng's?
+
 ------------ Prior to the release October 2012
 
 The following extractors still have to be translated to YAGO2s:
