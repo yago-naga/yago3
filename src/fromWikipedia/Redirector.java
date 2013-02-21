@@ -42,9 +42,11 @@ public class Redirector extends FollowUpExtractor {
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
 		// Extract the information
 		Map<String, String> redirects = new HashMap<>();
+		Announce.doing("Loading redirects");
 		for (Fact f : input.get(RedirectExtractor.RAWREDIRECTFACTS)) {
 		  redirects.put(FactComponent.forYagoEntity(FactComponent.asJavaString(f.getArg(2)).replace(' ','_')), f.getArg(1));		  
 		}
+		Announce.done();
 		
 		FactWriter out = output.get(checked);
 
