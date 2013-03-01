@@ -46,7 +46,7 @@ public class SPOTLXDeduplicator extends SimpleDeduplicator {
   
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-//    new SPOTLXDeduplicator().extract(new File("/home/jbiega/data/yago2s"), "test");
-    new SPOTLXDeduplicator().extract(new File("/local/jbiega/yagofacts"), "test");
+    new SPOTLXDeduplicator().extract(new File("/home/jbiega/data/yago2s"), "test");
+//    new SPOTLXDeduplicator().extract(new File("/local/jbiega/yagofacts"), "test");
   }
 }

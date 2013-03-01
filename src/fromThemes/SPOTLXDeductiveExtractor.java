@@ -28,6 +28,22 @@ import javatools.datatypes.FinalSet;
  * @author Joanna Biega
  */
 public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
+	
+  private int maxRuleSetSize;
+	
+  public SPOTLXDeductiveExtractor(int maxRuleSize) {
+	  maxRuleSetSize = maxRuleSize;
+  }
+  
+  public SPOTLXDeductiveExtractor() {
+	  /*Defaults to 0, which means the number of rules processed at once is unlimited*/
+	  maxRuleSetSize = 0;
+  }
+  
+  @Override
+  public int maxRuleSetSize() {
+	  return maxRuleSetSize;
+  }
   
   @Override
   public Set<Extractor> followUp() {
@@ -77,7 +93,7 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
   
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    new SPOTLXDeductiveExtractor().extract(new File("/home/jbiega/data/yago2s"), "test");
+    new SPOTLXDeductiveExtractor(/*maxRuleSetSize*/1).extract(new File("/home/jbiega/data/yago2s"), "test");
 //    new SPOTLXDeductiveExtractor().extract(new File("/local/jbiega/yagofacts"), "test");
   }
   

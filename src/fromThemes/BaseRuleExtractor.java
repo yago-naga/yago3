@@ -156,51 +156,80 @@ public abstract class BaseRuleExtractor extends Extractor {
   
   /** Fact collection containing implication rules */
   protected abstract FactCollection getInputRuleCollection(Map<Theme, FactSource> input) throws Exception;
+  
+  /** How many rules from the rule source can be processed at once 
+   *  Defaults to 0 - no limit*/
+  public int maxRuleSetSize() {
+	  return 0;
+  }
  
   /** Extract implication rules from input facts */
-  protected RuleSet initializeRuleSet(Map<Theme, FactSource> input) throws Exception {
+  protected List<RuleSet> initializeRuleSet(Map<Theme, FactSource> input) throws Exception {
     FactCollection ruleFacts = getInputRuleCollection(input);
-    RuleSet rules = new RuleSet();
+    List<Rule> allRules = new ArrayList<Rule>();
+    
     for (Fact f : ruleFacts.get("<_implies>")) {
-      rules.add(new Rule(f));
-    }  
-    return rules;
+      allRules.add(new Rule(f));
+    }
+    
+    
+    /* If the number of rules processed at once should be limited,
+     * we split allRules into a list of RuleSets of the desired size */
+    List<RuleSet> ruleSets = new ArrayList<RuleSet>();
+    
+    int ruleCounter = 0;
+    RuleSet rules = new RuleSet();
+    for (Rule r : allRules) {
+    	if (maxRuleSetSize() > 0 && ruleCounter >= maxRuleSetSize()) {
+    		ruleSets.add(rules);
+    		rules = new RuleSet();
+    		ruleCounter = 0;
+    	}
+    	
+    	rules.add(r);
+    	ruleCounter++;
+    }
+    ruleSets.add(rules);
+    return ruleSets;
   }
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    RuleSet rules = initializeRuleSet(input);
-    Announce.debug(rules);
+    List<RuleSet> ruleSets = initializeRuleSet(input);
+    Announce.debug(ruleSets);
     // Loop
-    Announce.doing("Applying rules");
-    RuleSet survivingRules = new RuleSet();
-    do {
-      // Apply all rules
-      Announce.doing("Doing a pass on all facts");
-      for (Entry<Theme, FactSource> reader : input.entrySet()) {
-        Announce.doing("Reading", reader.getKey());
-        for (Fact fact : reader.getValue()) {
-          for (Rule r : rules.potentialMatches(fact)) {
-            Map<String, String> map = r.mapFirstTo(fact);
-            if (map != null) {
-              Announce.debug("Matched", fact, "with", r);
-              Rule newRule = r.rest(map, fact.getId());
-              if (newRule.isReadyToGo()) {
-                for (Fact h : newRule.headFacts()) {
-                  write(output, getRULERESULTS(), h, getRULESOURCES(), FactComponent.forTheme(reader.getKey()), "RuleExtractor from " + r.original.toString());
-                }
-              } else {
-                survivingRules.add(newRule);
-              }
-            }
-          }
-        }
-        Announce.done();
-      }
-      Announce.done();
-      rules = survivingRules;
-      survivingRules = new RuleSet();
-    } while (!rules.isEmpty());
-    Announce.done();
+    for (RuleSet rules : ruleSets) {
+	    Announce.doing("Applying rules");
+	    Announce.debug(rules);
+	    RuleSet survivingRules = new RuleSet();
+	    do {
+	      // Apply all rules
+	      Announce.doing("Doing a pass on all facts");
+	      for (Entry<Theme, FactSource> reader : input.entrySet()) {
+	        Announce.doing("Reading", reader.getKey());
+	        for (Fact fact : reader.getValue()) {
+	          for (Rule r : rules.potentialMatches(fact)) {
+	            Map<String, String> map = r.mapFirstTo(fact);
+	            if (map != null) {
+	              //Announce.debug("Matched", fact, "with", r);
+	              Rule newRule = r.rest(map, fact.getId());
+	              if (newRule.isReadyToGo()) {
+	                for (Fact h : newRule.headFacts()) {
+	                  write(output, getRULERESULTS(), h, getRULESOURCES(), FactComponent.forTheme(reader.getKey()), "RuleExtractor from " + r.original.toString());
+	                }
+	              } else {
+	                survivingRules.add(newRule);
+	              }
+	            }
+	          }
+	        }
+	        Announce.done();
+	      }
+	      Announce.done();
+	      rules = survivingRules;
+	      survivingRules = new RuleSet();
+	    } while (!rules.isEmpty());
+	    Announce.done();
+    }
   }
 }
