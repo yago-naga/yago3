@@ -15,6 +15,7 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
+import javatools.parsers.Char;
 import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactCollection;
@@ -105,7 +106,7 @@ public class ConteXtExtractor extends Extractor {
 					continue;
 
 				String page = FileLines.readBetween(in, "<text", "</text>");
-				String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
+				String normalizedPage = Char.decodeAmpersand(Char.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
 
 				for (Pair<Fact, String> fact : contextPatterns.extractWithProvenance(normalizedPage, titleEntity)) {
 				  if (fact.first != null)
