@@ -32,7 +32,7 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
   
   @Override
   public Set<Extractor> followUp() {
-    return(new HashSet<Extractor> (Arrays.asList(new SPOTLXDeductiveExtractor())));
+    return(new HashSet<Extractor> (Arrays.asList(new SPOTLXDeductiveExtractor(1))));
   }
   
   @Override
