@@ -192,10 +192,27 @@ public abstract class BaseRuleExtractor extends Extractor {
     ruleSets.add(rules);
     return ruleSets;
   }
+  
+  public Map<Theme, List<Fact>> loadInputFacts(Map<Theme, FactSource> input) {
+	Map<Theme, List<Fact>> facts = new TreeMap<Theme, List<Fact>>();
+    for (Entry<Theme, FactSource> reader : input.entrySet()) {
+      Announce.doing("Loading ", reader.getKey());
+      List<Fact> factList = new ArrayList<Fact> ();
+      for (Fact fact : reader.getValue()) {
+    	  factList.add(fact);
+      }
+      facts.put(reader.getKey(), factList);
+      Announce.done();
+    }
+    return facts;
+  }
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     List<RuleSet> ruleSets = initializeRuleSet(input);
+    
+    Map<Theme, List<Fact>> allFacts = loadInputFacts(input);
+    
     Announce.debug(ruleSets);
     // Loop
     for (RuleSet rules : ruleSets) {
@@ -205,9 +222,14 @@ public abstract class BaseRuleExtractor extends Extractor {
 	    do {
 	      // Apply all rules
 	      Announce.doing("Doing a pass on all facts");
-	      for (Entry<Theme, FactSource> reader : input.entrySet()) {
-	        Announce.doing("Reading", reader.getKey());
+	      for (Entry<Theme, List<Fact>> reader : allFacts.entrySet()) { //input.entrySet
+	        Announce.doing("Processing", reader.getKey());
+	        int factCounter = 0;
 	        for (Fact fact : reader.getValue()) {
+	        	
+	          factCounter++;
+	          if (factCounter % 10 == 0) Announce.debug("Processed ", factCounter, " facts");
+	          
 	          for (Rule r : rules.potentialMatches(fact)) {
 	            Map<String, String> map = r.mapFirstTo(fact);
 	            if (map != null) {
