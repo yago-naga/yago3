@@ -1,0 +1,53 @@
+=====================================================
+Bug ID:	1
+Topic:	Duplicates
+Reporter:	Steffen Metzger
+Status:	TO DO
+//////////////////////////////
+In my YAGO2 version there are quite some duplicates (~300.000 facts
+affected if my fact dumper did it right), but that may also
+partially be because I added means entries and part of the problem may
+stem from there. Anyway, attached you find a
+list of all facts that are duplicates in my YAGO2, you may check with
+your version if you like.
+
+As for YAGO2S, just to check, I ran the following query to look for
+duplicates in YAGO2S:
+
+SELECT COUNT(*) FROM yagofacts f1
+INNER JOIN yagofacts f2 ON f1.subject=f2.subject and
+f1.predicate=f2.predicate and f1.object=f2.object and f1.id!=f2.id
+
+this gave a result of 107660 lines (this would mean ~50.000
+affected facts, less if we some facts have more than two instances).
+=====================================================
+Bug ID:	2
+Topic:	Upper-lower case in some types
+Reporter:	Steffen Metzger
+Status:	TO DO
+//////////////////////////////
+Another problem seems to be the writing of types, sometimes upper-and
+lower case is mixed up. One instance that I also found in YAGO2S is the
+wikicategory_German_physicists type, which appears sometimes also as
+wikicategory_german_physicists (lower G), as for example in this fact:
+Gustav_Zeuner   type    wikicategory_german_physicists
+
+There is the same problem with "wikicategory_Time_travel_films"
+and "wikicategory_time_travel_films"
+
+(at least the first example should also be in YAGO2S, saw it in the
+online browser)
+
+This becomes a problem with case-sensitive tables/queries. I haven't
+checked/seen other cases of this yet, so it may only be these instance,
+but it could also be a systematic problem of some sort...
+=====================================================
+Bug ID:	3
+Topic:	owl:thing --> wordnet "medicine"
+Reporter:	Marilena Oita
+Status:	TO DO
+//////////////////////////////
+In the process of making the transitive closure of yagoTransityveTypes with wordnetDomains
+ we discovered a I bug related to the fact that all entities of type owl:thing were associated with
+  wordnet domain "medicine".
+=====================================================
