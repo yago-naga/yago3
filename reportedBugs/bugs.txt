@@ -51,3 +51,10 @@ In the process of making the transitive closure of yagoTransityveTypes with word
  we discovered a I bug related to the fact that all entities of type owl:thing were associated with
   wordnet domain "medicine".
 =====================================================
+Bug ID:	3
+Topic:	States are countries
+Reporter:	Luis Galarraga
+Status:	TO DO
+//////////////////////////////
+Texas (and other US states) are listed as "country" in YAGO.
+=====================================================
