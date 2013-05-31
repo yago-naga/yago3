@@ -93,7 +93,8 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
   
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    new SPOTLXDeductiveExtractor(/*maxRuleSetSize*/1).extract(new File("/home/jbiega/data/yago2s"), "test");
+//    new SPOTLXDeductiveExtractor(/*maxRuleSetSize*/1).extract(new File("/home/jbiega/data/yago2s"), "test");
+    new SPOTLXDeductiveExtractor(/*maxRuleSetSize*/0).extract(new File("/home/jbiega/data/yago2s"), "test");
 //    new SPOTLXDeductiveExtractor().extract(new File("/local/jbiega/yagofacts"), "test");
   }
   

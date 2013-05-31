@@ -128,6 +128,19 @@ public abstract class BaseRuleExtractor extends Extractor {
       String subj = index(r.firstBody().arg1);
       D.addKeyValue(map, subj, r, ArrayList.class);
     }
+    
+    /* Get a list of all rules */
+    public List<Rule> allRules() {
+    	List<Rule> allRules = new ArrayList<Rule>();
+    	
+    	for (Entry<String, Map<String, List<Rule>>> rsr : rel2subj2rules.entrySet()) {
+    		for (Entry<String, List<Rule>> sr : rsr.getValue().entrySet()) {
+    			allRules.addAll(sr.getValue());
+    		}
+    	}
+    	
+    	return allRules;
+    }
 
     /** Returns rules whose first body atom matches potentially */
     public List<Rule> potentialMatches(Fact f) {
@@ -193,25 +206,85 @@ public abstract class BaseRuleExtractor extends Extractor {
     return ruleSets;
   }
   
-  public Map<Theme, List<Fact>> loadInputFacts(Map<Theme, FactSource> input) {
-	Map<Theme, List<Fact>> facts = new TreeMap<Theme, List<Fact>>();
+  public Map<Theme, FactCollection> loadInputFacts(Map<Theme, FactSource> input) {
+	Map<Theme, FactCollection> facts = new TreeMap<Theme, FactCollection>();
     for (Entry<Theme, FactSource> reader : input.entrySet()) {
       Announce.doing("Loading ", reader.getKey());
-      List<Fact> factList = new ArrayList<Fact> ();
+      FactCollection factCollection = new FactCollection ();
       for (Fact fact : reader.getValue()) {
-    	  factList.add(fact);
+    	  factCollection.add(fact);
       }
-      facts.put(reader.getKey(), factList);
+      facts.put(reader.getKey(), factCollection);
       Announce.done();
     }
     return facts;
   }
-
+  
+  private void instantiate(Rule r, Map<Theme, FactCollection> allFacts, Map<Theme, FactWriter> output) throws Exception {
+	  if (r.isReadyToGo()) {
+		  for (Fact h : r.headFacts()) {
+              write(output, getRULERESULTS(), h, getRULESOURCES(), /*FactComponent.forTheme(facts.getKey())*/ "", "RuleExtractor from " + r.original.toString());
+          }
+	  }
+	  
+	  else {
+		  Boolean relBound = !FactTemplate.isVariable(r.firstBody().relation);
+		  Boolean subjBound = !FactTemplate.isVariable(r.firstBody().arg1);
+		  
+		  for (Entry<Theme, FactCollection> facts : allFacts.entrySet()) {
+			  
+			  Announce.debug("Doing a pass on ", facts.getKey());
+			  
+			  FactCollection fs = facts.getValue();
+			  List<Fact> fc = null;
+			  
+			  if(relBound && subjBound) {
+				  fc = fs.get(r.firstBody().arg1, r.firstBody().relation);
+			  } else if (relBound) {
+				  fc = fs.get(r.firstBody().relation);
+			  } else if (subjBound) {
+				  fc = fs.getFactsWithSubject(r.firstBody().arg1);
+			  } else {
+				  fc = new ArrayList<Fact>(fs);
+			  }
+		  
+			  for(Fact f : fc) {
+				  Map<String, String> map = r.mapFirstTo(f);
+				  
+				  if (map != null) {
+					  instantiate(r.rest(map, f.getId()), allFacts, output);
+		          }
+			  }
+			  
+		  }
+		  
+	  }
+  }
+  
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+	  List<RuleSet> ruleSets = initializeRuleSet(input);
+	  Map<Theme, FactCollection> allFacts = loadInputFacts(input);
+	  
+	  Announce.doing("Doing a pass on all rules");
+	  for (RuleSet rules : ruleSets) {
+		  for (Rule r : rules.allRules()) {
+			  Announce.doing("Processing the rule: ", r);
+			  Announce.doing("Doing a pass on all fact themes");
+			  instantiate(r, allFacts, output);
+			  Announce.done();
+			  Announce.done();
+		  }
+	  }
+	  Announce.done();
+	  
+  }
+
+//  @Override
+  public void extractOld(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     List<RuleSet> ruleSets = initializeRuleSet(input);
     
-    Map<Theme, List<Fact>> allFacts = loadInputFacts(input);
+    Map<Theme, FactCollection> allFacts = loadInputFacts(input);
     
     Announce.debug(ruleSets);
     // Loop
@@ -222,7 +295,7 @@ public abstract class BaseRuleExtractor extends Extractor {
 	    do {
 	      // Apply all rules
 	      Announce.doing("Doing a pass on all facts");
-	      for (Entry<Theme, List<Fact>> reader : allFacts.entrySet()) { //input.entrySet
+	      for (Entry<Theme, FactCollection> reader : allFacts.entrySet()) { //input.entrySet
 	        Announce.doing("Processing", reader.getKey());
 	        int factCounter = 0;
 	        for (Fact fact : reader.getValue()) {
