@@ -16,6 +16,7 @@ import utils.FactTemplate;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
+import javatools.parsers.NumberFormatter;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -265,9 +266,11 @@ public abstract class BaseRuleExtractor extends Extractor {
 	  for (RuleSet rules : ruleSets) {
 		  for (Rule r : rules.allRules()) {
 			  Announce.doing("Processing the rule: ", r);
+			  Announce.debug("Starting at", NumberFormatter.ISOtime());
 			  Announce.doing("Doing a pass on all fact themes");
 			  instantiate(r, allFacts, output);
 			  Announce.done();
+			  Announce.debug("Rule " + r + " finished at", NumberFormatter.ISOtime());
 			  Announce.done();
 		  }
 	  }
