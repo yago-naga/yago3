@@ -266,11 +266,11 @@ public abstract class BaseRuleExtractor extends Extractor {
 	  for (RuleSet rules : ruleSets) {
 		  for (Rule r : rules.allRules()) {
 			  Announce.doing("Processing the rule: ", r);
-			  Announce.debug("Starting at", NumberFormatter.ISOtime());
+			  Announce.message("Starting at", NumberFormatter.ISOtime());
 			  Announce.doing("Doing a pass on all fact themes");
 			  instantiate(r, allFacts, output);
 			  Announce.done();
-			  Announce.debug("Rule " + r + " finished at", NumberFormatter.ISOtime());
+			  Announce.message("Rule " + r + " finished at", NumberFormatter.ISOtime());
 			  Announce.done();
 		  }
 	  }
