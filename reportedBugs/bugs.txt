@@ -51,10 +51,32 @@ In the process of making the transitive closure of yagoTransityveTypes with word
  we discovered a I bug related to the fact that all entities of type owl:thing were associated with
   wordnet domain "medicine".
 =====================================================
-Bug ID:	3
+Bug ID:	4
 Topic:	States are countries
 Reporter:	Luis Galarraga
 Status:	TO DO
 //////////////////////////////
 Texas (and other US states) are listed as "country" in YAGO.
+=====================================================
+Bug ID: 5
+Topic:  Incompatible facts added by Literal Facts Extractor
+Reporter: Joanna Biega
+Status: TO DO
+//////////////////////////////
+Example: if we get as an input facts <x, wasBornOnDate, 1995-##-##> and <x, wasBornOnDate, 1994-09-18>, 
+both of the facts seem to be added into the output theme.
+=====================================================
+Bug ID: 6
+Topic:  Some articles no longer have categories, but templates. We lose these
+Reporter: Fabian Suchanek
+Status: TO DO
+//////////////////////////////
+Example: Try Lippstadt, it's not there in YAGO
+=====================================================
+Bug ID: 7
+Topic:  Redirects should not make rdfs:label, but have their own relation
+Reporter: Fabian Suchanek
+Status: TO DO
+//////////////////////////////
+Otherwise we get too much garbage in the label-relation 
 =====================================================
