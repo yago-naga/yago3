@@ -79,9 +79,10 @@ public abstract class GeoNamesDataImporter extends Extractor {
     for (String line : new FileLines(geodata, "UTF-8", "Importing GeoNames entity data")) {
       String[] data = line.split("\t");
 
-      String geonamesId = FactComponent.forString(data[0]);
+      String geonamesId = data[0];
+      String geonamesIdYagoFormat = FactComponent.forNumber(geonamesId);
       
-      if (shouldImportForGeonamesId(geonamesId, geoEntityId2yago)) {  
+      if (shouldImportForGeonamesId(geonamesIdYagoFormat, geoEntityId2yago)) {  
         String name = data[1];
       
         Float lati = Float.parseFloat(data[4]);
@@ -103,12 +104,12 @@ public abstract class GeoNamesDataImporter extends Extractor {
         }
         
         // will remain untouched if not mapped
-        name = FactComponent.forYagoEntity(getYagoNameForGeonamesId(name, FactComponent.forNumber(geonamesId), geoEntityId2yago));
+        name = FactComponent.forYagoEntity(getYagoNameForGeonamesId(name, geonamesIdYagoFormat, geoEntityId2yago));
         
         out.write(new Fact(name, "<hasLatitude>", FactComponent.forStringWithDatatype(lati.toString(),"<degrees>")));
         out.write(new Fact(name, "<hasLongitude>", FactComponent.forStringWithDatatype(longi.toString(),"<degrees>")));
         out.write(new Fact(name, RDFS.subclassOf, geoClassId2yago.get(FactComponent.forString(fc))));
-        out.write(new Fact(name, "<hasGeonamesEntityId>", geonamesId));
+        out.write(new Fact(name, "<hasGeonamesEntityId>", geonamesIdYagoFormat));
         
         if (namesList != null) {
           for (String alternateName : namesList) {
@@ -183,13 +184,14 @@ public abstract class GeoNamesDataImporter extends Extractor {
     }
   }
 
-  private String getYagoNameForGeonamesId(String name, String geonamesId, Map<String, String> geoEntityId2yago) {
-    if (geoEntityId2yago.containsKey(geonamesId)) {
-      return geoEntityId2yago.get(geonamesId);
+  private String getYagoNameForGeonamesId(String name, String geonamesIdYagoFormat, Map<String, String> geoEntityId2yago) {
+    if (geoEntityId2yago.containsKey(geonamesIdYagoFormat)) {
+      return geoEntityId2yago.get(geonamesIdYagoFormat);
     } else {
       // To avoid clashes with canoncial Wikipedia names, add the GeoNames id
       // to unmatched GeoNames entities.
-      return GEO_ENTITY_PREFIX + "_" + name + "_" + geonamesId;
+      String geonamesIdOnly = FactComponent.stripQuotes(FactComponent.getString(geonamesIdYagoFormat));
+      return GEO_ENTITY_PREFIX + name + "_" + geonamesIdOnly;
     }
   }
   
