@@ -3,16 +3,6 @@ package fromThemes;
 import java.io.File;
 import java.util.Set;
 
-import fromOtherSources.HardExtractor;
-import fromWikipedia.CategoryExtractor;
-import fromWikipedia.FlightExtractor;
-import fromWikipedia.GenderExtractor;
-import fromWikipedia.InfoboxExtractor;
-import fromWikipedia.TemporalCategoryExtractor;
-import fromWikipedia.TemporalInfoboxExtractor;
-
-
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
@@ -20,6 +10,14 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromGeonames.GeoNamesDataImporter;
+import fromOtherSources.HardExtractor;
+import fromWikipedia.CategoryExtractor;
+import fromWikipedia.FlightExtractor;
+import fromWikipedia.GenderExtractor;
+import fromWikipedia.InfoboxExtractor;
+import fromWikipedia.TemporalCategoryExtractor;
+import fromWikipedia.TemporalInfoboxExtractor;
 
 /**
  * YAGO2s - FactExtractor
@@ -39,7 +37,7 @@ public class FactExtractor extends SimpleDeduplicator {
         InfoboxExtractor.INFOBOXFACTS,        
         RuleExtractor.RULERESULTS,  
         FlightExtractor.FLIGHTS,
-        //GeoNamesDataImporter.GEONAMESDATA,
+        GeoNamesDataImporter.GEONAMESMAPPEDDATA,
         TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA);
   }

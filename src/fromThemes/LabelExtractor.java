@@ -2,6 +2,7 @@ package fromThemes;
 
 import java.util.Set;
 
+import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.CategoryExtractor;
@@ -36,8 +37,9 @@ public class LabelExtractor extends SimpleDeduplicator {
         HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, 
         InfoboxExtractor.INFOBOXFACTS,
         PersonNameExtractor.PERSONNAMES,
-          WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
-        WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS);
+        WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
+        WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS,
+        GeoNamesDataImporter.GEONAMESMAPPEDDATA);
   }
 
   /** Relations that we care for*/

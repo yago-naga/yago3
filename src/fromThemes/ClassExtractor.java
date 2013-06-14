@@ -13,6 +13,7 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromGeonames.GeoNamesClassMapper;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
@@ -35,7 +36,8 @@ public class ClassExtractor extends Extractor {
   public Set<Theme> input() {
     return new FinalSet<>(WikipediaTypeExtractor.WIKIPEDIACLASSES,
         HardExtractor.HARDWIREDFACTS,         
-        WordnetExtractor.WORDNETCLASSES);
+        WordnetExtractor.WORDNETCLASSES,
+        GeoNamesClassMapper.GEONAMESCLASSES);
   }
 
   /** The YAGO taxonomy */

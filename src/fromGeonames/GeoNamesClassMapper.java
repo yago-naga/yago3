@@ -47,9 +47,6 @@ public class GeoNamesClassMapper extends Extractor {
   /** YAGO geo class */
   public static final String GEO_CLASS = "<yagoGeoEntity>";
   
-  /** YAGO geoclass prefix */
-  public static final String GEO_CLASS_PREFIX = "geoclass_";
-  
   private Set<String> geographicalWordNetClasses;
   private BreakIterator bi = BreakIterator.getWordInstance();
   private Pattern NON_WORD_CHAR = Pattern.compile("^[^\\w]*$");
@@ -99,7 +96,7 @@ public class GeoNamesClassMapper extends Extractor {
       }
       
       String geoClass = 
-          FactComponent.forGeoNamesClass(GEO_CLASS_PREFIX + featureClass);
+          FactComponent.forGeoNamesClass(featureClass);
       String wordNetClass = mapGeonamesCategory(featureClass, featureGloss, wordnetWords, wordnetGlosses, wordnetClasses);
       String parentClass = (wordNetClass != null) ? wordNetClass : GEO_CLASS;
 
@@ -119,7 +116,7 @@ public class GeoNamesClassMapper extends Extractor {
     String stemmedHead = PlingStemmer.stem(category.head());
 
     List<String> wordnetMeanings = null;
-    String lookup = FactComponent.forString(category.preModifier() + ' ' + stemmedHead);
+    String lookup = FactComponent.forStringWithLanguage(category.preModifier() + ' ' + stemmedHead, "eng");
     
     // Try premodifier + head, if no results, only head
     
@@ -128,7 +125,7 @@ public class GeoNamesClassMapper extends Extractor {
     }
     
     if (wordnetMeanings == null || wordnetMeanings.size() == 0) {
-      lookup = FactComponent.forString(stemmedHead);
+      lookup = FactComponent.forStringWithLanguage(stemmedHead, "eng");
       
       wordnetMeanings = getAllMeanings(lookup, wordnetWords);
     }

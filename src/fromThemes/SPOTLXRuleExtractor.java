@@ -42,7 +42,7 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
                           FactExtractor.YAGOFACTS,
                           MetaFactExtractor.YAGOMETAFACTS,
                           LiteralFactExtractor.YAGOLITERALFACTS,
-                          GeoNamesDataImporter.GEONAMESDATA);
+                          GeoNamesDataImporter.GEONAMESMAPPEDDATA);
   }
   
   /** Themes of spotlx deductions */

@@ -37,15 +37,24 @@ import basics.Theme.ThemeGroup;
  * @author Johannes Hoffart
  *
  */
-public abstract class GeoNamesDataImporter extends Extractor {
+public class GeoNamesDataImporter extends Extractor {
 
   public static final String GEO_ENTITY_PREFIX = "geoentity_";
   
   protected File geonamesFolder;
   
-  /** geonames entity links */
-  public static final Theme GEONAMESDATA = new Theme("yagoGeonamesData", 
-      "Data from GeoNames, e.g. coordinates, alternative names, locatedIn hierarchy, neighbor of",ThemeGroup.GEONAMES);
+  /** geonames data for mapped entities */
+  public static final Theme GEONAMESMAPPEDDATA = new Theme("mappedGeonamesData", 
+      "Data from GeoNames for mapped Wikipedia entities, e.g. coordinates, alternative names, locatedIn hierarchy, neighbor of");
+  
+  /** geonames data for entities that could not be mapped */
+  public static final Theme GEONAMESONLYDATA = new Theme("yagoGeonamesOnlyData", 
+      "Data from GeoNames for all non-mapped entities, e.g. coordinates, alternative names, locatedIn hierarchy, neighbor of",
+      ThemeGroup.GEONAMES);
+  
+  /** geonames types */
+  public static final Theme GEONAMESTYPES = new Theme("geonamesTypes", 
+      "All GeoNames types for both mapped and non-mapped entities.", ThemeGroup.GEONAMES);
 
   @Override
   public Set<Theme> input() {
@@ -57,89 +66,104 @@ public abstract class GeoNamesDataImporter extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(GEONAMESDATA);
+    return new FinalSet<Theme>(GEONAMESMAPPEDDATA, GEONAMESONLYDATA, GEONAMESTYPES);
   }
 
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    FactWriter out = output.get(GEONAMESDATA);
-    
+    FactWriter mappedOut = output.get(GEONAMESMAPPEDDATA);
+    FactWriter onlyOut = output.get(GEONAMESONLYDATA);
+    FactWriter typeOut = output.get(GEONAMESTYPES);
+
     FactCollection mappedEntityIds = new FactCollection(input.get(GeoNamesEntityMapper.GEONAMESENTITYIDS));
     Map<String, String> geoEntityId2yago = mappedEntityIds.getReverseMap("<hasGeonamesEntityId>");
     FactCollection mappedClassIds = new FactCollection(input.get(GeoNamesClassMapper.GEONAMESCLASSSIDS));
     Map<String, String> geoClassId2yago = mappedClassIds.getReverseMap("<hasGeonamesClassId>");
     FactSource ibFacts = input.get(InfoboxExtractor.INFOBOXFACTS);
     
-    extractAllCountries(new File(geonamesFolder, "allCountries.txt"), out, geoEntityId2yago, geoClassId2yago);
-    extractHierarchy(new File(geonamesFolder, "hierarchy.txt"), out, geoEntityId2yago);
-    extractCountryInfo(new File(geonamesFolder, "countryInfo.txt"), out, ibFacts);
+    Map<Integer, String> geoId2name = 
+        extractAllCountries(new File(geonamesFolder, "allCountries.txt"), mappedOut, onlyOut, typeOut, geoEntityId2yago, geoClassId2yago);
+    extractHierarchy(new File(geonamesFolder, "hierarchy.txt"), mappedOut, onlyOut, geoEntityId2yago, geoId2name);
+    extractCountryInfo(new File(geonamesFolder, "countryInfo.txt"), mappedOut, ibFacts);
   }
   
-  private void extractAllCountries(File geodata, FactWriter out, Map<String, String> geoEntityId2yago, Map<String, String> geoClassId2yago) throws NumberFormatException, IOException {        
+  private Map<Integer, String> extractAllCountries(File geodata, FactWriter mappedOut, FactWriter onlyOut, FactWriter typeOut, Map<String, String> geoEntityId2yago, Map<String, String> geoClassId2yago) throws NumberFormatException, IOException {
+    Map<Integer, String> geoId2name = new HashMap<>();
     for (String line : new FileLines(geodata, "UTF-8", "Importing GeoNames entity data")) {
       String[] data = line.split("\t");
 
       String geonamesId = data[0];
       String geonamesIdYagoFormat = FactComponent.forNumber(geonamesId);
+      String name = data[1];
+      geoId2name.put(Integer.parseInt(geonamesId), name);
+    
+      Float lati = Float.parseFloat(data[4]);
+      Float longi = Float.parseFloat(data[5]);
       
-      if (shouldImportForGeonamesId(geonamesIdYagoFormat, geoEntityId2yago)) {  
-        String name = data[1];
+      String fc = null;
       
-        Float lati = Float.parseFloat(data[4]);
-        Float longi = Float.parseFloat(data[5]);
-        
-        String fc = null;
-        
-        if (data[6].length() > 0 && data[7].length() > 0) {
-          fc = data[6] + "." + data[7];
-        } else {
-          continue;
-        }
-        
-        String alternateNames = data[3];
-        List<String> namesList = null;
+      if (data[6].length() > 0 && data[7].length() > 0) {
+        fc = data[6] + "." + data[7];
+      } else {
+        continue;
+      }
+      
+      String alternateNames = data[3];
+      List<String> namesList = null;
 
-        if (alternateNames.length() > 0) {
-          namesList = Arrays.asList(data[3].split(","));
-        }
-        
-        // will remain untouched if not mapped
-        name = FactComponent.forYagoEntity(getYagoNameForGeonamesId(name, geonamesIdYagoFormat, geoEntityId2yago));
-        
-        out.write(new Fact(name, "<hasLatitude>", FactComponent.forStringWithDatatype(lati.toString(),"<degrees>")));
-        out.write(new Fact(name, "<hasLongitude>", FactComponent.forStringWithDatatype(longi.toString(),"<degrees>")));
-        out.write(new Fact(name, RDFS.subclassOf, geoClassId2yago.get(FactComponent.forString(fc))));
-        out.write(new Fact(name, "<hasGeonamesEntityId>", geonamesIdYagoFormat));
-        
-        if (namesList != null) {
-          for (String alternateName : namesList) {
-            out.write(new Fact(name, RDFS.label, FactComponent.forString(alternateName)));
-          }
+      if (alternateNames.length() > 0) {
+        namesList = Arrays.asList(data[3].split(","));
+      }
+      
+      // will remain untouched if not mapped
+      name = FactComponent.forYagoEntity(getYagoNameForGeonamesId(name, geonamesIdYagoFormat, geoEntityId2yago));
+      
+      // Decide where to write to - if mapped, write to core facts, if not, separately.
+      FactWriter out = onlyOut;
+      if (geoEntityId2yago.containsKey(geonamesIdYagoFormat)) {
+        out = mappedOut;
+      }
+      
+      out.write(new Fact(name, "<hasLatitude>", FactComponent.forStringWithDatatype(lati.toString(),"<degrees>")));
+      out.write(new Fact(name, "<hasLongitude>", FactComponent.forStringWithDatatype(longi.toString(),"<degrees>")));
+      out.write(new Fact(name, "<hasGeonamesEntityId>", geonamesIdYagoFormat));
+      typeOut.write(new Fact(name, RDFS.type, geoClassId2yago.get(FactComponent.forString(fc))));
+      
+      if (namesList != null) {
+        for (String alternateName : namesList) {
+          out.write(new Fact(name, RDFS.label, FactComponent.forString(alternateName)));
         }
       }
     }
+    return geoId2name;
   }
 
-  private void extractHierarchy(File geodata, FactWriter out, Map<String, String> geoEntityId2yago) throws IOException {
+  private void extractHierarchy(File geodata, FactWriter mappedOut, FactWriter onlyOut, Map<String, String> geoEntityId2yago, Map<Integer, String> geoId2name) throws IOException {
     for (String line : new FileLines(geodata, "UTF-8", "Importing GeoNames locatedIn data")) {
       String[] data = line.split("\t");
       
       String parent = FactComponent.forNumber(data[0]);
+      String parentName = geoId2name.get(data[0]);
       String child = FactComponent.forNumber(data[1]);
+      String childName = geoId2name.get(data[1]);
       
-      if (shouldImportForGeonamesId(parent, geoEntityId2yago)
-          && shouldImportForGeonamesId(child, geoEntityId2yago)) {
-        String childEntity = geoEntityId2yago.get(child);
-        String parentEntity = geoEntityId2yago.get(parent);
-        
-        if (childEntity != null && parentEntity != null) {
-          out.write(new Fact(childEntity, "<isLocatedIn>", parentEntity));
-        }
+      FactWriter out = onlyOut;
+      // When both parent and child are part of Wikipedia, write to mapped.
+      if (geoEntityId2yago.containsKey(parent)
+          && geoEntityId2yago.containsKey(child)) {
+        out = mappedOut;
+      }
+      
+      String childEntity = getYagoNameForGeonamesId(childName, child, geoEntityId2yago);
+      String parentEntity = getYagoNameForGeonamesId(parentName, parent, geoEntityId2yago);
+      
+      if (childEntity != null && parentEntity != null) {
+        out.write(new Fact(childEntity, "<isLocatedIn>", parentEntity));
       }
     }
   }
 
-  private void extractCountryInfo(File geodata, FactWriter out, FactSource ibFacts) throws IOException {
+  private void extractCountryInfo(File geodata, FactWriter mappedOut, FactSource ibFacts) throws IOException {
     Map<String, String> tld2yago = new HashMap<>();
     for (Fact f : ibFacts) {
       if (f.getRelation().equals("<hasTLD>")) {
@@ -175,7 +199,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
           String neighbor = tld2yago.get(nbTLD);
           
           if (neighbor != null) {
-            out.write(new Fact(country, "<hasNeighbor>", neighbor));
+            mappedOut.write(new Fact(country, "<hasNeighbor>", neighbor));
           } else {
             Announce.debug("TLD '" + tld + "' not available in YAGO, not adding neighbor for '" + country + "'");
           }
@@ -195,5 +219,7 @@ public abstract class GeoNamesDataImporter extends Extractor {
     }
   }
   
-  public abstract boolean shouldImportForGeonamesId(String geonamesId, Map<String, String> geoEntityId2yago);
+  public GeoNamesDataImporter(File geonamesFolder) {
+    this.geonamesFolder = geonamesFolder;
+  }
 }

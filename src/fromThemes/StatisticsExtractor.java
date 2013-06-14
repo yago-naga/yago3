@@ -17,12 +17,10 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
-import fromGeonames.GeoNamesFullDataImporter;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.WikiInfoExtractor;
 import fromWikipedia.WikipediaTypeExtractor;
-import fromWikipedia.FlightExtractor;
 
 /**
  * YAGO2s - StatisticsExtractor

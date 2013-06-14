@@ -3,14 +3,6 @@ package fromThemes;
 import java.io.File;
 import java.util.Set;
 
-import fromOtherSources.HardExtractor;
-import fromWikipedia.CategoryExtractor;
-import fromWikipedia.CoordinateExtractor;
-import fromWikipedia.FlightIATAcodeExtractor;
-import fromWikipedia.InfoboxExtractor;
-import fromWikipedia.TemporalCategoryExtractor;
-import fromWikipedia.TemporalInfoboxExtractor;
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
@@ -18,6 +10,14 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromGeonames.GeoNamesDataImporter;
+import fromOtherSources.HardExtractor;
+import fromWikipedia.CategoryExtractor;
+import fromWikipedia.CoordinateExtractor;
+import fromWikipedia.FlightIATAcodeExtractor;
+import fromWikipedia.InfoboxExtractor;
+import fromWikipedia.TemporalCategoryExtractor;
+import fromWikipedia.TemporalInfoboxExtractor;
 
 /**
  * YAGO2s - LiteralFactExtractor
@@ -32,8 +32,8 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXFACTS, RuleExtractor.RULERESULTS,
-        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA,FlightIATAcodeExtractor.AIRPORT_CODE, SchemaExtractor.YAGOSCHEMA, CoordinateExtractor.COORDINATES
-    //GeoNamesDataImporter.GEONAMESDATA
+        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA,FlightIATAcodeExtractor.AIRPORT_CODE, SchemaExtractor.YAGOSCHEMA, CoordinateExtractor.COORDINATES,
+        GeoNamesDataImporter.GEONAMESMAPPEDDATA
     );
   }
 

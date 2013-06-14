@@ -1,15 +1,9 @@
 package fromThemes;
 
-import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import fromWikipedia.Extractor;
-
-
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
@@ -18,6 +12,7 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import fromWikipedia.Extractor;
 
 /**
  * YAGO2s - SimpleDeduplicator
