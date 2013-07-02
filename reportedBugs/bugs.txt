@@ -21,27 +21,6 @@ f1.predicate=f2.predicate and f1.object=f2.object and f1.id!=f2.id
 this gave a result of 107660 lines (this would mean ~50.000
 affected facts, less if we some facts have more than two instances).
 =====================================================
-Bug ID:	2
-Topic:	Upper-lower case in some types
-Reporter:	Steffen Metzger
-Status:	TO DO
-//////////////////////////////
-Another problem seems to be the writing of types, sometimes upper-and
-lower case is mixed up. One instance that I also found in YAGO2S is the
-wikicategory_German_physicists type, which appears sometimes also as
-wikicategory_german_physicists (lower G), as for example in this fact:
-Gustav_Zeuner   type    wikicategory_german_physicists
-
-There is the same problem with "wikicategory_Time_travel_films"
-and "wikicategory_time_travel_films"
-
-(at least the first example should also be in YAGO2S, saw it in the
-online browser)
-
-This becomes a problem with case-sensitive tables/queries. I haven't
-checked/seen other cases of this yet, so it may only be these instance,
-but it could also be a systematic problem of some sort...
-=====================================================
 Bug ID:	3
 Topic:	owl:thing --> wordnet "medicine"
 Reporter:	Marilena Oita
@@ -50,13 +29,6 @@ Status:	TO DO
 In the process of making the transitive closure of yagoTransityveTypes with wordnetDomains
  we discovered a I bug related to the fact that all entities of type owl:thing were associated with
   wordnet domain "medicine".
-=====================================================
-Bug ID:	4
-Topic:	States are countries
-Reporter:	Luis Galarraga
-Status:	TO DO
-//////////////////////////////
-Texas (and other US states) are listed as "country" in YAGO.
 =====================================================
 Bug ID: 5
 Topic:  Incompatible facts added by Literal Facts Extractor
@@ -79,4 +51,12 @@ Reporter: Fabian Suchanek
 Status: TO DO
 //////////////////////////////
 Otherwise we get too much garbage in the label-relation 
+=====================================================
+Bug ID: 8
+Topic:  Some organizations have genders
+Reporter: Joanna Biega
+Status: DOING
+//////////////////////////////
+Found that in one of the recent extractions some organizations got genders.
+E.g. <Amnesty_International> <hasGender> <male>
 =====================================================

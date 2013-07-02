@@ -1,0 +1,30 @@
+Bug ID: 2
+Topic:  Upper-lower case in some types
+Reporter: Steffen Metzger
+Status: FIXED
+Solution: Always capitalize the first letters of wikicategories.
+//////////////////////////////
+Another problem seems to be the writing of types, sometimes upper-and
+lower case is mixed up. One instance that I also found in YAGO2S is the
+wikicategory_German_physicists type, which appears sometimes also as
+wikicategory_german_physicists (lower G), as for example in this fact:
+Gustav_Zeuner   type    wikicategory_german_physicists
+
+There is the same problem with "wikicategory_Time_travel_films"
+and "wikicategory_time_travel_films"
+
+(at least the first example should also be in YAGO2S, saw it in the
+online browser)
+
+This becomes a problem with case-sensitive tables/queries. I haven't
+checked/seen other cases of this yet, so it may only be these instance,
+but it could also be a systematic problem of some sort...
+=====================================================
+Bug ID: 4
+Topic:  States are countries
+Reporter: Luis Galarraga
+Status: FIXED
+Solution: <wordnet_administrative_district_108491826> <isPreferredMeaningOf>  "state"@eng .
+//////////////////////////////
+Texas (and other US states) are listed as "country" in YAGO.
+=====================================================
