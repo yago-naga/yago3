@@ -1,18 +1,13 @@
 package fromThemes;
 
-import java.util.Map;
+import java.io.File;
 import java.util.Set;
 
 import fromOtherSources.HardExtractor;
-import fromWikipedia.Extractor;
-
-
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
@@ -47,7 +42,18 @@ public class SchemaExtractor extends SimpleDeduplicator {
 
   @Override
   public boolean isMyRelation(Fact fact) {
-    return relations.contains(fact.getRelation());
+	boolean isDesiredRelation = relations.contains(fact.getRelation());
+	boolean isTypeRelation = fact.getRelation().equals(RDFS.type);
+	boolean hasRightTypeArguments = fact.getArg(1).matches(".*Property.*|.*Relation.*") 
+									|| fact.getArg(2).matches(".*Property.*|.*Relation.*");
+	if (isTypeRelation)
+		System.out.println(hasRightTypeArguments +  fact.getArg(1) + fact.getArg(2));
+    return isDesiredRelation || (isTypeRelation && hasRightTypeArguments);
+  }
+  
+  public static void main(String[] args) throws Exception {
+    Announce.setLevel(Announce.Level.DEBUG);
+    new SchemaExtractor().extract(new File("/home/jbiega/data/yago2s"), "test");
   }
 
 
