@@ -1,3 +1,22 @@
+Bug ID: 8
+Topic:  Some organizations have genders
+Reporter: Joanna Biega
+Status: TO CHECK
+Solution: Perhaps it was only dependent on a wikipedia version.
+//////////////////////////////
+Found that in one of the recent extractions some organizations got genders.
+E.g. <Amnesty_International> <hasGender> <male>
+=====================================================
+Bug ID: 5
+Topic:  Incompatible facts added by Literal Facts Extractor
+Reporter: Joanna Biega
+Status: FIXED
+Solution: Fix the SchemaExtractor so that it rewrites the type facts concerning predicates. 
+          Otherwise the deduplicator can't check whether a relation is functional.
+//////////////////////////////
+Example: if we get as an input facts <x, wasBornOnDate, 1995-##-##> and <x, wasBornOnDate, 1994-09-18>, 
+both of the facts seem to be added into the output theme.
+=====================================================
 Bug ID: 2
 Topic:  Upper-lower case in some types
 Reporter: Steffen Metzger
