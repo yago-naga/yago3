@@ -1,3 +1,11 @@
+Bug ID: 7
+Topic:  Redirects should not make rdfs:label, but have their own relation
+Reporter: Fabian Suchanek
+Status: DONE
+Solution: Introduced the <redirectedFrom> relation to yago2s and basics2s/data.
+//////////////////////////////
+Otherwise we get too much garbage in the label-relation 
+=====================================================
 Bug ID: 8
 Topic:  Some organizations have genders
 Reporter: Joanna Biega

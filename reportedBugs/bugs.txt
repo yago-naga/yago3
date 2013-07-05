@@ -37,10 +37,3 @@ Status: TO DO
 //////////////////////////////
 Example: Try Lippstadt, it's not there in YAGO
 =====================================================
-Bug ID: 7
-Topic:  Redirects should not make rdfs:label, but have their own relation
-Reporter: Fabian Suchanek
-Status: TO DO
-//////////////////////////////
-Otherwise we get too much garbage in the label-relation 
-=====================================================
