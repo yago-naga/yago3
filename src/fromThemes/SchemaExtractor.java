@@ -46,8 +46,7 @@ public class SchemaExtractor extends SimpleDeduplicator {
 	boolean isTypeRelation = fact.getRelation().equals(RDFS.type);
 	boolean hasRightTypeArguments = fact.getArg(1).matches(".*Property.*|.*Relation.*") 
 									|| fact.getArg(2).matches(".*Property.*|.*Relation.*");
-	if (isTypeRelation)
-		System.out.println(hasRightTypeArguments +  fact.getArg(1) + fact.getArg(2));
+
     return isDesiredRelation || (isTypeRelation && hasRightTypeArguments);
   }
   
