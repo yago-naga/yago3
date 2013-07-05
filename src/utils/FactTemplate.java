@@ -41,9 +41,12 @@ public class FactTemplate {
 	/** Constructor */
 	public FactTemplate(String arg1, String relation, String arg2) {
 		super();
-		this.arg1 = arg1.intern();
-		this.relation = relation.intern();
-		this.arg2 = arg2.intern();
+//		this.arg1 = arg1.intern();
+		this.arg1 = arg1;
+//		this.relation = relation.intern();
+		this.relation = relation;
+//		this.arg2 = arg2.intern();
+		this.arg2 = arg2;
 	}
 
 	/** TRUE if the component is a variable */
