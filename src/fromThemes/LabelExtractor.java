@@ -44,7 +44,7 @@ public class LabelExtractor extends SimpleDeduplicator {
 
   /** Relations that we care for*/
   public static Set<String> relations = new FinalSet<>(RDFS.label, "skos:prefLabel", "<isPreferredMeaningOf>", "<hasGivenName>",
-      "<hasFamilyName>", "<hasGloss>");
+      "<hasFamilyName>", "<hasGloss>", "<redirectedFrom>");
 
   /** All facts of YAGO */
   public static final Theme YAGOLABELS = new Theme("yagoLabels", "All facts of YAGO that contain labels (rdfs:label, skos:prefLabel, isPreferredMeaningOf, hasGivenName, hasFamilyName, hasGloss)", ThemeGroup.CORE);
