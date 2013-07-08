@@ -12,7 +12,7 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-"$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2"	<_implies>	"$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2 ; #1 <happenedIn> $2; #2 <happenedOnDate> $1" .
+#"$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2"	<_implies>	"$0 <wasBornOnDate> $1 ; $0 <wasBornIn> $2 ; #1 <happenedIn> $2; #2 <happenedOnDate> $1" .
 "$0 rdf:type owl:SymmetricProperty; $1 $0 $2"	<_implies>	"$2 $0 $1" .
 
 # Fabian: Let's avoid inferring types, as this is sometimes erroneous (for horses which have a birthdate)

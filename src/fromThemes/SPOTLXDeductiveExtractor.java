@@ -58,7 +58,7 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
                           TransitiveTypeExtractor.TRANSITIVETYPE,
                           SPOTLXRuleExtractor.RULERESULTS,
                           FactExtractor.YAGOFACTS,
-                          MetaFactExtractor.YAGOMETAFACTS,
+                          //MetaFactExtractor.YAGOMETAFACTS,
                           LiteralFactExtractor.YAGOLITERALFACTS,
                           GeoNamesDataImporter.GEONAMESMAPPEDDATA);
   }

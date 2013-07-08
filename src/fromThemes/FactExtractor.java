@@ -47,7 +47,7 @@ public class FactExtractor extends SimpleDeduplicator {
 
   /** relations that we exclude, because they are treated elsewhere */
   public static final Set<String> relationsExcluded = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range, RDFS.subpropertyOf,
-      RDFS.label, "skos:prefLabel", "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>", "<hasGloss>");
+      RDFS.label, "skos:prefLabel", "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>", "<hasGloss>", "<redirectedFrom>");
 
   @Override
   public Theme myOutput() {
