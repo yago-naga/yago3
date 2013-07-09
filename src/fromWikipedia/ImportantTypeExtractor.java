@@ -5,8 +5,6 @@ import java.io.Reader;
 import java.util.Map;
 import java.util.Set;
 
-import main.ParallelCaller;
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;

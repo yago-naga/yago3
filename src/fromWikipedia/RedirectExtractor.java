@@ -11,11 +11,6 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromThemes.TypeChecker;
-
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -24,8 +19,10 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
-import basics.RDFS;
 import basics.Theme;
+import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
+import fromThemes.TypeChecker;
 
 /**
  * Extracts all redirects from Wikipedia

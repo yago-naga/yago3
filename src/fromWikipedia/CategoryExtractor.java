@@ -8,14 +8,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import utils.FactTemplateExtractor;
-import utils.TitleExtractor;
-
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
+import utils.FactTemplateExtractor;
+import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -25,7 +23,6 @@ import basics.Theme;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.TransitiveTypeExtractor;
 import fromThemes.TypeChecker;
 
 /**

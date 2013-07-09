@@ -1,16 +1,11 @@
 package fromThemes;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
-
-import fromWikipedia.Extractor;
-import fromWikipedia.WikipediaTypeExtractor;
-
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -22,6 +17,8 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromWikipedia.Extractor;
+import fromWikipedia.WikipediaTypeExtractor;
 
 /**
  * YAGO2s - TransitiveTypeExtractor

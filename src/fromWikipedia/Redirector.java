@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;

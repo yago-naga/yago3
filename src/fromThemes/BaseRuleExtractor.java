@@ -3,26 +3,21 @@ package fromThemes;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
-import fromWikipedia.Extractor;
-
-import utils.FactTemplate;
-
-
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.parsers.NumberFormatter;
+import utils.FactTemplate;
 import basics.Fact;
 import basics.FactCollection;
-import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
+import fromWikipedia.Extractor;
 
 /**
  * YAGO2s - RuleExtractor
