@@ -227,7 +227,7 @@ public abstract class BaseRuleExtractor extends Extractor {
 		  Boolean relBound = !FactTemplate.isVariable(r.firstBody().relation);
 		  Boolean subjBound = !FactTemplate.isVariable(r.firstBody().arg1);
 			  
-		  Announce.debug("Doing a pass on facts");
+		  Announce.debug("Currently processed rule: ", r);
 		  
 		  Collection<Fact> fc = null;
 		  
