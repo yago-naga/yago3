@@ -40,7 +40,7 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
     return new FinalSet<>(PatternHardExtractor.SPOTLX_ENTITY_RULES,
                           PatternHardExtractor.HARDWIREDFACTS,
                           FactExtractor.YAGOFACTS,
-                          MetaFactExtractor.YAGOMETAFACTS,
+                          //MetaFactExtractor.YAGOMETAFACTS,
                           LiteralFactExtractor.YAGOLITERALFACTS,
                           GeoNamesDataImporter.GEONAMESMAPPEDDATA);
   }
