@@ -3,6 +3,7 @@ package fromThemes;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -216,6 +217,11 @@ public abstract class BaseRuleExtractor extends Extractor {
     return facts;
   }
   
+  /** TRUE if the relation of a fact(template) is negated*/
+  public static boolean isNegated(FactTemplate f) {
+    return(f.relation.startsWith("-"));
+  }
+
   private void instantiate(Rule r, FactCollection allFacts, Map<Theme, FactWriter> output) throws Exception {
 	  if (r.isReadyToGo()) {
 		  for (Fact h : r.headFacts()) {
@@ -224,11 +230,27 @@ public abstract class BaseRuleExtractor extends Extractor {
 	  }
 	  
 	  else {
-		  Boolean relBound = !FactTemplate.isVariable(r.firstBody().relation);
-		  Boolean subjBound = !FactTemplate.isVariable(r.firstBody().arg1);
-			  
+	    FactTemplate firstBody=r.firstBody();
+		  Boolean relBound = !FactTemplate.isVariable(firstBody.relation);
+		  Boolean subjBound = !FactTemplate.isVariable(firstBody.arg1);
+		  Boolean objBound = !FactTemplate.isVariable(firstBody.arg2);
+		  
 		  Announce.debug("Currently processed rule: ", r);
 		  
+		  // Handle negation
+		  if(isNegated(firstBody)) {
+		    // Make sure everybody is bound
+		    if(!relBound || !subjBound || !objBound) {
+		      Announce.debug("In order to use negation, all elements have to be bound:",r);
+		      return;
+		    }		    
+		    // If it is contained in the KB, just return
+		    if(allFacts.contains(firstBody.arg1,firstBody.relation.substring(1),firstBody.arg2)) return;
+		    // Otherwise continue recursively
+		    instantiate(r.rest(Collections.<String, String> emptyMap(), null), allFacts, output);
+		    return;
+		  }
+		    
 		  Collection<Fact> fc = null;
 		  
 		  if(relBound && subjBound) {
