@@ -84,7 +84,7 @@ public class WordnetDomainExtractor extends Extractor {
     }
     for (String line : new FileLines(wordnetDomains, "Parsing WordNet Domains")) {
       String[] split = line.split("\\s");
-      if (split.length < 2) continue;
+      if (split.length < 2 || !split[0].endsWith("-n")) continue;
       String subject = Char.cutLast(Char.cutLast(split[0]));
       subject = mappings.get(subject);
       if (subject == null) continue;
