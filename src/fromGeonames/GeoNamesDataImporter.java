@@ -93,7 +93,7 @@ public class GeoNamesDataImporter extends Extractor {
       String[] data = line.split("\t");
 
       String geonamesId = data[0];
-      String geonamesIdYagoFormat = FactComponent.forNumber(geonamesId);
+      String geonamesIdYagoFormat = FactComponent.forString(geonamesId);
       String name = data[1];
       geoId2name.put(Integer.parseInt(geonamesId), name);
     
@@ -142,11 +142,17 @@ public class GeoNamesDataImporter extends Extractor {
     for (String line : new FileLines(geodata, "UTF-8", "Importing GeoNames locatedIn data")) {
       String[] data = line.split("\t");
       
-      String parent = FactComponent.forNumber(data[0]);
-      String parentName = geoId2name.get(data[0]);
-      String child = FactComponent.forNumber(data[1]);
-      String childName = geoId2name.get(data[1]);
+      String parentName = geoId2name.get(Integer.parseInt(data[0]));
+      String childName = geoId2name.get(Integer.parseInt(data[1]));
+
+      if (parentName == null || childName == null) {
+        Announce.debug("Skipping GeoNames locatedIn fact because of missing "
+            + "child or parent id. GeoNames data is not clean.");
+        continue;
+      }
       
+      String parent = FactComponent.forString(data[0]);
+      String child = FactComponent.forString(data[1]);
       FactWriter out = onlyOut;
       // When both parent and child are part of Wikipedia, write to mapped.
       if (geoEntityId2yago.containsKey(parent)
@@ -215,7 +221,7 @@ public class GeoNamesDataImporter extends Extractor {
       // To avoid clashes with canoncial Wikipedia names, add the GeoNames id
       // to unmatched GeoNames entities.
       String geonamesIdOnly = FactComponent.stripQuotes(FactComponent.getString(geonamesIdYagoFormat));
-      return GEO_ENTITY_PREFIX + name + "_" + geonamesIdOnly;
+      return FactComponent.forYagoEntity(GEO_ENTITY_PREFIX + name + "_" + geonamesIdOnly);
     }
   }
   
