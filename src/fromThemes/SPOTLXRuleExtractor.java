@@ -39,6 +39,7 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
   public Set<Theme> input() {
     return new FinalSet<>(PatternHardExtractor.SPOTLX_ENTITY_RULES,
                           PatternHardExtractor.HARDWIREDFACTS,
+                          TransitiveTypeExtractor.TRANSITIVETYPE,
                           FactExtractor.YAGOFACTS,
                           LiteralFactExtractor.YAGOLITERALFACTS);
   }
