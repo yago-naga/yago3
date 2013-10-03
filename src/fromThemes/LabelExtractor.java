@@ -9,6 +9,7 @@ import fromWikipedia.CategoryExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
+import fromWikipedia.InfoboxMapper;
 import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.RedirectExtractor;
 import fromWikipedia.WikipediaLabelExtractor;
@@ -35,7 +36,7 @@ public class LabelExtractor extends SimpleDeduplicator {
   public Set<Theme> input() {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
         HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, 
-        InfoboxExtractor.INFOBOXFACTS,
+        InfoboxMapper.INFOBOXFACTS_TOREDIRECT,
         PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
         WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS,

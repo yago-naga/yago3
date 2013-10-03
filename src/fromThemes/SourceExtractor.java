@@ -9,6 +9,7 @@ import fromWikipedia.Extractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
+import fromWikipedia.InfoboxMapper;
 import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 import fromWikipedia.WikipediaLabelExtractor;
@@ -36,7 +37,7 @@ public class SourceExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(InfoboxExtractor.INFOBOXSOURCES,PersonNameExtractor.PERSONNAMESOURCES,
+    return new FinalSet<>(InfoboxMapper.INFOBOXFACTS_TOREDIRECT,PersonNameExtractor.PERSONNAMESOURCES,
         RuleExtractor.RULESOURCES,CategoryExtractor.CATEGORYSOURCES,WikipediaTypeExtractor.WIKIPEDIATYPESOURCES,
         WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, FlightExtractor.FLIGHTSOURCE, CoordinateExtractor.COORDINATE_SOURCES, 
         TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES, FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE);
