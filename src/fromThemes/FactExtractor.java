@@ -16,6 +16,7 @@ import fromWikipedia.CategoryExtractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.GenderExtractor;
 import fromWikipedia.InfoboxExtractor;
+import fromWikipedia.InfoboxMapper;
 import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
@@ -34,7 +35,7 @@ public class FactExtractor extends SimpleDeduplicator {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS,
         GenderExtractor.PERSONS_GENDER,        
         HardExtractor.HARDWIREDFACTS, 
-        InfoboxExtractor.INFOBOXFACTS,        
+        InfoboxMapper.INFOBOXFACTS_TOREDIRECT,        
         RuleExtractor.RULERESULTS,  
         FlightExtractor.FLIGHTS,
         GeoNamesDataImporter.GEONAMESMAPPEDDATA,
