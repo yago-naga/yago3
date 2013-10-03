@@ -84,5 +84,14 @@ public class TitleExtractor {
     if (entities != null && !entities.contains(entity)) return (null);
     return (entity);
   }
+  
+  
+  public String getTitleEntityWithoutWordnet(Reader in) throws IOException {
+	    String title = FileLines.readToBoundary(in, "</title>");
+	    title = replacer.transform(Char.decodeAmpersand(title));
+	    if (title == null) return (null);
+	    String entity = FactComponent.forYagoEntity(title.replace(' ', '_'));
+	    return (entity);
+	  }
 
 }
