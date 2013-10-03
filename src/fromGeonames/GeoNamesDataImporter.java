@@ -12,8 +12,7 @@ import java.util.Set;
 
 import fromWikipedia.Extractor;
 import fromWikipedia.InfoboxExtractor;
-
-
+import fromWikipedia.InfoboxMapper;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -61,7 +60,7 @@ public class GeoNamesDataImporter extends Extractor {
     return new HashSet<Theme>(Arrays.asList(
         GeoNamesClassMapper.GEONAMESCLASSSIDS, 
         GeoNamesEntityMapper.GEONAMESENTITYIDS,
-        InfoboxExtractor.INFOBOXFACTS));
+        InfoboxMapper.INFOBOXFACTS_TOREDIRECT));
   }
 
   @Override
@@ -79,7 +78,7 @@ public class GeoNamesDataImporter extends Extractor {
     Map<String, String> geoEntityId2yago = mappedEntityIds.getReverseMap("<hasGeonamesEntityId>");
     FactCollection mappedClassIds = new FactCollection(input.get(GeoNamesClassMapper.GEONAMESCLASSSIDS));
     Map<String, String> geoClassId2yago = mappedClassIds.getReverseMap("<hasGeonamesClassId>");
-    FactSource ibFacts = input.get(InfoboxExtractor.INFOBOXFACTS);
+    FactSource ibFacts = input.get(InfoboxMapper.INFOBOXFACTS_TOREDIRECT);
     
     Map<Integer, String> geoId2name = 
         extractAllCountries(new File(geonamesFolder, "allCountries.txt"), mappedOut, onlyOut, typeOut, geoEntityId2yago, geoClassId2yago);
