@@ -3,11 +3,13 @@ package fromWikipedia;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -26,21 +28,64 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
+import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromThemes.TypeChecker;
+
+/**
+ * YAGO2s - InfoboxExtractor
+ * 
+ * This version extracts facts from infoboxes in any given language.
+ * 
+ * @author Fabian M. Suchanek
+ * @author Farzaneh Mahdisoltani
+ */
 
 public class InfoboxExtractor extends Extractor {
 
   /** Input file */
   protected File wikipedia;
 
+  private String language;
+
+  public static final HashMap<String, Theme> INFOBOXATTS_MAP = new HashMap<String, Theme>();
+
+  public static final HashMap<String, Theme> INFOBOXATTSOURCES_MAP = new HashMap<String, Theme>();
+
+  static int count = 0;
+
+  static String[] languages = { "de", "en" };
+  static {
+    count++;
+    for (String s : languages) {
+      INFOBOXATTS_MAP.put(s, new Theme("yagoInfoboxAttributes_" + s, "Facts of infobox", ThemeGroup.OTHER));
+      INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources_" + s, "Facts of infobox", ThemeGroup.OTHER));
+    }
+
+  }
+
+  static String[] getAllLangs() {
+    return languages;
+  }
+
+  public String getLang() {
+    return language;
+  }
+
+  /** facts of infobox */
+  public Theme INFOBOXATTS;
+
+  /** Sources */
+  public Theme INFOBOXATTSOURCES;
+
   @Override
-  public File inputDataFile() {   
+  public File inputDataFile() {
     return wikipedia;
   }
 
@@ -51,29 +96,8 @@ public class InfoboxExtractor extends Extractor {
   }
 
   @Override
-  public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(INFOBOXFACTS_TOREDIRECT, INFOBOXFACTS_TOTYPECHECK, this), new TypeChecker(
-        INFOBOXFACTS_TOTYPECHECK, INFOBOXFACTS, this)));
-  }
-
-  /** Infobox facts */
-  public static final Theme INFOBOXFACTS = new Theme("infoboxFacts",
-      "Facts extracted from the Wikipedia infoboxes, type-checked and with redirects resolved");
-
-  /** Infobox facts */
-  public static final Theme INFOBOXFACTS_TOREDIRECT = new Theme("infoboxFactsToBeRedirected",
-      "Facts extracted from the Wikipedia infoboxes, redirects to be resolved");
-
-  /** Infobox facts */
-  public static final Theme INFOBOXFACTS_TOTYPECHECK = new Theme("infoboxFactsToBeTypeChecked",
-      "Facts extracted from the Wikipedia infoboxes, redirects resolved, to be type checked");
-
-  /** Infobox sources */
-  public static final Theme INFOBOXSOURCES = new Theme("infoboxSources", "Source information for the facts extracted from the Wikipedia infoboxes");
-
-  @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(INFOBOXFACTS_TOREDIRECT, INFOBOXSOURCES);
+    return new FinalSet<Theme>(INFOBOXATTS, INFOBOXATTSOURCES);
   }
 
   /** normalizes an attribute name */
@@ -84,8 +108,10 @@ public class InfoboxExtractor extends Extractor {
   /** Extracts a relation from a string */
   protected void extract(String entity, String string, String relation, String attribute, Map<String, String> preferredMeanings,
       FactCollection factCollection, Map<Theme, FactWriter> writers, PatternList replacements) throws IOException {
+
     string = replacements.transform(Char.decodeAmpersand(string));
     string = string.replace("$0", FactComponent.stripBrackets(entity));
+
     string = string.trim();
     if (string.length() == 0) return;
 
@@ -135,11 +161,12 @@ public class InfoboxExtractor extends Extractor {
       }
       if (inverse) {
         Fact fact = new Fact(object, relation, entity);
-        write(writers, INFOBOXFACTS_TOREDIRECT, fact, INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
+        write(writers, INFOBOXATTS, fact, INFOBOXATTSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
       } else {
         Fact fact = new Fact(entity, relation, object);
-        write(writers, INFOBOXFACTS_TOREDIRECT, fact, INFOBOXSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
+        write(writers, INFOBOXATTS, fact, INFOBOXATTSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
       }
+
       if (factCollection.contains(relation, RDFS.type, YAGO.function)) break;
     }
   }
@@ -184,39 +211,49 @@ public class InfoboxExtractor extends Extractor {
   /** reads an infobox */
   public static Map<String, Set<String>> readInfobox(Reader in, Map<String, String> combinations) throws IOException {
     Map<String, Set<String>> result = new TreeMap<String, Set<String>>();
+
     while (true) {
       String attribute = normalizeAttribute(FileLines.readTo(in, '=', '}').toString());
       if (attribute.length() == 0) return (result);
       StringBuilder value = new StringBuilder();
       int c = readEnvironment(in, value);
       String valueStr = value.toString().trim();
-      if (!valueStr.isEmpty()) D.addKeyValue(result, attribute, Char.decodeAmpersand(valueStr), TreeSet.class);
+      if (!valueStr.isEmpty()) {
+        D.addKeyValue(result, attribute, Char.decodeAmpersand(valueStr), TreeSet.class);
+      }
       if (c == '}' || c == -1 || c == -2) break;
     }
     // Apply combinations
-    next: for (String code : combinations.keySet()) {
-      StringBuilder val = new StringBuilder();
-      for (String attribute : code.split(">")) {
-        int scanTo = attribute.indexOf('<');
-        if (scanTo != -1) {
-          val.append(attribute.substring(0, scanTo));
-          String attr = attribute.substring(scanTo + 1);
-          // Do we want to exclude the existence of an attribute?
-          if (attr.startsWith("~")) {
-            attr = attr.substring(1);
-            if (result.get(normalizeAttribute(attr)) != null) continue next;
-            continue;
-          }
-          String newVal = D.pick(result.get(normalizeAttribute(attr)));
-          if (newVal == null) continue next;
-          val.append(newVal);
-        } else {
-          val.append(attribute);
-        }
-      }
-      D.addKeyValue(result, normalizeAttribute(combinations.get(code)), val.toString(), TreeSet.class);
-    }
+
+    //    next: for (String code : combinations.keySet()) {
+    //      StringBuilder val = new StringBuilder();
+    //      for (String attribute : code.split(">")) {
+    //        int scanTo = attribute.indexOf('<');
+    //        if (scanTo != -1) {
+    //          val.append(attribute.substring(0, scanTo));
+    //          String attr = attribute.substring(scanTo + 1);
+    //          // Do we want to exclude the existence of an attribute?
+    //          if (attr.startsWith("~")) {
+    //            attr = attr.substring(1);
+    //            if (result.get(normalizeAttribute(attr)) != null) continue next;
+    //            continue;
+    //          }
+    //          String newVal = D.pick(result.get(normalizeAttribute(attr)));
+    //          if (newVal == null) continue next;
+    //          val.append(newVal);
+    //        } else {
+    //          val.append(attribute);
+    //        }
+    //      }
+    //      
+    //      D.addKeyValue(result, normalizeAttribute(combinations.get(code)), val.toString(), TreeSet.class);
+    //    }
     return (result);
+  }
+
+  public String addPrefix(String relation) {
+    // return relation;
+    return "<infobox/" + this.language + "/" + FactComponent.stripBrackets(relation) + ">";
   }
 
   @Override
@@ -237,25 +274,40 @@ public class InfoboxExtractor extends Extractor {
       switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox", "{{ Infobox")) {
         case -1:
           Announce.progressDone();
+
           in.close();
           return;
         case 0:
           Announce.progressStep();
-          titleEntity = titleExtractor.getTitleEntity(in);
+
+          if (this.language.equals("en")) titleEntity = titleExtractor.getTitleEntity(in);
+          else titleEntity = titleExtractor.getTitleEntityWithoutWordnet(in);
           break;
         default:
           if (titleEntity == null) continue;
           FileLines.readTo(in, '}', '|');
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
+
+          /*new version*/
           for (String attribute : attributes.keySet()) {
-            Set<String> relations = patterns.get(attribute);
-            if (relations == null) continue;
-            for (String relation : relations) {
-              for (String value : attributes.get(attribute)) {
-                extract(titleEntity, value, relation, attribute, preferredMeaning, hardWiredFacts, writers, replacements);
-              }
+            for (String value : attributes.get(attribute)) {
+              write(writers, INFOBOXATTS, new Fact(titleEntity, addPrefix(FactComponent.forYagoEntity(attribute)), FactComponent.forString(value)),
+                  INFOBOXATTSOURCES, FactComponent.wikipediaURL(titleEntity), "Infobox Extractor");
             }
           }
+
+          //<Milan>	<hasLatitude>	"45.45"^^<degrees> .
+          /*previous version*/
+          //    		for (String attribute : attributes.keySet()) {
+          //    			Set<String> relations = patterns.get(attribute);
+          //    			if (relations == null) continue;
+          //    			for (String value : attributes.get(attribute)) {
+          //    				for (String relation : relations) {
+          //    					if(relation.equals("<hasLatitude>") && titleEntity.equals("<Milan>")){}
+          //    					extract(titleEntity, value, relation, attribute, preferredMeaning, hardWiredFacts, writers, replacements);
+          //    				}
+          //    			}
+          //    		}
       }
     }
   }
@@ -275,18 +327,38 @@ public class InfoboxExtractor extends Extractor {
   }
 
   /** Constructor from source file */
-  public InfoboxExtractor(File wikipedia) {
+  public InfoboxExtractor(File wikipedia, String lang) {
     this.wikipedia = wikipedia;
+    this.language = lang;
+    INFOBOXATTS = INFOBOXATTS_MAP.get(lang);
+    INFOBOXATTSOURCES = INFOBOXATTSOURCES_MAP.get(lang);
+
+  }
+
+  public InfoboxExtractor(File wikipedia) {
+    this(wikipedia, decodeLang(wikipedia.getName()));
+  }
+
+  /* Finds the language from the name of the input file, 
+   * assuming that the first part of the name before the
+   *  underline is equal to the language */
+  public static String decodeLang(String fileName) {
+    if (!fileName.contains("_")) return "en";
+    return fileName.split("_")[0];
+
   }
 
   public static void main(String[] args) throws Exception {
-    Announce.setLevel(Announce.Level.DEBUG);
-    new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    new InfoboxExtractor(new File("c:/fabian/data/wikipedia/testset/ham.xml")).extract(new File("c:/fabian/data/yago2s"),
-        "Test on 1 wikipedia article");
-    // new InfoboxExtractor(new
-    // File("./testCases/wikitest.xml")).extract(new
-    // File("/Users/Fabian/Fabian/work/yago2/newfacts"), "test");
+    //    Announce.setLevel(Announce.Level.DEBUG);
+    //    new PatternHardExtractor(new File("C:/Users/Administrator/data")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "test");
+    //    new HardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/basics2s/data/")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "test");
+    //    new WordnetExtractor(new File("C:/Users/Administrator/data/wordnet")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "This time its gonna work!");
+    //    
+    InfoboxExtractor ie = new InfoboxExtractor(new File("C:/Users/Administrator/data2/wikipedia/testset/" + "wikitest.xml"));
+    ie.extract(new File("C:/Users/Administrator/data2/yago2s/"), "Test on 1 wikipedia article");
+
+    InfoboxExtractor ie2 = new InfoboxExtractor(new File("C:/Users/Administrator/data2/wikipedia/testset/de" + "_carsten.xml"));
+    ie2.extract(new File("C:/Users/Administrator/data2/yago2s/"), "Test on 1 wikipedia article");
+
   }
 }
