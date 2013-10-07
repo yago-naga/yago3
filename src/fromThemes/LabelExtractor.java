@@ -13,6 +13,7 @@ import fromWikipedia.InfoboxMapper;
 import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.RedirectExtractor;
 import fromWikipedia.WikipediaLabelExtractor;
+import fromWikipedia.WikipediaTypeExtractor;
 
 
 
@@ -35,7 +36,7 @@ public class LabelExtractor extends SimpleDeduplicator {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
-        HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, 
+        HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, WikipediaTypeExtractor.WIKIPEDIACLASSES, 
         InfoboxMapper.INFOBOXFACTS_TOREDIRECT,
         PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
