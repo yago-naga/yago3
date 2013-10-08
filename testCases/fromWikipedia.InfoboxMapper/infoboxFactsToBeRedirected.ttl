@@ -1,0 +1,1296 @@
+# Test on 1 wikipedia article
+# Facts of infobox
+# OTHER
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_y9qq7a_1b1_h2ic5m>
+<Campania>	<hasArea>	"1.359E10"^^<m^2> .
+#@ <id_y9qq7a_l7i_1nx0f7z>
+<Campania>	<hasNumberOfPeople>	"5954882"^^xsd:nonNegativeInteger .
+#@ <id_y9qq7a_ice_nhp74y>
+<Campania>	<hasWebsite>	<http://www.regione.campania.it/> .
+#@ <id_y9qq7a_ice_nhp74y>
+<Campania>	<hasWebsite>	<http://www.regione.campania.it/> .
+#@ <id_y9qq7a_ice_j36i5p>
+<Campania>	<hasWebsite>	<http://www.regione.campania.it> .
+#@ <id_1gaoy63_10x_f0rgut>
+<Carlo_Azeglio_Ciampi>	<graduatedFrom>	<Scuola_Normale_Superiore_di_Pisa> .
+#@ <id_1gaoy63_1xk_1k1xbta>
+<Carlo_Azeglio_Ciampi>	<wasBornOnDate>	"1920-12-09"^^xsd:date .
+#@ <id_1gaoy63_oyl_1u3k2jh>
+<Carlo_Azeglio_Ciampi>	<wasBornIn>	<Livorno> .
+#@ <id_1gaoy63_tje_1i5qu8j>
+<Carlo_Azeglio_Ciampi>	<isCitizenOf>	<Italians> .
+#@ <id_1gaoy63_1s2_6diydo>
+<Carlo_Azeglio_Ciampi>	<isAffiliatedTo>	<Action_Party_(Italy)> .
+#@ <id_1gaoy63_88c_1x9tonu>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wordnet_economist_110043643> .
+#@ <id_1gaoy63_88c_1kbo50g>
+<Carlo_Azeglio_Ciampi>	rdf:type	<wordnet_politician_110451263> .
+#@ <id_1gaoy63_16x_38lj4w>
+<Carlo_Azeglio_Ciampi>	<isMarriedTo>	<Franca_Pilla> .
+#@ <id_7r55ul_siu_wdv4o9>
+<Forza_Italia>	<wasCreatedOnDate>	"1994-01-18"^^xsd:date .
+#@ <id_wz05y3_1c7_7r55ul>
+<Silvio_Berlusconi>	<isLeaderOf>	<Forza_Italia> .
+#@ <id_1bclsii_1c7_7r55ul>
+<Giulio_Tremonti>	<isLeaderOf>	<Forza_Italia> .
+#@ <id_1qqn7vt_10x_1jc7hwh>
+<Gianfranco_Fini>	<graduatedFrom>	<La_Sapienza> .
+#@ <id_1qqn7vt_1xk_tssrwn>
+<Gianfranco_Fini>	<wasBornOnDate>	"1952-01-03"^^xsd:date .
+#@ <id_1qqn7vt_oyl_10ot5dv>
+<Gianfranco_Fini>	<wasBornIn>	<Italy> .
+#@ <id_1qqn7vt_11e_ydoau1>
+<Gianfranco_Fini>	<hasChild>	<Giuliana_Fini> .
+#@ <id_1qqn7vt_11e_17xhq7m>
+<Gianfranco_Fini>	<hasChild>	<Carolina_Fini> .
+#@ <id_1qqn7vt_tje_10ot5dv>
+<Gianfranco_Fini>	<isCitizenOf>	<Italy> .
+#@ <id_1qqn7vt_88c_1x4861e>
+<Gianfranco_Fini>	rdf:type	<wordnet_journalist_110224578> .
+#@ <id_1qqn7vt_88c_1kbo50g>
+<Gianfranco_Fini>	rdf:type	<wordnet_politician_110451263> .
+#@ <id_1qqn7vt_12k_zk2qwl>
+<Gianfranco_Fini>	<livesIn>	<Rome> .
+#@ <id_1vo5vis_10x_knbcmp>
+<Giorgio_Napolitano>	<graduatedFrom>	<University_of_Naples_Federico_II> .
+#@ <id_1vo5vis_1xk_1mebgcs>
+<Giorgio_Napolitano>	<wasBornOnDate>	"1925-06-29"^^xsd:date .
+#@ <id_1vo5vis_oyl_2yccfx>
+<Giorgio_Napolitano>	<wasBornIn>	<Naples> .
+#@ <id_1vo5vis_1s2_grsex8>
+<Giorgio_Napolitano>	<isAffiliatedTo>	<Democrats_of_the_Left> .
+#@ <id_1vo5vis_12k_19c9i96>
+<Giorgio_Napolitano>	<livesIn>	<Quirinal_Palace> .
+#@ <id_1vo5vis_16x_110on1m>
+<Giorgio_Napolitano>	<isMarriedTo>	<Clio_Maria_Bittoni> .
+#@ <id_1rnvp37_10x_caev3y>
+<Giuliano_Amato>	<graduatedFrom>	<University_of_Pisa> .
+#@ <id_1rnvp37_1xk_1o8033e>
+<Giuliano_Amato>	<wasBornOnDate>	"1938-05-13"^^xsd:date .
+#@ <id_1rnvp37_oyl_10uvvfa>
+<Giuliano_Amato>	<wasBornIn>	<Turin> .
+#@ <id_1rnvp37_11e_1p1810h>
+<Giuliano_Amato>	<hasChild>	<Elisa_Amato> .
+#@ <id_1rnvp37_11e_8xcuam>
+<Giuliano_Amato>	<hasChild>	<Lorenzo_Amato> .
+#@ <id_1rnvp37_1s2_15fk4hh>
+<Giuliano_Amato>	<isAffiliatedTo>	<Democratic_Party_(Italy)> .
+#@ <id_1rnvp37_16x_aibg5s>
+<Giuliano_Amato>	<isMarriedTo>	<Diana_Vincenzi> .
+#@ <id_1bclsii_10x_pt3h46>
+<Giulio_Tremonti>	<graduatedFrom>	<University_of_Pavia> .
+#@ <id_1bclsii_1xk_3c64x6>
+<Giulio_Tremonti>	<wasBornOnDate>	"1947-08-18"^^xsd:date .
+#@ <id_1bclsii_oyl_thsasm>
+<Giulio_Tremonti>	<wasBornIn>	<Sondrio> .
+#@ <id_1bclsii_1s2_zuuepc>
+<Giulio_Tremonti>	<isAffiliatedTo>	<The_People_of_Freedom> .
+#@ <id_1bclsii_88c_1inhq0u>
+<Giulio_Tremonti>	rdf:type	<wordnet_lawyer_110249950> .
+#@ <id_1q29rbl_1ia_jb1na3>
+<Italian_Chamber_of_Deputies>	rdfs:label	"Camera dei Deputati" .
+#@ <id_1q29rbl_ice_5i8uej>
+<Italian_Chamber_of_Deputies>	<hasWebsite>	<http://english.camera.it/> .
+#@ <id_1kw13uu_789_10uvvfa>
+<Kingdom_of_Italy_(1861–1946)>	<hasCapital>	<Turin> .
+#@ <id_1kw13uu_1ia_10ot5dv>
+<Kingdom_of_Italy_(1861–1946)>	rdfs:label	"Italy" .
+#@ <id_1kw13uu_lje_1c75obv>
+<Kingdom_of_Italy_(1861–1946)>	<hasCurrency>	<Italian_lira> .
+#@ <id_1kw13uu_11k_1cgysky>
+<Kingdom_of_Italy_(1861–1946)>	<hasMotto>	"We are Bound by Treaty and Religion" .
+#@ <id_1kw13uu_1ia_18emnks>
+<Kingdom_of_Italy_(1861–1946)>	rdfs:label	"Regno d'Italia" .
+#@ <id_184v0j1_10x_qrz0mj>
+<Lamberto_Dini>	<graduatedFrom>	<University_of_Florence> .
+#@ <id_184v0j1_1xk_siavic>
+<Lamberto_Dini>	<wasBornOnDate>	"1931-03-01"^^xsd:date .
+#@ <id_184v0j1_oyl_1y2whp0>
+<Lamberto_Dini>	<wasBornIn>	<Florence> .
+#@ <id_184v0j1_tje_1i5qu8j>
+<Lamberto_Dini>	<isCitizenOf>	<Italians> .
+#@ <id_184v0j1_1s2_zuuepc>
+<Lamberto_Dini>	<isAffiliatedTo>	<The_People_of_Freedom> .
+#@ <id_184v0j1_88c_1kbo50g>
+<Lamberto_Dini>	rdf:type	<wordnet_politician_110451263> .
+#@ <id_184v0j1_88c_1x9tonu>
+<Lamberto_Dini>	rdf:type	<wordnet_economist_110043643> .
+#@ <id_184v0j1_12k_zk2qwl>
+<Lamberto_Dini>	<livesIn>	<Rome> .
+#@ <id_184v0j1_12k_10ot5dv>
+<Lamberto_Dini>	<livesIn>	<Italy> .
+#@ <id_184v0j1_16x_i8dtnf>
+<Lamberto_Dini>	<isMarriedTo>	<Donatella_Zigone> .
+#@ <id_10q4wvf_z7a_10ot5dv>
+<Lazio>	<isLocatedIn>	<Italy> .
+#@ <id_10q4wvf_1b1_i3sd9l>
+<Lazio>	<hasArea>	"1.7236E10"^^<m^2> .
+#@ <id_10q4wvf_l7i_1mxs6nm>
+<Lazio>	<hasNumberOfPeople>	"5732212"^^xsd:nonNegativeInteger .
+#@ <id_10q4wvf_ice_1hmw8d7>
+<Lazio>	<hasWebsite>	<http://www.regione.lazio.it/> .
+#@ <id_10q4wvf_ice_1hmw8d7>
+<Lazio>	<hasWebsite>	<http://www.regione.lazio.it/> .
+#@ <id_10q4wvf_ice_qxndqs>
+<Lazio>	<hasWebsite>	<http://www.regione.lazio.it> .
+#@ <id_1qfjlq_1b1_3dzijn>
+<Lombardy>	<hasArea>	"2.3844E10"^^<m^2> .
+#@ <id_1qfjlq_l7i_1bkgypx>
+<Lombardy>	<hasNumberOfPeople>	"9939193"^^xsd:nonNegativeInteger .
+#@ <id_1qfjlq_ice_p231nn>
+<Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it/> .
+#@ <id_1qfjlq_ice_p231nn>
+<Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it/> .
+#@ <id_1qfjlq_ice_ulfqfg>
+<Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it> .
+#@ <id_4o2xc6_10x_xiwi9c>
+<Mario_Monti>	<graduatedFrom>	<Bocconi_University> .
+#@ <id_4o2xc6_1xk_fnlv2k>
+<Mario_Monti>	<wasBornOnDate>	"1943-03-19"^^xsd:date .
+#@ <id_4o2xc6_oyl_6qqgpc>
+<Mario_Monti>	<wasBornIn>	<Varese> .
+#@ <id_4o2xc6_11e_14od6vr>
+<Mario_Monti>	<hasChild>	<Federica_Monti> .
+#@ <id_4o2xc6_11e_di3voz>
+<Mario_Monti>	<hasChild>	<Giovanni_Monti> .
+#@ <id_4o2xc6_1s2_1jvigea>
+<Mario_Monti>	<isAffiliatedTo>	<Independent_(politician)> .
+#@ <id_4o2xc6_16x_12j96sf>
+<Mario_Monti>	<isMarriedTo>	<Elsa_Antonioli> .
+#@ <id_10qtisd_siu_18zbmuo>
+<Milan>	<wasCreatedOnDate>	"396-##-##"^^xsd:date .
+#@ <id_10qtisd_1n8_10c45ji>
+<Milan>	<hasLatitude>	"45.45"^^<degrees> .
+#@ <id_10qtisd_1n8_10c45ji>
+<Milan>	<hasLatitude>	"45.45"^^<degrees> .
+#@ <id_10qtisd_1n8_gc6mbx>
+<Milan>	<hasLatitude>	"45.46416666666667"^^<degrees> .
+#@ <id_10qtisd_jto_72wcxk>
+<Milan>	<hasLongitude>	"9.183333333333334"^^<degrees> .
+#@ <id_10qtisd_jto_72wcxk>
+<Milan>	<hasLongitude>	"9.183333333333334"^^<degrees> .
+#@ <id_10qtisd_jto_6ovjqx>
+<Milan>	<hasLongitude>	"9.190277777777778"^^<degrees> .
+#@ <id_10qtisd_1b1_jdhp54>
+<Milan>	<hasArea>	"1.8176E8"^^<m^2> .
+#@ <id_10qtisd_1ia_2lmawi>
+<Milan>	rdfs:label	"Milano" .
+#@ <id_10qtisd_1ia_1rzhy7i>
+<Milan>	rdfs:label	"The Economic Capital of Italy" .
+#@ <id_10qtisd_1ia_1u7esoo>
+<Milan>	rdfs:label	"Comune di Milano" .
+#@ <id_10qtisd_z7a_1qfjlq>
+<Milan>	<isLocatedIn>	<Lombardy> .
+#@ <id_2ox8i9_1b1_140jveb>
+<Molise>	<hasArea>	"4.438E9"^^<m^2> .
+#@ <id_2ox8i9_l7i_1ofu97i>
+<Molise>	<hasNumberOfPeople>	"319834"^^xsd:nonNegativeInteger .
+#@ <id_2ox8i9_ice_1mtl0gd>
+<Molise>	<hasWebsite>	<http://www.regione.molise.it/> .
+#@ <id_2ox8i9_ice_1mtl0gd>
+<Molise>	<hasWebsite>	<http://www.regione.molise.it/> .
+#@ <id_2ox8i9_ice_8rrs2q>
+<Molise>	<hasWebsite>	<http://www.regione.molise.it> .
+#@ <id_1re08hr_1xk_2ktowf>
+<Oscar_Luigi_Scalfaro>	<wasBornOnDate>	"1918-09-09"^^xsd:date .
+#@ <id_1re08hr_oyl_3652t7>
+<Oscar_Luigi_Scalfaro>	<wasBornIn>	<Novara> .
+#@ <id_1re08hr_11e_1udcrgn>
+<Oscar_Luigi_Scalfaro>	<hasChild>	<Marianna_Scalfaro> .
+#@ <id_1re08hr_1ug_128302t>
+<Oscar_Luigi_Scalfaro>	<diedOnDate>	"2012-01-29"^^xsd:date .
+#@ <id_1re08hr_dhj_zk2qwl>
+<Oscar_Luigi_Scalfaro>	<diedIn>	<Rome> .
+#@ <id_1re08hr_tje_1i5qu8j>
+<Oscar_Luigi_Scalfaro>	<isCitizenOf>	<Italians> .
+#@ <id_1re08hr_1s2_15mq0j2>
+<Oscar_Luigi_Scalfaro>	<isAffiliatedTo>	<Christian_Democracy_(Italy)> .
+#@ <id_1re08hr_16x_5hsvz5>
+<Oscar_Luigi_Scalfaro>	<isMarriedTo>	<Maria_Inzitari> .
+#@ <id_93sgke_10x_prkzmu>
+<Roberto_Maroni>	<graduatedFrom>	<University_of_Milan> .
+#@ <id_93sgke_1xk_2swull>
+<Roberto_Maroni>	<wasBornOnDate>	"1955-03-15"^^xsd:date .
+#@ <id_93sgke_oyl_6qqgpc>
+<Roberto_Maroni>	<wasBornIn>	<Varese> .
+#@ <id_93sgke_1s2_w3jqlb>
+<Roberto_Maroni>	<isAffiliatedTo>	<Lega_Nord> .
+#@ <id_1uqzhxh_10x_1l1h88i>
+<Romano_Prodi>	<graduatedFrom>	<Università_Cattolica_del_Sacro_Cuore> .
+#@ <id_1uqzhxh_1xk_3vc8a7>
+<Romano_Prodi>	<wasBornOnDate>	"1939-08-09"^^xsd:date .
+#@ <id_1uqzhxh_oyl_12ji7r4>
+<Romano_Prodi>	<wasBornIn>	<Scandiano> .
+#@ <id_1uqzhxh_11e_1yw7rq3>
+<Romano_Prodi>	<hasChild>	<Giorgio_Prodi> .
+#@ <id_1uqzhxh_11e_1apyjbz>
+<Romano_Prodi>	<hasChild>	<Antonio_Prodi> .
+#@ <id_1uqzhxh_1s2_15fk4hh>
+<Romano_Prodi>	<isAffiliatedTo>	<Democratic_Party_(Italy)> .
+#@ <id_1uqzhxh_88c_1x9tonu>
+<Romano_Prodi>	rdf:type	<wordnet_economist_110043643> .
+#@ <id_1uqzhxh_88c_8xmb98>
+<Romano_Prodi>	rdf:type	<wordnet_professor_110480730> .
+#@ <id_1uqzhxh_16x_13yjcwl>
+<Romano_Prodi>	<isMarriedTo>	<Flavia_Franzoni> .
+#@ <id_wz05y3_10x_prkzmu>
+<Silvio_Berlusconi>	<graduatedFrom>	<University_of_Milan> .
+#@ <id_wz05y3_1xk_uva2mh>
+<Silvio_Berlusconi>	<wasBornOnDate>	"1936-09-29"^^xsd:date .
+#@ <id_wz05y3_oyl_10qtisd>
+<Silvio_Berlusconi>	<wasBornIn>	<Milan> .
+#@ <id_wz05y3_11e_sb1d5v>
+<Silvio_Berlusconi>	<hasChild>	<Marina_Berlusconi> .
+#@ <id_wz05y3_11e_15oiopu>
+<Silvio_Berlusconi>	<hasChild>	<Pier_Silvio_Berlusconi> .
+#@ <id_wz05y3_1s2_zuuepc>
+<Silvio_Berlusconi>	<isAffiliatedTo>	<The_People_of_Freedom> .
+#@ <id_wz05y3_88c_1ukcfgc>
+<Silvio_Berlusconi>	rdf:type	<wordnet_entrepreneur_110060352> .
+#@ <id_wz05y3_16x_7qjadl>
+<Silvio_Berlusconi>	<isMarriedTo>	<Veronica_Lario> .
+#@ <id_zuuepc_siu_brvoq4>
+<The_People_of_Freedom>	<wasCreatedOnDate>	"2007-11-18"^^xsd:date .
+#@ <id_zuuepc_z7a_zk2qwl>
+<The_People_of_Freedom>	<isLocatedIn>	<Rome> .
+#@ <id_f8u9el_1c7_zuuepc>
+<Angelino_Alfano>	<isLeaderOf>	<The_People_of_Freedom> .
+#@ <id_savzx6_1c7_zuuepc>
+<Daniele_Capezzone>	<isLeaderOf>	<The_People_of_Freedom> .
+#@ <id_9vh9mw_1c7_zuuepc>
+<Sandro_Bondi>	<isLeaderOf>	<The_People_of_Freedom> .
+#@ <id_17ooix0_1c7_zuuepc>
+<Ignazio_La_Russa>	<isLeaderOf>	<The_People_of_Freedom> .
+#@ <id_1crdu3f_1c7_zuuepc>
+<Denis_Verdini>	<isLeaderOf>	<The_People_of_Freedom> .
+#@ <id_wz05y3_1c7_zuuepc>
+<Silvio_Berlusconi>	<isLeaderOf>	<The_People_of_Freedom> .
+#@ <id_zuuepc_1ia_12jnsbg>
+<The_People_of_Freedom>	rdfs:label	"Il Popolo della Libertà" .
+#@ <id_zuuepc_ice_pgv025>
+<The_People_of_Freedom>	<hasWebsite>	<http://www.ilpopolodellaliberta.it> .
+#@ <id_zuuepc_ice_pgv025>
+<The_People_of_Freedom>	<hasWebsite>	<http://www.ilpopolodellaliberta.it> .
+#@ <id_prkzmu_z7a_10qtisd>
+<University_of_Milan>	<isLocatedIn>	<Milan> .
+#@ <id_prkzmu_z7a_10ot5dv>
+<University_of_Milan>	<isLocatedIn>	<Italy> .
+#@ <id_prkzmu_siu_17ifpai>
+<University_of_Milan>	<wasCreatedOnDate>	"1924-##-##"^^xsd:date .
+#@ <id_prkzmu_11k_cir6r8>
+<University_of_Milan>	<hasMotto>	"Scientia illuminans dignus" .
+#@ <id_prkzmu_1ia_140wjjy>
+<University_of_Milan>	rdfs:label	"Università degli Studi di Milano" .
+#@ <id_prkzmu_ice_18bm07t>
+<University_of_Milan>	<hasWebsite>	<http://www.unimi.it/> .
+#@ <id_prkzmu_ice_18bm07t>
+<University_of_Milan>	<hasWebsite>	<http://www.unimi.it/> .
+#@ <id_prkzmu_ice_18bm07t>
+<University_of_Milan>	<hasWebsite>	<http://www.unimi.it/> .
+#@ <id_7qjadl_1xk_hhdoru>
+<Veronica_Lario>	<wasBornOnDate>	"1956-07-19"^^xsd:date .
+#@ <id_7qjadl_1ia_105uv4j>
+<Veronica_Lario>	rdfs:label	"Miriam Raffaella Bartolini" .
+#@ <id_7qjadl_oyl_1s2kwiy>
+<Veronica_Lario>	<wasBornIn>	<Bologna> .
+#@ <id_7qjadl_88c_1uyhsab>
+<Veronica_Lario>	rdf:type	<wordnet_actress_109767700> .
+#@ <id_7qjadl_16x_wz05y3>
+<Veronica_Lario>	<isMarriedTo>	<Silvio_Berlusconi> .
+#@ <id_11qatgv_10x_zvc8gq>
+<Cherie_Blair>	<graduatedFrom>	<London_School_of_Economics> .
+#@ <id_11qatgv_1xk_1n5qgan>
+<Cherie_Blair>	<wasBornOnDate>	"1954-09-23"^^xsd:date .
+#@ <id_11qatgv_1ia_7wiu84>
+<Cherie_Blair>	rdfs:label	"Cherie Booth" .
+#@ <id_11qatgv_oyl_zjsnp6>
+<Cherie_Blair>	<wasBornIn>	<Bury> .
+#@ <id_11qatgv_11e_1o05zha>
+<Cherie_Blair>	<hasChild>	<Euan_Blair> .
+#@ <id_11qatgv_11e_1oksbsg>
+<Cherie_Blair>	<hasChild>	<Nicholas_Blair> .
+#@ <id_11qatgv_11e_zrwmri>
+<Cherie_Blair>	<hasChild>	<Kathryn_Blair> .
+#@ <id_11qatgv_11e_62zhg7>
+<Cherie_Blair>	<hasChild>	<Leo_Blair> .
+#@ <id_11qatgv_tje_1wq0nkb>
+<Cherie_Blair>	<isCitizenOf>	<British_people> .
+#@ <id_11qatgv_1s2_10cbk3o>
+<Cherie_Blair>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_11qatgv_88c_1ozxwix>
+<Cherie_Blair>	rdf:type	<wordnet_barrister_109840963> .
+#@ <id_11qatgv_12k_wd6076>
+<Cherie_Blair>	<livesIn>	<10_Downing_Street> .
+#@ <id_11qatgv_12k_1ks0wcp>
+<Cherie_Blair>	<livesIn>	<Connaught_Square> .
+#@ <id_11qatgv_16x_gg7cuf>
+<Cherie_Blair>	<isMarriedTo>	<Tony_Blair> .
+#@ <id_11qatgv_ice_15xcqeo>
+<Cherie_Blair>	<hasWebsite>	<http://www.cherieblair.org/> .
+#@ <id_11qatgv_ice_15xcqeo>
+<Cherie_Blair>	<hasWebsite>	<http://www.cherieblair.org/> .
+#@ <id_z038xo_siu_d79xxf>
+<Edinburgh>	<wasCreatedOnDate>	"1125-##-##"^^xsd:date .
+#@ <id_z038xo_siu_zltrns>
+<Edinburgh>	<wasCreatedOnDate>	"1889-##-##"^^xsd:date .
+#@ <id_z038xo_siu_10raik6>
+<Edinburgh>	<wasCreatedOnDate>	"6##-##-##"^^xsd:date .
+#@ <id_z038xo_1n8_10cny96>
+<Edinburgh>	<hasLatitude>	"55.95"^^<degrees> .
+#@ <id_z038xo_1n8_10cny96>
+<Edinburgh>	<hasLatitude>	"55.95"^^<degrees> .
+#@ <id_z038xo_1n8_ii3dk8>
+<Edinburgh>	<hasLatitude>	"55.95305555555556"^^<degrees> .
+#@ <id_19cww22_1c7_z038xo>
+<George_Grubb>	<isLeaderOf>	<Edinburgh> .
+#@ <id_pkekk2_1c7_z038xo>
+<Politics_of_Edinburgh>	<isLeaderOf>	<Edinburgh> .
+#@ <id_1paesdz_1c7_z038xo>
+<Alistair_Darling>	<isLeaderOf>	<Edinburgh> .
+#@ <id_lzr1hj_1c7_z038xo>
+<Gavin_Strang>	<isLeaderOf>	<Edinburgh> .
+#@ <id_1icvh6w_1c7_z038xo>
+<Nigel_Griffiths>	<isLeaderOf>	<Edinburgh> .
+#@ <id_1mq00pg_1c7_z038xo>
+<Mark_Lazarowicz>	<isLeaderOf>	<Edinburgh> .
+#@ <id_1yx1340_1c7_z038xo>
+<John_Barrett_(Scottish_politician)>	<isLeaderOf>	<Edinburgh> .
+#@ <id_18po4tb_1c7_z038xo>
+<Kenny_MacAskill>	<isLeaderOf>	<Edinburgh> .
+#@ <id_164eql1_1c7_z038xo>
+<Marco_Biagi_(politician)>	<isLeaderOf>	<Edinburgh> .
+#@ <id_zyd85t_1c7_z038xo>
+<Malcolm_Chisholm>	<isLeaderOf>	<Edinburgh> .
+#@ <id_62bia5_1c7_z038xo>
+<Gordon_MacDonald_(Scottish_politician)>	<isLeaderOf>	<Edinburgh> .
+#@ <id_1h36y15_1c7_z038xo>
+<Jim_Eadie_(politician)>	<isLeaderOf>	<Edinburgh> .
+#@ <id_1yv2w0t_1c7_z038xo>
+<Colin_Keir>	<isLeaderOf>	<Edinburgh> .
+#@ <id_z038xo_jto_1i5lw4k>
+<Edinburgh>	<hasLongitude>	"-3.183333333333333"^^<degrees> .
+#@ <id_z038xo_jto_1i5lw4k>
+<Edinburgh>	<hasLongitude>	"-3.183333333333333"^^<degrees> .
+#@ <id_z038xo_jto_11fo2lq>
+<Edinburgh>	<hasLongitude>	"-3.1888888888888887"^^<degrees> .
+#@ <id_z038xo_11k_1yd201b>
+<Edinburgh>	<hasMotto>	"Nisi Dominus Frustra" .
+#@ <id_z038xo_1ia_ikdyax>
+<Edinburgh>	rdfs:label	"Auld Reekie" .
+#@ <id_z038xo_1ia_8v9kyg>
+<Edinburgh>	rdfs:label	"Athens of the North" .
+#@ <id_z038xo_1ia_10mbx6l>
+<Edinburgh>	rdfs:label	"Edina" .
+#@ <id_z038xo_1ia_p9gach>
+<Edinburgh>	rdfs:label	"Dunedin" .
+#@ <id_z038xo_1ia_17475uw>
+<Edinburgh>	rdfs:label	"City of Edinburgh" .
+#@ <id_z038xo_l7i_1p0odkt>
+<Edinburgh>	<hasNumberOfPeople>	"486120"^^xsd:nonNegativeInteger .
+#@ <id_z038xo_z7a_tvx1oo>
+<Edinburgh>	<isLocatedIn>	<City_of_Edinburgh> .
+#@ <id_z038xo_z7a_p6gbcc>
+<Edinburgh>	<isLocatedIn>	<Edinburgh_City_Centre> .
+#@ <id_z038xo_z7a_sl7oao>
+<Edinburgh>	<isLocatedIn>	<Scotland> .
+#@ <id_z038xo_z7a_1blrg33>
+<Edinburgh>	<isLocatedIn>	<United_Kingdom> .
+#@ <id_z038xo_ice_3b85a6>
+<Edinburgh>	<hasWebsite>	<http://www.edinburgh.gov.uk/> .
+#@ <id_z038xo_ice_o7m35>
+<Edinburgh>	<hasWebsite>	<http://www.edinburgh-inspiringcapital.com/> .
+#@ <id_z038xo_ice_3b85a6>
+<Edinburgh>	<hasWebsite>	<http://www.edinburgh.gov.uk/> .
+#@ <id_z038xo_ice_1le17kh>
+<Edinburgh>	<hasWebsite>	<http://www.edinburgh.gov.uk> .
+#@ <id_z038xo_ice_o7m35>
+<Edinburgh>	<hasWebsite>	<http://www.edinburgh-inspiringcapital.com/> .
+#@ <id_z038xo_ice_icoin2>
+<Edinburgh>	<hasWebsite>	<http://www.edinburgh-inspiringcapital.com> .
+#@ <id_z038xo_z7a_16lyshp>
+<Edinburgh>	<isLocatedIn>	<List_of_World_Heritage_Sites_in_Europe> .
+#@ <id_z038xo_u5f_1auv50k>
+<Edinburgh>	<happenedOnDate>	"1995-##-##"^^xsd:date .
+#@ <id_13977z3_1xk_21kemf>
+<Elizabeth_II>	<wasBornOnDate>	"1926-04-21"^^xsd:date .
+#@ <id_13977z3_oyl_5zylt5>
+<Elizabeth_II>	<wasBornIn>	<Mayfair> .
+#@ <id_n1e60j_11e_13977z3>
+<George_VI>	<hasChild>	<Elizabeth_II> .
+#@ <id_13977z3_1ia_gm0lw3>
+<Elizabeth_II>	rdfs:label	"Elizabeth Alexandra Mary" .
+#@ <id_1skuxve_11e_13977z3>
+<Queen_Elizabeth_The_Queen_Mother>	<hasChild>	<Elizabeth_II> .
+#@ <id_13977z3_16x_zic071>
+<Elizabeth_II>	<isMarriedTo>	<Prince_Philip,_Duke_of_Edinburgh> .
+#@ <id_1e3a5c8_10x_zvc8gq>
+<Frank_Dobson>	<graduatedFrom>	<London_School_of_Economics> .
+#@ <id_1e3a5c8_1xk_16nj2dh>
+<Frank_Dobson>	<wasBornOnDate>	"1940-03-15"^^xsd:date .
+#@ <id_1e3a5c8_oyl_h665k2>
+<Frank_Dobson>	<wasBornIn>	<Dunnington> .
+#@ <id_1e3a5c8_1s2_10cbk3o>
+<Frank_Dobson>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_1e3a5c8_ice_60bpey>
+<Frank_Dobson>	<hasWebsite>	<http://frankdobson.co.uk/> .
+#@ <id_max52o_10x_166elc5>
+<Gordon_Brown>	<graduatedFrom>	<University_of_Edinburgh> .
+#@ <id_max52o_1xk_f4f4ps>
+<Gordon_Brown>	<wasBornOnDate>	"1951-02-20"^^xsd:date .
+#@ <id_max52o_oyl_1efhr1n>
+<Gordon_Brown>	<wasBornIn>	<Giffnock> .
+#@ <id_max52o_11e_js9m20>
+<Gordon_Brown>	<hasChild>	<Jennifer_Jane> .
+#@ <id_max52o_11e_g5ibw5>
+<Gordon_Brown>	<hasChild>	<John_Macaulay> .
+#@ <id_max52o_11e_v0fvt2>
+<Gordon_Brown>	<hasChild>	<James_Fraser> .
+#@ <id_max52o_tje_hb07kz>
+<Gordon_Brown>	<isCitizenOf>	<British_nationality_law> .
+#@ <id_max52o_1s2_10cbk3o>
+<Gordon_Brown>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_max52o_88c_c2gjkd>
+<Gordon_Brown>	rdf:type	<wordnet_lector_110252222> .
+#@ <id_max52o_88c_1kbo50g>
+<Gordon_Brown>	rdf:type	<wordnet_politician_110451263> .
+#@ <id_max52o_12k_1haru7r>
+<Gordon_Brown>	<livesIn>	<North_Queensferry> .
+#@ <id_max52o_16x_1m9as6s>
+<Gordon_Brown>	<isMarriedTo>	<Sarah_Brown_(wife_of_Gordon_Brown)> .
+#@ <id_max52o_ice_4twvyy>
+<Gordon_Brown>	<hasWebsite>	<http://www.gordonbrown.org.uk> .
+#@ <id_max52o_ice_4twvyy>
+<Gordon_Brown>	<hasWebsite>	<http://www.gordonbrown.org.uk> .
+#@ <id_max52o_ice_4twvyy>
+<Gordon_Brown>	<hasWebsite>	<http://www.gordonbrown.org.uk> .
+#@ <id_177pmny_z7a_27wsag>
+<Inns_of_Court_School_of_Law>	<isLocatedIn>	<London> .
+#@ <id_177pmny_z7a_10it2g9>
+<Inns_of_Court_School_of_Law>	<isLocatedIn>	<England> .
+#@ <id_177pmny_siu_1nhiiuc>
+<Inns_of_Court_School_of_Law>	<wasCreatedOnDate>	"1852-##-##"^^xsd:date .
+#@ <id_177pmny_ice_1wxwmaj>
+<Inns_of_Court_School_of_Law>	<hasWebsite>	<http://www.city.ac.uk/law/index.html> .
+#@ <id_177pmny_ice_1wxwmaj>
+<Inns_of_Court_School_of_Law>	<hasWebsite>	<http://www.city.ac.uk/law/index.html> .
+#@ <id_g6y5dz_10x_pqyhz8>
+<Jack_Straw>	<graduatedFrom>	<University_of_Leeds> .
+#@ <id_g6y5dz_1xk_1novwn9>
+<Jack_Straw>	<wasBornOnDate>	"1946-08-03"^^xsd:date .
+#@ <id_g6y5dz_1ia_1d2xmr3>
+<Jack_Straw>	rdfs:label	"John Whitaker Straw" .
+#@ <id_g6y5dz_oyl_1iih4j9>
+<Jack_Straw>	<wasBornIn>	<Buckhurst_Hill> .
+#@ <id_g6y5dz_1s2_10cbk3o>
+<Jack_Straw>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_g6y5dz_16x_8j3k1t>
+<Jack_Straw>	<isMarriedTo>	<Alice_Perkins> .
+#@ <id_1xvi8at_1xk_fnlv3f>
+<John_Major>	<wasBornOnDate>	"1943-03-29"^^xsd:date .
+#@ <id_1xvi8at_oyl_oxjilb>
+<John_Major>	<wasBornIn>	<Carshalton> .
+#@ <id_1xvi8at_11e_1tekyl9>
+<John_Major>	<hasChild>	<Son_and_daughter> .
+#@ <id_1xvi8at_1s2_e6uuye>
+<John_Major>	<isAffiliatedTo>	<Conservative_Party_(UK)> .
+#@ <id_1xvi8at_16x_1gc9jvj>
+<John_Major>	<isMarriedTo>	<Norma_Major> .
+#@ <id_1x8chcg_10x_172epi0>
+<John_Prescott>	<graduatedFrom>	<Ruskin_College> .
+#@ <id_1x8chcg_1xk_1o80352>
+<John_Prescott>	<wasBornOnDate>	"1938-05-31"^^xsd:date .
+#@ <id_1x8chcg_oyl_1hms71o>
+<John_Prescott>	<wasBornIn>	<Prestatyn> .
+#@ <id_1x8chcg_1s2_10cbk3o>
+<John_Prescott>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_4ftjb3_10x_qs91q9>
+<John_Smith_(Labour_Party_leader)>	<graduatedFrom>	<University_of_Glasgow> .
+#@ <id_4ftjb3_1xk_1o82n1i>
+<John_Smith_(Labour_Party_leader)>	<wasBornOnDate>	"1938-09-13"^^xsd:date .
+#@ <id_4ftjb3_oyl_1qko5p2>
+<John_Smith_(Labour_Party_leader)>	<wasBornIn>	<Dalmally> .
+#@ <id_4ftjb3_1ug_wdxom7>
+<John_Smith_(Labour_Party_leader)>	<diedOnDate>	"1994-05-12"^^xsd:date .
+#@ <id_4ftjb3_dhj_27wsag>
+<John_Smith_(Labour_Party_leader)>	<diedIn>	<London> .
+#@ <id_4ftjb3_1s2_10cbk3o>
+<John_Smith_(Labour_Party_leader)>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_4ftjb3_16x_7hwzxl>
+<John_Smith_(Labour_Party_leader)>	<isMarriedTo>	<Elizabeth_Smith,_Baroness_Smith_of_Gilmorehill> .
+#@ <id_10cbk3o_z7a_1oe34ql>
+<Labour_Party_(UK)>	<isLocatedIn>	<the_United_Kingdom> .
+#@ <id_10cbk3o_siu_1x7tq88>
+<Labour_Party_(UK)>	<wasCreatedOnDate>	"1900-##-##"^^xsd:date .
+#@ <id_10cbk3o_z7a_15oa25m>
+<Labour_Party_(UK)>	<isLocatedIn>	<Victoria,_London> .
+#@ <id_ivttd0_1c7_10cbk3o>
+<Member_of_Parliament>	<isLeaderOf>	<Labour_Party_(UK)> .
+#@ <id_10cbk3o_ice_1gx97om>
+<Labour_Party_(UK)>	<hasWebsite>	<http://www.labour.org.uk> .
+#@ <id_16vp284_1xk_fnkl3e>
+<Margaret_Beckett>	<wasBornOnDate>	"1943-01-15"^^xsd:date .
+#@ <id_16vp284_1ia_1rg2hfp>
+<Margaret_Beckett>	rdfs:label	"Margaret Mary Jackson" .
+#@ <id_16vp284_oyl_18tovih>
+<Margaret_Beckett>	<wasBornIn>	<Ashton-under-Lyne> .
+#@ <id_16vp284_1s2_10cbk3o>
+<Margaret_Beckett>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_16vp284_16x_hvtmy9>
+<Margaret_Beckett>	<isMarriedTo>	<Leo_Beckett> .
+#@ <id_27r2yr_10x_1l4kmlr>
+<Michael_Meacher>	<graduatedFrom>	<New_College,_Oxford> .
+#@ <id_27r2yr_1xk_3vrjyq>
+<Michael_Meacher>	<wasBornOnDate>	"1939-11-04"^^xsd:date .
+#@ <id_27r2yr_oyl_1tdcavz>
+<Michael_Meacher>	<wasBornIn>	<Hemel_Hempstead> .
+#@ <id_27r2yr_1s2_10cbk3o>
+<Michael_Meacher>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_27r2yr_ice_1eaxden>
+<Michael_Meacher>	<hasWebsite>	<http://www.michaelmeacher.info> .
+#@ <id_27r2yr_ice_1eaxden>
+<Michael_Meacher>	<hasWebsite>	<http://www.michaelmeacher.info> .
+#@ <id_27r2yr_ice_1eaxden>
+<Michael_Meacher>	<hasWebsite>	<http://www.michaelmeacher.info> .
+#@ <id_7fm9w4_1xk_z7kvd>
+<Neil_Kinnock>	<wasBornOnDate>	"1942-03-28"^^xsd:date .
+#@ <id_7fm9w4_1ia_1cbjem0>
+<Neil_Kinnock>	rdfs:label	"Neil Gordon Kinnock" .
+#@ <id_7fm9w4_oyl_1ni2ykw>
+<Neil_Kinnock>	<wasBornIn>	<Tredegar> .
+#@ <id_7fm9w4_11e_1k9jchr>
+<Neil_Kinnock>	<hasChild>	<Stephen_Kinnock> .
+#@ <id_7fm9w4_tje_8mvz97>
+<Neil_Kinnock>	<isCitizenOf>	<Welsh_people> .
+#@ <id_7fm9w4_1s2_10cbk3o>
+<Neil_Kinnock>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_7fm9w4_16x_17umusi>
+<Neil_Kinnock>	<isMarriedTo>	<Glenys_Kinnock> .
+#@ <id_104s7no_1xk_1pij9id>
+<Phil_Wilson_(British_politician)>	<wasBornOnDate>	"1959-05-31"^^xsd:date .
+#@ <id_104s7no_oyl_1bfocqw>
+<Phil_Wilson_(British_politician)>	<wasBornIn>	<County_Durham> .
+#@ <id_104s7no_tje_1blrg33>
+<Phil_Wilson_(British_politician)>	<isCitizenOf>	<United_Kingdom> .
+#@ <id_104s7no_1s2_3dgoro>
+<Phil_Wilson_(British_politician)>	<isAffiliatedTo>	<Labour_party_(UK)> .
+#@ <id_104s7no_16x_nk07z4>
+<Phil_Wilson_(British_politician)>	<isMarriedTo>	<Margaret_Brown> .
+#@ <id_1jce2gm_10x_ca9zyc>
+<Roy_Hattersley>	<graduatedFrom>	<University_of_Hull> .
+#@ <id_1jce2gm_1xk_1778be4>
+<Roy_Hattersley>	<wasBornOnDate>	"1932-12-28"^^xsd:date .
+#@ <id_1jce2gm_oyl_oim8ys>
+<Roy_Hattersley>	<wasBornIn>	<Sheffield> .
+#@ <id_1jce2gm_1s2_10cbk3o>
+<Roy_Hattersley>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_1jce2gm_88c_1x4861e>
+<Roy_Hattersley>	rdf:type	<wordnet_journalist_110224578> .
+#@ <id_lwoiij_z7a_1bfocqw>
+<Sedgefield_(UK_Parliament_constituency)>	<isLocatedIn>	<County_Durham> .
+#@ <id_lwoiij_u5f_2dab5b>
+<Sedgefield_(UK_Parliament_constituency)>	<happenedOnDate>	"1918-##-##"^^xsd:date .
+#@ <id_lwoiij_u5f_1npk5hf>
+<Sedgefield_(UK_Parliament_constituency)>	<happenedOnDate>	"1983-##-##"^^xsd:date .
+#@ <id_1bx19fo_siu_1f4tbxg>
+<St_John's_College,_Oxford>	<wasCreatedOnDate>	"1555-##-##"^^xsd:date .
+#@ <id_v0jh7u_1gi_1bx19fo>
+<Thomas_White_(merchant)>	<created>	<St_John's_College,_Oxford> .
+#@ <id_1bx19fo_ice_1vvzutj>
+<St_John's_College,_Oxford>	<hasWebsite>	<http://www.sjc.ox.ac.uk/> .
+#@ <id_1bx19fo_ice_1vvzutj>
+<St_John's_College,_Oxford>	<hasWebsite>	<http://www.sjc.ox.ac.uk/> .
+#@ <id_1bx19fo_1n8_vzrl9j>
+<St_John's_College,_Oxford>	<hasLatitude>	"51.75612"^^<degrees> .
+#@ <id_1bx19fo_jto_glfrmr>
+<St_John's_College,_Oxford>	<hasLongitude>	"1.258605"^^<degrees> .
+#@ <id_gg7cuf_10x_1bx19fo>
+<Tony_Blair>	<graduatedFrom>	<St_John's_College,_Oxford> .
+#@ <id_gg7cuf_1xk_18h9m2v>
+<Tony_Blair>	<wasBornOnDate>	"1953-05-06"^^xsd:date .
+#@ <id_gg7cuf_1ia_s43p85>
+<Tony_Blair>	rdfs:label	"Anthony Charles Lynton Blair" .
+#@ <id_gg7cuf_oyl_z038xo>
+<Tony_Blair>	<wasBornIn>	<Edinburgh> .
+#@ <id_gg7cuf_1s2_10cbk3o>
+<Tony_Blair>	<isAffiliatedTo>	<Labour_Party_(UK)> .
+#@ <id_gg7cuf_88c_1inhq0u>
+<Tony_Blair>	rdf:type	<wordnet_lawyer_110249950> .
+#@ <id_gg7cuf_12k_1ks0wcp>
+<Tony_Blair>	<livesIn>	<Connaught_Square> .
+#@ <id_gg7cuf_16x_11qatgv>
+<Tony_Blair>	<isMarriedTo>	<Cherie_Blair> .
+#@ <id_gg7cuf_ice_1u7xor0>
+<Tony_Blair>	<hasWebsite>	<http://www.tonyblairoffice.org/> .
+#@ <id_gg7cuf_ice_1u7xor0>
+<Tony_Blair>	<hasWebsite>	<http://www.tonyblairoffice.org/> .
+#@ <id_17c51vo_z7a_7pv4sj>
+<World_Economic_Forum>	<isLocatedIn>	<Cologny> .
+#@ <id_1i8r7a9_1c7_17c51vo>
+<Klaus_Schwab>	<isLeaderOf>	<World_Economic_Forum> .
+#@ <id_17c51vo_11k_yreh6r>
+<World_Economic_Forum>	<hasMotto>	"Entrepreneurship in the global public interest" .
+#@ <id_17c51vo_ice_19757c0>
+<World_Economic_Forum>	<hasWebsite>	<http://www.weforum.org> .
+#@ <id_1fpq28n_10x_py5vtt>
+<Angela_Merkel>	<graduatedFrom>	<University_of_Leipzig> .
+#@ <id_1fpq28n_1xk_1n5p6au>
+<Angela_Merkel>	<wasBornOnDate>	"1954-07-17"^^xsd:date .
+#@ <id_1fpq28n_1ia_aab67a>
+<Angela_Merkel>	rdfs:label	"Angela Dorothea Kasner" .
+#@ <id_1fpq28n_oyl_3gfkn0>
+<Angela_Merkel>	<wasBornIn>	<Hamburg> .
+#@ <id_1fpq28n_1s2_t9jepg>
+<Angela_Merkel>	<isAffiliatedTo>	<Christian_Democratic_Union_(Germany)> .
+#@ <id_1fpq28n_16x_1ck1v4q>
+<Angela_Merkel>	<isMarriedTo>	<Joachim_Sauer> .
+#@ <id_18367vn_1ia_pu2zew>
+<Bundestag>	rdfs:label	"Deutscher Bundestag" .
+#@ <id_18367vn_1s2_t9jepg>
+<Bundestag>	<isAffiliatedTo>	<Christian_Democratic_Union_(Germany)> .
+#@ <id_18367vn_ice_2c3vmd>
+<Bundestag>	<hasWebsite>	<http://www.bundestag.de> .
+#@ <id_18367vn_ice_2c3vmd>
+<Bundestag>	<hasWebsite>	<http://www.bundestag.de> .
+#@ <id_1cpbvlf_ice_9lmbq4>
+<Chancellor_of_Germany>	<hasWebsite>	<http://bundeskanzlerin.de> .
+#@ <id_t9jepg_siu_18syvnt>
+<Christian_Democratic_Union_(Germany)>	<wasCreatedOnDate>	"1945-##-##"^^xsd:date .
+#@ <id_t9jepg_z7a_1wd5e4i>
+<Christian_Democratic_Union_(Germany)>	<isLocatedIn>	<Berlin> .
+#@ <id_t9jepg_1ia_17oe0bt>
+<Christian_Democratic_Union_(Germany)>	rdfs:label	"Christlich Demokratische Union Deutschlands" .
+#@ <id_t9jepg_ice_1heq0qs>
+<Christian_Democratic_Union_(Germany)>	<hasWebsite>	<http://www.cdu.de> .
+#@ <id_t9jepg_ice_1heq0qs>
+<Christian_Democratic_Union_(Germany)>	<hasWebsite>	<http://www.cdu.de> .
+#@ <id_t9jepg_ice_1heq0qs>
+<Christian_Democratic_Union_(Germany)>	<hasWebsite>	<http://www.cdu.de> .
+#@ <id_t9jepg_ice_1heq0qs>
+<Christian_Democratic_Union_(Germany)>	<hasWebsite>	<http://www.cdu.de> .
+#@ <id_jr01l4_10x_tqqkp2>
+<Christian_Wulff>	<graduatedFrom>	<University_of_Osnabrück> .
+#@ <id_jr01l4_1xk_1pijwge>
+<Christian_Wulff>	<wasBornOnDate>	"1959-06-19"^^xsd:date .
+#@ <id_jr01l4_oyl_mkf8al>
+<Christian_Wulff>	<wasBornIn>	<Osnabrück> .
+#@ <id_jr01l4_1s2_t9jepg>
+<Christian_Wulff>	<isAffiliatedTo>	<Christian_Democratic_Union_(Germany)> .
+#@ <id_jr01l4_16x_nkiphk>
+<Christian_Wulff>	<isMarriedTo>	<Bettina_Wulff> .
+#@ <id_jr01l4_ice_1894bxa>
+<Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/> .
+#@ <id_jr01l4_ice_1894bxa>
+<Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/> .
+#@ <id_tu1ps7_ice_6nsaxe>
+<Evangelical_Church_in_Germany>	<hasWebsite>	<http://ekd.de/english/index.html> .
+#@ <id_ht3f3u_10x_pfblkl>
+<Frank-Walter_Steinmeier>	<graduatedFrom>	<University_of_Giessen> .
+#@ <id_ht3f3u_1xk_hh9utp>
+<Frank-Walter_Steinmeier>	<wasBornOnDate>	"1956-01-05"^^xsd:date .
+#@ <id_ht3f3u_oyl_hs6fpp>
+<Frank-Walter_Steinmeier>	<wasBornIn>	<Detmold> .
+#@ <id_ht3f3u_tje_1ps9evn>
+<Frank-Walter_Steinmeier>	<isCitizenOf>	<Germany> .
+#@ <id_ht3f3u_1s2_mcz636>
+<Frank-Walter_Steinmeier>	<isAffiliatedTo>	<Social_Democratic_Party_of_Germany> .
+#@ <id_gh6929_1xk_16nhseg>
+<Franz_Müntefering>	<wasBornOnDate>	"1940-01-16"^^xsd:date .
+#@ <id_gh6929_oyl_1vhs3ar>
+<Franz_Müntefering>	<wasBornIn>	<Neheim-Hüsten> .
+#@ <id_gh6929_tje_1ps9evn>
+<Franz_Müntefering>	<isCitizenOf>	<Germany> .
+#@ <id_gh6929_88c_1kbo50g>
+<Franz_Müntefering>	rdf:type	<wordnet_politician_110451263> .
+#@ <id_gh6929_1s2_mcz636>
+<Franz_Müntefering>	<isAffiliatedTo>	<Social_Democratic_Party_of_Germany> .
+#@ <id_107bpbp_10x_m1t411>
+<Gerhard_Schröder>	<graduatedFrom>	<University_of_Göttingen> .
+#@ <id_107bpbp_1xk_uc0s97>
+<Gerhard_Schröder>	<wasBornOnDate>	"1944-04-07"^^xsd:date .
+#@ <id_107bpbp_1ia_blav7v>
+<Gerhard_Schröder>	rdfs:label	"Gerhard Fritz Kurt Schröder" .
+#@ <id_107bpbp_oyl_1u9ifjw>
+<Gerhard_Schröder>	<wasBornIn>	<Mossenberg-Wöhren> .
+#@ <id_107bpbp_1s2_mcz636>
+<Gerhard_Schröder>	<isAffiliatedTo>	<Social_Democratic_Party_of_Germany> .
+#@ <id_107bpbp_88c_1inhq0u>
+<Gerhard_Schröder>	rdf:type	<wordnet_lawyer_110249950> .
+#@ <id_107bpbp_16x_i4tzwr>
+<Gerhard_Schröder>	<isMarriedTo>	<Doris_Schröder-Köpf> .
+#@ <id_1ps9evn_789_1wd5e4i>
+<Germany>	<hasCapital>	<Berlin> .
+#@ <id_1ps9evn_f9j_zil1kf>
+<Germany>	<hasTLD>	".de"^^<yagoTLD> .
+#@ <id_1ps9evn_1ia_1ps9evn>
+<Germany>	rdfs:label	"Germany" .
+#@ <id_1ps9evn_lje_zjuknh>
+<Germany>	<hasCurrency>	<Euro> .
+#@ <id_1ps9evn_siu_vmnenb>
+<Germany>	<wasCreatedOnDate>	"1871-01-18"^^xsd:date .
+#@ <id_1ps9evn_siu_4s22s5>
+<Germany>	<wasCreatedOnDate>	"962-02-02"^^xsd:date .
+#@ <id_1ps9evn_siu_wowsfd>
+<Germany>	<wasCreatedOnDate>	"1949-05-23"^^xsd:date .
+#@ <id_1ps9evn_siu_18px7c3>
+<Germany>	<wasCreatedOnDate>	"1990-10-03"^^xsd:date .
+#@ <id_1ps9evn_f9j_1clozfr>
+<Germany>	<hasGDP>	"3628000000000"^^<dollar> .
+#@ <id_1ps9evn_1n8_1sdnf49>
+<Germany>	<hasLatitude>	"52.516666666666666"^^<degrees> .
+#@ <id_1ps9evn_1n8_1sdnf49>
+<Germany>	<hasLatitude>	"52.516666666666666"^^<degrees> .
+#@ <id_1cdgbyh_1c7_1ps9evn>
+<Joachim_Gauck>	<isLeaderOf>	<Germany> .
+#@ <id_1fpq28n_1c7_1ps9evn>
+<Angela_Merkel>	<isLeaderOf>	<Germany> .
+#@ <id_1eq6acs_1c7_1ps9evn>
+<Horst_Seehofer>	<isLeaderOf>	<Germany> .
+#@ <id_16zq96x_1c7_1ps9evn>
+<Norbert_Lammert>	<isLeaderOf>	<Germany> .
+#@ <id_1ps9evn_jto_122755u>
+<Germany>	<hasLongitude>	"13.383333333333333"^^<degrees> .
+#@ <id_1ps9evn_jto_122755u>
+<Germany>	<hasLongitude>	"13.383333333333333"^^<degrees> .
+#@ <id_1ps9evn_1b1_rl4gj>
+<Germany>	<hasArea>	"3.57021E11"^^<m^2> .
+#@ <id_1ps9evn_ibw_zil3ax>
+<Germany>	<hasPopulationDensity>	"229"^^</km^2> .
+#@ <id_1ps9evn_1kn_3jkg5t>
+<Germany>	<hasOfficialLanguage>	<German_language> .
+#@ <id_1ps9evn_l7i_1fq3p4o>
+<Germany>	<hasNumberOfPeople>	"81799600"^^xsd:nonNegativeInteger .
+#@ <id_18vc8ci_10x_ca61ms>
+<Guido_Westerwelle>	<graduatedFrom>	<University_of_Bonn> .
+#@ <id_18vc8ci_1xk_17yledj>
+<Guido_Westerwelle>	<wasBornOnDate>	"1961-12-27"^^xsd:date .
+#@ <id_18vc8ci_oyl_qha2si>
+<Guido_Westerwelle>	<wasBornIn>	<Bad_Honnef> .
+#@ <id_18vc8ci_1s2_opmyyg>
+<Guido_Westerwelle>	<isAffiliatedTo>	<Free_Democratic_Party_(Germany)> .
+#@ <id_18vc8ci_88c_1inhq0u>
+<Guido_Westerwelle>	rdf:type	<wordnet_lawyer_110249950> .
+#@ <id_18vc8ci_12k_1wd5e4i>
+<Guido_Westerwelle>	<livesIn>	<Berlin> .
+#@ <id_18vc8ci_12k_zjsj59>
+<Guido_Westerwelle>	<livesIn>	<Bonn> .
+#@ <id_18vc8ci_ice_3uctt7>
+<Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/> .
+#@ <id_18vc8ci_ice_3uctt7>
+<Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/> .
+#@ <id_3gfkn0_1n8_10cmo6o>
+<Hamburg>	<hasLatitude>	"53.55"^^<degrees> .
+#@ <id_3gfkn0_1n8_10cmo6o>
+<Hamburg>	<hasLatitude>	"53.55"^^<degrees> .
+#@ <id_3gfkn0_1n8_uicje6>
+<Hamburg>	<hasLatitude>	"53.56527777777777"^^<degrees> .
+#@ <id_3gfkn0_jto_zjgc2p>
+<Hamburg>	<hasLongitude>	"10.0"^^<degrees> .
+#@ <id_3gfkn0_jto_zjgc2p>
+<Hamburg>	<hasLongitude>	"10.0"^^<degrees> .
+#@ <id_3gfkn0_jto_kf8op3>
+<Hamburg>	<hasLongitude>	"10.001388888888888"^^<degrees> .
+#@ <id_3gfkn0_1b1_1qaar9m>
+<Hamburg>	<hasArea>	"7.55E8"^^<m^2> .
+#@ <id_3gfkn0_l7i_bkbxp>
+<Hamburg>	<hasNumberOfPeople>	"1796077"^^xsd:nonNegativeInteger .
+#@ <id_3gfkn0_ice_xkzcpf>
+<Hamburg>	<hasWebsite>	<http://www.hamburg.de/> .
+#@ <id_3gfkn0_ice_xkzcpf>
+<Hamburg>	<hasWebsite>	<http://www.hamburg.de/> .
+#@ <id_zycb9m_10x_1kwp9bi>
+<Helmut_Kohl>	<graduatedFrom>	<University_of_Heidelberg> .
+#@ <id_zycb9m_1xk_dtx89w>
+<Helmut_Kohl>	<wasBornOnDate>	"1930-04-03"^^xsd:date .
+#@ <id_zycb9m_1ia_120xu0l>
+<Helmut_Kohl>	rdfs:label	"Helmut Josef Michael Kohl" .
+#@ <id_zycb9m_oyl_yk0jtv>
+<Helmut_Kohl>	<wasBornIn>	<Ludwigshafen_am_Rhein> .
+#@ <id_zycb9m_1s2_7o5kut>
+<Helmut_Kohl>	<isAffiliatedTo>	<Christian_Democratic_Union_of_Germany> .
+#@ <id_zycb9m_16x_1s6vmx1>
+<Helmut_Kohl>	<isMarriedTo>	<Hannelore_Kohl> .
+#@ <id_1pj249b_10x_1fiizqg>
+<Horst_Köhler>	<graduatedFrom>	<University_of_Tübingen> .
+#@ <id_1pj249b_1xk_fnl83p>
+<Horst_Köhler>	<wasBornOnDate>	"1943-02-22"^^xsd:date .
+#@ <id_1pj249b_oyl_aq6naj>
+<Horst_Köhler>	<wasBornIn>	<Skierbieszów> .
+#@ <id_1pj249b_1s2_t9jepg>
+<Horst_Köhler>	<isAffiliatedTo>	<Christian_Democratic_Union_(Germany)> .
+#@ <id_1pj249b_88c_1x9tonu>
+<Horst_Köhler>	rdf:type	<wordnet_economist_110043643> .
+#@ <id_1pj249b_16x_gbg2az>
+<Horst_Köhler>	<isMarriedTo>	<Eva_Köhler> .
+#@ <id_1ck1v4q_1xk_wow5f5>
+<Joachim_Sauer>	<wasBornOnDate>	"1949-04-19"^^xsd:date .
+#@ <id_1ck1v4q_oyl_btics>
+<Joachim_Sauer>	<wasBornIn>	<Hosena> .
+#@ <id_1ck1v4q_11e_1d6xzjo>
+<Joachim_Sauer>	<hasChild>	<Daniel_Sauer> .
+#@ <id_1ck1v4q_11e_1vsg6ak>
+<Joachim_Sauer>	<hasChild>	<Adrian_Sauer> .
+#@ <id_1ck1v4q_16x_1fpq28n>
+<Joachim_Sauer>	<isMarriedTo>	<Angela_Merkel> .
+#@ <id_1cm9d6p_10x_m1t411>
+<Jürgen_Trittin>	<graduatedFrom>	<University_of_Göttingen> .
+#@ <id_1cm9d6p_1xk_1n5p6bn>
+<Jürgen_Trittin>	<wasBornOnDate>	"1954-07-25"^^xsd:date .
+#@ <id_1cm9d6p_oyl_1wk2fnl>
+<Jürgen_Trittin>	<wasBornIn>	<Bremen> .
+#@ <id_1cm9d6p_tje_1ps9evn>
+<Jürgen_Trittin>	<isCitizenOf>	<Germany> .
+#@ <id_1cm9d6p_1s2_1xlixxi>
+<Jürgen_Trittin>	<isAffiliatedTo>	<Bündnis_90/Die_Grünen> .
+#@ <id_1cm9d6p_ice_tffo4h>
+<Jürgen_Trittin>	<hasWebsite>	<http://www.juergentrittin.de/> .
+#@ <id_1cm9d6p_ice_tffo4h>
+<Jürgen_Trittin>	<hasWebsite>	<http://www.juergentrittin.de/> .
+#@ <id_1cm9d6p_ice_uqigpa>
+<Jürgen_Trittin>	<hasWebsite>	<http://www.juergentrittin.de> .
+#@ <id_1czrim3_10x_xl0vxw>
+<Philipp_Rösler>	<graduatedFrom>	<Hannover_Medical_School> .
+#@ <id_1czrim3_1xk_v3clb8>
+<Philipp_Rösler>	<wasBornOnDate>	"1973-02-24"^^xsd:date .
+#@ <id_1czrim3_oyl_d12ruu>
+<Philipp_Rösler>	<wasBornIn>	<South_Vietnam> .
+#@ <id_1czrim3_tje_1ps9evh>
+<Philipp_Rösler>	<isCitizenOf>	<Germans> .
+#@ <id_1czrim3_88c_17thdh9>
+<Philipp_Rösler>	rdf:type	<wordnet_doctor_110020890> .
+#@ <id_1czrim3_1s2_opmyyg>
+<Philipp_Rösler>	<isAffiliatedTo>	<Free_Democratic_Party_(Germany)> .
+#@ <id_1czrim3_12k_10ru4fh>
+<Philipp_Rösler>	<livesIn>	<Hannover> .
+#@ <id_1czrim3_ice_1yx2yp2>
+<Philipp_Rösler>	<hasWebsite>	<http://www.philipp-roesler.de/> .
+#@ <id_1czrim3_ice_1yx2yp2>
+<Philipp_Rösler>	<hasWebsite>	<http://www.philipp-roesler.de/> .
+#@ <id_py5vtt_z7a_1s0921k>
+<University_of_Leipzig>	<isLocatedIn>	<Leipzig> .
+#@ <id_py5vtt_z7a_1ps9evn>
+<University_of_Leipzig>	<isLocatedIn>	<Germany> .
+#@ <id_py5vtt_siu_1uvgvpp>
+<University_of_Leipzig>	<wasCreatedOnDate>	"1409-12-02"^^xsd:date .
+#@ <id_py5vtt_11k_4uhzi4>
+<University_of_Leipzig>	<hasMotto>	"Aus Tradition Grenzen überschreiten - Crossing Boundaries out of Tradition" .
+#@ <id_py5vtt_1ia_hi8u0j>
+<University_of_Leipzig>	rdfs:label	"Universität Leipzig" .
+#@ <id_py5vtt_z7a_5bpmr4>
+<University_of_Leipzig>	<isLocatedIn>	<Saxony> .
+#@ <id_py5vtt_ice_1l6natu>
+<University_of_Leipzig>	<hasWebsite>	<http://www.uni-leipzig.de/> .
+#@ <id_py5vtt_ice_1l6natu>
+<University_of_Leipzig>	<hasWebsite>	<http://www.uni-leipzig.de/> .
+#@ <id_py5vtt_ice_1l6natu>
+<University_of_Leipzig>	<hasWebsite>	<http://www.uni-leipzig.de/> .
+#@ <id_1dmdk4j_f9j_zil1kf>
+<West_Germany>	<hasTLD>	".de"^^<yagoTLD> .
+#@ <id_1dmdk4j_1ia_9jv2o2>
+<West_Germany>	rdfs:label	"West Germany" .
+#@ <id_1dmdk4j_lje_163xu3j>
+<West_Germany>	<hasCurrency>	<Deutsche_Mark> .
+#@ <id_1dmdk4j_1n8_1ahpjd1>
+<West_Germany>	<hasLatitude>	"50.733333333333334"^^<degrees> .
+#@ <id_1dmdk4j_1n8_1ahpjd1>
+<West_Germany>	<hasLatitude>	"50.733333333333334"^^<degrees> .
+#@ <id_1dmdk4j_jto_zil6wq>
+<West_Germany>	<hasLongitude>	"7.1"^^<degrees> .
+#@ <id_1dmdk4j_jto_zil6wq>
+<West_Germany>	<hasLongitude>	"7.1"^^<degrees> .
+#@ <id_1dmdk4j_1ia_lndspq>
+<West_Germany>	rdfs:label	"Bundesrepublik Deutschland" .
+#@ <id_1wkzd0h_10x_14qcrjr>
+<Albert_Pintat>	<graduatedFrom>	<University_of_Fribourg> .
+#@ <id_1wkzd0h_1xk_fnns1u>
+<Albert_Pintat>	<wasBornOnDate>	"1943-06-23"^^xsd:date .
+#@ <id_1wkzd0h_1s2_1wr3l4s>
+<Albert_Pintat>	<isAffiliatedTo>	<Liberal_Party_of_Andorra> .
+#@ <id_s193uj_1xk_2a99tw>
+<Antoni_Martí>	<wasBornOnDate>	"1963-11-10"^^xsd:date .
+#@ <id_s193uj_oyl_1csqvex>
+<Antoni_Martí>	<wasBornIn>	<Andorra> .
+#@ <id_s193uj_1s2_5byr5u>
+<Antoni_Martí>	<isAffiliatedTo>	<Democrats_for_Andorra> .
+#@ <id_14lrmcq_1xk_1ozv1qh>
+<Carla_Bruni>	<wasBornOnDate>	"1967-12-23"^^xsd:date .
+#@ <id_14lrmcq_1ia_uk0sey>
+<Carla_Bruni>	rdfs:label	"Carla Gilberta Bruni Tedeschi" .
+#@ <id_14lrmcq_oyl_10uvvfa>
+<Carla_Bruni>	<wasBornIn>	<Turin> .
+#@ <id_14lrmcq_11e_3dnf2x>
+<Carla_Bruni>	<hasChild>	<Giulia_Sarkozy> .
+#@ <id_14lrmcq_tje_16dbfh6>
+<Carla_Bruni>	<isCitizenOf>	<French_nationality_law> .
+#@ <id_14lrmcq_88c_1y7wfoo>
+<Carla_Bruni>	rdf:type	<wordnet_model_110324560> .
+#@ <id_14lrmcq_12k_hchqjy>
+<Carla_Bruni>	<livesIn>	<Élysée_Palace> .
+#@ <id_14lrmcq_12k_1s0yiym>
+<Carla_Bruni>	<livesIn>	<16th_arrondissement_of_Paris> .
+#@ <id_14lrmcq_16x_vkf2e7>
+<Carla_Bruni>	<isMarriedTo>	<Nicolas_Sarkozy> .
+#@ <id_4h2ou9_1xk_w67xnv>
+<Cécilia_Attias>	<wasBornOnDate>	"1957-11-12"^^xsd:date .
+#@ <id_4h2ou9_oyl_y6wvzx>
+<Cécilia_Attias>	<wasBornIn>	<Boulogne-Billancourt> .
+#@ <id_4h2ou9_16x_lae7hl>
+<Cécilia_Attias>	<isMarriedTo>	<Jacques_Martin_(TV_host)> .
+#@ <id_4h2ou9_16x_vkf2e7>
+<Cécilia_Attias>	<isMarriedTo>	<Nicolas_Sarkozy> .
+#@ <id_4h2ou9_16x_rwwk2q>
+<Cécilia_Attias>	<isMarriedTo>	<Richard_Attias> .
+#@ <id_1dmj8jj_1xk_rs0zq>
+<Christian_Frémont>	<wasBornOnDate>	"1942-##-##"^^xsd:date .
+#@ <id_1dmj8jj_oyl_1loge24>
+<Christian_Frémont>	<wasBornIn>	<Dordogne> .
+#@ <id_1dmj8jj_1s2_1as8dix>
+<Christian_Frémont>	<isAffiliatedTo>	<Union_for_a_Popular_Movement> .
+#@ <id_sb8eld_10x_jfqfk4>
+<Dominique_de_Villepin>	<graduatedFrom>	<Institut_d'Études_Politiques_de_Paris> .
+#@ <id_sb8eld_1xk_18hquqx>
+<Dominique_de_Villepin>	<wasBornOnDate>	"1953-11-14"^^xsd:date .
+#@ <id_sb8eld_1ia_t58xed>
+<Dominique_de_Villepin>	rdfs:label	"Dominique Marie François René Galouzeau de Villepin" .
+#@ <id_sb8eld_oyl_10tf6g6>
+<Dominique_de_Villepin>	<wasBornIn>	<Rabat> .
+#@ <id_sb8eld_11e_1gohav0>
+<Dominique_de_Villepin>	<hasChild>	<Marie_de_Villepin> .
+#@ <id_sb8eld_88c_upbkvv>
+<Dominique_de_Villepin>	rdf:type	<wordnet_diplomat_110013927> .
+#@ <id_sb8eld_88c_mxcdkg>
+<Dominique_de_Villepin>	rdf:type	<wordnet_civil_servant_109925459> .
+#@ <id_sb8eld_88c_1inhq0u>
+<Dominique_de_Villepin>	rdf:type	<wordnet_lawyer_110249950> .
+#@ <id_sb8eld_88c_w5vygh>
+<Dominique_de_Villepin>	rdf:type	<wordnet_writer_110794014> .
+#@ <id_sb8eld_1s2_14fyidp>
+<Dominique_de_Villepin>	<isAffiliatedTo>	<United_Republic_(France)> .
+#@ <id_18ttf26_1xk_4f6ki2>
+<Emmanuelle_Mignon>	<wasBornOnDate>	"1968-##-##"^^xsd:date .
+#@ <id_1qrqo30_1xk_1a2rw8c>
+<Édouard_Balladur>	<wasBornOnDate>	"1929-05-02"^^xsd:date .
+#@ <id_1qrqo30_oyl_147xp70>
+<Édouard_Balladur>	<wasBornIn>	<İzmir> .
+#@ <id_1qrqo30_88c_1x9tonu>
+<Édouard_Balladur>	rdf:type	<wordnet_economist_110043643> .
+#@ <id_1qrqo30_1s2_1as8dix>
+<Édouard_Balladur>	<isAffiliatedTo>	<Union_for_a_Popular_Movement> .
+#@ <id_hchqjy_z7a_10sbxbf>
+<Élysée_Palace>	<isLocatedIn>	<Paris> .
+#@ <id_cfajyt_1xk_vml8n4>
+<François_Baroin>	<wasBornOnDate>	"1965-06-21"^^xsd:date .
+#@ <id_cfajyt_oyl_10sbxbf>
+<François_Baroin>	<wasBornIn>	<Paris> .
+#@ <id_cfajyt_1s2_1as8dix>
+<François_Baroin>	<isAffiliatedTo>	<Union_for_a_Popular_Movement> .
+#@ <id_efriae_10x_grz3oh>
+<François_Fillon>	<graduatedFrom>	<Paris_Descartes_University> .
+#@ <id_efriae_1xk_1n5mmbs>
+<François_Fillon>	<wasBornOnDate>	"1954-03-04"^^xsd:date .
+#@ <id_efriae_oyl_1ru495r>
+<François_Fillon>	<wasBornIn>	<Le_Mans> .
+#@ <id_efriae_1s2_1as8dix>
+<François_Fillon>	<isAffiliatedTo>	<Union_for_a_Popular_Movement> .
+#@ <id_efriae_12k_1hc9ukf>
+<François_Fillon>	<livesIn>	<Hôtel_Matignon> .
+#@ <id_efriae_16x_1rxxghb>
+<François_Fillon>	<isMarriedTo>	<Penelope_Clarke> .
+#@ <id_1fvzpek_1ia_1yg6dyz>
+<French_Fourth_Republic>	rdfs:label	"France" .
+#@ <id_1fvzpek_lje_lsx6ed>
+<French_Fourth_Republic>	<hasCurrency>	<French_Franc> .
+#@ <id_1fvzpek_11k_pzy696>
+<French_Fourth_Republic>	<hasMotto>	"Liberté, égalité, fraternité" .
+#@ <id_1fvzpek_1ia_1qv016u>
+<French_Fourth_Republic>	rdfs:label	"République française" .
+#@ <id_jfqfk4_siu_1a3nezm>
+<Institut_d'Études_Politiques_de_Paris>	<wasCreatedOnDate>	"1872-##-##"^^xsd:date .
+#@ <id_jfqfk4_1ia_w7k46o>
+<Institut_d'Études_Politiques_de_Paris>	rdfs:label	"Sciences Po" .
+#@ <id_jfqfk4_ice_qj8lvt>
+<Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.fr/> .
+#@ <id_jfqfk4_ice_qj8l7p>
+<Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.eu/> .
+#@ <id_jfqfk4_ice_qj8lvt>
+<Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.fr/> .
+#@ <id_jfqfk4_ice_1ofhm3q>
+<Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.fr> .
+#@ <id_jfqfk4_ice_qj8l7p>
+<Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.eu/> .
+#@ <id_jfqfk4_ice_1ofhm2y>
+<Institut_d'Études_Politiques_de_Paris>	<hasWebsite>	<http://www.sciences-po.eu> .
+#@ <id_1ilv35d_10x_jfqfk4>
+<Jacques_Chirac>	<graduatedFrom>	<Institut_d'Études_Politiques_de_Paris> .
+#@ <id_1ilv35d_1xk_1777oem>
+<Jacques_Chirac>	<wasBornOnDate>	"1932-11-29"^^xsd:date .
+#@ <id_1ilv35d_1ia_1r00tog>
+<Jacques_Chirac>	rdfs:label	"Jacques René Chirac" .
+#@ <id_1ilv35d_1s2_1as8dix>
+<Jacques_Chirac>	<isAffiliatedTo>	<Union_for_a_Popular_Movement> .
+#@ <id_1ilv35d_88c_mxcdkg>
+<Jacques_Chirac>	rdf:type	<wordnet_civil_servant_109925459> .
+#@ <id_1ilv35d_88c_1kbo50g>
+<Jacques_Chirac>	rdf:type	<wordnet_politician_110451263> .
+#@ <id_1ilv35d_16x_v71du5>
+<Jacques_Chirac>	<isMarriedTo>	<Bernadette_Chirac> .
+#@ <id_64w4aa_1xk_1n654yu>
+<Jaume_Bartumeu>	<wasBornOnDate>	"1954-11-10"^^xsd:date .
+#@ <id_64w4aa_1s2_1lxa6xt>
+<Jaume_Bartumeu>	<isAffiliatedTo>	<Social_Democratic_Party_(Andorra)> .
+#@ <id_7rtptc_1xk_wx6bxa>
+<Jean_Sarkozy>	<wasBornOnDate>	"1986-09-01"^^xsd:date .
+#@ <id_7rtptc_11e_14u1nmi>
+<Jean_Sarkozy>	<hasChild>	<Solal_Sasha> .
+#@ <id_7rtptc_tje_1kbjt10>
+<Jean_Sarkozy>	<isCitizenOf>	<French_people> .
+#@ <id_vkf2e7_11e_7rtptc>
+<Nicolas_Sarkozy>	<hasChild>	<Jean_Sarkozy> .
+#@ <id_7rtptc_16x_lbmxgk>
+<Jean_Sarkozy>	<isMarriedTo>	<Jessica_Sebaoun> .
+#@ <id_ppnh9i_1xk_i0kf47>
+<Jean-Pierre_Raffarin>	<wasBornOnDate>	"1948-08-03"^^xsd:date .
+#@ <id_ppnh9i_oyl_18do1k7>
+<Jean-Pierre_Raffarin>	<wasBornIn>	<Poitiers> .
+#@ <id_ppnh9i_88c_1inhq0u>
+<Jean-Pierre_Raffarin>	rdf:type	<wordnet_lawyer_110249950> .
+#@ <id_ppnh9i_1s2_1jysf42>
+<Jean-Pierre_Raffarin>	<isAffiliatedTo>	<Liberal_Democracy_(France)> .
+#@ <id_ppnh9i_1s2_1as8dix>
+<Jean-Pierre_Raffarin>	<isAffiliatedTo>	<Union_for_a_Popular_Movement> .
+#@ <id_5iwrwt_1xk_woy2eg>
+<Joan_Enric_Vives_Sicília>	<wasBornOnDate>	"1949-07-24"^^xsd:date .
+#@ <id_5iwrwt_oyl_n2w2ob>
+<Joan_Enric_Vives_Sicília>	<wasBornIn>	<Barcelona> .
+#@ <id_1tccrte_1n8_18nsieb>
+<Neuilly-sur-Seine>	<hasLatitude>	"48.8881"^^<degrees> .
+#@ <id_1tccrte_jto_1nx0qri>
+<Neuilly-sur-Seine>	<hasLongitude>	"2.2686"^^<degrees> .
+#@ <id_1tccrte_1b1_fyig9d>
+<Neuilly-sur-Seine>	<hasArea>	"3730000.0"^^<m^2> .
+#@ <id_1tccrte_l7i_10d4o9l>
+<Neuilly-sur-Seine>	<hasNumberOfPeople>	"60454"^^xsd:nonNegativeInteger .
+#@ <id_vkf2e7_10x_17gzuo3>
+<Nicolas_Sarkozy>	<graduatedFrom>	<Paris_West_University_Nanterre_La_Défense> .
+#@ <id_vkf2e7_1xk_2svknh>
+<Nicolas_Sarkozy>	<wasBornOnDate>	"1955-01-28"^^xsd:date .
+#@ <id_vkf2e7_1ia_1epr034>
+<Nicolas_Sarkozy>	rdfs:label	"Nicolas Paul Stéphane Sarközy de Nagy-Bocsa" .
+#@ <id_vkf2e7_oyl_10sbxbf>
+<Nicolas_Sarkozy>	<wasBornIn>	<Paris> .
+#@ <id_vkf2e7_11e_7rtptc>
+<Nicolas_Sarkozy>	<hasChild>	<Jean_Sarkozy> .
+#@ <id_vkf2e7_1s2_1as8dix>
+<Nicolas_Sarkozy>	<isAffiliatedTo>	<Union_for_a_Popular_Movement> .
+#@ <id_vkf2e7_12k_hchqjy>
+<Nicolas_Sarkozy>	<livesIn>	<Élysée_Palace> .
+#@ <id_vkf2e7_16x_4h2ou9>
+<Nicolas_Sarkozy>	<isMarriedTo>	<Cécilia_Attias> .
+#@ <id_vkf2e7_16x_14lrmcq>
+<Nicolas_Sarkozy>	<isMarriedTo>	<Carla_Bruni> .
+#@ <id_vkf2e7_ice_4rurel>
+<Nicolas_Sarkozy>	<hasWebsite>	<http://www.sarkozy.fr/home/> .
+#@ <id_vkf2e7_ice_4rurel>
+<Nicolas_Sarkozy>	<hasWebsite>	<http://www.sarkozy.fr/home/> .
+#@ <id_17gzuo3_z7a_1vqh5vd>
+<Paris_West_University_Nanterre_La_Défense>	<isLocatedIn>	<Nanterre> .
+#@ <id_17gzuo3_siu_gqphl2>
+<Paris_West_University_Nanterre_La_Défense>	<wasCreatedOnDate>	"1964-##-##"^^xsd:date .
+#@ <id_17gzuo3_ice_1k7bb8e>
+<Paris_West_University_Nanterre_La_Défense>	<hasWebsite>	<http://www.u-paris10.fr/> .
+#@ <id_17gzuo3_ice_1k7bb8e>
+<Paris_West_University_Nanterre_La_Défense>	<hasWebsite>	<http://www.u-paris10.fr/> .
+#@ <id_1isx97r_1s2_1lxa6xt>
+<Pere_López_Agràs>	<isAffiliatedTo>	<Social_Democratic_Party_(Andorra)> .
+#@ <id_13n9nse_1xk_unqotn>
+<Philippe_Massoni>	<wasBornOnDate>	"1936-##-##"^^xsd:date .
+#@ <id_1snxdw5_siu_3w0h47>
+<Rally_for_the_Republic>	<wasCreatedOnDate>	"1976-##-##"^^xsd:date .
+#@ <id_1ilv35d_1gi_1snxdw5>
+<Jacques_Chirac>	<created>	<Rally_for_the_Republic> .
+#@ <id_1snxdw5_1ia_1tj5osj>
+<Rally_for_the_Republic>	rdfs:label	"Rassemblement pour la République" .
+#@ <id_1as8dix_siu_9f0bl2>
+<Union_for_a_Popular_Movement>	<wasCreatedOnDate>	"2002-11-17"^^xsd:date .
+#@ <id_j812s4_1c7_1as8dix>
+<Jean-François_Copé>	<isLeaderOf>	<Union_for_a_Popular_Movement> .
+#@ <id_1as8dix_1ia_vj1fin>
+<Union_for_a_Popular_Movement>	rdfs:label	"Union pour un Mouvement Populaire" .
+#@ <id_1as8dix_ice_1itk391>
+<Union_for_a_Popular_Movement>	<hasWebsite>	<http://www.lemouvementpopulaire.fr> .
+#@ <id_1as8dix_ice_1itk391>
+<Union_for_a_Popular_Movement>	<hasWebsite>	<http://www.lemouvementpopulaire.fr> .
+#@ <id_1as8dix_ice_1itk391>
+<Union_for_a_Popular_Movement>	<hasWebsite>	<http://www.lemouvementpopulaire.fr> .
+#@ <id_j2lde8_10x_wceha4>
+<Alfredo_Pérez_Rubalcaba>	<graduatedFrom>	<Complutense_University_of_Madrid> .
+#@ <id_j2lde8_1xk_f4ibnn>
+<Alfredo_Pérez_Rubalcaba>	<wasBornOnDate>	"1951-07-28"^^xsd:date .
+#@ <id_j2lde8_oyl_tgmsjz>
+<Alfredo_Pérez_Rubalcaba>	<wasBornIn>	<Solares> .
+#@ <id_j2lde8_1s2_1i5m33a>
+<Alfredo_Pérez_Rubalcaba>	<isAffiliatedTo>	<Spanish_Socialist_Workers'_Party> .
+#@ <id_j2lde8_88c_1880c8b>
+<Alfredo_Pérez_Rubalcaba>	rdf:type	<wordnet_chemist_109913824> .
+#@ <id_j2lde8_16x_lela4r>
+<Alfredo_Pérez_Rubalcaba>	<isMarriedTo>	<Pilar_Goya> .
+#@ <id_w2djwz_1ia_d5cju6>
+<Congress_of_Deputies_(Spain)>	rdfs:label	"Congreso de los Diputados" .
+#@ <id_w2djwz_ice_1cxo6vk>
+<Congress_of_Deputies_(Spain)>	<hasWebsite>	<http://www.congreso.es/> .
+#@ <id_w2djwz_ice_1cxo6vk>
+<Congress_of_Deputies_(Spain)>	<hasWebsite>	<http://www.congreso.es/> .
+#@ <id_w2djwz_ice_1mv0ke7>
+<Congress_of_Deputies_(Spain)>	<hasWebsite>	<http://www.congreso.es> .
+#@ <id_krjrbp_10x_d1lx9y>
+<Elena_Salgado>	<graduatedFrom>	<Technical_University_of_Madrid> .
+#@ <id_krjrbp_1xk_wowseh>
+<Elena_Salgado>	<wasBornOnDate>	"1949-05-12"^^xsd:date .
+#@ <id_krjrbp_oyl_18psovb>
+<Elena_Salgado>	<wasBornIn>	<Ourense> .
+#@ <id_krjrbp_1s2_1i5m33a>
+<Elena_Salgado>	<isAffiliatedTo>	<Spanish_Socialist_Workers'_Party> .
+#@ <id_krjrbp_88c_1x9tonu>
+<Elena_Salgado>	rdf:type	<wordnet_economist_110043643> .
+#@ <id_1u5uyhb_789_2h36ql>
+<Francoist_Spain>	<hasCapital>	<Madrid> .
+#@ <id_1u5uyhb_1ia_10u8jah>
+<Francoist_Spain>	rdfs:label	"Spain" .
+#@ <id_1u5uyhb_lje_qhq8an>
+<Francoist_Spain>	<hasCurrency>	<Spanish_peseta> .
+#@ <id_1u5uyhb_11k_1p7x38m>
+<Francoist_Spain>	<hasMotto>	"Plus Ultra" .
+#@ <id_1u5uyhb_11k_1dzw6iu>
+<Francoist_Spain>	<hasMotto>	"Una, Grande y Libre" .
+#@ <id_1m0lrpx_10x_d3efgx>
+<Joaquín_Almunia>	<graduatedFrom>	<University_of_Deusto> .
+#@ <id_1m0lrpx_1xk_i0j564>
+<Joaquín_Almunia>	<wasBornOnDate>	"1948-06-17"^^xsd:date .
+#@ <id_1m0lrpx_oyl_1wf8iyz>
+<Joaquín_Almunia>	<wasBornIn>	<Bilbao> .
+#@ <id_1m0lrpx_1s2_1i5m33a>
+<Joaquín_Almunia>	<isAffiliatedTo>	<Spanish_Socialist_Workers'_Party> .
+#@ <id_1ng0idk_10x_cacb9n>
+<José_Luis_Rodríguez_Zapatero>	<graduatedFrom>	<University_of_León> .
+#@ <id_1ng0idk_1xk_t9r5fi>
+<José_Luis_Rodríguez_Zapatero>	<wasBornOnDate>	"1960-08-04"^^xsd:date .
+#@ <id_1ng0idk_oyl_13dzdeu>
+<José_Luis_Rodríguez_Zapatero>	<wasBornIn>	<Valladolid> .
+#@ <id_1ng0idk_1s2_1i5m33a>
+<José_Luis_Rodríguez_Zapatero>	<isAffiliatedTo>	<Spanish_Socialist_Workers'_Party> .
+#@ <id_1ng0idk_16x_gbjwix>
+<José_Luis_Rodríguez_Zapatero>	<isMarriedTo>	<Sonsoles_Espinosa> .
+#@ <id_lb8qid_10x_wceha4>
+<José_María_Aznar>	<graduatedFrom>	<Complutense_University_of_Madrid> .
+#@ <id_lb8qid_1xk_18h7p5z>
+<José_María_Aznar>	<wasBornOnDate>	"1953-02-25"^^xsd:date .
+#@ <id_lb8qid_oyl_2h36ql>
+<José_María_Aznar>	<wasBornIn>	<Madrid> .
+#@ <id_lb8qid_11e_1pcsz2m>
+<José_María_Aznar>	<hasChild>	<José_María> .
+#@ <id_lb8qid_1s2_9wzrxn>
+<José_María_Aznar>	<isAffiliatedTo>	<People's_Party_(Spain)> .
+#@ <id_lb8qid_16x_speo6w>
+<José_María_Aznar>	<isMarriedTo>	<Ana_Botella> .
+#@ <id_1cx2d3n_1xk_1o7xj4h>
+<Juan_Carlos_I_of_Spain>	<wasBornOnDate>	"1938-01-05"^^xsd:date .
+#@ <id_1cx2d3n_oyl_zk2qwl>
+<Juan_Carlos_I_of_Spain>	<wasBornIn>	<Rome> .
+#@ <id_1pclm8u_11e_1cx2d3n>
+<Infante_Juan,_Count_of_Barcelona>	<hasChild>	<Juan_Carlos_I_of_Spain> .
+#@ <id_1cx2d3n_1ia_15xhky3>
+<Juan_Carlos_I_of_Spain>	rdfs:label	"Juan Carlos Alfonso Víctor María de Borbón y Borbón-Dos Sicilias" .
+#@ <id_a6m3ij_11e_1cx2d3n>
+<Princess_María_de_las_Mercedes_of_Bourbon-Two_Sicilies>	<hasChild>	<Juan_Carlos_I_of_Spain> .
+#@ <id_1cx2d3n_tje_qy99sw>
+<Juan_Carlos_I_of_Spain>	<isCitizenOf>	<Italian> .
+#@ <id_1cx2d3n_16x_o9if5j>
+<Juan_Carlos_I_of_Spain>	<isMarriedTo>	<Queen_Sofía_of_Spain> .
+#@ <id_45ua65_10x_wt6dvn>
+<Mariano_Rajoy>	<graduatedFrom>	<University_of_Santiago_de_Compostela> .
+#@ <id_45ua65_1xk_2swumi>
+<Mariano_Rajoy>	<wasBornOnDate>	"1955-03-27"^^xsd:date .
+#@ <id_45ua65_1ia_1do89go>
+<Mariano_Rajoy>	rdfs:label	"Mariano Rajoy Brey" .
+#@ <id_45ua65_oyl_atb5ws>
+<Mariano_Rajoy>	<wasBornIn>	<Santiago_de_Compostela> .
+#@ <id_45ua65_1s2_9wzrxn>
+<Mariano_Rajoy>	<isAffiliatedTo>	<People's_Party_(Spain)> .
+#@ <id_45ua65_12k_tgbzli>
+<Mariano_Rajoy>	<livesIn>	<Palace_of_Moncloa> .
+#@ <id_45ua65_16x_10q7h0r>
+<Mariano_Rajoy>	<isMarriedTo>	<Elvira_Fernández_Balboa> .
+#@ <id_45ua65_ice_1czcnuu>
+<Mariano_Rajoy>	<hasWebsite>	<http://www.pp.es/index.asp> .
+#@ <id_45ua65_ice_1czcnuu>
+<Mariano_Rajoy>	<hasWebsite>	<http://www.pp.es/index.asp> .
+#@ <id_1vmvigz_10x_wceha4>
+<María_Teresa_Fernández_de_la_Vega>	<graduatedFrom>	<Complutense_University_of_Madrid> .
+#@ <id_1vmvigz_1xk_woxfe3>
+<María_Teresa_Fernández_de_la_Vega>	<wasBornOnDate>	"1949-06-15"^^xsd:date .
+#@ <id_1vmvigz_1ia_hrlys6>
+<María_Teresa_Fernández_de_la_Vega>	rdfs:label	"María Teresa Fernández de la Vega Sanz" .
+#@ <id_1vmvigz_oyl_kpec2t>
+<María_Teresa_Fernández_de_la_Vega>	<wasBornIn>	<Valencia,_Spain> .
+#@ <id_1vmvigz_tje_10u8jah>
+<María_Teresa_Fernández_de_la_Vega>	<isCitizenOf>	<Spain> .
+#@ <id_1vmvigz_1s2_1i5m33a>
+<María_Teresa_Fernández_de_la_Vega>	<isAffiliatedTo>	<Spanish_Socialist_Workers'_Party> .
+#@ <id_1vmvigz_88c_krkayn>
+<María_Teresa_Fernández_de_la_Vega>	rdf:type	<wordnet_jurist_110227985> .
+#@ <id_1i5m33a_siu_6zo4ee>
+<Spanish_Socialist_Workers'_Party>	<wasCreatedOnDate>	"1879-05-02"^^xsd:date .
+#@ <id_1lbjvu2_1gi_1i5m33a>
+<Pablo_Iglesias>	<created>	<Spanish_Socialist_Workers'_Party> .
+#@ <id_1i5m33a_1ia_1mavxzj>
+<Spanish_Socialist_Workers'_Party>	rdfs:label	"Partido Socialista Obrero Español" .
+#@ <id_1i5m33a_ice_1uagrqt>
+<Spanish_Socialist_Workers'_Party>	<hasWebsite>	<http://www.psoe.es/> .
+#@ <id_1i5m33a_ice_1uagrqt>
+<Spanish_Socialist_Workers'_Party>	<hasWebsite>	<http://www.psoe.es/> .
+#@ <id_1i5m33a_ice_1uagrqt>
+<Spanish_Socialist_Workers'_Party>	<hasWebsite>	<http://www.psoe.es/> .
+#@ <id_1i5m33a_ice_1uagrqt>
+<Spanish_Socialist_Workers'_Party>	<hasWebsite>	<http://www.psoe.es/> .
+#@ <id_cacb9n_z7a_e5t89u>
+<University_of_León>	<isLocatedIn>	<León,_Spain> .
+#@ <id_cacb9n_siu_1bx7bsa>
+<University_of_León>	<wasCreatedOnDate>	"1979-##-##"^^xsd:date .
+#@ <id_cacb9n_11k_1op20t3>
+<University_of_León>	<hasMotto>	"Universitas legionensis" .
+#@ <id_cacb9n_1ia_17eofrl>
+<University_of_León>	rdfs:label	"Universidad de León" .
+#@ <id_cacb9n_ice_8u0sd9>
+<University_of_León>	<hasWebsite>	<http://www.unileon.es> .
+#@ <id_13dzdeu_siu_143dei>
+<Valladolid>	<wasCreatedOnDate>	"1072-##-##"^^xsd:date .
+#@ <id_13dzdeu_1n8_ov1wcu>
+<Valladolid>	<hasLatitude>	"41.63333333333333"^^<degrees> .
+#@ <id_13dzdeu_1n8_ov1wcu>
+<Valladolid>	<hasLatitude>	"41.63333333333333"^^<degrees> .
+#@ <id_13dzdeu_jto_6stck6>
+<Valladolid>	<hasLongitude>	"-4.716666666666667"^^<degrees> .
+#@ <id_13dzdeu_jto_6stck6>
+<Valladolid>	<hasLongitude>	"-4.716666666666667"^^<degrees> .
+#@ <id_13dzdeu_1b1_jxv9d2>
+<Valladolid>	<hasArea>	"1.9791E8"^^<m^2> .
+#@ <id_13dzdeu_l7i_1ofqcbn>
+<Valladolid>	<hasNumberOfPeople>	"313437"^^xsd:nonNegativeInteger .
+#@ <id_13dzdeu_z7a_1ei90d>
+<Valladolid>	<isLocatedIn>	<Campiña_del_Pisuerga> .
+#@ <id_13dzdeu_z7a_hhmpze>
+<Valladolid>	<isLocatedIn>	<Valladolid_(province)> .
+#@ <id_13dzdeu_z7a_10u8jah>
+<Valladolid>	<isLocatedIn>	<Spain> .
+#@ <id_13dzdeu_ice_1xgqqoy>
+<Valladolid>	<hasWebsite>	<http://www.valladolid.es/> .
+#@ <id_13dzdeu_ice_1xgqqoy>
+<Valladolid>	<hasWebsite>	<http://www.valladolid.es/> .
