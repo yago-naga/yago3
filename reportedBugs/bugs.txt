@@ -37,3 +37,31 @@ Status: TO DO
 //////////////////////////////
 Example: Try Lippstadt, it's not there in YAGO
 =====================================================
+Bug ID: 7
+Topic:  Disambiguation pages are labels, together with "(disambiguation)"
+Reporter: Fabian Suchanek
+Status: TO DO
+//////////////////////////////
+Example: Try United_States, see labels, one of them is "Eolas (disambiguation)"@eng
+=====================================================
+Bug ID: 8
+Topic:  TLD / Top level domain
+Reporter: Fabian Suchanek
+Status: TO DO
+//////////////////////////////
+Example: The United_States have TLD ".edu" instead of ".us"
+=====================================================
+Bug ID: 9
+Topic:  String extraction extracts "<small>"
+Reporter: Fabian Suchanek
+Status: TO DO
+//////////////////////////////
+Example: Iraq has motto "<small>"
+=====================================================
+Bug ID: 10
+Topic:  GDP extraction does not get the dollar
+Reporter: Fabian Suchanek
+Status: TO DO
+//////////////////////////////
+Example: Iraq and United_States both have GDP without the dollar unit (just <yagoMonetaryValue>)
+=====================================================
