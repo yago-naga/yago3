@@ -65,3 +65,10 @@ Status: TO DO
 //////////////////////////////
 Example: Iraq and United_States both have GDP without the dollar unit (just <yagoMonetaryValue>)
 =====================================================
+Bug ID: 11
+Topic:  There are dates with a wrong format
+Reporter: Joanna Biega
+Status: TO DO
+//////////////////////////////
+Example: <Texas_Flood> <wasCreatedOnDate>  "24-11-22"^^xsd:date .
+=====================================================
