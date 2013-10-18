@@ -354,11 +354,11 @@ public class InfoboxExtractor extends Extractor {
     //    new HardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/basics2s/data/")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "test");
     //    new WordnetExtractor(new File("C:/Users/Administrator/data/wordnet")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "This time its gonna work!");
     //    
-    InfoboxExtractor ie = new InfoboxExtractor(new File("C:/Users/Administrator/data2/wikipedia/testset/" + "wikitest.xml"));
-    ie.extract(new File("C:/Users/Administrator/data2/yago2s/"), "Test on 1 wikipedia article");
+    InfoboxExtractor ie = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
+    ie.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 
-    InfoboxExtractor ie2 = new InfoboxExtractor(new File("C:/Users/Administrator/data2/wikipedia/testset/de" + "_carsten.xml"));
-    ie2.extract(new File("C:/Users/Administrator/data2/yago2s/"), "Test on 1 wikipedia article");
+//    InfoboxExtractor ie2 = new InfoboxExtractor(new File("D:/data2/wikipedia/testset/de" + "_carsten.xml"));
+//    ie2.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 
   }
 }
