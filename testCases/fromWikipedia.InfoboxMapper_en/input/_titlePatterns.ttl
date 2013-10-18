@@ -1,0 +1,36 @@
+# test
+# The replacement patterns for Wikipedia titles used in YAGO
+# INTERNAL
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+"Economy of the Bahamas"	<_titleReplace>	"The_Bahamas" .
+"Economy of the Gambia"	<_titleReplace>	"The_Gambia" .
+"Economy of the (.+)"	<_titleReplace>	"$1" .
+"Economy of (.+)"	<_titleReplace>	"$1" .
+"Political divisions"	<_titleReplace>	"NIL" .
+"List of"	<_titleReplace>	"NIL" .
+"[^:<]+:[^<]+"	<_titleReplace>	"NIL" .
+"History of"	<_titleReplace>	"NIL" .
+"Comparison of"	<_titleReplace>	"NIL" .
+"Demography of"	<_titleReplace>	"NIL" .
+"Demographics of"	<_titleReplace>	"NIL" .
+"[^<]+eography[^<]+"	<_titleReplace>	"NIL" .
+"[^<]* and [^<]*"	<_titleReplace>	"NIL" .
+"[^<]{100,}"	<_titleReplace>	"NIL" .
+"Category:"	<_titleReplace>	"NIL" .
+"\\(disambiguation\\)"	<_titleReplace>	"NIL" .
+"\\(.*name.*\\)"	<_titleReplace>	"NIL" .
+"Prime Minister of"	<_titleReplace>	"NIL" .
+"Minister of"	<_titleReplace>	"NIL" .
+"President of"	<_titleReplace>	"NIL" .
+"Prince of"	<_titleReplace>	"NIL" .
+"Co-Princes of"	<_titleReplace>	"NIL" .
+"Leader of"	<_titleReplace>	"NIL" .
+"^\\d+"	<_titleReplace>	"NIL" .
