@@ -67,7 +67,9 @@ public class TransitiveTypeExtractor extends Extractor {
     FactWriter w = output.get(TRANSITIVETYPE);
     for (Entry<String, Set<String>> type : yagoTaxonomy.entrySet()) {
       for (String c : type.getValue()) {
-        w.write(new Fact(type.getKey(), RDFS.type, c));
+    	Fact f = new Fact(type.getKey(), RDFS.type, c);
+    	f.makeId();
+        w.write(f);
       }
     }
     Announce.done();
