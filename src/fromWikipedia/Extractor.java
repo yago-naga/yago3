@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
@@ -27,6 +28,17 @@ import basics.YAGO;
  * 
  */
 public abstract class Extractor {
+  
+  static String[] languages = { "de", "en" };
+  static Map<String,String> langPostfixes = new HashMap<String, String>();
+  static{
+    for(String s:languages)
+      if(!s.equals("en"))
+        langPostfixes.put(s, "_"+s);
+      else
+        langPostfixes.put(s, "");
+    
+  }
 
 	/** The themes required */
 	public abstract Set<Theme> input();
@@ -86,7 +98,7 @@ public abstract class Extractor {
 	public abstract void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception;
 
 	/** Convenience method */
-	public void extract(File inputFolder, String header) throws Exception {
+	public void extract(File inputFolder, String header) throws Exception {		
 		extract(inputFolder, inputFolder, header);
 	}
 
