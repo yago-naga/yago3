@@ -41,7 +41,7 @@ import fromThemes.TypeChecker;
 /**
  * YAGO2s - InfoboxExtractor
  * 
- * This version extracts facts from infoboxes in any given language.
+ * This version, extracts facts from infoboxes, no matter in which language.
  * 
  * @author Fabian M. Suchanek
  * @author Farzaneh Mahdisoltani
@@ -58,12 +58,9 @@ public class InfoboxExtractor extends Extractor {
 
   public static final HashMap<String, Theme> INFOBOXATTSOURCES_MAP = new HashMap<String, Theme>();
 
-  static int count = 0;
-
-  static String[] languages = { "de", "en" };
+ 
   static {
-    count++;
-    for (String s : languages) {
+    for (String s : Extractor.languages) {
       INFOBOXATTS_MAP.put(s, new Theme("yagoInfoboxAttributes_" + s, "Facts of infobox", ThemeGroup.OTHER));
       INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources_" + s, "Facts of infobox", ThemeGroup.OTHER));
     }
@@ -219,6 +216,13 @@ public class InfoboxExtractor extends Extractor {
       int c = readEnvironment(in, value);
       String valueStr = value.toString().trim();
       if (!valueStr.isEmpty()) {
+        if(attribute.contains("|")){
+          String[] parts= attribute.split("\\|");
+//          System.out.println("BEFORE_BEFORE_BEFORE_BEFORE_BEFORE" + attribute);
+          attribute  = parts[parts.length-1];
+//          System.out.println("AFTER_AFTER_AFTER_AFTER_AFTER_AFTER " + attribute);
+        }
+      
         D.addKeyValue(result, attribute, Char.decodeAmpersand(valueStr), TreeSet.class);
       }
       if (c == '}' || c == -1 || c == -2) break;
@@ -256,6 +260,14 @@ public class InfoboxExtractor extends Extractor {
     return "<infobox/" + this.language + "/" + FactComponent.stripBrackets(relation) + ">";
   }
 
+  private boolean comesFirst(Reader temp, String start,String end, String...findMe) throws IOException{
+    String between = FileLines.readBetween(temp, start, end);
+    for(String f:findMe)
+      if(between.contains(f))
+        return true;
+    
+    return false;
+  }
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
     FactCollection infoboxFacts = new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS));
@@ -271,17 +283,19 @@ public class InfoboxExtractor extends Extractor {
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
     while (true) {
-      switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox", "{{ Infobox")) {
+        /*nested comments not supported*/
+      switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox", "{{ Infobox", "<comment>")) {
         case -1:
           Announce.progressDone();
-
           in.close();
           return;
         case 0:
           Announce.progressStep();
-
           if (this.language.equals("en")) titleEntity = titleExtractor.getTitleEntity(in);
           else titleEntity = titleExtractor.getTitleEntityWithoutWordnet(in);
+          break;   
+        case 3:
+          String s = FileLines.readToBoundary(in, "</comment>");
           break;
         default:
           if (titleEntity == null) continue;
@@ -316,6 +330,7 @@ public class InfoboxExtractor extends Extractor {
   public static Map<String, Set<String>> infoboxPatterns(FactCollection infoboxFacts) {
     Map<String, Set<String>> patterns = new HashMap<String, Set<String>>();
     Announce.doing("Compiling infobox patterns");
+    //grabbing those with relation equal to "<_infoboxPattern>"
     for (Fact fact : infoboxFacts.get("<_infoboxPattern>")) {
       D.addKeyValue(patterns, normalizeAttribute(fact.getArgJavaString(1)), fact.getArg(2), TreeSet.class);
     }
@@ -354,11 +369,17 @@ public class InfoboxExtractor extends Extractor {
     //    new HardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/basics2s/data/")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "test");
     //    new WordnetExtractor(new File("C:/Users/Administrator/data/wordnet")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "This time its gonna work!");
     //    
-    InfoboxExtractor ie = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
-    ie.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+    InfoboxExtractor ie1 = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
+    ie1.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 
-//    InfoboxExtractor ie2 = new InfoboxExtractor(new File("D:/data2/wikipedia/testset/de" + "_carsten.xml"));
+//    InfoboxExtractor ie2 = new InfoboxExtractor(new File("D:/ar_wiki.xml"));
 //    ie2.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+//    
+//    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wiki.xml"));
+//    ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+//    
+//    InfoboxExtractor ie4 = new InfoboxExtractor(new File("D:/fa_wiki.xml"));
+//    ie4.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 
   }
 }
