@@ -65,11 +65,13 @@ public abstract class InfoboxMapper extends Extractor {
 	public Set<Theme> input() {
 		// return new HashSet<>(Arrays.asList(InfoboxExtractor.INFOBOXATTS));
 		// //new finalset
-		return new HashSet<Theme>(Arrays.asList(
+		return new HashSet<Theme>(
+		    Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
 				HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXATTS_MAP.get(language),
 				WordnetExtractor.WORDNETWORDS,
-				PatternHardExtractor.TITLEPATTERNS));
+				PatternHardExtractor.TITLEPATTERNS)
+				);
 
 	}
 
