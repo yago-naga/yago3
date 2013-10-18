@@ -56,6 +56,7 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
                           PatternHardExtractor.SPOTLX_ENTITY_RULES,
                           PatternHardExtractor.SPOTLX_FACT_RULES,
                           TransitiveTypeExtractor.TRANSITIVETYPE,
+                          LabelExtractor.YAGOLABELS,
                           SPOTLXRuleExtractor.RULERESULTS,
                           FactExtractor.YAGOFACTS,
                           LiteralFactExtractor.YAGOLITERALFACTS);

@@ -20,6 +20,9 @@
 "$1 rdf:type <permanentRelationToSubject> ; $0 <placedIn> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
 "$1 rdf:type <permanentRelationToSubject> ; $0 rdf:type <yagoGeoEntity> ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $0" .
 
+##-----------
+## We comment them out for optimization reasons (there are currently no permanentRelationsToObject)
+##-----------
 #"$1 rdf:type <permanentRelationToObject> ; $2 <placedIn> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $3" .
 #"$1 rdf:type <permanentRelationToObject> ; $2 rdf:type <yagoGeoEntity> ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursIn> $2" .
 
@@ -44,7 +47,9 @@
 "$1 rdf:type <permanentRelationToSubject> ; $0 <startsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
 "$1 rdf:type <permanentRelationToSubject> ; $0 <endsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
 
-# !!! Those currently only affect the <redirectedFrom>, <isPreferredMeaningOf> and rdfs:label facts, so we comment them out.
+##-----------
+## We comment them out for optimization reasons (there are currently no permanentRelationsToObject)
+##-----------
 #"$1 rdf:type <permanentRelationToObject> ; $2 <startsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursSince> $3" .
 #"$1 rdf:type <permanentRelationToObject> ; $2 <endsExistingOnDate> $3 ; $0 $1 $2" <_implies> "$0 $1 $2 ; #1 <occursUntil> $3" .
 
