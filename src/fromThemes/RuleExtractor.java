@@ -29,7 +29,7 @@ public class RuleExtractor extends BaseRuleExtractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(PatternHardExtractor.RULES, TransitiveTypeExtractor.TRANSITIVETYPE, ClassExtractor.YAGOTAXONOMY,
-        HardExtractor.HARDWIREDFACTS, InfoboxMapper.INFOBOXFACTS_TOREDIRECT, CategoryExtractor.CATEGORYFACTS,WordnetExtractor.WORDNETCLASSES);
+        HardExtractor.HARDWIREDFACTS,  InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"), CategoryExtractor.CATEGORYFACTS,WordnetExtractor.WORDNETCLASSES);
   }
 
   /** Theme of deductions */

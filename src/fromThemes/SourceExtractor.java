@@ -37,7 +37,7 @@ public class SourceExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(InfoboxMapper.INFOBOXFACTS_TOREDIRECT,PersonNameExtractor.PERSONNAMESOURCES,
+    return new FinalSet<>( InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),PersonNameExtractor.PERSONNAMESOURCES,
         RuleExtractor.RULESOURCES,CategoryExtractor.CATEGORYSOURCES,WikipediaTypeExtractor.WIKIPEDIATYPESOURCES,
         WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, FlightExtractor.FLIGHTSOURCE, CoordinateExtractor.COORDINATE_SOURCES, 
         TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES, FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE);

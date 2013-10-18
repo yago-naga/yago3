@@ -32,7 +32,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS, InfoboxMapper.INFOBOXFACTS_TOREDIRECT, RuleExtractor.RULERESULTS,
+    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS,  InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"), RuleExtractor.RULERESULTS,
         TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA,FlightIATAcodeExtractor.AIRPORT_CODE, SchemaExtractor.YAGOSCHEMA, CoordinateExtractor.COORDINATES,
         GeoNamesDataImporter.GEONAMESMAPPEDDATA
     );

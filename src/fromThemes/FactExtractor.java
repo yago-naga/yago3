@@ -35,7 +35,7 @@ public class FactExtractor extends SimpleDeduplicator {
     return new FinalSet<>(CategoryExtractor.CATEGORYFACTS,
         GenderExtractor.PERSONS_GENDER,        
         HardExtractor.HARDWIREDFACTS, 
-        InfoboxMapper.INFOBOXFACTS_TOREDIRECT,        
+        InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),        
         RuleExtractor.RULERESULTS,  
         FlightExtractor.FLIGHTS,
         GeoNamesDataImporter.GEONAMESMAPPEDDATA,
