@@ -94,6 +94,7 @@ public class DisambiguationPageExtractor extends Extractor {
 				return;
 			case 0:
 				titleEntity = FileLines.readToBoundary(in, "</title>");
+				titleEntity = cleanDisambiguationEntity(titleEntity);
         page = FileLines.readBetween(in, "<text", "</text>");
         
 				if (titleEntity == null || page == null)
@@ -107,6 +108,13 @@ public class DisambiguationPageExtractor extends Extractor {
 				}
 			}
 		}
+	}
+	
+	protected static String cleanDisambiguationEntity(String titleEntity) {
+		if (titleEntity.indexOf("(disambiguation)") > -1) {
+			titleEntity = titleEntity.substring(0, titleEntity.indexOf("(disambiguation)")).trim();
+		}
+		return titleEntity;
 	}
 
 	/** Returns the set of disambiguation templates */
@@ -132,5 +140,28 @@ public class DisambiguationPageExtractor extends Extractor {
 	public DisambiguationPageExtractor(File wikipedia) {
 		this.wikipedia = wikipedia;
 	}
+	
+	public static void main(String[] args) throws Exception {
+	    String s = "Regular Title";
+	    String correct = "Regular Title"; 
+	    s = DisambiguationPageExtractor.cleanDisambiguationEntity(s);
+	    if (!s.equals(correct)) {
+	    	System.out.println("Expected: " + correct + ". Value: " + s);
+	    }
+	    
+	    s = "Regular Title (disambiguation)";
+	    s = DisambiguationPageExtractor.cleanDisambiguationEntity(s);
+	    if (!s.equals(correct)) {
+	    	System.out.println("Expected: " + correct + ". Value: " + s);
+	    }
+	    
+	    s = "Regular Title (disambiguation). ";
+	    s = DisambiguationPageExtractor.cleanDisambiguationEntity(s);
+	    if (!s.equals(correct)) {
+	    	System.out.println("Expected: " + correct + ". Value: " + s);
+	    }
+	   
+	    System.out.println("Done.");
+	  }
 
 }
