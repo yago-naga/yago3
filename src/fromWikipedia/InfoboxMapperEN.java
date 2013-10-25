@@ -29,7 +29,7 @@ import basics.Theme;
 import basics.YAGO;
 
 
-public class InfoboxMapper_en extends InfoboxMapper{
+public class InfoboxMapperEN extends InfoboxMapper{
 
   
 //  /** Infobox facts */
@@ -254,7 +254,7 @@ public class InfoboxMapper_en extends InfoboxMapper{
       }
     }
   }
-  public InfoboxMapper_en(){
+  public InfoboxMapperEN(){
     super("en");
   }
   
@@ -276,7 +276,7 @@ public class InfoboxMapper_en extends InfoboxMapper{
 //     File("C:/Users/Administrator/data2/wikipedia/testset/wikitest.xml"))
 //     .extract(new File("C:/Users/Administrator/data2/yago2s/"+mylang),
 //     "Test on 1 wikipedia article");
-    InfoboxMapper_en extractor = new InfoboxMapper_en();
+    InfoboxMapperEN extractor = new InfoboxMapperEN();
     extractor.extract(new File("D:/data2/yago2s/"),
         "mapping infobox attributes into infobox facts");
   }

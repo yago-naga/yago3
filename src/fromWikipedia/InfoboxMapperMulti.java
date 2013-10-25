@@ -25,7 +25,7 @@ import basics.RDFS;
 import basics.Theme;
 
 
-public class InfoboxMapper_multi extends InfoboxMapper{
+public class InfoboxMapperMulti extends InfoboxMapper{
   
   @Override
   public Set<Theme> input() {
@@ -117,12 +117,12 @@ public class InfoboxMapper_multi extends InfoboxMapper{
 
 }
   
-  public InfoboxMapper_multi(String lang){
+  public InfoboxMapperMulti(String lang){
     super(lang);
   }
 
   public static void main(String[] args) throws Exception {
-    InfoboxMapper_multi extractor = new InfoboxMapper_multi("de");
+    InfoboxMapperMulti extractor = new InfoboxMapperMulti("de");
     extractor.extract(new File("D:/data2/yago2s/"),
         "mapping infobox attributes into infobox facts");
 
