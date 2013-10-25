@@ -13,6 +13,7 @@ import basics.Theme.ThemeGroup;
 import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.CategoryMapper;
 import fromWikipedia.CoordinateExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
@@ -32,7 +33,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS,  InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"), RuleExtractor.RULERESULTS,
+    return new FinalSet<>(CategoryMapper.CATEGORYFACTS, HardExtractor.HARDWIREDFACTS,  InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"), RuleExtractor.RULERESULTS,
         TemporalCategoryExtractor.TEMPORALCATEGORYFACTS, TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA,FlightIATAcodeExtractor.AIRPORT_CODE, SchemaExtractor.YAGOSCHEMA, CoordinateExtractor.COORDINATES,
         GeoNamesDataImporter.GEONAMESMAPPEDDATA
     );

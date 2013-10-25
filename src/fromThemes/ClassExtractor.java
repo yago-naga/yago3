@@ -36,8 +36,8 @@ public class ClassExtractor extends Extractor {
   public Set<Theme> input() {
     return new FinalSet<>(WikipediaTypeExtractor.WIKIPEDIACLASSES,
         HardExtractor.HARDWIREDFACTS,         
-        WordnetExtractor.WORDNETCLASSES,
-        GeoNamesClassMapper.GEONAMESCLASSES);
+        WordnetExtractor.WORDNETCLASSES//, GeoNamesClassMapper.GEONAMESCLASSES
+        );
   }
 
   /** The YAGO taxonomy */

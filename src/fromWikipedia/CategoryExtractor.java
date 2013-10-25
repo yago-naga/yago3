@@ -48,29 +48,18 @@ public class CategoryExtractor extends Extractor {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
   }
 
-  @Override
-  public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(CATEGORYFACTS_TOREDIRECT, CATEGORYFACTS_TOTYPECHECK, this), new TypeChecker(
-        CATEGORYFACTS_TOTYPECHECK, CATEGORYFACTS, this)));
-  }
 
   /** Sources for category facts*/
-  public static final Theme CATEGORYSOURCES = new Theme("categorySources", "The sources of category facts");
+  public static final Theme CATEGORYATTSOURCES = new Theme("categoryAttSources", "The sources of category facts");
 
   /** Facts deduced from categories */
-  public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "Facts about Wikipedia instances, derived from the Wikipedia categories");
-
-  /** Facts deduced from categories */
-  public static final Theme CATEGORYFACTS_TOREDIRECT = new Theme("categoryFactsToBeRedirected",
+  public static final Theme CATEGORYATTS = new Theme("categoryAttributes",
       "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected");
 
-  /** Facts deduced from categories */
-  public static final Theme CATEGORYFACTS_TOTYPECHECK = new Theme("categoryFactsToBeTypeChecked",
-      "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be typechecked");
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(CATEGORYSOURCES, CATEGORYFACTS_TOREDIRECT);
+    return new FinalSet<Theme>(CATEGORYATTSOURCES, CATEGORYATTS);
   }
 
   @Override
@@ -97,11 +86,9 @@ public class CategoryExtractor extends Extractor {
           if (titleEntity == null) continue;
           String category = FileLines.readTo(in, ']', '|').toString();
           category = category.trim();
-          for (Fact fact : categoryPatterns.extract(category, titleEntity)) {
-            if (fact != null) {
-              write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(titleEntity), "CategoryExtractor");
-            }
-          }
+          
+          write(writers, CATEGORYATTS, new Fact(titleEntity, "<hasWikiCategory>", FactComponent.forString(category)),CATEGORYATTSOURCES, 
+              FactComponent.wikipediaURL(titleEntity), "CategoryExtractor" );
           break;
         case 2:
           // Redirect pages have to go away
@@ -118,8 +105,8 @@ public class CategoryExtractor extends Extractor {
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new CategoryExtractor(new File("c:/fabian/data/wikipedia/testset/puettlingen.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+//    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
+//    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
+    new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
   }
 }

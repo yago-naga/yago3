@@ -30,22 +30,17 @@ import fromThemes.TypeChecker;
  * 
  * Extracts facts from categories
  * 
- * @author Fabian
+ * @author Farzaneh
  * 
  */
 public class CategoryMapper extends Extractor {
 
-  /** The file from which we read */
-  protected File wikipedia;
+
 
   @Override
-  public File inputDataFile() {   
-    return wikipedia;
-  }
-  
-  @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
+    return new TreeSet<Theme>(Arrays.asList(CategoryExtractor.CATEGORYATTS, PatternHardExtractor.CATEGORYPATTERNS, 
+        PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
   }
 
   @Override
@@ -75,54 +70,29 @@ public class CategoryMapper extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),
-        "<_categoryPattern>");
-    TitleExtractor titleExtractor = new TitleExtractor(input);
+    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
 
-    // Extract the information
     Announce.progressStart("Extracting", 3_900_000);
-    Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-    String titleEntity = null;
-    while (true) {
-      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:","#REDIRECT")) {
-        case -1:
-          Announce.progressDone();
-          in.close();
-          return;
-        case 0:
-          Announce.progressStep();
-          titleEntity = titleExtractor.getTitleEntity(in);
-          break;
-        case 1:
-          if (titleEntity == null) continue;
-          String category = FileLines.readTo(in, ']', '|').toString();
-          category = category.trim();
-          /*previouis version*/
-          for (Fact fact : categoryPatterns.extract(category, titleEntity)) {
-            if (fact != null) {
-              write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(titleEntity), "CategoryExtractor");
-            }
-          }
-          /*new version: writes out facts like titleEntity  'hasWikiCategory' category*/
-          break;
-        case 2:
-          // Redirect pages have to go away
-          titleEntity=null;
-          break;
+
+      /*previouis version*/
+//      for (Fact fact : categoryPatterns.extract(category, titleEntity))
+      for (Fact f : input.get(CategoryExtractor.CATEGORYATTS)){
+        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(f.getArg(2)),f.getArg(1))){
+          write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(f.getArg(1)), "CategoryExtractor");
+        }
       }
-    }
+
+
   }
 
   /** Constructor from source file */
-  public CategoryMapper(File wikipedia) {
-    this.wikipedia = wikipedia;
-  }
+  public CategoryMapper() {}
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    String yago = "C:/Users/Administrator/data2/yago2s/";
-    new HardExtractor(new File("../basics2s/data")).extract(new File(yago), "Test on 1 wikipedia article");
-    new PatternHardExtractor(new File("./data")).extract(new File(yago), "Test on 1 wikipedia article");
-    new CategoryMapper(new File("C:/Users/Administrator/data2/wikipedia/testset/wikitest.xml")).extract(new File(yago), "Test on 1 wikipedia article");
+    String yago = "D:/data2/yago2s/";
+//    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
+//    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
+    new CategoryMapper().extract(new File(yago), "Test on 1 wikipedia article");
   }
 }

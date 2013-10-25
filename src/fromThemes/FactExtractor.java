@@ -13,6 +13,7 @@ import basics.Theme.ThemeGroup;
 import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.CategoryMapper;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.GenderExtractor;
 import fromWikipedia.InfoboxExtractor;
@@ -32,7 +33,7 @@ public class FactExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS,
+    return new FinalSet<>(CategoryMapper.CATEGORYFACTS,
         GenderExtractor.PERSONS_GENDER,        
         HardExtractor.HARDWIREDFACTS, 
         InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),        

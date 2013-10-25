@@ -8,6 +8,7 @@ import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.CategoryMapper;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.InfoboxMapper;
 import javatools.administrative.Announce;
@@ -29,7 +30,7 @@ public class RuleExtractor extends BaseRuleExtractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(PatternHardExtractor.RULES, TransitiveTypeExtractor.TRANSITIVETYPE, ClassExtractor.YAGOTAXONOMY,
-        HardExtractor.HARDWIREDFACTS,  InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"), CategoryExtractor.CATEGORYFACTS,WordnetExtractor.WORDNETCLASSES);
+        HardExtractor.HARDWIREDFACTS,  InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"), CategoryMapper.CATEGORYFACTS,WordnetExtractor.WORDNETCLASSES);
   }
 
   /** Theme of deductions */

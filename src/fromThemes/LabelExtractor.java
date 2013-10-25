@@ -6,6 +6,7 @@ import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.CategoryMapper;
 import fromWikipedia.DisambiguationPageExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
@@ -34,7 +35,7 @@ public class LabelExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryExtractor.CATEGORYFACTS, DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
+    return new FinalSet<>(CategoryMapper.CATEGORYFACTS, DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
         HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, 
         InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),
         PersonNameExtractor.PERSONNAMES,
