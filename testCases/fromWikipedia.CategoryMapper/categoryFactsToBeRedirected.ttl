@@ -72,6 +72,10 @@
 <Giuliano_Amato>	<isPoliticianOf>	<Italy> .
 #@ <id_1bclsii_1xk_34ne4r>
 <Giulio_Tremonti>	<wasBornOnDate>	"1947-##-##"^^xsd:date .
+#@ <id_1kw13uu_siu_2lmnpe>
+<Kingdom_of_Italy_(1861–1946)>	<wasCreatedOnDate>	"1861-##-##"^^xsd:date .
+#@ <id_1kw13uu_1ql_1nhd5vu>
+<Kingdom_of_Italy_(1861–1946)>	<wasDestroyedOnDate>	"1946-##-##"^^xsd:date .
 #@ <id_184v0j1_1xk_savbom>
 <Lamberto_Dini>	<wasBornOnDate>	"1931-##-##"^^xsd:date .
 #@ <id_184v0j1_14h_10ot5dv>

@@ -103,6 +103,12 @@
 #@ <id_xkjvtn_115_1qxh75c>
 <id_1bclsii_1xk_34ne4r>	<extractionSource>	<http://en.wikipedia.org/wiki/Giulio_Tremonti> .
 <id_xkjvtn_115_1qxh75c>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ab7b3o_115_1guye28>
+<id_1kw13uu_siu_2lmnpe>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)> .
+<id_1ab7b3o_115_1guye28>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3oyah0_115_1guye28>
+<id_1kw13uu_1ql_1nhd5vu>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)> .
+<id_3oyah0_115_1guye28>	<extractionTechnique>	"CategoryExtractor" .
 #@ <id_1sflnzc_115_jis3n>
 <id_184v0j1_1xk_savbom>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini> .
 <id_1sflnzc_115_jis3n>	<extractionTechnique>	"CategoryExtractor" .
