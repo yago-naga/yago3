@@ -1,3 +1,145 @@
+/****
+ Please, follow those rules when maintaining this simple bug-tracker.
+
+1. Add new bugs on top of this file!
+
+(Statuses)
+2. A new bug gets the TO DO status.
+3. A resolved bug gets the TO CHECK status.
+4. When you confirm that the problem disappeared, assign the FIXED status.
+
+5. When possible, write a short information on how you solved the bug.
+6. The bugs are not necessarily resolved in the order specified by ID. 
+   Please look for unresolved bugs by searching for TO DO.
+
+Thank you!
+
+****/
+
+
+
+=====================================================
+Bug ID: 14
+Topic:  Wrong death dates extracted
+Reporter: Joanna Biega
+Status: TO CHECK
+Solution: create new replacement rule in _infoboxPatterns.ttl
+//////////////////////////////
+Example: in the patterns like 
+death_date = {{BirthDeathAge||1821|11|8|1900|10|23|yes}} 
+the first date (which is birth date) is extracted.
+=====================================================
+Bug ID: 13
+Topic:  There are dates with a wrong format
+Reporter: Joanna Biega
+Status: TO DO
+//////////////////////////////
+Example: <Texas_Flood> <wasCreatedOnDate>  "24-11-22"^^xsd:date .
+=====================================================
+Bug ID: 12
+Topic:  GDP extraction does not get the dollar
+Reporter: Fabian Suchanek
+Status: TO DO
+//////////////////////////////
+Example: Iraq and United_States both have GDP without the dollar unit (just <yagoMonetaryValue>)
+=====================================================
+Bug ID: 11
+Topic:  String extraction extracts "<small>"
+Reporter: Fabian Suchanek
+Status: TO CHECK
+Solution: replace html markup with (<.*>. "").
+Also replaced entities [[.*]] with their names in the string extraction methods. 
+//////////////////////////////
+Example: Iraq has motto "<small>".
+=====================================================
+Bug ID: 10
+Topic:  Disambiguation pages are labels, together with "(disambiguation)"
+Reporter: Fabian Suchanek
+Status: TO CHECK
+Solution: remove "(disambiguation)" from the entity titles when creating disambiguation labels.
+//////////////////////////////
+Example: Try United_States, see labels, one of them is "Eolas (disambiguation)"@eng
+=====================================================
+Bug ID: 9
+Topic:  TLD / Top level domain
+Reporter: Fabian Suchanek
+Status: TO CHECK
+Solution: couldn't reconstruct.
+//////////////////////////////
+Example: The United_States have TLD ".edu" instead of ".us"
+=====================================================
+Bug ID: 8
+Topic:  Some organizations have genders
+Reporter: Joanna Biega
+Status: TO CHECK
+Solution: Perhaps it was only dependent on a wikipedia version.
+//////////////////////////////
+Found that in one of the recent extractions some organizations got genders.
+E.g. <Amnesty_International> <hasGender> <male>
+=====================================================
+Bug ID: 7
+Topic:  Redirects should not make rdfs:label, but have their own relation
+Reporter: Fabian Suchanek
+Status: FIXED
+Solution: Introduced the <redirectedFrom> relation to yago2s and basics2s/data.
+//////////////////////////////
+Otherwise we get too much garbage in the label-relation 
+=====================================================
+Bug ID: 6
+Topic:  Some articles no longer have categories, but templates. We lose these
+Reporter: Fabian Suchanek
+Status: TO DO
+//////////////////////////////
+Example: Try Lippstadt, it's not there in YAGO
+=====================================================
+Bug ID: 5
+Topic:  Incompatible facts added by Literal Facts Extractor
+Reporter: Joanna Biega
+Status: FIXED
+Solution: Fix the SchemaExtractor so that it rewrites the type facts concerning predicates. 
+          Otherwise the deduplicator can't check whether a relation is functional.
+//////////////////////////////
+Example: if we get as an input facts <x, wasBornOnDate, 1995-##-##> and <x, wasBornOnDate, 1994-09-18>, 
+both of the facts seem to be added into the output theme.
+=====================================================
+Bug ID: 4
+Topic:  States are countries
+Reporter: Luis Galarraga
+Status: FIXED
+Solution: <wordnet_administrative_district_108491826> <isPreferredMeaningOf>  "state"@eng .
+//////////////////////////////
+Texas (and other US states) are listed as "country" in YAGO.
+=====================================================
+Bug ID: 3
+Topic:  owl:thing --> wordnet "medicine"
+Reporter: Marilena Oita
+Status: TO DO
+//////////////////////////////
+In the process of making the transitive closure of yagoTransityveTypes with wordnetDomains
+ we discovered a I bug related to the fact that all entities of type owl:thing were associated with
+  wordnet domain "medicine".
+=====================================================
+Bug ID: 2
+Topic:  Upper-lower case in some types
+Reporter: Steffen Metzger
+Status: FIXED
+Solution: Always capitalize the first letters of wikicategories.
+//////////////////////////////
+Another problem seems to be the writing of types, sometimes upper-and
+lower case is mixed up. One instance that I also found in YAGO2S is the
+wikicategory_German_physicists type, which appears sometimes also as
+wikicategory_german_physicists (lower G), as for example in this fact:
+Gustav_Zeuner   type    wikicategory_german_physicists
+
+There is the same problem with "wikicategory_Time_travel_films"
+and "wikicategory_time_travel_films"
+
+(at least the first example should also be in YAGO2S, saw it in the
+online browser)
+
+This becomes a problem with case-sensitive tables/queries. I haven't
+checked/seen other cases of this yet, so it may only be these instance,
+but it could also be a systematic problem of some sort...
 =====================================================
 Bug ID:	1
 Topic:	Duplicates
@@ -20,55 +162,4 @@ f1.predicate=f2.predicate and f1.object=f2.object and f1.id!=f2.id
 
 this gave a result of 107660 lines (this would mean ~50.000
 affected facts, less if we some facts have more than two instances).
-=====================================================
-Bug ID:	3
-Topic:	owl:thing --> wordnet "medicine"
-Reporter:	Marilena Oita
-Status:	TO DO
-//////////////////////////////
-In the process of making the transitive closure of yagoTransityveTypes with wordnetDomains
- we discovered a I bug related to the fact that all entities of type owl:thing were associated with
-  wordnet domain "medicine".
-=====================================================
-Bug ID: 6
-Topic:  Some articles no longer have categories, but templates. We lose these
-Reporter: Fabian Suchanek
-Status: TO DO
-//////////////////////////////
-Example: Try Lippstadt, it's not there in YAGO
-=====================================================
-Bug ID: 7
-Topic:  Disambiguation pages are labels, together with "(disambiguation)"
-Reporter: Fabian Suchanek
-Status: TO DO
-//////////////////////////////
-Example: Try United_States, see labels, one of them is "Eolas (disambiguation)"@eng
-=====================================================
-Bug ID: 8
-Topic:  TLD / Top level domain
-Reporter: Fabian Suchanek
-Status: TO DO
-//////////////////////////////
-Example: The United_States have TLD ".edu" instead of ".us"
-=====================================================
-Bug ID: 9
-Topic:  String extraction extracts "<small>"
-Reporter: Fabian Suchanek
-Status: TO DO
-//////////////////////////////
-Example: Iraq has motto "<small>"
-=====================================================
-Bug ID: 10
-Topic:  GDP extraction does not get the dollar
-Reporter: Fabian Suchanek
-Status: TO DO
-//////////////////////////////
-Example: Iraq and United_States both have GDP without the dollar unit (just <yagoMonetaryValue>)
-=====================================================
-Bug ID: 11
-Topic:  There are dates with a wrong format
-Reporter: Joanna Biega
-Status: TO DO
-//////////////////////////////
-Example: <Texas_Flood> <wasCreatedOnDate>  "24-11-22"^^xsd:date .
 =====================================================
