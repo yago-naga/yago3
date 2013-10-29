@@ -1,4 +1,4 @@
-/****
+/*************************************** INFO *******************************************************************\ 
  Please, follow those rules when maintaining this simple bug-tracker.
 
 1. Add new bugs on top of this file!
@@ -8,15 +8,27 @@
 3. A resolved bug gets the TO CHECK status.
 4. When you confirm that the problem disappeared, assign the FIXED status.
 
-5. When possible, write a short information on how you solved the bug.
+5. When possible, write a short info on how you solved the bug.
 6. The bugs are not necessarily resolved in the order specified by ID. 
    Please look for unresolved bugs by searching for TO DO.
 
 Thank you!
 
-****/
+You can use this bug report template:
+
+=====================================================
+Bug ID: 
+Topic:  
+Reporter: 
+Status: TO DO
+Solution: 
+//////////////////////////////
+[Description goes here]
+Example: 
 
 
+
+/*************************************** BUG LIST *******************************************************************\ 
 
 =====================================================
 Bug ID: 14
