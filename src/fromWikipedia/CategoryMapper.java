@@ -3,6 +3,7 @@ package fromWikipedia;
 import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
@@ -20,6 +21,7 @@ import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
@@ -33,66 +35,62 @@ import fromThemes.TypeChecker;
  * @author Farzaneh
  * 
  */
-public class CategoryMapper extends Extractor {
+public abstract class CategoryMapper extends Extractor {
 
 
 
+  protected String language; 
+  public static final HashMap<String, Theme> CATEGORYSOURCES_MAP = new HashMap<String, Theme>(); //new Theme("categorySources", "The sources of category facts");
+  public static final HashMap<String, Theme> CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>(); 
+  
+  
+  static {
+    for (String s : Extractor.languages) {
+      CATEGORYFACTS_TOREDIRECT_MAP.put(s, new Theme("categoryFactsToBeRedirected_" + s, 
+          "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
+      CATEGORYSOURCES_MAP.put(s, new Theme("categorySources_" + s, "The sources of category facts", ThemeGroup.OTHER));
+    }
+
+  }
+
+  
+  
+  public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "Facts about Wikipedia instances, derived from the Wikipedia categories");
+  /** Facts deduced from categories */
+  public static final Theme CATEGORYFACTS_TOTYPECHECK = new Theme("categoryFactsToBeTypeChecked",
+      "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be typechecked");
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(CategoryExtractor.CATEGORYATTS, PatternHardExtractor.CATEGORYPATTERNS, 
+    return new TreeSet<Theme>(Arrays.asList(CategoryExtractor.CATEGORYATTS_MAP.get(language), PatternHardExtractor.CATEGORYPATTERNS, 
         PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
   }
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(CATEGORYFACTS_TOREDIRECT, CATEGORYFACTS_TOTYPECHECK, this), new TypeChecker(
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(CATEGORYFACTS_TOREDIRECT_MAP.get(language), CATEGORYFACTS_TOTYPECHECK, this), new TypeChecker(
         CATEGORYFACTS_TOTYPECHECK, CATEGORYFACTS, this)));
   }
 
-  /** Sources for category facts*/
-  public static final Theme CATEGORYSOURCES = new Theme("categorySources", "The sources of category facts");
 
-  /** Facts deduced from categories */
-  public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "Facts about Wikipedia instances, derived from the Wikipedia categories");
-
-  /** Facts deduced from categories */
-  public static final Theme CATEGORYFACTS_TOREDIRECT = new Theme("categoryFactsToBeRedirected",
-      "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected");
-
-  /** Facts deduced from categories */
-  public static final Theme CATEGORYFACTS_TOTYPECHECK = new Theme("categoryFactsToBeTypeChecked",
-      "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be typechecked");
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(CATEGORYSOURCES, CATEGORYFACTS_TOREDIRECT);
+    return new FinalSet<Theme>(CATEGORYSOURCES_MAP.get(language), CATEGORYFACTS_TOREDIRECT_MAP.get(language));
   }
 
-  @Override
-  public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
 
-    Announce.progressStart("Extracting", 3_900_000);
-
-      /*previouis version*/
-//      for (Fact fact : categoryPatterns.extract(category, titleEntity))
-      for (Fact f : input.get(CategoryExtractor.CATEGORYATTS)){
-        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(f.getArg(2)),f.getArg(1))){
-          write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(f.getArg(1)), "CategoryExtractor");
-        }
-      }
-
-
-  }
 
   /** Constructor from source file */
-  public CategoryMapper() {}
+  public CategoryMapper(String lang) {
+    language=lang;
+  }
+  
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
     String yago = "D:/data2/yago2s/";
 //    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
 //    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
-    new CategoryMapper().extract(new File(yago), "Test on 1 wikipedia article");
+//    new CategoryMapper().extract(new File(yago), "Test on 1 wikipedia article");
   }
 }

@@ -22,6 +22,7 @@ public class Dictionary {
   
 
   private static Map<String,Map<String, Set<String>>> rdictionaries = new HashMap<String, Map<String,Set<String>>> ();
+  private static Map<String, String> catDictionary = new HashMap<String, String> ();
 
   private static Map<String, Set<String>> buildReverseDictionary(String secondLang, FactSource fs) throws FileNotFoundException, IOException{
     Map<String, Set<String>> rdictionary = new HashMap<String, Set<String>>(); 
@@ -53,12 +54,37 @@ public class Dictionary {
     
   }
   
+  private static Map<String, String> buildCatDictionary(FactSource fs) throws FileNotFoundException, IOException{
+    catDictionary = new HashMap<String, String>(); 
+    for(Fact f: fs){
+
+      String object= FactComponent.stripQuotes(FactComponent.getString(f.getArg(2)));
+      String subject =  FactComponent.stripBrackets(f.getArg(1));
+   
+    if(subject.equals("Category")){
+        catDictionary.put(FactComponent.getLanguage(f.getArg(2)), object);
+        System.out.println("added " + FactComponent.getLanguage(f.getArg(2)) + " " + object);
+    }
+      
+
+    }
+    return catDictionary;
+  }
+  
   public static synchronized Map<String, Set<String>> get(String secondLang,FactSource fs) throws FileNotFoundException, IOException{
    
     if(!rdictionaries.containsKey(secondLang)) {
       rdictionaries.put(secondLang, buildReverseDictionary(secondLang, fs));
     }
     return(rdictionaries.get(secondLang));
+  }
+  
+  public static synchronized Map<String, String> getCatDictionary(FactSource fs) throws FileNotFoundException, IOException{
+    if(catDictionary.isEmpty()){
+      buildCatDictionary(fs);
+    }
+    System.out.println(catDictionary);
+    return catDictionary; 
   }
   
   
