@@ -57,12 +57,16 @@ public class InfoboxExtractor extends Extractor {
   public static final HashMap<String, Theme> INFOBOXATTS_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> INFOBOXATTSOURCES_MAP = new HashMap<String, Theme>();
+  
+  public static final HashMap<String, Theme> INFOBOXTYPES_MAP = new HashMap<String, Theme>();
+  
 
  
   static {
     for (String s : Extractor.languages) {
       INFOBOXATTS_MAP.put(s, new Theme("yagoInfoboxAttributes_" + s, "Facts of infobox", ThemeGroup.OTHER));
-      INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources_" + s, "Facts of infobox", ThemeGroup.OTHER));
+      INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources_" + s, "Sources for facts of infobox", ThemeGroup.OTHER));
+      INFOBOXTYPES_MAP.put(s, new Theme("infoboxTypes_" + s, "Types of infoboxes", ThemeGroup.OTHER));
     }
 
   }
@@ -74,12 +78,6 @@ public class InfoboxExtractor extends Extractor {
   public String getLang() {
     return language;
   }
-
-  /** facts of infobox */
-  public Theme INFOBOXATTS;
-
-  /** Sources */
-  public Theme INFOBOXATTSOURCES;
 
   @Override
   public File inputDataFile() {
@@ -94,7 +92,7 @@ public class InfoboxExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(INFOBOXATTS, INFOBOXATTSOURCES);
+    return new FinalSet<Theme>( INFOBOXATTS_MAP.get(language), INFOBOXATTSOURCES_MAP.get(language), INFOBOXTYPES_MAP.get(language));
   }
 
   /** normalizes an attribute name */
@@ -158,10 +156,10 @@ public class InfoboxExtractor extends Extractor {
       }
       if (inverse) {
         Fact fact = new Fact(object, relation, entity);
-        write(writers, INFOBOXATTS, fact, INFOBOXATTSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
+        write(writers,  INFOBOXATTS_MAP.get(language), fact, INFOBOXATTSOURCES_MAP.get(language), FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
       } else {
         Fact fact = new Fact(entity, relation, object);
-        write(writers, INFOBOXATTS, fact, INFOBOXATTSOURCES, FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
+        write(writers, INFOBOXATTS_MAP.get(language), fact, INFOBOXATTSOURCES_MAP.get(language), FactComponent.wikipediaURL(entity), "InfoboxExtractor from " + attribute);
       }
 
       if (factCollection.contains(relation, RDFS.type, YAGO.function)) break;
@@ -218,9 +216,7 @@ public class InfoboxExtractor extends Extractor {
       if (!valueStr.isEmpty()) {
         if(attribute.contains("|")){
           String[] parts= attribute.split("\\|");
-//          System.out.println("BEFORE_BEFORE_BEFORE_BEFORE_BEFORE" + attribute);
           attribute  = parts[parts.length-1];
-//          System.out.println("AFTER_AFTER_AFTER_AFTER_AFTER_AFTER " + attribute);
         }
       
         D.addKeyValue(result, attribute, Char.decodeAmpersand(valueStr), TreeSet.class);
@@ -298,15 +294,27 @@ public class InfoboxExtractor extends Extractor {
           String s = FileLines.readToBoundary(in, "</comment>");
           break;
         default:
-          if (titleEntity == null) continue;
-          FileLines.readTo(in, '}', '|');
+           if (titleEntity == null) continue;
+ String cls = FileLines.readTo(in, '}', '|').toString().trim().toLowerCase();
+          
+          if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
+        
+//          if(writers==null)
+     
+//       write(writers, INFOBOXTYPES_MAP.get(language), new Fact(titleEntity, "<hasInfoboxType>", FactComponent.forYagoEntity(cls)),
+//          
+//           INFOBOXATTSOURCES_MAP.get(language), "", "");
+       
+       writers.get(INFOBOXTYPES_MAP.get(language)).write( new Fact(titleEntity, "<hasInfoboxType>", FactComponent.forYagoEntity(cls)));
+       
+          
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
 
           /*new version*/
           for (String attribute : attributes.keySet()) {
             for (String value : attributes.get(attribute)) {
-              write(writers, INFOBOXATTS, new Fact(titleEntity, addPrefix(FactComponent.forYagoEntity(attribute)), FactComponent.forString(value)),
-                  INFOBOXATTSOURCES, FactComponent.wikipediaURL(titleEntity), "Infobox Extractor");
+              write(writers, INFOBOXATTS_MAP.get(language), new Fact(titleEntity, addPrefix(FactComponent.forYagoEntity(attribute)), FactComponent.forString(value)),
+                  INFOBOXATTSOURCES_MAP.get(language), FactComponent.wikipediaURL(titleEntity), "Infobox Extractor");
             }
           }
 
@@ -345,8 +353,6 @@ public class InfoboxExtractor extends Extractor {
   public InfoboxExtractor(File wikipedia, String lang) {
     this.wikipedia = wikipedia;
     this.language = lang;
-    INFOBOXATTS = INFOBOXATTS_MAP.get(lang);
-    INFOBOXATTSOURCES = INFOBOXATTSOURCES_MAP.get(lang);
 
   }
 
