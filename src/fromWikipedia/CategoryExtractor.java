@@ -41,15 +41,16 @@ public class CategoryExtractor extends Extractor {
   protected File wikipedia;
   protected String language;
   
+  public static final HashMap<String, Theme> CATEGORYMEMBERSHIP_MAP = new HashMap<String, Theme>();
   /** Sources for category facts*/
-  public static final HashMap<String, Theme> CATEGORYATTSOURCES_MAP = new HashMap<String, Theme>();
-  public static final HashMap<String, Theme> CATEGORYATTS_MAP = new HashMap<String, Theme>();
+  public static final HashMap<String, Theme> CATEGORYMEMBSOURCES_MAP = new HashMap<String, Theme>();
+  
   
   static {
     for (String s : Extractor.languages) {
-      CATEGORYATTS_MAP.put(s, new Theme("categoryAttributes_" + s, 
+      CATEGORYMEMBERSHIP_MAP.put(s, new Theme("categoryMembership_" + s, 
           "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
-      CATEGORYATTSOURCES_MAP.put(s, new Theme("categoryAttSources_" + s, "The sources of category facts", ThemeGroup.OTHER));
+      CATEGORYMEMBSOURCES_MAP.put(s, new Theme("categoryMembSources_" + s, "The sources of category facts", ThemeGroup.OTHER));
     }
   }
 
@@ -66,7 +67,7 @@ public class CategoryExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(CATEGORYATTSOURCES_MAP.get(language), CATEGORYATTS_MAP.get(language));
+    return new FinalSet<Theme>(CATEGORYMEMBSOURCES_MAP.get(language), CATEGORYMEMBERSHIP_MAP.get(language));
   }
 
   @Override
@@ -81,7 +82,7 @@ public class CategoryExtractor extends Extractor {
     String titleEntity = null;
     while (true) {
       //TODO: for the word category in all languages
-      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:" , "[[Kategorie:","#REDIRECT")) {
+      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:" , "[[Kategorie:"/*,"#REDIRECT"*/)) {
         case -1:
           Announce.progressDone();
           in.close();
@@ -92,17 +93,17 @@ public class CategoryExtractor extends Extractor {
           break;
         case 1:
         case 2:
-          if (titleEntity == null) continue;
+          
+          if (titleEntity == null){ continue;}
           String category = FileLines.readTo(in, ']', '|').toString();
           category = category.trim();
-          
-          write(writers, CATEGORYATTS_MAP.get(language), new Fact(titleEntity, "<hasWikiCategory/" + this.language+ ">", FactComponent.forString(category)),CATEGORYATTSOURCES_MAP.get(language), 
+          write(writers, CATEGORYMEMBERSHIP_MAP.get(language), new Fact(titleEntity, "<hasWikiCategory/" + this.language+ ">", FactComponent.forString(category)),CATEGORYMEMBSOURCES_MAP.get(language), 
               FactComponent.wikipediaURL(titleEntity), "CategoryExtractor" );
           break;
-        case 3:
-          // Redirect pages have to go away
-          titleEntity=null;
-          break;
+//        case 3:
+//          // Redirect pages have to go away
+//          titleEntity=null;
+//          break;
       }
     }
   }
@@ -130,6 +131,6 @@ public class CategoryExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
 //    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
 //    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
-    new CategoryExtractor(new File("D:/de_wiki.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
+    new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
   }
 }

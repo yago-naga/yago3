@@ -1,11 +1,14 @@
 package fromWikipedia;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
 import utils.FactTemplateExtractor;
 import basics.Fact;
 import basics.FactCollection;
@@ -13,74 +16,91 @@ import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import fromOtherSources.InterLanguageLinks;
 import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
 
 
 public class CategoryMapperMulti extends CategoryMapper{
  
 
+  public static final HashMap<String, Theme> FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>(); 
+  public static final HashMap<String, Theme> FOREIGN_CATEGORYSOURCES_MAP = new HashMap<String, Theme>(); //new Theme("categorySources", "The sources of category facts");
+  
+  static {
+    for (String s : Extractor.languages) {
+      FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP.put(s, new Theme("foreginCategoryFactsToBeRedirected_" + s, 
+          "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
+      FOREIGN_CATEGORYSOURCES_MAP.put(s, new Theme("foreignCategorySources_" + s, "The sources of category facts", ThemeGroup.OTHER));
+    }
+
+  }
   @Override
   public Set<Theme> input() {
     Set<Theme> temp = super.input();
-    temp.add(InterLanguageLinks.INTERLANGUAGELINKS);
+    temp.add(CategoryTranslator.PARTLY_TRANSLATEDFACTS_MAP.get(language));
+    temp.add(CategoryTranslator.COMPLETELY_TRANSLATEDFACTS_MAP.get(language));
     return temp;
   }
   
+  @Override
+  public Set<Theme> output() {
+    return new FinalSet<Theme>(
+        FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP.get(language), FOREIGN_CATEGORYSOURCES_MAP.get(language));
+  }
+
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
     FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
 
     Announce.progressStart("Extracting", 3_900_000);
 
-    /*previouis version*/
-    //    for (Fact fact : categoryPatterns.extract(category, titleEntity)) {
-    //      if (fact != null) {
-    //        write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(titleEntity), "CategoryExtractor");
-    //      }
-    //    }
-
-    Map<String, Set<String>> rdictionary = Dictionary.get(language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
-
-String categoryWord = Dictionary.getCatDictionary(input.get(InterLanguageLinks.INTERLANGUAGELINKS)).get(language);
-int count1 =0;
-int count2 =0;
-int total =0;
-    for (Fact f : input.get(CategoryExtractor.CATEGORYATTS_MAP.get(language))){
-      
-      Set<String> entities = rdictionary.get(FactComponent.stripBrackets(f.getArg(1)));
-      
-      Set<String> categories = rdictionary.get(categoryWord+":"+FactComponent.stripQuotes(f.getArg(2)));
-      total++;
-      if(entities == null) {
-        System.out.println(FactComponent.stripBrackets(f.getArg(1)));
-        count2++;
-        continue; 
-      
-      }
-      
-      if(categories == null) { 
-        count1++;
-        continue; 
+      /*previouis version*/
+//    for (Fact fact : categoryPatterns.extract(category, titleEntity)) {
+//      if (fact != null) {
+//        write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(titleEntity), "CategoryExtractor");
+//      }
+//    }
+   
+    
+//      for (Fact f : input.get(CategoryExtractor.CATEGORYATTS_MAP.get(language))){
+//        System.out.println("PPPPPPPPPPPPPPPPPPPPPPPP");
+//        System.out.println(FactComponent.stripQuotes(f.getArg(2)));
+//        System.out.println(f.getArg(1));
+//        //Staat in Afrika
+////        <Republik_Kongo>
+//        System.out.println("PPPPPPPPPPPPPPPPPPPPPPPP");
+//        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(f.getArg(2)),f.getArg(1))){
+//          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+//        }
+//      } 
+    
+    for (Fact f : input.get(CategoryTranslator.PARTLY_TRANSLATEDFACTS_MAP.get(language))){
+        String temp= f.getArg(2);
+        if(f.getArg(2).contains("_"))
+          temp =  f.getArg(2).replace("_", " ");
+        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
+          if(fact!=null)
+          write(writers, FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, FOREIGN_CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+        }
         
-      } 
-       
-     
-      for(String entity:entities){
-        for(String category: categories){
-
-          for (Fact fact : categoryPatterns.extract(category.replace('_', ' ').replace("Category:", ""),FactComponent.forYagoEntity(entity))){
-            if( fact ==null) continue;
-            write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(FactComponent.forYagoEntity(entity)), "CategoryExtractor");
+      }
+      for (Fact f : input.get(CategoryTranslator.COMPLETELY_TRANSLATEDFACTS_MAP.get(language))){
+        String temp= f.getArg(2);
+        if(f.getArg(2).contains("_"))
+          temp =  f.getArg(2).replace("_", " ");
+        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
+          if(fact!=null){
+          write(writers, FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, FOREIGN_CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
           }
         }
       }
-      
-    }
-    
+     
+
 
   }
-  
+
   public CategoryMapperMulti(String lang) {
     super(lang);
   }

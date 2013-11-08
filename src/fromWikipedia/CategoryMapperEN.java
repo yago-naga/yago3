@@ -1,9 +1,14 @@
 package fromWikipedia;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
 import utils.FactTemplateExtractor;
 import basics.Fact;
 import basics.FactCollection;
@@ -11,10 +16,41 @@ import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
+import basics.Theme.ThemeGroup;
 import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
 
 
 public class CategoryMapperEN extends CategoryMapper{
+  
+  public static final HashMap<String, Theme> CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>(); 
+  public static final HashMap<String, Theme> CATEGORYSOURCES_MAP = new HashMap<String, Theme>(); //new Theme("categorySources", "The sources of category facts");
+  
+  static {
+    for (String s : Extractor.languages) {
+      CATEGORYFACTS_TOREDIRECT_MAP.put(s, new Theme("categoryFactsToBeRedirected_" + s, 
+          "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
+      CATEGORYSOURCES_MAP.put(s, new Theme("categorySources_" + s, "The sources of category facts", ThemeGroup.OTHER));
+    }
+
+  }
+  
+  @Override
+  public Set<Theme> input() {
+    Set<Theme> temp = super.input();
+    temp.add(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language));
+    return temp;
+  }
+  
+  @Override
+  public Set<Theme> output() {
+    return new FinalSet<Theme>(CATEGORYSOURCES_MAP.get(language), CATEGORYFACTS_TOREDIRECT_MAP.get(language));
+  }
+  
+  
+  public CategoryMapperEN(){
+    super("en");
+  }
   
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
@@ -28,23 +64,19 @@ public class CategoryMapperEN extends CategoryMapper{
 //        write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(titleEntity), "CategoryExtractor");
 //      }
 //    }
+   
     
-    
-      for (Fact f : input.get(CategoryExtractor.CATEGORYATTS_MAP.get(language))){
+      for (Fact f : input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language))){
         for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(f.getArg(2)),f.getArg(1))){
-          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryExtractor");
+          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
         }
       }
 
 
   }
-  public CategoryMapperEN(){
-    super("en");
-  }
-  
+
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    String mylang = "en";
     CategoryMapperEN extractor = new CategoryMapperEN();
     extractor.extract(new File("D:/data2/yago2s/"),
         "mapping infobox attributes into infobox facts");
