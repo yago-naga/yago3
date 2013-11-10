@@ -46,8 +46,8 @@ public class InfoboxMapperEN extends InfoboxMapper{
   @Override
   public Set<Extractor> followUp() {
     return new HashSet<Extractor>(Arrays.asList(new Redirector(
-        INFOBOXFACTS_TOREDIRECT_MAP.get("en"), INFOBOXFACTS_TOTYPECHECK, this),
-        new TypeChecker(INFOBOXFACTS_TOTYPECHECK, INFOBOXFACTS_TOREDIRECT_MAP.get("en"), this)));
+        INFOBOXFACTS_TOREDIRECT_MAP.get(language), INFOBOXFACTS_TOTYPECHECK, this),
+        new TypeChecker(INFOBOXFACTS_TOTYPECHECK, INFOBOXFACTS_TOREDIRECT_MAP.get(language), this)));
   }
 
 
@@ -155,7 +155,7 @@ public class InfoboxMapperEN extends InfoboxMapper{
     /*final version*/ 
     Map<String, Set<String>> attributes = new TreeMap<String, Set<String>>();
     String prevEntity = "";
-    for (Fact f : input.get(InfoboxExtractor.INFOBOXATTS_MAP.get("en"))) {
+    for (Fact f : input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language))) {
       String attribute = FactComponent.stripBrackets(FactComponent.stripPrefix(f.getRelation()));
       String value = f.getArgJavaString(2);
 
@@ -261,7 +261,6 @@ public class InfoboxMapperEN extends InfoboxMapper{
   
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    String mylang = "en";
 //     C:\Users\Administrator\Dropbox\workspace\yago2s
 //     File f1=new
 //     File("c:/Users/Administrator/Dropbox/workspace/yago2s/data");

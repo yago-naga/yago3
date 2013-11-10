@@ -3,14 +3,17 @@ package fromWikipedia;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.administrative.Announce.Level;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.IntHashMap;
 import javatools.filehandlers.FileLines;
@@ -20,6 +23,7 @@ import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
 import javatools.util.FileUtils;
 import utils.TitleExtractor;
+import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -42,31 +46,69 @@ import fromThemes.SimpleTypeExtractor;
  * @author Fabian
  * 
  */
-public class WikipediaTypeExtractor extends Extractor {
+public abstract class WikipediaTypeExtractor extends Extractor {
+  
+  protected String language; 
+  /** Sources for category facts*/
+  public static final HashMap<String, Theme> WIKIPEDIATYPESOURCES_MAP = new HashMap<String, Theme>();
+  /** Types deduced from categories */
+  public static final HashMap<String, Theme> YAGOTYPES_MAP = new HashMap<String, Theme>();
+  /** Classes deduced from categories */
+  public static final HashMap<String, Theme> WIKIPEDIACLASSES_MAP = new HashMap<String, Theme>();
+  
+  
+  static {
+    for (String s : Extractor.languages) {
+      WIKIPEDIATYPESOURCES_MAP.put(s, new Theme("wikipediaTypeSources" + Extractor.langPostfixes.get(s), "The sources of category type facts"));
+      YAGOTYPES_MAP.put(s, new Theme("yagoTypes"+ Extractor.langPostfixes.get(s), "All rdf:type facts of YAGO", ThemeGroup.TAXONOMY) );
+      WIKIPEDIACLASSES_MAP.put(s, new Theme("wikipediaClasses"+Extractor.langPostfixes.get(s),
+          "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves"));
+    }
 
-  /** The file from which we read */
-  protected File wikipedia;
-
-  @Override
-  public File inputDataFile() {   
-    return wikipedia;
   }
-
-  @Override
+  
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS,
+    return new TreeSet<Theme>(Arrays.asList(
+        InfoboxExtractor.INFOBOXATTS_MAP.get(language), InfoboxExtractor.INFOBOXTYPES_MAP.get(language),
+        PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETCLASSES, PatternHardExtractor.INFOBOXPATTERNS));
   }
+  
+  @Override
+  public Set<Theme> output() {
+    return new FinalSet<Theme>(WIKIPEDIATYPESOURCES_MAP.get(language), YAGOTYPES_MAP.get(language), WIKIPEDIACLASSES_MAP.get(language));
+  }
+  
+  
+  
+ 
 
-  /** Types deduced from categories */
-  public static final Theme YAGOTYPES = new Theme("yagoTypes", "All rdf:type facts of YAGO", ThemeGroup.TAXONOMY);
+  protected  ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {
+    for(Fact f: factSource){
+      result.add(f);
+    }
+    return(result);
+  }
+  
+  protected  ExtendedFactCollection loadFacts(FactSource factSource) {
+    return loadFacts(factSource, new ExtendedFactCollection());
+  }
+  
+  protected abstract ExtendedFactCollection getCategoryFactCollection( Map<Theme, FactSource> input);
 
-  /** Sources for category facts*/
-  public static final Theme WIKIPEDIATYPESOURCES = new Theme("wikipediaTypeSources", "The sources of category type facts");
 
-  /** Classes deduced from categories */
-  public static final Theme WIKIPEDIACLASSES = new Theme("wikipediaClasses",
-      "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
+//  /** The file from which we read */
+//  protected File wikipedia;
+//
+//  @Override
+//  public File inputDataFile() {   
+//    return wikipedia;
+//  }
+
+
+
+
+
 
   /** Holds the nonconceptual infoboxes*/
   protected Set<String> nonConceptualInfoboxes;
@@ -75,21 +117,18 @@ public class WikipediaTypeExtractor extends Extractor {
   protected Set<String> nonConceptualCategories;
 
   /** Holds the preferred meanings*/
-  private Map<String, String> preferredMeanings;
+  protected Map<String, String> preferredMeanings;
 
   /** Caches the YAGO branches*/
-  private Map<String, String> yagoBranches;
+  protected Map<String, String> yagoBranches;
 
   /** Holds the facts about categories that we accumulate*/
-  private FactCollection categoryClassFacts;
+  protected FactCollection categoryClassFacts;
 
   /** Holds all the classes from Wordnet*/
   protected FactCollection wordnetClasses;
 
-  @Override
-  public Set<Theme> output() {
-    return new FinalSet<Theme>(WIKIPEDIATYPESOURCES, YAGOTYPES, WIKIPEDIACLASSES);
-  }
+
 
   /** Maps a category to a wordnet class */
   public String category2class(String categoryName) {
@@ -164,6 +203,12 @@ public class WikipediaTypeExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
+    Announce.setLevel(Level.MUTE);
+    
+    ExtendedFactCollection infoboxTypes = loadFacts(input.get(InfoboxExtractor.INFOBOXTYPES_MAP.get(language)));
+    ExtendedFactCollection infoboxAtts = loadFacts(input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language)));
+    ExtendedFactCollection categoryAtts = getCategoryFactCollection(input);
+    
     nonConceptualInfoboxes = new HashSet<>();
     for (Fact f : new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS)).getBySecondArgSlow(RDFS.type, "<_yagoNonConceptualInfobox>")) {
       nonConceptualInfoboxes.add(f.getArgJavaString(1));
@@ -175,51 +220,133 @@ public class WikipediaTypeExtractor extends Extractor {
     categoryClassFacts = new FactCollection();
     yagoBranches = new HashMap<String, String>();
     TitleExtractor titleExtractor = new TitleExtractor(input);
-
+    
+ 
     // Extract the information
     Announce.progressStart("Extracting", 3_900_000);
-    Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-    String currentEntity = null;
+//    Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     Set<String> typesOfCurrentEntity = new HashSet<>();
-    loop: while (true) {
-      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "{{Infobox", "{{ Infobox")) {
-        case -1: // End of file
-          flush(currentEntity, typesOfCurrentEntity, writers);
-          break loop;
-        case 0: // New entity
-          Announce.progressStep();
-          flush(currentEntity, typesOfCurrentEntity, writers);
-          currentEntity = titleExtractor.getTitleEntity(in);
-          break;
-        case 1: // Category
-          if (currentEntity == null) continue;
-          // Some categories are not correctly terminated by ]]
-          String category = FileLines.readTo(in, ']', '|','\n','[','<','}','{').toString();
-          category = category.trim();
-          extractType(currentEntity, category, typesOfCurrentEntity);
-          break;
-        case 2: // Infobox
-        case 3:// Infobox
-          String cls = FileLines.readTo(in, '}', '|').toString().trim().toLowerCase();
-          if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
-          if (!nonConceptualInfoboxes.contains(cls)) {
-            String type = preferredMeanings.get(cls);
-            if (type != null) typesOfCurrentEntity.add(type);
-          }
+    List<Fact> factsWithSubject = new ArrayList<Fact>();
+    
+    Set<String> titles=
+        categoryAtts.getSubjects();
+    titles.addAll(infoboxAtts.getSubjects());
+//    for(Fact f2:categoryAtts){
+//      titles.add(f2.getArg(1));
+//    }
+//    for(Fact f2:infoboxAtts){
+//      titles.add(f2.getArg(1));
+//    }
+    System.out.println(titles);
+
+    String currentEntity = null; 
+    for(String title:titles){
+      flush(currentEntity, typesOfCurrentEntity, writers);
+      currentEntity = title;
+      if (currentEntity == null) continue;
+
+      factsWithSubject = categoryAtts.getFactsWithSubject(currentEntity);  
+      for(Fact f: factsWithSubject){
+        String category = f.getArgJavaString(2);
+        extractType(f.getArg(1), category, typesOfCurrentEntity);
       }
+      
+      factsWithSubject =infoboxTypes.getFactsWithSubject(currentEntity);
+      if(factsWithSubject.size()<1) continue; 
+      String cls = FactComponent.stripBrackets(infoboxTypes.getFactsWithSubject(currentEntity).get(0).getArg(2).replace("_", " "));
+      if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
+      if (!nonConceptualInfoboxes.contains(cls)) {
+        String type = preferredMeanings.get(cls);
+        if (type != null) typesOfCurrentEntity.add(type);
+      }
+      
     }
+    flush(currentEntity, typesOfCurrentEntity, writers);
+    
+    
+    
+    
+//    String currentEntity = null; 
+//    loop: while (true) {
+//      switch (FileLines.findIgnoreCase(in, "<title>")) {
+//        case -1: // End of file
+//          flush(currentEntity, typesOfCurrentEntity, writers);
+//          break loop;
+//        case 0: // New entity
+//          
+//          flush(currentEntity, typesOfCurrentEntity, writers);
+//          currentEntity = titleExtractor.getTitleEntity(in);
+//          if (currentEntity == null) continue;
+//
+//
+//          factsWithSubject = categoryAtts.getFactsWithSubject(currentEntity);  
+//          for(Fact f: factsWithSubject){
+//            String category = f.getArgJavaString(2);
+//            extractType(f.getArg(1), category, typesOfCurrentEntity);
+//          }
+//          
+//          
+//          factsWithSubject =infoboxTypes.getFactsWithSubject(currentEntity);
+//          if(factsWithSubject.size()<1) continue; 
+//          String cls = FactComponent.stripBrackets(infoboxTypes.getFactsWithSubject(currentEntity).get(0).getArg(2).replace("_", " "));
+//          if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
+//          if (!nonConceptualInfoboxes.contains(cls)) {
+//            String type = preferredMeanings.get(cls);
+//            if (type != null) typesOfCurrentEntity.add(type);
+//          }
+//      }
+//    }
+   
+    /*original version*/
+    
+//    loop: while (true) {
+//      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "{{Infobox", "{{ Infobox")) {
+//        case -1: // End of file
+//          flush(currentEntity, typesOfCurrentEntity, writers);
+//          break loop;
+//        case 0: // New entity
+//          Announce.progressStep();
+//          flush(currentEntity, typesOfCurrentEntity, writers);
+//          currentEntity = titleExtractor.getTitleEntity(in);
+//       
+//          factsWithSubject = categoryAtts.getFactsWithSubject(currentEntity);  
+//       
+//          break;
+//        case 1: // Category
+//          if (currentEntity == null) continue;
+//          for(Fact f: factsWithSubject){
+//            String category = f.getArgJavaString(2);
+//            extractType(f.getArg(1), category, typesOfCurrentEntity);
+//          }
+//          break;
+//        case 2: // Infobox
+//        case 3:// Infobox
+//        
+//          String cls="";
+//          if ( currentEntity != null){
+//            if(infoboxTypes.getFactsWithSubject(currentEntity).size()<1) continue; 
+//            cls = FactComponent.stripBrackets(infoboxTypes.getFactsWithSubject(currentEntity).get(0).getArg(2).replace("_", " "));
+//          }
+//          if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
+//          if (!nonConceptualInfoboxes.contains(cls)) {
+//            String type = preferredMeanings.get(cls);
+//            if (type != null) typesOfCurrentEntity.add(type);
+//          }
+//      }
+//    }
+    
     Announce.progressDone();
 
     Announce.doing("Writing classes");
     for (Fact f : categoryClassFacts) {
-      if (FactComponent.isFactId(f.getArg(1))) writers.get(WIKIPEDIATYPESOURCES).write(f);
-      else writers.get(WIKIPEDIACLASSES).write(f);
+      if (FactComponent.isFactId(f.getArg(1))) writers.get(WIKIPEDIATYPESOURCES_MAP.get(language)).write(f);
+      else writers.get(WIKIPEDIACLASSES_MAP.get(language)).write(f);
     }
     Announce.done();
 
     Announce.doing("Writing hard wired types");
     for (Fact f : input.get(HardExtractor.HARDWIREDFACTS)) {
-      if (f.getRelation().equals(RDFS.type)) write(writers, YAGOTYPES, f, WIKIPEDIATYPESOURCES, YAGO.yago, "Manual");
+      if (f.getRelation().equals(RDFS.type)) write(writers, YAGOTYPES_MAP.get(language), f, WIKIPEDIATYPESOURCES_MAP.get(language), YAGO.yago, "Manual");
     }
     Announce.done();
 
@@ -229,7 +356,7 @@ public class WikipediaTypeExtractor extends Extractor {
     this.preferredMeanings=null;
     this.wordnetClasses=null;
     this.yagoBranches=null;
-    in.close();
+//    in.close();
   }
 
   /** Writes the facts */
@@ -239,7 +366,7 @@ public class WikipediaTypeExtractor extends Extractor {
       return;
     }
     String yagoBranch = yagoBranchForEntity(entity, types);
-    Announce.debug("Branch of", entity, "is", yagoBranch);
+//    Announce.debug("Branch of", entity, "is", yagoBranch);
     if (yagoBranch == null) {
       types.clear();
       return;
@@ -247,9 +374,10 @@ public class WikipediaTypeExtractor extends Extractor {
     for (String type : types) {
       String branch = yagoBranchForClass(type);
       if (branch == null || !branch.equals(yagoBranch)) {
-        Announce.debug("Wrong branch:", type, branch);
+//        Announce.debug("Wrong branch:", type, branch);
       } else {
-        write(writers, YAGOTYPES, new Fact(entity, RDFS.type, type), WIKIPEDIATYPESOURCES, FactComponent.wikipediaURL(entity),
+//        System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
+        write(writers, YAGOTYPES_MAP.get(language), new Fact(entity, RDFS.type, type), WIKIPEDIATYPESOURCES_MAP.get(language), FactComponent.wikipediaURL(entity),
             "WikipediaTypeExtractor from category");
       }
     }
@@ -296,14 +424,10 @@ public class WikipediaTypeExtractor extends Extractor {
   }
 
   /** Constructor from source file */
-  public WikipediaTypeExtractor(File wikipedia) {
-    this.wikipedia = wikipedia;
+   
+  public WikipediaTypeExtractor(String lang) {
+    language=lang;
   }
 
-  public static void main(String[] args) throws Exception {
-    Announce.setLevel(Announce.Level.DEBUG);
-    //new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    //new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-    new WikipediaTypeExtractor(new File("c:/fabian/data/wikipedia/testset/esan.xml")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-  }
+
 }

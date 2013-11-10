@@ -64,9 +64,9 @@ public class InfoboxExtractor extends Extractor {
  
   static {
     for (String s : Extractor.languages) {
-      INFOBOXATTS_MAP.put(s, new Theme("yagoInfoboxAttributes_" + s, "Facts of infobox", ThemeGroup.OTHER));
-      INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources_" + s, "Sources for facts of infobox", ThemeGroup.OTHER));
-      INFOBOXTYPES_MAP.put(s, new Theme("infoboxTypes_" + s, "Types of infoboxes", ThemeGroup.OTHER));
+      INFOBOXATTS_MAP.put(s, new Theme("yagoInfoboxAttributes" +  Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
+      INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources" +  Extractor.langPostfixes.get(s), "Sources for facts of infobox", ThemeGroup.OTHER));
+      INFOBOXTYPES_MAP.put(s, new Theme("infoboxTypes" +  Extractor.langPostfixes.get(s), "Types of infoboxes", ThemeGroup.OTHER));
     }
 
   }
@@ -375,15 +375,15 @@ public class InfoboxExtractor extends Extractor {
     //    new HardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/basics2s/data/")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "test");
     //    new WordnetExtractor(new File("C:/Users/Administrator/data/wordnet")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "This time its gonna work!");
     //    
-    InfoboxExtractor ie1 = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
-    ie1.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+//    InfoboxExtractor ie1 = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
+//    ie1.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 
 //    InfoboxExtractor ie2 = new InfoboxExtractor(new File("D:/ar_wiki.xml"));
 //    ie2.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 //    
-//    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wiki.xml"));
-//    ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
-//    
+    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wiki.xml"));
+    ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+    
 //    InfoboxExtractor ie4 = new InfoboxExtractor(new File("D:/fa_wiki.xml"));
 //    ie4.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 

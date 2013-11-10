@@ -25,17 +25,7 @@ import fromOtherSources.WordnetExtractor;
 public class CategoryMapperMulti extends CategoryMapper{
  
 
-  public static final HashMap<String, Theme> FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>(); 
-  public static final HashMap<String, Theme> FOREIGN_CATEGORYSOURCES_MAP = new HashMap<String, Theme>(); //new Theme("categorySources", "The sources of category facts");
-  
-  static {
-    for (String s : Extractor.languages) {
-      FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP.put(s, new Theme("foreginCategoryFactsToBeRedirected_" + s, 
-          "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
-      FOREIGN_CATEGORYSOURCES_MAP.put(s, new Theme("foreignCategorySources_" + s, "The sources of category facts", ThemeGroup.OTHER));
-    }
-
-  }
+ 
   @Override
   public Set<Theme> input() {
     Set<Theme> temp = super.input();
@@ -44,11 +34,6 @@ public class CategoryMapperMulti extends CategoryMapper{
     return temp;
   }
   
-  @Override
-  public Set<Theme> output() {
-    return new FinalSet<Theme>(
-        FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP.get(language), FOREIGN_CATEGORYSOURCES_MAP.get(language));
-  }
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
@@ -82,7 +67,7 @@ public class CategoryMapperMulti extends CategoryMapper{
           temp =  f.getArg(2).replace("_", " ");
         for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
           if(fact!=null)
-          write(writers, FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, FOREIGN_CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
         }
         
       }
@@ -92,7 +77,7 @@ public class CategoryMapperMulti extends CategoryMapper{
           temp =  f.getArg(2).replace("_", " ");
         for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
           if(fact!=null){
-          write(writers, FOREIGN_CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, FOREIGN_CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
           }
         }
       }
