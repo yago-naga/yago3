@@ -30,7 +30,7 @@ public class SimpleTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(WikipediaTypeExtractor.YAGOTYPES, ClassExtractor.YAGOTAXONOMY);
+    return new FinalSet<>(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"), ClassExtractor.YAGOTAXONOMY);
   }
 
   /** The theme of simple types*/
@@ -53,7 +53,7 @@ public class SimpleTypeExtractor extends Extractor {
     FactCollection taxonomy = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY),true);
     Set<String> leafClasses = new HashSet<>();
     Announce.doing("Loading YAGO types");
-    for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES)) {
+    for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"))) {
       if (!f.getRelation().equals(RDFS.type)) continue;
       String clss = f.getArg(2);
       if (clss.startsWith("<wikicategory")) clss = taxonomy.getArg2(clss, RDFS.subclassOf);

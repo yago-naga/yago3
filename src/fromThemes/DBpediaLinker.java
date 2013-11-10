@@ -29,7 +29,7 @@ public class DBpediaLinker extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(WikipediaTypeExtractor.YAGOTYPES,ClassExtractor.YAGOTAXONOMY);
+		return new FinalSet<>(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"),ClassExtractor.YAGOTAXONOMY);
 	}
 
 	/** Mapping to DBpedia classes*/
@@ -46,7 +46,7 @@ public class DBpediaLinker extends Extractor {
 	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
        Announce.doing("Mapping instances");
        Set<String> instances=new TreeSet<>();
-       for(Fact fact : input.get(WikipediaTypeExtractor.YAGOTYPES)) {
+       for(Fact fact : input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"))) {
     	   if(!fact.getRelation().equals(RDFS.type) || instances.contains(fact.getArg(1))) continue;
     	   if(!fact.getArg(2).startsWith("<wikicategory_")) continue;
     	   if(!fact.getArg(1).startsWith("<")) continue;

@@ -37,7 +37,7 @@ public class TransitiveTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, WikipediaTypeExtractor.YAGOTYPES);
+    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"));
   }
 
   /** All type facts*/
@@ -54,7 +54,7 @@ public class TransitiveTypeExtractor extends Extractor {
     FactCollection classes = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY),true);
     yagoTaxonomy = new HashMap<>();
     Announce.doing("Computing the transitive closure");
-    for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES)) {
+    for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"))) {
       if (f.getRelation().equals(RDFS.type)) {
         D.addKeyValue(yagoTaxonomy, f.getArg(1), f.getArg(2), TreeSet.class);
         for (String c : classes.superClasses(f.getArg(2))) {

@@ -34,7 +34,7 @@ public class ClassExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(WikipediaTypeExtractor.WIKIPEDIACLASSES,
+    return new FinalSet<>(WikipediaTypeExtractor.WIKIPEDIACLASSES_MAP.get("en"),
         HardExtractor.HARDWIREDFACTS,         
         WordnetExtractor.WORDNETCLASSES//, GeoNamesClassMapper.GEONAMESCLASSES
         );
