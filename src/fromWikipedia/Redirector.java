@@ -71,7 +71,8 @@ public class Redirector extends FollowUpExtractor {
 			redirectedArg2 = redirects.get(dirtyFact.getArg(2));
 		}
 
-		Fact redirectedFact = new Fact(dirtyFact.getId(), redirectedArg1, dirtyFact.getRelation(), redirectedArg2);
+		Fact redirectedFact = new Fact(redirectedArg1, dirtyFact.getRelation(), redirectedArg2);
+		redirectedFact.makeId();
 
 		return redirectedFact;
 	}
