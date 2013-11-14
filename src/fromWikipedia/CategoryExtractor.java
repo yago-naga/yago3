@@ -100,10 +100,10 @@ public class CategoryExtractor extends Extractor {
           write(writers, CATEGORYMEMBERSHIP_MAP.get(language), new Fact(titleEntity, "<hasWikiCategory/" + this.language+ ">", FactComponent.forString(category)),CATEGORYMEMBSOURCES_MAP.get(language), 
               FactComponent.wikipediaURL(titleEntity), "CategoryExtractor" );
           break;
-//        case 3:
-//          // Redirect pages have to go away
-//          titleEntity=null;
-//          break;
+        case 3:
+          // Redirect pages have to go away
+          titleEntity=null;
+          break;
       }
     }
   }
