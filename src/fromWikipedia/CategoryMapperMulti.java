@@ -10,6 +10,7 @@ import java.util.TreeSet;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.FactTemplateExtractor;
+import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -29,8 +30,7 @@ public class CategoryMapperMulti extends CategoryMapper{
   @Override
   public Set<Theme> input() {
     Set<Theme> temp = super.input();
-    temp.add(CategoryTranslator.PARTLY_TRANSLATEDFACTS_MAP.get(language));
-    temp.add(CategoryTranslator.COMPLETELY_TRANSLATEDFACTS_MAP.get(language));
+    temp.add(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language));
     return temp;
   }
   
@@ -60,18 +60,30 @@ public class CategoryMapperMulti extends CategoryMapper{
 //          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
 //        }
 //      } 
-    
-    for (Fact f : input.get(CategoryTranslator.PARTLY_TRANSLATEDFACTS_MAP.get(language))){
-        String temp= f.getArg(2);
-        if(f.getArg(2).contains("_"))
-          temp =  f.getArg(2).replace("_", " ");
-        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
-          if(fact!=null)
-          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
-        }
-        
-      }
-      for (Fact f : input.get(CategoryTranslator.COMPLETELY_TRANSLATEDFACTS_MAP.get(language))){
+//    
+//    for (Fact f : input.get(CategoryTranslator.PARTLY_TRANSLATEDFACTS_MAP.get(language))){
+//        String temp= f.getArg(2);
+//        if(f.getArg(2).contains("_"))
+//          temp =  f.getArg(2).replace("_", " ");
+//        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
+//          if(fact!=null)
+//          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+//        }
+//        
+//      }
+//      for (Fact f : input.get(CategoryTranslator.COMPLETELY_TRANSLATEDFACTS_MAP.get(language))){
+//        String temp= f.getArg(2);
+//        if(f.getArg(2).contains("_"))
+//          temp =  f.getArg(2).replace("_", " ");
+//        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
+//          if(fact!=null){
+//          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+//          }
+//        }
+//      }
+      
+      ExtendedFactCollection result = getCategoryFactCollection(input);
+      for (Fact f: result){
         String temp= f.getArg(2);
         if(f.getArg(2).contains("_"))
           temp =  f.getArg(2).replace("_", " ");
@@ -86,6 +98,14 @@ public class CategoryMapperMulti extends CategoryMapper{
 
   }
 
+  
+  protected ExtendedFactCollection getCategoryFactCollection( Map<Theme, FactSource> input) {
+    ExtendedFactCollection result = new ExtendedFactCollection();
+    loadFacts(input.get(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language)), result) ;
+    return result;
+    
+  }
+  
   public CategoryMapperMulti(String lang) {
     super(lang);
   }

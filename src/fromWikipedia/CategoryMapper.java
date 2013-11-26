@@ -16,6 +16,7 @@ import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import utils.FactTemplateExtractor;
 import utils.TitleExtractor;
+import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -44,9 +45,9 @@ public abstract class CategoryMapper extends Extractor {
   
   static {
     for (String s : Extractor.languages) {
-      CATEGORYFACTS_TOREDIRECT_MAP.put(s, new Theme("categoryFactsToBeRedirected_" + s, 
+      CATEGORYFACTS_TOREDIRECT_MAP.put(s, new Theme("categoryFactsToBeRedirected" + Extractor.langPostfixes.get(s), 
           "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
-      CATEGORYSOURCES_MAP.put(s, new Theme("categorySources_" + s, "The sources of category facts", ThemeGroup.OTHER));
+      CATEGORYSOURCES_MAP.put(s, new Theme("categorySources" + Extractor.langPostfixes.get(s), "The sources of category facts", ThemeGroup.OTHER));
     }
 
   }
@@ -63,6 +64,12 @@ public abstract class CategoryMapper extends Extractor {
     return new FinalSet<Theme>(CATEGORYFACTS_TOREDIRECT_MAP.get(language), CATEGORYSOURCES_MAP.get(language));
   }
  
+  protected  ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {
+    for(Fact f: factSource){
+      result.add(f);
+    }
+    return(result);
+  }
   
 //  public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "Facts about Wikipedia instances, derived from the Wikipedia categories");
 //  /** Facts deduced from categories */

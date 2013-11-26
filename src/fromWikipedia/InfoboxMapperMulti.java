@@ -62,11 +62,11 @@ public class InfoboxMapperMulti extends InfoboxMapper{
    Map<String, Set<String>> matchings = 
        infoboxMatchings(new FactCollection(input.get(AttributeMatcher.MATCHED_INFOBOXATTS_MAP.get(language))));
 
-  Map<String, Set<String>> rdictionary = new HashMap<String, Set<String>>();
+  Map<String, String> rdictionary = new HashMap<String, String>();
  
  for (Fact f : input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language))) {
-   rdictionary = Dictionary.get(language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
-   Set<String> subjects = rdictionary.get(FactComponent.stripBrackets(f.getArg(1)));
+   rdictionary = Dictionary.get(language);
+   String subjects = rdictionary.get(FactComponent.stripBrackets(f.getArg(1)));
    Set<String> yagoRelations = matchings.get(f.getRelation());
 
    if(subjects==null) continue;
@@ -94,21 +94,21 @@ public class InfoboxMapperMulti extends InfoboxMapper{
 //     System.out.println("_________________");
      
      for(String o:secondLangObjects){
-       Set<String> objects = rdictionary.get(FactComponent.stripBrackets(o));
-       if(objects == null) continue;
-       for(String obj :objects){
+       String object = rdictionary.get(FactComponent.stripBrackets(o));
+       if(object == null) continue;
+//       for(String obj :objects){
          if (inverse) {
-           Fact fact = new Fact(obj, relation, subjects.toArray()[0].toString());
+           Fact fact = new Fact(object, relation, subjects.toString());
            write(writers, INFOBOXFACTS_TOREDIRECT_MAP.get(language), fact, INFOBOXSOURCES_MAP.get(language),
-               FactComponent.wikipediaURL(subjects.toArray()[0].toString()),
+               FactComponent.wikipediaURL(subjects.toString()),
                "InfoboxMapper_multi ");
          } else {
-           Fact fact = new Fact(subjects.toArray()[0].toString(), relation, obj);
+           Fact fact = new Fact(subjects.toString(), relation, object);
            write(writers, INFOBOXFACTS_TOREDIRECT_MAP.get(language), fact, INFOBOXSOURCES_MAP.get(language),
-               FactComponent.wikipediaURL(subjects.toArray()[0].toString()),
+               FactComponent.wikipediaURL(subjects.toString()),
                "InfoboxMapper_multi ");
          }
-       }
+//       }
      }
      
    }

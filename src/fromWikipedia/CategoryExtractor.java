@@ -131,6 +131,6 @@ public class CategoryExtractor extends Extractor {
     Announce.setLevel(Announce.Level.DEBUG);
 //    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
 //    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
-    new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
+    new CategoryExtractor(new File("D:/de_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
   }
 }

@@ -58,7 +58,7 @@ public class AttributeMatcher extends Extractor {
 	
 	Map<String, Map<String,Pair<Integer, Integer>>> statistics;
 	private String language;
-	private Map<String, Set<String>> rdictionary; 
+	private Map<String, String> rdictionary; 
 	final double WILSON_THRESHOLD = 0.2;
 	final double SUPPORT_THRESHOLD = 10;
 
@@ -117,7 +117,7 @@ public class AttributeMatcher extends Extractor {
 
 	@Override
 	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-	  rdictionary = Dictionary.get(language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
+	  rdictionary = Dictionary.get(language);
 	  statistics = new HashMap<String, Map<String,Pair <Integer,Integer>>>();
 	  FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 	  Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(input);
@@ -132,11 +132,10 @@ public class AttributeMatcher extends Extractor {
 	    String secondLangRelation = f2.getRelation();
 	    String secondLangObject = f2.getArg(2);
 	    
-	    Set<String> yagoArgs = rdictionary.get(secondLangSubject);
-	    if(yagoArgs==null) {
+	    String yagoArg = rdictionary.get(secondLangSubject);
+	    if(yagoArg==null) {
 	      continue;
 	    }
-	    for(String yagoArg: yagoArgs){
 	      List<Fact> yagoFactsWithSubject = myFactCollection.getFactsWithSubject(FactComponent.forYagoEntity(yagoArg));
 
 	      for(Fact f: yagoFactsWithSubject){
@@ -172,7 +171,6 @@ public class AttributeMatcher extends Extractor {
 	      }
 
 
-	    }
 	  }
 	  
 	  Announce.progressDone();

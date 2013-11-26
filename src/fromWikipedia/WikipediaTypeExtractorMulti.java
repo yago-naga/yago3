@@ -11,10 +11,6 @@ import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactSource;
 import basics.Theme;
-import fromOtherSources.HardExtractor;
-import fromOtherSources.InterLanguageLinks;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
 
 
 public class WikipediaTypeExtractorMulti extends WikipediaTypeExtractor {
@@ -22,8 +18,7 @@ public class WikipediaTypeExtractorMulti extends WikipediaTypeExtractor {
   @Override
   public Set<Theme> input() {
     Set<Theme> temp = super.input();
-    temp.add(CategoryTranslator.PARTLY_TRANSLATEDFACTS_MAP.get(language));
-    temp.add(CategoryTranslator.COMPLETELY_TRANSLATEDFACTS_MAP.get(language));
+    temp.add(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language));
     return temp;
   }
 
@@ -34,8 +29,7 @@ public class WikipediaTypeExtractorMulti extends WikipediaTypeExtractor {
   @Override
   protected ExtendedFactCollection getCategoryFactCollection( Map<Theme, FactSource> input) {
     ExtendedFactCollection result = new ExtendedFactCollection();
-    loadFacts(input.get(CategoryTranslator.PARTLY_TRANSLATEDFACTS_MAP.get(language)), result) ;
-    loadFacts(input.get(CategoryTranslator.COMPLETELY_TRANSLATEDFACTS_MAP.get(language)), result) ;
+    loadFacts(input.get(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language)), result) ;
     return result;
     
   }

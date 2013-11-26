@@ -119,8 +119,8 @@ public abstract class WikipediaTypeExtractor extends Extractor {
   /** Holds the preferred meanings*/
   protected Map<String, String> preferredMeanings;
 
-  /** Caches the YAGO branches*/
-  protected Map<String, String> yagoBranches;
+//  /** Caches the YAGO branches*/
+//  protected Map<String, String> yagoBranches;
 
   /** Holds the facts about categories that we accumulate*/
   protected FactCollection categoryClassFacts;
@@ -139,7 +139,7 @@ public abstract class WikipediaTypeExtractor extends Extractor {
       return (null);
     }
 
-    // If the category is an acronym, drop it
+    // If the category is an acronym, drop it 
     if (Name.isAbbreviation(category.head())) {
       Announce.debug("Could not find type in", categoryName, "(is abbreviation)");
       return (null);
@@ -203,11 +203,11 @@ public abstract class WikipediaTypeExtractor extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-    Announce.setLevel(Level.MUTE);
+//    Announce.setLevel(Level.MUTE);
     
     ExtendedFactCollection infoboxTypes = loadFacts(input.get(InfoboxExtractor.INFOBOXTYPES_MAP.get(language)));
     ExtendedFactCollection infoboxAtts = loadFacts(input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language)));
-    ExtendedFactCollection categoryAtts = getCategoryFactCollection(input);
+    ExtendedFactCollection categoryMembs = getCategoryFactCollection(input);
     
     nonConceptualInfoboxes = new HashSet<>();
     for (Fact f : new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS)).getBySecondArgSlow(RDFS.type, "<_yagoNonConceptualInfobox>")) {
@@ -218,8 +218,8 @@ public abstract class WikipediaTypeExtractor extends Extractor {
     wordnetClasses = new FactCollection(input.get(WordnetExtractor.WORDNETCLASSES),true);
     wordnetClasses.load(input.get(HardExtractor.HARDWIREDFACTS));
     categoryClassFacts = new FactCollection();
-    yagoBranches = new HashMap<String, String>();
-    TitleExtractor titleExtractor = new TitleExtractor(input);
+//    yagoBranches = new HashMap<String, String>();
+//    TitleExtractor titleExtractor = new TitleExtractor(input);
     
  
     // Extract the information
@@ -228,8 +228,7 @@ public abstract class WikipediaTypeExtractor extends Extractor {
     Set<String> typesOfCurrentEntity = new HashSet<>();
     List<Fact> factsWithSubject = new ArrayList<Fact>();
     
-    Set<String> titles=
-        categoryAtts.getSubjects();
+    Set<String> titles = categoryMembs.getSubjects();
     titles.addAll(infoboxAtts.getSubjects());
 //    for(Fact f2:categoryAtts){
 //      titles.add(f2.getArg(1));
@@ -237,7 +236,7 @@ public abstract class WikipediaTypeExtractor extends Extractor {
 //    for(Fact f2:infoboxAtts){
 //      titles.add(f2.getArg(1));
 //    }
-    System.out.println(titles);
+//    System.out.println(titles);
 
     String currentEntity = null; 
     for(String title:titles){
@@ -245,7 +244,7 @@ public abstract class WikipediaTypeExtractor extends Extractor {
       currentEntity = title;
       if (currentEntity == null) continue;
 
-      factsWithSubject = categoryAtts.getFactsWithSubject(currentEntity);  
+      factsWithSubject = categoryMembs.getFactsWithSubject(currentEntity);  
       for(Fact f: factsWithSubject){
         String category = f.getArgJavaString(2);
         extractType(f.getArg(1), category, typesOfCurrentEntity);
@@ -264,98 +263,24 @@ public abstract class WikipediaTypeExtractor extends Extractor {
     flush(currentEntity, typesOfCurrentEntity, writers);
     
     
-    
-    
-//    String currentEntity = null; 
-//    loop: while (true) {
-//      switch (FileLines.findIgnoreCase(in, "<title>")) {
-//        case -1: // End of file
-//          flush(currentEntity, typesOfCurrentEntity, writers);
-//          break loop;
-//        case 0: // New entity
-//          
-//          flush(currentEntity, typesOfCurrentEntity, writers);
-//          currentEntity = titleExtractor.getTitleEntity(in);
-//          if (currentEntity == null) continue;
-//
-//
-//          factsWithSubject = categoryAtts.getFactsWithSubject(currentEntity);  
-//          for(Fact f: factsWithSubject){
-//            String category = f.getArgJavaString(2);
-//            extractType(f.getArg(1), category, typesOfCurrentEntity);
-//          }
-//          
-//          
-//          factsWithSubject =infoboxTypes.getFactsWithSubject(currentEntity);
-//          if(factsWithSubject.size()<1) continue; 
-//          String cls = FactComponent.stripBrackets(infoboxTypes.getFactsWithSubject(currentEntity).get(0).getArg(2).replace("_", " "));
-//          if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
-//          if (!nonConceptualInfoboxes.contains(cls)) {
-//            String type = preferredMeanings.get(cls);
-//            if (type != null) typesOfCurrentEntity.add(type);
-//          }
-//      }
-//    }
-   
-    /*original version*/
-    
-//    loop: while (true) {
-//      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "{{Infobox", "{{ Infobox")) {
-//        case -1: // End of file
-//          flush(currentEntity, typesOfCurrentEntity, writers);
-//          break loop;
-//        case 0: // New entity
-//          Announce.progressStep();
-//          flush(currentEntity, typesOfCurrentEntity, writers);
-//          currentEntity = titleExtractor.getTitleEntity(in);
-//       
-//          factsWithSubject = categoryAtts.getFactsWithSubject(currentEntity);  
-//       
-//          break;
-//        case 1: // Category
-//          if (currentEntity == null) continue;
-//          for(Fact f: factsWithSubject){
-//            String category = f.getArgJavaString(2);
-//            extractType(f.getArg(1), category, typesOfCurrentEntity);
-//          }
-//          break;
-//        case 2: // Infobox
-//        case 3:// Infobox
-//        
-//          String cls="";
-//          if ( currentEntity != null){
-//            if(infoboxTypes.getFactsWithSubject(currentEntity).size()<1) continue; 
-//            cls = FactComponent.stripBrackets(infoboxTypes.getFactsWithSubject(currentEntity).get(0).getArg(2).replace("_", " "));
-//          }
-//          if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
-//          if (!nonConceptualInfoboxes.contains(cls)) {
-//            String type = preferredMeanings.get(cls);
-//            if (type != null) typesOfCurrentEntity.add(type);
-//          }
-//      }
-//    }
-    
     Announce.progressDone();
 
     Announce.doing("Writing classes");
     for (Fact f : categoryClassFacts) {
+//      write(writers.get(WIKIPEDIATYPESOURCES_MAP.get(language)), f, writers.get(WIKIPEDIATYPESOURCES_MAP.get(language)).source, "<http://...>", "Farzaneh's cool extractor");
       if (FactComponent.isFactId(f.getArg(1))) writers.get(WIKIPEDIATYPESOURCES_MAP.get(language)).write(f);
       else writers.get(WIKIPEDIACLASSES_MAP.get(language)).write(f);
     }
     Announce.done();
 
-    Announce.doing("Writing hard wired types");
-    for (Fact f : input.get(HardExtractor.HARDWIREDFACTS)) {
-      if (f.getRelation().equals(RDFS.type)) write(writers, YAGOTYPES_MAP.get(language), f, WIKIPEDIATYPESOURCES_MAP.get(language), YAGO.yago, "Manual");
-    }
-    Announce.done();
+  
 
     this.categoryClassFacts=null;
     this.nonConceptualCategories=null;
     this.nonConceptualInfoboxes=null;
     this.preferredMeanings=null;
     this.wordnetClasses=null;
-    this.yagoBranches=null;
+//    this.yagoBranches=null;
 //    in.close();
   }
 
@@ -365,63 +290,62 @@ public abstract class WikipediaTypeExtractor extends Extractor {
       types.clear();
       return;
     }
-    String yagoBranch = yagoBranchForEntity(entity, types);
+//    String yagoBranch = yagoBranchForEntity(entity, types);
 //    Announce.debug("Branch of", entity, "is", yagoBranch);
-    if (yagoBranch == null) {
-      types.clear();
-      return;
-    }
+//    if (yagoBranch == null) {
+//      types.clear();
+//      return;
+//    }
     for (String type : types) {
-      String branch = yagoBranchForClass(type);
-      if (branch == null || !branch.equals(yagoBranch)) {
+//      String branch = yagoBranchForClass(type);
+//      if (branch == null || !branch.equals(yagoBranch)) {
 //        Announce.debug("Wrong branch:", type, branch);
-      } else {
-//        System.out.println("WWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWWW");
+//      } else {
         write(writers, YAGOTYPES_MAP.get(language), new Fact(entity, RDFS.type, type), WIKIPEDIATYPESOURCES_MAP.get(language), FactComponent.wikipediaURL(entity),
             "WikipediaTypeExtractor from category");
-      }
+//      }
     }
     types.clear();
   }
 
   /** Returns the YAGO branch for a category class */
-  public String yagoBranchForClass(String arg) {
-    if (yagoBranches.containsKey(arg)) return (yagoBranches.get(arg));
-    String yagoBranch = SimpleTypeExtractor.yagoBranch(arg, wordnetClasses);
-    if (yagoBranch != null) {
-      yagoBranches.put(arg, yagoBranch);
-      return (yagoBranch);
-    }
-    String sup = categoryClassFacts.getArg2(arg, RDFS.subclassOf);
-    if (sup != null) {
-      yagoBranch = SimpleTypeExtractor.yagoBranch(sup, wordnetClasses);
-      if (yagoBranch != null) {
-        yagoBranches.put(arg, yagoBranch);
-        return (yagoBranch);
-      }
-    }
-    return null;
-  }
+//  public String yagoBranchForClass(String arg) {
+//    if (yagoBranches.containsKey(arg)) return (yagoBranches.get(arg));
+//    String yagoBranch = SimpleTypeExtractor.yagoBranch(arg, wordnetClasses);
+//    if (yagoBranch != null) {
+//      yagoBranches.put(arg, yagoBranch);
+//      return (yagoBranch);
+//    }
+//    String sup = categoryClassFacts.getArg2(arg, RDFS.subclassOf);
+//    if (sup != null) {
+//      yagoBranch = SimpleTypeExtractor.yagoBranch(sup, wordnetClasses);
+//      if (yagoBranch != null) {
+//        yagoBranches.put(arg, yagoBranch);
+//        return (yagoBranch);
+//      }
+//    }
+//    return null;
+//  }
 
   /** Returns the YAGO branch for a an entity */
-  public String yagoBranchForEntity(String entity, Set<String> types) {
-    IntHashMap<String> branches = new IntHashMap<>();
-    for (String type : types) {
-      String yagoBranch = yagoBranchForClass(type);
-      if (yagoBranch != null) {
-        Announce.debug(entity, type, yagoBranch);
-        // Give higher priority to the stuff extracted from infoboxes
-        branches.increase(yagoBranch);
-        if(type.startsWith("<wordnet")) branches.increase(yagoBranch);
-      }
-    }
-    String bestSoFar = null;
-    for (String candidate : branches.keys()) {
-      if (bestSoFar == null || branches.get(candidate) > branches.get(bestSoFar) || branches.get(candidate) == branches.get(bestSoFar)
-          && SimpleTypeExtractor.yagoBranches.indexOf(candidate) < SimpleTypeExtractor.yagoBranches.indexOf(bestSoFar)) bestSoFar = candidate;
-    }
-    return (bestSoFar);
-  }
+//  public String yagoBranchForEntity(String entity, Set<String> types) {
+//    IntHashMap<String> branches = new IntHashMap<>();
+//    for (String type : types) {
+//      String yagoBranch = yagoBranchForClass(type);
+//      if (yagoBranch != null) {
+//        Announce.debug(entity, type, yagoBranch);
+//        // Give higher priority to the stuff extracted from infoboxes
+//        branches.increase(yagoBranch);
+//        if(type.startsWith("<wordnet")) branches.increase(yagoBranch);
+//      }
+//    }
+//    String bestSoFar = null;
+//    for (String candidate : branches.keys()) {
+//      if (bestSoFar == null || branches.get(candidate) > branches.get(bestSoFar) || branches.get(candidate) == branches.get(bestSoFar)
+//          && SimpleTypeExtractor.yagoBranches.indexOf(candidate) < SimpleTypeExtractor.yagoBranches.indexOf(bestSoFar)) bestSoFar = candidate;
+//    }
+//    return (bestSoFar);
+//  }
 
   /** Constructor from source file */
    

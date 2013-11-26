@@ -381,7 +381,7 @@ public class InfoboxExtractor extends Extractor {
 //    InfoboxExtractor ie2 = new InfoboxExtractor(new File("D:/ar_wiki.xml"));
 //    ie2.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 //    
-    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wiki.xml"));
+    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wikitest.xml"));
     ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
     
 //    InfoboxExtractor ie4 = new InfoboxExtractor(new File("D:/fa_wiki.xml"));
