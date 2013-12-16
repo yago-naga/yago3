@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -22,10 +21,8 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.TypeChecker;
 
 /**
  * CategoryExtractor - YAGO2s
@@ -33,37 +30,29 @@ import fromThemes.TypeChecker;
  * Extracts facts from categories
  * 
  * @author Fabian
+ * @author Farzaneh Mahdisoltani
  * 
  */
 public class CategoryExtractor extends Extractor {
 
-  /** The file from which we read */
   protected File wikipedia;
   protected String language;
-  
   public static final HashMap<String, Theme> CATEGORYMEMBERSHIP_MAP = new HashMap<String, Theme>();
-  /** Sources for category facts*/
   public static final HashMap<String, Theme> CATEGORYMEMBSOURCES_MAP = new HashMap<String, Theme>();
   
   
   static {
     for (String s : Extractor.languages) {
-      CATEGORYMEMBERSHIP_MAP.put(s, new Theme("categoryMembership_" + s, 
+      CATEGORYMEMBERSHIP_MAP.put(s, new Theme("categoryMembership" + Extractor.langPostfixes.get(s), 
           "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
-      CATEGORYMEMBSOURCES_MAP.put(s, new Theme("categoryMembSources_" + s, "The sources of category facts", ThemeGroup.OTHER));
+      CATEGORYMEMBSOURCES_MAP.put(s, new Theme("categoryMembSources" +  Extractor.langPostfixes.get(s), "The sources of category facts", ThemeGroup.OTHER));
     }
-  }
-
-  @Override
-  public File inputDataFile() {   
-    return wikipedia;
   }
   
   @Override
   public Set<Theme> input() {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
   }
-
 
   @Override
   public Set<Theme> output() {
@@ -97,7 +86,8 @@ public class CategoryExtractor extends Extractor {
           if (titleEntity == null){ continue;}
           String category = FileLines.readTo(in, ']', '|').toString();
           category = category.trim();
-          write(writers, CATEGORYMEMBERSHIP_MAP.get(language), new Fact(titleEntity, "<hasWikiCategory/" + this.language+ ">", FactComponent.forString(category)),CATEGORYMEMBSOURCES_MAP.get(language), 
+          write(writers, CATEGORYMEMBERSHIP_MAP.get(language), new Fact(titleEntity, "<hasWikiCategory/" + this.language+ ">",
+              FactComponent.forString(category)),CATEGORYMEMBSOURCES_MAP.get(language), 
               FactComponent.wikipediaURL(titleEntity), "CategoryExtractor" );
           break;
         case 3:
@@ -109,14 +99,9 @@ public class CategoryExtractor extends Extractor {
   }
 
 
-  public CategoryExtractor(File wikipedia, String lang) {
-    this.wikipedia = wikipedia;
-    this.language = lang;
-
-  }
-  /** Constructor from source file */
-  public CategoryExtractor(File wikipedia) {
-    this(wikipedia, decodeLang(wikipedia.getName()));
+  @Override
+  public File inputDataFile() {   
+    return wikipedia;
   }
   
   /* Finds the language from the name of the input file, 
@@ -126,11 +111,22 @@ public class CategoryExtractor extends Extractor {
     if (!fileName.contains("_")) return "en";
     return fileName.split("_")[0];
   }
+  
+  /** Constructor from source file */
+  public CategoryExtractor(File wikipedia) {
+    this(wikipedia, decodeLang(wikipedia.getName()));
+  }
 
+  public CategoryExtractor(File wikipedia, String lang) {
+    this.wikipedia = wikipedia;
+    this.language = lang;
+
+  } 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
 //    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
 //    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
-    new CategoryExtractor(new File("D:/de_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
+    //new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
+    new CategoryExtractor(new File("/GW/D5data/wikipedia_dumps/en/20121201/enwiki-20121201-pages-articles.xml")).extract(new File("/san/fmahdiso/Data2/yago2s"), "Test on 1 wikipedia article");
   }
 }
