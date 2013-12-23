@@ -4,25 +4,29 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
-
-import javax.xml.bind.attachment.AttachmentMarshaller;
 
 import fromOtherSources.InterLanguageLinks;
 import javatools.administrative.Announce;
-import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
+
+/**
+ * Dictionary - YAGO2s
+ * 
+ * Useful to build different dictionaries out of INTERLANGUAGELINKS.
+ * 
+ * @author Farzaneh Mahdisoltani
+ * 
+ */
 
 public class Dictionary {
 
   private static Map<String, Map<String, String>> rdictionaries = new HashMap<String, Map<String, String>>();
 
   private static Map<String, String> catDictionary = new HashMap<String, String>();
+  private static Map<String, String> infDictionary = new HashMap<String, String>();
 
   private static FactSource fs = FactSource.from(InterLanguageLinks.INTERLANGUAGELINKS.file(new File("D:/data2/yago2s")));
 
@@ -61,6 +65,21 @@ public class Dictionary {
     }
     return catDictionary;
   }
+  
+  private static Map<String, String> buildInfDictionary() throws FileNotFoundException, IOException {
+    infDictionary = new HashMap<String, String>();
+    for (Fact f : fs) {
+
+      String object = FactComponent.stripQuotes(FactComponent.getString(f.getArg(2)));
+      String subject = FactComponent.stripBrackets(f.getArg(1));
+
+      if (subject.equals("Template:Infobox")) {
+        infDictionary.put(FactComponent.getLanguage(f.getArg(2)), object);
+      }
+
+    }
+    return infDictionary;
+  }
 
   public static synchronized Map<String, String> get(String secondLang) throws FileNotFoundException, IOException {
 
@@ -77,4 +96,12 @@ public class Dictionary {
     return catDictionary;
   }
 
+  public static synchronized Map<String, String> getInfDictionary() throws FileNotFoundException, IOException {
+    if (infDictionary.isEmpty()) {
+      buildInfDictionary();
+    }
+    return infDictionary;
+  }
+
+  
 }
