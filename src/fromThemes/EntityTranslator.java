@@ -90,7 +90,7 @@ public class EntityTranslator extends Extractor {
 
       }
     }
-    for(Fact f: new FactCollection(input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"))))
+    for(Fact f: new FactCollection(input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("de"))))
         translatedFacts.add(f);
     
     
