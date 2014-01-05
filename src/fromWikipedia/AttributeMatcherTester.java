@@ -21,8 +21,6 @@ import basics.Theme;
 
 public class AttributeMatcherTester extends Extractor {
 
-  private File inputFolder;
-  private File outputFolder;
   
   @Override
   public Set<Theme> input() {
@@ -39,20 +37,17 @@ public class AttributeMatcherTester extends Extractor {
     return result;
   }
   
-  public AttributeMatcherTester(File inputFolder, File outputFolder) {
-    this.outputFolder = outputFolder; 
-    this.inputFolder = inputFolder; 
-  }
-  public AttributeMatcherTester(File folder) {
-    this.outputFolder = folder; 
-    this.inputFolder = folder;
+
+  public AttributeMatcherTester() {
   }
 
   @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+  public void extract(File inputFolder, File outputFolder, String header) throws Exception{
     for(String s: Extractor.languages){
       AttributeMatcher am = new AttributeMatcher(s);
-      am.extract(outputFolder, "Test on wikipedia article");
+      am.setSupportThreshold(1);
+      am.setWilsonThreshold(0);
+      am.extract(inputFolder, "Test on wikipedia article");
     }
     
   }
@@ -61,8 +56,12 @@ public class AttributeMatcherTester extends Extractor {
 //  Extractor extractor = Extractor.forName("fromWikipedia.MultiInfoboxExtractorTester", null);
 //  extractor.extract(new File("C:/Users/Administrator/data2/yago2s/"),
 //      "blah blah");
-  File f =  new File("/san/fmahdiso/Data2/yago2s");
-  new AttributeMatcherTester(f).extract( f, null);
+  File f =  new File("D:/data2/yago2s");
+  new AttributeMatcherTester().extract( f, null);
 }
+
+  @Override
+  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+  }
 
 }

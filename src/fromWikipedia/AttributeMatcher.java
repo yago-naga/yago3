@@ -1,37 +1,24 @@
-
-
 package fromWikipedia;
 
-import java.awt.AlphaComposite;
-import java.awt.SecondaryLoop;
-import java.awt.geom.Point2D;
-import java.awt.im.InputContext;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.io.Reader;
 import java.io.StringReader;
-import java.sql.PreparedStatement;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import utils.PatternList;
 import utils.TermExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.Announce.Level;
-import javatools.administrative.D;
 import javatools.datatypes.FrequencyVector;
 import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.Char;
 import javatools.util.FileUtils;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.InterLanguageLinks;
@@ -49,70 +36,59 @@ import basics.Theme;
 import basics.YAGO;
 import basics.Theme.ThemeGroup;
 
+/**
+ * YAGO2s - AttributeMatcher
+ * 
+ * This Extractor matches cross-lingual infobox attributes. 
+ * 
+ * @author Farzaneh Mahdisoltani
+ */
+
 public class AttributeMatcher extends Extractor { 
 	
 	private static ExtendedFactCollection yagoFactCollection = null;
-//	FactSource lang2FactSource;
-//	Map<String, String> dictionary; 
-	/*the reverse dictionary*/
 	
 	Map<String, Map<String,Pair<Integer, Integer>>> statistics;
 	private String language;
 	private Map<String, String> rdictionary; 
-	final double WILSON_THRESHOLD = 0.2;
-	final double SUPPORT_THRESHOLD = 10;
-
-	public AttributeMatcher(String secondLang) throws FileNotFoundException, IOException{
-		language = secondLang;
+	private double WILSON_THRESHOLD = 0;
+	private double SUPPORT_THRESHOLD = 1;
+	
+	public void setWilsonThreshold(double d){
+	  WILSON_THRESHOLD = d;
 	}
 
+	public void setSupportThreshold(double d){
+	  SUPPORT_THRESHOLD = d;
+	}
 
-	
-	 public static final HashMap<String, Theme> MATCHED_INFOBOXATTS_MAP = new HashMap<String, Theme>();
-	  public static final HashMap<String, Theme> MATCHEDATTSOURCES_MAP = new HashMap<String, Theme>();
+	public static final HashMap<String, Theme> MATCHED_INFOBOXATTS_MAP = new HashMap<String, Theme>();
+	public static final HashMap<String, Theme> MATCHEDATTSOURCES_MAP = new HashMap<String, Theme>();
 	  
-	  
-	  static {
-	    for (String s : Extractor.languages) {
-	      MATCHED_INFOBOXATTS_MAP.put(s, new Theme("matchedInfoboxAtts" + Extractor.langPostfixes.get(s),
-	          "Attributes of the Wikipedia infoboxes in different languages are matched.", ThemeGroup.OTHER));
-	      MATCHEDATTSOURCES_MAP.put(s, new Theme("matchedAttSources" + Extractor.langPostfixes.get(s), "Sources of infobox", ThemeGroup.OTHER));
-	    }
-
+	static {
+	  for (String s : Extractor.languages) {
+	    MATCHED_INFOBOXATTS_MAP.put(s, new Theme("matchedInfoboxAtts" + Extractor.langPostfixes.get(s),
+	        "Attributes of the Wikipedia infoboxes in different languages are matched.", ThemeGroup.OTHER));
+	    MATCHEDATTSOURCES_MAP.put(s, new Theme("matchedAttSources" + Extractor.langPostfixes.get(s), "Sources of infobox", ThemeGroup.OTHER));
 	  }
 
-	  
-//	/** Infobox facts */
-//	public static final Theme MATCHED_INFOBOXATTS = new
-//			Theme("machedInfoboxAtts",
-//					"Attributes of the Wikipedia infoboxes in different languages are matched.");
-//	public static final Theme MATCHEDATTSOURCES = new
-//      Theme("machedAttsources",
-//          "Attributes of the Wikipedia infoboxes in different languages are matched.");
+	}
 
 	@Override
 	public Set<Theme> input() {
-		HashSet<Theme> result = new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, 
-				HardExtractor.HARDWIREDFACTS, 
-				WordnetExtractor.WORDNETWORDS,
-				InterLanguageLinks.INTERLANGUAGELINKS,
-				InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),
-				InfoboxExtractor.INFOBOXATTS_MAP.get(language)
-				));
-		//		Iterator iter = InfoboxExtractor.multiThemes.iterator();
-		//		while (iter.hasNext()) {
-		//		  result.add((Theme) iter.next());
-		//		}
-		return result;
+	  HashSet<Theme> result = new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, 
+	      HardExtractor.HARDWIREDFACTS, 
+	      WordnetExtractor.WORDNETWORDS,
+	      InterLanguageLinks.INTERLANGUAGELINKS,
+	      InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),
+	      InfoboxExtractor.INFOBOXATTS_MAP.get(language)
+	      ));
+	  return result;
 	}
 
 	@Override
 	public Set<Theme> output() {
 		return new HashSet<>(Arrays.asList(MATCHED_INFOBOXATTS_MAP.get(language),MATCHEDATTSOURCES_MAP.get(language)));
-	}
-
-	public Fact flip(Fact f){
-		return new Fact(f.getArg(1), f.getRelation(), f.getArg(2));
 	}
 
 	@Override
@@ -122,100 +98,100 @@ public class AttributeMatcher extends Extractor {
 	  FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 	  Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(input);
 	  ExtendedFactCollection myFactCollection = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en")));
-//	  		ExtendedFactCollection myFactCollection = getFactCollection(new File("D:/yago2s_ttl"));
+	  //	  		ExtendedFactCollection myFactCollection = getFactCollection(new File("D:/yago2s_ttl"));
 	  FactSource lang2FactSource= input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language));
 
-	  Announce.progressStart("Running through foreign Wikipedia", 12713794);
+	  Announce.progressStart("Running through "+language+" Wikipedia", 12713794); 
+	  int lang2FactSourceSize = 0;
 	  for (Fact f2 : lang2FactSource){
+	    lang2FactSourceSize++;
 	    Announce.progressStep();
 	    String secondLangSubject = FactComponent.stripBrackets(f2.getArg(1));
 	    String secondLangRelation = f2.getRelation();
 	    String secondLangObject = f2.getArg(2);
-	    
+
 	    String yagoArg = rdictionary.get(secondLangSubject);
 	    if(yagoArg==null) {
 	      continue;
 	    }
-	      List<Fact> yagoFactsWithSubject = myFactCollection.getFactsWithSubject(FactComponent.forYagoEntity(yagoArg));
+	    List<Fact> yagoFactsWithSubject = myFactCollection.getFactsWithSubject(FactComponent.forYagoEntity(yagoArg));
 
-	      for(Fact f: yagoFactsWithSubject){
-	        String yagoRelation = f.getRelation();
-	        String yagoObject = FactComponent.stripBrackets(f.getArg(2));
+	    for(Fact f: yagoFactsWithSubject){
+	      String yagoRelation = f.getRelation();
+	      String yagoObject = FactComponent.stripBrackets(f.getArg(2));
 
-	        String expectedDatatype = hardWiredFacts.getArg2(yagoRelation, RDFS.range);
-	        //assumption: all the subjects are entities
+	      String expectedDatatype = hardWiredFacts.getArg2(yagoRelation, RDFS.range);
+	      /* assumption: all the subjects are entities*/
 
-	        //					if(isEqualr(yagoSubject,secondLangSubject)){   //expectation: always be true
-	        if(isEqual(yagoObject, secondLangObject, expectedDatatype, preferredMeaning )){
-	         
-	          deduce(yagoRelation, secondLangRelation, true);
-	        }else
-	          
-	          deduce(yagoRelation, secondLangRelation, false);
-	        //					}
+	      // if(isEqualr(yagoSubject,secondLangSubject)){   //expectation: always be true
+	      if(isEqual(yagoObject, secondLangObject, expectedDatatype, preferredMeaning )){
+
+	        deduce(yagoRelation, secondLangRelation, true);
+	      }else
+
+	        deduce(yagoRelation, secondLangRelation, false);
+	      //					}
+	    }
+
+	    List<Fact> yagoFactsWithObject = myFactCollection.getFactsWithObject(FactComponent.forYagoEntity(yagoArg));
+	    for(Fact f: yagoFactsWithObject){
+	      String yagoRelation = f.getRelation();
+	      String yagoSubject = FactComponent.stripBrackets(f.getArg(1));
+	      String expectedDatatype = hardWiredFacts.getArg2(yagoRelation, RDFS.range);
+	      //assumption: all the subjects are entities
+	      if(isEntity(expectedDatatype)){
+	        if(isEqual(yagoSubject, secondLangObject, "<yagoGeoEntity>", preferredMeaning )/* && isEqualr(yagoObject, secondLangSubject)*/)
+	          deduce(yagoRelation, "<"+FactComponent.stripBrackets(secondLangRelation)+"->", true);
+	        else
+	          deduce(yagoRelation, "<"+FactComponent.stripBrackets(secondLangRelation)+"->", false);
 	      }
-
-	      List<Fact> yagoFactsWithObject = myFactCollection.getFactsWithObject(FactComponent.forYagoEntity(yagoArg));
-	      for(Fact f: yagoFactsWithObject){
-	        String yagoRelation = f.getRelation();
-	        String yagoSubject = FactComponent.stripBrackets(f.getArg(1));
-	        String expectedDatatype = hardWiredFacts.getArg2(yagoRelation, RDFS.range);
-	        //assumption: all the subjects are entities
-	        if(isEntity(expectedDatatype)){
-	          //						System.out.println("subjects are not equal " + yagoArg+ " " + secondLangSubject);
-	          if(isEqual(yagoSubject, secondLangObject, "<yagoGeoEntity>", preferredMeaning )/* && isEqualr(yagoObject, secondLangSubject)*/)
-	            deduce(yagoRelation, "<"+FactComponent.stripBrackets(secondLangRelation)+"->", true);
-	          else
-	            deduce(yagoRelation, "<"+FactComponent.stripBrackets(secondLangRelation)+"->", false);
-	        }
-	      }
-
-
+	    }
 	  }
-	  
+
 	  Announce.progressDone();
-	  
+	  //TODO: set the thresholds here
+	  //WILSON_THRESHOLD = lang2FactSourceSize/1000; 
+	  //SUPPORT_THRESHOLD = lang2FactSourceSize /100;
 	  for (Entry<String, Map<String, Pair<Integer, Integer>>> entry : statistics.entrySet())
 	  {
 	    Map<String, Pair<Integer, Integer>> temp = entry.getValue(); 
 	    if(temp != null){
 	      for (Entry <String, Pair<Integer, Integer>> subEntry : temp.entrySet() ){
-	       int total =  subEntry.getValue().second;
-	       int correct = subEntry.getValue().first;
-	         double[] ws=  FrequencyVector.wilson(total, correct);
-	          
-	        if((float)subEntry.getValue().first/subEntry.getValue().second > 0 ){
-//	          Fact fact = new Fact(entry.getKey(), (double)correct /total + " <" +
-//	             correct + "/" +total +">" + "     " +ws[0] + "    " + ws[1] , subEntry.getKey());
+	        int total =  subEntry.getValue().second;
+	        int correct = subEntry.getValue().first;
+	        double[] ws=  FrequencyVector.wilson(total, correct);
+
+	        if(correct > 0 ){
+	          //	          Fact fact = new Fact(entry.getKey(), (double)correct /total + " <" +
+	          //	             correct + "/" +total +">" + "     " +ws[0] + "    " + ws[1] , subEntry.getKey());
 	          /*filtering out */
-	          if(ws[0] - ws[1] > WILSON_THRESHOLD  && correct> SUPPORT_THRESHOLD){
+//	          if(ws[0] - ws[1] > WILSON_THRESHOLD  && correct> SUPPORT_THRESHOLD){
 	            Fact fact = new Fact(subEntry.getKey(),"<infoboxAttribute>", entry.getKey());
 
 	            write(writers, MATCHED_INFOBOXATTS_MAP.get(language), fact, MATCHEDATTSOURCES_MAP.get(language),
 	                FactComponent.wikipediaURL(entry.getKey()),"");
-	          }
-	          
-//	          writers.get(MATCHED_INFOBOXATTS).write(new Fact(entry.getKey(),
-//	             /*"<isEquivalentTo> " + */ "<"+subEntry.getValue().first+"/"+ subEntry.getValue().second+ "> "+
-//	                  (float)subEntry.getValue().first/subEntry.getValue().second+""  , subEntry.getKey()));
-//	          write(writers, MATCHED_INFOBOXATTS,new Fact(entry.getKey(), 
-//	              (float)subEntry.getValue().first/subEntry.getValue().second+""  ,subEntry.getKey()), MATCHEDATTSources,
-//	              FactComponent.wikipediaURL(entry.getKey()),
-//	              "TODO");
+//	          }
+
+	          //	          writers.get(MATCHED_INFOBOXATTS).write(new Fact(entry.getKey(),
+	          //	             /*"<isEquivalentTo> " + */ "<"+subEntry.getValue().first+"/"+ subEntry.getValue().second+ "> "+
+	          //	                  (float)subEntry.getValue().first/subEntry.getValue().second+""  , subEntry.getKey()));
+	          //	          write(writers, MATCHED_INFOBOXATTS,new Fact(entry.getKey(), 
+	          //	              (float)subEntry.getValue().first/subEntry.getValue().second+""  ,subEntry.getKey()), MATCHEDATTSources,
+	          //	              FactComponent.wikipediaURL(entry.getKey()),
+	          //	              "TODO");
 	        }
 	      }
 	    }
-	    
-
-//	      if(entry.getValue()./entry.getValue() >  0 );
 	  }
 
 
-	  
-	  
 	}
 	
-	
+	public Fact flip(Fact f){
+	  return new Fact(f.getArg(1), f.getRelation(), f.getArg(2));
+	}
+
+
 	private static synchronized ExtendedFactCollection getFactCollection(FactSource infoboxFacts) {
 		if(yagoFactCollection!=null) return(yagoFactCollection);
 		yagoFactCollection=new ExtendedFactCollection();
@@ -284,12 +260,6 @@ public class AttributeMatcher extends Extractor {
 		case "<yagoLegalActorGeo>":
 		case "<yagoURL>":
 		default:
-//			if(objects.size()!=1)
-//				return false;
-//			if(dictionary.get(target)!= null && dictionary.get(target).
-//					equals(FactComponent.stripBrackets(objects.get(0)))){
-//				return true;
-//			}
 			for(String s:objects){
 				String temp = FactComponent.stripBrackets(s);
 				if(rdictionary.get(temp)!=null && rdictionary.get(temp).contains(target))
@@ -370,28 +340,6 @@ public class AttributeMatcher extends Extractor {
 
 	}
 
-
-//	public void buildDictionary(String secondLang) throws FileNotFoundException, IOException{
-//		File input = new File ("D:/yago2s/multi/");
-//		//		Map<String,String> dictionary =  new HashMap<String, String>();
-//
-//		Announce.doing("", input.getName());
-//		N4Reader nr = new N4Reader(FileUtils.getBufferedUTF8Reader(InterLanguageLinks.INTERLANGUAGELINKS.file(input)));
-//		while(nr.hasNext()){
-//
-//			Fact f=nr.next();
-//
-//			if(FactComponent.getLanguage(f.getArg(2)).equals( secondLang)){
-//			  //				System.out.println(FactComponent.getLanguage(f.getArg(2)).equals( secondLang) + "IIIIIIIIIIIIIIIIIIII");
-//				//				System.out.println(FactComponent.stripBrackets(f.getArg(1)) + " TTTTTTTTTTT " +  FactComponent.stripQuotes(FactComponent.getString(f.getArg(2))));
-//				dictionary.put(FactComponent.stripBrackets(f.getArg(1)),  FactComponent.stripQuotes(FactComponent.getString(f.getArg(2))) );
-//			}
-//		}
-//
-//	}
-	
-
-
 	public HashSet<String> buildNgrams(String s){
 		HashSet<String> ngrams = new HashSet<String> (); 
 		for(int i= 2; i<5; i++){
@@ -439,46 +387,47 @@ public class AttributeMatcher extends Extractor {
 	public static String preprocess(String input) throws IOException{
 	  if(input.contains("\n"))
 	    input=input.replace("\n", "");
-		StringReader reader = new StringReader(input);
-		switch(FileLines.findIgnoreCase(reader, "<ref>", "<br />")){
-		  case 0:
-		    CharSequence temp = FileLines.readTo(reader, "</ref>");
-		    input = input.replace("<ref>"+temp, "");
-		    break;
-		  case 1:
-        input = input.replace("<br />", "");
-		    break;
-		}
-		
-		
-		for (int i = 1; i < input.length()-1; i++) 
-			if((input.charAt(i) == '.') && Character.isDigit(input.charAt(i-1)) && Character.isDigit(input.charAt(i+1)))
-				input = input.replace(".", "");
+	  StringReader reader = new StringReader(input);
+	  switch(FileLines.findIgnoreCase(reader, "<ref>", "<br />")){
+	    case 0:
+	      CharSequence temp = FileLines.readTo(reader, "</ref>");
+	      input = input.replace("<ref>"+temp, "");
+	      break;
+	    case 1:
+	      input = input.replace("<br />", "");
+	      break;
+	  }
 
-		for (int i = 1; i < input.length()-1; i++) 
-			if((input.charAt(i) == ',') && Character.isDigit(input.charAt(i-1)) && Character.isDigit(input.charAt(i+1)))
-				input = input.replace(",", ".");
+	  for (int i = 1; i < input.length()-1; i++) 
+	    if((input.charAt(i) == '.') && Character.isDigit(input.charAt(i-1)) && Character.isDigit(input.charAt(i+1)))
+	      input = input.replace(".", "");
 
-		return input;
+	  for (int i = 1; i < input.length()-1; i++) 
+	    if((input.charAt(i) == ',') && Character.isDigit(input.charAt(i-1)) && Character.isDigit(input.charAt(i+1)))
+	      input = input.replace(",", ".");
+
+	  return input;
 	}
+	
 
-	public static void main(String[] args) throws Exception {
-		Announce.setLevel(Announce.Level.DEBUG);
-		String mylang= "de"; 
-		//		new PatternHardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/yago2s/data")).extract(new File("C:/Users/Administrator/Dropbox/data/yago2s/"+mylang), "test");
-		//	    new HardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/basics2s/data")).extract(new File("C:/Users/Administrator/Dropbox/data/yago2s/"+mylang), "test");
-		//	    new WordnetExtractor(new File("C:/Users/Administrator/Dropbox/workspace/yago2s/data/wordnet")).extract(new File("C:/Users/Administrator/Dropbox/data/yago2s/"+mylang), "This time its gonna work!");
+  public AttributeMatcher(String secondLang) throws FileNotFoundException, IOException{
+    language = secondLang;
+  }
+  
 
-
-		Announce.setLevel(Level.MESSAGES);
-		new AttributeMatcher(mylang)
-		.extract(new File("D:/data2/yago2s"), 
-				"mapping infobox attributes in different languages");
-
-//		System.out.println(Double.valueOf(a));
+  public static void main(String[] args) throws Exception {
+    Announce.setLevel(Announce.Level.DEBUG);
+    String mylang= "de"; 
+    //		new PatternHardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/yago2s/data")).extract(new File("C:/Users/Administrator/Dropbox/data/yago2s/"+mylang), "test");
+    //	    new HardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/basics2s/data")).extract(new File("C:/Users/Administrator/Dropbox/data/yago2s/"+mylang), "test");
+    //	    new WordnetExtractor(new File("C:/Users/Administrator/Dropbox/workspace/yago2s/data/wordnet")).extract(new File("C:/Users/Administrator/Dropbox/data/yago2s/"+mylang), "This time its gonna work!");
 
 
-	} 
+    Announce.setLevel(Level.MESSAGES);
+    new AttributeMatcher(mylang)
+    .extract(new File("D:/data2/yago2s"), 
+        "mapping infobox attributes in different languages");
+  } 
 
 
 }

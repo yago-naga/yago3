@@ -1,21 +1,15 @@
 package fromWikipedia;
 
 import java.io.File;
-import java.io.Reader;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import utils.FactTemplateExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
-import utils.FactTemplateExtractor;
-import utils.TitleExtractor;
 import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactCollection;
@@ -24,20 +18,19 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.TypeChecker;
 
 /**
- * CategoryExtractor - YAGO2s
+ * CategoryMapper - YAGO2s
  * 
- * Extracts facts from categories
+ * Maps the facts in the output of CategoryExtractor for English 
+ * and CategoryTranslator for other languages
  * 
- * @author Farzaneh
+ * @author Farzaneh Mahdisoltani
  * 
  */
-public abstract class CategoryMapper extends Extractor {
+public class CategoryMapper extends Extractor {
 
   protected String language; 
   public static final HashMap<String, Theme> CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>(); 
@@ -56,7 +49,10 @@ public abstract class CategoryMapper extends Extractor {
   @Override
   public Set<Theme> input() {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, 
-        PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
+        PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS, 
+        CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language),
+        CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)
+        ));
   }  
   
   @Override
@@ -71,22 +67,55 @@ public abstract class CategoryMapper extends Extractor {
     return(result);
   }
   
-//  public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "Facts about Wikipedia instances, derived from the Wikipedia categories");
-//  /** Facts deduced from categories */
-//  public static final Theme CATEGORYFACTS_TOTYPECHECK = new Theme("categoryFactsToBeTypeChecked",
-//      "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be typechecked");
+  @Override
+  public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
+    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
 
+    Announce.progressStart("Extracting", 3_900_000);
 
-//  @Override
-//  public Set<Extractor> followUp() {
-//    return new HashSet<Extractor>(Arrays.asList(new Redirector(CATEGORYFACTS_TOREDIRECT_MAP.get(language), CATEGORYFACTS_TOTYPECHECK, this), new TypeChecker(
-//        CATEGORYFACTS_TOTYPECHECK, CATEGORYFACTS, this)));
-//  }
+    ExtendedFactCollection result = getCategoryFactCollection(input);
+    
+      for (Fact f: result){
+        String temp= f.getArg(2);
+        if(f.getArg(2).contains("_")){
+          temp =  f.getArg(2).replace("_", " ");
+          System.out.println(temp + "***************");
+        }
+        for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
+          if(fact!=null){
+          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+          }
+        }
+      }
+//    for (Fact f : result){
+//      for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(f.getArg(2)),f.getArg(1))){
+//        if(fact !=null) 
+//        //TODO: this might be a latent bug, expection is that the fact is never null; 
+//        write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+//      }
+//    }
 
- 
+  } 
+  
+  protected ExtendedFactCollection getCategoryFactCollection( Map<Theme, FactSource> input) {
+    ExtendedFactCollection result = new ExtendedFactCollection();
+    if(language=="en") loadFacts(input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)), result);
+    else loadFacts(input.get(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language)), result) ;
+    return result;
+    
+  }
+  
+  
   /** Constructor from source file */
   public CategoryMapper(String lang) {
     language=lang;
+  }
+  
+  public static void main(String[] args) throws Exception {
+    Announce.setLevel(Announce.Level.DEBUG);
+    CategoryMapper extractor = new CategoryMapper("en");
+    extractor.extract(new File("D:/data2/yago2s/"),
+        "mapping infobox attributes into infobox facts");
   }
   
 

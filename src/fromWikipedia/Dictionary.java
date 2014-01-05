@@ -39,6 +39,7 @@ public class Dictionary {
         String subject = FactComponent.stripBrackets(f.getArg(1));
         if (!rdictionary.containsKey(object)) {
           rdictionary.put(object, subject);
+//          System.out.println(object+" " +  subject);
         }
         //        if(!rdictionary.get(object).contains(subject)){
         //          rdictionary.get(object).add(subject);
@@ -103,5 +104,9 @@ public class Dictionary {
     return infDictionary;
   }
 
+  public static void main(String[] args) throws FileNotFoundException, IOException {
+    Dictionary d = new Dictionary();
+    d.buildReverseDictionary("en");
+  }
   
 }

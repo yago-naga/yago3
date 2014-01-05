@@ -127,6 +127,6 @@ public class CategoryExtractor extends Extractor {
 //    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
 //    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
     //new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
-    new CategoryExtractor(new File("/GW/D5data/wikipedia_dumps/en/20121201/enwiki-20121201-pages-articles.xml")).extract(new File("/san/fmahdiso/Data2/yago2s"), "Test on 1 wikipedia article");
+    new CategoryExtractor(new File("D:/de_wikitest.xml")).extract(new File("D:/data2/yago2s"), "Test on 1 wikipedia article");
   }
 }

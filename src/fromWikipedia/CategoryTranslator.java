@@ -9,16 +9,22 @@ import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import utils.FactTemplateExtractor;
 import fromOtherSources.PatternHardExtractor;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 
+/**
+ * CategoryTranslator - YAGO2s
+ * 
+ * Translates the categories in for category membership facts in different languages.
+ * 
+ * @author Farzaneh Mahdisoltani
+ * 
+ */
 
 public class CategoryTranslator extends Extractor{
 
@@ -45,7 +51,7 @@ public class CategoryTranslator extends Extractor{
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
+//    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
 
     Announce.progressStart("Extracting", 3_900_000);
 
@@ -57,16 +63,14 @@ public class CategoryTranslator extends Extractor{
     //    }
 
     Map<String, String> rdictionary = Dictionary.get(language);
-    String categoryWord = "Kategorie"; 
-    //Dictionary.getCatDictionary().get(language);
-
+   String categoryWord  = Dictionary.getCatDictionary().get(language); //= "Kategorie"; 
+   
+System.out.println("********************* " + categoryWord );
     for (Fact f : input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language))){
       
       String entity = f.getArg(1); 
 //          rdictionary.get(FactComponent.stripBrackets(f.getArg(1)));  
-      System.out.println(categoryWord+":"+FactComponent.stripQuotes(f.getArg(2).replace(" ", "_")));
       String category = rdictionary.get(categoryWord+":"+FactComponent.stripQuotes(f.getArg(2).replace(" ", "_")));
-      System.out.println(category);
    
       if(category == null) 
         continue; 
@@ -115,7 +119,7 @@ public class CategoryTranslator extends Extractor{
   }
   
   public static void main(String[] args) throws Exception {
-    new CategoryTranslator("de").extract(new File("D:/data2/yago2s/"),
+    new CategoryTranslator("en").extract(new File("D:/data2/yago2s/"),
         "translating category-memebership facts");
 
   }

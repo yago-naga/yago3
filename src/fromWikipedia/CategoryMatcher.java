@@ -122,7 +122,7 @@ public class CategoryMatcher extends Extractor {
          int correct = subEntry.getValue().first;
            double[] ws=  FrequencyVector.wilson(total, correct);
             
-          if((float)subEntry.getValue().first/subEntry.getValue().second >= 0 ){
+          if((float)subEntry.getValue().first/subEntry.getValue().second >= 0 && total > 1){
             Fact fact = new Fact(entry.getKey(), (double)correct /total + " <" +
                correct + "/" +total +">" + "     " +ws[0] + "    " + ws[1] , subEntry.getKey());
             /*filtering out */
