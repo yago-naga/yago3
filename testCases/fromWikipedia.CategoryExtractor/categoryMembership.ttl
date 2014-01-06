@@ -1,0 +1,2900 @@
+# Test of YAGO2s
+# Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected
+# OTHER
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_10onaxx_1hs_1mf5org>
+<Berlusconi_I_Cabinet>	<hasWikiCategory/en>	"Silvio Berlusconi" .
+#@ <id_10onaxx_1hs_1hpntjj>
+<Berlusconi_I_Cabinet>	<hasWikiCategory/en>	"1994 establishments in Italy" .
+#@ <id_10onaxx_1hs_yde1da>
+<Berlusconi_I_Cabinet>	<hasWikiCategory/en>	"1995 disestablishments" .
+#@ <id_10onaxx_1hs_50quvs>
+<Berlusconi_I_Cabinet>	<hasWikiCategory/en>	"Governments of Italy" .
+#@ <id_10onaxx_1hs_1mf5org>
+<Berlusconi_I_Cabinet>	<hasWikiCategory/en>	"Silvio Berlusconi" .
+#@ <id_10onaxx_1hs_1hpntjj>
+<Berlusconi_I_Cabinet>	<hasWikiCategory/en>	"1994 establishments in Italy" .
+#@ <id_10onaxx_1hs_yde1da>
+<Berlusconi_I_Cabinet>	<hasWikiCategory/en>	"1995 disestablishments" .
+#@ <id_y9qq7a_1hs_y9qq7a>
+<Campania>	<hasWikiCategory/en>	"Campania" .
+#@ <id_y9qq7a_1hs_1nqnpqz>
+<Campania>	<hasWikiCategory/en>	"Regions of Italy" .
+#@ <id_y9qq7a_1hs_j8dtk8>
+<Campania>	<hasWikiCategory/en>	"NUTS 2 statistical regions of the European Union" .
+#@ <id_y9qq7a_1hs_nk2hw2>
+<Campania>	<hasWikiCategory/en>	"Wine regions of Italy" .
+#@ <id_y9qq7a_1hs_zk0woa>
+<Campania>	<hasWikiCategory/en>	"Osci" .
+#@ <id_1gaoy63_1hs_88rxji>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"1920 births" .
+#@ <id_1gaoy63_1hs_ch4ybq>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1gaoy63_1hs_1aj10l4>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"People from Livorno" .
+#@ <id_1gaoy63_1hs_2pqysn>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Presidents of Italy" .
+#@ <id_1gaoy63_1hs_tathbh>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Prime Ministers of Italy" .
+#@ <id_1gaoy63_1hs_1lkr2w5>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Italian Life Senators" .
+#@ <id_1gaoy63_1hs_nsictm>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Italian bankers" .
+#@ <id_1gaoy63_1hs_u1zd27>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Central bankers" .
+#@ <id_1gaoy63_1hs_v2stj0>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Italian military personnel of World War II" .
+#@ <id_1gaoy63_1hs_3dx7ci>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Italian resistance members" .
+#@ <id_1gaoy63_1hs_12pkfeo>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"University of Pisa alumni" .
+#@ <id_1gaoy63_1hs_ovsluv>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Italian Roman Catholics" .
+#@ <id_1gaoy63_1hs_nw9cbd>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Action Party (Italy) politicians" .
+#@ <id_1gaoy63_1hs_16ac3ot>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Charlemagne Prize recipients" .
+#@ <id_1gaoy63_1hs_1nb55jm>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of St. Olav" .
+#@ <id_1gaoy63_1hs_klteho>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 1st Class with Chain" .
+#@ <id_1gaoy63_1hs_bq2k3i>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Recipients of the Order of the White Eagle (Poland)" .
+#@ <id_1gaoy63_1hs_1msqktr>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Recipients of the Collar of the Order of the Cross of Terra Mariana" .
+#@ <id_1gaoy63_1hs_m2rb2l>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Recipients of the Military Order of Italy" .
+#@ <id_1gaoy63_1hs_1nd3awx>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Recipients of the Order of the Star of Italian Solidarity" .
+#@ <id_1gaoy63_1hs_fcelue>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Recipients of the Order of Merit for Labour" .
+#@ <id_1gaoy63_1hs_1iulm0c>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Knights of the Order of Vittorio Veneto" .
+#@ <id_1gaoy63_1hs_a33gmb>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Bailiffs Grand Cross of the Order of St John" .
+#@ <id_1gaoy63_1hs_10itzyp>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Honorary Knights Grand Cross of the Order of the Bath" .
+#@ <id_1gaoy63_1hs_6n6ij3>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Grand Order of King Tomislav recipients" .
+#@ <id_1gaoy63_1hs_1ftmezl>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Order of Pius IX" .
+#@ <id_1gaoy63_1hs_1nitb58>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of Merit of the Italian Republic" .
+#@ <id_1gaoy63_1hs_126soh6>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Commandeurs of the Légion d'honneur" .
+#@ <id_1gaoy63_1hs_bllrhg>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Commanders Crosses of the Order of Merit of the Federal Republic of Germany" .
+#@ <id_1gaoy63_1hs_1xng4ym>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Grand Cordons of the Order of the Rising Sun" .
+#@ <id_1gaoy63_1hs_gog0vd>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Recipients of the Decoration for Services to the Republic of Austria" .
+#@ <id_1gaoy63_1hs_ei600t>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Sashes of the Order of the Star of Romania" .
+#@ <id_1gaoy63_1hs_1r8odbc>
+<Carlo_Azeglio_Ciampi>	<hasWikiCategory/en>	"Grand Crosses of the Order of the Southern Cross" .
+#@ <id_zskfq5_1hs_1p725i3>
+<Catholic_Church>	<hasWikiCategory/en>	"Roman Catholic Church" .
+#@ <id_zskfq5_1hs_15t55vs>
+<Catholic_Church>	<hasWikiCategory/en>	"Apostolic sees" .
+#@ <id_zskfq5_1hs_1i98jj2>
+<Catholic_Church>	<hasWikiCategory/en>	"Chalcedonianism" .
+#@ <id_7r55ul_1hs_11ak1be>
+<Forza_Italia>	<hasWikiCategory/en>	"Catholic political parties" .
+#@ <id_7r55ul_1hs_1hi1t0q>
+<Forza_Italia>	<hasWikiCategory/en>	"Christian democratic parties" .
+#@ <id_7r55ul_1hs_45igkh>
+<Forza_Italia>	<hasWikiCategory/en>	"Liberal-conservative parties" .
+#@ <id_7r55ul_1hs_ueqwfb>
+<Forza_Italia>	<hasWikiCategory/en>	"Liberal parties in Italy" .
+#@ <id_7r55ul_1hs_1o8bhme>
+<Forza_Italia>	<hasWikiCategory/en>	"Political parties established in 1993" .
+#@ <id_7r55ul_1hs_ecul3f>
+<Forza_Italia>	<hasWikiCategory/en>	"Political parties disestablished in 2009" .
+#@ <id_7r55ul_1hs_15j194m>
+<Forza_Italia>	<hasWikiCategory/en>	"Social democratic parties" .
+#@ <id_7r55ul_1hs_1rfqnop>
+<Forza_Italia>	<hasWikiCategory/en>	"Defunct Christian political parties" .
+#@ <id_1qqn7vt_1hs_1b8sv9r>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"1952 births" .
+#@ <id_1qqn7vt_1hs_ch4ybq>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1qqn7vt_1hs_18i1ukl>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"People from Bologna" .
+#@ <id_1qqn7vt_1hs_1oicy9q>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"The People of Freedom politicians" .
+#@ <id_1qqn7vt_1hs_u3baa9>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"Italian Social Movement politicians" .
+#@ <id_1qqn7vt_1hs_wyntxj>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"Italian Ministers of Foreign Affairs" .
+#@ <id_1qqn7vt_1hs_hgh0ua>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"National Alliance (Italy) politicians" .
+#@ <id_1qqn7vt_1hs_n9v7k1>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 2nd Class" .
+#@ <id_1qqn7vt_1hs_e5jgan>
+<Gianfranco_Fini>	<hasWikiCategory/en>	"Future and Freedom politicians" .
+#@ <id_1vo5vis_1hs_aao6w9>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"1925 births" .
+#@ <id_1vo5vis_1hs_pcb30j>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_1vo5vis_1hs_p655fg>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Democrats of the Left politicians" .
+#@ <id_1vo5vis_1hs_1p9rbvd>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Italian atheists" .
+#@ <id_1vo5vis_1hs_52ui1m>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Italian Communist Party politicians" .
+#@ <id_1vo5vis_1hs_1lkr2w5>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Italian Life Senators" .
+#@ <id_1vo5vis_1hs_47hrna>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Italian Ministers of the Interior" .
+#@ <id_1vo5vis_1hs_zb0xtq>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Italian people of World War II" .
+#@ <id_1vo5vis_1hs_1p9rbvd>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Italian atheists" .
+#@ <id_1vo5vis_1hs_ch4ybq>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1vo5vis_1hs_cb31pw>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"MEPs for Italy 1999–2004" .
+#@ <id_1vo5vis_1hs_14mrm>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"People from Naples" .
+#@ <id_1vo5vis_1hs_2pqysn>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Presidents of Italy" .
+#@ <id_1vo5vis_1hs_tabnp>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"Presidents of the Italian Chamber of Deputies" .
+#@ <id_1vo5vis_1hs_1nggzbh>
+<Giorgio_Napolitano>	<hasWikiCategory/en>	"University of Naples Federico II alumni" .
+#@ <id_1rnvp37_1hs_1uvflaf>
+<Giuliano_Amato>	<hasWikiCategory/en>	"1938 births" .
+#@ <id_1rnvp37_1hs_1ap0r4e>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Columbia Law School alumni" .
+#@ <id_1rnvp37_1hs_m4w8qq>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Democratic Party (Italy) politicians" .
+#@ <id_1rnvp37_1hs_wpfr8v>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Fellows of the American Academy of Arts and Sciences" .
+#@ <id_1rnvp37_1hs_1krpth9>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Italian Christian socialists" .
+#@ <id_1rnvp37_1hs_hnj809>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Italian Ministers of the Treasury" .
+#@ <id_1rnvp37_1hs_47hrna>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Italian Ministers of the Interior" .
+#@ <id_1rnvp37_1hs_1e3dj4i>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Italian Socialist Party politicians" .
+#@ <id_1rnvp37_1hs_ch4ybq>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1rnvp37_1hs_jo842n>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Members of the Italian Chamber of Deputies" .
+#@ <id_1rnvp37_1hs_zxw04n>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Members of the Italian Senate" .
+#@ <id_1rnvp37_1hs_1s9cagh>
+<Giuliano_Amato>	<hasWikiCategory/en>	"People from Turin" .
+#@ <id_1rnvp37_1hs_m01dw8>
+<Giuliano_Amato>	<hasWikiCategory/en>	"People of Sicilian descent" .
+#@ <id_1rnvp37_1hs_tathbh>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Prime Ministers of Italy" .
+#@ <id_1rnvp37_1hs_3iyebd>
+<Giuliano_Amato>	<hasWikiCategory/en>	"Sapienza University of Rome faculty" .
+#@ <id_1rnvp37_1hs_1jtqf7z>
+<Giuliano_Amato>	<hasWikiCategory/en>	"University of Florence faculty" .
+#@ <id_1rnvp37_1hs_199mc1d>
+<Giuliano_Amato>	<hasWikiCategory/en>	"University of Modena faculty" .
+#@ <id_1rnvp37_1hs_nhmic4>
+<Giuliano_Amato>	<hasWikiCategory/en>	"University of Perugia faculty" .
+#@ <id_1rnvp37_1hs_12pkfeo>
+<Giuliano_Amato>	<hasWikiCategory/en>	"University of Pisa alumni" .
+#@ <id_1bclsii_1hs_85p3ft>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"1947 births" .
+#@ <id_1bclsii_1hs_1myhzot>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"Forza Italia politicians" .
+#@ <id_1bclsii_1hs_1bbk7es>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"Italian economists" .
+#@ <id_1bclsii_1hs_1s0c6au>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"Italian essayists" .
+#@ <id_1bclsii_1hs_ovsluv>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"Italian Roman Catholics" .
+#@ <id_1bclsii_1hs_1e3dj4i>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"Italian Socialist Party politicians" .
+#@ <id_1bclsii_1hs_ch4ybq>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1bclsii_1hs_9x98u9>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"People from Sondrio" .
+#@ <id_1bclsii_1hs_18p6pl0>
+<Giulio_Tremonti>	<hasWikiCategory/en>	"Article Feedback 5" .
+#@ <id_1q29rbl_1hs_tjhg4g>
+<Italian_Chamber_of_Deputies>	<hasWikiCategory/en>	"National lower houses" .
+#@ <id_1q29rbl_1hs_ayzdpl>
+<Italian_Chamber_of_Deputies>	<hasWikiCategory/en>	"Government of Italy" .
+#@ <id_1kw13uu_1hs_uqhhxh>
+<Kingdom_of_Italy_(1861–1946)>	<hasWikiCategory/en>	"Kingdom of Italy (1861–1946)" .
+#@ <id_1kw13uu_1hs_1rq0dc6>
+<Kingdom_of_Italy_(1861–1946)>	<hasWikiCategory/en>	"States and territories established in 1861" .
+#@ <id_1kw13uu_1hs_1i7mono>
+<Kingdom_of_Italy_(1861–1946)>	<hasWikiCategory/en>	"1946 disestablishments" .
+#@ <id_1kw13uu_1hs_u67fw7>
+<Kingdom_of_Italy_(1861–1946)>	<hasWikiCategory/en>	"Former kingdoms" .
+#@ <id_184v0j1_1hs_76adta>
+<Lamberto_Dini>	<hasWikiCategory/en>	"1931 births" .
+#@ <id_184v0j1_1hs_ch4ybq>
+<Lamberto_Dini>	<hasWikiCategory/en>	"Living people" .
+#@ <id_184v0j1_1hs_tathbh>
+<Lamberto_Dini>	<hasWikiCategory/en>	"Prime Ministers of Italy" .
+#@ <id_184v0j1_1hs_wyntxj>
+<Lamberto_Dini>	<hasWikiCategory/en>	"Italian Ministers of Foreign Affairs" .
+#@ <id_184v0j1_1hs_1bbk7es>
+<Lamberto_Dini>	<hasWikiCategory/en>	"Italian economists" .
+#@ <id_184v0j1_1hs_vne8wp>
+<Lamberto_Dini>	<hasWikiCategory/en>	"People from Florence" .
+#@ <id_184v0j1_1hs_1qrm1sr>
+<Lamberto_Dini>	<hasWikiCategory/en>	"University of Michigan alumni" .
+#@ <id_184v0j1_1hs_12j3u9s>
+<Lamberto_Dini>	<hasWikiCategory/en>	"Democracy is Freedom – The Daisy politicians" .
+#@ <id_10q4wvf_1hs_10q4wvf>
+<Lazio>	<hasWikiCategory/en>	"Lazio" .
+#@ <id_10q4wvf_1hs_j8dtk8>
+<Lazio>	<hasWikiCategory/en>	"NUTS 2 statistical regions of the European Union" .
+#@ <id_10q4wvf_1hs_1nqnpqz>
+<Lazio>	<hasWikiCategory/en>	"Regions of Italy" .
+#@ <id_10q4wvf_1hs_nk2hw2>
+<Lazio>	<hasWikiCategory/en>	"Wine regions of Italy" .
+#@ <id_1qfjlq_1hs_1qfjlq>
+<Lombardy>	<hasWikiCategory/en>	"Lombardy" .
+#@ <id_1qfjlq_1hs_1nqnpqz>
+<Lombardy>	<hasWikiCategory/en>	"Regions of Italy" .
+#@ <id_1qfjlq_1hs_j8dtk8>
+<Lombardy>	<hasWikiCategory/en>	"NUTS 2 statistical regions of the European Union" .
+#@ <id_1qfjlq_1hs_nk2hw2>
+<Lombardy>	<hasWikiCategory/en>	"Wine regions of Italy" .
+#@ <id_1yo7s3q_1hs_xuxrf1>
+<Marco_Follini>	<hasWikiCategory/en>	"1954 births" .
+#@ <id_1yo7s3q_1hs_ch4ybq>
+<Marco_Follini>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1yo7s3q_1hs_i3zwoq>
+<Marco_Follini>	<hasWikiCategory/en>	"People from Rome" .
+#@ <id_1yo7s3q_1hs_1jfhygr>
+<Marco_Follini>	<hasWikiCategory/en>	"Christian Democracy (Italy) politicians" .
+#@ <id_1yo7s3q_1hs_xqg200>
+<Marco_Follini>	<hasWikiCategory/en>	"Union of Christian and Centre Democrats politicians" .
+#@ <id_sb1d5v_1hs_1pm2or0>
+<Marina_Berlusconi>	<hasWikiCategory/en>	"1966 births" .
+#@ <id_sb1d5v_1hs_7b8mfj>
+<Marina_Berlusconi>	<hasWikiCategory/en>	"Italian businesspeople" .
+#@ <id_sb1d5v_1hs_154uzwo>
+<Marina_Berlusconi>	<hasWikiCategory/en>	"Italian mass media owners" .
+#@ <id_sb1d5v_1hs_1s59xtk>
+<Marina_Berlusconi>	<hasWikiCategory/en>	"People from Milan" .
+#@ <id_sb1d5v_1hs_skrt1g>
+<Marina_Berlusconi>	<hasWikiCategory/en>	"Children of national leaders" .
+#@ <id_sb1d5v_1hs_ch4ybq>
+<Marina_Berlusconi>	<hasWikiCategory/en>	"Living people" .
+#@ <id_4o2xc6_1hs_yxfb59>
+<Mario_Monti>	<hasWikiCategory/en>	"1943 births" .
+#@ <id_4o2xc6_1hs_kb3pue>
+<Mario_Monti>	<hasWikiCategory/en>	"20th-century Italian people" .
+#@ <id_4o2xc6_1hs_16i080b>
+<Mario_Monti>	<hasWikiCategory/en>	"20th-century economists" .
+#@ <id_4o2xc6_1hs_1dn5rov>
+<Mario_Monti>	<hasWikiCategory/en>	"20th-century men" .
+#@ <id_4o2xc6_1hs_195tq6g>
+<Mario_Monti>	<hasWikiCategory/en>	"20th-century politicians" .
+#@ <id_4o2xc6_1hs_15vk4yw>
+<Mario_Monti>	<hasWikiCategory/en>	"21st-century Italian people" .
+#@ <id_4o2xc6_1hs_ophz4t>
+<Mario_Monti>	<hasWikiCategory/en>	"21st-century men" .
+#@ <id_4o2xc6_1hs_1yd7pti>
+<Mario_Monti>	<hasWikiCategory/en>	"21st-century politicians" .
+#@ <id_4o2xc6_1hs_sngcpy>
+<Mario_Monti>	<hasWikiCategory/en>	"21st-century scholars" .
+#@ <id_4o2xc6_1hs_1u85grh>
+<Mario_Monti>	<hasWikiCategory/en>	"21st-century economists" .
+#@ <id_4o2xc6_1hs_jklefs>
+<Mario_Monti>	<hasWikiCategory/en>	"Alumni of Bocconi University" .
+#@ <id_4o2xc6_1hs_7yg379>
+<Mario_Monti>	<hasWikiCategory/en>	"Bocconi University faculty" .
+#@ <id_4o2xc6_1hs_1hewisr>
+<Mario_Monti>	<hasWikiCategory/en>	"Coca-Cola people" .
+#@ <id_4o2xc6_1hs_pcb30j>
+<Mario_Monti>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_4o2xc6_1hs_1x1pmt1>
+<Mario_Monti>	<hasWikiCategory/en>	"Goldman Sachs people" .
+#@ <id_4o2xc6_1hs_1bbk7es>
+<Mario_Monti>	<hasWikiCategory/en>	"Italian economists" .
+#@ <id_4o2xc6_1hs_1ok3idm>
+<Mario_Monti>	<hasWikiCategory/en>	"Italian European Commissioners" .
+#@ <id_4o2xc6_1hs_1lkr2w5>
+<Mario_Monti>	<hasWikiCategory/en>	"Italian Life Senators" .
+#@ <id_4o2xc6_1hs_1bbmyvh>
+<Mario_Monti>	<hasWikiCategory/en>	"Italian people of Argentine descent" .
+#@ <id_4o2xc6_1hs_ch4ybq>
+<Mario_Monti>	<hasWikiCategory/en>	"Living people" .
+#@ <id_4o2xc6_1hs_3tir11>
+<Mario_Monti>	<hasWikiCategory/en>	"People from Varese" .
+#@ <id_4o2xc6_1hs_tathbh>
+<Mario_Monti>	<hasWikiCategory/en>	"Prime Ministers of Italy" .
+#@ <id_4o2xc6_1hs_kdks03>
+<Mario_Monti>	<hasWikiCategory/en>	"University of Turin faculty" .
+#@ <id_4o2xc6_1hs_mrip69>
+<Mario_Monti>	<hasWikiCategory/en>	"Yale University alumni" .
+#@ <id_10qtisd_1hs_10qtisd>
+<Milan>	<hasWikiCategory/en>	"Milan" .
+#@ <id_10qtisd_1hs_1a2n3s7>
+<Milan>	<hasWikiCategory/en>	"Populated places established in the 1st millennium BC" .
+#@ <id_2ox8i9_1hs_2ox8i9>
+<Molise>	<hasWikiCategory/en>	"Molise" .
+#@ <id_2ox8i9_1hs_1nqnpqz>
+<Molise>	<hasWikiCategory/en>	"Regions of Italy" .
+#@ <id_2ox8i9_1hs_1rq0e2x>
+<Molise>	<hasWikiCategory/en>	"States and territories established in 1963" .
+#@ <id_1re08hr_1hs_1jmjkw5>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"1918 births" .
+#@ <id_1re08hr_1hs_p5quow>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"2012 deaths" .
+#@ <id_1re08hr_1hs_1gjt3ov>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Italian politicians" .
+#@ <id_1re08hr_1hs_1u7958f>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Italian anti-fascists" .
+#@ <id_1re08hr_1hs_47hrna>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Italian Ministers of the Interior" .
+#@ <id_1re08hr_1hs_1ulber4>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Università Cattolica del Sacro Cuore alumni" .
+#@ <id_1re08hr_1hs_1jfhygr>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Christian Democracy (Italy) politicians" .
+#@ <id_1re08hr_1hs_8xd4w>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"People from Novara" .
+#@ <id_1re08hr_1hs_2pqysn>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Presidents of Italy" .
+#@ <id_1re08hr_1hs_tabnp>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Presidents of the Italian Chamber of Deputies" .
+#@ <id_1re08hr_1hs_1lkr2w5>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Italian Life Senators" .
+#@ <id_1re08hr_1hs_ovsluv>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Italian Roman Catholics" .
+#@ <id_1re08hr_1hs_71ez11>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"People of Calabrian descent" .
+#@ <id_1re08hr_1hs_5xrtd7>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 1st Class" .
+#@ <id_1re08hr_1hs_bq2k3i>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Recipients of the Order of the White Eagle (Poland)" .
+#@ <id_1re08hr_1hs_1msqktr>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Recipients of the Collar of the Order of the Cross of Terra Mariana" .
+#@ <id_1re08hr_1hs_1q58apg>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Knights of Grace of the Order of St John" .
+#@ <id_1re08hr_1hs_a33gmb>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Bailiffs Grand Cross of the Order of St John" .
+#@ <id_1re08hr_1hs_6n6ij3>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Grand Order of King Tomislav recipients" .
+#@ <id_1re08hr_1hs_gedcw4>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Recipients of the Order of Vytautas the Great" .
+#@ <id_1re08hr_1hs_191s7bo>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Recipients of the Order of Merit of the Italian Republic" .
+#@ <id_1re08hr_1hs_m2rb2l>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Recipients of the Military Order of Italy" .
+#@ <id_1re08hr_1hs_1nd3awx>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Recipients of the Order of the Star of Italian Solidarity" .
+#@ <id_1re08hr_1hs_fcelue>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Recipients of the Order of Merit for Labour" .
+#@ <id_1re08hr_1hs_1iulm0c>
+<Oscar_Luigi_Scalfaro>	<hasWikiCategory/en>	"Knights of the Order of Vittorio Veneto" .
+#@ <id_15oiopu_1hs_7b8mfj>
+<Pier_Silvio_Berlusconi>	<hasWikiCategory/en>	"Italian businesspeople" .
+#@ <id_15oiopu_1hs_skrt1g>
+<Pier_Silvio_Berlusconi>	<hasWikiCategory/en>	"Children of national leaders" .
+#@ <id_15oiopu_1hs_ch4ybq>
+<Pier_Silvio_Berlusconi>	<hasWikiCategory/en>	"Living people" .
+#@ <id_15oiopu_1hs_60pzzd>
+<Pier_Silvio_Berlusconi>	<hasWikiCategory/en>	"1969 births" .
+#@ <id_93sgke_1hs_1qok8h8>
+<Roberto_Maroni>	<hasWikiCategory/en>	"1955 births" .
+#@ <id_93sgke_1hs_17ir6se>
+<Roberto_Maroni>	<hasWikiCategory/en>	"Italian politicians convicted of crimes" .
+#@ <id_93sgke_1hs_47hrna>
+<Roberto_Maroni>	<hasWikiCategory/en>	"Italian Ministers of the Interior" .
+#@ <id_93sgke_1hs_ch4ybq>
+<Roberto_Maroni>	<hasWikiCategory/en>	"Living people" .
+#@ <id_93sgke_1hs_3tir11>
+<Roberto_Maroni>	<hasWikiCategory/en>	"People from Varese" .
+#@ <id_93sgke_1hs_huhprj>
+<Roberto_Maroni>	<hasWikiCategory/en>	"Lega Nord politicians" .
+#@ <id_1uqzhxh_1hs_ony0di>
+<Romano_Prodi>	<hasWikiCategory/en>	"1939 births" .
+#@ <id_1uqzhxh_1hs_ch4ybq>
+<Romano_Prodi>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1uqzhxh_1hs_qyw0d9>
+<Romano_Prodi>	<hasWikiCategory/en>	"People from the Province of Reggio Emilia" .
+#@ <id_1uqzhxh_1hs_1u6vk0f>
+<Romano_Prodi>	<hasWikiCategory/en>	"Alumni of the London School of Economics" .
+#@ <id_1uqzhxh_1hs_1ulber4>
+<Romano_Prodi>	<hasWikiCategory/en>	"Università Cattolica del Sacro Cuore alumni" .
+#@ <id_1uqzhxh_1hs_h2j13r>
+<Romano_Prodi>	<hasWikiCategory/en>	"University of Bologna faculty" .
+#@ <id_1uqzhxh_1hs_tathbh>
+<Romano_Prodi>	<hasWikiCategory/en>	"Prime Ministers of Italy" .
+#@ <id_1uqzhxh_1hs_v3oitt>
+<Romano_Prodi>	<hasWikiCategory/en>	"Presidents of the European Commission" .
+#@ <id_1uqzhxh_1hs_1ok3idm>
+<Romano_Prodi>	<hasWikiCategory/en>	"Italian European Commissioners" .
+#@ <id_1uqzhxh_1hs_ovsluv>
+<Romano_Prodi>	<hasWikiCategory/en>	"Italian Roman Catholics" .
+#@ <id_1uqzhxh_1hs_1gjt3ov>
+<Romano_Prodi>	<hasWikiCategory/en>	"Italian politicians" .
+#@ <id_1uqzhxh_1hs_1bbk7es>
+<Romano_Prodi>	<hasWikiCategory/en>	"Italian economists" .
+#@ <id_1uqzhxh_1hs_rkrbpo>
+<Romano_Prodi>	<hasWikiCategory/en>	"Italian academics" .
+#@ <id_1uqzhxh_1hs_5xrtd7>
+<Romano_Prodi>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 1st Class" .
+#@ <id_1uqzhxh_1hs_1nitb58>
+<Romano_Prodi>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of Merit of the Italian Republic" .
+#@ <id_1uqzhxh_1hs_ijkau>
+<Romano_Prodi>	<hasWikiCategory/en>	"Grand Crosses of the Order of the Star of Romania" .
+#@ <id_wz05y3_1hs_986n61>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"1936 births" .
+#@ <id_wz05y3_1hs_6gkled>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"A.C. Milan" .
+#@ <id_wz05y3_1hs_17v92l5>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Italian anti-communists" .
+#@ <id_wz05y3_1hs_17afxkn>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Italian billionaires" .
+#@ <id_wz05y3_1hs_7b8mfj>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Italian businesspeople" .
+#@ <id_wz05y3_1hs_rlgsdy>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Italian football chairmen and investors" .
+#@ <id_wz05y3_1hs_154uzwo>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Italian mass media owners" .
+#@ <id_wz05y3_1hs_17c9kwr>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Italian publishers (people)" .
+#@ <id_wz05y3_1hs_ovsluv>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Italian Roman Catholics" .
+#@ <id_wz05y3_1hs_j2ondk>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"University of Milan alumni" .
+#@ <id_wz05y3_1hs_1myhzot>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Forza Italia politicians" .
+#@ <id_wz05y3_1hs_ch4ybq>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Living people" .
+#@ <id_wz05y3_1hs_e7qznt>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Members of Propaganda Due" .
+#@ <id_wz05y3_1hs_jo842n>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Members of the Italian Chamber of Deputies" .
+#@ <id_wz05y3_1hs_1gt5gz8>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Newspaper publishers (people)" .
+#@ <id_wz05y3_1hs_1s59xtk>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"People from Milan" .
+#@ <id_wz05y3_1hs_tathbh>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Prime Ministers of Italy" .
+#@ <id_wz05y3_1hs_n9v7k1>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 2nd Class" .
+#@ <id_wz05y3_1hs_l175py>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Recipients of the Star of Romania Order" .
+#@ <id_wz05y3_1hs_1mf5org>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Silvio Berlusconi" .
+#@ <id_wz05y3_1hs_1oicy9q>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"The People of Freedom politicians" .
+#@ <id_wz05y3_1hs_1pf3jln>
+<Silvio_Berlusconi>	<hasWikiCategory/en>	"Presidents of the European Council" .
+#@ <id_zuuepc_1hs_1o8bxq3>
+<The_People_of_Freedom>	<hasWikiCategory/en>	"Political parties established in 2009" .
+#@ <id_zuuepc_1hs_1sczgp3>
+<The_People_of_Freedom>	<hasWikiCategory/en>	"Political parties in Italy" .
+#@ <id_zuuepc_1hs_e3yu37>
+<The_People_of_Freedom>	<hasWikiCategory/en>	"2009 establishments in Italy" .
+#@ <id_prkzmu_1hs_iw4598>
+<University_of_Milan>	<hasWikiCategory/en>	"Universities in Italy" .
+#@ <id_prkzmu_1hs_idjt2d>
+<University_of_Milan>	<hasWikiCategory/en>	"Educational institutions established in 1924" .
+#@ <id_prkzmu_1hs_wbur5y>
+<University_of_Milan>	<hasWikiCategory/en>	"University of Milan" .
+#@ <id_prkzmu_1hs_iy4inq>
+<University_of_Milan>	<hasWikiCategory/en>	"Universities in Milan" .
+#@ <id_7qjadl_1hs_kh2nkb>
+<Veronica_Lario>	<hasWikiCategory/en>	"1956 births" .
+#@ <id_7qjadl_1hs_ch4ybq>
+<Veronica_Lario>	<hasWikiCategory/en>	"Living people" .
+#@ <id_7qjadl_1hs_t5mxa2>
+<Veronica_Lario>	<hasWikiCategory/en>	"Italian film actors" .
+#@ <id_7qjadl_1hs_52osks>
+<Veronica_Lario>	<hasWikiCategory/en>	"Italian television actors" .
+#@ <id_7qjadl_1hs_18i1ukl>
+<Veronica_Lario>	<hasWikiCategory/en>	"People from Bologna" .
+#@ <id_7qjadl_1hs_12oq5xf>
+<Veronica_Lario>	<hasWikiCategory/en>	"Spouses of national leaders" .
+#@ <id_11qatgv_1hs_xuxrf1>
+<Cherie_Blair>	<hasWikiCategory/en>	"1954 births" .
+#@ <id_11qatgv_1hs_ch4ybq>
+<Cherie_Blair>	<hasWikiCategory/en>	"Living people" .
+#@ <id_11qatgv_1hs_11j25p2>
+<Cherie_Blair>	<hasWikiCategory/en>	"Academics of the University of Westminster" .
+#@ <id_11qatgv_1hs_1u6vk0f>
+<Cherie_Blair>	<hasWikiCategory/en>	"Alumni of the London School of Economics" .
+#@ <id_11qatgv_1hs_xdkozy>
+<Cherie_Blair>	<hasWikiCategory/en>	"British Queen's Counsel" .
+#@ <id_11qatgv_1hs_irk8if>
+<Cherie_Blair>	<hasWikiCategory/en>	"English Roman Catholics" .
+#@ <id_11qatgv_1hs_145fr3f>
+<Cherie_Blair>	<hasWikiCategory/en>	"English barristers" .
+#@ <id_11qatgv_1hs_1ftik4c>
+<Cherie_Blair>	<hasWikiCategory/en>	"English memoirists" .
+#@ <id_11qatgv_1hs_15e68fv>
+<Cherie_Blair>	<hasWikiCategory/en>	"Female lawyers" .
+#@ <id_11qatgv_1hs_9jziad>
+<Cherie_Blair>	<hasWikiCategory/en>	"Labour Party (UK) politicians" .
+#@ <id_11qatgv_1hs_synlf6>
+<Cherie_Blair>	<hasWikiCategory/en>	"Members of Lincoln's Inn" .
+#@ <id_11qatgv_1hs_7iw9xx>
+<Cherie_Blair>	<hasWikiCategory/en>	"People associated with Liverpool John Moores University" .
+#@ <id_11qatgv_1hs_i3pthb>
+<Cherie_Blair>	<hasWikiCategory/en>	"People from Bury" .
+#@ <id_11qatgv_1hs_13xw347>
+<Cherie_Blair>	<hasWikiCategory/en>	"People from Crosby, Merseyside" .
+#@ <id_11qatgv_1hs_160x1n7>
+<Cherie_Blair>	<hasWikiCategory/en>	"Queen's Counsel 1901–2000" .
+#@ <id_11qatgv_1hs_1j4q6jw>
+<Cherie_Blair>	<hasWikiCategory/en>	"Spouses of Prime Ministers of the United Kingdom" .
+#@ <id_11qatgv_1hs_1lnh7za>
+<Cherie_Blair>	<hasWikiCategory/en>	"Tony Blair" .
+#@ <id_11qatgv_1hs_57vooe>
+<Cherie_Blair>	<hasWikiCategory/en>	"21st-century Roman Catholics" .
+#@ <id_1ks0wcp_1hs_1im9wfa>
+<Connaught_Square>	<hasWikiCategory/en>	"Streets in Westminster" .
+#@ <id_1ks0wcp_1hs_qude9s>
+<Connaught_Square>	<hasWikiCategory/en>	"Squares in Westminster" .
+#@ <id_z038xo_1hs_z038xo>
+<Edinburgh>	<hasWikiCategory/en>	"Edinburgh" .
+#@ <id_z038xo_1hs_dc55e0>
+<Edinburgh>	<hasWikiCategory/en>	"British capitals" .
+#@ <id_z038xo_1hs_jupwi6>
+<Edinburgh>	<hasWikiCategory/en>	"Districts of Scotland" .
+#@ <id_z038xo_1hs_1y0p9bc>
+<Edinburgh>	<hasWikiCategory/en>	"Capitals in Europe" .
+#@ <id_z038xo_1hs_1ioqk4w>
+<Edinburgh>	<hasWikiCategory/en>	"Council areas of Scotland" .
+#@ <id_z038xo_1hs_57janm>
+<Edinburgh>	<hasWikiCategory/en>	"Host cities of the Commonwealth Games" .
+#@ <id_z038xo_1hs_ts16te>
+<Edinburgh>	<hasWikiCategory/en>	"Lieutenancy areas of Scotland" .
+#@ <id_z038xo_1hs_1qzo2mz>
+<Edinburgh>	<hasWikiCategory/en>	"Port cities and towns in Scotland" .
+#@ <id_z038xo_1hs_mi7unw>
+<Edinburgh>	<hasWikiCategory/en>	"Port cities and towns of the North Sea" .
+#@ <id_z038xo_1hs_16bkjaf>
+<Edinburgh>	<hasWikiCategory/en>	"Trading posts of the Hanseatic League" .
+#@ <id_13977z3_1hs_134anyg>
+<Elizabeth_II>	<hasWikiCategory/en>	"1926 births" .
+#@ <id_13977z3_1hs_u5enil>
+<Elizabeth_II>	<hasWikiCategory/en>	"Auxiliary Territorial Service officers" .
+#@ <id_13977z3_1hs_13xawot>
+<Elizabeth_II>	<hasWikiCategory/en>	"British Anglicans" .
+#@ <id_13977z3_1hs_10kxxwj>
+<Elizabeth_II>	<hasWikiCategory/en>	"British philanthropists" .
+#@ <id_13977z3_1hs_vimdga>
+<Elizabeth_II>	<hasWikiCategory/en>	"British Presbyterians" .
+#@ <id_13977z3_1hs_1j4ltzo>
+<Elizabeth_II>	<hasWikiCategory/en>	"British princesses" .
+#@ <id_13977z3_1hs_134dg1v>
+<Elizabeth_II>	<hasWikiCategory/en>	"Canadian philanthropists" .
+#@ <id_13977z3_1hs_pcb30j>
+<Elizabeth_II>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_13977z3_1hs_1395x9c>
+<Elizabeth_II>	<hasWikiCategory/en>	"Elizabeth II" .
+#@ <id_13977z3_1hs_i501zt>
+<Elizabeth_II>	<hasWikiCategory/en>	"Girlguiding UK" .
+#@ <id_13977z3_1hs_16ypq5p>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Antigua and Barbuda" .
+#@ <id_13977z3_1hs_11pvvas>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Barbados" .
+#@ <id_13977z3_1hs_xi8bxl>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Belize" .
+#@ <id_13977z3_1hs_xx3vgs>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Canada" .
+#@ <id_13977z3_1hs_y6np4w>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Fiji" .
+#@ <id_13977z3_1hs_1tbcuol>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Ghana" .
+#@ <id_13977z3_1hs_1goa2to>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Grenada" .
+#@ <id_13977z3_1hs_104ha07>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Guyana" .
+#@ <id_13977z3_1hs_hqrin2>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Jamaica" .
+#@ <id_13977z3_1hs_1tdidzy>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Kenya" .
+#@ <id_13977z3_1hs_12nitw9>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Malawi" .
+#@ <id_13977z3_1hs_1tejdmv>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Malta" .
+#@ <id_13977z3_1hs_13ugb3h>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Mauritius" .
+#@ <id_13977z3_1hs_c2g28z>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of New Zealand" .
+#@ <id_13977z3_1hs_94djwz>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Nigeria" .
+#@ <id_13977z3_1hs_but6zf>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Pakistan" .
+#@ <id_13977z3_1hs_tvgtdu>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Papua New Guinea" .
+#@ <id_13977z3_1hs_1jlu4xk>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Saint Kitts and Nevis" .
+#@ <id_13977z3_1hs_1ejq1v9>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Saint Lucia" .
+#@ <id_13977z3_1hs_iw642k>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Saint Vincent and the Grenadines" .
+#@ <id_13977z3_1hs_11pwjst>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Sierra Leone" .
+#@ <id_13977z3_1hs_1fgdg3e>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of the Bahamas" .
+#@ <id_13977z3_1hs_1yh7f2s>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of the Gambia" .
+#@ <id_13977z3_1hs_10zewri>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of the Solomon Islands" .
+#@ <id_13977z3_1hs_1cwk6h8>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Trinidad and Tobago" .
+#@ <id_13977z3_1hs_16a0g4z>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Tuvalu" .
+#@ <id_13977z3_1hs_16izsxm>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of state of Uganda" .
+#@ <id_13977z3_1hs_1rswmo3>
+<Elizabeth_II>	<hasWikiCategory/en>	"Heads of the Commonwealth" .
+#@ <id_13977z3_1hs_16zznet>
+<Elizabeth_II>	<hasWikiCategory/en>	"House of Windsor" .
+#@ <id_13977z3_1hs_ch4ybq>
+<Elizabeth_II>	<hasWikiCategory/en>	"Living people" .
+#@ <id_13977z3_1hs_rtxjmu>
+<Elizabeth_II>	<hasWikiCategory/en>	"Monarchs of Australia" .
+#@ <id_13977z3_1hs_1dfgu9a>
+<Elizabeth_II>	<hasWikiCategory/en>	"Monarchs of Ceylon" .
+#@ <id_13977z3_1hs_1uozyhz>
+<Elizabeth_II>	<hasWikiCategory/en>	"Monarchs of South Africa" .
+#@ <id_13977z3_1hs_t08fo7>
+<Elizabeth_II>	<hasWikiCategory/en>	"Monarchs of the United Kingdom" .
+#@ <id_13977z3_1hs_14xnqq7>
+<Elizabeth_II>	<hasWikiCategory/en>	"Monarchy in New Zealand" .
+#@ <id_13977z3_1hs_1ybt4l9>
+<Elizabeth_II>	<hasWikiCategory/en>	"People from London" .
+#@ <id_13977z3_1hs_mezbdc>
+<Elizabeth_II>	<hasWikiCategory/en>	"People illustrated on sterling banknotes" .
+#@ <id_13977z3_1hs_115fxc9>
+<Elizabeth_II>	<hasWikiCategory/en>	"Protestant monarchs" .
+#@ <id_13977z3_1hs_1krq3df>
+<Elizabeth_II>	<hasWikiCategory/en>	"Queens regnant in the British Isles" .
+#@ <id_13977z3_1hs_u5ky0c>
+<Elizabeth_II>	<hasWikiCategory/en>	"Reigning monarchs" .
+#@ <id_13977z3_1hs_6z0osk>
+<Elizabeth_II>	<hasWikiCategory/en>	"Royal Fellows of the Royal Society" .
+#@ <id_13977z3_1hs_i8ondk>
+<Elizabeth_II>	<hasWikiCategory/en>	"Women in the Canadian armed services" .
+#@ <id_13977z3_1hs_f9drcv>
+<Elizabeth_II>	<hasWikiCategory/en>	"Women in World War II" .
+#@ <id_13977z3_1hs_1vk9ca8>
+<Elizabeth_II>	<hasWikiCategory/en>	"Collars of the Order of the Chrysanthemum" .
+#@ <id_13977z3_1hs_1c7vcwg>
+<Elizabeth_II>	<hasWikiCategory/en>	"Collars of the Order of Merit (Chile)" .
+#@ <id_13977z3_1hs_1rct4wb>
+<Elizabeth_II>	<hasWikiCategory/en>	"Collars of the Order of the White Lion" .
+#@ <id_13977z3_1hs_1ombm7r>
+<Elizabeth_II>	<hasWikiCategory/en>	"Commanders Grand Cross with Collar of the Order of the White Rose of Finland" .
+#@ <id_13977z3_1hs_2ewpy>
+<Elizabeth_II>	<hasWikiCategory/en>	"Dames of the Order of the Royal House of Chakri" .
+#@ <id_13977z3_1hs_1qjau00>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Collars of the Order of the Southern Cross" .
+#@ <id_13977z3_1hs_1yoaopd>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Collars of the Order of the Tower and Sword" .
+#@ <id_13977z3_1hs_14gctul>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Collars of the Order of Saint James of the Sword" .
+#@ <id_13977z3_1hs_t83ehx>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Crosses of the Order of Saint James of the Sword" .
+#@ <id_13977z3_1hs_nbvm3l>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Crosses of the Order of Christ (Portugal)" .
+#@ <id_13977z3_1hs_1h8j3nv>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Crosses of the Order of Aviz" .
+#@ <id_13977z3_1hs_1navw4e>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Cordons of the Order of Leopold (Belgium)" .
+#@ <id_13977z3_1hs_17datqh>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Croix of the Légion d'honneur" .
+#@ <id_13977z3_1hs_1unsnfv>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Cordons of the Order of the Star of Jordan" .
+#@ <id_13977z3_1hs_1287rmk>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Crosses of the Order of Merit (Austria)" .
+#@ <id_13977z3_1hs_1yuejzb>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Crosses of the Order of Merit of the Republic of Poland" .
+#@ <id_13977z3_1hs_13jvy9p>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Crosses of the Order of the Redeemer" .
+#@ <id_13977z3_1hs_v5cjhe>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Crosses Special Class of the Order of Merit of the Federal Republic of Germany" .
+#@ <id_13977z3_1hs_vfsygv>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Crosses with Collar of the Order of Charles III" .
+#@ <id_13977z3_1hs_6n6ij3>
+<Elizabeth_II>	<hasWikiCategory/en>	"Grand Order of King Tomislav recipients" .
+#@ <id_13977z3_1hs_8hz1c>
+<Elizabeth_II>	<hasWikiCategory/en>	"Knights Grand Band of the Order of the Star of Africa" .
+#@ <id_13977z3_1hs_f5re3x>
+<Elizabeth_II>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of the Falcon" .
+#@ <id_13977z3_1hs_jii3oo>
+<Elizabeth_II>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of the Netherlands Lion" .
+#@ <id_13977z3_1hs_1pp6o83>
+<Elizabeth_II>	<hasWikiCategory/en>	"Knights Grand Cross with Collar of the Order of Merit of the Italian Republic" .
+#@ <id_13977z3_1hs_1g9qnwb>
+<Elizabeth_II>	<hasWikiCategory/en>	"Knights Grand Cross with Collar of the Order of St. Olav" .
+#@ <id_13977z3_1hs_8w4m3z>
+<Elizabeth_II>	<hasWikiCategory/en>	"Knights of the Elephant" .
+#@ <id_13977z3_1hs_syvcg1>
+<Elizabeth_II>	<hasWikiCategory/en>	"Knights of the Golden Fleece" .
+#@ <id_13977z3_1hs_qqy7ir>
+<Elizabeth_II>	<hasWikiCategory/en>	"Order of the Leopard" .
+#@ <id_13977z3_1hs_nuxv3>
+<Elizabeth_II>	<hasWikiCategory/en>	"Order of the Star of the Republic of Indonesia" .
+#@ <id_13977z3_1hs_16ovdp9>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Canadian Forces Decoration" .
+#@ <id_13977z3_1hs_1msqktr>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Collar of the Order of the Cross of Terra Mariana" .
+#@ <id_13977z3_1hs_1nmnf04>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Crown of the Realm" .
+#@ <id_13977z3_1hs_13x3tq9>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of Independence" .
+#@ <id_13977z3_1hs_19wy0jk>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of Manuel Amador Guerrero" .
+#@ <id_13977z3_1hs_1v3x094>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of Solomon" .
+#@ <id_13977z3_1hs_1vcwlhl>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Aztec Eagle" .
+#@ <id_13977z3_1hs_kywb4g>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Gold Lion of the House of Nassau" .
+#@ <id_13977z3_1hs_o2010f>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Liberator General San Martin" .
+#@ <id_13977z3_1hs_betizz>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of Merit (Hungary)" .
+#@ <id_13977z3_1hs_bzblns>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Nile" .
+#@ <id_13977z3_1hs_17nvlw1>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Seraphim" .
+#@ <id_13977z3_1hs_ws78kx>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Sun (Peru)" .
+#@ <id_13977z3_1hs_klteho>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 1st Class with Chain" .
+#@ <id_13977z3_1hs_gedcw4>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of Vytautas the Great" .
+#@ <id_13977z3_1hs_xovr0>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the White Double Cross" .
+#@ <id_13977z3_1hs_bq2k3i>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the White Eagle (Poland)" .
+#@ <id_13977z3_1hs_114jor0>
+<Elizabeth_II>	<hasWikiCategory/en>	"Recipients of the Order of the Yugoslav Star" .
+#@ <id_13977z3_1hs_ei600t>
+<Elizabeth_II>	<hasWikiCategory/en>	"Sashes of the Order of the Star of Romania" .
+#@ <id_13977z3_1hs_1wfjjmn>
+<Elizabeth_II>	<hasWikiCategory/en>	"Supreme Order of Hibiscus members" .
+#@ <id_1e3a5c8_1hs_jhnxxs>
+<Frank_Dobson>	<hasWikiCategory/en>	"1940 births" .
+#@ <id_1e3a5c8_1hs_1u6vk0f>
+<Frank_Dobson>	<hasWikiCategory/en>	"Alumni of the London School of Economics" .
+#@ <id_1e3a5c8_1hs_1qy7szz>
+<Frank_Dobson>	<hasWikiCategory/en>	"British Secretaries of State" .
+#@ <id_1e3a5c8_1hs_ry18n2>
+<Frank_Dobson>	<hasWikiCategory/en>	"Councillors in Camden" .
+#@ <id_1e3a5c8_1hs_1bh7l92>
+<Frank_Dobson>	<hasWikiCategory/en>	"Labour Party (UK) MPs" .
+#@ <id_1e3a5c8_1hs_ch4ybq>
+<Frank_Dobson>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1e3a5c8_1hs_11lu6ow>
+<Frank_Dobson>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_1e3a5c8_1hs_1eht8dl>
+<Frank_Dobson>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_1e3a5c8_1hs_i44dpw>
+<Frank_Dobson>	<hasWikiCategory/en>	"People from York" .
+#@ <id_1e3a5c8_1hs_15ot90q>
+<Frank_Dobson>	<hasWikiCategory/en>	"Secretaries of State for Health (UK)" .
+#@ <id_1e3a5c8_1hs_1e7qovx>
+<Frank_Dobson>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_1e3a5c8_1hs_12dm50y>
+<Frank_Dobson>	<hasWikiCategory/en>	"UK MPs 1979–1983" .
+#@ <id_1e3a5c8_1hs_1g3x6hf>
+<Frank_Dobson>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_1e3a5c8_1hs_1sf3cqm>
+<Frank_Dobson>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_1e3a5c8_1hs_1usbwsy>
+<Frank_Dobson>	<hasWikiCategory/en>	"UK MPs 1997–2001" .
+#@ <id_1e3a5c8_1hs_1wqfny5>
+<Frank_Dobson>	<hasWikiCategory/en>	"UK MPs 2001–2005" .
+#@ <id_1e3a5c8_1hs_1ymm5jn>
+<Frank_Dobson>	<hasWikiCategory/en>	"UK MPs 2005–2010" .
+#@ <id_1e3a5c8_1hs_ib4pgc>
+<Frank_Dobson>	<hasWikiCategory/en>	"UK MPs 2010–" .
+#@ <id_1e3a5c8_1hs_13k7iko>
+<Frank_Dobson>	<hasWikiCategory/en>	"People educated at Archbishop Holgate's School" .
+#@ <id_max52o_1hs_if6e7k>
+<Gordon_Brown>	<hasWikiCategory/en>	"1951 births" .
+#@ <id_max52o_1hs_iqh82v>
+<Gordon_Brown>	<hasWikiCategory/en>	"Academics of Glasgow Caledonian University" .
+#@ <id_max52o_1hs_1ix7va8>
+<Gordon_Brown>	<hasWikiCategory/en>	"Academics of the Open University" .
+#@ <id_max52o_1hs_p6vewx>
+<Gordon_Brown>	<hasWikiCategory/en>	"People educated at Kirkcaldy High School" .
+#@ <id_max52o_1hs_17wq38v>
+<Gordon_Brown>	<hasWikiCategory/en>	"Alumni of the University of Edinburgh" .
+#@ <id_max52o_1hs_rlaz1s>
+<Gordon_Brown>	<hasWikiCategory/en>	"Chancellors of the Exchequer of the United Kingdom" .
+#@ <id_max52o_1hs_ibfzzz>
+<Gordon_Brown>	<hasWikiCategory/en>	"Commission for Africa members" .
+#@ <id_max52o_1hs_1ri707j>
+<Gordon_Brown>	<hasWikiCategory/en>	"Gordon Brown" .
+#@ <id_max52o_1hs_1xwf7ic>
+<Gordon_Brown>	<hasWikiCategory/en>	"Leaders of the Labour Party (UK)" .
+#@ <id_max52o_1hs_ch4ybq>
+<Gordon_Brown>	<hasWikiCategory/en>	"Living people" .
+#@ <id_max52o_1hs_11lu6ow>
+<Gordon_Brown>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_max52o_1hs_qx4p9>
+<Gordon_Brown>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for Fife constituencies" .
+#@ <id_max52o_1hs_anwshd>
+<Gordon_Brown>	<hasWikiCategory/en>	"People associated with the campaign for Scottish devolution" .
+#@ <id_max52o_1hs_4k5bxj>
+<Gordon_Brown>	<hasWikiCategory/en>	"People from Kirkcaldy" .
+#@ <id_max52o_1hs_11fpswj>
+<Gordon_Brown>	<hasWikiCategory/en>	"People from Renfrewshire" .
+#@ <id_max52o_1hs_17urlwz>
+<Gordon_Brown>	<hasWikiCategory/en>	"Prime Ministers of the United Kingdom" .
+#@ <id_max52o_1hs_1n12rc1>
+<Gordon_Brown>	<hasWikiCategory/en>	"Rectors of the University of Edinburgh" .
+#@ <id_max52o_1hs_l7ccyn>
+<Gordon_Brown>	<hasWikiCategory/en>	"Scottish journalists" .
+#@ <id_max52o_1hs_k2r786>
+<Gordon_Brown>	<hasWikiCategory/en>	"Scottish Labour Party MPs" .
+#@ <id_max52o_1hs_1l6klbq>
+<Gordon_Brown>	<hasWikiCategory/en>	"Scottish Presbyterians" .
+#@ <id_max52o_1hs_1syugep>
+<Gordon_Brown>	<hasWikiCategory/en>	"Scottish scholars and academics" .
+#@ <id_max52o_1hs_1e7qovx>
+<Gordon_Brown>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_max52o_1hs_1g3x6hf>
+<Gordon_Brown>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_max52o_1hs_1sf3cqm>
+<Gordon_Brown>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_max52o_1hs_1usbwsy>
+<Gordon_Brown>	<hasWikiCategory/en>	"UK MPs 1997–2001" .
+#@ <id_max52o_1hs_1wqfny5>
+<Gordon_Brown>	<hasWikiCategory/en>	"UK MPs 2001–2005" .
+#@ <id_max52o_1hs_1ymm5jn>
+<Gordon_Brown>	<hasWikiCategory/en>	"UK MPs 2005–2010" .
+#@ <id_max52o_1hs_ib4pgc>
+<Gordon_Brown>	<hasWikiCategory/en>	"UK MPs 2010–" .
+#@ <id_max52o_1hs_jp9ose>
+<Gordon_Brown>	<hasWikiCategory/en>	"Youth rights individuals" .
+#@ <id_177pmny_1hs_mr93f9>
+<Inns_of_Court_School_of_Law>	<hasWikiCategory/en>	"City University London" .
+#@ <id_177pmny_1hs_f8rwp9>
+<Inns_of_Court_School_of_Law>	<hasWikiCategory/en>	"Law schools in England" .
+#@ <id_177pmny_1hs_xyopvf>
+<Inns_of_Court_School_of_Law>	<hasWikiCategory/en>	"Education in London" .
+#@ <id_177pmny_1hs_wqlud2>
+<Inns_of_Court_School_of_Law>	<hasWikiCategory/en>	"1852 establishments in England" .
+#@ <id_177pmny_1hs_idjse7>
+<Inns_of_Court_School_of_Law>	<hasWikiCategory/en>	"Educational institutions established in 1852" .
+#@ <id_g6y5dz_1hs_1ed6ocq>
+<Jack_Straw>	<hasWikiCategory/en>	"1946 births" .
+#@ <id_g6y5dz_1hs_13lscmm>
+<Jack_Straw>	<hasWikiCategory/en>	"Alumni of the University of Leeds" .
+#@ <id_g6y5dz_1hs_1qy7szz>
+<Jack_Straw>	<hasWikiCategory/en>	"British Secretaries of State" .
+#@ <id_g6y5dz_1hs_1x56qdb>
+<Jack_Straw>	<hasWikiCategory/en>	"British Secretaries of State for Foreign and Commonwealth Affairs" .
+#@ <id_g6y5dz_1hs_fsy496>
+<Jack_Straw>	<hasWikiCategory/en>	"English Anglicans" .
+#@ <id_g6y5dz_1hs_145fr3f>
+<Jack_Straw>	<hasWikiCategory/en>	"English barristers" .
+#@ <id_g6y5dz_1hs_1bh7l92>
+<Jack_Straw>	<hasWikiCategory/en>	"Labour Party (UK) MPs" .
+#@ <id_g6y5dz_1hs_10ox201>
+<Jack_Straw>	<hasWikiCategory/en>	"Leaders of the House of Commons" .
+#@ <id_g6y5dz_1hs_ch4ybq>
+<Jack_Straw>	<hasWikiCategory/en>	"Living people" .
+#@ <id_g6y5dz_1hs_1wzushq>
+<Jack_Straw>	<hasWikiCategory/en>	"Lord Chancellors of Great Britain" .
+#@ <id_g6y5dz_1hs_tfjm8l>
+<Jack_Straw>	<hasWikiCategory/en>	"Lords Privy Seal" .
+#@ <id_g6y5dz_1hs_11lu6ow>
+<Jack_Straw>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_g6y5dz_1hs_1eht8dl>
+<Jack_Straw>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_g6y5dz_1hs_1n3lm7a>
+<Jack_Straw>	<hasWikiCategory/en>	"Presidents of the National Union of Students (United Kingdom)" .
+#@ <id_g6y5dz_1hs_1w4yu84>
+<Jack_Straw>	<hasWikiCategory/en>	"Old Brentwoods" .
+#@ <id_g6y5dz_1hs_owsvvc>
+<Jack_Straw>	<hasWikiCategory/en>	"People from Epping Forest (district)" .
+#@ <id_g6y5dz_1hs_1279tk5>
+<Jack_Straw>	<hasWikiCategory/en>	"People from Loughton" .
+#@ <id_g6y5dz_1hs_1te6zus>
+<Jack_Straw>	<hasWikiCategory/en>	"English people of Jewish descent" .
+#@ <id_g6y5dz_1hs_ngmcmc>
+<Jack_Straw>	<hasWikiCategory/en>	"Politics of Blackburn" .
+#@ <id_g6y5dz_1hs_1i2e0x3>
+<Jack_Straw>	<hasWikiCategory/en>	"Presidents of the United Nations Security Council" .
+#@ <id_g6y5dz_1hs_1u8o5cv>
+<Jack_Straw>	<hasWikiCategory/en>	"Secretaries of State for the Home Department" .
+#@ <id_g6y5dz_1hs_12dm50y>
+<Jack_Straw>	<hasWikiCategory/en>	"UK MPs 1979–1983" .
+#@ <id_g6y5dz_1hs_1e7qovx>
+<Jack_Straw>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_g6y5dz_1hs_1g3x6hf>
+<Jack_Straw>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_g6y5dz_1hs_1sf3cqm>
+<Jack_Straw>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_g6y5dz_1hs_1usbwsy>
+<Jack_Straw>	<hasWikiCategory/en>	"UK MPs 1997–2001" .
+#@ <id_g6y5dz_1hs_1wqfny5>
+<Jack_Straw>	<hasWikiCategory/en>	"UK MPs 2001–2005" .
+#@ <id_g6y5dz_1hs_1ymm5jn>
+<Jack_Straw>	<hasWikiCategory/en>	"UK MPs 2005–2010" .
+#@ <id_g6y5dz_1hs_ib4pgc>
+<Jack_Straw>	<hasWikiCategory/en>	"UK MPs 2010–" .
+#@ <id_g6y5dz_1hs_1vbagmp>
+<Jack_Straw>	<hasWikiCategory/en>	"British people of Jewish descent" .
+#@ <id_1xvi8at_1hs_141o1gk>
+<John_Major>	<hasWikiCategory/en>	"John Major" .
+#@ <id_1xvi8at_1hs_yxfb59>
+<John_Major>	<hasWikiCategory/en>	"1943 births" .
+#@ <id_1xvi8at_1hs_1x56qdb>
+<John_Major>	<hasWikiCategory/en>	"British Secretaries of State for Foreign and Commonwealth Affairs" .
+#@ <id_1xvi8at_1hs_rlaz1s>
+<John_Major>	<hasWikiCategory/en>	"Chancellors of the Exchequer of the United Kingdom" .
+#@ <id_1xvi8at_1hs_ut7o5k>
+<John_Major>	<hasWikiCategory/en>	"Conservative Party (UK) MPs" .
+#@ <id_1xvi8at_1hs_3z0ygf>
+<John_Major>	<hasWikiCategory/en>	"Councillors in Lambeth" .
+#@ <id_1xvi8at_1hs_1yvyio8>
+<John_Major>	<hasWikiCategory/en>	"Cricket historians and writers" .
+#@ <id_1xvi8at_1hs_fsy496>
+<John_Major>	<hasWikiCategory/en>	"English Anglicans" .
+#@ <id_1xvi8at_1hs_1oql57r>
+<John_Major>	<hasWikiCategory/en>	"Knights of the Garter" .
+#@ <id_1xvi8at_1hs_15ylhbq>
+<John_Major>	<hasWikiCategory/en>	"Leaders of the Conservative Party (UK)" .
+#@ <id_1xvi8at_1hs_mgjs87>
+<John_Major>	<hasWikiCategory/en>	"Leaders of the Opposition (United Kingdom)" .
+#@ <id_1xvi8at_1hs_ch4ybq>
+<John_Major>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1xvi8at_1hs_1q4zvkp>
+<John_Major>	<hasWikiCategory/en>	"Attempted assassination survivors" .
+#@ <id_1xvi8at_1hs_17dapwq>
+<John_Major>	<hasWikiCategory/en>	"Members of the Order of the Companions of Honour" .
+#@ <id_1xvi8at_1hs_11lu6ow>
+<John_Major>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_1xvi8at_1hs_1eht8dl>
+<John_Major>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_1xvi8at_1hs_y5dlxj>
+<John_Major>	<hasWikiCategory/en>	"Old Rutlishians" .
+#@ <id_1xvi8at_1hs_t23i5g>
+<John_Major>	<hasWikiCategory/en>	"People from Carshalton" .
+#@ <id_1xvi8at_1hs_1gwe058>
+<John_Major>	<hasWikiCategory/en>	"Political scandals in the United Kingdom" .
+#@ <id_1xvi8at_1hs_1wjoi39>
+<John_Major>	<hasWikiCategory/en>	"Presidents of Surrey CCC" .
+#@ <id_1xvi8at_1hs_1i2e0x3>
+<John_Major>	<hasWikiCategory/en>	"Presidents of the United Nations Security Council" .
+#@ <id_1xvi8at_1hs_17urlwz>
+<John_Major>	<hasWikiCategory/en>	"Prime Ministers of the United Kingdom" .
+#@ <id_1xvi8at_1hs_12dm50y>
+<John_Major>	<hasWikiCategory/en>	"UK MPs 1979–1983" .
+#@ <id_1xvi8at_1hs_1e7qovx>
+<John_Major>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_1xvi8at_1hs_1g3x6hf>
+<John_Major>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_1xvi8at_1hs_1sf3cqm>
+<John_Major>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_1xvi8at_1hs_1usbwsy>
+<John_Major>	<hasWikiCategory/en>	"UK MPs 1997–2001" .
+#@ <id_1xvi8at_1hs_1pf3jln>
+<John_Major>	<hasWikiCategory/en>	"Presidents of the European Council" .
+#@ <id_1x8chcg_1hs_1uvflaf>
+<John_Prescott>	<hasWikiCategory/en>	"1938 births" .
+#@ <id_1x8chcg_1hs_1ek6qam>
+<John_Prescott>	<hasWikiCategory/en>	"Alumni of Ruskin College" .
+#@ <id_1x8chcg_1hs_jltxne>
+<John_Prescott>	<hasWikiCategory/en>	"Alumni of the University of Hull" .
+#@ <id_1x8chcg_1hs_1gb9z6>
+<John_Prescott>	<hasWikiCategory/en>	"British sailors" .
+#@ <id_1x8chcg_1hs_1ym3lby>
+<John_Prescott>	<hasWikiCategory/en>	"Deputy Prime Ministers of the United Kingdom" .
+#@ <id_1x8chcg_1hs_2d8r48>
+<John_Prescott>	<hasWikiCategory/en>	"First Secretaries of State of the United Kingdom" .
+#@ <id_1x8chcg_1hs_1bh7l92>
+<John_Prescott>	<hasWikiCategory/en>	"Labour Party (UK) MPs" .
+#@ <id_1x8chcg_1hs_ch4ybq>
+<John_Prescott>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1x8chcg_1hs_11lu6ow>
+<John_Prescott>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_1x8chcg_1hs_1eht8dl>
+<John_Prescott>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_1x8chcg_1hs_jglsi7>
+<John_Prescott>	<hasWikiCategory/en>	"Politicians from Kingston upon Hull" .
+#@ <id_1x8chcg_1hs_1xszk93>
+<John_Prescott>	<hasWikiCategory/en>	"People from Prestatyn" .
+#@ <id_1x8chcg_1hs_h84w7k>
+<John_Prescott>	<hasWikiCategory/en>	"Politics of the East Riding of Yorkshire" .
+#@ <id_1x8chcg_1hs_y47jgd>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 1970–1974" .
+#@ <id_1x8chcg_1hs_15u0w1r>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 1974" .
+#@ <id_1x8chcg_1hs_100e11a>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 1974–1979" .
+#@ <id_1x8chcg_1hs_12dm50y>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 1979–1983" .
+#@ <id_1x8chcg_1hs_1e7qovx>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_1x8chcg_1hs_1g3x6hf>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_1x8chcg_1hs_1sf3cqm>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_1x8chcg_1hs_1usbwsy>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 1997–2001" .
+#@ <id_1x8chcg_1hs_1wqfny5>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 2001–2005" .
+#@ <id_1x8chcg_1hs_1ymm5jn>
+<John_Prescott>	<hasWikiCategory/en>	"UK MPs 2005–2010" .
+#@ <id_1x8chcg_1hs_14hvltz>
+<John_Prescott>	<hasWikiCategory/en>	"Labour Party (UK) life peers" .
+#@ <id_1x8chcg_1hs_1f79ydx>
+<John_Prescott>	<hasWikiCategory/en>	"Labour Party (UK) MEPs" .
+#@ <id_1x8chcg_1hs_lzo85u>
+<John_Prescott>	<hasWikiCategory/en>	"MEPs for the United Kingdom 1973–1979" .
+#@ <id_1x8chcg_1hs_1y5c8nb>
+<John_Prescott>	<hasWikiCategory/en>	"Seamen from Kingston upon Hull" .
+#@ <id_1x8chcg_1hs_3ewzks>
+<John_Prescott>	<hasWikiCategory/en>	"Trade unionists from Kingston upon Hull" .
+#@ <id_4ftjb3_1hs_1uvflaf>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"1938 births" .
+#@ <id_4ftjb3_1hs_1l8azuk>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"1994 deaths" .
+#@ <id_4ftjb3_1hs_1nz1yp7>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Alumni of the University of Glasgow" .
+#@ <id_4ftjb3_1hs_1qy7szz>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"British Secretaries of State" .
+#@ <id_4ftjb3_1hs_ar1pk4>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Burials at Iona" .
+#@ <id_4ftjb3_1hs_mekzk4>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Cardiovascular disease deaths in England" .
+#@ <id_4ftjb3_1hs_up8033>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Deaths from myocardial infarction" .
+#@ <id_4ftjb3_1hs_1xwf7ic>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Leaders of the Labour Party (UK)" .
+#@ <id_4ftjb3_1hs_1fxm830>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Members of the Faculty of Advocates" .
+#@ <id_4ftjb3_1hs_mgjs87>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Leaders of the Opposition (United Kingdom)" .
+#@ <id_4ftjb3_1hs_11lu6ow>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_4ftjb3_1hs_5fzasw>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for Scottish constituencies" .
+#@ <id_4ftjb3_1hs_anwshd>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"People associated with the campaign for Scottish devolution" .
+#@ <id_4ftjb3_1hs_xqwaud>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"People from Argyll and Bute" .
+#@ <id_4ftjb3_1hs_snglsl>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Scottish Labour Party politicians" .
+#@ <id_4ftjb3_1hs_1l6klbq>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Scottish Presbyterians" .
+#@ <id_4ftjb3_1hs_1dzxtyi>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Scottish Queen's Counsel" .
+#@ <id_4ftjb3_1hs_1olubj0>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"Scottish solicitors" .
+#@ <id_4ftjb3_1hs_y47jgd>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"UK MPs 1970–1974" .
+#@ <id_4ftjb3_1hs_15u0w1r>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"UK MPs 1974" .
+#@ <id_4ftjb3_1hs_100e11a>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"UK MPs 1974–1979" .
+#@ <id_4ftjb3_1hs_12dm50y>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"UK MPs 1979–1983" .
+#@ <id_4ftjb3_1hs_1e7qovx>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_4ftjb3_1hs_1g3x6hf>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_4ftjb3_1hs_1sf3cqm>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_4ftjb3_1hs_3k6t7j>
+<John_Smith_(Labour_Party_leader)>	<hasWikiCategory/en>	"People educated at Dunoon Grammar School" .
+#@ <id_10cbk3o_1hs_1otu1ja>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Labour Party (UK)" .
+#@ <id_10cbk3o_1hs_1noofh1>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Democratic socialism" .
+#@ <id_10cbk3o_1hs_123yjxr>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Edwardian era" .
+#@ <id_10cbk3o_1hs_1s970yr>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Labour parties" .
+#@ <id_10cbk3o_1hs_mglf0m>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Party of European Socialists member parties" .
+#@ <id_10cbk3o_1hs_1o8bhek>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Political parties established in 1900" .
+#@ <id_10cbk3o_1hs_1arqo6a>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Second International" .
+#@ <id_10cbk3o_1hs_8nygzy>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Social democratic parties in the United Kingdom" .
+#@ <id_10cbk3o_1hs_19zhx7v>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"Socialist International" .
+#@ <id_10cbk3o_1hs_17ws5ak>
+<Labour_Party_(UK)>	<hasWikiCategory/en>	"1900 establishments in the United Kingdom" .
+#@ <id_16vp284_1hs_yxfb59>
+<Margaret_Beckett>	<hasWikiCategory/en>	"1943 births" .
+#@ <id_16vp284_1hs_ch4ybq>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Living people" .
+#@ <id_16vp284_1hs_cjghc>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Alumni of the University of Manchester Institute of Science and Technology" .
+#@ <id_16vp284_1hs_1drqil5>
+<Margaret_Beckett>	<hasWikiCategory/en>	"British female MPs" .
+#@ <id_16vp284_1hs_mgjs87>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Leaders of the Opposition (United Kingdom)" .
+#@ <id_16vp284_1hs_1qy7szz>
+<Margaret_Beckett>	<hasWikiCategory/en>	"British Secretaries of State" .
+#@ <id_16vp284_1hs_1x56qdb>
+<Margaret_Beckett>	<hasWikiCategory/en>	"British Secretaries of State for Foreign and Commonwealth Affairs" .
+#@ <id_16vp284_1hs_1p7606m>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Female foreign ministers" .
+#@ <id_16vp284_1hs_1lq7dxd>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Female members of the Cabinet of the United Kingdom" .
+#@ <id_16vp284_1hs_1bh7l92>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Labour Party (UK) MPs" .
+#@ <id_16vp284_1hs_1xwf7ic>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Leaders of the Labour Party (UK)" .
+#@ <id_16vp284_1hs_1kqzq23>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Lord Presidents of the Council" .
+#@ <id_16vp284_1hs_11lu6ow>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_16vp284_1hs_1eht8dl>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_16vp284_1hs_wo8g84>
+<Margaret_Beckett>	<hasWikiCategory/en>	"People from Ashton-under-Lyne" .
+#@ <id_16vp284_1hs_100e11a>
+<Margaret_Beckett>	<hasWikiCategory/en>	"UK MPs 1974–1979" .
+#@ <id_16vp284_1hs_1e7qovx>
+<Margaret_Beckett>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_16vp284_1hs_1g3x6hf>
+<Margaret_Beckett>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_16vp284_1hs_1sf3cqm>
+<Margaret_Beckett>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_16vp284_1hs_1usbwsy>
+<Margaret_Beckett>	<hasWikiCategory/en>	"UK MPs 1997–2001" .
+#@ <id_16vp284_1hs_1wqfny5>
+<Margaret_Beckett>	<hasWikiCategory/en>	"UK MPs 2001–2005" .
+#@ <id_16vp284_1hs_1ymm5jn>
+<Margaret_Beckett>	<hasWikiCategory/en>	"UK MPs 2005–2010" .
+#@ <id_16vp284_1hs_ib4pgc>
+<Margaret_Beckett>	<hasWikiCategory/en>	"UK MPs 2010–" .
+#@ <id_16vp284_1hs_10ox201>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Leaders of the House of Commons" .
+#@ <id_16vp284_1hs_1ilknsf>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Derbyshire MPs" .
+#@ <id_16vp284_1hs_arcmv4>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Politics of Lincoln, England" .
+#@ <id_16vp284_1hs_yyg7y6>
+<Margaret_Beckett>	<hasWikiCategory/en>	"Politics of Derby" .
+#@ <id_27r2yr_1hs_ony0di>
+<Michael_Meacher>	<hasWikiCategory/en>	"1939 births" .
+#@ <id_27r2yr_1hs_w8xri5>
+<Michael_Meacher>	<hasWikiCategory/en>	"Academics of the University of Essex" .
+#@ <id_27r2yr_1hs_1xsfdm2>
+<Michael_Meacher>	<hasWikiCategory/en>	"Academics of the University of York" .
+#@ <id_27r2yr_1hs_5l55vs>
+<Michael_Meacher>	<hasWikiCategory/en>	"Alumni of New College, Oxford" .
+#@ <id_27r2yr_1hs_1u6vk0f>
+<Michael_Meacher>	<hasWikiCategory/en>	"Alumni of the London School of Economics" .
+#@ <id_27r2yr_1hs_1bh7l92>
+<Michael_Meacher>	<hasWikiCategory/en>	"Labour Party (UK) MPs" .
+#@ <id_27r2yr_1hs_ch4ybq>
+<Michael_Meacher>	<hasWikiCategory/en>	"Living people" .
+#@ <id_27r2yr_1hs_11lu6ow>
+<Michael_Meacher>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_27r2yr_1hs_1eht8dl>
+<Michael_Meacher>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_27r2yr_1hs_153d6xi>
+<Michael_Meacher>	<hasWikiCategory/en>	"9/11 conspiracy theorists" .
+#@ <id_27r2yr_1hs_1lxeh18>
+<Michael_Meacher>	<hasWikiCategory/en>	"Old Berkhamstedians" .
+#@ <id_27r2yr_1hs_17c84ih>
+<Michael_Meacher>	<hasWikiCategory/en>	"People from Hemel Hempstead" .
+#@ <id_27r2yr_1hs_nidlfb>
+<Michael_Meacher>	<hasWikiCategory/en>	"Politics of Oldham" .
+#@ <id_27r2yr_1hs_y47jgd>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 1970–1974" .
+#@ <id_27r2yr_1hs_15u0w1r>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 1974" .
+#@ <id_27r2yr_1hs_100e11a>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 1974–1979" .
+#@ <id_27r2yr_1hs_12dm50y>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 1979–1983" .
+#@ <id_27r2yr_1hs_1e7qovx>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_27r2yr_1hs_1g3x6hf>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_27r2yr_1hs_1sf3cqm>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_27r2yr_1hs_1usbwsy>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 1997–2001" .
+#@ <id_27r2yr_1hs_1wqfny5>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 2001–2005" .
+#@ <id_27r2yr_1hs_1ymm5jn>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 2005–2010" .
+#@ <id_27r2yr_1hs_ib4pgc>
+<Michael_Meacher>	<hasWikiCategory/en>	"UK MPs 2010–" .
+#@ <id_7fm9w4_1hs_12e7uer>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Neil Kinnock" .
+#@ <id_7fm9w4_1hs_63su32>
+<Neil_Kinnock>	<hasWikiCategory/en>	"1942 births" .
+#@ <id_7fm9w4_1hs_ch4ybq>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Living people" .
+#@ <id_7fm9w4_1hs_prfufw>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Alumni of Cardiff University" .
+#@ <id_7fm9w4_1hs_1ferir8>
+<Neil_Kinnock>	<hasWikiCategory/en>	"British agnostics" .
+#@ <id_7fm9w4_1hs_fcq9mv>
+<Neil_Kinnock>	<hasWikiCategory/en>	"British European Commissioners" .
+#@ <id_7fm9w4_1hs_14hvltz>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Labour Party (UK) life peers" .
+#@ <id_7fm9w4_1hs_1xwf7ic>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Leaders of the Labour Party (UK)" .
+#@ <id_7fm9w4_1hs_mgjs87>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Leaders of the Opposition (United Kingdom)" .
+#@ <id_7fm9w4_1hs_11lu6ow>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_7fm9w4_1hs_1ai2me>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for Welsh constituencies" .
+#@ <id_7fm9w4_1hs_1ljdsqf>
+<Neil_Kinnock>	<hasWikiCategory/en>	"People educated at Lewis School, Pengam" .
+#@ <id_7fm9w4_1hs_r91zie>
+<Neil_Kinnock>	<hasWikiCategory/en>	"People associated with Cardiff University" .
+#@ <id_7fm9w4_1hs_l2kpsl>
+<Neil_Kinnock>	<hasWikiCategory/en>	"People from Tredegar" .
+#@ <id_7fm9w4_1hs_y47jgd>
+<Neil_Kinnock>	<hasWikiCategory/en>	"UK MPs 1970–1974" .
+#@ <id_7fm9w4_1hs_15u0w1r>
+<Neil_Kinnock>	<hasWikiCategory/en>	"UK MPs 1974" .
+#@ <id_7fm9w4_1hs_100e11a>
+<Neil_Kinnock>	<hasWikiCategory/en>	"UK MPs 1974–1979" .
+#@ <id_7fm9w4_1hs_12dm50y>
+<Neil_Kinnock>	<hasWikiCategory/en>	"UK MPs 1979–1983" .
+#@ <id_7fm9w4_1hs_1e7qovx>
+<Neil_Kinnock>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_7fm9w4_1hs_1g3x6hf>
+<Neil_Kinnock>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_7fm9w4_1hs_1sf3cqm>
+<Neil_Kinnock>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_7fm9w4_1hs_15h2zi6>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Welsh people of Scottish descent" .
+#@ <id_7fm9w4_1hs_3dmkyq>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Welsh politicians" .
+#@ <id_7fm9w4_1hs_ogkbb7>
+<Neil_Kinnock>	<hasWikiCategory/en>	"Welsh socialists" .
+#@ <id_104s7no_1hs_zwu0rs>
+<Phil_Wilson_(British_politician)>	<hasWikiCategory/en>	"1959 births" .
+#@ <id_104s7no_1hs_ch4ybq>
+<Phil_Wilson_(British_politician)>	<hasWikiCategory/en>	"Living people" .
+#@ <id_104s7no_1hs_1bh7l92>
+<Phil_Wilson_(British_politician)>	<hasWikiCategory/en>	"Labour Party (UK) MPs" .
+#@ <id_104s7no_1hs_1eht8dl>
+<Phil_Wilson_(British_politician)>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_104s7no_1hs_1ymm5jn>
+<Phil_Wilson_(British_politician)>	<hasWikiCategory/en>	"UK MPs 2005–2010" .
+#@ <id_104s7no_1hs_1ltye5r>
+<Phil_Wilson_(British_politician)>	<hasWikiCategory/en>	"People from Sedgefield" .
+#@ <id_104s7no_1hs_ib4pgc>
+<Phil_Wilson_(British_politician)>	<hasWikiCategory/en>	"UK MPs 2010–" .
+#@ <id_1td9j6g_1hs_1pdxurk>
+<Roman_Catholicism>	<hasWikiCategory/en>	"Christian terms" .
+#@ <id_1jce2gm_1hs_zzwuvh>
+<Roy_Hattersley>	<hasWikiCategory/en>	"1932 births" .
+#@ <id_1jce2gm_1hs_ch4ybq>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1jce2gm_1hs_1nx7n8z>
+<Roy_Hattersley>	<hasWikiCategory/en>	"People educated at The City School, Sheffield" .
+#@ <id_1jce2gm_1hs_jltxne>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Alumni of the University of Hull" .
+#@ <id_1jce2gm_1hs_b7f2ex>
+<Roy_Hattersley>	<hasWikiCategory/en>	"British humanists" .
+#@ <id_1jce2gm_1hs_11age2r>
+<Roy_Hattersley>	<hasWikiCategory/en>	"British journalists" .
+#@ <id_1jce2gm_1hs_1qy7szz>
+<Roy_Hattersley>	<hasWikiCategory/en>	"British Secretaries of State" .
+#@ <id_1jce2gm_1hs_1en3dw>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Councillors in Sheffield" .
+#@ <id_1jce2gm_1hs_1qq2zq6>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Daily Mail journalists" .
+#@ <id_1jce2gm_1hs_16bw5b9>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Fellows of the Royal Society of Literature" .
+#@ <id_1jce2gm_1hs_2s9a35>
+<Roy_Hattersley>	<hasWikiCategory/en>	"John F. Kennedy School of Government staff" .
+#@ <id_1jce2gm_1hs_1bh7l92>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Labour Party (UK) MPs" .
+#@ <id_1jce2gm_1hs_14hvltz>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Labour Party (UK) life peers" .
+#@ <id_1jce2gm_1hs_11lu6ow>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_1jce2gm_1hs_1eht8dl>
+<Roy_Hattersley>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_1jce2gm_1hs_14otm67>
+<Roy_Hattersley>	<hasWikiCategory/en>	"People from Sheffield" .
+#@ <id_1jce2gm_1hs_17ec2g0>
+<Roy_Hattersley>	<hasWikiCategory/en>	"The Guardian journalists" .
+#@ <id_1jce2gm_1hs_lbzqsb>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1964–1966" .
+#@ <id_1jce2gm_1hs_ma2zle>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1966–1970" .
+#@ <id_1jce2gm_1hs_y47jgd>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1970–1974" .
+#@ <id_1jce2gm_1hs_15u0w1r>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1974" .
+#@ <id_1jce2gm_1hs_100e11a>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1974–1979" .
+#@ <id_1jce2gm_1hs_12dm50y>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1979–1983" .
+#@ <id_1jce2gm_1hs_1e7qovx>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_1jce2gm_1hs_1g3x6hf>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_1jce2gm_1hs_1sf3cqm>
+<Roy_Hattersley>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_lwoiij_1hs_xkkq29>
+<Sedgefield_(UK_Parliament_constituency)>	<hasWikiCategory/en>	"Parliamentary constituencies in County Durham" .
+#@ <id_lwoiij_1hs_e0i1yp>
+<Sedgefield_(UK_Parliament_constituency)>	<hasWikiCategory/en>	"United Kingdom Parliamentary constituencies established in 1918" .
+#@ <id_lwoiij_1hs_m98bbv>
+<Sedgefield_(UK_Parliament_constituency)>	<hasWikiCategory/en>	"United Kingdom Parliamentary constituencies disestablished in 1974" .
+#@ <id_lwoiij_1hs_e0i24l>
+<Sedgefield_(UK_Parliament_constituency)>	<hasWikiCategory/en>	"United Kingdom Parliamentary constituencies established in 1983" .
+#@ <id_lwoiij_1hs_wrqoqg>
+<Sedgefield_(UK_Parliament_constituency)>	<hasWikiCategory/en>	"United Kingdom Parliamentary constituencies represented by a sitting Prime Minister" .
+#@ <id_y90lrr_1hs_1tcp8no>
+<Shadow_Home_Secretary>	<hasWikiCategory/en>	"Official Opposition (United Kingdom)" .
+#@ <id_1bx19fo_1hs_1a27anq>
+<St_John's_College,_Oxford>	<hasWikiCategory/en>	"1555 establishments in England" .
+#@ <id_1bx19fo_1hs_cwvyen>
+<St_John's_College,_Oxford>	<hasWikiCategory/en>	"Colleges of the University of Oxford" .
+#@ <id_1bx19fo_1hs_tdq0zu>
+<St_John's_College,_Oxford>	<hasWikiCategory/en>	"Educational institutions established in the 1550s" .
+#@ <id_1bx19fo_1hs_xkww0r>
+<St_John's_College,_Oxford>	<hasWikiCategory/en>	"Grade I listed buildings in Oxford" .
+#@ <id_1bx19fo_1hs_4makun>
+<St_John's_College,_Oxford>	<hasWikiCategory/en>	"Grade I listed educational buildings" .
+#@ <id_1bx19fo_1hs_1qyt5wl>
+<St_John's_College,_Oxford>	<hasWikiCategory/en>	"St John's College, Oxford" .
+#@ <id_1bx19fo_1hs_195q0l9>
+<St_John's_College,_Oxford>	<hasWikiCategory/en>	"Buildings and structures of the University of Oxford" .
+#@ <id_gg7cuf_1hs_51bacu>
+<Tony_Blair>	<hasWikiCategory/en>	"1953 births" .
+#@ <id_gg7cuf_1hs_dzvd9a>
+<Tony_Blair>	<hasWikiCategory/en>	"Alumni of St John's College, Oxford" .
+#@ <id_gg7cuf_1hs_lhn1ev>
+<Tony_Blair>	<hasWikiCategory/en>	"Alumni of the Inns of Court School of Law" .
+#@ <id_gg7cuf_1hs_ibfzzz>
+<Tony_Blair>	<hasWikiCategory/en>	"Commission for Africa members" .
+#@ <id_gg7cuf_1hs_3utjy6>
+<Tony_Blair>	<hasWikiCategory/en>	"Congressional Gold Medal recipients" .
+#@ <id_gg7cuf_1hs_1dxhdpe>
+<Tony_Blair>	<hasWikiCategory/en>	"Converts to Roman Catholicism from Anglicanism" .
+#@ <id_gg7cuf_1hs_16ac3ot>
+<Tony_Blair>	<hasWikiCategory/en>	"Charlemagne Prize recipients" .
+#@ <id_gg7cuf_1hs_1bh7l92>
+<Tony_Blair>	<hasWikiCategory/en>	"Labour Party (UK) MPs" .
+#@ <id_gg7cuf_1hs_1xwf7ic>
+<Tony_Blair>	<hasWikiCategory/en>	"Leaders of the Labour Party (UK)" .
+#@ <id_gg7cuf_1hs_mgjs87>
+<Tony_Blair>	<hasWikiCategory/en>	"Leaders of the Opposition (United Kingdom)" .
+#@ <id_gg7cuf_1hs_ch4ybq>
+<Tony_Blair>	<hasWikiCategory/en>	"Living people" .
+#@ <id_gg7cuf_1hs_synlf6>
+<Tony_Blair>	<hasWikiCategory/en>	"Members of Lincoln's Inn" .
+#@ <id_gg7cuf_1hs_t8287c>
+<Tony_Blair>	<hasWikiCategory/en>	"Members of the Fabian Society" .
+#@ <id_gg7cuf_1hs_11lu6ow>
+<Tony_Blair>	<hasWikiCategory/en>	"Members of the Privy Council of the United Kingdom" .
+#@ <id_gg7cuf_1hs_1eht8dl>
+<Tony_Blair>	<hasWikiCategory/en>	"Members of the United Kingdom Parliament for English constituencies" .
+#@ <id_gg7cuf_1hs_xkpqjn>
+<Tony_Blair>	<hasWikiCategory/en>	"Old Fettesians" .
+#@ <id_gg7cuf_1hs_wmqjyw>
+<Tony_Blair>	<hasWikiCategory/en>	"People educated at the Chorister School, Durham" .
+#@ <id_gg7cuf_1hs_1f6am53>
+<Tony_Blair>	<hasWikiCategory/en>	"People from Edinburgh" .
+#@ <id_gg7cuf_1hs_1hc2kjq>
+<Tony_Blair>	<hasWikiCategory/en>	"People of the Year Awards winners" .
+#@ <id_gg7cuf_1hs_1lr3st4>
+<Tony_Blair>	<hasWikiCategory/en>	"Presidential Medal of Freedom recipients" .
+#@ <id_gg7cuf_1hs_17urlwz>
+<Tony_Blair>	<hasWikiCategory/en>	"Prime Ministers of the United Kingdom" .
+#@ <id_gg7cuf_1hs_88l4pb>
+<Tony_Blair>	<hasWikiCategory/en>	"Sedgefield (borough)" .
+#@ <id_gg7cuf_1hs_1lnh7za>
+<Tony_Blair>	<hasWikiCategory/en>	"Tony Blair" .
+#@ <id_gg7cuf_1hs_19ipxvl>
+<Tony_Blair>	<hasWikiCategory/en>	"Trimdon" .
+#@ <id_gg7cuf_1hs_1e7qovx>
+<Tony_Blair>	<hasWikiCategory/en>	"UK MPs 1983–1987" .
+#@ <id_gg7cuf_1hs_1g3x6hf>
+<Tony_Blair>	<hasWikiCategory/en>	"UK MPs 1987–1992" .
+#@ <id_gg7cuf_1hs_1sf3cqm>
+<Tony_Blair>	<hasWikiCategory/en>	"UK MPs 1992–1997" .
+#@ <id_gg7cuf_1hs_1usbwsy>
+<Tony_Blair>	<hasWikiCategory/en>	"UK MPs 1997–2001" .
+#@ <id_gg7cuf_1hs_1wqfny5>
+<Tony_Blair>	<hasWikiCategory/en>	"UK MPs 2001–2005" .
+#@ <id_gg7cuf_1hs_1ymm5jn>
+<Tony_Blair>	<hasWikiCategory/en>	"UK MPs 2005–2010" .
+#@ <id_gg7cuf_1hs_1raphht>
+<Tony_Blair>	<hasWikiCategory/en>	"Yale University faculty" .
+#@ <id_gg7cuf_1hs_1pf3jln>
+<Tony_Blair>	<hasWikiCategory/en>	"Presidents of the European Council" .
+#@ <id_17c51vo_1hs_1oqs6hp>
+<World_Economic_Forum>	<hasWikiCategory/en>	"20th century in economics" .
+#@ <id_17c51vo_1hs_9chosl>
+<World_Economic_Forum>	<hasWikiCategory/en>	"20th-century establishments in Switzerland" .
+#@ <id_17c51vo_1hs_1orl9m7>
+<World_Economic_Forum>	<hasWikiCategory/en>	"21st century in economics" .
+#@ <id_17c51vo_1hs_10lqhb1>
+<World_Economic_Forum>	<hasWikiCategory/en>	"Davos" .
+#@ <id_17c51vo_1hs_1lc78qm>
+<World_Economic_Forum>	<hasWikiCategory/en>	"Economics organizations" .
+#@ <id_17c51vo_1hs_t571mk>
+<World_Economic_Forum>	<hasWikiCategory/en>	"Economy of Switzerland" .
+#@ <id_17c51vo_1hs_19ixtth>
+<World_Economic_Forum>	<hasWikiCategory/en>	"Foundations based in Switzerland" .
+#@ <id_17c51vo_1hs_zz2e69>
+<World_Economic_Forum>	<hasWikiCategory/en>	"Globalization" .
+#@ <id_17c51vo_1hs_113dvjs>
+<World_Economic_Forum>	<hasWikiCategory/en>	"Graubünden" .
+#@ <id_17c51vo_1hs_1slua93>
+<World_Economic_Forum>	<hasWikiCategory/en>	"Organisations based in Geneva" .
+#@ <id_17c51vo_1hs_1busb91>
+<World_Economic_Forum>	<hasWikiCategory/en>	"Organizations established in 1971" .
+#@ <id_1fpq28n_1hs_xuxrf1>
+<Angela_Merkel>	<hasWikiCategory/en>	"1954 births" .
+#@ <id_1fpq28n_1hs_vd69fy>
+<Angela_Merkel>	<hasWikiCategory/en>	"Chancellors of Germany" .
+#@ <id_1fpq28n_1hs_16ac3ot>
+<Angela_Merkel>	<hasWikiCategory/en>	"Charlemagne Prize recipients" .
+#@ <id_1fpq28n_1hs_196fxdu>
+<Angela_Merkel>	<hasWikiCategory/en>	"Christian Democratic Union (Germany) politicians" .
+#@ <id_1fpq28n_1hs_pcb30j>
+<Angela_Merkel>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_1fpq28n_1hs_1iikaix>
+<Angela_Merkel>	<hasWikiCategory/en>	"Environment ministers of Germany" .
+#@ <id_1fpq28n_1hs_1n53iop>
+<Angela_Merkel>	<hasWikiCategory/en>	"Female heads of government" .
+#@ <id_1fpq28n_1hs_l5r4c0>
+<Angela_Merkel>	<hasWikiCategory/en>	"German chemists" .
+#@ <id_1fpq28n_1hs_i2huua>
+<Angela_Merkel>	<hasWikiCategory/en>	"German Lutherans" .
+#@ <id_1fpq28n_1hs_3cpan1>
+<Angela_Merkel>	<hasWikiCategory/en>	"German people of Polish descent" .
+#@ <id_1fpq28n_1hs_wmxpsw>
+<Angela_Merkel>	<hasWikiCategory/en>	"German women in politics" .
+#@ <id_1fpq28n_1hs_8u2zoq>
+<Angela_Merkel>	<hasWikiCategory/en>	"Leaders of political parties in Germany" .
+#@ <id_1fpq28n_1hs_ch4ybq>
+<Angela_Merkel>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1fpq28n_1hs_xd8h0y>
+<Angela_Merkel>	<hasWikiCategory/en>	"Members of the Bundestag" .
+#@ <id_1fpq28n_1hs_mewf14>
+<Angela_Merkel>	<hasWikiCategory/en>	"Ministers for children, young people and families" .
+#@ <id_1fpq28n_1hs_lioxrn>
+<Angela_Merkel>	<hasWikiCategory/en>	"Grand Crosses of the Order of Merit of the Federal Republic of Germany" .
+#@ <id_1fpq28n_1hs_1ix0knr>
+<Angela_Merkel>	<hasWikiCategory/en>	"People from Hamburg" .
+#@ <id_1fpq28n_1hs_1lr3st4>
+<Angela_Merkel>	<hasWikiCategory/en>	"Presidential Medal of Freedom recipients" .
+#@ <id_1fpq28n_1hs_tp3y0t>
+<Angela_Merkel>	<hasWikiCategory/en>	"University of Leipzig alumni" .
+#@ <id_1fpq28n_1hs_13hkarc>
+<Angela_Merkel>	<hasWikiCategory/en>	"Women chemists" .
+#@ <id_1fpq28n_1hs_1pf3jln>
+<Angela_Merkel>	<hasWikiCategory/en>	"Presidents of the European Council" .
+#@ <id_18367vn_1hs_18367vn>
+<Bundestag>	<hasWikiCategory/en>	"Bundestag" .
+#@ <id_18367vn_1hs_xg0gxr>
+<Bundestag>	<hasWikiCategory/en>	"German loanwords" .
+#@ <id_18367vn_1hs_1hsyksw>
+<Bundestag>	<hasWikiCategory/en>	"Legislative branch of the Government of Germany" .
+#@ <id_18367vn_1hs_tjhg4g>
+<Bundestag>	<hasWikiCategory/en>	"National lower houses" .
+#@ <id_18367vn_1hs_1sgmpnf>
+<Bundestag>	<hasWikiCategory/en>	"Parliaments by country" .
+#@ <id_18367vn_1hs_1423p6x>
+<Bundestag>	<hasWikiCategory/en>	"Politics of Germany" .
+#@ <id_18367vn_1hs_18p6pl0>
+<Bundestag>	<hasWikiCategory/en>	"Article Feedback 5" .
+#@ <id_18367vn_1hs_1enogzk>
+<Bundestag>	<hasWikiCategory/en>	"National legislatures" .
+#@ <id_1cpbvlf_1hs_vd69fy>
+<Chancellor_of_Germany>	<hasWikiCategory/en>	"Chancellors of Germany" .
+#@ <id_1cpbvlf_1hs_1mgq2c6>
+<Chancellor_of_Germany>	<hasWikiCategory/en>	"Federal Government of Germany" .
+#@ <id_1cpbvlf_1hs_1ekp9r5>
+<Chancellor_of_Germany>	<hasWikiCategory/en>	"Lists of political office-holders in Germany" .
+#@ <id_t9jepg_1hs_1c5ki7n>
+<Christian_Democratic_Union_(Germany)>	<hasWikiCategory/en>	"Christian Democratic Union (Germany)" .
+#@ <id_t9jepg_1hs_1livj9u>
+<Christian_Democratic_Union_(Germany)>	<hasWikiCategory/en>	"European People's Party" .
+#@ <id_t9jepg_1hs_1m63smw>
+<Christian_Democratic_Union_(Germany)>	<hasWikiCategory/en>	"International Democrat Union member parties" .
+#@ <id_t9jepg_1hs_1hi1t0q>
+<Christian_Democratic_Union_(Germany)>	<hasWikiCategory/en>	"Christian democratic parties" .
+#@ <id_t9jepg_1hs_1o8bhi5>
+<Christian_Democratic_Union_(Germany)>	<hasWikiCategory/en>	"Political parties established in 1945" .
+#@ <id_t9jepg_1hs_hjkspj>
+<Christian_Democratic_Union_(Germany)>	<hasWikiCategory/en>	"Political parties in Germany" .
+#@ <id_jr01l4_1hs_zwu0rs>
+<Christian_Wulff>	<hasWikiCategory/en>	"1959 births" .
+#@ <id_jr01l4_1hs_196fxdu>
+<Christian_Wulff>	<hasWikiCategory/en>	"Christian Democratic Union (Germany) politicians" .
+#@ <id_jr01l4_1hs_m20u45>
+<Christian_Wulff>	<hasWikiCategory/en>	"German lawyers" .
+#@ <id_jr01l4_1hs_yv9039>
+<Christian_Wulff>	<hasWikiCategory/en>	"German politicians" .
+#@ <id_jr01l4_1hs_rfn0q5>
+<Christian_Wulff>	<hasWikiCategory/en>	"German Roman Catholics" .
+#@ <id_jr01l4_1hs_v5cjhe>
+<Christian_Wulff>	<hasWikiCategory/en>	"Grand Crosses Special Class of the Order of Merit of the Federal Republic of Germany" .
+#@ <id_jr01l4_1hs_ch4ybq>
+<Christian_Wulff>	<hasWikiCategory/en>	"Living people" .
+#@ <id_jr01l4_1hs_1rtc21i>
+<Christian_Wulff>	<hasWikiCategory/en>	"Members of the Landtag of Lower Saxony" .
+#@ <id_jr01l4_1hs_12qmli0>
+<Christian_Wulff>	<hasWikiCategory/en>	"People from Osnabrück" .
+#@ <id_jr01l4_1hs_g1op13>
+<Christian_Wulff>	<hasWikiCategory/en>	"Presidents of Germany" .
+#@ <id_w0lfr0_1hs_wmxpsw>
+<Claudia_Nolte>	<hasWikiCategory/en>	"German women in politics" .
+#@ <id_w0lfr0_1hs_196fxdu>
+<Claudia_Nolte>	<hasWikiCategory/en>	"Christian Democratic Union (Germany) politicians" .
+#@ <id_w0lfr0_1hs_ch4ybq>
+<Claudia_Nolte>	<hasWikiCategory/en>	"Living people" .
+#@ <id_w0lfr0_1hs_xd8h0y>
+<Claudia_Nolte>	<hasWikiCategory/en>	"Members of the Bundestag" .
+#@ <id_w0lfr0_1hs_s7nx7v>
+<Claudia_Nolte>	<hasWikiCategory/en>	"Government ministers of Germany" .
+#@ <id_w0lfr0_1hs_1pm2or0>
+<Claudia_Nolte>	<hasWikiCategory/en>	"1966 births" .
+#@ <id_w0lfr0_1hs_3ruema>
+<Claudia_Nolte>	<hasWikiCategory/en>	"People from Ilmenau" .
+#@ <id_w0lfr0_1hs_mewf14>
+<Claudia_Nolte>	<hasWikiCategory/en>	"Ministers for children, young people and families" .
+#@ <id_1o4heop_1hs_ucqibw>
+<Democratic_Awakening>	<hasWikiCategory/en>	"Political parties in East Germany" .
+#@ <id_1o4heop_1hs_jnwr9i>
+<Democratic_Awakening>	<hasWikiCategory/en>	"Dissent" .
+#@ <id_1o4heop_1hs_1o8bhlp>
+<Democratic_Awakening>	<hasWikiCategory/en>	"Political parties established in 1989" .
+#@ <id_1o4heop_1hs_ecu4zn>
+<Democratic_Awakening>	<hasWikiCategory/en>	"Political parties disestablished in 1990" .
+#@ <id_1o4heop_1hs_1gyulc8>
+<Democratic_Awakening>	<hasWikiCategory/en>	"Defunct political parties in Germany" .
+#@ <id_tu1ps7_1hs_1nmvefa>
+<Evangelical_Church_in_Germany>	<hasWikiCategory/en>	"Evangelical Church in Germany" .
+#@ <id_tu1ps7_1hs_1xahshp>
+<Evangelical_Church_in_Germany>	<hasWikiCategory/en>	"United and uniting churches" .
+#@ <id_tu1ps7_1hs_26zug3>
+<Evangelical_Church_in_Germany>	<hasWikiCategory/en>	"Christianity in Germany" .
+#@ <id_tu1ps7_1hs_7cfqcj>
+<Evangelical_Church_in_Germany>	<hasWikiCategory/en>	"National churches" .
+#@ <id_tu1ps7_1hs_j1d1pc>
+<Evangelical_Church_in_Germany>	<hasWikiCategory/en>	"Members of the World Council of Churches" .
+#@ <id_ht3f3u_1hs_kh2nkb>
+<Frank-Walter_Steinmeier>	<hasWikiCategory/en>	"1956 births" .
+#@ <id_ht3f3u_1hs_ch4ybq>
+<Frank-Walter_Steinmeier>	<hasWikiCategory/en>	"Living people" .
+#@ <id_ht3f3u_1hs_i2huua>
+<Frank-Walter_Steinmeier>	<hasWikiCategory/en>	"German Lutherans" .
+#@ <id_ht3f3u_1hs_9963ig>
+<Frank-Walter_Steinmeier>	<hasWikiCategory/en>	"Foreign Ministers of Germany" .
+#@ <id_ht3f3u_1hs_1x8rfqg>
+<Frank-Walter_Steinmeier>	<hasWikiCategory/en>	"People from Detmold" .
+#@ <id_ht3f3u_1hs_1dp5jfl>
+<Frank-Walter_Steinmeier>	<hasWikiCategory/en>	"Social Democratic Party of Germany politicians" .
+#@ <id_ht3f3u_1hs_ecq7zd>
+<Frank-Walter_Steinmeier>	<hasWikiCategory/en>	"University of Giessen alumni" .
+#@ <id_ht3f3u_1hs_2w5gva>
+<Frank-Walter_Steinmeier>	<hasWikiCategory/en>	"Vice-Chancellors of Germany" .
+#@ <id_gh6929_1hs_jhnxxs>
+<Franz_Müntefering>	<hasWikiCategory/en>	"1940 births" .
+#@ <id_gh6929_1hs_ch4ybq>
+<Franz_Müntefering>	<hasWikiCategory/en>	"Living people" .
+#@ <id_gh6929_1hs_1a67pub>
+<Franz_Müntefering>	<hasWikiCategory/en>	"People from Arnsberg" .
+#@ <id_gh6929_1hs_7gv33r>
+<Franz_Müntefering>	<hasWikiCategory/en>	"People from the Province of Westphalia" .
+#@ <id_gh6929_1hs_rfn0q5>
+<Franz_Müntefering>	<hasWikiCategory/en>	"German Roman Catholics" .
+#@ <id_gh6929_1hs_1dp5jfl>
+<Franz_Müntefering>	<hasWikiCategory/en>	"Social Democratic Party of Germany politicians" .
+#@ <id_gh6929_1hs_1lneh2r>
+<Franz_Müntefering>	<hasWikiCategory/en>	"Transport ministers of Germany" .
+#@ <id_gh6929_1hs_1ivazl1>
+<Franz_Müntefering>	<hasWikiCategory/en>	"Social Affairs ministers of Germany" .
+#@ <id_gh6929_1hs_dal1wc>
+<Franz_Müntefering>	<hasWikiCategory/en>	"Labor ministers (Germany)" .
+#@ <id_gh6929_1hs_xd8h0y>
+<Franz_Müntefering>	<hasWikiCategory/en>	"Members of the Bundestag" .
+#@ <id_gh6929_1hs_2w5gva>
+<Franz_Müntefering>	<hasWikiCategory/en>	"Vice-Chancellors of Germany" .
+#@ <id_107bpbp_1hs_1rr1s7g>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"1944 births" .
+#@ <id_107bpbp_1hs_ch4ybq>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"Living people" .
+#@ <id_107bpbp_1hs_1em01j5>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"People from Blomberg, North Rhine-Westphalia" .
+#@ <id_107bpbp_1hs_i2huua>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"German Lutherans" .
+#@ <id_107bpbp_1hs_1dp5jfl>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"Social Democratic Party of Germany politicians" .
+#@ <id_107bpbp_1hs_vd69fy>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"Chancellors of Germany" .
+#@ <id_107bpbp_1hs_xd8h0y>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"Members of the Bundestag" .
+#@ <id_107bpbp_1hs_zxb3g9>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"University of Göttingen alumni" .
+#@ <id_107bpbp_1hs_lgv98s>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"History of Lower Saxony" .
+#@ <id_107bpbp_1hs_ijkau>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"Grand Crosses of the Order of the Star of Romania" .
+#@ <id_107bpbp_1hs_d36qgi>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"Recipients of the Order of the Cross of Terra Mariana, 1st Class" .
+#@ <id_107bpbp_1hs_1qrcnei>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"Grand Order of Queen Jelena recipients" .
+#@ <id_107bpbp_1hs_bq2k3i>
+<Gerhard_Schröder>	<hasWikiCategory/en>	"Recipients of the Order of the White Eagle (Poland)" .
+#@ <id_1ps9evn_1hs_1ps9evn>
+<Germany>	<hasWikiCategory/en>	"Germany" .
+#@ <id_1ps9evn_1hs_g0quj3>
+<Germany>	<hasWikiCategory/en>	"Alpine countries" .
+#@ <id_1ps9evn_1hs_crs9nv>
+<Germany>	<hasWikiCategory/en>	"Countries bordering the Atlantic Ocean" .
+#@ <id_1ps9evn_1hs_enfpx>
+<Germany>	<hasWikiCategory/en>	"Countries bordering the Baltic Sea" .
+#@ <id_1ps9evn_1hs_tqd4cj>
+<Germany>	<hasWikiCategory/en>	"European countries" .
+#@ <id_1ps9evn_1hs_13fx4nl>
+<Germany>	<hasWikiCategory/en>	"Federal countries" .
+#@ <id_1ps9evn_1hs_54xx31>
+<Germany>	<hasWikiCategory/en>	"G8 nations" .
+#@ <id_1ps9evn_1hs_1dbsmup>
+<Germany>	<hasWikiCategory/en>	"G20 nations" .
+#@ <id_1ps9evn_1hs_kfarjf>
+<Germany>	<hasWikiCategory/en>	"German-speaking countries" .
+#@ <id_1ps9evn_1hs_d5e1a8>
+<Germany>	<hasWikiCategory/en>	"Liberal democracies" .
+#@ <id_1ps9evn_1hs_10extlr>
+<Germany>	<hasWikiCategory/en>	"Member states of NATO" .
+#@ <id_1ps9evn_1hs_rt74u6>
+<Germany>	<hasWikiCategory/en>	"Member states of the European Union" .
+#@ <id_1ps9evn_1hs_1ynqyxs>
+<Germany>	<hasWikiCategory/en>	"Member states of the Union for the Mediterranean" .
+#@ <id_1ps9evn_1hs_1z0umbz>
+<Germany>	<hasWikiCategory/en>	"Member states of the United Nations" .
+#@ <id_1ps9evn_1hs_1rq0dd1>
+<Germany>	<hasWikiCategory/en>	"States and territories established in 1871" .
+#@ <id_1ps9evn_1hs_txiuls>
+<Germany>	<hasWikiCategory/en>	"Western Europe" .
+#@ <id_18vc8ci_1hs_1nk6fe9>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"1961 births" .
+#@ <id_18vc8ci_1hs_ch4ybq>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"Living people" .
+#@ <id_18vc8ci_1hs_tbavzc>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"People from Bad Honnef" .
+#@ <id_18vc8ci_1hs_9963ig>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"Foreign Ministers of Germany" .
+#@ <id_18vc8ci_1hs_1vs49ae>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"Free Democratic Party (Germany) politicians" .
+#@ <id_18vc8ci_1hs_17d64we>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"Gay politicians" .
+#@ <id_18vc8ci_1hs_18a200d>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"German political candidates" .
+#@ <id_18vc8ci_1hs_oup4bl>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"LGBT politicians from Germany" .
+#@ <id_18vc8ci_1hs_xd8h0y>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"Members of the Bundestag" .
+#@ <id_18vc8ci_1hs_100sube>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"University of Bonn alumni" .
+#@ <id_18vc8ci_1hs_i2huua>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"German Lutherans" .
+#@ <id_18vc8ci_1hs_2w5gva>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"Vice-Chancellors of Germany" .
+#@ <id_18vc8ci_1hs_1i2e0x3>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"Presidents of the United Nations Security Council" .
+#@ <id_18vc8ci_1hs_m20u45>
+<Guido_Westerwelle>	<hasWikiCategory/en>	"German lawyers" .
+#@ <id_3gfkn0_1hs_3gfkn0>
+<Hamburg>	<hasWikiCategory/en>	"Hamburg" .
+#@ <id_3gfkn0_1hs_2osubo>
+<Hamburg>	<hasWikiCategory/en>	"City-states" .
+#@ <id_3gfkn0_1hs_eboh9w>
+<Hamburg>	<hasWikiCategory/en>	"German state capitals" .
+#@ <id_3gfkn0_1hs_l6wym0>
+<Hamburg>	<hasWikiCategory/en>	"Imperial free cities" .
+#@ <id_3gfkn0_1hs_qniy3r>
+<Hamburg>	<hasWikiCategory/en>	"NUTS 1 statistical regions of the European Union" .
+#@ <id_3gfkn0_1hs_1d5abh4>
+<Hamburg>	<hasWikiCategory/en>	"Port cities and towns in Germany" .
+#@ <id_3gfkn0_1hs_mi7unw>
+<Hamburg>	<hasWikiCategory/en>	"Port cities and towns of the North Sea" .
+#@ <id_3gfkn0_1hs_flpt59>
+<Hamburg>	<hasWikiCategory/en>	"Populated places established in the 9th century" .
+#@ <id_3gfkn0_1hs_1j5zfns>
+<Hamburg>	<hasWikiCategory/en>	"States of Germany" .
+#@ <id_3gfkn0_1hs_1leb0rp>
+<Hamburg>	<hasWikiCategory/en>	"States of the German Confederation" .
+#@ <id_3gfkn0_1hs_1ekuptg>
+<Hamburg>	<hasWikiCategory/en>	"States of the German Empire" .
+#@ <id_3gfkn0_1hs_tadm15>
+<Hamburg>	<hasWikiCategory/en>	"States of the Holy Roman Empire" .
+#@ <id_3gfkn0_1hs_nm3bls>
+<Hamburg>	<hasWikiCategory/en>	"States of the North German Confederation" .
+#@ <id_3gfkn0_1hs_1xa9lof>
+<Hamburg>	<hasWikiCategory/en>	"States of the Weimar Republic" .
+#@ <id_3gfkn0_1hs_4vwnbh>
+<Hamburg>	<hasWikiCategory/en>	"Turkish communities in Germany" .
+#@ <id_3gfkn0_1hs_16dzlbg>
+<Hamburg>	<hasWikiCategory/en>	"Members of the Hanseatic League" .
+#@ <id_zycb9m_1hs_1ddryq7>
+<Helmut_Kohl>	<hasWikiCategory/en>	"1930 births" .
+#@ <id_zycb9m_1hs_ch4ybq>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Living people" .
+#@ <id_zycb9m_1hs_1cvoygy>
+<Helmut_Kohl>	<hasWikiCategory/en>	"People from Ludwigshafen" .
+#@ <id_zycb9m_1hs_rfn0q5>
+<Helmut_Kohl>	<hasWikiCategory/en>	"German Roman Catholics" .
+#@ <id_zycb9m_1hs_196fxdu>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Christian Democratic Union (Germany) politicians" .
+#@ <id_zycb9m_1hs_vd69fy>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Chancellors of Germany" .
+#@ <id_zycb9m_1hs_723riu>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Cold War leaders" .
+#@ <id_zycb9m_1hs_1af3hgf>
+<Helmut_Kohl>	<hasWikiCategory/en>	"German anti-communists" .
+#@ <id_zycb9m_1hs_hr9jn0>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Honorary Knights Grand Cross of the Order of St Michael and St George" .
+#@ <id_zycb9m_1hs_16ac3ot>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Charlemagne Prize recipients" .
+#@ <id_zycb9m_1hs_jii3oo>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of the Netherlands Lion" .
+#@ <id_zycb9m_1hs_xd8h0y>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Members of the Bundestag" .
+#@ <id_zycb9m_1hs_v0wktv>
+<Helmut_Kohl>	<hasWikiCategory/en>	"People from the Palatinate" .
+#@ <id_zycb9m_1hs_1pa6cji>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Members of the Landtag of Rhineland-Palatinate" .
+#@ <id_zycb9m_1hs_1lr3st4>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Presidential Medal of Freedom recipients" .
+#@ <id_zycb9m_1hs_14cnboz>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Recipients of the Order of Merit of the Federal Republic of Germany" .
+#@ <id_zycb9m_1hs_bq2k3i>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Recipients of the Order of the White Eagle (Poland)" .
+#@ <id_zycb9m_1hs_cly00g>
+<Helmut_Kohl>	<hasWikiCategory/en>	"University of Heidelberg alumni" .
+#@ <id_zycb9m_1hs_1qrcnei>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Grand Order of Queen Jelena recipients" .
+#@ <id_zycb9m_1hs_d36qgi>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Recipients of the Order of the Cross of Terra Mariana, 1st Class" .
+#@ <id_zycb9m_1hs_ed5bli>
+<Helmut_Kohl>	<hasWikiCategory/en>	"German military personnel of World War II" .
+#@ <id_zycb9m_1hs_1ctpfb4>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Conservatism in Germany" .
+#@ <id_zycb9m_1hs_1pf3jln>
+<Helmut_Kohl>	<hasWikiCategory/en>	"Presidents of the European Council" .
+#@ <id_1pj249b_1hs_yxfb59>
+<Horst_Köhler>	<hasWikiCategory/en>	"1943 births" .
+#@ <id_1pj249b_1hs_10dfje1>
+<Horst_Köhler>	<hasWikiCategory/en>	"Bessarabia-German people" .
+#@ <id_1pj249b_1hs_i2huua>
+<Horst_Köhler>	<hasWikiCategory/en>	"German Lutherans" .
+#@ <id_1pj249b_1hs_yv9039>
+<Horst_Köhler>	<hasWikiCategory/en>	"German politicians" .
+#@ <id_1pj249b_1hs_1iwri4o>
+<Horst_Köhler>	<hasWikiCategory/en>	"German refugees" .
+#@ <id_1pj249b_1hs_ch4ybq>
+<Horst_Köhler>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1pj249b_1hs_1f4ioqt>
+<Horst_Köhler>	<hasWikiCategory/en>	"German people of Romanian descent" .
+#@ <id_1pj249b_1hs_1ct6i4l>
+<Horst_Köhler>	<hasWikiCategory/en>	"Managing directors of the International Monetary Fund" .
+#@ <id_1pj249b_1hs_4mmck0>
+<Horst_Köhler>	<hasWikiCategory/en>	"People from Zamość County" .
+#@ <id_1pj249b_1hs_g1op13>
+<Horst_Köhler>	<hasWikiCategory/en>	"Presidents of Germany" .
+#@ <id_1pj249b_1hs_v5cjhe>
+<Horst_Köhler>	<hasWikiCategory/en>	"Grand Crosses Special Class of the Order of Merit of the Federal Republic of Germany" .
+#@ <id_1pj249b_1hs_1nb55jm>
+<Horst_Köhler>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of St. Olav" .
+#@ <id_1ck1v4q_1hs_1tsy1k7>
+<Joachim_Sauer>	<hasWikiCategory/en>	"1949 births" .
+#@ <id_1ck1v4q_1hs_ch4ybq>
+<Joachim_Sauer>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1ck1v4q_1hs_l5r4c0>
+<Joachim_Sauer>	<hasWikiCategory/en>	"German chemists" .
+#@ <id_1ck1v4q_1hs_emabgk>
+<Joachim_Sauer>	<hasWikiCategory/en>	"Spouses of the Chancellors of Germany" .
+#@ <id_1ck1v4q_1hs_q3zi32>
+<Joachim_Sauer>	<hasWikiCategory/en>	"Humboldt University of Berlin faculty" .
+#@ <id_1ck1v4q_1hs_38fnis>
+<Joachim_Sauer>	<hasWikiCategory/en>	"Humboldt University of Berlin alumni" .
+#@ <id_1ck1v4q_1hs_1a18t0z>
+<Joachim_Sauer>	<hasWikiCategory/en>	"People from Brandenburg" .
+#@ <id_1cm9d6p_1hs_xuxrf1>
+<Jürgen_Trittin>	<hasWikiCategory/en>	"1954 births" .
+#@ <id_1cm9d6p_1hs_ch4ybq>
+<Jürgen_Trittin>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1cm9d6p_1hs_1tmupza>
+<Jürgen_Trittin>	<hasWikiCategory/en>	"People from Bremen" .
+#@ <id_1cm9d6p_1hs_16ud6x4>
+<Jürgen_Trittin>	<hasWikiCategory/en>	"Alliance '90/The Greens politicians" .
+#@ <id_1cm9d6p_1hs_1iikaix>
+<Jürgen_Trittin>	<hasWikiCategory/en>	"Environment ministers of Germany" .
+#@ <id_1cm9d6p_1hs_xd8h0y>
+<Jürgen_Trittin>	<hasWikiCategory/en>	"Members of the Bundestag" .
+#@ <id_1kyrcau_1hs_1uvflaf>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"1938 births" .
+#@ <id_1kyrcau_1hs_ch4ybq>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1kyrcau_1hs_1d5t0tj>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"People from Wałbrzych" .
+#@ <id_1kyrcau_1hs_1iikaix>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"Environment ministers of Germany" .
+#@ <id_1kyrcau_1hs_196fxdu>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"Christian Democratic Union (Germany) politicians" .
+#@ <id_1kyrcau_1hs_ibponr>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"United Nations officials" .
+#@ <id_1kyrcau_1hs_ty6zow>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"People from the Province of Lower Silesia" .
+#@ <id_1kyrcau_1hs_cp3dfi>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"United Nations Environment Programme" .
+#@ <id_1kyrcau_1hs_1uqyaiv>
+<Klaus_Töpfer>	<hasWikiCategory/en>	"Grand Crosses with Star and Sash of the Order of Merit of the Federal Republic of Germany" .
+#@ <id_1czrim3_1hs_ga7ar4>
+<Philipp_Rösler>	<hasWikiCategory/en>	"1973 births" .
+#@ <id_1czrim3_1hs_lm3tj7>
+<Philipp_Rösler>	<hasWikiCategory/en>	"Adoptees" .
+#@ <id_1czrim3_1hs_1vs49ae>
+<Philipp_Rösler>	<hasWikiCategory/en>	"Free Democratic Party (Germany) politicians" .
+#@ <id_1czrim3_1hs_1pkacsr>
+<Philipp_Rösler>	<hasWikiCategory/en>	"German people of Vietnamese descent" .
+#@ <id_1czrim3_1hs_rfn0q5>
+<Philipp_Rösler>	<hasWikiCategory/en>	"German Roman Catholics" .
+#@ <id_1czrim3_1hs_1su9j6o>
+<Philipp_Rösler>	<hasWikiCategory/en>	"Health ministers of Germany" .
+#@ <id_1czrim3_1hs_ch4ybq>
+<Philipp_Rösler>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1czrim3_1hs_1rtc21i>
+<Philipp_Rösler>	<hasWikiCategory/en>	"Members of the Landtag of Lower Saxony" .
+#@ <id_1czrim3_1hs_fvw2hd>
+<Philipp_Rösler>	<hasWikiCategory/en>	"Politicians of Vietnamese descent" .
+#@ <id_1czrim3_1hs_2w5gva>
+<Philipp_Rösler>	<hasWikiCategory/en>	"Vice-Chancellors of Germany" .
+#@ <id_75rcea_1hs_1m1lsk3>
+<Stralsund_–_Nordvorpommern_–_Rügen_(electoral_district)>	<hasWikiCategory/en>	"Federal electoral districts in Mecklenburg-Vorpommern" .
+#@ <id_py5vtt_1hs_bbsx6p>
+<University_of_Leipzig>	<hasWikiCategory/en>	"University of Leipzig" .
+#@ <id_py5vtt_1hs_ov87qc>
+<University_of_Leipzig>	<hasWikiCategory/en>	"Universities and colleges in Saxony" .
+#@ <id_py5vtt_1hs_1jkrlhy>
+<University_of_Leipzig>	<hasWikiCategory/en>	"Educational institutions established in the 15th century" .
+#@ <id_py5vtt_1hs_1ctcf3k>
+<University_of_Leipzig>	<hasWikiCategory/en>	"1409 establishments" .
+#@ <id_py5vtt_1hs_1hgrlgj>
+<University_of_Leipzig>	<hasWikiCategory/en>	"Visitor attractions in Leipzig" .
+#@ <id_1dmdk4j_1hs_9jv2o2>
+<West_Germany>	<hasWikiCategory/en>	"West Germany" .
+#@ <id_1dmdk4j_1hs_1kq0xje>
+<West_Germany>	<hasWikiCategory/en>	"Divided regions" .
+#@ <id_1dmdk4j_1hs_1jlpn6t>
+<West_Germany>	<hasWikiCategory/en>	"Anti-communism in Germany" .
+#@ <id_1dmdk4j_1hs_1rq0e1d>
+<West_Germany>	<hasWikiCategory/en>	"States and territories established in 1949" .
+#@ <id_1dmdk4j_1hs_13y8ytu>
+<West_Germany>	<hasWikiCategory/en>	"Former polities of the Cold War" .
+#@ <id_1dmdk4j_1hs_d2xl6h>
+<West_Germany>	<hasWikiCategory/en>	"Political history of Germany" .
+#@ <id_1dmdk4j_1hs_1avz8kr>
+<West_Germany>	<hasWikiCategory/en>	"Contemporary German history" .
+#@ <id_1dmdk4j_1hs_vnqj4z>
+<West_Germany>	<hasWikiCategory/en>	"Borders of Germany" .
+#@ <id_1p52ns4_1hs_1uyife4>
+<Achille_Peretti>	<hasWikiCategory/en>	"1911 births" .
+#@ <id_1p52ns4_1hs_1masjks>
+<Achille_Peretti>	<hasWikiCategory/en>	"1983 deaths" .
+#@ <id_1p52ns4_1hs_ra5yxl>
+<Achille_Peretti>	<hasWikiCategory/en>	"People from Ajaccio" .
+#@ <id_1p52ns4_1hs_1r7rxl5>
+<Achille_Peretti>	<hasWikiCategory/en>	"French politicians" .
+#@ <id_1p52ns4_1hs_e68goo>
+<Achille_Peretti>	<hasWikiCategory/en>	"French Resistance members" .
+#@ <id_1p52ns4_1hs_tulgmt>
+<Achille_Peretti>	<hasWikiCategory/en>	"French businesspeople" .
+#@ <id_1wkzd0h_1hs_1pxmfjn>
+<Albert_Pintat>	<hasWikiCategory/en>	"Heads of Government of Andorra" .
+#@ <id_1wkzd0h_1hs_yxfb59>
+<Albert_Pintat>	<hasWikiCategory/en>	"1943 births" .
+#@ <id_1wkzd0h_1hs_ch4ybq>
+<Albert_Pintat>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1wkzd0h_1hs_18v0z1j>
+<Albert_Pintat>	<hasWikiCategory/en>	"University of Fribourg alumni" .
+#@ <id_1wkzd0h_1hs_y8ls4s>
+<Albert_Pintat>	<hasWikiCategory/en>	"Liberal Party of Andorra politicians" .
+#@ <id_1wkzd0h_1hs_f85dr5>
+<Albert_Pintat>	<hasWikiCategory/en>	"Government ministers of Andorra" .
+#@ <id_s193uj_1hs_1a6bbjj>
+<Antoni_Martí>	<hasWikiCategory/en>	"1963 births" .
+#@ <id_s193uj_1hs_pcb30j>
+<Antoni_Martí>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_s193uj_1hs_1pxmfjn>
+<Antoni_Martí>	<hasWikiCategory/en>	"Heads of Government of Andorra" .
+#@ <id_s193uj_1hs_ch4ybq>
+<Antoni_Martí>	<hasWikiCategory/en>	"Living people" .
+#@ <id_s193uj_1hs_cggl1c>
+<Antoni_Martí>	<hasWikiCategory/en>	"Members of the General Council (Andorra)" .
+#@ <id_14lrmcq_1hs_jel3u3>
+<Carla_Bruni>	<hasWikiCategory/en>	"1967 births" .
+#@ <id_14lrmcq_1hs_ch4ybq>
+<Carla_Bruni>	<hasWikiCategory/en>	"Living people" .
+#@ <id_14lrmcq_1hs_9q7ugp>
+<Carla_Bruni>	<hasWikiCategory/en>	"Audiogram artists" .
+#@ <id_14lrmcq_1hs_15o54ek>
+<Carla_Bruni>	<hasWikiCategory/en>	"English-language singers" .
+#@ <id_14lrmcq_1hs_11inys8>
+<Carla_Bruni>	<hasWikiCategory/en>	"French female models" .
+#@ <id_14lrmcq_1hs_14xd2h5>
+<Carla_Bruni>	<hasWikiCategory/en>	"French female singers" .
+#@ <id_14lrmcq_1hs_cidy02>
+<Carla_Bruni>	<hasWikiCategory/en>	"French-language singers" .
+#@ <id_14lrmcq_1hs_hc2s1o>
+<Carla_Bruni>	<hasWikiCategory/en>	"French people of Italian descent" .
+#@ <id_14lrmcq_1hs_1ohinso>
+<Carla_Bruni>	<hasWikiCategory/en>	"Italian emigrants to France" .
+#@ <id_14lrmcq_1hs_i80g70>
+<Carla_Bruni>	<hasWikiCategory/en>	"Italian-language singers" .
+#@ <id_14lrmcq_1hs_161n3q>
+<Carla_Bruni>	<hasWikiCategory/en>	"Naturalized citizens of France" .
+#@ <id_14lrmcq_1hs_1qj0mwu>
+<Carla_Bruni>	<hasWikiCategory/en>	"Nicolas Sarkozy" .
+#@ <id_14lrmcq_1hs_1s9cagh>
+<Carla_Bruni>	<hasWikiCategory/en>	"People from Turin" .
+#@ <id_14lrmcq_1hs_1ajdsnm>
+<Carla_Bruni>	<hasWikiCategory/en>	"Spouses of French presidents" .
+#@ <id_4h2ou9_1hs_1dap4mi>
+<Cécilia_Attias>	<hasWikiCategory/en>	"1957 births" .
+#@ <id_4h2ou9_1hs_ch4ybq>
+<Cécilia_Attias>	<hasWikiCategory/en>	"Living people" .
+#@ <id_4h2ou9_1hs_i1f2a>
+<Cécilia_Attias>	<hasWikiCategory/en>	"People from Boulogne-Billancourt" .
+#@ <id_4h2ou9_1hs_1ajdsnm>
+<Cécilia_Attias>	<hasWikiCategory/en>	"Spouses of French presidents" .
+#@ <id_4h2ou9_1hs_1a8k0es>
+<Cécilia_Attias>	<hasWikiCategory/en>	"French people of Belgian descent" .
+#@ <id_4h2ou9_1hs_kd4qhp>
+<Cécilia_Attias>	<hasWikiCategory/en>	"French Jews" .
+#@ <id_4h2ou9_1hs_1y2gsq8>
+<Cécilia_Attias>	<hasWikiCategory/en>	"French people of Spanish descent" .
+#@ <id_4h2ou9_1hs_1hnhzn4>
+<Cécilia_Attias>	<hasWikiCategory/en>	"People of Catalan descent" .
+#@ <id_4h2ou9_1hs_1i8944x>
+<Cécilia_Attias>	<hasWikiCategory/en>	"French people of Romanian descent" .
+#@ <id_4h2ou9_1hs_iwimmn>
+<Cécilia_Attias>	<hasWikiCategory/en>	"French people of Russian descent" .
+#@ <id_4h2ou9_1hs_1qj0mwu>
+<Cécilia_Attias>	<hasWikiCategory/en>	"Nicolas Sarkozy" .
+#@ <id_1dmj8jj_1hs_63su32>
+<Christian_Frémont>	<hasWikiCategory/en>	"1942 births" .
+#@ <id_1dmj8jj_1hs_pcb30j>
+<Christian_Frémont>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_1dmj8jj_1hs_1r7rxl5>
+<Christian_Frémont>	<hasWikiCategory/en>	"French politicians" .
+#@ <id_1dmj8jj_1hs_ch4ybq>
+<Christian_Frémont>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1dmj8jj_1hs_1qj0mwu>
+<Christian_Frémont>	<hasWikiCategory/en>	"Nicolas Sarkozy" .
+#@ <id_5mn6i1_1hs_1tsy1k7>
+<Daniel_Vaillant>	<hasWikiCategory/en>	"1949 births" .
+#@ <id_5mn6i1_1hs_ch4ybq>
+<Daniel_Vaillant>	<hasWikiCategory/en>	"Living people" .
+#@ <id_5mn6i1_1hs_7ntnl>
+<Daniel_Vaillant>	<hasWikiCategory/en>	"People from Nièvre" .
+#@ <id_5mn6i1_1hs_5zrnd0>
+<Daniel_Vaillant>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_sb8eld_1hs_51bacu>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"1953 births" .
+#@ <id_sb8eld_1hs_ch4ybq>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Living people" .
+#@ <id_sb8eld_1hs_1s7vlhd>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"People from Rabat" .
+#@ <id_sb8eld_1hs_d8q2dd>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"French Roman Catholics" .
+#@ <id_sb8eld_1hs_1p2hvtz>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Rally for the Republic politicians" .
+#@ <id_sb8eld_1hs_1a0j7kc>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Union for a Popular Movement politicians" .
+#@ <id_sb8eld_1hs_o2rrk8>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"United Republic politicians" .
+#@ <id_sb8eld_1hs_1ihstu9>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Prime Ministers of France" .
+#@ <id_sb8eld_1hs_skw0q1>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Alumni of Sciences Po" .
+#@ <id_sb8eld_1hs_1sraxue>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Alumni of the École Nationale d'Administration" .
+#@ <id_sb8eld_1hs_6n48lm>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"University of Paris alumni" .
+#@ <id_sb8eld_1hs_15kxwhx>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Lycée Français de New York alumni" .
+#@ <id_sb8eld_1hs_1etuqrg>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"French Foreign Ministers" .
+#@ <id_sb8eld_1hs_oi321w>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"French interior ministers" .
+#@ <id_sb8eld_1hs_ebg2nv>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"French diplomats" .
+#@ <id_sb8eld_1hs_5zrnd0>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_sb8eld_1hs_n9v7k1>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 2nd Class" .
+#@ <id_sb8eld_1hs_1tuxbxg>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Grand Croix of the Ordre national du Mérite" .
+#@ <id_sb8eld_1hs_1i2e0x3>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Presidents of the United Nations Security Council" .
+#@ <id_sb8eld_1hs_1nivow3>
+<Dominique_de_Villepin>	<hasWikiCategory/en>	"Faculty of Sciences Po" .
+#@ <id_18ttf26_1hs_1c87kwa>
+<Emmanuelle_Mignon>	<hasWikiCategory/en>	"1968 births" .
+#@ <id_18ttf26_1hs_ch4ybq>
+<Emmanuelle_Mignon>	<hasWikiCategory/en>	"Living people" .
+#@ <id_18ttf26_1hs_1r7rxl5>
+<Emmanuelle_Mignon>	<hasWikiCategory/en>	"French politicians" .
+#@ <id_1qrqo30_1hs_1ihstu9>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Prime Ministers of France" .
+#@ <id_1qrqo30_1hs_5zrnd0>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_1qrqo30_1hs_pjem5c>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Grand Officiers of the Légion d'honneur" .
+#@ <id_1qrqo30_1hs_1tuxbxg>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Grand Croix of the Ordre national du Mérite" .
+#@ <id_1qrqo30_1hs_1ksopzx>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Candidates for President of France" .
+#@ <id_1qrqo30_1hs_1g8x7ca>
+<Édouard_Balladur>	<hasWikiCategory/en>	"French economists" .
+#@ <id_1qrqo30_1hs_1sraxue>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Alumni of the École Nationale d'Administration" .
+#@ <id_1qrqo30_1hs_skw0q1>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Alumni of Sciences Po" .
+#@ <id_1qrqo30_1hs_1s3dn5s>
+<Édouard_Balladur>	<hasWikiCategory/en>	"People from Izmir" .
+#@ <id_1qrqo30_1hs_9vpfqj>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Smyrniote Levantines" .
+#@ <id_1qrqo30_1hs_1sujg7a>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Turkish Armenians" .
+#@ <id_1qrqo30_1hs_1t1xm58>
+<Édouard_Balladur>	<hasWikiCategory/en>	"French Armenians" .
+#@ <id_1qrqo30_1hs_d8q2dd>
+<Édouard_Balladur>	<hasWikiCategory/en>	"French Roman Catholics" .
+#@ <id_1qrqo30_1hs_1ik215x>
+<Édouard_Balladur>	<hasWikiCategory/en>	"1929 births" .
+#@ <id_1qrqo30_1hs_ch4ybq>
+<Édouard_Balladur>	<hasWikiCategory/en>	"Living people" .
+#@ <id_hchqjy_1hs_ia27dx>
+<Élysée_Palace>	<hasWikiCategory/en>	"Palaces in Paris" .
+#@ <id_hchqjy_1hs_i6oms8>
+<Élysée_Palace>	<hasWikiCategory/en>	"Official residences in France" .
+#@ <id_hchqjy_1hs_1ijs5sl>
+<Élysée_Palace>	<hasWikiCategory/en>	"Government of France" .
+#@ <id_hchqjy_1hs_1uwxo1r>
+<Élysée_Palace>	<hasWikiCategory/en>	"Presidential palaces" .
+#@ <id_hchqjy_1hs_nhjseo>
+<Élysée_Palace>	<hasWikiCategory/en>	"8th arrondissement of Paris" .
+#@ <id_hchqjy_1hs_1nr4sch>
+<Élysée_Palace>	<hasWikiCategory/en>	"Champs-Élysées" .
+#@ <id_1yni7tb_1hs_ony0di>
+<Francis_Mer>	<hasWikiCategory/en>	"1939 births" .
+#@ <id_1yni7tb_1hs_ch4ybq>
+<Francis_Mer>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1yni7tb_1hs_tulgmt>
+<Francis_Mer>	<hasWikiCategory/en>	"French businesspeople" .
+#@ <id_1yni7tb_1hs_5zrnd0>
+<Francis_Mer>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_cfajyt_1hs_wsg7ot>
+<François_Baroin>	<hasWikiCategory/en>	"1965 births" .
+#@ <id_cfajyt_1hs_1si3ule>
+<François_Baroin>	<hasWikiCategory/en>	"21st-century French politicians" .
+#@ <id_cfajyt_1hs_oi321w>
+<François_Baroin>	<hasWikiCategory/en>	"French interior ministers" .
+#@ <id_cfajyt_1hs_boqlc9>
+<François_Baroin>	<hasWikiCategory/en>	"French lawyers" .
+#@ <id_cfajyt_1hs_11qonjd>
+<François_Baroin>	<hasWikiCategory/en>	"French Ministers of Finance" .
+#@ <id_cfajyt_1hs_1xcxt8>
+<François_Baroin>	<hasWikiCategory/en>	"Government spokespersons of France" .
+#@ <id_cfajyt_1hs_ch4ybq>
+<François_Baroin>	<hasWikiCategory/en>	"Living people" .
+#@ <id_cfajyt_1hs_kptcy2>
+<François_Baroin>	<hasWikiCategory/en>	"Mayors of Troyes" .
+#@ <id_cfajyt_1hs_1s6sccm>
+<François_Baroin>	<hasWikiCategory/en>	"People from Paris" .
+#@ <id_cfajyt_1hs_5zrnd0>
+<François_Baroin>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_cfajyt_1hs_1p2hvtz>
+<François_Baroin>	<hasWikiCategory/en>	"Rally for the Republic politicians" .
+#@ <id_cfajyt_1hs_1a0j7kc>
+<François_Baroin>	<hasWikiCategory/en>	"Union for a Popular Movement politicians" .
+#@ <id_efriae_1hs_xuxrf1>
+<François_Fillon>	<hasWikiCategory/en>	"1954 births" .
+#@ <id_efriae_1hs_pcb30j>
+<François_Fillon>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_efriae_1hs_boqlc9>
+<François_Fillon>	<hasWikiCategory/en>	"French lawyers" .
+#@ <id_efriae_1hs_1tuxbxg>
+<François_Fillon>	<hasWikiCategory/en>	"Grand Croix of the Ordre national du Mérite" .
+#@ <id_efriae_1hs_ch4ybq>
+<François_Fillon>	<hasWikiCategory/en>	"Living people" .
+#@ <id_efriae_1hs_17ay5tn>
+<François_Fillon>	<hasWikiCategory/en>	"People from Le Mans" .
+#@ <id_efriae_1hs_5zrnd0>
+<François_Fillon>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_efriae_1hs_1ihstu9>
+<François_Fillon>	<hasWikiCategory/en>	"Prime Ministers of France" .
+#@ <id_efriae_1hs_n9v7k1>
+<François_Fillon>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 2nd Class" .
+#@ <id_efriae_1hs_1a0j7kc>
+<François_Fillon>	<hasWikiCategory/en>	"Union for a Popular Movement politicians" .
+#@ <id_15kw2wg_1hs_5zrnd0>
+<François_d'Aubert>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_15kw2wg_1hs_ch4ybq>
+<François_d'Aubert>	<hasWikiCategory/en>	"Living people" .
+#@ <id_15kw2wg_1hs_yxfb59>
+<François_d'Aubert>	<hasWikiCategory/en>	"1943 births" .
+#@ <id_15kw2wg_1hs_1st13oh>
+<François_d'Aubert>	<hasWikiCategory/en>	"Alumni of HEC School of Management" .
+#@ <id_15kw2wg_1hs_g3dc13>
+<François_d'Aubert>	<hasWikiCategory/en>	"Members of the National Assembly of France" .
+#@ <id_15kw2wg_1hs_1sraxue>
+<François_d'Aubert>	<hasWikiCategory/en>	"Alumni of the École Nationale d'Administration" .
+#@ <id_15kw2wg_1hs_opfnkm>
+<François_d'Aubert>	<hasWikiCategory/en>	"French Ministers of Budget" .
+#@ <id_1fvzpek_1hs_1eh5v0f>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"Numbered republics" .
+#@ <id_1fvzpek_1hs_wdcf4y>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"Former countries in Europe" .
+#@ <id_1fvzpek_1hs_7hdtqg>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"Former republics" .
+#@ <id_1fvzpek_1hs_iezxek>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"20th century in France" .
+#@ <id_1fvzpek_1hs_1ijs5sl>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"Government of France" .
+#@ <id_1fvzpek_1hs_13imt68>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"Republicanism in France" .
+#@ <id_1fvzpek_1hs_1rq0e1a>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"States and territories established in 1946" .
+#@ <id_1fvzpek_1hs_1fylxks>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"French Fourth Republic" .
+#@ <id_1fvzpek_1hs_mh4wh4>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"1946 establishments in France" .
+#@ <id_1fvzpek_1hs_1eh5v0f>
+<French_Fourth_Republic>	<hasWikiCategory/en>	"Numbered republics" .
+#@ <id_3dnf2x_1hs_1uhn7yu>
+<Giulia_Sarkozy>	<hasWikiCategory/en>	"2011 births" .
+#@ <id_3dnf2x_1hs_ch4ybq>
+<Giulia_Sarkozy>	<hasWikiCategory/en>	"Living people" .
+#@ <id_3dnf2x_1hs_1sro3gg>
+<Giulia_Sarkozy>	<hasWikiCategory/en>	"Redirects with possibilities" .
+#@ <id_3dnf2x_1hs_a3anbe>
+<Giulia_Sarkozy>	<hasWikiCategory/en>	"Redirects to sections" .
+#@ <id_pq3wku_1hs_uqjyc2>
+<Hervé_Gaymard>	<hasWikiCategory/en>	"1960 births" .
+#@ <id_pq3wku_1hs_ch4ybq>
+<Hervé_Gaymard>	<hasWikiCategory/en>	"Living people" .
+#@ <id_pq3wku_1hs_2egmyw>
+<Hervé_Gaymard>	<hasWikiCategory/en>	"People from Savoie" .
+#@ <id_pq3wku_1hs_11qonjd>
+<Hervé_Gaymard>	<hasWikiCategory/en>	"French Ministers of Finance" .
+#@ <id_pq3wku_1hs_1si3ule>
+<Hervé_Gaymard>	<hasWikiCategory/en>	"21st-century French politicians" .
+#@ <id_pq3wku_1hs_skw0q1>
+<Hervé_Gaymard>	<hasWikiCategory/en>	"Alumni of Sciences Po" .
+#@ <id_pq3wku_1hs_1sraxue>
+<Hervé_Gaymard>	<hasWikiCategory/en>	"Alumni of the École Nationale d'Administration" .
+#@ <id_pq3wku_1hs_1a0j7kc>
+<Hervé_Gaymard>	<hasWikiCategory/en>	"Union for a Popular Movement politicians" .
+#@ <id_jfqfk4_1hs_evfjkx>
+<Institut_d'Études_Politiques_de_Paris>	<hasWikiCategory/en>	"Political science organizations" .
+#@ <id_jfqfk4_1hs_jhama0>
+<Institut_d'Études_Politiques_de_Paris>	<hasWikiCategory/en>	"Education in Paris" .
+#@ <id_jfqfk4_1hs_bqhrjm>
+<Institut_d'Études_Politiques_de_Paris>	<hasWikiCategory/en>	"Grands établissements" .
+#@ <id_jfqfk4_1hs_62b62j>
+<Institut_d'Études_Politiques_de_Paris>	<hasWikiCategory/en>	"Instituts d'études politiques" .
+#@ <id_jfqfk4_1hs_1nnsygn>
+<Institut_d'Études_Politiques_de_Paris>	<hasWikiCategory/en>	"Libraries in Paris" .
+#@ <id_jfqfk4_1hs_idjsfx>
+<Institut_d'Études_Politiques_de_Paris>	<hasWikiCategory/en>	"Educational institutions established in 1872" .
+#@ <id_jfqfk4_1hs_7cocfx>
+<Institut_d'Études_Politiques_de_Paris>	<hasWikiCategory/en>	"Schools of international relations" .
+#@ <id_jfqfk4_1hs_iykwz3>
+<Institut_d'Études_Politiques_de_Paris>	<hasWikiCategory/en>	"Universities and colleges in France" .
+#@ <id_1ilv35d_1hs_zzwuvh>
+<Jacques_Chirac>	<hasWikiCategory/en>	"1932 births" .
+#@ <id_1ilv35d_1hs_ch4ybq>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1ilv35d_1hs_1s6sccm>
+<Jacques_Chirac>	<hasWikiCategory/en>	"People from Paris" .
+#@ <id_1ilv35d_1hs_skw0q1>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Alumni of Sciences Po" .
+#@ <id_1ilv35d_1hs_1sraxue>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Alumni of the École Nationale d'Administration" .
+#@ <id_1ilv35d_1hs_w86j3n>
+<Jacques_Chirac>	<hasWikiCategory/en>	"French anti-communists" .
+#@ <id_1ilv35d_1hs_1l94a3e>
+<Jacques_Chirac>	<hasWikiCategory/en>	"French Army officers" .
+#@ <id_1ilv35d_1hs_yekhog>
+<Jacques_Chirac>	<hasWikiCategory/en>	"French military personnel of the Algerian War" .
+#@ <id_1ilv35d_1hs_d8q2dd>
+<Jacques_Chirac>	<hasWikiCategory/en>	"French Roman Catholics" .
+#@ <id_1ilv35d_1hs_5zrnd0>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_1ilv35d_1hs_2ltip8>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Ig Nobel Prize winners" .
+#@ <id_1ilv35d_1hs_1q4zvkp>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Attempted assassination survivors" .
+#@ <id_1ilv35d_1hs_b67hwn>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Lycée Louis-le-Grand alumni" .
+#@ <id_1ilv35d_1hs_7h0s0n>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Mayors of Paris" .
+#@ <id_1ilv35d_1hs_1r59ezq>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Harvard University alumni" .
+#@ <id_1ilv35d_1hs_10itzyp>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Honorary Knights Grand Cross of the Order of the Bath" .
+#@ <id_1ilv35d_1hs_1nb55jm>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of St. Olav" .
+#@ <id_1ilv35d_1hs_10hmbfh>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Officers of the National Order of Quebec" .
+#@ <id_1ilv35d_1hs_ei600t>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Sashes of the Order of the Star of Romania" .
+#@ <id_1ilv35d_1hs_1vfafof>
+<Jacques_Chirac>	<hasWikiCategory/en>	"State Prize of the Russian Federation laureates" .
+#@ <id_1ilv35d_1hs_5xrtd7>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 1st Class" .
+#@ <id_1ilv35d_1hs_w1w30p>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the Order of Merit for the Fatherland, 1st class" .
+#@ <id_1ilv35d_1hs_1rct4wb>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Collars of the Order of the White Lion" .
+#@ <id_1ilv35d_1hs_1msqktr>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the Collar of the Order of the Cross of Terra Mariana" .
+#@ <id_1ilv35d_1hs_17datqh>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Grand Croix of the Légion d'honneur" .
+#@ <id_1ilv35d_1hs_1tuxbxg>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Grand Croix of the Ordre national du Mérite" .
+#@ <id_1ilv35d_1hs_1uxbinc>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Chevaliers of the Ordre des Arts et des Lettres" .
+#@ <id_1ilv35d_1hs_1dm4ucb>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Knights of the Order of the Black Star" .
+#@ <id_1ilv35d_1hs_1nitb58>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of Merit of the Italian Republic" .
+#@ <id_1ilv35d_1hs_1o1xbi6>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Grand Collars of the Order of Prince Henry" .
+#@ <id_1ilv35d_1hs_gog0vd>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the Decoration for Services to the Republic of Austria" .
+#@ <id_1ilv35d_1hs_nzl9wm>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the Croix de la Valeur Militaire" .
+#@ <id_1ilv35d_1hs_tmw6fq>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the National Order of Merit (Malta)" .
+#@ <id_1ilv35d_1hs_j7zhrk>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the Médaille de l'Aéronautique" .
+#@ <id_1ilv35d_1hs_gedcw4>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the Order of Vytautas the Great" .
+#@ <id_1ilv35d_1hs_3s08mf>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Recipients of the Order of the Lithuanian Grand Duke Gediminas" .
+#@ <id_1ilv35d_1hs_ko06t1>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Stroke survivors" .
+#@ <id_1ilv35d_1hs_bovhcn>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Presidents of France" .
+#@ <id_1ilv35d_1hs_51egtj>
+<Jacques_Chirac>	<hasWikiCategory/en>	"French fraudsters" .
+#@ <id_1ilv35d_1hs_1r7rxl5>
+<Jacques_Chirac>	<hasWikiCategory/en>	"French politicians" .
+#@ <id_1ilv35d_1hs_1ihstu9>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Prime Ministers of France" .
+#@ <id_1ilv35d_1hs_1rxuv01>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Lycée Carnot alumni" .
+#@ <id_1ilv35d_1hs_1hbbws2>
+<Jacques_Chirac>	<hasWikiCategory/en>	"Jacques Chirac" .
+#@ <id_1ilv35d_1hs_xgdou0>
+<Jacques_Chirac>	<hasWikiCategory/en>	"French politicians convicted of crimes" .
+#@ <id_64w4aa_1hs_xuxrf1>
+<Jaume_Bartumeu>	<hasWikiCategory/en>	"1954 births" .
+#@ <id_64w4aa_1hs_f5qs4>
+<Jaume_Bartumeu>	<hasWikiCategory/en>	"Andorran lawyers" .
+#@ <id_64w4aa_1hs_1pxmfjn>
+<Jaume_Bartumeu>	<hasWikiCategory/en>	"Heads of Government of Andorra" .
+#@ <id_64w4aa_1hs_1xu5ber>
+<Jaume_Bartumeu>	<hasWikiCategory/en>	"People from Andorra la Vella" .
+#@ <id_64w4aa_1hs_ch4ybq>
+<Jaume_Bartumeu>	<hasWikiCategory/en>	"Living people" .
+#@ <id_64w4aa_1hs_cggl1c>
+<Jaume_Bartumeu>	<hasWikiCategory/en>	"Members of the General Council (Andorra)" .
+#@ <id_64w4aa_1hs_rqeshb>
+<Jaume_Bartumeu>	<hasWikiCategory/en>	"Social Democratic Party (Andorra) politicians" .
+#@ <id_7rtptc_1hs_1tun66>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"1986 births" .
+#@ <id_7rtptc_1hs_ch4ybq>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"Living people" .
+#@ <id_7rtptc_1hs_skrt1g>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"Children of national leaders" .
+#@ <id_7rtptc_1hs_69vq3w>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"French people of Corsican descent" .
+#@ <id_7rtptc_1hs_9ximkb>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"French people of Hungarian descent" .
+#@ <id_7rtptc_1hs_1woss0q>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"French people of Jewish descent" .
+#@ <id_7rtptc_1hs_1o1szqj>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"Hungarian nobility" .
+#@ <id_7rtptc_1hs_1h6wcj1>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"People from Neuilly-sur-Seine" .
+#@ <id_7rtptc_1hs_5zrnd0>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"Politicians of the French Fifth Republic" .
+#@ <id_7rtptc_1hs_6n48lm>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"University of Paris alumni" .
+#@ <id_7rtptc_1hs_1qj0mwu>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"Nicolas Sarkozy" .
+#@ <id_7rtptc_1hs_1dngd30>
+<Jean_Sarkozy>	<hasWikiCategory/en>	"Lycée Pasteur alumni" .
+#@ <id_ppnh9i_1hs_10zbki0>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"1948 births" .
+#@ <id_ppnh9i_1hs_ch4ybq>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"Living people" .
+#@ <id_ppnh9i_1hs_5y5srw>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"People from Poitiers" .
+#@ <id_ppnh9i_1hs_1ihstu9>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"Prime Ministers of France" .
+#@ <id_ppnh9i_1hs_boqlc9>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"French lawyers" .
+#@ <id_ppnh9i_1hs_d8q2dd>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"French Roman Catholics" .
+#@ <id_ppnh9i_1hs_10hmbfh>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"Officers of the National Order of Quebec" .
+#@ <id_ppnh9i_1hs_ijkau>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"Grand Crosses of the Order of the Star of Romania" .
+#@ <id_ppnh9i_1hs_pjem5c>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"Grand Officiers of the Légion d'honneur" .
+#@ <id_ppnh9i_1hs_1tuxbxg>
+<Jean-Pierre_Raffarin>	<hasWikiCategory/en>	"Grand Croix of the Ordre national du Mérite" .
+#@ <id_5iwrwt_1hs_69igkh>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"Persondata templates without short description parameter" .
+#@ <id_5iwrwt_1hs_1tsy1k7>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"1949 births" .
+#@ <id_5iwrwt_1hs_ch4ybq>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"Living people" .
+#@ <id_5iwrwt_1hs_1393fvq>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"People from Barcelona" .
+#@ <id_5iwrwt_1hs_1s3day>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"Bishops of Urgell" .
+#@ <id_5iwrwt_1hs_1tv3maj>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"21st-century Roman Catholic bishops" .
+#@ <id_5iwrwt_1hs_pcb30j>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_5iwrwt_1hs_u5ky0c>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"Reigning monarchs" .
+#@ <id_5iwrwt_1hs_r1s1k5>
+<Joan_Enric_Vives_Sicília>	<hasWikiCategory/en>	"Roman Catholic monarchs" .
+#@ <id_1dwhis1_1hs_1cbaezz>
+<Michel_Charasse>	<hasWikiCategory/en>	"1941 births" .
+#@ <id_1dwhis1_1hs_ch4ybq>
+<Michel_Charasse>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1dwhis1_1hs_1arnjr8>
+<Michel_Charasse>	<hasWikiCategory/en>	"French Senators of the Fifth Republic" .
+#@ <id_1dwhis1_1hs_1r7rxl5>
+<Michel_Charasse>	<hasWikiCategory/en>	"French politicians" .
+#@ <id_1tccrte_1hs_ilwgj7>
+<Neuilly-sur-Seine>	<hasWikiCategory/en>	"1900 Summer Olympics" .
+#@ <id_1tccrte_1hs_1wdwisw>
+<Neuilly-sur-Seine>	<hasWikiCategory/en>	"Communes of Hauts-de-Seine" .
+#@ <id_vkf2e7_1hs_1qok8h8>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"1955 births" .
+#@ <id_vkf2e7_1hs_skw0q1>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Alumni of Sciences Po" .
+#@ <id_vkf2e7_1hs_85ccvi>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Candidates for the French presidential election, 2007" .
+#@ <id_vkf2e7_1hs_85ccw8>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Candidates for the French presidential election, 2012" .
+#@ <id_vkf2e7_1hs_1877q9j>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Commanders of the Order of Leopold (Belgium)" .
+#@ <id_vkf2e7_1hs_1deqmpa>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Conservatism in France" .
+#@ <id_vkf2e7_1hs_pcb30j>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_vkf2e7_1hs_oi321w>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"French interior ministers" .
+#@ <id_vkf2e7_1hs_boqlc9>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"French lawyers" .
+#@ <id_vkf2e7_1hs_opfnkm>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"French Ministers of Budget" .
+#@ <id_vkf2e7_1hs_gbbcak>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"French people of Greek descent" .
+#@ <id_vkf2e7_1hs_9ximkb>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"French people of Hungarian descent" .
+#@ <id_vkf2e7_1hs_1woss0q>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"French people of Jewish descent" .
+#@ <id_vkf2e7_1hs_1h4a7qn>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Government of Andorra" .
+#@ <id_vkf2e7_1hs_1xcxt8>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Government spokespersons of France" .
+#@ <id_vkf2e7_1hs_17datqh>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Grand Croix of the Légion d'honneur" .
+#@ <id_vkf2e7_1hs_sfns7x>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Grand Crosses of the Order of Stara Planina" .
+#@ <id_vkf2e7_1hs_1o1szqj>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Hungarian nobility" .
+#@ <id_vkf2e7_1hs_10itzyp>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Honorary Knights Grand Cross of the Order of the Bath" .
+#@ <id_vkf2e7_1hs_ch4ybq>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Living people" .
+#@ <id_vkf2e7_1hs_1qj0mwu>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Nicolas Sarkozy" .
+#@ <id_vkf2e7_1hs_1s6sccm>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"People from Paris" .
+#@ <id_vkf2e7_1hs_bovhcn>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Presidents of France" .
+#@ <id_vkf2e7_1hs_r1s1k5>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Roman Catholic monarchs" .
+#@ <id_vkf2e7_1hs_u5ky0c>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Reigning monarchs" .
+#@ <id_vkf2e7_1hs_6n48lm>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"University of Paris alumni" .
+#@ <id_vkf2e7_1hs_1pf3jln>
+<Nicolas_Sarkozy>	<hasWikiCategory/en>	"Presidents of the European Council" .
+#@ <id_17gzuo3_1hs_wdd5p0>
+<Paris_West_University_Nanterre_La_Défense>	<hasWikiCategory/en>	"University of Paris" .
+#@ <id_17gzuo3_1hs_iykwz3>
+<Paris_West_University_Nanterre_La_Défense>	<hasWikiCategory/en>	"Universities and colleges in France" .
+#@ <id_17gzuo3_1hs_idjt5t>
+<Paris_West_University_Nanterre_La_Défense>	<hasWikiCategory/en>	"Educational institutions established in 1964" .
+#@ <id_1isx97r_1hs_1pxmfjn>
+<Pere_López_Agràs>	<hasWikiCategory/en>	"Heads of Government of Andorra" .
+#@ <id_1isx97r_1hs_1xu5ber>
+<Pere_López_Agràs>	<hasWikiCategory/en>	"People from Andorra la Vella" .
+#@ <id_1isx97r_1hs_ch4ybq>
+<Pere_López_Agràs>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1isx97r_1hs_rqeshb>
+<Pere_López_Agràs>	<hasWikiCategory/en>	"Social Democratic Party (Andorra) politicians" .
+#@ <id_13n9nse_1hs_1r7rxl5>
+<Philippe_Massoni>	<hasWikiCategory/en>	"French politicians" .
+#@ <id_13n9nse_1hs_1t5o1ey>
+<Philippe_Massoni>	<hasWikiCategory/en>	"French police chiefs" .
+#@ <id_13n9nse_1hs_986n61>
+<Philippe_Massoni>	<hasWikiCategory/en>	"1936 births" .
+#@ <id_13n9nse_1hs_ch4ybq>
+<Philippe_Massoni>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1snxdw5_1hs_9xuhby>
+<Rally_for_the_Republic>	<hasWikiCategory/en>	"Political parties of the Fifth Republic" .
+#@ <id_1snxdw5_1hs_nanedy>
+<Rally_for_the_Republic>	<hasWikiCategory/en>	"Right-wing parties in France" .
+#@ <id_1snxdw5_1hs_1o8bhkr>
+<Rally_for_the_Republic>	<hasWikiCategory/en>	"Political parties established in 1976" .
+#@ <id_1snxdw5_1hs_ecul38>
+<Rally_for_the_Republic>	<hasWikiCategory/en>	"Political parties disestablished in 2002" .
+#@ <id_1as8dix_1hs_vv1cot>
+<Union_for_a_Popular_Movement>	<hasWikiCategory/en>	"Union for a Popular Movement" .
+#@ <id_1as8dix_1hs_1m63smw>
+<Union_for_a_Popular_Movement>	<hasWikiCategory/en>	"International Democrat Union member parties" .
+#@ <id_1as8dix_1hs_1o8bxpw>
+<Union_for_a_Popular_Movement>	<hasWikiCategory/en>	"Political parties established in 2002" .
+#@ <id_1as8dix_1hs_66t4b6>
+<Union_for_a_Popular_Movement>	<hasWikiCategory/en>	"2002 establishments in France" .
+#@ <id_j2lde8_1hs_if6e7k>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"1951 births" .
+#@ <id_j2lde8_1hs_ch4ybq>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Living people" .
+#@ <id_j2lde8_1hs_xhgolf>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"People from Trasmiera" .
+#@ <id_j2lde8_1hs_1jr7sd2>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Spanish Socialist Workers' Party politicians" .
+#@ <id_j2lde8_1hs_3tbktd>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Academics of the Complutense University of Madrid" .
+#@ <id_j2lde8_1hs_1ldb72w>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Cantabrian politicians" .
+#@ <id_j2lde8_1hs_19kmy1t>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Complutense University of Madrid alumni" .
+#@ <id_j2lde8_1hs_xujkzl>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Government ministers of Spain" .
+#@ <id_j2lde8_1hs_dght2k>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Members of the fifth Congress of Deputies (Spain)" .
+#@ <id_j2lde8_1hs_1pql6zx>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Members of the sixth Congress of Deputies (Spain)" .
+#@ <id_j2lde8_1hs_oy640y>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Members of the seventh Congress of Deputies (Spain)" .
+#@ <id_j2lde8_1hs_1sym1ew>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Members of the eighth Congress of Deputies (Spain)" .
+#@ <id_j2lde8_1hs_p90q58>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Members of the ninth Congress of Deputies (Spain)" .
+#@ <id_j2lde8_1hs_1mderyq>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Members of the tenth Congress of Deputies (Spain)" .
+#@ <id_j2lde8_1hs_dj3qki>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Spanish chemists" .
+#@ <id_j2lde8_1hs_ycfzsw>
+<Alfredo_Pérez_Rubalcaba>	<hasWikiCategory/en>	"Leaders of political parties in Spain" .
+#@ <id_w2djwz_1hs_2d4xw2>
+<Congress_of_Deputies_(Spain)>	<hasWikiCategory/en>	"Congress of Deputies (Spain)" .
+#@ <id_w2djwz_1hs_tjhg4g>
+<Congress_of_Deputies_(Spain)>	<hasWikiCategory/en>	"National lower houses" .
+#@ <id_w2djwz_1hs_a9l7bm>
+<Congress_of_Deputies_(Spain)>	<hasWikiCategory/en>	"Cortes Generales" .
+#@ <id_krjrbp_1hs_1tsy1k7>
+<Elena_Salgado>	<hasWikiCategory/en>	"1949 births" .
+#@ <id_krjrbp_1hs_ch4ybq>
+<Elena_Salgado>	<hasWikiCategory/en>	"Living people" .
+#@ <id_krjrbp_1hs_p59mwy>
+<Elena_Salgado>	<hasWikiCategory/en>	"People from Ourense" .
+#@ <id_krjrbp_1hs_p90q58>
+<Elena_Salgado>	<hasWikiCategory/en>	"Members of the ninth Congress of Deputies (Spain)" .
+#@ <id_krjrbp_1hs_1jr7sd2>
+<Elena_Salgado>	<hasWikiCategory/en>	"Spanish Socialist Workers' Party politicians" .
+#@ <id_krjrbp_1hs_xujkzl>
+<Elena_Salgado>	<hasWikiCategory/en>	"Government ministers of Spain" .
+#@ <id_krjrbp_1hs_sf7pms>
+<Elena_Salgado>	<hasWikiCategory/en>	"Spanish Ministers of Economy and Finance" .
+#@ <id_krjrbp_1hs_19kmy1t>
+<Elena_Salgado>	<hasWikiCategory/en>	"Complutense University of Madrid alumni" .
+#@ <id_krjrbp_1hs_1egoot5>
+<Elena_Salgado>	<hasWikiCategory/en>	"Galician politicians" .
+#@ <id_krjrbp_1hs_1cqow3y>
+<Elena_Salgado>	<hasWikiCategory/en>	"Spanish women in politics" .
+#@ <id_1u5uyhb_1hs_1bw72y8>
+<Francoist_Spain>	<hasWikiCategory/en>	"1975 disestablishments" .
+#@ <id_1u5uyhb_1hs_1rq0e0i>
+<Francoist_Spain>	<hasWikiCategory/en>	"States and territories established in 1939" .
+#@ <id_1u5uyhb_1hs_10c0rn2>
+<Francoist_Spain>	<hasWikiCategory/en>	"Francoist Spain" .
+#@ <id_1u5uyhb_1hs_1f782y0>
+<Francoist_Spain>	<hasWikiCategory/en>	"20th century in Spain" .
+#@ <id_1u5uyhb_1hs_1g4fw33>
+<Francoist_Spain>	<hasWikiCategory/en>	"Former monarchies of Europe" .
+#@ <id_1m0lrpx_1hs_10zbki0>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"1948 births" .
+#@ <id_1m0lrpx_1hs_ch4ybq>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1m0lrpx_1hs_1ti0tao>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"People from Bilbao" .
+#@ <id_1m0lrpx_1hs_6n48lm>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"University of Paris alumni" .
+#@ <id_1m0lrpx_1hs_6o1031>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"John F. Kennedy School of Government alumni" .
+#@ <id_1m0lrpx_1hs_1jr7sd2>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Spanish Socialist Workers' Party politicians" .
+#@ <id_1m0lrpx_1hs_4x9652>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Spanish European Commissioners" .
+#@ <id_1m0lrpx_1hs_115zsb7>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Members of the first Congress of Deputies (Spain)" .
+#@ <id_1m0lrpx_1hs_1nqcc0d>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Members of the second Congress of Deputies (Spain)" .
+#@ <id_1m0lrpx_1hs_wv50ak>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Members of the third Congress of Deputies (Spain)" .
+#@ <id_1m0lrpx_1hs_1vj8vs7>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Members of the fourth Congress of Deputies (Spain)" .
+#@ <id_1m0lrpx_1hs_dght2k>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Members of the fifth Congress of Deputies (Spain)" .
+#@ <id_1m0lrpx_1hs_1pql6zx>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Members of the sixth Congress of Deputies (Spain)" .
+#@ <id_1m0lrpx_1hs_oy640y>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Members of the seventh Congress of Deputies (Spain)" .
+#@ <id_1m0lrpx_1hs_1sym1ew>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Members of the eighth Congress of Deputies (Spain)" .
+#@ <id_1m0lrpx_1hs_ggfhrb>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Alumni of the University of Deusto" .
+#@ <id_1m0lrpx_1hs_ufa4nc>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Recipients of the Order of the Cross of Terra Mariana, 2nd Class" .
+#@ <id_1m0lrpx_1hs_ycfzsw>
+<Joaquín_Almunia>	<hasWikiCategory/en>	"Leaders of political parties in Spain" .
+#@ <id_1ng0idk_1hs_uqjyc2>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"1960 births" .
+#@ <id_1ng0idk_1hs_ycfzsw>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Leaders of political parties in Spain" .
+#@ <id_1ng0idk_1hs_ch4ybq>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1ng0idk_1hs_wv50ak>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Members of the third Congress of Deputies (Spain)" .
+#@ <id_1ng0idk_1hs_1vj8vs7>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Members of the fourth Congress of Deputies (Spain)" .
+#@ <id_1ng0idk_1hs_dght2k>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Members of the fifth Congress of Deputies (Spain)" .
+#@ <id_1ng0idk_1hs_1pql6zx>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Members of the sixth Congress of Deputies (Spain)" .
+#@ <id_1ng0idk_1hs_oy640y>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Members of the seventh Congress of Deputies (Spain)" .
+#@ <id_1ng0idk_1hs_1sym1ew>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Members of the eighth Congress of Deputies (Spain)" .
+#@ <id_1ng0idk_1hs_p90q58>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Members of the ninth Congress of Deputies (Spain)" .
+#@ <id_1ng0idk_1hs_17ijcyz>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"People from Valladolid" .
+#@ <id_1ng0idk_1hs_tg8v83>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Prime Ministers of Spain" .
+#@ <id_1ng0idk_1hs_n9v7k1>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 2nd Class" .
+#@ <id_1ng0idk_1hs_d36qgi>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Recipients of the Order of the Cross of Terra Mariana, 1st Class" .
+#@ <id_1ng0idk_1hs_fd35mt>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Spanish agnostics" .
+#@ <id_1ng0idk_1hs_1jr7sd2>
+<José_Luis_Rodríguez_Zapatero>	<hasWikiCategory/en>	"Spanish Socialist Workers' Party politicians" .
+#@ <id_lb8qid_1hs_51bacu>
+<José_María_Aznar>	<hasWikiCategory/en>	"1953 births" .
+#@ <id_lb8qid_1hs_1q4zvkp>
+<José_María_Aznar>	<hasWikiCategory/en>	"Attempted assassination survivors" .
+#@ <id_lb8qid_1hs_u552be>
+<José_María_Aznar>	<hasWikiCategory/en>	"Environmental skepticism" .
+#@ <id_lb8qid_1hs_107vvj5>
+<José_María_Aznar>	<hasWikiCategory/en>	"Georgetown University faculty" .
+#@ <id_lb8qid_1hs_ycfzsw>
+<José_María_Aznar>	<hasWikiCategory/en>	"Leaders of political parties in Spain" .
+#@ <id_lb8qid_1hs_ch4ybq>
+<José_María_Aznar>	<hasWikiCategory/en>	"Living people" .
+#@ <id_lb8qid_1hs_1nqcc0d>
+<José_María_Aznar>	<hasWikiCategory/en>	"Members of the second Congress of Deputies (Spain)" .
+#@ <id_lb8qid_1hs_wv50ak>
+<José_María_Aznar>	<hasWikiCategory/en>	"Members of the third Congress of Deputies (Spain)" .
+#@ <id_lb8qid_1hs_1vj8vs7>
+<José_María_Aznar>	<hasWikiCategory/en>	"Members of the fourth Congress of Deputies (Spain)" .
+#@ <id_lb8qid_1hs_dght2k>
+<José_María_Aznar>	<hasWikiCategory/en>	"Members of the fifth Congress of Deputies (Spain)" .
+#@ <id_lb8qid_1hs_1pql6zx>
+<José_María_Aznar>	<hasWikiCategory/en>	"Members of the sixth Congress of Deputies (Spain)" .
+#@ <id_lb8qid_1hs_oy640y>
+<José_María_Aznar>	<hasWikiCategory/en>	"Members of the seventh Congress of Deputies (Spain)" .
+#@ <id_lb8qid_1hs_1ykzj1e>
+<José_María_Aznar>	<hasWikiCategory/en>	"People from Madrid" .
+#@ <id_lb8qid_1hs_7gud4>
+<José_María_Aznar>	<hasWikiCategory/en>	"People's Party (Spain) politicians" .
+#@ <id_lb8qid_1hs_tg8v83>
+<José_María_Aznar>	<hasWikiCategory/en>	"Prime Ministers of Spain" .
+#@ <id_lb8qid_1hs_p74py3>
+<José_María_Aznar>	<hasWikiCategory/en>	"Spanish people" .
+#@ <id_lb8qid_1hs_1r04ntn>
+<José_María_Aznar>	<hasWikiCategory/en>	"Spanish Roman Catholics" .
+#@ <id_1cx2d3n_1hs_1uvflaf>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"1938 births" .
+#@ <id_1cx2d3n_1hs_1awv7k0>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"20th-century Roman Catholics" .
+#@ <id_1cx2d3n_1hs_57vooe>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"21st-century Roman Catholics" .
+#@ <id_1cx2d3n_1hs_16ac3ot>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Charlemagne Prize recipients" .
+#@ <id_1cx2d3n_1hs_1kvnu8o>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Claimant Kings of Jerusalem" .
+#@ <id_1cx2d3n_1hs_pcb30j>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_1cx2d3n_1hs_1aitroo>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Fellows of Fitzwilliam College, Cambridge" .
+#@ <id_1cx2d3n_1hs_10c0rn2>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Francoist Spain" .
+#@ <id_1cx2d3n_1hs_o24lrq>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"House of Bourbon (Spain)" .
+#@ <id_1cx2d3n_1hs_ch4ybq>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1cx2d3n_1hs_i3zwoq>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"People from Rome" .
+#@ <id_1cx2d3n_1hs_u5ky0c>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Reigning monarchs" .
+#@ <id_1cx2d3n_1hs_r1s1k5>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Roman Catholic monarchs" .
+#@ <id_1cx2d3n_1hs_1tuq30p>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Sailors at the 1972 Summer Olympics" .
+#@ <id_1cx2d3n_1hs_1pqfexs>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Spanish infantes" .
+#@ <id_1cx2d3n_1hs_1hfio0t>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Spanish monarchs" .
+#@ <id_1cx2d3n_1hs_s998vr>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Spanish yacht racers" .
+#@ <id_1cx2d3n_1hs_1deliv7>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Bailiffs Grand Cross of the Sacred Military Constantinian Order of Saint George" .
+#@ <id_1cx2d3n_1hs_a33gmb>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Bailiffs Grand Cross of the Order of St John" .
+#@ <id_1cx2d3n_1hs_1rywn45>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Collars of the Order of the Aztec Eagle" .
+#@ <id_1cx2d3n_1hs_1vk9ca8>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Collars of the Order of the Chrysanthemum" .
+#@ <id_1cx2d3n_1hs_1rct4wb>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Collars of the Order of the White Lion" .
+#@ <id_1cx2d3n_1hs_1ombm7r>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Commanders Grand Cross with Collar of the Order of the White Rose of Finland" .
+#@ <id_1cx2d3n_1hs_1hvwkar>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Extra Knights Companion of the Garter" .
+#@ <id_1cx2d3n_1hs_1o1xbi6>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Collars of the Order of Prince Henry" .
+#@ <id_1cx2d3n_1hs_c013f8>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Collars of the Order of Liberty‎" .
+#@ <id_1cx2d3n_1hs_14gctul>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Collars of the Order of Saint James of the Sword" .
+#@ <id_1cx2d3n_1hs_1yoaopd>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Collars of the Order of the Tower and Sword" .
+#@ <id_1cx2d3n_1hs_1navw4e>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Cordons of the Order of Leopold (Belgium)" .
+#@ <id_1cx2d3n_1hs_17datqh>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Croix of the Légion d'honneur" .
+#@ <id_1cx2d3n_1hs_1tuxbxg>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Croix of the Ordre national du Mérite" .
+#@ <id_1cx2d3n_1hs_1h8j3nv>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Crosses of the Order of Aviz" .
+#@ <id_1cx2d3n_1hs_nbvm3l>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Crosses of the Order of Christ (Portugal)" .
+#@ <id_1cx2d3n_1hs_13jvy9p>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Crosses of the Order of the Redeemer" .
+#@ <id_1cx2d3n_1hs_v5cjhe>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Crosses Special Class of the Order of Merit of the Federal Republic of Germany" .
+#@ <id_1cx2d3n_1hs_1bpntvy>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Grand Masters of the Order of the Golden Fleece" .
+#@ <id_1cx2d3n_1hs_15ib40n>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights Grand Cross of Justice of the Sacred Military Constantinian Order of Saint George" .
+#@ <id_1cx2d3n_1hs_1lsss3o>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of the Immaculate Conception of Vila Viçosa" .
+#@ <id_1cx2d3n_1hs_jii3oo>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights Grand Cross of the Order of the Netherlands Lion" .
+#@ <id_1cx2d3n_1hs_1pp6o83>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights Grand Cross with Collar of the Order of Merit of the Italian Republic" .
+#@ <id_1cx2d3n_1hs_1g9qnwb>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights Grand Cross with Collar of the Order of St. Olav" .
+#@ <id_1cx2d3n_1hs_yaefq>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights of Malta" .
+#@ <id_1cx2d3n_1hs_1tj0203>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights of Santiago" .
+#@ <id_1cx2d3n_1hs_8w4m3z>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights of the Elephant" .
+#@ <id_1cx2d3n_1hs_syvcg1>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights of the Golden Fleece" .
+#@ <id_1cx2d3n_1hs_1wz1z3c>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights of the Order of Alcántara" .
+#@ <id_1cx2d3n_1hs_157ylpc>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights of the Order of Saint Januarius" .
+#@ <id_1cx2d3n_1hs_uapjak>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights of the Order of the Most Holy Annunciation" .
+#@ <id_1cx2d3n_1hs_una9ho>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Knights of the Order of the Rajamitrabhorn" .
+#@ <id_1cx2d3n_1hs_1yonobp>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Recipients of the Royal Victorian Chain" .
+#@ <id_1cx2d3n_1hs_1msqktr>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Recipients of the Collar of the Order of the Cross of Terra Mariana" .
+#@ <id_1cx2d3n_1hs_17nvlw1>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Recipients of the Order of the Seraphim" .
+#@ <id_1cx2d3n_1hs_klteho>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Recipients of the Order of the Three Stars, 1st Class with Chain" .
+#@ <id_1cx2d3n_1hs_bq2k3i>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Recipients of the Order of the White Eagle (Poland)" .
+#@ <id_1cx2d3n_1hs_gedcw4>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Recipients of the Order of Vytautas the Great" .
+#@ <id_1cx2d3n_1hs_ei600t>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Sashes of the Order of the Star of Romania" .
+#@ <id_1cx2d3n_1hs_nep31x>
+<Juan_Carlos_I_of_Spain>	<hasWikiCategory/en>	"Recipients of the Olympic Order" .
+#@ <id_1lrkwvu_1hs_1c6rdqk>
+<León_(Spanish_Congress_Electoral_District)>	<hasWikiCategory/en>	"Electoral Districts of the Congress of Deputies (Spain)" .
+#@ <id_1lrkwvu_1hs_15pgsgd>
+<León_(Spanish_Congress_Electoral_District)>	<hasWikiCategory/en>	"Province of León" .
+#@ <id_ngfbkz_1hs_1c6rdqk>
+<Madrid_(Spanish_Congress_Electoral_District)>	<hasWikiCategory/en>	"Electoral Districts of the Congress of Deputies (Spain)" .
+#@ <id_ngfbkz_1hs_me8tpj>
+<Madrid_(Spanish_Congress_Electoral_District)>	<hasWikiCategory/en>	"Politics of Madrid" .
+#@ <id_ngfbkz_1hs_869k8f>
+<Madrid_(Spanish_Congress_Electoral_District)>	<hasWikiCategory/en>	"Community of Madrid" .
+#@ <id_45ua65_1hs_1qok8h8>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"1955 births" .
+#@ <id_45ua65_1hs_pcb30j>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Current national leaders" .
+#@ <id_45ua65_1hs_1egoot5>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Galician politicians" .
+#@ <id_45ua65_1hs_xujkzl>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Government ministers of Spain" .
+#@ <id_45ua65_1hs_ycfzsw>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Leaders of political parties in Spain" .
+#@ <id_45ua65_1hs_ch4ybq>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Living people" .
+#@ <id_45ua65_1hs_wv50ak>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the third Congress of Deputies (Spain)" .
+#@ <id_45ua65_1hs_1vj8vs7>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the fourth Congress of Deputies (Spain)" .
+#@ <id_45ua65_1hs_dght2k>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the fifth Congress of Deputies (Spain)" .
+#@ <id_45ua65_1hs_1pql6zx>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the sixth Congress of Deputies (Spain)" .
+#@ <id_45ua65_1hs_oy640y>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the seventh Congress of Deputies (Spain)" .
+#@ <id_45ua65_1hs_1sym1ew>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the eighth Congress of Deputies (Spain)" .
+#@ <id_45ua65_1hs_p90q58>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the ninth Congress of Deputies (Spain)" .
+#@ <id_45ua65_1hs_1mderyq>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the tenth Congress of Deputies (Spain)" .
+#@ <id_45ua65_1hs_19vo4vd>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Members of the Parliament of Galicia" .
+#@ <id_45ua65_1hs_7ume6p>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"People from Santiago de Compostela" .
+#@ <id_45ua65_1hs_7gud4>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"People's Party (Spain) politicians" .
+#@ <id_45ua65_1hs_tg8v83>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Prime Ministers of Spain" .
+#@ <id_45ua65_1hs_1r04ntn>
+<Mariano_Rajoy>	<hasWikiCategory/en>	"Spanish Roman Catholics" .
+#@ <id_1vmvigz_1hs_1tsy1k7>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"1949 births" .
+#@ <id_1vmvigz_1hs_ch4ybq>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Living people" .
+#@ <id_1vmvigz_1hs_1c7yaxr>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"People from Valencia, Spain" .
+#@ <id_1vmvigz_1hs_zvzlzg>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Valencian politicians" .
+#@ <id_1vmvigz_1hs_1jr7sd2>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Spanish Socialist Workers' Party politicians" .
+#@ <id_1vmvigz_1hs_1pql6zx>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Members of the sixth Congress of Deputies (Spain)" .
+#@ <id_1vmvigz_1hs_oy640y>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Members of the seventh Congress of Deputies (Spain)" .
+#@ <id_1vmvigz_1hs_1sym1ew>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Members of the eighth Congress of Deputies (Spain)" .
+#@ <id_1vmvigz_1hs_p90q58>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Members of the ninth Congress of Deputies (Spain)" .
+#@ <id_1vmvigz_1hs_xujkzl>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Government ministers of Spain" .
+#@ <id_1vmvigz_1hs_1cqow3y>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Spanish women in politics" .
+#@ <id_1vmvigz_1hs_19kmy1t>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Complutense University of Madrid alumni" .
+#@ <id_1vmvigz_1hs_d36qgi>
+<María_Teresa_Fernández_de_la_Vega>	<hasWikiCategory/en>	"Recipients of the Order of the Cross of Terra Mariana, 1st Class" .
+#@ <id_gbjwix_1hs_1nk6fe9>
+<Sonsoles_Espinosa>	<hasWikiCategory/en>	"1961 births" .
+#@ <id_gbjwix_1hs_ch4ybq>
+<Sonsoles_Espinosa>	<hasWikiCategory/en>	"Living people" .
+#@ <id_gbjwix_1hs_12oq5xf>
+<Sonsoles_Espinosa>	<hasWikiCategory/en>	"Spouses of national leaders" .
+#@ <id_gbjwix_1hs_dkabu9>
+<Sonsoles_Espinosa>	<hasWikiCategory/en>	"People from Ávila, Spain" .
+#@ <id_gbjwix_1hs_acq4yr>
+<Sonsoles_Espinosa>	<hasWikiCategory/en>	"Spanish lawyers" .
+#@ <id_gbjwix_1hs_eh2gvv>
+<Sonsoles_Espinosa>	<hasWikiCategory/en>	"Spanish sopranos" .
+#@ <id_1i5m33a_1hs_1dlwy4n>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"Spanish Socialist Workers' Party" .
+#@ <id_1i5m33a_1hs_1o8bgu5>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"Political parties established in 1879" .
+#@ <id_1i5m33a_1hs_1sieulp>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"Political parties in Spain" .
+#@ <id_1i5m33a_1hs_15j194m>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"Social democratic parties" .
+#@ <id_1i5m33a_1hs_19zhx7v>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"Socialist International" .
+#@ <id_1i5m33a_1hs_mglf0m>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"Party of European Socialists member parties" .
+#@ <id_1i5m33a_1hs_aajuc2>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"Members of the Labour and Socialist International" .
+#@ <id_1i5m33a_1hs_1arqo6a>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"Second International" .
+#@ <id_1i5m33a_1hs_789u9n>
+<Spanish_Socialist_Workers'_Party>	<hasWikiCategory/en>	"1879 establishments in Spain" .
+#@ <id_cacb9n_1hs_5w2ta9>
+<University_of_León>	<hasWikiCategory/en>	"Universities in Castile and León" .
+#@ <id_cacb9n_1hs_idjt6t>
+<University_of_León>	<hasWikiCategory/en>	"Educational institutions established in 1979" .
+#@ <id_13dzdeu_1hs_13dzdeu>
+<Valladolid>	<hasWikiCategory/en>	"Valladolid" .
+#@ <id_13dzdeu_1hs_1f6e8qr>
+<Valladolid>	<hasWikiCategory/en>	"Municipalities in the Province of Valladolid" .
+#@ <id_13dzdeu_1hs_130tmor>
+<Valladolid>	<hasWikiCategory/en>	"Populated places in the Province of Valladolid" .

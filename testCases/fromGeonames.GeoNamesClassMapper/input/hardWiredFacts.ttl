@@ -571,7 +571,7 @@ rdf:Statement	rdf:type	rdf:Resource .
 <yagoInverseFunction>	rdfs:subClassOf	rdf:Property .
 rdf:Property	rdf:type	rdf:Resource .
 <yagoSymmetricRelation>	rdfs:subClassOf	rdf:Property .
-<yagoTransitiveRelation>	rdfs:subClassOf	rdf:Property .
+<Relation>	rdfs:subClassOf	rdf:Property .
 rdfs:domain	rdfs:domain	rdf:Property .
 rdfs:range	rdfs:domain	rdf:Property .
 rdf:type	rdfs:domain	rdf:Resource .
@@ -581,7 +581,7 @@ rdf:type	rdf:type	<permanentRelationToSubject> .
 rdfs:subClassOf	rdfs:domain	rdf:Class .
 rdfs:subClassOf	rdfs:range	rdf:Class .
 rdfs:subClassOf	rdf:type	rdf:Property .
-rdfs:subClassOf	rdf:type	<yagoTransitiveRelation> .
+rdfs:subClassOf	rdf:type	<Relation> .
 rdfs:domain	rdfs:range	rdf:Class .
 rdfs:domain	rdf:type	<yagoFunction> .
 rdfs:range	rdfs:range	rdf:Class .
@@ -589,7 +589,7 @@ rdfs:range	rdf:type	<yagoFunction> .
 rdfs:subPropertyOf	rdfs:domain	rdf:Property .
 rdfs:subPropertyOf	rdfs:range	rdf:Property .
 rdfs:subPropertyOf	rdf:type	rdf:Property .
-rdfs:subPropertyOf	rdf:type	<yagoTransitiveRelation> .
+rdfs:subPropertyOf	rdf:type	<Relation> .
 <hasConfidence>	rdfs:domain	rdf:Property .
 <hasConfidence>	rdfs:range	xsd:decimal .
 <hasConfidence>	rdf:type	rdf:Property .
@@ -626,7 +626,7 @@ rdfs:subPropertyOf	rdf:type	<yagoTransitiveRelation> .
 <isLocatedIn>	rdfs:domain	<yagoPermanentlyLocatedEntity> .
 <isLocatedIn>	rdfs:range	<yagoGeoEntity> .
 <isLocatedIn>	rdf:type	<yagoFunction> .
-<isLocatedIn>	rdf:type	<yagoTransitiveRelation> .
+<isLocatedIn>	rdf:type	<Relation> .
 <isLocatedIn>	rdfs:subPropertyOf	<placedIn> .
 <occursIn>	rdfs:domain	rdf:Statement .
 <occursIn>	rdfs:range	<yagoGeoEntity> .

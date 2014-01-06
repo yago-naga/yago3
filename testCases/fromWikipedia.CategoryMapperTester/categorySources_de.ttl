@@ -1,0 +1,200 @@
+# null
+# The sources of category facts
+# OTHER
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+/2001/XMLSchema#> .
+
+#@ <id_zjvf0p_115_11h17b1>
+<id_1g0fv8n_1xk_1c2nx85>	<extractionSource>	<http://en.wikipedia.org/wiki/Al-Biruni> .
+<id_zjvf0p_115_11h17b1>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_130ylqf_115_1tp1emz>
+<id_1nagl0x_1ug_2jsfao>	<extractionSource>	<http://en.wikipedia.org/wiki/Aurelian> .
+<id_130ylqf_115_1tp1emz>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1gzt9ra_115_1ts1bu9>
+<id_8zo213_1ug_34ne4r>	<extractionSource>	<http://en.wikipedia.org/wiki/Aleister_Crowley> .
+<id_1gzt9ra_115_1ts1bu9>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_kah0fk_115_1qchto>
+<id_1w0x87m_z7a_zjryzu>	<extractionSource>	<http://en.wikipedia.org/wiki/Ankara> .
+<id_kah0fk_115_1qchto>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1kfepaf_115_11h17b1>
+<id_1g0fv8n_1ug_2plnk3>	<extractionSource>	<http://en.wikipedia.org/wiki/Al-Biruni> .
+<id_1kfepaf_115_11h17b1>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_vchwso_115_rvgb9u>
+<id_6uqed8_1xk_2lhaqw>	<extractionSource>	<http://en.wikipedia.org/wiki/Anne_Haigis> .
+<id_vchwso_115_rvgb9u>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1or9bqi_115_8zyv8x>
+<id_1hat80r_1ug_1nhiiuc>	<extractionSource>	<http://en.wikipedia.org/wiki/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1or9bqi_115_8zyv8x>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_13ox2sk_115_8zyv8x>
+<id_1hat80r_1xk_7uoubt>	<extractionSource>	<http://en.wikipedia.org/wiki/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_13ox2sk_115_8zyv8x>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_phqeqn_115_1xfh869>
+<id_14nquvf_1ug_1llz0og>	<extractionSource>	<http://en.wikipedia.org/wiki/Aemilianus_(Kaiser)> .
+<id_phqeqn_115_1xfh869>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_ni68se_115_1tp1emz>
+<id_1nagl0x_1xk_s0zgmt>	<extractionSource>	<http://en.wikipedia.org/wiki/Aurelian> .
+<id_ni68se_115_1tp1emz>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_a279al_115_13p165b>
+<id_1j1f3ex_1ug_q8bwh2>	<extractionSource>	<http://en.wikipedia.org/wiki/Anthony_Minghella> .
+<id_a279al_115_13p165b>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_ybie6r_115_uic3gc>
+<id_waqb6a_1xk_vy9v6y>	<extractionSource>	<http://en.wikipedia.org/wiki/Aki_Kaurismäki> .
+<id_ybie6r_115_uic3gc>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_dhu0ej_115_k5dxwa>
+<id_4kij9g_1ug_1pb7sli>	<extractionSource>	<http://en.wikipedia.org/wiki/Abraham_Lincoln> .
+<id_dhu0ej_115_k5dxwa>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_vhs3l5_115_84dtt9>
+<id_1fpq28n_ab2_r1lvgh>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
+<id_vhs3l5_115_84dtt9>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_ku3h3s_115_ah5hy6>
+<id_1x5ypmc_ab2_5mg9x0>	<extractionSource>	<http://en.wikipedia.org/wiki/Anna_Seghers> .
+<id_ku3h3s_115_ah5hy6>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_dz528d_115_84dtt9>
+<id_1fpq28n_14h_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
+<id_dz528d_115_84dtt9>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1ill956_115_1ygay9f>
+<id_1s1q4nd_z7a_gwtjao>	<extractionSource>	<http://en.wikipedia.org/wiki/Algerien> .
+<id_1ill956_115_1ygay9f>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_tr2k7e_115_ah5hy6>
+<id_1x5ypmc_1xk_1x7tq88>	<extractionSource>	<http://en.wikipedia.org/wiki/Anna_Seghers> .
+<id_tr2k7e_115_ah5hy6>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_xlth0b_115_1ts1bu9>
+<id_8zo213_1xk_j3q7ol>	<extractionSource>	<http://en.wikipedia.org/wiki/Aleister_Crowley> .
+<id_xlth0b_115_1ts1bu9>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_ikdymd_115_9905t8>
+<id_1vxtdhe_1xk_vyf85g>	<extractionSource>	<http://en.wikipedia.org/wiki/Anthony_Hope> .
+<id_ikdymd_115_9905t8>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_159gjzs_115_9905t8>
+<id_1vxtdhe_1ug_1lnnw4o>	<extractionSource>	<http://en.wikipedia.org/wiki/Anthony_Hope> .
+<id_159gjzs_115_9905t8>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1dyiqro_115_13p165b>
+<id_1j1f3ex_1xk_1my72hz>	<extractionSource>	<http://en.wikipedia.org/wiki/Anthony_Minghella> .
+<id_1dyiqro_115_13p165b>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_dyoqiz_115_ah5hy6>
+<id_1x5ypmc_ab2_1bsvu77>	<extractionSource>	<http://en.wikipedia.org/wiki/Anna_Seghers> .
+<id_dyoqiz_115_ah5hy6>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_338ftu_115_1cn6r16>
+<id_jvgdqc_1xk_1etji86>	<extractionSource>	<http://en.wikipedia.org/wiki/Arthur_Schopenhauer> .
+<id_338ftu_115_1cn6r16>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1l4j47y_115_84dtt9>
+<id_1fpq28n_1xk_1my72hz>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
+<id_1l4j47y_115_84dtt9>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_3hfz9r_115_1hmi471>
+<id_1cu38x3_1xk_1my72hz>	<extractionSource>	<http://en.wikipedia.org/wiki/Ang_Lee> .
+<id_3hfz9r_115_1hmi471>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1mdh0du_115_1jo76kp>
+<id_17bwc9r_1xk_zltrns>	<extractionSource>	<http://en.wikipedia.org/wiki/Adolf_Hitler> .
+<id_1mdh0du_115_1jo76kp>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_15w12gb_115_15wmjx6>
+<id_kvwn0k_z7a_zjryzu>	<extractionSource>	<http://en.wikipedia.org/wiki/Afghanistan> .
+<id_15w12gb_115_15wmjx6>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_gbfshu_115_1hmi471>
+<id_1cu38x3_ab2_i0dssq>	<extractionSource>	<http://en.wikipedia.org/wiki/Ang_Lee> .
+<id_gbfshu_115_1hmi471>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1wksrij_115_orzxjd>
+<id_qke59b_ab2_18z94qd>	<extractionSource>	<http://en.wikipedia.org/wiki/Angelina_Jolie> .
+<id_1wksrij_115_orzxjd>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_dz528d_115_84dtt9>
+<id_1fpq28n_14h_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel> .
+<id_dz528d_115_84dtt9>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_15jdepv_115_ah5hy6>
+<id_1x5ypmc_ab2_af5lte>	<extractionSource>	<http://en.wikipedia.org/wiki/Anna_Seghers> .
+<id_15jdepv_115_ah5hy6>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_w11twh_115_1d37fym>
+<id_s2hj20_1xk_1kd4prd>	<extractionSource>	<http://en.wikipedia.org/wiki/Alan_Turing> .
+<id_w11twh_115_1d37fym>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1opzug0_115_v71czk>
+<id_9n8mfq_1xk_3w0h47>	<extractionSource>	<http://en.wikipedia.org/wiki/Alicia_Silverstone> .
+<id_1opzug0_115_v71czk>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_gqq1g_115_1vjpds2>
+<id_b1zzqk_ab2_i0dssq>	<extractionSource>	<http://en.wikipedia.org/wiki/Al_Pacino> .
+<id_gqq1g_115_1vjpds2>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_kjx9hu_115_1d37fym>
+<id_s2hj20_1ug_1my72hz>	<extractionSource>	<http://en.wikipedia.org/wiki/Alan_Turing> .
+<id_kjx9hu_115_1d37fym>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_swahxl_115_orzxjd>
+<id_qke59b_1xk_1o8q8va>	<extractionSource>	<http://en.wikipedia.org/wiki/Angelina_Jolie> .
+<id_swahxl_115_orzxjd>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1b77ci7_115_1ygay9f>
+<id_1s1q4nd_z7a_1vwnhy2>	<extractionSource>	<http://en.wikipedia.org/wiki/Algerien> .
+<id_1b77ci7_115_1ygay9f>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_3u7txv_115_1vjpds2>
+<id_b1zzqk_ab2_p4blpu>	<extractionSource>	<http://en.wikipedia.org/wiki/Al_Pacino> .
+<id_3u7txv_115_1vjpds2>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_qzcx4d_115_13p165b>
+<id_1j1f3ex_ab2_i0dssq>	<extractionSource>	<http://en.wikipedia.org/wiki/Anthony_Minghella> .
+<id_qzcx4d_115_13p165b>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_ootswa_115_k5dxwa>
+<id_4kij9g_14h_36zb1a>	<extractionSource>	<http://en.wikipedia.org/wiki/Abraham_Lincoln> .
+<id_ootswa_115_k5dxwa>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_x3cix9_115_15wmjx6>
+<id_kvwn0k_z7a_gwtjao>	<extractionSource>	<http://en.wikipedia.org/wiki/Afghanistan> .
+<id_x3cix9_115_15wmjx6>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_bz2qcj_115_1y9ga2t>
+<id_jzenfz_1xk_ht1ocs>	<extractionSource>	<http://en.wikipedia.org/wiki/Andrei_Dmitrijewitsch_Linde> .
+<id_bz2qcj_115_1y9ga2t>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_wnd4fi_115_zcw4r1>
+<id_1dlmwwz_1ug_fodatc>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfred_Hitchcock> .
+<id_wnd4fi_115_zcw4r1>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_a9i9ey_115_orzxjd>
+<id_qke59b_ab2_i0dssq>	<extractionSource>	<http://en.wikipedia.org/wiki/Angelina_Jolie> .
+<id_a9i9ey_115_orzxjd>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_175c12r_115_1hmi471>
+<id_1cu38x3_ab2_18z94qd>	<extractionSource>	<http://en.wikipedia.org/wiki/Ang_Lee> .
+<id_175c12r_115_1hmi471>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_5epaut_115_cxxhx7>
+<id_11gvs0h_z7a_10me62j>	<extractionSource>	<http://en.wikipedia.org/wiki/Alexandria> .
+<id_5epaut_115_cxxhx7>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_8xgm0r_115_1g75tna>
+<id_ore03k_1xk_wpsb4w>	<extractionSource>	<http://en.wikipedia.org/wiki/Arthur_Harris> .
+<id_8xgm0r_115_1g75tna>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_16ue3yf_115_1t97ks>
+<id_1w3txyq_z7a_zjryzu>	<extractionSource>	<http://en.wikipedia.org/wiki/Astana> .
+<id_16ue3yf_115_1t97ks>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_mphc4o_115_xe7nr1>
+<id_l1wtg3_siu_ucrl1d>	<extractionSource>	<http://en.wikipedia.org/wiki/The_Visitors> .
+<id_mphc4o_115_xe7nr1>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_lnb8h9_115_ogpf29>
+<id_13042zv_1xk_fzcelm>	<extractionSource>	<http://en.wikipedia.org/wiki/Arvo_Pärt> .
+<id_lnb8h9_115_ogpf29>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_lu8vf6_115_k5dxwa>
+<id_4kij9g_1xk_i4653k>	<extractionSource>	<http://en.wikipedia.org/wiki/Abraham_Lincoln> .
+<id_lu8vf6_115_k5dxwa>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1t8jtj9_115_1cn6r16>
+<id_jvgdqc_1ug_1mycfgh>	<extractionSource>	<http://en.wikipedia.org/wiki/Arthur_Schopenhauer> .
+<id_1t8jtj9_115_1cn6r16>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1cxjash_115_1vjpds2>
+<id_b1zzqk_ab2_18z94qd>	<extractionSource>	<http://en.wikipedia.org/wiki/Al_Pacino> .
+<id_1cxjash_115_1vjpds2>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_zs2emf_115_zcw4r1>
+<id_1dlmwwz_1xk_1sfg8pz>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfred_Hitchcock> .
+<id_zs2emf_115_zcw4r1>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_mvvfow_115_ogpf29>
+<id_13042zv_ab2_1ml209d>	<extractionSource>	<http://en.wikipedia.org/wiki/Arvo_Pärt> .
+<id_mvvfow_115_ogpf29>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1hzcdg5_115_1vjpds2>
+<id_b1zzqk_1xk_16g3iis>	<extractionSource>	<http://en.wikipedia.org/wiki/Al_Pacino> .
+<id_1hzcdg5_115_1vjpds2>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_d4zjh3_115_ah5hy6>
+<id_1x5ypmc_1ug_1npk5hf>	<extractionSource>	<http://en.wikipedia.org/wiki/Anna_Seghers> .
+<id_d4zjh3_115_ah5hy6>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_ly8khu_115_1g75tna>
+<id_ore03k_1ug_3cudqc>	<extractionSource>	<http://en.wikipedia.org/wiki/Arthur_Harris> .
+<id_ly8khu_115_1g75tna>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1ph4h5d_115_1jo76kp>
+<id_17bwc9r_1ug_18syvnt>	<extractionSource>	<http://en.wikipedia.org/wiki/Adolf_Hitler> .
+<id_1ph4h5d_115_1jo76kp>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_12pjm03_115_cxxhx7>
+<id_11gvs0h_z7a_1vwnhy2>	<extractionSource>	<http://en.wikipedia.org/wiki/Alexandria> .
+<id_12pjm03_115_cxxhx7>	<extractionTechnique>	"CategoryMapper" .
+#@ <id_1i7qvwl_115_ehty9o>
+<id_8394nm_1ug_1x5u4v0>	<extractionSource>	<http://en.wikipedia.org/wiki/Arcadius> .
+<id_1i7qvwl_115_ehty9o>	<extractionTechnique>	"CategoryMapper" .

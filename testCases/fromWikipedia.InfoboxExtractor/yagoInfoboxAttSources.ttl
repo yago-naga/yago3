@@ -1,5 +1,5 @@
-# Test on 1 wikipedia article
-# Facts of infobox
+# Test of YAGO2s
+# Sources for facts of infobox
 # OTHER
 
 @base <http://yago-knowledge.org/resource/> .
