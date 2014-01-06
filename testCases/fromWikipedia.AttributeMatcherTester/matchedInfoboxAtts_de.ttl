@@ -1,0 +1,12 @@
+# Test on wikipedia article
+# Attributes of the Wikipedia infoboxes in different languages are matched.
+# OTHER
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
