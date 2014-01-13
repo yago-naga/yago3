@@ -29,7 +29,7 @@ import basics.YAGO;
  */
 public abstract class Extractor {
   
-  protected static String[] languages = {"en", "de" };
+  protected static String[] languages = {"en" , "de" };
   static Map<String,String> langPostfixes = new HashMap<String, String>();
   static{
     for(String s:languages)

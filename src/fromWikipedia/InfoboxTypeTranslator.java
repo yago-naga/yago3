@@ -20,7 +20,7 @@ import basics.Theme.ThemeGroup;
 /**
  * InfoboxTypeTranslator - YAGO2s
  * 
- * Translates the infobox types in different languages.
+ * Translates the infobox types (right hand side) in different languages.
  * 
  * @author Farzaneh Mahdisoltani
  * 
@@ -67,7 +67,6 @@ public class InfoboxTypeTranslator extends Extractor{
       word=word.substring(0, 1).toUpperCase() + word.substring(1);
      
       String category = rdictionary.get(infoboxWord+"_"+word);
-   System.out.println(category);
       if(category == null) 
         continue; 
     

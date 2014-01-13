@@ -1,14 +1,11 @@
 package fromWikipedia;
 
 import java.io.File;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import basics.ExtendedFactCollection;
-import basics.Fact;
 import basics.FactSource;
 import basics.Theme;
 
@@ -35,7 +32,7 @@ public class WikipediaTypeExtractorMulti extends WikipediaTypeExtractor {
   }
   
   public static void main(String[] args) throws Exception {
-    Announce.setLevel(Announce.Level.DEBUG);
+    Announce.setLevel(Announce.Level.MUTE);
     WikipediaTypeExtractorMulti extractor = new WikipediaTypeExtractorMulti("de");
     extractor.extract(new File("D:/data2/yago2s/"),
         "");

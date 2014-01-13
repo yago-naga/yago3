@@ -306,7 +306,7 @@ public class InfoboxExtractor extends Extractor {
 //          
 //           INFOBOXATTSOURCES_MAP.get(language), "", "");
        
-       writers.get(INFOBOXTYPES_MAP.get(language)).write( new Fact(titleEntity, "<hasInfoboxType>", FactComponent.forYagoEntity(cls)));
+       writers.get(INFOBOXTYPES_MAP.get(language)).write( new Fact(titleEntity, "rdf:type", FactComponent.forYagoEntity(cls)));
        
           
           Map<String, Set<String>> attributes = readInfobox(in, combinations);
@@ -376,14 +376,14 @@ public class InfoboxExtractor extends Extractor {
     //    new HardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/basics2s/data/")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "test");
     //    new WordnetExtractor(new File("C:/Users/Administrator/data/wordnet")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "This time its gonna work!");
     //    
-    InfoboxExtractor ie1 = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
-    ie1.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+//    InfoboxExtractor ie1 = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
+//    ie1.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 
 //    InfoboxExtractor ie2 = new InfoboxExtractor(new File("D:/ar_wiki.xml"));
 //    ie2.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 //    
-//    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wiki.xml"));
-//    ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wikitest.xml"));
+    ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
     
 //    InfoboxExtractor ie4 = new InfoboxExtractor(new File("D:/fa_wiki.xml"));
 //    ie4.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");

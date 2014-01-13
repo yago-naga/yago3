@@ -9,9 +9,6 @@ import java.util.TreeSet;
 
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.EntityTranslator;
-import fromThemes.SchemaExtractor;
-import fromThemes.SimpleDeduplicator;
 import fromThemes.SimpleTypeExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -24,8 +21,6 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
-import basics.YAGO;
-import basics.Theme.ThemeGroup;
 
   
 public class TypeCoherenceChecker extends Extractor {
@@ -40,7 +35,6 @@ public class TypeCoherenceChecker extends Extractor {
     for (String s : Extractor.languages) {
 //      result.add(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s));
       result.add(WikipediaTypeExtractor.WIKIPEDIACLASSES_MAP.get(s));
-    
     }
     return result;
   }
@@ -63,14 +57,6 @@ protected FactCollection wordnetClasses;
 protected ExtendedFactCollection categoryClassFacts;
 /** Holds the facts about categories that we accumulate*/
 //protected FactCollection categoryClassFacts;
-  
-  
-   
-  
-
- 
- 
-  
   
   protected  ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {
     for(Fact f: factSource){
@@ -102,11 +88,8 @@ protected ExtendedFactCollection categoryClassFacts;
       String currentEntity= f.getArg(1);
       if(processed.contains(currentEntity)) continue;
       Set<String> typesOfCurrentEntity= batch.getArg2s(currentEntity, "rdf:type");
-      System.out.println(f.getArg(1));
-      System.out.println(typesOfCurrentEntity);
-      System.out.println(output);
-      if(output==null) System.out.println();
-      flush(f.getArg(1),typesOfCurrentEntity,  output);
+      System.out.println(currentEntity + " OOOOOOOOOOOOOOOOOOOOOO "+ typesOfCurrentEntity );
+      flush(currentEntity,typesOfCurrentEntity,  output);
       processed.add(currentEntity);
     }
     Announce.doing("Writing hard wired types");
@@ -145,6 +128,7 @@ protected ExtendedFactCollection categoryClassFacts;
   /** Returns the YAGO branch for a an entity */
   public String yagoBranchForEntity(String entity, Set<String> types) {
     IntHashMap<String> branches = new IntHashMap<>();
+
     for (String type : types) {
       String yagoBranch = yagoBranchForClass(type);
       if (yagoBranch != null) {

@@ -59,7 +59,7 @@ public class Dictionary {
       String object = FactComponent.stripQuotes(FactComponent.getString(f.getArg(2)));
       String subject = FactComponent.stripBrackets(f.getArg(1));
 
-      if (subject.equals("Category")) {
+      if (subject.equals("Category") && !catDictionary.containsKey((FactComponent.getLanguage(f.getArg(2))))) {
         catDictionary.put(FactComponent.getLanguage(f.getArg(2)), object);
       }
 

@@ -20,7 +20,7 @@ import basics.Theme.ThemeGroup;
 /**
  * CategoryTranslator - YAGO2s
  * 
- * Translates the categories in for category membership facts in different languages.
+ * Translates the categories (right hand side) in for category membership facts in different languages.
  * 
  * @author Farzaneh Mahdisoltani
  * 
@@ -54,24 +54,11 @@ public class CategoryTranslator extends Extractor{
 //    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
 
     Announce.progressStart("Extracting", 3_900_000);
-
-    /*previouis version*/
-    //    for (Fact fact : categoryPatterns.extract(category, titleEntity)) {
-    //      if (fact != null) {
-    //        write(writers, CATEGORYFACTS_TOREDIRECT, fact, CATEGORYSOURCES, FactComponent.wikipediaURL(titleEntity), "CategoryExtractor");
-    //      }
-    //    }
-
     Map<String, String> rdictionary = Dictionary.get(language);
-   String categoryWord  = Dictionary.getCatDictionary().get(language); //= "Kategorie"; 
-   
-System.out.println("********************* " + categoryWord );
+    String categoryWord  = Dictionary.getCatDictionary().get(language); //= "Kategorie"; 
     for (Fact f : input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language))){
-      
       String entity = f.getArg(1); 
-//          rdictionary.get(FactComponent.stripBrackets(f.getArg(1)));  
       String category = rdictionary.get(categoryWord+":"+FactComponent.stripQuotes(f.getArg(2).replace(" ", "_")));
-   
       if(category == null) 
         continue; 
     
@@ -119,7 +106,7 @@ System.out.println("********************* " + categoryWord );
   }
   
   public static void main(String[] args) throws Exception {
-    new CategoryTranslator("en").extract(new File("D:/data2/yago2s/"),
+    new CategoryTranslator("de").extract(new File("D:/data2/yago2s/"),
         "translating category-memebership facts");
 
   }

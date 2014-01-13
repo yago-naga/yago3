@@ -156,8 +156,12 @@ public class InfoboxMapperEN extends InfoboxMapper{
     Map<String, Set<String>> attributes = new TreeMap<String, Set<String>>();
     String prevEntity = "";
     for (Fact f : input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language))) {
+      System.out.println( "START: " + f);
       String attribute = FactComponent.stripBrackets(FactComponent.stripPrefix(f.getRelation()));
       String value = f.getArgJavaString(2);
+      if (value==null) {
+        continue; 
+      }
 
       if(!f.getArg(1).equals(prevEntity) ){
         processCombinations(prevEntity,attributes, combinations,
@@ -167,7 +171,6 @@ public class InfoboxMapperEN extends InfoboxMapper{
         D.addKeyValue(attributes,attribute,value, TreeSet.class);
       }else{
         D.addKeyValue(attributes,attribute,value, TreeSet.class);
-
       }
 
     }
@@ -278,5 +281,6 @@ public class InfoboxMapperEN extends InfoboxMapper{
     InfoboxMapperEN extractor = new InfoboxMapperEN();
     extractor.extract(new File("D:/data2/yago2s/"),
         "mapping infobox attributes into infobox facts");
+    
   }
 }

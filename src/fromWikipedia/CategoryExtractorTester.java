@@ -1,11 +1,16 @@
 package fromWikipedia;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import fromOtherSources.HardExtractor;
+import fromOtherSources.InterLanguageLinks;
+import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
@@ -24,7 +29,13 @@ public class CategoryExtractorTester extends Extractor{
 	
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(); 
+
+    HashSet<Theme> result = new HashSet<Theme>( 
+        Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, 
+        PatternHardExtractor.TITLEPATTERNS,
+        WordnetExtractor.WORDNETWORDS));
+    return result;
+  
 	}
 
 	@Override
@@ -38,22 +49,20 @@ public class CategoryExtractorTester extends Extractor{
 	}
 
 	@Override
-	public void extract(File inputFolder, String header) throws Exception {    
-	
-		
+	public void extract(File inputFolder, File outputFolder, String header) throws Exception {
 	  for(String s: Extractor.languages){
-	    CategoryExtractor ce = new CategoryExtractor(getInputFile(s));
+	    CategoryExtractor ce = new CategoryExtractor(getInputFile(dataFolder(inputFolder), s));
 	    ce.extract(inputFolder, header);
 	  }
-		
+
 	}
-	public CategoryExtractorTester(File folder, File outputFolder) {
+
+	public CategoryExtractorTester(File folder) {
 	  this.inputFolder = folder;
   }
-	public CategoryExtractorTester(File folder) {
-	  this(folder, folder);
+	public CategoryExtractorTester() {
 	}
-public File getInputFile(String lang){
+public File getInputFile(File inputFolder, String lang){
 	File[] listoffiles = inputFolder.listFiles();
   for(File f: listoffiles){
     if(f.getName().startsWith(lang))
@@ -62,13 +71,21 @@ public File getInputFile(String lang){
   return null;
     
 }
+private static File dataFolder(File testCase) {
+  for (File f : testCase.listFiles()) {
+    if (f.isDirectory() && f.getName().equals("data")) {
+      return f;
+    }
+  }
+  return null;
+}
 	 
 	public static void main(String[] args) throws Exception {
 //		Extractor extractor = Extractor.forName("fromWikipedia.MultiInfoboxExtractorTester", null);
 //		extractor.extract(new File("C:/Users/Administrator/data2/yago2s/"),
 //				"blah blah");
 		File f =  new File("D:/data2/yago2s/input");
-		new CategoryExtractorTester(f).extract( new File("D:/data2/yago2s"), "");
+		new CategoryExtractorTester().extract( new File("D:/data2/yago2s"), "");
 	}
 
   @Override
