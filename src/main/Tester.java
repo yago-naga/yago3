@@ -40,7 +40,7 @@ public class Tester {
 
   /** Runs the tester*/
   public static void main(String[] args) throws Exception {
-    Writer w=new FileWriter(new File("/san/data2/test/yago_test.log"));
+    Writer w=new FileWriter(new File("D:/data2/test/yago_test.log"));
     Announce.setWriter(w);
     Announce.doing("Testing YAGO extractors");
     String initFile = args.length == 0 ? "yago.ini" : args[0];
@@ -73,16 +73,22 @@ public class Tester {
 
   /** Runs a single test*/
   private static void runTest(File testCase, File yagoFolder, File outputFolder) throws Exception {
-    if (!testCase.isDirectory() || testCase.getName().startsWith(".")) return;
+     if (!testCase.isDirectory() || testCase.getName().startsWith(".")) return;
     Announce.doing("Testing", testCase.getName());
     Announce.message(testCase, yagoFolder, outputFolder);
     Extractor extractor = null;
     try {
-      if (inputFolder(testCase) != null) {
+      if (dataFolder(testCase) !=null){
+        extractor = Extractor.forName(testCase.getName(), dataFolder(testCase));
+      }
+      else{
         extractor = Extractor.forName(testCase.getName(), dataFile(testCase));
+      } 
+      if (inputFolder(testCase) != null) {
+        
         extractor.extract(inputFolder(testCase), outputFolder, "Test of YAGO2s");
       } else {
-        extractor = Extractor.forName(testCase.getName(), dataFile(testCase));
+        
         extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
       }
     } catch (Exception e) {
@@ -118,6 +124,14 @@ public class Tester {
   private static File inputFolder(File testCase) {
     for (File f : testCase.listFiles()) {
       if (f.isDirectory() && f.getName().equals("input")) {
+        return f;
+      }
+    }
+    return null;
+  }
+  private static File dataFolder(File testCase) {
+    for (File f : testCase.listFiles()) {
+      if (f.isDirectory() && f.getName().equals("data")) {
         return f;
       }
     }
