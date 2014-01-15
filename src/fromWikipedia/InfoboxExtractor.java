@@ -3,13 +3,11 @@ package fromWikipedia;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
@@ -28,7 +26,6 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
-import basics.N4Writer;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
@@ -36,7 +33,6 @@ import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.TypeChecker;
 
 /**
  * YAGO2s - InfoboxExtractor
@@ -93,6 +89,15 @@ public class InfoboxExtractor extends Extractor {
   @Override
   public Set<Theme> output() {
     return new FinalSet<Theme>( INFOBOXATTS_MAP.get(language), INFOBOXATTSOURCES_MAP.get(language), INFOBOXTYPES_MAP.get(language));
+  }
+  
+  @Override
+  public Set<Extractor> followUp() {
+	if (this.language.equals("en")) {
+	  return new HashSet<Extractor> (Arrays.asList(new InfoboxMapperEN()));
+	} else {
+		return new HashSet<Extractor> (Arrays.asList(new AttributeMatcher(this.language)));
+	}
   }
 
   /** normalizes an attribute name */
@@ -382,8 +387,11 @@ public class InfoboxExtractor extends Extractor {
 //    InfoboxExtractor ie2 = new InfoboxExtractor(new File("D:/ar_wiki.xml"));
 //    ie2.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 //    
-    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wikitest.xml"));
-    ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+//    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wikitest.xml"));
+//    ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+	  
+//    InfoboxExtractor ie3 = new InfoboxExtractor(new File("/home/jbiega/Downloads/elvis.xml"));
+//    ie3.extract(new File("/home/jbiega/data/yago2s/"), "Test on 1 wikipedia article");
     
 //    InfoboxExtractor ie4 = new InfoboxExtractor(new File("D:/fa_wiki.xml"));
 //    ie4.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");

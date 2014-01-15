@@ -80,7 +80,7 @@ public class AttributeMatcher extends Extractor {
 	      HardExtractor.HARDWIREDFACTS, 
 	      WordnetExtractor.WORDNETWORDS,
 	      InterLanguageLinks.INTERLANGUAGELINKS,
-	      InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),
+	      InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"), //Possibly replace by already redirected and typechecked.
 	      InfoboxExtractor.INFOBOXATTS_MAP.get(language)
 	      ));
 	  return result;
@@ -89,6 +89,11 @@ public class AttributeMatcher extends Extractor {
 	@Override
 	public Set<Theme> output() {
 		return new HashSet<>(Arrays.asList(MATCHED_INFOBOXATTS_MAP.get(language),MATCHEDATTSOURCES_MAP.get(language)));
+	}
+	
+	@Override
+	public Set<Extractor> followUp() {
+	  return new HashSet<Extractor>(Arrays.asList(new InfoboxMapperMulti(this.language)));
 	}
 
 	@Override
@@ -410,7 +415,7 @@ public class AttributeMatcher extends Extractor {
 	}
 	
 
-  public AttributeMatcher(String secondLang) throws FileNotFoundException, IOException{
+  public AttributeMatcher(String secondLang) {
     language = secondLang;
   }
   
