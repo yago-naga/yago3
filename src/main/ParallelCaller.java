@@ -189,41 +189,72 @@ public class ParallelCaller {
     }
     List<Extractor> extractors = new ArrayList<Extractor>();
     for (String extractorName : extractorNames) {
-      Extractor e = ParallelCaller.extractorForCall(extractorName);
-      if (e != null) extractors.add(e);
+      List<Extractor> e = ParallelCaller.extractorForCall(extractorName);
+      extractors.addAll(e);
     }
     Announce.done();
     return (extractors);
   }
 
   /** Creates an extractor for a call of the form "extractorName(File)" */
-  public static Extractor extractorForCall(String extractorName) {
+  public static List<Extractor> extractorForCall(String extractorName) {
     if (extractorName == null || extractorName.isEmpty()) return (null);
     Announce.doing("Creating", extractorName);
-    Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z_0-9\\-:/\\.]*)\\)").matcher(extractorName);
+    Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)\\(([A-Za-z_0-9\\-:/\\.]*[\\*]{0,1})\\)").matcher(extractorName);
     if (!m.matches()) {
       Announce.error("Cannot understand extractor call:", extractorName);
       Announce.failed();
       return (null);
     }
+    List<Extractor> extractors = new ArrayList<Extractor>();
     Extractor extractor;
     if (m.group(2) != null && !m.group(2).isEmpty()) {
+    	
       String inputDataFileName = Parameters.get(m.group(2), m.group(2));
-      File inputDataFile = new File(inputDataFileName);
-      if (!inputDataFile.exists()) {
-        Announce.warning("Input data file not found:", inputDataFile);
-        return (null);
+      
+      if (inputDataFileName.endsWith("*")) {
+    	  File inputDataFile = new File(inputDataFileName.substring(0, inputDataFileName.length() - 2));
+    	  
+          if (!inputDataFile.exists() || !inputDataFile.isDirectory()) {
+            Announce.warning("Input directory not found:", inputDataFile);
+            return extractors;
+          }
+          
+          for (File f : inputDataFile.listFiles()) {
+          	extractor = Extractor.forName(m.group(1), f);
+            if (extractor == null) {
+              Announce.failed();
+            } else {
+              extractors.add(extractor);
+            }
+          }
+          
+      } else {
+        File inputDataFile = new File(inputDataFileName);
+        if (!inputDataFile.exists()) {
+          Announce.warning("Input data file not found:", inputDataFile);
+          return extractors;
+        }
+        extractor = Extractor.forName(m.group(1), inputDataFile);
+        if (extractor == null) {
+          Announce.failed();
+//	      return (null);
+        } else {
+        	extractors.add(extractor);
+        }
       }
-      extractor = Extractor.forName(m.group(1), inputDataFile);
+      
     } else {
       extractor = Extractor.forName(m.group(1), null);
-    }
-    if (extractor == null) {
-      Announce.failed();
-      return (null);
+      if (extractor == null) {
+        Announce.failed();
+//        return (null);
+      } else {
+    	  extractors.add(extractor);
+      }
     }
     Announce.done();
-    return (extractor);
+    return (extractors);
   }
 
 }
