@@ -73,7 +73,7 @@ public class ConteXtExtractor extends Extractor {
  public Set<Extractor> followUp() {
    return new HashSet<Extractor>(
        Arrays.asList(
-           (Extractor) new Redirector(DIRTYCONTEXTFACTS, REDIRECTEDCONTEXTFACTS, this), 
+           (Extractor) new Redirector(DIRTYCONTEXTFACTS, REDIRECTEDCONTEXTFACTS, this, decodeLang(this.wikipedia.getName())), 
            (Extractor) new TypeChecker(REDIRECTEDCONTEXTFACTS, CONTEXTFACTS, this)));
  }
 

@@ -29,16 +29,24 @@ import basics.YAGO;
  */
 public abstract class Extractor {
   
-  protected static String[] languages = {"en" , "de" };
-  static Map<String,String> langPostfixes = new HashMap<String, String>();
-  static{
-    for(String s:languages)
-      if(!s.equals("en"))
-        langPostfixes.put(s, "_"+s);
-      else
-        langPostfixes.put(s, "");
-    
-  }
+	protected static String[] languages = {"en" , "de" };
+	static Map<String,String> langPostfixes = new HashMap<String, String>();
+	static{
+		for(String s:languages) {
+			if(!s.equals("en"))
+				langPostfixes.put(s, "_"+s);
+			else
+				langPostfixes.put(s, "");
+		}
+	}
+  
+	/* Finds the language from the name of the input file, 
+	* assuming that the first part of the name before the
+	*  underline is equal to the language */
+	public static String decodeLang(String fileName) {
+		if (!fileName.contains("_")) return "en";
+		return fileName.split("_")[0];
+	}
 
 	/** The themes required */
 	public abstract Set<Theme> input();

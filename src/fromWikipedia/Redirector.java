@@ -25,10 +25,12 @@ import fromWikipedia.Extractor.FollowUpExtractor;
  * 
  */
 public class Redirector extends FollowUpExtractor {
+	
+	private String language;
 
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(checkMe, RedirectExtractor.RAWREDIRECTFACTS, PatternHardExtractor.TITLEPATTERNS,
+		return new HashSet<Theme>(Arrays.asList(checkMe, RedirectExtractor.RAWREDIRECTFACTS_MAP.get(this.language), PatternHardExtractor.TITLEPATTERNS,
 				WordnetExtractor.WORDNETWORDS));
 	}
 
@@ -42,7 +44,7 @@ public class Redirector extends FollowUpExtractor {
 		// Extract the information
 		Map<String, String> redirects = new HashMap<>();
 		Announce.doing("Loading redirects");
-		for (Fact f : input.get(RedirectExtractor.RAWREDIRECTFACTS)) {
+		for (Fact f : input.get(RedirectExtractor.RAWREDIRECTFACTS_MAP.get(this.language))) {
 		  redirects.put(FactComponent.forYagoEntity(FactComponent.asJavaString(f.getArg(2)).replace(' ','_')), f.getArg(1));		  
 		}
 		Announce.done();
@@ -77,16 +79,14 @@ public class Redirector extends FollowUpExtractor {
 		return redirectedFact;
 	}
 
-	public Redirector(Theme in, Theme out, Extractor parent) {
+	public Redirector(Theme in, Theme out, Extractor parent, String lang) {
 		this.checkMe=in;
 		this.checked=out;
 		this.parent=parent;
+		this.language = lang;
 	}
 	
-	public Redirector(Theme in, Theme out) {
-		this.checkMe=in;
-		this.checked=out;
-		this.parent=null;
+	public Redirector(Theme in, Theme out, String lang) {
+		this(in, out, null, lang);
 	}
-
 }

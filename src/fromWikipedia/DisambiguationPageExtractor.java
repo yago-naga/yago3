@@ -47,8 +47,10 @@ public class DisambiguationPageExtractor extends Extractor {
 	
   @Override
  public Set<Extractor> followUp() {
-   return new HashSet<Extractor>(Arrays.asList((Extractor)new Redirector(DIRTYDISAMBIGUATIONMEANSFACTS, REDIRECTEDDISAMBIGUATIONMEANSFACTS, this), 
-       (Extractor)new TypeChecker(REDIRECTEDDISAMBIGUATIONMEANSFACTS, DISAMBIGUATIONMEANSFACTS, this)));
+   return new HashSet<Extractor>(Arrays.asList(
+		   (Extractor)new Redirector(DIRTYDISAMBIGUATIONMEANSFACTS, REDIRECTEDDISAMBIGUATIONMEANSFACTS, this, decodeLang(this.wikipedia.getName())), 
+		   (Extractor)new TypeChecker(REDIRECTEDDISAMBIGUATIONMEANSFACTS, DISAMBIGUATIONMEANSFACTS, this))
+		   );
  }
 
   /** Means facts from disambiguation pages */

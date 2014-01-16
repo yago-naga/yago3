@@ -29,7 +29,7 @@ import basics.Theme;
 import basics.YAGO;
 
 
-public class InfoboxMapperEN extends InfoboxMapper{
+public class InfoboxMapperEN extends InfoboxMapper {
 
   
 //  /** Infobox facts */
@@ -40,7 +40,7 @@ public class InfoboxMapperEN extends InfoboxMapper{
   @Override
   public Set<Extractor> followUp() {
     return new HashSet<Extractor>(Arrays.asList(new Redirector(
-        INFOBOXFACTS_TOREDIRECT_MAP.get(language), INFOBOXFACTS_TOTYPECHECK_MAP.get(language), this),
+        INFOBOXFACTS_TOREDIRECT_MAP.get(language), INFOBOXFACTS_TOTYPECHECK_MAP.get(language), this, this.language),
         new TypeChecker( INFOBOXFACTS_TOTYPECHECK_MAP.get(language), INFOBOXFACTS_MAP.get(language), this)));
   }
 
@@ -272,9 +272,16 @@ public class InfoboxMapperEN extends InfoboxMapper{
 //     File("C:/Users/Administrator/data2/wikipedia/testset/wikitest.xml"))
 //     .extract(new File("C:/Users/Administrator/data2/yago2s/"+mylang),
 //     "Test on 1 wikipedia article");
-    InfoboxMapperEN extractor = new InfoboxMapperEN();
-    extractor.extract(new File("D:/data2/yago2s/"),
-        "mapping infobox attributes into infobox facts");
+//    InfoboxMapperEN extractor = new InfoboxMapperEN();
+//    extractor.extract(new File("D:/data2/yago2s/"),
+//        "mapping infobox attributes into infobox facts");
+//      InfoboxMapperEN extractor = new InfoboxMapperEN();
+//      extractor.extract(new File("/home/jbiega/data/yago2s/"),
+//          "mapping infobox attributes into infobox facts");
+//    
+//      for (Extractor e : extractor.followUp()) {
+//    	  e.extract(new File("/home/jbiega/data/yago2s/"), "test");
+//      }
     
   }
 }

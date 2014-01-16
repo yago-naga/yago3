@@ -49,7 +49,7 @@ public class StructureExtractor extends Extractor {
 	@Override
   public Set<Extractor> followUp() {
     return new HashSet<Extractor>(Arrays.asList(
-        new Redirector(DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS, this),
+        new Redirector(DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS, this, decodeLang(this.wikipedia.getName())),
         new TypeChecker(REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS, this)));
   }
 

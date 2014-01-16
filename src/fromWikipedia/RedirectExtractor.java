@@ -34,21 +34,26 @@ public class RedirectExtractor extends Extractor {
 
 	/** Input file */
 	private File wikipedia;
+	
+	private String language;
 
-  @Override
-  public File inputDataFile() {   
-    return wikipedia;
-  }
+    @Override
+    public File inputDataFile() {   
+      return wikipedia;
+    }
 
 	private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
+   
+	public static final HashMap<String, Theme> RAWREDIRECTFACTS_MAP = new HashMap<String, Theme>();
 
-	 /** Redirect facts from Wikipedia redirect pages */
-  public static final Theme RAWREDIRECTFACTS = new Theme("redirectFacts",
-      "Redirect facts from Wikipedia redirect pages");
-
-  /** Redirect facts from Wikipedia redirect pages as YAGO facts */
- public static final Theme REDIRECTLABELS = new Theme("redirectLabels",
-     "Redirect facts from Wikipedia redirect pages");
+	public static final HashMap<String, Theme> REDIRECTLABELS_MAP = new HashMap<String, Theme>();
+   
+	static {
+		for (String s : Extractor.languages) {
+			RAWREDIRECTFACTS_MAP.put(s, new Theme("redirectFacts" +  Extractor.langPostfixes.get(s), "Redirect facts from Wikipedia redirect pages"));
+			REDIRECTLABELS_MAP.put(s, new Theme("redirectLabels" +  Extractor.langPostfixes.get(s), "Redirect facts from Wikipedia redirect pages"));
+		}
+	}
 
 	@Override
 	public Set<Theme> input() {
@@ -58,12 +63,12 @@ public class RedirectExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(RAWREDIRECTFACTS);
+		return new FinalSet<Theme>(RAWREDIRECTFACTS_MAP.get(this.language));
 	}
 
 	@Override
 	public Set<Extractor> followUp() {	
-	  return new HashSet<Extractor>(Arrays.asList(new TypeChecker(RAWREDIRECTFACTS, REDIRECTLABELS, this)));
+	  return new HashSet<Extractor>(Arrays.asList(new TypeChecker(RAWREDIRECTFACTS_MAP.get(this.language), REDIRECTLABELS_MAP.get(this.language), this)));
 	}
 	
 	@Override
@@ -98,7 +103,7 @@ public class RedirectExtractor extends Extractor {
 			}
 		}
 
-		FactWriter out = output.get(RAWREDIRECTFACTS);
+		FactWriter out = output.get(RAWREDIRECTFACTS_MAP.get(this.language));
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
 			out.write(new Fact(FactComponent.forYagoEntity(redirect.getValue().replace(' ','_')), "<redirectedFrom>", FactComponent.forStringWithLanguage(redirect.getKey(),"eng")));
@@ -124,6 +129,11 @@ public class RedirectExtractor extends Extractor {
 	 *            Wikipedia XML dump
 	 */
 	public RedirectExtractor(File wikipedia) {
+		this(wikipedia, decodeLang(wikipedia.getName()));
+	}
+	
+	public RedirectExtractor(File wikipedia, String lang) {
 		this.wikipedia = wikipedia;
+		this.language = lang;
 	}
 }

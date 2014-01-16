@@ -40,7 +40,7 @@ public class LabelExtractor extends SimpleDeduplicator {
         InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),
         PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
-        WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS,
+        WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS_MAP.get("en"),
         GeoNamesDataImporter.GEONAMESMAPPEDDATA);
   }
 

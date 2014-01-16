@@ -366,15 +366,6 @@ public class InfoboxExtractor extends Extractor {
     this(wikipedia, decodeLang(wikipedia.getName()));
   }
 
-  /* Finds the language from the name of the input file, 
-   * assuming that the first part of the name before the
-   *  underline is equal to the language */
-  public static String decodeLang(String fileName) {
-    if (!fileName.contains("_")) return "en";
-    return fileName.split("_")[0];
-
-  }
-
   public static void main(String[] args) throws Exception {
     //    Announce.setLevel(Announce.Level.DEBUG);
     //    new PatternHardExtractor(new File("C:/Users/Administrator/data")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "test");
@@ -390,7 +381,7 @@ public class InfoboxExtractor extends Extractor {
 //    InfoboxExtractor ie3 = new InfoboxExtractor(new File("D:/de_wikitest.xml"));
 //    ie3.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
 	  
-//    InfoboxExtractor ie3 = new InfoboxExtractor(new File("/home/jbiega/Downloads/elvis.xml"));
+//    InfoboxExtractor ie3 = new InfoboxExtractor(new File("/home/jbiega/Downloads/wiki.xml"));
 //    ie3.extract(new File("/home/jbiega/data/yago2s/"), "Test on 1 wikipedia article");
     
 //    InfoboxExtractor ie4 = new InfoboxExtractor(new File("D:/fa_wiki.xml"));
