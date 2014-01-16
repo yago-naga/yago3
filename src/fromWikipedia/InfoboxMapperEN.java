@@ -18,6 +18,7 @@ import javatools.parsers.Char;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.Redirector;
 import fromThemes.TypeChecker;
 import basics.Fact;
 import basics.FactCollection;

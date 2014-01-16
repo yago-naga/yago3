@@ -35,6 +35,7 @@ import basics.YAGO;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.Redirector;
 import fromThemes.TypeChecker;
 
 /**

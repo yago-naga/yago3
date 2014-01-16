@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import fromThemes.Redirector;
 import fromThemes.TypeChecker;
 
 import javatools.administrative.Announce;

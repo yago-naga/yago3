@@ -21,6 +21,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.PatternHardExtractor;
+import fromThemes.Redirector;
 import fromThemes.TransitiveTypeExtractor;
 import fromThemes.TypeChecker;
 

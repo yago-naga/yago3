@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -15,6 +15,8 @@ import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromWikipedia.Extractor;
+import fromWikipedia.RedirectExtractor;
 import fromWikipedia.Extractor.FollowUpExtractor;
 
 /**

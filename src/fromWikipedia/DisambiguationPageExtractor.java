@@ -21,6 +21,7 @@ import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.Redirector;
 import fromThemes.TypeChecker;
 
 /**
