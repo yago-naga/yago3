@@ -76,18 +76,20 @@ public class RedirectExtractor extends Extractor {
 
 		String titleEntity = null;
 		redirect: while (true) {
-			switch (FileLines.findIgnoreCase(in, "<title>", "#REDIRECT")) {
+			switch (FileLines.findIgnoreCase(in, "<title>", "<redirect")) {
 			case -1:
 				Announce.done();
 				in.close();
 				break redirect;
 			case 0:
-        titleEntity = FileLines.readToBoundary(in, "</title>");
+				titleEntity = FileLines.readToBoundary(in, "</title>");
 				break;
 			default:
 				if (titleEntity == null)
 					continue;
+				FileLines.readTo(in, "[[").toString().trim();
 				String redirect = FileLines.readTo(in, "]]").toString().trim();
+				redirect = "[[" + redirect;
 				String redirectTarget = getRedirectTarget(redirect);
 
 				if (redirectTarget != null) {
