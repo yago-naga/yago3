@@ -106,7 +106,10 @@ public class RedirectExtractor extends Extractor {
 		FactWriter out = output.get(RAWREDIRECTFACTS_MAP.get(this.language));
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
-			out.write(new Fact(FactComponent.forYagoEntity(redirect.getValue().replace(' ','_')), "<redirectedFrom>", FactComponent.forStringWithLanguage(redirect.getKey(),"eng")));
+			out.write(new Fact(
+					FactComponent.forYagoEntity(redirect.getValue().replace(' ','_')), 
+					"<redirectedFrom>", 
+					FactComponent.forStringWithLanguage(redirect.getKey(), this.language.equals("en") ? "eng" : this.language)));
 		}
 		
 		Announce.done();
