@@ -80,7 +80,7 @@ public class AttributeMatcher extends Extractor {
 	      HardExtractor.HARDWIREDFACTS, 
 	      WordnetExtractor.WORDNETWORDS,
 	      InterLanguageLinks.INTERLANGUAGELINKS,
-	      InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"), //Possibly replace by already redirected and typechecked.
+	      InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
 	      InfoboxExtractor.INFOBOXATTS_MAP.get(language)
 	      ));
 	  return result;
