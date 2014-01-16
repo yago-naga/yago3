@@ -86,7 +86,7 @@ public class CategoryMatcher extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-    rdictionary = Dictionary.get(language);
+    rdictionary = InterlanguageLinksDictionary.get(language);
     statistics = new HashMap<String, Map<String,Pair <Integer,Integer>>>();
     ExtendedFactCollection enFactCollection = getFactCollection(input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get("en")));
 

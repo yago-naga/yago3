@@ -21,7 +21,7 @@ import basics.FactSource;
  * 
  */
 
-public class Dictionary {
+public class InterlanguageLinksDictionary {
 
   private static Map<String, Map<String, String>> rdictionaries = new HashMap<String, Map<String, String>>();
 
@@ -105,7 +105,7 @@ public class Dictionary {
   }
 
   public static void main(String[] args) throws FileNotFoundException, IOException {
-    Dictionary d = new Dictionary();
+    InterlanguageLinksDictionary d = new InterlanguageLinksDictionary();
     d.buildReverseDictionary("en");
   }
   

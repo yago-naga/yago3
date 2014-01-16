@@ -65,7 +65,7 @@ public class InfoboxMapperMulti extends InfoboxMapper{
   Map<String, String> rdictionary = new HashMap<String, String>();
  
  for (Fact f : input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language))) {
-   rdictionary = Dictionary.get(language);
+   rdictionary = InterlanguageLinksDictionary.get(language);
    String subjects = rdictionary.get(FactComponent.stripBrackets(f.getArg(1)));
    Set<String> yagoRelations = matchings.get(f.getRelation());
 

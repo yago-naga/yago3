@@ -55,8 +55,8 @@ public class InfoboxTypeTranslator extends Extractor{
 
     Announce.progressStart("Extracting", 3_900_000);
 
-    Map<String, String> rdictionary = Dictionary.get(language);
-    String infoboxWord = Dictionary.getInfDictionary().get(language);
+    Map<String, String> rdictionary = InterlanguageLinksDictionary.get(language);
+    String infoboxWord = InterlanguageLinksDictionary.getInfDictionary().get(language);
 
     for (Fact f : input.get(InfoboxExtractor.INFOBOXTYPES_MAP.get(language))){
       

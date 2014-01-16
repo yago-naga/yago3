@@ -27,7 +27,7 @@ public class EntityTranslator extends Extractor {
     for(String s:Extractor.languages){
       if(s.equals("en")) continue; 
         try {
-          allDictionaries.put( s, Dictionary.get(s));
+          allDictionaries.put( s, InterlanguageLinksDictionary.get(s));
         } catch (IOException e) {
           e.printStackTrace();
         }

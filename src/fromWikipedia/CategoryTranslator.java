@@ -54,8 +54,8 @@ public class CategoryTranslator extends Extractor{
 //    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
 
     Announce.progressStart("Extracting", 3_900_000);
-    Map<String, String> rdictionary = Dictionary.get(language);
-    String categoryWord  = Dictionary.getCatDictionary().get(language); //= "Kategorie"; 
+    Map<String, String> rdictionary = InterlanguageLinksDictionary.get(language);
+    String categoryWord  = InterlanguageLinksDictionary.getCatDictionary().get(language); //= "Kategorie"; 
     for (Fact f : input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language))){
       String entity = f.getArg(1); 
       String category = rdictionary.get(categoryWord+":"+FactComponent.stripQuotes(f.getArg(2).replace(" ", "_")));

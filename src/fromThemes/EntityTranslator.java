@@ -14,7 +14,7 @@ import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
-import fromWikipedia.Dictionary;
+import fromWikipedia.InterlanguageLinksDictionary;
 import fromWikipedia.Extractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.WikipediaTypeExtractor;
@@ -31,7 +31,7 @@ public class EntityTranslator extends Extractor {
     for(String s:Extractor.languages){
       if(s.equals("en")) continue; 
         try {
-          allDictionaries.put( s, Dictionary.get(s));
+          allDictionaries.put( s, InterlanguageLinksDictionary.get(s));
         } catch (IOException e) {
           e.printStackTrace();
         }
