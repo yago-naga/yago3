@@ -36,18 +36,12 @@ public class InfoboxMapperEN extends InfoboxMapper{
 //  public static final Theme INFOBOXFACTS_TOREDIRECT = new Theme(
 //      "infoboxFactsToBeRedirected_en",
 //      "Facts extracted from the Wikipedia infoboxes, redirects to be resolved");
-
-  /** Infobox facts */
-  public static final Theme INFOBOXFACTS_TOTYPECHECK = new Theme(
-      "infoboxFactsToBeTypeChecked",
-      "Facts extracted from the Wikipedia infoboxes, redirects resolved, to be type checked");
-  
   
   @Override
   public Set<Extractor> followUp() {
     return new HashSet<Extractor>(Arrays.asList(new Redirector(
-        INFOBOXFACTS_TOREDIRECT_MAP.get(language), INFOBOXFACTS_TOTYPECHECK, this),
-        new TypeChecker(INFOBOXFACTS_TOTYPECHECK, INFOBOXFACTS_TOREDIRECT_MAP.get(language), this)));
+        INFOBOXFACTS_TOREDIRECT_MAP.get(language), INFOBOXFACTS_TOTYPECHECK_MAP.get(language), this),
+        new TypeChecker( INFOBOXFACTS_TOTYPECHECK_MAP.get(language), INFOBOXFACTS_MAP.get(language), this)));
   }
 
 

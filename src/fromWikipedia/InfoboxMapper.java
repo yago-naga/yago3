@@ -42,14 +42,18 @@ import fromThemes.TypeChecker;
 
 public abstract class InfoboxMapper extends Extractor {
 	
-	protected String language; 
+  protected String language; 
   public static final HashMap<String, Theme> INFOBOXFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>();
+  public static final HashMap<String, Theme> INFOBOXFACTS_TOTYPECHECK_MAP = new HashMap<String, Theme>();
+  public static final HashMap<String, Theme> INFOBOXFACTS_MAP = new HashMap<String, Theme>();
   public static final HashMap<String, Theme> INFOBOXSOURCES_MAP = new HashMap<String, Theme>();
   
   
   static {
     for (String s : Extractor.languages) {
       INFOBOXFACTS_TOREDIRECT_MAP.put(s, new Theme("infoboxFactsToBeRedirected" + Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
+      INFOBOXFACTS_TOTYPECHECK_MAP.put(s, new Theme("infoboxFactsToBeTypechecked" + Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
+      INFOBOXFACTS_MAP.put(s, new Theme("infoboxFacts" + Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
       INFOBOXSOURCES_MAP.put(s, new Theme("infoboxSources" + Extractor.langPostfixes.get(s), "Sources of infobox", ThemeGroup.OTHER));
     }
 
