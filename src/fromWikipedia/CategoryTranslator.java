@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import fromOtherSources.InterLanguageLinks;
 import fromOtherSources.PatternHardExtractor;
 import basics.Fact;
 import basics.FactComponent;
@@ -20,7 +20,7 @@ import basics.Theme.ThemeGroup;
 /**
  * CategoryTranslator - YAGO2s
  * 
- * Translates the categories (right hand side) in for category membership facts in different languages.
+ * Translates the categories (right hand side) for category membership facts in different languages.
  * 
  * @author Farzaneh Mahdisoltani
  * 
@@ -39,8 +39,11 @@ public class CategoryTranslator extends Extractor{
   
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, 
-        PatternHardExtractor.TITLEPATTERNS, CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)));
+    return new TreeSet<Theme>(Arrays.asList(
+        InterLanguageLinks.INTERLANGUAGELINKS,
+        PatternHardExtractor.CATEGORYPATTERNS, 
+        PatternHardExtractor.TITLEPATTERNS, 
+        CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)));
   }
 
   @Override
@@ -54,8 +57,8 @@ public class CategoryTranslator extends Extractor{
 //    FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),   "<_categoryPattern>");
 
     Announce.progressStart("Extracting", 3_900_000);
-    Map<String, String> rdictionary = InterlanguageLinksDictionary.get(language);
-    String categoryWord  = InterlanguageLinksDictionary.getCatDictionary().get(language); //= "Kategorie"; 
+    Map<String, String> rdictionary = InterLanguageLinksDictionary.get(language, input.get( InterLanguageLinks.INTERLANGUAGELINKS));
+    String categoryWord  = InterLanguageLinksDictionary.getCatDictionary(input.get( InterLanguageLinks.INTERLANGUAGELINKS)).get(language); //= "Kategorie"; 
     for (Fact f : input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language))){
       String entity = f.getArg(1); 
       String category = rdictionary.get(categoryWord+":"+FactComponent.stripQuotes(f.getArg(2).replace(" ", "_")));

@@ -1,41 +1,20 @@
 package fromWikipedia;
 
-import java.io.File;
-import java.io.IOException;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
-
-import javatools.administrative.Announce;
-import javatools.administrative.D;
-import javatools.parsers.Char;
-import utils.PatternList;
-import utils.TermExtractor;
-import utils.TitleExtractor;
-import basics.Fact;
-import basics.FactCollection;
-import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
-import basics.RDFS;
 import basics.Theme;
-import basics.YAGO;
 import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.TypeChecker;
 
 /**
  * Class InfoboxMapper - YAGO2S
  * 
- * 
+ * Maps the facts in the output of InfoboxExtractor 
+ * for non-English languages.
  * 
  * @author Farzaneh Mahdisoltani
  */
@@ -59,23 +38,14 @@ public abstract class InfoboxMapper extends Extractor {
 
   }
 
-//	public static final Theme INFOBOXFACTS = new Theme("infoboxFactsToBeRedirected", "Facts of infobox");
-//	public static final Theme INFOBOXSOURCES = new Theme("infoboxSources", "Sources for facts of inforbox");
-
-
-
-
 	@Override
 	public Set<Theme> input() {
-		// return new HashSet<>(Arrays.asList(InfoboxExtractor.INFOBOXATTS));
-		// //new finalset
-		return new HashSet<Theme>(
-		    Arrays.asList(
+		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
 				HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOXATTS_MAP.get(language),
 				WordnetExtractor.WORDNETWORDS,
-				PatternHardExtractor.TITLEPATTERNS)
-				);
+				PatternHardExtractor.TITLEPATTERNS
+				));
 
 	}
 

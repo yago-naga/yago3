@@ -1,12 +1,11 @@
 package fromWikipedia;
 
 import java.io.File;
-import java.io.IOException;
-import java.util.HashMap;
+import java.util.Arrays;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
+import fromOtherSources.InterLanguageLinks;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
@@ -15,29 +14,26 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 
+/**
+ * EntityTranslator - YAGO2s
+ * 
+ * Translates the subjects (left hand side) of the input themes to the most English language.
+ * 
+ * @author Farzaneh Mahdisoltani
+ * 
+ */
 
 public class EntityTranslator extends Extractor {
 
   
   public static final Theme TRANSLATEDFACTS = new Theme("translatedFacts", "");
   
-  
-  private static Map<String, Map<String, String>> allDictionaries = new HashMap<String, Map<String, String>>(); 
-  static{
-    for(String s:Extractor.languages){
-      if(s.equals("en")) continue; 
-        try {
-          allDictionaries.put( s, InterlanguageLinksDictionary.get(s));
-        } catch (IOException e) {
-          e.printStackTrace();
-        }
-    }
-  }
-  
   @Override
   public Set<Theme> input() {
-    Set<Theme> result = new TreeSet<Theme>();
-    result.add(InfoboxExtractor.INFOBOXTYPES_MAP.get("en"));
+    Set<Theme> result = new TreeSet<Theme>(Arrays.asList(
+        InterLanguageLinks.INTERLANGUAGELINKS,
+        InfoboxExtractor.INFOBOXTYPES_MAP.get("en")
+        ));
     for (String s : Extractor.languages) {
       result.add(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s));
       result.add(InfoboxTypeTranslator.INFOBOXTYPETRANSLATEDFACTS_MAP.get(s));
@@ -61,18 +57,15 @@ public class EntityTranslator extends Extractor {
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     FactCollection translatedFacts = new FactCollection();
-    int count=0;
     for(Fact f: new FactCollection(input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en")))){
-      count++;
       translatedFacts.add(f);
     }
     for(Fact f: new FactCollection(input.get(InfoboxExtractor.INFOBOXTYPES_MAP.get("en")))){
-      count++;
       translatedFacts.add(f);
     }
     for(String s:Extractor.languages){
       if(s.equals("en")) continue;
-      Map<String, String> tempDictionary= allDictionaries.get(s);
+      Map<String, String> tempDictionary= InterLanguageLinksDictionary.get(s, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
       FactCollection temp = new FactCollection();
       loadFacts(input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s)), temp);
       loadFacts(input.get(InfoboxTypeTranslator.INFOBOXTYPETRANSLATEDFACTS_MAP.get(s)), temp);
@@ -88,14 +81,9 @@ public class EntityTranslator extends Extractor {
 //        if(tempDictionary.containsKey( FactComponent.stripBrackets(f.getArg(2)))){
 //          translatedObject = tempDictionary.get(FactComponent.stripBrackets(f.getArg(2)));
 //        }
-        
         translatedFacts.add(new Fact (FactComponent.forYagoEntity(translatedSubject),  f.getRelation(), FactComponent.forYagoEntity((f.getArg(2)))));
-
-        
-
       }
     }
-   System.out.println("OOOOOOOOOOOOOOOOOOOOOOOO " + count) ;
     
     
     for(Fact fact:translatedFacts){

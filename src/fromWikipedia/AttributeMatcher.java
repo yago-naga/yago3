@@ -76,13 +76,17 @@ public class AttributeMatcher extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-	  HashSet<Theme> result = new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, 
-	      HardExtractor.HARDWIREDFACTS, 
-	      WordnetExtractor.WORDNETWORDS,
-	      InterLanguageLinks.INTERLANGUAGELINKS,
-	      InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
-	      InfoboxExtractor.INFOBOXATTS_MAP.get(language)
-	      ));
+	  HashSet<Theme> result = new HashSet<Theme>(
+	      Arrays.asList(
+	          InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),
+	          InterLanguageLinks.INTERLANGUAGELINKS,
+	          PatternHardExtractor.INFOBOXPATTERNS, 
+	          HardExtractor.HARDWIREDFACTS, 
+	          WordnetExtractor.WORDNETWORDS,
+	          InterLanguageLinks.INTERLANGUAGELINKS,
+	          InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
+	          InfoboxExtractor.INFOBOXATTS_MAP.get(language)
+	          ));
 	  return result;
 	}
 
@@ -98,7 +102,7 @@ public class AttributeMatcher extends Extractor {
 
 	@Override
 	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-	  rdictionary = InterlanguageLinksDictionary.get(language);
+	  rdictionary = InterLanguageLinksDictionary.get(language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
 	  statistics = new HashMap<String, Map<String,Pair <Integer,Integer>>>();
 	  FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 	  Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(input);
@@ -429,9 +433,9 @@ public class AttributeMatcher extends Extractor {
 
 
     Announce.setLevel(Level.MESSAGES);
-//    new AttributeMatcher(mylang)
-//    .extract(new File("D:/data2/yago2s"), 
-//        "mapping infobox attributes in different languages");
+    new AttributeMatcher(mylang)
+    .extract(new File("D:/data2/yago2s"), 
+        "mapping infobox attributes in different languages");
     
 //    new AttributeMatcher(mylang)
 //    .extract(new File("/home/jbiega/data/yago2s"), 

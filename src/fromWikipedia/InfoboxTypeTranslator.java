@@ -6,9 +6,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import fromOtherSources.InterLanguageLinks;
 import fromOtherSources.PatternHardExtractor;
 import basics.Fact;
 import basics.FactComponent;
@@ -26,7 +26,6 @@ import basics.Theme.ThemeGroup;
  * 
  */
 
-
 public class InfoboxTypeTranslator extends Extractor{
 
   private String language;
@@ -40,8 +39,12 @@ public class InfoboxTypeTranslator extends Extractor{
   
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, 
-        PatternHardExtractor.TITLEPATTERNS, InfoboxExtractor.INFOBOXTYPES_MAP.get(language)));
+    return new TreeSet<Theme>(Arrays.asList(
+        InterLanguageLinks.INTERLANGUAGELINKS,
+        PatternHardExtractor.CATEGORYPATTERNS, 
+        PatternHardExtractor.TITLEPATTERNS, 
+        InfoboxExtractor.INFOBOXTYPES_MAP.get(language)
+        ));
   }
 
   @Override
@@ -55,8 +58,8 @@ public class InfoboxTypeTranslator extends Extractor{
 
     Announce.progressStart("Extracting", 3_900_000);
 
-    Map<String, String> rdictionary = InterlanguageLinksDictionary.get(language);
-    String infoboxWord = InterlanguageLinksDictionary.getInfDictionary().get(language);
+    Map<String, String> rdictionary = InterLanguageLinksDictionary.get(language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
+    String infoboxWord = InterLanguageLinksDictionary.getInfDictionary( input.get(InterLanguageLinks.INTERLANGUAGELINKS)).get(language);
 
     for (Fact f : input.get(InfoboxExtractor.INFOBOXTYPES_MAP.get(language))){
       

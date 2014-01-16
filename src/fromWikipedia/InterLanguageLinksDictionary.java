@@ -1,12 +1,9 @@
 package fromWikipedia;
 
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-
-import fromOtherSources.InterLanguageLinks;
 import javatools.administrative.Announce;
 import basics.Fact;
 import basics.FactComponent;
@@ -16,21 +13,21 @@ import basics.FactSource;
  * Dictionary - YAGO2s
  * 
  * Useful to build different dictionaries out of INTERLANGUAGELINKS.
+ * Attention: Every Extractor that uses this dictionary, should have 
+ * INTERLANGUAGELINKS as one of the inputs. 
  * 
  * @author Farzaneh Mahdisoltani
  * 
  */
 
-public class InterlanguageLinksDictionary {
+public class InterLanguageLinksDictionary {
 
   private static Map<String, Map<String, String>> rdictionaries = new HashMap<String, Map<String, String>>();
 
   private static Map<String, String> catDictionary = new HashMap<String, String>();
   private static Map<String, String> infDictionary = new HashMap<String, String>();
 
-  private static FactSource fs = FactSource.from(InterLanguageLinks.INTERLANGUAGELINKS.file(new File("D:/data2/yago2s")));
-
-  private static Map<String, String> buildReverseDictionary(String secondLang) throws FileNotFoundException, IOException {
+  private static Map<String, String> buildReverseDictionary(String secondLang, FactSource fs) throws FileNotFoundException, IOException {
     Map<String, String> rdictionary = new HashMap<String, String>();
     for (Fact f : fs) {
       if (FactComponent.getLanguage(f.getArg(2)).equals(secondLang)) {
@@ -52,7 +49,7 @@ public class InterlanguageLinksDictionary {
 
   }
 
-  private static Map<String, String> buildCatDictionary() throws FileNotFoundException, IOException {
+  private static Map<String, String> buildCatDictionary(FactSource fs) throws FileNotFoundException, IOException {
     catDictionary = new HashMap<String, String>();
     for (Fact f : fs) {
 
@@ -67,7 +64,7 @@ public class InterlanguageLinksDictionary {
     return catDictionary;
   }
   
-  private static Map<String, String> buildInfDictionary() throws FileNotFoundException, IOException {
+  private static Map<String, String> buildInfDictionary(FactSource fs) throws FileNotFoundException, IOException {
     infDictionary = new HashMap<String, String>();
     for (Fact f : fs) {
 
@@ -82,31 +79,27 @@ public class InterlanguageLinksDictionary {
     return infDictionary;
   }
 
-  public static synchronized Map<String, String> get(String secondLang) throws FileNotFoundException, IOException {
+  public static synchronized Map<String, String> get(String secondLang, FactSource fs) throws FileNotFoundException, IOException {
 
     if (!rdictionaries.containsKey(secondLang)) {
-      rdictionaries.put(secondLang, buildReverseDictionary(secondLang));
+      rdictionaries.put(secondLang, buildReverseDictionary(secondLang, fs));
     }
     return (rdictionaries.get(secondLang));
   }
 
-  public static synchronized Map<String, String> getCatDictionary() throws FileNotFoundException, IOException {
+  public static synchronized Map<String, String> getCatDictionary(FactSource fs) throws FileNotFoundException, IOException {
     if (catDictionary.isEmpty()) {
-      buildCatDictionary();
+      buildCatDictionary(fs);
     }
     return catDictionary;
   }
 
-  public static synchronized Map<String, String> getInfDictionary() throws FileNotFoundException, IOException {
+  public static synchronized Map<String, String> getInfDictionary(FactSource fs) throws FileNotFoundException, IOException {
     if (infDictionary.isEmpty()) {
-      buildInfDictionary();
+      buildInfDictionary(fs);
     }
     return infDictionary;
   }
 
-  public static void main(String[] args) throws FileNotFoundException, IOException {
-    InterlanguageLinksDictionary d = new InterlanguageLinksDictionary();
-    d.buildReverseDictionary("en");
-  }
   
 }

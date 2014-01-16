@@ -69,7 +69,9 @@ public class CategoryMatcher extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    HashSet<Theme> result = new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, 
+    HashSet<Theme> result = new HashSet<Theme>(Arrays.asList(
+        InterLanguageLinks.INTERLANGUAGELINKS,
+        PatternHardExtractor.INFOBOXPATTERNS, 
         HardExtractor.HARDWIREDFACTS, 
         WordnetExtractor.WORDNETWORDS,
         InterLanguageLinks.INTERLANGUAGELINKS,
@@ -86,7 +88,7 @@ public class CategoryMatcher extends Extractor {
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-    rdictionary = InterlanguageLinksDictionary.get(language);
+    rdictionary = InterLanguageLinksDictionary.get(language, input.get( InterLanguageLinks.INTERLANGUAGELINKS));
     statistics = new HashMap<String, Map<String,Pair <Integer,Integer>>>();
     ExtendedFactCollection enFactCollection = getFactCollection(input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get("en")));
 
