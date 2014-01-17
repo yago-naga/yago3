@@ -29,7 +29,7 @@ import basics.Theme;
  * @author Farzaneh Mahdisoltani
  */
 
-public class InfoboxMapperMulti extends InfoboxMapper{
+public class InfoboxMapperMulti extends InfoboxMapper {
   
   @Override
   public Set<Theme> input() {
