@@ -19,6 +19,7 @@ import basics.Theme.ThemeGroup;
 import basics.YAGO;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
+import fromWikipedia.TypeCoherenceChecker;
 import fromWikipedia.WikiInfoExtractor;
 import fromWikipedia.WikipediaTypeExtractor;
 
@@ -34,7 +35,7 @@ public class StatisticsExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"), FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
+    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, TypeCoherenceChecker.YAGOTYPES, FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
         MetaFactExtractor.YAGOMETAFACTS, SchemaExtractor.YAGOSCHEMA, LiteralFactExtractor.YAGOLITERALFACTS, 
         WordnetExtractor.WORDNETIDS, WikiInfoExtractor.WIKIINFO);
   }

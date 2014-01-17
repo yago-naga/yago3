@@ -18,6 +18,7 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import fromWikipedia.Extractor;
+import fromWikipedia.TypeCoherenceChecker;
 import fromWikipedia.WikipediaTypeExtractor;
 
 /**
@@ -37,11 +38,11 @@ public class TransitiveTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"));
+    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, TypeCoherenceChecker.YAGOTYPES);
   }
 
   /** All type facts*/
-  public static final Theme TRANSITIVETYPE = new Theme("yagoTransitiveType", "Transitive closure of all rdf:type/rdfs:subClassOf facts",
+  public static final Theme TRANSITIVETYPE = new Theme("Type", "Transitive closure of all rdf:type/rdfs:subClassOf facts",
       ThemeGroup.TAXONOMY);
 
   @Override
@@ -54,7 +55,7 @@ public class TransitiveTypeExtractor extends Extractor {
     FactCollection classes = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY),true);
     yagoTaxonomy = new HashMap<>();
     Announce.doing("Computing the transitive closure");
-    for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"))) {
+    for (Fact f : input.get(TypeCoherenceChecker.YAGOTYPES)) {
       if (f.getRelation().equals(RDFS.type)) {
         D.addKeyValue(yagoTaxonomy, f.getArg(1), f.getArg(2), TreeSet.class);
         for (String c : classes.superClasses(f.getArg(2))) {
@@ -106,6 +107,6 @@ public class TransitiveTypeExtractor extends Extractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new TransitiveTypeExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
+    new TransitiveTypeExtractor().extract(new File("D:/data2/yago2s"), "test");
   }
 }

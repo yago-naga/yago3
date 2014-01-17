@@ -8,6 +8,7 @@ import java.util.Map;
 import java.util.Set;
 
 import fromWikipedia.Extractor;
+import fromWikipedia.TypeCoherenceChecker;
 import fromWikipedia.WikipediaTypeExtractor;
 
 
@@ -30,7 +31,7 @@ public class SimpleTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"), ClassExtractor.YAGOTAXONOMY);
+    return new FinalSet<>(TypeCoherenceChecker.YAGOTYPES, ClassExtractor.YAGOTAXONOMY);
   }
 
   /** The theme of simple types*/
@@ -53,7 +54,7 @@ public class SimpleTypeExtractor extends Extractor {
     FactCollection taxonomy = new FactCollection(input.get(ClassExtractor.YAGOTAXONOMY),true);
     Set<String> leafClasses = new HashSet<>();
     Announce.doing("Loading YAGO types");
-    for (Fact f : input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en"))) {
+    for (Fact f : input.get(TypeCoherenceChecker.YAGOTYPES)) {
       if (!f.getRelation().equals(RDFS.type)) continue;
       String clss = f.getArg(2);
       if (clss.startsWith("<wikicategory")) clss = taxonomy.getArg2(clss, RDFS.subclassOf);
@@ -100,7 +101,7 @@ public class SimpleTypeExtractor extends Extractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new SimpleTypeExtractor().extract(new File("c:/fabian/data/yago2s"), "test\n");
+    new SimpleTypeExtractor().extract(new File("D:/data2/yago2s"), "test\n");
   }
 
 }
