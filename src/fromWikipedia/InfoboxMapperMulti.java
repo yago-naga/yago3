@@ -1,7 +1,9 @@
 package fromWikipedia;
 
 import java.io.File;
+import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -12,6 +14,8 @@ import utils.TermExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.InterLanguageLinks;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.Redirector;
+import fromThemes.TypeChecker;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -37,6 +41,13 @@ public class InfoboxMapperMulti extends InfoboxMapper {
     temp.add(InterLanguageLinks.INTERLANGUAGELINKS);
     temp.add(AttributeMatcher.MATCHED_INFOBOXATTS_MAP.get(language));
     return temp;
+  }
+  
+  @Override
+  public Set<Extractor> followUp() {
+    return new HashSet<Extractor>(Arrays.asList(new Redirector(
+        INFOBOXFACTS_TOREDIRECT_MAP.get(language), INFOBOXFACTS_TOTYPECHECK_MAP.get(language), this, this.language),
+        new TypeChecker( INFOBOXFACTS_TOTYPECHECK_MAP.get(language), INFOBOXFACTS_MAP.get(language), this)));
   }
   
   public static Map<String, Set<String>> infoboxMatchings(FactCollection facts) {
