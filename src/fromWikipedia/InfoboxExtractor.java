@@ -33,6 +33,7 @@ import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.AttributeRedirector;
 
 /**
  * YAGO2s - InfoboxExtractor
@@ -51,6 +52,8 @@ public class InfoboxExtractor extends Extractor {
   private String language;
 
   public static final HashMap<String, Theme> INFOBOXATTS_MAP = new HashMap<String, Theme>();
+  
+  public static final HashMap<String, Theme> INFOBOXATTS_REDIRECTED_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> INFOBOXATTSOURCES_MAP = new HashMap<String, Theme>();
   
@@ -61,6 +64,7 @@ public class InfoboxExtractor extends Extractor {
   static {
     for (String s : Extractor.languages) {
       INFOBOXATTS_MAP.put(s, new Theme("yagoInfoboxAttributes" +  Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
+      INFOBOXATTS_REDIRECTED_MAP.put(s, new Theme("infoboxAttributesRedirected" +  Extractor.langPostfixes.get(s), "Redirected facts of infobox", ThemeGroup.OTHER));
       INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources" +  Extractor.langPostfixes.get(s), "Sources for facts of infobox", ThemeGroup.OTHER));
       INFOBOXTYPES_MAP.put(s, new Theme("infoboxTypes" +  Extractor.langPostfixes.get(s), "Types of infoboxes", ThemeGroup.OTHER));
     }
@@ -96,7 +100,9 @@ public class InfoboxExtractor extends Extractor {
 	if (this.language.equals("en")) {
 	  return new HashSet<Extractor> (Arrays.asList(new InfoboxMapperEN()));
 	} else {
-		return new HashSet<Extractor> (Arrays.asList(new AttributeMatcher(this.language)));
+		return new HashSet<Extractor> (Arrays.asList(
+				new AttributeRedirector(INFOBOXATTS_MAP.get(this.language), INFOBOXATTS_REDIRECTED_MAP.get(this.language), this.language),
+				new AttributeMatcher(this.language)));
 	}
   }
 

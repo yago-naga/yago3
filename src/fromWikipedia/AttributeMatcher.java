@@ -78,14 +78,13 @@ public class AttributeMatcher extends Extractor {
 	public Set<Theme> input() {
 	  HashSet<Theme> result = new HashSet<Theme>(
 	      Arrays.asList(
-	          InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),
+	          InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
 	          InterLanguageLinks.INTERLANGUAGELINKS,
 	          PatternHardExtractor.INFOBOXPATTERNS, 
 	          HardExtractor.HARDWIREDFACTS, 
 	          WordnetExtractor.WORDNETWORDS,
 	          InterLanguageLinks.INTERLANGUAGELINKS,
-	          InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
-	          InfoboxExtractor.INFOBOXATTS_MAP.get(language)
+	          InfoboxExtractor.INFOBOXATTS_REDIRECTED_MAP.get(language)
 	          ));
 	  return result;
 	}
@@ -432,14 +431,14 @@ public class AttributeMatcher extends Extractor {
     //	    new WordnetExtractor(new File("C:/Users/Administrator/Dropbox/workspace/yago2s/data/wordnet")).extract(new File("C:/Users/Administrator/Dropbox/data/yago2s/"+mylang), "This time its gonna work!");
 
 
-    Announce.setLevel(Level.MESSAGES);
-    new AttributeMatcher(mylang)
-    .extract(new File("D:/data2/yago2s"), 
-        "mapping infobox attributes in different languages");
-    
+//    Announce.setLevel(Level.MESSAGES);
 //    new AttributeMatcher(mylang)
-//    .extract(new File("/home/jbiega/data/yago2s"), 
+//    .extract(new File("D:/data2/yago2s"), 
 //        "mapping infobox attributes in different languages");
+//    
+	new AttributeMatcher(mylang)
+	.extract(new File("/home/jbiega/data/yago2s"), 
+        "mapping infobox attributes in different languages");
   } 
 
 
