@@ -64,7 +64,7 @@ public class Redirector extends FollowUpExtractor {
 		Announce.done();
 	}
 
-	private Fact redirectArguments(Fact dirtyFact, Map<String, String> redirects) {
+	protected Fact redirectArguments(Fact dirtyFact, Map<String, String> redirects) {
 		String redirectedArg1 = dirtyFact.getArg(1);
 		if (redirects.containsKey(dirtyFact.getArg(1))) {
 			redirectedArg1 = redirects.get(dirtyFact.getArg(1));
