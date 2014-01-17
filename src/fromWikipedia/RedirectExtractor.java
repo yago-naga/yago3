@@ -92,10 +92,9 @@ public class RedirectExtractor extends Extractor {
 			default:
 				if (titleEntity == null)
 					continue;
-				FileLines.readTo(in, "[[").toString().trim();
-				String redirect = FileLines.readTo(in, "]]").toString().trim();
-				redirect = "[[" + redirect;
-				String redirectTarget = getRedirectTarget(redirect);
+				FileLines.readTo(in, "<text");
+				String redirectText = FileLines.readTo(in, "</text>").toString().trim();
+				String redirectTarget = getRedirectTarget(redirectText);
 
 				if (redirectTarget != null) {
 					redirects.put(titleEntity, redirectTarget);
@@ -139,4 +138,9 @@ public class RedirectExtractor extends Extractor {
 		this.wikipedia = wikipedia;
 		this.language = lang;
 	}
+	
+	public static void main(String[] args) throws Exception {
+	    Announce.setLevel(Announce.Level.DEBUG);
+	    new RedirectExtractor(new File("/home/jbiega/Downloads/redirect.xml")).extract(new File("/home/jbiega/data/yago2s"), "Test on 1 wikipedia article");
+	  }
 }
