@@ -56,10 +56,6 @@ public class AttributeRedirector extends Redirector {
 			redirectedArg2 = redirectedArg2.replace(found, updatedFound);
 		}
 		
-//		if (redirects.containsKey(dirtyFact.getArg(2))) {
-//			redirectedArg2 = redirects.get(dirtyFact.getArg(2));
-//		}
-
 		Fact redirectedFact = new Fact(redirectedArg1, dirtyFact.getRelation(), redirectedArg2);
 		redirectedFact.makeId();
 
