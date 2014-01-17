@@ -42,8 +42,9 @@ import fromThemes.SimpleTypeExtractor;
  * WikipediaTypeExtractor - YAGO2s
  * 
  * Extracts types from categories and infoboxes
+ * for English.
  * 
- * @author Fabian
+ * @author Farzaneh Mahdisoltani
  * 
  */
 public class WikipediaTypeExtractorEN extends WikipediaTypeExtractor {

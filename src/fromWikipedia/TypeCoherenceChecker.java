@@ -6,7 +6,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromThemes.SimpleTypeExtractor;
@@ -42,9 +41,9 @@ public class TypeCoherenceChecker extends Extractor {
  
 
   /** All types of YAGO */
-  public static final Theme COHERENTTYPES = new Theme("cohrenetTypes",
+  public static final Theme YAGOTYPES = new Theme("yagoTypes",
       "The coherent types extracted from different wikipedias");
-  public static final Theme COHERENTTYPESSOURCES = new Theme("cohrenetTypesSources",
+  public static final Theme YAGOTYPESSOURCES = new Theme("yagoTypesSources",
       "Sources for the coherent types extracted from different wikipedias");
 
   /** Caches the YAGO branches*/
@@ -81,22 +80,20 @@ protected ExtendedFactCollection categoryClassFacts;
       loadFacts(input.get(WikipediaTypeExtractor.WIKIPEDIACLASSES_MAP.get(s)), categoryClassFacts);
     }
     
-    FactWriter w = output.get(COHERENTTYPES);
+    FactWriter w = output.get(YAGOTYPES);
     Set<String> processed = new TreeSet<String>();
     for (Fact f : batch){
       
       String currentEntity= f.getArg(1);
       if(processed.contains(currentEntity)) continue;
       Set<String> typesOfCurrentEntity= batch.getArg2s(currentEntity, "rdf:type");
-      System.out.println(currentEntity + " OOOOOOOOOOOOOOOOOOOOOO "+ typesOfCurrentEntity );
       flush(currentEntity,typesOfCurrentEntity,  output);
       processed.add(currentEntity);
     }
     Announce.doing("Writing hard wired types");
     for (Fact f : input.get(HardExtractor.HARDWIREDFACTS)) {
       if (f.getRelation().equals(RDFS.type)) 
-//        output.get(COHERENTTYPES).write(f);
-      write(output,COHERENTTYPES, f, COHERENTTYPESSOURCES, FactComponent.wikipediaURL(f.getArg(1)),
+      write(output,YAGOTYPES, f, YAGOTYPESSOURCES, FactComponent.wikipediaURL(f.getArg(1)),
           "WikipediaTypeExtractor from category");
     }
     Announce.done();
@@ -161,7 +158,7 @@ public void flush(String entity, Set<String> types, Map<Theme, FactWriter> write
 //      writers.get(COHERENTTYPES).write( new Fact(entity, RDFS.type, type));
      
     
-      write(writers, COHERENTTYPES, new Fact(entity, RDFS.type, type), COHERENTTYPESSOURCES, FactComponent.wikipediaURL(entity),
+      write(writers, YAGOTYPES, new Fact(entity, RDFS.type, type), YAGOTYPESSOURCES, FactComponent.wikipediaURL(entity),
           "WikipediaTypeExtractor from category");
     }
   }
@@ -178,7 +175,7 @@ public void flush(String entity, Set<String> types, Map<Theme, FactWriter> write
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(COHERENTTYPES, COHERENTTYPESSOURCES);
+    return new FinalSet<Theme>(YAGOTYPES, YAGOTYPESSOURCES);
  
   }
 

@@ -9,6 +9,15 @@ import basics.ExtendedFactCollection;
 import basics.FactSource;
 import basics.Theme;
 
+/**
+ * WikipediaTypeExtractor - YAGO2s
+ * 
+ * Extracts types from categories and infoboxes
+ * for non-English Languages
+ * 
+ * @author Farzaneh Mahdisoltani
+ * 
+ */
 
 public class WikipediaTypeExtractorMulti extends WikipediaTypeExtractor {
 

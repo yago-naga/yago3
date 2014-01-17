@@ -35,7 +35,7 @@ public class EntityTranslator extends Extractor {
         InfoboxExtractor.INFOBOXTYPES_MAP.get("en")
         ));
     for (String s : Extractor.languages) {
-      result.add(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s));
+      result.add(WikipediaTypeExtractor.RAWTYPES_MAP.get(s));
       result.add(InfoboxTypeTranslator.INFOBOXTYPETRANSLATEDFACTS_MAP.get(s));
     }
     return result;
@@ -57,7 +57,7 @@ public class EntityTranslator extends Extractor {
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     FactCollection translatedFacts = new FactCollection();
-    for(Fact f: new FactCollection(input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get("en")))){
+    for(Fact f: new FactCollection(input.get(WikipediaTypeExtractor.RAWTYPES_MAP.get("en")))){
       translatedFacts.add(f);
     }
     for(Fact f: new FactCollection(input.get(InfoboxExtractor.INFOBOXTYPES_MAP.get("en")))){
@@ -67,7 +67,7 @@ public class EntityTranslator extends Extractor {
       if(s.equals("en")) continue;
       Map<String, String> tempDictionary= InterLanguageLinksDictionary.get(s, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
       FactCollection temp = new FactCollection();
-      loadFacts(input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s)), temp);
+      loadFacts(input.get(WikipediaTypeExtractor.RAWTYPES_MAP.get(s)), temp);
       loadFacts(input.get(InfoboxTypeTranslator.INFOBOXTYPETRANSLATEDFACTS_MAP.get(s)), temp);
       for(Fact f: temp){
 

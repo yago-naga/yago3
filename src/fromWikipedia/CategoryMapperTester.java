@@ -52,9 +52,12 @@ public class CategoryMapperTester extends Extractor {
   
   @Override
   public void extract(File inputFolder, File outputFolder, String header) throws Exception {
+    CategoryMapperEN ecm = new CategoryMapperEN();
+    ecm.extract(inputFolder, "Test on English wikipedia sample");
     for(String s: Extractor.languages){
-      CategoryMapper cm = new CategoryMapper(s);
-      cm.extract(inputFolder, "Test on wikipedia article");
+      if(s.equals("en")) continue; 
+      CategoryMapperMulti cm = new CategoryMapperMulti(s);
+      cm.extract(inputFolder, "Test on non-English wikipedia sample");
     }
     
   }

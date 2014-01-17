@@ -1,8 +1,6 @@
 package fromWikipedia;
 
-import java.io.File;
 import java.io.IOException;
-import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -13,16 +11,11 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
-import javatools.administrative.Announce.Level;
 import javatools.datatypes.FinalSet;
-import javatools.datatypes.IntHashMap;
-import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
-import javatools.util.FileUtils;
-import utils.TitleExtractor;
 import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactCollection;
@@ -32,11 +25,9 @@ import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import basics.YAGO;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.SimpleTypeExtractor;
 
 /**
  * WikipediaTypeExtractor - YAGO2s
@@ -52,15 +43,15 @@ public abstract class WikipediaTypeExtractor extends Extractor {
   /** Sources for category facts*/
   public static final HashMap<String, Theme> WIKIPEDIATYPESOURCES_MAP = new HashMap<String, Theme>();
   /** Types deduced from categories */
-  public static final HashMap<String, Theme> YAGOTYPES_MAP = new HashMap<String, Theme>();
+  public static final HashMap<String, Theme> RAWTYPES_MAP = new HashMap<String, Theme>();
   /** Classes deduced from categories */
   public static final HashMap<String, Theme> WIKIPEDIACLASSES_MAP = new HashMap<String, Theme>();
   
   
   static {
     for (String s : Extractor.languages) {
-      WIKIPEDIATYPESOURCES_MAP.put(s, new Theme("wikipediaTypeSources" + Extractor.langPostfixes.get(s), "The sources of category type facts"));
-      YAGOTYPES_MAP.put(s, new Theme("yagoTypes"+ Extractor.langPostfixes.get(s), "All rdf:type facts of YAGO", ThemeGroup.TAXONOMY) );
+      WIKIPEDIATYPESOURCES_MAP.put(s, new Theme("rawTypeSources" + Extractor.langPostfixes.get(s), "The sources of category type facts"));
+      RAWTYPES_MAP.put(s, new Theme("rawTypes"+ Extractor.langPostfixes.get(s), "All rdf:type facts of YAGO", ThemeGroup.TAXONOMY) );
       WIKIPEDIACLASSES_MAP.put(s, new Theme("wikipediaClasses"+Extractor.langPostfixes.get(s),
           "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves"));
     }
@@ -76,7 +67,7 @@ public abstract class WikipediaTypeExtractor extends Extractor {
   
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(WIKIPEDIATYPESOURCES_MAP.get(language), YAGOTYPES_MAP.get(language), WIKIPEDIACLASSES_MAP.get(language));
+    return new FinalSet<Theme>(WIKIPEDIATYPESOURCES_MAP.get(language), RAWTYPES_MAP.get(language), WIKIPEDIACLASSES_MAP.get(language));
   }
   
   
@@ -271,7 +262,7 @@ public abstract class WikipediaTypeExtractor extends Extractor {
       return;
     }
     for (String type : types) {
-        write(writers, YAGOTYPES_MAP.get(language), new Fact(entity, RDFS.type, type), WIKIPEDIATYPESOURCES_MAP.get(language), FactComponent.wikipediaURL(entity),
+        write(writers, RAWTYPES_MAP.get(language), new Fact(entity, RDFS.type, type), WIKIPEDIATYPESOURCES_MAP.get(language), FactComponent.wikipediaURL(entity),
             "WikipediaTypeExtractor from category");
     }
     types.clear();
