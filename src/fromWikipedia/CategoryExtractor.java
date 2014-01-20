@@ -21,6 +21,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromOtherSources.InterLanguageLinks;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 
@@ -51,7 +52,12 @@ public class CategoryExtractor extends Extractor {
   
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
+    return new TreeSet<Theme>(Arrays.asList(
+        PatternHardExtractor.CATEGORYPATTERNS,
+        PatternHardExtractor.TITLEPATTERNS, 
+        WordnetExtractor.WORDNETWORDS,
+        InterLanguageLinks.INTERLANGUAGELINKS
+        ));
   }
 
   @Override
@@ -70,8 +76,8 @@ public class CategoryExtractor extends Extractor {
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
     while (true) {
-      //TODO: for the word category in all languages
-      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:" , "[[Kategorie:"/*,"#REDIRECT"*/)) {
+      String categoryWord  = InterLanguageLinksDictionary.getCatDictionary(input.get( InterLanguageLinks.INTERLANGUAGELINKS)).get(language); 
+      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:" , "[["+categoryWord /*"[[Kategorie:","#REDIRECT"*/)) {
         case -1:
           Announce.progressDone();
           in.close();
