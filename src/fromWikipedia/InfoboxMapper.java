@@ -30,9 +30,9 @@ public abstract class InfoboxMapper extends Extractor {
   
   static {
     for (String s : Extractor.languages) {
-      INFOBOXFACTS_TOREDIRECT_MAP.put(s, new Theme("infoboxFactsToBeRedirected" + Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
-      INFOBOXFACTS_TOTYPECHECK_MAP.put(s, new Theme("infoboxFactsToBeTypechecked" + Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
-      INFOBOXFACTS_MAP.put(s, new Theme("infoboxFacts" + Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
+      INFOBOXFACTS_TOREDIRECT_MAP.put(s, new Theme("infoboxFactsToBeRedirected" + Extractor.langPostfixes.get(s), "Facts of infobox, still to be redirected and type-checked", ThemeGroup.OTHER));
+      INFOBOXFACTS_TOTYPECHECK_MAP.put(s, new Theme("infoboxFactsToBeTypechecked" + Extractor.langPostfixes.get(s), "Facts of infobox, redirected, still to be type-checked", ThemeGroup.OTHER));
+      INFOBOXFACTS_MAP.put(s, new Theme("infoboxFacts" + Extractor.langPostfixes.get(s), "Facts of infobox, redirected and type-checked", ThemeGroup.OTHER));
       INFOBOXSOURCES_MAP.put(s, new Theme("infoboxSources" + Extractor.langPostfixes.get(s), "Sources of infobox", ThemeGroup.OTHER));
     }
 
