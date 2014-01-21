@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -63,6 +64,17 @@ public class CategoryExtractor extends Extractor {
   @Override
   public Set<Theme> output() {
     return new FinalSet<Theme>(CATEGORYMEMBSOURCES_MAP.get(language), CATEGORYMEMBERSHIP_MAP.get(language));
+  }
+  
+  @Override
+  public Set<Extractor> followUp() {
+	if (this.language.equals("en")) {
+	  return new HashSet<Extractor> (Arrays.asList(new CategoryMapperEN()));
+	} else {
+	  return new HashSet<Extractor> (Arrays.asList(
+				new CategoryTranslator(this.language),
+				new CategoryMapperMulti(this.language)));
+	}
   }
 
   @Override
