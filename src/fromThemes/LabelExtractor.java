@@ -49,7 +49,7 @@ public class LabelExtractor extends SimpleDeduplicator {
       "<hasFamilyName>", "<hasGloss>", "<redirectedFrom>");
 
   /** All facts of YAGO */
-  public static final Theme YAGOLABELS = new Theme("yagoLabels", "All facts of YAGO that contain labels (rdfs:label, skos:prefLabel, isPreferredMeaningOf, hasGivenName, hasFamilyName, hasGloss)", ThemeGroup.CORE);
+  public static final Theme YAGOLABELS = new Theme("yagoLabels", "All facts of YAGO that contain labels (rdfs:label, skos:prefLabel, isPreferredMeaningOf, hasGivenName, hasFamilyName, hasGloss, redirectedFrom)", ThemeGroup.CORE);
 
   @Override
   public Theme myOutput() {   
