@@ -102,7 +102,8 @@ public class InfoboxExtractor extends Extractor {
 	} else {
 		return new HashSet<Extractor> (Arrays.asList(
 				new AttributeRedirector(INFOBOXATTS_MAP.get(this.language), INFOBOXATTS_REDIRECTED_MAP.get(this.language), this.language),
-				new AttributeMatcher(this.language)));
+				new AttributeMatcher(this.language),
+				new InfoboxTypeTranslator(this.language)));
 	}
   }
 
