@@ -160,7 +160,6 @@ public class CategoryMatcher extends Extractor {
       for (File factsFile : yagoFolder.listFiles()) {
         
         if (factsFile.getName().endsWith("Facts.ttl")) {
-          System.out.println("loading "+factsFile.getName());
           N4Reader nr = new N4Reader(FileUtils.getBufferedUTF8Reader(factsFile));
           while(nr.hasNext()){
             Fact f = nr.next();

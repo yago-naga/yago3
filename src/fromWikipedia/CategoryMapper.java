@@ -96,7 +96,6 @@ public class CategoryMapper extends Extractor {
         String temp= f.getArg(2);
         if(f.getArg(2).contains("_")){
           temp =  f.getArg(2).replace("_", " ");
-          System.out.println(temp + "***************");
         }
         for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(temp),f.getArg(1))){
           if(fact!=null){

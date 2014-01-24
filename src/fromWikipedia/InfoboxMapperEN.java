@@ -151,7 +151,6 @@ public class InfoboxMapperEN extends InfoboxMapper {
     Map<String, Set<String>> attributes = new TreeMap<String, Set<String>>();
     String prevEntity = "";
     for (Fact f : input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language))) {
-      System.out.println( "START: " + f);
       String attribute = FactComponent.stripBrackets(FactComponent.stripPrefix(f.getRelation()));
       String value = f.getArgJavaString(2);
       if (value==null) {

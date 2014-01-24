@@ -217,7 +217,6 @@ public class AttributeMatcher extends Extractor {
 	    for (File factsFile : yagoFolder.listFiles()) {
 	      
 	      if (factsFile.getName().endsWith("Facts.ttl")) {
-	        System.out.println("loading "+factsFile.getName());
 	        N4Reader nr = new N4Reader(FileUtils.getBufferedUTF8Reader(factsFile));
 	        while(nr.hasNext()){
 	          Fact f = nr.next();
@@ -329,7 +328,6 @@ public class AttributeMatcher extends Extractor {
 	}
 
 	public double dateSim(String s1, String s2){
-		System.out.println(s1 + " " + s2);
 		String[] date1 = s1.split("-");
 		String[] date2 = s2.split("-");
 		float sum=0;
@@ -339,7 +337,6 @@ public class AttributeMatcher extends Extractor {
 			sum += (Integer.parseInt(date1[1]) - Integer.parseInt(date2[1]))*30 ;
 		if(isNumeric(date1[2]) && isNumeric(date2[2]))
 			sum += (Integer.parseInt(date1[1]) - Integer.parseInt(date2[1]));
-		System.out.println(sum);
 		if(sum<366)
 			return 1;
 
