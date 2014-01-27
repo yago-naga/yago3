@@ -69,7 +69,9 @@ public class CategoryExtractor extends Extractor {
   @Override
   public Set<Extractor> followUp() {
 	if (this.language.equals("en")) {
-	  return new HashSet<Extractor> (Arrays.asList(new CategoryMapperEN()));
+	  return new HashSet<Extractor> (Arrays.asList(
+			  new CategoryTranslator(this.language),
+			  new CategoryMapperEN()));
 	} else {
 	  return new HashSet<Extractor> (Arrays.asList(
 				new CategoryTranslator(this.language),

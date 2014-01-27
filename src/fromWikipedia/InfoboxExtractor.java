@@ -99,6 +99,7 @@ public class InfoboxExtractor extends Extractor {
   public Set<Extractor> followUp() {
 	if (this.language.equals("en")) {
 	  return new HashSet<Extractor> (Arrays.asList(new InfoboxMapperEN(), 
+			  new InfoboxTypeTranslator(this.language),
 			  new WikipediaTypeExtractorEN()));
 	} else {
 		return new HashSet<Extractor> (Arrays.asList(
