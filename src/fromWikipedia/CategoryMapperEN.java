@@ -45,16 +45,19 @@ public class CategoryMapperEN extends CategoryMapper{
     Announce.progressStart("Extracting", 3_900_000);
       for (Fact f : input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language))){
         for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(f.getArg(2)),f.getArg(1))){
-          write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+          if (fact != null) {
+            write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
+          }
         }
       }
-
   }
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
     CategoryMapperEN extractor = new CategoryMapperEN();
-    extractor.extract(new File("D:/data2/yago2s/"),
+//    extractor.extract(new File("D:/data2/yago2s/"),
+//        "mapping infobox attributes into infobox facts");
+    extractor.extract(new File("/home/jbiega/data/yago2s/"),
         "mapping infobox attributes into infobox facts");
   }
   
