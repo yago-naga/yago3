@@ -42,7 +42,7 @@ public class TransitiveTypeExtractor extends Extractor {
   }
 
   /** All type facts*/
-  public static final Theme TRANSITIVETYPE = new Theme("Type", "Transitive closure of all rdf:type/rdfs:subClassOf facts",
+  public static final Theme TRANSITIVETYPE = new Theme("yagoTransitiveType", "Transitive closure of all rdf:type/rdfs:subClassOf facts",
       ThemeGroup.TAXONOMY);
 
   @Override
