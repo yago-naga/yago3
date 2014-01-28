@@ -91,7 +91,7 @@ public class CategoryExtractor extends Extractor {
     String titleEntity = null;
     while (true) {
       String categoryWord  = InterLanguageLinksDictionary.getCatDictionary(input.get( InterLanguageLinks.INTERLANGUAGELINKS)).get(language); 
-      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:" , "[["+categoryWord /*"[[Kategorie:","#REDIRECT"*/)) {
+      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:" , "[[" + categoryWord + ":"  /*"[[Kategorie:","#REDIRECT"*/)) {
         case -1:
           Announce.progressDone();
           in.close();
@@ -147,6 +147,9 @@ public class CategoryExtractor extends Extractor {
 //    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
 //    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
     //new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
-    new CategoryExtractor(new File("D:/de_wikitest.xml")).extract(new File("D:/data2/yago2s"), "Test on 1 wikipedia article");
+//    new CategoryExtractor(new File("D:/de_wikitest.xml")).extract(new File("D:/data2/yago2s"), "Test on 1 wikipedia article");
+    new CategoryExtractor(new File("/home/jbiega/Downloads/wiki.xml")).extract(new File("/home/jbiega/data/yago2s"), "Test on 1 wikipedia article");
+
   }
+  
 }
