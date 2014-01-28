@@ -105,9 +105,9 @@ public class AttributeMatcher extends Extractor {
 	  statistics = new HashMap<String, Map<String,Pair <Integer,Integer>>>();
 	  FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
 	  Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(input);
-	  ExtendedFactCollection myFactCollection = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en")));
+	  ExtendedFactCollection myFactCollection = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_MAP.get("en")));
 	  //	  		ExtendedFactCollection myFactCollection = getFactCollection(new File("D:/yago2s_ttl"));
-	  FactSource lang2FactSource= input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language));
+	  FactSource lang2FactSource= input.get(InfoboxExtractor.INFOBOXATTS_REDIRECTED_MAP.get(language));
 
 	  Announce.progressStart("Running through "+language+" Wikipedia", 12713794); 
 	  int lang2FactSourceSize = 0;
