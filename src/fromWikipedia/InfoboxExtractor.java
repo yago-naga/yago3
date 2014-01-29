@@ -95,8 +95,10 @@ public class InfoboxExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>( INFOBOXATTS_MAP.get(language), INFOBOXATTSOURCES_MAP.get(language), 
-        INFOBOXTYPES_MAP.get(language), INFOBOXATTS_REDIRECTED_MAP.get(language));
+    return new FinalSet<Theme>(
+    		INFOBOXATTS_MAP.get(language), 
+    		INFOBOXATTSOURCES_MAP.get(language), 
+    		INFOBOXTYPES_MAP.get(language));
   }
   
   @Override
