@@ -1,6 +1,8 @@
 package fromThemes;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -33,11 +35,11 @@ public class ClassExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-	FinalSet<Theme> input = new FinalSet<>(
+	  HashSet<Theme> input = new HashSet<Theme>(Arrays.asList(
 			HardExtractor.HARDWIREDFACTS,         
 	        WordnetExtractor.WORDNETCLASSES
 	        //GeoNamesClassMapper.GEONAMESCLASSES
-	        );
+	        ));
 	for (String lang : Extractor.languages) {
 		input.add(WikipediaTypeExtractor.WIKIPEDIACLASSES_MAP.get(lang));
 	}
