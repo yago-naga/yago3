@@ -79,18 +79,18 @@
 "playForNation3"	<_infoboxPattern>	<playsFor> .
 
 
-"-office"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office0"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office1"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office2"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office3"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office4"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office5"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office6"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office7"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office8"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office9"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
-"-office10"	<_infoboxPattern>	<holdsPoliticalPosition;occursSince;occursUntil;hasPredecessor;hasSuccessor> .
+"-office"	<_infoboxPattern>	<holdsPoliticalPositionoccurs,Since,occursUntil,hasPredecessor,hasSuccessor> .
+"-office0"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office1"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office2"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office3"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office4"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office5"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office6"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office7"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office8"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office9"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
+"-office10"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
 
 #-----For Binary T-facts-----
 "establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .

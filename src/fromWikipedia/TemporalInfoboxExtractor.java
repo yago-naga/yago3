@@ -164,7 +164,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 			FactCollection factCollection, Map<Theme, FactWriter> writers,
 			PatternList replacements) throws IOException {
 		// If the relation is for a combined attribute
-		if (relation.contains(";")) {
+		if (relation.contains(",")) {
 			extractMetaFact(entity, valueString, relation, preferredMeanings,
 					factCollection, writers, replacements);
 		} else {
@@ -308,7 +308,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 			PatternList replacements) throws IOException {
 		Fact baseFact = new Fact("", "", "");
 		valueString = valueString.replaceAll("\\t\\t", "\tNULL\t");
-		String[] relations = relation.split(";");
+		String[] relations = relation.split(",");
 		String values[] = valueString.split("\\t");
 
 		for (int i = 0; i < relations.length; i++) {
@@ -517,10 +517,11 @@ public class TemporalInfoboxExtractor extends Extractor {
 
 	public static void main(String[] args) throws Exception {
 	    Announce.setLevel(Announce.Level.DEBUG);
-	    new PatternHardExtractor(new File("./data")).extract(new File("/var/tmp/test/facts"), "test");
-	    new HardExtractor(new File("./basics2s/data")).extract(new File("/var/tmp/test/facts"), "test");
+//	    new PatternHardExtractor(new File("./data")).extract(new File("/var/tmp/test/facts"), "test");
+//	    new HardExtractor(new File("./basics2s/data")).extract(new File("/var/tmp/test/facts"), "test");
 //	    new TemporalInfoboxExtractor(new File("/var/tmp/test/wikitest.xml")).extract(new File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
-	    new TemporalInfoboxExtractor(new File("/var/tmp/Wikipedia_Archive/DavidBeckham.xml")).extract(new File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
+//	    new TemporalInfoboxExtractor(new File("/var/tmp/Wikipedia_Archive/DavidBeckham.xml")).extract(new File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
+	    new TemporalInfoboxExtractor(new File("/home/jbiega/Downloads/wiki.xml")).extract(new File("/home/jbiega/data/yago2s"), "Test on 1 wikipedia article");
 
 	}
 }
