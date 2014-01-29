@@ -86,13 +86,17 @@ public class InfoboxExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS,
+    return new HashSet<Theme>(Arrays.asList(
+        PatternHardExtractor.INFOBOXPATTERNS, 
+        PatternHardExtractor.TITLEPATTERNS, 
+        HardExtractor.HARDWIREDFACTS,
         WordnetExtractor.WORDNETWORDS));
   }
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>( INFOBOXATTS_MAP.get(language), INFOBOXATTSOURCES_MAP.get(language), INFOBOXTYPES_MAP.get(language));
+    return new FinalSet<Theme>( INFOBOXATTS_MAP.get(language), INFOBOXATTSOURCES_MAP.get(language), 
+        INFOBOXTYPES_MAP.get(language), INFOBOXATTS_REDIRECTED_MAP.get(language));
   }
   
   @Override
@@ -382,8 +386,12 @@ public class InfoboxExtractor extends Extractor {
     //    new HardExtractor(new File("C:/Users/Administrator/Dropbox/workspace/basics2s/data/")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "test");
     //    new WordnetExtractor(new File("C:/Users/Administrator/data/wordnet")).extract(new File("C:/Users/Administrator/data2/yago2s/"), "This time its gonna work!");
     //    
-//    InfoboxExtractor ie1 = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
-//    ie1.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+    InfoboxExtractor ie1 = new InfoboxExtractor(new File("D:/en_wikitest.xml"));
+    ie1.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
+    
+    for (Extractor e : ie1.followUp()) {
+      e.extract(new File("D:/data2/yago2s/"), "test");
+    }
 
 //    InfoboxExtractor ie2 = new InfoboxExtractor(new File("D:/ar_wiki.xml"));
 //    ie2.extract(new File("D:/data2/yago2s/"), "Test on 1 wikipedia article");
