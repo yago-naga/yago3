@@ -52,7 +52,7 @@ public abstract class InfoboxMapper extends Extractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new HashSet<>(Arrays.asList(INFOBOXFACTS_TOREDIRECT_MAP.get(language),
+		return new HashSet<>(Arrays.asList(INFOBOXFACTS_TOREDIRECT_MAP.get(language),INFOBOXFACTS_TOTYPECHECK_MAP.get(language),
 				INFOBOXSOURCES_MAP.get(language)));
 	}
 	
