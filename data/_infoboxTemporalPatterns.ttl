@@ -79,7 +79,7 @@
 "playForNation3"	<_infoboxPattern>	<playsFor> .
 
 
-"-office"	<_infoboxPattern>	<holdsPoliticalPositionoccurs,Since,occursUntil,hasPredecessor,hasSuccessor> .
+"-office"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
 "-office0"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
 "-office1"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
 "-office2"	<_infoboxPattern>	<holdsPoliticalPosition,occursSince,occursUntil,hasPredecessor,hasSuccessor> .
