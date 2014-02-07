@@ -141,6 +141,6 @@ public class RedirectExtractor extends Extractor {
 	
 	public static void main(String[] args) throws Exception {
 	    Announce.setLevel(Announce.Level.DEBUG);
-	    new RedirectExtractor(new File("/home/jbiega/Downloads/redirect.xml")).extract(new File("/home/jbiega/data/yago2s"), "Test on 1 wikipedia article");
+	    new RedirectExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
 	  }
 }

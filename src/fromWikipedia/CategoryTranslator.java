@@ -43,7 +43,7 @@ public class CategoryTranslator extends Extractor{
         InterLanguageLinks.INTERLANGUAGELINKS,
         PatternHardExtractor.CATEGORYPATTERNS, 
         PatternHardExtractor.TITLEPATTERNS, 
-        CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)));
+        CategoryExtractor.CATEGORYMEMBERSHIPTRANSLATED_MAP.get(language)));
   }
 
   @Override
@@ -59,9 +59,12 @@ public class CategoryTranslator extends Extractor{
     Announce.progressStart("Extracting", 3_900_000);
     Map<String, String> rdictionary = InterLanguageLinksDictionary.get(language, input.get( InterLanguageLinks.INTERLANGUAGELINKS));
     String categoryWord  = InterLanguageLinksDictionary.getCatDictionary(input.get( InterLanguageLinks.INTERLANGUAGELINKS)).get(language); //= "Kategorie"; 
-    for (Fact f : input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language))){
+    for (Fact f : input.get(CategoryExtractor.CATEGORYMEMBERSHIPTRANSLATED_MAP.get(language))){
+      System.out.println(f);
       String entity = f.getArg(1); 
-      String category = rdictionary.get(categoryWord+":"+FactComponent.stripQuotes(f.getArg(2).replace(" ", "_")));
+      System.out.println("OOOOOOOOOOOOOOOOOOOOOOOOOOOOO " + categoryWord+":"+FactComponent.stripBrackets(f.getArg(2).replace(" ", "_")));
+      String category = rdictionary.get(categoryWord+":"+FactComponent.stripBrackets(f.getArg(2).replace(" ", "_")));
+     
       if(category == null) 
         continue; 
     
@@ -109,7 +112,7 @@ public class CategoryTranslator extends Extractor{
   }
   
   public static void main(String[] args) throws Exception {
-    new CategoryTranslator("de").extract(new File("D:/data2/yago2s/"),
+    new CategoryTranslator("de").extract(new File("D:/data3/yago2s/"),
         "translating category-memebership facts");
 
   }

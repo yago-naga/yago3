@@ -3,7 +3,6 @@ package fromWikipedia;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -21,8 +20,6 @@ import basics.Theme;
 import basics.Theme.ThemeGroup;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.Redirector;
-import fromThemes.TypeChecker;
 
 /**
  * CategoryMapper - YAGO2s
@@ -33,23 +30,16 @@ import fromThemes.TypeChecker;
  * @author Farzaneh Mahdisoltani
  * 
  */
-
 public class CategoryMapper extends Extractor {
 
   protected String language; 
-  public static final HashMap<String, Theme> CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>();
-  public static final HashMap<String, Theme> CATEGORYFACTS_TOTYPECHECK_MAP = new HashMap<String, Theme>(); 
-  public static final HashMap<String, Theme> CATEGORYFACTS_MAP = new HashMap<String, Theme>(); 
+  public static final HashMap<String, Theme> CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>(); 
   public static final HashMap<String, Theme> CATEGORYSOURCES_MAP = new HashMap<String, Theme>(); //new Theme("categorySources", "The sources of category facts");
   
   static {
     for (String s : Extractor.languages) {
       CATEGORYFACTS_TOREDIRECT_MAP.put(s, new Theme("categoryFactsToBeRedirected" + Extractor.langPostfixes.get(s), 
           "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
-      CATEGORYFACTS_TOTYPECHECK_MAP.put(s, new Theme("categoryFactsToBeTypeChecked" + Extractor.langPostfixes.get(s), 
-              "Facts about Wikipedia instances, derived from the Wikipedia categories, redirected, still to be type-checked", ThemeGroup.OTHER));
-      CATEGORYFACTS_MAP.put(s, new Theme("categoryFacts" + Extractor.langPostfixes.get(s), 
-              "Facts about Wikipedia instances, derived from the Wikipedia categories, redirected and type-checked", ThemeGroup.OTHER));
       CATEGORYSOURCES_MAP.put(s, new Theme("categorySources" + Extractor.langPostfixes.get(s), "The sources of category facts", ThemeGroup.OTHER));
     }
 
@@ -68,13 +58,6 @@ public class CategoryMapper extends Extractor {
   @Override
   public Set<Theme> output() {
     return new FinalSet<Theme>(CATEGORYFACTS_TOREDIRECT_MAP.get(language), CATEGORYSOURCES_MAP.get(language));
-  }
-  
-  @Override
-  public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(new Redirector(
-        CATEGORYFACTS_TOREDIRECT_MAP.get(language), CATEGORYFACTS_TOTYPECHECK_MAP.get(language), this, this.language),
-        new TypeChecker( CATEGORYFACTS_TOTYPECHECK_MAP.get(language), CATEGORYFACTS_MAP.get(language), this)));
   }
  
   protected  ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {
@@ -106,10 +89,11 @@ public class CategoryMapper extends Extractor {
 //    for (Fact f : result){
 //      for (Fact fact : categoryPatterns.extract(FactComponent.stripQuotes(f.getArg(2)),f.getArg(1))){
 //        if(fact !=null) 
-//        //TODO: this might be a latent bug, expection is that the fact is never null; 
+//        //TODO: this might be a latent bug, expectation is that the fact is never null; 
 //        write(writers, CATEGORYFACTS_TOREDIRECT_MAP.get(language), fact, CATEGORYSOURCES_MAP.get(language), FactComponent.wikipediaURL(f.getArg(1)), "CategoryMapper");
 //      }
 //    }
+     
 
   } 
   
@@ -130,7 +114,7 @@ public class CategoryMapper extends Extractor {
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
     CategoryMapper extractor = new CategoryMapper("en");
-    extractor.extract(new File("D:/data2/yago2s/"),
+    extractor.extract(new File("D:/data3/yago2s/"),
         "mapping infobox attributes into infobox facts");
   }
   

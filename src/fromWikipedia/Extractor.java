@@ -33,10 +33,7 @@ public abstract class Extractor {
 	static Map<String,String> langPostfixes = new HashMap<String, String>();
 	static{
 		for(String s:languages) {
-			if(!s.equals("en"))
 				langPostfixes.put(s, "_"+s);
-			else
-				langPostfixes.put(s, "");
 		}
 	}
   
