@@ -61,6 +61,8 @@ public class InfoboxExtractor extends Extractor {
   
   public static final HashMap<String, Theme> INFOBOXATTSTRANSLATED_MAP = new HashMap<String, Theme>();
   
+  public static final HashMap<String, Theme> INFOBOXTYPESTRANSLATED_MAP = new HashMap<String, Theme>();
+  
 
  
   static {
@@ -114,6 +116,7 @@ public class InfoboxExtractor extends Extractor {
 	} else {
 		return new HashSet<Extractor> (Arrays.asList(
 		    new EntityTranslator(INFOBOXATTS_MAP.get(this.language), INFOBOXATTSTRANSLATED_MAP.get(this.language), this.language),
+		    new EntityTranslator(INFOBOXTYPES_MAP.get(this.language), INFOBOXTYPESTRANSLATED_MAP.get(this.language), this.language),
 				new AttributeRedirector(INFOBOXATTSTRANSLATED_MAP.get(this.language), INFOBOXATTS_REDIRECTED_MAP.get(this.language), this.language),
 				new AttributeMatcher(this.language),
 				new InfoboxTypeTranslator(this.language),
