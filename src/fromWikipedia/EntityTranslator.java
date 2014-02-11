@@ -48,6 +48,9 @@ public class EntityTranslator extends FollowUpExtractor {
   
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+//    if(this.language.equals("en")){
+//      
+//    }
     
     FactCollection translatedFacts = new FactCollection();
 

@@ -94,10 +94,10 @@ public class AttributeMatcher extends Extractor {
 		return new HashSet<>(Arrays.asList(MATCHED_INFOBOXATTS_MAP.get(language),MATCHEDATTSOURCES_MAP.get(language)));
 	}
 	
-	@Override
-	public Set<Extractor> followUp() {
-	  return new HashSet<Extractor>(Arrays.asList(new InfoboxMapper(this.language)));
-	}
+//	@Override
+//	public Set<Extractor> followUp() {
+//	  return new HashSet<Extractor>(Arrays.asList(new InfoboxMapper(this.language)));
+//	}
 
 	@Override
 	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
@@ -132,8 +132,6 @@ public class AttributeMatcher extends Extractor {
         /* assumption: all the subjects are entities*/
 
         // if(isEqualr(yagoSubject,secondLangSubject)){   //expectation: always be true
-        System.out.println(yagoObject + " ((((((((((((((( ");
-        System.out.println(secondLangObject+ " LLLLLLLLLLLLLLLLL ");
         if(isEqual(yagoObject, secondLangObject, expectedDatatype, preferredMeaning )){
 
           deduce(yagoRelation, secondLangRelation, true);

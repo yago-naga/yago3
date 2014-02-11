@@ -71,16 +71,16 @@ public class CategoryExtractor extends Extractor {
   
   @Override
   public Set<Extractor> followUp() {
-	if (this.language.equals("en")) {
-	  return new HashSet<Extractor> (Arrays.asList(
-			  new CategoryTranslator(this.language),
-			  new CategoryMapper("en")));
-	} else {
+//	if (this.language.equals("en")) {
+//	  return new HashSet<Extractor> (Arrays.asList(
+//			  new CategoryTranslator(this.language),
+//			  new CategoryMapper("en")));
+//	} else {
 	  return new HashSet<Extractor> (Arrays.asList(
 	      new EntityTranslator(CATEGORYMEMBERSHIP_MAP.get(this.language), CATEGORYMEMBERSHIPTRANSLATED_MAP.get(this.language), this.language),
 				new CategoryTranslator(this.language),
 				new CategoryMapper(this.language)));
-	}
+//	}
   }
 
   @Override
@@ -153,11 +153,11 @@ public class CategoryExtractor extends Extractor {
 //    new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
     
     
-//    new CategoryExtractor(new File("D:/de_wikitest.xml")).extract(new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
-//    new EntityTranslator(CATEGORYMEMBERSHIP_MAP.get("de"), CATEGORYMEMBERSHIPTRANSLATED_MAP.get("de"), "de").extract(new File("D:/data3/yago2s"), null);
-//    new CategoryTranslator("de").extract(new File("D:/data3/yago2s/"),
-//        "translating category-memebership facts");
-    new CategoryMapper("de").extract(new File("D:/data3/yago2s/"),
+    new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
+    new EntityTranslator(CATEGORYMEMBERSHIP_MAP.get("en"), CATEGORYMEMBERSHIPTRANSLATED_MAP.get("en"), "en").extract(new File("D:/data3/yago2s"), null);
+    new CategoryTranslator("en").extract(new File("D:/data3/yago2s/"),
+        "translating category-memebership facts");
+    new CategoryMapper("en").extract(new File("D:/data3/yago2s/"),
         "mapping infobox attributes into infobox facts");
 
   }
