@@ -33,7 +33,6 @@ import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.AttributeRedirector;
 
 /**
  * YAGO2s - InfoboxExtractor
@@ -52,14 +51,10 @@ public class InfoboxExtractor extends Extractor {
   private String language;
 
   public static final HashMap<String, Theme> INFOBOXATTS_MAP = new HashMap<String, Theme>();
-  
-  public static final HashMap<String, Theme> INFOBOXATTS_REDIRECTED_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> INFOBOXATTSOURCES_MAP = new HashMap<String, Theme>();
   
   public static final HashMap<String, Theme> INFOBOXTYPES_MAP = new HashMap<String, Theme>();
-  
-  public static final HashMap<String, Theme> INFOBOXATTSTRANSLATED_MAP = new HashMap<String, Theme>();
   
   public static final HashMap<String, Theme> INFOBOXTYPESTRANSLATED_MAP = new HashMap<String, Theme>();
   
@@ -68,10 +63,8 @@ public class InfoboxExtractor extends Extractor {
   static {
     for (String s : Extractor.languages) {
       INFOBOXATTS_MAP.put(s, new Theme("yagoInfoboxAttributes" +  Extractor.langPostfixes.get(s), "Facts of infobox", ThemeGroup.OTHER));
-      INFOBOXATTS_REDIRECTED_MAP.put(s, new Theme("infoboxAttributesRedirected" +  Extractor.langPostfixes.get(s), "Redirected facts of infobox", ThemeGroup.OTHER));
       INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources" +  Extractor.langPostfixes.get(s), "Sources for facts of infobox", ThemeGroup.OTHER));
       INFOBOXTYPES_MAP.put(s, new Theme("infoboxTypes" +  Extractor.langPostfixes.get(s), "Types of infoboxes", ThemeGroup.OTHER));
-      INFOBOXATTSTRANSLATED_MAP.put(s, new Theme("yagoInfoboxAttributesTranslated" +  Extractor.langPostfixes.get(s), "Types of infoboxes", ThemeGroup.OTHER));
     }
 
   }
@@ -115,13 +108,11 @@ public class InfoboxExtractor extends Extractor {
 //			  new WikipediaTypeExtractor("en")));
 //	} else {
 		return new HashSet<Extractor> (Arrays.asList(
-		    new InfoboxMapper(this.language), 
-		    new EntityTranslator(INFOBOXATTS_MAP.get(this.language), INFOBOXATTSTRANSLATED_MAP.get(this.language), this.language),
+		    new InfoboxMapper(this.language),
 		    new EntityTranslator(INFOBOXTYPES_MAP.get(this.language), INFOBOXTYPESTRANSLATED_MAP.get(this.language), this.language),
-				new AttributeRedirector(INFOBOXATTSTRANSLATED_MAP.get(this.language), INFOBOXATTS_REDIRECTED_MAP.get(this.language), this.language),
-				new AttributeMatcher(this.language),
-				new InfoboxTypeTranslator(this.language),
-				new WikipediaTypeExtractor(this.language)));
+			new AttributeMatcher(this.language),
+			new InfoboxTypeTranslator(this.language),
+			new WikipediaTypeExtractor(this.language)));
 //	}
   }
 
@@ -406,11 +397,8 @@ public class InfoboxExtractor extends Extractor {
    
     /*German*/
 //    new InfoboxExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/data3/yago2s/"), "Test on 1 wikipedia article");
-//    new AttributeRedirector(INFOBOXATTSTRANSLATED_MAP.get("en"), INFOBOXATTS_REDIRECTED_MAP.get("en"), "en").extract(new File("D:/data3/yago2s/"), "test");
 //    new AttributeMatcher("en").extract(new File("D:/data3/yago2s/"), "test");
     new InfoboxTypeTranslator("en").extract(new File("D:/data3/yago2s/"), "test");
-    new EntityTranslator(INFOBOXATTS_MAP.get("en"), INFOBOXATTSTRANSLATED_MAP.get("en"), "en"
-        ).extract(new File("D:/data3/yago2s"), null);
 //    new WikipediaTypeExtractor("en").extract(new File("D:/data3/yago2s/"), "test");
 
 

@@ -23,6 +23,7 @@ import fromOtherSources.HardExtractor;
 import fromOtherSources.InterLanguageLinks;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.InfoboxTermExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -84,7 +85,7 @@ public class AttributeMatcher extends Extractor {
 	          PatternHardExtractor.INFOBOXPATTERNS, 
 	          HardExtractor.HARDWIREDFACTS, 
 	          WordnetExtractor.WORDNETWORDS,
-	          InfoboxExtractor.INFOBOXATTS_REDIRECTED_MAP.get(language)
+	          InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language)
 	          ));
 	  return result;
 	}
@@ -107,7 +108,7 @@ public class AttributeMatcher extends Extractor {
     Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(input);
     ExtendedFactCollection myFactCollection = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_MAP.get("en")));
     //        ExtendedFactCollection myFactCollection = getFactCollection(new File("D:/yago2s_ttl"));
-    FactSource lang2FactSource= input.get(InfoboxExtractor.INFOBOXATTS_REDIRECTED_MAP.get(language));
+    FactSource lang2FactSource= input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language)); //?
 
     Announce.progressStart("Running through "+language+" Wikipedia", 12713794); 
     int lang2FactSourceSize = 0;

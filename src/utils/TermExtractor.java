@@ -75,6 +75,16 @@ public abstract class TermExtractor {
     }
     return (forWikiLink);
   }
+  
+  public static List<TermExtractor> all() {
+	  return Arrays.asList(
+			  forWikiLink,
+			  forDate,
+			  forString,
+			  forUrl,
+			  forNumber
+			  );
+  }
 
   // also needs to match \ for yago-encoded stuff
   private static List<Pattern> urlPatterns = Arrays.asList(Pattern.compile("http[s]?://([-\\w\\./\\\\]+)"),
