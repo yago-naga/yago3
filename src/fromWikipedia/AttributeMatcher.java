@@ -69,9 +69,9 @@ public class AttributeMatcher extends Extractor {
 	  
 	static {
 	  for (String s : Extractor.languages) {
-	    MATCHED_INFOBOXATTS_MAP.put(s, new Theme("matchedInfoboxAtts" + Extractor.langPostfixes.get(s),
+	    MATCHED_INFOBOXATTS_MAP.put(s, new Theme("matchedAttributes" + Extractor.langPostfixes.get(s),
 	        "Attributes of the Wikipedia infoboxes in different languages are matched.", ThemeGroup.OTHER));
-	    MATCHEDATTSOURCES_MAP.put(s, new Theme("matchedAttSources" + Extractor.langPostfixes.get(s), "Sources of infobox", ThemeGroup.OTHER));
+	    MATCHEDATTSOURCES_MAP.put(s, new Theme("matchedAttributesSources" + Extractor.langPostfixes.get(s), "Sources of infobox", ThemeGroup.OTHER));
 	  }
 
 	}
@@ -175,7 +175,7 @@ public class AttributeMatcher extends Extractor {
             //               correct + "/" +total +">" + "     " +ws[0] + "    " + ws[1] , subEntry.getKey());
             /*filtering out */
 //            if(ws[0] - ws[1] > WILSON_THRESHOLD  && correct> SUPPORT_THRESHOLD){
-              Fact fact = new Fact(subEntry.getKey(),"<infoboxAttribute>", entry.getKey());
+              Fact fact = new Fact(subEntry.getKey(),"<_infoboxPattern> ", entry.getKey());
 
               write(writers, MATCHED_INFOBOXATTS_MAP.get(language), fact, MATCHEDATTSOURCES_MAP.get(language),
                   FactComponent.wikipediaURL(entry.getKey()),"");
