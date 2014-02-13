@@ -80,7 +80,7 @@ public class AttributeMatcher extends Extractor {
 	public Set<Theme> input() {
 	  HashSet<Theme> result = new HashSet<Theme>(
 	      Arrays.asList(
-	          InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
+//	          InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
 	          InterLanguageLinks.INTERLANGUAGELINKS,
 	          PatternHardExtractor.INFOBOXPATTERNS, 
 	          HardExtractor.HARDWIREDFACTS, 
@@ -106,7 +106,7 @@ public class AttributeMatcher extends Extractor {
     statistics = new HashMap<String, Map<String,Pair <Integer,Integer>>>();
     FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
     Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(input);
-    ExtendedFactCollection myFactCollection = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_MAP.get("en")));
+    ExtendedFactCollection myFactCollection = getFactCollection(input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language)));
     //        ExtendedFactCollection myFactCollection = getFactCollection(new File("D:/yago2s_ttl"));
     FactSource lang2FactSource= input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language)); //?
 
@@ -133,7 +133,7 @@ public class AttributeMatcher extends Extractor {
         /* assumption: all the subjects are entities*/
 
         // if(isEqualr(yagoSubject,secondLangSubject)){   //expectation: always be true
-        if(isEqual(yagoObject, secondLangObject, expectedDatatype, preferredMeaning )){
+        if(isEqual(yagoObject, secondLangObject/*, expectedDatatype, preferredMeaning*/ )){
 
           deduce(yagoRelation, secondLangRelation, true);
         }else
@@ -149,7 +149,7 @@ public class AttributeMatcher extends Extractor {
         String expectedDatatype = hardWiredFacts.getArg2(yagoRelation, RDFS.range);
         //assumption: all the subjects are entities
         if(isEntity(expectedDatatype)){
-          if(isEqual(yagoSubject, secondLangObject, "<yagoGeoEntity>", preferredMeaning )/* && isEqualr(yagoObject, secondLangSubject)*/)
+          if(isEqual(yagoSubject, secondLangObject/*, "<yagoGeoEntity>", preferredMeaning */)/* && isEqualr(yagoObject, secondLangSubject)*/)
             deduce(yagoRelation, "<"+FactComponent.stripBrackets(secondLangRelation)+"->", true);
           else
             deduce(yagoRelation, "<"+FactComponent.stripBrackets(secondLangRelation)+"->", false);
@@ -249,33 +249,34 @@ public class AttributeMatcher extends Extractor {
 			return true;
 		return false;
 	}
-	public boolean isEqual(String target, String b, String expectedDatatype, Map<String, String> preferredMeaning) throws IOException{
-		TermExtractor termExtractor = expectedDatatype.equals(RDFS.clss) ? new TermExtractor.ForClass(
-				preferredMeaning) : TermExtractor.forType(expectedDatatype);
-		List<String> objects = termExtractor.extractList(preprocess(b));
-		switch (expectedDatatype){
-		
-		case "xsd:date":	
-			break;
-		case "xsd:nonNegativeInteger":
-		case "<m^2>":{
-			break;
-		}
-		case "xsd:string": {
-			break;
-		}
-		case "<yagoGeoEntity>":
-		case "<yagoLegalActorGeo>":
-		case "<yagoURL>":
-		default:
-			for(String s:objects){
-				String temp = FactComponent.stripBrackets(s);
+	public boolean isEqual(String target, String b/*, String expectedDatatype, Map<String, String> preferredMeaning*/) throws IOException{
+//		TermExtractor termExtractor = expectedDatatype.equals(RDFS.clss) ? new TermExtractor.ForClass(
+//				preferredMeaning) : TermExtractor.forType(expectedDatatype);
+//		List<String> objects = termExtractor.extractList(preprocess(b));
+				String object = preprocess(b);
+//		switch (expectedDatatype){
+//		
+//		case "xsd:date":	
+//			break;
+//		case "xsd:nonNegativeInteger":
+//		case "<m^2>":{
+//			break;
+//		}
+//		case "xsd:string": {
+//			break;
+//		}
+//		case "<yagoGeoEntity>":
+//		case "<yagoLegalActorGeo>":
+//		case "<yagoURL>":
+//		default:
+//			for(String s:objects){
+				String temp = FactComponent.stripBrackets(object);
 				if(rdictionary.get(temp)!=null && rdictionary.get(temp).contains(target))
 //				if(temp.equals(target))
 					return true;
-			}
-			return false; 
-		}
+//			}
+//			return false; 
+//		}
 		return false;
 
 	}
