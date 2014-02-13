@@ -75,8 +75,8 @@ public class CategoryMatcher extends Extractor {
         HardExtractor.HARDWIREDFACTS, 
         WordnetExtractor.WORDNETWORDS,
         InterLanguageLinks.INTERLANGUAGELINKS,
-        CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get("en"),
-        CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)
+        CategoryExtractor.CATEGORYMEMBERS_MAP.get("en"),
+        CategoryExtractor.CATEGORYMEMBERS_MAP.get(language)
         ));
     return result;
   }
@@ -90,9 +90,9 @@ public class CategoryMatcher extends Extractor {
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
     rdictionary = InterLanguageLinksDictionary.get(language, input.get( InterLanguageLinks.INTERLANGUAGELINKS));
     statistics = new HashMap<String, Map<String,Pair <Integer,Integer>>>();
-    ExtendedFactCollection enFactCollection = getFactCollection(input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get("en")));
+    ExtendedFactCollection enFactCollection = getFactCollection(input.get(CategoryExtractor.CATEGORYMEMBERS_MAP.get("en")));
 
-    FactSource lang2FactSource= input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language));
+    FactSource lang2FactSource= input.get(CategoryExtractor.CATEGORYMEMBERS_MAP.get(language));
 
     Announce.progressStart("Running through foreign Wikipedia", 12713794);
     for (Fact f2 : lang2FactSource){

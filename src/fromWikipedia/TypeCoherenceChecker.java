@@ -33,7 +33,7 @@ public class TypeCoherenceChecker extends Extractor {
     result.add(EntityTranslator.TRANSLATEDFACTS);
     for (String s : Extractor.languages) {
 //      result.add(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s));
-      result.add(WikipediaTypeExtractor.WIKIPEDIACLASSES_MAP.get(s));
+      result.add(CategoryTypeExtractor.WIKIPEDIACLASSES_MAP.get(s));
     }
     return result;
   }
@@ -77,7 +77,7 @@ protected ExtendedFactCollection categoryClassFacts;
     for (String s : Extractor.languages) {
 //      loadFacts(input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s)), batch);
       loadFacts(input.get(EntityTranslator.TRANSLATEDFACTS), batch);
-      loadFacts(input.get(WikipediaTypeExtractor.WIKIPEDIACLASSES_MAP.get(s)), categoryClassFacts);
+      loadFacts(input.get(CategoryTypeExtractor.WIKIPEDIACLASSES_MAP.get(s)), categoryClassFacts);
     }
     
     FactWriter w = output.get(YAGOTYPES);

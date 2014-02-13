@@ -50,8 +50,8 @@ public class CategoryMapper extends Extractor {
   public Set<Theme> input() {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, 
         PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS, 
-        CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language),
-        CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)
+        CategoryExtractor.CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(language),
+        CategoryExtractor.CATEGORYMEMBERS_MAP.get(language)
         ));
   }  
   
@@ -99,8 +99,8 @@ public class CategoryMapper extends Extractor {
   
   protected ExtendedFactCollection getCategoryFactCollection( Map<Theme, FactSource> input) {
     ExtendedFactCollection result = new ExtendedFactCollection();
-    if(language=="en") loadFacts(input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)), result);
-    else loadFacts(input.get(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language)), result) ;
+    if(language=="en") loadFacts(input.get(CategoryExtractor.CATEGORYMEMBERS_MAP.get(language)), result);
+    else loadFacts(input.get(CategoryExtractor.CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(language)), result) ;
     return result;
     
   }

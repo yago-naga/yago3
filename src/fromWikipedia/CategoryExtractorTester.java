@@ -42,8 +42,8 @@ public class CategoryExtractorTester extends Extractor{
 	public Set<Theme> output() {
 		Set<Theme> result = new TreeSet<Theme>();
 		for(String s:Extractor.languages){
-			result.add(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(s));
-			result.add(CategoryExtractor.CATEGORYMEMBSOURCES_MAP.get(s));
+			result.add(CategoryExtractor.CATEGORYMEMBERS_MAP.get(s));
+			result.add(CategoryExtractor.CATEGORYMEMBERSSOURCES_MAP.get(s));
 		}
 		return result;
 	}

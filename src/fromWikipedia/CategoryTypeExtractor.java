@@ -38,7 +38,7 @@ import fromOtherSources.WordnetExtractor;
  * @author Fabian
  * 
  */
-public class WikipediaTypeExtractor extends Extractor {
+public class CategoryTypeExtractor extends Extractor {
   
   protected String language; 
   /** Sources for category facts*/
@@ -61,14 +61,15 @@ public class WikipediaTypeExtractor extends Extractor {
   
   public Set<Theme> input() {
     Set<Theme> temp=  new TreeSet<Theme>(Arrays.asList(
-        InfoboxExtractor.INFOBOXATTS_MAP.get(language), InfoboxTypeTranslator.INFOBOXTYPETRANSLATEDFACTS_MAP.get(language),
+//        InfoboxExtractor.INFOBOXATTS_MAP.get(language),
+//        InfoboxExtractor.INFOBOXTYPESBOTHTRANSLATED_MAP.get(language),
         PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS,
         WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETCLASSES, PatternHardExtractor.INFOBOXPATTERNS));
     
     if(this.language.equals("en"))
-        temp.add(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language));
+        temp.add(CategoryExtractor.CATEGORYMEMBERS_MAP.get(language));
     else
-      temp.add(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language));
+      temp.add(CategoryExtractor.CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(language));
         
     return temp;
   }
@@ -98,9 +99,9 @@ public class WikipediaTypeExtractor extends Extractor {
   protected ExtendedFactCollection getCategoryFactCollection( Map<Theme, FactSource> input) {
     ExtendedFactCollection result = new ExtendedFactCollection();
     if(this.language.equals("en")){
-      return loadFacts( input.get(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(language)));
+      return loadFacts( input.get(CategoryExtractor.CATEGORYMEMBERS_MAP.get(language)));
     }else{
-      loadFacts(input.get(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(language)), result) ;
+      loadFacts(input.get(CategoryExtractor.CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(language)), result) ;
     }
    
    
@@ -202,8 +203,8 @@ public class WikipediaTypeExtractor extends Extractor {
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
 //    Announce.setLevel(Level.MUTE);
     
-    ExtendedFactCollection infoboxTypes = loadFacts(input.get( InfoboxTypeTranslator.INFOBOXTYPETRANSLATEDFACTS_MAP.get(language)));
-    ExtendedFactCollection infoboxAtts = loadFacts(input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language)));
+//    ExtendedFactCollection infoboxTypes = loadFacts(input.get( InfoboxExtractor.INFOBOXTYPESBOTHTRANSLATED_MAP.get(language)));
+//    ExtendedFactCollection infoboxAtts = loadFacts(input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language)));
     ExtendedFactCollection categoryMembs = getCategoryFactCollection(input);
     
     nonConceptualInfoboxes = new HashSet<>();
@@ -226,7 +227,7 @@ public class WikipediaTypeExtractor extends Extractor {
     List<Fact> factsWithSubject = new ArrayList<Fact>();
     
     Set<String> titles = categoryMembs.getSubjects();
-    titles.addAll(infoboxAtts.getSubjects());
+//    titles.addAll(infoboxAtts.getSubjects()); //this part is moved to infoboxTypeExtractor
 
     String currentEntity = null; 
    
@@ -241,17 +242,18 @@ public class WikipediaTypeExtractor extends Extractor {
         extractType(f.getArg(1), category, typesOfCurrentEntity);
       }
       
-      factsWithSubject =infoboxTypes.getFactsWithSubject(currentEntity);
-      if(factsWithSubject.size()<1) continue; 
-      String cls = FactComponent.stripQuotes(factsWithSubject.get(0).getArg(2).replace("_", " "));
-      if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
-      
-      if (!nonConceptualInfoboxes.contains(cls)) {
-        String type = preferredMeanings.get(cls);
-        if (type != null) {
-          typesOfCurrentEntity.add(type);
-        }
-      }
+      //moved to infoboxtype extractor
+//      factsWithSubject =infoboxTypes.getFactsWithSubject(currentEntity);
+//      if(factsWithSubject.size()<1) continue; 
+//      String cls = FactComponent.stripQuotes(factsWithSubject.get(0).getArg(2).replace("_", " "));
+//      if (Character.isDigit(Char.last(cls))) cls = Char.cutLast(cls);
+//      
+//      if (!nonConceptualInfoboxes.contains(cls)) {
+//        String type = preferredMeanings.get(cls);
+//        if (type != null) {
+//          typesOfCurrentEntity.add(type);
+//        }
+//      }
       
     }
     flush(currentEntity, typesOfCurrentEntity, writers);
@@ -292,13 +294,13 @@ public class WikipediaTypeExtractor extends Extractor {
 
   /** Constructor from source file */
    
-  public WikipediaTypeExtractor(String lang) {
+  public CategoryTypeExtractor(String lang) {
     language=lang;
   }
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    WikipediaTypeExtractor extractor = new WikipediaTypeExtractor("en");
+    CategoryTypeExtractor extractor = new CategoryTypeExtractor("en");
     extractor.extract(new File("D:/data3/yago2s/"),
         "");
     //new HardExtractor(new File("../basics2s/data")).extract(new File("c:/fabian/data/yago2s"), "Test on 1 wikipedia article");

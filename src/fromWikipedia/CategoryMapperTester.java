@@ -34,8 +34,8 @@ public class CategoryMapperTester extends Extractor {
     result.add(PatternHardExtractor.TITLEPATTERNS);
     result.add(WordnetExtractor.WORDNETWORDS);
     for(String s:Extractor.languages){
-      result.add(CategoryTranslator.CATEGORYTRANSLATEDFACTS_MAP.get(s));
-      result.add(CategoryExtractor.CATEGORYMEMBERSHIP_MAP.get(s));
+      result.add(CategoryExtractor.CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(s));
+      result.add(CategoryExtractor.CATEGORYMEMBERS_MAP.get(s));
     }
     return result;
   }
@@ -52,11 +52,11 @@ public class CategoryMapperTester extends Extractor {
   
   @Override
   public void extract(File inputFolder, File outputFolder, String header) throws Exception {
-    CategoryMapperEN ecm = new CategoryMapperEN();
+    CategoryMapper ecm = new CategoryMapper("en");
     ecm.extract(inputFolder, "Test on English wikipedia sample");
     for(String s: Extractor.languages){
       if(s.equals("en")) continue; 
-      CategoryMapperMulti cm = new CategoryMapperMulti(s);
+      CategoryMapper cm = new CategoryMapper(s);
       cm.extract(inputFolder, "Test on non-English wikipedia sample");
     }
     

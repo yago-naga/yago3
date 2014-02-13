@@ -33,72 +33,63 @@ import basics.Theme;
 public class EntityTranslator extends FollowUpExtractor {
 
   private String language;
-  
+
   public static final Theme TRANSLATEDFACTS = new Theme("translatedFacts", "");
-  
+
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(checkMe,InterLanguageLinks.INTERLANGUAGELINKS));
+    return new HashSet<Theme>(Arrays.asList(checkMe, InterLanguageLinks.INTERLANGUAGELINKS));
   }
 
   @Override
   public Set<Theme> output() {
     return new FinalSet<Theme>(checked);
   }
-  
+
   @Override
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-//    if(this.language.equals("en")){
-//      
-//    }
-    
+    //    if(this.language.equals("en")){
+    //      
+    //    }
+
     FactCollection translatedFacts = new FactCollection();
 
-      Map<String, String> tempDictionary= InterLanguageLinksDictionary.get(language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
-      FactCollection temp = new FactCollection();
-      loadFacts(input.get(checkMe), temp);
-      for(Fact f: temp){
+    Map<String, String> tempDictionary = InterLanguageLinksDictionary.get(language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
+    FactCollection temp = new FactCollection();
+    loadFacts(input.get(checkMe), temp);
+    for (Fact f : temp) {
 
-        String translatedSubject  =  FactComponent.stripBrackets(f.getArg(1));
+      String translatedSubject = FactComponent.stripBrackets(f.getArg(1));
 
-
-        if(tempDictionary.containsKey( FactComponent.stripBrackets(f.getArg(1)))){
-          translatedSubject = tempDictionary.get(FactComponent.stripBrackets(f.getArg(1)));
-        }
-        translatedFacts.add(new Fact (FactComponent.forYagoEntity(translatedSubject),  f.getRelation(), FactComponent.forYagoEntity((FactComponent.stripQuotes(f.getArg(2))))));
+      if (tempDictionary.containsKey(FactComponent.stripBrackets(f.getArg(1)))) {
+        translatedSubject = tempDictionary.get(FactComponent.stripBrackets(f.getArg(1)));
       }
-    
-    
-    for(Fact fact:translatedFacts){
+      translatedFacts.add(new Fact(FactComponent.forYagoEntity(translatedSubject), f.getRelation(), FactComponent.forYagoEntity((FactComponent
+          .stripQuotes(f.getArg(2))))));
+    }
+
+    for (Fact fact : translatedFacts) {
       output.get(checked).write(fact);
     }
-    
-  }
-  
-  
-  
-  public EntityTranslator(Theme in, Theme out, String lang) {
-    System.out.println(checkMe);
-    System.out.println(checked);
-    
-    this.checkMe=in;
-    this.checked=out;
-    this.language = lang;
-  }
-  
-  
-  protected  FactCollection loadFacts(FactSource factSource, FactCollection temp) {
-    for(Fact f: factSource){
-      temp.add(f);
-    }
-    return(temp);
+
   }
 
-  
+  public EntityTranslator(Theme in, Theme out, String lang) {
+    this.checkMe = in;
+    this.checked = out;
+    this.language = lang;
+  }
+
+  protected FactCollection loadFacts(FactSource factSource, FactCollection temp) {
+    for (Fact f : factSource) {
+      temp.add(f);
+    }
+    return (temp);
+  }
+
   public static void main(String[] args) throws Exception {
-    new EntityTranslator(Theme.forFile(new File("D:/data2/yago2s/infoboxAttributesRedirected_de.ttl")), 
-        Theme.forFile(new File("D:/data2/yago2s/res.ttl")), "de"
-        ).extract(new File("D:/data2/yago2s"), null); 
+    new EntityTranslator(Theme.forFile(new File("D:/data2/yago2s/infoboxAttributesRedirected_de.ttl")), Theme.forFile(new File(
+        "D:/data2/yago2s/res.ttl")), "de").extract(new File("D:/data2/yago2s"), null);
   }
 
 }
