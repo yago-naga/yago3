@@ -21,7 +21,6 @@ import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.TypeCoherenceChecker;
 import fromWikipedia.WikiInfoExtractor;
-import fromWikipedia.WikipediaTypeExtractor;
 
 /**
  * YAGO2s - StatisticsExtractor

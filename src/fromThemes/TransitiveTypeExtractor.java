@@ -19,7 +19,6 @@ import basics.Theme;
 import basics.Theme.ThemeGroup;
 import fromWikipedia.Extractor;
 import fromWikipedia.TypeCoherenceChecker;
-import fromWikipedia.WikipediaTypeExtractor;
 
 /**
  * YAGO2s - TransitiveTypeExtractor

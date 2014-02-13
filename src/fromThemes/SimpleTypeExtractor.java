@@ -9,7 +9,6 @@ import java.util.Set;
 
 import fromWikipedia.Extractor;
 import fromWikipedia.TypeCoherenceChecker;
-import fromWikipedia.WikipediaTypeExtractor;
 
 
 import javatools.administrative.Announce;

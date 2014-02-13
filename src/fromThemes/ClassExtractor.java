@@ -18,7 +18,7 @@ import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
-import fromWikipedia.WikipediaTypeExtractor;
+import fromWikipedia.CategoryTypeExtractor;
 
 /**
  * YAGO2s - ClassExtractor
@@ -41,7 +41,7 @@ public class ClassExtractor extends Extractor {
 	        //GeoNamesClassMapper.GEONAMESCLASSES
 	        ));
 	for (String lang : Extractor.languages) {
-		input.add(WikipediaTypeExtractor.WIKIPEDIACLASSES_MAP.get(lang));
+		input.add(CategoryTypeExtractor.WIKIPEDIACLASSES_MAP.get(lang));
 	}
 	return input;
   }

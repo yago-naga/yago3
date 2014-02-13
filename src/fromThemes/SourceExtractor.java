@@ -3,20 +3,16 @@ package fromThemes;
 import java.util.Map;
 import java.util.Set;
 
-import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryMapper;
+import fromWikipedia.CategoryTypeExtractor;
 import fromWikipedia.CoordinateExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
-import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.InfoboxMapper;
 import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 import fromWikipedia.WikipediaLabelExtractor;
-import fromWikipedia.WikipediaTypeExtractor;
-
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
@@ -39,7 +35,7 @@ public class SourceExtractor extends Extractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>( InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),PersonNameExtractor.PERSONNAMESOURCES,
-        RuleExtractor.RULESOURCES,CategoryMapper.CATEGORYSOURCES_MAP.get("en"),WikipediaTypeExtractor.WIKIPEDIATYPESOURCES_MAP.get("en"),
+        RuleExtractor.RULESOURCES,CategoryMapper.CATEGORYSOURCES_MAP.get("en"),CategoryTypeExtractor.WIKIPEDIATYPESOURCES_MAP.get("en"),
         WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, FlightExtractor.FLIGHTSOURCE, CoordinateExtractor.COORDINATE_SOURCES, 
         TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES, FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE);
   }
