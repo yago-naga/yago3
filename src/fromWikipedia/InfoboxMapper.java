@@ -114,52 +114,15 @@ public class InfoboxMapper extends Extractor {
 
 		// Check inverse
 		boolean inverse;
-		String expectedDatatype;
 		if (relation.endsWith("->")) {
 			inverse = true;
 			relation = Char.cutLast(Char.cutLast(relation)) + '>';
-			expectedDatatype = factCollection.getArg2(relation, RDFS.domain);
 		} else {
 			inverse = false;
-			expectedDatatype = factCollection.getArg2(relation, RDFS.range);
-		}
-		if (expectedDatatype == null) {
-			Announce.warning("Unknown relation to extract:", relation);
-			expectedDatatype = YAGO.entity;
 		}
 
-		// Get the term extractor
-		String syntaxChecker = FactComponent.asJavaString(factCollection
-				.getArg2(expectedDatatype, "<_hasTypeCheckPattern>"));
+		// object = AttributeMatcher.preprocess(f.getArg(2));
 
-		// Check syntax
-		if (syntaxChecker != null && FactComponent.asJavaString(object) != null
-				&& !FactComponent.asJavaString(object).matches(syntaxChecker)) {
-			Announce.debug("Extraction", object, "for", entity, relation,
-					"does not match syntax check", syntaxChecker);
-			return;
-		}
-		// Check data type
-		if (FactComponent.isLiteral(object)) {
-			String parsedDatatype = FactComponent.getDatatype(object);
-			if (parsedDatatype == null)
-				parsedDatatype = YAGO.string;
-			if (syntaxChecker != null
-					&& factCollection.isSubClassOf(expectedDatatype,
-							parsedDatatype)) {
-				// If the syntax check went through, we are fine
-				object = FactComponent.setDataType(object, expectedDatatype);
-			} else {
-				// For other stuff, we check if the datatype is OK
-				if (!factCollection.isSubClassOf(parsedDatatype,
-						expectedDatatype)) {
-					Announce.debug("Extraction", object, "for", entity,
-							relation, "does not match type check",
-							expectedDatatype);
-					return;
-				}
-			}
-		}
 		if (inverse) {
 			Fact fact = new Fact(object, relation, entity);
 			write(writers, INFOBOXFACTS_TOREDIRECT_MAP.get(language), fact,
@@ -173,68 +136,15 @@ public class InfoboxMapper extends Extractor {
 					FactComponent.wikipediaURL(entity),
 					"InfoboxExtractor from " + attribute);
 		}
-//		if (factCollection.contains(relation, RDFS.type, YAGO.function))
-//			break;
 	}
 
-	public void extractMulti(Map<Theme, FactWriter> writers,
-			Map<Theme, FactSource> input) throws Exception {
-
-		FactCollection hardWiredFacts = new FactCollection(
-				input.get(HardExtractor.HARDWIREDFACTS));
-		Map<String, String> preferredMeanings = WordnetExtractor
-				.preferredMeanings(input);
-
-		Map<String, Set<String>> matchings = infoboxMatchings(new FactCollection(
-				input.get(AttributeMatcher.MATCHED_INFOBOXATTS_MAP
-						.get(language))));
-
-		// Map<String, String> rdictionary = new HashMap<String, String>();
-
-		for (Fact f : input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language))) {
-			String subject = FactComponent.stripBrackets(f.getArg(1));
-			Set<String> yagoRelations = matchings.get(f.getRelation());
-
-			if (yagoRelations == null)
-				continue;
-
-			for (String relation : yagoRelations) {
-				boolean inverse = f.getRelation().endsWith("->");
-				String expectedDatatype = hardWiredFacts.getArg2(relation, RDFS.range);
-				
-				String object = AttributeMatcher.preprocess(f.getArg(2));
-
-				// String object =
-				// rdictionary.get(FactComponent.stripBrackets(o));
-				// if(object == null) continue;
-				if (inverse) {
-					Fact fact = new Fact(object, relation, subject.toString());
-					write(writers,
-							INFOBOXFACTS_TOREDIRECT_MAP.get(language),
-							fact, INFOBOXSOURCES_MAP.get(language),
-							FactComponent.wikipediaURL(subject.toString()),
-							"InfoboxMapperMulti");
-				} else {
-					Fact fact = new Fact(subject.toString(), relation, object);
-					write(writers,
-							INFOBOXFACTS_TOREDIRECT_MAP.get(language),
-							fact, INFOBOXSOURCES_MAP.get(language),
-							FactComponent.wikipediaURL(subject.toString()),
-							"InfoboxMapperMulti");
-				}
-			}
-		}
-	}
-
-	public void extractEN(Map<Theme, FactWriter> writers,
+	public void extract(Map<Theme, FactWriter> writers,
 			Map<Theme, FactSource> input) throws Exception {
 
 		FactCollection infoboxFacts = new FactCollection(
 				input.get(PatternHardExtractor.INFOBOXPATTERNS));
 		FactCollection hardWiredFacts = new FactCollection(
 				input.get(HardExtractor.HARDWIREDFACTS));
-		Map<String, Set<String>> patterns = InfoboxExtractor
-				.infoboxPatterns(infoboxFacts);
 		PatternList replacements = new PatternList(infoboxFacts,
 				"<_infoboxReplace>");
 		Map<String, String> combinations = infoboxFacts
@@ -242,10 +152,25 @@ public class InfoboxMapper extends Extractor {
 		Map<String, String> preferredMeanings = WordnetExtractor
 				.preferredMeanings(input);
 
-		/* final version */
+		FactCollection nonMappedFacts = new FactCollection(
+				input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP
+						.get(language)));
+
+		// Get the infobox patterns depending on the language
+		Map<String, Set<String>> patterns;
+		if (this.language.equals("en")) {
+			patterns = InfoboxExtractor.infoboxPatterns(infoboxFacts);
+		} else {
+			FactCollection matchedAttributes = new FactCollection(
+					input.get(AttributeMatcher.MATCHED_INFOBOXATTS_MAP
+							.get(language)));
+			patterns = InfoboxExtractor.infoboxPatterns(matchedAttributes);
+		}
+
 		Map<String, Set<String>> attributes = new TreeMap<String, Set<String>>();
 		String prevEntity = "";
-		for (Fact f : input.get(InfoboxTermExtractor.INFOBOXTERMS_MAP.get("en"))) {
+		for (Fact f : nonMappedFacts) {
+
 			String attribute = FactComponent.stripBrackets(FactComponent
 					.stripPrefix(f.getRelation()));
 			String value = f.getArg(2);
@@ -263,7 +188,6 @@ public class InfoboxMapper extends Extractor {
 			} else {
 				D.addKeyValue(attributes, attribute, value, TreeSet.class);
 			}
-
 		}
 
 		processCombinations(prevEntity, attributes, combinations, patterns,
@@ -319,15 +243,6 @@ public class InfoboxMapper extends Extractor {
 		return result;
 	}
 
-	@Override
-	public void extract(Map<Theme, FactWriter> writers,
-			Map<Theme, FactSource> input) throws Exception {
-		if (this.language.equals("en"))
-			extractEN(writers, input);
-		else
-			extractMulti(writers, input);
-	}
-
 	private void processCombinations(String entity,
 			Map<String, Set<String>> attributes,
 			Map<String, String> combinations,
@@ -355,33 +270,19 @@ public class InfoboxMapper extends Extractor {
 		}
 	}
 
-	public static Map<String, Set<String>> infoboxMatchings(FactCollection facts) {
-		Map<String, Set<String>> map = new HashMap<String, Set<String>>();
-		Announce.doing("Compiling infobox patterns");
-		for (Fact f : facts) {
-			D.addKeyValue(map, f.getArg(1), f.getArg(2), TreeSet.class);
-		}
-		if (map.isEmpty()) {
-			Announce.warning("No infobox patterns found");
-		}
-
-		Announce.done();
-		return (map);
-	}
-
 	public InfoboxMapper(String lang) {
 		language = lang;
 	}
 
 	public static void main(String[] args) throws Exception {
 		InfoboxMapper extractor = new InfoboxMapper("en");
-//		extractor.extract(new File("D:/data3/yago2s/"),
-//				"mapping infobox attributes into infobox facts");
+		// extractor.extract(new File("D:/data3/yago2s/"),
+		// "mapping infobox attributes into infobox facts");
 		extractor.extract(new File("/home/jbiega/data/yago2s/"),
 				"mapping infobox attributes into infobox facts");
-//		for (Extractor e : extractor.followUp()) {
-//			e.extract(new File("D:/data3/yago2s/"), "test");
-//		}
+		// for (Extractor e : extractor.followUp()) {
+		// e.extract(new File("D:/data3/yago2s/"), "test");
+		// }
 	}
 
 }

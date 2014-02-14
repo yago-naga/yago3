@@ -1,6 +1,6 @@
 # Manually coded facts of YAGO2s.
 #  DO NOT OVERWRITE!
-# This file contains the infobox patterns and the infobox replacements.
+# This file contains the infobox patterns, infobox replacements and infobox combinations.
 # It is used by the InfoboxExtractor.
 # Infobox patterns are not case sensitive.
 
