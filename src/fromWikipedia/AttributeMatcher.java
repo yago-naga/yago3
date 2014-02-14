@@ -13,7 +13,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.regex.Pattern;
 
-import utils.TermExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FrequencyVector;
 import javatools.datatypes.Pair;
@@ -52,7 +51,6 @@ public class AttributeMatcher extends Extractor {
 	
 	Map<String, Map<String,Pair<Integer, Integer>>> statistics;
 	private String language;
-	private Map<String, String> rdictionary; 
 	private double WILSON_THRESHOLD = 0;
 	private double SUPPORT_THRESHOLD = 1;
 	
@@ -80,7 +78,7 @@ public class AttributeMatcher extends Extractor {
 	public Set<Theme> input() {
 	  HashSet<Theme> result = new HashSet<Theme>(
 	      Arrays.asList(
-//	          InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
+	          InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
 	          InterLanguageLinks.INTERLANGUAGELINKS,
 	          PatternHardExtractor.INFOBOXPATTERNS, 
 	          HardExtractor.HARDWIREDFACTS, 
@@ -94,62 +92,43 @@ public class AttributeMatcher extends Extractor {
 	public Set<Theme> output() {
 		return new HashSet<>(Arrays.asList(MATCHED_INFOBOXATTS_MAP.get(language),MATCHEDATTSOURCES_MAP.get(language)));
 	}
-	
-//	@Override
-//	public Set<Extractor> followUp() {
-//	  return new HashSet<Extractor>(Arrays.asList(new InfoboxMapper(this.language)));
-//	}
 
 	@Override
 	public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
-    rdictionary = InterLanguageLinksDictionary.get(language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
     statistics = new HashMap<String, Map<String,Pair <Integer,Integer>>>();
     FactCollection hardWiredFacts = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
     Map<String, String> preferredMeaning = WordnetExtractor.preferredMeanings(input);
-    ExtendedFactCollection myFactCollection = getFactCollection(input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language)));
+    ExtendedFactCollection englishFactCollection = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_MAP.get("en")));
     //        ExtendedFactCollection myFactCollection = getFactCollection(new File("D:/yago2s_ttl"));
-    FactSource lang2FactSource= input.get(InfoboxExtractor.INFOBOXATTS_MAP.get(language)); //?
+    FactSource lang2FactSource= input.get( InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language)); 
 
-    Announce.progressStart("Running through "+language+" Wikipedia", 12713794); 
-    int lang2FactSourceSize = 0;
     for (Fact f2 : lang2FactSource){
-      lang2FactSourceSize++;
-      Announce.progressStep();
       String secondLangSubject = FactComponent.stripBrackets(f2.getArg(1));
       String secondLangRelation = f2.getRelation();
       String secondLangObject = f2.getArg(2);
 
-      String yagoArg = /*rdictionary.get*/(secondLangSubject);
-      if(yagoArg==null) {
-        continue;
-      }
-      List<Fact> yagoFactsWithSubject = myFactCollection.getFactsWithSubject(FactComponent.forYagoEntity(yagoArg));
+      List<Fact> yagoFactsWithSubject = englishFactCollection.getFactsWithSubject(secondLangSubject);
 
       for(Fact f: yagoFactsWithSubject){
+        System.out.println("OOOOOOOOOOOOOOOOOOOOOOO " +f);
         String yagoRelation = f.getRelation();
         String yagoObject = FactComponent.stripBrackets(f.getArg(2));
 
-        String expectedDatatype = hardWiredFacts.getArg2(yagoRelation, RDFS.range);
-        /* assumption: all the subjects are entities*/
-
-        // if(isEqualr(yagoSubject,secondLangSubject)){   //expectation: always be true
-        if(isEqual(yagoObject, secondLangObject/*, expectedDatatype, preferredMeaning*/ )){
-
+        if((yagoObject.equals( secondLangObject))){
           deduce(yagoRelation, secondLangRelation, true);
         }else
-
           deduce(yagoRelation, secondLangRelation, false);
-        //          }
       }
 
-      List<Fact> yagoFactsWithObject = myFactCollection.getFactsWithObject(FactComponent.forYagoEntity(yagoArg));
+      List<Fact> yagoFactsWithObject = englishFactCollection.getFactsWithObject(FactComponent.forYagoEntity(secondLangSubject));
       for(Fact f: yagoFactsWithObject){
         String yagoRelation = f.getRelation();
         String yagoSubject = FactComponent.stripBrackets(f.getArg(1));
         String expectedDatatype = hardWiredFacts.getArg2(yagoRelation, RDFS.range);
         //assumption: all the subjects are entities
-        if(isEntity(expectedDatatype)){
-          if(isEqual(yagoSubject, secondLangObject/*, "<yagoGeoEntity>", preferredMeaning */)/* && isEqualr(yagoObject, secondLangSubject)*/)
+        System.out.println("BBBBBBBBBBBBBBBBBBBBBBBBBBB "+ expectedDatatype+ " " + yagoRelation);
+        if(isEntity(expectedDatatype)){ 
+          if(yagoSubject.equals( secondLangObject)/*, "<yagoGeoEntity>", preferredMeaning && isEqualr(yagoObject, secondLangSubject)*/)
             deduce(yagoRelation, "<"+FactComponent.stripBrackets(secondLangRelation)+"->", true);
           else
             deduce(yagoRelation, "<"+FactComponent.stripBrackets(secondLangRelation)+"->", false);
@@ -239,47 +218,7 @@ public class AttributeMatcher extends Extractor {
 		}
 		return false;
 	}
-//	public  boolean isEqual(String target, String b){
-//		if(dictionary.get(target)!= null && dictionary.get(target).equals(FactComponent.stripBrackets(b)))
-//			return true;
-//		return false;
-//	}
-	public  boolean isEqualr(String target, String b){
-		if(rdictionary.get(FactComponent.stripBrackets(b))!= null && rdictionary.get(FactComponent.stripBrackets(b)).contains(target))
-			return true;
-		return false;
-	}
-	public boolean isEqual(String target, String b/*, String expectedDatatype, Map<String, String> preferredMeaning*/) throws IOException{
-//		TermExtractor termExtractor = expectedDatatype.equals(RDFS.clss) ? new TermExtractor.ForClass(
-//				preferredMeaning) : TermExtractor.forType(expectedDatatype);
-//		List<String> objects = termExtractor.extractList(preprocess(b));
-				String object = preprocess(b);
-//		switch (expectedDatatype){
-//		
-//		case "xsd:date":	
-//			break;
-//		case "xsd:nonNegativeInteger":
-//		case "<m^2>":{
-//			break;
-//		}
-//		case "xsd:string": {
-//			break;
-//		}
-//		case "<yagoGeoEntity>":
-//		case "<yagoLegalActorGeo>":
-//		case "<yagoURL>":
-//		default:
-//			for(String s:objects){
-				String temp = FactComponent.stripBrackets(object);
-				if(rdictionary.get(temp)!=null && rdictionary.get(temp).contains(target))
-//				if(temp.equals(target))
-					return true;
-//			}
-//			return false; 
-//		}
-		return false;
 
-	}
 
 	public void deduce(String yagoRelation, String secondLangRelation, boolean both) throws IOException{
 

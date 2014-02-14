@@ -33,6 +33,7 @@ import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.InfoboxTermExtractor;
 
 /**
  * YAGO2s - InfoboxExtractor
@@ -114,9 +115,11 @@ public class InfoboxExtractor extends Extractor {
     return new HashSet<Extractor> (Arrays.asList(
         new EntityTranslator(INFOBOXTYPES_MAP.get(this.language), INFOBOXTYPESTRANSLATED_MAP.get(this.language), this.language),
         new InfoboxTypeTranslator(INFOBOXTYPESTRANSLATED_MAP.get(this.language), INFOBOXTYPESBOTHTRANSLATED_MAP.get(this.language), this.language),
+        new InfoboxTypeExtractor(this.language),
+        new InfoboxTermExtractor(this.language),
         new AttributeMatcher(this.language),
-        new InfoboxMapper(this.language),
-        new InfoboxTypeExtractor(this.language)));
+        new InfoboxMapper(this.language)
+       ));
 //	}
   }
 
@@ -400,11 +403,12 @@ public class InfoboxExtractor extends Extractor {
 //        ).extract(new File("D:/data3/yago2s"), null);
    
     /*German*/
-//    new InfoboxExtractor(new File("D:/de_wikitest.xml")).extract(new File("D:/data3/yago2s/"), "Test on 1 wikipedia article");
+    new InfoboxExtractor(new File("D:/de_wikitest.xml")).extract(new File("D:/data3/yago2s/"), "Test on 1 wikipedia article");
 //    new EntityTranslator(INFOBOXATTS_MAP.get("de"), INFOBOXTYPESTRANSLATED_MAP.get("de"), "de"
 //        ).extract(new File("D:/data3/yago2s"), null);
 //    new InfoboxTypeTranslator(INFOBOXTYPESTRANSLATED_MAP.get("de"), INFOBOXTYPESBOTHTRANSLATED_MAP.get("de"), "de").extract(new File("D:/data3/yago2s/"), "test");
-    new AttributeMatcher("en").extract(new File("D:/data3/yago2s/"), "test");
+    new InfoboxTermExtractor("de").extract(new File("D:/data3/yago2s/"), "test");
+    new AttributeMatcher("de").extract(new File("D:/data3/yago2s/"), "test");
 
     new InfoboxTypeExtractor("de").extract(new File("D:/data3/yago2s/"), "test");
 
