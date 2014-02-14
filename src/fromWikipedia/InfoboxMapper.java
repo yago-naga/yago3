@@ -91,7 +91,6 @@ public class InfoboxMapper extends Extractor {
 				PatternHardExtractor.INFOBOXPATTERNS,
 				HardExtractor.HARDWIREDFACTS,
 				InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language),
-				InfoboxTermExtractor.INFOBOXTERMS_MAP.get("en"),
 				WordnetExtractor.WORDNETWORDS,
 				PatternHardExtractor.TITLEPATTERNS,
 				AttributeMatcher.MATCHED_INFOBOXATTS_MAP.get(language)));
