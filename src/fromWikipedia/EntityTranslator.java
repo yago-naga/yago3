@@ -2,17 +2,12 @@ package fromWikipedia;
 
 import java.io.File;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
 import fromOtherSources.InterLanguageLinks;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor.FollowUpExtractor;
-import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
@@ -33,8 +28,6 @@ import basics.Theme;
 public class EntityTranslator extends FollowUpExtractor {
 
   private String language;
-
-  public static final Theme TRANSLATEDFACTS = new Theme("translatedFacts", "");
 
   @Override
   public Set<Theme> input() {

@@ -30,10 +30,12 @@ public class TypeCoherenceChecker extends Extractor {
     Set<Theme> result = new TreeSet<Theme>();
     result.add(WordnetExtractor.WORDNETCLASSES);
     result.add(HardExtractor.HARDWIREDFACTS);
-    result.add(EntityTranslator.TRANSLATEDFACTS);
+    
     for (String s : Extractor.languages) {
-//      result.add(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s));
-      result.add(CategoryTypeExtractor.WIKIPEDIACLASSES_MAP.get(s));
+      result.add(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(s));
+      result.add(CategoryTypeExtractor.CATEGORYCLASSES_MAP.get(s));
+      result.add(InfoboxTypeExtractor.INFOBOXRAWTYPES_MAP.get(s));
+      result.add(InfoboxTypeExtractor.INFOBOXCLASSES_MAP.get(s));
     }
     return result;
   }
@@ -75,9 +77,10 @@ protected ExtendedFactCollection categoryClassFacts;
     ExtendedFactCollection batch = new ExtendedFactCollection();
     
     for (String s : Extractor.languages) {
-//      loadFacts(input.get(WikipediaTypeExtractor.YAGOTYPES_MAP.get(s)), batch);
-      loadFacts(input.get(EntityTranslator.TRANSLATEDFACTS), batch);
-      loadFacts(input.get(CategoryTypeExtractor.WIKIPEDIACLASSES_MAP.get(s)), categoryClassFacts);
+      loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(s)), batch);
+      loadFacts(input.get(CategoryTypeExtractor.CATEGORYCLASSES_MAP.get(s)), categoryClassFacts);
+      loadFacts(input.get(InfoboxTypeExtractor.INFOBOXRAWTYPES_MAP.get(s)), batch);
+      loadFacts(input.get(InfoboxTypeExtractor.INFOBOXCLASSES_MAP.get(s)), categoryClassFacts);
     }
     
     FactWriter w = output.get(YAGOTYPES);
@@ -96,14 +99,12 @@ protected ExtendedFactCollection categoryClassFacts;
       write(output,YAGOTYPES, f, YAGOTYPESSOURCES, FactComponent.wikipediaURL(f.getArg(1)),
           "WikipediaTypeExtractor from category");
     }
-    Announce.done();
-
-    w.close();
     
+    w.close();
     Announce.done();
   }
   
-  /** Returns the YAGO branch for a category class */
+  /** Returns the YAGO branch for a class */
   public String yagoBranchForClass(String arg) {
     if (yagoBranches.containsKey(arg)) return (yagoBranches.get(arg));
     String yagoBranch = SimpleTypeExtractor.yagoBranch(arg, wordnetClasses);
@@ -169,7 +170,7 @@ public void flush(String entity, Set<String> types, Map<Theme, FactWriter> write
   
   public static void main(String[] args) throws Exception {
     TypeCoherenceChecker extractor = new TypeCoherenceChecker();
-    extractor.extract(new File("D:/data2/yago2s/"),"");
+    extractor.extract(new File("D:/data3/yago2s/"),"");
   }
 
 
