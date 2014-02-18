@@ -41,7 +41,7 @@ public class ClassExtractor extends Extractor {
 	        //GeoNamesClassMapper.GEONAMESCLASSES
 	        ));
 	for (String lang : Extractor.languages) {
-		input.add(CategoryTypeExtractor.WIKIPEDIACLASSES_MAP.get(lang));
+		input.add(CategoryTypeExtractor.CATEGORYCLASSES_MAP.get(lang));
 	}
 	return input;
   }
