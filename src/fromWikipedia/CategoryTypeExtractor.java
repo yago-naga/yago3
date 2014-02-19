@@ -83,7 +83,7 @@ public class CategoryTypeExtractor extends Extractor {
   
  
 
-  protected  ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {
+  protected  ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) { //TODO:
     for(Fact f: factSource){
       result.add(f);
     }

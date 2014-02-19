@@ -42,7 +42,7 @@ public class CategoryExtractor extends Extractor {
 
   public static final HashMap<String, Theme> CATEGORYMEMBERS_MAP = new HashMap<String, Theme>();
 
-  public static final HashMap<String, Theme> CATEGORYMEMBERSTRANSLATED_MAP = new HashMap<String, Theme>();
+//  public static final HashMap<String, Theme> CATEGORYMEMBERSTRANSLATED_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> CATEGORYMEMBERSBOTHTRANSLATED_MAP = new HashMap<String, Theme>();
 
@@ -52,8 +52,8 @@ public class CategoryExtractor extends Extractor {
     for (String s : Extractor.languages) {
       CATEGORYMEMBERS_MAP.put(s, new Theme("categoryMembers" + Extractor.langPostfixes.get(s),
           "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be tranlsated", ThemeGroup.OTHER));
-      CATEGORYMEMBERSTRANSLATED_MAP.put(s, new Theme("categoryMembershipTranslated" + Extractor.langPostfixes.get(s),
-          "Category Members facts with translated subjects.", ThemeGroup.OTHER));
+//      CATEGORYMEMBERSTRANSLATED_MAP.put(s, new Theme("categoryMembershipTranslated" + Extractor.langPostfixes.get(s),
+//          "Category Members facts with translated subjects.", ThemeGroup.OTHER));
       CATEGORYMEMBERSBOTHTRANSLATED_MAP.put(s, new Theme("categoryMembersBothTranslated" + Extractor.langPostfixes.get(s),
           "Category Members facts with translated subjects and objects.", ThemeGroup.OTHER));
       CATEGORYMEMBERSSOURCES_MAP.put(s, new Theme("categoryMembersSources" + Extractor.langPostfixes.get(s), "The sources of category facts",
@@ -75,9 +75,8 @@ public class CategoryExtractor extends Extractor {
   @Override
   public Set<Extractor> followUp() {
     return new HashSet<Extractor>(
-        Arrays.asList(new EntityTranslator(CATEGORYMEMBERS_MAP.get(this.language), CATEGORYMEMBERSTRANSLATED_MAP.get(this.language), this.language),
-            new CategoryTranslator(CATEGORYMEMBERSTRANSLATED_MAP.get(this.language), CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(this.language),
-                this.language), new CategoryMapper(this.language), new CategoryTypeExtractor(this.language)));
+        Arrays.asList(new Translator(CATEGORYMEMBERS_MAP.get(this.language), CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(this.language), this.language, "Category"),
+               new CategoryMapper(this.language), new CategoryTypeExtractor(this.language)));
   }
 
   @Override
@@ -150,7 +149,7 @@ public class CategoryExtractor extends Extractor {
     //        "D:/data3/yago2s/"), "translating category-memebership facts");
     //    new CategoryMapper("en").extract(new File("D:/data3/yago2s/"), "mapping infobox attributes into infobox facts");
 //    new CategoryTypeExtractor("en").extract(new File("D:/data3/yago2s/"), "mapping infobox attributes into infobox facts");
-    new EntityTranslator(CATEGORYMEMBERS_MAP.get("en"), CATEGORYMEMBERSTRANSLATED_MAP.get("en"), "en").extract(new File("D:/data3/yago2s"), "");
+    new Translator(CATEGORYMEMBERS_MAP.get("de"), CATEGORYMEMBERSBOTHTRANSLATED_MAP.get("de"), "de", "Category").extract(new File("D:/data3/yago2s"), "");
     
 
   }

@@ -112,26 +112,13 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		// if (this.language.equals("en")) {
-		// return new HashSet<Extractor> (Arrays.asList(
-		// new InfoboxMapper("en"),
-		// new InfoboxTypeTranslator(this.language), //TODO: does it really need
-		// to be translated for en?
-		// new WikipediaTypeExtractor("en")));
-		// } else {
-		return new HashSet<Extractor>(Arrays.asList(
-				new EntityTranslator(INFOBOXTYPES_MAP.get(this.language),
-						INFOBOXTYPESTRANSLATED_MAP.get(this.language),
-						this.language), new InfoboxTypeTranslator(
-						INFOBOXTYPESTRANSLATED_MAP.get(this.language),
-						INFOBOXTYPESBOTHTRANSLATED_MAP.get(this.language),
-						this.language),
-				new InfoboxTypeExtractor(this.language),
-				new InfoboxTermExtractor(this.language), new AttributeMatcher(
-						this.language), new InfoboxMapper(this.language)));
-		// }
-	}
+  public Set<Extractor> followUp() {
+    return new HashSet<Extractor>(Arrays.asList(
+        new Translator(INFOBOXTYPES_MAP.get(this.language), INFOBOXTYPESBOTHTRANSLATED_MAP.get(this.language), this.language, "Infobox"),
+        new InfoboxTypeExtractor(this.language), new InfoboxTermExtractor(this.language), new AttributeMatcher(this.language), new InfoboxMapper(
+            this.language)));
+
+  }
 
 	/** normalizes an attribute name */
 	public static String normalizeAttribute(String a) {
