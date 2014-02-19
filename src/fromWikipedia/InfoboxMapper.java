@@ -87,14 +87,16 @@ public class InfoboxMapper extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(
+		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
 				HardExtractor.HARDWIREDFACTS,
 				InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language),
 				WordnetExtractor.WORDNETWORDS,
-				PatternHardExtractor.TITLEPATTERNS,
-				AttributeMatcher.MATCHED_INFOBOXATTS_MAP.get(language)));
-
+				PatternHardExtractor.TITLEPATTERNS));
+		if (!language.equals("en")) {
+			input.add(AttributeMatcher.MATCHED_INFOBOXATTS_MAP.get(language));
+		}
+		return input;
 	}
 
 	@Override
