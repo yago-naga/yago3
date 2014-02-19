@@ -22,10 +22,9 @@ import basics.FactWriter;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import fromOtherSources.PatternHardExtractor;
-import fromWikipedia.EntityTranslator;
+import fromWikipedia.Translator;
 import fromWikipedia.Extractor;
 import fromWikipedia.InfoboxExtractor;
-import fromWikipedia.InfoboxMapper;
 
 public class InfoboxTermExtractor extends Extractor {
 	
@@ -60,7 +59,7 @@ public class InfoboxTermExtractor extends Extractor {
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(new Redirector(
 				INFOBOXTERMS_TOREDIRECT_MAP.get(language), INFOBOXTERMS_MAP.get(language), this, this.language),
-				new EntityTranslator(INFOBOXTERMS_MAP.get(language), INFOBOXATTSTRANSLATED_MAP.get(this.language), this.language)));
+				new Translator(INFOBOXTERMS_MAP.get(language), INFOBOXATTSTRANSLATED_MAP.get(this.language), this.language, "Entity")));
 	}
 
 	@Override
