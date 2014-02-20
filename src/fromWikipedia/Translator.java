@@ -63,10 +63,16 @@ public class Translator extends FollowUpExtractor {
         translatedSubject = tempDictionary.get(translatedSubject);
       }
       if (objectType.equals("Entity")) {
-        if (tempDictionary.containsKey(translatedObject)) {
-          translatedObject = tempDictionary.get(translatedObject);
-        }
-        output.get(checked).write(new Fact(FactComponent.forYagoEntity(translatedSubject), f.getRelation(), FactComponent.forString(translatedObject)));
+
+	//For non-literals translate the entity and put back into yagoEntity form
+	if (!FactComponent.isLiteral(translatedObject)) {
+	  if (tempDictionary.containsKey(translatedObject)) {
+	    translatedObject = tempDictionary.get(translatedObject);
+	  }
+	  translatedObject = FactComponent.forUri(translatedObject);
+	}
+
+        output.get(checked).write(new Fact(FactComponent.forYagoEntity(translatedSubject), f.getRelation(), translatedObject));
 //        translatedFacts.add(new Fact(FactComponent.forYagoEntity(translatedSubject), f.getRelation(), FactComponent.forString(translatedObject)));
 
       } else if (objectType.equals("Infobox")) {
