@@ -33,10 +33,10 @@ public class FactExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryMapper.CATEGORYFACTS_TOREDIRECT_MAP.get("en"),
+    return new FinalSet<>(CategoryMapper.CATEGORYFACTS_MAP.get("en"),
         GenderExtractor.PERSONS_GENDER,        
         HardExtractor.HARDWIREDFACTS, 
-        InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),        
+        InfoboxMapper.INFOBOXFACTS_MAP.get("en"),        
         RuleExtractor.RULERESULTS,  
         FlightExtractor.FLIGHTS,
         GeoNamesDataImporter.GEONAMESMAPPEDDATA,

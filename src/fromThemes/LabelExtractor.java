@@ -35,9 +35,9 @@ public class LabelExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryMapper.CATEGORYFACTS_TOREDIRECT_MAP.get("en"), DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
+    return new FinalSet<>(CategoryMapper.CATEGORYFACTS_MAP.get("en"), DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
         HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, 
-        InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"),
+        InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
         PersonNameExtractor.PERSONNAMES,
         WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
         WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS_MAP.get("en"),

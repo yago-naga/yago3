@@ -2,6 +2,7 @@ package fromWikipedia;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
@@ -19,6 +20,8 @@ import basics.Theme;
 import basics.Theme.ThemeGroup;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.TypeChecker;
+import fromThemes.Redirector;
 
 /**
  * CategoryMapper - YAGO2s
@@ -35,12 +38,20 @@ public class CategoryMapper extends Extractor {
 
   public static final HashMap<String, Theme> CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>();
 
+  public static final HashMap<String, Theme> CATEGORYFACTS_TOTYPECHECK_MAP = new HashMap<String, Theme>();
+
+  public static final HashMap<String, Theme> CATEGORYFACTS_MAP = new HashMap<String, Theme>();
+
   public static final HashMap<String, Theme> CATEGORYSOURCES_MAP = new HashMap<String, Theme>();
 
   static {
     for (String s : Extractor.languages) {
       CATEGORYFACTS_TOREDIRECT_MAP.put(s, new Theme("categoryFactsToBeRedirected" + Extractor.langPostfixes.get(s),
           "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected", ThemeGroup.OTHER));
+      CATEGORYFACTS_TOTYPECHECK_MAP.put(s, new Theme("categoryFactsToBeTypechecked" + Extractor.langPostfixes.get(s),
+          "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be typechecked", ThemeGroup.OTHER));
+      CATEGORYFACTS_MAP.put(s, new Theme("categoryFacts" + Extractor.langPostfixes.get(s),
+          "Facts about Wikipedia instances, derived from the Wikipedia categories", ThemeGroup.OTHER));
       CATEGORYSOURCES_MAP.put(s, new Theme("categorySources" + Extractor.langPostfixes.get(s), "The sources of category facts", ThemeGroup.OTHER));
     }
 
@@ -55,6 +66,15 @@ public class CategoryMapper extends Extractor {
   @Override
   public Set<Theme> output() {
     return new FinalSet<Theme>(CATEGORYFACTS_TOREDIRECT_MAP.get(language), CATEGORYSOURCES_MAP.get(language));
+  }
+
+  @Override
+  public Set<Extractor> followUp() {
+    return new HashSet<Extractor>(Arrays.asList(
+			new Redirector(CATEGORYFACTS_TOREDIRECT_MAP.get(language),
+					CATEGORYFACTS_TOTYPECHECK_MAP.get(language), this, this.language),
+			new TypeChecker(CATEGORYFACTS_TOTYPECHECK_MAP.get(language),
+					CATEGORYFACTS_MAP.get(language), this)));
   }
 
   protected ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {

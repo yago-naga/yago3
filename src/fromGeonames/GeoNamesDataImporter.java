@@ -60,7 +60,7 @@ public class GeoNamesDataImporter extends Extractor {
     return new HashSet<Theme>(Arrays.asList(
         GeoNamesClassMapper.GEONAMESCLASSSIDS, 
         GeoNamesEntityMapper.GEONAMESENTITYIDS,
-        InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en")));
+        InfoboxMapper.INFOBOXFACTS_MAP.get("en")));
   }
 
   @Override
@@ -78,7 +78,7 @@ public class GeoNamesDataImporter extends Extractor {
     Map<String, String> geoEntityId2yago = mappedEntityIds.getReverseMap("<hasGeonamesEntityId>");
     FactCollection mappedClassIds = new FactCollection(input.get(GeoNamesClassMapper.GEONAMESCLASSSIDS));
     Map<String, String> geoClassId2yago = mappedClassIds.getReverseMap("<hasGeonamesClassId>");
-    FactSource ibFacts = input.get(InfoboxMapper.INFOBOXFACTS_TOREDIRECT_MAP.get("en"));
+    FactSource ibFacts = input.get(InfoboxMapper.INFOBOXFACTS_MAP.get("en"));
     
     Map<Integer, String> geoId2name = 
         extractAllCountries(new File(geonamesFolder, "allCountries.txt"), mappedOut, onlyOut, typeOut, geoEntityId2yago, geoClassId2yago);
