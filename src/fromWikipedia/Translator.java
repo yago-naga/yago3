@@ -49,11 +49,6 @@ public class Translator extends FollowUpExtractor {
 		Map<String, String> tempDictionary = InterLanguageLinksDictionary.get(
 				language, input.get(InterLanguageLinks.INTERLANGUAGELINKS));
 
-		// FactCollection translatedFacts = new FactCollection();
-
-		// FactCollection temp = new FactCollection();
-		// loadFacts(input.get(checkMe), temp);
-
 		for (Fact f : input.get(checkMe)) {
 
 			/*
@@ -70,8 +65,7 @@ public class Translator extends FollowUpExtractor {
 			
 			if (objectType.equals("Entity")) {
 
-				// For non-literals translate the entity and put back into
-				// yagoEntity form
+				// For non-literals: translate the entity and put back into yagoEntity form
 				if (!FactComponent.isLiteral(translatedObject)) {
 					
 					translatedObject = FactComponent.stripBrackets(translatedObject);
@@ -86,9 +80,6 @@ public class Translator extends FollowUpExtractor {
 						new Fact(
 								FactComponent.forYagoEntity(translatedSubject),
 								f.getRelation(), translatedObject));
-				// translatedFacts.add(new
-				// Fact(FactComponent.forYagoEntity(translatedSubject),
-				// f.getRelation(), FactComponent.forString(translatedObject)));
 
 			} else if (objectType.equals("Infobox")) {
 
@@ -118,10 +109,6 @@ public class Translator extends FollowUpExtractor {
 								FactComponent.forYagoEntity(translatedSubject),
 								"<hasInfoboxType/en>", FactComponent
 										.forString(translatedObject)));
-				// translatedFacts
-				// .add(new Fact(FactComponent.forYagoEntity(translatedSubject),
-				// "<hasInfoboxType/en>",
-				// FactComponent.forString(translatedObject)));
 
 			} else if (objectType.equals("Category")) {
 
@@ -146,17 +133,8 @@ public class Translator extends FollowUpExtractor {
 								FactComponent.forYagoEntity(translatedSubject),
 								"<hasWikiCategory/en>", FactComponent
 										.forString(translatedObject)));
-				// translatedFacts.add(new
-				// Fact(FactComponent.forYagoEntity(translatedSubject),
-				// "<hasWikiCategory/en>", FactComponent
-				// .forString(translatedObject)));
-
 			}
-
 		}
-		// for (Fact fact : translatedFacts) {
-		// output.get(checked).write(fact);
-		// }
 	}
 
 	public Translator(Theme in, Theme out, String lang, String objectType) {
