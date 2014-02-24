@@ -112,13 +112,16 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	@Override
-  public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(
-        new Translator(INFOBOXTYPES_MAP.get(this.language), INFOBOXTYPESBOTHTRANSLATED_MAP.get(this.language), this.language, "Infobox"),
-        new InfoboxTypeExtractor(this.language), new InfoboxTermExtractor(this.language), new AttributeMatcher(this.language), new InfoboxMapper(
-            this.language)));
+	public Set<Extractor> followUp() {
+		return new HashSet<Extractor>(Arrays.asList(new Translator(
+				INFOBOXTYPES_MAP.get(this.language),
+				INFOBOXTYPESBOTHTRANSLATED_MAP.get(this.language),
+				this.language, "Infobox"), new InfoboxTypeExtractor(
+				this.language), new InfoboxTermExtractor(this.language),
+				new AttributeMatcher(this.language), new InfoboxMapper(
+						this.language)));
 
-  }
+	}
 
 	/** normalizes an attribute name */
 	public static String normalizeAttribute(String a) {
@@ -316,12 +319,6 @@ public class InfoboxExtractor extends Extractor {
 		return (result);
 	}
 
-	public String addPrefix(String relation) {
-		// return relation;
-		return "<infobox/" + this.language + "/"
-				+ FactComponent.stripBrackets(relation) + ">";
-	}
-
 	private boolean comesFirst(Reader temp, String start, String end,
 			String... findMe) throws IOException {
 		String between = FileLines.readBetween(temp, start, end);
@@ -401,8 +398,9 @@ public class InfoboxExtractor extends Extractor {
 					for (String value : attributes.get(attribute)) {
 						write(writers,
 								INFOBOXATTS_MAP.get(language),
-								new Fact(titleEntity, addPrefix(FactComponent
-										.forYagoEntity(attribute)),
+								new Fact(titleEntity,
+										addPrefix(this.language, FactComponent
+												.forYagoEntity(attribute)),
 										FactComponent.forString(value)),
 								INFOBOXATTSOURCES_MAP.get(language),
 								FactComponent.wikipediaURL(titleEntity),
@@ -478,7 +476,7 @@ public class InfoboxExtractor extends Extractor {
 		// ).extract(new File("D:/data3/yago2s"), null);
 
 		/* German */
-		new InfoboxExtractor(new File("/home/jbiega/Downloads/vango.xml"))
+		new InfoboxExtractor(new File("/home/jbiega/Downloads/en_pol.xml"))
 				.extract(new File("/home/jbiega/data/yago2s/"),
 						"Test on 1 wikipedia article");
 		// new EntityTranslator(INFOBOXATTS_MAP.get("de"),
@@ -487,8 +485,8 @@ public class InfoboxExtractor extends Extractor {
 		// new InfoboxTypeTranslator(INFOBOXTYPESTRANSLATED_MAP.get("de"),
 		// INFOBOXTYPESBOTHTRANSLATED_MAP.get("de"), "de").extract(new
 		// File("D:/data3/yago2s/"), "test");
-		new InfoboxTermExtractor("en").extract(new File(
-				"/home/jbiega/data/yago2s/"), "test");
+		// new InfoboxTermExtractor("en").extract(new File(
+		// "/home/jbiega/data/yago2s/"), "test");
 		// new AttributeMatcher("en").extract(new
 		// File("/home/jbiega/data/yago2s/"), "test");
 

@@ -103,7 +103,6 @@ public class InfoboxMapper extends Extractor {
 	public Set<Theme> output() {
 		return new HashSet<>(Arrays.asList(
 				INFOBOXFACTS_TOREDIRECT_MAP.get(language),
-				INFOBOXFACTS_TOTYPECHECK_MAP.get(language),
 				INFOBOXSOURCES_MAP.get(language)));
 	}
 
@@ -168,8 +167,8 @@ public class InfoboxMapper extends Extractor {
 			patterns = InfoboxExtractor.infoboxPatterns(matchedAttributes);
 		}
 
-		Map<String, Set<String>> attributes = new TreeMap<String, Set<String>>();
-		String prevEntity = "";
+//		Map<String, Set<String>> attributes = new TreeMap<String, Set<String>>();
+//		String prevEntity = "";
 		for (Fact f : nonMappedFacts) {
 
 			String attribute = FactComponent.stripBrackets(FactComponent
@@ -178,98 +177,131 @@ public class InfoboxMapper extends Extractor {
 			if (value == null) {
 				continue;
 			}
-
-			if (!f.getArg(1).equals(prevEntity)) {
-				processCombinations(prevEntity, attributes, combinations,
-						patterns, preferredMeanings, hardWiredFacts, writers,
+			
+			System.out.println(patterns);
+			
+			Set<String> relations = patterns.get(attribute);
+			if (relations == null)
+				continue;
+			
+			
+			for (String relation : relations) {
+				extract(f.getArg(1), value, relation, attribute,
+						preferredMeanings, hardWiredFacts, writers,
 						replacements);
-				prevEntity = f.getArg(1);
-				attributes.clear();
-				D.addKeyValue(attributes, attribute, value, TreeSet.class);
-			} else {
-				D.addKeyValue(attributes, attribute, value, TreeSet.class);
 			}
-		}
 
-		processCombinations(prevEntity, attributes, combinations, patterns,
-				preferredMeanings, hardWiredFacts, writers, replacements);
+//			if (!f.getArg(1).equals(prevEntity)) {
+////				processCombinations(prevEntity, attributes, combinations,
+////						patterns, preferredMeanings, hardWiredFacts, writers,
+////						replacements);
+//				prevEntity = f.getArg(1);
+//				attributes.clear();
+//				D.addKeyValue(attributes, attribute, value, TreeSet.class);
+//			} else {
+//				D.addKeyValue(attributes, attribute, value, TreeSet.class);
+//			}
+		}
+		
+		
+//		for (String mappedattribute : attributes.keySet()) {
+//
+//			Set<String> relations = patterns.get(mappedattribute);
+//
+//			if (relations == null)
+//				continue;
+//			for (String mappedvalue : attributes.get(mappedattribute)) {
+//				for (String relation : relations) {
+//					extract(prevEntity, mappedvalue, relation, mappedattribute,
+//							preferredMeanings, hardWiredFacts, writers,
+//							replacements);
+//				}
+//			}
+//		}
+
+//		processCombinations(prevEntity, attributes, combinations, patterns,
+//				preferredMeanings, hardWiredFacts, writers, replacements);
 
 	}
 
-	public Map<String, Set<String>> applyCombination(
-			Map<String, Set<String>> result, Map<String, String> combinations) {
-		// Map<String, Set<String>> result = new TreeMap<String, Set<String>>();
+//	public Map<String, Set<String>> applyCombination(
+//			Map<String, Set<String>> result, Map<String, String> combinations) {
+//		// Map<String, Set<String>> result = new TreeMap<String, Set<String>>();
+//
+//		// D.addKeyValue(result, originalAttribute, originalValue,
+//		// TreeSet.class);
+//
+//		// for (Fact f : input){
+//		// Apply combinations
+//		next: for (String code : combinations.keySet()) {
+//			StringBuilder val = new StringBuilder();
+//
+//			for (String attribute : code.split(">")) {
+//				int scanTo = attribute.indexOf('<');
+//				if (scanTo != -1) {
+//					val.append(attribute.substring(0, scanTo));
+//					String attr = attribute.substring(scanTo + 1);
+//					// Do we want to exclude the existence of an attribute?
+//					if (attr.startsWith("~")) {
+//						attr = attr.substring(1);
+//						if (result.get(InfoboxExtractor
+//								.normalizeAttribute(attr)) != null) {
+//							continue next;
+//						}
+//						continue;
+//					}
+//					String newVal = D.pick(result.get(InfoboxExtractor
+//							.normalizeAttribute(attr)));
+//					if (newVal == null) {
+//						continue next;
+//					}
+//					val.append(newVal);
+//				} else {
+//					val.append(attribute);
+//				}
+//			}
+//			
+//			System.out.println(val);
+//
+//			D.addKeyValue(
+//					result,
+//					InfoboxExtractor.normalizeAttribute(combinations.get(code)),
+//					val.toString(), TreeSet.class);
+//		}
+//
+//		// }
+//	
+//		System.out.println(result);
+//
+//		return result;
+//	}
 
-		// D.addKeyValue(result, originalAttribute, originalValue,
-		// TreeSet.class);
-
-		// for (Fact f : input){
-		// Apply combinations
-		next: for (String code : combinations.keySet()) {
-			StringBuilder val = new StringBuilder();
-
-			for (String attribute : code.split(">")) {
-				int scanTo = attribute.indexOf('<');
-				if (scanTo != -1) {
-					val.append(attribute.substring(0, scanTo));
-					String attr = attribute.substring(scanTo + 1);
-					// Do we want to exclude the existence of an attribute?
-					if (attr.startsWith("~")) {
-						attr = attr.substring(1);
-						if (result.get(InfoboxExtractor
-								.normalizeAttribute(attr)) != null) {
-							continue next;
-						}
-						continue;
-					}
-					String newVal = D.pick(result.get(InfoboxExtractor
-							.normalizeAttribute(attr)));
-					if (newVal == null) {
-						continue next;
-					}
-					val.append(newVal);
-				} else {
-					val.append(attribute);
-				}
-			}
-
-			D.addKeyValue(
-					result,
-					InfoboxExtractor.normalizeAttribute(combinations.get(code)),
-					val.toString(), TreeSet.class);
-		}
-
-		// }
-
-		return result;
-	}
-
-	private void processCombinations(String entity,
-			Map<String, Set<String>> attributes,
-			Map<String, String> combinations,
-			Map<String, Set<String>> patterns,
-			Map<String, String> preferredMeanings,
-			FactCollection hardWiredFacts, Map<Theme, FactWriter> writers,
-			PatternList replacements) throws IOException {
-		if (!attributes.isEmpty()) {
-			attributes = applyCombination(attributes, combinations);
-
-			for (String mappedattribute : attributes.keySet()) {
-
-				Set<String> relations = patterns.get(mappedattribute);
-
-				if (relations == null)
-					continue;
-				for (String mappedvalue : attributes.get(mappedattribute)) {
-					for (String relation : relations) {
-						extract(entity, mappedvalue, relation, mappedattribute,
-								preferredMeanings, hardWiredFacts, writers,
-								replacements);
-					}
-				}
-			}
-		}
-	}
+//	private void processCombinations(String entity,
+//			Map<String, Set<String>> attributes,
+//			Map<String, String> combinations,
+//			Map<String, Set<String>> patterns,
+//			Map<String, String> preferredMeanings,
+//			FactCollection hardWiredFacts, Map<Theme, FactWriter> writers,
+//			PatternList replacements) throws IOException {
+//		if (!attributes.isEmpty()) {
+//			attributes = applyCombination(attributes, combinations);
+//
+//			for (String mappedattribute : attributes.keySet()) {
+//
+//				Set<String> relations = patterns.get(mappedattribute);
+//
+//				if (relations == null)
+//					continue;
+//				for (String mappedvalue : attributes.get(mappedattribute)) {
+//					for (String relation : relations) {
+//						extract(entity, mappedvalue, relation, mappedattribute,
+//								preferredMeanings, hardWiredFacts, writers,
+//								replacements);
+//					}
+//				}
+//			}
+//		}
+//	}
 
 	public InfoboxMapper(String lang) {
 		language = lang;

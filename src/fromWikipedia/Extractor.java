@@ -30,7 +30,9 @@ import basics.YAGO;
 public abstract class Extractor {
   
 	protected static String[] languages = {"en" , "de" };
+
 	protected static Map<String,String> langPostfixes = new HashMap<String, String>();
+	
 	static{
 		for(String s:languages) {
 				langPostfixes.put(s, "_"+s);
@@ -43,6 +45,12 @@ public abstract class Extractor {
 	public static String decodeLang(String fileName) {
 		if (!fileName.contains("_")) return "en";
 		return fileName.split("_")[0];
+	}
+	
+	public static String addPrefix(String language, String relation) {
+		// return relation;
+		return "<infobox/" + language + "/"
+				+ FactComponent.stripBrackets(relation) + ">";
 	}
 
 	/** The themes required */
