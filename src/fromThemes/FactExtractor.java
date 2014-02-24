@@ -1,6 +1,8 @@
 package fromThemes;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import javatools.administrative.Announce;
@@ -14,6 +16,8 @@ import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
 import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryMapper;
+import fromWikipedia.CategoryTypeExtractor;
+import fromWikipedia.Extractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.GenderExtractor;
 import fromWikipedia.InfoboxExtractor;
@@ -31,43 +35,55 @@ import fromWikipedia.TemporalInfoboxExtractor;
  */
 public class FactExtractor extends SimpleDeduplicator {
 
-  @Override
-  public Set<Theme> input() {
-    return new FinalSet<>(CategoryMapper.CATEGORYFACTS_MAP.get("en"),
-        GenderExtractor.PERSONS_GENDER,        
-        HardExtractor.HARDWIREDFACTS, 
-        InfoboxMapper.INFOBOXFACTS_MAP.get("en"),        
-        RuleExtractor.RULERESULTS,  
-        FlightExtractor.FLIGHTS,
-        GeoNamesDataImporter.GEONAMESMAPPEDDATA,
-        TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
-        TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, SchemaExtractor.YAGOSCHEMA);
-  }
+	@Override
+	public Set<Theme> input() {
+		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
+				GenderExtractor.PERSONS_GENDER, HardExtractor.HARDWIREDFACTS,
+				RuleExtractor.RULERESULTS, FlightExtractor.FLIGHTS,
+				GeoNamesDataImporter.GEONAMESMAPPEDDATA,
+				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
+				SchemaExtractor.YAGOSCHEMA));
 
-  /** All facts of YAGO */
-  public static final Theme YAGOFACTS = new Theme("yagoFacts", "All facts of YAGO that hold between instances", ThemeGroup.CORE);
+		for (String lang : Extractor.languages) {
+			input.add(CategoryMapper.CATEGORYFACTS_MAP.get(lang));
+			input.add(InfoboxMapper.INFOBOXFACTS_MAP.get(lang));
+		}
+		return input;
+	}
 
-  /** relations that we exclude, because they are treated elsewhere */
-  public static final Set<String> relationsExcluded = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range, RDFS.subpropertyOf,
-      RDFS.label, "skos:prefLabel", "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>", "<hasGloss>", "<redirectedFrom>");
+	/** All facts of YAGO */
+	public static final Theme YAGOFACTS = new Theme("yagoFacts",
+			"All facts of YAGO that hold between instances", ThemeGroup.CORE);
 
-  @Override
-  public Theme myOutput() {
-    return YAGOFACTS;
-  }
+	/** relations that we exclude, because they are treated elsewhere */
+	public static final Set<String> relationsExcluded = new FinalSet<>(
+			RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range,
+			RDFS.subpropertyOf, RDFS.label, "skos:prefLabel",
+			"<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>",
+			"<hasGloss>", "<redirectedFrom>");
 
-  @Override
-  public boolean isMyRelation(Fact fact) {
-    if(fact.getRelation().startsWith("<_")) return(false);
-    if(relationsExcluded.contains(fact.getRelation())) return(false);
-    if(FactComponent.isFactId(fact.getArg(1))) return(false);
-    if(FactComponent.isLiteral(fact.getArg(2))) return(false);
-    return(true);
-  }
-  
-  public static void main(String[] args) throws Exception {
-    Announce.setLevel(Announce.Level.DEBUG);
-    new FactExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
-  }
+	@Override
+	public Theme myOutput() {
+		return YAGOFACTS;
+	}
+
+	@Override
+	public boolean isMyRelation(Fact fact) {
+		if (fact.getRelation().startsWith("<_"))
+			return (false);
+		if (relationsExcluded.contains(fact.getRelation()))
+			return (false);
+		if (FactComponent.isFactId(fact.getArg(1)))
+			return (false);
+		if (FactComponent.isLiteral(fact.getArg(2)))
+			return (false);
+		return (true);
+	}
+
+	public static void main(String[] args) throws Exception {
+		Announce.setLevel(Announce.Level.DEBUG);
+		new FactExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
+	}
 
 }

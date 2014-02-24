@@ -1,5 +1,7 @@
 package fromThemes;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -25,42 +27,57 @@ import basics.YAGO;
 /**
  * YAGO2s - SourceExtractor
  * 
- * Deduplicates all source facts. This extractor is different from FactExtractor so that it can run in parallel. 
+ * Deduplicates all source facts. This extractor is different from FactExtractor
+ * so that it can run in parallel.
  * 
  * @author Fabian M. Suchanek
  * 
  */
 public class SourceExtractor extends Extractor {
 
-  @Override
-  public Set<Theme> input() {
-    return new FinalSet<>( InfoboxMapper.INFOBOXSOURCES_MAP.get("en"),PersonNameExtractor.PERSONNAMESOURCES,
-        RuleExtractor.RULESOURCES,CategoryMapper.CATEGORYSOURCES_MAP.get("en"),CategoryTypeExtractor.CATEGORYTYPESOURCES_MAP.get("en"),
-        WikipediaLabelExtractor.WIKIPEDIALABELSOURCES, FlightExtractor.FLIGHTSOURCE, CoordinateExtractor.COORDINATE_SOURCES, 
-        TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES, FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE);
-  }
+	@Override
+	public Set<Theme> input() {
+		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
+				PersonNameExtractor.PERSONNAMESOURCES,
+				RuleExtractor.RULESOURCES,
+				WikipediaLabelExtractor.WIKIPEDIALABELSOURCES,
+				FlightExtractor.FLIGHTSOURCE,
+				CoordinateExtractor.COORDINATE_SOURCES,
+				TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES,
+				FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE));
 
-  /** All source facts of YAGO */
-  public static final Theme YAGOSOURCES = new Theme("yagoSources", "All sources of YAGO facts", ThemeGroup.META);
+		for (String lang : Extractor.languages) {
+			input.add(InfoboxMapper.INFOBOXSOURCES_MAP.get(lang));
+			input.add(CategoryMapper.CATEGORYSOURCES_MAP.get(lang));
+			input.add(CategoryTypeExtractor.CATEGORYTYPESOURCES_MAP.get(lang));
+		}
+		return input;
+	}
 
-  @Override
-  public Set<Theme> output() {
-    return new FinalSet<>(YAGOSOURCES);
-  }
+	/** All source facts of YAGO */
+	public static final Theme YAGOSOURCES = new Theme("yagoSources",
+			"All sources of YAGO facts", ThemeGroup.META);
 
-  @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    Announce.doing("Extracting sources");
-    FactWriter w=output.get(YAGOSOURCES);
-    for(Theme theme : input.keySet()) {
-      Announce.doing("Extracting sources from",theme);
-      for(Fact fact : input.get(theme)) {
-        if(fact.getRelation().equals(YAGO.extractionSource) || fact.getRelation().equals(YAGO.extractionTechnique)) {
-          w.write(fact);
-        }
-      }
-      Announce.done();
-    }
-    Announce.done();
-  }
+	@Override
+	public Set<Theme> output() {
+		return new FinalSet<>(YAGOSOURCES);
+	}
+
+	@Override
+	public void extract(Map<Theme, FactWriter> output,
+			Map<Theme, FactSource> input) throws Exception {
+		Announce.doing("Extracting sources");
+		FactWriter w = output.get(YAGOSOURCES);
+		for (Theme theme : input.keySet()) {
+			Announce.doing("Extracting sources from", theme);
+			for (Fact fact : input.get(theme)) {
+				if (fact.getRelation().equals(YAGO.extractionSource)
+						|| fact.getRelation().equals(YAGO.extractionTechnique)) {
+					w.write(fact);
+				}
+			}
+			Announce.done();
+		}
+		Announce.done();
+	}
 }

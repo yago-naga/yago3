@@ -1,6 +1,8 @@
 package fromThemes;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -9,6 +11,7 @@ import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryMapper;
+import fromWikipedia.Extractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.InfoboxMapper;
 import javatools.administrative.Announce;
@@ -27,42 +30,56 @@ import basics.Theme;
  */
 public class RuleExtractor extends BaseRuleExtractor {
 
-  @Override
-  public Set<Theme> input() {
-    return new FinalSet<>(PatternHardExtractor.RULES, TransitiveTypeExtractor.TRANSITIVETYPE, ClassExtractor.YAGOTAXONOMY,
-        HardExtractor.HARDWIREDFACTS,  InfoboxMapper.INFOBOXFACTS_MAP.get("en"), CategoryMapper.CATEGORYFACTS_MAP.get("en"),WordnetExtractor.WORDNETCLASSES);
-  }
+	@Override
+	public Set<Theme> input() {
+		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
+				PatternHardExtractor.RULES,
+				TransitiveTypeExtractor.TRANSITIVETYPE,
+				ClassExtractor.YAGOTAXONOMY, 
+				HardExtractor.HARDWIREDFACTS,
+				WordnetExtractor.WORDNETCLASSES));
 
-  /** Theme of deductions */
-  public static final Theme RULERESULTS = new Theme("ruleResults", "Results of rule applications");
+		for (String lang : Extractor.languages) {
+			input.add(CategoryMapper.CATEGORYFACTS_MAP.get(lang));
+			input.add(InfoboxMapper.INFOBOXFACTS_MAP.get(lang));
+		}
+		return input;
+	}
 
-  /** Theme of sources deductions */
-  public static final Theme RULESOURCES = new Theme("ruleSources", "Source information for results of rule applications");
+	/** Theme of deductions */
+	public static final Theme RULERESULTS = new Theme("ruleResults",
+			"Results of rule applications");
 
-  public Theme getRULERESULTS() {
-    return RULERESULTS;
-  }
-  
-  public Theme getRULESOURCES() {
-    return RULESOURCES;
-  }
+	/** Theme of sources deductions */
+	public static final Theme RULESOURCES = new Theme("ruleSources",
+			"Source information for results of rule applications");
 
-  @Override
-  public Set<Theme> output() {
-    return new FinalSet<>(RULERESULTS, RULESOURCES);
-  }
-  
-  /** Extract rule collection from fact sources */
-  @Override
-  public FactCollection getInputRuleCollection(Map<Theme, FactSource> input) throws Exception {
-    FactSource rules = input.get(PatternHardExtractor.RULES);
-    FactCollection collection = new FactCollection(rules);
-    return collection;
-  }
+	public Theme getRULERESULTS() {
+		return RULERESULTS;
+	}
 
-  public static void main(String[] args) throws Exception {
-    new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago2s"), "test");
-    Announce.setLevel(Announce.Level.DEBUG);
-    new RuleExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
-  }
+	public Theme getRULESOURCES() {
+		return RULESOURCES;
+	}
+
+	@Override
+	public Set<Theme> output() {
+		return new FinalSet<>(RULERESULTS, RULESOURCES);
+	}
+
+	/** Extract rule collection from fact sources */
+	@Override
+	public FactCollection getInputRuleCollection(Map<Theme, FactSource> input)
+			throws Exception {
+		FactSource rules = input.get(PatternHardExtractor.RULES);
+		FactCollection collection = new FactCollection(rules);
+		return collection;
+	}
+
+	public static void main(String[] args) throws Exception {
+		new PatternHardExtractor(new File("./data")).extract(new File(
+				"c:/fabian/data/yago2s"), "test");
+		Announce.setLevel(Announce.Level.DEBUG);
+		new RuleExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
+	}
 }

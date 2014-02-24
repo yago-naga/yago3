@@ -1,5 +1,7 @@
 package fromThemes;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import fromGeonames.GeoNamesDataImporter;
@@ -8,6 +10,7 @@ import fromOtherSources.WordnetExtractor;
 import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryMapper;
 import fromWikipedia.DisambiguationPageExtractor;
+import fromWikipedia.Extractor;
 import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.InfoboxMapper;
@@ -35,13 +38,22 @@ public class LabelExtractor extends SimpleDeduplicator {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CategoryMapper.CATEGORYFACTS_MAP.get("en"), DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
-        HardExtractor.HARDWIREDFACTS, WikipediaLabelExtractor.WIKIPEDIALABELS, 
-        InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
-        PersonNameExtractor.PERSONNAMES,
-        WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
-        WordnetExtractor.WORDNETGLOSSES, FlightIATAcodeExtractor.AIRPORT_CODE, RedirectExtractor.REDIRECTLABELS_MAP.get("en"),
-        GeoNamesDataImporter.GEONAMESMAPPEDDATA);
+    Set<Theme> input = new HashSet<Theme>(Arrays.asList(
+    		DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,         
+    		HardExtractor.HARDWIREDFACTS, 
+    		WikipediaLabelExtractor.WIKIPEDIALABELS, 
+    		PersonNameExtractor.PERSONNAMES,
+    		WordnetExtractor.WORDNETWORDS, SchemaExtractor.YAGOSCHEMA,
+    		WordnetExtractor.WORDNETGLOSSES, 
+    		FlightIATAcodeExtractor.AIRPORT_CODE, 
+    		GeoNamesDataImporter.GEONAMESMAPPEDDATA));
+    
+    for (String lang : Extractor.languages) {
+		input.add(CategoryMapper.CATEGORYFACTS_MAP.get(lang));
+		input.add(InfoboxMapper.INFOBOXFACTS_MAP.get(lang));
+		input.add(RedirectExtractor.REDIRECTLABELS_MAP.get(lang));
+	}
+	return input;
   }
 
   /** Relations that we care for*/
