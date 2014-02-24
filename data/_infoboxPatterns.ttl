@@ -313,3 +313,4 @@
 "<!--.*-->"	<_infoboxReplace>	"" .
 "</?span[^>]*>"	<_infoboxReplace>	"" .
 "<ref.+?</ref>"	<_infoboxReplace>	"" .
+"<ref.+?/>" <_infoboxReplace> "" .
