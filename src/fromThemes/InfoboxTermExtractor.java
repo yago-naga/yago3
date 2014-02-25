@@ -156,7 +156,6 @@ public class InfoboxTermExtractor extends Extractor {
 			Map<String, Set<String>> attributes,
 			Map<String, String> combinations) throws IOException {
 		if (!attributes.isEmpty()) {
-			System.out.println(attributes);
 			attributes = applyCombination(attributes, combinations);
 		}
 		return attributes;
@@ -199,16 +198,11 @@ public class InfoboxTermExtractor extends Extractor {
 				}
 			}
 
-			System.out.println("RERERE");
-			System.out.println(val);
-
 			D.addKeyValue(
 					result,
 					InfoboxExtractor.normalizeAttribute(combinations.get(code)),
 					val.toString(), TreeSet.class);
 		}
-
-		// }
 
 		return result;
 	}
