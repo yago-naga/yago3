@@ -7,12 +7,12 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import javatools.datatypes.FinalSet;
 import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
-import basics.Theme.ThemeGroup;
 
 /**
  * MultilingualComparator - YAGO2s
@@ -31,17 +31,24 @@ public class MultilingualComparator extends Extractor {
 
   public static final HashMap<String, Theme> MISSINGFACTS_MAP = new HashMap<String, Theme>();
 
-  /** Types deduced from categories */
+  public static final HashMap<String, Theme> MISSINGENTITIES_MAP = new HashMap<String, Theme>();
+
   public static final HashMap<String, Theme> CONFIRMINGFACTS_MAP = new HashMap<String, Theme>();
 
-  /** Classes deduced from categories */
+  public static final HashMap<String, Theme> CONFIRMINGENTITIES_MAP = new HashMap<String, Theme>();
+
   public static final HashMap<String, Theme> NEWFACTS_MAP = new HashMap<String, Theme>();
+
+  public static final HashMap<String, Theme> NEWENTITIES_MAP = new HashMap<String, Theme>();
 
   static {
     for (String s : Extractor.languages) {
-      MISSINGFACTS_MAP.put(s, new Theme("missingFacts" + Extractor.langPostfixes.get(s), "The sources of category type facts"));
-      CONFIRMINGFACTS_MAP.put(s, new Theme("confirmingFacts" + Extractor.langPostfixes.get(s), "", ThemeGroup.TAXONOMY));
+      MISSINGFACTS_MAP.put(s, new Theme("missingFacts" + Extractor.langPostfixes.get(s), ""));
+      MISSINGENTITIES_MAP.put(s, new Theme("missingEntities" + Extractor.langPostfixes.get(s), ""));
+      CONFIRMINGFACTS_MAP.put(s, new Theme("confirmingFacts" + Extractor.langPostfixes.get(s), ""));
+      CONFIRMINGENTITIES_MAP.put(s, new Theme("confirmingEntities" + Extractor.langPostfixes.get(s), ""));
       NEWFACTS_MAP.put(s, new Theme("newFacts" + Extractor.langPostfixes.get(s), ""));
+      NEWENTITIES_MAP.put(s, new Theme("newEntities" + Extractor.langPostfixes.get(s), ""));
     }
 
   }
@@ -55,7 +62,8 @@ public class MultilingualComparator extends Extractor {
   @Override
   public Set<Theme> output() {
 
-    return new TreeSet<Theme>();
+    return new FinalSet<Theme>(MISSINGFACTS_MAP.get(language), MISSINGENTITIES_MAP.get(language), CONFIRMINGFACTS_MAP.get(language),
+        CONFIRMINGFACTS_MAP.get(language), CONFIRMINGENTITIES_MAP.get(language), NEWFACTS_MAP.get(language), NEWENTITIES_MAP.get(language));
   }
 
   protected ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {
@@ -71,17 +79,22 @@ public class MultilingualComparator extends Extractor {
     ExtendedFactCollection baseLangFactCollection = new ExtendedFactCollection();
     loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(baseLang)), baseLangFactCollection);
     loadFacts(input.get(InfoboxTypeExtractor.INFOBOXRAWTYPES_MAP.get(baseLang)), baseLangFactCollection);
+    Set<String> baseLangEntities = baseLangFactCollection.getSubjects();
 
-    ExtendedFactCollection languageFactCollection = new ExtendedFactCollection();
-    loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(language)), languageFactCollection);
-    loadFacts(input.get(InfoboxTypeExtractor.INFOBOXRAWTYPES_MAP.get(language)), languageFactCollection);
+    ExtendedFactCollection secondLangFactCollection = new ExtendedFactCollection();
+    loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(language)), secondLangFactCollection);
+    loadFacts(input.get(InfoboxTypeExtractor.INFOBOXRAWTYPES_MAP.get(language)), secondLangFactCollection);
+    Set<String> secondLangEntities = baseLangFactCollection.getSubjects();
 
     int missingFacts = 0;
+    int missingEntities = 0;
     int newFacts = 0;
+    int newEntities = 0;
     int confirmingFacts = 0;
+    int confirmingEntities = 0;
 
     for (Fact f : yagoTypes) {
-      if (languageFactCollection.contains(f.getArg(1), f.getRelation(), f.getArg(2))) {
+      if (secondLangFactCollection.contains(f.getArg(1), f.getRelation(), f.getArg(2))) {
         if (baseLangFactCollection.contains(f.getArg(1), f.getRelation(), f.getArg(2))) {
           confirmingFacts++;
           output.get(CONFIRMINGFACTS_MAP.get(language)).write(f);
@@ -94,13 +107,26 @@ public class MultilingualComparator extends Extractor {
         output.get(MISSINGFACTS_MAP.get(language)).write(f);
       }
 
+      if (secondLangEntities.contains(f.getArg(1))) {
+        if (baseLangEntities.contains(f.getArg(1))) {
+          confirmingEntities++;
+          output.get(CONFIRMINGENTITIES_MAP.get(language)).write(new Fact(f.getArg(1), "", ""));
+        } else {
+          newEntities++;
+          output.get(NEWENTITIES_MAP.get(language)).write(new Fact(f.getArg(1), "", ""));
+        }
+      } else if (baseLangEntities.contains(f.getArg(1))) {
+        missingEntities++;
+        output.get(MISSINGENTITIES_MAP.get(language)).write(new Fact(f.getArg(1), "", ""));
+      }
+
     }
     output.get(MISSINGFACTS_MAP.get(language)).write(new Fact("Missing_facts", "hasNumberOf", missingFacts + ""));
+    output.get(MISSINGENTITIES_MAP.get(language)).write(new Fact("Missing_entities", "hasNumberOf", missingEntities + ""));
     output.get(CONFIRMINGFACTS_MAP.get(language)).write(new Fact("Confirming_facts", "hasNumberOf", confirmingFacts + ""));
+    output.get(CONFIRMINGENTITIES_MAP.get(language)).write(new Fact("Confirming_entities", "hasNumberOf", confirmingEntities + ""));
     output.get(NEWFACTS_MAP.get(language)).write(new Fact("New_facts", "hasNumberOf", newFacts + ""));
-    System.out.println(confirmingFacts);
-    System.out.println(missingFacts);
-    System.out.println(newFacts);
+    output.get(NEWENTITIES_MAP.get(language)).write(new Fact("New_entities", "hasNumberOf", newEntities + ""));
 
   }
 

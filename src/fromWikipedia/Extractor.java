@@ -29,6 +29,7 @@ import basics.YAGO;
  */
 public abstract class Extractor {
   
+  /** The languages order should be from the "most English" to the least ones */
 	protected static String[] languages = {"en" , "de" };
 
 	protected static Map<String,String> langPostfixes = new HashMap<String, String>();
@@ -39,7 +40,7 @@ public abstract class Extractor {
 		}
 	}
   
-	/* Finds the language from the name of the input file, 
+	/** Finds the language from the name of the input file, 
 	* assuming that the first part of the name before the
 	*  underline is equal to the language */
 	public static String decodeLang(String fileName) {

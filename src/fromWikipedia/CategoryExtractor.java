@@ -42,8 +42,6 @@ public class CategoryExtractor extends Extractor {
 
   public static final HashMap<String, Theme> CATEGORYMEMBERS_MAP = new HashMap<String, Theme>();
 
-//  public static final HashMap<String, Theme> CATEGORYMEMBERSTRANSLATED_MAP = new HashMap<String, Theme>();
-
   public static final HashMap<String, Theme> CATEGORYMEMBERSBOTHTRANSLATED_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> CATEGORYMEMBERSSOURCES_MAP = new HashMap<String, Theme>();
@@ -52,8 +50,6 @@ public class CategoryExtractor extends Extractor {
     for (String s : Extractor.languages) {
       CATEGORYMEMBERS_MAP.put(s, new Theme("categoryMembers" + Extractor.langPostfixes.get(s),
           "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be tranlsated", ThemeGroup.OTHER));
-//      CATEGORYMEMBERSTRANSLATED_MAP.put(s, new Theme("categoryMembershipTranslated" + Extractor.langPostfixes.get(s),
-//          "Category Members facts with translated subjects.", ThemeGroup.OTHER));
       CATEGORYMEMBERSBOTHTRANSLATED_MAP.put(s, new Theme("categoryMembersBothTranslated" + Extractor.langPostfixes.get(s),
           "Category Members facts with translated subjects and objects.", ThemeGroup.OTHER));
       CATEGORYMEMBERSSOURCES_MAP.put(s, new Theme("categoryMembersSources" + Extractor.langPostfixes.get(s), "The sources of category facts",
@@ -74,9 +70,9 @@ public class CategoryExtractor extends Extractor {
 
   @Override
   public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(
-        Arrays.asList(new Translator(CATEGORYMEMBERS_MAP.get(this.language), CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(this.language), this.language, "Category"),
-               new CategoryMapper(this.language), new CategoryTypeExtractor(this.language)));
+    return new HashSet<Extractor>(Arrays.asList(
+        new Translator(CATEGORYMEMBERS_MAP.get(this.language), CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(this.language), this.language, "Category"),
+        new CategoryMapper(this.language), new CategoryTypeExtractor(this.language)));
   }
 
   @Override
@@ -88,6 +84,9 @@ public class CategoryExtractor extends Extractor {
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
     while (true) {
+      /** categoryWord holds the synonym of the word "Category" in different languages. 
+       * It is needed to distinguish the category part in Wiki pages. 
+       */
       String categoryWord = InterLanguageLinksDictionary.getCatDictionary(input.get(InterLanguageLinks.INTERLANGUAGELINKS)).get(language);
       switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "[[" + categoryWord + ":")) {
         case -1:
@@ -111,14 +110,13 @@ public class CategoryExtractor extends Extractor {
               CATEGORYMEMBERSSOURCES_MAP.get(language), FactComponent.wikipediaURL(titleEntity), "CategoryExtractor");
           break;
         case 3:
-          // Redirect pages have to go away
           titleEntity = null;
           break;
       }
     }
   }
 
-  /* Finds the language from the name of the input file, 
+  /** Finds the language from the name of the input file, 
    * assuming that the first part of the name before the
    *  underline is equal to the language */
   public static String decodeLang(String fileName) {
@@ -136,21 +134,9 @@ public class CategoryExtractor extends Extractor {
     this.language = lang;
   }
 
-
   public static void main(String[] args) throws Exception {
-    Announce.setLevel(Announce.Level.DEBUG);
-    //    new HardExtractor(new File("D:/data/")).extract(new File("D:/data2/yago2s/"), "test");
-    //    new PatternHardExtractor(new File("D:/data")).extract(new File("D:/data2/yago2s/"), "test");
-    //    new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/Data2/yago2s"), "Test on 1 wikipedia article");
 
-        new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
-    //    new EntityTranslator(CATEGORYMEMBERS_MAP.get("en"), CATEGORYMEMBERSTRANSLATED_MAP.get("en"), "en").extract(new File("D:/data3/yago2s"), null);
-    //    new CategoryTranslator(CATEGORYMEMBERSTRANSLATED_MAP.get("en"), CATEGORYMEMBERSBOTHTRANSLATED_MAP.get("en"), "en").extract(new File(
-    //        "D:/data3/yago2s/"), "translating category-memebership facts");
-    //    new CategoryMapper("en").extract(new File("D:/data3/yago2s/"), "mapping infobox attributes into infobox facts");
-//    new CategoryTypeExtractor("en").extract(new File("D:/data3/yago2s/"), "mapping infobox attributes into infobox facts");
-    new Translator(CATEGORYMEMBERS_MAP.get("de"), CATEGORYMEMBERSBOTHTRANSLATED_MAP.get("de"), "de", "Category").extract(new File("D:/data3/yago2s"), "");
-    
+    new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
 
   }
 

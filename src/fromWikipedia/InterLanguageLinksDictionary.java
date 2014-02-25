@@ -25,11 +25,9 @@ public class InterLanguageLinksDictionary {
   private static Map<String, Map<String, String>> rdictionaries = new HashMap<String, Map<String, String>>();
 
   private static Map<String, String> catDictionary = new HashMap<String, String>();
+
   private static Map<String, String> infDictionary = new HashMap<String, String>();
 
-  
-  
-  
   private static Map<String, String> buildReverseDictionary(String secondLang, FactSource fs) throws FileNotFoundException, IOException {
     Map<String, String> rdictionary = new HashMap<String, String>();
     for (Fact f : fs) {
@@ -37,13 +35,13 @@ public class InterLanguageLinksDictionary {
 
         String object = FactComponent.stripQuotes(FactComponent.getString(f.getArg(2)));
         String subject = FactComponent.stripBrackets(f.getArg(1));
-       
+
         if (!rdictionary.containsKey(object)) {
           rdictionary.put(object, subject);
         }
       }
     }
-   
+
     Announce.done("Dictionary built for " + secondLang);
     return rdictionary;
 
@@ -63,7 +61,7 @@ public class InterLanguageLinksDictionary {
     }
     return catDictionary;
   }
-  
+
   private static Map<String, String> buildInfDictionary(FactSource fs) throws FileNotFoundException, IOException {
     infDictionary = new HashMap<String, String>();
     for (Fact f : fs) {
@@ -101,5 +99,4 @@ public class InterLanguageLinksDictionary {
     return infDictionary;
   }
 
-  
 }

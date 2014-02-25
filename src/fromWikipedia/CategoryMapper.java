@@ -1,5 +1,6 @@
 package fromWikipedia;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -26,8 +27,7 @@ import fromThemes.Redirector;
 /**
  * CategoryMapper - YAGO2s
  * 
- * Maps the facts obtained from CategoryExtractor for English 
- * and CategoryTranslator for other languages
+ * Maps the facts obtained from CategoryExtractor (Previously translated for other languages).
  * 
  * @author Farzaneh Mahdisoltani
  * 
@@ -71,18 +71,10 @@ public class CategoryMapper extends Extractor {
   @Override
   public Set<Extractor> followUp() {
     return new HashSet<Extractor>(Arrays.asList(
-			new Redirector(CATEGORYFACTS_TOREDIRECT_MAP.get(language),
-					CATEGORYFACTS_TOTYPECHECK_MAP.get(language), this, this.language),
-			new TypeChecker(CATEGORYFACTS_TOTYPECHECK_MAP.get(language),
-					CATEGORYFACTS_MAP.get(language), this)));
+        new Redirector(CATEGORYFACTS_TOREDIRECT_MAP.get(language), CATEGORYFACTS_TOTYPECHECK_MAP.get(language), this, this.language),
+        new TypeChecker(CATEGORYFACTS_TOTYPECHECK_MAP.get(language), CATEGORYFACTS_MAP.get(language), this)));
   }
 
-  protected ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {
-    for (Fact f : factSource) {
-      result.add(f);
-    }
-    return (result);
-  }
 
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
@@ -91,9 +83,11 @@ public class CategoryMapper extends Extractor {
 
     Announce.progressStart("Extracting", 3_900_000);
 
-    ExtendedFactCollection result = getCategoryFactCollection(input);
+    FactCollection factCollection;
+    if (language == "en") factCollection = new FactCollection(input.get(CategoryExtractor.CATEGORYMEMBERS_MAP.get(language)));
+    else factCollection = new FactCollection(input.get(CategoryExtractor.CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(language)));
 
-    for (Fact f : result) {
+    for (Fact f : factCollection) {
       String temp = f.getArg(2);
       if (f.getArg(2).contains("_")) {
         temp = f.getArg(2).replace("_", " ");
@@ -108,23 +102,13 @@ public class CategoryMapper extends Extractor {
 
   }
 
-  protected ExtendedFactCollection getCategoryFactCollection(Map<Theme, FactSource> input) {
-    ExtendedFactCollection result = new ExtendedFactCollection();
-    if (language == "en") loadFacts(input.get(CategoryExtractor.CATEGORYMEMBERS_MAP.get(language)), result);
-    else loadFacts(input.get(CategoryExtractor.CATEGORYMEMBERSBOTHTRANSLATED_MAP.get(language)), result);
-    return result;
-
-  }
-
   /** Constructor from source file */
   public CategoryMapper(String lang) {
     language = lang;
   }
 
   public static void main(String[] args) throws Exception {
-    Announce.setLevel(Announce.Level.DEBUG);
-//    CategoryMapper extractor = new CategoryMapper("en");
-//    extractor.extract(new File("D:/data3/yago2s/"), "mapping infobox attributes into infobox facts");
+    new CategoryMapper("en").extract(new File("D:/data3/yago2s/"), "mapping categories into facts");
   }
 
 }
