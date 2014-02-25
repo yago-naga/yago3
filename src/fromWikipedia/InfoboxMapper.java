@@ -144,10 +144,6 @@ public class InfoboxMapper extends Extractor {
 		Map<String, String> preferredMeanings = WordnetExtractor
 				.preferredMeanings(input);
 
-		FactCollection nonMappedFacts = new FactCollection(
-				input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP
-						.get(language)));
-
 		// Get the infobox patterns depending on the language
 		Map<String, Set<String>> patterns;
 		if (this.language.equals("en")) {
@@ -159,7 +155,7 @@ public class InfoboxMapper extends Extractor {
 			patterns = InfoboxExtractor.infoboxPatterns(matchedAttributes);
 		}
 
-		for (Fact f : nonMappedFacts) {
+		for (Fact f : input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language))) {
 
 			String attribute = FactComponent.stripBrackets(FactComponent
 					.stripPrefix(f.getRelation()));
