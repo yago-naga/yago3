@@ -211,7 +211,7 @@ public class InfoboxTypeExtractor extends Extractor {
     }
     flush(currentEntity, typesOfCurrentEntity, writers);
 
-    Announce.progressDone();
+    //Announce.progressDone();
 
     Announce.doing("Writing classes");
     for (Fact f : infoboxTypesFacts) {

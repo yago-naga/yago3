@@ -85,15 +85,15 @@ public class GenderExtractor extends Extractor {
     TitleExtractor titleExtractor = new TitleExtractor(input);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
-    Announce.progressStart("Extracting Genders", 4_500_000);
+    //Announce.progressStart("Extracting Genders", 4_500_000);
     while (true) {
       switch (FileLines.findIgnoreCase(in, "<title>")) {
         case -1:
-          Announce.progressDone();
+          //Announce.progressDone();
           in.close();
           return;
         case 0:
-          Announce.progressStep();
+          //Announce.progressStep();
           titleEntity = titleExtractor.getTitleEntity(in);
           if (titleEntity != null) {
             if (!people.contains(titleEntity)) continue;

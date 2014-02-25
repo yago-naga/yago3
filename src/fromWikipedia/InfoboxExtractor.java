@@ -255,18 +255,18 @@ public class InfoboxExtractor extends Extractor {
     TitleExtractor titleExtractor = new TitleExtractor(input);
 
     // Extract the information
-    Announce.progressStart("Extracting", 4_500_000);
+    //Announce.progressStart("Extracting", 4_500_000);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
     while (true) {
       /* nested comments not supported */
       switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox", "{{ Infobox", "<comment>")) {
         case -1:
-          Announce.progressDone();
+          //Announce.progressDone();
           in.close();
           return;
         case 0:
-          Announce.progressStep();
+          //Announce.progressStep();
           if (this.language.equals("en")) {
             titleEntity = titleExtractor.getTitleEntity(in);
           } else {

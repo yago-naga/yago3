@@ -70,17 +70,17 @@ public class WikipediaLabelExtractor extends Extractor {
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
     Map<String,String> lanMap=new FactCollection(input.get(PatternHardExtractor.LANGUAGECODEMAPPING)).asStringMap("<hasThreeLetterLanguageCode>");
     TitleExtractor titleExtractor = new TitleExtractor(input);
-    Announce.progressStart("Extracting", 3_900_000);
+    //Announce.progressStart("Extracting", 3_900_000);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
     while (true) {
       switch (FileLines.findIgnoreCase(in, "<title>", "[[")) {
         case -1:
-          Announce.progressDone();
+          //Announce.progressDone();
           in.close();
           return;
         case 0:
-          Announce.progressStep();
+          //Announce.progressStep();
           titleEntity = titleExtractor.getTitleEntity(in);
           if (titleEntity != null) {
             for (String name : namesOf(titleEntity)) {

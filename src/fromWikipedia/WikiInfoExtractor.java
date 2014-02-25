@@ -58,7 +58,7 @@ public class WikiInfoExtractor extends fromWikipedia.Extractor {
     Set<String> entities=TransitiveTypeExtractor.entities(input);
     TitleExtractor titleExtractor=new TitleExtractor(input);
     // Extract the information
-    Announce.progressStart("Extracting", 3_900_000);
+    //Announce.progressStart("Extracting", 3_900_000);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     while (FileLines.scrollTo(in, "<title>")) {
       String entity=titleExtractor.getTitleEntity(in);

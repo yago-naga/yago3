@@ -92,15 +92,15 @@ public class CoordinateExtractor extends Extractor {
     String titleEntity = null;
     FactWriter out = output.get(COORDINATES);
     FactWriter sources = output.get(COORDINATE_SOURCES);
-    Announce.progressStart("Extracting coordinates", 4_500_000);
+    //Announce.progressStart("Extracting coordinates", 4_500_000);
     while (true) {
       switch (FileLines.findIgnoreCase(in, "<title>", "{{coord", "{{ coord")) {
         case -1:
-          Announce.progressDone();
+          //Announce.progressDone();
           in.close();
           return;
         case 0:
-          Announce.progressStep();
+          //Announce.progressStep();
           titleEntity = titleExtractor.getTitleEntity(in);
           break;
         case 1:

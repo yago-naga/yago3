@@ -81,7 +81,7 @@ public class CategoryMapper extends Extractor {
     FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(new FactCollection(input.get(PatternHardExtractor.CATEGORYPATTERNS)),
         "<_categoryPattern>");
 
-    Announce.progressStart("Extracting", 3_900_000);
+    //Announce.progressStart("Extracting", 3_900_000);
 
     FactCollection factCollection;
     if (language == "en") factCollection = new FactCollection(input.get(CategoryExtractor.CATEGORYMEMBERS_MAP.get(language)));

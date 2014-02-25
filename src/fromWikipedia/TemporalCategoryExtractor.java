@@ -81,7 +81,7 @@ public class TemporalCategoryExtractor extends Extractor {
 		FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(
 				categoryPatternCollection, "<_categoryPattern>");
 		TitleExtractor titleExtractor = new TitleExtractor(input);
-		Announce.progressStart("Extracting", 3_900_000);
+		//Announce.progressStart("Extracting", 3_900_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		FactCollection facts = new FactCollection();
@@ -89,11 +89,11 @@ public class TemporalCategoryExtractor extends Extractor {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:")) {
 			case -1:
 				flush(titleEntity, facts, writers);
-				Announce.progressDone();
+				//Announce.progressDone();
 				in.close();
 				return;
 			case 0:
-				Announce.progressStep();
+				//Announce.progressStep();
 				flush(titleEntity, facts, writers);
 				titleEntity = titleExtractor.getTitleEntity(in);
 				break;

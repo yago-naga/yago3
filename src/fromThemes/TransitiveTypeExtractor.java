@@ -95,13 +95,13 @@ public class TransitiveTypeExtractor extends Extractor {
   public synchronized static Map<String, Set<String>> yagoTaxonomy(FactSource transitiveTaxonomy) {
     if (yagoTaxonomy != null) return (yagoTaxonomy);
     yagoTaxonomy = new HashMap<>();
-    Announce.progressStart("Loading entire transitive YAGO taxonomy",34823725);
+    //Announce.progressStart("Loading entire transitive YAGO taxonomy",34823725);
     for (Fact f : transitiveTaxonomy) {
-      Announce.progressStep();
+      //Announce.progressStep();
       if (!f.getRelation().equals(RDFS.type)) continue;
       D.addKeyValue(yagoTaxonomy, f.getArg(1), f.getArg(2), TreeSet.class);
     }
-    Announce.progressDone();
+    //Announce.progressDone();
     return (yagoTaxonomy);
   }
 
