@@ -40,7 +40,7 @@ public abstract class Extractor {
 		}
 	}
 	
-	protected String language = null;
+	public String language = null;
   
 	/** Finds the language from the name of the input file, 
 	* assuming that the first part of the name before the
