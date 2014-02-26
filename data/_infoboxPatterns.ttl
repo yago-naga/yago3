@@ -22,9 +22,9 @@
 "baseball biography"	rdf:type	<_yagoNonConceptualInfobox> . # Has multiple biographie son one page
 
 # --------- Combinations of Infobox attributes --------------
-"<population_density_km2> /km^2"	<_infoboxCombine>	"my_population_density" .
-"<areakm2> km^2"	<_infoboxCombine>	"myarea" .
-"<areatotalkm2> km^2"	<_infoboxCombine>	"myarea" .
+"<populationdensitykm> /km^2"	<_infoboxCombine>	"my_population_density" .
+"<areakm> km^2"	<_infoboxCombine>	"myarea" .
+"<areatotalkm> km^2"	<_infoboxCombine>	"myarea" .
 "<area> km^2"	<_infoboxCombine>	"myarea" .
 "<latitude> degrees 0 minutes 0 seconds E"	<_infoboxCombine>	"_latitude" .
 "<longitude> degrees 0 minutes 0 seconds N"	<_infoboxCombine>	"_longitude" .
