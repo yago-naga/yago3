@@ -38,8 +38,6 @@ public class AttributeMatcher extends Extractor {
 
   Map<String, Map<String, Pair<Integer, Integer>>> statistics;
 
-  private String language;
-
   private double WILSON_THRESHOLD = 0;
 
   private double SUPPORT_THRESHOLD = 1;
@@ -55,7 +53,6 @@ public class AttributeMatcher extends Extractor {
       MATCHEDATTSOURCES_MAP.put(s, new Theme("matchedAttributesSources" + Extractor.langPostfixes.get(s), "Sources of matched attributes",
           ThemeGroup.OTHER));
     }
-
   }
 
   @Override

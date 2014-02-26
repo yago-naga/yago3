@@ -39,6 +39,8 @@ public abstract class Extractor {
 				langPostfixes.put(s, "_"+s);
 		}
 	}
+	
+	protected String language = null;
   
 	/** Finds the language from the name of the input file, 
 	* assuming that the first part of the name before the
@@ -95,7 +97,8 @@ public abstract class Extractor {
 	
 	/** Returns the name */
 	public String name() {
-		return (this.getClass().getName());
+		String lang = this.language == null ? "" : "(" + this.language + ")";
+		return (this.getClass().getName() + lang);
 	}
 
 	/** Returns input data file name (if any)*/

@@ -34,8 +34,6 @@ import fromThemes.Redirector;
  */
 public class CategoryMapper extends Extractor {
 
-  protected String language;
-
   public static final HashMap<String, Theme> CATEGORYFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> CATEGORYFACTS_TOTYPECHECK_MAP = new HashMap<String, Theme>();

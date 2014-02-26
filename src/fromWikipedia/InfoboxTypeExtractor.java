@@ -40,8 +40,6 @@ import fromOtherSources.WordnetExtractor;
  */
 public class InfoboxTypeExtractor extends Extractor {
 
-  protected String language;
-
   /** Sources for category facts*/
   public static final HashMap<String, Theme> INFOBOXTYPESOURCES_MAP = new HashMap<String, Theme>();
 

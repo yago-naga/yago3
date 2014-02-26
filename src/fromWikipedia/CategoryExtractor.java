@@ -38,8 +38,6 @@ public class CategoryExtractor extends Extractor {
 
   protected File wikipedia;
 
-  protected String language;
-
   public static final HashMap<String, Theme> CATEGORYMEMBERS_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> CATEGORYMEMBERSBOTHTRANSLATED_MAP = new HashMap<String, Theme>();

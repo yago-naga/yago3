@@ -36,8 +36,6 @@ public class InfoboxTermExtractor extends Extractor {
 	public static final HashMap<String, Theme> INFOBOXTERMS_MAP = new HashMap<String, Theme>();
 	public static final HashMap<String, Theme> INFOBOXATTSTRANSLATED_MAP = new HashMap<String, Theme>();
 
-	private String language;
-
 	static {
 		for (String s : Extractor.languages) {
 			INFOBOXTERMS_TOREDIRECT_MAP

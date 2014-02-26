@@ -34,7 +34,6 @@ import fromThemes.TypeChecker;
 
 public class InfoboxMapper extends Extractor {
 
-	protected String language;
 	public static final HashMap<String, Theme> INFOBOXFACTS_TOREDIRECT_MAP = new HashMap<String, Theme>();
 	public static final HashMap<String, Theme> INFOBOXFACTS_TOTYPECHECK_MAP = new HashMap<String, Theme>();
 	public static final HashMap<String, Theme> INFOBOXFACTS_MAP = new HashMap<String, Theme>();

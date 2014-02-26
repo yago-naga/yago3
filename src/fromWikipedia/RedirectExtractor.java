@@ -34,8 +34,6 @@ public class RedirectExtractor extends Extractor {
 
 	/** Input file */
 	private File wikipedia;
-	
-	private String language;
 
     @Override
     public File inputDataFile() {   

@@ -27,8 +27,6 @@ import fromWikipedia.Extractor.FollowUpExtractor;
  * 
  */
 public class Redirector extends FollowUpExtractor {
-	
-	private String language;
 
 	@Override
 	public Set<Theme> input() {

@@ -39,8 +39,6 @@ import fromOtherSources.WordnetExtractor;
  */
 public class CategoryTypeExtractor extends Extractor {
 
-  protected String language;
-
   /** Sources for category facts*/
   public static final HashMap<String, Theme> CATEGORYTYPESOURCES_MAP = new HashMap<String, Theme>();
 

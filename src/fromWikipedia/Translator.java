@@ -27,8 +27,6 @@ import basics.Theme;
 
 public class Translator extends FollowUpExtractor {
 
-	private String language;
-
 	private String objectType;
 
 	@Override

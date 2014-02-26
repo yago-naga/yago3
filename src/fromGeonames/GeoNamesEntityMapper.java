@@ -58,8 +58,8 @@ public class GeoNamesEntityMapper extends Extractor {
     for (String line : new FileLines(alternateNames, "UTF-8", "Reading GeoNames Wikipedia mappings")) {
       String[] data = line.split("\t");
       
-      String language = data[2];
-      if (language.equals("link")) {
+      String lang = data[2];
+      if (lang.equals("link")) {
         // Skip non-Wikipedia link alternate names.
         String alternateName = data[3];
         if (alternateName.startsWith(ENWIKI_PREFIX)) {         

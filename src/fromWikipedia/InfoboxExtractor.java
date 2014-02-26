@@ -49,8 +49,6 @@ public class InfoboxExtractor extends Extractor {
 	/** Input file */
 	protected File wikipedia;
 
-	private String language;
-
 	public static final HashMap<String, Theme> INFOBOXATTS_MAP = new HashMap<String, Theme>();
 
 	public static final HashMap<String, Theme> INFOBOXATTSOURCES_MAP = new HashMap<String, Theme>();

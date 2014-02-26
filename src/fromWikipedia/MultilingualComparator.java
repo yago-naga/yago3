@@ -27,8 +27,6 @@ public class MultilingualComparator extends Extractor {
 
   protected String baseLang;
 
-  protected String language;
-
   public static final HashMap<String, Theme> MISSINGFACTS_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> MISSINGENTITIES_MAP = new HashMap<String, Theme>();
