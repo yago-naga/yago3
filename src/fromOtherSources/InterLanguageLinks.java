@@ -45,6 +45,11 @@ public class InterLanguageLinks extends Extractor {
   public Set<Theme> output() {
     return (new FinalSet<Theme>(INTERLANGUAGELINKS));
   }
+  
+  @Override
+	public File inputDataFile() {
+		return inputFile;
+	}
 
   public void extract(File input, FactWriter writer) throws Exception {
     N4Reader nr = new N4Reader(FileUtils.getBufferedUTF8Reader(input));
@@ -91,11 +96,18 @@ public class InterLanguageLinks extends Extractor {
   }
 
   public static void main(String[] args) {
-    try {
-      new InterLanguageLinks(new File("D:/wikidata.rdf")).extract(new File("D:/data2/yago2s/"), "test");
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
+//    try {
+//      new InterLanguageLinks(new File("D:/wikidata.rdf"))
+//      .extract(new File("D:/data2/yago2s/"), "test");
+//    } catch (Exception e) {
+//      e.printStackTrace();
+//    }
+	  try {
+	      new InterLanguageLinks(new File("./data/wikidata.rdf"))
+	      .extract(new File("/home/jbiega/data/yago2s/"), "test");
+	    } catch (Exception e) {
+	      e.printStackTrace();
+	    }
   }
 
 }
