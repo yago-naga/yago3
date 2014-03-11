@@ -49,12 +49,16 @@ public class AttributeMatcher extends Extractor {
   
   public static final HashMap<String, Theme> MATCHEDATTSOURCES_MAP = new HashMap<String, Theme>();
   
+  public static final HashMap<String, Theme> MATCHED_INFOBOXATTS_SCORES_MAP = new HashMap<String, Theme>();
+  
   static {
     for (String s : Extractor.languages) {
       MATCHED_INFOBOXATTS_MAP.put(s, new Theme("matchedAttributes" + Extractor.langPostfixes.get(s),
           "Attributes of the Wikipedia infoboxes in different languages are matched.", ThemeGroup.OTHER));
       MATCHEDATTSOURCES_MAP.put(s, new Theme("matchedAttributesSources" + Extractor.langPostfixes.get(s), "Sources of matched attributes",
           ThemeGroup.OTHER));
+      MATCHED_INFOBOXATTS_SCORES_MAP.put(s, new Theme("matchedAttributesScores" + Extractor.langPostfixes.get(s),
+              "Attributes of the Wikipedia infoboxes in different languages are matched.", ThemeGroup.OTHER));
     }
 
   }
@@ -133,10 +137,14 @@ public class AttributeMatcher extends Extractor {
           double[] ws = FrequencyVector.wilson(total, correct);
           
           if (correct >= 0) {
-            Fact fact = new Fact(entry.getKey(), (double) correct / total + " <" + correct + "/" + total + ">" + "     " + ws[0] + "    " + ws[1],
+            Fact scoreFact = new Fact(entry.getKey(), (double) correct / total + " <" + correct + "/" + total + ">" + "     " + ws[0] + "    " + ws[1],
                 subEntry.getKey());
+            writers.get(MATCHED_INFOBOXATTS_SCORES_MAP.get(language)).write(scoreFact);
+            
             /** filtering out */
             if (ws[0] - ws[1] > WILSON_THRESHOLD && correct > SUPPORT_THRESHOLD) {
+            	
+              Fact fact = new Fact(entry.getKey(), "<_infoboxPattern>", subEntry.getKey());
               
               write(writers, MATCHED_INFOBOXATTS_MAP.get(language), fact, MATCHEDATTSOURCES_MAP.get(language),
                   FactComponent.wikipediaURL(entry.getKey()), "");
