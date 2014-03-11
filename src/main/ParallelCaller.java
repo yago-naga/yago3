@@ -66,7 +66,7 @@ public class ParallelCaller {
       if (success) {
         D.p("Finished", finished);
         themesWeHave.addAll(finished.output());
-        extractorsToDo.addAll(finished.followUp());
+        //extractorsToDo.addAll(finished.followUp());
       } else {
         D.p("Failed", finished);
         extractorsFailed.add(finished);
@@ -140,6 +140,22 @@ public class ParallelCaller {
       callNext(ex, success);
     }
   }
+  
+  public static List<Extractor> resolveFollowUps(List<Extractor> extractors) {
+	  List<Extractor> followUps = new ArrayList<>();
+	  List<Extractor> extractorsCurrent = new ArrayList<>(extractors);
+	  while (!extractorsCurrent.isEmpty()) {
+		  for (Extractor extractor : extractorsCurrent) {
+			  followUps.addAll(extractor.followUp());
+		  }
+		  
+		  extractors.addAll(followUps);
+		  extractorsCurrent.clear();
+		  extractorsCurrent.addAll(followUps);
+		  followUps.clear();
+	  }
+	  return (extractors);
+  }
 
   /** Run */
   public static void main(String[] args) throws Exception {
@@ -152,6 +168,8 @@ public class ParallelCaller {
     boolean reuse = Parameters.getBoolean("reuse", false);
     outputFolder = Parameters.getOrRequestAndAddFile("yagoFolder", "the folder where YAGO should be created");
     extractorsToDo = ParallelCaller.extractors(Parameters.getList("extractors"));
+    extractorsToDo = resolveFollowUps(extractorsToDo);
+    
     extractorsRunning.clear();
     extractorsFailed.clear();
     themesWeHave.clear();
