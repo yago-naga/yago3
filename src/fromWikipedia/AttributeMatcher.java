@@ -73,7 +73,9 @@ public class AttributeMatcher extends Extractor {
   
   @Override
   public Set<Theme> output() {
-    return new HashSet<>(Arrays.asList(MATCHED_INFOBOXATTS_MAP.get(language), MATCHEDATTSOURCES_MAP.get(language)));
+    return new HashSet<>(Arrays.asList(MATCHED_INFOBOXATTS_MAP.get(language), 
+    		MATCHEDATTSOURCES_MAP.get(language),
+    		MATCHED_INFOBOXATTS_SCORES_MAP.get(language)));
   }
   
   @Override
