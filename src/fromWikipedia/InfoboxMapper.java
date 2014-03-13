@@ -108,7 +108,7 @@ public class InfoboxMapper extends Extractor {
 		for (Fact fact : infoboxFacts.get("<_infoboxPattern>")) {
 			D.addKeyValue(patterns,
 					FactComponent.stripBrackets(FactComponent
-							.stripPrefix(fact.getArgJavaString(1))),
+							.stripPrefix(fact.getArg(1))),
 					fact.getArg(2), TreeSet.class);
 		}
 		if (patterns.isEmpty()) {
