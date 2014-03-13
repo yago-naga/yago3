@@ -41,228 +41,228 @@
 
 # --------- Infobox patterns --------------
 
-"clubs"	<_infoboxPattern>	<playsFor> .
-"pages"	<_infoboxPattern>	<hasPages> .
-"_latitude"	<_infoboxPattern>	<hasLatitude> .
-"_longitude"	<_infoboxPattern>	<hasLongitude> .
-"latitude"	<_infoboxPattern>	<hasLatitude> .
-"longitude"	<_infoboxPattern>	<hasLongitude> .
-"Nickname"	<_infoboxPattern>	rdfs:label .
-"nativename"	<_infoboxPattern>	rdfs:label .
-"commonname"	<_infoboxPattern>	rdfs:label .
-"alias"	<_infoboxPattern>	rdfs:label .
-"alternatename"	<_infoboxPattern>	rdfs:label .
-"abbreviation"	<_infoboxPattern>	rdfs:label .
-"companyname"	<_infoboxPattern>	rdfs:label .
-"fullname"	<_infoboxPattern>	rdfs:label .
+<infobox/en/clubs>  <_infoboxPattern> <playsFor> .
+<infobox/en/pages>  <_infoboxPattern> <hasPages> .
+<infobox/en/_latitude>  <_infoboxPattern> <hasLatitude> .
+<infobox/en/_longitude> <_infoboxPattern> <hasLongitude> .
+<infobox/en/latitude> <_infoboxPattern> <hasLatitude> .
+<infobox/en/longitude>  <_infoboxPattern> <hasLongitude> .
+<infobox/en/Nickname> <_infoboxPattern> rdfs:label .
+<infobox/en/nativename> <_infoboxPattern> rdfs:label .
+<infobox/en/commonname> <_infoboxPattern> rdfs:label .
+<infobox/en/alias>  <_infoboxPattern> rdfs:label .
+<infobox/en/alternatename>  <_infoboxPattern> rdfs:label .
+<infobox/en/abbreviation> <_infoboxPattern> rdfs:label .
+<infobox/en/companyname>  <_infoboxPattern> rdfs:label .
+<infobox/en/fullname> <_infoboxPattern> rdfs:label .
 #@ <infoBoxId0>
-"binomial"	<_infoboxPattern>	rdfs:label .
-<infoBoxId0>	rdfs:comment	"Added by Fabian 2011-05-26" .
+<infobox/en/binomial> <_infoboxPattern> rdfs:label .
+<infoBoxId0>  rdfs:comment  "Added by Fabian 2011-05-26" .
 #@ <infoBoxId1>
-"playername"	<_infoboxPattern>	rdfs:label .
-<infoBoxId1>	rdfs:comment	"Added by Fabian 2011-05-26" .
+<infobox/en/playername> <_infoboxPattern> rdfs:label .
+<infoBoxId1>  rdfs:comment  "Added by Fabian 2011-05-26" .
 #@ <infoBoxId2>
-"synonyms"	<_infoboxPattern>	rdfs:label .
-<infoBoxId2>	rdfs:comment	"Added by Fabian 2011-05-27" .
-#"ICD10"  <_infoboxPattern> <hasICD10> .
-"Capital"	<_infoboxPattern>	<hasCapital> .
-"OfficialLang"	<_infoboxPattern>	<hasOfficialLanguage> .
-# "---Governor"	<_infoboxPattern>	<isLeaderOf-> . // Often goes for the president with his governor
-"Senators"	<_infoboxPattern>	<isPoliticianOf-> .
-"Motto"	<_infoboxPattern>	<hasMotto> .
-"nationalMotto"	<_infoboxPattern>	<hasMotto> .
-"governmenttype"	<_infoboxPattern>	rdf:type .
-"leadername"	<_infoboxPattern>	<isLeaderOf-> .
-"establisheddate"	<_infoboxPattern>	<wasCreatedOnDate> .
-"myarea"	<_infoboxPattern>	<hasArea> .
-"populationestimate"	<_infoboxPattern>	<hasNumberOfPeople> .
-"my_population_density"	<_infoboxPattern>	<hasPopulationDensity> .
-"GDPnominal"	<_infoboxPattern>	<hasGDP> .
-"Gini"	<_infoboxPattern>	<hasGini> .
-#"utcoffset"	<_infoboxPattern>	<hasUTCOffset> .
-"cctld"	<_infoboxPattern>	<hasTLD> .
-"currency"	<_infoboxPattern>	<hasCurrency> .
-"expenses"	<_infoboxPattern>	<hasExpenses> .
-"export-goods"	<_infoboxPattern>	<exports> .
-"export-partners"	<_infoboxPattern>	<dealsWith> .
-"exports"	<_infoboxPattern>	<hasExport> .
-"growth"	<_infoboxPattern>	<hasEconomicGrowth> .
-#"hdi"	<_infoboxPattern>	<hasHDI> . # Bad results here
-"import-goods"	<_infoboxPattern>	<imports> .
-"import-partners"	<_infoboxPattern>	<dealsWith> .
-"imports"	<_infoboxPattern>	<hasImport> .
-"inflation"	<_infoboxPattern>	<hasInflation> .
-"localname"	<_infoboxPattern>	rdfs:label .
-"location"	<_infoboxPattern>	<isLocatedIn> .
+<infobox/en/synonyms> <_infoboxPattern> rdfs:label .
+<infoBoxId2>  rdfs:comment  "Added by Fabian 2011-05-27" .
+#<infobox/en/ICD10>  <_infoboxPattern> <hasICD10> .
+<infobox/en/Capital>  <_infoboxPattern> <hasCapital> .
+<infobox/en/OfficialLang> <_infoboxPattern> <hasOfficialLanguage> .
+# <infobox/en/---Governor>  <_infoboxPattern> <isLeaderOf-> . // Often goes for the president with his governor
+<infobox/en/Senators> <_infoboxPattern> <isPoliticianOf-> .
+<infobox/en/Motto>  <_infoboxPattern> <hasMotto> .
+<infobox/en/nationalMotto>  <_infoboxPattern> <hasMotto> .
+<infobox/en/governmenttype> <_infoboxPattern> rdf:type .
+<infobox/en/leadername> <_infoboxPattern> <isLeaderOf-> .
+<infobox/en/establisheddate>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/myarea> <_infoboxPattern> <hasArea> .
+<infobox/en/populationestimate> <_infoboxPattern> <hasNumberOfPeople> .
+<infobox/en/my_population_density>  <_infoboxPattern> <hasPopulationDensity> .
+<infobox/en/GDPnominal> <_infoboxPattern> <hasGDP> .
+<infobox/en/Gini> <_infoboxPattern> <hasGini> .
+#<infobox/en/utcoffset> <_infoboxPattern> <hasUTCOffset> .
+<infobox/en/cctld>  <_infoboxPattern> <hasTLD> .
+<infobox/en/currency> <_infoboxPattern> <hasCurrency> .
+<infobox/en/expenses> <_infoboxPattern> <hasExpenses> .
+<infobox/en/export-goods> <_infoboxPattern> <exports> .
+<infobox/en/export-partners>  <_infoboxPattern> <dealsWith> .
+<infobox/en/exports>  <_infoboxPattern> <hasExport> .
+<infobox/en/growth> <_infoboxPattern> <hasEconomicGrowth> .
+#<infobox/en/hdi> <_infoboxPattern> <hasHDI> . # Bad results here
+<infobox/en/import-goods> <_infoboxPattern> <imports> .
+<infobox/en/import-partners>  <_infoboxPattern> <dealsWith> .
+<infobox/en/imports>  <_infoboxPattern> <hasImport> .
+<infobox/en/inflation>  <_infoboxPattern> <hasInflation> .
+<infobox/en/localname>  <_infoboxPattern> rdfs:label .
+<infobox/en/location> <_infoboxPattern> <isLocatedIn> .
 #@ <infoBoxId3>
-"county"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId3>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
+<infobox/en/county> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId3>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
 #@ <infoBoxId4>
-"roof"	<_infoboxPattern>	<hasHeight> .
-<infoBoxId4>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
+<infobox/en/roof> <_infoboxPattern> <hasHeight> .
+<infoBoxId4>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
 #@ <infoBoxId5>
-"subdivision_name1"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId5>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
+<infobox/en/subdivision_name1>  <_infoboxPattern> <isLocatedIn> .
+<infoBoxId5>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
 #@ <infoBoxId6>
-"subdivision_name"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId6>	rdfs:comment	"Added 2011-04-26 for jeopardy" .
-"locationcity"	<_infoboxPattern>	<isLocatedIn> .
-"officiallanguages"	<_infoboxPattern>	<hasOfficialLanguage> .
-"officialname"	<_infoboxPattern>	rdfs:label .
-"population"	<_infoboxPattern>	<hasNumberOfPeople> .
-"populationtotal"	<_infoboxPattern>	<hasNumberOfPeople> .
-"poverty"	<_infoboxPattern>	<hasPoverty> .
-"unemployment"	<_infoboxPattern>	<hasUnemployment> .
+<infobox/en/subdivision_name> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId6>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
+<infobox/en/locationcity> <_infoboxPattern> <isLocatedIn> .
+<infobox/en/officiallanguages>  <_infoboxPattern> <hasOfficialLanguage> .
+<infobox/en/officialname> <_infoboxPattern> rdfs:label .
+<infobox/en/population> <_infoboxPattern> <hasNumberOfPeople> .
+<infobox/en/populationtotal>  <_infoboxPattern> <hasNumberOfPeople> .
+<infobox/en/poverty>  <_infoboxPattern> <hasPoverty> .
+<infobox/en/unemployment> <_infoboxPattern> <hasUnemployment> .
 #@ <infoBoxId7>
-"length"	<_infoboxPattern>	<hasLength> .
-<infoBoxId7>	rdfs:comment	"Added 2011-04-27 for GeoCLEF" .
+<infobox/en/length> <_infoboxPattern> <hasLength> .
+<infoBoxId7>  rdfs:comment  "Added 2011-04-27 for GeoCLEF" .
 #@ <infoBoxId8>
-"established"	<_infoboxPattern>	<wasCreatedOnDate> .
-<infoBoxId8>	rdfs:comment	"Added by Fabian 2011-05-27" .
+<infobox/en/established>  <_infoboxPattern> <wasCreatedOnDate> .
+<infoBoxId8>  rdfs:comment  "Added by Fabian 2011-05-27" .
 #@ <infoBoxId9>
-"architect"	<_infoboxPattern>	<created-> .
-<infoBoxId9>	rdfs:comment	"Added by Fabian 2011-05-27" .
+<infobox/en/architect>  <_infoboxPattern> <created-> .
+<infoBoxId9>  rdfs:comment  "Added by Fabian 2011-05-27" .
 #@ <infoBoxId10>
-"department"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId10>	rdfs:comment	"Added by Fabian 2011-05-27" .
+<infobox/en/department> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId10> rdfs:comment  "Added by Fabian 2011-05-27" .
 #@ <infoBoxId11>
-"arondissement"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId11>	rdfs:comment	"Added by Fabian 2011-05-27" .
+<infobox/en/arondissement>  <_infoboxPattern> <isLocatedIn> .
+<infoBoxId11> rdfs:comment  "Added by Fabian 2011-05-27" .
 #@ <infoBoxId12>
-"canton"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId12>	rdfs:comment	"Added by Fabian 2011-05-27" .
+<infobox/en/canton> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId12> rdfs:comment  "Added by Fabian 2011-05-27" .
 #@ <infoBoxId13>
-"road"	<_infoboxPattern>	<isLocatedIn-> .
-<infoBoxId13>	rdfs:comment	"Added by Fabian 2011-05-29" .
-"nationality"	<_infoboxPattern>	<isCitizenOf> .
-"citizenship"	<_infoboxPattern>	<isCitizenOf> .
-"birthname"	<_infoboxPattern>	rdfs:label .
-"birthdate"	<_infoboxPattern>	<wasBornOnDate> .
-"dateofbirth"	<_infoboxPattern>	<wasBornOnDate> .
-"born"	<_infoboxPattern>	<wasBornOnDate> .
-"deathdate"	<_infoboxPattern>	<diedOnDate> .
-"dateofdeath"	<_infoboxPattern>	<diedOnDate> .
-"birthplace"	<_infoboxPattern>	<wasBornIn> .
-"deathplace"	<_infoboxPattern>	<diedIn> .
-"died"	<_infoboxPattern>	<diedOnDate> .
-"spouse"	<_infoboxPattern>	<isMarriedTo> .
-"children"	<_infoboxPattern>	<hasChild> .
-"occupation"	<_infoboxPattern>	rdf:type .
-"profession"	<_infoboxPattern>	rdf:type .
-"politicalparty"	<_infoboxPattern>	<isAffiliatedTo> .
-"party"	<_infoboxPattern>	<isAffiliatedTo> .
-"maininterests"	<_infoboxPattern>	<isInterestedIn> .
-"notableideas"	<_infoboxPattern>	<isKnownFor> .
-"contributions"	<_infoboxPattern>	<isKnownFor> .
-# "knownfor"	<_infoboxPattern>	<isKnownFor> . // Often gives themes/affairs instead of noteable ideas
-"awards"	<_infoboxPattern>	<hasWonPrize> .
-"notableworks"	<_infoboxPattern>	<created> .
-"workinstitutions"	<_infoboxPattern>	<worksAt> .
-"workplaces"	<_infoboxPattern>	<worksAt> .
-"doctoraladvisor"	<_infoboxPattern>	<hasAcademicAdvisor> .
-"doctoralstudents"	<_infoboxPattern>	<hasAcademicAdvisor-> .
-"parents"	<_infoboxPattern>	<hasChild-> .
-"father"	<_infoboxPattern>	<hasChild-> .
-"mother"	<_infoboxPattern>	<hasChild-> .
-"influences"	<_infoboxPattern>	<influences-> .
-"influencedby"	<_infoboxPattern>	<influences-> .
-"influenced"	<_infoboxPattern>	<influences> .
-"almamater"	<_infoboxPattern>	<graduatedFrom> .
-"height"	<_infoboxPattern>	<hasHeight> .
-"weight"	<_infoboxPattern>	<hasWeight> .
-"website"	<_infoboxPattern>	<hasWebsite> .
-"academyawards"	<_infoboxPattern>	<hasWonPrize> .
-"afiawards"	<_infoboxPattern>	<hasWonPrize> .
-"artist"	<_infoboxPattern>	<created-> .
-"baftaawards"	<_infoboxPattern>	<hasWonPrize> .
-"commander"	<_infoboxPattern>	<isLeaderOf-> .
-"commander-in-chief"	<_infoboxPattern>	<isLeaderOf-> .
-"famousworks"	<_infoboxPattern>	<created> .
-"founded"	<_infoboxPattern>	<wasCreatedOnDate> .
-"goldenglobeawards"	<_infoboxPattern>	<hasWonPrize> .
-"homepage"	<_infoboxPattern>	<hasWebsite> .
-"instrument"	<_infoboxPattern>	<hasMusicalRole> .
-"magnumopus"	<_infoboxPattern>	<created> .
-"placeofbirth"	<_infoboxPattern>	<wasBornIn> .
-"placeofdeath"	<_infoboxPattern>	<diedIn> .
-# "premier"	<_infoboxPattern>	<isLeaderOf-> . # This attribute is often given to the governing *person*
-"prizes"	<_infoboxPattern>	<hasWonPrize> .
-"residence"	<_infoboxPattern>	<livesIn> .
-"url"	<_infoboxPattern>	<hasWebsite> .
+<infobox/en/road> <_infoboxPattern> <isLocatedIn-> .
+<infoBoxId13> rdfs:comment  "Added by Fabian 2011-05-29" .
+<infobox/en/nationality>  <_infoboxPattern> <isCitizenOf> .
+<infobox/en/citizenship>  <_infoboxPattern> <isCitizenOf> .
+<infobox/en/birthname>  <_infoboxPattern> rdfs:label .
+<infobox/en/birthdate>  <_infoboxPattern> <wasBornOnDate> .
+<infobox/en/dateofbirth>  <_infoboxPattern> <wasBornOnDate> .
+<infobox/en/born> <_infoboxPattern> <wasBornOnDate> .
+<infobox/en/deathdate>  <_infoboxPattern> <diedOnDate> .
+<infobox/en/dateofdeath>  <_infoboxPattern> <diedOnDate> .
+<infobox/en/birthplace> <_infoboxPattern> <wasBornIn> .
+<infobox/en/deathplace> <_infoboxPattern> <diedIn> .
+<infobox/en/died> <_infoboxPattern> <diedOnDate> .
+<infobox/en/spouse> <_infoboxPattern> <isMarriedTo> .
+<infobox/en/children> <_infoboxPattern> <hasChild> .
+<infobox/en/occupation> <_infoboxPattern> rdf:type .
+<infobox/en/profession> <_infoboxPattern> rdf:type .
+<infobox/en/politicalparty> <_infoboxPattern> <isAffiliatedTo> .
+<infobox/en/party>  <_infoboxPattern> <isAffiliatedTo> .
+<infobox/en/maininterests>  <_infoboxPattern> <isInterestedIn> .
+<infobox/en/notableideas> <_infoboxPattern> <isKnownFor> .
+<infobox/en/contributions>  <_infoboxPattern> <isKnownFor> .
+# <infobox/en/knownfor> <_infoboxPattern> <isKnownFor> . // Often gives themes/affairs instead of noteable ideas
+<infobox/en/awards> <_infoboxPattern> <hasWonPrize> .
+<infobox/en/notableworks> <_infoboxPattern> <created> .
+<infobox/en/workinstitutions> <_infoboxPattern> <worksAt> .
+<infobox/en/workplaces> <_infoboxPattern> <worksAt> .
+<infobox/en/doctoraladvisor>  <_infoboxPattern> <hasAcademicAdvisor> .
+<infobox/en/doctoralstudents> <_infoboxPattern> <hasAcademicAdvisor-> .
+<infobox/en/parents>  <_infoboxPattern> <hasChild-> .
+<infobox/en/father> <_infoboxPattern> <hasChild-> .
+<infobox/en/mother> <_infoboxPattern> <hasChild-> .
+<infobox/en/influences> <_infoboxPattern> <influences-> .
+<infobox/en/influencedby> <_infoboxPattern> <influences-> .
+<infobox/en/influenced> <_infoboxPattern> <influences> .
+<infobox/en/almamater>  <_infoboxPattern> <graduatedFrom> .
+<infobox/en/height> <_infoboxPattern> <hasHeight> .
+<infobox/en/weight> <_infoboxPattern> <hasWeight> .
+<infobox/en/website>  <_infoboxPattern> <hasWebsite> .
+<infobox/en/academyawards>  <_infoboxPattern> <hasWonPrize> .
+<infobox/en/afiawards>  <_infoboxPattern> <hasWonPrize> .
+<infobox/en/artist> <_infoboxPattern> <created-> .
+<infobox/en/baftaawards>  <_infoboxPattern> <hasWonPrize> .
+<infobox/en/commander>  <_infoboxPattern> <isLeaderOf-> .
+<infobox/en/commander-in-chief> <_infoboxPattern> <isLeaderOf-> .
+<infobox/en/famousworks>  <_infoboxPattern> <created> .
+<infobox/en/founded>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/goldenglobeawards>  <_infoboxPattern> <hasWonPrize> .
+<infobox/en/homepage> <_infoboxPattern> <hasWebsite> .
+<infobox/en/instrument> <_infoboxPattern> <hasMusicalRole> .
+<infobox/en/magnumopus> <_infoboxPattern> <created> .
+<infobox/en/placeofbirth> <_infoboxPattern> <wasBornIn> .
+<infobox/en/placeofdeath> <_infoboxPattern> <diedIn> .
+# <infobox/en/premier>  <_infoboxPattern> <isLeaderOf-> . # This attribute is often given to the governing *person*
+<infobox/en/prizes> <_infoboxPattern> <hasWonPrize> .
+<infobox/en/residence>  <_infoboxPattern> <livesIn> .
+<infobox/en/url>  <_infoboxPattern> <hasWebsite> .
 #@ <infoBoxId14>
-"cityofbirth"	<_infoboxPattern>	<wasBornIn> .
-<infoBoxId14>	rdfs:comment	"Added by Fabian 2011-05-26" .
+<infobox/en/cityofbirth>  <_infoboxPattern> <wasBornIn> .
+<infoBoxId14> rdfs:comment  "Added by Fabian 2011-05-26" .
 #@ <infoBoxId15>
-"countryofbirth"	<_infoboxPattern>	<wasBornIn> .
-<infoBoxId15>	rdfs:comment	"Added by Fabian 2011-05-26" .
+<infobox/en/countryofbirth> <_infoboxPattern> <wasBornIn> .
+<infoBoxId15> rdfs:comment  "Added by Fabian 2011-05-26" .
 #@ <infoBoxId16>
-"team"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId16>	rdfs:comment	"Added by Fabian 2011-05-29" .
+<infobox/en/team> <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId16> rdfs:comment  "Added by Fabian 2011-05-29" .
 #@ <infoBoxId17>
-"clubs"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId17>	rdfs:comment	"Added by Fabian 2011-05-29" .
+<infobox/en/clubs>  <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId17> rdfs:comment  "Added by Fabian 2011-05-29" .
 #@ <infoBoxId18>
-"youthclubs"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId18>	rdfs:comment	"Added by Fabian 2011-05-29" .
+<infobox/en/youthclubs> <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId18> rdfs:comment  "Added by Fabian 2011-05-29" .
 #@ <infoBoxId19>
-"nationalteam"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId19>	rdfs:comment	"Added by Fabian 2011-05-29" .
+<infobox/en/nationalteam> <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId19> rdfs:comment  "Added by Fabian 2011-05-29" .
 #@ <infoBoxId20>
-"currentclub"	<_infoboxPattern>	<isAffiliatedTo> .
-<infoBoxId20>	rdfs:comment	"Added by Fabian 2011-05-29" .
-"director"	<_infoboxPattern>	<directed-> .
-"writer"	<_infoboxPattern>	<created-> .
-"composer"	<_infoboxPattern>	<created-> .
-"starring"	<_infoboxPattern>	<actedIn-> .
-# "producer"	<_infoboxPattern>	<produced-> . # Had bad results here
-"published"	<_infoboxPattern>	<wasCreatedOnDate> .
-"author"	<_infoboxPattern>	<created-> .
-"released"	<_infoboxPattern>	<wasCreatedOnDate> .
-"releasedate"	<_infoboxPattern>	<wasCreatedOnDate> .
-"runtime"	<_infoboxPattern>	<hasDuration> .
-"duration"	<_infoboxPattern>	<hasDuration> .
-"budget"	<_infoboxPattern>	<hasBudget> .
-"datecreated"	<_infoboxPattern>	<wasCreatedOnDate> .
-"isbn"	<_infoboxPattern>	<hasISBN> .
-"creator"	<_infoboxPattern>	<created-> .
-"designer"	<_infoboxPattern>	<created-> .
-"developer"	<_infoboxPattern>	<created-> .
-"imdbid"	<_infoboxPattern>	<hasImdb> .
-# "production company"	<_infoboxPattern>	<produced-> . # Had bad results here
-"revenue"	<_infoboxPattern>	<hasRevenue> .
-"slogan"	<_infoboxPattern>	<hasMotto> .
+<infobox/en/currentclub>  <_infoboxPattern> <isAffiliatedTo> .
+<infoBoxId20> rdfs:comment  "Added by Fabian 2011-05-29" .
+<infobox/en/director> <_infoboxPattern> <directed-> .
+<infobox/en/writer> <_infoboxPattern> <created-> .
+<infobox/en/composer> <_infoboxPattern> <created-> .
+<infobox/en/starring> <_infoboxPattern> <actedIn-> .
+# <infobox/en/producer> <_infoboxPattern> <produced-> . # Had bad results here
+<infobox/en/published>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/author> <_infoboxPattern> <created-> .
+<infobox/en/released> <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/releasedate>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/runtime>  <_infoboxPattern> <hasDuration> .
+<infobox/en/duration> <_infoboxPattern> <hasDuration> .
+<infobox/en/budget> <_infoboxPattern> <hasBudget> .
+<infobox/en/datecreated>  <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/isbn> <_infoboxPattern> <hasISBN> .
+<infobox/en/creator>  <_infoboxPattern> <created-> .
+<infobox/en/designer> <_infoboxPattern> <created-> .
+<infobox/en/developer>  <_infoboxPattern> <created-> .
+<infobox/en/imdbid> <_infoboxPattern> <hasImdb> .
+# <infobox/en/production company> <_infoboxPattern> <produced-> . # Had bad results here
+<infobox/en/revenue>  <_infoboxPattern> <hasRevenue> .
+<infobox/en/slogan> <_infoboxPattern> <hasMotto> .
 #@ <infoBoxId21>
-"recorded"	<_infoboxPattern>	<wasCreatedOnDate> .
-<infoBoxId21>	rdfs:comment	"Added by Fabian 2011-05-26" .
+<infobox/en/recorded> <_infoboxPattern> <wasCreatedOnDate> .
+<infoBoxId21> rdfs:comment  "Added by Fabian 2011-05-26" .
 #@ <infoBoxId22>
-"editing"	<_infoboxPattern>	<edited-> .
-<infoBoxId22>	rdfs:comment	"Added by Fabian 2011-05-29" .
+<infobox/en/editing>  <_infoboxPattern> <edited-> .
+<infoBoxId22> rdfs:comment  "Added by Fabian 2011-05-29" .
 #@ <infoBoxId23>
-"music"	<_infoboxPattern>	<wroteMusicFor-> .
-<infoBoxId23>	rdfs:comment	"Added by Fabian 2011-05-29" .
-"founder"	<_infoboxPattern>	<created-> .
+<infobox/en/music>  <_infoboxPattern> <wroteMusicFor-> .
+<infoBoxId23> rdfs:comment  "Added by Fabian 2011-05-29" .
+<infobox/en/founder>  <_infoboxPattern> <created-> .
 #@ <infoBoxId24>
-"region"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId24>	rdfs:comment	"Added by Fabian 2011-05-26" .
+<infobox/en/region> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId24> rdfs:comment  "Added by Fabian 2011-05-26" .
 #@ <infoBoxId25>
-"country"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId25>	rdfs:comment	"Added by Fabian 2011-05-26" .
+<infobox/en/country>  <_infoboxPattern> <isLocatedIn> .
+<infoBoxId25> rdfs:comment  "Added by Fabian 2011-05-26" .
 #@ <infoBoxId26>
-"city"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId26>	rdfs:comment	"Added by Fabian 2011-05-26" .
+<infobox/en/city> <_infoboxPattern> <isLocatedIn> .
+<infoBoxId26> rdfs:comment  "Added by Fabian 2011-05-26" .
 #@ <infoBoxId27>
-"state"	<_infoboxPattern>	<isLocatedIn> .
-<infoBoxId27>	rdfs:comment	"Added by Fabian 2011-05-26" .
-"foundation"	<_infoboxPattern>	<wasCreatedOnDate> .
-"headquarters"	<_infoboxPattern>	<isLocatedIn> .
-"numemployees"	<_infoboxPattern>	<hasNumberOfPeople> .
+<infobox/en/state>  <_infoboxPattern> <isLocatedIn> .
+<infoBoxId27> rdfs:comment  "Added by Fabian 2011-05-26" .
+<infobox/en/foundation> <_infoboxPattern> <wasCreatedOnDate> .
+<infobox/en/headquarters> <_infoboxPattern> <isLocatedIn> .
+<infobox/en/numemployees> <_infoboxPattern> <hasNumberOfPeople> .
 #@ <infoBoxId28>
-"owner"	<_infoboxPattern>	<owns-> .
-<infoBoxId28>	rdfs:comment	"Added by Fabian 2011-05-29" .
-"combatant"	<_infoboxPattern>	<participatedIn-> .
-"place"	<_infoboxPattern>	<happenedIn> .
-"dat" <_infoboxPattern>	<happenedOnDate> .
-"year"	<_infoboxPattern>	<happenedOnDate> .
+<infobox/en/owner>  <_infoboxPattern> <owns-> .
+<infoBoxId28> rdfs:comment  "Added by Fabian 2011-05-29" .
+<infobox/en/combatant>  <_infoboxPattern> <participatedIn-> .
+<infobox/en/place>  <_infoboxPattern> <happenedIn> .
+<infobox/en/dat>    <_infoboxPattern> <happenedOnDate> .
+<infobox/en/year> <_infoboxPattern> <happenedOnDate> .
 
 # ------------ Replacements ----------
 "<br ?/>"	<_infoboxReplace>	"\n" .
