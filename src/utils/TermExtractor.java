@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import fromOtherSources.WordnetExtractor;
+
 import javatools.administrative.Announce;
 import javatools.parsers.Char;
 import javatools.parsers.DateParser;
@@ -76,6 +78,11 @@ public abstract class TermExtractor {
     return (forWikiLink);
   }
   
+  public static List<TermExtractor> all(Map<String, String> preferredMeanings) {
+	  List<TermExtractor> all = all();
+	  all.add(new TermExtractor.ForClass(preferredMeanings));
+	  return all;
+  }
   public static List<TermExtractor> all() {
 	  return Arrays.asList(
 			  forWikiLink,

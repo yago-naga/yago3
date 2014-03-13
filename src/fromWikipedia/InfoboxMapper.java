@@ -120,9 +120,7 @@ public class InfoboxMapper extends Extractor {
 
 	/** Extracts a relation from a string */
 	protected void extract(String entity, String object, String relation,
-			String attribute, Map<String, String> preferredMeanings,
-			FactCollection factCollection, Map<Theme, FactWriter> writers,
-			PatternList replacements) throws IOException {
+			String attribute, Map<Theme, FactWriter> writers) throws IOException {
 
 		// Check inverse
 		boolean inverse;
@@ -155,14 +153,6 @@ public class InfoboxMapper extends Extractor {
 
 		FactCollection infoboxFacts = new FactCollection(
 				input.get(PatternHardExtractor.INFOBOXPATTERNS));
-		FactCollection hardWiredFacts = new FactCollection(
-				input.get(HardExtractor.HARDWIREDFACTS));
-		PatternList replacements = new PatternList(infoboxFacts,
-				"<_infoboxReplace>");
-		Map<String, String> combinations = infoboxFacts
-				.asStringMap("<_infoboxCombine>");
-		Map<String, String> preferredMeanings = WordnetExtractor
-				.preferredMeanings(input);
 
 		// Get the infobox patterns depending on the language
 		Map<String, Set<String>> patterns;
@@ -190,9 +180,7 @@ public class InfoboxMapper extends Extractor {
 			
 			
 			for (String relation : relations) {
-				extract(f.getArg(1), value, relation, attribute,
-						preferredMeanings, hardWiredFacts, writers,
-						replacements);
+				extract(f.getArg(1), value, relation, attribute, writers);
 			}
 		}
 

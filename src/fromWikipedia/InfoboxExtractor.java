@@ -131,93 +131,93 @@ public class InfoboxExtractor extends Extractor {
 				.replace("-", "").replaceAll("\\d", ""));
 	}
 
-	/** Extracts a relation from a string */
-	protected void extract(String entity, String string, String relation,
-			String attribute, Map<String, String> preferredMeanings,
-			FactCollection factCollection, Map<Theme, FactWriter> writers,
-			PatternList replacements) throws IOException {
-
-		string = replacements.transform(Char.decodeAmpersand(string));
-		string = string.replace("$0", FactComponent.stripBrackets(entity));
-
-		string = string.trim();
-		if (string.length() == 0)
-			return;
-
-		// Check inverse
-		boolean inverse;
-		String expectedDatatype;
-		if (relation.endsWith("->")) {
-			inverse = true;
-			relation = Char.cutLast(Char.cutLast(relation)) + '>';
-			expectedDatatype = factCollection.getArg2(relation, RDFS.domain);
-		} else {
-			inverse = false;
-			expectedDatatype = factCollection.getArg2(relation, RDFS.range);
-		}
-		if (expectedDatatype == null) {
-			Announce.warning("Unknown relation to extract:", relation);
-			expectedDatatype = YAGO.entity;
-		}
-
-		// Get the term extractor
-		TermExtractor extractor = expectedDatatype.equals(RDFS.clss) ? new TermExtractor.ForClass(
-				preferredMeanings) : TermExtractor.forType(expectedDatatype);
-		String syntaxChecker = FactComponent.asJavaString(factCollection
-				.getArg2(expectedDatatype, "<_hasTypeCheckPattern>"));
-
-		// Extract all terms
-		List<String> objects = extractor.extractList(string);
-		for (String object : objects) {
-			// Check syntax
-			if (syntaxChecker != null
-					&& FactComponent.asJavaString(object) != null
-					&& !FactComponent.asJavaString(object).matches(
-							syntaxChecker)) {
-				Announce.debug("Extraction", object, "for", entity, relation,
-						"does not match syntax check", syntaxChecker);
-				continue;
-			}
-			// Check data type
-			if (FactComponent.isLiteral(object)) {
-				String parsedDatatype = FactComponent.getDatatype(object);
-				if (parsedDatatype == null)
-					parsedDatatype = YAGO.string;
-				if (syntaxChecker != null
-						&& factCollection.isSubClassOf(expectedDatatype,
-								parsedDatatype)) {
-					// If the syntax check went through, we are fine
-					object = FactComponent
-							.setDataType(object, expectedDatatype);
-				} else {
-					// For other stuff, we check if the datatype is OK
-					if (!factCollection.isSubClassOf(parsedDatatype,
-							expectedDatatype)) {
-						Announce.debug("Extraction", object, "for", entity,
-								relation, "does not match type check",
-								expectedDatatype);
-						continue;
-					}
-				}
-			}
-			if (inverse) {
-				Fact fact = new Fact(object, relation, entity);
-				write(writers, INFOBOXATTS_MAP.get(language), fact,
-						INFOBOXATTSOURCES_MAP.get(language),
-						FactComponent.wikipediaURL(entity),
-						"InfoboxExtractor from " + attribute);
-			} else {
-				Fact fact = new Fact(entity, relation, object);
-				write(writers, INFOBOXATTS_MAP.get(language), fact,
-						INFOBOXATTSOURCES_MAP.get(language),
-						FactComponent.wikipediaURL(entity),
-						"InfoboxExtractor from " + attribute);
-			}
-
-			if (factCollection.contains(relation, RDFS.type, YAGO.function))
-				break;
-		}
-	}
+//	/** Extracts a relation from a string */
+//	protected void extract(String entity, String string, String relation,
+//			String attribute, Map<String, String> preferredMeanings,
+//			FactCollection factCollection, Map<Theme, FactWriter> writers,
+//			PatternList replacements) throws IOException {
+//
+//		string = replacements.transform(Char.decodeAmpersand(string));
+//		string = string.replace("$0", FactComponent.stripBrackets(entity));
+//
+//		string = string.trim();
+//		if (string.length() == 0)
+//			return;
+//
+//		// Check inverse
+//		boolean inverse;
+//		String expectedDatatype;
+//		if (relation.endsWith("->")) {
+//			inverse = true;
+//			relation = Char.cutLast(Char.cutLast(relation)) + '>';
+//			expectedDatatype = factCollection.getArg2(relation, RDFS.domain);
+//		} else {
+//			inverse = false;
+//			expectedDatatype = factCollection.getArg2(relation, RDFS.range);
+//		}
+//		if (expectedDatatype == null) {
+//			Announce.warning("Unknown relation to extract:", relation);
+//			expectedDatatype = YAGO.entity;
+//		}
+//
+//		// Get the term extractor
+//		TermExtractor extractor = expectedDatatype.equals(RDFS.clss) ? new TermExtractor.ForClass(
+//				preferredMeanings) : TermExtractor.forType(expectedDatatype);
+//		String syntaxChecker = FactComponent.asJavaString(factCollection
+//				.getArg2(expectedDatatype, "<_hasTypeCheckPattern>"));
+//
+//		// Extract all terms
+//		List<String> objects = extractor.extractList(string);
+//		for (String object : objects) {
+//			// Check syntax
+//			if (syntaxChecker != null
+//					&& FactComponent.asJavaString(object) != null
+//					&& !FactComponent.asJavaString(object).matches(
+//							syntaxChecker)) {
+//				Announce.debug("Extraction", object, "for", entity, relation,
+//						"does not match syntax check", syntaxChecker);
+//				continue;
+//			}
+//			// Check data type
+//			if (FactComponent.isLiteral(object)) {
+//				String parsedDatatype = FactComponent.getDatatype(object);
+//				if (parsedDatatype == null)
+//					parsedDatatype = YAGO.string;
+//				if (syntaxChecker != null
+//						&& factCollection.isSubClassOf(expectedDatatype,
+//								parsedDatatype)) {
+//					// If the syntax check went through, we are fine
+//					object = FactComponent
+//							.setDataType(object, expectedDatatype);
+//				} else {
+//					// For other stuff, we check if the datatype is OK
+//					if (!factCollection.isSubClassOf(parsedDatatype,
+//							expectedDatatype)) {
+//						Announce.debug("Extraction", object, "for", entity,
+//								relation, "does not match type check",
+//								expectedDatatype);
+//						continue;
+//					}
+//				}
+//			}
+//			if (inverse) {
+//				Fact fact = new Fact(object, relation, entity);
+//				write(writers, INFOBOXATTS_MAP.get(language), fact,
+//						INFOBOXATTSOURCES_MAP.get(language),
+//						FactComponent.wikipediaURL(entity),
+//						"InfoboxExtractor from " + attribute);
+//			} else {
+//				Fact fact = new Fact(entity, relation, object);
+//				write(writers, INFOBOXATTS_MAP.get(language), fact,
+//						INFOBOXATTSOURCES_MAP.get(language),
+//						FactComponent.wikipediaURL(entity),
+//						"InfoboxExtractor from " + attribute);
+//			}
+//
+//			if (factCollection.contains(relation, RDFS.type, YAGO.function))
+//				break;
+//		}
+//	}
 
 	/** reads an environment, returns the char on which we finish */
 	public static int readEnvironment(Reader in, StringBuilder b)

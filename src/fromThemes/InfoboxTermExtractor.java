@@ -25,7 +25,9 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Translator;
 import fromWikipedia.Extractor;
 import fromWikipedia.InfoboxExtractor;
@@ -60,6 +62,8 @@ public class InfoboxTermExtractor extends Extractor {
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
+				WordnetExtractor.WORDNETWORDS,
+				HardExtractor.HARDWIREDFACTS,
 				InfoboxExtractor.INFOBOXATTS_MAP.get(this.language)));
 	}
 
@@ -89,6 +93,8 @@ public class InfoboxTermExtractor extends Extractor {
 				input.get(PatternHardExtractor.INFOBOXPATTERNS));
 		PatternList replacements = new PatternList(infoboxPatterns,
 				"<_infoboxReplace>");
+		Map<String, String> preferredMeanings = WordnetExtractor
+				.preferredMeanings(input);
 
 		Map<String, String> combinations = infoboxPatterns
 				.asStringMap("<_infoboxCombine>");
@@ -107,7 +113,7 @@ public class InfoboxTermExtractor extends Extractor {
 				continue;
 			}
 			if (!f.getArg(1).equals(prevEntity)) {
-				process(prevEntity, attributes, combinations, replacements, out);
+				process(prevEntity, attributes, combinations, replacements, preferredMeanings, out);
 
 				prevEntity = f.getArg(1);
 				attributes.clear();
@@ -116,18 +122,18 @@ public class InfoboxTermExtractor extends Extractor {
 				D.addKeyValue(attributes, attribute, value, TreeSet.class);
 			}
 		}
-		process(prevEntity, attributes, combinations, replacements, out);
+		process(prevEntity, attributes, combinations, replacements, preferredMeanings, out);
 	}
 
 	protected void process(String entity, Map<String, Set<String>> attributes,
-			Map<String, String> combinations, PatternList replacements,
+			Map<String, String> combinations, PatternList replacements, Map<String, String> preferredMeanings,
 			FactWriter out) throws IOException {
 
 		attributes = processCombinations(entity, attributes, combinations);
 
 		for (String attr : attributes.keySet()) {
 			for (String val : attributes.get(attr)) {
-				for (TermExtractor extractor : TermExtractor.all()) {
+				for (TermExtractor extractor : TermExtractor.all(preferredMeanings)) {
 
 					val = replacements.transform(Char.decodeAmpersand(val));
 					val = val
