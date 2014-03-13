@@ -7,7 +7,10 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
+import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.parsers.Char;
 import utils.PatternList;
 import basics.Fact;
@@ -96,6 +99,24 @@ public class InfoboxMapper extends Extractor {
 				INFOBOXFACTS_TOREDIRECT_MAP.get(language),
 				INFOBOXSOURCES_MAP.get(language)));
 	}
+	
+	/** returns the infobox patterns */
+	public static Map<String, Set<String>> infoboxPatterns(
+			FactCollection infoboxFacts) {
+		Map<String, Set<String>> patterns = new HashMap<String, Set<String>>();
+		Announce.doing("Compiling infobox patterns");
+		for (Fact fact : infoboxFacts.get("<_infoboxPattern>")) {
+			D.addKeyValue(patterns,
+					FactComponent.stripBrackets(FactComponent
+							.stripPrefix(fact.getArgJavaString(1))),
+					fact.getArg(2), TreeSet.class);
+		}
+		if (patterns.isEmpty()) {
+			Announce.warning("No infobox patterns found");
+		}
+		Announce.done();
+		return (patterns);
+	}
 
 	/** Extracts a relation from a string */
 	protected void extract(String entity, String object, String relation,
@@ -146,12 +167,12 @@ public class InfoboxMapper extends Extractor {
 		// Get the infobox patterns depending on the language
 		Map<String, Set<String>> patterns;
 		if (this.language.equals("en")) {
-			patterns = InfoboxExtractor.infoboxPatterns(infoboxFacts);
+			patterns = infoboxPatterns(infoboxFacts);
 		} else {
 			FactCollection matchedAttributes = new FactCollection(
 					input.get(AttributeMatcher.MATCHED_INFOBOXATTS_MAP
 							.get(language)));
-			patterns = InfoboxExtractor.infoboxPatterns(matchedAttributes);
+			patterns = infoboxPatterns(matchedAttributes);
 		}
 
 		for (Fact f : input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language))) {

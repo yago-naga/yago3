@@ -261,8 +261,7 @@ public class InfoboxExtractor extends Extractor {
 	}
 
 	/** reads an infobox */
-	public static Map<String, Set<String>> readInfobox(Reader in,
-			Map<String, String> combinations) throws IOException {
+	public static Map<String, Set<String>> readInfobox(Reader in) throws IOException {
 		Map<String, Set<String>> result = new TreeMap<String, Set<String>>();
 
 		while (true) {
@@ -299,10 +298,7 @@ public class InfoboxExtractor extends Extractor {
 	@Override
 	public void extract(Map<Theme, FactWriter> writers,
 			Map<Theme, FactSource> input) throws Exception {
-		FactCollection infoboxFacts = new FactCollection(
-				input.get(PatternHardExtractor.INFOBOXPATTERNS));
-		Map<String, String> combinations = infoboxFacts
-				.asStringMap("<_infoboxCombine>");
+
 		TitleExtractor titleExtractor = new TitleExtractor(input);
 
 		// Extract the information
@@ -342,8 +338,7 @@ public class InfoboxExtractor extends Extractor {
 						new Fact(titleEntity, "rdf:type", FactComponent
 								.forYagoEntity(cls)));
 
-				Map<String, Set<String>> attributes = readInfobox(in,
-						combinations);
+				Map<String, Set<String>> attributes = readInfobox(in);
 
 				/* new version */
 				for (String attribute : attributes.keySet()) {
@@ -362,23 +357,6 @@ public class InfoboxExtractor extends Extractor {
 
 			}
 		}
-	}
-
-	/** returns the infobox patterns */
-	public static Map<String, Set<String>> infoboxPatterns(
-			FactCollection infoboxFacts) {
-		Map<String, Set<String>> patterns = new HashMap<String, Set<String>>();
-		Announce.doing("Compiling infobox patterns");
-		for (Fact fact : infoboxFacts.get("<_infoboxPattern>")) {
-			D.addKeyValue(patterns,
-					normalizeAttribute(fact.getArgJavaString(1)),
-					fact.getArg(2), TreeSet.class);
-		}
-		if (patterns.isEmpty()) {
-			Announce.warning("No infobox patterns found");
-		}
-		Announce.done();
-		return (patterns);
 	}
 
 	/** Constructor from source file */
