@@ -44,7 +44,7 @@ public class InfoboxTypeExtractor extends Extractor {
   public static final HashMap<String, Theme> INFOBOXTYPESOURCES_MAP = new HashMap<String, Theme>();
 
   /** Types deduced from categories */
-  public static final HashMap<String, Theme> INFOBOXRAWTYPES_MAP = new HashMap<String, Theme>();
+  public static final HashMap<String, Theme> INFOBOXTYPES_MAP = new HashMap<String, Theme>();
 
   /** Classes deduced from categories */
   public static final HashMap<String, Theme> INFOBOXCLASSES_MAP = new HashMap<String, Theme>();
@@ -52,7 +52,7 @@ public class InfoboxTypeExtractor extends Extractor {
   static {
     for (String s : Extractor.languages) {
       INFOBOXTYPESOURCES_MAP.put(s, new Theme("infoboxTypeSources" + Extractor.langPostfixes.get(s), "The sources of category type facts"));
-      INFOBOXRAWTYPES_MAP.put(s, new Theme("infoboxRawTypes" + Extractor.langPostfixes.get(s), "All rdf:type facts of YAGO", ThemeGroup.TAXONOMY));
+      INFOBOXTYPES_MAP.put(s, new Theme("infoboxTypes" + Extractor.langPostfixes.get(s), "All rdf:type facts of YAGO", ThemeGroup.TAXONOMY));
       INFOBOXCLASSES_MAP.put(s, new Theme("infoboxClasses" + Extractor.langPostfixes.get(s),
           "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves"));
     }
@@ -69,7 +69,7 @@ public class InfoboxTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(INFOBOXTYPESOURCES_MAP.get(language), INFOBOXRAWTYPES_MAP.get(language), INFOBOXCLASSES_MAP.get(language));
+    return new FinalSet<Theme>(INFOBOXTYPESOURCES_MAP.get(language), INFOBOXTYPES_MAP.get(language), INFOBOXCLASSES_MAP.get(language));
   }
 
   protected ExtendedFactCollection loadFacts(FactSource factSource, ExtendedFactCollection result) {
@@ -230,7 +230,7 @@ public class InfoboxTypeExtractor extends Extractor {
       return;
     }
     for (String type : types) {
-      write(writers, INFOBOXRAWTYPES_MAP.get(language), new Fact(entity, RDFS.type, type), INFOBOXTYPESOURCES_MAP.get(language),
+      write(writers, INFOBOXTYPES_MAP.get(language), new Fact(entity, RDFS.type, type), INFOBOXTYPESOURCES_MAP.get(language),
           FactComponent.wikipediaURL(entity), "WikipediaTypeExtractor from category");
     }
     types.clear();
@@ -242,7 +242,7 @@ public class InfoboxTypeExtractor extends Extractor {
 
   public static void main(String[] args) throws Exception {
     InfoboxTypeExtractor extractor = new InfoboxTypeExtractor("en");
-    extractor.extract(new File("D:/data3/yago2s/"), "Test");
+    extractor.extract(new File("/home/jbiega/data/yago2s/"), "Test");
   }
 
 }

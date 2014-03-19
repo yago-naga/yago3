@@ -53,7 +53,7 @@ public class InfoboxExtractor extends Extractor {
 
 	public static final HashMap<String, Theme> INFOBOXATTSOURCES_MAP = new HashMap<String, Theme>();
 
-	public static final HashMap<String, Theme> INFOBOXTYPES_MAP = new HashMap<String, Theme>();
+	public static final HashMap<String, Theme> INFOBOXRAWTYPES_MAP = new HashMap<String, Theme>();
 
 	public static final HashMap<String, Theme> INFOBOXTYPESTRANSLATED_MAP = new HashMap<String, Theme>();
 
@@ -67,7 +67,7 @@ public class InfoboxExtractor extends Extractor {
 			INFOBOXATTSOURCES_MAP.put(s, new Theme("yagoInfoboxAttSources"
 					+ Extractor.langPostfixes.get(s),
 					"Sources for facts of infobox", ThemeGroup.OTHER));
-			INFOBOXTYPES_MAP.put(s, new Theme("infoboxTypes"
+			INFOBOXRAWTYPES_MAP.put(s, new Theme("infoboxRawTypes"
 					+ Extractor.langPostfixes.get(s), "Types of infoboxes",
 					ThemeGroup.OTHER));
 			INFOBOXTYPESTRANSLATED_MAP.put(s, new Theme(
@@ -106,13 +106,13 @@ public class InfoboxExtractor extends Extractor {
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(INFOBOXATTS_MAP.get(language),
 				INFOBOXATTSOURCES_MAP.get(language),
-				INFOBOXTYPES_MAP.get(language));
+				INFOBOXRAWTYPES_MAP.get(language));
 	}
 
 	@Override
 	public Set<Extractor> followUp() {
 		Set<Extractor> input = new HashSet<Extractor>(Arrays.asList(
-				new Translator(INFOBOXTYPES_MAP.get(this.language),
+				new Translator(INFOBOXRAWTYPES_MAP.get(this.language),
 						INFOBOXTYPESBOTHTRANSLATED_MAP.get(this.language),
 						this.language, "Infobox"), 
 				new InfoboxTypeExtractor(this.language),
@@ -334,7 +334,7 @@ public class InfoboxExtractor extends Extractor {
 				if (Character.isDigit(Char.last(cls)))
 					cls = Char.cutLast(cls);
 
-				writers.get(INFOBOXTYPES_MAP.get(language)).write(
+				writers.get(INFOBOXRAWTYPES_MAP.get(language)).write(
 						new Fact(titleEntity, "rdf:type", FactComponent
 								.forYagoEntity(cls)));
 
