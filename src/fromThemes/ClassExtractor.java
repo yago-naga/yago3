@@ -19,6 +19,7 @@ import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.CategoryTypeExtractor;
+import fromWikipedia.InfoboxTypeExtractor;
 
 /**
  * YAGO2s - ClassExtractor
@@ -42,6 +43,7 @@ public class ClassExtractor extends Extractor {
 	        ));
 	for (String lang : Extractor.languages) {
 		input.add(CategoryTypeExtractor.CATEGORYCLASSES_MAP.get(lang));
+		input.add(InfoboxTypeExtractor.INFOBOXCLASSES_MAP.get(lang));
 	}
 	return input;
   }
