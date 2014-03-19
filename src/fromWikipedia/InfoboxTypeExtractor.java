@@ -60,7 +60,7 @@ public class InfoboxTypeExtractor extends Extractor {
   }
 
   public Set<Theme> input() {
-    Set<Theme> temp = new TreeSet<Theme>(Arrays.asList(InfoboxExtractor.INFOBOXTYPESBOTHTRANSLATED_MAP.get(language),
+    Set<Theme> temp = new TreeSet<Theme>(Arrays.asList(InfoboxExtractor.INFOBOXRAwTYPESBOTHTRANSLATED_MAP.get(language),
         PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETCLASSES,
         PatternHardExtractor.INFOBOXPATTERNS));
 
@@ -165,7 +165,7 @@ public class InfoboxTypeExtractor extends Extractor {
   @Override
   public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
 
-    ExtendedFactCollection infoboxTypes = loadFacts(input.get(InfoboxExtractor.INFOBOXTYPESBOTHTRANSLATED_MAP.get(language)));
+    ExtendedFactCollection infoboxTypes = loadFacts(input.get(InfoboxExtractor.INFOBOXRAwTYPESBOTHTRANSLATED_MAP.get(language)));
 
     nonConceptualInfoboxes = new HashSet<>();
     for (Fact f : new FactCollection(input.get(PatternHardExtractor.INFOBOXPATTERNS)).getBySecondArgSlow(RDFS.type, "<_yagoNonConceptualInfobox>")) {

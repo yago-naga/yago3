@@ -55,9 +55,9 @@ public class InfoboxExtractor extends Extractor {
 
 	public static final HashMap<String, Theme> INFOBOXRAWTYPES_MAP = new HashMap<String, Theme>();
 
-	public static final HashMap<String, Theme> INFOBOXTYPESTRANSLATED_MAP = new HashMap<String, Theme>();
+	public static final HashMap<String, Theme> INFOBOXRAWTYPESTRANSLATED_MAP = new HashMap<String, Theme>();
 
-	public static final HashMap<String, Theme> INFOBOXTYPESBOTHTRANSLATED_MAP = new HashMap<String, Theme>();
+	public static final HashMap<String, Theme> INFOBOXRAwTYPESBOTHTRANSLATED_MAP = new HashMap<String, Theme>();
 
 	static {
 		for (String s : Extractor.languages) {
@@ -70,10 +70,10 @@ public class InfoboxExtractor extends Extractor {
 			INFOBOXRAWTYPES_MAP.put(s, new Theme("infoboxRawTypes"
 					+ Extractor.langPostfixes.get(s), "Types of infoboxes",
 					ThemeGroup.OTHER));
-			INFOBOXTYPESTRANSLATED_MAP.put(s, new Theme(
+			INFOBOXRAWTYPESTRANSLATED_MAP.put(s, new Theme(
 					"infoboxTypesTranslated" + Extractor.langPostfixes.get(s),
 					"Types of infoboxes", ThemeGroup.OTHER));
-			INFOBOXTYPESBOTHTRANSLATED_MAP.put(s,
+			INFOBOXRAwTYPESBOTHTRANSLATED_MAP.put(s,
 					new Theme("infoboxTypesBothTranslated"
 							+ Extractor.langPostfixes.get(s),
 							"Types of infoboxes", ThemeGroup.OTHER));
@@ -113,7 +113,7 @@ public class InfoboxExtractor extends Extractor {
 	public Set<Extractor> followUp() {
 		Set<Extractor> input = new HashSet<Extractor>(Arrays.asList(
 				new Translator(INFOBOXRAWTYPES_MAP.get(this.language),
-						INFOBOXTYPESBOTHTRANSLATED_MAP.get(this.language),
+						INFOBOXRAwTYPESBOTHTRANSLATED_MAP.get(this.language),
 						this.language, "Infobox"), 
 				new InfoboxTypeExtractor(this.language),
 				new InfoboxTermExtractor(this.language), 
