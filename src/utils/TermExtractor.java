@@ -84,13 +84,13 @@ public abstract class TermExtractor {
 	  return all;
   }
   public static List<TermExtractor> all() {
-	  return Arrays.asList(
+	  return new ArrayList<TermExtractor>(Arrays.asList(
 			  forWikiLink,
 			  forDate,
 			  forString,
 			  forUrl,
 			  forNumber
-			  );
+			  ));
   }
 
   // also needs to match \ for yago-encoded stuff
