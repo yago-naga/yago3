@@ -106,11 +106,10 @@ public class AttributeMatcher extends Extractor {
       // map
       Map<String, Integer> germanMap = german2yago2count.get(germanRelation);
       if (germanMap == null) german2yago2count.put(germanRelation, germanMap = new HashMap<String, Integer>());
-      List<Fact> relationsWithGivenSubject = yagoFacts.getFactsWithSubject(germanSubject);
-      List<Fact> relationsWithGivenObject = yagoFacts.getFactsWithObject(germanObject);
+      List<Fact> relationsWithGivenSubjectAndObject = yagoFacts.getFactsWithSubject(germanSubject);
       // intersection
-      relationsWithGivenSubject.retainAll(relationsWithGivenObject);
-      for (Fact fact : relationsWithGivenSubject) {
+      relationsWithGivenSubjectAndObject.retainAll(yagoFacts.getFactsWithObject(germanObject));
+      for (Fact fact : relationsWithGivenSubjectAndObject) {
         D.addKeyValue(germanMap, fact.getRelation(), 1);
       }
     }
