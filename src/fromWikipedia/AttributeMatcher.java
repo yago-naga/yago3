@@ -123,7 +123,9 @@ public class AttributeMatcher extends Extractor {
         if (correct >= 0) {
           Fact scoreFact = new Fact(germanAttribute,
               (double) correct / total + " <" + correct + "/" + total + ">" + "     " + ws[0] + "    " + ws[1], yagoRelation);
-          writers.get(MATCHED_INFOBOXATTS_SCORES_MAP.get(language)).write(scoreFact);
+          if (correct > 0) {
+        	  writers.get(MATCHED_INFOBOXATTS_SCORES_MAP.get(language)).write(scoreFact);
+          }
           /** filtering out */
           if (ws[0] - ws[1] > WILSON_THRESHOLD && correct > SUPPORT_THRESHOLD) {
             Fact fact = new Fact(germanAttribute, "<_infoboxPattern>", yagoRelation);
