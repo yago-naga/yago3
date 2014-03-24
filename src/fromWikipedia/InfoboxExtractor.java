@@ -335,7 +335,7 @@ public class InfoboxExtractor extends Extractor {
 					cls = Char.cutLast(cls);
 
 				writers.get(INFOBOXRAWTYPES_MAP.get(language)).write(
-						new Fact(titleEntity, "rdf:type", FactComponent
+						new Fact(titleEntity, "<infoboxType/" + this.language + ">", FactComponent
 								.forYagoEntity(cls)));
 
 				Map<String, Set<String>> attributes = readInfobox(in);
