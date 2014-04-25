@@ -84,6 +84,9 @@ public class CategoryExtractor extends Extractor {
     while (true) {
       /** categoryWord holds the synonym of the word "Category" in different languages. 
        * It is needed to distinguish the category part in Wiki pages. 
+       * 
+       * TODO: categoryWord does not change during the run, does it? You can
+       * take it outside of the loop.
        */
       String categoryWord = InterLanguageLinksDictionary.getCatDictionary(input.get(InterLanguageLinks.INTERLANGUAGELINKS)).get(language);
       switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "[[" + categoryWord + ":")) {
