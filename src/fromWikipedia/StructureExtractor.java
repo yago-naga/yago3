@@ -7,14 +7,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import utils.FactTemplateExtractor;
-import utils.TitleExtractor;
-
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
+import utils.FactTemplateExtractor;
+import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactSource;
@@ -22,7 +20,6 @@ import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.Redirector;
-import fromThemes.TransitiveTypeExtractor;
 import fromThemes.TypeChecker;
 
 /**
@@ -44,7 +41,7 @@ public class StructureExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.STRUCTUREPATTERNS, 
-				PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
+				PatternHardExtractor.TITLEPATTERNS));
 	}
 	
 	@Override

@@ -7,16 +7,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import utils.FactTemplateExtractor;
-import utils.TitleExtractor;
-
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
+import utils.FactTemplateExtractor;
+import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -25,7 +23,6 @@ import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.Redirector;
-import fromThemes.TransitiveTypeExtractor;
 import fromThemes.TypeChecker;
 
 /**
@@ -47,7 +44,7 @@ public class ConteXtExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CONTEXTPATTERNS,
-				PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
+				PatternHardExtractor.TITLEPATTERNS));
 	}
 	
 	 /** Context for entities */
