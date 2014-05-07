@@ -21,7 +21,7 @@
 # "(?s)(.{0,500})\\[\\[([^\\]\\n\\|:]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 <hasInternalWikipediaLinkTo> @Entity($2); #1 <hasContextPrecedingAnchor> @String($1); #1 <hasContextSucceedingAnchor> @String($3)" .
 
 # Wikipedia links without |
-"(?s)\\[\\[([^\\]\\n\\|:]+?)\\]\\]"	<_extendedStructureWikiPattern>	"$0 <hasInternalWikipediaLinkTo> @Entity($1)"
+"(?s)\\[\\[([^\\]\\n\\|:]+?)\\]\\]"	<_extendedStructureWikiPattern>	"$0 <hasInternalWikipediaLinkTo> @Entity($1)" .
 
 # External links
 "(?i)\\[(https?://[^\\s\\]\\n]+)\\s+([^\\]\\n]+)\\]"	<_extendedStructureWikiPattern>	"$0 <hasExternalWikipediaLinkTo> @Url($1); #1 <hasAnchorText> @String($2)" .
