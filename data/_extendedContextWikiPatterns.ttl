@@ -12,17 +12,16 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Wikipedia links with |
-"(?i)\\[\\[[^\\]\u000a:]+?\\|([^\\]\u000a]+?)\\]\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaAnchorText> @String($1)" .
+"(?i)\\[\\[[^\\]\\n:]+?\\|([^\\]\\n]+?)\\]\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaAnchorText> @String($1)" .
 
-# Links without |
-"(?i)\\[\\[([^\\]\u000a\\|:]+?)\\]\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaAnchorText> @String($1)" .
+# Wikipedia links without |
+"(?i)\\[\\[([^\\]\\n\\|:]+?)\\]\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaAnchorText> @String($1)" .
 
-# Citations
+# Citations - TODO this is not useable in non-English!
 "(?i)\\{\\{Cit[ae][^\\}]+title\\s*=\\s*([^\\}\\|]+)"	<_extendedContextWikiPattern>	"$0 <hasCitationTitle> @String($1)" .
-"(?i)(={1,5})\\s*([^=\u000a]+?)\\s*\u0001"	<_extendedContextWikiPattern>	"$0 <hasTitleText> @String($2)" .
+
+# Section titles
+"(?i)(={1,5})\\s*([^=\\n]+?)\\s*\\1"	<_extendedContextWikiPattern>	"$0 <hasTitleText> @String($2)" .
 
 # External links without anchor text
-"(?i)\\[https?://[^\\s\\]\u000a]+\\s+([^\\]\u000a]+)\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaAnchorText> @String($1)" .
-
-# Categories
-"(?i)\\[\\[Category:([^\\]\u000a\\|]+).*?\\]\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaCategory> @String($1)" .
+"(?i)\\[https?://[^\\s\\]\\n]+\\s+([^\\]\\n]+)\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaAnchorText> @String($1)" .
