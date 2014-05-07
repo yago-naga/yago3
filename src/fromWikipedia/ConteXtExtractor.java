@@ -22,6 +22,7 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
 import fromThemes.Redirector;
 import fromThemes.TypeChecker;
 
@@ -44,7 +45,7 @@ public class ConteXtExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CONTEXTPATTERNS,
-				PatternHardExtractor.TITLEPATTERNS));
+				PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
 	}
 	
 	 /** Context for entities */

@@ -56,7 +56,7 @@ public class TitleExtractor {
       Announce.error("The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
     }
     if (input.get(WordnetExtractor.WORDNETWORDS) == null && input.get(TransitiveTypeExtractor.TRANSITIVETYPE) == null) {
-      Announce.error("The TitleExtractor needs WordnetExtractor.WORDNETWORDS or TransitiveTypeExtractor.TRANSITIVETYPE as input."
+      Announce.error("The TitleExtractor needs WordnetExtractor.WORDNETWORDS or TransitiveTypeExtractor.TRANSITIVETYPE as input. "
           + "This is in order to avoid that Wikipedia articles that describe common nouns (such as 'table') become instances in YAGO.");
     }
     replacer = new PatternList(input.get(PatternHardExtractor.TITLEPATTERNS), "<_titleReplace>");
