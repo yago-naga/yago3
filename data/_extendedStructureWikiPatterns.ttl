@@ -15,16 +15,16 @@
 # "(?s)(.{0,500})\\[\\[([^\\]\\n:]+?)\\|([^\\]\\n]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 <hasInternalWikipediaLinkTo> @Entity($2); #1 <hasAnchorText> @String($3); #1 <hasContextPrecedingAnchor> @String($1); #1 <hasContextSucceedingAnchor> @String($4)" .
 
 # Wikipedia links with |
-"(?s)\\[\\[([^\\]\\n:]+?)\\|([^\\]\\n]+?)\\]\\]"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($1); #1 hasAnchorText @String($2)"
+"(?s)\\[\\[([^\\]\\n:]+?)\\|([^\\]\\n]+?)\\]\\]"	<_extendedStructureWikiPattern>	"$0 <hasInternalWikipediaLinkTo> @Entity($1); #1 hasAnchorText @String($2)"
 
 # Wikipedia links without | and context - IGNORED
 # "(?s)(.{0,500})\\[\\[([^\\]\\n\\|:]+?)\\]\\](.{0,500})"	<_extendedStructureWikiPattern>	"$0 <hasInternalWikipediaLinkTo> @Entity($2); #1 <hasContextPrecedingAnchor> @String($1); #1 <hasContextSucceedingAnchor> @String($3)" .
 
 # Wikipedia links without |
-"(?s)\\[\\[([^\\]\\n\\|:]+?)\\]\\]"	<_extendedStructureWikiPattern>	"$0 hasInternalWikipediaLinkTo @Entity($1)"
+"(?s)\\[\\[([^\\]\\n\\|:]+?)\\]\\]"	<_extendedStructureWikiPattern>	"$0 <hasInternalWikipediaLinkTo> @Entity($1)"
 
 # External links
 "(?i)\\[(https?://[^\\s\\]\\n]+)\\s+([^\\]\\n]+)\\]"	<_extendedStructureWikiPattern>	"$0 <hasExternalWikipediaLinkTo> @Url($1); #1 <hasAnchorText> @String($2)" .
 
 # External links without anchor text
-"\\[(https?://[^\\s\\]\\n]+)\\]"	<_extendedStructureWikiPattern>	"$0	hasExternalWikipediaLinkTo @Url($1)"	
+"\\[(https?://[^\\s\\]\\n]+)\\]"	<_extendedStructureWikiPattern>	"$0 <hasExternalWikipediaLinkTo> @Url($1)"	
