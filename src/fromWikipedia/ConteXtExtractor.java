@@ -9,7 +9,6 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
@@ -17,7 +16,6 @@ import utils.FactTemplateExtractor;
 import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
-import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
@@ -27,7 +25,9 @@ import fromThemes.Redirector;
 import fromThemes.TypeChecker;
 
 /**
- * Extracts context keyphrases (the X in SPOTLX) facts from Wikipedia
+ * Extracts context keyphrases (the X in SPOTLX) facts from Wikipedia.
+ * 
+ * For now, the provenance generation (yagoConteXtFacts) is disabled. 
  * 
  * @author Johannes Hoffart
  * 
@@ -59,13 +59,14 @@ public class ConteXtExtractor extends Extractor {
 	public static final Theme CONTEXTFACTS = new Theme("yagoConteXtFacts",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
-	 /** Context for entities */
-  public static final Theme CONTEXTSOURCES = new Theme("yagoConteXtSources",
-      "Source information for the extracted keyphrases");
+	 /** Context for entities provenance */
+//  public static final Theme CONTEXTSOURCES = new Theme("yagoConteXtSources",
+//      "Source information for the extracted keyphrases");
 	
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);
+//		return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);
+	  return new FinalSet<Theme>(DIRTYCONTEXTFACTS);
 	}
 	
   @Override
@@ -90,7 +91,7 @@ public class ConteXtExtractor extends Extractor {
 				"<_extendedContextWikiPattern>");
 
 		FactWriter out = output.get(DIRTYCONTEXTFACTS);
-    FactWriter outSources = output.get(CONTEXTSOURCES);
+//    FactWriter outSources = output.get(CONTEXTSOURCES);
 
 		String titleEntity = null;
 		while (true) {
@@ -107,10 +108,15 @@ public class ConteXtExtractor extends Extractor {
 				String page = FileLines.readBetween(in, "<text", "</text>");
 				String normalizedPage = Char.decodeAmpersand(Char.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
 
-				for (Pair<Fact, String> fact : contextPatterns.extractWithProvenance(normalizedPage, titleEntity)) {
-				  if (fact.first != null)
-				    write(out, fact.first, outSources, FactComponent.wikipediaURL(titleEntity), "ConteXtExtractor from: " + fact.second);
-				}
+//				for (Pair<Fact, String> fact : contextPatterns.extractWithProvenance(normalizedPage, titleEntity)) {
+//				  if (fact.first != null)
+//				    write(out, fact.first, outSources, FactComponent.wikipediaURL(titleEntity), "ConteXtExtractor from: " + fact.second);
+//				}
+        for (Fact fact : contextPatterns.extract(normalizedPage, titleEntity)) {
+          if (fact != null) {
+            out.write(fact);
+          }
+        }
 			}
 		}
 	}
