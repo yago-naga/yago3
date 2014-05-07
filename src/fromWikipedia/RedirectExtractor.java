@@ -42,13 +42,13 @@ public class RedirectExtractor extends Extractor {
 
 	private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
    
-	public static final HashMap<String, Theme> RAWREDIRECTFACTS_MAP = new HashMap<String, Theme>();
+	public static final HashMap<String, Theme> REDIRECTFACTS_DIRTY_MAP = new HashMap<String, Theme>();
 
 	public static final HashMap<String, Theme> REDIRECTLABELS_MAP = new HashMap<String, Theme>();
    
 	static {
 		for (String s : Extractor.languages) {
-			RAWREDIRECTFACTS_MAP.put(s, new Theme("redirectFacts" +  Extractor.langPostfixes.get(s), "Redirect facts from Wikipedia redirect pages"));
+			REDIRECTFACTS_DIRTY_MAP.put(s, new Theme("redirectLabelsDirty" +  Extractor.langPostfixes.get(s), "Redirect facts from Wikipedia redirect pages (to be type checked)"));
 			REDIRECTLABELS_MAP.put(s, new Theme("redirectLabels" +  Extractor.langPostfixes.get(s), "Redirect facts from Wikipedia redirect pages"));
 		}
 	}
@@ -61,12 +61,17 @@ public class RedirectExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(RAWREDIRECTFACTS_MAP.get(this.language));
+		return new FinalSet<Theme>(REDIRECTFACTS_DIRTY_MAP.get(this.language));
 	}
 
 	@Override
 	public Set<Extractor> followUp() {	
-	  return new HashSet<Extractor>(Arrays.asList(new TypeChecker(RAWREDIRECTFACTS_MAP.get(this.language), REDIRECTLABELS_MAP.get(this.language), this)));
+	  return new HashSet<Extractor>(
+	      Arrays.asList(
+	          new TypeChecker(
+	              REDIRECTFACTS_DIRTY_MAP.get(this.language), 
+	              REDIRECTLABELS_MAP.get(this.language), 
+	              this)));
 	}
 	
 	@Override
@@ -100,7 +105,7 @@ public class RedirectExtractor extends Extractor {
 			}
 		}
 
-		FactWriter out = output.get(RAWREDIRECTFACTS_MAP.get(this.language));
+		FactWriter out = output.get(REDIRECTFACTS_DIRTY_MAP.get(this.language));
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
 			out.write(new Fact(
