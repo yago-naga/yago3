@@ -3,46 +3,39 @@ package fromThemes;
 import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
-import java.util.TreeSet;
-
-import utils.PatternList;
-import utils.TermExtractor;
 
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
-
+import utils.PatternList;
+import utils.TermExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
-import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromWikipedia.Translator;
 import fromWikipedia.Extractor;
 import fromWikipedia.InfoboxExtractor;
+import fromWikipedia.Translator;
 
 public class InfoboxTermExtractor extends Extractor {
 
-	public static final Theme INFOBOXTERMS = new Theme("infoboxTerms", "en",
+	public static final Theme INFOBOXTERMS = new Theme("infoboxTerms",
 			"The attribute facts of the Wikipedia infoboxes, split into terms");
 	public static final Theme INFOBOXTERMS_TOREDIRECT = new Theme(
 			"infoboxTermsToBeRedirected",
-			"en",
 			"The attribute facts of the Wikipedia infoboxes, split into terms, still to be redirected.");
 	public static final Theme INFOBOXATTSTRANSLATED = new Theme(
 			"infoboxAttributesTranslated",
-			"en",
 			"The attribute facts of the Wikipedia infoboxes, split into terms, redirected, subject translated");
 
 	@Override

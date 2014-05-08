@@ -6,19 +6,16 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import fromOtherSources.HardExtractor;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromWikipedia.CategoryExtractor;
-import fromWikipedia.CategoryMapper;
-import fromWikipedia.Extractor;
-import fromWikipedia.InfoboxExtractor;
-import fromWikipedia.InfoboxMapper;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.FactCollection;
 import basics.FactSource;
 import basics.Theme;
+import fromOtherSources.HardExtractor;
+import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
+import fromWikipedia.CategoryMapper;
+import fromWikipedia.InfoboxMapper;
 
 /**
  * YAGO2s - RuleExtractor
@@ -35,14 +32,10 @@ public class RuleExtractor extends BaseRuleExtractor {
 		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.RULES,
 				TransitiveTypeExtractor.TRANSITIVETYPE,
-				ClassExtractor.YAGOTAXONOMY, 
-				HardExtractor.HARDWIREDFACTS,
+				ClassExtractor.YAGOTAXONOMY, HardExtractor.HARDWIREDFACTS,
 				WordnetExtractor.WORDNETCLASSES));
-
-		for (String lang : Extractor.languages) {
-			input.add(CategoryMapper.CATEGORYFACTS_MAP.get(lang));
-			input.add(InfoboxMapper.INFOBOXFACTS_MAP.get(lang));
-		}
+		input.addAll(CategoryMapper.CATEGORYFACTS.inAllLanguages());
+		input.addAll(InfoboxMapper.INFOBOXFACTS.inAllLanguages());
 		return input;
 	}
 

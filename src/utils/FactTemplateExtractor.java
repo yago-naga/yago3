@@ -22,48 +22,67 @@ import basics.FactSource;
  * Extracts from strings by help of fact templates
  * 
  * @author Fabian M. Suchanek
- *
+ * 
  */
 public class FactTemplateExtractor {
 
-	/** List of patterns*/
-	public final List<Pair<Pattern, List<FactTemplate>>> patterns=new ArrayList<>();
+	/** List of patterns */
+	public final List<Pair<Pattern, List<FactTemplate>>> patterns = new ArrayList<>();
 
-	/** Constructor 
-	 * @throws IOException */
-	public FactTemplateExtractor(FactSource  facts, String relation) throws IOException {
-		this(new FactCollection(facts),relation);
+	/**
+	 * Constructor
+	 * 
+	 * @throws IOException
+	 */
+	public FactTemplateExtractor(FactSource facts, String relation)
+			throws IOException {
+		this(new FactCollection(facts), relation);
 	}
-	
+
 	/** Constructor */
 	public FactTemplateExtractor(FactCollection facts, String relation) {
-		Announce.doing("Loading fact templates of",relation);
+		Announce.doing("Loading fact templates of", relation);
 		for (Fact fact : facts.get(relation)) {
-			patterns.add(new Pair<Pattern, List<FactTemplate>>(fact.getArgPattern(1), FactTemplate.create(fact.getArgJavaString(2))));
+			patterns.add(new Pair<Pattern, List<FactTemplate>>(fact
+					.getArgPattern(1), FactTemplate.create(fact
+					.getArgJavaString(2))));
 		}
-		if(patterns.isEmpty()) {
+		if (patterns.isEmpty()) {
 			Announce.warning("No patterns found!");
 		}
 		Announce.done();
 	}
-	
-	
-	 /**
-   * Extracts facts using patterns without provenance
-   * 
-   * @param string
-   * @param dollarZero
-   * @return Collection of facts
-   */
-	 public Collection<Fact> extract(String string, String dollarZero) {
-	   Collection<Pair<Fact,String>> rwp = extractWithProvenance(string, dollarZero);
-	   List<Fact> results = new LinkedList<Fact>();
-	   
-	   for (Pair<Fact,String> fwp : rwp) 
-	     results.add(fwp.first);
-	   
-	   return results;	   
-	 }
+
+	/**
+	 * Extracts facts using patterns without provenance
+	 * 
+	 * @param string
+	 * @param dollarZero
+	 * @return Collection of facts
+	 */
+	public Collection<Fact> extract(String string, String dollarZero) {
+		List<Fact> result = new ArrayList<>();
+		for (Pair<Pattern, List<FactTemplate>> pattern : patterns) {
+			Matcher m = pattern.first().matcher(string);
+			while (m.find()) {
+				Map<String, String> variables = new TreeMap<>();
+				variables.put("$0", dollarZero);
+				for (int i = 1; i <= m.groupCount(); i++) {
+					if (m.group(i).trim().isEmpty()) {
+						Announce.debug("$" + i
+								+ " was empty, skipping fact for pattern: "
+								+ pattern);
+						continue;
+					} else {
+						variables.put("$" + i, m.group(i));
+					}
+				}
+				result.addAll(FactTemplate.instantiate(pattern.second(),
+						variables));
+			}
+		}
+		return (result);
+	}
 
 	/**
 	 * Extracts facts using patterns including provenance
@@ -71,27 +90,33 @@ public class FactTemplateExtractor {
 	 * @param string
 	 * @param dollarZero
 	 * @return Collection of <fact, extractionTechnique> pairs
+	 * @deprecated Found no reference to this. Can it go away? Fabian
 	 */
-	public Collection<Pair<Fact, String>> extractWithProvenance(String string, String dollarZero) {
-		List<Pair<Fact, String>> result=new LinkedList<>();
-		for(Pair<Pattern, List<FactTemplate>> pattern : patterns) {
-			Matcher m=pattern.first().matcher(string);
-			while(m.find()) {
-				Map<String,String> variables=new TreeMap<>();
+	public Collection<Pair<Fact, String>> extractWithProvenance(String string,
+			String dollarZero) {
+		List<Pair<Fact, String>> result = new LinkedList<>();
+		for (Pair<Pattern, List<FactTemplate>> pattern : patterns) {
+			Matcher m = pattern.first().matcher(string);
+			while (m.find()) {
+				Map<String, String> variables = new TreeMap<>();
 				variables.put("$0", dollarZero);
-				for(int i=1;i<=m.groupCount();i++) {
-				  if (m.group(i).trim().isEmpty()) { 
-				    Announce.debug("$"+i+" was empty, skipping fact for pattern: " + pattern);
-				    continue;
-				  } else {
-				    variables.put("$"+i,m.group(i));
-				  }
+				for (int i = 1; i <= m.groupCount(); i++) {
+					if (m.group(i).trim().isEmpty()) {
+						Announce.debug("$" + i
+								+ " was empty, skipping fact for pattern: "
+								+ pattern);
+						continue;
+					} else {
+						variables.put("$" + i, m.group(i));
+					}
 				}
-				for (Fact f : FactTemplate.instantiate(pattern.second(), variables)) {
-				  result.add(new Pair<Fact, String>(f, pattern.first.toString() + " -> " + pattern.second.toString()));
+				for (Fact f : FactTemplate.instantiate(pattern.second(),
+						variables)) {
+					result.add(new Pair<Fact, String>(f, pattern.first
+							.toString() + " -> " + pattern.second.toString()));
 				}
 			}
 		}
-		return(result);
+		return (result);
 	}
 }

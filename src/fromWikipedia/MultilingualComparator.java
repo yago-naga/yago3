@@ -52,8 +52,8 @@ public class MultilingualComparator extends Extractor {
   }
 
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(TypeCoherenceChecker.YAGOTYPES, CategoryTypeExtractor.CATEGORYTYPES_MAP.get(baseLang),
-        InfoboxTypeExtractor.INFOBOXTYPES_MAP.get(baseLang), CategoryTypeExtractor.CATEGORYTYPES_MAP.get(language),
+    return new TreeSet<Theme>(Arrays.asList(TypeCoherenceChecker.YAGOTYPES, CategoryTypeExtractor.CATEGORYTYPES.inLanguage(baseLang),
+        InfoboxTypeExtractor.INFOBOXTYPES_MAP.get(baseLang), CategoryTypeExtractor.CATEGORYTYPES.inLanguage(language),
         InfoboxTypeExtractor.INFOBOXTYPES_MAP.get(language)));
   }
 
@@ -75,12 +75,12 @@ public class MultilingualComparator extends Extractor {
   public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
     FactSource yagoTypes = input.get(TypeCoherenceChecker.YAGOTYPES);
     ExtendedFactCollection baseLangFactCollection = new ExtendedFactCollection();
-    loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(baseLang)), baseLangFactCollection);
+    loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES.inLanguage(baseLang)), baseLangFactCollection);
     loadFacts(input.get(InfoboxTypeExtractor.INFOBOXTYPES_MAP.get(baseLang)), baseLangFactCollection);
     Set<String> baseLangEntities = baseLangFactCollection.getSubjects();
 
     ExtendedFactCollection secondLangFactCollection = new ExtendedFactCollection();
-    loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(language)), secondLangFactCollection);
+    loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES.inLanguage(language)), secondLangFactCollection);
     loadFacts(input.get(InfoboxTypeExtractor.INFOBOXTYPES_MAP.get(language)), secondLangFactCollection);
     Set<String> secondLangEntities = baseLangFactCollection.getSubjects();
 

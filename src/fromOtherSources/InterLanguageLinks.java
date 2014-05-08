@@ -10,7 +10,6 @@ import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
 import basics.Fact;
@@ -88,13 +87,14 @@ public class InterLanguageLinks extends Extractor {
 		Map<String, String> language2name = new HashMap<String, String>();
 		while (nr.hasNext()) {
 			Fact f = nr.next();
-			//D.p(f);
+			// D.p(f);
 			// Record a new name in the map
 			if (f.getRelation().endsWith("/inLanguage>")) {
 				String[] parts = f.getArg(1).split("/");
 				String name = parts[parts.length - 1];
 				language2name.put(FactComponent.stripQuotes(f.getArg(2)), name);
-			} else if (f.getArg(2).endsWith("#Item>") && !language2name.isEmpty()) {
+			} else if (f.getArg(2).endsWith("#Item>")
+					&& !language2name.isEmpty()) {
 				// New item starts, find the most English name for the entity
 				String mostEnglishLan = mostEnglishLanguage(language2name
 						.keySet());

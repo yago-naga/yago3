@@ -4,25 +4,21 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import fromGeonames.GeoNamesDataImporter;
-import fromOtherSources.HardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromWikipedia.CategoryExtractor;
-import fromWikipedia.CategoryMapper;
-import fromWikipedia.DisambiguationPageExtractor;
-import fromWikipedia.Extractor;
-import fromWikipedia.FlightIATAcodeExtractor;
-import fromWikipedia.InfoboxExtractor;
-import fromWikipedia.InfoboxMapper;
-import fromWikipedia.PersonNameExtractor;
-import fromWikipedia.RedirectExtractor;
-import fromWikipedia.WikipediaLabelExtractor;
-
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromGeonames.GeoNamesDataImporter;
+import fromOtherSources.HardExtractor;
+import fromOtherSources.WordnetExtractor;
+import fromWikipedia.CategoryMapper;
+import fromWikipedia.DisambiguationPageExtractor;
+import fromWikipedia.FlightIATAcodeExtractor;
+import fromWikipedia.InfoboxMapper;
+import fromWikipedia.PersonNameExtractor;
+import fromWikipedia.RedirectExtractor;
+import fromWikipedia.WikipediaLabelExtractor;
 
 /**
  * YAGO2s - LabelExtractor

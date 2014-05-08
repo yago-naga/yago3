@@ -31,8 +31,8 @@ public class TypeCoherenceChecker extends Extractor {
     result.add(HardExtractor.HARDWIREDFACTS);
 
     for (String s : Extractor.languages) {
-      result.add(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(s));
-      result.add(CategoryTypeExtractor.CATEGORYCLASSES_MAP.get(s));
+      result.add(CategoryTypeExtractor.CATEGORYTYPES.inLanguage(s));
+      result.add(CategoryTypeExtractor.CATEGORYCLASSES.inLanguage(s));
       result.add(InfoboxTypeExtractor.INFOBOXTYPES_MAP.get(s));
       result.add(InfoboxTypeExtractor.INFOBOXCLASSES_MAP.get(s));
     }
@@ -73,8 +73,8 @@ public class TypeCoherenceChecker extends Extractor {
     ExtendedFactCollection batch = new ExtendedFactCollection();
 
     for (String s : Extractor.languages) {
-      loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES_MAP.get(s)), batch);
-      loadFacts(input.get(CategoryTypeExtractor.CATEGORYCLASSES_MAP.get(s)), categoryClassFacts);
+      loadFacts(input.get(CategoryTypeExtractor.CATEGORYTYPES.inLanguage(s)), batch);
+      loadFacts(input.get(CategoryTypeExtractor.CATEGORYCLASSES.inLanguage(s)), categoryClassFacts);
       loadFacts(input.get(InfoboxTypeExtractor.INFOBOXTYPES_MAP.get(s)), batch);
       loadFacts(input.get(InfoboxTypeExtractor.INFOBOXCLASSES_MAP.get(s)), categoryClassFacts);
     }

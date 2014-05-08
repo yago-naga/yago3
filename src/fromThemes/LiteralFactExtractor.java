@@ -14,12 +14,9 @@ import basics.Theme;
 import basics.Theme.ThemeGroup;
 import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
-import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryMapper;
 import fromWikipedia.CoordinateExtractor;
-import fromWikipedia.Extractor;
 import fromWikipedia.FlightIATAcodeExtractor;
-import fromWikipedia.InfoboxExtractor;
 import fromWikipedia.InfoboxMapper;
 import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
@@ -37,8 +34,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 	@Override
 	public Set<Theme> input() {
 		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
-				HardExtractor.HARDWIREDFACTS,
-				RuleExtractor.RULERESULTS,
+				HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS,
 				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
 				SchemaExtractor.YAGOSCHEMA,
@@ -47,7 +43,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 
 		input.addAll(CategoryMapper.CATEGORYFACTS.inAllLanguages());
-		input.addAll(InfoboxMapper.INFOBOXFACTS.inAllLanguages());		
+		input.addAll(InfoboxMapper.INFOBOXFACTS.inAllLanguages());
 		return input;
 	}
 

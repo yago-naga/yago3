@@ -152,7 +152,7 @@ public class Translator extends FollowUpExtractor {
 
 	public static void main(String[] args) throws Exception {
 		Theme res = new Theme("res", "");
-		new Translator(CategoryExtractor.CATEGORYMEMBERS_MAP.get("de"), res,
+		new Translator(CategoryExtractor.CATEGORYMEMBERS.inLanguage("de"), res,
 				"de", "Category").extract(new File("D:/data3/yago2s"), "");
 	}
 
