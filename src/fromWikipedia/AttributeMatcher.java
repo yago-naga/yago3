@@ -1,22 +1,21 @@
 package fromWikipedia;
 
 import java.io.File;
+import java.io.Writer;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.D;
-import javatools.datatypes.FrequencyVector;
+import javatools.util.FileUtils;
 import basics.ExtendedFactCollection;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
-import basics.Theme.ThemeGroup;
 import fromThemes.InfoboxTermExtractor;
 
 /**
@@ -30,152 +29,152 @@ import fromThemes.InfoboxTermExtractor;
 
 public class AttributeMatcher extends Extractor {
 
-  private static ExtendedFactCollection yagoFacts = null;
+	/** Minimum requires support for output */
+	public static final int MINSUPPORT = 5;
 
-  /* Map of German attribute to YAGO relations to |Test & Gold|, |Test| */
-  Map<String, Map<String, Integer>> german2yago2count;
+	/** Where to write the results as TSV */
+	public static final File outputFolder = new File(".");
 
-  private String language;
+	private static ExtendedFactCollection yagoFacts = null;
 
-  private double WILSON_THRESHOLD = 0;
+	public static final Theme MATCHED_INFOBOXATTS = new Theme(
+			"matchedAttributes",
+			"Attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
 
-  private double SUPPORT_THRESHOLD = 1;
+	public static final Theme MATCHED_INFOBOXATTS_SOURCES = new Theme(
+			"matchedAttributeSources",
+			"Sources for the attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
 
-  public static final HashMap<String, Theme> MATCHED_INFOBOXATTS_MAP = new HashMap<String, Theme>();
+	@Override
+	public Set<Theme> input() {
+		HashSet<Theme> result = new HashSet<Theme>(
+				Arrays.asList(InfoboxMapper.INFOBOXFACTS.inLanguage("en"),
+						InfoboxTermExtractor.INFOBOXATTSTRANSLATED
+								.inLanguage(language)));
+		return result;
+	}
 
-  public static final HashMap<String, Theme> MATCHEDATTSOURCES_MAP = new HashMap<String, Theme>();
+	@Override
+	public Set<Theme> output() {
+		return new HashSet<>(Arrays.asList(
+				MATCHED_INFOBOXATTS.inLanguage(language),
+				MATCHED_INFOBOXATTS_SOURCES.inLanguage(language)));
+	}
 
-  public static final HashMap<String, Theme> MATCHED_INFOBOXATTS_SCORES_MAP = new HashMap<String, Theme>();
+	@Override
+	public void extract(Map<Theme, FactWriter> writers,
+			Map<Theme, FactSource> input) throws Exception {
 
-  static {
-    for (String s : Extractor.languages) {
-      MATCHED_INFOBOXATTS_MAP.put(s, new Theme("matchedAttributes" + Extractor.langPostfixes.get(s),
-          "Attributes of the Wikipedia infoboxes in different languages are matched.", ThemeGroup.OTHER));
-      MATCHEDATTSOURCES_MAP.put(s, new Theme("matchedAttributesSources" + Extractor.langPostfixes.get(s), "Sources of matched attributes",
-          ThemeGroup.OTHER));
-      MATCHED_INFOBOXATTS_SCORES_MAP.put(s, new Theme("matchedAttributesScores" + Extractor.langPostfixes.get(s),
-          "Attributes of the Wikipedia infoboxes in different languages are matched.", ThemeGroup.OTHER));
-    }
+		FactWriter out = writers.get(MATCHED_INFOBOXATTS.inLanguage(language));
+		Writer tsv = FileUtils.getBufferedUTF8Writer(new File(outputFolder,
+				"attributeMatches_" + language + ".tsv"));
+		FactWriter sources = writers.get(MATCHED_INFOBOXATTS_SOURCES
+				.inLanguage(language));
 
-  }
+		Theme germanFacts = InfoboxTermExtractor.INFOBOXATTSTRANSLATED
+				.inLanguage(language);
+		// Counts, for every german attribute, how often it appears with every
+		// YAGO relation
+		Map<String, Map<String, Integer>> german2yago2count = new HashMap<String, Map<String, Integer>>();
+		// Counts, for every german attribute, how often it appears with every
+		// YAGO relation but is false
+		Map<String, Map<String, Integer>> german2yagowrong2count = new HashMap<String, Map<String, Integer>>();
 
-  @Override
-  public Set<Theme> input() {
-    HashSet<Theme> result = new HashSet<Theme>(Arrays.asList(InfoboxMapper.INFOBOXFACTS_MAP.get("en"),
+		// Counts for every german attribute how many facts there are
+		Map<String, Integer> germanFactCountPerAttribute = new HashMap<>();
 
-    InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language)));
-    return result;
-  }
+		yagoFacts = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_MAP
+				.get("en")));
+		for (Fact germanFact : input.get(germanFacts)) {
+			String germanRelation = germanFact.getRelation();
+			String germanSubject = germanFact.getArg(1);
+			String germanObject = germanFact.getArg(2);
+			/*
+			 * We look for German attributes where both subject and object (in
+			 * translated form) appear in YAGO. If the attribute is skipped at
+			 * this level, it still has the chance to be processed if appears
+			 * with 'good' subject and object in other facts
+			 */
+			if (!yagoFacts.hasSubject(germanSubject)
+					|| !yagoFacts.hasObject(germanObject))
+				continue;
 
-  @Override
-  public Set<Theme> output() {
-    return new HashSet<>(Arrays.asList(MATCHED_INFOBOXATTS_MAP.get(language), MATCHEDATTSOURCES_MAP.get(language),
-        MATCHED_INFOBOXATTS_SCORES_MAP.get(language)));
-  }
+			// We increase the counter for the attribute of the german fact
+			D.addKeyValue(germanFactCountPerAttribute, germanRelation, 1);
+			// System.out.println(germanFactCountPerAttribute.get(germanRelation));
 
-  @Override
-  public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> input) throws Exception {
+			// Let's now see to which YAGO relations the german attribute could
+			// map
+			Map<String, Integer> germanMap = german2yago2count
+					.get(germanRelation);
+			if (germanMap == null)
+				german2yago2count.put(germanRelation,
+						germanMap = new HashMap<String, Integer>());
+			Map<String, Integer> germanWrongMap = german2yagowrong2count
+					.get(germanRelation);
+			if (germanWrongMap == null)
+				german2yagowrong2count.put(germanRelation,
+						germanWrongMap = new HashMap<String, Integer>());
 
-    /**
-     * Counts, for every german attribute, how often it appears with every
-     * YAGO relation
-     */
-    german2yago2count = new HashMap<String, Map<String, Integer>>();
+			for (String yagoRelation : yagoFacts.getRelations(germanSubject)) {
+				Set<String> yagoObjects = yagoFacts.getArg2s(germanSubject,
+						yagoRelation);
+				if (yagoObjects.contains(germanObject))
+					D.addKeyValue(germanMap, yagoRelation, 1);
+				else
+					D.addKeyValue(germanWrongMap, yagoRelation, 1);
+			}
+		}
 
-    /** Counts for every german attribute how many facts there are */
-    Map<String, Integer> germanFactCountPerAttribute = new HashMap<>();
+		// Now output the results:
+		for (String germanAttribute : german2yago2count.keySet()) {
+			for (String yagoRelation : german2yago2count.get(germanAttribute)
+					.keySet()) {
+				int correct = german2yago2count.get(germanAttribute).get(
+						yagoRelation);
+				if (correct < MINSUPPORT)
+					continue;
+				int wrong = german2yagowrong2count.get(germanAttribute).get(
+						yagoRelation);
+				int total = germanFactCountPerAttribute.get(germanAttribute);
 
-    yagoFacts = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_MAP.get("en")));
-    for (Fact germanFact : input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language))) {
-      String germanRelation = germanFact.getRelation();
-      String germanSubject = germanFact.getArg(1);
-      String germanObject = germanFact.getArg(2);
-      /*
-       * We look for German attributes where both subject and object (in
-       * translated form) appear in YAGO. If the attribute is skipped at
-       * this level, it still has the chance to be processed if appears
-       * with 'good' subject and object in other facts
-       */
-      if (yagoFacts.getFactsWithSubject(germanSubject) == null || yagoFacts.getFactsWithObject(germanObject) == null) continue;
+				Fact matchFact = new Fact(germanAttribute, "<_infoboxPattern>",
+						yagoRelation);
+				matchFact.makeId();
+				write(out, matchFact, sources,
+						FactComponent.forTheme(germanFacts), "Counting");
+				out.write(new Fact(matchFact.getId(), "<_hasTotal>",
+						FactComponent.forNumber(total)));
+				out.write(new Fact(matchFact.getId(), "<_hasCorrect>",
+						FactComponent.forNumber(correct)));
+				out.write(new Fact(matchFact.getId(), "<_hasIncorrect>",
+						FactComponent.forNumber(wrong)));
+				tsv.write(germanAttribute + "\t" + yagoRelation + "\t" + total
+						+ "\t" + correct + "\t" + wrong + "\n");
+			}
+		}
+		tsv.close();
+	}
 
-      // We increase the counter for the attribute of the german fact
-      D.addKeyValue(germanFactCountPerAttribute, germanRelation, 1);
-      // System.out.println(germanFactCountPerAttribute.get(germanRelation));
+	private static synchronized ExtendedFactCollection getFactCollection(
+			FactSource infoboxFacts) {
+		if (yagoFacts != null)
+			return (yagoFacts);
+		yagoFacts = new ExtendedFactCollection();
+		for (Fact f : infoboxFacts) {
+			yagoFacts.add(f);
+		}
+		return (yagoFacts);
+	}
 
-      // Let's now see to which YAGO relations the german attribute could
-      // map
-      Map<String, Integer> germanMap = german2yago2count.get(germanRelation);
-      if (germanMap == null) german2yago2count.put(germanRelation, germanMap = new HashMap<String, Integer>());
-      List<Fact> relationsWithGivenSubjectAndObject = yagoFacts.getFactsWithSubject(germanSubject);
-      // intersection
-      relationsWithGivenSubjectAndObject.retainAll(yagoFacts.getFactsWithObject(germanObject));
-      for (Fact fact : relationsWithGivenSubjectAndObject) {
-        D.addKeyValue(germanMap, fact.getRelation(), 1);
-      }
-    }
-    // Now output the results:
-    for (String germanAttribute : german2yago2count.keySet()) {
-      for (String yagoRelation : german2yago2count.get(germanAttribute).keySet()) {
-        int total = germanFactCountPerAttribute.get(germanAttribute);
-        int correct = german2yago2count.get(germanAttribute).get(yagoRelation);
-        double[] ws = FrequencyVector.wilson(total, correct);
+	public AttributeMatcher(String secondLang) {
+		language = secondLang;
+	}
 
-        if (correct >= 0) {
-          Fact scoreFact = new Fact(germanAttribute,
-              (double) correct / total + " <" + correct + "/" + total + ">" + "     " + ws[0] + "    " + ws[1], yagoRelation);
-          if (correct > 0) {
-        	  writers.get(MATCHED_INFOBOXATTS_SCORES_MAP.get(language)).write(scoreFact);
-          }
-          /** filtering out */
-          if (ws[0] - ws[1] > WILSON_THRESHOLD && correct > SUPPORT_THRESHOLD) {
-            Fact fact = new Fact(germanAttribute, "<_infoboxPattern>", yagoRelation);
-            write(writers, MATCHED_INFOBOXATTS_MAP.get(language), fact, MATCHEDATTSOURCES_MAP.get(language),
-                FactComponent.wikipediaURL(germanAttribute), "");
-          }
+	public static void main(String[] args) throws Exception {
 
-        }
-      }
-    }
-
-  }
-
-  private static synchronized ExtendedFactCollection getFactCollection(FactSource infoboxFacts) {
-    if (yagoFacts != null) return (yagoFacts);
-    yagoFacts = new ExtendedFactCollection();
-    for (Fact f : infoboxFacts) {
-      yagoFacts.add(f);
-    }
-    return (yagoFacts);
-  }
-
-  public static Set<String> getIntersection(Set<String> set1, Set<String> set2) {
-    boolean set1IsLarger = set1.size() > set2.size();
-    Set<String> cloneSet = new HashSet<String>(set1IsLarger ? set2 : set1);
-    cloneSet.retainAll(set1IsLarger ? set1 : set2);
-    return cloneSet;
-  }
-
-  public static Set<String> getUnion(Set<String> set1, Set<String> set2) {
-    Set<String> cloneSet = new HashSet<String>(set1);
-    cloneSet.addAll(set2);
-    return cloneSet;
-  }
-
-  public void setWilsonThreshold(double d) {
-    WILSON_THRESHOLD = d;
-  }
-
-  public void setSupportThreshold(double d) {
-    SUPPORT_THRESHOLD = d;
-  }
-
-  public AttributeMatcher(String secondLang) {
-    language = secondLang;
-  }
-
-  public static void main(String[] args) throws Exception {
-
-    new AttributeMatcher("de").extract(new File("D:/data3/yago2s"), "mapping infobox attributes in different languages");
-  }
+		new AttributeMatcher("de").extract(new File("D:/data3/yago2s"),
+				"mapping infobox attributes in different languages");
+	}
 
 }

@@ -41,7 +41,10 @@ public class InfoboxMapper extends Extractor {
 	public static final HashMap<String, Theme> INFOBOXFACTS_TOTYPECHECK_MAP = new HashMap<String, Theme>();
 	public static final HashMap<String, Theme> INFOBOXFACTS_MAP = new HashMap<String, Theme>();
 	public static final HashMap<String, Theme> INFOBOXSOURCES_MAP = new HashMap<String, Theme>();
-
+	public static final Theme INFOBOXFACTS=new Theme("infoboxFacts","en",
+			"Facts of infobox, redirected and type-checked");
+	public static final Theme INFOBOXSOURCES=new Theme("infoboxSources","en",
+			"Sources of infobox facts");
 	static {
 		for (String s : Extractor.languages) {
 			INFOBOXFACTS_TOREDIRECT_MAP
@@ -84,11 +87,11 @@ public class InfoboxMapper extends Extractor {
 		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
 				HardExtractor.HARDWIREDFACTS,
-				InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language),
+				InfoboxTermExtractor.INFOBOXATTSTRANSLATED.inLanguage(language),
 				WordnetExtractor.WORDNETWORDS,
 				PatternHardExtractor.TITLEPATTERNS));
 		if (!language.equals("en")) {
-			input.add(AttributeMatcher.MATCHED_INFOBOXATTS_MAP.get(language));
+			input.add(AttributeMatcher.MATCHED_INFOBOXATTS.inLanguage(language));
 		}
 		return input;
 	}
@@ -160,12 +163,11 @@ public class InfoboxMapper extends Extractor {
 			patterns = infoboxPatterns(infoboxFacts);
 		} else {
 			FactCollection matchedAttributes = new FactCollection(
-					input.get(AttributeMatcher.MATCHED_INFOBOXATTS_MAP
-							.get(language)));
+					input.get(AttributeMatcher.MATCHED_INFOBOXATTS.inLanguage(language)));
 			patterns = infoboxPatterns(matchedAttributes);
 		}
 
-		for (Fact f : input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED_MAP.get(language))) {
+		for (Fact f : input.get(InfoboxTermExtractor.INFOBOXATTSTRANSLATED.inLanguage(language))) {
 
 			String attribute = FactComponent.stripBrackets(FactComponent
 					.stripPrefix(f.getRelation()));

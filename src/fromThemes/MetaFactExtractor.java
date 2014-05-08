@@ -21,7 +21,7 @@ import basics.Theme.ThemeGroup;
 /**
  * YAGO2s - FactExtractor
  * 
- * Deduplicates all facts and puts them into the right themes
+ * Deduplicates all meta facts and puts them into the right themes
  * 
  * @author Fabian M. Suchanek
  * 

@@ -44,7 +44,7 @@ public class Redirector extends FollowUpExtractor {
 		// Extract the information
 		Map<String, String> redirects = new HashMap<>();
 		Announce.doing("Loading redirects");
-		for (Fact f : input.get(RedirectExtractor.REDIRECTFACTS_DIRTY_MAP.get(this.language))) {
+		for (Fact f : input.get(RedirectExtractor.REDIRECTFACTS_DIRTY.inLanguage(this.language))) {
 		  redirects.put(FactComponent.forYagoEntity(FactComponent.asJavaString(f.getArg(2)).replace(' ','_')), f.getArg(1));		  
 		}
 		Announce.done();

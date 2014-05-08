@@ -48,7 +48,8 @@ public class InfoboxTypeExtractor extends Extractor {
 
   /** Classes deduced from categories */
   public static final HashMap<String, Theme> INFOBOXCLASSES_MAP = new HashMap<String, Theme>();
-
+  public static final Theme INFOBOXCLASSES=new Theme("infoboxClasses","en",
+          "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
   static {
     for (String s : Extractor.languages) {
       INFOBOXTYPESOURCES_MAP.put(s, new Theme("infoboxTypeSources" + Extractor.langPostfixes.get(s), "The sources of category type facts"));

@@ -50,7 +50,7 @@ public class InfoboxExtractor extends Extractor {
 	protected File wikipedia;
 
 	public static final HashMap<String, Theme> INFOBOXATTS_MAP = new HashMap<String, Theme>();
-
+	public static final Theme INFOBOXRAW=new Theme("yagoRawInfoboxes","en", "Raw facts from the Wikipedia infoboxes");
 	public static final HashMap<String, Theme> INFOBOXATTSOURCES_MAP = new HashMap<String, Theme>();
 
 	public static final HashMap<String, Theme> INFOBOXRAWTYPES_MAP = new HashMap<String, Theme>();

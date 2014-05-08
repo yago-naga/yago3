@@ -44,9 +44,7 @@ public class TypeChecker extends FollowUpExtractor {
 	}
 
 	public TypeChecker(Theme in, Theme out) {
-		checkMe = in;
-		checked = out;
-		this.parent = null;
+		this(in, out, null);
 	}
 
 	/** Holds the transitive types */

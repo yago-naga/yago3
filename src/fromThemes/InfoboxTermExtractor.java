@@ -34,52 +34,39 @@ import fromWikipedia.InfoboxExtractor;
 
 public class InfoboxTermExtractor extends Extractor {
 
-	public static final HashMap<String, Theme> INFOBOXTERMS_TOREDIRECT_MAP = new HashMap<String, Theme>();
-	public static final HashMap<String, Theme> INFOBOXTERMS_MAP = new HashMap<String, Theme>();
-	public static final HashMap<String, Theme> INFOBOXATTSTRANSLATED_MAP = new HashMap<String, Theme>();
-
-	static {
-		for (String s : Extractor.languages) {
-			INFOBOXTERMS_TOREDIRECT_MAP
-					.put(s,
-							new Theme(
-									"infoboxTermsToBeRedirected"
-											+ Extractor.langPostfixes.get(s),
-									"Attribute terms of infobox, still to be redirected",
-									ThemeGroup.OTHER));
-			INFOBOXTERMS_MAP.put(s, new Theme("infoboxTerms"
-					+ Extractor.langPostfixes.get(s),
-					"Attribute terms of infobox", ThemeGroup.OTHER));
-			INFOBOXATTSTRANSLATED_MAP.put(s,
-					new Theme("infoboxAttributesTranslated"
-							+ Extractor.langPostfixes.get(s),
-							"Attribute terms of infobox translated",
-							ThemeGroup.OTHER));
-		}
-	}
+	public static final Theme INFOBOXTERMS = new Theme("infoboxTerms", "en",
+			"The attribute facts of the Wikipedia infoboxes, split into terms");
+	public static final Theme INFOBOXTERMS_TOREDIRECT = new Theme(
+			"infoboxTermsToBeRedirected",
+			"en",
+			"The attribute facts of the Wikipedia infoboxes, split into terms, still to be redirected.");
+	public static final Theme INFOBOXATTSTRANSLATED = new Theme(
+			"infoboxAttributesTranslated",
+			"en",
+			"The attribute facts of the Wikipedia infoboxes, split into terms, redirected, subject translated");
 
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
-				WordnetExtractor.WORDNETWORDS,
-				HardExtractor.HARDWIREDFACTS,
-				InfoboxExtractor.INFOBOXATTS_MAP.get(this.language)));
+				WordnetExtractor.WORDNETWORDS, HardExtractor.HARDWIREDFACTS,
+				InfoboxExtractor.INFOBOXRAW.inLanguage(this.language)));
 	}
 
 	@Override
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(
-				INFOBOXTERMS_TOREDIRECT_MAP.get(this.language));
+				INFOBOXTERMS_TOREDIRECT.inLanguage(this.language));
 	}
 
 	@Override
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(
-				new Redirector(INFOBOXTERMS_TOREDIRECT_MAP.get(language),
-						INFOBOXTERMS_MAP.get(language), this, this.language),
-				new Translator(INFOBOXTERMS_MAP.get(language),
-						INFOBOXATTSTRANSLATED_MAP.get(this.language),
+				new Redirector(INFOBOXTERMS_TOREDIRECT
+						.inLanguage(this.language), INFOBOXTERMS
+						.inLanguage(this.language), this, this.language),
+				new Translator(INFOBOXTERMS.inLanguage(language),
+						INFOBOXATTSTRANSLATED.inLanguage(this.language),
 						this.language, "Entity")));
 	}
 
@@ -87,53 +74,48 @@ public class InfoboxTermExtractor extends Extractor {
 	public void extract(Map<Theme, FactWriter> output,
 			Map<Theme, FactSource> input) throws Exception {
 
-		FactWriter out = output.get(INFOBOXTERMS_TOREDIRECT_MAP.get(language));
+		FactWriter out = output.get(INFOBOXTERMS_TOREDIRECT
+				.inLanguage(language));
 
-		FactCollection infoboxPatterns = new FactCollection(
-				input.get(PatternHardExtractor.INFOBOXPATTERNS));
-		PatternList replacements = new PatternList(infoboxPatterns,
+		PatternList replacements = new PatternList(new FactCollection(
+				input.get(PatternHardExtractor.INFOBOXPATTERNS)),
 				"<_infoboxReplace>");
 		Map<String, String> preferredMeanings = WordnetExtractor
 				.preferredMeanings(input);
 
-		Map<String, String> combinations = infoboxPatterns
-				.asStringMap("<_infoboxCombine>");
-
 		Map<String, Set<String>> attributes = new TreeMap<String, Set<String>>();
 		String prevEntity = "";
 
-		for (Fact f : input.get(InfoboxExtractor.INFOBOXATTS_MAP
-				.get(this.language))) {
+		for (Fact f : input.get(InfoboxExtractor.INFOBOXRAW
+				.inLanguage(this.language))) {
 
 			String attribute = FactComponent.stripBrackets(FactComponent
 					.stripPrefix(f.getRelation()));
 			String value = f.getArgJavaString(2);
 
-			if (value == null) {
+			if (value == null)
 				continue;
-			}
+
 			if (!f.getArg(1).equals(prevEntity)) {
-				process(prevEntity, attributes, combinations, replacements, preferredMeanings, out);
+				process(prevEntity, attributes, replacements,
+						preferredMeanings, out);
 
 				prevEntity = f.getArg(1);
 				attributes.clear();
-				D.addKeyValue(attributes, attribute, value, TreeSet.class);
-			} else {
-				D.addKeyValue(attributes, attribute, value, TreeSet.class);
 			}
+			D.addKeyValue(attributes, attribute, value, HashSet.class);
 		}
-		process(prevEntity, attributes, combinations, replacements, preferredMeanings, out);
+		process(prevEntity, attributes, replacements, preferredMeanings, out);
 	}
 
 	protected void process(String entity, Map<String, Set<String>> attributes,
-			Map<String, String> combinations, PatternList replacements, Map<String, String> preferredMeanings,
+			PatternList replacements, Map<String, String> preferredMeanings,
 			FactWriter out) throws IOException {
-
-		attributes = processCombinations(entity, attributes, combinations);
 
 		for (String attr : attributes.keySet()) {
 			for (String val : attributes.get(attr)) {
-				for (TermExtractor extractor : TermExtractor.all(preferredMeanings)) {
+				for (TermExtractor extractor : TermExtractor
+						.all(preferredMeanings)) {
 
 					val = replacements.transform(Char.decodeAmpersand(val));
 					val = val
@@ -156,61 +138,6 @@ public class InfoboxTermExtractor extends Extractor {
 		}
 	}
 
-	private Map<String, Set<String>> processCombinations(String entity,
-			Map<String, Set<String>> attributes,
-			Map<String, String> combinations) throws IOException {
-		if (!attributes.isEmpty()) {
-			attributes = applyCombination(attributes, combinations);
-		}
-		return attributes;
-	}
-
-	public Map<String, Set<String>> applyCombination(
-			Map<String, Set<String>> result, Map<String, String> combinations) {
-		// Map<String, Set<String>> result = new TreeMap<String, Set<String>>();
-
-		// D.addKeyValue(result, originalAttribute, originalValue,
-		// TreeSet.class);
-
-		// for (Fact f : input){
-		// Apply combinations
-		next: for (String code : combinations.keySet()) {
-			StringBuilder val = new StringBuilder();
-
-			for (String attribute : code.split(">")) {
-				int scanTo = attribute.indexOf('<');
-				if (scanTo != -1) {
-					val.append(attribute.substring(0, scanTo));
-					String attr = attribute.substring(scanTo + 1);
-					// Do we want to exclude the existence of an attribute?
-					if (attr.startsWith("~")) {
-						attr = attr.substring(1);
-						if (result.get(InfoboxExtractor
-								.normalizeAttribute(attr)) != null) {
-							continue next;
-						}
-						continue;
-					}
-					String newVal = D.pick(result.get(InfoboxExtractor
-							.normalizeAttribute(attr)));
-					if (newVal == null) {
-						continue next;
-					}
-					val.append(newVal);
-				} else {
-					val.append(attribute);
-				}
-			}
-
-			D.addKeyValue(
-					result,
-					InfoboxExtractor.normalizeAttribute(combinations.get(code)),
-					val.toString(), TreeSet.class);
-		}
-
-		return result;
-	}
-
 	public InfoboxTermExtractor(String lang) {
 		super();
 		this.language = lang;
@@ -219,16 +146,6 @@ public class InfoboxTermExtractor extends Extractor {
 	public static void main(String[] args) throws Exception {
 		InfoboxTermExtractor extractor = new InfoboxTermExtractor("en");
 		extractor.extract(new File("/home/jbiega/data/yago2s/"),
-				"mapping infobox attributes into infobox facts");
-
-		new Redirector(INFOBOXTERMS_TOREDIRECT_MAP.get("en"),
-				INFOBOXTERMS_MAP.get("en"), extractor, "en").extract(new File(
-				"/home/jbiega/data/yago2s/"),
-				"mapping infobox attributes into infobox facts");
-
-		new Translator(INFOBOXTERMS_MAP.get("en"),
-				INFOBOXATTSTRANSLATED_MAP.get("en"), "en", "Entity").extract(
-				new File("/home/jbiega/data/yago2s/"),
 				"mapping infobox attributes into infobox facts");
 	}
 

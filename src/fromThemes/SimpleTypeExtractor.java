@@ -22,6 +22,15 @@ import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
 
+/**
+ * YAGO2s - SimpleTypeExtractor
+ * 
+ * Produces a simplified taxonomy of just 3 layers.
+ * 
+ * @author Fabian M. Suchanek
+ * 
+ */
+
 public class SimpleTypeExtractor extends Extractor {
 
   /** Branches of YAGO, order matters! */

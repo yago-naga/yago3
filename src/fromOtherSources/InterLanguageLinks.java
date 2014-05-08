@@ -1,22 +1,25 @@
 package fromOtherSources;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import fromWikipedia.Extractor;
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
-import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.N4Reader;
 import basics.Theme;
+import fromWikipedia.Extractor;
 
 /**
  * YAGO2s - InterLanguageLinks
@@ -29,85 +32,109 @@ import basics.Theme;
 
 public class InterLanguageLinks extends Extractor {
 
-  private File inputFile;
+	/** List of language suffixes from most English to least English. */
+	public static final List<String> languages = Arrays.asList("en", "de",
+			"fr", "es", "it");
 
-  public static final Theme INTERLANGUAGELINKS = new Theme("yagoInterLanguageLinks", "The manually created inter language synonyms");
+	/** Input file */
+	protected File inputFile;
 
-  public InterLanguageLinks(File inputFolder) {
-    this.inputFile = inputFolder.isFile() ? inputFolder : new File(inputFolder, "wikidata.rdf");
-  }
+	/** Output theme */
+	public static final Theme INTERLANGUAGELINKS = new Theme(
+			"yagoInterLanguageLinks",
+			"The inter-language synonyms from Wikidata (http://http://www.wikidata.org/).");
 
-  @Override
-  public Set<Theme> input() {
-    return Collections.emptySet();
-  }
+	public InterLanguageLinks(File inputFolder) {
+		this.inputFile = inputFolder.isFile() ? inputFolder : new File(
+				inputFolder, "wikidata.rdf");
+		if (!inputFile.exists())
+			throw new RuntimeException("File not found: " + inputFile);
+	}
 
-  public Set<Theme> output() {
-    return (new FinalSet<Theme>(INTERLANGUAGELINKS));
-  }
-  
-  @Override
+	@Override
+	public Set<Theme> input() {
+		return Collections.emptySet();
+	}
+
+	@Override
+	public Set<Theme> output() {
+		return (new FinalSet<Theme>(INTERLANGUAGELINKS));
+	}
+
+	@Override
 	public File inputDataFile() {
 		return inputFile;
 	}
 
-  public void extract(File input, FactWriter writer) throws Exception {
-    N4Reader nr = new N4Reader(FileUtils.getBufferedUTF8Reader(input));
-    Map<String, String> correspondence = new HashMap<String, String>();
-    while (nr.hasNext()) {
-      Fact f = nr.next();
-      if (f.getArg(2).contains("#Item")) {
-        String mostEnglishName = null;
-        String mostEnglishLang = null;
-        for (int i = 0; i < Extractor.languages.length; i++) {
-          mostEnglishName = correspondence.get(languages[i]);
-          if (mostEnglishName != null) {
-            mostEnglishLang = languages[i];
-            break;
-          }
-        }
+	/** Returns the most English language in the set */
+	public static String mostEnglishLanguage(Collection<String> langs) {
+		for (int i = 0; i < languages.size(); i++) {
+			if (langs.contains(languages.get(i)))
+				return (languages.get(i));
+		}
+		// Otherwise take smallest language
+		String smallest = "zzzzzzzzz";
+		for (String l : langs) {
+			if (smallest.compareTo(l) > 0)
+				smallest = l;
+		}
+		return (smallest);
+	}
 
-        if (mostEnglishName != null) {
-          mostEnglishName = Char.cutLast(mostEnglishName);
-          for (Map.Entry<String, String> entry : correspondence.entrySet()) {
-            writer.write(new Fact(FactComponent.forYagoEntity(Char.decodePercentage(mostEnglishName)), "rdfs:label", FactComponent
-                .forStringWithLanguage(Char.decodePercentage(Char.cutLast(entry.getValue())), entry.getKey())));
-          }
-        }
-        correspondence.clear();
+	/** Extracts the language links from wikidata */
+	public void extract(File input, FactWriter writer) throws Exception {
+		N4Reader nr = new N4Reader(input);
+		// Maps a language such as "en" to the name in that language
+		Map<String, String> language2name = new HashMap<String, String>();
+		while (nr.hasNext()) {
+			Fact f = nr.next();
+			//D.p(f);
+			// Record a new name in the map
+			if (f.getRelation().endsWith("/inLanguage>")) {
+				String[] parts = f.getArg(1).split("/");
+				String name = parts[parts.length - 1];
+				language2name.put(FactComponent.stripQuotes(f.getArg(2)), name);
+			} else if (f.getArg(2).endsWith("#Item>") && !language2name.isEmpty()) {
+				// New item starts, find the most English name for the entity
+				String mostEnglishLan = mostEnglishLanguage(language2name
+						.keySet());
+				String mostEnglishName = language2name.get(mostEnglishLan);
+				mostEnglishName = Char.cutLast(mostEnglishName);
+				for (Map.Entry<String, String> entry : language2name.entrySet()) {
+					writer.write(new Fact(FactComponent.forYagoEntity(Char
+							.decodePercentage(mostEnglishName)), "rdfs:label",
+							FactComponent.forStringWithLanguage(Char
+									.decodePercentage(Char.cutLast(entry
+											.getValue())), entry.getKey())));
+				}
+				language2name.clear();
+			}
+		}
+		nr.close();
+	}
 
-        f = nr.next();
-      } else if (f.getRelation().contains("Language")) {
-        String[] parts = f.getArg(1).split("/");
-        String name = parts[parts.length - 1];
-        correspondence.put(FactComponent.stripQuotes(f.getArg(2)), name);
-      }
+	@Override
+	public void extract(Map<Theme, FactWriter> writers,
+			Map<Theme, FactSource> factCollections) throws Exception {
+		Announce.doing("Copying language links");
+		Announce.message("Input folder is", inputFile);
+		extract(inputFile, writers.get(INTERLANGUAGELINKS));
+		Announce.done();
+	}
 
-    }
-    nr.close();
-  }
-
-  @Override
-  public void extract(Map<Theme, FactWriter> writers, Map<Theme, FactSource> factCollections) throws Exception {
-    Announce.doing("Copying patterns");
-    Announce.message("Input folder is", inputFile);
-    extract(inputFile, writers.get(INTERLANGUAGELINKS));
-    Announce.done();
-  }
-
-  public static void main(String[] args) {
-//    try {
-//      new InterLanguageLinks(new File("D:/wikidata.rdf"))
-//      .extract(new File("D:/data2/yago2s/"), "test");
-//    } catch (Exception e) {
-//      e.printStackTrace();
-//    }
-	  try {
-	      new InterLanguageLinks(new File("./data/wikidata.rdf"))
-	      .extract(new File("/home/jbiega/data/yago2s/"), "test");
-	    } catch (Exception e) {
-	      e.printStackTrace();
-	    }
-  }
+	public static void main(String[] args) {
+		// try {
+		// new InterLanguageLinks(new File("D:/wikidata.rdf"))
+		// .extract(new File("D:/data2/yago2s/"), "test");
+		// } catch (Exception e) {
+		// e.printStackTrace();
+		// }
+		try {
+			new InterLanguageLinks(new File("./data/wikidata.rdf")).extract(
+					new File("../"), "test");
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
 }

@@ -46,10 +46,8 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 				SchemaExtractor.YAGOSCHEMA, CoordinateExtractor.COORDINATES,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 
-		for (String lang : Extractor.languages) {
-			input.add(CategoryMapper.CATEGORYFACTS_MAP.get(lang));
-			input.add(InfoboxMapper.INFOBOXFACTS_MAP.get(lang));
-		}
+		input.addAll(CategoryMapper.CATEGORYFACTS.inAllLanguages());
+		input.addAll(InfoboxMapper.INFOBOXFACTS.inAllLanguages());		
 		return input;
 	}
 

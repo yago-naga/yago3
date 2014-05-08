@@ -34,51 +34,52 @@ import fromWikipedia.InfoboxTypeExtractor;
  */
 public class ClassExtractor extends Extractor {
 
-  @Override
-  public Set<Theme> input() {
-	  HashSet<Theme> input = new HashSet<Theme>(Arrays.asList(
-			HardExtractor.HARDWIREDFACTS,         
-	        WordnetExtractor.WORDNETCLASSES
-	        //GeoNamesClassMapper.GEONAMESCLASSES
-	        ));
-	for (String lang : Extractor.languages) {
-		input.add(CategoryTypeExtractor.CATEGORYCLASSES_MAP.get(lang));
-		input.add(InfoboxTypeExtractor.INFOBOXCLASSES_MAP.get(lang));
+	@Override
+	public Set<Theme> input() {
+		HashSet<Theme> input = new HashSet<Theme>(Arrays.asList(
+				HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES
+		// GeoNamesClassMapper.GEONAMESCLASSES
+				));
+		input.addAll(CategoryTypeExtractor.CATEGORYCLASSES.inAllLanguages());
+		input.addAll(InfoboxTypeExtractor.INFOBOXCLASSES.inAllLanguages());
+		return input;
 	}
-	return input;
-  }
 
-  /** The YAGO taxonomy */
-  public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy", "The entire YAGO taxonomy. These are all rdfs:subClassOf facts derived from Wikipedia and from WordNet.", ThemeGroup.TAXONOMY);
+	/** The YAGO taxonomy */
+	public static final Theme YAGOTAXONOMY = new Theme(
+			"yagoTaxonomy",
+			"The entire YAGO taxonomy. These are all rdfs:subClassOf facts derived from multilingual Wikipedia and from WordNet.",
+			ThemeGroup.TAXONOMY);
 
-  @Override
-  public Set<Theme> output() {
-    return new FinalSet<>(YAGOTAXONOMY);
-  }
+	@Override
+	public Set<Theme> output() {
+		return new FinalSet<>(YAGOTAXONOMY);
+	}
 
-  @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    String relation =RDFS.subclassOf;
-      Announce.doing("Reading", relation);
-      FactCollection facts = new FactCollection();
-      for (Theme theme : input.keySet()) {
-        Announce.doing("Reading", theme);
-        for (Fact fact : input.get(theme)) {
-          if (!relation.equals(fact.getRelation()))
-            continue;
-          facts.add(fact);
-        }
-        Announce.done();
-      }
-      Announce.done();
-      Announce.doing("Writing", relation);
-      FactWriter w = output.get(YAGOTAXONOMY);
-      for (Fact fact : facts)
-        w.write(fact);
-      Announce.done();
-    }
-  
-  public static void main(String[] args) throws Exception {
-    new ClassExtractor().extract(new File("c:/fabian/data/yago2s"),"test");
-  }
+	@Override
+	public void extract(Map<Theme, FactWriter> output,
+			Map<Theme, FactSource> input) throws Exception {
+		String relation = RDFS.subclassOf;
+		Announce.doing("Reading", relation);
+		FactCollection facts = new FactCollection();
+		for (Theme theme : input.keySet()) {
+			Announce.doing("Reading", theme);
+			for (Fact fact : input.get(theme)) {
+				if (!relation.equals(fact.getRelation()))
+					continue;
+				facts.add(fact);
+			}
+			Announce.done();
+		}
+		Announce.done();
+		Announce.doing("Writing", relation);
+		FactWriter w = output.get(YAGOTAXONOMY);
+		for (Fact fact : facts)
+			w.write(fact);
+		Announce.done();
+	}
+
+	public static void main(String[] args) throws Exception {
+		new ClassExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
+	}
 }

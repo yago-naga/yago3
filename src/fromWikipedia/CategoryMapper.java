@@ -39,7 +39,10 @@ public class CategoryMapper extends Extractor {
   public static final HashMap<String, Theme> CATEGORYFACTS_TOTYPECHECK_MAP = new HashMap<String, Theme>();
 
   public static final HashMap<String, Theme> CATEGORYFACTS_MAP = new HashMap<String, Theme>();
-
+  public static final Theme CATEGORYFACTS=new Theme("categoryFacts","en",
+          "Facts about Wikipedia instances, derived from the Wikipedia categories"); 
+  public static final Theme CATEGORYSOURCES=new Theme("categorySources","en",
+          "Sources for the facts about Wikipedia instances, derived from the Wikipedia categories"); 
   public static final HashMap<String, Theme> CATEGORYSOURCES_MAP = new HashMap<String, Theme>();
 
   static {

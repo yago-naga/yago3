@@ -42,10 +42,16 @@ public class CategoryTypeExtractor extends Extractor {
   /** Sources for category facts*/
   public static final HashMap<String, Theme> CATEGORYTYPESOURCES_MAP = new HashMap<String, Theme>();
 
+  public static final Theme CATEGORYTYPESOURCES=new Theme("categoryTypeSources","en",
+          "Sources for the classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
+
   /** Types deduced from categories */
   public static final HashMap<String, Theme> CATEGORYTYPES_MAP = new HashMap<String, Theme>();
 
   /** Classes deduced from categories */
+  public static final Theme CATEGORYCLASSES=new Theme("categoryClasses","en",
+          "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
+  
   public static final HashMap<String, Theme> CATEGORYCLASSES_MAP = new HashMap<String, Theme>();
 
   static {

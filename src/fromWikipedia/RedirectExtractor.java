@@ -42,10 +42,11 @@ public class RedirectExtractor extends Extractor {
 
 	private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
    
+	public static final Theme REDIRECTFACTS_DIRTY = new Theme("redirectLabelsDirty","en", "Redirect facts from Wikipedia redirect pages (to be type checked)");
 	public static final HashMap<String, Theme> REDIRECTFACTS_DIRTY_MAP = new HashMap<String, Theme>();
 
 	public static final HashMap<String, Theme> REDIRECTLABELS_MAP = new HashMap<String, Theme>();
-   
+	public static final Theme REDIRECTLABELS=new Theme("redirectLabels", "en","Redirect facts from Wikipedia redirect pages");
 	static {
 		for (String s : Extractor.languages) {
 			REDIRECTFACTS_DIRTY_MAP.put(s, new Theme("redirectLabelsDirty" +  Extractor.langPostfixes.get(s), "Redirect facts from Wikipedia redirect pages (to be type checked)"));

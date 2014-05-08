@@ -46,11 +46,9 @@ public class SourceExtractor extends Extractor {
 				TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES,
 				FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE));
 
-		for (String lang : Extractor.languages) {
-			input.add(InfoboxMapper.INFOBOXSOURCES_MAP.get(lang));
-			input.add(CategoryMapper.CATEGORYSOURCES_MAP.get(lang));
-			input.add(CategoryTypeExtractor.CATEGORYTYPESOURCES_MAP.get(lang));
-		}
+		input.addAll(InfoboxMapper.INFOBOXSOURCES.inAllLanguages());
+		input.addAll(CategoryMapper.CATEGORYSOURCES.inAllLanguages());
+		input.addAll(CategoryTypeExtractor.CATEGORYTYPESOURCES.inAllLanguages());
 		return input;
 	}
 
