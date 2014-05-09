@@ -10,10 +10,7 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import fromWikipedia.Extractor;
@@ -61,6 +58,11 @@ public class WordnetDomainExtractor extends Extractor {
   }
 
   @Override
+  public Set<Theme> inputCached() {
+    return new FinalSet<>(WordnetExtractor.WORDNETIDS);
+  }
+
+  @Override
   public Set<Theme> output() {
     return new FinalSet<>(WORDNETDOMAINS, WORDNETDOMAINSOURCES);
   }
@@ -71,12 +73,12 @@ public class WordnetDomainExtractor extends Extractor {
   }
 
   @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+  public void extract() throws Exception {
     //Writer w=new FileWriter("c:/fabian/data/wordnetdomains/wordnetdomains.tsv");
     //w.write("# "+WORDNETDOMAINS.description+"\n");
     Map<String, String> mappings = new HashMap<String, String>();
     Set<String> labels = new HashSet<>();
-    Map<String, String> words = new FactCollection(input.get(WordnetExtractor.WORDNETIDS),true).getReverseMap("<hasSynsetId>");
+    Map<String, String> words = WordnetExtractor.WORDNETIDS.factCollection().getReverseMap("<hasSynsetId>");
     for (String line : new FileLines(wordnetMappings, "Loading Wordnet Mappings")) {
       String[] split = line.split("\\s");
       if (split.length < 2) continue;
@@ -95,16 +97,16 @@ public class WordnetDomainExtractor extends Extractor {
       for (int i = 1; i < split.length; i++) {
         String label = "<wordnetDomain_" + split[i] + ">";
         labels.add(label);
-        write(output, WORDNETDOMAINS, new Fact(subject, "<hasWordnetDomain>", label), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>",
+        write(WORDNETDOMAINS, new Fact(subject, "<hasWordnetDomain>", label), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>",
             "Wordnet Domain Mapper");
         //if(FactComponent.wordnetWord(subject)!=null) w.write(FactComponent.wordnetWord(subject)+"\t"+id+"\t<http://yago-knowledge.org/resource/"+FactComponent.stripBrackets(subject)+">\t"+split[i]+"\n");
       }      
     }
     //w.close();
     for (String label : labels) {
-      write(output, WORDNETDOMAINS, new Fact(label, RDFS.type, "<wordnetDomain>"), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>",
+      write(WORDNETDOMAINS, new Fact(label, RDFS.type, "<wordnetDomain>"), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>",
           "Wordnet Domain Mapper");
-      write(output, WORDNETDOMAINS, new Fact(label, RDFS.label, FactComponent.forStringWithLanguage(label.substring(15, label.length() - 1),"eng")),
+      write(WORDNETDOMAINS, new Fact(label, RDFS.label, FactComponent.forStringWithLanguage(label.substring(15, label.length() - 1),"eng")),
           WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>", "Wordnet Domain Mapper");
     }
   }

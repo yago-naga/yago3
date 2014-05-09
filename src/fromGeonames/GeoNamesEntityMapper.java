@@ -3,15 +3,12 @@ package fromGeonames;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import basics.Fact;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import fromThemes.TypeChecker;
@@ -54,7 +51,7 @@ public class GeoNamesEntityMapper extends Extractor {
   }
 
   @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {    
+  public void extract() throws Exception {    
     for (String line : new FileLines(alternateNames, "UTF-8", "Reading GeoNames Wikipedia mappings")) {
       String[] data = line.split("\t");
       
@@ -68,7 +65,7 @@ public class GeoNamesEntityMapper extends Extractor {
                   ENWIKI_PREFIX.length(), alternateName.length()));
           String geoId = data[1];
           // Links missing in YAGO will be dropped by the type-checker.
-          output.get(DIRTYGEONAMESENTITYIDS).write(
+          DIRTYGEONAMESENTITYIDS.write(
               new Fact(
                   geoEntity, "<hasGeonamesEntityId>", 
                   FactComponent.forString(geoId)));

@@ -18,7 +18,7 @@ import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxMapper;
 import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.RedirectExtractor;
-import fromWikipedia.WikipediaLabelExtractor;
+import fromWikipedia.WikidataLabelExtractor;
 
 /**
  * YAGO2s - LabelExtractor
@@ -36,7 +36,7 @@ public class LabelExtractor extends SimpleDeduplicator {
 		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
 				DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,
 				HardExtractor.HARDWIREDFACTS,
-				WikipediaLabelExtractor.WIKIPEDIALABELS,
+				WikidataLabelExtractor.WIKIPEDIALABELS,
 				PersonNameExtractor.PERSONNAMES, WordnetExtractor.WORDNETWORDS,
 				SchemaExtractor.YAGOSCHEMA, WordnetExtractor.WORDNETGLOSSES,
 				FlightIATAcodeExtractor.AIRPORT_CODE,

@@ -6,21 +6,15 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import fromWikipedia.Extractor;
-
-
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import fromWikipedia.Extractor;
 
 /**
  * Imports the multi-lingual class labels from Gerard de Melo's Universal WordNet (WUN=
@@ -57,13 +51,17 @@ public class UWNImporter extends Extractor {
   }
 
   @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+	public Set<Theme> inputCached() {
+		return new HashSet<Theme>(Arrays.asList(
+		        HardExtractor.HARDWIREDFACTS,
+		        WordnetExtractor.WORDNETIDS));
+	}
+  @Override
+  public void extract() throws Exception {
     // get wordnet synset id mapping
-    Map<String, String> wnssm = new FactCollection(input.get(WordnetExtractor.WORDNETIDS),true).getReverseMap("<hasSynsetId>"); 
-    Map<String, String> tlc2language = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS)).getReverseMap("<hasThreeLetterLanguageCode>");
+    Map<String, String> wnssm = WordnetExtractor.WORDNETIDS.factCollection().getReverseMap("<hasSynsetId>"); 
+    Map<String, String> tlc2language = HardExtractor.HARDWIREDFACTS.factCollection().getReverseMap("<hasThreeLetterLanguageCode>");
 
-    FactWriter writer = output.get(UWNDATA);
-    
     for (String line : new FileLines(uwnNouns, "UTF-8", "Importing UWN mappings")) {
       String data[] = line.split("\t");
             
@@ -81,7 +79,7 @@ public class UWNImporter extends Extractor {
         continue;
       }
       
-      writer.write(new Fact(wordnetSynset, RDFS.label, name));
+      UWNDATA.write(new Fact(wordnetSynset, RDFS.label, name));
     }
   }
   

@@ -9,12 +9,11 @@ import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.D;
+import javatools.datatypes.FinalSet;
 import javatools.util.FileUtils;
-import basics.ExtendedFactCollection;
 import basics.Fact;
+import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.Theme;
 import fromThemes.InfoboxTermExtractor;
 
@@ -27,15 +26,12 @@ import fromThemes.InfoboxTermExtractor;
  * @author Farzaneh Mahdisoltani
  */
 
-public class AttributeMatcher extends Extractor {
+public class AttributeMatcher extends MultilingualExtractor {
 
 	/** Minimum requires support for output */
 	public static final int MINSUPPORT = 5;
 
-	/** Where to write the results as TSV */
-	public static final File outputFolder = new File(".");
-
-	private static ExtendedFactCollection yagoFacts = null;
+	private static FactCollection yagoFacts = null;
 
 	public static final Theme MATCHED_INFOBOXATTS = new Theme(
 			"matchedAttributes",
@@ -55,6 +51,11 @@ public class AttributeMatcher extends Extractor {
 	}
 
 	@Override
+	public Set<Theme> inputCached() {
+		return new FinalSet<>(InfoboxMapper.INFOBOXFACTS.inLanguage("en"));
+	}
+
+	@Override
 	public Set<Theme> output() {
 		return new HashSet<>(Arrays.asList(
 				MATCHED_INFOBOXATTS.inLanguage(language),
@@ -62,14 +63,12 @@ public class AttributeMatcher extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> writers,
-			Map<Theme, FactSource> input) throws Exception {
+	public void extract() throws Exception {
 
-		FactWriter out = writers.get(MATCHED_INFOBOXATTS.inLanguage(language));
-		Writer tsv = FileUtils.getBufferedUTF8Writer(new File(outputFolder,
-				"attributeMatches_" + language + ".tsv"));
-		FactWriter sources = writers.get(MATCHED_INFOBOXATTS_SOURCES
-				.inLanguage(language));
+		Theme out = MATCHED_INFOBOXATTS.inLanguage(language);
+		Writer tsv = FileUtils.getBufferedUTF8Writer(new File(out.file()
+				.getParent(), "attributeMatches_" + language + ".tsv"));
+		Theme sources = MATCHED_INFOBOXATTS_SOURCES.inLanguage(language);
 
 		Theme germanFacts = InfoboxTermExtractor.INFOBOXATTSTRANSLATED
 				.inLanguage(language);
@@ -83,9 +82,8 @@ public class AttributeMatcher extends Extractor {
 		// Counts for every german attribute how many facts there are
 		Map<String, Integer> germanFactCountPerAttribute = new HashMap<>();
 
-		yagoFacts = getFactCollection(input.get(InfoboxMapper.INFOBOXFACTS_MAP
-				.get("en")));
-		for (Fact germanFact : input.get(germanFacts)) {
+		yagoFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en").factCollection();
+		for (Fact germanFact : germanFacts.factSource()) {
 			String germanRelation = germanFact.getRelation();
 			String germanSubject = germanFact.getArg(1);
 			String germanObject = germanFact.getArg(2);
@@ -95,8 +93,8 @@ public class AttributeMatcher extends Extractor {
 			 * this level, it still has the chance to be processed if appears
 			 * with 'good' subject and object in other facts
 			 */
-			if (!yagoFacts.hasSubject(germanSubject)
-					|| !yagoFacts.hasObject(germanObject))
+			if (!yagoFacts.containsSubject(germanSubject)
+					|| !yagoFacts.containsObject(germanObject))
 				continue;
 
 			// We increase the counter for the attribute of the german fact
@@ -117,7 +115,7 @@ public class AttributeMatcher extends Extractor {
 						germanWrongMap = new HashMap<String, Integer>());
 
 			for (String yagoRelation : yagoFacts.getRelations(germanSubject)) {
-				Set<String> yagoObjects = yagoFacts.getArg2s(germanSubject,
+				Set<String> yagoObjects = yagoFacts.collectObjects(germanSubject,
 						yagoRelation);
 				if (yagoObjects.contains(germanObject))
 					D.addKeyValue(germanMap, yagoRelation, 1);
@@ -154,17 +152,6 @@ public class AttributeMatcher extends Extractor {
 			}
 		}
 		tsv.close();
-	}
-
-	private static synchronized ExtendedFactCollection getFactCollection(
-			FactSource infoboxFacts) {
-		if (yagoFacts != null)
-			return (yagoFacts);
-		yagoFacts = new ExtendedFactCollection();
-		for (Fact f : infoboxFacts) {
-			yagoFacts.add(f);
-		}
-		return (yagoFacts);
 	}
 
 	public AttributeMatcher(String secondLang) {

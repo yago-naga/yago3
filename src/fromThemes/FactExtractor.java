@@ -40,7 +40,6 @@ public class FactExtractor extends SimpleDeduplicator {
 				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
 				SchemaExtractor.YAGOSCHEMA));
-
 		input.addAll(CategoryMapper.CATEGORYFACTS.inAllLanguages());
 		input.addAll(InfoboxMapper.INFOBOXFACTS.inAllLanguages());
 		return input;

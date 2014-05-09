@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -14,8 +13,6 @@ import javatools.util.FileUtils;
 import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.InterLanguageLinks;
 import fromOtherSources.PatternHardExtractor;
@@ -31,7 +28,7 @@ import fromOtherSources.WordnetExtractor;
  * 
  */
 
-public class CategoryExtractor extends Extractor {
+public class CategoryExtractor extends MultilingualExtractor {
 
 	protected File wikipedia;
 
@@ -50,10 +47,16 @@ public class CategoryExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new TreeSet<Theme>(Arrays.asList(
-				PatternHardExtractor.CATEGORYPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
-				WordnetExtractor.WORDNETWORDS,
-				InterLanguageLinks.INTERLANGUAGELINKS));
+				WordnetExtractor.PREFMEANINGS,
+				InterLanguageLinks.INTERLANGUAGELINKS,
+				InterLanguageLinks.CATEGORYWORDS));
+	}
+
+	@Override
+	public Set<Theme> inputCached() {
+		return new FinalSet<>(WordnetExtractor.PREFMEANINGS,
+				InterLanguageLinks.CATEGORYWORDS);
 	}
 
 	@Override
@@ -68,26 +71,27 @@ public class CategoryExtractor extends Extractor {
 		return new HashSet<Extractor>(Arrays.asList(new Translator(
 				CATEGORYMEMBERS.inLanguage(this.language),
 				CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language),
-				this.language, "Category"), new CategoryMapper(this.language),
-				new CategoryTypeExtractor(this.language)));
+				this.language, Translator.ObjectType.Category),
+				new CategoryMapper(this.language), new CategoryTypeExtractor(
+						this.language)));
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> writers,
-			Map<Theme, FactSource> input) throws Exception {
-		TitleExtractor titleExtractor = new TitleExtractor(input);
+	public void extract() throws Exception {
+		TitleExtractor titleExtractor = new TitleExtractor(language);
 
 		// Extract the information
 		// Announce.progressStart("Extracting", 3_900_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		/**
-		 * categoryWord holds the synonym of the word "Category" in
-		 * different languages. It is needed to distinguish the category
-		 * part in Wiki pages.
+		 * categoryWord holds the synonym of the word "Category" in different
+		 * languages. It is needed to distinguish the category part in Wiki
+		 * pages.
 		 */
-		String categoryWord = InterLanguageLinksDictionary.getCatDictionary(
-				input.get(InterLanguageLinks.INTERLANGUAGELINKS)).get(language);
+		String categoryWord = InterLanguageLinks.CATEGORYWORDS.factCollection()
+				.getObject(FactComponent.forString(language),
+						"<hasCategoryWord>");
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "[["
 					+ categoryWord + ":")) {
@@ -107,7 +111,7 @@ public class CategoryExtractor extends Extractor {
 				}
 				String category = FileLines.readTo(in, ']', '|').toString();
 				category = category.trim();
-				write(writers, CATEGORYMEMBERS.inLanguage(language), new Fact(
+				write(CATEGORYMEMBERS.inLanguage(language), new Fact(
 						titleEntity, "<hasWikiCategory/" + this.language + ">",
 						FactComponent.forString(category)),
 						CATEGORYMEMBERS_SOURCES.inLanguage(language),

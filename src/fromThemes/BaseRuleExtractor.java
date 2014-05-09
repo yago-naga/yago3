@@ -167,7 +167,7 @@ public abstract class BaseRuleExtractor extends Extractor {
   }
   
   /** Fact collection containing implication rules */
-  protected abstract FactCollection getInputRuleCollection(Map<Theme, FactSource> input) throws Exception;
+  protected abstract FactCollection getInputRuleCollection() throws Exception;
   
   /** How many rules from the rule source can be processed at once 
    *  Defaults to 0 - no limit*/
@@ -176,11 +176,11 @@ public abstract class BaseRuleExtractor extends Extractor {
   }
  
   /** Extract implication rules from input facts */
-  protected List<RuleSet> initializeRuleSet(Map<Theme, FactSource> input) throws Exception {
-    FactCollection ruleFacts = getInputRuleCollection(input);
+  protected List<RuleSet> initializeRuleSet() throws Exception {
+    FactCollection ruleFacts = getInputRuleCollection();
     List<Rule> allRules = new ArrayList<Rule>();
     
-    for (Fact f : ruleFacts.get("<_implies>")) {
+    for (Fact f : ruleFacts.getFactsWithRelation("<_implies>")) {
       allRules.add(new Rule(f));
     }
     
@@ -205,11 +205,11 @@ public abstract class BaseRuleExtractor extends Extractor {
     return ruleSets;
   }
   
-  public FactCollection loadInputFacts(Map<Theme, FactSource> input) {
+  public FactCollection loadInputFacts() {
 	FactCollection facts = new FactCollection();
-    for (Entry<Theme, FactSource> reader : input.entrySet()) {
-      Announce.doing("Loading ", reader.getKey());
-      for (Fact fact : reader.getValue()) {
+    for (Theme theme: input()) {
+      Announce.doing("Loading ", theme);
+      for (Fact fact : theme.factSource()) {
     	  facts.add(fact);
       }
       Announce.done();
@@ -222,10 +222,10 @@ public abstract class BaseRuleExtractor extends Extractor {
     return(f.relation.startsWith("-"));
   }
 
-  private void instantiate(Rule r, FactCollection allFacts, Map<Theme, FactWriter> output) throws Exception {
+  private void instantiate(Rule r, FactCollection allFacts) throws Exception {
 	  if (r.isReadyToGo()) {
 		  for (Fact h : r.headFacts()) {
-              write(output, getRULERESULTS(), h, getRULESOURCES(), /*Theme reference?*/ "", "RuleExtractor from " + r.original.toString());
+              write(getRULERESULTS(), h, getRULESOURCES(), /*Theme reference?*/ "", "RuleExtractor from " + r.original.toString());
           }
 	  }
 	  
@@ -247,18 +247,18 @@ public abstract class BaseRuleExtractor extends Extractor {
 		    // If it is contained in the KB, just return
 		    if(allFacts.contains(firstBody.arg1,firstBody.relation.substring(1),firstBody.arg2)) return;
 		    // Otherwise continue recursively
-		    instantiate(r.rest(Collections.<String, String> emptyMap(), null), allFacts, output);
+		    instantiate(r.rest(Collections.<String, String> emptyMap(), null), allFacts);
 		    return;
 		  }
 		    
 		  Collection<Fact> fc = null;
 		  
 		  if(relBound && subjBound) {
-			  fc = allFacts.get(r.firstBody().arg1, r.firstBody().relation);
+			  fc = allFacts.getFactsWithSubjectAndRelation(r.firstBody().arg1, r.firstBody().relation);
 		  } else if (relBound) {
-			  fc = allFacts.get(r.firstBody().relation);
+			  fc = allFacts.getFactsWithRelation(r.firstBody().relation);
 		  } else if (subjBound) {
-			  fc = allFacts.getFactsWithSubject(r.firstBody().arg1);
+			  fc = allFacts.collectFactsWithSubject(r.firstBody().arg1);
 		  } else {
 			  fc = allFacts;
 		  }
@@ -267,7 +267,7 @@ public abstract class BaseRuleExtractor extends Extractor {
 			  Map<String, String> map = r.mapFirstTo(f);
 			  
 			  if (map != null) {
-				  instantiate(r.rest(map, f.getId()), allFacts, output);
+				  instantiate(r.rest(map, f.getId()), allFacts);
 	          }
 		  }
 		  
@@ -275,9 +275,9 @@ public abstract class BaseRuleExtractor extends Extractor {
   }
   
   @Override
-  public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-	  List<RuleSet> ruleSets = initializeRuleSet(input);
-	  FactCollection allFacts = loadInputFacts(input);
+  public void extract() throws Exception {
+	  List<RuleSet> ruleSets = initializeRuleSet();
+	  FactCollection allFacts = loadInputFacts();
 	  
 	  Announce.doing("Doing a pass on all rules");
 	  for (RuleSet rules : ruleSets) {
@@ -285,7 +285,7 @@ public abstract class BaseRuleExtractor extends Extractor {
 			  Announce.doing("Processing the rule: ", r);
 			  Announce.message("Starting at", NumberFormatter.ISOtime());
 			  Announce.doing("Doing a pass on all fact themes");
-			  instantiate(r, allFacts, output);
+			  instantiate(r, allFacts);
 			  Announce.done();
 			  Announce.message("Rule " + r + " finished at", NumberFormatter.ISOtime());
 			  Announce.done();
@@ -297,9 +297,9 @@ public abstract class BaseRuleExtractor extends Extractor {
 
 //  @Override
   public void extractOld(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    List<RuleSet> ruleSets = initializeRuleSet(input);
+    List<RuleSet> ruleSets = initializeRuleSet();
     
-    FactCollection allFacts = loadInputFacts(input);
+    FactCollection allFacts = loadInputFacts();
     
     Announce.debug(ruleSets);
     // Loop
@@ -323,7 +323,7 @@ public abstract class BaseRuleExtractor extends Extractor {
 	            Rule newRule = r.rest(map, fact.getId());
 	            if (newRule.isReadyToGo()) {
 	              for (Fact h : newRule.headFacts()) {
-	                write(output, getRULERESULTS(), h, getRULESOURCES(), /*FactComponent.forTheme(reader.getKey())*/"", "RuleExtractor from " + r.original.toString());
+	                write(getRULERESULTS(), h, getRULESOURCES(), /*FactComponent.forTheme(reader.getKey())*/"", "RuleExtractor from " + r.original.toString());
 	              }
 	            } else {
 	              survivingRules.add(newRule);

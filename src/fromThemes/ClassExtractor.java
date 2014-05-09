@@ -3,23 +3,19 @@ package fromThemes;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromWikipedia.CategoryClassExtractor;
 import fromWikipedia.Extractor;
-import fromWikipedia.CategoryTypeExtractor;
-import fromWikipedia.InfoboxTypeExtractor;
 
 /**
  * YAGO2s - ClassExtractor
@@ -40,8 +36,7 @@ public class ClassExtractor extends Extractor {
 				HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES
 		// GeoNamesClassMapper.GEONAMESCLASSES
 				));
-		input.addAll(CategoryTypeExtractor.CATEGORYCLASSES.inAllLanguages());
-		input.addAll(InfoboxTypeExtractor.INFOBOXCLASSES.inAllLanguages());
+		input.addAll(CategoryClassExtractor.CATEGORYCLASSES.inAllLanguages());
 		return input;
 	}
 
@@ -57,14 +52,13 @@ public class ClassExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> output,
-			Map<Theme, FactSource> input) throws Exception {
+	public void extract() throws Exception {
 		String relation = RDFS.subclassOf;
 		Announce.doing("Reading", relation);
 		FactCollection facts = new FactCollection();
-		for (Theme theme : input.keySet()) {
+		for (Theme theme : input()) {
 			Announce.doing("Reading", theme);
-			for (Fact fact : input.get(theme)) {
+			for (Fact fact : theme.factSource()) {
 				if (!relation.equals(fact.getRelation()))
 					continue;
 				facts.add(fact);
@@ -73,9 +67,8 @@ public class ClassExtractor extends Extractor {
 		}
 		Announce.done();
 		Announce.doing("Writing", relation);
-		FactWriter w = output.get(YAGOTAXONOMY);
 		for (Fact fact : facts)
-			w.write(fact);
+			YAGOTAXONOMY.write(fact);
 		Announce.done();
 	}
 

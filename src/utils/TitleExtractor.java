@@ -2,20 +2,13 @@ package utils;
 
 import java.io.IOException;
 import java.io.Reader;
-import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
-import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.Theme;
-import basics.YAGO;
-import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromThemes.TransitiveTypeExtractor;
@@ -23,75 +16,73 @@ import fromThemes.TransitiveTypeExtractor;
 /**
  * Extracts Wikipedia title
  * 
- * This tool requires PatternHardExtractor.TITLEPATTERNS and 
- * - either WordnetExtractor.WORDNETWORDS
- * - or TransitiveTypeExtractor.TRANSITIVETYPE
+ * This tool requires PatternHardExtractor.TITLEPATTERNS and - either
+ * WordnetExtractor.WORDNETWORDS - or TransitiveTypeExtractor.TRANSITIVETYPE
  * 
  * It does a profound check whether this entity should become a YAGO entity.
  * 
  * @author Fabian M. Suchanek
- *
+ * 
  */
 public class TitleExtractor {
 
-  /** Holds the patterns to apply to titles*/
-  protected PatternList replacer;
+	/** Holds the patterns to apply to titles */
+	protected PatternList replacer;
 
-  /** Holds the words of wordnet*/
-  protected Set<String> wordnetWords;
+	/** Holds the words of wordnet */
+	protected Set<String> wordnetWords;
 
-  /** Holds all entities of Wikipedia */
-  protected Set<String> entities;
+	/** Holds all entities of Wikipedia */
+	protected Set<String> entities;
 
-  /** Constructs a TitleExtractor*/
-  public TitleExtractor(FactCollection titlePatternFacts, Set<String> wordnetWords) {
-    replacer = new PatternList(titlePatternFacts, "<_titleReplace>");
-    this.wordnetWords = wordnetWords;
-  }
+	/** Language of Wikipedia */
+	protected String language;
 
-  /** Constructs a TitleExtractor
-   * @throws IOException */
-  public TitleExtractor(Map<Theme, FactSource> input) throws IOException {
-    if (input.get(PatternHardExtractor.TITLEPATTERNS) == null) {
-      Announce.error("The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
-    }
-    if (input.get(WordnetExtractor.WORDNETWORDS) == null && input.get(TransitiveTypeExtractor.TRANSITIVETYPE) == null) {
-      Announce.error("The TitleExtractor needs WordnetExtractor.WORDNETWORDS or TransitiveTypeExtractor.TRANSITIVETYPE as input. "
-          + "This is in order to avoid that Wikipedia articles that describe common nouns (such as 'table') become instances in YAGO.");
-    }
-    replacer = new PatternList(input.get(PatternHardExtractor.TITLEPATTERNS), "<_titleReplace>");
-    if (input.get(TransitiveTypeExtractor.TRANSITIVETYPE) != null) {
-      this.entities = TransitiveTypeExtractor.entities(input);
-    } else {
-      if (input.containsKey(HardExtractor.HARDWIREDFACTS)) {
-        this.wordnetWords = WordnetExtractor.preferredMeanings(input).keySet();
-      } else {
-        this.wordnetWords = new HashSet<>();
-        for (Fact f : input.get(WordnetExtractor.WORDNETWORDS)) {
-          if (f.getRelation().equals(YAGO.isPreferredMeaningOf)) this.wordnetWords.add(f.getArgJavaString(2));
-        }
-      }
-    }
-  }
+	/** Constructs a TitleExtractor */
+	public TitleExtractor(FactCollection titlePatternFacts,
+			Set<String> wordnetWords) {
+		replacer = new PatternList(titlePatternFacts, "<_titleReplace>");
+		this.wordnetWords = wordnetWords;
+	}
 
-  /** Reads the title entity, supposes that the reader is after "<title>" */
-  public String getTitleEntity(Reader in) throws IOException {
-    String title = FileLines.readToBoundary(in, "</title>");
-    title = replacer.transform(Char.decodeAmpersand(title));
-    if (title == null) return (null);
-    if (wordnetWords != null && wordnetWords.contains(title.toLowerCase())) return (null);
-    String entity = FactComponent.forYagoEntity(title.replace(' ', '_'));
-    if (entities != null && !entities.contains(entity)) return (null);
-    return (entity);
-  }
-  
-  
-  public String getTitleEntityWithoutWordnet(Reader in) throws IOException {
-	    String title = FileLines.readToBoundary(in, "</title>");
-	    title = replacer.transform(Char.decodeAmpersand(title));
-	    if (title == null) return (null);
-	    String entity = FactComponent.forYagoEntity(title.replace(' ', '_'));
-	    return (entity);
-	  }
+	/**
+	 * Constructs a TitleExtractor
+	 * 
+	 * @throws IOException
+	 */
+	public TitleExtractor(String language) throws IOException {
+		if (!PatternHardExtractor.TITLEPATTERNS.isAvailable()) {
+			Announce.error("The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
+		}
+		replacer = new PatternList(
+				PatternHardExtractor.TITLEPATTERNS.factCollection(),
+				"<_titleReplace>");
+		if (language.equals("en")
+				&& !WordnetExtractor.PREFMEANINGS.isAvailable()
+				&& !TransitiveTypeExtractor.TRANSITIVETYPE.isAvailable()) {
+			Announce.error("The English TitleExtractor needs WordnetExtractor.PREFMEANINGS or TransitiveTypeExtractor.TRANSITIVETYPE as input. "
+					+ "This is in order to avoid that Wikipedia articles that describe common nouns (such as 'table') become instances in YAGO.");
+		}
+		if (TransitiveTypeExtractor.TRANSITIVETYPE.isAvailable()) {
+			this.entities = TransitiveTypeExtractor.TRANSITIVETYPE
+					.factCollection().getSubjects();
+		} else if (language.equals("en")) {
+			this.wordnetWords = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings().keySet();
+		}
+		this.language = language;
+	}
 
+	/** Reads the title entity, supposes that the reader is after "<title>" */
+	public String getTitleEntity(Reader in) throws IOException {
+		String title = FileLines.readToBoundary(in, "</title>");
+		title = replacer.transform(Char.decodeAmpersand(title));
+		if (title == null)
+			return (null);
+		if (wordnetWords != null && wordnetWords.contains(title.toLowerCase()))
+			return (null);
+		String entity = FactComponent.forForeignYagoEntity(title, language);
+		if (entities != null && !entities.contains(entity))
+			return (null);
+		return (entity);
+	}
 }

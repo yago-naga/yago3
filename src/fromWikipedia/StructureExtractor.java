@@ -4,7 +4,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
@@ -15,8 +14,6 @@ import utils.FactTemplateExtractor;
 import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
@@ -34,32 +31,40 @@ public class StructureExtractor extends Extractor {
 	/** Input file */
 	private File wikipedia;
 
-  @Override
-  public File inputDataFile() {   
-    return wikipedia;
-  }
+	@Override
+	public File inputDataFile() {
+		return wikipedia;
+	}
 
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.STRUCTUREPATTERNS, 
-				PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.WORDNETWORDS));
+		return new HashSet<Theme>(Arrays.asList(
+				PatternHardExtractor.STRUCTUREPATTERNS,
+				PatternHardExtractor.TITLEPATTERNS,
+				WordnetExtractor.WORDNETWORDS));
 	}
-	
+
 	@Override
-  public Set<Extractor> followUp() {
-    return new HashSet<Extractor>(Arrays.asList(
-        new Redirector(DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS, this, decodeLang(this.wikipedia.getName())),
-        new TypeChecker(REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS, this)));
-  }
+	public Set<Extractor> followUp() {
+		return new HashSet<Extractor>(Arrays.asList(new Redirector(
+				DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS, this,
+				decodeLang(this.wikipedia.getName())), new TypeChecker(
+				REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS, this)));
+	}
 
-  /** Facts representing the Wikipedia structure (e.g. links) */
-  public static final Theme DIRTYSTRUCTUREFACTS = new Theme("structureFactsNeedTypeCheckingRedirecting", "Regular structure from Wikipedia, e.g. links - needs redirecting and typechecking");
+	/** Facts representing the Wikipedia structure (e.g. links) */
+	public static final Theme DIRTYSTRUCTUREFACTS = new Theme(
+			"structureFactsNeedTypeCheckingRedirecting",
+			"Regular structure from Wikipedia, e.g. links - needs redirecting and typechecking");
 
-  /** Facts representing the Wikipedia structure (e.g. links) */
-  public static final Theme REDIRECTEDSTRUCTUREFACTS = new Theme("structureFactsNeedTypeChecking", "Regular structure from Wikipedia, e.g. links - needs typechecking");
+	/** Facts representing the Wikipedia structure (e.g. links) */
+	public static final Theme REDIRECTEDSTRUCTUREFACTS = new Theme(
+			"structureFactsNeedTypeChecking",
+			"Regular structure from Wikipedia, e.g. links - needs typechecking");
 
-  /** Facts representing the Wikipedia structure (e.g. links) */
-  public static final Theme STRUCTUREFACTS = new Theme("structureFacts", "Regular structure from Wikipedia, e.g. links");
+	/** Facts representing the Wikipedia structure (e.g. links) */
+	public static final Theme STRUCTUREFACTS = new Theme("structureFacts",
+			"Regular structure from Wikipedia, e.g. links");
 
 	@Override
 	public Set<Theme> output() {
@@ -67,19 +72,17 @@ public class StructureExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+	public void extract() throws Exception {
 		// Extract the information
 		Announce.doing("Extracting structure facts");
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-		TitleExtractor titleExtractor = new TitleExtractor(input);
+		TitleExtractor titleExtractor = new TitleExtractor("en");
 
-		FactCollection structurePatternCollection = new FactCollection(
-				input.get(PatternHardExtractor.STRUCTUREPATTERNS));
-		FactTemplateExtractor structurePatterns = new FactTemplateExtractor(structurePatternCollection,
-				"<_extendedStructureWikiPattern>");
-
-		FactWriter out = output.get(DIRTYSTRUCTUREFACTS);
+		FactCollection structurePatternCollection = PatternHardExtractor.STRUCTUREPATTERNS
+				.factCollection();
+		FactTemplateExtractor structurePatterns = new FactTemplateExtractor(
+				structurePatternCollection, "<_extendedStructureWikiPattern>");
 
 		String titleEntity = null;
 		while (true) {
@@ -94,11 +97,13 @@ public class StructureExtractor extends Extractor {
 					continue;
 
 				String page = FileLines.readBetween(in, "<text", "</text>");
-        String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
+				String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+",
+						" ");
 
-				for (Fact fact : structurePatterns.extract(normalizedPage, titleEntity)) {
-				  if (fact != null)
-				    out.write(fact);
+				for (Fact fact : structurePatterns.extract(normalizedPage,
+						titleEntity)) {
+					if (fact != null)
+						DIRTYSTRUCTUREFACTS.write(fact);
 				}
 			}
 		}

@@ -41,12 +41,12 @@ public class MultilingualComparator extends Extractor {
 
   static {
     for (String s : Extractor.languages) {
-      MISSINGFACTS_MAP.put(s, new Theme("missingFacts" + Extractor.langPostfixes.get(s), ""));
-      MISSINGENTITIES_MAP.put(s, new Theme("missingEntities" + Extractor.langPostfixes.get(s), ""));
-      CONFIRMINGFACTS_MAP.put(s, new Theme("confirmingFacts" + Extractor.langPostfixes.get(s), ""));
-      CONFIRMINGENTITIES_MAP.put(s, new Theme("confirmingEntities" + Extractor.langPostfixes.get(s), ""));
-      NEWFACTS_MAP.put(s, new Theme("newFacts" + Extractor.langPostfixes.get(s), ""));
-      NEWENTITIES_MAP.put(s, new Theme("newEntities" + Extractor.langPostfixes.get(s), ""));
+      MISSINGFACTS_MAP.put(s, new Theme("missingFacts" + Extractor.langPostfixes.getFactsWithRelation(s), ""));
+      MISSINGENTITIES_MAP.put(s, new Theme("missingEntities" + Extractor.langPostfixes.getFactsWithRelation(s), ""));
+      CONFIRMINGFACTS_MAP.put(s, new Theme("confirmingFacts" + Extractor.langPostfixes.getFactsWithRelation(s), ""));
+      CONFIRMINGENTITIES_MAP.put(s, new Theme("confirmingEntities" + Extractor.langPostfixes.getFactsWithRelation(s), ""));
+      NEWFACTS_MAP.put(s, new Theme("newFacts" + Extractor.langPostfixes.getFactsWithRelation(s), ""));
+      NEWENTITIES_MAP.put(s, new Theme("newEntities" + Extractor.langPostfixes.getFactsWithRelation(s), ""));
     }
 
   }

@@ -5,27 +5,20 @@ import java.io.IOException;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
-
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import javatools.util.FileUtils;
 import utils.FactTemplateExtractor;
 import utils.TitleExtractor;
-
+import basics.Fact;
+import basics.FactCollection;
+import basics.Theme;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromThemes.TypeChecker;
-
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
-import basics.Fact;
-import basics.FactCollection;
-import basics.FactSource;
-import basics.FactWriter;
-import basics.Theme;
 
 /**
  * TemporalCategoryExtractor - YAGO2s
@@ -41,10 +34,10 @@ public class TemporalCategoryExtractor extends Extractor {
 	/** Input file */
 	private File wikipedia;
 
-  @Override
-  public File inputDataFile() {   
-    return wikipedia;
-  }
+	@Override
+	public File inputDataFile() {
+		return wikipedia;
+	}
 
 	@Override
 	public Set<Extractor> followUp() {
@@ -66,7 +59,8 @@ public class TemporalCategoryExtractor extends Extractor {
 			"Temporal facts derived from the categories - still to be type checked");
 	/** Facts deduced from categories */
 	public static final Theme TEMPORALCATEGORYFACTS = new Theme(
-			"categoryTemporalFacts", "Temporal facts derived from the categories");
+			"categoryTemporalFacts",
+			"Temporal facts derived from the categories");
 
 	@Override
 	public Set<Theme> output() {
@@ -74,27 +68,26 @@ public class TemporalCategoryExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> writers,
-			Map<Theme, FactSource> input) throws IOException {
-		FactCollection categoryPatternCollection = new FactCollection(
-				input.get(PatternHardExtractor.TEMPORALCATEGORYPATTERNS));
+	public void extract() throws IOException {
+		FactCollection categoryPatternCollection = PatternHardExtractor.TEMPORALCATEGORYPATTERNS
+				.factCollection();
 		FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(
 				categoryPatternCollection, "<_categoryPattern>");
-		TitleExtractor titleExtractor = new TitleExtractor(input);
-		//Announce.progressStart("Extracting", 3_900_000);
+		TitleExtractor titleExtractor = new TitleExtractor("en");
+		// Announce.progressStart("Extracting", 3_900_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		FactCollection facts = new FactCollection();
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:")) {
 			case -1:
-				flush(titleEntity, facts, writers);
-				//Announce.progressDone();
+				flush(titleEntity, facts);
+				// Announce.progressDone();
 				in.close();
 				return;
 			case 0:
-				//Announce.progressStep();
-				flush(titleEntity, facts, writers);
+				// Announce.progressStep();
+				flush(titleEntity, facts);
 				titleEntity = titleExtractor.getTitleEntity(in);
 				break;
 			case 1:
@@ -115,13 +108,13 @@ public class TemporalCategoryExtractor extends Extractor {
 	}
 
 	/** Writes the facts */
-	public static void flush(String entity, FactCollection facts,
-			Map<Theme, FactWriter> writers) throws IOException {
+	public static void flush(String entity, FactCollection facts)
+			throws IOException {
 		if (entity == null)
 			return;
 
 		for (Fact fact : facts) {
-			writers.get(DIRTYCATEGORYFACTS).write(fact);
+			DIRTYCATEGORYFACTS.write(fact);
 		}
 		facts.clear();
 	}

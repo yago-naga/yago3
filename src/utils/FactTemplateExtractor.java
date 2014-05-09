@@ -42,7 +42,7 @@ public class FactTemplateExtractor {
 	/** Constructor */
 	public FactTemplateExtractor(FactCollection facts, String relation) {
 		Announce.doing("Loading fact templates of", relation);
-		for (Fact fact : facts.get(relation)) {
+		for (Fact fact : facts.getFactsWithRelation(relation)) {
 			patterns.add(new Pair<Pattern, List<FactTemplate>>(fact
 					.getArgPattern(1), FactTemplate.create(fact
 					.getArgJavaString(2))));

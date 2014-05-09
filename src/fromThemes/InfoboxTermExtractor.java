@@ -1,33 +1,28 @@
 package fromThemes;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeMap;
 
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
 import utils.PatternList;
 import utils.TermExtractor;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.Theme;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.Extractor;
 import fromWikipedia.InfoboxExtractor;
+import fromWikipedia.MultilingualExtractor;
 import fromWikipedia.Translator;
 
-public class InfoboxTermExtractor extends Extractor {
+public class InfoboxTermExtractor extends MultilingualExtractor {
 
 	public static final Theme INFOBOXTERMS = new Theme("infoboxTerms",
 			"The attribute facts of the Wikipedia infoboxes, split into terms");
@@ -43,13 +38,19 @@ public class InfoboxTermExtractor extends Extractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
 				WordnetExtractor.WORDNETWORDS, HardExtractor.HARDWIREDFACTS,
-				InfoboxExtractor.INFOBOXRAW.inLanguage(this.language)));
+				InfoboxExtractor.INFOBOX_ATTRIBUTES.inLanguage(this.language)));
 	}
 
 	@Override
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(
 				INFOBOXTERMS_TOREDIRECT.inLanguage(this.language));
+	}
+
+	@Override
+	public Set<Theme> inputCached() {
+		return new FinalSet<>(PatternHardExtractor.INFOBOXPATTERNS,
+				WordnetExtractor.PREFMEANINGS);
 	}
 
 	@Override
@@ -60,72 +61,30 @@ public class InfoboxTermExtractor extends Extractor {
 						.inLanguage(this.language), this, this.language),
 				new Translator(INFOBOXTERMS.inLanguage(language),
 						INFOBOXATTSTRANSLATED.inLanguage(this.language),
-						this.language, "Entity")));
+						this.language, Translator.ObjectType.Entity)));
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> output,
-			Map<Theme, FactSource> input) throws Exception {
-
-		FactWriter out = output.get(INFOBOXTERMS_TOREDIRECT
-				.inLanguage(language));
-
-		PatternList replacements = new PatternList(new FactCollection(
-				input.get(PatternHardExtractor.INFOBOXPATTERNS)),
+	public void extract() throws Exception {
+		PatternList replacements = new PatternList(
+				PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
 				"<_infoboxReplace>");
-		Map<String, String> preferredMeanings = WordnetExtractor
-				.preferredMeanings(input);
-
-		Map<String, Set<String>> attributes = new TreeMap<String, Set<String>>();
-		String prevEntity = "";
-
-		for (Fact f : input.get(InfoboxExtractor.INFOBOXRAW
-				.inLanguage(this.language))) {
-
-			String attribute = FactComponent.stripBrackets(FactComponent
-					.stripPrefix(f.getRelation()));
-			String value = f.getArgJavaString(2);
-
-			if (value == null)
+		Map<String, String> preferredMeanings = WordnetExtractor.PREFMEANINGS
+				.factCollection().getPreferredMeanings();
+		for (Fact f : InfoboxExtractor.INFOBOX_ATTRIBUTES.inLanguage(
+				this.language).factSource()) {
+			String val = f.getObjectAsJavaString();
+			val = replacements.transform(Char.decodeAmpersand(val));
+			val = val
+					.replace("$0", FactComponent.stripBrackets(f.getSubject()));
+			val = val.trim();
+			if (val.length() == 0)
 				continue;
-
-			if (!f.getArg(1).equals(prevEntity)) {
-				process(prevEntity, attributes, replacements,
-						preferredMeanings, out);
-
-				prevEntity = f.getArg(1);
-				attributes.clear();
-			}
-			D.addKeyValue(attributes, attribute, value, HashSet.class);
-		}
-		process(prevEntity, attributes, replacements, preferredMeanings, out);
-	}
-
-	protected void process(String entity, Map<String, Set<String>> attributes,
-			PatternList replacements, Map<String, String> preferredMeanings,
-			FactWriter out) throws IOException {
-
-		for (String attr : attributes.keySet()) {
-			for (String val : attributes.get(attr)) {
-				for (TermExtractor extractor : TermExtractor
-						.all(preferredMeanings)) {
-
-					val = replacements.transform(Char.decodeAmpersand(val));
-					val = val
-							.replace("$0", FactComponent.stripBrackets(entity));
-					val = val.trim();
-					if (val.length() == 0)
-						continue;
-
-					List<String> objects = extractor.extractList(val);
-
-					for (String object : objects) {
-						Fact fact = new Fact(entity,
-								InfoboxExtractor.addPrefix(this.language,
-										FactComponent.forYagoEntity(attr)),
-								object);
-						out.write(fact);
-					}
+			for (TermExtractor extractor : TermExtractor.all(preferredMeanings)) {
+				List<String> objects = extractor.extractList(val);
+				for (String object : objects) {
+					INFOBOXTERMS_TOREDIRECT.inLanguage(language).write(
+							new Fact(f.getSubject(), f.getRelation(), object));
 				}
 			}
 		}

@@ -3,6 +3,7 @@ package fromWikipedia;
 import java.io.BufferedReader;
 import java.io.File;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -17,11 +18,7 @@ import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.Theme;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
 import fromThemes.TypeChecker;
 
 /**
@@ -30,53 +27,46 @@ import fromThemes.TypeChecker;
  * @author Johannes Hoffart
  * 
  */
-public class RedirectExtractor extends Extractor {
+public class RedirectExtractor extends MultilingualExtractor {
 
 	/** Input file */
 	private File wikipedia;
 
-    @Override
-    public File inputDataFile() {   
-      return wikipedia;
-    }
-
-	private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
-   
-	public static final Theme REDIRECTFACTS_DIRTY = new Theme("redirectLabelsDirty","en", "Redirect facts from Wikipedia redirect pages (to be type checked)");
-	public static final HashMap<String, Theme> REDIRECTFACTS_DIRTY_MAP = new HashMap<String, Theme>();
-
-	public static final HashMap<String, Theme> REDIRECTLABELS_MAP = new HashMap<String, Theme>();
-	public static final Theme REDIRECTLABELS=new Theme("redirectLabels", "en","Redirect facts from Wikipedia redirect pages");
-	static {
-		for (String s : Extractor.languages) {
-			REDIRECTFACTS_DIRTY_MAP.put(s, new Theme("redirectLabelsDirty" +  Extractor.langPostfixes.get(s), "Redirect facts from Wikipedia redirect pages (to be type checked)"));
-			REDIRECTLABELS_MAP.put(s, new Theme("redirectLabels" +  Extractor.langPostfixes.get(s), "Redirect facts from Wikipedia redirect pages"));
-		}
+	@Override
+	public File inputDataFile() {
+		return wikipedia;
 	}
 
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS,
-				WordnetExtractor.WORDNETWORDS));
+		return Collections.emptySet();
 	}
+
+	private static final Pattern pattern = Pattern
+			.compile("\\[\\[([^#\\]]*?)\\]\\]");
+
+	public static final Theme REDIRECTFACTS_DIRTY = new Theme(
+			"redirectLabelsDirty", "en",
+			"Redirect facts from Wikipedia redirect pages (to be type checked)");
+
+	public static final Theme REDIRECTLABELS = new Theme("redirectLabels",
+			"en", "Redirect facts from Wikipedia redirect pages");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(REDIRECTFACTS_DIRTY_MAP.get(this.language));
+		return new FinalSet<Theme>(
+				REDIRECTFACTS_DIRTY.inLanguage(this.language));
 	}
 
 	@Override
-	public Set<Extractor> followUp() {	
-	  return new HashSet<Extractor>(
-	      Arrays.asList(
-	          new TypeChecker(
-	              REDIRECTFACTS_DIRTY_MAP.get(this.language), 
-	              REDIRECTLABELS_MAP.get(this.language), 
-	              this)));
+	public Set<Extractor> followUp() {
+		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(
+				REDIRECTFACTS_DIRTY.inLanguage(this.language), REDIRECTLABELS
+						.inLanguage(this.language), this)));
 	}
-	
+
 	@Override
-	public void extract(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+	public void extract() throws Exception {
 		// Extract the information
 		Announce.doing("Extracting Redirects");
 		Map<String, String> redirects = new HashMap<>();
@@ -97,7 +87,8 @@ public class RedirectExtractor extends Extractor {
 				if (titleEntity == null)
 					continue;
 				FileLines.readTo(in, "<text");
-				String redirectText = FileLines.readTo(in, "</text>").toString().trim();
+				String redirectText = FileLines.readTo(in, "</text>")
+						.toString().trim();
 				String redirectTarget = getRedirectTarget(redirectText);
 
 				if (redirectTarget != null) {
@@ -106,15 +97,15 @@ public class RedirectExtractor extends Extractor {
 			}
 		}
 
-		FactWriter out = output.get(REDIRECTFACTS_DIRTY_MAP.get(this.language));
+		Theme out = REDIRECTFACTS_DIRTY.inLanguage(this.language);
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
-			out.write(new Fact(
-					FactComponent.forYagoEntity(redirect.getValue().replace(' ','_')), 
-					"<redirectedFrom>", 
-					FactComponent.forStringWithLanguage(redirect.getKey(), this.language.equals("en") ? "eng" : this.language)));
+			out.write(new Fact(FactComponent.forYagoEntity(redirect.getValue()
+					.replace(' ', '_')), "<redirectedFrom>", FactComponent
+					.forStringWithLanguage(redirect.getKey(),
+							this.language.equals("en") ? "eng" : this.language)));
 		}
-		
+
 		Announce.done();
 	}
 
@@ -137,14 +128,15 @@ public class RedirectExtractor extends Extractor {
 	public RedirectExtractor(File wikipedia) {
 		this(wikipedia, decodeLang(wikipedia.getName()));
 	}
-	
+
 	public RedirectExtractor(File wikipedia, String lang) {
 		this.wikipedia = wikipedia;
 		this.language = lang;
 	}
-	
+
 	public static void main(String[] args) throws Exception {
-	    Announce.setLevel(Announce.Level.DEBUG);
-	    new RedirectExtractor(new File("D:/en_wikitest.xml")).extract(new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
-	  }
+		Announce.setLevel(Announce.Level.DEBUG);
+		new RedirectExtractor(new File("D:/en_wikitest.xml")).extract(new File(
+				"D:/data3/yago2s"), "Test on 1 wikipedia article");
+	}
 }

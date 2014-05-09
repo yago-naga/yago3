@@ -2,9 +2,14 @@ package fromThemes;
 
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import basics.Fact;
+import basics.Theme;
+import basics.Theme.ThemeGroup;
+import basics.YAGO;
 import fromWikipedia.CategoryMapper;
 import fromWikipedia.CategoryTypeExtractor;
 import fromWikipedia.CoordinateExtractor;
@@ -14,15 +19,7 @@ import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.InfoboxMapper;
 import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
-import fromWikipedia.WikipediaLabelExtractor;
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import basics.Fact;
-import basics.FactSource;
-import basics.FactWriter;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
-import basics.YAGO;
+import fromWikipedia.WikidataLabelExtractor;
 
 /**
  * YAGO2s - SourceExtractor
@@ -40,12 +37,11 @@ public class SourceExtractor extends Extractor {
 		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
 				PersonNameExtractor.PERSONNAMESOURCES,
 				RuleExtractor.RULESOURCES,
-				WikipediaLabelExtractor.WIKIPEDIALABELSOURCES,
+				WikidataLabelExtractor.WIKIPEDIALABELSOURCES,
 				FlightExtractor.FLIGHTSOURCE,
 				CoordinateExtractor.COORDINATE_SOURCES,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES,
 				FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE));
-
 		input.addAll(InfoboxMapper.INFOBOXSOURCES.inAllLanguages());
 		input.addAll(CategoryMapper.CATEGORYSOURCES.inAllLanguages());
 		input.addAll(CategoryTypeExtractor.CATEGORYTYPESOURCES.inAllLanguages());
@@ -62,16 +58,14 @@ public class SourceExtractor extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> output,
-			Map<Theme, FactSource> input) throws Exception {
+	public void extract() throws Exception {
 		Announce.doing("Extracting sources");
-		FactWriter w = output.get(YAGOSOURCES);
-		for (Theme theme : input.keySet()) {
+		for (Theme theme : input()) {
 			Announce.doing("Extracting sources from", theme);
-			for (Fact fact : input.get(theme)) {
+			for (Fact fact : theme.factSource()) {
 				if (fact.getRelation().equals(YAGO.extractionSource)
 						|| fact.getRelation().equals(YAGO.extractionTechnique)) {
-					w.write(fact);
+					YAGOSOURCES.write(fact);
 				}
 			}
 			Announce.done();

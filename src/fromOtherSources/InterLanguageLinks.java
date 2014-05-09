@@ -3,8 +3,8 @@ package fromOtherSources;
 import java.io.File;
 import java.util.Arrays;
 import java.util.Collection;
-import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,8 +14,6 @@ import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
 import basics.Fact;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.N4Reader;
 import basics.Theme;
 import fromWikipedia.Extractor;
@@ -43,6 +41,19 @@ public class InterLanguageLinks extends Extractor {
 			"yagoInterLanguageLinks",
 			"The inter-language synonyms from Wikidata (http://http://www.wikidata.org/).");
 
+	/** Words for "category" in different languages */
+	public static final Theme CATEGORYWORDS = new Theme("categoryWords",
+			"Words for 'category' in different languages.");
+
+	/** Translations of infobox templates */
+	public static final Theme INFOBOX_TEMPLATE_TRANSLATIONS = new Theme(
+			"infoboxTemplateTranslations",
+			"Template names in different languages.");
+
+	/** Translations of categories */
+	public static final Theme CATEGORY_TRANSLATIONS = new Theme(
+			"categoryTranslations", "Category names in different languages.");
+
 	public InterLanguageLinks(File inputFolder) {
 		this.inputFile = inputFolder.isFile() ? inputFolder : new File(
 				inputFolder, "wikidata.rdf");
@@ -52,12 +63,13 @@ public class InterLanguageLinks extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return Collections.emptySet();
+		return new FinalSet<>(PatternHardExtractor.LANGUAGECODEMAPPING);
 	}
 
 	@Override
 	public Set<Theme> output() {
-		return (new FinalSet<Theme>(INTERLANGUAGELINKS));
+		return (new FinalSet<Theme>(INTERLANGUAGELINKS, CATEGORYWORDS,
+				CATEGORY_TRANSLATIONS, INFOBOX_TEMPLATE_TRANSLATIONS));
 	}
 
 	@Override
@@ -81,31 +93,74 @@ public class InterLanguageLinks extends Extractor {
 	}
 
 	/** Extracts the language links from wikidata */
-	public void extract(File input, FactWriter writer) throws Exception {
+	public void extract(File input, Theme writer) throws Exception {
+		Set<String> goodLanguages = new HashSet<>();
+		goodLanguages.addAll(PatternHardExtractor.LANGUAGECODEMAPPING
+				.factCollection().getSubjects());
+		goodLanguages.addAll(PatternHardExtractor.LANGUAGECODEMAPPING
+				.factCollection().getObjects());
+
+		// Categories for which we have already translated the word "category"
+		Set<String> categoryWordLanguages = new HashSet<>();
+
 		N4Reader nr = new N4Reader(input);
 		// Maps a language such as "en" to the name in that language
 		Map<String, String> language2name = new HashMap<String, String>();
 		while (nr.hasNext()) {
 			Fact f = nr.next();
-			// D.p(f);
 			// Record a new name in the map
 			if (f.getRelation().endsWith("/inLanguage>")) {
-				String[] parts = f.getArg(1).split("/");
-				String name = parts[parts.length - 1];
-				language2name.put(FactComponent.stripQuotes(f.getArg(2)), name);
+				String lan = FactComponent.stripQuotes(f.getObject());
+				if (!goodLanguages.contains(lan))
+					continue;
+				language2name.put(lan, FactComponent.stripPrefix(Char
+						.decodePercentage(f.getSubject())));
 			} else if (f.getArg(2).endsWith("#Item>")
 					&& !language2name.isEmpty()) {
-				// New item starts, find the most English name for the entity
+				// New item starts, let's flush out the previous one
 				String mostEnglishLan = mostEnglishLanguage(language2name
 						.keySet());
 				String mostEnglishName = language2name.get(mostEnglishLan);
-				mostEnglishName = Char.cutLast(mostEnglishName);
-				for (Map.Entry<String, String> entry : language2name.entrySet()) {
-					writer.write(new Fact(FactComponent.forYagoEntity(Char
-							.decodePercentage(mostEnglishName)), "rdfs:label",
-							FactComponent.forStringWithLanguage(Char
-									.decodePercentage(Char.cutLast(entry
-											.getValue())), entry.getKey())));
+				for (String lan : language2name.keySet()) {
+					writer.write(new Fact(FactComponent.forForeignYagoEntity(
+							mostEnglishName, mostEnglishLan), "rdfs:label",
+							FactComponent.forStringWithLanguage(
+									language2name.get(lan), lan)));
+				}
+				if (mostEnglishLan.equals("en")
+						&& mostEnglishName.startsWith("Category:")) {
+					for (String lan : language2name.keySet()) {
+						String catword = language2name.get(lan);
+						int cutpos = catword.indexOf(':');
+						if (cutpos == -1)
+							continue;
+						String name = catword.substring(cutpos + 1);
+						catword = catword.substring(cutpos);
+						if (!categoryWordLanguages.contains(lan)) {
+							CATEGORYWORDS.write(new Fact(FactComponent
+									.forString(lan), "<_hasCategoryWord>",
+									FactComponent.forString(catword)));
+						}
+						CATEGORY_TRANSLATIONS.write(new Fact(FactComponent
+								.forString(name), "<_translatedFrom/" + lan
+								+ ">", FactComponent.forString(mostEnglishName
+								.substring(8))));
+					}
+				}
+				if (mostEnglishLan.equals("en")
+						&& mostEnglishName.startsWith("Template:Infobox_")) {
+					for (String lan : language2name.keySet()) {
+						String name = language2name.get(lan);
+						int cutpos = name.indexOf('_');
+						if (cutpos == -1)
+							continue;
+						name = name.substring(cutpos + 1);
+						INFOBOX_TEMPLATE_TRANSLATIONS.write(new Fact(
+								FactComponent.forString(name),
+								"<_translatedFrom/" + lan + ">", FactComponent
+										.forString(mostEnglishName
+												.substring(17))));
+					}
 				}
 				language2name.clear();
 			}
@@ -114,11 +169,10 @@ public class InterLanguageLinks extends Extractor {
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> writers,
-			Map<Theme, FactSource> factCollections) throws Exception {
+	public void extract() throws Exception {
 		Announce.doing("Copying language links");
 		Announce.message("Input folder is", inputFile);
-		extract(inputFile, writers.get(INTERLANGUAGELINKS));
+		extract(inputFile, INTERLANGUAGELINKS);
 		Announce.done();
 	}
 

@@ -1,23 +1,20 @@
 package fromThemes;
 
 import java.util.Arrays;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import fromOtherSources.HardExtractor;
-import fromWikipedia.Extractor;
-import fromWikipedia.Extractor.FollowUpExtractor;
-
 import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactSource;
-import basics.FactWriter;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import followUp.FollowUpExtractor;
+import fromOtherSources.HardExtractor;
+import fromWikipedia.Extractor;
 
 /**
  * YAGO2s - TypeChecker
@@ -28,6 +25,11 @@ import basics.YAGO;
  * 
  */
 public class TypeChecker extends FollowUpExtractor {
+
+	@Override
+	public Set<Theme> inputCached() {
+		return new FinalSet<>(HardExtractor.HARDWIREDFACTS);
+	}
 
 	@Override
 	public Set<Theme> input() {
@@ -48,7 +50,7 @@ public class TypeChecker extends FollowUpExtractor {
 	}
 
 	/** Holds the transitive types */
-	protected Map<String, Set<String>> types;
+	protected FactCollection types;
 
 	/** Holds the schema */
 	protected FactCollection schema;
@@ -56,12 +58,12 @@ public class TypeChecker extends FollowUpExtractor {
 	/** Type checks a fact. */
 	public boolean check(Fact fact) {
 
-		String domain = schema.getArg2(fact.getRelation(), RDFS.domain);
+		String domain = schema.getObject(fact.getRelation(), RDFS.domain);
 		if (!check(fact.getArg(1), domain)) {
 			Announce.debug("Domain check failed", fact);
 			return (false);
 		}
-		String range = schema.getArg2(fact.getRelation(), RDFS.range);
+		String range = schema.getObject(fact.getRelation(), RDFS.range);
 		if (!check(fact.getArg(2), range)) {
 			Announce.debug("Range check failed", fact);
 			return (false);
@@ -69,12 +71,12 @@ public class TypeChecker extends FollowUpExtractor {
 		return (true);
 	}
 
-	/** Checks whether an entity is of a type. TRUE if the type is NULL */
+	/** Checks whether an entity is of a type*/
 	public boolean check(String entity, String type) {
 
 		// Check syntax
-		String syntaxChecker = FactComponent.asJavaString(schema.getArg2(type,
-				"<_hasTypeCheckPattern>"));
+		String syntaxChecker = FactComponent.asJavaString(schema.getObject(
+				type, "<_hasTypeCheckPattern>"));
 
 		if (syntaxChecker != null && FactComponent.asJavaString(entity) != null
 				&& !FactComponent.asJavaString(entity).matches(syntaxChecker)) {
@@ -104,12 +106,10 @@ public class TypeChecker extends FollowUpExtractor {
 		}
 
 		// Check taxonomical type
-		if (type == null)
-			return (true);
 		if (type.equals(RDFS.resource))
 			return (true);
 		if (type.equals(YAGO.entity)) {
-			return (types.containsKey(entity));
+			return (types.containsSubject(entity));
 		}
 		if (type.equals(RDFS.statement)) {
 			return (FactComponent.isFactId(entity));
@@ -128,21 +128,21 @@ public class TypeChecker extends FollowUpExtractor {
 						.equals(YAGO.languageString));
 			return (schema.isSubClassOf(literal[1], type));
 		}
-		Set<String> myTypes = types.get(entity);
+		Set<String> myTypes = types.collectObjects(entity, "rdf:type");
 		return (myTypes != null && myTypes.contains(type));
 	}
 
 	@Override
-	public void extract(Map<Theme, FactWriter> output,
-			Map<Theme, FactSource> input) throws Exception {
-		types = TransitiveTypeExtractor.yagoTaxonomy(input);
-		schema = new FactCollection(input.get(HardExtractor.HARDWIREDFACTS));
+	public void extract() throws Exception {
+		types = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
+		schema = HardExtractor.HARDWIREDFACTS.factCollection();
 		Announce.doing("Type-checking facts of", checkMe);
-		FactWriter w = output.get(checked);
-		for (Fact f : input.get(checkMe)) {
+		for (Fact f : checkMe.factSource()) {
 			if (check(f))
-				w.write(f);
+				checked.write(f);
 		}
+		schema = null;
+		types = null;
 		Announce.done();
 	}
 

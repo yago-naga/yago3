@@ -1,19 +1,15 @@
 package fromOtherSources;
 
 import java.io.File;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-
-import fromWikipedia.Extractor;
-
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;
-import basics.FactWriter;
 import basics.Theme;
+import fromWikipedia.Extractor;
 
 /**
  * HardExtractor - YAGO2s
@@ -40,22 +36,22 @@ public class HardExtractor extends Extractor {
 	}
 	
 	/** Helper */
-	public void extract(File input, FactWriter writer) throws Exception {
+	public void extract(File input, Theme theme) throws Exception {
 		if (!input.getName().endsWith(".ttl"))
 			return;
 		Announce.doing("Copying hard wired facts from", input.getName());
 		for (Fact f : FactSource.from(input)) {
-			writer.write(f);
+			theme.write(f);
 		}
 		Announce.done();
 	}
 
 	@Override
-	public void extract(Map<Theme,FactWriter> writers, Map<Theme,FactSource> factCollections) throws Exception {
+	public void extract() throws Exception {
 		Announce.doing("Copying hard wired facts");
 		Announce.message("Input folder is", inputFolder);
 		for (File f : inputFolder.listFiles())
-			extract(f, writers.get(HARDWIREDFACTS));
+			extract(f, HARDWIREDFACTS);
 		Announce.done();
 	}
 

@@ -3,13 +3,11 @@ package fromThemes;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.FactCollection;
-import basics.FactSource;
 import basics.Theme;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
@@ -62,10 +60,9 @@ public class RuleExtractor extends BaseRuleExtractor {
 
 	/** Extract rule collection from fact sources */
 	@Override
-	public FactCollection getInputRuleCollection(Map<Theme, FactSource> input)
-			throws Exception {
-		FactSource rules = input.get(PatternHardExtractor.RULES);
-		FactCollection collection = new FactCollection(rules);
+	public FactCollection getInputRuleCollection() throws Exception {
+		FactCollection collection = new FactCollection(
+				PatternHardExtractor.RULES.factSource());
 		return collection;
 	}
 
