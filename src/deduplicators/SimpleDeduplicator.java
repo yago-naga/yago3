@@ -39,7 +39,7 @@ public abstract class SimpleDeduplicator extends Extractor {
 
 	@Override
 	public void extract() throws Exception {
-		Announce.doing("Deduplicating", this.getClass().getSimpleName());
+		Announce.doing("Running", this.getClass().getSimpleName());
 		Set<String> functions = null;
 		if (!input().contains(SchemaExtractor.YAGOSCHEMA)) {
 			Announce.warning("Deduplicators should have SchemaExtractor.YAGOSCHEMA, in their required input!");
@@ -64,7 +64,6 @@ public abstract class SimpleDeduplicator extends Extractor {
 		for (Fact f : batch)
 			myOutput().write(f);
 		Announce.done();
-		myOutput().close();
 
 		Announce.done();
 	}

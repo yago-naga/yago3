@@ -52,7 +52,8 @@ public class TitleExtractor {
 	 */
 	public TitleExtractor(String language) throws IOException {
 		if (!PatternHardExtractor.TITLEPATTERNS.isAvailable()) {
-			Announce.error("The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
+			throw new RuntimeException(
+					"The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
 		}
 		replacer = new PatternList(
 				PatternHardExtractor.TITLEPATTERNS.factCollection(),
@@ -67,7 +68,8 @@ public class TitleExtractor {
 			this.entities = TransitiveTypeExtractor.TRANSITIVETYPE
 					.factCollection().getSubjects();
 		} else if (language.equals("en")) {
-			this.wordnetWords = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings().keySet();
+			this.wordnetWords = WordnetExtractor.PREFMEANINGS.factCollection()
+					.getPreferredMeanings().keySet();
 		}
 		this.language = language;
 	}

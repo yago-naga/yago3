@@ -1,0 +1,29 @@
+# test
+# Maps a foreign entity to a YAGO entity. Data from (http://http://www.wikidata.org/).
+# INTERNAL
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<de/Spanien>	<_hasTranslation>	<Spain> .
+<de/Vereinigte_Staaten>	<_hasTranslation>	<United_States> .
+<de/Universum>	<_hasTranslation>	<Universe> .
+<de/Leben>	<_hasTranslation>	<Life> .
+<de/Tod>	<_hasTranslation>	<Death> .
+<de/Türkei>	<_hasTranslation>	<Turkey> .
+<de/Club-Mate>	<_hasTranslation>	<Club-Mate> .
+<de/Niederlande>	<_hasTranslation>	<Netherlands> .
+<de/New_York_City>	<_hasTranslation>	<New_York_City> .
+<de/San_Francisco>	<_hasTranslation>	<San_Francisco> .
+<de/Los_Angeles>	<_hasTranslation>	<Los_Angeles> .
+<de/Zürich>	<_hasTranslation>	<Zurich> .
+<de/Boston>	<_hasTranslation>	<Boston> .
+<de/Esperanto>	<_hasTranslation>	<Esperanto> .
+<de/Vilnius>	<_hasTranslation>	<Vilnius> .
+<de/Andorra>	<_hasTranslation>	<Andorra> .
+<de/Vorlage:Infobox_Insel>	<_hasTranslation>	<Template:Infobox_islands> .

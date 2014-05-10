@@ -1,0 +1,1168 @@
+# Test on 1 wikipedia article
+# Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated
+# INTERNAL
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_1ya05qi_1hs_wozuq1>
+<de/Alan_Smithee>	<hasWikiCategory/de>	"Fiktive Person" .
+#@ <id_1ya05qi_1hs_c4tysk>
+<de/Alan_Smithee>	<hasWikiCategory/de>	"Pseudonym" .
+#@ <id_1ya05qi_1hs_3mustr>
+<de/Alan_Smithee>	<hasWikiCategory/de>	"Sammelpseudonym" .
+#@ <id_1ya05qi_1hs_1f7lqfz>
+<de/Alan_Smithee>	<hasWikiCategory/de>	"Werk von Alan Smithee" .
+#@ <id_1cae7a1_1hs_18eq1yv>
+<de/Ang_Lee>	<hasWikiCategory/de>	"Taiwanischer Künstler" .
+#@ <id_1cae7a1_1hs_1brhla2>
+<de/Ang_Lee>	<hasWikiCategory/de>	"Drehbuchautor" .
+#@ <id_1cae7a1_1hs_1f2yccp>
+<de/Ang_Lee>	<hasWikiCategory/de>	"Filmregisseur" .
+#@ <id_1cae7a1_1hs_f253l7>
+<de/Ang_Lee>	<hasWikiCategory/de>	"Oscarpreisträger" .
+#@ <id_1cae7a1_1hs_1ulbx13>
+<de/Ang_Lee>	<hasWikiCategory/de>	"Golden-Globe-Preisträger" .
+#@ <id_1cae7a1_1hs_p98gwl>
+<de/Ang_Lee>	<hasWikiCategory/de>	"Taiwaner" .
+#@ <id_1cae7a1_1hs_3lcxkn>
+<de/Ang_Lee>	<hasWikiCategory/de>	"Geboren 1954" .
+#@ <id_1cae7a1_1hs_zjz9mc>
+<de/Ang_Lee>	<hasWikiCategory/de>	"Mann" .
+#@ <id_43ixq_1hs_1vq09vb>
+<de/Anschluss_(Soziologie)>	<hasWikiCategory/de>	"Soziologische Systemtheorie" .
+#@ <id_1na8y7p_1hs_10qdgli>
+<de/Aussagenlogik>	<hasWikiCategory/de>	"Logik" .
+#@ <id_1na8y7p_1hs_39zd0z>
+<de/Aussagenlogik>	<hasWikiCategory/de>	"Sprachphilosophie" .
+#@ <id_1e250cu_1hs_10kfts3>
+<de/Liste_von_Autoren/A>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250cu_1hs_12mitg>
+<de/Liste_von_Autoren/A>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d1_1hs_10kfts3>
+<de/Liste_von_Autoren/H>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d1_1hs_12mitg>
+<de/Liste_von_Autoren/H>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250cw_1hs_10kfts3>
+<de/Liste_von_Autoren/C>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250cw_1hs_12mitg>
+<de/Liste_von_Autoren/C>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d2_1hs_10kfts3>
+<de/Liste_von_Autoren/I>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d2_1hs_12mitg>
+<de/Liste_von_Autoren/I>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d4_1hs_10kfts3>
+<de/Liste_von_Autoren/K>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d4_1hs_12mitg>
+<de/Liste_von_Autoren/K>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d3_1hs_10kfts3>
+<de/Liste_von_Autoren/J>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d3_1hs_12mitg>
+<de/Liste_von_Autoren/J>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250df_1hs_10kfts3>
+<de/Liste_von_Autoren/V>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250df_1hs_12mitg>
+<de/Liste_von_Autoren/V>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d0_1hs_10kfts3>
+<de/Liste_von_Autoren/G>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d0_1hs_12mitg>
+<de/Liste_von_Autoren/G>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250dg_1hs_10kfts3>
+<de/Liste_von_Autoren/W>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250dg_1hs_12mitg>
+<de/Liste_von_Autoren/W>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250cv_1hs_10kfts3>
+<de/Liste_von_Autoren/B>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250cv_1hs_12mitg>
+<de/Liste_von_Autoren/B>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250cx_1hs_10kfts3>
+<de/Liste_von_Autoren/D>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250cx_1hs_12mitg>
+<de/Liste_von_Autoren/D>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250dc_1hs_10kfts3>
+<de/Liste_von_Autoren/S>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250dc_1hs_12mitg>
+<de/Liste_von_Autoren/S>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250dd_1hs_10kfts3>
+<de/Liste_von_Autoren/T>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250dd_1hs_12mitg>
+<de/Liste_von_Autoren/T>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d6_1hs_10kfts3>
+<de/Liste_von_Autoren/M>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d6_1hs_12mitg>
+<de/Liste_von_Autoren/M>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d8_1hs_10kfts3>
+<de/Liste_von_Autoren/O>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d8_1hs_12mitg>
+<de/Liste_von_Autoren/O>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250cz_1hs_10kfts3>
+<de/Liste_von_Autoren/F>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250cz_1hs_12mitg>
+<de/Liste_von_Autoren/F>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250cy_1hs_10kfts3>
+<de/Liste_von_Autoren/E>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250cy_1hs_12mitg>
+<de/Liste_von_Autoren/E>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d5_1hs_10kfts3>
+<de/Liste_von_Autoren/L>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d5_1hs_12mitg>
+<de/Liste_von_Autoren/L>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d7_1hs_10kfts3>
+<de/Liste_von_Autoren/N>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d7_1hs_12mitg>
+<de/Liste_von_Autoren/N>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250d9_1hs_10kfts3>
+<de/Liste_von_Autoren/P>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250d9_1hs_12mitg>
+<de/Liste_von_Autoren/P>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250da_1hs_10kfts3>
+<de/Liste_von_Autoren/Q>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250da_1hs_12mitg>
+<de/Liste_von_Autoren/Q>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250db_1hs_10kfts3>
+<de/Liste_von_Autoren/R>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250db_1hs_12mitg>
+<de/Liste_von_Autoren/R>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250de_1hs_10kfts3>
+<de/Liste_von_Autoren/U>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250de_1hs_12mitg>
+<de/Liste_von_Autoren/U>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250di_1hs_10kfts3>
+<de/Liste_von_Autoren/Y>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250di_1hs_12mitg>
+<de/Liste_von_Autoren/Y>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_1e250dj_1hs_10kfts3>
+<de/Liste_von_Autoren/Z>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1e250dj_1hs_12mitg>
+<de/Liste_von_Autoren/Z>	<hasWikiCategory/de>	"Wikipedia:Liste" .
+#@ <id_ykgyd7_1hs_10kfts3>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Autor" .
+#@ <id_ykgyd7_1hs_k5sqia>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Literatur (20. Jahrhundert)" .
+#@ <id_ykgyd7_1hs_e3jfbk>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Literatur (Englisch)" .
+#@ <id_ykgyd7_1hs_10m0wg7>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Drama" .
+#@ <id_ykgyd7_1hs_122u2cc>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Theaterregisseur" .
+#@ <id_ykgyd7_1hs_7beilw>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Hörspielautor" .
+#@ <id_ykgyd7_1hs_1brhla2>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Drehbuchautor" .
+#@ <id_ykgyd7_1hs_1f2yccp>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Filmregisseur" .
+#@ <id_ykgyd7_1hs_wekbnv>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Filmproduzent" .
+#@ <id_ykgyd7_1hs_f253l7>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Oscarpreisträger" .
+#@ <id_ykgyd7_1hs_1q4lqp9>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Opernregisseur" .
+#@ <id_ykgyd7_1hs_4fjc69>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Commander des Order of the British Empire" .
+#@ <id_ykgyd7_1hs_10kxhd6>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Brite" .
+#@ <id_ykgyd7_1hs_3lcxkn>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Geboren 1954" .
+#@ <id_ykgyd7_1hs_yu2af1>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Gestorben 2008" .
+#@ <id_ykgyd7_1hs_zjz9mc>
+<de/Anthony_Minghella>	<hasWikiCategory/de>	"Mann" .
+#@ <id_ycqgzi_1hs_1xfnpk2>
+<de/US-amerikanischer_Film>	<hasWikiCategory/de>	"Film in den Vereinigten Staaten" .
+#@ <id_ycqgzi_1hs_oxphwp>
+<de/US-amerikanischer_Film>	<hasWikiCategory/de>	"Filmgeschichte" .
+#@ <id_1nnnucv_1hs_h1jd47>
+<de/Vorsätze_für_Maßeinheiten>	<hasWikiCategory/de>	"Maßeinheit" .
+#@ <id_1nnnucv_1hs_11rwx32>
+<de/Vorsätze_für_Maßeinheiten>	<hasWikiCategory/de>	"Liste (Technik)" .
+#@ <id_1nnnucv_1hs_1p3du1n>
+<de/Vorsätze_für_Maßeinheiten>	<hasWikiCategory/de>	"Liste (Abkürzungen)" .
+#@ <id_1lijj5k_1hs_pelmsc>
+<de/Abkürzungen/Gesetze_und_Recht>	<hasWikiCategory/de>	"Liste (Recht)" .
+#@ <id_1lijj5k_1hs_9uj81p>
+<de/Abkürzungen/Gesetze_und_Recht>	<hasWikiCategory/de>	"Rechtssprache" .
+#@ <id_1lijj5k_1hs_1p3du1n>
+<de/Abkürzungen/Gesetze_und_Recht>	<hasWikiCategory/de>	"Liste (Abkürzungen)" .
+#@ <id_1w79d94_1hs_1wcebss>
+<de/Liste_von_Abkürzungen_(Computer)>	<hasWikiCategory/de>	"Liste (Informatik)" .
+#@ <id_1w79d94_1hs_1p3du1n>
+<de/Liste_von_Abkürzungen_(Computer)>	<hasWikiCategory/de>	"Liste (Abkürzungen)" .
+#@ <id_15itdy6_1hs_ngeac5>
+<de/Liste_von_Unternehmen_mit_Namensherkunftserklärungen>	<hasWikiCategory/de>	"Liste (Namen)" .
+#@ <id_15ay2do_1hs_1liio1w>
+<de/ISO_4217>	<hasWikiCategory/de>	"ISO-Norm" .
+#@ <id_15ay2do_1hs_w18jw6>
+<de/ISO_4217>	<hasWikiCategory/de>	"Währungseinheit" .
+#@ <id_imad33_1hs_1m3rb2g>
+<de/Achsensprung_(Film)>	<hasWikiCategory/de>	"Filmgestaltung" .
+#@ <id_imad33_1hs_1n8dzlt>
+<de/Achsensprung_(Film)>	<hasWikiCategory/de>	"Postproduktion" .
+#@ <id_sbh5gx_1hs_1598mte>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Alfred Hitchcock" .
+#@ <id_sbh5gx_1hs_1f2yccp>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Filmregisseur" .
+#@ <id_sbh5gx_1hs_wekbnv>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Filmproduzent" .
+#@ <id_sbh5gx_1hs_1h8nc8e>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Knight Commander des Order of the British Empire" .
+#@ <id_sbh5gx_1hs_14rum33>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Mitglied der Ehrenlegion (Ritter)" .
+#@ <id_sbh5gx_1hs_17pl7cd>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Träger des Ordre des Arts et des Lettres (Offizier)" .
+#@ <id_sbh5gx_1hs_8ifsic>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Person (London)" .
+#@ <id_sbh5gx_1hs_10kxhd6>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Brite" .
+#@ <id_sbh5gx_1hs_1jeot50>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"US-Amerikaner" .
+#@ <id_sbh5gx_1hs_3lcwxj>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Geboren 1899" .
+#@ <id_sbh5gx_1hs_yu1uaf>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Gestorben 1980" .
+#@ <id_sbh5gx_1hs_zjz9mc>
+<de/Alfred_Hitchcock>	<hasWikiCategory/de>	"Mann" .
+#@ <id_6isaer_1hs_zjuylg>
+<de/Auteur-Theorie>	<hasWikiCategory/de>	"Film" .
+#@ <id_6isaer_1hs_q2vdw6>
+<de/Auteur-Theorie>	<hasWikiCategory/de>	"Filmwissenschaft" .
+#@ <id_wcleg0_1hs_1f2yccp>
+<de/Aki_Kaurismäki>	<hasWikiCategory/de>	"Filmregisseur" .
+#@ <id_wcleg0_1hs_1brhla2>
+<de/Aki_Kaurismäki>	<hasWikiCategory/de>	"Drehbuchautor" .
+#@ <id_wcleg0_1hs_w7el3w>
+<de/Aki_Kaurismäki>	<hasWikiCategory/de>	"Träger der finnischen Auszeichnung Akademiker" .
+#@ <id_wcleg0_1hs_10mz0f6>
+<de/Aki_Kaurismäki>	<hasWikiCategory/de>	"Finne" .
+#@ <id_wcleg0_1hs_3lcxkq>
+<de/Aki_Kaurismäki>	<hasWikiCategory/de>	"Geboren 1957" .
+#@ <id_wcleg0_1hs_zjz9mc>
+<de/Aki_Kaurismäki>	<hasWikiCategory/de>	"Mann" .
+#@ <id_jmy1c6_1hs_10kb4no>
+<de/Anime>	<hasWikiCategory/de>	"Anime" .
+#@ <id_1ug6cyw_1hs_1eshe8v>
+<de/Actionfilm>	<hasWikiCategory/de>	"Filmgenre" .
+#@ <id_1ug6cyw_1hs_s368re>
+<de/Actionfilm>	<hasWikiCategory/de>	"Actionfilm" .
+#@ <id_1hjbn32_1hs_1ulbx13>
+<de/Al_Pacino>	<hasWikiCategory/de>	"Golden-Globe-Preisträger" .
+#@ <id_1hjbn32_1hs_c8uc4>
+<de/Al_Pacino>	<hasWikiCategory/de>	"Schauspieler" .
+#@ <id_1hjbn32_1hs_f253l7>
+<de/Al_Pacino>	<hasWikiCategory/de>	"Oscarpreisträger" .
+#@ <id_1hjbn32_1hs_1kaujlu>
+<de/Al_Pacino>	<hasWikiCategory/de>	"Emmy-Preisträger" .
+#@ <id_1hjbn32_1hs_1jeot50>
+<de/Al_Pacino>	<hasWikiCategory/de>	"US-Amerikaner" .
+#@ <id_1hjbn32_1hs_6p2nxm>
+<de/Al_Pacino>	<hasWikiCategory/de>	"Person (New York City)" .
+#@ <id_1hjbn32_1hs_3lcxjo>
+<de/Al_Pacino>	<hasWikiCategory/de>	"Geboren 1940" .
+#@ <id_1hjbn32_1hs_zjz9mc>
+<de/Al_Pacino>	<hasWikiCategory/de>	"Mann" .
+#@ <id_1d4nw1p_1hs_1byhzau>
+<de/Alkohole>	<hasWikiCategory/de>	"Alkohol" .
+#@ <id_1d4nw1p_1hs_1u9bsi1>
+<de/Alkohole>	<hasWikiCategory/de>	"Stoffgruppe" .
+#@ <id_1d4nw1p_1hs_1yyxxqc>
+<de/Alkohole>	<hasWikiCategory/de>	"Biogener Brennstoff" .
+#@ <id_l4kogx_1hs_eg3eec>
+<de/The_Visitors>	<hasWikiCategory/de>	"Nummer-eins-Album" .
+#@ <id_l4kogx_1hs_oggfn3>
+<de/The_Visitors>	<hasWikiCategory/de>	"Album (Pop)" .
+#@ <id_l4kogx_1hs_jsumoy>
+<de/The_Visitors>	<hasWikiCategory/de>	"ABBA-Album" .
+#@ <id_l4kogx_1hs_1hhrcr6>
+<de/The_Visitors>	<hasWikiCategory/de>	"Album 1981" .
+#@ <id_z5e1bf_1hs_9m9juy>
+<de/Aluminium>	<hasWikiCategory/de>	"Mineral" .
+#@ <id_z5e1bf_1hs_1wlonjs>
+<de/Aluminium>	<hasWikiCategory/de>	"Kubisches Kristallsystem" .
+#@ <id_z5e1bf_1hs_zp0nor>
+<de/Aluminium>	<hasWikiCategory/de>	"Elemente (Mineralklasse)" .
+#@ <id_z5e1bf_1hs_1utb5tj>
+<de/Aluminium>	<hasWikiCategory/de>	"Elektrotechnischer Werkstoff" .
+#@ <id_1chqlks_1hs_9m9juy>
+<de/Antimon>	<hasWikiCategory/de>	"Mineral" .
+#@ <id_1chqlks_1hs_8bl7zt>
+<de/Antimon>	<hasWikiCategory/de>	"Trigonales Kristallsystem" .
+#@ <id_1chqlks_1hs_zp0nor>
+<de/Antimon>	<hasWikiCategory/de>	"Elemente (Mineralklasse)" .
+#@ <id_jn0juv_1hs_wysu7l>
+<de/Argon>	<hasWikiCategory/de>	"Löschmittel" .
+#@ <id_jn0juv_1hs_9fr0m3>
+<de/Argon>	<hasWikiCategory/de>	"Lebensmittelzusatzstoff" .
+#@ <id_jn0sil_1hs_9m9juy>
+<de/Arsen>	<hasWikiCategory/de>	"Mineral" .
+#@ <id_jn0sil_1hs_8bl7zt>
+<de/Arsen>	<hasWikiCategory/de>	"Trigonales Kristallsystem" .
+#@ <id_jn0sil_1hs_zp0nor>
+<de/Arsen>	<hasWikiCategory/de>	"Elemente (Mineralklasse)" .
+#@ <id_jn1g5j_1hs_euaces>
+<de/Astat>	<hasWikiCategory/de>	"Halbmetall" .
+#@ <id_10d55g4_1hs_1mdr6qr>
+<de/Alkalimetalle>	<hasWikiCategory/de>	"Alkalimetall" .
+#@ <id_10d55g4_1hs_1qs0u2v>
+<de/Alkalimetalle>	<hasWikiCategory/de>	"Gruppe des Periodensystems" .
+#@ <id_17detes_1hs_96zgpf>
+<de/Actinoide>	<hasWikiCategory/de>	"Actinoid" .
+#@ <id_17detes_1hs_1qs0u2v>
+<de/Actinoide>	<hasWikiCategory/de>	"Gruppe des Periodensystems" .
+#@ <id_1o7hef3_1hs_35q9np>
+<de/Atom>	<hasWikiCategory/de>	"Atomphysik" .
+#@ <id_1o7hd7d_1hs_1pnzjj1>
+<de/Arzt>	<hasWikiCategory/de>	"Freier Beruf" .
+#@ <id_1o7hd7d_1hs_18849cw>
+<de/Arzt>	<hasWikiCategory/de>	"Heilberuf" .
+#@ <id_1o7hd7d_1hs_xf1jvz>
+<de/Arzt>	<hasWikiCategory/de>	"Mediziner" .
+#@ <id_1o7hd7d_1hs_75zvtp>
+<de/Arzt>	<hasWikiCategory/de>	"Hochschulberuf" .
+#@ <id_5r127p_1hs_3ghchv>
+<de/Anthropologie>	<hasWikiCategory/de>	"Anthropologie" .
+#@ <id_5r127p_1hs_1mojbxt>
+<de/Anthropologie>	<hasWikiCategory/de>	"Philosophische Anthropologie" .
+#@ <id_5r127p_1hs_1mfc8zv>
+<de/Anthropologie>	<hasWikiCategory/de>	"Rechtsmedizin" .
+#@ <id_5r127p_1hs_fr2gfa>
+<de/Anthropologie>	<hasWikiCategory/de>	"Ethnologie" .
+#@ <id_5r127p_1hs_1y10m3>
+<de/Anthropologie>	<hasWikiCategory/de>	"Evolution" .
+#@ <id_5r127p_1hs_tzkvix>
+<de/Anthropologie>	<hasWikiCategory/de>	"Allgemeine Pädagogik" .
+#@ <id_5r127p_1hs_ar30ya>
+<de/Anthropologie>	<hasWikiCategory/de>	"Wissenschaftliches Fachgebiet" .
+#@ <id_180fbcl_1hs_6ne9v>
+<de/Alexander_der_Große>	<hasWikiCategory/de>	"König (Makedonien)" .
+#@ <id_180fbcl_1hs_2pce81>
+<de/Alexander_der_Große>	<hasWikiCategory/de>	"Alexander der Große" .
+#@ <id_180fbcl_1hs_qayc7a>
+<de/Alexander_der_Große>	<hasWikiCategory/de>	"Person (Alexanderzug)" .
+#@ <id_180fbcl_1hs_epf518>
+<de/Alexander_der_Große>	<hasWikiCategory/de>	"Altägyptischer König (Griechisch-römische Zeit)" .
+#@ <id_180fbcl_1hs_1qv33ly>
+<de/Alexander_der_Große>	<hasWikiCategory/de>	"Militärperson (Makedonien)" .
+#@ <id_180fbcl_1hs_12qyab1>
+<de/Alexander_der_Große>	<hasWikiCategory/de>	"Geboren 356 v. Chr." .
+#@ <id_180fbcl_1hs_1lwt73a>
+<de/Alexander_der_Große>	<hasWikiCategory/de>	"Gestorben 323 v. Chr." .
+#@ <id_180fbcl_1hs_zjz9mc>
+<de/Alexander_der_Große>	<hasWikiCategory/de>	"Mann" .
+#@ <id_14ilnsa_1hs_1w134v0>
+<de/Antike>	<hasWikiCategory/de>	"Antike" .
+#@ <id_14ilnsa_1hs_75txk0>
+<de/Antike>	<hasWikiCategory/de>	"Zeitalter" .
+#@ <id_14ilnsa_1hs_1u6elh>
+<de/Antike>	<hasWikiCategory/de>	"Geschichtswissenschaft" .
+#@ <id_1w0h8i8_1hs_10kfts3>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1w0h8i8_1hs_13wfp24>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Literatur (19. Jahrhundert)" .
+#@ <id_1w0h8i8_1hs_k5sqia>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Literatur (20. Jahrhundert)" .
+#@ <id_1w0h8i8_1hs_e3jfbk>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Literatur (Englisch)" .
+#@ <id_1w0h8i8_1hs_192qxmm>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Roman, Epik" .
+#@ <id_1w0h8i8_1hs_khn056>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Dichterjurist" .
+#@ <id_1w0h8i8_1hs_10kxhd6>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Brite" .
+#@ <id_1w0h8i8_1hs_ascg7t>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Engländer" .
+#@ <id_1w0h8i8_1hs_3lcwus>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Geboren 1863" .
+#@ <id_1w0h8i8_1hs_yu1u67>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Gestorben 1933" .
+#@ <id_1w0h8i8_1hs_zjz9mc>
+<de/Anthony_Hope>	<hasWikiCategory/de>	"Mann" .
+#@ <id_gnbkoo_1hs_asyqig>
+<de/Ångström_(Einheit)>	<hasWikiCategory/de>	"Längeneinheit" .
+#@ <id_14hz8g2_1hs_1ymfa1m>
+<de/Ampere>	<hasWikiCategory/de>	"Elektromagnetische Einheit" .
+#@ <id_14hz8g2_1hs_fx6fmj>
+<de/Ampere>	<hasWikiCategory/de>	"SI-Einheit" .
+#@ <id_1o7h1vn_1hs_ctffk7>
+<de/Acre>	<hasWikiCategory/de>	"Alte Maße und Gewichte (Vereinigtes Königreich)" .
+#@ <id_1o7h1vn_1hs_1rts6lf>
+<de/Acre>	<hasWikiCategory/de>	"Angloamerikanische Einheit" .
+#@ <id_1o7h1vn_1hs_k3f3mu>
+<de/Acre>	<hasWikiCategory/de>	"Flächeneinheit" .
+#@ <id_12rq6b0_1hs_1dfi16z>
+<de/Apostilb>	<hasWikiCategory/de>	"Veraltete Einheit (Physik)" .
+#@ <id_12rq6b0_1hs_11v5038>
+<de/Apostilb>	<hasWikiCategory/de>	"CGS-Einheit" .
+#@ <id_12rq6b0_1hs_1wlm8ys>
+<de/Apostilb>	<hasWikiCategory/de>	"Leuchtdichteeinheit" .
+#@ <id_12rq6b0_1hs_1dfi16z>
+<de/Apostilb>	<hasWikiCategory/de>	"Veraltete Einheit (Physik)" .
+#@ <id_26x78f_1hs_k3f3mu>
+<de/Ar_(Einheit)>	<hasWikiCategory/de>	"Flächeneinheit" .
+#@ <id_26x78f_1hs_1jg5m7q>
+<de/Ar_(Einheit)>	<hasWikiCategory/de>	"Landwirtschaft" .
+#@ <id_26x78f_1hs_gwexo9>
+<de/Ar_(Einheit)>	<hasWikiCategory/de>	"Gesetzliche Einheit in der EU" .
+#@ <id_26x78f_1hs_1kujfta>
+<de/Ar_(Einheit)>	<hasWikiCategory/de>	"Gesetzliche Einheit in der Schweiz" .
+#@ <id_1wurzc2_1hs_p7ugr6>
+<de/Arbeit_(Sozialwissenschaften)>	<hasWikiCategory/de>	"Soziologie der Arbeit" .
+#@ <id_1wurzc2_1hs_i6kxoo>
+<de/Arbeit_(Sozialwissenschaften)>	<hasWikiCategory/de>	"Sozialwissenschaft" .
+#@ <id_1wurzc2_1hs_1wibih2>
+<de/Arbeit_(Sozialwissenschaften)>	<hasWikiCategory/de>	"Arbeitswissenschaft" .
+#@ <id_1wurzc2_1hs_n8dtii>
+<de/Arbeit_(Sozialwissenschaften)>	<hasWikiCategory/de>	"Arbeitswelt" .
+#@ <id_fypoej_1hs_35q9np>
+<de/Atomare_Masseneinheit>	<hasWikiCategory/de>	"Atomphysik" .
+#@ <id_fypoej_1hs_gsy9un>
+<de/Atomare_Masseneinheit>	<hasWikiCategory/de>	"Kernchemie" .
+#@ <id_fypoej_1hs_zx3vth>
+<de/Atomare_Masseneinheit>	<hasWikiCategory/de>	"Masseneinheit" .
+#@ <id_fypoej_1hs_v4aycb>
+<de/Atomare_Masseneinheit>	<hasWikiCategory/de>	"Chemische Einheit" .
+#@ <id_fypoej_1hs_1qdnvx9>
+<de/Atomare_Masseneinheit>	<hasWikiCategory/de>	"Zum Gebrauch mit dem SI zugelassene Einheit" .
+#@ <id_1uyxow_1hs_1tvka9l>
+<de/Anglizismus>	<hasWikiCategory/de>	"Lehnwort" .
+#@ <id_1uyxow_1hs_zi3erp>
+<de/Anglizismus>	<hasWikiCategory/de>	"Sprachkritik" .
+#@ <id_e4e78b_1hs_ghwfj7>
+<de/Astronom>	<hasWikiCategory/de>	"Person der Astronomie" .
+#@ <id_e4e78b_1hs_1f4jyd9>
+<de/Astronom>	<hasWikiCategory/de>	"Berufliche Funktion" .
+#@ <id_9qo7xm_1hs_11abygq>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Hochschullehrer (Manchester)" .
+#@ <id_9qo7xm_1hs_1h2h77v>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Informatiker" .
+#@ <id_9qo7xm_1hs_1wpgwoj>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Logiker" .
+#@ <id_9qo7xm_1hs_9y6b80>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Mathematischer Logiker (20. Jahrhundert)" .
+#@ <id_9qo7xm_1hs_1geudoo>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Theoretischer Biologe" .
+#@ <id_9qo7xm_1hs_9jmmm2>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Kryptologe" .
+#@ <id_9qo7xm_1hs_134rg7e>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Enigma (Maschine)" .
+#@ <id_9qo7xm_1hs_1159rzy>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Vertreter der Philosophie des Geistes" .
+#@ <id_9qo7xm_1hs_103b6rq>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Kognitionswissenschaftler" .
+#@ <id_9qo7xm_1hs_y5rpxk>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Geschichte der Homosexualität" .
+#@ <id_9qo7xm_1hs_5cch0o>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Geschichte der Informatik" .
+#@ <id_9qo7xm_1hs_sgwpbf>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Mitglied der Royal Society" .
+#@ <id_9qo7xm_1hs_1xm4acf>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Officer des Order of the British Empire" .
+#@ <id_9qo7xm_1hs_10kxhd6>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Brite" .
+#@ <id_9qo7xm_1hs_3lcxh5>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Geboren 1912" .
+#@ <id_9qo7xm_1hs_yu1u7y>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Gestorben 1954" .
+#@ <id_9qo7xm_1hs_zjz9mc>
+<de/Alan_Turing>	<hasWikiCategory/de>	"Mann" .
+#@ <id_hjzo8h_1hs_zvszcv>
+<de/Archäologie>	<hasWikiCategory/de>	"Archäologie" .
+#@ <id_1a72c02_1hs_f6n0wn>
+<de/American_Standard_Code_for_Information_Interchange>	<hasWikiCategory/de>	"Datenformat" .
+#@ <id_1a72c02_1hs_pyhx58>
+<de/American_Standard_Code_for_Information_Interchange>	<hasWikiCategory/de>	"Zeichenkodierung" .
+#@ <id_15eb9b8_1hs_tq3pzl>
+<de/Außenbandruptur_des_oberen_Sprunggelenkes>	<hasWikiCategory/de>	"Krankheitsbild in Orthopädie und Unfallchirurgie" .
+#@ <id_15eb9b8_1hs_1x44t8e>
+<de/Außenbandruptur_des_oberen_Sprunggelenkes>	<hasWikiCategory/de>	"Kindertraumatologie" .
+#@ <id_1fdwp5t_1hs_1wch40j>
+<de/Alphabet>	<hasWikiCategory/de>	"Alphabet" .
+#@ <id_r1xpte_1hs_ozuo06>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Militärperson (Vereinigtes Königreich)" .
+#@ <id_r1xpte_1hs_j6p39t>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Angehöriger der Royal Air Force" .
+#@ <id_r1xpte_1hs_108vjhn>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Person im Zweiten Weltkrieg (Vereinigtes Königreich)" .
+#@ <id_r1xpte_1hs_1lj93k1>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Baronet" .
+#@ <id_r1xpte_1hs_1pljwvh>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Luftkrieg" .
+#@ <id_r1xpte_1hs_10kxhd6>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Brite" .
+#@ <id_r1xpte_1hs_3lcwxc>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Geboren 1892" .
+#@ <id_r1xpte_1hs_yu1uaj>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Gestorben 1984" .
+#@ <id_r1xpte_1hs_zjz9mc>
+<de/Arthur_Harris>	<hasWikiCategory/de>	"Mann" .
+#@ <id_84vdxp_1hs_1h6qk3>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Duke of Wellington" .
+#@ <id_84vdxp_1hs_1a5tctk>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Britischer Premierminister" .
+#@ <id_84vdxp_1hs_ol2scr>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Außenminister (Vereinigtes Königreich)" .
+#@ <id_84vdxp_1hs_127e45p>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Innenminister (Vereinigtes Königreich)" .
+#@ <id_84vdxp_1hs_1xmzwnk>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Abgeordneter des Irish House of Commons" .
+#@ <id_84vdxp_1hs_1m45txb>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Abgeordneter des House of Commons (Vereinigtes Königreich)" .
+#@ <id_84vdxp_1hs_1m8m2ry>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Politiker (18. Jahrhundert)" .
+#@ <id_84vdxp_1hs_c5237z>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Politiker (19. Jahrhundert)" .
+#@ <id_84vdxp_1hs_ebqa6w>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Mitglied des House of Lords" .
+#@ <id_84vdxp_1hs_mdawno>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Feldmarschall (Vereinigtes Königreich)" .
+#@ <id_84vdxp_1hs_s2r2kj>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Generalfeldmarschall (Preußen)" .
+#@ <id_84vdxp_1hs_1ghcwnz>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Person in den Koalitionskriegen (Vereinigtes Königreich)" .
+#@ <id_84vdxp_1hs_k5n3ub>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Lord Warden of the Cinque Ports" .
+#@ <id_84vdxp_1hs_ei81g6>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Mitglied der Akademie gemeinnütziger Wissenschaften" .
+#@ <id_84vdxp_1hs_1vpkqzp>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"King’s German Legion" .
+#@ <id_84vdxp_1hs_1glgkgl>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Freimaurer (18. Jahrhundert)" .
+#@ <id_84vdxp_1hs_6hwkwm>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Freimaurer (19. Jahrhundert)" .
+#@ <id_84vdxp_1hs_l3o7x2>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Freimaurer (Vereinigtes Königreich)" .
+#@ <id_84vdxp_1hs_sgwpbf>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Mitglied der Royal Society" .
+#@ <id_84vdxp_1hs_t62d59>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Person (Wellington)" .
+#@ <id_84vdxp_1hs_1wkxk32>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Knight des Order of the Garter" .
+#@ <id_84vdxp_1hs_1nhyuqs>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Knight Grand Cross des Order of the Bath" .
+#@ <id_84vdxp_1hs_psovyb>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Träger des Militär-Max-Joseph-Ordens (Großkreuz)" .
+#@ <id_84vdxp_1hs_65b8e8>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Träger des Guelphen-Ordens" .
+#@ <id_84vdxp_1hs_165v1uf>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Träger des Militär-Maria-Theresien-Ordens (Großkreuz)" .
+#@ <id_84vdxp_1hs_umt2su>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Träger des Elefanten-Ordens" .
+#@ <id_84vdxp_1hs_yypft8>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Ritter des Ordens vom Goldenen Vlies" .
+#@ <id_84vdxp_1hs_ztatd8>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Person (Dublin)" .
+#@ <id_84vdxp_1hs_10kxhd6>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Brite" .
+#@ <id_84vdxp_1hs_3lcw49>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Geboren 1769" .
+#@ <id_84vdxp_1hs_yu1th7>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Gestorben 1852" .
+#@ <id_84vdxp_1hs_zjz9mc>
+<de/Arthur_Wellesley,_1._Duke_of_Wellington>	<hasWikiCategory/de>	"Mann" .
+#@ <id_4ekm0n_1hs_112ojs9>
+<de/Astronomie>	<hasWikiCategory/de>	"Astronomie" .
+#@ <id_4ekm0n_1hs_ar30ya>
+<de/Astronomie>	<hasWikiCategory/de>	"Wissenschaftliches Fachgebiet" .
+#@ <id_qm98j1_1hs_c8uc4>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"Schauspieler" .
+#@ <id_qm98j1_1hs_f253l7>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"Oscarpreisträger" .
+#@ <id_qm98j1_1hs_1r8l28o>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"UN-Sonderbotschafter" .
+#@ <id_qm98j1_1hs_1ulbx13>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"Golden-Globe-Preisträger" .
+#@ <id_qm98j1_1hs_1e1ew7k>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"Mitglied im Council on Foreign Relations" .
+#@ <id_qm98j1_1hs_19qpeg7>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"Person (Los Angeles)" .
+#@ <id_qm98j1_1hs_1jeot50>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"US-Amerikaner" .
+#@ <id_qm98j1_1hs_3lcxme>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"Geboren 1975" .
+#@ <id_qm98j1_1hs_zjv50g>
+<de/Angelina_Jolie>	<hasWikiCategory/de>	"Frau" .
+#@ <id_xy44qd_1hs_1um82hz>
+<de/Archimedes>	<hasWikiCategory/de>	"Archimedes" .
+#@ <id_xy44qd_1hs_1ow0dw9>
+<de/Archimedes>	<hasWikiCategory/de>	"Mathematiker der Antike" .
+#@ <id_xy44qd_1hs_1hwcgmr>
+<de/Archimedes>	<hasWikiCategory/de>	"Erfinder" .
+#@ <id_xy44qd_1hs_gd0s9t>
+<de/Archimedes>	<hasWikiCategory/de>	"Physiker (vor dem 16. Jahrhundert)" .
+#@ <id_xy44qd_1hs_1fmym2u>
+<de/Archimedes>	<hasWikiCategory/de>	"Strömungsmechaniker" .
+#@ <id_xy44qd_1hs_17j3yx8>
+<de/Archimedes>	<hasWikiCategory/de>	"Grieche (Antike)" .
+#@ <id_xy44qd_1hs_1a0i0he>
+<de/Archimedes>	<hasWikiCategory/de>	"Person (Syrakus)" .
+#@ <id_xy44qd_1hs_j78zrn>
+<de/Archimedes>	<hasWikiCategory/de>	"Geboren im 3. Jahrhundert v. Chr." .
+#@ <id_xy44qd_1hs_1dqo18l>
+<de/Archimedes>	<hasWikiCategory/de>	"Gestorben 212 v. Chr." .
+#@ <id_xy44qd_1hs_zjz9mc>
+<de/Archimedes>	<hasWikiCategory/de>	"Mann" .
+#@ <id_34c66d_1hs_lg5har>
+<de/Aristoteles>	<hasWikiCategory/de>	"Aristoteles" .
+#@ <id_34c66d_1hs_1q9lsnx>
+<de/Aristoteles>	<hasWikiCategory/de>	"Philosoph (Antike)" .
+#@ <id_34c66d_1hs_isjqkt>
+<de/Aristoteles>	<hasWikiCategory/de>	"Moralphilosoph" .
+#@ <id_34c66d_1hs_1djgopz>
+<de/Aristoteles>	<hasWikiCategory/de>	"Erkenntnistheoretiker" .
+#@ <id_34c66d_1hs_1wpgwoj>
+<de/Aristoteles>	<hasWikiCategory/de>	"Logiker" .
+#@ <id_34c66d_1hs_110ktwq>
+<de/Aristoteles>	<hasWikiCategory/de>	"Naturphilosoph" .
+#@ <id_34c66d_1hs_lhn95h>
+<de/Aristoteles>	<hasWikiCategory/de>	"Sachbuchautor (Physik)" .
+#@ <id_34c66d_1hs_1sj2s7r>
+<de/Aristoteles>	<hasWikiCategory/de>	"Sprachphilosoph" .
+#@ <id_34c66d_1hs_j9vyc5>
+<de/Aristoteles>	<hasWikiCategory/de>	"Universalgelehrter" .
+#@ <id_34c66d_1hs_3aczv2>
+<de/Aristoteles>	<hasWikiCategory/de>	"Griechische Philosophie" .
+#@ <id_34c66d_1hs_1k2ec4c>
+<de/Aristoteles>	<hasWikiCategory/de>	"Politischer Philosoph" .
+#@ <id_34c66d_1hs_pd7ord>
+<de/Aristoteles>	<hasWikiCategory/de>	"Metaphysik" .
+#@ <id_34c66d_1hs_1p852l7>
+<de/Aristoteles>	<hasWikiCategory/de>	"Zoologe" .
+#@ <id_34c66d_1hs_17j3yx8>
+<de/Aristoteles>	<hasWikiCategory/de>	"Grieche (Antike)" .
+#@ <id_34c66d_1hs_hr2djc>
+<de/Aristoteles>	<hasWikiCategory/de>	"Geboren 384 v. Chr." .
+#@ <id_34c66d_1hs_grt5wl>
+<de/Aristoteles>	<hasWikiCategory/de>	"Gestorben 322 v. Chr." .
+#@ <id_34c66d_1hs_zjz9mc>
+<de/Aristoteles>	<hasWikiCategory/de>	"Mann" .
+#@ <id_34c66d_1hs_gd0s9t>
+<de/Aristoteles>	<hasWikiCategory/de>	"Physiker (vor dem 16. Jahrhundert)" .
+#@ <id_66acmu_1hs_zj43s3>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Abraham Lincoln" .
+#@ <id_66acmu_1hs_1egxdd0>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Präsident der Vereinigten Staaten" .
+#@ <id_66acmu_1hs_11bjl95>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Mitglied des Repräsentantenhauses der Vereinigten Staaten für Illinois" .
+#@ <id_66acmu_1hs_o1l279>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Mitglied des Repräsentantenhauses von Illinois" .
+#@ <id_66acmu_1hs_1x72ayi>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Mitglied der United States Whig Party" .
+#@ <id_66acmu_1hs_1052kw5>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Mitglied der Republikanischen Partei (Vereinigte Staaten)" .
+#@ <id_66acmu_1hs_10fee0b>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Person im Sezessionskrieg" .
+#@ <id_66acmu_1hs_1oqbh02>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Person (Duell)" .
+#@ <id_66acmu_1hs_p4boc9>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Rechtsanwalt (Vereinigte Staaten)" .
+#@ <id_66acmu_1hs_1jeot50>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"US-Amerikaner" .
+#@ <id_66acmu_1hs_3lcwps>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Geboren 1809" .
+#@ <id_66acmu_1hs_yu1ti5>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Gestorben 1865" .
+#@ <id_66acmu_1hs_zjz9mc>
+<de/Abraham_Lincoln>	<hasWikiCategory/de>	"Mann" .
+#@ <id_lrtvug_1hs_1olvmj3>
+<de/Altweibersommer>	<hasWikiCategory/de>	"Wetterbeobachtung und -vorhersage" .
+#@ <id_lrtvug_1hs_1f4j36a>
+<de/Altweibersommer>	<hasWikiCategory/de>	"Kalender" .
+#@ <id_lrtvug_1hs_1hah25h>
+<de/Altweibersommer>	<hasWikiCategory/de>	"Jahreszeit" .
+#@ <id_lrtvug_1hs_6avce>
+<de/Altweibersommer>	<hasWikiCategory/de>	"Herbst" .
+#@ <id_lrtvug_1hs_z35ar5>
+<de/Altweibersommer>	<hasWikiCategory/de>	"September" .
+#@ <id_14lcgw0_1hs_1w3txyq>
+<de/Astana>	<hasWikiCategory/de>	"Astana" .
+#@ <id_14lcgw0_1hs_9qbade>
+<de/Astana>	<hasWikiCategory/de>	"Stadt republikanischer Bedeutung (Kasachstan)" .
+#@ <id_14lcgw0_1hs_zkukj9>
+<de/Astana>	<hasWikiCategory/de>	"Hauptstadt in Asien" .
+#@ <id_14lcgw0_1hs_r96sid>
+<de/Astana>	<hasWikiCategory/de>	"Sonderwirtschaftszone" .
+#@ <id_1i09ryh_1hs_1ef6vvc>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Angela Merkel" .
+#@ <id_1i09ryh_1hs_a0lxxq>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Bundeskanzler (Deutschland)" .
+#@ <id_1i09ryh_1hs_12hd2pf>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Amtierender Regierungschef" .
+#@ <id_1i09ryh_1hs_hlqub4>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Umweltminister (Bundesrepublik Deutschland)" .
+#@ <id_1i09ryh_1hs_1r3ilsz>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Generalsekretär der CDU" .
+#@ <id_1i09ryh_1hs_144k774>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Bundestagsabgeordneter (Mecklenburg-Vorpommern)" .
+#@ <id_1i09ryh_1hs_1bxc0ih>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Vorsitzender der CDU/CSU-Bundestagsfraktion" .
+#@ <id_1i09ryh_1hs_pdedsd>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"CDU-Bundesvorstand" .
+#@ <id_1i09ryh_1hs_1q9g257>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"DA-Mitglied" .
+#@ <id_1i09ryh_1hs_1rfj6n9>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Politiker (20. Jahrhundert)" .
+#@ <id_1i09ryh_1hs_hbz73a>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Politiker (21. Jahrhundert)" .
+#@ <id_1i09ryh_1hs_7rlytp>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Träger des Verdienstordens der Italienischen Republik (Großkreuz)" .
+#@ <id_1i09ryh_1hs_c89gxw>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Träger des Ordens El Sol del Perú" .
+#@ <id_1i09ryh_1hs_qnn3bg>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Träger des Ordens des Infanten Dom Henrique (Großkreuz)" .
+#@ <id_1i09ryh_1hs_1fy1xb5>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Träger der Presidential Medal of Freedom" .
+#@ <id_1i09ryh_1hs_1ee044f>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Träger des Bundesverdienstkreuzes (Großkreuz)" .
+#@ <id_1i09ryh_1hs_krxrk4>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Träger des norwegischen Verdienstordens (Großkreuz)" .
+#@ <id_1i09ryh_1hs_1qobx5k>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Karlspreisträger" .
+#@ <id_1i09ryh_1hs_1uey0sy>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor der Hebräischen Universität Jerusalem" .
+#@ <id_1i09ryh_1hs_1bjsxbq>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor der TH Breslau" .
+#@ <id_1i09ryh_1hs_a14r4j>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor der Universität Leipzig" .
+#@ <id_1i09ryh_1hs_h14jyc>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor der Universität Bern" .
+#@ <id_1i09ryh_1hs_18ifyss>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor der Universität Tel Aviv" .
+#@ <id_1i09ryh_1hs_1itrh4o>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor der Babeș-Bolyai-Universität Cluj" .
+#@ <id_1i09ryh_1hs_1nng1rr>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"DDR-Bürger" .
+#@ <id_1i09ryh_1hs_1nujirp>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Deutscher" .
+#@ <id_1i09ryh_1hs_3lcxkn>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Geboren 1954" .
+#@ <id_1i09ryh_1hs_zjv50g>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Frau" .
+#@ <id_1i09ryh_1hs_1d6seq3>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor einer Universität in Südkorea" .
+#@ <id_1i09ryh_1hs_oz2gwh>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor der Angel-Kantschev-Universität Russe" .
+#@ <id_1i09ryh_1hs_1comdk5>
+<de/Angela_Merkel>	<hasWikiCategory/de>	"Ehrendoktor einer Universität in den Vereinigten Staaten" .
+#@ <id_eburqc_1hs_c8uc4>
+<de/Alicia_Silverstone>	<hasWikiCategory/de>	"Schauspieler" .
+#@ <id_eburqc_1hs_1jeot50>
+<de/Alicia_Silverstone>	<hasWikiCategory/de>	"US-Amerikaner" .
+#@ <id_eburqc_1hs_3lcxmf>
+<de/Alicia_Silverstone>	<hasWikiCategory/de>	"Geboren 1976" .
+#@ <id_eburqc_1hs_zjv50g>
+<de/Alicia_Silverstone>	<hasWikiCategory/de>	"Frau" .
+#@ <id_ngngm1_1hs_j9vyc5>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Universalgelehrter" .
+#@ <id_ngngm1_1hs_1wigbb9>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Kartograf (Mittelalter)" .
+#@ <id_ngngm1_1hs_f25kv9>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Astronom (Blütezeit des Islam)" .
+#@ <id_ngngm1_1hs_145b0w0>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Astrologe" .
+#@ <id_ngngm1_1hs_113d5a0>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Übersetzer" .
+#@ <id_ngngm1_1hs_1wjtrmj>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Choresmien" .
+#@ <id_ngngm1_1hs_1nksqly>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Iranistik" .
+#@ <id_ngngm1_1hs_3yo6rn>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Perser" .
+#@ <id_ngngm1_1hs_g5l8kl>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Geboren 973" .
+#@ <id_ngngm1_1hs_yu1niy>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Gestorben 1048" .
+#@ <id_ngngm1_1hs_zjz9mc>
+<de/Al-Biruni>	<hasWikiCategory/de>	"Mann" .
+#@ <id_14ifr4w_1hs_zkukj9>
+<de/Ankara>	<hasWikiCategory/de>	"Hauptstadt in Asien" .
+#@ <id_14ifr4w_1hs_1w0x87m>
+<de/Ankara>	<hasWikiCategory/de>	"Ankara" .
+#@ <id_14ifr4w_1hs_54w0rf>
+<de/Ankara>	<hasWikiCategory/de>	"Millionenstadt" .
+#@ <id_14ifr4w_1hs_1u9vh3x>
+<de/Ankara>	<hasWikiCategory/de>	"Träger des Europapreises" .
+#@ <id_3udoj_1hs_snmsb5>
+<de/Atheismus>	<hasWikiCategory/de>	"Atheismus" .
+#@ <id_3udoj_1hs_5ze7xe>
+<de/Atheismus>	<hasWikiCategory/de>	"Religionsphilosophie" .
+#@ <id_1x8mkn6_1hs_t3g85v>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Anna Seghers" .
+#@ <id_1x8mkn6_1hs_10kfts3>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Autor" .
+#@ <id_1x8mkn6_1hs_k5sqia>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Literatur (20. Jahrhundert)" .
+#@ <id_1x8mkn6_1hs_djynil>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Literatur (Deutsch)" .
+#@ <id_1x8mkn6_1hs_1xk42az>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Literatur (Berlin)" .
+#@ <id_1x8mkn6_1hs_192qxmm>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Roman, Epik" .
+#@ <id_1x8mkn6_1hs_vox1go>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Emigrant aus dem Deutschen Reich zur Zeit des Nationalsozialismus" .
+#@ <id_1x8mkn6_1hs_om9s7y>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Exilliteratur" .
+#@ <id_1x8mkn6_1hs_xjf2g9>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Bewegung Freies Deutschland" .
+#@ <id_1x8mkn6_1hs_1x3f9y1>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"KPD-Mitglied" .
+#@ <id_1x8mkn6_1hs_rra68c>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Träger des Nationalpreises der DDR I. Klasse für Kunst und Literatur" .
+#@ <id_1x8mkn6_1hs_17u2fcv>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Träger des Karl-Marx-Ordens" .
+#@ <id_1x8mkn6_1hs_kgh0t3>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Träger des Vaterländischen Verdienstordens" .
+#@ <id_1x8mkn6_1hs_19s98kx>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Träger des Sterns der Völkerfreundschaft" .
+#@ <id_1x8mkn6_1hs_cx0zh5>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Ehrenbürger von Berlin" .
+#@ <id_1x8mkn6_1hs_psc2yy>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Ehrenbürger von Mainz" .
+#@ <id_1x8mkn6_1hs_1bv4gt>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Ehrenbürger der Johannes Gutenberg-Universität Mainz" .
+#@ <id_1x8mkn6_1hs_6pcgb3>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Mitglied des Heinrich-Heine-Klubs" .
+#@ <id_1x8mkn6_1hs_1n1130g>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Mitglied der Akademie der Künste (DDR)" .
+#@ <id_1x8mkn6_1hs_c4tysk>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Pseudonym" .
+#@ <id_1x8mkn6_1hs_1nujirp>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Deutscher" .
+#@ <id_1x8mkn6_1hs_3lcxg8>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Geboren 1900" .
+#@ <id_1x8mkn6_1hs_yu1uai>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Gestorben 1983" .
+#@ <id_1x8mkn6_1hs_zjv50g>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"Frau" .
+#@ <id_1x8mkn6_1hs_1806aqy>
+<de/Anna_Seghers>	<hasWikiCategory/de>	"NS-Opfer" .
+#@ <id_1ldhsyw_1hs_1bfon41>
+<de/Atmosphäre_(Astronomie)>	<hasWikiCategory/de>	"Atmosphäre" .
+#@ <id_agbod9_1hs_11zcev6>
+<de/Arvo_Pärt>	<hasWikiCategory/de>	"Komponist (20. Jahrhundert)" .
+#@ <id_agbod9_1hs_dxs4gi>
+<de/Arvo_Pärt>	<hasWikiCategory/de>	"Komponist (Kirchenmusik)" .
+#@ <id_agbod9_1hs_k0z418>
+<de/Arvo_Pärt>	<hasWikiCategory/de>	"Träger des Ordens des Staatswappens (I. Klasse)" .
+#@ <id_agbod9_1hs_v0yjpd>
+<de/Arvo_Pärt>	<hasWikiCategory/de>	"Ehrendoktor der Universität Tartu" .
+#@ <id_agbod9_1hs_1mskwfc>
+<de/Arvo_Pärt>	<hasWikiCategory/de>	"Estnischer Komponist" .
+#@ <id_agbod9_1hs_zjuj7j>
+<de/Arvo_Pärt>	<hasWikiCategory/de>	"Este" .
+#@ <id_agbod9_1hs_3lcxiy>
+<de/Arvo_Pärt>	<hasWikiCategory/de>	"Geboren 1935" .
+#@ <id_agbod9_1hs_zjz9mc>
+<de/Arvo_Pärt>	<hasWikiCategory/de>	"Mann" .
+#@ <id_2k3bw6_1hs_1tyvqhe>
+<de/Afghanistan>	<hasWikiCategory/de>	"Staat in Asien" .
+#@ <id_2k3bw6_1hs_kvwn0k>
+<de/Afghanistan>	<hasWikiCategory/de>	"Afghanistan" .
+#@ <id_2k3bw6_1hs_99rt23>
+<de/Afghanistan>	<hasWikiCategory/de>	"Least Developed Country" .
+#@ <id_2k3bw6_1hs_kakb7g>
+<de/Afghanistan>	<hasWikiCategory/de>	"Islamische Republik" .
+#@ <id_2k3bw6_1hs_3z3uo3>
+<de/Afghanistan>	<hasWikiCategory/de>	"Binnenstaat" .
+#@ <id_2k3bw6_1hs_l1hw01>
+<de/Afghanistan>	<hasWikiCategory/de>	"Mitgliedstaat der Vereinten Nationen" .
+#@ <id_18ovze0_1hs_10tdegz>
+<de/Atonale_Musik>	<hasWikiCategory/de>	"Musiktheorie" .
+#@ <id_18ovze0_1hs_bsifo>
+<de/Atonale_Musik>	<hasWikiCategory/de>	"Neue Musik" .
+#@ <id_vkag3w_1hs_5lr5iu>
+<de/Akeleien>	<hasWikiCategory/de>	"Staude" .
+#@ <id_vkag3w_1hs_i1mimi>
+<de/Akeleien>	<hasWikiCategory/de>	"Hahnenfußgewächse" .
+#@ <id_1mqmck5_1hs_13y9mjq>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Aleister Crowley" .
+#@ <id_1mqmck5_1hs_6hwkwm>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Freimaurer (19. Jahrhundert)" .
+#@ <id_1mqmck5_1hs_1lsdobw>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Freimaurer (20. Jahrhundert)" .
+#@ <id_1mqmck5_1hs_55yhjq>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Freimaurer (England)" .
+#@ <id_1mqmck5_1hs_15p1g7w>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Okkultist" .
+#@ <id_1mqmck5_1hs_kcn86p>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Rosenkreuzer" .
+#@ <id_1mqmck5_1hs_1phtmi6>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Zauberer" .
+#@ <id_1mqmck5_1hs_10uj3u2>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Tarot" .
+#@ <id_1mqmck5_1hs_14q1x9a>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Thelema" .
+#@ <id_1mqmck5_1hs_c6uqpo>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Autor (Esoterik)" .
+#@ <id_1mqmck5_1hs_mw4ibx>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Bergsteiger (Vereinigtes Königreich)" .
+#@ <id_1mqmck5_1hs_1tbkwye>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Schachkomponist" .
+#@ <id_1mqmck5_1hs_ascg7t>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Engländer" .
+#@ <id_1mqmck5_1hs_10kxhd6>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Brite" .
+#@ <id_1mqmck5_1hs_3lcwvp>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Geboren 1875" .
+#@ <id_1mqmck5_1hs_yu1u76>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Gestorben 1947" .
+#@ <id_1mqmck5_1hs_zjz9mc>
+<de/Aleister_Crowley>	<hasWikiCategory/de>	"Mann" .
+#@ <id_14foxy5_1hs_1vy6f0v>
+<de/Aikidō>	<hasWikiCategory/de>	"Aikidō" .
+#@ <id_14foxy5_1hs_1q2ug2r>
+<de/Aikidō>	<hasWikiCategory/de>	"Kampfkunst (Japan)" .
+#@ <id_14foxy5_1hs_1icd924>
+<de/Aikidō>	<hasWikiCategory/de>	"Kampfkunststil" .
+#@ <id_4sru8v_1hs_17ooxlj>
+<de/Alexandria>	<hasWikiCategory/de>	"Ort in Ägypten" .
+#@ <id_4sru8v_1hs_3isuou>
+<de/Alexandria>	<hasWikiCategory/de>	"Ort in Afrika" .
+#@ <id_4sru8v_1hs_77byai>
+<de/Alexandria>	<hasWikiCategory/de>	"Ort mit Seehafen" .
+#@ <id_4sru8v_1hs_136bhj7>
+<de/Alexandria>	<hasWikiCategory/de>	"Archäologischer Fundplatz in Ägypten" .
+#@ <id_4sru8v_1hs_19cihlz>
+<de/Alexandria>	<hasWikiCategory/de>	"Ort in der Bibel" .
+#@ <id_4sru8v_1hs_50b9gi>
+<de/Alexandria>	<hasWikiCategory/de>	"Hellenistische Stadt" .
+#@ <id_4sru8v_1hs_11gvs0h>
+<de/Alexandria>	<hasWikiCategory/de>	"Alexandria" .
+#@ <id_4sru8v_1hs_54w0rf>
+<de/Alexandria>	<hasWikiCategory/de>	"Millionenstadt" .
+#@ <id_4sru8v_1hs_13xqenz>
+<de/Alexandria>	<hasWikiCategory/de>	"Hauptort eines Gouvernements (Ägypten)" .
+#@ <id_1nk157y_1hs_1naytig>
+<de/Anne_Haigis>	<hasWikiCategory/de>	"Popsänger" .
+#@ <id_1nk157y_1hs_3b7p5r>
+<de/Anne_Haigis>	<hasWikiCategory/de>	"Deutscher Musiker" .
+#@ <id_1nk157y_1hs_3lcxko>
+<de/Anne_Haigis>	<hasWikiCategory/de>	"Geboren 1955" .
+#@ <id_1nk157y_1hs_zjv50g>
+<de/Anne_Haigis>	<hasWikiCategory/de>	"Frau" .
+#@ <id_1ud3gn9_1hs_dnspsj>
+<de/Astrophysik>	<hasWikiCategory/de>	"Astrophysik" .
+#@ <id_9srnuv_1hs_14ztv01>
+<de/Arbeitskampf>	<hasWikiCategory/de>	"Kollektives Arbeitsrecht (Deutschland)" .
+#@ <id_9srnuv_1hs_5m1ok6>
+<de/Arbeitskampf>	<hasWikiCategory/de>	"Streik" .
+#@ <id_jn1836_1hs_10kebeo>
+<de/Asien>	<hasWikiCategory/de>	"Asien" .
+#@ <id_jn1836_1hs_zxx57g>
+<de/Asien>	<hasWikiCategory/de>	"Kontinent" .
+#@ <id_jn1836_1hs_wgnny6>
+<de/Asien>	<hasWikiCategory/de>	"Eurasien" .
+#@ <id_tb0ev9_1hs_b8cfkm>
+<de/Arbeitsrecht_(Deutschland)>	<hasWikiCategory/de>	"Arbeitsrecht (Deutschland)" .
+#@ <id_1l5zxg7_1hs_14ztv01>
+<de/Aussperrung>	<hasWikiCategory/de>	"Kollektives Arbeitsrecht (Deutschland)" .
+#@ <id_1l5zxg7_1hs_5m1ok6>
+<de/Aussperrung>	<hasWikiCategory/de>	"Streik" .
+#@ <id_1l5zxg7_1hs_71fpb6>
+<de/Aussperrung>	<hasWikiCategory/de>	"Arbeitsrecht (Schweiz)" .
+#@ <id_113cygt_1hs_1fp559w>
+<de/AP>	<hasWikiCategory/de>	"Abkürzung" .
+#@ <id_11dbqvj_1hs_1g4r9fy>
+<de/Augustus>	<hasWikiCategory/de>	"Kaiser (Rom)" .
+#@ <id_11dbqvj_1hs_1hr51dm>
+<de/Augustus>	<hasWikiCategory/de>	"Konsul (Römische Republik)" .
+#@ <id_11dbqvj_1hs_8p1v03>
+<de/Augustus>	<hasWikiCategory/de>	"Zensor" .
+#@ <id_11dbqvj_1hs_10kfka8>
+<de/Augustus>	<hasWikiCategory/de>	"Augur" .
+#@ <id_11dbqvj_1hs_1d34k5>
+<de/Augustus>	<hasWikiCategory/de>	"Julier" .
+#@ <id_11dbqvj_1hs_1lfwgap>
+<de/Augustus>	<hasWikiCategory/de>	"Octavier" .
+#@ <id_11dbqvj_1hs_s6zur5>
+<de/Augustus>	<hasWikiCategory/de>	"Römischer Mäzen" .
+#@ <id_11dbqvj_1hs_zomy7q>
+<de/Augustus>	<hasWikiCategory/de>	"Geboren 63 v. Chr." .
+#@ <id_11dbqvj_1hs_14osjmi>
+<de/Augustus>	<hasWikiCategory/de>	"Gestorben 14" .
+#@ <id_11dbqvj_1hs_zjz9mc>
+<de/Augustus>	<hasWikiCategory/de>	"Mann" .
+#@ <id_11dbqvj_1hs_1ibw5q9>
+<de/Augustus>	<hasWikiCategory/de>	"Augustus" .
+#@ <id_11dbqvj_1hs_y2gck9>
+<de/Augustus>	<hasWikiCategory/de>	"Herrscher (1. Jahrhundert)" .
+#@ <id_1reuaup_1hs_7mdc6m>
+<de/Argumentum_lege_non_distinguente>	<hasWikiCategory/de>	"Lateinische Phrase" .
+#@ <id_ldz0qo_1hs_1lwmqkx>
+<de/Atlantischer_Ozean>	<hasWikiCategory/de>	"Atlantischer Ozean" .
+#@ <id_ldz0qo_1hs_10s7tk7>
+<de/Atlantischer_Ozean>	<hasWikiCategory/de>	"Ozean" .
+#@ <id_n0atx2_1hs_vosn4g>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Philosoph (19. Jahrhundert)" .
+#@ <id_n0atx2_1hs_isjqkt>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Moralphilosoph" .
+#@ <id_n0atx2_1hs_1mlmptz>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Kantianer" .
+#@ <id_n0atx2_1hs_10kfts3>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Autor" .
+#@ <id_n0atx2_1hs_17gjxwq>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Hochschullehrer (Humboldt-Universität zu Berlin)" .
+#@ <id_n0atx2_1hs_1w6j4ty>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Person (Frankfurt am Main)" .
+#@ <id_n0atx2_1hs_zi3erp>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Sprachkritik" .
+#@ <id_n0atx2_1hs_mb8r45>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Aphorismus" .
+#@ <id_n0atx2_1hs_b40nzw>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Literatur (Neulatein)" .
+#@ <id_n0atx2_1hs_1nujirp>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Deutscher" .
+#@ <id_n0atx2_1hs_1h8yku2>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Person (Königlich-Preußen)" .
+#@ <id_n0atx2_1hs_11dmdvk>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Vertreter des Atheismus" .
+#@ <id_n0atx2_1hs_3lcw5y>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Geboren 1788" .
+#@ <id_n0atx2_1hs_yu1ti0>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Gestorben 1860" .
+#@ <id_n0atx2_1hs_zjz9mc>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Mann" .
+#@ <id_n0atx2_1hs_qj8u91>
+<de/Arthur_Schopenhauer>	<hasWikiCategory/de>	"Person (Danzig)" .
+#@ <id_1uli3fq_1hs_16805k3>
+<de/Architektur_(Informatik)>	<hasWikiCategory/de>	"Softwarearchitektur" .
+#@ <id_1uli3fq_1hs_1nbvlxj>
+<de/Architektur_(Informatik)>	<hasWikiCategory/de>	"Rechnerarchitektur" .
+#@ <id_17slb25_1hs_1g4r9fy>
+<de/Aemilianus_(Kaiser)>	<hasWikiCategory/de>	"Kaiser (Rom)" .
+#@ <id_17slb25_1hs_1m9a6ve>
+<de/Aemilianus_(Kaiser)>	<hasWikiCategory/de>	"Geboren im 3. Jahrhundert" .
+#@ <id_17slb25_1hs_1htnzll>
+<de/Aemilianus_(Kaiser)>	<hasWikiCategory/de>	"Gestorben 253" .
+#@ <id_17slb25_1hs_zjz9mc>
+<de/Aemilianus_(Kaiser)>	<hasWikiCategory/de>	"Mann" .
+#@ <id_17slb25_1hs_cwgfff>
+<de/Aemilianus_(Kaiser)>	<hasWikiCategory/de>	"Herrscher (3. Jahrhundert)" .
+#@ <id_16bw667_1hs_1g4r9fy>
+<de/Aurelian>	<hasWikiCategory/de>	"Kaiser (Rom)" .
+#@ <id_16bw667_1hs_1ovshax>
+<de/Aurelian>	<hasWikiCategory/de>	"Militärperson (Römische Kaiserzeit)" .
+#@ <id_16bw667_1hs_1n1ms9a>
+<de/Aurelian>	<hasWikiCategory/de>	"Christenverfolger" .
+#@ <id_16bw667_1hs_cwgfff>
+<de/Aurelian>	<hasWikiCategory/de>	"Herrscher (3. Jahrhundert)" .
+#@ <id_16bw667_1hs_g5l38l>
+<de/Aurelian>	<hasWikiCategory/de>	"Geboren 214" .
+#@ <id_16bw667_1hs_1htnznd>
+<de/Aurelian>	<hasWikiCategory/de>	"Gestorben 275" .
+#@ <id_16bw667_1hs_zjz9mc>
+<de/Aurelian>	<hasWikiCategory/de>	"Mann" .
+#@ <id_1a4bhac_1hs_58x7kl>
+<de/Allgemeine_Psychologie>	<hasWikiCategory/de>	"Allgemeine Psychologie" .
+#@ <id_3zikrl_1hs_1nz1qdn>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Astronom (20. Jahrhundert)" .
+#@ <id_3zikrl_1hs_dvhqto>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Astronom (21. Jahrhundert)" .
+#@ <id_3zikrl_1hs_aunvun>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Physiker (20. Jahrhundert)" .
+#@ <id_3zikrl_1hs_17vut45>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Hochschullehrer (Stanford)" .
+#@ <id_3zikrl_1hs_xbk6u8>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Hochschullehrer (Moskau)" .
+#@ <id_3zikrl_1hs_1fo9n1b>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Mitglied der National Academy of Sciences der Vereinigten Staaten" .
+#@ <id_3zikrl_1hs_10tsb7m>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Russe" .
+#@ <id_3zikrl_1hs_3lcxjw>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Geboren 1948" .
+#@ <id_3zikrl_1hs_zjz9mc>
+<de/Andrei_Dmitrijewitsch_Linde>	<hasWikiCategory/de>	"Mann" .
+#@ <id_jmzgh8_1hs_10kcjsq>
+<de/Apple>	<hasWikiCategory/de>	"Apple" .
+#@ <id_jmzgh8_1hs_1w0utaj>
+<de/Apple>	<hasWikiCategory/de>	"Hardwarehersteller (Vereinigte Staaten)" .
+#@ <id_jmzgh8_1hs_ijazak>
+<de/Apple>	<hasWikiCategory/de>	"Softwarehersteller (Vereinigte Staaten)" .
+#@ <id_jmzgh8_1hs_1wfzqhs>
+<de/Apple>	<hasWikiCategory/de>	"Audiotechnikhersteller" .
+#@ <id_jmzgh8_1hs_87pi2s>
+<de/Apple>	<hasWikiCategory/de>	"Unternehmen (Silicon Valley)" .
+#@ <id_jmzgh8_1hs_fun17l>
+<de/Apple>	<hasWikiCategory/de>	"Markenname" .
+#@ <id_jmzgh8_1hs_1az39y9>
+<de/Apple>	<hasWikiCategory/de>	"Unternehmen im NASDAQ-100" .
+#@ <id_jmzgh8_1hs_hj5j1z>
+<de/Apple>	<hasWikiCategory/de>	"Aktiengesellschaft in den Vereinigten Staaten" .
+#@ <id_jmzgh8_1hs_cou1zo>
+<de/Apple>	<hasWikiCategory/de>	"Bürogerätehersteller" .
+#@ <id_jmzgh8_1hs_18824sh>
+<de/Apple>	<hasWikiCategory/de>	"Cupertino" .
+#@ <id_jmzgh8_1hs_3jz11r>
+<de/Apple>	<hasWikiCategory/de>	"Gegründet 1976" .
+#@ <id_17ek7al_1hs_161d5wg>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Adolf Hitler" .
+#@ <id_17ek7al_1hs_99zr9r>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Reichskanzler (Deutsches Reich)" .
+#@ <id_17ek7al_1hs_57uvo5>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Reichspräsident (Deutschland)" .
+#@ <id_17ek7al_1hs_yqo2p1>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"DAP-Mitglied" .
+#@ <id_17ek7al_1hs_19at2i2>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"NSDAP-Mitglied" .
+#@ <id_17ek7al_1hs_1om5rhc>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Teilnehmer am Hitlerputsch" .
+#@ <id_17ek7al_1hs_ktdto1>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Täter des Holocaust" .
+#@ <id_17ek7al_1hs_qrnpv8>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Porajmos (Akteur)" .
+#@ <id_17ek7al_1hs_1gnn1ms>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Person (Aktion T4)" .
+#@ <id_17ek7al_1hs_1rwqr12>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Reichstagsabgeordneter (Weimarer Republik)" .
+#@ <id_17ek7al_1hs_rbvy8l>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Reichstagsabgeordneter (Deutsches Reich 1933–1945)" .
+#@ <id_17ek7al_1hs_ln0c2s>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Politiker (Weimarer Republik)" .
+#@ <id_17ek7al_1hs_jv5yhv>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Politiker (Deutsches Reich 1933–1945)" .
+#@ <id_17ek7al_1hs_15vt0ag>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Parteivorsitzender (Deutschland)" .
+#@ <id_17ek7al_1hs_dwr22n>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Militärperson im Nationalsozialismus" .
+#@ <id_17ek7al_1hs_1k6vz6u>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Österreichische Geschichte" .
+#@ <id_17ek7al_1hs_6ikkxh>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Person (Braunau am Inn)" .
+#@ <id_17ek7al_1hs_10kfts3>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Autor" .
+#@ <id_17ek7al_1hs_10sqn9g>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Österreicher" .
+#@ <id_17ek7al_1hs_1s0g28x>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Staatenloser" .
+#@ <id_17ek7al_1hs_1nujirp>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Deutscher" .
+#@ <id_17ek7al_1hs_3lcwwo>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Geboren 1889" .
+#@ <id_17ek7al_1hs_yu1u74>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Gestorben 1945" .
+#@ <id_17ek7al_1hs_zjz9mc>
+<de/Adolf_Hitler>	<hasWikiCategory/de>	"Mann" .
+#@ <id_1b35psn_1hs_1s1q4nd>
+<de/Algerien>	<hasWikiCategory/de>	"Algerien" .
+#@ <id_1b35psn_1hs_1jz6rsw>
+<de/Algerien>	<hasWikiCategory/de>	"Staat in Afrika" .
+#@ <id_1b35psn_1hs_l1hw01>
+<de/Algerien>	<hasWikiCategory/de>	"Mitgliedstaat der Vereinten Nationen" .
+#@ <id_9asi8p_1hs_2t91ya>
+<de/Arbeitsspeicher>	<hasWikiCategory/de>	"Digitales Speichermedium" .
+#@ <id_9asi8p_1hs_1nbvlxj>
+<de/Arbeitsspeicher>	<hasWikiCategory/de>	"Rechnerarchitektur" .
+#@ <id_1q5srs0_1hs_1g4r9fy>
+<de/Arcadius>	<hasWikiCategory/de>	"Kaiser (Rom)" .
+#@ <id_1q5srs0_1hs_w9av4a>
+<de/Arcadius>	<hasWikiCategory/de>	"Kaiser (Byzanz)" .
+#@ <id_1q5srs0_1hs_zn0mhn>
+<de/Arcadius>	<hasWikiCategory/de>	"Theodosianische Dynastie" .
+#@ <id_1q5srs0_1hs_1dwabc9>
+<de/Arcadius>	<hasWikiCategory/de>	"Geboren im 4. Jahrhundert" .
+#@ <id_1q5srs0_1hs_1hto0yt>
+<de/Arcadius>	<hasWikiCategory/de>	"Gestorben 408" .
+#@ <id_1q5srs0_1hs_zjz9mc>
+<de/Arcadius>	<hasWikiCategory/de>	"Mann" .

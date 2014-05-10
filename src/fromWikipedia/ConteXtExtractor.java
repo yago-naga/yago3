@@ -55,11 +55,6 @@ public class ConteXtExtractor extends EnglishWikipediaExtractor {
 			"yagoConteXtFacts",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
-	/** Context for entities provenance */
-	// public static final Theme CONTEXTSOURCES = new
-	// Theme("yagoConteXtSources",
-	// "Source information for the extracted keyphrases");
-
 	@Override
 	public Set<Theme> output() {
 		// return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);

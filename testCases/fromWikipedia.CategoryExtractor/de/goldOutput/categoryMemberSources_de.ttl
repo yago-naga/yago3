@@ -1,0 +1,1746 @@
+# Test on 1 wikipedia article
+# Sources for the facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated
+# INTERNAL
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_6p2znn_115_etrie8>
+<id_1ya05qi_1hs_wozuq1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Smithee> .
+<id_6p2znn_115_etrie8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1vcqzvi_115_etrie8>
+<id_1ya05qi_1hs_c4tysk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Smithee> .
+<id_1vcqzvi_115_etrie8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19hxxc6_115_etrie8>
+<id_1ya05qi_1hs_3mustr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Smithee> .
+<id_19hxxc6_115_etrie8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_r8qymj_115_etrie8>
+<id_1ya05qi_1hs_1f7lqfz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Smithee> .
+<id_r8qymj_115_etrie8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_lnx352_115_nrfx6r>
+<id_1cae7a1_1hs_18eq1yv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ang_Lee> .
+<id_lnx352_115_nrfx6r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15qtznl_115_nrfx6r>
+<id_1cae7a1_1hs_1brhla2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ang_Lee> .
+<id_15qtznl_115_nrfx6r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_16o4bgf_115_nrfx6r>
+<id_1cae7a1_1hs_1f2yccp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ang_Lee> .
+<id_16o4bgf_115_nrfx6r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1lr6qa2_115_nrfx6r>
+<id_1cae7a1_1hs_f253l7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ang_Lee> .
+<id_1lr6qa2_115_nrfx6r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1enafez_115_nrfx6r>
+<id_1cae7a1_1hs_1ulbx13>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ang_Lee> .
+<id_1enafez_115_nrfx6r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1qlki76_115_nrfx6r>
+<id_1cae7a1_1hs_p98gwl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ang_Lee> .
+<id_1qlki76_115_nrfx6r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_yimv5y_115_nrfx6r>
+<id_1cae7a1_1hs_3lcxkn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ang_Lee> .
+<id_yimv5y_115_nrfx6r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1w43tzu_115_nrfx6r>
+<id_1cae7a1_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ang_Lee> .
+<id_1w43tzu_115_nrfx6r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1lfnem6_115_s3sook>
+<id_43ixq_1hs_1vq09vb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anschluss_(Soziologie)> .
+<id_1lfnem6_115_s3sook>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1osr28a_115_191i61r>
+<id_1na8y7p_1hs_10qdgli>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aussagenlogik> .
+<id_1osr28a_115_191i61r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_9x9j2a_115_191i61r>
+<id_1na8y7p_1hs_39zd0z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aussagenlogik> .
+<id_9x9j2a_115_191i61r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ontrxb_115_hifs6w>
+<id_1e250cu_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/A> .
+<id_ontrxb_115_hifs6w>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_13s2ayz_115_hifs6w>
+<id_1e250cu_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/A> .
+<id_13s2ayz_115_hifs6w>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1q4xipm_115_hifs73>
+<id_1e250d1_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/H> .
+<id_1q4xipm_115_hifs73>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vtmt00_115_hifs73>
+<id_1e250d1_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/H> .
+<id_vtmt00_115_hifs73>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_eyghi9_115_hifs6y>
+<id_1e250cw_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/C> .
+<id_eyghi9_115_hifs6y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_181rop5_115_hifs6y>
+<id_1e250cw_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/C> .
+<id_181rop5_115_hifs6y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1la8vi3_115_hifs74>
+<id_1e250d2_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/I> .
+<id_1la8vi3_115_hifs74>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_xyhhv3_115_hifs74>
+<id_1e250d2_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/I> .
+<id_xyhhv3_115_hifs74>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1bkvl31_115_hifs76>
+<id_1e250d4_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/K> .
+<id_1bkvl31_115_hifs76>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1286vl9_115_hifs76>
+<id_1e250d4_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/K> .
+<id_1286vl9_115_hifs76>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gfk8ak_115_hifs75>
+<id_1e250d3_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/J> .
+<id_1gfk8ak_115_hifs75>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_103c6q6_115_hifs75>
+<id_1e250d3_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/J> .
+<id_103c6q6_115_hifs75>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_i1zijz_115_hifs7h>
+<id_1e250df_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/V> .
+<id_i1zijz_115_hifs7h>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_2wlat7_115_hifs7h>
+<id_1e250df_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/V> .
+<id_2wlat7_115_hifs7h>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1uzm5x5_115_hifs72>
+<id_1e250d0_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/G> .
+<id_1uzm5x5_115_hifs72>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_tos44x_115_hifs72>
+<id_1e250d0_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/G> .
+<id_tos44x_115_hifs72>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_d7avcg_115_hifs7i>
+<id_1e250dg_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/W> .
+<id_d7avcg_115_hifs7i>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_51fzoa_115_hifs7i>
+<id_1e250dg_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/W> .
+<id_51fzoa_115_hifs7i>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jt54ps_115_hifs6x>
+<id_1e250cv_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/B> .
+<id_jt54ps_115_hifs6x>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15wwzu2_115_hifs6x>
+<id_1e250cv_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/B> .
+<id_15wwzu2_115_hifs6x>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_a3ruaq_115_hifs6z>
+<id_1e250cx_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/D> .
+<id_a3ruaq_115_hifs6z>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1a6mdk8_115_hifs6z>
+<id_1e250cx_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/D> .
+<id_1a6mdk8_115_hifs6z>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_wm1g6k_115_hifs7e>
+<id_1e250dc_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/S> .
+<id_wm1g6k_115_hifs7e>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1vj5a72_115_hifs7e>
+<id_1e250dc_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/S> .
+<id_1vj5a72_115_hifs7e>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_rrcsz1_115_hifs7f>
+<id_1e250dd_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/T> .
+<id_rrcsz1_115_hifs7f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xnzz25_115_hifs7f>
+<id_1e250dd_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/T> .
+<id_1xnzz25_115_hifs7f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11vianz_115_hifs78>
+<id_1e250d6_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/M> .
+<id_11vianz_115_hifs78>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_16hw9bf_115_hifs78>
+<id_1e250d6_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/M> .
+<id_16hw9bf_115_hifs78>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_s6508x_115_hifs7a>
+<id_1e250d8_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/O> .
+<id_s6508x_115_hifs7a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1arln1l_115_hifs7a>
+<id_1e250d8_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/O> .
+<id_1arln1l_115_hifs7a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_eejvo_115_hifs71>
+<id_1e250cz_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/F> .
+<id_eejvo_115_hifs71>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1egbrae_115_hifs71>
+<id_1e250cz_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/F> .
+<id_1egbrae_115_hifs71>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_593737_115_hifs70>
+<id_1e250cy_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/E> .
+<id_593737_115_hifs70>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1cbh2fb_115_hifs70>
+<id_1e250cy_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/E> .
+<id_1cbh2fb_115_hifs70>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_16q6xvi_115_hifs77>
+<id_1e250d5_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/L> .
+<id_16q6xvi_115_hifs77>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_14d1kgc_115_hifs77>
+<id_1e250d5_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/L> .
+<id_14d1kgc_115_hifs77>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_x0tngg_115_hifs79>
+<id_1e250d7_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/N> .
+<id_x0tngg_115_hifs79>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_18mqy6i_115_hifs79>
+<id_1e250d7_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/N> .
+<id_18mqy6i_115_hifs79>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_nbgd1e_115_hifs7b>
+<id_1e250d9_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/P> .
+<id_nbgd1e_115_hifs7b>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1cwgbwo_115_hifs7b>
+<id_1e250d9_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/P> .
+<id_1cwgbwo_115_hifs7b>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_16beqlm_115_hifs7c>
+<id_1e250da_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Q> .
+<id_16beqlm_115_hifs7c>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1r9fwgw_115_hifs7c>
+<id_1e250da_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Q> .
+<id_1r9fwgw_115_hifs7c>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11gq3e3_115_hifs7d>
+<id_1e250db_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/R> .
+<id_11gq3e3_115_hifs7d>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1tealbz_115_hifs7d>
+<id_1e250db_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/R> .
+<id_1tealbz_115_hifs7d>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_mwo5ri_115_hifs7g>
+<id_1e250de_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/U> .
+<id_mwo5ri_115_hifs7g>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_rqly4_115_hifs7g>
+<id_1e250de_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/U> .
+<id_rqly4_115_hifs7g>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3hxkxe_115_hifs7k>
+<id_1e250di_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Y> .
+<id_3hxkxe_115_hifs7k>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_9b5deg_115_hifs7k>
+<id_1e250di_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Y> .
+<id_9b5deg_115_hifs7k>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xoczoz_115_hifs7l>
+<id_1e250dj_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Z> .
+<id_1xoczoz_115_hifs7l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_bg029j_115_hifs7l>
+<id_1e250dj_1hs_12mitg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Z> .
+<id_bg029j_115_hifs7l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_w17df_115_31pp0l>
+<id_ykgyd7_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_w17df_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_dtm9zb_115_31pp0l>
+<id_ykgyd7_1hs_k5sqia>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_dtm9zb_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ay2z8a_115_31pp0l>
+<id_ykgyd7_1hs_e3jfbk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_ay2z8a_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_w6d7i_115_31pp0l>
+<id_ykgyd7_1hs_10m0wg7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_w6d7i_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_z0duv_115_31pp0l>
+<id_ykgyd7_1hs_122u2cc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_z0duv_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1owvmht_115_31pp0l>
+<id_ykgyd7_1hs_7beilw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_1owvmht_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_oo5yun_115_31pp0l>
+<id_ykgyd7_1hs_1brhla2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_oo5yun_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_plganh_115_31pp0l>
+<id_ykgyd7_1hs_1f2yccp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_plganh_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_k8egb8_115_31pp0l>
+<id_ykgyd7_1hs_wekbnv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_k8egb8_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_bdlx3w_115_31pp0l>
+<id_ykgyd7_1hs_f253l7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_bdlx3w_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_uttpzv_115_31pp0l>
+<id_ykgyd7_1hs_1q4lqp9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_uttpzv_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1nk0ytx_115_31pp0l>
+<id_ykgyd7_1hs_4fjc69>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_1nk0ytx_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_wcfvr_115_31pp0l>
+<id_ykgyd7_1hs_10kxhd6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_wcfvr_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1n663yw_115_31pp0l>
+<id_ykgyd7_1hs_3lcxkn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_1n663yw_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_le9zct_115_31pp0l>
+<id_ykgyd7_1hs_yu2af1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_le9zct_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_lqj0to_115_31pp0l>
+<id_ykgyd7_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella> .
+<id_lqj0to_115_31pp0l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_wkw0xl_115_1qcfmqc>
+<id_ycqgzi_1hs_1xfnpk2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/US-amerikanischer_Film> .
+<id_wkw0xl_115_1qcfmqc>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1lwni21_115_1qcfmqc>
+<id_ycqgzi_1hs_oxphwp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/US-amerikanischer_Film> .
+<id_1lwni21_115_1qcfmqc>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_12qw9nl_115_1jml4k9>
+<id_1nnnucv_1hs_h1jd47>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Vorsätze_für_Maßeinheiten> .
+<id_12qw9nl_115_1jml4k9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_12v6b13_115_1jml4k9>
+<id_1nnnucv_1hs_11rwx32>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Vorsätze_für_Maßeinheiten> .
+<id_12v6b13_115_1jml4k9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1vq19if_115_1jml4k9>
+<id_1nnnucv_1hs_1p3du1n>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Vorsätze_für_Maßeinheiten> .
+<id_1vq19if_115_1jml4k9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jnqns8_115_1cq6baa>
+<id_1lijj5k_1hs_pelmsc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abkürzungen/Gesetze_und_Recht> .
+<id_jnqns8_115_1cq6baa>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1sw3sq3_115_1cq6baa>
+<id_1lijj5k_1hs_9uj81p>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abkürzungen/Gesetze_und_Recht> .
+<id_1sw3sq3_115_1cq6baa>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_188ip4w_115_1cq6baa>
+<id_1lijj5k_1hs_1p3du1n>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abkürzungen/Gesetze_und_Recht> .
+<id_188ip4w_115_1cq6baa>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qqjymj_115_egkw1a>
+<id_1w79d94_1hs_1wcebss>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Abkürzungen_(Computer)> .
+<id_qqjymj_115_egkw1a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_mou6wj_115_egkw1a>
+<id_1w79d94_1hs_1p3du1n>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Abkürzungen_(Computer)> .
+<id_mou6wj_115_egkw1a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1srs2e3_115_1e8cjw4>
+<id_15itdy6_1hs_ngeac5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Unternehmen_mit_Namensherkunftserklärungen> .
+<id_1srs2e3_115_1e8cjw4>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_17crgol_115_1qbnzaa>
+<id_15ay2do_1hs_1liio1w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/ISO_4217> .
+<id_17crgol_115_1qbnzaa>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1dnlrrk_115_1qbnzaa>
+<id_15ay2do_1hs_w18jw6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/ISO_4217> .
+<id_1dnlrrk_115_1qbnzaa>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_9kwolh_115_1l3p6w9>
+<id_imad33_1hs_1m3rb2g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Achsensprung_(Film)> .
+<id_9kwolh_115_1l3p6w9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_a4gvc2_115_1l3p6w9>
+<id_imad33_1hs_1n8dzlt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Achsensprung_(Film)> .
+<id_a4gvc2_115_1l3p6w9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1lmcdm2_115_1l37irr>
+<id_sbh5gx_1hs_1598mte>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_1lmcdm2_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_9pqj4z_115_1l37irr>
+<id_sbh5gx_1hs_1f2yccp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_9pqj4z_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_14cch5q_115_1l37irr>
+<id_sbh5gx_1hs_wekbnv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_14cch5q_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_aqxhle_115_1l37irr>
+<id_sbh5gx_1hs_1h8nc8e>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_aqxhle_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1m1pxna_115_1l37irr>
+<id_sbh5gx_1hs_14rum33>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_1m1pxna_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1nfkdwl_115_1l37irr>
+<id_sbh5gx_1hs_17pl7cd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_1nfkdwl_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_akmm89_115_1l37irr>
+<id_sbh5gx_1hs_8ifsic>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_akmm89_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1k1qqcd_115_1l37irr>
+<id_sbh5gx_1hs_10kxhd6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_1k1qqcd_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_cdsgkb_115_1l37irr>
+<id_sbh5gx_1hs_1jeot50>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_cdsgkb_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_8902eo_115_1l37irr>
+<id_sbh5gx_1hs_3lcwxj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_8902eo_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15i7ryu_115_1l37irr>
+<id_sbh5gx_1hs_yu1uaf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_15i7ryu_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15uh1o6_115_1l37irr>
+<id_sbh5gx_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alfred_Hitchcock> .
+<id_15uh1o6_115_1l37irr>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ceci4f_115_1q7if49>
+<id_6isaer_1hs_zjuylg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Auteur-Theorie> .
+<id_ceci4f_115_1q7if49>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_7a5mzi_115_1q7if49>
+<id_6isaer_1hs_q2vdw6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Auteur-Theorie> .
+<id_7a5mzi_115_1q7if49>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1luw8qs_115_h07h6e>
+<id_wcleg0_1hs_1f2yccp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aki_Kaurismäki> .
+<id_1luw8qs_115_h07h6e>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1kxlwxy_115_h07h6e>
+<id_wcleg0_1hs_1brhla2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aki_Kaurismäki> .
+<id_1kxlwxy_115_h07h6e>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_kkh0wr_115_h07h6e>
+<id_wcleg0_1hs_w7el3w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aki_Kaurismäki> .
+<id_kkh0wr_115_h07h6e>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_x6w3no_115_h07h6e>
+<id_wcleg0_1hs_10mz0f6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aki_Kaurismäki> .
+<id_x6w3no_115_h07h6e>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1o7mvs4_115_h07h6e>
+<id_wcleg0_1hs_3lcxkq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aki_Kaurismäki> .
+<id_1o7mvs4_115_h07h6e>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_mrzsmt_115_h07h6e>
+<id_wcleg0_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aki_Kaurismäki> .
+<id_mrzsmt_115_h07h6e>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ruu1gv_115_q1iuy8>
+<id_jmy1c6_1hs_10kb4no>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anime> .
+<id_1ruu1gv_115_q1iuy8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gu0urm_115_muu4ji>
+<id_1ug6cyw_1hs_1eshe8v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actionfilm> .
+<id_1gu0urm_115_muu4ji>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19wnilp_115_muu4ji>
+<id_1ug6cyw_1hs_s368re>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actionfilm> .
+<id_19wnilp_115_muu4ji>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_s5bcs8_115_1tvmhe0>
+<id_1hjbn32_1hs_1ulbx13>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al_Pacino> .
+<id_s5bcs8_115_1tvmhe0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_khxcsp_115_1tvmhe0>
+<id_1hjbn32_1hs_c8uc4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al_Pacino> .
+<id_khxcsp_115_1tvmhe0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1whhv5p_115_1tvmhe0>
+<id_1hjbn32_1hs_f253l7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al_Pacino> .
+<id_1whhv5p_115_1tvmhe0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_n95a59_115_1tvmhe0>
+<id_1hjbn32_1hs_1kaujlu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al_Pacino> .
+<id_n95a59_115_1tvmhe0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_mu7690_115_1tvmhe0>
+<id_1hjbn32_1hs_1jeot50>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al_Pacino> .
+<id_mu7690_115_1tvmhe0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1apek4z_115_1tvmhe0>
+<id_1hjbn32_1hs_6p2nxm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al_Pacino> .
+<id_1apek4z_115_1tvmhe0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_198y00r_115_1tvmhe0>
+<id_1hjbn32_1hs_3lcxjo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al_Pacino> .
+<id_198y00r_115_1tvmhe0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_7tawwd_115_1tvmhe0>
+<id_1hjbn32_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al_Pacino> .
+<id_7tawwd_115_1tvmhe0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1t996hd_115_1y5dsyb>
+<id_1d4nw1p_1hs_1byhzau>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkohole> .
+<id_1t996hd_115_1y5dsyb>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_28p51t_115_1y5dsyb>
+<id_1d4nw1p_1hs_1u9bsi1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkohole> .
+<id_28p51t_115_1y5dsyb>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_54gm92_115_1y5dsyb>
+<id_1d4nw1p_1hs_1yyxxqc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkohole> .
+<id_54gm92_115_1y5dsyb>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1uhvr1v_115_10pg33r>
+<id_l4kogx_1hs_eg3eec>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1uhvr1v_115_10pg33r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_85599_115_10pg33r>
+<id_l4kogx_1hs_oggfn3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_85599_115_10pg33r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1x2vpgs_115_10pg33r>
+<id_l4kogx_1hs_jsumoy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1x2vpgs_115_10pg33r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_kw3j1h_115_10pg33r>
+<id_l4kogx_1hs_1hhrcr6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_kw3j1h_115_10pg33r>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1u00hzw_115_1bhovmd>
+<id_z5e1bf_1hs_9m9juy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1u00hzw_115_1bhovmd>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_g9sigr_115_1bhovmd>
+<id_z5e1bf_1hs_1wlonjs>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_g9sigr_115_1bhovmd>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_psbld6_115_1bhovmd>
+<id_z5e1bf_1hs_zp0nor>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_psbld6_115_1bhovmd>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ffu5k6_115_1bhovmd>
+<id_z5e1bf_1hs_1utb5tj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_ffu5k6_115_1bhovmd>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1wqiaeu_115_nysbhi>
+<id_1chqlks_1hs_9m9juy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1wqiaeu_115_nysbhi>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1w4ag4c_115_nysbhi>
+<id_1chqlks_1hs_8bl7zt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1w4ag4c_115_nysbhi>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_sitds4_115_nysbhi>
+<id_1chqlks_1hs_zp0nor>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_sitds4_115_nysbhi>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_sbml88_115_q1ldgx>
+<id_jn0juv_1hs_wysu7l>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_sbml88_115_q1ldgx>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xpfykw_115_q1ldgx>
+<id_jn0juv_1hs_9fr0m3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1xpfykw_115_q1ldgx>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vf19tp_115_q1lm4n>
+<id_jn0sil_1hs_9m9juy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_vf19tp_115_q1lm4n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ustfj7_115_q1lm4n>
+<id_jn0sil_1hs_8bl7zt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_ustfj7_115_q1lm4n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1q8gf63_115_q1lm4n>
+<id_jn0sil_1hs_zp0nor>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1q8gf63_115_q1lm4n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1yjytvz_115_q1m9rl>
+<id_jn1g5j_1hs_euaces>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1yjytvz_115_q1m9rl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1213ss9_115_m4eda6>
+<id_10d55g4_1hs_1mdr6qr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkalimetalle> .
+<id_1213ss9_115_m4eda6>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_144ebc8_115_m4eda6>
+<id_10d55g4_1hs_1qs0u2v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkalimetalle> .
+<id_144ebc8_115_m4eda6>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1misq97_115_1jppnpq>
+<id_17detes_1hs_96zgpf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinoide> .
+<id_1misq97_115_1jppnpq>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jtp441_115_1jppnpq>
+<id_17detes_1hs_1qs0u2v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinoide> .
+<id_jtp441_115_1jppnpq>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_16y8ypb_115_1szw9p1>
+<id_1o7hef3_1hs_35q9np>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atom> .
+<id_16y8ypb_115_1szw9p1>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_13pkgpu_115_1szw8hb>
+<id_1o7hd7d_1hs_1pnzjj1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arzt> .
+<id_13pkgpu_115_1szw8hb>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_cc312e_115_1szw8hb>
+<id_1o7hd7d_1hs_18849cw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arzt> .
+<id_cc312e_115_1szw8hb>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1q7kp5b_115_1szw8hb>
+<id_1o7hd7d_1hs_xf1jvz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arzt> .
+<id_1q7kp5b_115_1szw8hb>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_uq07bu_115_1szw8hb>
+<id_1o7hd7d_1hs_75zvtp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arzt> .
+<id_uq07bu_115_1szw8hb>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1i9nc5g_115_1qjec0v>
+<id_5r127p_1hs_3ghchv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthropologie> .
+<id_1i9nc5g_115_1qjec0v>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_m6y9xc_115_1qjec0v>
+<id_5r127p_1hs_1mojbxt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthropologie> .
+<id_m6y9xc_115_1qjec0v>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_m1usl0_115_1qjec0v>
+<id_5r127p_1hs_1mfc8zv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthropologie> .
+<id_m1usl0_115_1qjec0v>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_7ixcf7_115_1qjec0v>
+<id_5r127p_1hs_fr2gfa>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthropologie> .
+<id_7ixcf7_115_1qjec0v>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1hkg80k_115_1qjec0v>
+<id_5r127p_1hs_1y10m3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthropologie> .
+<id_1hkg80k_115_1qjec0v>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_eaz45j_115_1qjec0v>
+<id_5r127p_1hs_tzkvix>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthropologie> .
+<id_eaz45j_115_1qjec0v>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_55or3x_115_1qjec0v>
+<id_5r127p_1hs_ar30ya>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthropologie> .
+<id_55or3x_115_1qjec0v>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ascquq_115_bgq36n>
+<id_180fbcl_1hs_6ne9v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_ascquq_115_bgq36n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1cffldd_115_bgq36n>
+<id_180fbcl_1hs_2pce81>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1cffldd_115_bgq36n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_70atks_115_bgq36n>
+<id_180fbcl_1hs_qayc7a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_70atks_115_bgq36n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1jn6pl_115_bgq36n>
+<id_180fbcl_1hs_epf518>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1jn6pl_115_bgq36n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1uqdqwb_115_bgq36n>
+<id_180fbcl_1hs_1qv33ly>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1uqdqwb_115_bgq36n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_10v27zj_115_bgq36n>
+<id_180fbcl_1hs_12qyab1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_10v27zj_115_bgq36n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1seuz91_115_bgq36n>
+<id_180fbcl_1hs_1lwt73a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1seuz91_115_bgq36n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_bendlp_115_bgq36n>
+<id_180fbcl_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_bendlp_115_bgq36n>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_fnn6nq_115_pz6zuo>
+<id_14ilnsa_1hs_1w134v0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antike> .
+<id_fnn6nq_115_pz6zuo>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1uj1i9j_115_pz6zuo>
+<id_14ilnsa_1hs_75txk0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antike> .
+<id_1uj1i9j_115_pz6zuo>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1smumnz_115_pz6zuo>
+<id_14ilnsa_1hs_1u6elh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antike> .
+<id_1smumnz_115_pz6zuo>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gwwyf1_115_ck8l5y>
+<id_1w0h8i8_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_1gwwyf1_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1iin878_115_ck8l5y>
+<id_1w0h8i8_1hs_13wfp24>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_1iin878_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_14peae5_115_ck8l5y>
+<id_1w0h8i8_1hs_k5sqia>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_14peae5_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11tuzn4_115_ck8l5y>
+<id_1w0h8i8_1hs_e3jfbk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_11tuzn4_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1kb6dv8_115_ck8l5y>
+<id_1w0h8i8_1hs_192qxmm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_1kb6dv8_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15hb88t_115_ck8l5y>
+<id_1w0h8i8_1hs_khn056>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_15hb88t_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gx86xd_115_ck8l5y>
+<id_1w0h8i8_1hs_10kxhd6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_1gx86xd_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_10wquuo_115_ck8l5y>
+<id_1w0h8i8_1hs_ascg7t>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_10wquuo_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_f0u1wo_115_ck8l5y>
+<id_1w0h8i8_1hs_3lcwus>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_f0u1wo_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ca1qgu_115_ck8l5y>
+<id_1w0h8i8_1hs_yu1u67>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_1ca1qgu_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1cmb18i_115_ck8l5y>
+<id_1w0h8i8_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Hope> .
+<id_1cmb18i_115_ck8l5y>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ulh6wm_115_xxfaha>
+<id_gnbkoo_1hs_asyqig>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_1ulh6wm_115_xxfaha>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ujg938_115_pykkig>
+<id_14hz8g2_1hs_1ymfa1m>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_1ujg938_115_pykkig>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_4a9dmf_115_pykkig>
+<id_14hz8g2_1hs_fx6fmj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_4a9dmf_115_pykkig>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gi9ctl_115_1szvx5l>
+<id_1o7h1vn_1hs_ctffk7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Acre> .
+<id_1gi9ctl_115_1szvx5l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_14qob0k_115_1szvx5l>
+<id_1o7h1vn_1hs_1rts6lf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Acre> .
+<id_14qob0k_115_1szvx5l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1jaunop_115_1szvx5l>
+<id_1o7h1vn_1hs_k3f3mu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Acre> .
+<id_1jaunop_115_1szvx5l>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_zri63h_115_1nsg37m>
+<id_12rq6b0_1hs_1dfi16z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apostilb> .
+<id_zri63h_115_1nsg37m>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_bu2xas_115_1nsg37m>
+<id_12rq6b0_1hs_11v5038>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apostilb> .
+<id_bu2xas_115_1nsg37m>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_18uqhvt_115_1nsg37m>
+<id_12rq6b0_1hs_1wlm8ys>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apostilb> .
+<id_18uqhvt_115_1nsg37m>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_zri63h_115_1nsg37m>
+<id_12rq6b0_1hs_1dfi16z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apostilb> .
+<id_zri63h_115_1nsg37m>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jnrj8q_115_hrslv9>
+<id_26x78f_1hs_k3f3mu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_jnrj8q_115_hrslv9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1wc7kc3_115_hrslv9>
+<id_26x78f_1hs_1jg5m7q>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_1wc7kc3_115_hrslv9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_iszu6y_115_hrslv9>
+<id_26x78f_1hs_gwexo9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_iszu6y_115_hrslv9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1x1w1lj_115_hrslv9>
+<id_26x78f_1hs_1kujfta>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_1x1w1lj_115_hrslv9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qoqhfh_115_1o2ergs>
+<id_1wurzc2_1hs_p7ugr6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeit_(Sozialwissenschaften)> .
+<id_qoqhfh_115_1o2ergs>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ncpasa_115_1o2ergs>
+<id_1wurzc2_1hs_i6kxoo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeit_(Sozialwissenschaften)> .
+<id_ncpasa_115_1o2ergs>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3r43zo_115_1o2ergs>
+<id_1wurzc2_1hs_1wibih2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeit_(Sozialwissenschaften)> .
+<id_3r43zo_115_1o2ergs>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_pqwfx6_115_1o2ergs>
+<id_1wurzc2_1hs_n8dtii>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeit_(Sozialwissenschaften)> .
+<id_pqwfx6_115_1o2ergs>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1wyxi8j_115_1qoywtx>
+<id_fypoej_1hs_35q9np>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_1wyxi8j_115_1qoywtx>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_nie5m4_115_1qoywtx>
+<id_fypoej_1hs_gsy9un>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_nie5m4_115_1qoywtx>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_wjsi70_115_1qoywtx>
+<id_fypoej_1hs_zx3vth>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_wjsi70_115_1qoywtx>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_tn1fh8_115_1qoywtx>
+<id_fypoej_1hs_v4aycb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_tn1fh8_115_1qoywtx>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_616i1y_115_1qoywtx>
+<id_fypoej_1hs_1qdnvx9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_616i1y_115_1qoywtx>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ciz6cp_115_2kpyy>
+<id_1uyxow_1hs_1tvka9l>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anglizismus> .
+<id_ciz6cp_115_2kpyy>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_2orslu_115_2kpyy>
+<id_1uyxow_1hs_zi3erp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anglizismus> .
+<id_2orslu_115_2kpyy>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1jdyugg_115_z5444x>
+<id_e4e78b_1hs_ghwfj7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astronom> .
+<id_1jdyugg_115_z5444x>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1y3do28_115_z5444x>
+<id_e4e78b_1hs_1f4jyd9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astronom> .
+<id_1y3do28_115_z5444x>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_16yh5cp_115_7ya07o>
+<id_9qo7xm_1hs_11abygq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_16yh5cp_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1wa6gzk_115_7ya07o>
+<id_9qo7xm_1hs_1h2h77v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_1wa6gzk_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_5aupik_115_7ya07o>
+<id_9qo7xm_1hs_1wpgwoj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_5aupik_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1mya825_115_7ya07o>
+<id_9qo7xm_1hs_9y6b80>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_1mya825_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1wlfmdx_115_7ya07o>
+<id_9qo7xm_1hs_1geudoo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_1wlfmdx_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1mr0ov3_115_7ya07o>
+<id_9qo7xm_1hs_9jmmm2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_1mr0ov3_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1783gq4_115_7ya07o>
+<id_9qo7xm_1hs_134rg7e>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_1783gq4_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_169jw1w_115_7ya07o>
+<id_9qo7xm_1hs_1159rzy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_169jw1w_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15s3m8u_115_7ya07o>
+<id_9qo7xm_1hs_103b6rq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_15s3m8u_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_h7qm52_115_7ya07o>
+<id_9qo7xm_1hs_y5rpxk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_h7qm52_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1kqt457_115_7ya07o>
+<id_9qo7xm_1hs_5cch0o>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_1kqt457_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_f51rui_115_7ya07o>
+<id_9qo7xm_1hs_sgwpbf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_f51rui_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_5pbx71_115_7ya07o>
+<id_9qo7xm_1hs_1xm4acf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_5pbx71_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_16nb5vp_115_7ya07o>
+<id_9qo7xm_1hs_10kxhd6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_16nb5vp_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1jxodus_115_7ya07o>
+<id_9qo7xm_1hs_3lcxh5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_1jxodus_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_i5s04r_115_7ya07o>
+<id_9qo7xm_1hs_yu1u7y>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_i5s04r_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ii1atq_115_7ya07o>
+<id_9qo7xm_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alan_Turing> .
+<id_ii1atq_115_7ya07o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_s3bp4d_115_frlgij>
+<id_hjzo8h_1hs_zvszcv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archäologie> .
+<id_s3bp4d_115_frlgij>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_xn0y2d_115_8nnrtk>
+<id_1a72c02_1hs_f6n0wn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/American_Standard_Code_for_Information_Interchange> .
+<id_xn0y2d_115_8nnrtk>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_13e8zm0_115_8nnrtk>
+<id_1a72c02_1hs_pyhx58>	<extractionSource>	<http://en.wikipedia.org/wiki/de/American_Standard_Code_for_Information_Interchange> .
+<id_13e8zm0_115_8nnrtk>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1l3ntok_115_b6tl1q>
+<id_15eb9b8_1hs_tq3pzl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Außenbandruptur_des_oberen_Sprunggelenkes> .
+<id_1l3ntok_115_b6tl1q>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_8phm02_115_b6tl1q>
+<id_15eb9b8_1hs_1x44t8e>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Außenbandruptur_des_oberen_Sprunggelenkes> .
+<id_8phm02_115_b6tl1q>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vh4y84_115_1dik3b>
+<id_1fdwp5t_1hs_1wch40j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alphabet> .
+<id_vh4y84_115_1dik3b>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_h3nu81_115_ct6xng>
+<id_r1xpte_1hs_ozuo06>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_h3nu81_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_doxaqo_115_ct6xng>
+<id_r1xpte_1hs_j6p39t>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_doxaqo_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_acvyrh_115_ct6xng>
+<id_r1xpte_1hs_108vjhn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_acvyrh_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_13hyx4p_115_ct6xng>
+<id_r1xpte_1hs_1lj93k1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_13hyx4p_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15g5oza_115_ct6xng>
+<id_r1xpte_1hs_1pljwvh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_15g5oza_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_b4ypdk_115_ct6xng>
+<id_r1xpte_1hs_10kxhd6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_b4ypdk_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ni265q_115_ct6xng>
+<id_r1xpte_1hs_3lcwxc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_1ni265q_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_lq5tr3_115_ct6xng>
+<id_r1xpte_1hs_yu1uaj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_lq5tr3_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_m2f3gb_115_ct6xng>
+<id_r1xpte_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Harris> .
+<id_m2f3gb_115_ct6xng>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1w4ijna_115_1kdasaf>
+<id_84vdxp_1hs_1h6qk3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1w4ijna_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1cnvz2n_115_1kdasaf>
+<id_84vdxp_1hs_1a5tctk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1cnvz2n_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qibpvt_115_1kdasaf>
+<id_84vdxp_1hs_ol2scr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_qibpvt_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qfkqkk_115_1kdasaf>
+<id_84vdxp_1hs_127e45p>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_qfkqkk_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1oetzz8_115_1kdasaf>
+<id_84vdxp_1hs_1xmzwnk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1oetzz8_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1iarrqd_115_1kdasaf>
+<id_84vdxp_1hs_1m45txb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1iarrqd_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1idxcb0_115_1kdasaf>
+<id_84vdxp_1hs_1m8m2ry>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1idxcb0_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jzi80i_115_1kdasaf>
+<id_84vdxp_1hs_c5237z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_jzi80i_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_lnhdre_115_1kdasaf>
+<id_84vdxp_1hs_ebqa6w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_lnhdre_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_pgo7yi_115_1kdasaf>
+<id_84vdxp_1hs_mdawno>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_pgo7yi_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_rjpo6y_115_1kdasaf>
+<id_84vdxp_1hs_s2r2kj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_rjpo6y_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1g9wrme_115_1kdasaf>
+<id_84vdxp_1hs_1ghcwnz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1g9wrme_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_nsxjug_115_1kdasaf>
+<id_84vdxp_1hs_k5n3ub>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_nsxjug_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_lqal6w_115_1kdasaf>
+<id_84vdxp_1hs_ei81g6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_lqal6w_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ni4g0b_115_1kdasaf>
+<id_84vdxp_1hs_1vpkqzp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1ni4g0b_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gc68v7_115_1kdasaf>
+<id_84vdxp_1hs_1glgkgl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1gc68v7_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1yiw1nc_115_1kdasaf>
+<id_84vdxp_1hs_6hwkwm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1yiw1nc_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_o8wb1h_115_1kdasaf>
+<id_84vdxp_1hs_l3o7x2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_o8wb1h_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_scz8bx_115_1kdasaf>
+<id_84vdxp_1hs_sgwpbf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_scz8bx_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_s1uljo_115_1kdasaf>
+<id_84vdxp_1hs_t62d59>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_s1uljo_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1nwn82j_115_1kdasaf>
+<id_84vdxp_1hs_1wkxk32>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1nwn82j_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1jlm4od_115_1kdasaf>
+<id_84vdxp_1hs_1nhyuqs>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1jlm4od_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_r4axdb_115_1kdasaf>
+<id_84vdxp_1hs_psovyb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_r4axdb_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xqg2dg_115_1kdasaf>
+<id_84vdxp_1hs_65b8e8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1xqg2dg_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_sayh1c_115_1kdasaf>
+<id_84vdxp_1hs_165v1uf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_sayh1c_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_tea25w_115_1kdasaf>
+<id_84vdxp_1hs_umt2su>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_tea25w_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vh0lg6_115_1kdasaf>
+<id_84vdxp_1hs_yypft8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_vh0lg6_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vv1y2l_115_1kdasaf>
+<id_84vdxp_1hs_ztatd8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_vv1y2l_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qag10y_115_1kdasaf>
+<id_84vdxp_1hs_10kxhd6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_qag10y_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1x5lscu_115_1kdasaf>
+<id_84vdxp_1hs_3lcw49>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_1x5lscu_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vdpgzu_115_1kdasaf>
+<id_84vdxp_1hs_yu1th7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_vdpgzu_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vpyrb5_115_1kdasaf>
+<id_84vdxp_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Wellesley,_1._Duke_of_Wellington> .
+<id_vpyrb5_115_1kdasaf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1llhozq_115_vucfkd>
+<id_4ekm0n_1hs_112ojs9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astronomie> .
+<id_1llhozq_115_vucfkd>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_9jcwsj_115_vucfkd>
+<id_4ekm0n_1hs_ar30ya>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astronomie> .
+<id_9jcwsj_115_vucfkd>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_efir79_115_b9vb9f>
+<id_qm98j1_1hs_c8uc4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_efir79_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_mh5dn5_115_b9vb9f>
+<id_qm98j1_1hs_f253l7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_mh5dn5_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_k985g8_115_b9vb9f>
+<id_qm98j1_1hs_1r8l28o>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_k985g8_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_mgtdb8_115_b9vb9f>
+<id_qm98j1_1hs_1ulbx13>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_mgtdb8_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_dzpgef_115_b9vb9f>
+<id_qm98j1_1hs_1e1ew7k>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_dzpgef_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1t67nma_115_b9vb9f>
+<id_qm98j1_1hs_19qpeg7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_1t67nma_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_h5p6s0_115_b9vb9f>
+<id_qm98j1_1hs_1jeot50>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_h5p6s0_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1y9pkjm_115_b9vb9f>
+<id_qm98j1_1hs_3lcxme>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_1y9pkjm_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_wtzszm_115_b9vb9f>
+<id_qm98j1_1hs_zjv50g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angelina_Jolie> .
+<id_wtzszm_115_b9vb9f>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_p6vux7_115_1pdvya3>
+<id_xy44qd_1hs_1um82hz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_p6vux7_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_mhzzz9_115_1pdvya3>
+<id_xy44qd_1hs_1ow0dw9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_mhzzz9_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_j7l9kv_115_1pdvya3>
+<id_xy44qd_1hs_1hwcgmr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_j7l9kv_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1qr3bgl_115_1pdvya3>
+<id_xy44qd_1hs_gd0s9t>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_1qr3bgl_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_i4e7lx_115_1pdvya3>
+<id_xy44qd_1hs_1fmym2u>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_i4e7lx_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1uti8ps_115_1pdvya3>
+<id_xy44qd_1hs_17j3yx8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_1uti8ps_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_etb7p6_115_1pdvya3>
+<id_xy44qd_1hs_1a0i0he>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_etb7p6_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1rhmqdx_115_1pdvya3>
+<id_xy44qd_1hs_j78zrn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_1rhmqdx_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_h8aiyy_115_1pdvya3>
+<id_xy44qd_1hs_1dqo18l>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_h8aiyy_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_uexsf_115_1pdvya3>
+<id_xy44qd_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Archimedes> .
+<id_uexsf_115_1pdvya3>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1bly66z_115_1bxygf>
+<id_34c66d_1hs_lg5har>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_1bly66z_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1agugni_115_1bxygf>
+<id_34c66d_1hs_1q9lsnx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_1agugni_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1aecvcm_115_1bxygf>
+<id_34c66d_1hs_isjqkt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_1aecvcm_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15240r1_115_1bxygf>
+<id_34c66d_1hs_1djgopz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_15240r1_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1e59rp5_115_1bxygf>
+<id_34c66d_1hs_1wpgwoj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_1e59rp5_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_g0zw1j_115_1bxygf>
+<id_34c66d_1hs_110ktwq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_g0zw1j_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1bnhd4m_115_1bxygf>
+<id_34c66d_1hs_lhn95h>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_1bnhd4m_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1c4ujyg_115_1bxygf>
+<id_34c66d_1hs_1sj2s7r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_1c4ujyg_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19zq8v4_115_1bxygf>
+<id_34c66d_1hs_j9vyc5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_19zq8v4_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_kjwpct_115_1bxygf>
+<id_34c66d_1hs_3aczv2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_kjwpct_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_17ilbyh_115_1bxygf>
+<id_34c66d_1hs_1k2ec4c>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_17ilbyh_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1dgipju_115_1bxygf>
+<id_34c66d_1hs_pd7ord>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_1dgipju_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19y8l39_115_1bxygf>
+<id_34c66d_1hs_1p852l7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_19y8l39_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jq618u_115_1bxygf>
+<id_34c66d_1hs_17j3yx8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_jq618u_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19vrff5_115_1bxygf>
+<id_34c66d_1hs_hr2djc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_19vrff5_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19fuzml_115_1bxygf>
+<id_34c66d_1hs_grt5wl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_19fuzml_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ibfd0h_115_1bxygf>
+<id_34c66d_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_1ibfd0h_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_196zopj_115_1bxygf>
+<id_34c66d_1hs_gd0s9t>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aristoteles> .
+<id_196zopj_115_1bxygf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_g381r7_115_rq336o>
+<id_66acmu_1hs_zj43s3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_g381r7_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1t10gdz_115_rq336o>
+<id_66acmu_1hs_1egxdd0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_1t10gdz_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_14boc0c_115_rq336o>
+<id_66acmu_1hs_11bjl95>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_14boc0c_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_a1dmou_115_rq336o>
+<id_66acmu_1hs_o1l279>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_a1dmou_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_284cnv_115_rq336o>
+<id_66acmu_1hs_1x72ayi>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_284cnv_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_134w8e1_115_rq336o>
+<id_66acmu_1hs_1052kw5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_134w8e1_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_13wqjol_115_rq336o>
+<id_66acmu_1hs_10fee0b>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_13wqjol_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xwkm9z_115_rq336o>
+<id_66acmu_1hs_1oqbh02>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_1xwkm9z_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ajxja3_115_rq336o>
+<id_66acmu_1hs_p4boc9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_ajxja3_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1vczj14_115_rq336o>
+<id_66acmu_1hs_1jeot50>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_1vczj14_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1hk3xpg_115_rq336o>
+<id_66acmu_1hs_3lcwps>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_1hk3xpg_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_fs7kvz_115_rq336o>
+<id_66acmu_1hs_yu1ti5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_fs7kvz_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_g4gv6h_115_rq336o>
+<id_66acmu_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Abraham_Lincoln> .
+<id_g4gv6h_115_rq336o>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1j9dv9m_115_17bmmea>
+<id_lrtvug_1hs_1olvmj3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Altweibersommer> .
+<id_1j9dv9m_115_17bmmea>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1e4xwfj_115_17bmmea>
+<id_lrtvug_1hs_1f4j36a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Altweibersommer> .
+<id_1e4xwfj_115_17bmmea>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1frql6r_115_17bmmea>
+<id_lrtvug_1hs_1hah25h>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Altweibersommer> .
+<id_1frql6r_115_17bmmea>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_75czex_115_17bmmea>
+<id_lrtvug_1hs_6avce>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Altweibersommer> .
+<id_75czex_115_17bmmea>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_13zgk5o_115_17bmmea>
+<id_lrtvug_1hs_z35ar5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Altweibersommer> .
+<id_13zgk5o_115_17bmmea>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1al68bt_115_q1xsye>
+<id_14lcgw0_1hs_1w3txyq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1al68bt_115_q1xsye>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11at7bs_115_q1xsye>
+<id_14lcgw0_1hs_9qbade>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_11at7bs_115_q1xsye>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1vzs7o6_115_q1xsye>
+<id_14lcgw0_1hs_zkukj9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1vzs7o6_115_q1xsye>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1retgm7_115_q1xsye>
+<id_14lcgw0_1hs_r96sid>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1retgm7_115_q1xsye>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_97bevt_115_13rizsj>
+<id_1i09ryh_1hs_1ef6vvc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_97bevt_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_8gxeqi_115_13rizsj>
+<id_1i09ryh_1hs_a0lxxq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_8gxeqi_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1k50arp_115_13rizsj>
+<id_1i09ryh_1hs_12hd2pf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_1k50arp_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_cpbj8g_115_13rizsj>
+<id_1i09ryh_1hs_hlqub4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_cpbj8g_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_elrcly_115_13rizsj>
+<id_1i09ryh_1hs_1r3ilsz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_elrcly_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1kamrx0_115_13rizsj>
+<id_1i09ryh_1hs_144k774>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_1kamrx0_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_82u4kt_115_13rizsj>
+<id_1i09ryh_1hs_1bxc0ih>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_82u4kt_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_gd25my_115_13rizsj>
+<id_1i09ryh_1hs_pdedsd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_gd25my_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_e7xz9c_115_13rizsj>
+<id_1i09ryh_1hs_1q9g257>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_e7xz9c_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_fdsdna_115_13rizsj>
+<id_1i09ryh_1hs_1rfj6n9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_fdsdna_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_cjy14b_115_13rizsj>
+<id_1i09ryh_1hs_hbz73a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_cjy14b_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1omfryi_115_13rizsj>
+<id_1i09ryh_1hs_7rlytp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_1omfryi_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_9ii3c8_115_13rizsj>
+<id_1i09ryh_1hs_c89gxw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_9ii3c8_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_gzqg3x_115_13rizsj>
+<id_1i09ryh_1hs_qnn3bg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_gzqg3x_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_9ypyl4_115_13rizsj>
+<id_1i09ryh_1hs_1fy1xb5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_9ypyl4_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_96mdup_115_13rizsj>
+<id_1i09ryh_1hs_1ee044f>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_96mdup_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_e7vkvk_115_13rizsj>
+<id_1i09ryh_1hs_krxrk4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_e7vkvk_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_f1l4b9_115_13rizsj>
+<id_1i09ryh_1hs_1qobx5k>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_f1l4b9_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_gsmwrc_115_13rizsj>
+<id_1i09ryh_1hs_1uey0sy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_gsmwrc_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_7vgpaf_115_13rizsj>
+<id_1i09ryh_1hs_1bjsxbq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_7vgpaf_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_8gh9ze_115_13rizsj>
+<id_1i09ryh_1hs_a14r4j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_8gh9ze_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_brsigf_115_13rizsj>
+<id_1i09ryh_1hs_h14jyc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_brsigf_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1mzwkfj_115_13rizsj>
+<id_1i09ryh_1hs_18ifyss>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_1mzwkfj_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_bc9013_115_13rizsj>
+<id_1i09ryh_1hs_1itrh4o>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_bc9013_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_dly8ad_115_13rizsj>
+<id_1i09ryh_1hs_1nng1rr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_dly8ad_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_dpvuxb_115_13rizsj>
+<id_1i09ryh_1hs_1nujirp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_dpvuxb_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1mmsqzb_115_13rizsj>
+<id_1i09ryh_1hs_3lcxkn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_1mmsqzb_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_l72zgs_115_13rizsj>
+<id_1i09ryh_1hs_zjv50g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_l72zgs_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_80y9g1_115_13rizsj>
+<id_1i09ryh_1hs_1d6seq3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_80y9g1_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_g77iaf_115_13rizsj>
+<id_1i09ryh_1hs_oz2gwh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_g77iaf_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_8f522g_115_13rizsj>
+<id_1i09ryh_1hs_1comdk5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Angela_Merkel> .
+<id_8f522g_115_13rizsj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_2h9sxr_115_vlyhiy>
+<id_eburqc_1hs_c8uc4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alicia_Silverstone> .
+<id_2h9sxr_115_vlyhiy>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_12wzf6i_115_vlyhiy>
+<id_eburqc_1hs_1jeot50>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alicia_Silverstone> .
+<id_12wzf6i_115_vlyhiy>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ixkc8p_115_vlyhiy>
+<id_eburqc_1hs_3lcxmf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alicia_Silverstone> .
+<id_1ixkc8p_115_vlyhiy>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_hhukoo_115_vlyhiy>
+<id_eburqc_1hs_zjv50g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alicia_Silverstone> .
+<id_hhukoo_115_vlyhiy>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xj8wzw_115_zsyawz>
+<id_ngngm1_1hs_j9vyc5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_1xj8wzw_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xjczzh_115_zsyawz>
+<id_ngngm1_1hs_1wigbb9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_1xjczzh_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1vi2371_115_zsyawz>
+<id_ngngm1_1hs_f25kv9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_1vi2371_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_110mt75_115_zsyawz>
+<id_ngngm1_1hs_145b0w0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_110mt75_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_zkfpzf_115_zsyawz>
+<id_ngngm1_1hs_113d5a0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_zkfpzf_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xk5fkn_115_zsyawz>
+<id_ngngm1_1hs_1wjtrmj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_1xk5fkn_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1tb9yvl_115_zsyawz>
+<id_ngngm1_1hs_1nksqly>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_1tb9yvl_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_18gsp3l_115_zsyawz>
+<id_ngngm1_1hs_3yo6rn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_18gsp3l_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1w1p5lv_115_zsyawz>
+<id_ngngm1_1hs_g5l8kl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_1w1p5lv_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_6hkkhd_115_zsyawz>
+<id_ngngm1_1hs_yu1niy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_6hkkhd_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_6ttz65_115_zsyawz>
+<id_ngngm1_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Al-Biruni> .
+<id_6ttz65_115_zsyawz>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1jlz6nb_115_pz137a>
+<id_14ifr4w_1hs_zkukj9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_1jlz6nb_115_pz137a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ht4flb_115_pz137a>
+<id_14ifr4w_1hs_1w0x87m>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_ht4flb_115_pz137a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_m3mn99_115_pz137a>
+<id_14ifr4w_1hs_54w0rf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_m3mn99_115_pz137a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_gzz1ob_115_pz137a>
+<id_14ifr4w_1hs_1u9vh3x>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_gzz1ob_115_pz137a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gqgol9_115_cg57zh>
+<id_3udoj_1hs_snmsb5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atheismus> .
+<id_1gqgol9_115_cg57zh>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_nk3bfx_115_cg57zh>
+<id_3udoj_1hs_5ze7xe>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atheismus> .
+<id_nk3bfx_115_cg57zh>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_omwqf4_115_dsdxaw>
+<id_1x8mkn6_1hs_t3g85v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_omwqf4_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1r3yx8r_115_dsdxaw>
+<id_1x8mkn6_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_1r3yx8r_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_keule7_115_dsdxaw>
+<id_1x8mkn6_1hs_k5sqia>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_keule7_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_hws3sd_115_dsdxaw>
+<id_1x8mkn6_1hs_djynil>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_hws3sd_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_q56czw_115_dsdxaw>
+<id_1x8mkn6_1hs_1xk42az>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_q56czw_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ui8coy_115_dsdxaw>
+<id_1x8mkn6_1hs_192qxmm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_1ui8coy_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qiadl5_115_dsdxaw>
+<id_1x8mkn6_1hs_vox1go>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_qiadl5_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_n4sj9l_115_dsdxaw>
+<id_1x8mkn6_1hs_om9s7y>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_n4sj9l_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_rdb6cf_115_dsdxaw>
+<id_1x8mkn6_1hs_xjf2g9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_rdb6cf_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_pb9ytk_115_dsdxaw>
+<id_1x8mkn6_1hs_1x3f9y1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_pb9ytk_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_oncnnz_115_dsdxaw>
+<id_1x8mkn6_1hs_rra68c>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_oncnnz_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ujupwn_115_dsdxaw>
+<id_1x8mkn6_1hs_17u2fcv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_1ujupwn_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_l63y8i_115_dsdxaw>
+<id_1x8mkn6_1hs_kgh0t3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_l63y8i_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1vgxwi0_115_dsdxaw>
+<id_1x8mkn6_1hs_19s98kx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_1vgxwi0_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_hm58hn_115_dsdxaw>
+<id_1x8mkn6_1hs_cx0zh5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_hm58hn_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_npug1t_115_dsdxaw>
+<id_1x8mkn6_1hs_psc2yy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_npug1t_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1so3ywb_115_dsdxaw>
+<id_1x8mkn6_1hs_1bv4gt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_1so3ywb_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1v8q42m_115_dsdxaw>
+<id_1x8mkn6_1hs_6pcgb3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_1v8q42m_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_kis58e_115_dsdxaw>
+<id_1x8mkn6_1hs_1n1130g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_kis58e_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_glymt9_115_dsdxaw>
+<id_1x8mkn6_1hs_c4tysk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_glymt9_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ll7pgm_115_dsdxaw>
+<id_1x8mkn6_1hs_1nujirp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_ll7pgm_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1tref8u_115_dsdxaw>
+<id_1x8mkn6_1hs_3lcxg8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_1tref8u_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_rzi2jb_115_dsdxaw>
+<id_1x8mkn6_1hs_yu1uai>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_rzi2jb_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_sbonv9_115_dsdxaw>
+<id_1x8mkn6_1hs_zjv50g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_sbonv9_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1tz0zxp_115_dsdxaw>
+<id_1x8mkn6_1hs_1806aqy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anna_Seghers> .
+<id_1tz0zxp_115_dsdxaw>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1278hod_115_1pp1ea>
+<id_1ldhsyw_1hs_1bfon41>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atmosphäre_(Astronomie)> .
+<id_1278hod_115_1pp1ea>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jz8wkm_115_msmio7>
+<id_agbod9_1hs_11zcev6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arvo_Pärt> .
+<id_jz8wkm_115_msmio7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_13mb8j1_115_msmio7>
+<id_agbod9_1hs_dxs4gi>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arvo_Pärt> .
+<id_13mb8j1_115_msmio7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15u5u58_115_msmio7>
+<id_agbod9_1hs_k0z418>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arvo_Pärt> .
+<id_15u5u58_115_msmio7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1b1o72t_115_msmio7>
+<id_agbod9_1hs_v0yjpd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arvo_Pärt> .
+<id_1b1o72t_115_msmio7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ca94yy_115_msmio7>
+<id_agbod9_1hs_1mskwfc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arvo_Pärt> .
+<id_1ca94yy_115_msmio7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1dto5ri_115_msmio7>
+<id_agbod9_1hs_zjuj7j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arvo_Pärt> .
+<id_1dto5ri_115_msmio7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_g89es4_115_msmio7>
+<id_agbod9_1hs_3lcxiy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arvo_Pärt> .
+<id_g89es4_115_msmio7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1dtqdnf_115_msmio7>
+<id_agbod9_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arvo_Pärt> .
+<id_1dtqdnf_115_msmio7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1rbbr3r_115_rp468>
+<id_2k3bw6_1hs_1tyvqhe>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1rbbr3r_115_rp468>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1whhhuc_115_rp468>
+<id_2k3bw6_1hs_kvwn0k>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1whhhuc_115_rp468>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_17vlvga_115_rp468>
+<id_2k3bw6_1hs_99rt23>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_17vlvga_115_rp468>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1w5pwt0_115_rp468>
+<id_2k3bw6_1hs_kakb7g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1w5pwt0_115_rp468>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15zylok_115_rp468>
+<id_2k3bw6_1hs_3z3uo3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_15zylok_115_rp468>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1vwbx4c_115_rp468>
+<id_2k3bw6_1hs_l1hw01>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1vwbx4c_115_rp468>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gqpeoq_115_ug5782>
+<id_18ovze0_1hs_10tdegz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atonale_Musik> .
+<id_1gqpeoq_115_ug5782>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1szr08i_115_ug5782>
+<id_18ovze0_1hs_bsifo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atonale_Musik> .
+<id_1szr08i_115_ug5782>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_d4g26d_115_1gl0d0i>
+<id_vkag3w_1hs_5lr5iu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Akeleien> .
+<id_d4g26d_115_1gl0d0i>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_10uafdr_115_1gl0d0i>
+<id_vkag3w_1hs_i1mimi>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Akeleien> .
+<id_10uafdr_115_1gl0d0i>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_2qdopt_115_gh8nvv>
+<id_1mqmck5_1hs_13y9mjq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_2qdopt_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1m98f0t_115_gh8nvv>
+<id_1mqmck5_1hs_6hwkwm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_1m98f0t_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_tnevd3_115_gh8nvv>
+<id_1mqmck5_1hs_1lsdobw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_tnevd3_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1l06ht3_115_gh8nvv>
+<id_1mqmck5_1hs_55yhjq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_1l06ht3_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3jdilt_115_gh8nvv>
+<id_1mqmck5_1hs_15p1g7w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_3jdilt_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_c8kiq5_115_gh8nvv>
+<id_1mqmck5_1hs_kcn86p>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_c8kiq5_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vdtsu6_115_gh8nvv>
+<id_1mqmck5_1hs_1phtmi6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_vdtsu6_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19vqq3_115_gh8nvv>
+<id_1mqmck5_1hs_10uj3u2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_19vqq3_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_32w1fw_115_gh8nvv>
+<id_1mqmck5_1hs_14q1x9a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_32w1fw_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_7rmhfj_115_gh8nvv>
+<id_1mqmck5_1hs_c6uqpo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_7rmhfj_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_dgnnja_115_gh8nvv>
+<id_1mqmck5_1hs_mw4ibx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_dgnnja_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_x6jzt2_115_gh8nvv>
+<id_1mqmck5_1hs_1tbkwye>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_x6jzt2_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_7qqyas_115_gh8nvv>
+<id_1mqmck5_1hs_ascg7t>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_7qqyas_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_14nti5_115_gh8nvv>
+<id_1mqmck5_1hs_10kxhd6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_14nti5_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1kvy7co_115_gh8nvv>
+<id_1mqmck5_1hs_3lcwvp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_1kvy7co_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_j41txs_115_gh8nvv>
+<id_1mqmck5_1hs_yu1u76>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_j41txs_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jgb4om_115_gh8nvv>
+<id_1mqmck5_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aleister_Crowley> .
+<id_jgb4om_115_gh8nvv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gchab0_115_pwaa0j>
+<id_14foxy5_1hs_1vy6f0v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aikidō> .
+<id_1gchab0_115_pwaa0j>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1cxc15y_115_pwaa0j>
+<id_14foxy5_1hs_1q2ug2r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aikidō> .
+<id_1cxc15y_115_pwaa0j>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19vl65g_115_pwaa0j>
+<id_14foxy5_1hs_1icd924>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aikidō> .
+<id_19vl65g_115_pwaa0j>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1i77cr6_115_w8jnsl>
+<id_4sru8v_1hs_17ooxlj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1i77cr6_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qdh1mk_115_w8jnsl>
+<id_4sru8v_1hs_3isuou>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_qdh1mk_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_rhv1dp_115_w8jnsl>
+<id_4sru8v_1hs_77byai>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_rhv1dp_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1fffykp_115_w8jnsl>
+<id_4sru8v_1hs_136bhj7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1fffykp_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1iykwne_115_w8jnsl>
+<id_4sru8v_1hs_19cihlz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1iykwne_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qfvx4i_115_w8jnsl>
+<id_4sru8v_1hs_50b9gi>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_qfvx4i_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1f8nlem_115_w8jnsl>
+<id_4sru8v_1hs_11gvs0h>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1f8nlem_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qigbt6_115_w8jnsl>
+<id_4sru8v_1hs_54w0rf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_qigbt6_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1gfzwgo_115_w8jnsl>
+<id_4sru8v_1hs_13xqenz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1gfzwgo_115_w8jnsl>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1iea6sr_115_1lrmxi0>
+<id_1nk157y_1hs_1naytig>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anne_Haigis> .
+<id_1iea6sr_115_1lrmxi0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1j74gfr_115_1lrmxi0>
+<id_1nk157y_1hs_3b7p5r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anne_Haigis> .
+<id_1j74gfr_115_1lrmxi0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1jdep0k_115_1lrmxi0>
+<id_1nk157y_1hs_3lcxko>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anne_Haigis> .
+<id_1jdep0k_115_1lrmxi0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_hxoxi0_115_1lrmxi0>
+<id_1nk157y_1hs_zjv50g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anne_Haigis> .
+<id_hxoxi0_115_1lrmxi0>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_jwndut_115_1skp8xb>
+<id_1ud3gn9_1hs_dnspsj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astrophysik> .
+<id_jwndut_115_1skp8xb>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1valfo3_115_pdn2hp>
+<id_9srnuv_1hs_14ztv01>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeitskampf> .
+<id_1valfo3_115_pdn2hp>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_17unq7c_115_pdn2hp>
+<id_9srnuv_1hs_5m1ok6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeitskampf> .
+<id_17unq7c_115_pdn2hp>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1qhhzhf_115_q1m1p8>
+<id_jn1836_1hs_10kebeo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_1qhhzhf_115_q1m1p8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_h29923_115_q1m1p8>
+<id_jn1836_1hs_zxx57g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_h29923_115_q1m1p8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_fdmpq5_115_q1m1p8>
+<id_jn1836_1hs_wgnny6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_fdmpq5_115_q1m1p8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_105dbbn_115_1afwb6j>
+<id_tb0ev9_1hs_b8cfkm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeitsrecht_(Deutschland)> .
+<id_105dbbn_115_1afwb6j>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11tftmk_115_1jdlpq9>
+<id_1l5zxg7_1hs_14ztv01>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aussperrung> .
+<id_11tftmk_115_1jdlpq9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3y52cf_115_1jdlpq9>
+<id_1l5zxg7_1hs_5m1ok6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aussperrung> .
+<id_3y52cf_115_1jdlpq9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_406id2_115_1jdlpq9>
+<id_1l5zxg7_1hs_71fpb6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aussperrung> .
+<id_406id2_115_1jdlpq9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1o7bqfd_115_1aet783>
+<id_113cygt_1hs_1fp559w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/AP> .
+<id_1o7bqfd_115_1aet783>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1072g0p_115_1me1ns5>
+<id_11dbqvj_1hs_1g4r9fy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_1072g0p_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11l470h_115_1me1ns5>
+<id_11dbqvj_1hs_1hr51dm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_11l470h_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1lbgk0v_115_1me1ns5>
+<id_11dbqvj_1hs_8p1v03>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_1lbgk0v_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_azna15_115_1me1ns5>
+<id_11dbqvj_1hs_10kfka8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_azna15_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1htjml9_115_1me1ns5>
+<id_11dbqvj_1hs_1d34k5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_1htjml9_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_13bwekr_115_1me1ns5>
+<id_11dbqvj_1hs_1lfwgap>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_13bwekr_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_dders0_115_1me1ns5>
+<id_11dbqvj_1hs_s6zur5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_dders0_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_hju54q_115_1me1ns5>
+<id_11dbqvj_1hs_zomy7q>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_hju54q_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_cy98e8_115_1me1ns5>
+<id_11dbqvj_1hs_14osjmi>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_cy98e8_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_hha6tg_115_1me1ns5>
+<id_11dbqvj_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_hha6tg_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11ujca9_115_1me1ns5>
+<id_11dbqvj_1hs_1ibw5q9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_11ujca9_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_g54tia_115_1me1ns5>
+<id_11dbqvj_1hs_y2gck9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Augustus> .
+<id_g54tia_115_1me1ns5>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1wexq4n_115_9o5tmv>
+<id_1reuaup_1hs_7mdc6m>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argumentum_lege_non_distinguente> .
+<id_1wexq4n_115_9o5tmv>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1yb3inv_115_12o2qja>
+<id_ldz0qo_1hs_1lwmqkx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atlantischer_Ozean> .
+<id_1yb3inv_115_12o2qja>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_15t8lij_115_12o2qja>
+<id_ldz0qo_1hs_10s7tk7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atlantischer_Ozean> .
+<id_15t8lij_115_12o2qja>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1kd9zti_115_1phpnq8>
+<id_n0atx2_1hs_vosn4g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1kd9zti_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1e9qfqh_115_1phpnq8>
+<id_n0atx2_1hs_isjqkt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1e9qfqh_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_nb6i8a_115_1phpnq8>
+<id_n0atx2_1hs_1mlmptz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_nb6i8a_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1tfvfjf_115_1phpnq8>
+<id_n0atx2_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1tfvfjf_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1wp28ze_115_1phpnq8>
+<id_n0atx2_1hs_17gjxwq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1wp28ze_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_r7uoog_115_1phpnq8>
+<id_n0atx2_1hs_1w6j4ty>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_r7uoog_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1m50phq_115_1phpnq8>
+<id_n0atx2_1hs_zi3erp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1m50phq_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1fvoh9b_115_1phpnq8>
+<id_n0atx2_1hs_mb8r45>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1fvoh9b_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_19yqyho_115_1phpnq8>
+<id_n0atx2_1hs_b40nzw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_19yqyho_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_nx47ra_115_1phpnq8>
+<id_n0atx2_1hs_1nujirp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_nx47ra_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_k5kni9_115_1phpnq8>
+<id_n0atx2_1hs_1h8yku2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_k5kni9_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1tt6mxt_115_1phpnq8>
+<id_n0atx2_1hs_11dmdvk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1tt6mxt_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_olbwjk_115_1phpnq8>
+<id_n0atx2_1hs_3lcw5y>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_olbwjk_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1lujn3p_115_1phpnq8>
+<id_n0atx2_1hs_yu1ti0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1lujn3p_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1m6sxec_115_1phpnq8>
+<id_n0atx2_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1m6sxec_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1hw9dx9_115_1phpnq8>
+<id_n0atx2_1hs_qj8u91>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arthur_Schopenhauer> .
+<id_1hw9dx9_115_1phpnq8>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1frli5z_115_19ufo3g>
+<id_1uli3fq_1hs_16805k3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Architektur_(Informatik)> .
+<id_1frli5z_115_19ufo3g>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_7xdhes_115_19ufo3g>
+<id_1uli3fq_1hs_1nbvlxj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Architektur_(Informatik)> .
+<id_7xdhes_115_19ufo3g>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_10907s_115_b8w2w7>
+<id_17slb25_1hs_1g4r9fy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aemilianus_(Kaiser)> .
+<id_10907s_115_b8w2w7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3wyswx_115_b8w2w7>
+<id_17slb25_1hs_1m9a6ve>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aemilianus_(Kaiser)> .
+<id_3wyswx_115_b8w2w7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_2gg8yx_115_b8w2w7>
+<id_17slb25_1hs_1htnzll>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aemilianus_(Kaiser)> .
+<id_2gg8yx_115_b8w2w7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1cf8qxx_115_b8w2w7>
+<id_17slb25_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aemilianus_(Kaiser)> .
+<id_1cf8qxx_115_b8w2w7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11q1k1f_115_b8w2w7>
+<id_17slb25_1hs_cwgfff>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aemilianus_(Kaiser)> .
+<id_11q1k1f_115_b8w2w7>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_11opfdb_115_1rcm32t>
+<id_16bw667_1hs_1g4r9fy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aurelian> .
+<id_11opfdb_115_1rcm32t>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_16hefej_115_1rcm32t>
+<id_16bw667_1hs_1ovshax>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aurelian> .
+<id_16hefej_115_1rcm32t>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_14ybdbt_115_1rcm32t>
+<id_16bw667_1hs_1n1ms9a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aurelian> .
+<id_14ybdbt_115_1rcm32t>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_4jbqjg_115_1rcm32t>
+<id_16bw667_1hs_cwgfff>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aurelian> .
+<id_4jbqjg_115_1rcm32t>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_5f9wz6_115_1rcm32t>
+<id_16bw667_1hs_g5l38l>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aurelian> .
+<id_5f9wz6_115_1rcm32t>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_134wo5y_115_1rcm32t>
+<id_16bw667_1hs_1htnznd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aurelian> .
+<id_134wo5y_115_1rcm32t>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_f8ixfy_115_1rcm32t>
+<id_16bw667_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aurelian> .
+<id_f8ixfy_115_1rcm32t>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1r5egpp_115_32wl22>
+<id_1a4bhac_1hs_58x7kl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Allgemeine_Psychologie> .
+<id_1r5egpp_115_32wl22>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xz44lo_115_11z70nf>
+<id_3zikrl_1hs_1nz1qdn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_1xz44lo_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_lxp89d_115_11z70nf>
+<id_3zikrl_1hs_dvhqto>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_lxp89d_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ki4i4w_115_11z70nf>
+<id_3zikrl_1hs_aunvun>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_ki4i4w_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_17wn6ol_115_11z70nf>
+<id_3zikrl_1hs_17vut45>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_17wn6ol_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_v3mhgz_115_11z70nf>
+<id_3zikrl_1hs_xbk6u8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_v3mhgz_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1u0ufd1_115_11z70nf>
+<id_3zikrl_1hs_1fo9n1b>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_1u0ufd1_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_14k6lj3_115_11z70nf>
+<id_3zikrl_1hs_10tsb7m>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_14k6lj3_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xm0t06_115_11z70nf>
+<id_3zikrl_1hs_3lcxjw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_1xm0t06_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_w6dpvk_115_11z70nf>
+<id_3zikrl_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Andrei_Dmitrijewitsch_Linde> .
+<id_w6dpvk_115_11z70nf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_nj70z_115_q1ka3a>
+<id_jmzgh8_1hs_10kcjsq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_nj70z_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_xdm6r8_115_q1ka3a>
+<id_jmzgh8_1hs_1w0utaj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_xdm6r8_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1iwuwyq_115_q1ka3a>
+<id_jmzgh8_1hs_ijazak>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_1iwuwyq_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_y7e7ok_115_q1ka3a>
+<id_jmzgh8_1hs_1wfzqhs>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_y7e7ok_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_uxv4gn_115_q1ka3a>
+<id_jmzgh8_1hs_87pi2s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_uxv4gn_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1hnyk05_115_q1ka3a>
+<id_jmzgh8_1hs_fun17l>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_1hnyk05_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_o23xn6_115_q1ka3a>
+<id_jmzgh8_1hs_1az39y9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_o23xn6_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1if0u5a_115_q1ka3a>
+<id_jmzgh8_1hs_hj5j1z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_1if0u5a_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1g5nfrv_115_q1ka3a>
+<id_jmzgh8_1hs_cou1zo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_1g5nfrv_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3my9ii_115_q1ka3a>
+<id_jmzgh8_1hs_18824sh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_3my9ii_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_tctr2l_115_q1ka3a>
+<id_jmzgh8_1hs_3jz11r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_tctr2l_115_q1ka3a>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_tqzwd_115_1mzflxf>
+<id_17ek7al_1hs_161d5wg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_tqzwd_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3w9t6p_115_1mzflxf>
+<id_17ek7al_1hs_99zr9r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_3w9t6p_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1ywnp5_115_1mzflxf>
+<id_17ek7al_1hs_57uvo5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_1ywnp5_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_z1pslo_115_1mzflxf>
+<id_17ek7al_1hs_yqo2p1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_z1pslo_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_2zk4r4_115_1mzflxf>
+<id_17ek7al_1hs_19at2i2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_2zk4r4_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_spicgn_115_1mzflxf>
+<id_17ek7al_1hs_1om5rhc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_spicgn_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_sgksx7_115_1mzflxf>
+<id_17ek7al_1hs_ktdto1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_sgksx7_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_v9x96d_115_1mzflxf>
+<id_17ek7al_1hs_qrnpv8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_v9x96d_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_oyo835_115_1mzflxf>
+<id_17ek7al_1hs_1gnn1ms>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_oyo835_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ub7ffs_115_1mzflxf>
+<id_17ek7al_1hs_1rwqr12>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_ub7ffs_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_vibf7b_115_1mzflxf>
+<id_17ek7al_1hs_rbvy8l>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_vibf7b_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ste2fa_115_1mzflxf>
+<id_17ek7al_1hs_ln0c2s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_ste2fa_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_rzsuxa_115_1mzflxf>
+<id_17ek7al_1hs_jv5yhv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_rzsuxa_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1exa04_115_1mzflxf>
+<id_17ek7al_1hs_15vt0ag>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_1exa04_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_p74den_115_1mzflxf>
+<id_17ek7al_1hs_dwr22n>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_p74den_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_q08t5b_115_1mzflxf>
+<id_17ek7al_1hs_1k6vz6u>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_q08t5b_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_379dzn_115_1mzflxf>
+<id_17ek7al_1hs_6ikkxh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_379dzn_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1xwjyh6_115_1mzflxf>
+<id_17ek7al_1hs_10kfts3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_1xwjyh6_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1y156a7_115_1mzflxf>
+<id_17ek7al_1hs_10sqn9g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_1y156a7_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_tozyll_115_1mzflxf>
+<id_17ek7al_1hs_1s0g28x>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_tozyll_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_sdsqp1_115_1mzflxf>
+<id_17ek7al_1hs_1nujirp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_sdsqp1_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1tn1kl_115_1mzflxf>
+<id_17ek7al_1hs_3lcwwo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_1tn1kl_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_z2uq3x_115_1mzflxf>
+<id_17ek7al_1hs_yu1u74>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_z2uq3x_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_zf40ut_115_1mzflxf>
+<id_17ek7al_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Adolf_Hitler> .
+<id_zf40ut_115_1mzflxf>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1oiryyi_115_1w3vmp9>
+<id_1b35psn_1hs_1s1q4nd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1oiryyi_115_1w3vmp9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1lchylv_115_1w3vmp9>
+<id_1b35psn_1hs_1jz6rsw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1lchylv_115_1w3vmp9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_3p9nr7_115_1w3vmp9>
+<id_1b35psn_1hs_l1hw01>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_3p9nr7_115_1w3vmp9>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_1b84uqy_115_uul8sj>
+<id_9asi8p_1hs_2t91ya>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeitsspeicher> .
+<id_1b84uqy_115_uul8sj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_qj0qit_115_uul8sj>
+<id_9asi8p_1hs_1nbvlxj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arbeitsspeicher> .
+<id_qj0qit_115_uul8sj>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_yok8wz_115_c5empi>
+<id_1q5srs0_1hs_1g4r9fy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arcadius> .
+<id_yok8wz_115_c5empi>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_ju0gop_115_c5empi>
+<id_1q5srs0_1hs_w9av4a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arcadius> .
+<id_ju0gop_115_c5empi>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_m1ezjg_115_c5empi>
+<id_1q5srs0_1hs_zn0mhn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arcadius> .
+<id_m1ezjg_115_c5empi>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_y9zkzq_115_c5empi>
+<id_1q5srs0_1hs_1dwabc9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arcadius> .
+<id_y9zkzq_115_c5empi>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_104qm3o_115_c5empi>
+<id_1q5srs0_1hs_1hto0yt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arcadius> .
+<id_104qm3o_115_c5empi>	<extractionTechnique>	"CategoryExtractor" .
+#@ <id_m0hzqy_115_c5empi>
+<id_1q5srs0_1hs_zjz9mc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arcadius> .
+<id_m0hzqy_115_c5empi>	<extractionTechnique>	"CategoryExtractor" .

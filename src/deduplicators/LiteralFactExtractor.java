@@ -44,8 +44,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 				SchemaExtractor.YAGOSCHEMA,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 
-		input.addAll(CoordinateExtractor.COORDINATES
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.add(CoordinateExtractor.COORDINATES);
 		input.addAll(CategoryMapper.CATEGORYFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(InfoboxMapper.INFOBOXFACTS

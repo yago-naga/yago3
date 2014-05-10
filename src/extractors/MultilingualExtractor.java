@@ -22,7 +22,7 @@ public abstract class MultilingualExtractor extends Extractor {
 
 	/** List of language suffixes from most English to least English. */
 	public static List<String> wikipediaLanguages = Arrays.asList("en", "de",
-			"fr", "es", "it");
+			"fr");
 
 	/** The language of this extractor */
 	public final String language;
@@ -41,9 +41,9 @@ public abstract class MultilingualExtractor extends Extractor {
 			String language) {
 		Announce.doing("Creating extractor", className + "(" + language + ")");
 		if (language == null) {
-			Announce.error("Language is null");
+			throw new RuntimeException("Language is null");
 		}
-		Extractor extractor=null;
+		Extractor extractor = null;
 		try {
 			extractor = className.getConstructor(String.class).newInstance(
 					language);
@@ -53,5 +53,4 @@ public abstract class MultilingualExtractor extends Extractor {
 		Announce.done();
 		return (extractor);
 	}
-
 }

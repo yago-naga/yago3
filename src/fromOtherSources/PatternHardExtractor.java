@@ -79,4 +79,9 @@ public class PatternHardExtractor extends HardExtractor {
 	public PatternHardExtractor(File inputFolder) {
 		super(inputFolder);
 	}
+
+	public static void main(String[] args) throws Exception {
+		new PatternHardExtractor(new File("./data")).extract(new File(
+				"c:/fabian/data/yago3"), "test");
+	}
 }

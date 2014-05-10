@@ -1,0 +1,1677 @@
+# Test on 1 wikipedia article
+# Sources for the raw facts from the Wikipedia infoboxes
+# WIKIPEDIA
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_m98oke_115_d94ulq>
+<id_1r9izo8_141_zkfbds>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_m98oke_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1d2be7c_115_d94ulq>
+<id_1r9izo8_1co_zbo3js>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1d2be7c_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ius4vr_115_d94ulq>
+<id_1r9izo8_jpx_zil2q5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_ius4vr_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_sznzcj_115_d94ulq>
+<id_1r9izo8_1s2_1y4egjo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_sznzcj_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_14jq6m1_115_d94ulq>
+<id_1r9izo8_pdw_pv0zpl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_14jq6m1_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_dfqegs_115_d94ulq>
+<id_1r9izo8_465_lkvdf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_dfqegs_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1x7id58_115_d94ulq>
+<id_1r9izo8_akn_11nc074>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1x7id58_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1o8r12b_115_d94ulq>
+<id_1r9izo8_1n6_1i9uejs>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1o8r12b_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1j5ni6d_115_d94ulq>
+<id_1r9izo8_4vr_zil2eu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1j5ni6d_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1cr94tz_115_d94ulq>
+<id_1r9izo8_11u_2a65iw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1cr94tz_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16xsawa_115_d94ulq>
+<id_1r9izo8_akn_hmoi4s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_16xsawa_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1gxnym1_115_d94ulq>
+<id_1r9izo8_bpl_wwyb9w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1gxnym1_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1v3h5lr_115_d94ulq>
+<id_1r9izo8_1rs_qqiyc4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1v3h5lr_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_w8g83g_115_d94ulq>
+<id_1r9izo8_1oq_zik10z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_w8g83g_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_lkbaos_115_d94ulq>
+<id_1r9izo8_1ik_fm3jw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_lkbaos_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vmd9q0_115_d94ulq>
+<id_1r9izo8_1i7_zpwak2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_vmd9q0_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1c2s0id_115_d94ulq>
+<id_1r9izo8_sx1_zjgd15>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1c2s0id_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1c2ah0l_115_d94ulq>
+<id_1r9izo8_sx1_zil4yc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1c2ah0l_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1scv91a_115_d94ulq>
+<id_1r9izo8_sx1_1m29xmz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1scv91a_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1p4cw9d_115_d94ulq>
+<id_1r9izo8_1ts_1aljhul>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1p4cw9d_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1k51tpn_115_d94ulq>
+<id_1r9izo8_1k5_zil39y>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1k51tpn_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1itxkuq_115_d94ulq>
+<id_1r9izo8_17o_8y8k0g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1itxkuq_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_10xp9vi_115_d94ulq>
+<id_1r9izo8_1ki_1githx0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_10xp9vi_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_i9a0ld_115_d94ulq>
+<id_1r9izo8_zrr_zil3av>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_i9a0ld_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1om8cnv_115_d94ulq>
+<id_1r9izo8_1xz_1stpeev>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1om8cnv_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ibb03c_115_d94ulq>
+<id_1r9izo8_17o_96zcju>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1ibb03c_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1k6e45a_115_d94ulq>
+<id_1r9izo8_2sb_1y8zxlk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1k6e45a_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_h83h5h_115_d94ulq>
+<id_1r9izo8_4ro_zik2dd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_h83h5h_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_wsgy3l_115_d94ulq>
+<id_1r9izo8_3sn_zik10z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_wsgy3l_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1fz94w3_115_d94ulq>
+<id_1r9izo8_1ik_1at7344>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1fz94w3_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ntlslo_115_d94ulq>
+<id_1r9izo8_jvg_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1ntlslo_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_xk6cji_115_d94ulq>
+<id_1r9izo8_1gz_zik2x4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_xk6cji_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1k9v7oo_115_d94ulq>
+<id_1r9izo8_wfi_zik2x4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1k9v7oo_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1lgiiix_115_d94ulq>
+<id_1r9izo8_1ik_1melc06>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1lgiiix_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1jyz33q_115_d94ulq>
+<id_1r9izo8_d6d_u5b4dj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1jyz33q_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1v4pcwa_115_d94ulq>
+<id_1r9izo8_1ri_zil3gs>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1v4pcwa_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_zfhvsl_115_d94ulq>
+<id_1r9izo8_1ik_soqfgn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_zfhvsl_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_wi6tf2_115_d94ulq>
+<id_1r9izo8_13i_zjgc8q>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_wi6tf2_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_wi6vys_115_d94ulq>
+<id_1r9izo8_13i_zjgeeb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_wi6vys_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ms7zlp_115_d94ulq>
+<id_1r9izo8_1tl_zik277>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_ms7zlp_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1mvkluu_115_d94ulq>
+<id_1r9izo8_4fd_zik6c1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1mvkluu_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_14svltm_115_d94ulq>
+<id_1r9izo8_138_zjhobk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_14svltm_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1honmbf_115_d94ulq>
+<id_1r9izo8_138_1oi01gp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1honmbf_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1s7myuy_115_d94ulq>
+<id_1r9izo8_165_1t7hexa>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1s7myuy_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1chgowl_115_d94ulq>
+<id_1r9izo8_1ui_zik2ma>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_1chgowl_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_pz4obi_115_d94ulq>
+<id_1r9izo8_1dc_1gkv06e>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_pz4obi_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_gebdyb_115_d94ulq>
+<id_1r9izo8_gl2_6w8u5w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinium> .
+<id_gebdyb_115_d94ulq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_14q4lci_115_10pg33r>
+<id_l4kogx_rwp_zjlfaw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_14q4lci_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_zqbh2m_115_10pg33r>
+<id_l4kogx_1vo_qmdfif>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_zqbh2m_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17ocgpt_115_10pg33r>
+<id_l4kogx_jw8_1lg6qg3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_17ocgpt_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1y7k7e4_115_10pg33r>
+<id_l4kogx_48s_e70zo1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1y7k7e4_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16p4j2l_115_10pg33r>
+<id_l4kogx_17o_3hqvy8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_16p4j2l_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_yxm8i0_115_10pg33r>
+<id_l4kogx_1mf_1c5lbmo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_yxm8i0_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1yz2lgb_115_10pg33r>
+<id_l4kogx_4bg_1373clf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1yz2lgb_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1go9o5q_115_10pg33r>
+<id_l4kogx_ha5_1ok24kk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1go9o5q_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1f03xe9_115_10pg33r>
+<id_l4kogx_ce7_1auk7zb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1f03xe9_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1d5i5c1_115_10pg33r>
+<id_l4kogx_zqo_1849ixa>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1d5i5c1_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1d29f1b_115_10pg33r>
+<id_l4kogx_1ug_1a1gzlq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1d29f1b_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_121spqj_115_10pg33r>
+<id_l4kogx_ako_5m3ks6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_121spqj_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1l84vyu_115_10pg33r>
+<id_l4kogx_113_1s3ix88>	<extractionSource>	<http://en.wikipedia.org/wiki/de/The_Visitors> .
+<id_1l84vyu_115_10pg33r>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_wyozfh_115_1bhovmd>
+<id_z5e1bf_141_zkfbds>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_wyozfh_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_6afyjr_115_1bhovmd>
+<id_z5e1bf_1co_1oq9ths>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_6afyjr_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_tk8fln_115_1bhovmd>
+<id_z5e1bf_jpx_zil2k4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_tk8fln_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_13tjez3_115_1bhovmd>
+<id_z5e1bf_1pm_zil2jc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_13tjez3_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_5r528k_115_1bhovmd>
+<id_z5e1bf_1s2_1y4egjo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_5r528k_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1feiv3_115_1bhovmd>
+<id_z5e1bf_3j3_8nydi4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1feiv3_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1t3um2o_115_1bhovmd>
+<id_z5e1bf_pdw_13is646>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1t3um2o_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_7ntfym_115_1bhovmd>
+<id_z5e1bf_465_zik12o>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_7ntfym_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1f7tiwg_115_1bhovmd>
+<id_z5e1bf_akn_ck1s94>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1f7tiwg_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1554s1m_115_1bhovmd>
+<id_z5e1bf_1n6_1pq33y7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1554s1m_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1erluqj_115_1bhovmd>
+<id_z5e1bf_1uu_1kvh73a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1erluqj_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1tvkjsl_115_1bhovmd>
+<id_z5e1bf_4vr_zjg9au>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1tvkjsl_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_kvpacv_115_1bhovmd>
+<id_z5e1bf_11u_vpc3k6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_kvpacv_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_185w7wq_115_1bhovmd>
+<id_z5e1bf_1np_zsiwip>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_185w7wq_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1hn8lnj_115_1bhovmd>
+<id_z5e1bf_akn_hmogne>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1hn8lnj_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ielrot_115_1bhovmd>
+<id_z5e1bf_bpl_1pbhiys>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_ielrot_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_18s78hm_115_1bhovmd>
+<id_z5e1bf_1rs_1bi2265>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_18s78hm_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_9tjst0_115_1bhovmd>
+<id_z5e1bf_pa3_1yq5m2r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_9tjst0_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16xwjtd_115_1bhovmd>
+<id_z5e1bf_1oq_zik276>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_16xwjtd_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1awu7yt_115_1bhovmd>
+<id_z5e1bf_1ik_udhssr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1awu7yt_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ty0vss_115_1bhovmd>
+<id_z5e1bf_1i7_1utqnsr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_ty0vss_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16i2zal_115_1bhovmd>
+<id_z5e1bf_sx1_1nlgf13>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_16i2zal_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1lgo307_115_1bhovmd>
+<id_z5e1bf_sx1_wr8r2q>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1lgo307_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_d0i13f_115_1bhovmd>
+<id_z5e1bf_sx1_10cpela>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_d0i13f_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_kwl22l_115_1bhovmd>
+<id_z5e1bf_1ts_wtgosl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_kwl22l_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1uui4z2_115_1bhovmd>
+<id_z5e1bf_1k5_zil2k0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1uui4z2_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_heib72_115_1bhovmd>
+<id_z5e1bf_17o_icy95c>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_heib72_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_8iw108_115_1bhovmd>
+<id_z5e1bf_1bj_ibaju5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_8iw108_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_176617i_115_1bhovmd>
+<id_z5e1bf_1ki_9h67xf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_176617i_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_19zvrii_115_1bhovmd>
+<id_z5e1bf_e6w_zjgwbc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_19zvrii_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xhm55i_115_1bhovmd>
+<id_z5e1bf_1xz_26z9y0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1xhm55i_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_8mp901_115_1bhovmd>
+<id_z5e1bf_17o_1rp6fy1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_8mp901_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_f9j4vc_115_1bhovmd>
+<id_z5e1bf_w90_1n01ixv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_f9j4vc_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17dlwo1_115_1bhovmd>
+<id_z5e1bf_2sb_a4bxi3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_17dlwo1_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_rxjqwj_115_1bhovmd>
+<id_z5e1bf_4ro_zik276>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_rxjqwj_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_12ziumo_115_1bhovmd>
+<id_z5e1bf_3sn_169gb3u>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_12ziumo_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1fr0pe8_115_1bhovmd>
+<id_z5e1bf_4di_hatww5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1fr0pe8_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_11byvqe_115_1bhovmd>
+<id_z5e1bf_1ik_1swaoba>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_11byvqe_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1yj23hv_115_1bhovmd>
+<id_z5e1bf_jvg_zik10z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1yj23hv_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_198l0pw_115_1bhovmd>
+<id_z5e1bf_1mc_gacdp1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_198l0pw_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_hs1cca_115_1bhovmd>
+<id_z5e1bf_1gz_1m4ku0s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_hs1cca_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1knh6yp_115_1bhovmd>
+<id_z5e1bf_wfi_doabnn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1knh6yp_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_q8p0hb_115_1bhovmd>
+<id_z5e1bf_15x_1x2mfx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_q8p0hb_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16or8mf_115_1bhovmd>
+<id_z5e1bf_1ik_lh7fll>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_16or8mf_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_tezjhx_115_1bhovmd>
+<id_z5e1bf_d6d_1kxet2w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_tezjhx_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_tmogu6_115_1bhovmd>
+<id_z5e1bf_1gi_1o32wp0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_tmogu6_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17bldc8_115_1bhovmd>
+<id_z5e1bf_1ik_o3fwlc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_17bldc8_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_dvlau6_115_1bhovmd>
+<id_z5e1bf_1n4_p7crxh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_dvlau6_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1m4d140_115_1bhovmd>
+<id_z5e1bf_13i_1pxk3kr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1m4d140_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1mpe57u_115_1bhovmd>
+<id_z5e1bf_13i_1rb3hyu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1mpe57u_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_xi6jav_115_1bhovmd>
+<id_z5e1bf_1tl_zjgc16>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_xi6jav_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xl0ua3_115_1bhovmd>
+<id_z5e1bf_4fd_zik2wo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1xl0ua3_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1fiamgd_115_1bhovmd>
+<id_z5e1bf_138_zjh28r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1fiamgd_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_sk4136_115_1bhovmd>
+<id_z5e1bf_138_1kgw68g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_sk4136_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_fy9kxo_115_1bhovmd>
+<id_z5e1bf_165_wh8x5a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_fy9kxo_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1n6wzrx_115_1bhovmd>
+<id_z5e1bf_1ui_zik2mj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1n6wzrx_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17abhkh_115_1bhovmd>
+<id_z5e1bf_145_2ueik8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_17abhkh_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_bag3c9_115_1bhovmd>
+<id_z5e1bf_1dc_1ymr3wy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_bag3c9_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1fc1mwb_115_1bhovmd>
+<id_z5e1bf_gl2_1jvhz53>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Aluminium> .
+<id_1fc1mwb_115_1bhovmd>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_zp6ruf_115_nysbhi>
+<id_1chqlks_141_zkfbds>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_zp6ruf_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_nyadfm_115_nysbhi>
+<id_1chqlks_1co_1wuvogm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_nyadfm_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_waq839_115_nysbhi>
+<id_1chqlks_jpx_zil2lu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_waq839_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16k17fh_115_nysbhi>
+<id_1chqlks_1pm_zil2kx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_16k17fh_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_f2kh4s_115_nysbhi>
+<id_1chqlks_1s2_1nf9rgz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_f2kh4s_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_zv80x1_115_nysbhi>
+<id_1chqlks_pdw_1p0jkha>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_zv80x1_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_44shtp_115_nysbhi>
+<id_1chqlks_465_mbdrnr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_44shtp_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1nr6x1l_115_nysbhi>
+<id_1chqlks_akn_11nc1oa>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1nr6x1l_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_7td9tb_115_nysbhi>
+<id_1chqlks_1n6_xm0rem>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_7td9tb_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17lq6p5_115_nysbhi>
+<id_1chqlks_1uu_gfe53u>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_17lq6p5_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1wm3l46_115_nysbhi>
+<id_1chqlks_4vr_zjgw5b>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1wm3l46_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_57khfe_115_nysbhi>
+<id_1chqlks_11u_1u8c2mx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_57khfe_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kdqe2h_115_nysbhi>
+<id_1chqlks_akn_hmogne>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1kdqe2h_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1r38801_115_nysbhi>
+<id_1chqlks_bpl_pyopl8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1r38801_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1mker6j_115_nysbhi>
+<id_1chqlks_1rs_1bi25vm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1mker6j_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1rd6l1g_115_nysbhi>
+<id_1chqlks_pa3_17njgio>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1rd6l1g_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_19oec8d_115_nysbhi>
+<id_1chqlks_1oq_zik278>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_19oec8d_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1djuzll_115_nysbhi>
+<id_1chqlks_1ik_1po7336>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1djuzll_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_b0676y_115_nysbhi>
+<id_1chqlks_1i7_10qb57f>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_b0676y_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1k9hagj_115_nysbhi>
+<id_1chqlks_sx1_1njy3nw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1k9hagj_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1pipptj_115_nysbhi>
+<id_1chqlks_sx1_zjh266>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1pipptj_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1pird34_115_nysbhi>
+<id_1chqlks_sx1_zjiapk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1pird34_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ijotsv_115_nysbhi>
+<id_1chqlks_sx1_krv7z4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1ijotsv_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1pi8md5_115_nysbhi>
+<id_1chqlks_sx1_zil7rt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1pi8md5_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1pmjvrl_115_nysbhi>
+<id_1chqlks_1ts_1vmkhot>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1pmjvrl_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xkzxey_115_nysbhi>
+<id_1chqlks_1k5_zil2l3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1xkzxey_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ku4zry_115_nysbhi>
+<id_1chqlks_17o_1odlt9i>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_ku4zry_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_b1tfgt_115_nysbhi>
+<id_1chqlks_1bj_hshwkn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_b1tfgt_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_paz2dp_115_nysbhi>
+<id_1chqlks_1ki_1bvasdt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_paz2dp_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1cpvkbd_115_nysbhi>
+<id_1chqlks_e6w_zil3w7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1cpvkbd_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vn6wsn_115_nysbhi>
+<id_1chqlks_1xz_qa0gmw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_vn6wsn_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_euhoro_115_nysbhi>
+<id_1chqlks_17o_1d1fn7u>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_euhoro_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ed9u21_115_nysbhi>
+<id_1chqlks_w90_ngue49>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1ed9u21_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1k1usbt_115_nysbhi>
+<id_1chqlks_2sb_tqvzw7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1k1usbt_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_uo1kd4_115_nysbhi>
+<id_1chqlks_4ro_zik2ak>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_uo1kd4_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_54e0wm_115_nysbhi>
+<id_1chqlks_3sn_1fdef23>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_54e0wm_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1a3gdwp_115_nysbhi>
+<id_1chqlks_1ik_mu7zk3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1a3gdwp_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_28ftwj_115_nysbhi>
+<id_1chqlks_jvg_zik111>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_28ftwj_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_rdhq38_115_nysbhi>
+<id_1chqlks_1gz_1d9fieu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_rdhq38_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xpjwl3_115_nysbhi>
+<id_1chqlks_wfi_zhyylf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1xpjwl3_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_12n3sz4_115_nysbhi>
+<id_1chqlks_15x_1gdfbmh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_12n3sz4_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1khta1g_115_nysbhi>
+<id_1chqlks_1ik_p92x9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1khta1g_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_fpuvrq_115_nysbhi>
+<id_1chqlks_1ch_1no62ql>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_fpuvrq_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kiv0a6_115_nysbhi>
+<id_1chqlks_1ik_pru0a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1kiv0a6_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ulq61_115_nysbhi>
+<id_1chqlks_13i_1pvwpva>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_ulq61_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_uu10u_115_nysbhi>
+<id_1chqlks_13i_1r9g49d>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_uu10u_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_108ohpk_115_nysbhi>
+<id_1chqlks_1tl_zjgipf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_108ohpk_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1aekme_115_nysbhi>
+<id_1chqlks_4fd_zik2sl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1aekme_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1i8swgn_115_nysbhi>
+<id_1chqlks_138_zjggnb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1i8swgn_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1amvgq1_115_nysbhi>
+<id_1chqlks_138_1tiz28v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1amvgq1_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1efazxt_115_nysbhi>
+<id_1chqlks_165_1ippg6q>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1efazxt_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1pxeri4_115_nysbhi>
+<id_1chqlks_1ui_zik31r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1pxeri4_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1prcz64_115_nysbhi>
+<id_1chqlks_145_1swbq65>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1prcz64_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1q1qxhl_115_nysbhi>
+<id_1chqlks_1dc_131wx4f>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1q1qxhl_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1puhuek_115_nysbhi>
+<id_1chqlks_gl2_zik282>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Antimon> .
+<id_1puhuek_115_nysbhi>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ht9u0a_115_q1ldgx>
+<id_jn0juv_141_ut6v6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1ht9u0a_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1gj6myp_115_q1ldgx>
+<id_jn0juv_1co_1ok0bw7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1gj6myp_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17ltlk1_115_q1ldgx>
+<id_jn0juv_1pm_zik2ca>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_17ltlk1_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_n5dgjs_115_q1ldgx>
+<id_jn0juv_1s2_msia4s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_n5dgjs_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_bg49p6_115_q1ldgx>
+<id_jn0juv_465_zik12o>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_bg49p6_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1i9bywf_115_q1ldgx>
+<id_jn0juv_akn_avxgpd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1i9bywf_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_2xwg7_115_q1ldgx>
+<id_jn0juv_1n6_eyjjuf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_2xwg7_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vndx4b_115_q1ldgx>
+<id_jn0juv_11u_1fz4o3d>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_vndx4b_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1lfjfe3_115_q1ldgx>
+<id_jn0juv_akn_hmogne>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1lfjfe3_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1vfea6r_115_q1ldgx>
+<id_jn0juv_bpl_wwy9si>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1vfea6r_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_k3asj0_115_q1ldgx>
+<id_jn0juv_1rs_1bi23nj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_k3asj0_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ow2o2a_115_q1ldgx>
+<id_jn0juv_pa3_17njgio>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_ow2o2a_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1aq7dl5_115_q1ldgx>
+<id_jn0juv_1oq_zik27b>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1aq7dl5_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_b39d44_115_q1ldgx>
+<id_jn0juv_1ik_1pnqdpz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_b39d44_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_19472y2_115_q1ldgx>
+<id_jn0juv_1i7_xmls3e>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_19472y2_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_hsbbfq_115_q1ldgx>
+<id_jn0juv_sx1_1njtjse>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_hsbbfq_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_hdt231_115_q1ldgx>
+<id_jn0juv_sx1_1o1hmfj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_hdt231_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_tlx8fl_115_q1ldgx>
+<id_jn0juv_sx1_4vdcp1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_tlx8fl_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1sodl6g_115_q1ldgx>
+<id_jn0juv_1ts_18e56p4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1sodl6g_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ymsype_115_q1ldgx>
+<id_jn0juv_1k5_zil2if>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1ymsype_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1x5as1q_115_q1ldgx>
+<id_jn0juv_17o_8lcfrg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1x5as1q_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1mi7yrp_115_q1ldgx>
+<id_jn0juv_1bj_1emm4j1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1mi7yrp_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_10j0a17_115_q1ldgx>
+<id_jn0juv_1ki_15tl0ux>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_10j0a17_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1h0kb25_115_q1ldgx>
+<id_jn0juv_1xz_12yfmnt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1h0kb25_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_no09o2_115_q1ldgx>
+<id_jn0juv_17o_10kdn6d>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_no09o2_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vpukob_115_q1ldgx>
+<id_jn0juv_4ro_zik27b>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_vpukob_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1b5t1xg_115_q1ldgx>
+<id_jn0juv_1ik_mv7rkc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1b5t1xg_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_3a8v9b_115_q1ldgx>
+<id_jn0juv_jvg_zik10z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_3a8v9b_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_13rt0go_115_q1ldgx>
+<id_jn0juv_1gz_hycixb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_13rt0go_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_11l26u0_115_q1ldgx>
+<id_jn0juv_wfi_4fwhxl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_11l26u0_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1k3w2aw_115_q1ldgx>
+<id_jn0juv_15x_hycixb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1k3w2aw_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_9j339c_115_q1ldgx>
+<id_jn0juv_1ik_1melais>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_9j339c_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_6ksaor_115_q1ldgx>
+<id_jn0juv_e5r_zil3f2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_6ksaor_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_4xryr6_115_q1ldgx>
+<id_jn0juv_1gi_1o32wp0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_4xryr6_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1c9v0ro_115_q1ldgx>
+<id_jn0juv_1ch_1no62ql>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1c9v0ro_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16bq0q4_115_q1ldgx>
+<id_jn0juv_1ik_e0bvp5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_16bq0q4_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_n5yhdp_115_q1ldgx>
+<id_jn0juv_1n4_zil40r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_n5yhdp_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_paoqjh_115_q1ldgx>
+<id_jn0juv_13i_1a4zd47>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_paoqjh_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1b00vzo_115_q1ldgx>
+<id_jn0juv_13i_zjkv5z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1b00vzo_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_11agi27_115_q1ldgx>
+<id_jn0juv_1tl_zjg96q>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_11agi27_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_2c7lvo_115_q1ldgx>
+<id_jn0juv_4fd_zik2pu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_2c7lvo_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ckkxrs_115_q1ldgx>
+<id_jn0juv_138_13taaal>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1ckkxrs_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17379qi_115_q1ldgx>
+<id_jn0juv_138_b3bnem>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_17379qi_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_bzmexg_115_q1ldgx>
+<id_jn0juv_165_1k5e3yo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_bzmexg_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1qz7tin_115_q1ldgx>
+<id_jn0juv_1ui_zik2mp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1qz7tin_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_9y8uvm_115_q1ldgx>
+<id_jn0juv_145_zil2pd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_9y8uvm_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1if6ikz_115_q1ldgx>
+<id_jn0juv_1dc_1rtpapj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_1if6ikz_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_og3nzi_115_q1ldgx>
+<id_jn0juv_gl2_1fbr29h>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Argon> .
+<id_og3nzi_115_q1ldgx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xett8e_115_q1lm4n>
+<id_jn0sil_141_zkfbds>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1xett8e_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_5p595_115_q1lm4n>
+<id_jn0sil_1co_1pq1nwt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_5p595_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1u0d9du_115_q1lm4n>
+<id_jn0sil_jpx_zil2j9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1u0d9du_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_58k6rp_115_q1lm4n>
+<id_jn0sil_1pm_zil2j8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_58k6rp_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1h2rk5v_115_q1lm4n>
+<id_jn0sil_1s2_gzgzh5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1h2rk5v_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1mi7edb_115_q1lm4n>
+<id_jn0sil_pdw_13is646>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1mi7edb_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_11ufj7o_115_q1lm4n>
+<id_jn0sil_465_mbdrnr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_11ufj7o_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_13dcajy_115_q1lm4n>
+<id_jn0sil_akn_11nc35q>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_13dcajy_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vd7l59_115_q1lm4n>
+<id_jn0sil_1n6_1ixtu36>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_vd7l59_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1egrjgq_115_q1lm4n>
+<id_jn0sil_1uu_1yb7wyh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1egrjgq_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vamkir_115_q1lm4n>
+<id_jn0sil_4vr_zjgw69>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_vamkir_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_sgz3tw_115_q1lm4n>
+<id_jn0sil_11u_9s83ym>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_sgz3tw_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_j29dhc_115_q1lm4n>
+<id_jn0sil_akn_hmogne>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_j29dhc_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_oja6l6_115_q1lm4n>
+<id_jn0sil_bpl_nh5f63>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_oja6l6_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_i3uu35_115_q1lm4n>
+<id_jn0sil_1rs_17zbuck>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_i3uu35_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_37wl3n_115_q1lm4n>
+<id_jn0sil_pa3_1yq5m2r>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_37wl3n_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_8cxbn8_115_q1lm4n>
+<id_jn0sil_1oq_zik278>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_8cxbn8_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_6yrp_115_q1lm4n>
+<id_jn0sil_1ik_12zizxp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_6yrp_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_fm7hrn_115_q1lm4n>
+<id_jn0sil_1i7_1ejteda>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_fm7hrn_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_o797j8_115_q1lm4n>
+<id_jn0sil_sx1_zjghj9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_o797j8_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_o78ruu_115_q1lm4n>
+<id_jn0sil_sx1_zjh4dj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_o78ruu_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_o7aeqp_115_q1lm4n>
+<id_jn0sil_sx1_zjif3c>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_o7aeqp_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_11tej7q_115_q1lm4n>
+<id_jn0sil_sx1_1t16mm2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_11tej7q_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_6g1rgc_115_q1lm4n>
+<id_jn0sil_sx1_10euo00>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_6g1rgc_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_qdjebs_115_q1lm4n>
+<id_jn0sil_1ts_6gatsw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_qdjebs_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_w9iwtg_115_q1lm4n>
+<id_jn0sil_1k5_zil2jd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_w9iwtg_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1eagvej_115_q1lm4n>
+<id_jn0sil_17o_at6gsc>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1eagvej_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1dhyfaw_115_q1lm4n>
+<id_jn0sil_1bj_t5kntq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1dhyfaw_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_v0v7ai_115_q1lm4n>
+<id_jn0sil_1ki_hrr3ec>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_v0v7ai_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_j1ss2k_115_q1lm4n>
+<id_jn0sil_1eg_zik10z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_j1ss2k_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1q1ty91_115_q1lm4n>
+<id_jn0sil_e6w_1fy67g1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1q1ty91_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1oh3m8x_115_q1lm4n>
+<id_jn0sil_1xz_h6zotu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1oh3m8x_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_15r9rg5_115_q1lm4n>
+<id_jn0sil_17o_10kdvu3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_15r9rg5_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_edqgr1_115_q1lm4n>
+<id_jn0sil_2sb_kkzd6j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_edqgr1_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1sdoks4_115_q1lm4n>
+<id_jn0sil_4ro_zik28w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1sdoks4_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1jrnga7_115_q1lm4n>
+<id_jn0sil_3sn_1fdef23>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1jrnga7_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_iw4b91_115_q1lm4n>
+<id_jn0sil_4di_kw3y5a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_iw4b91_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_qg5ycp_115_q1lm4n>
+<id_jn0sil_1ik_1juub6s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_qg5ycp_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_zy2vah_115_q1lm4n>
+<id_jn0sil_jvg_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_zy2vah_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_34cf1j_115_q1lm4n>
+<id_jn0sil_1gz_n145of>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_34cf1j_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_pu1a6p_115_q1lm4n>
+<id_jn0sil_wfi_n145of>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_pu1a6p_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_msskb2_115_q1lm4n>
+<id_jn0sil_15x_1pvskw2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_msskb2_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_l5fyoh_115_q1lm4n>
+<id_jn0sil_1ik_1a1ycvy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_l5fyoh_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_svudfc_115_q1lm4n>
+<id_jn0sil_d6d_1xrs7pw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_svudfc_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ud4b5b_115_q1lm4n>
+<id_jn0sil_1ch_1no62ql>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1ud4b5b_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_by844e_115_q1lm4n>
+<id_jn0sil_1ik_tl0zut>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_by844e_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xyb1fb_115_q1lm4n>
+<id_jn0sil_1tl_zjh47k>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1xyb1fb_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_z01m0d_115_q1lm4n>
+<id_jn0sil_4fd_zik2sl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_z01m0d_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1bogfwu_115_q1lm4n>
+<id_jn0sil_165_mgtixw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1bogfwu_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_bftgqu_115_q1lm4n>
+<id_jn0sil_18x_1mjg4jt>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_bftgqu_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_7dj7co_115_q1lm4n>
+<id_jn0sil_18x_zil7w6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_7dj7co_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_olxrlx_115_q1lm4n>
+<id_jn0sil_1ui_zik2mq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_olxrlx_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16m2uxw_115_q1lm4n>
+<id_jn0sil_145_zil2pa>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_16m2uxw_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_182s6iv_115_q1lm4n>
+<id_jn0sil_1dc_184xjiq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_182s6iv_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_oj0uua_115_q1lm4n>
+<id_jn0sil_gl2_zik2aj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_oj0uua_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1s3jm1r_115_q1lm4n>
+<id_jn0sil_awl_19xgw3l>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_1s3jm1r_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_15wfg26_115_q1lm4n>
+<id_jn0sil_17o_10tpr20>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Arsen> .
+<id_15wfg26_115_q1lm4n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_gjk7bt_115_q1m9rl>
+<id_jn1g5j_141_zkfbds>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_gjk7bt_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_bgnlig_115_q1m9rl>
+<id_jn1g5j_1co_6x4n7u>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_bgnlig_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_neemv1_115_q1m9rl>
+<id_jn1g5j_1pm_zil2k6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_neemv1_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1pjhp0s_115_q1m9rl>
+<id_jn1g5j_1s2_1pl7c9g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1pjhp0s_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1k09za7_115_q1m9rl>
+<id_jn1g5j_465_mbdrnr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1k09za7_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_y5owna_115_q1m9rl>
+<id_jn1g5j_akn_11ne04h>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_y5owna_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1dfz0iv_115_q1m9rl>
+<id_jn1g5j_4vr_zil35k>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1dfz0iv_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_19lyipk_115_q1m9rl>
+<id_jn1g5j_11u_1id2cuf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_19lyipk_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1183tnp_115_q1m9rl>
+<id_jn1g5j_akn_hmoi4s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1183tnp_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1b7zhdg_115_q1m9rl>
+<id_jn1g5j_bpl_wwyb9w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1b7zhdg_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1pdsod6_115_q1m9rl>
+<id_jn1g5j_1rs_qqiyc4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1pdsod6_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_qirrqw_115_q1m9rl>
+<id_jn1g5j_1oq_zik27a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_qirrqw_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ujmn5t_115_q1m9rl>
+<id_jn1g5j_1ik_fm3jw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_ujmn5t_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kdfx7d_115_q1m9rl>
+<id_jn1g5j_1i7_10lymae>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1kdfx7d_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16cm2cc_115_q1m9rl>
+<id_jn1g5j_sx1_zil8hj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_16cm2cc_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_tb0ilf_115_q1m9rl>
+<id_jn1g5j_sx1_1m29xmz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_tb0ilf_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_4dzsdo_115_q1m9rl>
+<id_jn1g5j_1ts_13rye9d>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_4dzsdo_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1efdcyr_115_q1m9rl>
+<id_jn1g5j_1k5_zil2mk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1efdcyr_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1baqp0n_115_q1m9rl>
+<id_jn1g5j_1ki_11h054j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1baqp0n_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_cjliea_115_q1m9rl>
+<id_jn1g5j_zrr_zil39t>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_cjliea_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_10jljlk_115_q1m9rl>
+<id_jn1g5j_17o_10kejh1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_10jljlk_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_biezvp_115_q1m9rl>
+<id_jn1g5j_4ro_zik2d9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_biezvp_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_oyhvme_115_q1m9rl>
+<id_jn1g5j_3sn_10bht4x>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_oyhvme_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_gxeeg8_115_q1m9rl>
+<id_jn1g5j_1ik_1at7344>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_gxeeg8_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1i3xbd2_115_q1m9rl>
+<id_jn1g5j_jvg_zik112>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1i3xbd2_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ruhvax_115_q1m9rl>
+<id_jn1g5j_1gz_zik2x4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_ruhvax_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ek6qg3_115_q1m9rl>
+<id_jn1g5j_wfi_zik2x4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1ek6qg3_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_mens32_115_q1m9rl>
+<id_jn1g5j_1ik_1melc06>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_mens32_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1e9alv5_115_q1m9rl>
+<id_jn1g5j_d6d_u5b4dj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1e9alv5_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_tptek0_115_q1m9rl>
+<id_jn1g5j_1ik_soqfgn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_tptek0_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_qs0si8_115_q1m9rl>
+<id_jn1g5j_13i_zil3zp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_qs0si8_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_qs0tnp_115_q1m9rl>
+<id_jn1g5j_13i_zil5n7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_qs0tnp_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xn4srz_115_q1m9rl>
+<id_jn1g5j_1tl_112qkdi>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1xn4srz_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1h5w21h_115_q1m9rl>
+<id_jn1g5j_4fd_zik2s9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1h5w21h_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16rs7oh_115_q1m9rl>
+<id_jn1g5j_1ui_zik2mr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_16rs7oh_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_6ccqqu_115_q1m9rl>
+<id_jn1g5j_145_169wf95>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_6ccqqu_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ulbx6f_115_q1m9rl>
+<id_jn1g5j_1dc_1qej5ce>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_1ulbx6f_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_11mcetu_115_q1m9rl>
+<id_jn1g5j_gl2_orjxad>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astat> .
+<id_11mcetu_115_q1m9rl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1nu84a9_115_m4eda6>
+<id_10d55g4_1oq_zik2mk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkalimetalle> .
+<id_1nu84a9_115_m4eda6>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_q0yiqp_115_m4eda6>
+<id_10d55g4_101_y2lfqa>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkalimetalle> .
+<id_q0yiqp_115_m4eda6>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ltljvf_115_m4eda6>
+<id_10d55g4_101_nte2i3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkalimetalle> .
+<id_ltljvf_115_m4eda6>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1qmmc55_115_m4eda6>
+<id_10d55g4_101_1p2lw0i>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alkalimetalle> .
+<id_1qmmc55_115_m4eda6>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_109s02k_115_1jppnpq>
+<id_17detes_1oq_zik11d>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinoide> .
+<id_109s02k_115_1jppnpq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_dsnzqs_115_1jppnpq>
+<id_17detes_101_w362a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinoide> .
+<id_dsnzqs_115_1jppnpq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_d0wpm7_115_1jppnpq>
+<id_17detes_101_1276f53>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinoide> .
+<id_d0wpm7_115_1jppnpq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xa9jte_115_1jppnpq>
+<id_17detes_101_nte2i3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Actinoide> .
+<id_1xa9jte_115_1jppnpq>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vwizvv_115_1kxc25m>
+<id_18l17uo_141_zkfbds>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_vwizvv_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1d90d6m_115_1kxc25m>
+<id_18l17uo_1co_1ysun0j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1d90d6m_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_si2g6h_115_1kxc25m>
+<id_18l17uo_jpx_zil2p9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_si2g6h_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_bl81xj_115_1kxc25m>
+<id_18l17uo_1s2_13imay2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_bl81xj_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_6lngeq_115_1kxc25m>
+<id_18l17uo_465_zik12e>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_6lngeq_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_d3tvr3_115_1kxc25m>
+<id_18l17uo_akn_11nc0xu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_d3tvr3_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_3pn5jy_115_1kxc25m>
+<id_18l17uo_1n6_1fzsmr5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_3pn5jy_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_126hr5k_115_1kxc25m>
+<id_18l17uo_1uu_cwreqv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_126hr5k_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ssxthw_115_1kxc25m>
+<id_18l17uo_4vr_zil2ew>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1ssxthw_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_nx5j5d_115_1kxc25m>
+<id_18l17uo_11u_1gvx5zv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_nx5j5d_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1gl2m7r_115_1kxc25m>
+<id_18l17uo_akn_hmoi4s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1gl2m7r_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1qky9xi_115_1kxc25m>
+<id_18l17uo_bpl_wwyb9w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1qky9xi_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_5pney4_115_1kxc25m>
+<id_18l17uo_1rs_qqiyc4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_5pney4_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_15vqllg_115_1kxc25m>
+<id_18l17uo_1oq_zik2ma>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_15vqllg_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_v1gsq7_115_1kxc25m>
+<id_18l17uo_1ik_fm3jw>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_v1gsq7_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1qx0vt2_115_1kxc25m>
+<id_18l17uo_1i7_1l7pzig>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1qx0vt2_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1lpkst8_115_1kxc25m>
+<id_18l17uo_sx1_zil5na>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1lpkst8_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_896q1d_115_1kxc25m>
+<id_18l17uo_sx1_1m29xmz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_896q1d_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_86yn5i_115_1kxc25m>
+<id_18l17uo_1ts_1hcg7m4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_86yn5i_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1d5msbd_115_1kxc25m>
+<id_18l17uo_17o_1y0fbyb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1d5msbd_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1il5lwa_115_1kxc25m>
+<id_18l17uo_1bj_6qvfoz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1il5lwa_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ec4oz3_115_1kxc25m>
+<id_18l17uo_1ki_1dd5fsn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1ec4oz3_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_rwkby6_115_1kxc25m>
+<id_18l17uo_zrr_zil3ch>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_rwkby6_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1wugcxk_115_1kxc25m>
+<id_18l17uo_1xz_1qbxjb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1wugcxk_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1olgcv1_115_1kxc25m>
+<id_18l17uo_17o_23pki6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1olgcv1_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_s8zbb_115_1kxc25m>
+<id_18l17uo_2sb_1ygitmf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_s8zbb_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_qvdsgh_115_1kxc25m>
+<id_18l17uo_4ro_zik2e4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_qvdsgh_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_8gkun5_115_1kxc25m>
+<id_18l17uo_3sn_2pw7au>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_8gkun5_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1uwonva_115_1kxc25m>
+<id_18l17uo_1ik_1at7344>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1uwonva_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xgw3x5_115_1kxc25m>
+<id_18l17uo_jvg_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1xgw3x5_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_177gnuz_115_1kxc25m>
+<id_18l17uo_1gz_zik2x4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_177gnuz_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1tx5j05_115_1kxc25m>
+<id_18l17uo_wfi_zik2x4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1tx5j05_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ctzj0_115_1kxc25m>
+<id_18l17uo_1ik_1melc06>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1ctzj0_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1tm9ef7_115_1kxc25m>
+<id_18l17uo_d6d_u5b4dj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1tm9ef7_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ub1lxk_115_1kxc25m>
+<id_18l17uo_y4f_1o32wp0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_ub1lxk_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1p8qd3p_115_1kxc25m>
+<id_18l17uo_1ch_i1ffgm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1p8qd3p_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_192s742_115_1kxc25m>
+<id_18l17uo_1ik_soqfgn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_192s742_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_165h5as_115_1kxc25m>
+<id_18l17uo_13i_zjgd1b>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_165h5as_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_165h6x2_115_1kxc25m>
+<id_18l17uo_13i_zjgf6w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_165h6x2_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_wg0n1a_115_1kxc25m>
+<id_18l17uo_1tl_zjgezv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_wg0n1a_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1wiuuhh_115_1kxc25m>
+<id_18l17uo_4fd_zik2ma>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1wiuuhh_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1eg4oux_115_1kxc25m>
+<id_18l17uo_138_zjh3kb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1eg4oux_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1vsygrs_115_1kxc25m>
+<id_18l17uo_138_1o2mdm1>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1vsygrs_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_gd570d_115_1kxc25m>
+<id_18l17uo_165_zjfm70>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_gd570d_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1m4r08c_115_1kxc25m>
+<id_18l17uo_1ui_zik2mk>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1m4r08c_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1i3envj_115_1kxc25m>
+<id_18l17uo_145_10ayum9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1i3envj_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_100ahzx_115_1kxc25m>
+<id_18l17uo_1dc_uv2wl6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_100ahzx_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1gayitr_115_1kxc25m>
+<id_18l17uo_gl2_neaxsd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Americium> .
+<id_1gayitr_115_1kxc25m>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_6wcld3_115_bgq36n>
+<id_180fbcl_1n4_1est999>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_6wcld3_115_bgq36n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kcy32h_115_bgq36n>
+<id_180fbcl_1cc_1amy0um>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1kcy32h_115_bgq36n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1x2ok3_115_bgq36n>
+<id_180fbcl_rd0_1ci2l9q>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1x2ok3_115_bgq36n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1km7zh4_115_bgq36n>
+<id_180fbcl_168_4x80up>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1km7zh4_115_bgq36n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1tffw8q_115_bgq36n>
+<id_180fbcl_w86_39b6no>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1tffw8q_115_bgq36n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1vmlyoq_115_bgq36n>
+<id_180fbcl_63l_7zegaq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_1vmlyoq_115_bgq36n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_10b6af8_115_bgq36n>
+<id_180fbcl_4g0_13p43es>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexander_der_Große> .
+<id_10b6af8_115_bgq36n>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17zlhvd_115_xxfaha>
+<id_gnbkoo_isf_1je0ow3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_17zlhvd_115_xxfaha>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_n9084w_115_xxfaha>
+<id_gnbkoo_1cz_1dqlhog>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_n9084w_115_xxfaha>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_12sbk1h_115_xxfaha>
+<id_gnbkoo_z0k_ccy2c>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_12sbk1h_115_xxfaha>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vn97wo_115_xxfaha>
+<id_gnbkoo_gpv_tzd6a4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_vn97wo_115_xxfaha>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_2osdbe_115_xxfaha>
+<id_gnbkoo_12q_168ghrb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_2osdbe_115_xxfaha>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_3won5u_115_xxfaha>
+<id_gnbkoo_17o_1qkkywa>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_3won5u_115_xxfaha>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1bl58us_115_xxfaha>
+<id_gnbkoo_178_k2xj69>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_1bl58us_115_xxfaha>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_z19xic_115_xxfaha>
+<id_gnbkoo_1lm_27evyo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ångström_(Einheit)> .
+<id_z19xic_115_xxfaha>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xxg89u_115_pykkig>
+<id_14hz8g2_1cz_e83ge4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_1xxg89u_115_pykkig>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_4cv0n3_115_pykkig>
+<id_14hz8g2_z0k_izkygh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_4cv0n3_115_pykkig>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1444q4l_115_pykkig>
+<id_14hz8g2_gpv_1bym441>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_1444q4l_115_pykkig>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_dvxmm1_115_pykkig>
+<id_14hz8g2_12q_1qm601g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_dvxmm1_115_pykkig>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ncsrki_115_pykkig>
+<id_14hz8g2_17o_1w0gpis>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_1ncsrki_115_pykkig>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_bgtzmm_115_pykkig>
+<id_14hz8g2_17o_vhda2v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_bgtzmm_115_pykkig>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1v68ap1_115_pykkig>
+<id_14hz8g2_178_1pe2af8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ampere> .
+<id_1v68ap1_115_pykkig>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1r56if7_115_hrslv9>
+<id_26x78f_isf_ukf7sb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_1r56if7_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_k34y66_115_hrslv9>
+<id_26x78f_1cz_rwuu2j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_k34y66_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ox8dwi_115_hrslv9>
+<id_26x78f_z0k_wu8x3c>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_ox8dwi_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_18svp29_115_hrslv9>
+<id_26x78f_gpv_eti4j5>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_18svp29_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ukpovy_115_hrslv9>
+<id_26x78f_12q_194idh8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_1ukpovy_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1mvhw49_115_hrslv9>
+<id_26x78f_17o_1almjp0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_1mvhw49_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xf0yis_115_hrslv9>
+<id_26x78f_17o_1y87h2u>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_1xf0yis_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1uiv7cr_115_hrslv9>
+<id_26x78f_178_h508c2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_1uiv7cr_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kpaqox_115_hrslv9>
+<id_26x78f_1lm_3p4lpe>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_1kpaqox_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_meiw5n_115_hrslv9>
+<id_26x78f_12q_1pizhvb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ar_(Einheit)> .
+<id_meiw5n_115_hrslv9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_55h1r9_115_1qoywtx>
+<id_fypoej_z0k_15hcz91>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_55h1r9_115_1qoywtx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_v84891_115_1qoywtx>
+<id_fypoej_gpv_11r5yn3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_v84891_115_1qoywtx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_puyk7m_115_1qoywtx>
+<id_fypoej_12q_yry8ls>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_puyk7m_115_1qoywtx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_n4vrr8_115_1qoywtx>
+<id_fypoej_17o_gflol4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_n4vrr8_115_1qoywtx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_w76609_115_1qoywtx>
+<id_fypoej_17o_zjytdh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_w76609_115_1qoywtx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_9vvax4_115_1qoywtx>
+<id_fypoej_178_1p5rxkh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_9vvax4_115_1qoywtx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_nmvobw_115_1qoywtx>
+<id_fypoej_1lm_1cb5j8p>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Atomare_Masseneinheit> .
+<id_nmvobw_115_1qoywtx>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_cmdy52_115_q1xsye>
+<id_14lcgw0_17o_19ai2o6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_cmdy52_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1mlubuc_115_q1xsye>
+<id_14lcgw0_1kg_zjgz46>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1mlubuc_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17gp9l_115_q1xsye>
+<id_14lcgw0_sc1_1qfpk69>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_17gp9l_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1anl2n3_115_q1xsye>
+<id_14lcgw0_1wj_1h2rju9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1anl2n3_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_tfejy3_115_q1xsye>
+<id_14lcgw0_12u_p23sdu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_tfejy3_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1qse1m_115_q1xsye>
+<id_14lcgw0_1o5_19eozul>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1qse1m_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_4yt3ya_115_q1xsye>
+<id_14lcgw0_1o8_zil6za>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_4yt3ya_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_phsnii_115_q1xsye>
+<id_14lcgw0_1oj_zilf8i>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_phsnii_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_5mhp4i_115_q1xsye>
+<id_14lcgw0_yfe_14f3hz8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_5mhp4i_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_r493bg_115_q1xsye>
+<id_14lcgw0_16y_t5jh49>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_r493bg_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1vsbuf3_115_q1xsye>
+<id_14lcgw0_17o_zil42g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1vsbuf3_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_15749v0_115_q1xsye>
+<id_14lcgw0_17b_109udad>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_15749v0_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xo1z47_115_q1xsye>
+<id_14lcgw0_1qu_zik2ak>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1xo1z47_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xo1y2h_115_q1xsye>
+<id_14lcgw0_1qu_zik273>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1xo1y2h_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xo1x7n_115_q1xsye>
+<id_14lcgw0_1qu_zik10w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1xo1x7n_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1won9j4_115_q1xsye>
+<id_14lcgw0_1r1_zik2ca>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1won9j4_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1won8gt_115_q1xsye>
+<id_14lcgw0_1r1_zik283>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1won8gt_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1won7l4_115_q1xsye>
+<id_14lcgw0_1r1_zik10w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1won7l4_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1yls1qp_115_q1xsye>
+<id_14lcgw0_1x0_1bwdcs2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1yls1qp_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_189365w_115_q1xsye>
+<id_14lcgw0_19n_mvfw4x>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_189365w_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vstua3_115_q1xsye>
+<id_14lcgw0_ydb_zjk6yd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_vstua3_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1dxplr1_115_q1xsye>
+<id_14lcgw0_1w1_bjeqog>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1dxplr1_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_wrro29_115_q1xsye>
+<id_14lcgw0_1vx_12bxvlg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_wrro29_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ytb4fc_115_q1xsye>
+<id_14lcgw0_1bu_1gxvx62>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Astana> .
+<id_1ytb4fc_115_q1xsye>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1eqyouo_115_pz137a>
+<id_14ifr4w_17o_pp63gv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_1eqyouo_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_127h305_115_pz137a>
+<id_14ifr4w_lsq_l6iqxx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_127h305_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_5kav04_115_pz137a>
+<id_14ifr4w_5mk_b96mf2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_5kav04_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16xie94_115_pz137a>
+<id_14ifr4w_6vi_zjgz4u>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_16xie94_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_7f4hae_115_pz137a>
+<id_14ifr4w_1al_17sb3tm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_7f4hae_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_7fonx9_115_pz137a>
+<id_14ifr4w_ino_1d7h03g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_7fonx9_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_10lndb9_115_pz137a>
+<id_14ifr4w_1v2_zjgz4v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_10lndb9_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_37hiun_115_pz137a>
+<id_14ifr4w_viz_zjh2ap>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_37hiun_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1jeixoj_115_pz137a>
+<id_14ifr4w_17o_zil8im>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_1jeixoj_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_90okzk_115_pz137a>
+<id_14ifr4w_1sr_1ohwbdl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_90okzk_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_o9ssm7_115_pz137a>
+<id_14ifr4w_1sq_zilf1i>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_o9ssm7_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_166jlau_115_pz137a>
+<id_14ifr4w_pzm_1w0x87m>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_166jlau_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1tr42on_115_pz137a>
+<id_14ifr4w_1w1_19134h7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_1tr42on_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kt2vbz_115_pz137a>
+<id_14ifr4w_1vx_hiutns>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Ankara> .
+<id_1kt2vbz_115_pz137a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_18psu7r_115_rp468>
+<id_2k3bw6_149_1o18mxd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_18psu7r_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_i9t2i0_115_rp468>
+<id_2k3bw6_54j_1c8xc9x>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_i9t2i0_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ncb8pm_115_rp468>
+<id_2k3bw6_d0j_1jsq09o>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1ncb8pm_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1hsutzs_115_rp468>
+<id_2k3bw6_140_zjicp8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1hsutzs_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_13zvz6y_115_rp468>
+<id_2k3bw6_6o0_1dbcj2b>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_13zvz6y_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_taajvd_115_rp468>
+<id_2k3bw6_1e6_d0jged>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_taajvd_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_10eerbh_115_rp468>
+<id_2k3bw6_1j9_b1wh71>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_10eerbh_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vt56x6_115_rp468>
+<id_2k3bw6_109_188onzm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_vt56x6_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1xltdu7_115_rp468>
+<id_2k3bw6_1m2_1oji9g7>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1xltdu7_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_5fg5iy_115_rp468>
+<id_2k3bw6_rwm_10adqrh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_5fg5iy_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1duwtqb_115_rp468>
+<id_2k3bw6_akn_1k9ke6o>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1duwtqb_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17549xd_115_rp468>
+<id_2k3bw6_ltk_5qoj4n>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_17549xd_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_bt5m20_115_rp468>
+<id_2k3bw6_sc1_1cr5nde>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_bt5m20_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1demmxw_115_rp468>
+<id_2k3bw6_1o8_40g2jn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1demmxw_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_181utcy_115_rp468>
+<id_2k3bw6_18n_yj2kx>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_181utcy_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_9xf6xy_115_rp468>
+<id_2k3bw6_1s0_l2nt1f>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_9xf6xy_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_vsvihf_115_rp468>
+<id_2k3bw6_akn_i067w3>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_vsvihf_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1wigjs3_115_rp468>
+<id_2k3bw6_j7o_1tfp2kz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1wigjs3_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_o560pf_115_rp468>
+<id_2k3bw6_ako_1t3yyg8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_o560pf_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_hhqsje_115_rp468>
+<id_2k3bw6_17b_1ntffv0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_hhqsje_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_16jt7g_115_rp468>
+<id_2k3bw6_131_1k6baqv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_16jt7g_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_130iemw_115_rp468>
+<id_2k3bw6_1io_4bpzn2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_130iemw_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_uo4otk_115_rp468>
+<id_2k3bw6_b1a_1mk2t5m>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_uo4otk_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_4sqgs3_115_rp468>
+<id_2k3bw6_szo_1jk4dqm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_4sqgs3_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ni3eg_115_rp468>
+<id_2k3bw6_hyw_17l8tm0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_ni3eg_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kddg5t_115_rp468>
+<id_2k3bw6_m2h_1h6gflo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1kddg5t_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_11zmfip_115_rp468>
+<id_2k3bw6_1pn_1h72e13>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_11zmfip_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1d7o28n_115_rp468>
+<id_2k3bw6_ydb_ofeqv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1d7o28n_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1vfbnea_115_rp468>
+<id_2k3bw6_ekn_8d1y9l>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1vfbnea_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_firyb1_115_rp468>
+<id_2k3bw6_1ux_1xwee62>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_firyb1_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1vt1gro_115_rp468>
+<id_2k3bw6_14j_1ek3j6x>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1vt1gro_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1sjufzl_115_rp468>
+<id_2k3bw6_1bu_181t0tn>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Afghanistan> .
+<id_1sjufzl_115_rp468>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_34mb6i_115_w8jnsl>
+<id_4sru8v_gmd_enmore>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_34mb6i_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1dg01br_115_w8jnsl>
+<id_4sru8v_17o_18tt8b9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1dg01br_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_s4wa4z_115_w8jnsl>
+<id_4sru8v_1j9_os8p52>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_s4wa4z_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1wlgky9_115_w8jnsl>
+<id_4sru8v_vap_6wqg16>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1wlgky9_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_f7nt2j_115_w8jnsl>
+<id_4sru8v_1md_8kmg7c>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_f7nt2j_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1a1sr2b_115_w8jnsl>
+<id_4sru8v_5mk_1x6bv0w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1a1sr2b_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_a74jjx_115_w8jnsl>
+<id_4sru8v_sc1_16c71jh>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_a74jjx_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1p2pshu_115_w8jnsl>
+<id_4sru8v_1o5_1hjt2ym>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1p2pshu_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_14229z_115_w8jnsl>
+<id_4sru8v_18n_zjdugz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_14229z_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_4mci1p_115_w8jnsl>
+<id_4sru8v_1tr_1xajgte>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_4mci1p_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ok1vxg_115_w8jnsl>
+<id_4sru8v_4ds_sqwy4a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_ok1vxg_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_167awvy_115_w8jnsl>
+<id_4sru8v_1ob_17bwd7b>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_167awvy_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_xhhx20_115_w8jnsl>
+<id_4sru8v_1bb_zjh3qe>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_xhhx20_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kjb94l_115_w8jnsl>
+<id_4sru8v_1rl_zjgz47>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1kjb94l_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_18lpbpp_115_w8jnsl>
+<id_4sru8v_17o_1014ym4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_18lpbpp_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1uy5v54_115_w8jnsl>
+<id_4sru8v_hzh_1qj3bfy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1uy5v54_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_10y88hw_115_w8jnsl>
+<id_4sru8v_4fn_zjgz47>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_10y88hw_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1mebp8v_115_w8jnsl>
+<id_4sru8v_1w1_13bus4t>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_1mebp8v_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_14cdnxy_115_w8jnsl>
+<id_4sru8v_ako_1l8bbd2>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Alexandria> .
+<id_14cdnxy_115_w8jnsl>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1n8qoaa_115_q1m1p8>
+<id_jn1836_ooo_zx3f6z>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_1n8qoaa_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_t3sk4g_115_q1m1p8>
+<id_jn1836_kgt_zik2dz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_t3sk4g_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1gv95md_115_q1m1p8>
+<id_jn1836_1o8_1ewdipo>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_1gv95md_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1wtganu_115_q1m1p8>
+<id_jn1836_4ax_l0tj65>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_1wtganu_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1tqczy2_115_q1m1p8>
+<id_jn1836_11s_5vbse4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_1tqczy2_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_ts8wi4_115_q1m1p8>
+<id_jn1836_1su_zik29v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_ts8wi4_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1csl2xd_115_q1m1p8>
+<id_jn1836_d7v_rcw1sp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_1csl2xd_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_hlarsr_115_q1m1p8>
+<id_jn1836_1va_1qlpgmu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_hlarsr_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_3aocjx_115_q1m1p8>
+<id_jn1836_pq2_f3zkau>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Asien> .
+<id_3aocjx_115_q1m1p8>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_j6rk8g_115_q1ka3a>
+<id_jmzgh8_xdk_1nzuq8j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_j6rk8g_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1gj8kfn_115_q1ka3a>
+<id_jmzgh8_cpc_zjgiyv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_1gj8kfn_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_3py18y_115_q1ka3a>
+<id_jmzgh8_wn0_1mvif84>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_3py18y_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_r59z69_115_q1ka3a>
+<id_jmzgh8_17o_1spdwxy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_r59z69_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_seex6f_115_q1ka3a>
+<id_jmzgh8_w28_pg3gi8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_seex6f_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ks88rb_115_q1ka3a>
+<id_jmzgh8_17o_o5z76y>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_1ks88rb_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_17l1lnm_115_q1ka3a>
+<id_jmzgh8_v2v_qu3el8>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_17l1lnm_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_oo6icy_115_q1ka3a>
+<id_jmzgh8_17o_1nicpcm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_oo6icy_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1gkpjs3_115_q1ka3a>
+<id_jmzgh8_17o_f9ga05>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_1gkpjs3_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_18hxzpj_115_q1ka3a>
+<id_jmzgh8_1va_puedmr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_18hxzpj_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_tjhh61_115_q1ka3a>
+<id_jmzgh8_18i_10uh3uu>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Apple> .
+<id_tjhh61_115_q1ka3a>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_elrjoy_115_1w3vmp9>
+<id_1b35psn_149_10lyr7w>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_elrjoy_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_daqqxb_115_1w3vmp9>
+<id_1b35psn_54j_wprkus>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_daqqxb_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1d6v3ev_115_1w3vmp9>
+<id_1b35psn_d0j_sllqsp>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1d6v3ev_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1omvctv_115_1w3vmp9>
+<id_1b35psn_140_zjge9a>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1omvctv_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1heucq9_115_1w3vmp9>
+<id_1b35psn_17o_1o91n9s>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1heucq9_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1catvm2_115_1w3vmp9>
+<id_1b35psn_1e6_1toqpfm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1catvm2_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_e4xjec_115_1w3vmp9>
+<id_1b35psn_1lf_zik3lj>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_e4xjec_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_mpvspv_115_1w3vmp9>
+<id_1b35psn_1j9_5eoj9g>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_mpvspv_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1k3018e_115_1w3vmp9>
+<id_1b35psn_109_1lqo2dy>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1k3018e_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_18qoj0w_115_1w3vmp9>
+<id_1b35psn_1m2_sddoy9>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_18qoj0w_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_47oepf_115_1w3vmp9>
+<id_1b35psn_rwm_10aexrr>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_47oepf_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ialm0a_115_1w3vmp9>
+<id_1b35psn_akn_1uumm10>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1ialm0a_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_300vrs_115_1w3vmp9>
+<id_1b35psn_ltk_hko3pz>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_300vrs_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_t9pw81_115_1w3vmp9>
+<id_1b35psn_sc1_sarkc4>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_t9pw81_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1kiu9jj_115_1w3vmp9>
+<id_1b35psn_1o8_3c80ja>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1kiu9jj_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_mbewvi_115_1w3vmp9>
+<id_1b35psn_1s0_vhcjtm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_mbewvi_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_m1qsq2_115_1w3vmp9>
+<id_1b35psn_akn_11rejkd>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_m1qsq2_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1vaqcdt_115_1w3vmp9>
+<id_1b35psn_j7o_1tfredg>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1vaqcdt_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_inrokg_115_1w3vmp9>
+<id_1b35psn_ako_1is22cm>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_inrokg_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1qi3ote_115_1w3vmp9>
+<id_1b35psn_17b_zik2om>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1qi3ote_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1x2v04f_115_1w3vmp9>
+<id_1b35psn_131_1g63ir6>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1x2v04f_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_3gtc3d_115_1w3vmp9>
+<id_1b35psn_1io_prihin>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_3gtc3d_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1p9qozn_115_1w3vmp9>
+<id_1b35psn_szo_p9c8nq>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1p9qozn_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_4ki6b3_115_1w3vmp9>
+<id_1b35psn_1lq_1046gli>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_4ki6b3_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1yotq5r_115_1w3vmp9>
+<id_1b35psn_hyw_ibo5jv>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1yotq5r_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_11zpq22_115_1w3vmp9>
+<id_1b35psn_m2h_eq4490>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_11zpq22_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ekfm53_115_1w3vmp9>
+<id_1b35psn_1pn_rz78ob>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1ekfm53_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1a2261y_115_1w3vmp9>
+<id_1b35psn_ydb_zjcjpl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1a2261y_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1jt2s3m_115_1w3vmp9>
+<id_1b35psn_1mi_1jsah8v>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1jt2s3m_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1wyjidp_115_1w3vmp9>
+<id_1b35psn_ekn_1cukg4d>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1wyjidp_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_u8zspn_115_1w3vmp9>
+<id_1b35psn_gbe_jqga0j>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_u8zspn_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_i483ve_115_1w3vmp9>
+<id_1b35psn_1ux_5frolb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_i483ve_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1wz0zd8_115_1w3vmp9>
+<id_1b35psn_14j_1jl51p0>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1wz0zd8_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .
+#@ <id_1ol10av_115_1w3vmp9>
+<id_1b35psn_1bu_10w1mmf>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Algerien> .
+<id_1ol10av_115_1w3vmp9>	<extractionTechnique>	"Infobox Extractor" .

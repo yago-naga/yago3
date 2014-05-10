@@ -43,8 +43,7 @@ public class SourceExtractor extends Extractor {
 				FlightExtractor.FLIGHTSOURCE,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES,
 				FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE));
-		input.addAll(CoordinateExtractor.COORDINATE_SOURCES
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.add(CoordinateExtractor.COORDINATE_SOURCES);
 		input.addAll(InfoboxMapper.INFOBOXSOURCES
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(CategoryMapper.CATEGORYSOURCES

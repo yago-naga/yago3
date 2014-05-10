@@ -35,7 +35,7 @@ public class StructureExtractor extends EnglishWikipediaExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.STRUCTUREPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
-				WordnetExtractor.WORDNETWORDS));
+				WordnetExtractor.PREFMEANINGS));
 	}
 
 	@Override

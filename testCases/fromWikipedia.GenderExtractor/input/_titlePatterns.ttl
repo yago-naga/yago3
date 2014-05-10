@@ -1,14 +1,13 @@
-# Manually coded facts of YAGO.
-#  DO NOT OVERWRITE!
+# test
+# The replacement patterns for Wikipedia titles used in YAGO
+# INTERNAL
 
 @base <http://yago-knowledge.org/resource/> .
-@prefix dc: <http://purl.org/dc/terms/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 "Economy of the Bahamas"	<_titleReplace>	"The_Bahamas" .
@@ -27,5 +26,11 @@
 "[^<]{100,}"	<_titleReplace>	"NIL" .
 "Category:"	<_titleReplace>	"NIL" .
 "\\(disambiguation\\)"	<_titleReplace>	"NIL" .
+"\\(.*name.*\\)"	<_titleReplace>	"NIL" .
 "Prime Minister of"	<_titleReplace>	"NIL" .
-"\u005cd+"	<_titleReplace>	"NIL" .
+"Minister of"	<_titleReplace>	"NIL" .
+"President of"	<_titleReplace>	"NIL" .
+"Prince of"	<_titleReplace>	"NIL" .
+"Co-Princes of"	<_titleReplace>	"NIL" .
+"Leader of"	<_titleReplace>	"NIL" .
+"^\\d+"	<_titleReplace>	"NIL" .

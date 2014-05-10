@@ -128,6 +128,9 @@ public class Translator extends FollowUpExtractor {
 	}
 
 	public Translator(Theme in, Theme out, String lang, ObjectType objectType) {
+		if (language.equals("en"))
+			throw new RuntimeException(
+					"Don't translate English. This is useless and very costly.");
 		this.checkMe = in;
 		this.checked = out;
 		this.language = lang;

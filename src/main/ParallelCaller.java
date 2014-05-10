@@ -16,8 +16,9 @@ import javatools.administrative.D;
 import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
 import basics.Theme;
-import extractors.Extractor;
 import extractors.DataExtractor;
+import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
 import extractors.MultilingualDataExtractor;
 import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
@@ -290,10 +291,11 @@ public class ParallelCaller {
 			File input = new File(m.group(2));
 			extractors.add(DataExtractor.forName((Class<DataExtractor>) clss,
 					input));
-		} else if (clss.getSuperclass() == Object.class) {
-			extractors.add(Extractor.forName((Class<Extractor>) clss));
+		} else if (clss.getSuperclass() == EnglishWikipediaExtractor.class) {
+			extractors.add(EnglishWikipediaExtractor.forName(
+					(Class<DataExtractor>) clss, wikipedias.get("en")));
 		} else {
-			Announce.error("Unknown extractor class:", clss);
+			extractors.add(Extractor.forName((Class<Extractor>) clss));
 		}
 		Announce.done();
 		return (extractors);

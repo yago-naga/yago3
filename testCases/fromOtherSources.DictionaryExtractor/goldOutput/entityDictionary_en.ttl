@@ -1,0 +1,31 @@
+# test
+# Maps a foreign entity to a YAGO entity. Data from (http://http://www.wikidata.org/).
+# INTERNAL
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<Spain>	<_hasTranslation>	<Spain> .
+<United_States>	<_hasTranslation>	<United_States> .
+<Universe>	<_hasTranslation>	<Universe> .
+<Life>	<_hasTranslation>	<Life> .
+<Death>	<_hasTranslation>	<Death> .
+<Turkey>	<_hasTranslation>	<Turkey> .
+<Club-Mate>	<_hasTranslation>	<Club-Mate> .
+<Netherlands>	<_hasTranslation>	<Netherlands> .
+<New_York_City>	<_hasTranslation>	<New_York_City> .
+<San_Francisco>	<_hasTranslation>	<San_Francisco> .
+<Los_Angeles>	<_hasTranslation>	<Los_Angeles> .
+<Zurich>	<_hasTranslation>	<Zurich> .
+<Boston>	<_hasTranslation>	<Boston> .
+<Esperanto>	<_hasTranslation>	<Esperanto> .
+<Alcoholic_beverages>	<_hasTranslation>	<Alcoholic_beverages> .
+<Vilnius>	<_hasTranslation>	<Vilnius> .
+<Andorra>	<_hasTranslation>	<Andorra> .
+<Category:French_violists>	<_hasTranslation>	<Category:French_violists> .
+<Template:Infobox_islands>	<_hasTranslation>	<Template:Infobox_islands> .

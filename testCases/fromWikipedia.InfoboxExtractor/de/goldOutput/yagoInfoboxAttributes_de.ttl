@@ -1,0 +1,1122 @@
+# Test on 1 wikipedia article
+# Raw facts from the Wikipedia infoboxes
+# WIKIPEDIA
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dbp: <http://dbpedia.org/ontology/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <id_1r9izo8_141_zkfbds>
+<de/Actinium>	<infobox/de/aggregatzustand>	"fest" .
+#@ <id_1r9izo8_1co_zbo3js>
+<de/Actinium>	<infobox/de/atommasse>	"227,0278" .
+#@ <id_1r9izo8_jpx_zil2q5>
+<de/Actinium>	<infobox/de/atomradius>	"195" .
+#@ <id_1r9izo8_1s2_1y4egjo>
+<de/Actinium>	<infobox/de/aussehen>	"silbrig" .
+#@ <id_1r9izo8_pdw_pv0zpl>
+<de/Actinium>	<infobox/de/basizität>	"mäßig basisch" .
+#@ <id_1r9izo8_465_lkvdf>
+<de/Actinium>	<infobox/de/block>	"d\n<!--- Allgemein --->" .
+#@ <id_1r9izo8_akn_11nc074>
+<de/Actinium>	<infobox/de/cas>	"7440-34-8" .
+#@ <id_1r9izo8_1n6_1i9uejs>
+<de/Actinium>	<infobox/de/dichte>	"10,07 g/cm<sup>3</sup>" .
+#@ <id_1r9izo8_4vr_zil2eu>
+<de/Actinium>	<infobox/de/elektronegativität>	"1,1" .
+#@ <id_1r9izo8_11u_2a65iw>
+<de/Actinium>	<infobox/de/elektronenkonfiguration>	"&#91;[[Radon|Rn]]&#93; 6[[D-Orbital|d]]<sup>1</sup> 7[[S-Orbital|s]]<sup>2</sup>" .
+#@ <id_1r9izo8_akn_hmoi4s>
+<de/Actinium>	<infobox/de/euh>	"{{EUH-Sätze|/}}" .
+#@ <id_1r9izo8_bpl_wwyb9w>
+<de/Actinium>	<infobox/de/gefahrensymbole>	"{{Gefahrensymbole|/}}" .
+#@ <id_1r9izo8_1rs_qqiyc4>
+<de/Actinium>	<infobox/de/ghspiktogramme>	"{{GHS-Piktogramme|/}}" .
+#@ <id_1r9izo8_1oq_zik10z>
+<de/Actinium>	<infobox/de/gruppe>	"3" .
+#@ <id_1r9izo8_1ik_fm3jw>
+<de/Actinium>	<infobox/de/h>	"{{H-Sätze|/}}" .
+#@ <id_1r9izo8_1i7_zpwak2>
+<de/Actinium>	<infobox/de/hauptquelle>	"<ref>Die Werte für die Eigenschaften (Infobox) sind, wenn nicht anders angegeben, aus [http://www.webelements.com/actinium/ www.webelements.com (Actinium)] entnommen.</ref>" .
+#@ <id_1r9izo8_sx1_zjgd15>
+<de/Actinium>	<infobox/de/ionisierungsenergie>	"1170" .
+#@ <id_1r9izo8_sx1_zil4yc>
+<de/Actinium>	<infobox/de/ionisierungsenergie>	"499" .
+#@ <id_1r9izo8_sx1_1m29xmz>
+<de/Actinium>	<infobox/de/ionisierungsenergie>	"<!--- Physikalisch --->" .
+#@ <id_1r9izo8_1ts_1aljhul>
+<de/Actinium>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| Massenzahl= 224\n| Symbol= Ac\n| NH= 0\n| Halbwertszeit= 2,9 [[Stunde|h]]\n| AnzahlZerfallstypen= 3\n| Zerfallstyp1ZM= [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE= 1,403\n| Zerfallstyp1ZP= [[Radium|<sup>224</sup>Ra]]\n| Zerfallstyp2ZM= [[Alphastrahlung|α]]\n| Zerfallstyp2ZE= 9,100\n| Zerfallstyp2ZP= [[Francium|<sup>220</sup>Fr]]\n| Zerfallstyp3ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp3ZE= 0,232\n| Zerfallstyp3ZP= [[Thorium|<sup>224</sup>Th]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 225\n| Symbol= Ac\n| NH= 0\n| Halbwertszeit= 10 [[Tag|d]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Alphastrahlung|α]]\n| Zerfallstyp1ZE= 5,935\n| Zerfallstyp1ZP= [[Francium|<sup>221</sup>Fr]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 226\n| Symbol= Ac\n| NH= 0\n| Halbwertszeit= 29,4 [[Stunde|h]]\n| AnzahlZerfallstypen= 3\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 0,640\n| Zerfallstyp1ZP= [[Thorium|<sup>226</sup>Th]]\n| Zerfallstyp2ZM= [[Elektronen-Einfang|ε]]\n| Zerfallstyp2ZE= 1,116\n| Zerfallstyp2ZP= [[Radium|<sup>226</sup>Ra]]\n| Zerfallstyp3ZM= [[Alphastrahlung|α]]\n| Zerfallstyp3ZE= 5,536\n| Zerfallstyp3ZP= [[Francium|<sup>222</sup>Fr]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 227\n| Symbol= Ac\n| NH= 100\n| Halbwertszeit= 21,773 [[Jahr|a]]\n| AnzahlZerfallstypen= 2\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 0,045\n| Zerfallstyp1ZP= [[Thorium|<sup>227</sup>Th]]\n| Zerfallstyp2ZM= [[Alphastrahlung|α]]\n| Zerfallstyp2ZE= 5,536\n| Zerfallstyp2ZP= [[Francium|<sup>223</sup>Fr]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 228\n| Symbol= Ac\n| NH= -1\n| Halbwertszeit= 6,15 h\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 2,127\n| Zerfallstyp1ZP= [[Thorium|<sup>228</sup>Th]]\n}}" .
+#@ <id_1r9izo8_1k5_zil39y>
+<de/Actinium>	<infobox/de/kovalenterradius>	"215" .
+#@ <id_1r9izo8_17o_8y8k0g>
+<de/Actinium>	<infobox/de/kristallstruktur>	"[[Kubisches Kristallsystem|kubisch flächenzentriert]]" .
+#@ <id_1r9izo8_1ki_1githx0>
+<de/Actinium>	<infobox/de/massenanteil>	"6 · 10<sup>−14</sup>&nbsp;ppm<ref name=\u0022Harry H. Binder\u0022>Harry H. Binder: ''Lexikon der chemischen Elemente'', S. Hirzel Verlag, Stuttgart 1999, ISBN 3-7776-0736-3.</ref>\n<!--- Atomar --->" .
+#@ <id_1r9izo8_zrr_zil3av>
+<de/Actinium>	<infobox/de/massenzahl>	"227" .
+#@ <id_1r9izo8_1xz_1stpeev>
+<de/Actinium>	<infobox/de/molaresvolumen>	"22,55 · 10<sup>−6</sup>" .
+#@ <id_1r9izo8_17o_96zcju>
+<de/Actinium>	<infobox/de/name>	"Actinium" .
+#@ <id_1r9izo8_2sb_1y8zxlk>
+<de/Actinium>	<infobox/de/normalpotential>	"−2,13 [[Volt|V]]<br />(Ac<sup>3+</sup> + 3&nbsp;e<sup>−</sup> → Ac)" .
+#@ <id_1r9izo8_4ro_zik2dd>
+<de/Actinium>	<infobox/de/ordnungszahl>	"89" .
+#@ <id_1r9izo8_3sn_zik10z>
+<de/Actinium>	<infobox/de/oxidationszustände>	"3" .
+#@ <id_1r9izo8_1ik_1at7344>
+<de/Actinium>	<infobox/de/p>	"{{P-Sätze|/}}" .
+#@ <id_1r9izo8_jvg_zik113>
+<de/Actinium>	<infobox/de/periode>	"7" .
+#@ <id_1r9izo8_1gz_zik2x4>
+<de/Actinium>	<infobox/de/quellegefstkz>	"NV" .
+#@ <id_1r9izo8_wfi_zik2x4>
+<de/Actinium>	<infobox/de/quelleghskz>	"NV" .
+#@ <id_1r9izo8_1ik_1melc06>
+<de/Actinium>	<infobox/de/r>	"{{R-Sätze|/}}" .
+#@ <id_1r9izo8_d6d_u5b4dj>
+<de/Actinium>	<infobox/de/radioaktiv>	"Ja\n<!--- Isotope --->" .
+#@ <id_1r9izo8_1ri_zil3gs>
+<de/Actinium>	<infobox/de/reftempspezifischewärmekapazität>	"293" .
+#@ <id_1r9izo8_1ik_soqfgn>
+<de/Actinium>	<infobox/de/s>	"{{S-Sätze|/}}" .
+#@ <id_1r9izo8_13i_zjgc8q>
+<de/Actinium>	<infobox/de/schmelzpunktc>	"1050" .
+#@ <id_1r9izo8_13i_zjgeeb>
+<de/Actinium>	<infobox/de/schmelzpunktk>	"1323" .
+#@ <id_1r9izo8_1tl_zik277>
+<de/Actinium>	<infobox/de/schmelzwärme>	"14" .
+#@ <id_1r9izo8_4fd_zik6c1>
+<de/Actinium>	<infobox/de/serie>	"Üm" .
+#@ <id_1r9izo8_138_zjhobk>
+<de/Actinium>	<infobox/de/siedepunktc>	"3300" .
+#@ <id_1r9izo8_138_1oi01gp>
+<de/Actinium>	<infobox/de/siedepunktk>	"3573 K" .
+#@ <id_1r9izo8_165_1t7hexa>
+<de/Actinium>	<infobox/de/spezifischewärmekapazität>	"<!--27,2-->" .
+#@ <id_1r9izo8_1ui_zik2ma>
+<de/Actinium>	<infobox/de/symbol>	"Ac" .
+#@ <id_1r9izo8_1dc_1gkv06e>
+<de/Actinium>	<infobox/de/verdampfungswärme>	"400 kJ/mol" .
+#@ <id_1r9izo8_gl2_6w8u5w>
+<de/Actinium>	<infobox/de/wärmeleitfähigkeit>	"12\n<!--- Chemisch --->" .
+#@ <id_l4kogx_rwp_zjlfaw>
+<de/The_Visitors>	<infobox/de/anzahltitel>	"9/13" .
+#@ <id_l4kogx_1vo_qmdfif>
+<de/The_Visitors>	<infobox/de/besetzung>	"* [[Gesang]]: [[Agnetha Fältskog]], [[Anni-Frid Lyngstad]], [[Björn Ulvaeus]]\n* [[E-Bass|Bass]]: Rutger Gunnarsson\n* [[Gitarre]]: Lasse Wellander, [[Björn Ulvaeus]]\n* [[Schlagzeug]]: [[Ola Brunkert]]\n* [[Keyboard]] & Synthesizers: [[Benny Andersson]]" .
+#@ <id_l4kogx_jw8_1lg6qg3>
+<de/The_Visitors>	<infobox/de/formate>	"CD, LP, MC" .
+#@ <id_l4kogx_48s_e70zo1>
+<de/The_Visitors>	<infobox/de/genre>	"[[Popmusik|Pop]]" .
+#@ <id_l4kogx_17o_3hqvy8>
+<de/The_Visitors>	<infobox/de/jahr>	"[[30. November]] [[1981]]" .
+#@ <id_l4kogx_1mf_1c5lbmo>
+<de/The_Visitors>	<infobox/de/künstler>	"[[ABBA]]" .
+#@ <id_l4kogx_4bg_1373clf>
+<de/The_Visitors>	<infobox/de/label>	"[[Polar Music International AB]] (LP)\n[[Vivendi#Universal Music Group|Universal International]] (CD)" .
+#@ <id_l4kogx_ha5_1ok24kk>
+<de/The_Visitors>	<infobox/de/laufzeit>	"37m39s" .
+#@ <id_l4kogx_ce7_1auk7zb>
+<de/The_Visitors>	<infobox/de/nächstes>	"[[The Singles – The First 10 Years]]<br />(1982)" .
+#@ <id_l4kogx_zqo_1849ixa>
+<de/The_Visitors>	<infobox/de/produzent>	"* [[Benny Andersson]]\n* [[Björn Ulvaeus]]" .
+#@ <id_l4kogx_1ug_1a1gzlq>
+<de/The_Visitors>	<infobox/de/studio>	"Polar Music Studios Stockholm" .
+#@ <id_l4kogx_ako_5m3ks6>
+<de/The_Visitors>	<infobox/de/typ>	"Studio" .
+#@ <id_l4kogx_113_1s3ix88>
+<de/The_Visitors>	<infobox/de/vorheriges>	"[[Super Trouper]]<br />(1980)" .
+#@ <id_z5e1bf_141_zkfbds>
+<de/Aluminium>	<infobox/de/aggregatzustand>	"fest" .
+#@ <id_z5e1bf_1co_1oq9ths>
+<de/Aluminium>	<infobox/de/atommasse>	"26,981538" .
+#@ <id_z5e1bf_jpx_zil2k4>
+<de/Aluminium>	<infobox/de/atomradius>	"125" .
+#@ <id_z5e1bf_1pm_zil2jc>
+<de/Aluminium>	<infobox/de/atomradiusberechnet>	"118" .
+#@ <id_z5e1bf_1s2_1y4egjo>
+<de/Aluminium>	<infobox/de/aussehen>	"silbrig" .
+#@ <id_z5e1bf_3j3_8nydi4>
+<de/Aluminium>	<infobox/de/austrittsarbeit>	"4,06–4,26 eV <ref>David R. Lide: ''CRC Handbook of Chemistry and Physics'', CRC Press LLC, 1998, ISBN 0-8493-0479-2.</ref>" .
+#@ <id_z5e1bf_pdw_13is646>
+<de/Aluminium>	<infobox/de/basizität>	"[[amphoter]]" .
+#@ <id_z5e1bf_465_zik12o>
+<de/Aluminium>	<infobox/de/block>	"p" .
+#@ <id_z5e1bf_akn_ck1s94>
+<de/Aluminium>	<infobox/de/cas>	"7429-90-5" .
+#@ <id_z5e1bf_1n6_1pq33y7>
+<de/Aluminium>	<infobox/de/dichte>	"2,7 g/cm<sup>3</sup>" .
+#@ <id_z5e1bf_1uu_1kvh73a>
+<de/Aluminium>	<infobox/de/elektrischeleitfähigkeit>	"37,7 · 10<sup>6</sup>" .
+#@ <id_z5e1bf_4vr_zjg9au>
+<de/Aluminium>	<infobox/de/elektronegativität>	"1,61" .
+#@ <id_z5e1bf_11u_vpc3k6>
+<de/Aluminium>	<infobox/de/elektronenkonfiguration>	"&#91;[[Neon|Ne]]&#93; 3[[S-Orbital|s]]<sup>2</sup> 3[[P-Orbital|p]]<sup>1</sup>" .
+#@ <id_z5e1bf_1np_zsiwip>
+<de/Aluminium>	<infobox/de/emodul>	"70000 N/mm²<ref>[http://web.archive.org/web/20080714174141/http://wdb.ebb1.arch.tu-muenchen.de/metalle.php?doctype=2&id=1&gruppe=1 ''Aluminium.''] In: ''Baustoffsammlung der Fakultät für Architektur der TU München.''</ref>" .
+#@ <id_z5e1bf_akn_hmogne>
+<de/Aluminium>	<infobox/de/euh>	"{{EUH-Sätze|-}}" .
+#@ <id_z5e1bf_bpl_1pbhiys>
+<de/Aluminium>	<infobox/de/gefahrensymbole>	"'''Pulver'''<br />{{Gefahrensymbole|F}}" .
+#@ <id_z5e1bf_1rs_1bi2265>
+<de/Aluminium>	<infobox/de/ghspiktogramme>	"{{GHS-Piktogramme|02}}" .
+#@ <id_z5e1bf_pa3_1yq5m2r>
+<de/Aluminium>	<infobox/de/ghssignalwort>	"Gefahr" .
+#@ <id_z5e1bf_1oq_zik276>
+<de/Aluminium>	<infobox/de/gruppe>	"13" .
+#@ <id_z5e1bf_1ik_udhssr>
+<de/Aluminium>	<infobox/de/h>	"{{H-Sätze|250|261}}" .
+#@ <id_z5e1bf_1i7_1utqnsr>
+<de/Aluminium>	<infobox/de/hauptquelle>	"<ref>Die Werte für die Eigenschaften (Infobox) sind, wenn nicht anders angegeben, aus [http://www.webelements.com/aluminium/ www.webelements.com (Aluminium)] entnommen.</ref>\n<!--- Allgemein --->" .
+#@ <id_z5e1bf_sx1_1nlgf13>
+<de/Aluminium>	<infobox/de/ionisierungsenergie>	"1816,7" .
+#@ <id_z5e1bf_sx1_wr8r2q>
+<de/Aluminium>	<infobox/de/ionisierungsenergie>	"2744,8\n<!--- Physikalisch --->" .
+#@ <id_z5e1bf_sx1_10cpela>
+<de/Aluminium>	<infobox/de/ionisierungsenergie>	"577,5" .
+#@ <id_z5e1bf_1ts_wtgosl>
+<de/Aluminium>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| Massenzahl = 25\n| Symbol = Al\n| NH = 0\n| Halbwertszeit = 7,183 [[Sekunde|s]]\n| AnzahlZerfallstypen = 1\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 4,277\n| Zerfallstyp1ZP = [[Magnesium|<sup>25</sup>Mg]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 26\n| Symbol = Al\n| NH = -1\n| Halbwertszeit = 7,17 · 10<sup>5</sup> [[Jahr|a]]\n| AnzahlZerfallstypen = 1\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 4,004\n| Zerfallstyp1ZP = [[Magnesium|<sup>26</sup>Mg]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 0\n| OZ = 13\n| Massenzahl = 27\n| Symbol = Al\n| NH = 100\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 28\n| Symbol = Al\n| NH = 0\n| Halbwertszeit = 2,2414 [[Minute|min]]\n| AnzahlZerfallstypen = 1\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 4,642\n| Zerfallstyp1ZP = [[Silicium|<sup>28</sup>Si]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 29\n| Symbol = Al\n| NH = 0\n| Halbwertszeit = 6,56 [[Minute|min]]\n| AnzahlZerfallstypen = 1\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 3,680\n| Zerfallstyp1ZP = [[Silicium|<sup>29</sup>Si]]\n}}" .
+#@ <id_z5e1bf_1k5_zil2k0>
+<de/Aluminium>	<infobox/de/kovalenterradius>	"121" .
+#@ <id_z5e1bf_17o_icy95c>
+<de/Aluminium>	<infobox/de/kristallstruktur>	"[[Kubisches Kristallsystem|kubisch]] flächenzentriert" .
+#@ <id_z5e1bf_1bj_ibaju5>
+<de/Aluminium>	<infobox/de/magnetismus>	"[[Paramagnetismus|paramagnetisch]] ([[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = 2,1 · 10<sup>−5</sup>)<ref>Weast, Robert C. (ed. in chief): ''CRC Handbook of Chemistry and Physics''. CRC (Chemical Rubber Publishing Company), Boca Raton 1990. Seiten E-129 bis E-145. ISBN 0-8493-0470-9. Werte dort sind auf g/mol bezogen und in cgs-Einheiten angegeben. Der hier angegebene Wert ist der daraus berechnete maßeinheitslose SI-Wert.</ref>" .
+#@ <id_z5e1bf_1ki_9h67xf>
+<de/Aluminium>	<infobox/de/massenanteil>	"7,57 %<ref name=\u0022Harry H. Binder\u0022>Harry H. Binder: ''Lexikon der chemischen Elemente'', S. Hirzel Verlag, Stuttgart 1999, ISBN 3-7776-0736-3.</ref>\n<!--- Atomar --->" .
+#@ <id_z5e1bf_e6w_zjgwbc>
+<de/Aluminium>	<infobox/de/mohshärte>	"2,75" .
+#@ <id_z5e1bf_1xz_26z9y0>
+<de/Aluminium>	<infobox/de/molaresvolumen>	"10,00 · 10<sup>−6</sup>" .
+#@ <id_z5e1bf_17o_1rp6fy1>
+<de/Aluminium>	<infobox/de/name>	"Aluminium" .
+#@ <id_z5e1bf_w90_1n01ixv>
+<de/Aluminium>	<infobox/de/nmreigenschaften>	"{{Infobox Chemisches Element/NMR\n| Symbol = Al\n| Massenzahl_1 = 27\n| Kernspin_1 = 5/2\n| Gamma_1 = 6,976 · 10<sup>7</sup>\n| Empfindlichkeit_1 =\n| Larmorfrequenz_1 =\n}}" .
+#@ <id_z5e1bf_2sb_a4bxi3>
+<de/Aluminium>	<infobox/de/normalpotential>	"−1,676 [[Volt|V]] (Al<sup>3+</sup> + 3&nbsp;e<sup>−</sup> → Al)" .
+#@ <id_z5e1bf_4ro_zik276>
+<de/Aluminium>	<infobox/de/ordnungszahl>	"13" .
+#@ <id_z5e1bf_3sn_169gb3u>
+<de/Aluminium>	<infobox/de/oxidationszustände>	"1, 2, '''3'''" .
+#@ <id_z5e1bf_4di_hatww5>
+<de/Aluminium>	<infobox/de/oxide>	"Al<sub>2</sub>O<sub>3</sub>" .
+#@ <id_z5e1bf_1ik_1swaoba>
+<de/Aluminium>	<infobox/de/p>	"{{P-Sätze|210|222|231+232|280|422|501}}" .
+#@ <id_z5e1bf_jvg_zik10z>
+<de/Aluminium>	<infobox/de/periode>	"3" .
+#@ <id_z5e1bf_1mc_gacdp1>
+<de/Aluminium>	<infobox/de/poissonzahl>	"0,34<ref>[http://www.imtek.de/avt/content/upload/vorlesung/2007/wt_5_2007.pdf ''Nicht-Eisen-Metalle.''] (PDF)</ref>" .
+#@ <id_z5e1bf_1gz_1m4ku0s>
+<de/Aluminium>	<infobox/de/quellegefstkz>	"{{CLP|CAS=7429-90-5|ZVG=500053}}" .
+#@ <id_z5e1bf_wfi_doabnn>
+<de/Aluminium>	<infobox/de/quelleghskz>	"{{CLP|CAS=7429-90-5|ZVG=500053}}<br />'''Pulver'''" .
+#@ <id_z5e1bf_15x_1x2mfx>
+<de/Aluminium>	<infobox/de/quellep>	"<ref name=\u0022Alfa\u0022>{{Alfa|42920|Datum=13. März 2011}}</ref>" .
+#@ <id_z5e1bf_1ik_lh7fll>
+<de/Aluminium>	<infobox/de/r>	"{{R-Sätze|15|17}} (nicht stabilisiert)<br />R: {{R-Sätze|10|15}} ([[phlegmatisiert]])" .
+#@ <id_z5e1bf_d6d_1kxet2w>
+<de/Aluminium>	<infobox/de/radioaktiv>	"<!-- Isotope -->" .
+#@ <id_z5e1bf_1gi_1o32wp0>
+<de/Aluminium>	<infobox/de/reftempschallgeschwindigkeitk>	"293,15" .
+#@ <id_z5e1bf_1ik_o3fwlc>
+<de/Aluminium>	<infobox/de/s>	"{{S-Sätze|(2)|7/8|43}}" .
+#@ <id_z5e1bf_1n4_p7crxh>
+<de/Aluminium>	<infobox/de/schallgeschwindigkeit>	"6250-6500 ([[Longitudinalwelle]])/3100 ([[Scherwelle]])<ref name=\u0022rose2004\u0022>{{Literatur|Autor=Joseph L. Rose|Titel=Ultrasonic Waves in Solid Media|Online={{Google Buch|BuchID=DEtHDJJ-RS4C|Seite=44}}|Seiten=44|Jahr=2004|Verlag=Cambridge University Press|ISBN=978-0-521-54889-2}}</ref><ref name=\u0022Kundu2012\u0022>{{Literatur|Titel=Ultrasonic and Electromagnetic NDE for Structure and Material Characterization|Autor=Tribikram Kundu|Verlag=CRC Press|Jahr=2012|Online={{Google Buch|BuchID=yhP2FJgn25wC|Seite=94}}|Seiten=94ff.|ISBN=1439836639}}</ref>" .
+#@ <id_z5e1bf_13i_1pxk3kr>
+<de/Aluminium>	<infobox/de/schmelzpunktc>	"660,32" .
+#@ <id_z5e1bf_13i_1rb3hyu>
+<de/Aluminium>	<infobox/de/schmelzpunktk>	"933,47" .
+#@ <id_z5e1bf_1tl_zjgc16>
+<de/Aluminium>	<infobox/de/schmelzwärme>	"10,7" .
+#@ <id_z5e1bf_4fd_zik2wo>
+<de/Aluminium>	<infobox/de/serie>	"Me" .
+#@ <id_z5e1bf_138_zjh28r>
+<de/Aluminium>	<infobox/de/siedepunktc>	"2470" .
+#@ <id_z5e1bf_138_1kgw68g>
+<de/Aluminium>	<infobox/de/siedepunktk>	"2743 K<ref name=\u0022Zhang\u0022>Yiming Zhang, Julian R. G. Evans, Shoufeng Yang: ''Corrected Values for Boiling Points and Enthalpies of Vaporization of Elements in Handbooks.'' In: ''[[Journal of Chemical & Engineering Data]].'' 56, 2011, S.&nbsp;328–337 ({{DOI|10.1021/je1011086}}).</ref>" .
+#@ <id_z5e1bf_165_wh8x5a>
+<de/Aluminium>	<infobox/de/spezifischewärmekapazität>	"897<ref name=\u0022Harry H. Binder\u0022 />" .
+#@ <id_z5e1bf_1ui_zik2mj>
+<de/Aluminium>	<infobox/de/symbol>	"Al" .
+#@ <id_z5e1bf_145_2ueik8>
+<de/Aluminium>	<infobox/de/vanderwaalsradius>	"184<ref>Manjeera Mantina, Adam C. Chamberlin, Rosendo Valero, Christopher J. Cramer, Donald G. Truhlar: ''Consistent van der Waals Radii for the Whole Main Group.'' In: ''The Journal of Physical Chemistry A.'' 113, 2009, S.&nbsp;5806–5812 ({{DOI|10.1021/jp8111556}}).</ref>" .
+#@ <id_z5e1bf_1dc_1ymr3wy>
+<de/Aluminium>	<infobox/de/verdampfungswärme>	"284 kJ/mol<ref name=\u0022Zhang\u0022/>" .
+#@ <id_z5e1bf_gl2_1jvhz53>
+<de/Aluminium>	<infobox/de/wärmeleitfähigkeit>	"235\n<!--- Chemisch --->" .
+#@ <id_1chqlks_141_zkfbds>
+<de/Antimon>	<infobox/de/aggregatzustand>	"fest" .
+#@ <id_1chqlks_1co_1wuvogm>
+<de/Antimon>	<infobox/de/atommasse>	"121,750" .
+#@ <id_1chqlks_jpx_zil2lu>
+<de/Antimon>	<infobox/de/atomradius>	"145" .
+#@ <id_1chqlks_1pm_zil2kx>
+<de/Antimon>	<infobox/de/atomradiusberechnet>	"133" .
+#@ <id_1chqlks_1s2_1nf9rgz>
+<de/Antimon>	<infobox/de/aussehen>	"silbrig glänzend grau" .
+#@ <id_1chqlks_pdw_1p0jkha>
+<de/Antimon>	<infobox/de/basizität>	"leicht [[Säure|sauer]]" .
+#@ <id_1chqlks_465_mbdrnr>
+<de/Antimon>	<infobox/de/block>	"p\n<!--- Allgemein --->" .
+#@ <id_1chqlks_akn_11nc1oa>
+<de/Antimon>	<infobox/de/cas>	"7440-36-0" .
+#@ <id_1chqlks_1n6_xm0rem>
+<de/Antimon>	<infobox/de/dichte>	"6,697 g/cm<sup>3</sup>" .
+#@ <id_1chqlks_1uu_gfe53u>
+<de/Antimon>	<infobox/de/elektrischeleitfähigkeit>	"2,5 · 10<sup>6</sup>" .
+#@ <id_1chqlks_4vr_zjgw5b>
+<de/Antimon>	<infobox/de/elektronegativität>	"2,05" .
+#@ <id_1chqlks_11u_1u8c2mx>
+<de/Antimon>	<infobox/de/elektronenkonfiguration>	"&#91;[[Krypton|Kr]]&#93; 4[[D-Orbital|d]]<sup>10</sup> 5[[S-Orbital|s]]<sup>2</sup> 5[[P-Orbital|p]]<sup>3</sup>" .
+#@ <id_1chqlks_akn_hmogne>
+<de/Antimon>	<infobox/de/euh>	"{{EUH-Sätze|-}}" .
+#@ <id_1chqlks_bpl_pyopl8>
+<de/Antimon>	<infobox/de/gefahrensymbole>	"{{Gefahrensymbole|Xi}}" .
+#@ <id_1chqlks_1rs_1bi25vm>
+<de/Antimon>	<infobox/de/ghspiktogramme>	"{{GHS-Piktogramme|07}}" .
+#@ <id_1chqlks_pa3_17njgio>
+<de/Antimon>	<infobox/de/ghssignalwort>	"Achtung" .
+#@ <id_1chqlks_1oq_zik278>
+<de/Antimon>	<infobox/de/gruppe>	"15" .
+#@ <id_1chqlks_1ik_1po7336>
+<de/Antimon>	<infobox/de/h>	"{{H-Sätze|335}}" .
+#@ <id_1chqlks_1i7_10qb57f>
+<de/Antimon>	<infobox/de/hauptquelle>	"<ref>Die Werte für die Eigenschaften (Infobox) sind, wenn nicht anders angegeben, aus [http://www.webelements.com/antimony/ www.webelements.com (Antimon)] entnommen.</ref>" .
+#@ <id_1chqlks_sx1_1njy3nw>
+<de/Antimon>	<infobox/de/ionisierungsenergie>	"1594,9" .
+#@ <id_1chqlks_sx1_zjh266>
+<de/Antimon>	<infobox/de/ionisierungsenergie>	"2440" .
+#@ <id_1chqlks_sx1_zjiapk>
+<de/Antimon>	<infobox/de/ionisierungsenergie>	"4260" .
+#@ <id_1chqlks_sx1_krv7z4>
+<de/Antimon>	<infobox/de/ionisierungsenergie>	"5400\n<!--- Physikalisch --->" .
+#@ <id_1chqlks_sx1_zil7rt>
+<de/Antimon>	<infobox/de/ionisierungsenergie>	"834" .
+#@ <id_1chqlks_1ts_1vmkhot>
+<de/Antimon>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = Sb\n| Massenzahl = 119\n| NH = 0\n| Halbwertszeit = 38,19 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 0,594\n| Zerfallstyp1ZP = [[Zinn|<sup>119</sup>Sn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = Sb\n| Massenzahl = 120\n| NH = 0\n| Halbwertszeit = 5,76 [[Tag|d]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 2,681\n| Zerfallstyp1ZP = [[Zinn|<sup>120</sup>Sn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 0\n| Symbol = Sb\n| Massenzahl = 121\n| NH = '''57,36'''\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = Sb\n| Massenzahl = 122\n| NH = 0\n| Halbwertszeit = 2,7238 [[Tag|d]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 1,979\n| Zerfallstyp1ZP = [[Tellur|<sup>122</sup>Te]]\n| Zerfallstyp2ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp2ZE = 1,620\n| Zerfallstyp2ZP = [[Zinn|<sup>122</sup>Sn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 0\n| Symbol = Sb\n| Massenzahl = 123\n| NH = 42,64\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = Sb\n| Massenzahl = 124\n| NH = 0\n| Halbwertszeit = 60,20 [[Tag|d]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 2,905\n| Zerfallstyp1ZP = [[Tellur|<sup>124</sup>Te]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = Sb\n| Massenzahl = 125\n| NH = 0\n| Halbwertszeit = 2,7582 [[Jahr|a]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 0,767\n| Zerfallstyp1ZP = [[Tellur|<sup>125</sup>Te]]\n}}" .
+#@ <id_1chqlks_1k5_zil2l3>
+<de/Antimon>	<infobox/de/kovalenterradius>	"139" .
+#@ <id_1chqlks_17o_1odlt9i>
+<de/Antimon>	<infobox/de/kristallstruktur>	"trigonal" .
+#@ <id_1chqlks_1bj_hshwkn>
+<de/Antimon>	<infobox/de/magnetismus>	"[[Diamagnetismus|diamagnetisch]] ([[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = −6,8 · 10<sup>−5</sup>)<ref name=\u0022CRC\u0022>David R. Lide: ''[[CRC Handbook of Chemistry and Physics]]: A ready-reference book of chemical and physical data'', 90. Aufl., CRC Taylor & Francis, Boca Raton Fla. 2009, ISBN 978-1-4200-9084-0, Section 4, S.&nbsp;4-142 bis 4-147. Die Werte dort sind auf g/mol bezogen und in cgs-Einheiten angegeben. Der hier angegebene Wert ist der daraus berechnete maßeinheitslose SI-Wert.</ref>" .
+#@ <id_1chqlks_1ki_1bvasdt>
+<de/Antimon>	<infobox/de/massenanteil>	"0,65&nbsp;ppm<ref name=\u0022Harry H. Binder\u0022>Harry H. Binder: ''Lexikon der chemischen Elemente'', S. Hirzel Verlag, Stuttgart 1999, ISBN 3-7776-0736-3.</ref>\n<!--- Atomar --->" .
+#@ <id_1chqlks_e6w_zil3w7>
+<de/Antimon>	<infobox/de/mohshärte>	"3,0" .
+#@ <id_1chqlks_1xz_qa0gmw>
+<de/Antimon>	<infobox/de/molaresvolumen>	"18,19 · 10<sup>−6</sup>" .
+#@ <id_1chqlks_17o_1d1fn7u>
+<de/Antimon>	<infobox/de/name>	"Antimon" .
+#@ <id_1chqlks_w90_ngue49>
+<de/Antimon>	<infobox/de/nmreigenschaften>	"<!----\n{{Infobox Chemisches Element/NMR\n| Symbol = Sb\n| Massenzahl_1 =\n| Kernspin_1 =\n| Gamma_1 =\n| Empfindlichkeit_1 =\n| Larmorfrequenz_1 =\n}}\n---->" .
+#@ <id_1chqlks_2sb_tqvzw7>
+<de/Antimon>	<infobox/de/normalpotential>	"0,150&nbsp;[[Volt|V]] (Sb<sup>3+</sup> + 3&nbsp;e<sup>−</sup> → Sb)" .
+#@ <id_1chqlks_4ro_zik2ak>
+<de/Antimon>	<infobox/de/ordnungszahl>	"51" .
+#@ <id_1chqlks_3sn_1fdef23>
+<de/Antimon>	<infobox/de/oxidationszustände>	"−3, '''3''', 5" .
+#@ <id_1chqlks_1ik_mu7zk3>
+<de/Antimon>	<infobox/de/p>	"{{P-Sätze|262}}" .
+#@ <id_1chqlks_jvg_zik111>
+<de/Antimon>	<infobox/de/periode>	"5" .
+#@ <id_1chqlks_1gz_1d9fieu>
+<de/Antimon>	<infobox/de/quellegefstkz>	"<ref name=\u0022alfa-SDB\u0022>{{Alfa|14640|Name=Antimonpulver|Datum=2. Februar 2010}}</ref>" .
+#@ <id_1chqlks_wfi_zhyylf>
+<de/Antimon>	<infobox/de/quelleghskz>	"{{CLP|CAS=7440-36-0|ZVG=8390}}" .
+#@ <id_1chqlks_15x_1gdfbmh>
+<de/Antimon>	<infobox/de/quellep>	"<ref name=\u0022GESTIS\u0022>{{GESTIS|ZVG=8390|CAS=7440-36-0|Datum=21. März 2011}}.</ref>" .
+#@ <id_1chqlks_1ik_p92x9>
+<de/Antimon>	<infobox/de/r>	"{{R-Sätze|36/37/38}}" .
+#@ <id_1chqlks_1ch_1no62ql>
+<de/Antimon>	<infobox/de/reftempwärmeleitfähigkeitk>	"<!--- Chemisch --->" .
+#@ <id_1chqlks_1ik_pru0a>
+<de/Antimon>	<infobox/de/s>	"{{S-Sätze|26|37}}\n<!--- Isotope --->" .
+#@ <id_1chqlks_13i_1pvwpva>
+<de/Antimon>	<infobox/de/schmelzpunktc>	"630,63" .
+#@ <id_1chqlks_13i_1r9g49d>
+<de/Antimon>	<infobox/de/schmelzpunktk>	"903,78" .
+#@ <id_1chqlks_1tl_zjgipf>
+<de/Antimon>	<infobox/de/schmelzwärme>	"19,7" .
+#@ <id_1chqlks_4fd_zik2sl>
+<de/Antimon>	<infobox/de/serie>	"Hm" .
+#@ <id_1chqlks_138_zjggnb>
+<de/Antimon>	<infobox/de/siedepunktc>	"1635" .
+#@ <id_1chqlks_138_1tiz28v>
+<de/Antimon>	<infobox/de/siedepunktk>	"1908 K<ref name=\u0022Zhang\u0022>Yiming Zhang, Julian R. G. Evans, Shoufeng Yang: ''Corrected Values for Boiling Points and Enthalpies of Vaporization of Elements in Handbooks.'' In: ''[[Journal of Chemical & Engineering Data]].'' 56, 2011, S.&nbsp;328–337, {{DOI|10.1021/je1011086}}.</ref>" .
+#@ <id_1chqlks_165_1ippg6q>
+<de/Antimon>	<infobox/de/spezifischewärmekapazität>	"<!--210-->" .
+#@ <id_1chqlks_1ui_zik31r>
+<de/Antimon>	<infobox/de/symbol>	"Sb" .
+#@ <id_1chqlks_145_1swbq65>
+<de/Antimon>	<infobox/de/vanderwaalsradius>	"206<ref>Manjeera Mantina, Adam C. Chamberlin, Rosendo Valero, Christopher J. Cramer, Donald G. Truhlar: ''Consistent van der Waals Radii for the Whole Main Group.'' In: ''J. Phys. Chem. A.'' 2009, 113, S.&nbsp;5806–5812, {{DOI|10.1021/jp8111556}}.</ref>" .
+#@ <id_1chqlks_1dc_131wx4f>
+<de/Antimon>	<infobox/de/verdampfungswärme>	"193 kJ/mol<ref name=\u0022Zhang\u0022/>" .
+#@ <id_1chqlks_gl2_zik282>
+<de/Antimon>	<infobox/de/wärmeleitfähigkeit>	"24" .
+#@ <id_jn0juv_141_ut6v6>
+<de/Argon>	<infobox/de/aggregatzustand>	"gasförmig" .
+#@ <id_jn0juv_1co_1ok0bw7>
+<de/Argon>	<infobox/de/atommasse>	"39,948" .
+#@ <id_jn0juv_1pm_zik2ca>
+<de/Argon>	<infobox/de/atomradiusberechnet>	"71" .
+#@ <id_jn0juv_1s2_msia4s>
+<de/Argon>	<infobox/de/aussehen>	"farbloses Gas" .
+#@ <id_jn0juv_465_zik12o>
+<de/Argon>	<infobox/de/block>	"p" .
+#@ <id_jn0juv_akn_avxgpd>
+<de/Argon>	<infobox/de/cas>	"7440-37-1 \n<!--- Atomar --->" .
+#@ <id_jn0juv_1n6_eyjjuf>
+<de/Argon>	<infobox/de/dichte>	"1,784 kg · m<sup>−3</sup><ref name=\u0022GESTIS\u0022/>" .
+#@ <id_jn0juv_11u_1fz4o3d>
+<de/Argon>	<infobox/de/elektronenkonfiguration>	"&#x5B;[[Neon|Ne]]&#x5D; 3[[S-Orbital|s]]<sup>2</sup> 3[[P-Orbital|p]]<sup>6</sup>" .
+#@ <id_jn0juv_akn_hmogne>
+<de/Argon>	<infobox/de/euh>	"{{EUH-Sätze|-}}" .
+#@ <id_jn0juv_bpl_wwy9si>
+<de/Argon>	<infobox/de/gefahrensymbole>	"{{Gefahrensymbole|-}}" .
+#@ <id_jn0juv_1rs_1bi23nj>
+<de/Argon>	<infobox/de/ghspiktogramme>	"{{GHS-Piktogramme|04}}" .
+#@ <id_jn0juv_pa3_17njgio>
+<de/Argon>	<infobox/de/ghssignalwort>	"Achtung" .
+#@ <id_jn0juv_1oq_zik27b>
+<de/Argon>	<infobox/de/gruppe>	"18" .
+#@ <id_jn0juv_1ik_1pnqdpz>
+<de/Argon>	<infobox/de/h>	"{{H-Sätze|280}}" .
+#@ <id_jn0juv_1i7_xmls3e>
+<de/Argon>	<infobox/de/hauptquelle>	"<ref name=\u0022webelements\u0022>Die Werte für die Eigenschaften (Infobox) sind, wenn nicht anders angegeben, aus [http://www.webelements.com/argon/ www.webelements.com (Argon)] entnommen.</ref>\n<!--- Allgemein --->" .
+#@ <id_jn0juv_sx1_1njtjse>
+<de/Argon>	<infobox/de/ionisierungsenergie>	"1520,8" .
+#@ <id_jn0juv_sx1_1o1hmfj>
+<de/Argon>	<infobox/de/ionisierungsenergie>	"2665,8" .
+#@ <id_jn0juv_sx1_4vdcp1>
+<de/Argon>	<infobox/de/ionisierungsenergie>	"3931\n<!--- Physikalisch --->" .
+#@ <id_jn0juv_1ts_18e56p4>
+<de/Argon>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| Massenzahl= 35\n| Symbol= Ar\n| NH= 0\n| Halbwertszeit= 1,775 [[Sekunde|s]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE= 5,965\n| Zerfallstyp1ZP= [[Chlor|<sup>35</sup>Cl]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 36\n| OZ = 18\n| Symbol= Ar\n| NH= 0,336\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 37\n| Symbol= Ar\n| NH= 0\n| Halbwertszeit= 35,04 [[Tag|d]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE= 0,813\n| Zerfallstyp1ZP= [[Chlor|<sup>37</sup>Cl]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 0\n| Massenzahl= 38\n| OZ= 18\n| Symbol= Ar\n| NH= 0,063\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 39\n| Symbol= Ar\n| NH= -1\n| Halbwertszeit= 269 [[Jahr|a]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 0,565\n| Zerfallstyp1ZP= [[Kalium|<sup>39</sup>K]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 0\n| Massenzahl= 40\n| OZ= 18\n| Symbol= Ar\n| NH= 99,6\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 41\n| Symbol= Ar\n| NH= 0\n| Halbwertszeit= 109,34 [[Minute|min]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 2,492\n| Zerfallstyp1ZP= [[Kalium|<sup>41</sup>K]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 42\n| Symbol= Ar\n| NH= 0\n| Halbwertszeit= 32,9 [[Jahr|a]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 0,600\n| Zerfallstyp1ZP= [[Kalium|<sup>42</sup>K]]\n}}" .
+#@ <id_jn0juv_1k5_zil2if>
+<de/Argon>	<infobox/de/kovalenterradius>	"106" .
+#@ <id_jn0juv_17o_8lcfrg>
+<de/Argon>	<infobox/de/kristallstruktur>	"kubisch flächenzentriert" .
+#@ <id_jn0juv_1bj_1emm4j1>
+<de/Argon>	<infobox/de/magnetismus>	"[[Diamagnetismus|diamagnetisch]] ([[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = −1,1 · 10<sup>−8</sup>)<ref>Weast, Robert C. (ed. in chief): ''CRC Handbook of Chemistry and Physics''. CRC (Chemical Rubber Publishing Company), Boca Raton 1990. Seiten E-129 bis E-145. ISBN 0-8493-0470-9. Werte dort sind auf g/mol bezogen und in cgs-Einheiten angegeben. Der hier angegebene Wert ist der daraus berechnete maßeinheitslose SI-Wert.</ref>" .
+#@ <id_jn0juv_1ki_15tl0ux>
+<de/Argon>	<infobox/de/massenanteil>	"3,6&nbsp;[[Parts per million|ppm]]<ref name=\u0022Harry H. Binder\u0022>Harry H. Binder: ''Lexikon der chemischen Elemente'', S. Hirzel Verlag, Stuttgart 1999, ISBN 3-7776-0736-3.</ref>" .
+#@ <id_jn0juv_1xz_12yfmnt>
+<de/Argon>	<infobox/de/molaresvolumen>	"(fest) 22,56 · 10<sup>−6</sup>" .
+#@ <id_jn0juv_17o_10kdn6d>
+<de/Argon>	<infobox/de/name>	"Argon" .
+#@ <id_jn0juv_4ro_zik27b>
+<de/Argon>	<infobox/de/ordnungszahl>	"18" .
+#@ <id_jn0juv_1ik_mv7rkc>
+<de/Argon>	<infobox/de/p>	"{{P-Sätze|403}}" .
+#@ <id_jn0juv_jvg_zik10z>
+<de/Argon>	<infobox/de/periode>	"3" .
+#@ <id_jn0juv_1gz_hycixb>
+<de/Argon>	<infobox/de/quellegefstkz>	"<ref name=\u0022GESTIS\u0022 />" .
+#@ <id_jn0juv_wfi_4fwhxl>
+<de/Argon>	<infobox/de/quelleghskz>	"<ref name=\u0022GESTIS\u0022>{{GESTIS|ZVG=7180|Name=Argon|CAS=7440-37-1|Datum=27. April 2008}}.</ref>" .
+#@ <id_jn0juv_15x_hycixb>
+<de/Argon>	<infobox/de/quellep>	"<ref name=\u0022GESTIS\u0022 />" .
+#@ <id_jn0juv_1ik_1melais>
+<de/Argon>	<infobox/de/r>	"{{R-Sätze|-}}" .
+#@ <id_jn0juv_e5r_zil3f2>
+<de/Argon>	<infobox/de/reftempdichtek>	"273" .
+#@ <id_jn0juv_1gi_1o32wp0>
+<de/Argon>	<infobox/de/reftempschallgeschwindigkeitk>	"293,15" .
+#@ <id_jn0juv_1ch_1no62ql>
+<de/Argon>	<infobox/de/reftempwärmeleitfähigkeitk>	"<!--- Chemisch --->" .
+#@ <id_jn0juv_1ik_e0bvp5>
+<de/Argon>	<infobox/de/s>	"{{S-Sätze|-}}\n<!--- Isotope --->" .
+#@ <id_jn0juv_1n4_zil40r>
+<de/Argon>	<infobox/de/schallgeschwindigkeit>	"319" .
+#@ <id_jn0juv_13i_1a4zd47>
+<de/Argon>	<infobox/de/schmelzpunktc>	"−189,3" .
+#@ <id_jn0juv_13i_zjkv5z>
+<de/Argon>	<infobox/de/schmelzpunktk>	"83,8" .
+#@ <id_jn0juv_1tl_zjg96q>
+<de/Argon>	<infobox/de/schmelzwärme>	"1,18" .
+#@ <id_jn0juv_4fd_zik2pu>
+<de/Argon>	<infobox/de/serie>	"Eg" .
+#@ <id_jn0juv_138_13taaal>
+<de/Argon>	<infobox/de/siedepunktc>	"−186" .
+#@ <id_jn0juv_138_b3bnem>
+<de/Argon>	<infobox/de/siedepunktk>	"87,15 K<ref name=\u0022Zhang\u0022>Yiming Zhang, Julian R. G. Evans, Shoufeng Yang: ''Corrected Values for Boiling Points and Enthalpies of Vaporization of Elements in Handbooks.'' In: ''Journal of Chemical & Engineering Data.'' 56, 2011, S.&nbsp;328–337, {{DOI|10.1021/je1011086}}.</ref>" .
+#@ <id_jn0juv_165_1k5e3yo>
+<de/Argon>	<infobox/de/spezifischewärmekapazität>	"<!--520-->" .
+#@ <id_jn0juv_1ui_zik2mp>
+<de/Argon>	<infobox/de/symbol>	"Ar" .
+#@ <id_jn0juv_145_zil2pd>
+<de/Argon>	<infobox/de/vanderwaalsradius>	"188" .
+#@ <id_jn0juv_1dc_1rtpapj>
+<de/Argon>	<infobox/de/verdampfungswärme>	"6,52 kJ/mol<ref name=\u0022Zhang\u0022/>" .
+#@ <id_jn0juv_gl2_1fbr29h>
+<de/Argon>	<infobox/de/wärmeleitfähigkeit>	"0,01772" .
+#@ <id_jn0sil_141_zkfbds>
+<de/Arsen>	<infobox/de/aggregatzustand>	"fest" .
+#@ <id_jn0sil_1co_1pq1nwt>
+<de/Arsen>	<infobox/de/atommasse>	"74,92159" .
+#@ <id_jn0sil_jpx_zil2j9>
+<de/Arsen>	<infobox/de/atomradius>	"115" .
+#@ <id_jn0sil_1pm_zil2j8>
+<de/Arsen>	<infobox/de/atomradiusberechnet>	"114" .
+#@ <id_jn0sil_1s2_gzgzh5>
+<de/Arsen>	<infobox/de/aussehen>	"metallisch grau, gelb oder schwarz" .
+#@ <id_jn0sil_pdw_13is646>
+<de/Arsen>	<infobox/de/basizität>	"[[amphoter]]" .
+#@ <id_jn0sil_465_mbdrnr>
+<de/Arsen>	<infobox/de/block>	"p\n<!--- Allgemein --->" .
+#@ <id_jn0sil_akn_11nc35q>
+<de/Arsen>	<infobox/de/cas>	"7440-38-2" .
+#@ <id_jn0sil_1n6_1ixtu36>
+<de/Arsen>	<infobox/de/dichte>	"5,72 g/cm<sup>3</sup> (grau)<ref name=\u0022GESTIS\u0022/><br />1,97 g/cm<sup>3</sup> (gelb)<ref name=\u0022GESTIS\u0022/><br />4,7–5,1 g/cm<sup>3</sup> (schwarz)<ref name=\u0022GESTIS\u0022/>" .
+#@ <id_jn0sil_1uu_1yb7wyh>
+<de/Arsen>	<infobox/de/elektrischeleitfähigkeit>	"3,03 · 10<sup>6</sup>" .
+#@ <id_jn0sil_4vr_zjgw69>
+<de/Arsen>	<infobox/de/elektronegativität>	"2,18" .
+#@ <id_jn0sil_11u_9s83ym>
+<de/Arsen>	<infobox/de/elektronenkonfiguration>	"&#91;[[Argon|Ar]]&#93; 3[[D-Orbital|d]]<sup>10</sup> 4[[S-Orbital|s]]<sup>2</sup> 4[[P-Orbital|p]]<sup>3</sup>" .
+#@ <id_jn0sil_akn_hmogne>
+<de/Arsen>	<infobox/de/euh>	"{{EUH-Sätze|-}}" .
+#@ <id_jn0sil_bpl_nh5f63>
+<de/Arsen>	<infobox/de/gefahrensymbole>	"{{Gefahrensymbole|T|N}}" .
+#@ <id_jn0sil_1rs_17zbuck>
+<de/Arsen>	<infobox/de/ghspiktogramme>	"{{GHS-Piktogramme|06|09}}" .
+#@ <id_jn0sil_pa3_1yq5m2r>
+<de/Arsen>	<infobox/de/ghssignalwort>	"Gefahr" .
+#@ <id_jn0sil_1oq_zik278>
+<de/Arsen>	<infobox/de/gruppe>	"15" .
+#@ <id_jn0sil_1ik_12zizxp>
+<de/Arsen>	<infobox/de/h>	"{{H-Sätze|331|301|410}}" .
+#@ <id_jn0sil_1i7_1ejteda>
+<de/Arsen>	<infobox/de/hauptquelle>	"<ref>Die Werte für die Eigenschaften (Infobox) sind, wenn nicht anders angegeben, aus [http://www.webelements.com/arsenic/ www.webelements.com (Arsen)] entnommen.</ref>" .
+#@ <id_jn0sil_sx1_zjghj9>
+<de/Arsen>	<infobox/de/ionisierungsenergie>	"1798" .
+#@ <id_jn0sil_sx1_zjh4dj>
+<de/Arsen>	<infobox/de/ionisierungsenergie>	"2735" .
+#@ <id_jn0sil_sx1_zjif3c>
+<de/Arsen>	<infobox/de/ionisierungsenergie>	"4837" .
+#@ <id_jn0sil_sx1_1t16mm2>
+<de/Arsen>	<infobox/de/ionisierungsenergie>	"6043\n<!--- Physikalisch --->" .
+#@ <id_jn0sil_sx1_10euo00>
+<de/Arsen>	<infobox/de/ionisierungsenergie>	"947,0" .
+#@ <id_jn0sil_1ts_6gatsw>
+<de/Arsen>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 1\n|Symbol = As\n|Massenzahl = 72\n|NH = 0\n|Halbwertszeit = 26 [[Stunde|h]]\n|Zerfallstyp1ZM = [[Elektroneneinfang|ε]]\n|Zerfallstyp1ZE = 4,356\n|Zerfallstyp1ZP = [[Germanium|<sup>72</sup>Ge]]\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 1\n|Symbol = As\n|Massenzahl = 73\n|NH = 0\n|Halbwertszeit = 80,3 [[Tag|d]]\n|Zerfallstyp1ZM = [[Elektroneneinfang|ε]]\n|Zerfallstyp1ZE = 0,341\n|Zerfallstyp1ZP = [[Germanium|<sup>73</sup>Ge]]\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 2\n|Symbol = As\n|Massenzahl = 74\n|NH = 0\n|Halbwertszeit = 17,77 [[Tag|d]]\n|Zerfallstyp1ZM = [[Elektroneneinfang|ε]]\n|Zerfallstyp1ZE = 2,562\n|Zerfallstyp1ZP = [[Germanium|<sup>74</sup>Ge]]\n|Zerfallstyp2ZM = [[Betastrahlung|β<sup>−</sup>]]\n|Zerfallstyp2ZE = 1,353\n|Zerfallstyp2ZP = [[Selen|<sup>74</sup>Se]]\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 0\n|Symbol = As\n|Massenzahl = 75\n|NH = '''100'''\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 1\n|Symbol = As\n|Massenzahl = 76\n|NH = 0\n|Halbwertszeit = 1,0778 [[Tag|d]]\n|Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n|Zerfallstyp1ZE = 2,962\n|Zerfallstyp1ZP = [[Selen|<sup>76</sup>Se]]\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 1\n|Symbol = As\n|Massenzahl = 77\n|NH = 0\n|Halbwertszeit = 39 [[Stunde|h]]\n|Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n|Zerfallstyp1ZE = 0,683\n|Zerfallstyp1ZP = [[Selen|<sup>77</sup>Se]]\n}}" .
+#@ <id_jn0sil_1k5_zil2jd>
+<de/Arsen>	<infobox/de/kovalenterradius>	"119" .
+#@ <id_jn0sil_17o_at6gsc>
+<de/Arsen>	<infobox/de/kristallstruktur>	"trigonal (grau)" .
+#@ <id_jn0sil_1bj_t5kntq>
+<de/Arsen>	<infobox/de/magnetismus>	"[[Diamagnetismus|diamagnetisch]] (grau: [[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = −2,2 · 10<sup>−5</sup><ref name=\u0022CRC-H\u0022>Weast, Robert C. (ed. in chief): ''CRC Handbook of Chemistry and Physics''. CRC (Chemical Rubber Publishing Company), Boca Raton 1990. Seiten E-129 bis E-145. ISBN 0-8493-0470-9. Werte dort sind auf g/mol bezogen und in cgs-Einheiten angegeben. Der hier angegebene Wert ist der daraus berechnete maßeinheitslose SI-Wert.</ref><br />gelb: <math>\\chi_{m}</math> = −1,8 · 10<sup>−6</sup><ref name=\u0022CRC-H\u0022 /><br />schwarz: <math>\\chi_{m}</math> = −1,9 · 10<sup>−5</sup><ref name=\u0022CRC-H\u0022 />)" .
+#@ <id_jn0sil_1ki_hrr3ec>
+<de/Arsen>	<infobox/de/massenanteil>	"5,5&nbsp;ppm<ref name=\u0022Harry H. Binder\u0022>Harry H. Binder: ''Lexikon der chemischen Elemente'', S. Hirzel Verlag, Stuttgart 1999, ISBN 3-7776-0736-3.</ref>\n<!--- Atomar --->" .
+#@ <id_jn0sil_1eg_zik10z>
+<de/Arsen>	<infobox/de/modifikationen>	"3" .
+#@ <id_jn0sil_e6w_1fy67g1>
+<de/Arsen>	<infobox/de/mohshärte>	"graues As: 3,5" .
+#@ <id_jn0sil_1xz_h6zotu>
+<de/Arsen>	<infobox/de/molaresvolumen>	"12,95 · 10<sup>−6</sup>" .
+#@ <id_jn0sil_17o_10kdvu3>
+<de/Arsen>	<infobox/de/name>	"Arsen" .
+#@ <id_jn0sil_2sb_kkzd6j>
+<de/Arsen>	<infobox/de/normalpotential>	"0,240 [[Volt|V]] (½ As<sub>2</sub>O<sub>3</sub> + 3H<sup>+</sup> + 3e<sup>−</sup><br />→ As + 1½ H<sub>2</sub>O)" .
+#@ <id_jn0sil_4ro_zik28w>
+<de/Arsen>	<infobox/de/ordnungszahl>	"33" .
+#@ <id_jn0sil_3sn_1fdef23>
+<de/Arsen>	<infobox/de/oxidationszustände>	"−3, '''3''', 5" .
+#@ <id_jn0sil_4di_kw3y5a>
+<de/Arsen>	<infobox/de/oxide>	"As<sub>2</sub>O<sub>3</sub>" .
+#@ <id_jn0sil_1ik_1juub6s>
+<de/Arsen>	<infobox/de/p>	"{{P-Sätze|261|273|301+310|311|501}}" .
+#@ <id_jn0sil_jvg_zik110>
+<de/Arsen>	<infobox/de/periode>	"4" .
+#@ <id_jn0sil_1gz_n145of>
+<de/Arsen>	<infobox/de/quellegefstkz>	"{{CLP|CAS=7440-38-2|ZVG=8280}}" .
+#@ <id_jn0sil_wfi_n145of>
+<de/Arsen>	<infobox/de/quelleghskz>	"{{CLP|CAS=7440-38-2|ZVG=8280}}" .
+#@ <id_jn0sil_15x_1pvskw2>
+<de/Arsen>	<infobox/de/quellep>	"<ref name=\u0022Quellname\u0022>{{Sigma-Aldrich|ALDRICH|267961|Datum=16. März 2011}}</ref>" .
+#@ <id_jn0sil_1ik_1a1ycvy>
+<de/Arsen>	<infobox/de/r>	"{{R-Sätze|23/25|50/53}}" .
+#@ <id_jn0sil_d6d_1xrs7pw>
+<de/Arsen>	<infobox/de/radioaktiv>	"<!--- Isotope --->" .
+#@ <id_jn0sil_1ch_1no62ql>
+<de/Arsen>	<infobox/de/reftempwärmeleitfähigkeitk>	"<!--- Chemisch --->" .
+#@ <id_jn0sil_1ik_tl0zut>
+<de/Arsen>	<infobox/de/s>	"{{S-Sätze|(1/2)|20/21|28|45|60|61}}" .
+#@ <id_jn0sil_1tl_zjh47k>
+<de/Arsen>	<infobox/de/schmelzwärme>	"27,7" .
+#@ <id_jn0sil_4fd_zik2sl>
+<de/Arsen>	<infobox/de/serie>	"Hm" .
+#@ <id_jn0sil_165_mgtixw>
+<de/Arsen>	<infobox/de/spezifischewärmekapazität>	"328,5<ref name=\u0022Harry H. Binder\u0022/>" .
+#@ <id_jn0sil_18x_1mjg4jt>
+<de/Arsen>	<infobox/de/sublimationspunktc>	"613<ref name=\u0022GESTIS\u0022>{{GESTIS|Name=Arsen|ZVG=8280|CAS=7440-38-2|Datum=25. Januar 2010}}.</ref>" .
+#@ <id_jn0sil_18x_zil7w6>
+<de/Arsen>	<infobox/de/sublimationspunktk>	"886" .
+#@ <id_jn0sil_1ui_zik2mq>
+<de/Arsen>	<infobox/de/symbol>	"As" .
+#@ <id_jn0sil_145_zil2pa>
+<de/Arsen>	<infobox/de/vanderwaalsradius>	"185" .
+#@ <id_jn0sil_1dc_184xjiq>
+<de/Arsen>	<infobox/de/verdampfungswärme>	"Sublimation: 32,4" .
+#@ <id_jn0sil_gl2_zik2aj>
+<de/Arsen>	<infobox/de/wärmeleitfähigkeit>	"50" .
+#@ <id_jn0sil_awl_19xgw3l>
+<de/Arsen>	<infobox/de/bezeichnung>	"Toxische Wirkung: Arsen und dessen Verbindungen" .
+#@ <id_jn0sil_17o_10tpr20>
+<de/Arsen>	<infobox/de/code>	"T57.0" .
+#@ <id_jn1g5j_141_zkfbds>
+<de/Astat>	<infobox/de/aggregatzustand>	"fest" .
+#@ <id_jn1g5j_1co_6x4n7u>
+<de/Astat>	<infobox/de/atommasse>	"209,9871" .
+#@ <id_jn1g5j_1pm_zil2k6>
+<de/Astat>	<infobox/de/atomradiusberechnet>	"127" .
+#@ <id_jn1g5j_1s2_1pl7c9g>
+<de/Astat>	<infobox/de/aussehen>	"metallisch" .
+#@ <id_jn1g5j_465_mbdrnr>
+<de/Astat>	<infobox/de/block>	"p\n<!--- Allgemein --->" .
+#@ <id_jn1g5j_akn_11ne04h>
+<de/Astat>	<infobox/de/cas>	"7440-68-8" .
+#@ <id_jn1g5j_4vr_zil35k>
+<de/Astat>	<infobox/de/elektronegativität>	"2,2" .
+#@ <id_jn1g5j_11u_1id2cuf>
+<de/Astat>	<infobox/de/elektronenkonfiguration>	"&#x5B;[[Xenon|Xe]]&#x5D; 4[[F-Orbital|f]]<sup>14</sup> 5[[D-Orbital|d]]<sup>10</sup> 6[[S-Orbital|s]]<sup>2</sup> 6[[P-Orbital|p]]<sup>5</sup>" .
+#@ <id_jn1g5j_akn_hmoi4s>
+<de/Astat>	<infobox/de/euh>	"{{EUH-Sätze|/}}" .
+#@ <id_jn1g5j_bpl_wwyb9w>
+<de/Astat>	<infobox/de/gefahrensymbole>	"{{Gefahrensymbole|/}}" .
+#@ <id_jn1g5j_1rs_qqiyc4>
+<de/Astat>	<infobox/de/ghspiktogramme>	"{{GHS-Piktogramme|/}}" .
+#@ <id_jn1g5j_1oq_zik27a>
+<de/Astat>	<infobox/de/gruppe>	"17" .
+#@ <id_jn1g5j_1ik_fm3jw>
+<de/Astat>	<infobox/de/h>	"{{H-Sätze|/}}" .
+#@ <id_jn1g5j_1i7_10lymae>
+<de/Astat>	<infobox/de/hauptquelle>	"<ref>Die Werte der atomaren und physikalischen Eigenschaften (Infobox) sind (soweit nicht anders angegeben) aus [http://www.webelements.com/astatine/ www.webelements.com (Astat)] entnommen.</ref>" .
+#@ <id_jn1g5j_sx1_zil8hj>
+<de/Astat>	<infobox/de/ionisierungsenergie>	"920" .
+#@ <id_jn1g5j_sx1_1m29xmz>
+<de/Astat>	<infobox/de/ionisierungsenergie>	"<!--- Physikalisch --->" .
+#@ <id_jn1g5j_1ts_13rye9d>
+<de/Astat>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 209\n| NH = 0\n| Halbwertszeit = 5,41 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 3,486\n| Zerfallstyp1ZP = [[Polonium|<sup>209</sup>Po]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 5,757\n| Zerfallstyp2ZP = [[Bismut|<sup>205</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 210\n| NH = 0\n| Halbwertszeit = 8,3 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 3,981\n| Zerfallstyp1ZP = [[Polonium|<sup>210</sup>Po]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 5,631\n| Zerfallstyp2ZP = [[Bismut|<sup>206</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 211\n| NH = 0\n| Halbwertszeit = 7,124 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 0,786\n| Zerfallstyp1ZP = [[Polonium|<sup>211</sup>Po]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 5,982\n| Zerfallstyp2ZP = [[Bismut|<sup>207</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 3\n| Symbol = At\n| Massenzahl = 212\n| NH = 0\n| Halbwertszeit = 0,314 s\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 1,754\n| Zerfallstyp1ZP = [[Polonium|<sup>212</sup>Po]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 7,829\n| Zerfallstyp2ZP = [[Bismut|<sup>208</sup>Bi]]\n| Zerfallstyp3ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp3ZE = 0,043\n| Zerfallstyp3ZP = [[Radon|<sup>212</sup>Rn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = At\n| Massenzahl = 213\n| NH = 0\n| Halbwertszeit = 125 ns\n| Zerfallstyp1ZM = [[Alphastrahlung|α]]\n| Zerfallstyp1ZE = 9.254\n| Zerfallstyp1ZP = [[Bismut|<sup>209</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 1\n| Symbol = At\n| Massenzahl = 214\n| NH = 0\n| Halbwertszeit = 558 ns\n| Zerfallstyp1ZM = [[Alphastrahlung|α]]\n| Zerfallstyp1ZE = 8.987\n| Zerfallstyp1ZP = [[Bismut|<sup>210</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = At\n| Massenzahl = 215\n| NH = -1\n| Halbwertszeit = 0,10 [[Sekunde|ms]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]]\n| Zerfallstyp1ZE = 8,178\n| Zerfallstyp1ZP = [[Bismut|<sup>211</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= -1 <!-- Leerzeile -->\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 218\n| NH = -1\n| Halbwertszeit = 1,5 [[Sekunde|s]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]] (99,90 %)\n| Zerfallstyp1ZE = 6,874\n| Zerfallstyp1ZP = [[Bismut|<sup>214</sup>Bi]]\n| Zerfallstyp2ZM = [[Betastrahlung|β<sup>−</sup>]] (0,10 %)\n| Zerfallstyp2ZE = 2,883\n| Zerfallstyp2ZP = [[Radon|<sup>218</sup>Rn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 219\n| NH = -1\n| Halbwertszeit = 56 [[Sekunde|s]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]] (97 %)\n| Zerfallstyp1ZE = 6,390\n| Zerfallstyp1ZP = [[Bismut|<sup>215</sup>Bi]]\n| Zerfallstyp2ZM = [[Betastrahlung|β<sup>−</sup>]] (3 %)\n| Zerfallstyp2ZE = 1,700\n| Zerfallstyp2ZP = [[Radon|<sup>219</sup>Rn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = At\n| Massenzahl = 220\n| NH = 0\n| Halbwertszeit = 3,71 [[Minute|min]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 9,900\n| Zerfallstyp1ZP = [[Radon|<sup>220</sup>Rn]]\n}}" .
+#@ <id_jn1g5j_1k5_zil2mk>
+<de/Astat>	<infobox/de/kovalenterradius>	"150" .
+#@ <id_jn1g5j_1ki_11h054j>
+<de/Astat>	<infobox/de/massenanteil>	"3 · 10<sup>−21</sup>&nbsp;ppm<ref name=\u0022Harry H. Binder\u0022>Harry H. Binder: ''Lexikon der chemischen Elemente'', S. Hirzel Verlag, Stuttgart 1999, ISBN 3-7776-0736-3.</ref>\n<!--- Atomar --->" .
+#@ <id_jn1g5j_zrr_zil39t>
+<de/Astat>	<infobox/de/massenzahl>	"210" .
+#@ <id_jn1g5j_17o_10kejh1>
+<de/Astat>	<infobox/de/name>	"Astat" .
+#@ <id_jn1g5j_4ro_zik2d9>
+<de/Astat>	<infobox/de/ordnungszahl>	"85" .
+#@ <id_jn1g5j_3sn_10bht4x>
+<de/Astat>	<infobox/de/oxidationszustände>	"±1, 3, 5, 7" .
+#@ <id_jn1g5j_1ik_1at7344>
+<de/Astat>	<infobox/de/p>	"{{P-Sätze|/}}" .
+#@ <id_jn1g5j_jvg_zik112>
+<de/Astat>	<infobox/de/periode>	"6" .
+#@ <id_jn1g5j_1gz_zik2x4>
+<de/Astat>	<infobox/de/quellegefstkz>	"NV" .
+#@ <id_jn1g5j_wfi_zik2x4>
+<de/Astat>	<infobox/de/quelleghskz>	"NV" .
+#@ <id_jn1g5j_1ik_1melc06>
+<de/Astat>	<infobox/de/r>	"{{R-Sätze|/}}" .
+#@ <id_jn1g5j_d6d_u5b4dj>
+<de/Astat>	<infobox/de/radioaktiv>	"Ja\n<!--- Isotope --->" .
+#@ <id_jn1g5j_1ik_soqfgn>
+<de/Astat>	<infobox/de/s>	"{{S-Sätze|/}}" .
+#@ <id_jn1g5j_13i_zil3zp>
+<de/Astat>	<infobox/de/schmelzpunktc>	"302" .
+#@ <id_jn1g5j_13i_zil5n7>
+<de/Astat>	<infobox/de/schmelzpunktk>	"575" .
+#@ <id_jn1g5j_1tl_112qkdi>
+<de/Astat>	<infobox/de/schmelzwärme>	"ca. 6" .
+#@ <id_jn1g5j_4fd_zik2s9>
+<de/Astat>	<infobox/de/serie>	"Ha" .
+#@ <id_jn1g5j_1ui_zik2mr>
+<de/Astat>	<infobox/de/symbol>	"At" .
+#@ <id_jn1g5j_145_169wf95>
+<de/Astat>	<infobox/de/vanderwaalsradius>	"202<ref>Manjeera Mantina, Adam C. Chamberlin, Rosendo Valero, Christopher J. Cramer, Donald G. Truhlar: ''Consistent van der Waals Radii for the Whole Main Group.'' In: ''J. Phys. Chem. A.'' 2009, 113, S.&nbsp;5806–5812, {{DOI|10.1021/jp8111556}}.</ref>" .
+#@ <id_jn1g5j_1dc_1qej5ce>
+<de/Astat>	<infobox/de/verdampfungswärme>	"ca. 40 kJ/mol" .
+#@ <id_jn1g5j_gl2_orjxad>
+<de/Astat>	<infobox/de/wärmeleitfähigkeit>	"2\n<!--- Chemisch --->" .
+#@ <id_10d55g4_1oq_zik2mk>
+<de/Alkalimetalle>	<infobox/de/gruppe>	"Am" .
+#@ <id_10d55g4_101_y2lfqa>
+<de/Alkalimetalle>	<infobox/de/gruppea>	"Alkalimetalle" .
+#@ <id_10d55g4_101_nte2i3>
+<de/Alkalimetalle>	<infobox/de/gruppen>	"Erdalkalimetalle" .
+#@ <id_10d55g4_101_1p2lw0i>
+<de/Alkalimetalle>	<infobox/de/gruppev>	"Edelgase" .
+#@ <id_17detes_1oq_zik11d>
+<de/Actinoide>	<infobox/de/gruppe>	"A" .
+#@ <id_17detes_101_w362a>
+<de/Actinoide>	<infobox/de/gruppea>	"Actinoide" .
+#@ <id_17detes_101_1276f53>
+<de/Actinoide>	<infobox/de/gruppen>	"Titangruppe" .
+#@ <id_17detes_101_nte2i3>
+<de/Actinoide>	<infobox/de/gruppev>	"Erdalkalimetalle" .
+#@ <id_18l17uo_141_zkfbds>
+<de/Americium>	<infobox/de/aggregatzustand>	"fest" .
+#@ <id_18l17uo_1co_1ysun0j>
+<de/Americium>	<infobox/de/atommasse>	"243,061375<ref name=\u0022Binder\u0022>Harry H. Binder: ''Lexikon der chemischen Elemente'', S. Hirzel Verlag, Stuttgart 1999, ISBN 3-7776-0736-3, S.&nbsp;18–23.</ref>" .
+#@ <id_18l17uo_jpx_zil2p9>
+<de/Americium>	<infobox/de/atomradius>	"184" .
+#@ <id_18l17uo_1s2_13imay2>
+<de/Americium>	<infobox/de/aussehen>	"silbrig-weißes Metall" .
+#@ <id_18l17uo_465_zik12e>
+<de/Americium>	<infobox/de/block>	"f" .
+#@ <id_18l17uo_akn_11nc0xu>
+<de/Americium>	<infobox/de/cas>	"7440-35-9" .
+#@ <id_18l17uo_1n6_1fzsmr5>
+<de/Americium>	<infobox/de/dichte>	"13,67 g/cm<sup>3</sup>" .
+#@ <id_18l17uo_1uu_cwreqv>
+<de/Americium>	<infobox/de/elektrischeleitfähigkeit>	"147,1<ref name=\u0022Binder\u0022/>" .
+#@ <id_18l17uo_4vr_zil2ew>
+<de/Americium>	<infobox/de/elektronegativität>	"1,3" .
+#@ <id_18l17uo_11u_1gvx5zv>
+<de/Americium>	<infobox/de/elektronenkonfiguration>	"&#x5B;[[Radon|Rn]]&#x5D; 5[[F-Orbital|f]]<sup>7</sup> 7[[S-Orbital|s]]<sup>2</sup>" .
+#@ <id_18l17uo_akn_hmoi4s>
+<de/Americium>	<infobox/de/euh>	"{{EUH-Sätze|/}}" .
+#@ <id_18l17uo_bpl_wwyb9w>
+<de/Americium>	<infobox/de/gefahrensymbole>	"{{Gefahrensymbole|/}}" .
+#@ <id_18l17uo_1rs_qqiyc4>
+<de/Americium>	<infobox/de/ghspiktogramme>	"{{GHS-Piktogramme|/}}" .
+#@ <id_18l17uo_1oq_zik2ma>
+<de/Americium>	<infobox/de/gruppe>	"Ac" .
+#@ <id_18l17uo_1ik_fm3jw>
+<de/Americium>	<infobox/de/h>	"{{H-Sätze|/}}" .
+#@ <id_18l17uo_1i7_1l7pzig>
+<de/Americium>	<infobox/de/hauptquelle>	"<ref>Die Werte der atomaren und physikalischen Eigenschaften (Infobox) sind, wenn nicht anders angegeben, aus [http://www.webelements.com/americium www.webelements.com (Americium)] entnommen.</ref>\n<!--- Allgemein --->" .
+#@ <id_18l17uo_sx1_zil5na>
+<de/Americium>	<infobox/de/ionisierungsenergie>	"578" .
+#@ <id_18l17uo_sx1_1m29xmz>
+<de/Americium>	<infobox/de/ionisierungsenergie>	"<!--- Physikalisch --->" .
+#@ <id_18l17uo_1ts_1hcg7m4>
+<de/Americium>	<infobox/de/isotope>	"<ref name=\u0022nubase\u0022/>\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 238\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 98&nbsp;[[Minute|min]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]&nbsp;(≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>238</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]&nbsp;(1,0&nbsp;·&nbsp;10<sup>−4</sup> %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>234</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 239\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 11,9&nbsp;[[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]&nbsp;(≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>239</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]&nbsp;(0,010 %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>235</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 240\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 50,8&nbsp;[[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]&nbsp;(≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>240</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]&nbsp;(1,9&nbsp;·&nbsp;10<sup>−4</sup> %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>236</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 2\n| Massenzahl = 241\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 432,2&nbsp;[[Jahr|a]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]]&nbsp;(≈ 100 %)\n| Zerfallstyp1ZE = 5,486\n| Zerfallstyp1ZP = [[Neptunium|<sup>237</sup>Np]]\n| Zerfallstyp2ZM = [[Spontane Spaltung|SF]]&nbsp;(4,3&nbsp;·&nbsp;10<sup>−10</sup> %)\n| Zerfallstyp2ZE = ?\n| Zerfallstyp2ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 242\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 16,02&nbsp;[[Stunde|h]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]&nbsp;(82,7 %)\n| Zerfallstyp1ZE = 0,665\n| Zerfallstyp1ZP = [[Curium|<sup>242</sup>Cm]]\n| Zerfallstyp2ZM = [[Elektronen-Einfang|ε]]&nbsp;(17,3 %)\n| Zerfallstyp2ZE = 0,751\n| Zerfallstyp2ZP = [[Plutonium|<sup>242</sup>Pu]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 3\n| Massenzahl = 242''m''1\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 141&nbsp;[[Jahr|a]]\n| Zerfallstyp1ZM = [[Isomerie-Übergang|IT]]&nbsp;(≈ 100 %)\n| Zerfallstyp1ZE = 0,049\n| Zerfallstyp1ZP = <sup>242</sup>Am\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]&nbsp;(0,45 %)\n| Zerfallstyp2ZE = 5,637\n| Zerfallstyp2ZP = [[Neptunium|<sup>238</sup>Np]]\n| Zerfallstyp3ZM = [[Spontane Spaltung|SF]]&nbsp;(4,7&nbsp;·&nbsp;10<sup>−9</sup> %)\n| Zerfallstyp3ZE = ?\n| Zerfallstyp3ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 242''m''2\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 14,0&nbsp;m[[Sekunde|s]]\n| AnzahlZerfallstypen = 3\n| Zerfallstyp1ZM = [[Spontane Spaltung|SF]]&nbsp;(≈ 100 %)\n| Zerfallstyp1ZE = ?\n| Zerfallstyp1ZP = ?\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 7,788\n| Zerfallstyp2ZP = [[Neptunium|<sup>238</sup>Np]]\n| Zerfallstyp3ZM = [[Isomerie-Übergang|IT]]\n| Zerfallstyp3ZE = 2,2\n| Zerfallstyp3ZP = <sup>242</sup>Am\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 243\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 7370&nbsp;[[Jahr|a]]\n| AnzahlZerfallstypen = 2\n| Zerfallstyp1ZM = [[Alphastrahlung|α]]&nbsp;(≈ 100 %)\n| Zerfallstyp1ZE = 5,438\n| Zerfallstyp1ZP = [[Neptunium|<sup>239</sup>Np]]\n| Zerfallstyp2ZM = [[Spontane Spaltung|SF]]&nbsp;(4,7&nbsp;·&nbsp;10<sup>−9</sup> %)\n| Zerfallstyp2ZE = ?\n| Zerfallstyp2ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 244\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 10,1&" .
+#@ <id_18l17uo_17o_1y0fbyb>
+<de/Americium>	<infobox/de/kristallstruktur>	"[[Hexagonales Kristallsystem|hexagonal]]" .
+#@ <id_18l17uo_1bj_6qvfoz>
+<de/Americium>	<infobox/de/magnetismus>	"[[Paramagnetismus|paramagnetisch]] ([[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = 7,1 · 10<sup>−4</sup>)<ref>Weast, Robert C. (ed. in chief): ''[[CRC Handbook of Chemistry and Physics]]'', CRC (Chemical Rubber Publishing Company), Boca Raton 1990. Seiten E-129 bis E-145. ISBN 0-8493-0470-9. Die Werte dort sind auf g/mol bezogen und in cgs-Einheiten angegeben. Der hier angegebene Wert ist der daraus berechnete maßeinheitslose SI-Wert.</ref>" .
+#@ <id_18l17uo_1ki_1dd5fsn>
+<de/Americium>	<infobox/de/massenanteil>	"<!--- Atomar --->" .
+#@ <id_18l17uo_zrr_zil3ch>
+<de/Americium>	<infobox/de/massenzahl>	"243" .
+#@ <id_18l17uo_1xz_1qbxjb>
+<de/Americium>	<infobox/de/molaresvolumen>	"1,778 · 10<sup>−5</sup>" .
+#@ <id_18l17uo_17o_23pki6>
+<de/Americium>	<infobox/de/name>	"Americium" .
+#@ <id_18l17uo_2sb_1ygitmf>
+<de/Americium>	<infobox/de/normalpotential>	"−2,070&nbsp;[[Volt|V]]<br />(Am<sup>3+</sup> + 3&nbsp;e<sup>−</sup> → Am)<ref name=\u0022Binder\u0022/>" .
+#@ <id_18l17uo_4ro_zik2e4>
+<de/Americium>	<infobox/de/ordnungszahl>	"95" .
+#@ <id_18l17uo_3sn_2pw7au>
+<de/Americium>	<infobox/de/oxidationszustände>	"+2, '''+3''', +4, +5, +6, (+7)" .
+#@ <id_18l17uo_1ik_1at7344>
+<de/Americium>	<infobox/de/p>	"{{P-Sätze|/}}" .
+#@ <id_18l17uo_jvg_zik113>
+<de/Americium>	<infobox/de/periode>	"7" .
+#@ <id_18l17uo_1gz_zik2x4>
+<de/Americium>	<infobox/de/quellegefstkz>	"NV" .
+#@ <id_18l17uo_wfi_zik2x4>
+<de/Americium>	<infobox/de/quelleghskz>	"NV" .
+#@ <id_18l17uo_1ik_1melc06>
+<de/Americium>	<infobox/de/r>	"{{R-Sätze|/}}" .
+#@ <id_18l17uo_d6d_u5b4dj>
+<de/Americium>	<infobox/de/radioaktiv>	"Ja\n<!--- Isotope --->" .
+#@ <id_18l17uo_y4f_1o32wp0>
+<de/Americium>	<infobox/de/reftempelektrischeleitfähigkeitk>	"293,15" .
+#@ <id_18l17uo_1ch_i1ffgm>
+<de/Americium>	<infobox/de/reftempwärmeleitfähigkeitk>	"300\n<!--- Chemisch --->" .
+#@ <id_18l17uo_1ik_soqfgn>
+<de/Americium>	<infobox/de/s>	"{{S-Sätze|/}}" .
+#@ <id_18l17uo_13i_zjgd1b>
+<de/Americium>	<infobox/de/schmelzpunktc>	"1176" .
+#@ <id_18l17uo_13i_zjgf6w>
+<de/Americium>	<infobox/de/schmelzpunktk>	"1449" .
+#@ <id_18l17uo_1tl_zjgezv>
+<de/Americium>	<infobox/de/schmelzwärme>	"14,4" .
+#@ <id_18l17uo_4fd_zik2ma>
+<de/Americium>	<infobox/de/serie>	"Ac" .
+#@ <id_18l17uo_138_zjh3kb>
+<de/Americium>	<infobox/de/siedepunktc>	"2607" .
+#@ <id_18l17uo_138_1o2mdm1>
+<de/Americium>	<infobox/de/siedepunktk>	"2880 K" .
+#@ <id_18l17uo_165_zjfm70>
+<de/Americium>	<infobox/de/spezifischewärmekapazität>	"0,11" .
+#@ <id_18l17uo_1ui_zik2mk>
+<de/Americium>	<infobox/de/symbol>	"Am" .
+#@ <id_18l17uo_145_10ayum9>
+<de/Americium>	<infobox/de/vanderwaalsradius>	"228,5" .
+#@ <id_18l17uo_1dc_uv2wl6>
+<de/Americium>	<infobox/de/verdampfungswärme>	"238,5 kJ/mol" .
+#@ <id_18l17uo_gl2_neaxsd>
+<de/Americium>	<infobox/de/wärmeleitfähigkeit>	"10<ref name=\u0022Binder\u0022/>" .
+#@ <id_180fbcl_1n4_1est999>
+<de/Alexander_der_Große>	<infobox/de/eigenname>	"<hiero>G1-E23:V31:O34-M17-N35:D46-D21:O34</hiero>" .
+#@ <id_180fbcl_1cc_1amy0um>
+<de/Alexander_der_Große>	<infobox/de/eigennameerklärung>	"Alexandros<br /> ''Alksjndrs''" .
+#@ <id_180fbcl_rd0_1ci2l9q>
+<de/Alexander_der_Große>	<infobox/de/horusname>	"<hiero>G20-V31:I6*O49</hiero>" .
+#@ <id_180fbcl_168_4x80up>
+<de/Alexander_der_Große>	<infobox/de/horusnameerklärung>	"Mek-kemet<br /> ''Mk-km.t''<br />''Beschützer Ägyptens''" .
+#@ <id_180fbcl_w86_39b6no>
+<de/Alexander_der_Große>	<infobox/de/thronname>	"<hiero>C12-C1-U21:N35:N36</hiero>" .
+#@ <id_180fbcl_63l_7zegaq>
+<de/Alexander_der_Große>	<infobox/de/thronnameerklärung>	"Setep-en-Re-merj-Amun<br /> ''{{Unicode|Stp-n-Rˁ-mr.j-Jmn}}''<br /> ''Auserwählt von Re, geliebt von Amun''" .
+#@ <id_180fbcl_4g0_13p43es>
+<de/Alexander_der_Große>	<infobox/de/titel>	"Ägyptische Namen Alexanders des Großen" .
+#@ <id_gnbkoo_isf_1je0ow3>
+<de/Ångström_(Einheit)>	<infobox/de/abgeleitetvon>	"[[Atom]]radius" .
+#@ <id_gnbkoo_1cz_1dqlhog>
+<de/Ångström_(Einheit)>	<infobox/de/benanntnach>	"[[Anders Jonas Ångström]]" .
+#@ <id_gnbkoo_z0k_ccy2c>
+<de/Ångström_(Einheit)>	<infobox/de/dimension>	"<math>\\mathsf{L}</math>" .
+#@ <id_gnbkoo_gpv_tzd6a4>
+<de/Ångström_(Einheit)>	<infobox/de/einheitenzeichen>	"<math>\\mathrm{\\AA}</math>" .
+#@ <id_gnbkoo_12q_168ghrb>
+<de/Ångström_(Einheit)>	<infobox/de/formelzeichen>	"<math>\\lambda</math>, <math>a</math>, <math>b</math>, <math>c</math>" .
+#@ <id_gnbkoo_17o_1qkkywa>
+<de/Ångström_(Einheit)>	<infobox/de/name>	"Ångström" .
+#@ <id_gnbkoo_178_k2xj69>
+<de/Ångström_(Einheit)>	<infobox/de/physgröße>	"[[Länge (Physik)|Länge]]" .
+#@ <id_gnbkoo_1lm_27evyo>
+<de/Ångström_(Einheit)>	<infobox/de/si>	"<math>\\mathrm{1 \\, \\AA = 10^{-10} \\, m = 100 \\; pm}</math>" .
+#@ <id_14hz8g2_1cz_e83ge4>
+<de/Ampere>	<infobox/de/benanntnach>	"[[André-Marie Ampère]]" .
+#@ <id_14hz8g2_z0k_izkygh>
+<de/Ampere>	<infobox/de/dimension>	"<math>\\mathsf{I}</math>" .
+#@ <id_14hz8g2_gpv_1bym441>
+<de/Ampere>	<infobox/de/einheitenzeichen>	"<math>\\mathrm{A}</math>" .
+#@ <id_14hz8g2_12q_1qm601g>
+<de/Ampere>	<infobox/de/formelzeichen>	"<math>I</math>" .
+#@ <id_14hz8g2_17o_1w0gpis>
+<de/Ampere>	<infobox/de/name>	"Ampere" .
+#@ <id_14hz8g2_17o_vhda2v>
+<de/Ampere>	<infobox/de/norm>	"[[Internationales_Einheitensystem#SI-Basiseinheiten|SI-Basiseinheit]]" .
+#@ <id_14hz8g2_178_1pe2af8>
+<de/Ampere>	<infobox/de/physgröße>	"[[Stromstärke]], [[Durchflutung|magnetische Durchflutung]]" .
+#@ <id_26x78f_isf_ukf7sb>
+<de/Ar_(Einheit)>	<infobox/de/abgeleitetvon>	"[[Quadratmeter]]" .
+#@ <id_26x78f_1cz_rwuu2j>
+<de/Ar_(Einheit)>	<infobox/de/benanntnach>	"{{laS|''arealis''}}, „Fläche“" .
+#@ <id_26x78f_z0k_wu8x3c>
+<de/Ar_(Einheit)>	<infobox/de/dimension>	"<math>\\mathsf{L^2}</math>" .
+#@ <id_26x78f_gpv_eti4j5>
+<de/Ar_(Einheit)>	<infobox/de/einheitenzeichen>	"<math>\\mathrm{a}</math>" .
+#@ <id_26x78f_12q_194idh8>
+<de/Ar_(Einheit)>	<infobox/de/formelzeichen>	"<math>A</math>" .
+#@ <id_26x78f_17o_1almjp0>
+<de/Ar_(Einheit)>	<infobox/de/name>	"Ar / Are" .
+#@ <id_26x78f_17o_1y87h2u>
+<de/Ar_(Einheit)>	<infobox/de/norm>	"GESETZ" .
+#@ <id_26x78f_178_h508c2>
+<de/Ar_(Einheit)>	<infobox/de/physgröße>	"[[Flächeninhalt]]" .
+#@ <id_26x78f_1lm_3p4lpe>
+<de/Ar_(Einheit)>	<infobox/de/si>	"<math>\\mathrm{1 \\, a = 100 \\; m^2}</math>" .
+#@ <id_26x78f_12q_1pizhvb>
+<de/Ar_(Einheit)>	<infobox/de/sieheauch>	"[[Hektar]]" .
+#@ <id_fypoej_z0k_15hcz91>
+<de/Atomare_Masseneinheit>	<infobox/de/dimension>	"<math>\\mathsf{M}</math>" .
+#@ <id_fypoej_gpv_11r5yn3>
+<de/Atomare_Masseneinheit>	<infobox/de/einheitenzeichen>	"<math>\\mathrm{u}</math> (oder <math>\\mathrm{Da}</math>)" .
+#@ <id_fypoej_12q_yry8ls>
+<de/Atomare_Masseneinheit>	<infobox/de/formelzeichen>	"<math>m</math>" .
+#@ <id_fypoej_17o_gflol4>
+<de/Atomare_Masseneinheit>	<infobox/de/name>	"Atomare Masseneinheit" .
+#@ <id_fypoej_17o_zjytdh>
+<de/Atomare_Masseneinheit>	<infobox/de/norm>	"N-SI" .
+#@ <id_fypoej_178_1p5rxkh>
+<de/Atomare_Masseneinheit>	<infobox/de/physgröße>	"[[Masse (Physik)|Masse]]" .
+#@ <id_fypoej_1lm_1cb5j8p>
+<de/Atomare_Masseneinheit>	<infobox/de/si>	"<math>\\mathrm{1 \\, u = 1{,}660\\,538\\,921(73) \\cdot 10^{-27} \\; kg}</math>" .
+#@ <id_14lcgw0_17o_19ai2o6>
+<de/Astana>	<infobox/de/akim>	"[[Imanghali Tasmaghambetow]]" .
+#@ <id_14lcgw0_1kg_zjgz46>
+<de/Astana>	<infobox/de/akimstand>	"2008" .
+#@ <id_14lcgw0_sc1_1qfpk69>
+<de/Astana>	<infobox/de/einwohner>	"780880" .
+#@ <id_14lcgw0_1wj_1h2rju9>
+<de/Astana>	<infobox/de/einwohnerdatenref>	"[http://www.stat.kz/digital/naselsenie/2012/2013/%D0%BC%D0%B0%D1%80%D1%82/01_2012_%D0%AD-14-05-%D0%9C.xls Численность населения Республики Казахстан по областям с началa 2013 года до 1 февраля 2013 года] (russisch; [[Microsoft Excel|MS Excel]]; 56&nbsp;kB)" .
+#@ <id_14lcgw0_12u_p23sdu>
+<de/Astana>	<infobox/de/einwohnerstand>	"1. Feb. 2013" .
+#@ <id_14lcgw0_1o5_19eozul>
+<de/Astana>	<infobox/de/flagge>	"New flag of Astana.svg" .
+#@ <id_14lcgw0_1o8_zil6za>
+<de/Astana>	<infobox/de/fläche>	"710" .
+#@ <id_14lcgw0_1oj_zilf8i>
+<de/Astana>	<infobox/de/gebiet>	"AST" .
+#@ <id_14lcgw0_yfe_14f3hz8>
+<de/Astana>	<infobox/de/gegründet>	"[[1830]]" .
+#@ <id_14lcgw0_16y_t5jh49>
+<de/Astana>	<infobox/de/gemeindeart>	"Stadt mit Sonderstatus" .
+#@ <id_14lcgw0_17o_zil42g>
+<de/Astana>	<infobox/de/höhe>	"338" .
+#@ <id_14lcgw0_17b_109udad>
+<de/Astana>	<infobox/de/kfzkennzeichen>	"01, Z" .
+#@ <id_14lcgw0_1qu_zik2ak>
+<de/Astana>	<infobox/de/latdeg>	"51" .
+#@ <id_14lcgw0_1qu_zik273>
+<de/Astana>	<infobox/de/latmin>	"10" .
+#@ <id_14lcgw0_1qu_zik10w>
+<de/Astana>	<infobox/de/latsec>	"0" .
+#@ <id_14lcgw0_1r1_zik2ca>
+<de/Astana>	<infobox/de/londeg>	"71" .
+#@ <id_14lcgw0_1r1_zik283>
+<de/Astana>	<infobox/de/lonmin>	"25" .
+#@ <id_14lcgw0_1r1_zik10w>
+<de/Astana>	<infobox/de/lonsec>	"0" .
+#@ <id_14lcgw0_1x0_1bwdcs2>
+<de/Astana>	<infobox/de/namekyrillisch>	"Астана" .
+#@ <id_14lcgw0_19n_mvfw4x>
+<de/Astana>	<infobox/de/postleitzahl>	"010000-010015" .
+#@ <id_14lcgw0_ydb_zjk6yd>
+<de/Astana>	<infobox/de/telefonvorwahl>	"7172" .
+#@ <id_14lcgw0_1w1_bjeqog>
+<de/Astana>	<infobox/de/wappen>	"New coat of arms of Astana.svg" .
+#@ <id_14lcgw0_1vx_12bxvlg>
+<de/Astana>	<infobox/de/webpräsenz>	"www.astana.kz" .
+#@ <id_14lcgw0_1bu_1gxvx62>
+<de/Astana>	<infobox/de/zeitzone>	"[[East Kazakhstan Standard Time|EKST]] (UTC+6)" .
+#@ <id_14ifr4w_17o_pp63gv>
+<de/Ankara>	<infobox/de/bild>	"Sogutozu Ankara Turkey.jpg" .
+#@ <id_14ifr4w_lsq_l6iqxx>
+<de/Ankara>	<infobox/de/breitengrad>	"39/55//N" .
+#@ <id_14ifr4w_5mk_b96mf2>
+<de/Ankara>	<infobox/de/bürgermeister>	"[[Melih Gökçek]]" .
+#@ <id_14ifr4w_6vi_zjgz4u>
+<de/Ankara>	<infobox/de/bürgermeisterstand>	"2011" .
+#@ <id_14ifr4w_1al_17sb3tm>
+<de/Ankara>	<infobox/de/einwohnerort>	"4630735" .
+#@ <id_14ifr4w_ino_1d7h03g>
+<de/Ankara>	<infobox/de/einwohnerortquelle>	"[http://rapor.tuik.gov.tr/reports/rwservlet?adnksdb2&ENVID=adnksdb2Env&report=wa_buyukbelediye.RDF&p_il1=6&p_kod=2&p_yil=2012&p_dil=1&desformat=html Türkisches Institut für Statistik] abgerufen 28. Januar 2013" .
+#@ <id_14ifr4w_1v2_zjgz4v>
+<de/Ankara>	<infobox/de/einwohnerortstand>	"2012" .
+#@ <id_14ifr4w_viz_zjh2ap>
+<de/Ankara>	<infobox/de/flächeort>	"2498" .
+#@ <id_14ifr4w_17o_zil8im>
+<de/Ankara>	<infobox/de/höhe>	"938" .
+#@ <id_14ifr4w_1sr_1ohwbdl>
+<de/Ankara>	<infobox/de/längengrad>	"32/51//E" .
+#@ <id_14ifr4w_1sq_zilf1i>
+<de/Ankara>	<infobox/de/partei>	"AKP" .
+#@ <id_14ifr4w_pzm_1w0x87m>
+<de/Ankara>	<infobox/de/provinz>	"Ankara" .
+#@ <id_14ifr4w_1w1_19134h7>
+<de/Ankara>	<infobox/de/wappen>	"Ankara-emblem.svg" .
+#@ <id_14ifr4w_1vx_hiutns>
+<de/Ankara>	<infobox/de/webpräsenz>	"www.ankara.bel.tr" .
+#@ <id_2k3bw6_149_1o18mxd>
+<de/Afghanistan>	<infobox/de/amtssprache>	"[[Paschtunische Sprache|Paschtu]] und [[Persische Sprache#Dari|Dari (Persisch)]]<ref name=\u0022Iranica\u0022>Ch. M. Kieffer, [http://www.iranicaonline.org/articles/afghanistan-iv-ethnography Languages of Afghanistan], in [[Encyclopædia Iranica]], online ed. 2009.</ref><ref name=\u0022CIA\u0022>[https://www.cia.gov/library/publications/the-world-factbook/geos/af.html CIA Factbook for Afghanistan]</ref><ref>[http://www.britannica.com/EBchecked/topic/7798/Afghanistan Britannica.com]</ref><ref>[http://president.gov.af/Contents/68/Documents/199/ChapterOneConstitutionState.html The Constitution of the Islamic Republic of Afghanistan – January 26, 2004]</ref>" .
+#@ <id_2k3bw6_54j_1c8xc9x>
+<de/Afghanistan>	<infobox/de/artikelflagge>	"Flagge Afghanistans" .
+#@ <id_2k3bw6_d0j_1jsq09o>
+<de/Afghanistan>	<infobox/de/artikelwappen>	"Wappen Afghanistans" .
+#@ <id_2k3bw6_140_zjicp8>
+<de/Afghanistan>	<infobox/de/bevdichte>	"45,7" .
+#@ <id_2k3bw6_6o0_1dbcj2b>
+<de/Afghanistan>	<infobox/de/bevzunahme>	"{{Steigen}} +3,49 %<ref>http://www.wolframalpha.com/input/?i=Afghanistan</ref>" .
+#@ <id_2k3bw6_1e6_d0jged>
+<de/Afghanistan>	<infobox/de/bildflagge>	"Flag of Afghanistan.svg" .
+#@ <id_2k3bw6_1j9_b1wh71>
+<de/Afghanistan>	<infobox/de/bildlage>	"Afghanistan on the globe (Afro-Eurasia centered).svg" .
+#@ <id_2k3bw6_109_188onzm>
+<de/Afghanistan>	<infobox/de/bildlageimagemap>	"Afro-EurasienGlobus1" .
+#@ <id_2k3bw6_1m2_1oji9g7>
+<de/Afghanistan>	<infobox/de/bildwappen>	"Emblem of Afghanistan.svg" .
+#@ <id_2k3bw6_rwm_10adqrh>
+<de/Afghanistan>	<infobox/de/bildwappenbreite>	"104px" .
+#@ <id_2k3bw6_akn_1k9ke6o>
+<de/Afghanistan>	<infobox/de/bip>	"2010\n* 15,61 Mrd. US$\n* 27,36 Mrd. US$\n* 500 US$\n* 900 US$" .
+#@ <id_2k3bw6_ltk_5qoj4n>
+<de/Afghanistan>	<infobox/de/biperweitert>	"* Total (Nominal)\n* Total ([[Kaufkraftparität|KKP]])\n* BIP/Einw. (Nominal)\n* BIP/Einw. (KKP)" .
+#@ <id_2k3bw6_sc1_1cr5nde>
+<de/Afghanistan>	<infobox/de/einwohner>	"29,8 Mio.<ref name=\u0022CIA\u0022 /> <small>Schätzung Juli 2011</small>" .
+#@ <id_2k3bw6_1o8_40g2jn>
+<de/Afghanistan>	<infobox/de/fläche>	"652.230<ref name=\u0022CIA\u0022 />" .
+#@ <id_2k3bw6_18n_yj2kx>
+<de/Afghanistan>	<infobox/de/gründung>	"1747 (Entstehung des [[Durrani-Reich]]s, des Vorgängerstaats des modernen Afghanistan)" .
+#@ <id_2k3bw6_1s0_l2nt1f>
+<de/Afghanistan>	<infobox/de/hauptstadt>	"[[Kabul]]" .
+#@ <id_2k3bw6_akn_i067w3>
+<de/Afghanistan>	<infobox/de/hdi>	"{{Gestiegen}} 0,398 <small>(172.)</small><ref>[http://hdr.undp.org/en/media/HDR_2011_EN_Complete.pdf Human Development Report 2011] (PDF; 5,9&nbsp;MB), abgerufen am 9. Dezember 2011.</ref>" .
+#@ <id_2k3bw6_j7o_1tfp2kz>
+<de/Afghanistan>	<infobox/de/internettld>	"[[.af]]" .
+#@ <id_2k3bw6_ako_1t3yyg8>
+<de/Afghanistan>	<infobox/de/iso>	"[[ISO 3166-2:AF|AF]], AFG, 004<ref>[http://www.statoids.com/wab.html Statoids.com]</ref>" .
+#@ <id_2k3bw6_17b_1ntffv0>
+<de/Afghanistan>	<infobox/de/kfzkennzeichen>	"[[Kfz-Kennzeichen (Afghanistan)|AFG]]<ref>[http://plaque.free.fr/ov2f.html http://plaque.free.fr/]</ref>" .
+#@ <id_2k3bw6_131_1k6baqv>
+<de/Afghanistan>	<infobox/de/nameamtssprache>	"<span style=\u0022font-size:1.4em\u0022>'''د افغانستان اسلامي جمهوریت'''<br />''Da Afġānistān Islāmī Jomhoriyat''<br /><small>([[Paschtunische Sprache|Paschtu]])</small><br />'''جمهوری اسلامی افغانستان'''<br />''Jomhūrī-ye Eslāmī-ye Afġānistān''<br /><small>([[Persische Sprache#Dari|Dari]])</small></span>" .
+#@ <id_2k3bw6_1io_4bpzn2>
+<de/Afghanistan>	<infobox/de/namedeutsch>	"'''Islamische Republik Afghanistan'''" .
+#@ <id_2k3bw6_b1a_1mk2t5m>
+<de/Afghanistan>	<infobox/de/nationalfeiertag>	"19. August (Unabhängigkeitstag)<ref name=\u0022CIA\u0022 />" .
+#@ <id_2k3bw6_szo_1jk4dqm>
+<de/Afghanistan>	<infobox/de/nationalhymne>	"[[Milli Tharana]]<br />[[Datei:National anthem of Afghanistan.ogg|noicon|120px]]" .
+#@ <id_2k3bw6_hyw_17l8tm0>
+<de/Afghanistan>	<infobox/de/regierungssystem>	"[[Präsidentielles Regierungssystem|Präsidialsystem]]" .
+#@ <id_2k3bw6_m2h_1h6gflo>
+<de/Afghanistan>	<infobox/de/staatsform>	"[[Islamische Republik]]" .
+#@ <id_2k3bw6_1pn_1h72e13>
+<de/Afghanistan>	<infobox/de/staatsoberhaupt>	"[[Liste der Staatsoberhäupter Afghanistans|Präsident]] [[Hamid Karzai]]" .
+#@ <id_2k3bw6_ydb_ofeqv>
+<de/Afghanistan>	<infobox/de/telefonvorwahl>	"+93<ref>[http://www.wtng.info/wtng-hst.html WTNG.info]</ref>" .
+#@ <id_2k3bw6_ekn_8d1y9l>
+<de/Afghanistan>	<infobox/de/unabhängigkeit>	"19. August 1919 (formal vom [[Vereinigtes Königreich|Vereinigten Königreich]], faktisch nie kolonisiert)<ref name=\u0022CIA\u0022 />" .
+#@ <id_2k3bw6_1ux_1xwee62>
+<de/Afghanistan>	<infobox/de/wappenopt>	"Emblem" .
+#@ <id_2k3bw6_14j_1ek3j6x>
+<de/Afghanistan>	<infobox/de/währung>	"1 [[Afghani]] = 100 Puls<br /> 1 € = {{Wechselkurs|EUR|AFN|NKS=2}} AFN<br /> 100 AFN = {{Wechselkurs|AFN|EUR|Faktor=100|NKS=2}} €<br /><small>(Stand: {{Wechselkurs|EUR|AFN|Datum=1}})</small>" .
+#@ <id_2k3bw6_1bu_181t0tn>
+<de/Afghanistan>	<infobox/de/zeitzone>	"[[Koordinierte Weltzeit|UTC]][[UTC+4:30|+4:30]]" .
+#@ <id_4sru8v_gmd_enmore>
+<de/Alexandria>	<infobox/de/amtname>	"{{Ar|الإسكندرية}}" .
+#@ <id_4sru8v_17o_18tt8b9>
+<de/Alexandria>	<infobox/de/bild>	"Alexandria harbour (February 2007).jpg" .
+#@ <id_4sru8v_1j9_os8p52>
+<de/Alexandria>	<infobox/de/bildtext>	"Hafen von Alexandria" .
+#@ <id_4sru8v_vap_6wqg16>
+<de/Alexandria>	<infobox/de/bmtitel>	"Gouverneur" .
+#@ <id_4sru8v_1md_8kmg7c>
+<de/Alexandria>	<infobox/de/breite>	"31/12/48.6/N" .
+#@ <id_4sru8v_5mk_1x6bv0w>
+<de/Alexandria>	<infobox/de/bürgermeister>	"Adel Labib" .
+#@ <id_4sru8v_sc1_16c71jh>
+<de/Alexandria>	<infobox/de/einwohner>	"4317398" .
+#@ <id_4sru8v_1o5_1hjt2ym>
+<de/Alexandria>	<infobox/de/flagge>	"Governadorat d'Alexandria.svg" .
+#@ <id_4sru8v_18n_zjdugz>
+<de/Alexandria>	<infobox/de/gründung>	"-330" .
+#@ <id_4sru8v_1tr_1xajgte>
+<de/Alexandria>	<infobox/de/isocode>	"EG-ALX" .
+#@ <id_4sru8v_4ds_sqwy4a>
+<de/Alexandria>	<infobox/de/länge>	"29/55/39.58/E" .
+#@ <id_4sru8v_1ob_17bwd7b>
+<de/Alexandria>	<infobox/de/meinwohner>	"4545218" .
+#@ <id_4sru8v_1bb_zjh3qe>
+<de/Alexandria>	<infobox/de/mfläche>	"2679" .
+#@ <id_4sru8v_1rl_zjgz47>
+<de/Alexandria>	<infobox/de/mstand>	"2009" .
+#@ <id_4sru8v_17o_1014ym4>
+<de/Alexandria>	<infobox/de/name>	"al-Iskandariyya — Alexandria" .
+#@ <id_4sru8v_hzh_1qj3bfy>
+<de/Alexandria>	<infobox/de/partner>	"{{TUR|Ziel=Izmir}}, [[Türkei]]<br />{{DEU|Ziel=Bezirk Lichtenberg}}, [[Berlin]]" .
+#@ <id_4sru8v_4fn_zjgz47>
+<de/Alexandria>	<infobox/de/stand>	"2009" .
+#@ <id_4sru8v_1w1_13bus4t>
+<de/Alexandria>	<infobox/de/wappen>	"Alexandria Logo.jpg" .
+#@ <id_4sru8v_ako_1l8bbd2>
+<de/Alexandria>	<infobox/de/www>	"www.alexandriaegypt.com" .
+#@ <id_jn1836_ooo_zx3f6z>
+<de/Asien>	<infobox/de/bevölkerung>	"ca. 4 Milliarden" .
+#@ <id_jn1836_kgt_zik2dz>
+<de/Asien>	<infobox/de/bevölkerungsdichte>	"90" .
+#@ <id_jn1836_1o8_1ewdipo>
+<de/Asien>	<infobox/de/fläche>	"44614500" .
+#@ <id_jn1836_4ax_l0tj65>
+<de/Asien>	<infobox/de/karte>	"Asia on the globe (white-red).svg" .
+#@ <id_jn1836_11s_5vbse4>
+<de/Asien>	<infobox/de/karteimagemap>	"AsienGlobus2" .
+#@ <id_jn1836_1su_zik29v>
+<de/Asien>	<infobox/de/länder>	"47" .
+#@ <id_jn1836_d7v_rcw1sp>
+<de/Asien>	<infobox/de/sprachfamilien>	"[[Indogermanische Sprachen]]<br />[[Kaukasische Sprachen]]<br />[[Uralische Sprachen]]<br />[[Paläosibirische Sprachen]]<br />[[Afroasiatische Sprachen]]<br />[[Turksprachen]]<br />[[Mongolische Sprachen]]<br />[[Tungusische Sprachen]]<br />[[Japanisch-Ryūkyū|Japanische Sprachen]]<br /> [[Koreanische Sprache|Koreanisch]]<br /> [[Dravidische Sprachen]]<br />[[Sinotibetische Sprachen]]<br />[[Austroasiatische Sprachen]]<br />[[Hmong-Mien-Sprachen]]<br />[[Tai-Kadai-Sprachen]]<br />[[Austronesische Sprachen]]<br />[[Burushaski]]<br />[[Nahali]]<br />[[Kusunda (Sprache)|Kusunda]]" .
+#@ <id_jn1836_1va_1qlpgmu>
+<de/Asien>	<infobox/de/zeitzoneost>	"[[Koordinierte Weltzeit|UTC+12]] ([[Russland]])" .
+#@ <id_jn1836_pq2_f3zkau>
+<de/Asien>	<infobox/de/zeitzonewest>	"[[Koordinierte Weltzeit|UTC+2]] ([[Türkei]])" .
+#@ <id_jmzgh8_xdk_1nzuq8j>
+<de/Apple>	<infobox/de/branche>	"Hardware- und Softwarehersteller" .
+#@ <id_jmzgh8_cpc_zjgiyv>
+<de/Apple>	<infobox/de/gründungsdatum>	"1976" .
+#@ <id_jmzgh8_wn0_1mvif84>
+<de/Apple>	<infobox/de/homepage>	"[http://www.apple.com/de www.apple.com/de]" .
+#@ <id_jmzgh8_17o_1spdwxy>
+<de/Apple>	<infobox/de/isin>	"US0378331005" .
+#@ <id_jmzgh8_w28_pg3gi8>
+<de/Apple>	<infobox/de/leitung>	"[[Tim Cook]] ([[Chief Executive Officer|CEO]])<br />[[Arthur D. Levinson]] ([[Board of Directors|Chairman]])" .
+#@ <id_jmzgh8_17o_o5z76y>
+<de/Apple>	<infobox/de/logo>	"[[Datei:Apple logo black.svg|150px|Logo]]" .
+#@ <id_jmzgh8_v2v_qu3el8>
+<de/Apple>	<infobox/de/mitarbeiterzahl>	"72.800 <small>(29. September 2012)</small>" .
+#@ <id_jmzgh8_17o_1nicpcm>
+<de/Apple>	<infobox/de/name>	"Apple Inc." .
+#@ <id_jmzgh8_17o_f9ga05>
+<de/Apple>	<infobox/de/sitz>	"[[Cupertino]] [[Kalifornien|CA]], [[Vereinigte Staaten]]" .
+#@ <id_jmzgh8_1va_puedmr>
+<de/Apple>	<infobox/de/umsatz>	"156,5 Mrd. [[US-Dollar|USD]] <small>(GJ 2012)</small>" .
+#@ <id_jmzgh8_18i_10uh3uu>
+<de/Apple>	<infobox/de/unternehmensform>	"[[Gesellschaftsrecht der Vereinigten Staaten#Corporation|Incorporated]]" .
+#@ <id_1b35psn_149_10lyr7w>
+<de/Algerien>	<infobox/de/amtssprache>	"[[Arabische Sprache|Arabisch]] („Amts- und Nationalsprache“)<br /> [[Tamazight|Mazirisch]] („Nationalsprache“)" .
+#@ <id_1b35psn_54j_wprkus>
+<de/Algerien>	<infobox/de/artikelflagge>	"Flagge Algeriens" .
+#@ <id_1b35psn_d0j_sllqsp>
+<de/Algerien>	<infobox/de/artikelwappen>	"Siegel Algeriens" .
+#@ <id_1b35psn_140_zjge9a>
+<de/Algerien>	<infobox/de/bevdichte>	"13,8" .
+#@ <id_1b35psn_17o_1o91n9s>
+<de/Algerien>	<infobox/de/bild>	"Algeria Map.jpg" .
+#@ <id_1b35psn_1e6_1toqpfm>
+<de/Algerien>	<infobox/de/bildflagge>	"Flag of Algeria.svg" .
+#@ <id_1b35psn_1lf_zik3lj>
+<de/Algerien>	<infobox/de/bildflaggerahmen>	"ja" .
+#@ <id_1b35psn_1j9_5eoj9g>
+<de/Algerien>	<infobox/de/bildlage>	"Algeria on the globe (North Africa centered).svg" .
+#@ <id_1b35psn_109_1lqo2dy>
+<de/Algerien>	<infobox/de/bildlageimagemap>	"NordafrikaGlobus1" .
+#@ <id_1b35psn_1m2_sddoy9>
+<de/Algerien>	<infobox/de/bildwappen>	"Seal of Algeria.svg" .
+#@ <id_1b35psn_rwm_10aexrr>
+<de/Algerien>	<infobox/de/bildwappenbreite>	"120px" .
+#@ <id_1b35psn_akn_1uumm10>
+<de/Algerien>	<infobox/de/bip>	"2011<ref>[http://www.imf.org/external/pubs/ft/weo/2012/01/weodata/index.aspx World Economic Outlook Database, April 2012] des [[Internationaler Währungsfonds|Internationalen Währungsfonds]]</ref>\n* $ 190,7 Milliarden <small>([[Liste der Länder nach Bruttoinlandsprodukt|49.]])</small>\n* $ 263,6 Milliarden <small>([[Liste der Länder nach Bruttoinlandsprodukt|48.]])</small>\n* $ 5.304 <small>([[Liste der Länder nach Bruttoinlandsprodukt pro Kopf|92.]])</small>\n* $ 7.333 <small>([[Liste der Länder nach Bruttoinlandsprodukt pro Kopf|102.]])</small>" .
+#@ <id_1b35psn_ltk_hko3pz>
+<de/Algerien>	<infobox/de/biperweitert>	"* Total (nominal)\n* Total ([[Kaufkraftparität|KKP]])\n* BIP/Einw. (nominal)\n* BIP/Einw. (KKP)" .
+#@ <id_1b35psn_sc1_sarkc4>
+<de/Algerien>	<infobox/de/einwohner>	"32 Mio. <small>(2008)</small>" .
+#@ <id_1b35psn_1o8_3c80ja>
+<de/Algerien>	<infobox/de/fläche>	"2.381.741" .
+#@ <id_1b35psn_1s0_vhcjtm>
+<de/Algerien>	<infobox/de/hauptstadt>	"[[Algier]]" .
+#@ <id_1b35psn_akn_11rejkd>
+<de/Algerien>	<infobox/de/hdi>	"{{Gestiegen}} 0,698 <small>(96.)</small><ref>{{cite web|url=http://hdr.undp.org/en/media/HDR_2011_EN_Summary.pdf|title=2011 Human development Report|publisher=[[Entwicklungsprogramm der Vereinten Nationen]]|pages=17-20|accessdate=2012-12-27|format=PDF; 2,1&nbsp;MB}}</ref>" .
+#@ <id_1b35psn_j7o_1tfredg>
+<de/Algerien>	<infobox/de/internettld>	"[[.dz]]" .
+#@ <id_1b35psn_ako_1is22cm>
+<de/Algerien>	<infobox/de/iso>	"[[ISO 3166-2:DZ|DZ]], DZA, 012" .
+#@ <id_1b35psn_17b_zik2om>
+<de/Algerien>	<infobox/de/kfzkennzeichen>	"DZ" .
+#@ <id_1b35psn_131_1g63ir6>
+<de/Algerien>	<infobox/de/nameamtssprache>	"<span style=\u0022font-size:1.4em\u0022>'''الجمهورية الجَزائرية الديمقراطية الشعبية'''</span>" .
+#@ <id_1b35psn_1io_prihin>
+<de/Algerien>	<infobox/de/namedeutsch>	"'''Demokratische Volksrepublik Algerien'''" .
+#@ <id_1b35psn_szo_p9c8nq>
+<de/Algerien>	<infobox/de/nationalhymne>	"''[[Kassaman|Qassaman]]''" .
+#@ <id_1b35psn_1lq_1046gli>
+<de/Algerien>	<infobox/de/regierungschef>	"[[Liste der Premierminister von Algerien|Premierminister]]<br />[[Abdelmalek Sellal]]" .
+#@ <id_1b35psn_hyw_ibo5jv>
+<de/Algerien>	<infobox/de/regierungssystem>	"[[Semipräsidentielles Regierungssystem]]" .
+#@ <id_1b35psn_m2h_eq4490>
+<de/Algerien>	<infobox/de/staatsform>	"[[Republik]]" .
+#@ <id_1b35psn_1pn_rz78ob>
+<de/Algerien>	<infobox/de/staatsoberhaupt>	"[[Liste der Präsidenten von Algerien|Staatspräsident]]<br />[[Abd al-Aziz Bouteflika]]" .
+#@ <id_1b35psn_ydb_zjcjpl>
+<de/Algerien>	<infobox/de/telefonvorwahl>	"+213" .
+#@ <id_1b35psn_1mi_1jsah8v>
+<de/Algerien>	<infobox/de/transkription>	"<span style=\u0022font-size:1.4em\u0022>'''al-Ǧumhūriyya al-Ǧazāʾiriyya</span><br /><span style=\u0022font-size:1.4em\u0022>ad-Dīmūqrāṭiyya aš-Šaʿbiyya'''</font> (arab.)</span>" .
+#@ <id_1b35psn_ekn_1cukg4d>
+<de/Algerien>	<infobox/de/unabhängigkeit>	"von [[Frankreich]] am 5. Juli [[1962]]" .
+#@ <id_1b35psn_gbe_jqga0j>
+<de/Algerien>	<infobox/de/wahlspruch>	"من الشعب و للشعب<br /><small>([[Arabische Sprache|arabisch]], „Vom Volk und für das Volk“)</small>" .
+#@ <id_1b35psn_1ux_5frolb>
+<de/Algerien>	<infobox/de/wappenopt>	"Siegel" .
+#@ <id_1b35psn_14j_1jl51p0>
+<de/Algerien>	<infobox/de/währung>	"1 [[Algerischer Dinar]] (DA) = 100 Centimes<br />1&nbsp;€ = {{Wechselkurs|EUR|DZD|NKS=2}} DZD<br />100 DZD = {{Wechselkurs|DZD|EUR|Faktor=100|NKS=2}} €<br />(Stand: {{Wechselkurs|EUR|DZD|Datum=1}})" .
+#@ <id_1b35psn_1bu_10w1mmf>
+<de/Algerien>	<infobox/de/zeitzone>	"[[Koordinierte Weltzeit|UTC]][[UTC+1|+1]]" .

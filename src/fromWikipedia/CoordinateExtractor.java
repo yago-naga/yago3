@@ -13,13 +13,12 @@ import javatools.filehandlers.FileLines;
 import javatools.parsers.NumberParser;
 import javatools.util.FileUtils;
 import utils.TitleExtractor;
-import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
-import extractors.MultilingualWikipediaExtractor;
+import extractors.EnglishWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
-import fromThemes.TransitiveTypeExtractor;
+import fromOtherSources.WordnetExtractor;
 
 /**
  * Extracts coord data from Wikipedia. Implements
@@ -28,37 +27,36 @@ import fromThemes.TransitiveTypeExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class CoordinateExtractor extends MultilingualWikipediaExtractor {
+public class CoordinateExtractor extends EnglishWikipediaExtractor {
 
 	/** gender facts, checked if the entity is a person */
-	public static final BaseTheme COORDINATES = new BaseTheme(
-			"coordinateFacts", "Coordinates from Wikipedia articles");
+	public static final Theme COORDINATES = new Theme("coordinateFacts",
+			"Coordinates from Wikipedia articles");
 
 	/** sources */
-	public static final BaseTheme COORDINATE_SOURCES = new BaseTheme(
+	public static final Theme COORDINATE_SOURCES = new Theme(
 			"coordinateSources", "Sources for coordinate facts from Wikipedia");
 
 	/** Constructor from source file */
-	public CoordinateExtractor(String lang, File wikipedia) {
-		super(lang, wikipedia);
+	public CoordinateExtractor(File wikipedia) {
+		super(wikipedia);
 	}
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<Theme>(TransitiveTypeExtractor.TRANSITIVETYPE,
+		return new FinalSet<Theme>(WordnetExtractor.PREFMEANINGS,
 				PatternHardExtractor.TITLEPATTERNS);
 	}
 
 	@Override
 	public Set<Theme> inputCached() {
-		return new FinalSet<Theme>(TransitiveTypeExtractor.TRANSITIVETYPE,
+		return new FinalSet<Theme>(WordnetExtractor.PREFMEANINGS,
 				PatternHardExtractor.TITLEPATTERNS);
 	}
 
 	@Override
 	public Set<Theme> output() {
-		return (new FinalSet<Theme>(COORDINATE_SOURCES.inLanguage(language),
-				COORDINATES.inLanguage(language)));
+		return (new FinalSet<Theme>(COORDINATE_SOURCES, COORDINATES));
 	}
 
 	public static final String bar = "\\s*\\|\\s*";
@@ -81,15 +79,15 @@ public class CoordinateExtractor extends MultilingualWikipediaExtractor {
 			throws IOException {
 		Double la = NumberParser.getDouble(lat);
 		if (la != null)
-			write(COORDINATES.inLanguage(language), new Fact(entity,
-					"<hasLatitude>", FactComponent.forDegree(la)),
-					COORDINATE_SOURCES.inLanguage(language),
+			write(COORDINATES,
+					new Fact(entity, "<hasLatitude>", FactComponent
+							.forDegree(la)), COORDINATE_SOURCES,
 					FactComponent.wikipediaURL(entity), "CoordinateExtractor");
 		Double lo = NumberParser.getDouble(lon);
 		if (lo != null)
-			write(COORDINATES.inLanguage(language), new Fact(entity,
-					"<hasLongitude>", FactComponent.forDegree(lo)),
-					COORDINATE_SOURCES.inLanguage(language),
+			write(COORDINATES,
+					new Fact(entity, "<hasLongitude>", FactComponent
+							.forDegree(lo)), COORDINATE_SOURCES,
 					FactComponent.wikipediaURL(entity), "CoordinateExtractor");
 		Announce.debug(" Latitude", lat, la);
 		Announce.debug(" Longitude", lon, lo);
@@ -97,7 +95,7 @@ public class CoordinateExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public void extract() throws Exception {
-		TitleExtractor titleExtractor = new TitleExtractor(language);
+		TitleExtractor titleExtractor = new TitleExtractor("en");
 		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		String titleEntity = null;
 		// Announce.progressStart("Extracting coordinates", 4_500_000);
@@ -154,10 +152,9 @@ public class CoordinateExtractor extends MultilingualWikipediaExtractor {
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
 		new CoordinateExtractor(
-				"en",
 				new File(
-						"c:/Fabian/eclipseProjects\\yago2s\\testCases\\fromWikipedia.CategoryExtractor\\wikitest.xml"))
-				.extract(new File("c:/fabian/data/yago2s"), "test");
+						"c:/Fabian/eclipseProjects\\yago2s\\testCases\\fromWikipedia.CoordinateExtractor\\de/wikipedia/de_wikitest.xml"))
+				.extract(new File("c:/fabian/data/yago3"), "test");
 	}
 
 }

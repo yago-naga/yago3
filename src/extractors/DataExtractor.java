@@ -31,10 +31,10 @@ public abstract class DataExtractor extends Extractor {
 			File datainput) {
 		Announce.doing("Creating extractor", className + "(" + datainput + ")");
 		if (datainput == null) {
-			Announce.error("No data input");
+			throw new RuntimeException("No data input");
 		}
 		if (!datainput.exists()) {
-			Announce.error("File or folder not found:", datainput);
+			throw new RuntimeException("File or folder not found: "+ datainput);
 		}
 		Extractor extractor=null;
 		try {

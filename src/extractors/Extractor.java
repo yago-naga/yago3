@@ -85,7 +85,9 @@ public abstract class Extractor {
 			Announce.done();
 		}
 		Announce.done();
+		Announce.doing("Extracting");
 		extract();
+		Announce.done();
 		for (Theme out : output())
 			out.close();
 		Announce.done();

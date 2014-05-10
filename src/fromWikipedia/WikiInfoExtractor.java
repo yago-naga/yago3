@@ -100,7 +100,7 @@ public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 		new WikiInfoExtractor(
 				new File(
 						"c:/Fabian/eclipseProjects/yago2s/testCases/extractors.CategoryExtractor/wikitest.xml"))
-				.extract(new File("c:/fabian/data/yago2s"),
+				.extract(new File("c:/fabian/data/yago3"),
 						"Test on 1 wikipedia article\n");
 	}
 }

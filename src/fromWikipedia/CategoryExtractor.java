@@ -94,7 +94,11 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 		 */
 		String categoryWord = DictionaryExtractor.CATEGORYWORDS
 				.factCollection().getObject(FactComponent.forString(language),
-						"<hasCategoryWord>");
+						"<_hasCategoryWord>");
+		if (categoryWord == null)
+			throw new Exception("Category word undefined in language "
+					+ language);
+		categoryWord = FactComponent.asJavaString(categoryWord);
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "[["
 					+ categoryWord + ":")) {
@@ -108,7 +112,6 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 				break;
 			case 1:
 			case 2:
-
 				if (titleEntity == null) {
 					continue;
 				}
@@ -121,9 +124,6 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 						FactComponent.wikipediaURL(titleEntity),
 						"CategoryExtractor");
 				break;
-			case 3:
-				titleEntity = null;
-				break;
 			}
 		}
 	}
@@ -134,8 +134,12 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
 	public static void main(String[] args) throws Exception {
 
-		new CategoryExtractor("en", new File("D:/en_wikitest.xml")).extract(
-				new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
+		new CategoryExtractor(
+				"de",
+				new File(
+						"C:/Fabian/eclipseProjects/yago2s/testCases/fromWikipedia.CategoryExtractor/de/wikipedia/de_wikitest.xml"))
+				.extract(new File("c:/fabian/data/yago3"),
+						"Test on 1 wikipedia article");
 
 	}
 

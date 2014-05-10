@@ -303,9 +303,11 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				if (Character.isDigit(Char.last(cls)))
 					cls = Char.cutLast(cls);
 
-				INFOBOX_TYPES.inLanguage(language).write(
-						new Fact(titleEntity, typeRelation, FactComponent
-								.forString(cls)));
+				write(INFOBOX_TYPES.inLanguage(language), new Fact(titleEntity,
+						typeRelation, FactComponent.forString(cls)),
+						INFOBOX_TYPE_SOURCES.inLanguage(language),
+						FactComponent.wikipediaURL(titleEntity),
+						"InfoboxExtractor");
 
 				Map<String, Set<String>> attributes = readInfobox(in);
 
@@ -333,9 +335,9 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new InfoboxExtractor("po",
-				new File("/home/jbiega/Downloads/en_pol.xml")).extract(
-				new File("/home/jbiega/data/yago2s/"),
+		new InfoboxExtractor("de",
+				new File("C:/Fabian/eclipseProjects/yago2s/testCases/fromWikipedia.InfoboxExtractor/de/wikipedia/de_wikitest.xml")).extract(
+				new File("c:/fabian/data/yago3"),
 				"Test on 1 wikipedia article");
 
 	}
