@@ -20,7 +20,7 @@ import basics.FactSource;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 import fromThemes.InfoboxMapper;
 
 /**
@@ -32,7 +32,7 @@ import fromThemes.InfoboxMapper;
  * @author Johannes Hoffart
  * 
  */
-public class GeoNamesDataImporter extends FileExtractor {
+public class GeoNamesDataImporter extends DataExtractor {
 
 	public static final String GEO_ENTITY_PREFIX = "geoentity_";
 

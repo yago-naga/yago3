@@ -13,7 +13,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 
 /**
  * YAGO2s - WordnetDomainExtractor
@@ -30,7 +30,7 @@ import extractors.FileExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class WordnetDomainExtractor extends FileExtractor {
+public class WordnetDomainExtractor extends DataExtractor {
 
 	/** File of wordnet domains from http://wndomains.fbk.eu */
 	protected File wordnetDomains;

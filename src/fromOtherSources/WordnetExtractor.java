@@ -21,7 +21,7 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 
 /**
  * YAGO2s - WordNetExtractor
@@ -31,7 +31,7 @@ import extractors.FileExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class WordnetExtractor extends FileExtractor {
+public class WordnetExtractor extends DataExtractor {
 
 	/** wordnet classes */
 	public static final Theme WORDNETCLASSES = new Theme("wordnetClasses",

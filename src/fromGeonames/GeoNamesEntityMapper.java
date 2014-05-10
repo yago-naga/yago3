@@ -11,7 +11,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 import extractors.Extractor;
 import followUp.TypeChecker;
 
@@ -23,7 +23,7 @@ import followUp.TypeChecker;
  * @author Johannes Hoffart
  * 
  */
-public class GeoNamesEntityMapper extends FileExtractor {
+public class GeoNamesEntityMapper extends DataExtractor {
 
 	public static final String ENWIKI_PREFIX = "http://en.wikipedia.org/wiki/";
 

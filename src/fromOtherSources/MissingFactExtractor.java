@@ -14,7 +14,7 @@ import deduplicators.FactExtractor;
 import deduplicators.LabelExtractor;
 import deduplicators.LiteralFactExtractor;
 import deduplicators.MetaFactExtractor;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 
 /**
  * Class MissingFacts - YAGO2S
@@ -24,7 +24,7 @@ import extractors.FileExtractor;
  * @author Fabian M. Suchanek
  */
 
-public class MissingFactExtractor extends FileExtractor {
+public class MissingFactExtractor extends DataExtractor {
 
 	@Override
 	public Set<Theme> input() {

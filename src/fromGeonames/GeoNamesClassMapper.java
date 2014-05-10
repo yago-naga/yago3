@@ -23,7 +23,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 
@@ -35,7 +35,7 @@ import fromOtherSources.WordnetExtractor;
  * @author Johannes Hoffart
  * 
  */
-public class GeoNamesClassMapper extends FileExtractor {
+public class GeoNamesClassMapper extends DataExtractor {
 
 	/** YAGO geo class */
 	public static final String GEO_CLASS = "<yagoGeoEntity>";

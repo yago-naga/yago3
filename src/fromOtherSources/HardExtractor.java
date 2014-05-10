@@ -9,7 +9,7 @@ import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;
 import basics.Theme;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 
 /**
  * HardExtractor - YAGO2s
@@ -19,7 +19,7 @@ import extractors.FileExtractor;
  * @author Fabian
  * 
  */
-public class HardExtractor extends FileExtractor {
+public class HardExtractor extends DataExtractor {
 
 	/** Our output */
 	public static final Theme HARDWIREDFACTS = new Theme("hardWiredFacts",

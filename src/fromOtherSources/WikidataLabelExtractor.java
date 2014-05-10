@@ -16,7 +16,7 @@ import basics.N4Reader;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 import fromThemes.TransitiveTypeExtractor;
 
 /**
@@ -27,7 +27,7 @@ import fromThemes.TransitiveTypeExtractor;
  * @author Fabian
  * 
  */
-public class WikidataLabelExtractor extends FileExtractor {
+public class WikidataLabelExtractor extends DataExtractor {
 
 	public WikidataLabelExtractor(File wikidata) {
 		super(wikidata);

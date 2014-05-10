@@ -14,7 +14,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 
 /**
  * Imports the multi-lingual class labels from Gerard de Melo's Universal
@@ -27,7 +27,7 @@ import extractors.FileExtractor;
  * @author Johannes Hoffart
  * 
  */
-public class UWNImporter extends FileExtractor {
+public class UWNImporter extends DataExtractor {
 
 	/** multi-lingual class names */
 	public static final Theme UWNDATA = new Theme(

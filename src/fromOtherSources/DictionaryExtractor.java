@@ -15,7 +15,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
 import basics.Theme;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 import extractors.MultilingualExtractor;
 
 /**
@@ -27,7 +27,7 @@ import extractors.MultilingualExtractor;
  * 
  */
 
-public class DictionaryExtractor extends FileExtractor {
+public class DictionaryExtractor extends DataExtractor {
 
 	/** Output theme */
 	public static final BaseTheme ENTITY_DICTIONARY = new BaseTheme(

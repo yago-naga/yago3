@@ -2,11 +2,19 @@ package main;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
-import fromOtherSources.HardExtractor;
-import fromOtherSources.PatternHardExtractor;
+import basics.FactCollection;
+import basics.Theme;
+import extractors.DataExtractor;
+import extractors.Extractor;
+import extractors.MultilingualDataExtractor;
+import extractors.MultilingualExtractor;
+import extractors.MultilingualWikipediaExtractor;
 import fromThemes.RelationChecker;
 
 /**
@@ -21,7 +29,7 @@ public class Tester {
 
 	private static int total = 0;
 
-	private static int failed = 0;
+	private static int succeeded = 0;
 
 	/** Runs the tester */
 	public static void main(String[] args) throws Exception {
@@ -41,13 +49,7 @@ public class Tester {
 		File outputFolder = Parameters
 				.getOrRequestAndAddFile("testYagoFolder",
 						"Enter the folder where the test version of YAGO should be created:");
-		ParallelCaller.createWikipediaList(Parameters.getList("languages"),
-				Parameters.getList("wikipedias"));
-		// Run hard extractors to update patterns and relations
-		new PatternHardExtractor(new File("./data"))
-				.extract(yagoFolder, "test");
-		new HardExtractor(new File("../basics2s/data")).extract(yagoFolder,
-				"test");
+		File singleTest = Parameters.getFile("singleTest");
 
 		if (singleTest != null) {
 			runTest(singleTest, yagoFolder, outputFolder);
@@ -59,50 +61,31 @@ public class Tester {
 			}
 		}
 		Announce.done();
-		Announce.message((total - failed), "/", total, "tests succeeded");
+		Announce.message(succeeded, "/", total, "tests succeeded");
 		Announce.close();
 	}
 
 	/** Runs a single test */
-	private static void runTest(File testCase, File yagoFolder,
-			File outputFolder) throws Exception {
-		if (!testCase.isDirectory() || testCase.getName().startsWith("."))
-			return;
-		Announce.doing("Testing", testCase.getName());
-		File inputDataFile=null;
-		if()
-		Extractor extractor = null;
+	private static void runTest(Extractor extractor, File yagoFolder,
+			File inputFolder, File outputFolder, File goldFolder)
+			throws Exception {
+		setInputThemes(extractor, inputFolder);
+		Announce.doing("Running extractor");
+		total += extractor.output().size();
 		try {
-			if (dataFolder(testCase) != null) {
-				extractor = Extractor.forName(testCase.getName(),
-						dataFolder(testCase));
-			} else {
-				extractor = Extractor.forName(testCase.getName(),
-						dataFile(testCase));
-			}
-			if (inputFolder(testCase) != null) {
-
-				extractor.extract(inputFolder(testCase), outputFolder,
-						"Test of YAGO2s");
-			} else {
-
-				extractor.extract(yagoFolder, outputFolder, "Test of YAGO2s");
-			}
+			extractor.extract(yagoFolder, outputFolder, "Test");
 		} catch (Exception e) {
-			Announce.message(e);
+			Announce.warning(e);
 			Announce.failed();
-			total++;
-			failed++;
 			return;
 		}
 		Announce.doing("Checking output");
 		for (Theme theme : extractor.output()) {
-			total++;
 			Announce.doing("Checking", theme);
 			FactCollection goldStandard = null;
 			FactCollection result = null;
 			try {
-				goldStandard = new FactCollection(theme.file(testCase));
+				goldStandard = new FactCollection(theme.file(goldFolder));
 				result = new FactCollection(theme.file(outputFolder));
 			} catch (Exception ex) {
 				Announce.message(ex);
@@ -110,30 +93,144 @@ public class Tester {
 			if (result == null || goldStandard == null
 					|| !result.checkEqual(goldStandard)) {
 				Announce.done("--------> " + theme + " failed");
-				failed++;
 			} else {
 				Announce.done("--------> " + theme + " OK");
+				succeeded++;
 			}
 		}
 		Announce.done();
+	}
+
+	/** Runs a single test */
+	@SuppressWarnings("unchecked")
+	private static void runTest(File testCase, File yagoFolder,
+			File outputFolder) throws Exception {
+		if (!testCase.isDirectory() || testCase.getName().startsWith("."))
+			return;
+		String extractorName = testCase.getName();
+		Announce.doing("Testing", extractorName);
+		Class<? extends Extractor> clss = null;
+		try {
+			clss = (Class<? extends Extractor>) Class.forName(extractorName);
+		} catch (Exception e) {
+			Announce.warning(e);
+			Announce.failed();
+			return;
+		}
+		if (clss.getSuperclass() == MultilingualWikipediaExtractor.class) {
+			for (File language : testCase.listFiles()) {
+				if (language.isFile() || language.getName().length() != 2) {
+					Announce.warning(
+							"Folder for MultilingualWikipediaExtractor should contain subfolders for each language, and not",
+							language);
+				}
+				File wikipedia = getWikipedia(language);
+				File gold = getGold(language);
+				runTest(MultilingualDataExtractor.forName(
+						(Class<MultilingualDataExtractor>) clss,
+						language.getName(), wikipedia), language, yagoFolder,
+						outputFolder, gold);
+			}
+		} else if (clss.getSuperclass() == MultilingualDataExtractor.class) {
+			for (File language : testCase.listFiles()) {
+				if (language.isFile() || language.getName().length() != 2) {
+					Announce.warning(
+							"Folder for MultilingualDataExtractor should contain subfolders for each language, and not",
+							language);
+				}
+				File dataInput = getDataInput(language);
+				File gold = getGold(language);
+				runTest(MultilingualDataExtractor.forName(
+						(Class<MultilingualDataExtractor>) clss,
+						language.getName(), dataInput), language, yagoFolder,
+						outputFolder, gold);
+			}
+		} else if (clss.getSuperclass() == MultilingualExtractor.class) {
+			for (File language : testCase.listFiles()) {
+				if (language.isFile() || language.getName().length() != 2) {
+					Announce.warning(
+							"Folder for MultilingualDataExtractor should contain subfolders for each language, and not",
+							language);
+				}
+				File gold = getGold(language);
+				runTest(MultilingualExtractor
+						.forName((Class<MultilingualExtractor>) clss,
+								language.getName()),
+						language, yagoFolder, outputFolder, gold);
+			}
+		} else if (clss.getSuperclass() == DataExtractor.class) {
+			File dataInput = getDataInput(testCase);
+			File gold = getGold(testCase);
+			runTest(DataExtractor.forName((Class<DataExtractor>) clss,
+					dataInput), testCase, yagoFolder, outputFolder, gold);
+		} else if (clss.getSuperclass() == Object.class) {
+			File gold = getGold(testCase);
+			runTest(Extractor.forName((Class<Extractor>) clss), testCase,
+					yagoFolder, outputFolder, gold);
+		} else {
+			Announce.error("Unknown extractor class:", clss);
+		}
+
 		Announce.done();
 	}
 
-	private static File inputFolder(File testCase) {
-		for (File f : testCase.listFiles()) {
-			if (f.isDirectory() && f.getName().equals("input")) {
-				return f;
-			}
+	/** Returns the gold folder */
+	private static File getGold(File testCase) {
+		File gold = new File(testCase, "goldOutput");
+		if (!gold.exists() || !gold.isDirectory() || gold.list().length == 0) {
+			Announce.error("A test case should contain a folder 'goldOutput' with the gold standard");
 		}
-		return null;
+		return (gold);
 	}
 
-	private static File dataFolder(File testCase) {
-		for (File f : testCase.listFiles()) {
-			if (f.isDirectory() && f.getName().equals("data")) {
-				return f;
-			}
+	/** Returns the wikipedia file in this folder */
+	private static File getWikipedia(File language) {
+		File dataInput = new File(language, "wikipedia");
+		if (!dataInput.exists() || !dataInput.isDirectory()) {
+			Announce.error("A test case for a WikipediaExtractor should contain a folder 'wikipedia'");
 		}
-		return null;
+		File[] files = dataInput.listFiles();
+		if (files.length != 1) {
+			Announce.error("The 'wikipedia' folder for a WikipediaExtractor should contain exactly one file");
+		}
+		return (files[0]);
+	}
+
+	/** Returns the file for the data input */
+	private static File getDataInput(File testCase) {
+		File dataInput = new File(testCase, "dataInput");
+		if (!dataInput.exists() || !dataInput.isDirectory()) {
+			Announce.error("A test case for a DataExtractor should contain a folder 'dataInput'");
+		}
+		File[] files = dataInput.listFiles();
+		if (files.length == 0) {
+			Announce.error("The 'dataInput' folder for a DataExtractor should contain one or more data input files");
+		}
+		if (files.length == 1)
+			return (files[0]);
+		else
+			return (dataInput);
+	}
+
+	/** Points the input themes to the testCases */
+	private static void setInputThemes(Extractor ex, File testCase) {
+		Theme.clear();
+		File inputThemeFolder = new File(testCase, "input");
+		if (!inputThemeFolder.exists() || !inputThemeFolder.isDirectory()) {
+			Announce.warning("A test case should contain a subfolder 'input'");
+			return;
+		}
+		List<File> files = new ArrayList<File>(Arrays.asList(inputThemeFolder
+				.listFiles()));
+		for (Theme t : ex.input()) {
+			File themeFile = t.file(inputThemeFolder);
+			if (!themeFile.exists())
+				continue;
+			t.setFile(themeFile);
+			files.remove(themeFile);
+		}
+		if (!files.isEmpty()) {
+			Announce.warning("Superfluous themes in input:", files);
+		}
 	}
 }

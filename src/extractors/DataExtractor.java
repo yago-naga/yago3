@@ -17,17 +17,17 @@ import javatools.administrative.Announce;
  * 
  */
 
-public abstract class FileExtractor extends Extractor {
+public abstract class DataExtractor extends Extractor {
 
 	/** The file or folder from which we read */
 	protected final File inputData;
 
-	public FileExtractor(File input) {
+	public DataExtractor(File input) {
 		inputData = input;
 	}
 
 	/** Creates an extractor given by name */
-	public static Extractor forName(Class<FileExtractor> className,
+	public static Extractor forName(Class<DataExtractor> className,
 			File datainput) {
 		Announce.doing("Creating extractor", className + "(" + datainput + ")");
 		if (datainput == null) {

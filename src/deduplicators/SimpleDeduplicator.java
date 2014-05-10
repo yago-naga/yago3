@@ -44,16 +44,10 @@ public abstract class SimpleDeduplicator extends Extractor {
 		if (!input().contains(SchemaExtractor.YAGOSCHEMA)) {
 			Announce.warning("Deduplicators should have SchemaExtractor.YAGOSCHEMA, in their required input!");
 		} else {
-			functions = SchemaExtractor.YAGOSCHEMA.factCollection().seekSubjects(
-					RDFS.type, YAGO.function);
+			functions = SchemaExtractor.YAGOSCHEMA.factCollection()
+					.seekSubjects(RDFS.type, YAGO.function);
 		}
 
-		// We don't need any more taxonomy beyond this point
-		// BUT: due to parallelization, some other extractors might be using it!
-		// TransitiveTypeExtractor.freeMemory();
-		// WordnetExtractor.freeMemory();
-
-		Theme w = myOutput();
 		Announce.doing("Loading");
 		FactCollection batch = new FactCollection();
 		for (Theme theme : input()) {
@@ -68,9 +62,9 @@ public abstract class SimpleDeduplicator extends Extractor {
 
 		Announce.doing("Writing");
 		for (Fact f : batch)
-			w.write(f);
+			myOutput().write(f);
 		Announce.done();
-		w.close();
+		myOutput().close();
 
 		Announce.done();
 	}

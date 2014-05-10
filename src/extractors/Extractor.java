@@ -73,7 +73,8 @@ public abstract class Extractor {
 		Announce.doing("Running", this.name());
 		Announce.doing("Loading input");
 		for (Theme theme : input()) {
-			theme.setFile(theme.file(inputFolder));
+			if (!theme.isAvailable())
+				theme.setFile(theme.file(inputFolder));
 		}
 		Announce.done();
 		Announce.doing("Creating output files");

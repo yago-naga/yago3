@@ -5,14 +5,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.FactCollection;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import extractors.Extractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromThemes.CategoryClassExtractor;
@@ -28,7 +24,7 @@ import fromThemes.CategoryClassExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class ClassExtractor extends Extractor {
+public class ClassExtractor extends SimpleDeduplicator {
 
 	@Override
 	public Set<Theme> input() {
@@ -47,29 +43,13 @@ public class ClassExtractor extends Extractor {
 			ThemeGroup.TAXONOMY);
 
 	@Override
-	public Set<Theme> output() {
-		return new FinalSet<>(YAGOTAXONOMY);
+	public Theme myOutput() {
+		return YAGOTAXONOMY;
 	}
 
 	@Override
-	public void extract() throws Exception {
-		String relation = RDFS.subclassOf;
-		Announce.doing("Reading", relation);
-		FactCollection facts = new FactCollection();
-		for (Theme theme : input()) {
-			Announce.doing("Reading", theme);
-			for (Fact fact : theme.factSource()) {
-				if (!relation.equals(fact.getRelation()))
-					continue;
-				facts.add(fact);
-			}
-			Announce.done();
-		}
-		Announce.done();
-		Announce.doing("Writing", relation);
-		for (Fact fact : facts)
-			YAGOTAXONOMY.write(fact);
-		Announce.done();
+	public boolean isMyRelation(Fact fact) {
+		return fact.getRelation().equals(RDFS.subclassOf);
 	}
 
 	public static void main(String[] args) throws Exception {

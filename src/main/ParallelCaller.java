@@ -17,7 +17,7 @@ import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
 import basics.Theme;
 import extractors.Extractor;
-import extractors.FileExtractor;
+import extractors.DataExtractor;
 import extractors.MultilingualDataExtractor;
 import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
@@ -233,10 +233,10 @@ public class ParallelCaller {
 	public static List<Extractor> extractors(List<String> extractorNames) {
 		Announce.doing("Creating extractors");
 		if (extractorNames == null) {
-			Announce.error("No extractors given\nThe ini file should contain:\nextractors = extractorClass(fileName), ...");
+			Announce.error("No extractors given\nThe ini file should contain:\nextractors = package.extractorClass(fileName), ...");
 		}
 		if (extractorNames.isEmpty()) {
-			Announce.error("Empty extractor list\nThe ini file should contain:\nextractors = extractorClass(fileName), ...");
+			Announce.error("Empty extractor list\nThe ini file should contain:\nextractors = package.extractorClass(fileName), ...");
 		}
 
 		List<Extractor> extractors = new ArrayList<Extractor>();
@@ -286,9 +286,9 @@ public class ParallelCaller {
 				extractors.add(MultilingualExtractor.forName(
 						(Class<MultilingualExtractor>) clss, language));
 			}
-		} else if (clss.getSuperclass() == FileExtractor.class) {
+		} else if (clss.getSuperclass() == DataExtractor.class) {
 			File input = new File(m.group(2));
-			extractors.add(FileExtractor.forName((Class<FileExtractor>) clss,
+			extractors.add(DataExtractor.forName((Class<DataExtractor>) clss,
 					input));
 		} else if (clss.getSuperclass() == Object.class) {
 			extractors.add(Extractor.forName((Class<Extractor>) clss));

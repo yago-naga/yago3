@@ -8,7 +8,7 @@ import java.io.File;
  * @author Fabian
  * 
  */
-public abstract class EnglishWikipediaExtractor extends FileExtractor {
+public abstract class EnglishWikipediaExtractor extends DataExtractor {
 
 	protected File wikipedia() {
 		return (inputData);
