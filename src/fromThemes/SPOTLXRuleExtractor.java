@@ -5,13 +5,15 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import deduplicators.FactExtractor;
+import deduplicators.LiteralFactExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.FactCollection;
 import basics.Theme;
+import extractors.Extractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
-import fromWikipedia.Extractor;
 
 /**
  * YAGO2s - SPOTLXRuleExtractor

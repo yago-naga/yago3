@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,8 +17,10 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
+import extractors.Extractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromWikipedia.CategoryExtractor;
 
 /**
  * CategoryClassExtractor - YAGO2s
@@ -28,9 +30,9 @@ import fromOtherSources.WordnetExtractor;
  * @author Fabian
  * 
  */
-public class CategoryClassExtractor extends MultilingualExtractor {
+public class CategoryClassExtractor extends Extractor {
 
-	/** Classes deduced from categories with their connection to WordNet*/
+	/** Classes deduced from categories with their connection to WordNet */
 	public static final Theme CATEGORYCLASSES = new Theme(
 			"categoryClasses",
 			"Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
@@ -176,12 +178,8 @@ public class CategoryClassExtractor extends MultilingualExtractor {
 		this.preferredMeanings = null;
 	}
 
-	public CategoryClassExtractor(String lang) {
-		language = lang;
-	}
-
 	public static void main(String[] args) throws Exception {
-		new CategoryClassExtractor("de").extract(new File("D:/data3/yago2s/"),
+		new CategoryClassExtractor().extract(new File("D:/data3/yago2s/"),
 				"Test");
 	}
 

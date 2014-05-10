@@ -11,25 +11,35 @@ import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
 import utils.PatternList;
 import utils.TermExtractor;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
+import extractors.Extractor;
+import extractors.MultilingualExtractor;
+import followUp.Redirector;
+import followUp.Translator;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromWikipedia.Extractor;
 import fromWikipedia.InfoboxExtractor;
-import fromWikipedia.MultilingualExtractor;
-import fromWikipedia.Translator;
 
+/**
+ * YAGO2s - InfoboxTermExtractor
+ * 
+ * Extracts the terms from the
+ * 
+ * @author Fabian
+ * 
+ */
 public class InfoboxTermExtractor extends MultilingualExtractor {
 
-	public static final Theme INFOBOXTERMS = new Theme("infoboxTerms",
+	public static final BaseTheme INFOBOXTERMS = new BaseTheme("infoboxTerms",
 			"The attribute facts of the Wikipedia infoboxes, split into terms");
-	public static final Theme INFOBOXTERMS_TOREDIRECT = new Theme(
+	public static final BaseTheme INFOBOXTERMS_TOREDIRECT = new BaseTheme(
 			"infoboxTermsToBeRedirected",
 			"The attribute facts of the Wikipedia infoboxes, split into terms, still to be redirected.");
-	public static final Theme INFOBOXATTSTRANSLATED = new Theme(
+	public static final BaseTheme INFOBOXATTSTRANSLATED = new BaseTheme(
 			"infoboxAttributesTranslated",
 			"The attribute facts of the Wikipedia infoboxes, split into terms, redirected, subject translated");
 
@@ -91,8 +101,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 	}
 
 	public InfoboxTermExtractor(String lang) {
-		super();
-		this.language = lang;
+		super(lang);
 	}
 
 	public static void main(String[] args) throws Exception {

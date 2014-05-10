@@ -1,4 +1,4 @@
-package fromThemes;
+package deduplicators;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -10,16 +10,18 @@ import basics.Fact;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
-import fromWikipedia.CategoryMapper;
-import fromWikipedia.CategoryTypeExtractor;
+import extractors.Extractor;
+import extractors.MultilingualExtractor;
+import fromOtherSources.WikidataLabelExtractor;
+import fromThemes.CategoryMapper;
+import fromThemes.CategoryTypeExtractor;
+import fromThemes.InfoboxMapper;
+import fromThemes.PersonNameExtractor;
+import fromThemes.RuleExtractor;
 import fromWikipedia.CoordinateExtractor;
-import fromWikipedia.Extractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
-import fromWikipedia.InfoboxMapper;
-import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
-import fromWikipedia.WikidataLabelExtractor;
 
 /**
  * YAGO2s - SourceExtractor
@@ -39,12 +41,16 @@ public class SourceExtractor extends Extractor {
 				RuleExtractor.RULESOURCES,
 				WikidataLabelExtractor.WIKIPEDIALABELSOURCES,
 				FlightExtractor.FLIGHTSOURCE,
-				CoordinateExtractor.COORDINATE_SOURCES,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES,
 				FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE));
-		input.addAll(InfoboxMapper.INFOBOXSOURCES.inAllLanguages());
-		input.addAll(CategoryMapper.CATEGORYSOURCES.inAllLanguages());
-		input.addAll(CategoryTypeExtractor.CATEGORYTYPESOURCES.inAllLanguages());
+		input.addAll(CoordinateExtractor.COORDINATE_SOURCES
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(InfoboxMapper.INFOBOXSOURCES
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(CategoryMapper.CATEGORYSOURCES
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(CategoryTypeExtractor.CATEGORYTYPESOURCES
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return input;
 	}
 

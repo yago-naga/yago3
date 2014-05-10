@@ -33,7 +33,7 @@ public class WordnetDomainHierarchyExtractor extends HardExtractor {
 	@Override
 	public void extract() throws Exception {
 		Announce.doing("Copying wordnet domain hierarchy");
-		for (Fact f : FactSource.from(new File(inputFolder,
+		for (Fact f : FactSource.from(new File(inputData,
 				"_wordnetDomainHierarchy.ttl"))) {
 			WORDNETDOMAINHIERARCHY.write(f);
 		}

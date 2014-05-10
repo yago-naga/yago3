@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.io.File;
 import java.util.Set;
@@ -12,7 +12,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
-import fromThemes.TransitiveTypeExtractor;
+import extractors.Extractor;
 
 /**
  * YAGO2s - PersonNameExtractor

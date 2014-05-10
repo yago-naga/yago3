@@ -1,6 +1,8 @@
-package fromWikipedia;
+package fromOtherSources;
 
 import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -10,12 +12,11 @@ import javatools.parsers.Char;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
+import basics.N4Reader;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
-import fromOtherSources.HardExtractor;
-import fromOtherSources.InterLanguageLinks;
-import fromOtherSources.PatternHardExtractor;
+import extractors.FileExtractor;
 import fromThemes.TransitiveTypeExtractor;
 
 /**
@@ -26,12 +27,15 @@ import fromThemes.TransitiveTypeExtractor;
  * @author Fabian
  * 
  */
-public class WikidataLabelExtractor extends Extractor {
+public class WikidataLabelExtractor extends FileExtractor {
+
+	public WikidataLabelExtractor(File wikidata) {
+		super(wikidata);
+	}
 
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<Theme>(TransitiveTypeExtractor.TRANSITIVETYPE,
-				InterLanguageLinks.INTERLANGUAGELINKS,
 				PatternHardExtractor.LANGUAGECODEMAPPING);
 	}
 
@@ -69,41 +73,65 @@ public class WikidataLabelExtractor extends Extractor {
 				.factCollection();
 		Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE
 				.factCollection().getSubjects();
-		String lastGuy = "";
-		for (Fact f : InterLanguageLinks.INTERLANGUAGELINKS.factSource()) {
-			if (!entities.contains(f.getSubject()))
-				continue;
-			if (!f.getRelation().equals(RDFS.label))
-				continue;
-			// Write out standard names
-			if (!lastGuy.equals(f.getSubject())) {
-				lastGuy = f.getSubject();
-				write(WIKIPEDIALABELS,
-						new Fact(f.getSubject(), YAGO.hasPreferredName,
-								FactComponent.forStringWithLanguage(
-										preferredName(lastGuy), "eng")),
+
+		// first write the English names
+		for (String yagoEntity : entities) {
+			write(WIKIPEDIALABELS,
+					new Fact(yagoEntity, YAGO.hasPreferredName, FactComponent
+							.forStringWithLanguage(preferredName(yagoEntity),
+									"eng")), WIKIPEDIALABELSOURCES, "Wikidata",
+					"WikidataLabelExtractor");
+			for (String name : trivialNamesOf(yagoEntity)) {
+				write(WIKIPEDIALABELS, new Fact(yagoEntity, RDFS.label,
+						FactComponent.forStringWithLanguage(name, "eng")),
 						WIKIPEDIALABELSOURCES, "Wikidata",
 						"WikidataLabelExtractor");
-				for (String name : trivialNamesOf(f.getSubject())) {
-					write(WIKIPEDIALABELS, new Fact(f.getSubject(), RDFS.label,
-							FactComponent.forStringWithLanguage(name, "eng")),
-							WIKIPEDIALABELSOURCES, "Wikidata",
-							"WikidataLabelExtractor");
-				}
 			}
-			String label = f.getObjectAsJavaString();
-			String lan = FactComponent.getLanguage(f.getObject());
-			if (lan.length() == 2)
-				lan = languagemap
-						.getObject(lan, "<hasThreeLetterLanguageCode>");
-			if (lan == null || lan.length() != 3)
-				continue;
-			write(WIKIDATAMULTILABELS,
-					new Fact(f.getSubject(), YAGO.hasPreferredName,
-							FactComponent.forStringWithLanguage(label, lan)),
-					WIKIDATAMULTILABELSOURCES, "Wikidata",
-					"WikidataLabelExtractor");
+
 		}
+
+		// Now write the foreign names
+		N4Reader nr = new N4Reader(inputData);
+		// Maps a language such as "en" to the name in that language
+		Map<String, String> language2name = new HashMap<String, String>();
+		while (nr.hasNext()) {
+			Fact f = nr.next();
+			// Record a new name in the map
+			if (f.getRelation().endsWith("/inLanguage>")) {
+				String lan = FactComponent.stripQuotes(f.getObject());
+				language2name.put(lan, FactComponent.stripPrefix(Char
+						.decodePercentage(f.getSubject())));
+			} else if (f.getArg(2).endsWith("#Item>")
+					&& !language2name.isEmpty()) {
+				// New item starts, let's flush out the previous one
+				String mostEnglishLan = DictionaryExtractor
+						.mostEnglishLanguage(language2name.keySet());
+				if (mostEnglishLan != null) {
+					String mostEnglishName = language2name.get(mostEnglishLan);
+					String yagoEntity = FactComponent.forForeignYagoEntity(
+							mostEnglishName, mostEnglishLan);
+					if (entities.contains(yagoEntity)) {
+						for (String lan : language2name.keySet()) {
+							String foreignName = language2name.get(lan);
+							if (lan.length() == 2)
+								lan = languagemap.getObject(lan,
+										"<hasThreeLetterLanguageCode>");
+							if (lan == null || lan.length() != 3)
+								continue;
+							write(WIKIDATAMULTILABELS,
+									new Fact(yagoEntity, YAGO.hasPreferredName,
+											FactComponent
+													.forStringWithLanguage(
+															foreignName, lan)),
+									WIKIDATAMULTILABELSOURCES, "Wikidata",
+									"WikidataLabelExtractor");
+						}
+					}
+				}
+				language2name.clear();
+			}
+		}
+		nr.close();
 	}
 
 	/** returns the (trivial) names of an entity */

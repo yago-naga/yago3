@@ -1,4 +1,4 @@
-package fromThemes;
+package deduplicators;
 
 import java.io.File;
 import java.util.Arrays;
@@ -12,12 +12,14 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import extractors.MultilingualExtractor;
 import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
-import fromWikipedia.CategoryMapper;
+import fromThemes.CategoryMapper;
+import fromThemes.InfoboxMapper;
+import fromThemes.RuleExtractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.GenderExtractor;
-import fromWikipedia.InfoboxMapper;
 import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
@@ -40,8 +42,10 @@ public class FactExtractor extends SimpleDeduplicator {
 				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
 				SchemaExtractor.YAGOSCHEMA));
-		input.addAll(CategoryMapper.CATEGORYFACTS.inAllLanguages());
-		input.addAll(InfoboxMapper.INFOBOXFACTS.inAllLanguages());
+		input.addAll(CategoryMapper.CATEGORYFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(InfoboxMapper.INFOBOXFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return input;
 	}
 

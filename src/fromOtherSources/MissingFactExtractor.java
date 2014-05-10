@@ -1,4 +1,4 @@
-package fromThemes;
+package fromOtherSources;
 
 import java.io.File;
 import java.util.Set;
@@ -10,7 +10,11 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.Theme;
-import fromWikipedia.Extractor;
+import deduplicators.FactExtractor;
+import deduplicators.LabelExtractor;
+import deduplicators.LiteralFactExtractor;
+import deduplicators.MetaFactExtractor;
+import extractors.FileExtractor;
 
 /**
  * Class MissingFacts - YAGO2S
@@ -20,7 +24,7 @@ import fromWikipedia.Extractor;
  * @author Fabian M. Suchanek
  */
 
-public class MissingFactExtractor extends Extractor {
+public class MissingFactExtractor extends FileExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -39,11 +43,8 @@ public class MissingFactExtractor extends Extractor {
 		return new FinalSet<>(MISSING_FACTS);
 	}
 
-	/** Folder where the old YAGO lives */
-	protected final File oldYagoFolder;
-
 	public MissingFactExtractor(File oldYagoFolder) {
-		this.oldYagoFolder = oldYagoFolder;
+		super(oldYagoFolder);
 	}
 
 	@Override
@@ -53,7 +54,7 @@ public class MissingFactExtractor extends Extractor {
 			Announce.doing("Loading old facts");
 			FactCollection old = new FactCollection();
 			int numFacts = 10000;
-			for (Fact f : FactSource.from(checkMe.file(oldYagoFolder))) {
+			for (Fact f : FactSource.from(checkMe.file(inputData))) {
 				if (f.getArg(1).startsWith("<wordnet_"))
 					continue;
 				if (f.getArg(1).endsWith("_language>"))

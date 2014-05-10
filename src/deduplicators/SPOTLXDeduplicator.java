@@ -1,4 +1,4 @@
-package fromThemes;
+package deduplicators;
 
 import java.io.File;
 import java.util.Arrays;
@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 
+import fromThemes.SPOTLXDeductiveExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;

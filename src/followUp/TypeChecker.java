@@ -1,4 +1,4 @@
-package fromThemes;
+package followUp;
 
 import java.util.Arrays;
 import java.util.Set;
@@ -12,9 +12,9 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
-import followUp.FollowUpExtractor;
+import extractors.Extractor;
 import fromOtherSources.HardExtractor;
-import fromWikipedia.Extractor;
+import fromThemes.TransitiveTypeExtractor;
 
 /**
  * YAGO2s - TypeChecker

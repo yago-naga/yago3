@@ -3,6 +3,12 @@ package fromThemes;
 import java.io.File;
 import java.util.Set;
 
+import deduplicators.ClassExtractor;
+import deduplicators.FactExtractor;
+import deduplicators.LabelExtractor;
+import deduplicators.LiteralFactExtractor;
+import deduplicators.MetaFactExtractor;
+import deduplicators.SchemaExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.ByteString;
 import javatools.datatypes.FinalSet;
@@ -14,9 +20,8 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
+import extractors.Extractor;
 import fromOtherSources.WordnetExtractor;
-import fromWikipedia.Extractor;
-import fromWikipedia.TypeCoherenceChecker;
 import fromWikipedia.WikiInfoExtractor;
 
 /**
@@ -32,7 +37,7 @@ public class StatisticsExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<>(ClassExtractor.YAGOTAXONOMY,
-				TypeCoherenceChecker.YAGOTYPES, FactExtractor.YAGOFACTS,
+				CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
 				LabelExtractor.YAGOLABELS, MetaFactExtractor.YAGOMETAFACTS,
 				SchemaExtractor.YAGOSCHEMA,
 				LiteralFactExtractor.YAGOLITERALFACTS,

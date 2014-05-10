@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.io.File;
 import java.util.Arrays;
@@ -7,10 +7,13 @@ import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.Theme;
+import extractors.MultilingualExtractor;
+import fromWikipedia.CategoryExtractor;
 
 /**
  * WikipediaTypeExtractor - YAGO2s
@@ -23,12 +26,13 @@ import basics.Theme;
 public class CategoryTypeExtractor extends MultilingualExtractor {
 
 	/** Sources for category facts */
-	public static final Theme CATEGORYTYPESOURCES = new Theme(
+	public static final BaseTheme CATEGORYTYPESOURCES = new BaseTheme(
 			"categoryTypeSources",
 			"Sources for the classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
 
 	/** Types deduced from categories */
-	public static final Theme CATEGORYTYPES = new Theme("categoryTypes",
+	public static final BaseTheme CATEGORYTYPES = new BaseTheme(
+			"categoryTypes",
 			"The rdf:type facts of YAGO derived from the categories");
 
 	public Set<Theme> input() {
@@ -74,9 +78,9 @@ public class CategoryTypeExtractor extends MultilingualExtractor {
 					.getObjectAsJavaString());
 			if (!validClasses.contains(category))
 				continue;
-			write(CATEGORYTYPES,
-					new Fact(f.getSubject(), "rdf:type", category),
-					CATEGORYTYPESOURCES,
+			write(CATEGORYTYPES.inLanguage(language), new Fact(f.getSubject(),
+					"rdf:type", category),
+					CATEGORYTYPESOURCES.inLanguage(language),
 					FactComponent.wikipediaURL(f.getSubject()),
 					"By membership in concpetual category");
 		}
@@ -84,7 +88,7 @@ public class CategoryTypeExtractor extends MultilingualExtractor {
 	}
 
 	public CategoryTypeExtractor(String lang) {
-		language = lang;
+		super(lang);
 	}
 
 	public static void main(String[] args) throws Exception {

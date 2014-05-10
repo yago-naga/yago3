@@ -19,6 +19,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import extractors.EnglishWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.TransitiveTypeExtractor;
 
@@ -30,15 +31,7 @@ import fromThemes.TransitiveTypeExtractor;
  * @author Edwin
  * 
  */
-public class GenderExtractor extends Extractor {
-
-	/** Wikipedia Input file */
-	protected File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
+public class GenderExtractor extends EnglishWikipediaExtractor {
 
 	/** gender facts, checked if the entity is a person */
 	public static final Theme PERSONS_GENDER = new Theme("personGenderFacts",
@@ -50,7 +43,7 @@ public class GenderExtractor extends Extractor {
 
 	/** Constructor from source file */
 	public GenderExtractor(File wikipedia) {
-		this.wikipedia = wikipedia;
+		super(wikipedia);
 	}
 
 	@Override
@@ -82,7 +75,7 @@ public class GenderExtractor extends Extractor {
 		FactCollection types = TransitiveTypeExtractor.TRANSITIVETYPE
 				.factCollection();
 		TitleExtractor titleExtractor = new TitleExtractor("en");
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		String titleEntity = null;
 		// Announce.progressStart("Extracting Genders", 4_500_000);
 		while (true) {

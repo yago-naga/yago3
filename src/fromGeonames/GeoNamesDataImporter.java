@@ -20,8 +20,8 @@ import basics.FactSource;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import fromWikipedia.Extractor;
-import fromWikipedia.InfoboxMapper;
+import extractors.FileExtractor;
+import fromThemes.InfoboxMapper;
 
 /**
  * The GeoNamesEntityMapper maps geonames entities to Wikipedia entities.
@@ -32,11 +32,11 @@ import fromWikipedia.InfoboxMapper;
  * @author Johannes Hoffart
  * 
  */
-public class GeoNamesDataImporter extends Extractor {
+public class GeoNamesDataImporter extends FileExtractor {
 
 	public static final String GEO_ENTITY_PREFIX = "geoentity_";
 
-	protected File geonamesFolder;
+	protected File inputDataFile;
 
 	/** geonames data for mapped entities */
 	public static final Theme GEONAMESMAPPEDDATA = new Theme(
@@ -92,13 +92,13 @@ public class GeoNamesDataImporter extends Extractor {
 				.factSource();
 
 		Map<Integer, String> geoId2name = extractAllCountries(new File(
-				geonamesFolder, "allCountries.txt"), GEONAMESMAPPEDDATA,
+				inputDataFile, "allCountries.txt"), GEONAMESMAPPEDDATA,
 				GEONAMESONLYDATA, GEONAMESTYPES, geoEntityId2yago,
 				geoClassId2yago);
-		extractHierarchy(new File(geonamesFolder, "hierarchy.txt"),
+		extractHierarchy(new File(inputDataFile, "hierarchy.txt"),
 				GEONAMESMAPPEDDATA, GEONAMESONLYDATA, geoEntityId2yago,
 				geoId2name);
-		extractCountryInfo(new File(geonamesFolder, "countryInfo.txt"),
+		extractCountryInfo(new File(inputDataFile, "countryInfo.txt"),
 				GEONAMESMAPPEDDATA, ibFacts);
 	}
 
@@ -271,6 +271,6 @@ public class GeoNamesDataImporter extends Extractor {
 	}
 
 	public GeoNamesDataImporter(File geonamesFolder) {
-		this.geonamesFolder = geonamesFolder;
+		super(geonamesFolder);
 	}
 }

@@ -69,9 +69,9 @@ public class PatternHardExtractor extends HardExtractor {
 	@Override
 	public void extract() throws Exception {
 		Announce.doing("Copying patterns");
-		Announce.message("Input folder is", inputFolder);
+		Announce.message("Input folder is", inputData);
 		for (Theme t : output()) {
-			extract(t.file(inputFolder), t);
+			extract(t.file(inputData), t);
 		}
 		Announce.done();
 	}

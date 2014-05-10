@@ -11,12 +11,18 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import utils.TitleExtractor;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
-import fromOtherSources.InterLanguageLinks;
+import extractors.Extractor;
+import extractors.MultilingualWikipediaExtractor;
+import followUp.Translator;
+import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.CategoryMapper;
+import fromThemes.CategoryTypeExtractor;
 
 /**
  * CategoryExtractor - YAGO2s
@@ -28,19 +34,17 @@ import fromOtherSources.WordnetExtractor;
  * 
  */
 
-public class CategoryExtractor extends MultilingualExtractor {
+public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
-	protected File wikipedia;
-
-	public static final Theme CATEGORYMEMBERS = new Theme(
+	public static final BaseTheme CATEGORYMEMBERS = new BaseTheme(
 			"categoryMembers",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
 
-	public static final Theme CATEGORYMEMBERS_SOURCES = new Theme(
+	public static final BaseTheme CATEGORYMEMBERS_SOURCES = new BaseTheme(
 			"categoryMemberSources",
 			"Sources for the facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
 
-	public static final Theme CATEGORYMEMBERS_TRANSLATED = new Theme(
+	public static final BaseTheme CATEGORYMEMBERS_TRANSLATED = new BaseTheme(
 			"categoryMembersTranslated",
 			"Category Members facts with translated subjects and objects");
 
@@ -49,14 +53,13 @@ public class CategoryExtractor extends MultilingualExtractor {
 		return new TreeSet<Theme>(Arrays.asList(
 				PatternHardExtractor.TITLEPATTERNS,
 				WordnetExtractor.PREFMEANINGS,
-				InterLanguageLinks.INTERLANGUAGELINKS,
-				InterLanguageLinks.CATEGORYWORDS));
+				DictionaryExtractor.CATEGORYWORDS));
 	}
 
 	@Override
 	public Set<Theme> inputCached() {
 		return new FinalSet<>(WordnetExtractor.PREFMEANINGS,
-				InterLanguageLinks.CATEGORYWORDS);
+				DictionaryExtractor.CATEGORYWORDS);
 	}
 
 	@Override
@@ -82,15 +85,15 @@ public class CategoryExtractor extends MultilingualExtractor {
 
 		// Extract the information
 		// Announce.progressStart("Extracting", 3_900_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		String titleEntity = null;
 		/**
 		 * categoryWord holds the synonym of the word "Category" in different
 		 * languages. It is needed to distinguish the category part in Wiki
 		 * pages.
 		 */
-		String categoryWord = InterLanguageLinks.CATEGORYWORDS.factCollection()
-				.getObject(FactComponent.forString(language),
+		String categoryWord = DictionaryExtractor.CATEGORYWORDS
+				.factCollection().getObject(FactComponent.forString(language),
 						"<hasCategoryWord>");
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "[["
@@ -125,30 +128,14 @@ public class CategoryExtractor extends MultilingualExtractor {
 		}
 	}
 
-	/**
-	 * Finds the language from the name of the input file, assuming that the
-	 * first part of the name before the underline is equal to the language
-	 */
-	public static String decodeLang(String fileName) {
-		if (!fileName.contains("_"))
-			return "en";
-		return fileName.split("_")[0];
-	}
-
-	/** Constructor from source file */
-	public CategoryExtractor(File wikipedia) {
-		this(wikipedia, decodeLang(wikipedia.getName()));
-	}
-
-	public CategoryExtractor(File wikipedia, String lang) {
-		this.wikipedia = wikipedia;
-		this.language = lang;
+	public CategoryExtractor(String lang, File wikipedia) {
+		super(lang, wikipedia);
 	}
 
 	public static void main(String[] args) throws Exception {
 
-		new CategoryExtractor(new File("D:/en_wikitest.xml")).extract(new File(
-				"D:/data3/yago2s"), "Test on 1 wikipedia article");
+		new CategoryExtractor("en", new File("D:/en_wikitest.xml")).extract(
+				new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
 
 	}
 

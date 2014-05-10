@@ -1,4 +1,4 @@
-package fromThemes;
+package deduplicators;
 
 import java.io.File;
 import java.util.Arrays;
@@ -12,10 +12,10 @@ import basics.FactCollection;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import extractors.Extractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromWikipedia.CategoryClassExtractor;
-import fromWikipedia.Extractor;
+import fromThemes.CategoryClassExtractor;
 
 /**
  * YAGO2s - ClassExtractor
@@ -33,10 +33,10 @@ public class ClassExtractor extends Extractor {
 	@Override
 	public Set<Theme> input() {
 		HashSet<Theme> input = new HashSet<Theme>(Arrays.asList(
-				HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES
+				HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES,
+				CategoryClassExtractor.CATEGORYCLASSES
 		// GeoNamesClassMapper.GEONAMESCLASSES
 				));
-		input.addAll(CategoryClassExtractor.CATEGORYCLASSES.inAllLanguages());
 		return input;
 	}
 

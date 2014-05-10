@@ -11,6 +11,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import utils.Stopwords;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -22,9 +23,9 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import extractors.FileExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromWikipedia.Extractor;
 
 /**
  * The GeoNamesClassMapper maps geonames classes to WordNet synsets.
@@ -34,9 +35,7 @@ import fromWikipedia.Extractor;
  * @author Johannes Hoffart
  * 
  */
-public class GeoNamesClassMapper extends Extractor {
-
-	private File geonamesFeatureCodes;
+public class GeoNamesClassMapper extends FileExtractor {
 
 	/** YAGO geo class */
 	public static final String GEO_CLASS = "<yagoGeoEntity>";
@@ -75,7 +74,9 @@ public class GeoNamesClassMapper extends Extractor {
 
 	@Override
 	public Set<Theme> inputCached() {
-		return new FinalSet<>(PatternHardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES, WordnetExtractor.WORDNETWORDS, WordnetExtractor.WORDNETGLOSSES);
+		return new FinalSet<>(PatternHardExtractor.HARDWIREDFACTS,
+				WordnetExtractor.WORDNETCLASSES, WordnetExtractor.WORDNETWORDS,
+				WordnetExtractor.WORDNETGLOSSES);
 	}
 
 	@Override
@@ -83,15 +84,19 @@ public class GeoNamesClassMapper extends Extractor {
 		geographicalWordNetClasses = new HashSet<String>();
 		FactCollection hardFacts = PatternHardExtractor.HARDWIREDFACTS
 				.factCollection();
-		for (Fact f : hardFacts.seekFactsWithRelationAndObject(RDFS.subclassOf, GEO_CLASS)) {
+		for (Fact f : hardFacts.seekFactsWithRelationAndObject(RDFS.subclassOf,
+				GEO_CLASS)) {
 			geographicalWordNetClasses.add(f.getArg(1));
 		}
 
-		FactCollection wordnetWords = WordnetExtractor.WORDNETWORDS.factCollection();
-		FactCollection wordnetGlosses = WordnetExtractor.WORDNETGLOSSES.factCollection();
-		FactCollection wordnetClasses = WordnetExtractor.WORDNETCLASSES.factCollection();
+		FactCollection wordnetWords = WordnetExtractor.WORDNETWORDS
+				.factCollection();
+		FactCollection wordnetGlosses = WordnetExtractor.WORDNETGLOSSES
+				.factCollection();
+		FactCollection wordnetClasses = WordnetExtractor.WORDNETCLASSES
+				.factCollection();
 
-		for (String line : new FileLines(geonamesFeatureCodes,
+		for (String line : new FileLines(inputData,
 				"Loading feature code mappings")) {
 			String[] data = line.split("\t");
 
@@ -110,11 +115,11 @@ public class GeoNamesClassMapper extends Extractor {
 			String parentClass = (wordNetClass != null) ? wordNetClass
 					: GEO_CLASS;
 
-			write(GEONAMESCLASSES, new Fact(null, geoClass,
-					RDFS.subclassOf, parentClass), GEONAMESSOURCES, "GeoNames",
+			write(GEONAMESCLASSES, new Fact(null, geoClass, RDFS.subclassOf,
+					parentClass), GEONAMESSOURCES, "GeoNames",
 					"GeoNamesClassMapper");
-			GEONAMESCLASSSIDS.write(
-					new Fact(null, geoClass, "<hasGeonamesClassId>",
+			GEONAMESCLASSSIDS
+					.write(new Fact(null, geoClass, "<hasGeonamesClassId>",
 							FactComponent.forString(featureId)));
 
 			if (featureGloss != null) {
@@ -149,8 +154,8 @@ public class GeoNamesClassMapper extends Extractor {
 		}
 
 		String preferredMeaning = null;
-		List<Fact> preferredLabels = wordnetWords.seekFactsWithRelationAndObject(
-				"skos:prefLabel", lookup);
+		List<Fact> preferredLabels = wordnetWords
+				.seekFactsWithRelationAndObject("skos:prefLabel", lookup);
 		if (preferredLabels.size() > 0) {
 			preferredMeaning = preferredLabels.get(0).getArg(1);
 		}
@@ -201,8 +206,8 @@ public class GeoNamesClassMapper extends Extractor {
 			String bestMatch = null;
 
 			for (String meaning : meanings) {
-				String wnGloss = FactComponent.asJavaString(wnGlosses.getObject(
-						meaning, "<hasGloss>"));
+				String wnGloss = FactComponent.asJavaString(wnGlosses
+						.getObject(meaning, "<hasGloss>"));
 				Set<String> wnGlossTokens = getTokensForGloss(wnGloss);
 
 				// for (String synonym : Basics.facts.getArg1s("means",
@@ -279,7 +284,8 @@ public class GeoNamesClassMapper extends Extractor {
 			FactCollection wordnetWords) {
 		List<String> meanings = new LinkedList<String>();
 
-		List<Fact> labels = wordnetWords.seekFactsWithRelationAndObject(RDFS.label, lookup);
+		List<Fact> labels = wordnetWords.seekFactsWithRelationAndObject(
+				RDFS.label, lookup);
 		for (Fact f : labels) {
 			meanings.add(f.getArg(1));
 		}
@@ -288,6 +294,6 @@ public class GeoNamesClassMapper extends Extractor {
 	}
 
 	public GeoNamesClassMapper(File geonamesFeatureCodes) {
-		this.geonamesFeatureCodes = geonamesFeatureCodes;
+		super(geonamesFeatureCodes);
 	}
 }

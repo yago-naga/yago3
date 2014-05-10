@@ -5,15 +5,15 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import deduplicators.ClassExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.FactCollection;
 import basics.Theme;
+import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromWikipedia.CategoryMapper;
-import fromWikipedia.InfoboxMapper;
 
 /**
  * YAGO2s - RuleExtractor
@@ -32,8 +32,10 @@ public class RuleExtractor extends BaseRuleExtractor {
 				TransitiveTypeExtractor.TRANSITIVETYPE,
 				ClassExtractor.YAGOTAXONOMY, HardExtractor.HARDWIREDFACTS,
 				WordnetExtractor.WORDNETCLASSES));
-		input.addAll(CategoryMapper.CATEGORYFACTS.inAllLanguages());
-		input.addAll(InfoboxMapper.INFOBOXFACTS.inAllLanguages());
+		input.addAll(CategoryMapper.CATEGORYFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(InfoboxMapper.INFOBOXFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return input;
 	}
 

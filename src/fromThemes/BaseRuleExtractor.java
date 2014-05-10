@@ -18,7 +18,7 @@ import basics.FactCollection;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.Theme;
-import fromWikipedia.Extractor;
+import extractors.Extractor;
 
 /**
  * YAGO2s - RuleExtractor

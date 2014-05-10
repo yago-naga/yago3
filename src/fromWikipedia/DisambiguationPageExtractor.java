@@ -14,9 +14,11 @@ import utils.FactTemplateExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.Theme;
+import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
-import fromThemes.Redirector;
-import fromThemes.TypeChecker;
 
 /**
  * Extracts means facts from Wikipedia disambiguation pages
@@ -24,15 +26,7 @@ import fromThemes.TypeChecker;
  * @author Johannes Hoffart
  * 
  */
-public class DisambiguationPageExtractor extends Extractor {
-
-	/** Input file */
-	private File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
+public class DisambiguationPageExtractor extends EnglishWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -45,7 +39,7 @@ public class DisambiguationPageExtractor extends Extractor {
 		return new HashSet<Extractor>(Arrays.asList((Extractor) new Redirector(
 				DIRTYDISAMBIGUATIONMEANSFACTS,
 				REDIRECTEDDISAMBIGUATIONMEANSFACTS, this,
-				decodeLang(this.wikipedia.getName())),
+				decodeLang(this.inputData.getName())),
 				(Extractor) new TypeChecker(REDIRECTEDDISAMBIGUATIONMEANSFACTS,
 						DISAMBIGUATIONMEANSFACTS, this)));
 	}
@@ -74,7 +68,7 @@ public class DisambiguationPageExtractor extends Extractor {
 		// Extract the information
 		Announce.doing("Extracting disambiguation means");
 
-		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		BufferedReader in = FileUtils.getBufferedUTF8Reader(inputData);
 
 		FactCollection disambiguationPatternCollection = PatternHardExtractor.DISAMBIGUATIONTEMPLATES
 				.factCollection();
@@ -142,7 +136,7 @@ public class DisambiguationPageExtractor extends Extractor {
 	 *            Wikipedia XML dump
 	 */
 	public DisambiguationPageExtractor(File wikipedia) {
-		this.wikipedia = wikipedia;
+		super(wikipedia);
 	}
 
 	public static void main(String[] args) throws Exception {

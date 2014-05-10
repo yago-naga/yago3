@@ -15,10 +15,12 @@ import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.Theme;
+import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
+import followUp.TypeChecker;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.TypeChecker;
 
 /**
  * TemporalCategoryExtractor - YAGO2s
@@ -29,15 +31,10 @@ import fromThemes.TypeChecker;
  * @author Erdal Kuzey
  * 
  */
-public class TemporalCategoryExtractor extends Extractor {
+public class TemporalCategoryExtractor extends EnglishWikipediaExtractor {
 
 	/** Input file */
-	private File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
+	private File inputData;
 
 	@Override
 	public Set<Extractor> followUp() {
@@ -75,7 +72,7 @@ public class TemporalCategoryExtractor extends Extractor {
 				categoryPatternCollection, "<_categoryPattern>");
 		TitleExtractor titleExtractor = new TitleExtractor("en");
 		// Announce.progressStart("Extracting", 3_900_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		String titleEntity = null;
 		FactCollection facts = new FactCollection();
 		while (true) {
@@ -120,6 +117,6 @@ public class TemporalCategoryExtractor extends Extractor {
 	}
 
 	public TemporalCategoryExtractor(File wikipedia) {
-		this.wikipedia = wikipedia;
+		super(wikipedia);
 	}
 }

@@ -1,4 +1,4 @@
-package fromThemes;
+package deduplicators;
 
 import java.util.Arrays;
 import java.util.HashSet;
@@ -9,16 +9,17 @@ import basics.Fact;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import extractors.MultilingualExtractor;
 import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
+import fromOtherSources.WikidataLabelExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromWikipedia.CategoryMapper;
+import fromThemes.CategoryMapper;
+import fromThemes.InfoboxMapper;
+import fromThemes.PersonNameExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
-import fromWikipedia.InfoboxMapper;
-import fromWikipedia.PersonNameExtractor;
 import fromWikipedia.RedirectExtractor;
-import fromWikipedia.WikidataLabelExtractor;
 
 /**
  * YAGO2s - LabelExtractor
@@ -41,9 +42,12 @@ public class LabelExtractor extends SimpleDeduplicator {
 				SchemaExtractor.YAGOSCHEMA, WordnetExtractor.WORDNETGLOSSES,
 				FlightIATAcodeExtractor.AIRPORT_CODE,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
-		input.addAll(CategoryMapper.CATEGORYFACTS.inAllLanguages());
-		input.addAll(InfoboxMapper.INFOBOXFACTS.inAllLanguages());
-		input.addAll(RedirectExtractor.REDIRECTLABELS.inAllLanguages());
+		input.addAll(CategoryMapper.CATEGORYFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(InfoboxMapper.INFOBOXFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(RedirectExtractor.REDIRECTLABELS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return input;
 	}
 

@@ -12,6 +12,7 @@ import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
+import extractors.EnglishWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.TransitiveTypeExtractor;
 
@@ -23,15 +24,7 @@ import fromThemes.TransitiveTypeExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class WikiInfoExtractor extends MultilingualExtractor {
-
-	/** Holds the Wikipedia file */
-	protected final File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
+public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -60,10 +53,10 @@ public class WikiInfoExtractor extends MultilingualExtractor {
 	public void extract() throws Exception {
 		Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE
 				.factCollection().getSubjects();
-		TitleExtractor titleExtractor = new TitleExtractor(language);
+		TitleExtractor titleExtractor = new TitleExtractor("en");
 		// Extract the information
 		// Announce.progressStart("Extracting", 3_900_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		while (FileLines.scrollTo(in, "<title>")) {
 			String entity = titleExtractor.getTitleEntity(in);
 			if (entity == null)
@@ -100,7 +93,7 @@ public class WikiInfoExtractor extends MultilingualExtractor {
 	}
 
 	public WikiInfoExtractor(File wikipediaFile) {
-		this.wikipedia = wikipediaFile;
+		super(wikipediaFile);
 	}
 
 	public static void main(String[] args) throws Exception {

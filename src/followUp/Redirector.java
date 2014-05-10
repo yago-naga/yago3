@@ -1,4 +1,4 @@
-package fromThemes;
+package followUp;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -11,10 +11,9 @@ import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
-import followUp.FollowUpExtractor;
+import extractors.Extractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromWikipedia.Extractor;
 import fromWikipedia.RedirectExtractor;
 
 /**
@@ -26,12 +25,15 @@ import fromWikipedia.RedirectExtractor;
  */
 public class Redirector extends FollowUpExtractor {
 
+	protected String language;
+
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(checkMe,
-				RedirectExtractor.REDIRECTFACTS_DIRTY.inLanguage(this.language),
-				PatternHardExtractor.TITLEPATTERNS,
-				WordnetExtractor.WORDNETWORDS));
+		return new HashSet<Theme>(
+				Arrays.asList(checkMe, RedirectExtractor.REDIRECTFACTS_DIRTY
+						.inLanguage(this.language),
+						PatternHardExtractor.TITLEPATTERNS,
+						WordnetExtractor.WORDNETWORDS));
 	}
 
 	@Override

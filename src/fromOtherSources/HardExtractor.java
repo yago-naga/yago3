@@ -9,7 +9,7 @@ import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;
 import basics.Theme;
-import fromWikipedia.Extractor;
+import extractors.FileExtractor;
 
 /**
  * HardExtractor - YAGO2s
@@ -19,22 +19,16 @@ import fromWikipedia.Extractor;
  * @author Fabian
  * 
  */
-public class HardExtractor extends Extractor {
+public class HardExtractor extends FileExtractor {
 
-	/** Our output*/
-	public static final Theme HARDWIREDFACTS=new Theme("hardWiredFacts","The manually created facts of YAGO");
-	
+	/** Our output */
+	public static final Theme HARDWIREDFACTS = new Theme("hardWiredFacts",
+			"The manually created facts of YAGO");
+
 	public Set<Theme> output() {
 		return (new FinalSet<Theme>(HARDWIREDFACTS));
 	}
 
-	protected File inputFolder;
-
-	@Override
-	public File inputDataFile() {
-	  return inputFolder;
-	}
-	
 	/** Helper */
 	public void extract(File input, Theme theme) throws Exception {
 		if (!input.getName().endsWith(".ttl"))
@@ -49,18 +43,18 @@ public class HardExtractor extends Extractor {
 	@Override
 	public void extract() throws Exception {
 		Announce.doing("Copying hard wired facts");
-		Announce.message("Input folder is", inputFolder);
-		for (File f : inputFolder.listFiles())
+		Announce.message("Input folder is", inputData);
+		for (File f : inputData.listFiles())
 			extract(f, HARDWIREDFACTS);
 		Announce.done();
 	}
 
 	public HardExtractor(File inputFolder) {
+		super(inputFolder);
 		if (!inputFolder.exists())
 			throw new RuntimeException("Folder not found " + inputFolder);
 		if (!inputFolder.isDirectory())
 			throw new RuntimeException("Not a folder: " + inputFolder);
-		this.inputFolder = inputFolder;
 	}
 
 	@Override

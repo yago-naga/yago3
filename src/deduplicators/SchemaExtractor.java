@@ -1,10 +1,9 @@
-package fromThemes;
+package deduplicators;
 
 import java.io.File;
 import java.util.Set;
 
 import fromOtherSources.HardExtractor;
-
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;

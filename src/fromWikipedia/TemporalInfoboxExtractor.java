@@ -28,11 +28,13 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.Redirector;
-import fromThemes.TypeChecker;
 
 /**
  * TemporalInfoboxExtractor - YAGO2s
@@ -43,20 +45,12 @@ import fromThemes.TypeChecker;
  * @author Erdal Kuzey
  * 
  */
-public class TemporalInfoboxExtractor extends Extractor {
-
-	/** Input file */
-	protected File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
+public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(new Redirector(
 				TEMPORALDIRTYINFOBOXFACTS, TEMPORALREDIRECTEDINFOBOXFACTS,
-				this, decodeLang(this.wikipedia.getName())), new TypeChecker(
+				this, decodeLang(this.inputData.getName())), new TypeChecker(
 				TEMPORALREDIRECTEDINFOBOXFACTS, TEMPORALINFOBOXFACTS, this)));
 	}
 
@@ -116,7 +110,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 
 		// Extract the information
 		// Announce.progressStart("Extracting", 4_500_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		String titleEntity = null;
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox",
@@ -534,7 +528,7 @@ public class TemporalInfoboxExtractor extends Extractor {
 	}
 
 	public TemporalInfoboxExtractor(File wikipedia) {
-		this.wikipedia = wikipedia;
+		super(wikipedia);
 	}
 
 	public static void main(String[] args) throws Exception {

@@ -16,10 +16,13 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
-import fromThemes.TypeChecker;
+import extractors.Extractor;
+import extractors.MultilingualWikipediaExtractor;
+import followUp.TypeChecker;
 
 /**
  * Extracts all redirects from Wikipedia
@@ -27,15 +30,7 @@ import fromThemes.TypeChecker;
  * @author Johannes Hoffart
  * 
  */
-public class RedirectExtractor extends MultilingualExtractor {
-
-	/** Input file */
-	private File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
+public class RedirectExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -45,12 +40,12 @@ public class RedirectExtractor extends MultilingualExtractor {
 	private static final Pattern pattern = Pattern
 			.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
-	public static final Theme REDIRECTFACTS_DIRTY = new Theme(
-			"redirectLabelsDirty", "en",
+	public static final BaseTheme REDIRECTFACTS_DIRTY = new BaseTheme(
+			"redirectLabelsDirty",
 			"Redirect facts from Wikipedia redirect pages (to be type checked)");
 
-	public static final Theme REDIRECTLABELS = new Theme("redirectLabels",
-			"en", "Redirect facts from Wikipedia redirect pages");
+	public static final BaseTheme REDIRECTLABELS = new BaseTheme(
+			"redirectLabels", "Redirect facts from Wikipedia redirect pages");
 
 	@Override
 	public Set<Theme> output() {
@@ -71,7 +66,7 @@ public class RedirectExtractor extends MultilingualExtractor {
 		Announce.doing("Extracting Redirects");
 		Map<String, String> redirects = new HashMap<>();
 
-		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		BufferedReader in = FileUtils.getBufferedUTF8Reader(inputData);
 
 		String titleEntity = null;
 		redirect: while (true) {
@@ -119,24 +114,13 @@ public class RedirectExtractor extends MultilingualExtractor {
 		}
 	}
 
-	/**
-	 * Needs Wikipedia as input
-	 * 
-	 * @param wikipedia
-	 *            Wikipedia XML dump
-	 */
-	public RedirectExtractor(File wikipedia) {
-		this(wikipedia, decodeLang(wikipedia.getName()));
-	}
-
-	public RedirectExtractor(File wikipedia, String lang) {
-		this.wikipedia = wikipedia;
-		this.language = lang;
+	public RedirectExtractor(String lang, File wikipedia) {
+		super(lang, wikipedia);
 	}
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		new RedirectExtractor(new File("D:/en_wikitest.xml")).extract(new File(
-				"D:/data3/yago2s"), "Test on 1 wikipedia article");
+		new RedirectExtractor("en", new File("D:/en_wikitest.xml")).extract(
+				new File("D:/data3/yago2s"), "Test on 1 wikipedia article");
 	}
 }

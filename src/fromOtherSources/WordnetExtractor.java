@@ -21,7 +21,7 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
-import fromWikipedia.Extractor;
+import extractors.FileExtractor;
 
 /**
  * YAGO2s - WordNetExtractor
@@ -31,15 +31,7 @@ import fromWikipedia.Extractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class WordnetExtractor extends Extractor {
-
-	/** Folder where wordnet lives */
-	protected File wordnetFolder;
-
-	@Override
-	public File inputDataFile() {
-		return wordnetFolder;
-	}
+public class WordnetExtractor extends FileExtractor {
 
 	/** wordnet classes */
 	public static final Theme WORDNETCLASSES = new Theme("wordnetClasses",
@@ -86,15 +78,16 @@ public class WordnetExtractor extends Extractor {
 	@Override
 	public void extract() throws Exception {
 		Announce.doing("Extracting from Wordnet");
-		Set<String> definedWords=new HashSet<>();
+		Set<String> definedWords = new HashSet<>();
 		for (Fact f : HardExtractor.HARDWIREDFACTS.factSource()) {
-			if(!f.getRelation().equals("<isPreferredMeaningOf>")) continue;
+			if (!f.getRelation().equals("<isPreferredMeaningOf>"))
+				continue;
 			PREFMEANINGS.write(f);
 			definedWords.add(f.getArgJavaString(2));
 		}
 
 		Collection<String> instances = new HashSet<String>(8000);
-		for (String line : new FileLines(new File(wordnetFolder, "wn_ins.pl"),
+		for (String line : new FileLines(new File(inputData, "wn_ins.pl"),
 				"Loading instances")) {
 			line = line.replace("''", "'");
 			Matcher m = RELATIONPATTERN.matcher(line);
@@ -106,7 +99,7 @@ public class WordnetExtractor extends Extractor {
 		String lastId = "";
 		String lastClass = "";
 
-		for (String line : new FileLines(new File(wordnetFolder, "wn_s.pl"),
+		for (String line : new FileLines(new File(inputData, "wn_s.pl"),
 				"Loading synsets")) {
 			line = line.replace("''", "'"); // TODO: Does this work for
 			// wordnet_child's_game_100483935 ?
@@ -149,7 +142,7 @@ public class WordnetExtractor extends Extractor {
 			WORDNETWORDS.write(new Fact(null, lastClass, RDFS.label, wordForm));
 		}
 		instances = null;
-		for (String line : new FileLines(new File(wordnetFolder, "wn_hyp.pl"),
+		for (String line : new FileLines(new File(inputData, "wn_hyp.pl"),
 				"Loading subclassOf")) {
 			line = line.replace("''", "'"); // TODO: Does this work for
 			// wordnet_child's_game_100483935 ?
@@ -168,7 +161,7 @@ public class WordnetExtractor extends Extractor {
 					"rdfs:subClassOf", id2class.get(arg2)));
 		}
 
-		for (String line : new FileLines(new File(wordnetFolder, "wn_g.pl"),
+		for (String line : new FileLines(new File(inputData, "wn_g.pl"),
 				"Loading hasGloss")) {
 			line = line.replace("''", "'");
 			Matcher m = RELATIONPATTERN.matcher(line);
@@ -191,7 +184,7 @@ public class WordnetExtractor extends Extractor {
 	}
 
 	public WordnetExtractor(File wordnetFolder) {
-		this.wordnetFolder = wordnetFolder;
+		super(wordnetFolder);
 	}
 
 	public static void main(String[] args) throws Exception {

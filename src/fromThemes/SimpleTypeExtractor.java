@@ -6,6 +6,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import deduplicators.ClassExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
@@ -14,8 +15,7 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
-import fromWikipedia.Extractor;
-import fromWikipedia.TypeCoherenceChecker;
+import extractors.Extractor;
 
 /**
  * YAGO2s - SimpleTypeExtractor
@@ -35,7 +35,7 @@ public class SimpleTypeExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(TypeCoherenceChecker.YAGOTYPES,
+		return new FinalSet<>(CoherentTypeExtractor.YAGOTYPES,
 				ClassExtractor.YAGOTAXONOMY);
 	}
 
@@ -68,7 +68,7 @@ public class SimpleTypeExtractor extends Extractor {
 		FactCollection taxonomy = ClassExtractor.YAGOTAXONOMY.factCollection();
 		Set<String> leafClasses = new HashSet<>();
 		Announce.doing("Loading YAGO types");
-		for (Fact f : TypeCoherenceChecker.YAGOTYPES.factSource()) {
+		for (Fact f : CoherentTypeExtractor.YAGOTYPES.factSource()) {
 			if (!f.getRelation().equals(RDFS.type))
 				continue;
 			String clss = f.getArg(2);

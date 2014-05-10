@@ -16,13 +16,20 @@ import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
 import utils.TitleExtractor;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import extractors.Extractor;
+import extractors.MultilingualWikipediaExtractor;
+import followUp.Translator;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.AttributeMatcher;
+import fromThemes.InfoboxMapper;
 import fromThemes.InfoboxTermExtractor;
+import fromThemes.InfoboxTypeExtractor;
 
 /**
  * YAGO2s - InfoboxExtractor
@@ -33,38 +40,30 @@ import fromThemes.InfoboxTermExtractor;
  * @author Farzaneh Mahdisoltani
  */
 
-public class InfoboxExtractor extends MultilingualExtractor {
+public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
-	/** Input file */
-	protected File wikipedia;
+	public static final BaseTheme INFOBOX_ATTRIBUTES = new BaseTheme(
+			"yagoInfoboxAttributes", "Raw facts from the Wikipedia infoboxes",
+			ThemeGroup.WIKIPEDIA);
 
-	public static final Theme INFOBOX_ATTRIBUTES = new Theme(
-			"yagoInfoboxAttributes", "en",
-			"Raw facts from the Wikipedia infoboxes", ThemeGroup.WIKIPEDIA);
-
-	public static final Theme INFOBOX_ATTRIBUTE_SOURCES = new Theme(
-			"yagoInfoboxAttributeSources", "en",
+	public static final BaseTheme INFOBOX_ATTRIBUTE_SOURCES = new BaseTheme(
+			"yagoInfoboxAttributeSources",
 			"Sources for the raw facts from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final Theme INFOBOX_TYPES = new Theme("yagoInfoboxTypes",
-			"en", "Raw types from the Wikipedia infoboxes",
+	public static final BaseTheme INFOBOX_TYPES = new BaseTheme(
+			"yagoInfoboxTypes", "Raw types from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final Theme INFOBOX_TYPES_TRANSLATED = new Theme(
-			"infoboxTypesTranslated", "en",
+	public static final BaseTheme INFOBOX_TYPES_TRANSLATED = new BaseTheme(
+			"infoboxTypesTranslated",
 			"Types from the Wikipedia infoboxes, translated",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final Theme INFOBOX_TYPE_SOURCES = new Theme(
-			"yagoInfoboxTypeSources", "en",
+	public static final BaseTheme INFOBOX_TYPE_SOURCES = new BaseTheme(
+			"yagoInfoboxTypeSources",
 			"Sources for the raw types from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
 
 	@Override
 	public Set<Theme> input() {
@@ -278,7 +277,7 @@ public class InfoboxExtractor extends MultilingualExtractor {
 
 		// Extract the information
 		// Announce.progressStart("Extracting", 4_500_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		String titleEntity = null;
 		while (true) {
 			/* nested comments not supported */
@@ -329,19 +328,15 @@ public class InfoboxExtractor extends MultilingualExtractor {
 	}
 
 	/** Constructor from source file */
-	public InfoboxExtractor(File wikipedia, String lang) {
-		this.wikipedia = wikipedia;
-		this.language = lang;
-	}
-
-	public InfoboxExtractor(File wikipedia) {
-		this(wikipedia, decodeLang(wikipedia.getName()));
+	public InfoboxExtractor(String lang, File wikipedia) {
+		super(lang, wikipedia);
 	}
 
 	public static void main(String[] args) throws Exception {
-		new InfoboxExtractor(new File("/home/jbiega/Downloads/en_pol.xml"))
-				.extract(new File("/home/jbiega/data/yago2s/"),
-						"Test on 1 wikipedia article");
+		new InfoboxExtractor("po",
+				new File("/home/jbiega/Downloads/en_pol.xml")).extract(
+				new File("/home/jbiega/data/yago2s/"),
+				"Test on 1 wikipedia article");
 
 	}
 }

@@ -16,10 +16,12 @@ import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
 import basics.Theme;
+import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.Redirector;
-import fromThemes.TypeChecker;
 
 /**
  * Extracts context keyphrases (the X in SPOTLX) facts from Wikipedia.
@@ -29,15 +31,7 @@ import fromThemes.TypeChecker;
  * @author Johannes Hoffart
  * 
  */
-public class ConteXtExtractor extends Extractor {
-
-	/** Input file */
-	private File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
+public class ConteXtExtractor extends EnglishWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -76,7 +70,7 @@ public class ConteXtExtractor extends Extractor {
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList((Extractor) new Redirector(
 				DIRTYCONTEXTFACTS, REDIRECTEDCONTEXTFACTS, this,
-				decodeLang(this.wikipedia.getName())),
+				decodeLang(this.inputData.getName())),
 				(Extractor) new TypeChecker(REDIRECTEDCONTEXTFACTS,
 						CONTEXTFACTS, this)));
 	}
@@ -86,7 +80,7 @@ public class ConteXtExtractor extends Extractor {
 		// Extract the information
 		Announce.doing("Extracting context facts");
 
-		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		BufferedReader in = FileUtils.getBufferedUTF8Reader(inputData);
 		TitleExtractor titleExtractor = new TitleExtractor("en");
 
 		FactCollection contextPatternCollection = PatternHardExtractor.CONTEXTPATTERNS
@@ -138,7 +132,7 @@ public class ConteXtExtractor extends Extractor {
 	 *            Wikipedia XML dump
 	 */
 	public ConteXtExtractor(File wikipedia) {
-		this.wikipedia = wikipedia;
+		super(wikipedia);
 	}
 
 }

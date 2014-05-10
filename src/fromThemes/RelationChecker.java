@@ -11,8 +11,8 @@ import basics.FactCollection;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
+import extractors.Extractor;
 import fromOtherSources.HardExtractor;
-import fromWikipedia.Extractor;
 
 /**
  * YAGO2s - RelationChecker

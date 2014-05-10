@@ -1,9 +1,10 @@
-package fromThemes;
+package deduplicators;
 
 import java.io.File;
 import java.util.Set;
 
 import fromOtherSources.HardExtractor;
+import fromThemes.RuleExtractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;

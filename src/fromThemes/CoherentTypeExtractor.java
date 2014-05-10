@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.io.File;
 import java.io.IOException;
@@ -15,20 +15,31 @@ import basics.FactCollection;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
+import extractors.Extractor;
+import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.SimpleTypeExtractor;
 
-public class TypeCoherenceChecker extends Extractor {
+/**
+ * YAGO2s - CoherentTypeExtractor
+ * 
+ * Extracts the coherent types from previous types
+ * 
+ * @author Farzaneh
+ * 
+ */
+public class CoherentTypeExtractor extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
 		Set<Theme> result = new TreeSet<Theme>();
 		result.add(WordnetExtractor.WORDNETCLASSES);
 		result.add(HardExtractor.HARDWIREDFACTS);
-		result.addAll(CategoryTypeExtractor.CATEGORYTYPES.inAllLanguages());
-		result.addAll(CategoryClassExtractor.CATEGORYCLASSES.inAllLanguages());
-		result.addAll(InfoboxTypeExtractor.INFOBOXTYPES.inAllLanguages());
+		result.add(CategoryClassExtractor.CATEGORYCLASSES);
+		result.addAll(CategoryTypeExtractor.CATEGORYTYPES
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		result.addAll(InfoboxTypeExtractor.INFOBOXTYPES
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return result;
 	}
 
@@ -137,7 +148,7 @@ public class TypeCoherenceChecker extends Extractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		TypeCoherenceChecker extractor = new TypeCoherenceChecker();
+		CoherentTypeExtractor extractor = new CoherentTypeExtractor();
 		extractor.extract(new File("D:/data3/yago2s/"), "");
 	}
 }

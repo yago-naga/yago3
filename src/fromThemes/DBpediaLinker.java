@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
 
+import deduplicators.ClassExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
@@ -11,8 +12,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import fromWikipedia.Extractor;
-import fromWikipedia.TypeCoherenceChecker;
+import extractors.Extractor;
 
 /**
  * YAGO2s - DBpediaLinker
@@ -26,7 +26,7 @@ public class DBpediaLinker extends Extractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<>(TypeCoherenceChecker.YAGOTYPES,
+		return new FinalSet<>(CoherentTypeExtractor.YAGOTYPES,
 				ClassExtractor.YAGOTAXONOMY);
 	}
 
@@ -49,7 +49,7 @@ public class DBpediaLinker extends Extractor {
 	public void extract() throws Exception {
 		Announce.doing("Mapping instances");
 		Set<String> instances = new TreeSet<>();
-		for (Fact fact : TypeCoherenceChecker.YAGOTYPES.factSource()) {
+		for (Fact fact : CoherentTypeExtractor.YAGOTYPES.factSource()) {
 			if (!fact.getRelation().equals(RDFS.type)
 					|| instances.contains(fact.getArg(1)))
 				continue;

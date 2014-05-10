@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.io.File;
 import java.util.Map;
@@ -9,12 +9,15 @@ import javatools.datatypes.FinalSet;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.Theme;
+import extractors.MultilingualExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromWikipedia.InfoboxExtractor;
 
 /**
  * WikipediaTypeExtractor - YAGO2s
@@ -27,11 +30,11 @@ import fromOtherSources.WordnetExtractor;
 public class InfoboxTypeExtractor extends MultilingualExtractor {
 
 	/** Sources for category facts */
-	public static final Theme INFOBOXTYPESOURCES = new Theme(
+	public static final BaseTheme INFOBOXTYPESOURCES = new BaseTheme(
 			"infoboxTypeSources", "The sources of category type facts");
 
 	/** Sources for category facts */
-	public static final Theme INFOBOXTYPES = new Theme("infoboxTypes",
+	public static final BaseTheme INFOBOXTYPES = new BaseTheme("infoboxTypes",
 			"The sources of category type facts");
 
 	public Set<Theme> input() {
@@ -136,7 +139,7 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 			if (clss == null)
 				continue;
 			write(INFOBOXTYPES.inLanguage(language), new Fact(f.getSubject(),
-					RDFS.type, clss), INFOBOXTYPESOURCES,
+					RDFS.type, clss), INFOBOXTYPESOURCES.inLanguage(language),
 					FactComponent.wikipediaURL(f.getSubject()),
 					"InfoboxTypeExtractor");
 		}
@@ -145,7 +148,7 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 	}
 
 	public InfoboxTypeExtractor(String lang) {
-		language = lang;
+		super(lang);
 	}
 
 	public static void main(String[] args) throws Exception {

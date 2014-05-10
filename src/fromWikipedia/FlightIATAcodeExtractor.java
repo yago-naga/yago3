@@ -15,8 +15,10 @@ import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
-import fromThemes.Redirector;
-import fromThemes.TypeChecker;
+import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 
 /**
  * YAGO2s - FlightIATAcodeExtractor
@@ -27,7 +29,7 @@ import fromThemes.TypeChecker;
  * @author Edwin Lewis-Kelham
  * 
  */
-public class FlightIATAcodeExtractor extends Extractor {
+public class FlightIATAcodeExtractor extends EnglishWikipediaExtractor {
 
 	public static final Theme AIRPORT_CODE = new Theme("hasAirportCode",
 			"The airport code for each airport");
@@ -40,13 +42,6 @@ public class FlightIATAcodeExtractor extends Extractor {
 
 	public static final Theme AIRPORT_CODE_NEEDTYPE = new Theme(
 			"hasAirportCodeNeedTypeCheck", "Airports need type checking");
-
-	protected File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
 
 	@Override
 	public Set<Theme> input() {
@@ -67,14 +62,14 @@ public class FlightIATAcodeExtractor extends Extractor {
 
 	/** Constructor from source file */
 	public FlightIATAcodeExtractor(File wikipedia) {
-		this.wikipedia = wikipedia;
+		super(wikipedia);
 	}
 
 	@Override
 	public void extract() throws Exception {
 		// Extract the information
 		Announce.doing("Extracting");
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		while (true) {
 			switch (FileLines.findIgnoreCase(in,
 					"{{Lists of airports by IATA code}}")) {

@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.io.File;
 import java.util.Arrays;
@@ -7,13 +7,17 @@ import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import utils.FactTemplateExtractor;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.Theme;
+import extractors.Extractor;
+import extractors.MultilingualExtractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
-import fromThemes.Redirector;
-import fromThemes.TypeChecker;
+import fromWikipedia.CategoryExtractor;
 
 /**
  * CategoryMapper - YAGO2s
@@ -26,18 +30,19 @@ import fromThemes.TypeChecker;
  */
 public class CategoryMapper extends MultilingualExtractor {
 
-	public static final Theme CATEGORYFACTS_TOREDIRECT = new Theme(
+	public static final BaseTheme CATEGORYFACTS_TOREDIRECT = new BaseTheme(
 			"categoryFactsToBeRedirected",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected");
 
-	public static final Theme CATEGORYFACTS_TOTYPECHECK = new Theme(
+	public static final BaseTheme CATEGORYFACTS_TOTYPECHECK = new BaseTheme(
 			"categoryFactsToBeTypechecked",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories, still to be typechecked");
 
-	public static final Theme CATEGORYFACTS = new Theme("categoryFacts", "en",
+	public static final BaseTheme CATEGORYFACTS = new BaseTheme(
+			"categoryFacts",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories");
 
-	public static final Theme CATEGORYSOURCES = new Theme(
+	public static final BaseTheme CATEGORYSOURCES = new BaseTheme(
 			"categorySources",
 			"Sources for the facts about Wikipedia instances, derived from the Wikipedia categories");
 
@@ -106,7 +111,7 @@ public class CategoryMapper extends MultilingualExtractor {
 
 	/** Constructor from source file */
 	public CategoryMapper(String lang) {
-		language = lang;
+		super(lang);
 	}
 
 	public static void main(String[] args) throws Exception {

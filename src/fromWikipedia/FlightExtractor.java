@@ -17,10 +17,12 @@ import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
+import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.Redirector;
-import fromThemes.TypeChecker;
 
 /**
  * FlightExtractor - Yago2s
@@ -31,7 +33,7 @@ import fromThemes.TypeChecker;
  * 
  */
 
-public class FlightExtractor extends Extractor {
+public class FlightExtractor extends EnglishWikipediaExtractor {
 
 	public static final Theme FLIGHTS = new Theme("flights",
 			"Flights from airport to airport");
@@ -45,13 +47,6 @@ public class FlightExtractor extends Extractor {
 	public static final Theme FLIGHTSNEEDTYPE = new Theme(
 			"flightsNeedTypeCheck",
 			"Flights from airport to airport, need type checking");
-
-	protected File wikipedia;
-
-	@Override
-	public File inputDataFile() {
-		return wikipedia;
-	}
 
 	@Override
 	public Set<Theme> input() {
@@ -68,13 +63,13 @@ public class FlightExtractor extends Extractor {
 	public Set<Extractor> followUp() {
 		return new HashSet<Extractor>(Arrays.asList(new Redirector(
 				FLIGHTSNEEDRED, FLIGHTSNEEDTYPE, this,
-				decodeLang(this.wikipedia.getName())), new TypeChecker(
+				decodeLang(this.inputData.getName())), new TypeChecker(
 				FLIGHTSNEEDTYPE, FLIGHTS, this)));
 	}
 
 	/** Constructor from source file */
 	public FlightExtractor(File wikipedia) {
-		this.wikipedia = wikipedia;
+		super(wikipedia);
 	}
 
 	@Override
@@ -83,7 +78,7 @@ public class FlightExtractor extends Extractor {
 
 		// Extract the information
 		// Announce.progressStart("Extracting", 4_500_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		String titleEntity = null;
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>",

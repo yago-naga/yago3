@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.io.File;
 import java.io.Writer;
@@ -11,11 +11,12 @@ import java.util.Set;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.util.FileUtils;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
 import basics.Theme;
-import fromThemes.InfoboxTermExtractor;
+import extractors.MultilingualExtractor;
 
 /**
  * YAGO2s - AttributeMatcher
@@ -33,11 +34,11 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 	private static FactCollection yagoFacts = null;
 
-	public static final Theme MATCHED_INFOBOXATTS = new Theme(
+	public static final BaseTheme MATCHED_INFOBOXATTS = new BaseTheme(
 			"matchedAttributes",
 			"Attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
 
-	public static final Theme MATCHED_INFOBOXATTS_SOURCES = new Theme(
+	public static final BaseTheme MATCHED_INFOBOXATTS_SOURCES = new BaseTheme(
 			"matchedAttributeSources",
 			"Sources for the attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
 
@@ -82,7 +83,8 @@ public class AttributeMatcher extends MultilingualExtractor {
 		// Counts for every german attribute how many facts there are
 		Map<String, Integer> germanFactCountPerAttribute = new HashMap<>();
 
-		yagoFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en").factCollection();
+		yagoFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en")
+				.factCollection();
 		for (Fact germanFact : germanFacts.factSource()) {
 			String germanRelation = germanFact.getRelation();
 			String germanSubject = germanFact.getArg(1);
@@ -115,8 +117,8 @@ public class AttributeMatcher extends MultilingualExtractor {
 						germanWrongMap = new HashMap<String, Integer>());
 
 			for (String yagoRelation : yagoFacts.getRelations(germanSubject)) {
-				Set<String> yagoObjects = yagoFacts.collectObjects(germanSubject,
-						yagoRelation);
+				Set<String> yagoObjects = yagoFacts.collectObjects(
+						germanSubject, yagoRelation);
 				if (yagoObjects.contains(germanObject))
 					D.addKeyValue(germanMap, yagoRelation, 1);
 				else
@@ -155,7 +157,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 	}
 
 	public AttributeMatcher(String secondLang) {
-		language = secondLang;
+		super(secondLang);
 	}
 
 	public static void main(String[] args) throws Exception {

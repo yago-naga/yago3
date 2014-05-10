@@ -1,4 +1,4 @@
-package fromThemes;
+package deduplicators;
 
 import java.util.Set;
 
@@ -9,7 +9,7 @@ import basics.FactCollection;
 import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
-import fromWikipedia.Extractor;
+import extractors.Extractor;
 
 /**
  * YAGO2s - SimpleDeduplicator

@@ -4,11 +4,10 @@ import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import basics.Theme;
-import fromWikipedia.Extractor;
-import fromWikipedia.MultilingualExtractor;
+import extractors.Extractor;
 
 /** A Dummy class to indicate extractors that are called en suite */
-public abstract class FollowUpExtractor extends MultilingualExtractor {
+public abstract class FollowUpExtractor extends Extractor {
 
 	/** This is the theme we want to check */
 	protected Theme checkMe;

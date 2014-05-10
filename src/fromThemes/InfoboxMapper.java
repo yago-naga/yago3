@@ -1,4 +1,4 @@
-package fromWikipedia;
+package fromThemes;
 
 import java.io.File;
 import java.util.Arrays;
@@ -7,14 +7,16 @@ import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
+import basics.BaseTheme;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
 import basics.Theme;
+import extractors.Extractor;
+import extractors.MultilingualExtractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
-import fromThemes.InfoboxTermExtractor;
-import fromThemes.Redirector;
-import fromThemes.TypeChecker;
 
 /**
  * Class InfoboxMapper - YAGO2S
@@ -26,16 +28,16 @@ import fromThemes.TypeChecker;
 
 public class InfoboxMapper extends MultilingualExtractor {
 
-	public static final Theme INFOBOXFACTS = new Theme("infoboxFacts",
+	public static final BaseTheme INFOBOXFACTS = new BaseTheme("infoboxFacts",
 			"Facts of infobox, redirected and type-checked");
-	public static final Theme INFOBOXFACTS_TOREDIRECT = new Theme(
+	public static final BaseTheme INFOBOXFACTS_TOREDIRECT = new BaseTheme(
 			"infoboxFactsToRedirect",
 			"Facts of infobox to be redirected and type-checked");
-	public static final Theme INFOBOXFACTS_TOTYPECHECK = new Theme(
+	public static final BaseTheme INFOBOXFACTS_TOTYPECHECK = new BaseTheme(
 			"infoboxFactsToCheck", "Facts of infobox to be type-checked");
 
-	public static final Theme INFOBOXSOURCES = new Theme("infoboxSources",
-			"en", "Sources of infobox facts");
+	public static final BaseTheme INFOBOXSOURCES = new BaseTheme(
+			"infoboxSources", "Sources of infobox facts");
 
 	@Override
 	public Set<Extractor> followUp() {
@@ -108,7 +110,7 @@ public class InfoboxMapper extends MultilingualExtractor {
 	}
 
 	public InfoboxMapper(String lang) {
-		language = lang;
+		super(lang);
 	}
 
 	public static void main(String[] args) throws Exception {
