@@ -8,7 +8,6 @@ import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
-import basics.FactSource;
 import basics.Theme;
 import deduplicators.FactExtractor;
 import deduplicators.LabelExtractor;
@@ -54,7 +53,8 @@ public class MissingFactExtractor extends DataExtractor {
 			Announce.doing("Loading old facts");
 			FactCollection old = new FactCollection();
 			int numFacts = 10000;
-			for (Fact f : FactSource.from(checkMe.file(inputData))) {
+			for (Fact f : checkMe.assignToFolder(inputData)
+					.factSource()) {
 				if (f.getArg(1).startsWith("<wordnet_"))
 					continue;
 				if (f.getArg(1).endsWith("_language>"))

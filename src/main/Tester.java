@@ -54,8 +54,8 @@ public class Tester {
 			FactCollection goldStandard = null;
 			FactCollection result = null;
 			try {
-				goldStandard = new FactCollection(theme.file(goldFolder));
-				result = new FactCollection(theme.file(outputFolder));
+				goldStandard = new FactCollection(theme.findFile(goldFolder));
+				result = new FactCollection(theme.findFile(outputFolder));
 			} catch (Exception ex) {
 				Announce.message(ex);
 			}
@@ -218,11 +218,13 @@ public class Tester {
 				.listFiles()));
 		for (Theme t : ex.input()) {
 			t.forgetFile();
-			File themeFile = t.file(inputThemeFolder);
-			if (!themeFile.exists())
+			try {
+				t.assignToFolder(inputThemeFolder);
+			} catch (Exception e) {
+				// file is not there, no problem, get it later from YAGO
 				continue;
-			t.setFile(themeFile);
-			files.remove(themeFile);
+			}
+			files.remove(t.file());
 		}
 		if (!files.isEmpty()) {
 			Announce.warning("Superfluous themes in input:", files);

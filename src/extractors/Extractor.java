@@ -8,7 +8,6 @@ import java.util.Set;
 import javatools.administrative.Announce;
 import basics.Fact;
 import basics.FactComponent;
-import basics.N4Writer;
 import basics.Theme;
 import basics.YAGO;
 
@@ -74,14 +73,14 @@ public abstract class Extractor {
 		Announce.doing("Loading input");
 		for (Theme theme : input()) {
 			if (!theme.isAvailable())
-				theme.setFile(theme.file(inputFolder));
+				theme.assignToFolder(inputFolder);
 		}
 		Announce.done();
 		Announce.doing("Creating output files");
 		for (Theme out : output()) {
 			Announce.doing("Creating file", out.name);
-			out.open(new N4Writer(out.file(outputFolder), header + "\n"
-					+ out.description + "\n" + out.themeGroup));
+			out.openForWritingInFolder(outputFolder, header + "\n"
+					+ out.description + "\n" + out.themeGroup);
 			Announce.done();
 		}
 		Announce.done();

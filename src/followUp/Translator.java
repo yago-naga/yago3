@@ -128,7 +128,7 @@ public class Translator extends FollowUpExtractor {
 	}
 
 	public Translator(Theme in, Theme out, String lang, ObjectType objectType) {
-		if (language.equals("en"))
+		if (lang.equals("en"))
 			throw new RuntimeException(
 					"Don't translate English. This is useless and very costly.");
 		this.checkMe = in;
@@ -138,10 +138,10 @@ public class Translator extends FollowUpExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Theme res = new Theme("res", "");
+		Theme res = new Theme("result", "");
 		new Translator(CategoryExtractor.CATEGORYMEMBERS.inLanguage("de"), res,
-				"de", ObjectType.Category).extract(new File("D:/data3/yago2s"),
-				"");
+				"de", ObjectType.Category).extract(new File("c:/fabian/data/yago3"),
+				"test");
 	}
 
 }

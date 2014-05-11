@@ -5,6 +5,8 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import basics.Fact;
+import basics.FactSource;
 import basics.Theme;
 
 /**
@@ -71,7 +73,12 @@ public class PatternHardExtractor extends HardExtractor {
 		Announce.doing("Copying patterns");
 		Announce.message("Input folder is", inputData);
 		for (Theme t : output()) {
-			extract(t.file(inputData), t);
+			File f = t.findFile(inputData);
+			Announce.doing("Copying hard wired facts from", f.getName());
+			for (Fact fact : FactSource.from(f)) {
+				t.write(fact);
+			}
+			Announce.done();
 		}
 		Announce.done();
 	}
