@@ -2,8 +2,6 @@ package fromWikipedia;
 
 import java.io.File;
 import java.io.Reader;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,7 +14,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
 import extractors.EnglishWikipediaExtractor;
-import extractors.Extractor;
+import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
 
@@ -54,10 +52,10 @@ public class FlightIATAcodeExtractor extends EnglishWikipediaExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new Redirector(
-				AIRPORT_CODE_NEEDRED, AIRPORT_CODE_NEEDTYPE, this, "en"),
-				new TypeChecker(AIRPORT_CODE_NEEDTYPE, AIRPORT_CODE, this)));
+	public Set<FollowUpExtractor> followUp() {
+		return new FinalSet<FollowUpExtractor>(new Redirector(
+				AIRPORT_CODE_NEEDRED, AIRPORT_CODE_NEEDTYPE, this),
+				new TypeChecker(AIRPORT_CODE_NEEDTYPE, AIRPORT_CODE, this));
 	}
 
 	/** Constructor from source file */

@@ -2,19 +2,17 @@ package fromThemes;
 
 import java.io.File;
 import java.io.Writer;
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.util.FileUtils;
-import basics.BaseTheme;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
+import basics.MultilingualTheme;
 import basics.Theme;
 import extractors.MultilingualExtractor;
 
@@ -34,21 +32,21 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 	private static FactCollection yagoFacts = null;
 
-	public static final BaseTheme MATCHED_INFOBOXATTS = new BaseTheme(
+	public static final MultilingualTheme MATCHED_INFOBOXATTS = new MultilingualTheme(
 			"matchedAttributes",
 			"Attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
 
-	public static final BaseTheme MATCHED_INFOBOXATTS_SOURCES = new BaseTheme(
+	public static final MultilingualTheme MATCHED_INFOBOXATTS_SOURCES = new MultilingualTheme(
 			"matchedAttributeSources",
 			"Sources for the attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
 
 	@Override
 	public Set<Theme> input() {
-		HashSet<Theme> result = new HashSet<Theme>(
-				Arrays.asList(InfoboxMapper.INFOBOXFACTS.inLanguage("en"),
-						InfoboxTermExtractor.INFOBOXATTSTRANSLATED
-								.inLanguage(language)));
-		return result;
+		return new FinalSet<Theme>(InfoboxMapper.INFOBOXFACTS.inLanguage("en"),
+				isEnglish() ? InfoboxTermExtractor.INFOBOXTERMS
+						.inLanguage("en")
+						: InfoboxTermExtractor.INFOBOXTERMSTRANSLATED
+								.inLanguage(language));
 	}
 
 	@Override
@@ -58,9 +56,8 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new HashSet<>(Arrays.asList(
-				MATCHED_INFOBOXATTS.inLanguage(language),
-				MATCHED_INFOBOXATTS_SOURCES.inLanguage(language)));
+		return new FinalSet<>(MATCHED_INFOBOXATTS.inLanguage(language),
+				MATCHED_INFOBOXATTS_SOURCES.inLanguage(language));
 	}
 
 	@Override
@@ -71,7 +68,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 				.getParent(), "attributeMatches_" + language + ".tsv"));
 		Theme sources = MATCHED_INFOBOXATTS_SOURCES.inLanguage(language);
 
-		Theme germanFacts = InfoboxTermExtractor.INFOBOXATTSTRANSLATED
+		Theme germanFacts = InfoboxTermExtractor.INFOBOXTERMSTRANSLATED
 				.inLanguage(language);
 		// Counts, for every german attribute, how often it appears with every
 		// YAGO relation
@@ -85,7 +82,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 		yagoFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en")
 				.factCollection();
-		for (Fact germanFact : germanFacts.factSource()) {
+		for (Fact germanFact : germanFacts) {
 			String germanRelation = germanFact.getRelation();
 			String germanSubject = germanFact.getArg(1);
 			String germanObject = germanFact.getArg(2);

@@ -51,7 +51,7 @@ public class TitleExtractor {
 	 * @throws IOException
 	 */
 	public TitleExtractor(String language) throws IOException {
-		if (!PatternHardExtractor.TITLEPATTERNS.isAvailable()) {
+		if (!PatternHardExtractor.TITLEPATTERNS.isAvailableForReading()) {
 			throw new RuntimeException(
 					"The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
 		}
@@ -59,12 +59,12 @@ public class TitleExtractor {
 				PatternHardExtractor.TITLEPATTERNS.factCollection(),
 				"<_titleReplace>");
 		if (language.equals("en")
-				&& !WordnetExtractor.PREFMEANINGS.isAvailable()
-				&& !TransitiveTypeExtractor.TRANSITIVETYPE.isAvailable()) {
+				&& !WordnetExtractor.PREFMEANINGS.isAvailableForReading()
+				&& !TransitiveTypeExtractor.TRANSITIVETYPE.isAvailableForReading()) {
 			Announce.error("The English TitleExtractor needs WordnetExtractor.PREFMEANINGS or TransitiveTypeExtractor.TRANSITIVETYPE as input. "
 					+ "This is in order to avoid that Wikipedia articles that describe common nouns (such as 'table') become instances in YAGO.");
 		}
-		if (TransitiveTypeExtractor.TRANSITIVETYPE.isAvailable()) {
+		if (TransitiveTypeExtractor.TRANSITIVETYPE.isAvailableForReading()) {
 			this.entities = TransitiveTypeExtractor.TRANSITIVETYPE
 					.factCollection().getSubjects();
 		} else if (language.equals("en")) {

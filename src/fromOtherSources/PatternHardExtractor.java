@@ -73,7 +73,7 @@ public class PatternHardExtractor extends HardExtractor {
 		Announce.doing("Copying patterns");
 		Announce.message("Input folder is", inputData);
 		for (Theme t : output()) {
-			File f = t.findFile(inputData);
+			File f = t.findFileInFolder(inputData);
 			Announce.doing("Copying hard wired facts from", f.getName());
 			for (Fact fact : FactSource.from(f)) {
 				t.write(fact);

@@ -64,7 +64,7 @@ public class RuleExtractor extends BaseRuleExtractor {
 	@Override
 	public FactCollection getInputRuleCollection() throws Exception {
 		FactCollection collection = new FactCollection(
-				PatternHardExtractor.RULES.factSource());
+				PatternHardExtractor.RULES);
 		return collection;
 	}
 

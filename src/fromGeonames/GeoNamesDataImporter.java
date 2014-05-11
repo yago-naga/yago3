@@ -88,8 +88,7 @@ public class GeoNamesDataImporter extends DataExtractor {
 				.factCollection();
 		Map<String, String> geoClassId2yago = mappedClassIds
 				.getReverseMap("<hasGeonamesClassId>");
-		FactSource ibFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en")
-				.factSource();
+		FactSource ibFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en");
 
 		Map<Integer, String> geoId2name = extractAllCountries(new File(
 				inputDataFile, "allCountries.txt"), GEONAMESMAPPEDDATA,

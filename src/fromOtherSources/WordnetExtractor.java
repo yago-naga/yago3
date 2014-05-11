@@ -79,7 +79,7 @@ public class WordnetExtractor extends DataExtractor {
 	public void extract() throws Exception {
 		Announce.doing("Extracting from Wordnet");
 		Set<String> definedWords = new HashSet<>();
-		for (Fact f : HardExtractor.HARDWIREDFACTS.factSource()) {
+		for (Fact f : HardExtractor.HARDWIREDFACTS) {
 			if (!f.getRelation().equals("<isPreferredMeaningOf>"))
 				continue;
 			PREFMEANINGS.write(f);

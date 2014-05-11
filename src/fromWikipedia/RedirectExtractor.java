@@ -2,10 +2,8 @@ package fromWikipedia;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -16,12 +14,12 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
-import basics.BaseTheme;
+import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
-import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
+import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 
 /**
@@ -40,11 +38,11 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 	private static final Pattern pattern = Pattern
 			.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
-	public static final BaseTheme REDIRECTFACTS_DIRTY = new BaseTheme(
+	public static final MultilingualTheme REDIRECTFACTS_DIRTY = new MultilingualTheme(
 			"redirectLabelsDirty",
 			"Redirect facts from Wikipedia redirect pages (to be type checked)");
 
-	public static final BaseTheme REDIRECTLABELS = new BaseTheme(
+	public static final MultilingualTheme REDIRECTLABELS = new MultilingualTheme(
 			"redirectLabels", "Redirect facts from Wikipedia redirect pages");
 
 	@Override
@@ -54,10 +52,10 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(
-				REDIRECTFACTS_DIRTY.inLanguage(this.language), REDIRECTLABELS
-						.inLanguage(this.language), this)));
+	public Set<FollowUpExtractor> followUp() {
+		return new FinalSet<FollowUpExtractor>(new TypeChecker(
+				REDIRECTFACTS_DIRTY.inLanguage(this.language),
+				REDIRECTLABELS.inLanguage(this.language), this));
 	}
 
 	@Override
@@ -66,7 +64,7 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 		Announce.doing("Extracting Redirects");
 		Map<String, String> redirects = new HashMap<>();
 
-		BufferedReader in = FileUtils.getBufferedUTF8Reader(inputData);
+		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 
 		String titleEntity = null;
 		redirect: while (true) {
@@ -96,7 +94,7 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
 			out.write(new Fact(FactComponent.forYagoEntity(redirect.getValue()
-					.replace(' ', '_')), "<redirectedFrom>", FactComponent
+					), "<redirectedFrom>", FactComponent
 					.forStringWithLanguage(redirect.getKey(),
 							this.language.equals("en") ? "eng" : this.language)));
 		}

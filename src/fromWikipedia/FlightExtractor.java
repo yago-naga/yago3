@@ -2,8 +2,6 @@ package fromWikipedia;
 
 import java.io.File;
 import java.io.Reader;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -12,13 +10,13 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
-import utils.TermExtractor;
+import utils.TermParser;
 import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
 import extractors.EnglishWikipediaExtractor;
-import extractors.Extractor;
+import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
@@ -60,11 +58,10 @@ public class FlightExtractor extends EnglishWikipediaExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new Redirector(
-				FLIGHTSNEEDRED, FLIGHTSNEEDTYPE, this,
-				decodeLang(this.inputData.getName())), new TypeChecker(
-				FLIGHTSNEEDTYPE, FLIGHTS, this)));
+	public Set<FollowUpExtractor> followUp() {
+		return new FinalSet<FollowUpExtractor>(new Redirector(FLIGHTSNEEDRED,
+				FLIGHTSNEEDTYPE, this), new TypeChecker(FLIGHTSNEEDTYPE,
+				FLIGHTS, this));
 	}
 
 	/** Constructor from source file */
@@ -104,7 +101,7 @@ public class FlightExtractor extends EnglishWikipediaExtractor {
 							|| s.contains("}}\r\r") || s.contains("}}\n\r\n\r"))
 						break;
 					if (s.contains("[[")) {
-						List<String> entities = TermExtractor.forWikiLink
+						List<String> entities = TermParser.forWikiLink
 								.extractList(s);
 						if ((entities.size() == 1 || entities.size() == 2)) {
 							airline = entities.get(0);

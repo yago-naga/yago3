@@ -3,22 +3,21 @@ package fromThemes;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
 import utils.PatternList;
-import utils.TermExtractor;
-import basics.BaseTheme;
+import utils.TermParser;
 import basics.Fact;
 import basics.FactComponent;
+import basics.MultilingualTheme;
 import basics.Theme;
-import extractors.Extractor;
 import extractors.MultilingualExtractor;
+import followUp.EntityTranslator;
+import followUp.FollowUpExtractor;
 import followUp.Redirector;
-import followUp.Translator;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
@@ -34,20 +33,21 @@ import fromWikipedia.InfoboxExtractor;
  */
 public class InfoboxTermExtractor extends MultilingualExtractor {
 
-	public static final BaseTheme INFOBOXTERMS = new BaseTheme("infoboxTerms",
+	public static final MultilingualTheme INFOBOXTERMS = new MultilingualTheme(
+			"infoboxTerms",
 			"The attribute facts of the Wikipedia infoboxes, split into terms");
-	public static final BaseTheme INFOBOXTERMS_TOREDIRECT = new BaseTheme(
+	public static final MultilingualTheme INFOBOXTERMS_TOREDIRECT = new MultilingualTheme(
 			"infoboxTermsToBeRedirected",
 			"The attribute facts of the Wikipedia infoboxes, split into terms, still to be redirected.");
-	public static final BaseTheme INFOBOXATTSTRANSLATED = new BaseTheme(
-			"infoboxAttributesTranslated",
+	public static final MultilingualTheme INFOBOXTERMSTRANSLATED = new MultilingualTheme(
+			"infoboxTermsTranslated",
 			"The attribute facts of the Wikipedia infoboxes, split into terms, redirected, subject translated");
 
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
-				WordnetExtractor.WORDNETWORDS, HardExtractor.HARDWIREDFACTS,
+				WordnetExtractor.PREFMEANINGS, HardExtractor.HARDWIREDFACTS,
 				InfoboxExtractor.INFOBOX_ATTRIBUTES.inLanguage(this.language)));
 	}
 
@@ -64,14 +64,15 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(
-				new Redirector(INFOBOXTERMS_TOREDIRECT
-						.inLanguage(this.language), INFOBOXTERMS
-						.inLanguage(this.language), this, this.language),
-				new Translator(INFOBOXTERMS.inLanguage(language),
-						INFOBOXATTSTRANSLATED.inLanguage(this.language),
-						this.language, Translator.ObjectType.Entity)));
+	public Set<FollowUpExtractor> followUp() {
+		Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
+		result.add(new Redirector(INFOBOXTERMS_TOREDIRECT
+				.inLanguage(this.language), INFOBOXTERMS
+				.inLanguage(this.language), this));
+		if (!language.equals("en"))
+			result.add(new EntityTranslator(INFOBOXTERMS.inLanguage(language),
+					INFOBOXTERMSTRANSLATED.inLanguage(this.language), this));
+		return (result);
 	}
 
 	@Override
@@ -81,8 +82,9 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 				"<_infoboxReplace>");
 		Map<String, String> preferredMeanings = WordnetExtractor.PREFMEANINGS
 				.factCollection().getPreferredMeanings();
-		for (Fact f : InfoboxExtractor.INFOBOX_ATTRIBUTES.inLanguage(
-				this.language).factSource()) {
+
+		for (Fact f : InfoboxExtractor.INFOBOX_ATTRIBUTES
+				.inLanguage(this.language)) {
 			String val = f.getObjectAsJavaString();
 			val = replacements.transform(Char.decodeAmpersand(val));
 			val = val
@@ -90,12 +92,13 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 			val = val.trim();
 			if (val.length() == 0)
 				continue;
-			for (TermExtractor extractor : TermExtractor.all(preferredMeanings)) {
-				List<String> objects = extractor.extractList(val);
-				for (String object : objects) {
-					INFOBOXTERMS_TOREDIRECT.inLanguage(language).write(
-							new Fact(f.getSubject(), f.getRelation(), object));
-				}
+			Set<String> objects = new HashSet<>();
+			for (TermParser extractor : TermParser.all(preferredMeanings)) {
+				objects.addAll(extractor.extractList(val));
+			}
+			for (String object : objects) {
+				INFOBOXTERMS_TOREDIRECT.inLanguage(language).write(
+						new Fact(f.getSubject(), f.getRelation(), object));
 			}
 		}
 	}

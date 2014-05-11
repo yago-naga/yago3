@@ -20,7 +20,7 @@ import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
 import utils.PatternList;
-import utils.TermExtractor;
+import utils.TermParser;
 import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactCollection;
@@ -29,7 +29,7 @@ import basics.RDFS;
 import basics.Theme;
 import basics.YAGO;
 import extractors.EnglishWikipediaExtractor;
-import extractors.Extractor;
+import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
 import fromOtherSources.HardExtractor;
@@ -47,11 +47,12 @@ import fromOtherSources.WordnetExtractor;
  */
 public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new Redirector(
-				TEMPORALDIRTYINFOBOXFACTS, TEMPORALREDIRECTEDINFOBOXFACTS,
-				this, decodeLang(this.inputData.getName())), new TypeChecker(
-				TEMPORALREDIRECTEDINFOBOXFACTS, TEMPORALINFOBOXFACTS, this)));
+	public Set<FollowUpExtractor> followUp() {
+		return new FinalSet<FollowUpExtractor>(
+				new Redirector(TEMPORALDIRTYINFOBOXFACTS,
+						TEMPORALREDIRECTEDINFOBOXFACTS, this), new TypeChecker(
+						TEMPORALREDIRECTEDINFOBOXFACTS, TEMPORALINFOBOXFACTS,
+						this));
 	}
 
 	public Set<Theme> input() {
@@ -190,8 +191,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			}
 
 			// Get the term extractor
-			TermExtractor extractor = cls.equals(RDFS.clss) ? new TermExtractor.ForClass(
-					preferredMeanings) : TermExtractor.forType(cls);
+			TermParser extractor = cls.equals(RDFS.clss) ? new TermParser.ForClass(
+					preferredMeanings) : TermParser.forType(cls);
 			String syntaxChecker = FactComponent.asJavaString(factCollection
 					.getObject(cls, "<_hasTypeCheckPattern>"));
 
@@ -348,8 +349,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			}
 
 			// Get the term extractor
-			TermExtractor extractor = cls.equals(RDFS.clss) ? new TermExtractor.ForClass(
-					preferredMeanings) : TermExtractor.forType(cls);
+			TermParser extractor = cls.equals(RDFS.clss) ? new TermParser.ForClass(
+					preferredMeanings) : TermParser.forType(cls);
 			String syntaxChecker = FactComponent.asJavaString(factCollection
 					.getObject(cls, "<_hasTypeCheckPattern>"));
 

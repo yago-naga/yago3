@@ -10,6 +10,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
 import basics.YAGO;
+import followUp.FollowUpExtractor;
 
 /**
  * Extractor - Yago2s
@@ -20,7 +21,7 @@ import basics.YAGO;
  * @author Fabian
  * 
  */
-public abstract class Extractor {
+public abstract class Extractor implements Comparable<Extractor> {
 
 	/** The themes required */
 	public abstract Set<Theme> input();
@@ -34,7 +35,7 @@ public abstract class Extractor {
 	public abstract Set<Theme> output();
 
 	/** Returns other extractors to be called en suite */
-	public Set<Extractor> followUp() {
+	public Set<FollowUpExtractor> followUp() {
 		return (Collections.emptySet());
 	}
 
@@ -46,16 +47,6 @@ public abstract class Extractor {
 	@Override
 	public String toString() {
 		return name();
-	}
-
-	/**
-	 * Finds the language from the name of the input file, assuming that the
-	 * first part of the name before the underline is equal to the language
-	 */
-	public static String decodeLang(String fileName) {
-		if (!fileName.contains("_"))
-			return "en";
-		return fileName.split("_")[0];
 	}
 
 	/** Main method */
@@ -72,18 +63,14 @@ public abstract class Extractor {
 		Announce.doing("Running", this.name());
 		Announce.doing("Loading input");
 		for (Theme theme : input()) {
-			if (!theme.isAvailable())
+			if (!theme.isAvailableForReading())
 				theme.assignToFolder(inputFolder);
 		}
 		Announce.done();
-		Announce.doing("Creating output files");
 		for (Theme out : output()) {
-			Announce.doing("Creating file", out.name);
 			out.openForWritingInFolder(outputFolder, header + "\n"
 					+ out.description + "\n" + out.themeGroup);
-			Announce.done();
 		}
-		Announce.done();
 		Announce.doing("Extracting");
 		extract();
 		Announce.done();
@@ -103,6 +90,11 @@ public abstract class Extractor {
 		}
 		Announce.done();
 		return (extractor);
+	}
+
+	@Override
+	public int compareTo(Extractor o) {
+		return this.name().compareTo(o.name());
 	}
 
 	/**

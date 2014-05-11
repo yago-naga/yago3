@@ -12,7 +12,7 @@ import basics.FactComponent;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import extractors.DataExtractor;
-import extractors.Extractor;
+import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 
 /**
@@ -52,8 +52,8 @@ public class GeoNamesEntityMapper extends DataExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(
+	public Set<FollowUpExtractor> followUp() {
+		return new HashSet<FollowUpExtractor>(Arrays.asList(new TypeChecker(
 				DIRTYGEONAMESENTITYIDS, GEONAMESENTITYIDS, this)));
 	}
 

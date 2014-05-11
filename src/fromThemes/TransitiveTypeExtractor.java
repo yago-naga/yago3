@@ -7,7 +7,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 
-import deduplicators.ClassExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
@@ -16,13 +15,14 @@ import basics.FactCollection;
 import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
+import deduplicators.ClassExtractor;
 import extractors.Extractor;
 
 /**
  * YAGO2s - TransitiveTypeExtractor
  * 
  * Extracts all transitive rdf:type facts.
-
+ * 
  * @author Fabian M. Suchanek
  * 
  */
@@ -54,7 +54,7 @@ public class TransitiveTypeExtractor extends Extractor {
 		FactCollection classes = ClassExtractor.YAGOTAXONOMY.factCollection();
 		Map<String, Set<String>> yagoTaxonomy = new HashMap<>();
 		Announce.doing("Computing the transitive closure");
-		for (Fact f : CoherentTypeExtractor.YAGOTYPES.factSource()) {
+		for (Fact f : CoherentTypeExtractor.YAGOTYPES) {
 			if (f.getRelation().equals(RDFS.type)) {
 				D.addKeyValue(yagoTaxonomy, f.getArg(1), f.getArg(2),
 						TreeSet.class);

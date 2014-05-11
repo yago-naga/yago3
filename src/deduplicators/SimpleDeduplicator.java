@@ -52,7 +52,7 @@ public abstract class SimpleDeduplicator extends Extractor {
 		FactCollection batch = new FactCollection();
 		for (Theme theme : input()) {
 			Announce.doing("Loading from", theme);
-			for (Fact fact : theme.factSource()) {
+			for (Fact fact : theme) {
 				if (isMyRelation(fact))
 					batch.add(fact, functions);
 			}

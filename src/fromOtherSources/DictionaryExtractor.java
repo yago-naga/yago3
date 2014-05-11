@@ -10,7 +10,7 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.parsers.Char;
-import basics.BaseTheme;
+import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
@@ -30,7 +30,7 @@ import extractors.MultilingualExtractor;
 public class DictionaryExtractor extends DataExtractor {
 
 	/** Output theme */
-	public static final BaseTheme ENTITY_DICTIONARY = new BaseTheme(
+	public static final MultilingualTheme ENTITY_DICTIONARY = new MultilingualTheme(
 			"entityDictionary",
 			"Maps a foreign entity to a YAGO entity. Data from (http://http://www.wikidata.org/).");
 
@@ -39,12 +39,12 @@ public class DictionaryExtractor extends DataExtractor {
 			"Words for 'category' in different languages.");
 
 	/** Translations of infobox templates */
-	public static final BaseTheme INFOBOX_TEMPLATE_DICTIONARY = new BaseTheme(
+	public static final MultilingualTheme INFOBOX_TEMPLATE_DICTIONARY = new MultilingualTheme(
 			"infoboxTemplateDictionary",
 			"Maps a foreign infobox template name to the English name.");
 
 	/** Translations of categories */
-	public static final BaseTheme CATEGORY_DICTIONARY = new BaseTheme(
+	public static final MultilingualTheme CATEGORY_DICTIONARY = new MultilingualTheme(
 			"categoryDictionary",
 			"Maps a foreign category name to the English name.");
 
@@ -114,15 +114,6 @@ public class DictionaryExtractor extends DataExtractor {
 						.keySet());
 				if (mostEnglishLan != null) {
 					String mostEnglishName = language2name.get(mostEnglishLan);
-					for (String lan : language2name.keySet()) {
-						ENTITY_DICTIONARY.inLanguage(lan).write(
-								new Fact(FactComponent.forForeignYagoEntity(
-										language2name.get(lan), lan),
-										"<_hasTranslation>", FactComponent
-												.forForeignYagoEntity(
-														mostEnglishName,
-														mostEnglishLan)));
-					}
 					if (mostEnglishLan.equals("en")
 							&& mostEnglishName.startsWith("Category:")) {
 						for (String lan : language2name.keySet()) {
@@ -136,6 +127,7 @@ public class DictionaryExtractor extends DataExtractor {
 								CATEGORYWORDS.write(new Fact(FactComponent
 										.forString(lan), "<_hasCategoryWord>",
 										FactComponent.forString(catword)));
+								categoryWordLanguages.add(lan);
 							}
 							CATEGORY_DICTIONARY
 									.inLanguage(lan)
@@ -146,23 +138,38 @@ public class DictionaryExtractor extends DataExtractor {
 											"<_hasTranslation>",
 											FactComponent
 													.forWikiCategory(mostEnglishName
-															.substring(8))));
+															.substring(9))));
 						}
-					}
-					if (mostEnglishLan.equals("en")
+					} else if (mostEnglishLan.equals("en")
 							&& mostEnglishName.startsWith("Template:Infobox_")) {
 						for (String lan : language2name.keySet()) {
 							String name = language2name.get(lan);
 							int cutpos = name.indexOf('_');
 							if (cutpos == -1)
 								continue;
-							name = name.substring(cutpos + 1);
+							name = FactComponent.forInfoboxTemplate(
+									name.substring(cutpos + 1), lan);
 							INFOBOX_TEMPLATE_DICTIONARY.inLanguage(lan).write(
-									new Fact(FactComponent
-											.forStringWithLanguage(name, lan),
+									new Fact(name, "<_hasTranslation>",
+											FactComponent.forInfoboxTemplate(
+													mostEnglishName
+															.substring(17),
+													"en")));
+						}
+					} else {
+						for (String lan : language2name.keySet()) {
+							ENTITY_DICTIONARY
+									.inLanguage(lan)
+									.write(new Fact(
+											FactComponent
+													.forForeignYagoEntity(
+															language2name
+																	.get(lan),
+															lan),
 											"<_hasTranslation>", FactComponent
-													.forString(mostEnglishName
-															.substring(17))));
+													.forForeignYagoEntity(
+															mostEnglishName,
+															mostEnglishLan)));
 						}
 					}
 				}

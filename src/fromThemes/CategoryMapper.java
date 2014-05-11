@@ -7,13 +7,13 @@ import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import utils.FactTemplateExtractor;
-import basics.BaseTheme;
+import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.Theme;
-import extractors.Extractor;
 import extractors.MultilingualExtractor;
+import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
@@ -30,19 +30,19 @@ import fromWikipedia.CategoryExtractor;
  */
 public class CategoryMapper extends MultilingualExtractor {
 
-	public static final BaseTheme CATEGORYFACTS_TOREDIRECT = new BaseTheme(
+	public static final MultilingualTheme CATEGORYFACTS_TOREDIRECT = new MultilingualTheme(
 			"categoryFactsToBeRedirected",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories, still to be redirected");
 
-	public static final BaseTheme CATEGORYFACTS_TOTYPECHECK = new BaseTheme(
+	public static final MultilingualTheme CATEGORYFACTS_TOTYPECHECK = new MultilingualTheme(
 			"categoryFactsToBeTypechecked",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories, still to be typechecked");
 
-	public static final BaseTheme CATEGORYFACTS = new BaseTheme(
+	public static final MultilingualTheme CATEGORYFACTS = new MultilingualTheme(
 			"categoryFacts",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories");
 
-	public static final BaseTheme CATEGORYSOURCES = new BaseTheme(
+	public static final MultilingualTheme CATEGORYSOURCES = new MultilingualTheme(
 			"categorySources",
 			"Sources for the facts about Wikipedia instances, derived from the Wikipedia categories");
 
@@ -55,7 +55,7 @@ public class CategoryMapper extends MultilingualExtractor {
 	public Set<Theme> input() {
 		Set<Theme> result = new HashSet<Theme>(
 				Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS));
-		if (language.equals("en"))
+		if (isEnglish())
 			result.add(CategoryExtractor.CATEGORYMEMBERS.inLanguage(language));
 		else
 			result.add(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED
@@ -71,13 +71,12 @@ public class CategoryMapper extends MultilingualExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new Redirector(
+	public Set<FollowUpExtractor> followUp() {
+		return new FinalSet<FollowUpExtractor>(new Redirector(
 				CATEGORYFACTS_TOREDIRECT.inLanguage(language),
-				CATEGORYFACTS_TOTYPECHECK.inLanguage(language), this,
-				this.language),
+				CATEGORYFACTS_TOTYPECHECK.inLanguage(language), this),
 				new TypeChecker(CATEGORYFACTS_TOTYPECHECK.inLanguage(language),
-						CATEGORYFACTS.inLanguage(language), this)));
+						CATEGORYFACTS.inLanguage(language), this));
 	}
 
 	@Override
@@ -88,11 +87,10 @@ public class CategoryMapper extends MultilingualExtractor {
 
 		FactSource factSource;
 		if (language.equals("en"))
-			factSource = CategoryExtractor.CATEGORYMEMBERS.inLanguage(language)
-					.factSource();
+			factSource = CategoryExtractor.CATEGORYMEMBERS.inLanguage(language);
 		else
 			factSource = CategoryExtractor.CATEGORYMEMBERS_TRANSLATED
-					.inLanguage(language).factSource();
+					.inLanguage(language);
 
 		for (Fact f : factSource) {
 			for (Fact fact : categoryPatterns.extract(

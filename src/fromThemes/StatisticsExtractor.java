@@ -64,7 +64,7 @@ public class StatisticsExtractor extends Extractor {
 		for (Theme t : input()) {
 			Announce.doing("Analyzing", t);
 			int counter = 0;
-			for (Fact f : t.factSource()) {
+			for (Fact f : t) {
 				counter++;
 				ByteString arg1 = ByteString.of(f.getArg(1));
 				if ((f.getRelation().equals(RDFS.domain) || f.getRelation()

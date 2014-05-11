@@ -27,6 +27,11 @@ public abstract class MultilingualExtractor extends Extractor {
 	/** The language of this extractor */
 	public final String language;
 
+	/** TRUE if the language is english*/
+	public boolean isEnglish() {
+		return(language.startsWith("en"));
+	}
+
 	@Override
 	public String name() {
 		return (this.getClass().getName() + "(" + this.language + ")");

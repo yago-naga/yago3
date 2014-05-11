@@ -4,18 +4,21 @@ import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
+import javatools.filehandlers.FileSet;
 import basics.FactCollection;
 import basics.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;
-import extractors.MultilingualDataExtractor;
 import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
+import followUp.FollowUpExtractor;
 import fromThemes.RelationChecker;
 
 /**
@@ -28,10 +31,13 @@ import fromThemes.RelationChecker;
  */
 public class Tester {
 
+	/** Total number of themes that should be produced */
 	private static int total = 0;
 
+	/** Number of themes that succeeded */
 	private static int succeeded = 0;
 
+	/** Extractors that failed */
 	private static List<String> failedExtractors = new ArrayList<>();
 
 	/** Runs a single test */
@@ -54,8 +60,10 @@ public class Tester {
 			FactCollection goldStandard = null;
 			FactCollection result = null;
 			try {
-				goldStandard = new FactCollection(theme.findFile(goldFolder));
-				result = new FactCollection(theme.findFile(outputFolder));
+				goldStandard = new FactCollection(
+						theme.findFileInFolder(goldFolder));
+				result = new FactCollection(
+						theme.findFileInFolder(outputFolder));
 			} catch (Exception ex) {
 				Announce.message(ex);
 			}
@@ -97,7 +105,13 @@ public class Tester {
 			Announce.failed();
 			return;
 		}
-		if (clss.getSuperclass() == MultilingualWikipediaExtractor.class) {
+		Set<Class<?>> superclasses = new HashSet<>();
+		Class<?> s = clss;
+		while (s != Object.class) {
+			superclasses.add(s);
+			s = s.getSuperclass();
+		}
+		if (superclasses.contains(MultilingualWikipediaExtractor.class)) {
 			for (File language : testCase.listFiles()) {
 				if (language.isFile() || language.getName().length() != 2) {
 					Announce.warning(
@@ -106,26 +120,12 @@ public class Tester {
 				}
 				File wikipedia = getWikipedia(language);
 				File gold = getGold(language);
-				runTest(MultilingualDataExtractor.forName(
-						(Class<MultilingualDataExtractor>) clss,
+				runTest(MultilingualWikipediaExtractor.forName(
+						(Class<MultilingualWikipediaExtractor>) clss,
 						language.getName(), wikipedia), language, yagoFolder,
 						outputFolder, gold);
 			}
-		} else if (clss.getSuperclass() == MultilingualDataExtractor.class) {
-			for (File language : testCase.listFiles()) {
-				if (language.isFile() || language.getName().length() != 2) {
-					Announce.warning(
-							"Folder for MultilingualDataExtractor should contain subfolders for each language, and not",
-							language);
-				}
-				File dataInput = getDataInput(language);
-				File gold = getGold(language);
-				runTest(MultilingualDataExtractor.forName(
-						(Class<MultilingualDataExtractor>) clss,
-						language.getName(), dataInput), language, yagoFolder,
-						outputFolder, gold);
-			}
-		} else if (clss.getSuperclass() == MultilingualExtractor.class) {
+		} else if (superclasses.contains(MultilingualExtractor.class)) {
 			for (File language : testCase.listFiles()) {
 				if (language.isFile() || language.getName().length() != 2) {
 					Announce.warning(
@@ -138,21 +138,48 @@ public class Tester {
 								language.getName()),
 						language, yagoFolder, outputFolder, gold);
 			}
-		} else if (clss.getSuperclass() == DataExtractor.class) {
+		} else if (superclasses.contains(DataExtractor.class)) {
 			File dataInput = getDataInput(testCase);
 			File gold = getGold(testCase);
 			runTest(DataExtractor.forName((Class<DataExtractor>) clss,
 					dataInput), testCase, yagoFolder, outputFolder, gold);
-		} else if (clss.getSuperclass() == EnglishWikipediaExtractor.class) {
+		} else if (superclasses.contains(EnglishWikipediaExtractor.class)) {
 			File wikipedia = getWikipedia(testCase);
 			File gold = getGold(testCase);
 			runTest(EnglishWikipediaExtractor.forName(
 					(Class<DataExtractor>) clss, wikipedia), testCase,
 					yagoFolder, outputFolder, gold);
-		} else {
+		} else if (superclasses.contains(FollowUpExtractor.class)) {
+			File gold = getGold(testCase);
+			File[] goldFiles = gold.listFiles();
+			if (goldFiles.length != 1
+					|| !goldFiles[0].getName().startsWith("checked.")) {
+				Announce.error("FollowUpExtractors need exactly one gold output theme called 'checked'");
+			}
+			File[] inputFiles = new File(testCase, "input").listFiles();
+			Theme in = null;
+			if (inputFiles != null) {
+				for (File f : inputFiles) {
+					if (f.getName().startsWith("checkMe"))
+						in = new Theme(FileSet.newExtension(f, null).getName(),
+								"Facts to be checked by " + clss);
+				}
+			}
+			if (in == null) {
+				Announce.error("FollowUpExtractors need a folder 'input' with an input theme called 'checkMe' or 'checkMe_XY'");
+			}
+			runTest(FollowUpExtractor.forName((Class<FollowUpExtractor>) clss,
+					in, new Theme("checked", "Facts checked by " + clss)),
+					testCase, yagoFolder, outputFolder, gold);
+		} else if (superclasses.contains(Extractor.class)) {
 			File gold = getGold(testCase);
 			runTest(Extractor.forName((Class<Extractor>) clss), testCase,
 					yagoFolder, outputFolder, gold);
+		} else {
+			Announce.message("Test class has to be a subclass of Extractor:",
+					clss);
+			Announce.failed();
+			return;
 		}
 		Announce.done();
 	}

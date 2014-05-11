@@ -2,6 +2,7 @@ package followUp;
 
 import java.util.Set;
 
+import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Theme;
 import extractors.Extractor;
@@ -10,13 +11,13 @@ import extractors.Extractor;
 public abstract class FollowUpExtractor extends Extractor {
 
 	/** This is the theme we want to check */
-	protected Theme checkMe;
+	protected final Theme checkMe;
 
 	/** This is the theme we produce */
-	protected Theme checked;
+	protected final Theme checked;
 
-	/** This is the theme we produce */
-	protected Extractor parent;
+	/** Points to whoever created us */
+	protected final Extractor parent;
 
 	@Override
 	public Set<Theme> output() {
@@ -31,4 +32,28 @@ public abstract class FollowUpExtractor extends Extractor {
 			return super.name();
 		}
 	}
+
+	protected FollowUpExtractor(Theme in, Theme out, Extractor parent) {
+		checkMe = in;
+		checked = out;
+		this.parent = parent;
+	}
+
+	/** Creates an extractor given by name */
+	public static FollowUpExtractor forName(Class<FollowUpExtractor> className,
+			Theme in, Theme out) {
+		Announce.doing("Creating extractor", className + "(" + in + ", " + out
+				+ ")");
+		FollowUpExtractor extractor = null;
+		try {
+			extractor = className.getConstructor(Theme.class, Theme.class,
+					Extractor.class).newInstance(in, out, null);
+
+		} catch (Exception ex) {
+			Announce.error(ex);
+		}
+		Announce.done();
+		return (extractor);
+	}
+
 }

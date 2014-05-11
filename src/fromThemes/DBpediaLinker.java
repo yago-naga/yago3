@@ -49,7 +49,7 @@ public class DBpediaLinker extends Extractor {
 	public void extract() throws Exception {
 		Announce.doing("Mapping instances");
 		Set<String> instances = new TreeSet<>();
-		for (Fact fact : CoherentTypeExtractor.YAGOTYPES.factSource()) {
+		for (Fact fact : CoherentTypeExtractor.YAGOTYPES) {
 			if (!fact.getRelation().equals(RDFS.type)
 					|| instances.contains(fact.getArg(1)))
 				continue;
@@ -66,7 +66,7 @@ public class DBpediaLinker extends Extractor {
 		Announce.done();
 		Announce.doing("Mapping classes");
 		instances = new TreeSet<>();
-		for (Fact fact : ClassExtractor.YAGOTAXONOMY.factSource()) {
+		for (Fact fact : ClassExtractor.YAGOTAXONOMY) {
 			if (!fact.getRelation().equals(RDFS.subclassOf)
 					|| instances.contains(fact.getArg(1)))
 				continue;

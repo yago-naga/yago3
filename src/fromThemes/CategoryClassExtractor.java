@@ -164,8 +164,7 @@ public class CategoryClassExtractor extends Extractor {
 		Set<String> categoriesDone = new HashSet<>();
 
 		// Extract the information
-		for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inLanguage("en")
-				.factSource()) {
+		for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inLanguage("en")) {
 			if (!f.getRelation().equals("<hasWikiCategory/en>"))
 				continue;
 			String category = f.getArgJavaString(2);

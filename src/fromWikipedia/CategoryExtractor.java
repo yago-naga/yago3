@@ -3,7 +3,7 @@ package fromWikipedia;
 import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -11,18 +11,16 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import utils.TitleExtractor;
-import basics.BaseTheme;
 import basics.Fact;
 import basics.FactComponent;
+import basics.MultilingualTheme;
 import basics.Theme;
-import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
-import followUp.Translator;
+import followUp.CategoryTranslator;
+import followUp.FollowUpExtractor;
 import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.CategoryMapper;
-import fromThemes.CategoryTypeExtractor;
 
 /**
  * CategoryExtractor - YAGO2s
@@ -36,15 +34,15 @@ import fromThemes.CategoryTypeExtractor;
 
 public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
-	public static final BaseTheme CATEGORYMEMBERS = new BaseTheme(
+	public static final MultilingualTheme CATEGORYMEMBERS = new MultilingualTheme(
 			"categoryMembers",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
 
-	public static final BaseTheme CATEGORYMEMBERS_SOURCES = new BaseTheme(
+	public static final MultilingualTheme CATEGORYMEMBERS_SOURCES = new MultilingualTheme(
 			"categoryMemberSources",
 			"Sources for the facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
 
-	public static final BaseTheme CATEGORYMEMBERS_TRANSLATED = new BaseTheme(
+	public static final MultilingualTheme CATEGORYMEMBERS_TRANSLATED = new MultilingualTheme(
 			"categoryMembersTranslated",
 			"Category Members facts with translated subjects and objects");
 
@@ -70,13 +68,12 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new Translator(
+	public Set<FollowUpExtractor> followUp() {
+		if (language.equals("en"))
+			return (Collections.emptySet());
+		return (new FinalSet<FollowUpExtractor>(new CategoryTranslator(
 				CATEGORYMEMBERS.inLanguage(this.language),
-				CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language),
-				this.language, Translator.ObjectType.Category),
-				new CategoryMapper(this.language), new CategoryTypeExtractor(
-						this.language)));
+				CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language), this)));
 	}
 
 	@Override
@@ -85,7 +82,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
 		// Extract the information
 		// Announce.progressStart("Extracting", 3_900_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
+		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		/**
 		 * categoryWord holds the synonym of the word "Category" in different
@@ -117,9 +114,10 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 				}
 				String category = FileLines.readTo(in, ']', '|').toString();
 				category = category.trim();
-				write(CATEGORYMEMBERS.inLanguage(language), new Fact(
-						titleEntity, "<hasWikiCategory/" + this.language + ">",
-						FactComponent.forString(category)),
+				write(CATEGORYMEMBERS.inLanguage(language),
+						new Fact(titleEntity, "<hasWikiCategory>",
+								FactComponent.forForeignWikiCategory(category,
+										language)),
 						CATEGORYMEMBERS_SOURCES.inLanguage(language),
 						FactComponent.wikipediaURL(titleEntity),
 						"CategoryExtractor");

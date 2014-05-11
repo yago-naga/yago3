@@ -2,6 +2,8 @@ package extractors;
 
 import java.io.File;
 
+import javatools.administrative.Announce;
+
 /**
  * YAGO2s - MultilingualWikipediaExtractor
  * 
@@ -14,10 +16,33 @@ import java.io.File;
  * 
  */
 public abstract class MultilingualWikipediaExtractor extends
-		MultilingualDataExtractor {
+		MultilingualExtractor {
+
+	/** Data file */
+	protected final File wikipedia;
 
 	public MultilingualWikipediaExtractor(String lan, File wikipedia) {
-		super(lan, wikipedia);
+		super(lan);
+		this.wikipedia = wikipedia;
+	}
+
+	/** Creates an extractor with a given name */
+	public static Extractor forName(
+			Class<MultilingualWikipediaExtractor> className, String language,
+			File wikipedia) {
+		Announce.doing("Creating extractor", className + "(" + language + ")");
+		if (language == null) {
+			throw new RuntimeException("Language is null");
+		}
+		Extractor extractor = null;
+		try {
+			extractor = className.getConstructor(String.class, File.class)
+					.newInstance(language, wikipedia);
+		} catch (Exception ex) {
+			Announce.error(ex);
+		}
+		Announce.done();
+		return (extractor);
 	}
 
 }

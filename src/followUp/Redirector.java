@@ -1,8 +1,6 @@
 package followUp;
 
-import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -12,8 +10,6 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
 import extractors.Extractor;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
 import fromWikipedia.RedirectExtractor;
 
 /**
@@ -29,11 +25,8 @@ public class Redirector extends FollowUpExtractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(
-				Arrays.asList(checkMe, RedirectExtractor.REDIRECTFACTS_DIRTY
-						.inLanguage(this.language),
-						PatternHardExtractor.TITLEPATTERNS,
-						WordnetExtractor.WORDNETWORDS));
+		return new FinalSet<Theme>(checkMe,
+				RedirectExtractor.REDIRECTFACTS_DIRTY.inLanguage(this.language));
 	}
 
 	@Override
@@ -52,8 +45,8 @@ public class Redirector extends FollowUpExtractor {
 		// Extract the information
 		Map<String, String> redirects = new HashMap<>();
 		Announce.doing("Loading redirects");
-		for (Fact f : RedirectExtractor.REDIRECTFACTS_DIRTY.inLanguage(
-				this.language).factCollection()) {
+		for (Fact f : RedirectExtractor.REDIRECTFACTS_DIRTY
+				.inLanguage(this.language)) {
 			redirects.put(
 					FactComponent.forYagoEntity(FactComponent.asJavaString(
 							f.getArg(2)).replace(' ', '_')), f.getArg(1));
@@ -61,7 +54,7 @@ public class Redirector extends FollowUpExtractor {
 		Announce.done();
 
 		Announce.doing("Applying redirects to facts");
-		for (Fact dirtyFact : checkMe.factSource()) {
+		for (Fact dirtyFact : checkMe) {
 			Fact redirectedDirtyFact = redirectArguments(dirtyFact, redirects);
 			checked.write(redirectedDirtyFact);
 		}
@@ -87,14 +80,11 @@ public class Redirector extends FollowUpExtractor {
 		return redirectedFact;
 	}
 
-	public Redirector(Theme in, Theme out, Extractor parent, String lang) {
-		this.checkMe = in;
-		this.checked = out;
-		this.parent = parent;
-		this.language = lang;
+	public Redirector(Theme in, Theme out, Extractor parent) {
+		super(in, out, parent);
+		this.language = in.language();
+		if (this.language == null)
+			this.language = "en";
 	}
 
-	public Redirector(Theme in, Theme out, String lang) {
-		this(in, out, null, lang);
-	}
 }

@@ -47,7 +47,7 @@ public class PersonNameExtractor extends Extractor {
 		Set<String> people = new TreeSet<>();
 		String source = FactComponent
 				.forTheme(TransitiveTypeExtractor.TRANSITIVETYPE);
-		for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE.factSource()) {
+		for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
 			if (!f.getRelation().equals(RDFS.type)
 					|| !f.getArg(2).equals(YAGO.person))
 				continue;

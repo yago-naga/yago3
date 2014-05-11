@@ -19,9 +19,9 @@ import basics.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;
-import extractors.MultilingualDataExtractor;
 import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
+import followUp.FollowUpExtractor;
 
 /**
  * YAGO2s -- ParallelCaller
@@ -62,6 +62,9 @@ public class ParallelCaller {
 	/** Starting time */
 	protected static long startTime;
 
+	/** TRUE if we are just simulating a run */
+	protected static boolean simulate = true;
+
 	/** Calls next extractor */
 	public static synchronized void callNext(Extractor finished, boolean success) {
 		D.p(NumberFormatter.ISOtime());
@@ -84,8 +87,10 @@ public class ParallelCaller {
 			requiredCaches.addAll(ex.inputCached());
 		}
 		for (Theme theme : themesWeHave) {
-			if (requiredCaches.contains(theme))
+			if (requiredCaches.contains(theme)) {
+				D.p("Killing cache", theme);
 				theme.killCache();
+			}
 		}
 
 		// Start other extractors that can run now
@@ -99,6 +104,7 @@ public class ParallelCaller {
 					D.p("Skipping", ex);
 				} else {
 					D.p("Starting", ex);
+					D.p("Required caches: ", ex.inputCached());
 					extractorsRunning.add(ex);
 					new ExtractionCaller(ex).start();
 				}
@@ -113,7 +119,7 @@ public class ParallelCaller {
 
 		// Print new state
 		D.p("Themes:", themesWeHave);
-		D.p("Extractors queuing:", extractorsToDo);
+		// D.p("Extractors queuing:", extractorsToDo);
 		D.p("Extractors running:", extractorsRunning);
 		D.p("Extractors failed:", extractorsFailed);
 		if (!extractorsRunning.isEmpty())
@@ -144,15 +150,15 @@ public class ParallelCaller {
 		}
 
 		public void run() {
-			boolean success;
+			boolean success = false;
 			try {
-				ex.extract(outputFolder, ParallelCaller.header
-						+ NumberFormatter.ISOtime() + ".\n\n");
+				if (!simulate)
+					ex.extract(outputFolder, ParallelCaller.header
+							+ NumberFormatter.ISOtime() + ".\n\n");
 				success = true;
 			} catch (Exception e) {
 				e.printStackTrace();
 				e.printStackTrace(System.out);
-				success = false;
 			}
 			callNext(ex, success);
 		}
@@ -161,7 +167,7 @@ public class ParallelCaller {
 	/** Adds all follow up extractors to the list */
 	public static void addFollowUps(List<Extractor> extractors) {
 		for (int i = 0; i < extractors.size(); i++) {
-			Set<Extractor> followUps = extractors.get(i).followUp();
+			Set<FollowUpExtractor> followUps = extractors.get(i).followUp();
 			extractors.addAll(followUps);
 		}
 	}
@@ -189,7 +195,10 @@ public class ParallelCaller {
 	/** Run */
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.WARNING);
-		D.p("Running YAGO extractors in parallel");
+		if (simulate)
+			D.p("Simulating a YAGO run");
+		else
+			D.p("Running YAGO extractors in parallel");
 		String initFile = args.length == 0 ? "yago.ini" : args[0];
 		D.p("Initializing from", initFile);
 		Parameters.init(initFile);
@@ -208,15 +217,12 @@ public class ParallelCaller {
 		themesWeHave.clear();
 		if (reuse) {
 			D.p("Reusing existing themes");
-			for (File f : outputFolder.listFiles()) {
-				if (!f.getName().endsWith(".ttl") || f.length() < 100)
+			for (Theme t : Theme.all()) {
+				File f = t.findFileInFolder(outputFolder);
+				if (f == null || f.length() < 100)
 					continue;
-				Theme t = Theme.forFile(f);
-				if (t == null) {
-					D.p("  No theme found for", f.getName());
-				} else {
-					themesWeHave.add(t);
-				}
+				t.assignToFolder(outputFolder);
+				themesWeHave.add(t);
 			}
 		}
 		startTime = System.currentTimeMillis();
@@ -271,16 +277,9 @@ public class ParallelCaller {
 		}
 		if (clss.getSuperclass() == MultilingualWikipediaExtractor.class) {
 			for (String language : wikipedias.keySet()) {
-				extractors.add(MultilingualDataExtractor.forName(
-						(Class<MultilingualDataExtractor>) clss, language,
+				extractors.add(MultilingualWikipediaExtractor.forName(
+						(Class<MultilingualWikipediaExtractor>) clss, language,
 						wikipedias.get(language)));
-			}
-		} else if (clss.getSuperclass() == MultilingualDataExtractor.class) {
-			File input = new File(m.group(2));
-			for (String language : wikipedias.keySet()) {
-				extractors.add(MultilingualDataExtractor.forName(
-						(Class<MultilingualDataExtractor>) clss, language,
-						input));
 			}
 		} else if (clss.getSuperclass() == MultilingualExtractor.class) {
 			for (String language : wikipedias.keySet()) {

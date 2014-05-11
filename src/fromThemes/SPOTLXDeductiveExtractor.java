@@ -1,19 +1,15 @@
 package fromThemes;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.Set;
 
-import deduplicators.FactExtractor;
-import deduplicators.LabelExtractor;
-import deduplicators.LiteralFactExtractor;
-import deduplicators.SPOTLXDeduplicator;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.FactCollection;
 import basics.Theme;
-import extractors.Extractor;
+import deduplicators.FactExtractor;
+import deduplicators.LabelExtractor;
+import deduplicators.LiteralFactExtractor;
 import fromOtherSources.PatternHardExtractor;
 
 /**
@@ -46,10 +42,11 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
 		return maxRuleSetSize;
 	}
 
-	@Override
-	public Set<Extractor> followUp() {
-		return (new HashSet<Extractor>(Arrays.asList(new SPOTLXDeduplicator())));
-	}
+	/*
+	 * Non follow-up extractors should not be declared as follow-up public
+	 * Set<FollowUpExtractor> followUp() { return (new
+	 * HashSet<FollowUpExtractor>( Arrays.asList(new SPOTLXDeduplicator()))); }
+	 */
 
 	@Override
 	public Set<Theme> input() {

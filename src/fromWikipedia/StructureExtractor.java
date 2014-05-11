@@ -16,7 +16,7 @@ import basics.Fact;
 import basics.FactCollection;
 import basics.Theme;
 import extractors.EnglishWikipediaExtractor;
-import extractors.Extractor;
+import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
@@ -39,11 +39,10 @@ public class StructureExtractor extends EnglishWikipediaExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new Redirector(
-				DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS, this,
-				decodeLang(this.inputData.getName())), new TypeChecker(
-				REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS, this)));
+	public Set<FollowUpExtractor> followUp() {
+		return new FinalSet<FollowUpExtractor>(new Redirector(
+				DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS, this),
+				new TypeChecker(REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS, this));
 	}
 
 	/** Facts representing the Wikipedia structure (e.g. links) */

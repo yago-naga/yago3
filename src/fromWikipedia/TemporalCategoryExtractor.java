@@ -16,7 +16,7 @@ import basics.Fact;
 import basics.FactCollection;
 import basics.Theme;
 import extractors.EnglishWikipediaExtractor;
-import extractors.Extractor;
+import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
@@ -37,9 +37,9 @@ public class TemporalCategoryExtractor extends EnglishWikipediaExtractor {
 	private File inputData;
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList(new TypeChecker(
-				DIRTYCATEGORYFACTS, TEMPORALCATEGORYFACTS, this)));
+	public Set<FollowUpExtractor> followUp() {
+		return new FinalSet<FollowUpExtractor>(new TypeChecker(
+				DIRTYCATEGORYFACTS, TEMPORALCATEGORYFACTS, this));
 	}
 
 	@Override

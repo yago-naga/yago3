@@ -7,7 +7,7 @@ import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import basics.BaseTheme;
+import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -26,19 +26,19 @@ import fromWikipedia.CategoryExtractor;
 public class CategoryTypeExtractor extends MultilingualExtractor {
 
 	/** Sources for category facts */
-	public static final BaseTheme CATEGORYTYPESOURCES = new BaseTheme(
+	public static final MultilingualTheme CATEGORYTYPESOURCES = new MultilingualTheme(
 			"categoryTypeSources",
 			"Sources for the classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
 
 	/** Types deduced from categories */
-	public static final BaseTheme CATEGORYTYPES = new BaseTheme(
+	public static final MultilingualTheme CATEGORYTYPES = new MultilingualTheme(
 			"categoryTypes",
 			"The rdf:type facts of YAGO derived from the categories");
 
 	public Set<Theme> input() {
 		Set<Theme> result = new TreeSet<Theme>(
 				Arrays.asList(CategoryClassExtractor.CATEGORYCLASSES));
-		if (this.language.equals("en"))
+		if (isEnglish())
 			result.add(CategoryExtractor.CATEGORYMEMBERS.inLanguage(language));
 		else
 			result.add(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED
@@ -65,10 +65,10 @@ public class CategoryTypeExtractor extends MultilingualExtractor {
 		FactSource categoryMembs;
 		if (this.language.equals("en"))
 			categoryMembs = CategoryExtractor.CATEGORYMEMBERS.inLanguage(
-					language).factSource();
+					language);
 		else
 			categoryMembs = CategoryExtractor.CATEGORYMEMBERS_TRANSLATED
-					.inLanguage(language).factSource();
+					.inLanguage(language);
 
 		// Extract the information
 		for (Fact f : categoryMembs) {

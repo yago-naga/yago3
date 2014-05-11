@@ -57,7 +57,7 @@ public class HardExtractor extends DataExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new HardExtractor(new File("./data")).extract(new File(
+		new HardExtractor(new File("../basics2s/data")).extract(new File(
 				"c:/fabian/data/yago3"), "test");
 	}
 }

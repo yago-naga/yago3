@@ -67,7 +67,7 @@ public class SourceExtractor extends Extractor {
 		Announce.doing("Extracting sources");
 		for (Theme theme : input()) {
 			Announce.doing("Extracting sources from", theme);
-			for (Fact fact : theme.factSource()) {
+			for (Fact fact : theme) {
 				if (fact.getRelation().equals(YAGO.extractionSource)
 						|| fact.getRelation().equals(YAGO.extractionTechnique)) {
 					YAGOSOURCES.write(fact);

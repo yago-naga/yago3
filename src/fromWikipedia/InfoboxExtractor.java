@@ -3,8 +3,7 @@ package fromWikipedia;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.Collections;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
@@ -15,21 +14,18 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
 import javatools.util.FileUtils;
+import utils.PatternList;
 import utils.TitleExtractor;
-import basics.BaseTheme;
+import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
-import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
-import followUp.Translator;
+import followUp.FollowUpExtractor;
+import followUp.InfoboxTemplateTranslator;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.AttributeMatcher;
-import fromThemes.InfoboxMapper;
-import fromThemes.InfoboxTermExtractor;
-import fromThemes.InfoboxTypeExtractor;
 
 /**
  * YAGO2s - InfoboxExtractor
@@ -42,34 +38,41 @@ import fromThemes.InfoboxTypeExtractor;
 
 public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
-	public static final BaseTheme INFOBOX_ATTRIBUTES = new BaseTheme(
+	public static final MultilingualTheme INFOBOX_ATTRIBUTES = new MultilingualTheme(
 			"yagoInfoboxAttributes", "Raw facts from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final BaseTheme INFOBOX_ATTRIBUTE_SOURCES = new BaseTheme(
+	public static final MultilingualTheme INFOBOX_ATTRIBUTE_SOURCES = new MultilingualTheme(
 			"yagoInfoboxAttributeSources",
 			"Sources for the raw facts from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final BaseTheme INFOBOX_TYPES = new BaseTheme(
+	public static final MultilingualTheme INFOBOX_TYPES = new MultilingualTheme(
 			"yagoInfoboxTypes", "Raw types from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final BaseTheme INFOBOX_TYPES_TRANSLATED = new BaseTheme(
+	public static final MultilingualTheme INFOBOX_TYPES_TRANSLATED = new MultilingualTheme(
 			"infoboxTypesTranslated",
 			"Types from the Wikipedia infoboxes, translated",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final BaseTheme INFOBOX_TYPE_SOURCES = new BaseTheme(
+	public static final MultilingualTheme INFOBOX_TYPE_SOURCES = new MultilingualTheme(
 			"yagoInfoboxTypeSources",
 			"Sources for the raw types from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(Arrays.asList(
+		return new FinalSet<Theme>(PatternHardExtractor.INFOBOXPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
-				WordnetExtractor.PREFMEANINGS));
+				WordnetExtractor.PREFMEANINGS);
+	}
+
+	@Override
+	public Set<Theme> inputCached() {
+		return new FinalSet<Theme>(PatternHardExtractor.INFOBOXPATTERNS,
+				PatternHardExtractor.TITLEPATTERNS,
+				WordnetExtractor.PREFMEANINGS);
 	}
 
 	@Override
@@ -81,19 +84,11 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		Set<Extractor> input = new HashSet<Extractor>(Arrays.asList(
-				new Translator(INFOBOX_TYPES.inLanguage(this.language),
-						INFOBOX_TYPES_TRANSLATED.inLanguage(this.language),
-						this.language, Translator.ObjectType.InfoboxType),
-				new InfoboxTypeExtractor(this.language),
-				new InfoboxTermExtractor(this.language), new InfoboxMapper(
-						this.language)));
-
-		if (!this.language.equals("en")) {
-			input.add(new AttributeMatcher(this.language));
-		}
-		return input;
+	public Set<FollowUpExtractor> followUp() {
+		if(language.equals("en")) return(Collections.emptySet());
+		return (new FinalSet<FollowUpExtractor>(new InfoboxTemplateTranslator(
+				INFOBOX_TYPES.inLanguage(this.language),
+				INFOBOX_TYPES_TRANSLATED.inLanguage(this.language), this)));
 	}
 
 	/** normalizes an attribute name */
@@ -101,6 +96,9 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 		return (a.trim().toLowerCase().replace("_", "").replace(" ", "")
 				.replace("-", "").replaceAll("\\d", ""));
 	}
+
+	/** For cleaning up values */
+	protected PatternList valueCleaner;
 
 	// /** Extracts a relation from a string */
 	// protected void extract(String entity, String string, String relation,
@@ -258,7 +256,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				}
 
 				D.addKeyValue(result, attribute,
-						Char.decodeAmpersand(valueStr), TreeSet.class);
+						Char.decodeAmpersand(Char.decodeAmpersand(valueStr)), TreeSet.class);
 			}
 			if (c == '}' || c == -1 || c == -2) {
 				break;
@@ -272,12 +270,14 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	public void extract() throws Exception {
 
 		TitleExtractor titleExtractor = new TitleExtractor(language);
+		valueCleaner = new PatternList(
+				PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
+				"<_infoboxReplace>");
 		String typeRelation = FactComponent
 				.forInfoboxTypeRelation(this.language);
-
 		// Extract the information
 		// Announce.progressStart("Extracting", 4_500_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
+		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		String titleEntity = null;
 		while (true) {
 			/* nested comments not supported */
@@ -297,14 +297,13 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 			default:
 				if (titleEntity == null)
 					continue;
-				String cls = FileLines.readTo(in, '}', '|').toString().trim()
-						.toLowerCase();
+				String cls = FileLines.readTo(in, '}', '|').toString();
+				cls = Char.decodeAmpersand(cls);
+				cls = valueCleaner.transform(cls);
+				cls = FactComponent.forInfoboxTemplate(cls, language);
 
-				if (Character.isDigit(Char.last(cls)))
-					cls = Char.cutLast(cls);
-
-				write(INFOBOX_TYPES.inLanguage(language), new Fact(titleEntity,
-						typeRelation, FactComponent.forString(cls)),
+				write(INFOBOX_TYPES.inLanguage(language),
+						new Fact(titleEntity, typeRelation, cls),
 						INFOBOX_TYPE_SOURCES.inLanguage(language),
 						FactComponent.wikipediaURL(titleEntity),
 						"InfoboxExtractor");
@@ -314,11 +313,12 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				/* new version */
 				for (String attribute : attributes.keySet()) {
 					for (String value : attributes.get(attribute)) {
+						value = valueCleaner.transform(value);
 						write(INFOBOX_ATTRIBUTES.inLanguage(language),
 								new Fact(titleEntity, FactComponent
 										.forInfoboxAttribute(this.language,
 												attribute), FactComponent
-										.forString(value)),
+										.forStringWithLanguage(value, language)),
 								INFOBOX_ATTRIBUTE_SOURCES.inLanguage(language),
 								FactComponent.wikipediaURL(titleEntity),
 								"Infobox Extractor");
@@ -335,10 +335,12 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new InfoboxExtractor("de",
-				new File("C:/Fabian/eclipseProjects/yago2s/testCases/fromWikipedia.InfoboxExtractor/de/wikipedia/de_wikitest.xml")).extract(
-				new File("c:/fabian/data/yago3"),
-				"Test on 1 wikipedia article");
+		new InfoboxExtractor(
+				"de",
+				new File(
+						"C:/Fabian/eclipseProjects/yago2s/testCases/fromWikipedia.InfoboxExtractor/de/wikipedia/de_wikitest.xml"))
+				.extract(new File("c:/fabian/data/yago3"),
+						"Test on 1 wikipedia article");
 
 	}
 }

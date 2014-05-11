@@ -71,7 +71,7 @@ public class CoherentTypeExtractor extends Extractor {
 		subclassFacts = new FactCollection();
 		typeFacts = new FactCollection();
 		for (Theme theme : input()) {
-			for (Fact f : theme.factSource()) {
+			for (Fact f : theme) {
 				if (f.getRelation().equals(RDFS.type))
 					typeFacts.justAdd(f);
 				if (f.getRelation().equals(RDFS.subclassOf))

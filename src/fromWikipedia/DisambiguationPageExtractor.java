@@ -15,7 +15,7 @@ import basics.Fact;
 import basics.FactCollection;
 import basics.Theme;
 import extractors.EnglishWikipediaExtractor;
-import extractors.Extractor;
+import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
@@ -35,13 +35,12 @@ public class DisambiguationPageExtractor extends EnglishWikipediaExtractor {
 	}
 
 	@Override
-	public Set<Extractor> followUp() {
-		return new HashSet<Extractor>(Arrays.asList((Extractor) new Redirector(
+	public Set<FollowUpExtractor> followUp() {
+		return new FinalSet<FollowUpExtractor>(new Redirector(
 				DIRTYDISAMBIGUATIONMEANSFACTS,
-				REDIRECTEDDISAMBIGUATIONMEANSFACTS, this,
-				decodeLang(this.inputData.getName())),
-				(Extractor) new TypeChecker(REDIRECTEDDISAMBIGUATIONMEANSFACTS,
-						DISAMBIGUATIONMEANSFACTS, this)));
+				REDIRECTEDDISAMBIGUATIONMEANSFACTS, this), new TypeChecker(
+				REDIRECTEDDISAMBIGUATIONMEANSFACTS, DISAMBIGUATIONMEANSFACTS,
+				this));
 	}
 
 	/** Means facts from disambiguation pages */

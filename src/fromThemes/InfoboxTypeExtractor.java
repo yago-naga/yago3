@@ -9,7 +9,7 @@ import javatools.datatypes.FinalSet;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
-import basics.BaseTheme;
+import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -30,11 +30,11 @@ import fromWikipedia.InfoboxExtractor;
 public class InfoboxTypeExtractor extends MultilingualExtractor {
 
 	/** Sources for category facts */
-	public static final BaseTheme INFOBOXTYPESOURCES = new BaseTheme(
+	public static final MultilingualTheme INFOBOXTYPESOURCES = new MultilingualTheme(
 			"infoboxTypeSources", "The sources of category type facts");
 
 	/** Sources for category facts */
-	public static final BaseTheme INFOBOXTYPES = new BaseTheme("infoboxTypes",
+	public static final MultilingualTheme INFOBOXTYPES = new MultilingualTheme("infoboxTypes",
 			"The sources of category type facts");
 
 	public Set<Theme> input() {
@@ -131,8 +131,7 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 		preferredMeanings = WordnetExtractor.PREFMEANINGS.factCollection()
 				.getPreferredMeanings();
 
-		for (Fact f : InfoboxExtractor.INFOBOX_TYPES.inLanguage(language)
-				.factSource()) {
+		for (Fact f : InfoboxExtractor.INFOBOX_TYPES.inLanguage(language)) {
 			if (!f.getRelation().equals(typeRelation))
 				continue;
 			String clss = infobox2class(f.getObjectAsJavaString());

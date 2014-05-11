@@ -68,7 +68,7 @@ public class SimpleTypeExtractor extends Extractor {
 		FactCollection taxonomy = ClassExtractor.YAGOTAXONOMY.factCollection();
 		Set<String> leafClasses = new HashSet<>();
 		Announce.doing("Loading YAGO types");
-		for (Fact f : CoherentTypeExtractor.YAGOTYPES.factSource()) {
+		for (Fact f : CoherentTypeExtractor.YAGOTYPES) {
 			if (!f.getRelation().equals(RDFS.type))
 				continue;
 			String clss = f.getArg(2);
