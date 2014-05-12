@@ -1,0 +1,24 @@
+// Test
+// Sources for the attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.
+// INTERNAL
+
+<id_18df044_115_1cmee6w>	<id_7j2dww_l3j_88cvi8>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_18df044_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_1q5th8o_115_1cmee6w>	<id_2wnehw_l3j_siusp8>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_1q5th8o_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_1e25nvd_115_1cmee6w>	<id_1t3ynup_l3j_l7ia5l>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_1e25nvd_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_1z0i3vx_115_1cmee6w>	<id_7v4gly_l3j_1iajk1l>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_1z0i3vx_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_1o0f5z2_115_1cmee6w>	<id_1i9d7wf_l3j_88cvi8>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_1o0f5z2_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_mkeaqv_115_1cmee6w>	<id_1s5todj_l3j_siusp8>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_mkeaqv_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_u2lj1p_115_1cmee6w>	<id_1fx8vax_l3j_1xko9lr>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_u2lj1p_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_jrh66w_115_1cmee6w>	<id_1r6y2p3_l3j_iceu8x>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_jrh66w_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_11wjmow_115_1cmee6w>	<id_1b5au3u_l3j_1iajk1l>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_11wjmow_115_1cmee6w>	<extractionTechnique>	"Counting"
+<id_1f16gv6_115_1cmee6w>	<id_1fxf906_l3j_1iajk1l>	<extractionSource>	<yagoTheme_infoboxTerms_en>
+	<id_1f16gv6_115_1cmee6w>	<extractionTechnique>	"Counting"

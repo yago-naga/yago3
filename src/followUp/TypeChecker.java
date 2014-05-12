@@ -65,8 +65,7 @@ public class TypeChecker extends FollowUpExtractor {
 			untypedRelations.add(fact.getRelation());
 			return (true);
 		}
-		// TODO: Domain check should be kept
-		if (false && !check(fact.getArg(1), domain)) {
+		if (!check(fact.getArg(1), domain)) {
 			Announce.debug("Domain check failed", fact);
 			return (false);
 		}
@@ -87,7 +86,8 @@ public class TypeChecker extends FollowUpExtractor {
 	public boolean check(String entity, String type) {
 
 		/*
-		 * This is the old code of which I do not know what purpose it served.
+		 * // This is the old code, replaced by the new code below.
+		 * 
 		 * // Check syntax String syntaxChecker =
 		 * FactComponent.asJavaString(schema.getObject( type,
 		 * "<_hasTypeCheckPattern>"));
@@ -101,17 +101,17 @@ public class TypeChecker extends FollowUpExtractor {
 		 * parsedDatatype = FactComponent.getDatatype(entity); if
 		 * (parsedDatatype == null) parsedDatatype = YAGO.string; if
 		 * (syntaxChecker != null && schema.isSubClassOf(type, parsedDatatype))
-		 * { // If the syntax check went through, we are fine entity =
-		 * FactComponent.setDataType(entity, type); } else { // Otherwise, we
-		 * check if the datatype is OK if (!schema.isSubClassOf(parsedDatatype,
-		 * type)) { Announce.debug("Extraction", entity, "for", entity,
-		 * parsedDatatype, "does not match data type check", type); return
-		 * false; } } }
+		 * { // If the // syntax // check // went // through, // we are // fine
+		 * entity = FactComponent.setDataType(entity, type); } else { //
+		 * Otherwise, we check if the datatype is OK if
+		 * (!schema.isSubClassOf(parsedDatatype, type)) {
+		 * Announce.debug("Extraction", entity, "for", entity, parsedDatatype,
+		 * "does not match data type check", type); return false; } } }
 		 */
-
 		// Is it a literal?
 		String[] literal = FactComponent.literalAndDatatypeAndLanguage(entity);
 		if (literal != null) {
+			// Literals without data types are strings
 			if (literal[1] == null) {
 				if (type.equals(YAGO.languageString) && literal[2] == null) {
 					Announce.debug("Kicked out", entity,
@@ -119,21 +119,24 @@ public class TypeChecker extends FollowUpExtractor {
 							type);
 					return (false);
 				}
-				if (schema.isSubClassOf(type, YAGO.string))
-					return (true);
-				Announce.debug("Kicked out", entity,
-						"because it is a pure string instead of a", type);
-				return (false);
+				literal[1] = YAGO.string;
 			}
-			if (!schema.isSubClassOf(literal[1], type)) {
-				Announce.debug("Kicked out", entity, "because its datatype",
-						literal[1], "is not a subclass of", type);
+			if (schema.isSubClassOf(literal[1], type))
+				return (true);
+			// Now try retro-typing: The parsed type xsd:integer
+			// can fulfill xsd:nonNegativeInteger, if it matches the syntax
+			// check.
+			// For this, the parsed type has to be a superclass of the expected
+			// type.
+			if (!schema.isSubClassOf(type, literal[1])) {
+				Announce.debug("Kicked out", entity,
+						"because its cannot be retro-typed to", type);
 				return (false);
 			}
 			String syntaxChecker = FactComponent.asJavaString(schema.getObject(
 					type, "<_hasTypeCheckPattern>"));
 			if (syntaxChecker == null)
-				return (true);
+				return (false);
 			if (FactComponent.asJavaString(entity).matches(syntaxChecker))
 				return (true);
 			Announce.debug("Kicked out", entity,
@@ -162,7 +165,6 @@ public class TypeChecker extends FollowUpExtractor {
 
 	@Override
 	public void extract() throws Exception {
-		Announce.setLevel(Announce.Level.DEBUG);// TODO: This has to go away
 		types = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
 		schema = HardExtractor.HARDWIREDFACTS.factCollection();
 		Announce.doing("Type-checking facts of", checkMe);

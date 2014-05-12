@@ -3,6 +3,7 @@ package fromThemes;
 import java.io.File;
 import java.io.Writer;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -68,8 +69,10 @@ public class AttributeMatcher extends MultilingualExtractor {
 				.getParent(), "attributeMatches_" + language + ".tsv"));
 		Theme sources = MATCHED_INFOBOXATTS_SOURCES.inLanguage(language);
 
-		Theme germanFacts = InfoboxTermExtractor.INFOBOXTERMSTRANSLATED
-				.inLanguage(language);
+		Theme germanFacts = isEnglish() ? InfoboxTermExtractor.INFOBOXTERMS
+				.inLanguage(language)
+				: InfoboxTermExtractor.INFOBOXTERMSTRANSLATED
+						.inLanguage(language);
 		// Counts, for every german attribute, how often it appears with every
 		// YAGO relation
 		Map<String, Map<String, Integer>> german2yago2count = new HashMap<String, Map<String, Integer>>();
@@ -82,6 +85,14 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 		yagoFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en")
 				.factCollection();
+
+		// We collect all objects for a subject and a relation
+		// to account for the fact that we have the same object
+		// in several types at this point.
+		String currentSubject = "";
+		String currentRelation = "";
+		Set<String> currentObjects = new HashSet<>();
+
 		for (Fact germanFact : germanFacts) {
 			String germanRelation = germanFact.getRelation();
 			String germanSubject = germanFact.getArg(1);
@@ -92,35 +103,53 @@ public class AttributeMatcher extends MultilingualExtractor {
 			 * this level, it still has the chance to be processed if appears
 			 * with 'good' subject and object in other facts
 			 */
-			if (!yagoFacts.containsSubject(germanSubject)
-					|| !yagoFacts.containsObject(germanObject))
+			if (!yagoFacts.containsSubject(germanSubject))
+				continue;
+			if (!FactComponent.isLiteral(germanObject)
+					&& !yagoFacts.containsObject(germanObject))
 				continue;
 
-			// We increase the counter for the attribute of the german fact
-			D.addKeyValue(germanFactCountPerAttribute, germanRelation, 1);
-			// System.out.println(germanFactCountPerAttribute.get(germanRelation));
-
-			// Let's now see to which YAGO relations the german attribute could
-			// map
-			Map<String, Integer> germanMap = german2yago2count
-					.get(germanRelation);
-			if (germanMap == null)
-				german2yago2count.put(germanRelation,
-						germanMap = new HashMap<String, Integer>());
-			Map<String, Integer> germanWrongMap = german2yagowrong2count
-					.get(germanRelation);
-			if (germanWrongMap == null)
-				german2yagowrong2count.put(germanRelation,
-						germanWrongMap = new HashMap<String, Integer>());
-
-			for (String yagoRelation : yagoFacts.getRelations(germanSubject)) {
-				Set<String> yagoObjects = yagoFacts.collectObjects(
-						germanSubject, yagoRelation);
-				if (yagoObjects.contains(germanObject))
-					D.addKeyValue(germanMap, yagoRelation, 1);
-				else
-					D.addKeyValue(germanWrongMap, yagoRelation, 1);
+			if (currentSubject.equals(germanSubject)
+					&& currentRelation.equals(germanRelation)) {
+				currentObjects.add(germanObject);
+				continue;
 			}
+
+			// Come here if we have a new relation.
+			// Treat currentRelation and currentObjects
+			if (!currentObjects.isEmpty()) {
+				// We increase the counter for the attribute of the german fact
+				D.addKeyValue(germanFactCountPerAttribute, currentRelation, 1);
+				// System.out.println(germanFactCountPerAttribute.get(germanRelation));
+
+				// Let's now see to which YAGO relations the german attribute
+				// could
+				// map
+				Map<String, Integer> germanMap = german2yago2count
+						.get(currentRelation);
+				if (germanMap == null)
+					german2yago2count.put(currentRelation,
+							germanMap = new HashMap<String, Integer>());
+				Map<String, Integer> germanWrongMap = german2yagowrong2count
+						.get(currentRelation);
+				if (germanWrongMap == null)
+					german2yagowrong2count.put(currentRelation,
+							germanWrongMap = new HashMap<String, Integer>());
+				for (String yagoRelation : yagoFacts
+						.getRelations(currentSubject)) {
+					Set<String> yagoObjects = yagoFacts.collectObjects(
+							currentSubject, yagoRelation);
+					if (containsAny(yagoObjects, currentObjects))
+						D.addKeyValue(germanMap, yagoRelation, 1);
+					else
+						D.addKeyValue(germanWrongMap, yagoRelation, 1);
+				}
+			}
+
+			currentSubject = germanSubject;
+			currentRelation = germanRelation;
+			currentObjects.clear();
+			currentObjects.add(germanObject);
 		}
 
 		// Now output the results:
@@ -131,8 +160,9 @@ public class AttributeMatcher extends MultilingualExtractor {
 						yagoRelation);
 				if (correct < MINSUPPORT)
 					continue;
-				int wrong = german2yagowrong2count.get(germanAttribute).get(
+				Integer wrong = german2yagowrong2count.get(germanAttribute).get(
 						yagoRelation);
+				if(wrong==null) wrong=0;
 				int total = germanFactCountPerAttribute.get(germanAttribute);
 
 				Fact matchFact = new Fact(germanAttribute, "<_infoboxPattern>",
@@ -151,6 +181,16 @@ public class AttributeMatcher extends MultilingualExtractor {
 			}
 		}
 		tsv.close();
+	}
+
+	/** TRUE if intersection is non-empty */
+	private static <K> boolean containsAny(Set<K> yagoObjects,
+			Set<K> currentObjects) {
+		for (K k : yagoObjects) {
+			if (currentObjects.contains(k))
+				return (true);
+		}
+		return false;
 	}
 
 	public AttributeMatcher(String secondLang) {
