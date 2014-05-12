@@ -138,17 +138,17 @@ public class Tester {
 								language.getName()),
 						language, yagoFolder, outputFolder, gold);
 			}
-		} else if (superclasses.contains(DataExtractor.class)) {
-			File dataInput = getDataInput(testCase);
-			File gold = getGold(testCase);
-			runTest(DataExtractor.forName((Class<DataExtractor>) clss,
-					dataInput), testCase, yagoFolder, outputFolder, gold);
 		} else if (superclasses.contains(EnglishWikipediaExtractor.class)) {
 			File wikipedia = getWikipedia(testCase);
 			File gold = getGold(testCase);
 			runTest(EnglishWikipediaExtractor.forName(
 					(Class<DataExtractor>) clss, wikipedia), testCase,
 					yagoFolder, outputFolder, gold);
+		} else if (superclasses.contains(DataExtractor.class)) {
+			File dataInput = getDataInput(testCase);
+			File gold = getGold(testCase);
+			runTest(DataExtractor.forName((Class<DataExtractor>) clss,
+					dataInput), testCase, yagoFolder, outputFolder, gold);
 		} else if (superclasses.contains(FollowUpExtractor.class)) {
 			File gold = getGold(testCase);
 			File[] goldFiles = gold.listFiles();

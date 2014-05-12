@@ -33,6 +33,10 @@ public class HardExtractor extends DataExtractor {
 	public void extract() throws Exception {
 		Announce.doing("Copying hard wired facts");
 		Announce.message("Input folder is", inputData);
+		if (!inputData.equals(new File("../basics2s/data")))
+			Announce.warning(
+					"The Hardextractor should be run on '../basics2s/data', not on",
+					inputData);
 		for (File f : inputData.listFiles()) {
 			Announce.doing("Copying hard wired facts from", f.getName());
 			for (Fact fact : FactSource.from(f)) {

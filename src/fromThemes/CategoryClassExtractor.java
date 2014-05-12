@@ -2,11 +2,9 @@ package fromThemes;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -43,10 +41,9 @@ public class CategoryClassExtractor extends Extractor {
 			"Sources for the classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
 
 	public Set<Theme> input() {
-		return (new TreeSet<Theme>(Arrays.asList(
-				PatternHardExtractor.CATEGORYPATTERNS,
+		return (new FinalSet<Theme>(PatternHardExtractor.CATEGORYPATTERNS,
 				WordnetExtractor.PREFMEANINGS,
-				CategoryExtractor.CATEGORYMEMBERS.inLanguage("en"))));
+				CategoryExtractor.CATEGORYMEMBERS.inLanguage("en")));
 	}
 
 	@Override
@@ -178,7 +175,7 @@ public class CategoryClassExtractor extends Extractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new CategoryClassExtractor().extract(new File("D:/data3/yago2s/"),
+		new CategoryClassExtractor().extract(new File("c:/fabian/data/yago3"),
 				"Test");
 	}
 

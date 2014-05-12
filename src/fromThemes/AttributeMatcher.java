@@ -184,7 +184,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 	}
 
 	/** TRUE if intersection is non-empty */
-	private static <K> boolean containsAny(Set<K> yagoObjects,
+	public static <K> boolean containsAny(Set<K> yagoObjects,
 			Set<K> currentObjects) {
 		for (K k : yagoObjects) {
 			if (currentObjects.contains(k))

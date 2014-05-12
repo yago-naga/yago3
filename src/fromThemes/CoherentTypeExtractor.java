@@ -2,6 +2,7 @@ package fromThemes;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -108,8 +109,8 @@ public class CoherentTypeExtractor extends Extractor {
 			String yagoBranch = yagoBranchForClass(type);
 			if (yagoBranch != null) {
 				Announce.debug(entity, type, yagoBranch);
-				// Give higher priority to the stuff extracted from infoboxes
 				branches.increase(yagoBranch);
+				// Give higher priority to the stuff extracted from infoboxes
 				if (type.startsWith("<wordnet"))
 					branches.increase(yagoBranch);
 			}
@@ -135,20 +136,19 @@ public class CoherentTypeExtractor extends Extractor {
 		for (String type : types) {
 			String branch = yagoBranchForClass(type);
 			if (branch == null || !branch.equals(yagoBranch)) {
-				Announce.debug("Wrong branch:", type, branch);
+				Announce.debug("Wrong branch:", type, branch,". Expected branch:",yagoBranch);
 			} else {
-				// writers.get(COHERENTTYPES).write( new Fact(entity, RDFS.type,
-				// type));
-
 				write(YAGOTYPES, new Fact(entity, RDFS.type, type),
 						YAGOTYPESSOURCES, FactComponent.wikipediaURL(entity),
-						"WikipediaTypeExtractor from category");
+						"CoherentTypeExtractor");
 			}
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
-		CoherentTypeExtractor extractor = new CoherentTypeExtractor();
-		extractor.extract(new File("D:/data3/yago2s/"), "");
+		Announce.setLevel(Announce.Level.DEBUG);
+		MultilingualExtractor.wikipediaLanguages=Arrays.asList("en");
+		new CoherentTypeExtractor()
+		.extract(new File("c:/fabian/data/yago3"), "test");
 	}
 }

@@ -78,6 +78,10 @@ public class EntityTranslator extends FollowUpExtractor {
 		if (language == null || language.equals("en"))
 			throw new RuntimeException(
 					"Don't translate English. This is useless and very costly.");
+		// By default, we translate entities.
+		// May be overwritten in subclasses
+		objectDictionary = DictionaryExtractor.ENTITY_DICTIONARY
+				.inLanguage(language);
 	}
 
 }

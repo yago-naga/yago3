@@ -42,6 +42,10 @@ public class WordnetDomainHierarchyExtractor extends HardExtractor {
 
 	public WordnetDomainHierarchyExtractor(File inputFolder) {
 		super(inputFolder);
+		if (!inputFolder.equals(new File("./data/wordnetDomains")))
+			Announce.warning(this
+					+ " should be run on './data/wordnetDomains', not on",
+					inputFolder);
 	}
 
 	public static void main(String[] args) throws Exception {

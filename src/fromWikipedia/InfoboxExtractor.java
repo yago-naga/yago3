@@ -16,9 +16,9 @@ import javatools.parsers.Char;
 import javatools.util.FileUtils;
 import utils.PatternList;
 import utils.TitleExtractor;
-import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
+import basics.MultilingualTheme;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import extractors.MultilingualWikipediaExtractor;
@@ -47,17 +47,18 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 			"Sources for the raw facts from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final MultilingualTheme INFOBOX_TYPES = new MultilingualTheme(
-			"yagoInfoboxTypes", "Raw types from the Wikipedia infoboxes",
+	public static final MultilingualTheme INFOBOX_TEMPLATES = new MultilingualTheme(
+			"yagoInfoboxTemplates",
+			"Raw infobox templates from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final MultilingualTheme INFOBOX_TYPES_TRANSLATED = new MultilingualTheme(
-			"infoboxTypesTranslated",
-			"Types from the Wikipedia infoboxes, translated",
+	public static final MultilingualTheme INFOBOX_TEMPLATES_TRANSLATED = new MultilingualTheme(
+			"infoboxTemplatesTranslated",
+			"Templates from the Wikipedia infoboxes, translated",
 			ThemeGroup.WIKIPEDIA);
 
-	public static final MultilingualTheme INFOBOX_TYPE_SOURCES = new MultilingualTheme(
-			"yagoInfoboxTypeSources",
+	public static final MultilingualTheme INFOBOX_TEMPLATE_SOURCES = new MultilingualTheme(
+			"yagoInfoboxTemplateSources",
 			"Sources for the raw types from the Wikipedia infoboxes",
 			ThemeGroup.WIKIPEDIA);
 
@@ -79,16 +80,17 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(INFOBOX_ATTRIBUTES.inLanguage(language),
 				INFOBOX_ATTRIBUTE_SOURCES.inLanguage(language),
-				INFOBOX_TYPES.inLanguage(language),
-				INFOBOX_TYPE_SOURCES.inLanguage(language));
+				INFOBOX_TEMPLATES.inLanguage(language),
+				INFOBOX_TEMPLATE_SOURCES.inLanguage(language));
 	}
 
 	@Override
 	public Set<FollowUpExtractor> followUp() {
-		if(language.equals("en")) return(Collections.emptySet());
+		if (language.equals("en"))
+			return (Collections.emptySet());
 		return (new FinalSet<FollowUpExtractor>(new InfoboxTemplateTranslator(
-				INFOBOX_TYPES.inLanguage(this.language),
-				INFOBOX_TYPES_TRANSLATED.inLanguage(this.language), this)));
+				INFOBOX_TEMPLATES.inLanguage(this.language),
+				INFOBOX_TEMPLATES_TRANSLATED.inLanguage(this.language), this)));
 	}
 
 	/** normalizes an attribute name */
@@ -256,7 +258,8 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				}
 
 				D.addKeyValue(result, attribute,
-						Char.decodeAmpersand(Char.decodeAmpersand(valueStr)), TreeSet.class);
+						Char.decodeAmpersand(Char.decodeAmpersand(valueStr)),
+						TreeSet.class);
 			}
 			if (c == '}' || c == -1 || c == -2) {
 				break;
@@ -302,9 +305,9 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				cls = valueCleaner.transform(cls);
 				cls = FactComponent.forInfoboxTemplate(cls, language);
 
-				write(INFOBOX_TYPES.inLanguage(language),
-						new Fact(titleEntity, typeRelation, cls),
-						INFOBOX_TYPE_SOURCES.inLanguage(language),
+				write(INFOBOX_TEMPLATES.inLanguage(language), new Fact(
+						titleEntity, typeRelation, cls),
+						INFOBOX_TEMPLATE_SOURCES.inLanguage(language),
 						FactComponent.wikipediaURL(titleEntity),
 						"InfoboxExtractor");
 
@@ -336,11 +339,10 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
 	public static void main(String[] args) throws Exception {
 		new InfoboxExtractor(
-				"de",
+				"en",
 				new File(
-						"C:/Fabian/eclipseProjects/yago2s/testCases/fromWikipedia.InfoboxExtractor/de/wikipedia/de_wikitest.xml"))
-				.extract(new File("c:/fabian/data/yago3"),
-						"Test on 1 wikipedia article");
+						"C:/Fabian/eclipseProjects/yago2s/testCases/fromWikipedia.InfoboxExtractor/en/wikipedia/en_wikitest.xml"))
+				.extract(new File("c:/fabian/data/yago3"), "Test");
 
 	}
 }

@@ -9,9 +9,10 @@ import javatools.datatypes.FinalSet;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
-import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
+import basics.FactSource;
+import basics.MultilingualTheme;
 import basics.RDFS;
 import basics.Theme;
 import extractors.MultilingualExtractor;
@@ -31,16 +32,22 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 
 	/** Sources for category facts */
 	public static final MultilingualTheme INFOBOXTYPESOURCES = new MultilingualTheme(
-			"infoboxTypeSources", "The sources of category type facts");
+			"infoboxTypeSources", "The sources of infobox type facts");
 
 	/** Sources for category facts */
-	public static final MultilingualTheme INFOBOXTYPES = new MultilingualTheme("infoboxTypes",
-			"The sources of category type facts");
+	public static final MultilingualTheme INFOBOXTYPES = new MultilingualTheme(
+			"infoboxTypes", "The infobox type facts");
 
 	public Set<Theme> input() {
-		return (new FinalSet<Theme>(
-				InfoboxExtractor.INFOBOX_TYPES.inLanguage(language),
-				PatternHardExtractor.INFOBOXPATTERNS));
+		if (isEnglish())
+			return (new FinalSet<Theme>(
+					InfoboxExtractor.INFOBOX_TEMPLATES.inLanguage(language),
+					PatternHardExtractor.INFOBOXPATTERNS, WordnetExtractor.PREFMEANINGS));
+		else
+			return (new FinalSet<Theme>(
+					InfoboxExtractor.INFOBOX_TEMPLATES_TRANSLATED
+							.inLanguage(language),
+					PatternHardExtractor.INFOBOXPATTERNS, WordnetExtractor.PREFMEANINGS));
 	}
 
 	@Override
@@ -131,7 +138,12 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 		preferredMeanings = WordnetExtractor.PREFMEANINGS.factCollection()
 				.getPreferredMeanings();
 
-		for (Fact f : InfoboxExtractor.INFOBOX_TYPES.inLanguage(language)) {
+		FactSource in = isEnglish() ? InfoboxExtractor.INFOBOX_TEMPLATES
+				.inLanguage(language)
+				: InfoboxExtractor.INFOBOX_TEMPLATES_TRANSLATED
+						.inLanguage(language);
+
+		for (Fact f : in) {
 			if (!f.getRelation().equals(typeRelation))
 				continue;
 			String clss = infobox2class(f.getObjectAsJavaString());
@@ -151,8 +163,8 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		InfoboxTypeExtractor extractor = new InfoboxTypeExtractor("en");
-		extractor.extract(new File("/home/jbiega/data/yago2s/"), "Test");
+		new InfoboxTypeExtractor("en")
+		.extract(new File("c:/fabian/data/yago3"), "Test");
 	}
 
 }

@@ -24,6 +24,9 @@ public abstract class DataExtractor extends Extractor {
 
 	public DataExtractor(File input) {
 		inputData = input;
+		if (!inputData.exists())
+			throw new RuntimeException("Input file does not exist for "
+					+ this.getClass() + ": " + inputData);
 	}
 
 	/** Creates an extractor given by name */
@@ -34,9 +37,9 @@ public abstract class DataExtractor extends Extractor {
 			throw new RuntimeException("No data input");
 		}
 		if (!datainput.exists()) {
-			throw new RuntimeException("File or folder not found: "+ datainput);
+			throw new RuntimeException("File or folder not found: " + datainput);
 		}
-		Extractor extractor=null;
+		Extractor extractor = null;
 		try {
 			extractor = className.getConstructor(File.class).newInstance(
 					datainput);
