@@ -88,6 +88,10 @@ public class GeoNamesEntityMapper extends DataExtractor {
 	}
 
 	public GeoNamesEntityMapper() {
-		this(new File("./data/geonames/featureCodes_en.txt"));
+		this(new File("./data/geonames/allCountries.txt"));
+	}
+	
+	public static void main(String[] args) throws Exception {
+		new GeoNamesEntityMapper().extract(new File("c:/fabian/data/yago3"), "");
 	}
 }
