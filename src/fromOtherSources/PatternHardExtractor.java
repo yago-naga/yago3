@@ -85,10 +85,10 @@ public class PatternHardExtractor extends HardExtractor {
 
 	public PatternHardExtractor(File inputFolder) {
 		super(inputFolder);
-		if (!inputFolder.equals(new File("./data")))
-			Announce.warning(
-					"The PatternHardExtractor should be run on './data', not on",
-					inputFolder);
+	}
+
+	public PatternHardExtractor() {
+		this(new File("./data"));
 	}
 
 	public static void main(String[] args) throws Exception {

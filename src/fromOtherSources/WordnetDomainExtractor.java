@@ -6,7 +6,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
@@ -69,10 +68,13 @@ public class WordnetDomainExtractor extends DataExtractor {
 
 	public WordnetDomainExtractor(File wordnetdomainsfolder) {
 		super(wordnetdomainsfolder);
-		if(!wordnetdomainsfolder.equals(new File("./data/wordnetDomains"))) Announce.warning(this+" should be run on './data/wordnetDomains', not on", wordnetdomainsfolder);
 		this.wordnetMappings = new File(wordnetdomainsfolder, "wn20-30.noun");
 		this.wordnetDomains = new File(wordnetdomainsfolder,
 				"wn-domains-3.2-20070223.txt");
+	}
+
+	public WordnetDomainExtractor() {
+		this(new File("./data/wordnetDomains"));
 	}
 
 	@Override
@@ -131,7 +133,7 @@ public class WordnetDomainExtractor extends DataExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new WordnetDomainExtractor(new File("./data/wordnetDomains"))
-				.extract(new File("c:/fabian/data/yago3"), "test");
+		new WordnetDomainExtractor().extract(new File("c:/fabian/data/yago3"),
+				"test");
 	}
 }

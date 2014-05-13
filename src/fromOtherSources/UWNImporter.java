@@ -85,4 +85,8 @@ public class UWNImporter extends DataExtractor {
 	public UWNImporter(File uwnNouns) {
 		super(uwnNouns);
 	}
+
+	public UWNImporter() {
+		this(new File("./data/uwn4yago/uwn-nouns.tsv"));
+	}
 }

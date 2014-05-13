@@ -32,18 +32,26 @@ public abstract class DataExtractor extends Extractor {
 	/** Creates an extractor given by name */
 	public static Extractor forName(Class<DataExtractor> className,
 			File datainput) {
-		Announce.doing("Creating extractor", className + "(" + datainput + ")");
+		Extractor extractor = null;
 		if (datainput == null) {
-			throw new RuntimeException("No data input");
+			Announce.doing("Creating extractor", className + "(default)");
+			try {
+				extractor = className.getConstructor().newInstance();
+				Announce.done();
+				return (extractor);
+			} catch (Exception ex) {
+				throw new RuntimeException(
+						"No data input, and no default constructor for "
+								+ className);
+			}
 		}
+		Announce.doing("Creating extractor", className + "(" + datainput + ")");
 		if (!datainput.exists()) {
 			throw new RuntimeException("File or folder not found: " + datainput);
 		}
-		Extractor extractor = null;
 		try {
 			extractor = className.getConstructor(File.class).newInstance(
 					datainput);
-
 		} catch (Exception ex) {
 			Announce.error(ex);
 		}

@@ -86,4 +86,8 @@ public class GeoNamesEntityMapper extends DataExtractor {
 	public GeoNamesEntityMapper(File alternateNames) {
 		super(alternateNames);
 	}
+
+	public GeoNamesEntityMapper() {
+		this(new File("./data/geonames/featureCodes_en.txt"));
+	}
 }

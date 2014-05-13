@@ -272,4 +272,8 @@ public class GeoNamesDataImporter extends DataExtractor {
 	public GeoNamesDataImporter(File geonamesFolder) {
 		super(geonamesFolder);
 	}
+
+	public GeoNamesDataImporter() {
+		this(new File("./data/geonames/"));
+	}
 }

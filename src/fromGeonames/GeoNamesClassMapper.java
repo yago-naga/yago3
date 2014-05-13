@@ -11,12 +11,12 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import utils.Stopwords;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
+import utils.Stopwords;
 import basics.Fact;
 import basics.FactCollection;
 import basics.FactComponent;
@@ -294,6 +294,15 @@ public class GeoNamesClassMapper extends DataExtractor {
 	}
 
 	public GeoNamesClassMapper(File geonamesFeatureCodes) {
-		super(geonamesFeatureCodes);
+		super(geonamesFeatureCodes);		
+	}
+
+	public GeoNamesClassMapper() {
+		this(new File("./data/geonames/featureCodes_en.txt"));
+	}
+	
+	public static void main(String[] args) throws Exception {
+		new GeoNamesClassMapper()
+				.extract(new File("c:/fabian/data/yago3"), "");
 	}
 }

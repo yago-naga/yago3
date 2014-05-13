@@ -48,11 +48,12 @@ public class DictionaryExtractor extends DataExtractor {
 			"categoryDictionary",
 			"Maps a foreign category name to the English name.");
 
-	public DictionaryExtractor(File inputFolder) {
-		super(inputFolder.isFile() ? inputFolder : new File(inputFolder,
-				"wikidata.rdf"));
-		if (!inputData.exists())
-			throw new RuntimeException("File not found: " + inputData);
+	public DictionaryExtractor(File wikidata) {
+		super(wikidata);
+	}
+	
+	public DictionaryExtractor() {
+		this(new File("./data/wikidata.rdf"));
 	}
 
 	@Override

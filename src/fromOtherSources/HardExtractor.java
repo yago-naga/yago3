@@ -55,13 +55,17 @@ public class HardExtractor extends DataExtractor {
 			throw new RuntimeException("Not a folder: " + inputFolder);
 	}
 
+	public HardExtractor() {
+	  this(new File("../basics3/data"));
+	}
+	
 	@Override
 	public Set<Theme> input() {
 		return new TreeSet<Theme>();
 	}
 
 	public static void main(String[] args) throws Exception {
-		new HardExtractor(new File("../basics2s/data")).extract(new File(
+		new HardExtractor().extract(new File(
 				"c:/fabian/data/yago3"), "test");
 	}
 }

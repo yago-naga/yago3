@@ -33,6 +33,10 @@ public class WikidataLabelExtractor extends DataExtractor {
 		super(wikidata);
 	}
 
+	public WikidataLabelExtractor() {
+		this(new File("./data/wikidata.rdf"));
+	}
+
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<Theme>(TransitiveTypeExtractor.TRANSITIVETYPE,

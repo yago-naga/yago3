@@ -353,9 +353,8 @@ public class ParallelCaller {
 			extractors.add(EnglishWikipediaExtractor.forName(
 					(Class<DataExtractor>) clss, wikipedias.get("en")));
 		} else if (superclasses.contains(DataExtractor.class)) {
-			if (m.group(2) == null || m.group(2).isEmpty())
-				Announce.error("Need input data file for call", extractorCall);
-			File input = new File(m.group(2));
+			File input=null;
+			if (m.group(2) != null && !m.group(2).isEmpty()) input=new File(m.group(2));
 			extractors.add(DataExtractor.forName((Class<DataExtractor>) clss,
 					input));
 		} else {
