@@ -33,9 +33,6 @@ import fromOtherSources.WordnetExtractor;
  */
 public class TemporalCategoryExtractor extends EnglishWikipediaExtractor {
 
-	/** Input file */
-	private File inputData;
-
 	@Override
 	public Set<FollowUpExtractor> followUp() {
 		return new FinalSet<FollowUpExtractor>(new TypeChecker(

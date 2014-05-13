@@ -90,15 +90,15 @@ public class ParallelCaller {
 
 	/** Calls next extractor */
 	public static synchronized void callNext(Extractor finished, boolean success) {
-		Announce.message(NumberFormatter.ISOtime());
+		D.p(NumberFormatter.ISOtime());
 		if (finished != null) {
 			extractorsRunning.remove(finished);
 			if (success) {
-				Announce.message("Finished", finished);
+				D.p("Finished", finished);
 				themesWeHave.addAll(finished.output());
 				themesWeProducedAndNobodyConsumed.addAll(finished.output());
 			} else {
-				Announce.message("Failed", finished);
+				D.p("Failed", finished);
 				extractorsFailed.add(finished);
 			}
 		}
@@ -113,7 +113,7 @@ public class ParallelCaller {
 		for (Theme theme : themesWeHave) {
 			if (!requiredCaches.contains(theme)
 					&& !cachesWeKilled.contains(theme)) {
-				Announce.message("Killing cache", theme);
+				D.p("Killing cache", theme);
 				theme.killCache();
 				cachesWeKilled.add(theme);
 			}
@@ -128,16 +128,16 @@ public class ParallelCaller {
 				themesWeProducedAndNobodyConsumed.removeAll(ex.input());
 				if (!ex.output().isEmpty()
 						&& themesWeHave.containsAll(ex.output())) {
-					Announce.message("Skipping", ex);
+					D.p("Skipping", ex);
 				} else {
-					Announce.message("Starting", ex);
+					D.p("Starting", ex);
 					StringBuilder caches = new StringBuilder();
 					for (Theme t : ex.inputCached())
 						caches.append(t)
 								.append(t.isCached() ? " (cached)" : "")
 								.append(", ");
 					if (caches.length() != 0)
-						Announce.message("Required caches: ", caches);
+						D.p("Required caches: ", caches);
 					if (AttributeMatcher.containsAny(ex.inputCached(),
 							cachesWeKilled)) {
 						Announce.warning("Resurrecting cache");
@@ -157,16 +157,15 @@ public class ParallelCaller {
 		// Print new state
 		// D.p("Themes:", themesWeHave);
 		// D.p("Extractors queuing:", extractorsToDo);
-		Announce.message("Extractors running:", extractorsRunning);
-		Announce.message("Extractors failed:", extractorsFailed);
+		D.p("Extractors running:", extractorsRunning);
+		D.p("Extractors failed:", extractorsFailed);
 		if (!extractorsRunning.isEmpty())
 			return;
 
 		// In case we finished print summary
 		long now = System.currentTimeMillis();
-		Announce.message("Finished at", NumberFormatter.ISOtime());
-		Announce.message("Time needed:",
-				NumberFormatter.formatMS(now - startTime));
+		D.p("Finished at", NumberFormatter.ISOtime());
+		D.p("Time needed:", NumberFormatter.formatMS(now - startTime));
 		if (!extractorsToDo.isEmpty()) {
 			for (Extractor e : extractorsToDo) {
 				Set<Theme> weneed = new HashSet<>(e.input());
@@ -253,18 +252,15 @@ public class ParallelCaller {
 		Parameters.init(initFile);
 		simulate = Parameters.getBoolean("simulate", false);
 		if (simulate)
-			Announce.message("Simulating a YAGO run");
+			D.p("Simulating a YAGO run");
 		else
-			Announce.message("Running YAGO extractors in parallel");
+			D.p("Running YAGO extractors in parallel");
 		numThreads = Parameters.getInt("numThreads", numThreads);
 		createWikipediaList(Parameters.getList("languages"),
 				Parameters.getList("wikipedias"));
 		boolean reuse = Parameters.getBoolean("reuse", false);
-		outputFolder = simulate ? Parameters
-				.getOrRequestAndAddFile("yagoSimulationFolder",
-						"Enter the folder where the simulation of YAGO should be created:")
-				: Parameters.getOrRequestAndAddFile("yagoFolder",
-						"Enter the folder where YAGO should be created:");
+		outputFolder = simulate ? Parameters.getFile("yagoSimulationFolder")
+				: Parameters.getFile("yagoFolder");
 		extractorsToDo = extractors(Parameters.getList("extractors"));
 		addFollowUps(extractorsToDo);
 
@@ -272,7 +268,7 @@ public class ParallelCaller {
 		extractorsFailed.clear();
 		themesWeHave.clear();
 		if (reuse) {
-			Announce.message("Reusing existing themes");
+			D.p("Reusing existing themes");
 			for (Theme t : Theme.all()) {
 				File f = t.findFileInFolder(outputFolder);
 				if (f == null || f.length() < 100)
@@ -353,8 +349,9 @@ public class ParallelCaller {
 			extractors.add(EnglishWikipediaExtractor.forName(
 					(Class<DataExtractor>) clss, wikipedias.get("en")));
 		} else if (superclasses.contains(DataExtractor.class)) {
-			File input=null;
-			if (m.group(2) != null && !m.group(2).isEmpty()) input=new File(m.group(2));
+			File input = null;
+			if (m.group(2) != null && !m.group(2).isEmpty())
+				input = new File(m.group(2));
 			extractors.add(DataExtractor.forName((Class<DataExtractor>) clss,
 					input));
 		} else {
