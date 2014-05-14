@@ -296,8 +296,29 @@ public class ParallelCaller {
 		if (extractorNames == null || extractorNames.isEmpty()) {
 			Announce.help(
 					"Error: No extractors given. The ini file should contain",
-					"   extractors = package.extractorClass(fileName), ...",
-					"where filename arguments are required only for DataExtractors");
+					"   extractors = package.extractorClass[(fileName)], ...",
+					"The filename arguments are required only for DataExtractors",
+					"if you want them to run on other files than the default files.");
+
+			/*
+			 * // In the future: Collect extractor names automatically File
+			 * source = new File("./src"); if (!source.exists() ||
+			 * !source.isDirectory()) { Announce.help(
+			 * "Error: No extractors given. The ini file should contain",
+			 * "   extractors = package.extractorClass[(fileName)], ...",
+			 * "The filename arguments are required only for DataExtractors",
+			 * "if you want them to run on other files than the default files.",
+			 * "",
+			 * "Alternatively, if there is a folder './src', the extractor names"
+			 * , "will be collected from there."); } extractorNames = new
+			 * ArrayList<>(); List<String> exclude =
+			 * Arrays.asList("deduplicators", "extractors", "followUp", "main",
+			 * "utils"); for (File dir : source.listFiles()) { if
+			 * (dir.isDirectory() && !exclude.contains(dir.getName())) { for
+			 * (String e : dir.list()) { if (e.endsWith(".java")) {
+			 * extractorNames.add(dir.getName() + "." + e.substring(0,
+			 * e.length() - 5)); } } } }
+			 */
 		}
 
 		List<Extractor> extractors = new ArrayList<Extractor>();

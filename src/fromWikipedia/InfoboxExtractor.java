@@ -303,28 +303,34 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				String cls = FileLines.readTo(in, '}', '|').toString();
 				cls = Char.decodeAmpersand(cls);
 				cls = valueCleaner.transform(cls);
-				cls = FactComponent.forInfoboxTemplate(cls, language);
-
-				write(INFOBOX_TEMPLATES.inLanguage(language), new Fact(
-						titleEntity, typeRelation, cls),
-						INFOBOX_TEMPLATE_SOURCES.inLanguage(language),
-						FactComponent.wikipediaURL(titleEntity),
-						"InfoboxExtractor");
-
+				// Let's avoid writing nonsense here
+				if (cls != null && cls.length() > 3) {
+					cls = FactComponent.forInfoboxTemplate(cls, language);
+					write(INFOBOX_TEMPLATES.inLanguage(language), new Fact(
+							titleEntity, typeRelation, cls),
+							INFOBOX_TEMPLATE_SOURCES.inLanguage(language),
+							FactComponent.wikipediaURL(titleEntity),
+							"InfoboxExtractor");
+				}
 				Map<String, Set<String>> attributes = readInfobox(in);
 
 				/* new version */
 				for (String attribute : attributes.keySet()) {
 					for (String value : attributes.get(attribute)) {
 						value = valueCleaner.transform(value);
-						write(INFOBOX_ATTRIBUTES.inLanguage(language),
-								new Fact(titleEntity, FactComponent
-										.forInfoboxAttribute(this.language,
-												attribute), FactComponent
-										.forStringWithLanguage(value, language)),
-								INFOBOX_ATTRIBUTE_SOURCES.inLanguage(language),
-								FactComponent.wikipediaURL(titleEntity),
-								"Infobox Extractor");
+						// Here, too, avoid nonsense
+						if (value != null && !value.isEmpty()) {
+							write(INFOBOX_ATTRIBUTES.inLanguage(language),
+									new Fact(titleEntity, FactComponent
+											.forInfoboxAttribute(this.language,
+													attribute), FactComponent
+											.forStringWithLanguage(value,
+													language)),
+									INFOBOX_ATTRIBUTE_SOURCES
+											.inLanguage(language),
+									FactComponent.wikipediaURL(titleEntity),
+									"Infobox Extractor");
+						}
 					}
 				}
 

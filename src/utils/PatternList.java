@@ -42,6 +42,7 @@ public class PatternList {
 
 	/** Replaces all patterns in the string */
 	public String transform(String input) {
+		if(input==null) return(null);
 		for (Pair<Pattern, String> pattern : patterns) {
 			input = pattern.first.matcher(input).replaceAll(pattern.second);
 			if (input.contains("NIL") && pattern.second.equals("NIL"))

@@ -86,7 +86,10 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 		for (Fact f : InfoboxExtractor.INFOBOX_ATTRIBUTES
 				.inLanguage(this.language)) {
 			String val = f.getObjectAsJavaString();
-			val = replacements.transform(Char.decodeAmpersand(val));
+			val = Char.decodeAmpersand(val);
+			// Sometimes we get empty values here
+			if(val==null || val.isEmpty()) continue;
+			val = replacements.transform(val);
 			val = val
 					.replace("$0", FactComponent.stripBrackets(f.getSubject()));
 			val = val.trim();

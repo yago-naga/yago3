@@ -114,6 +114,9 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 				}
 				String category = FileLines.readTo(in, ']', '|').toString();
 				category = category.trim();
+				// There are sometimes categories of length 0
+				// This causes problems, so avoid them
+				if(category.length()<4) continue;
 				write(CATEGORYMEMBERS.inLanguage(language),
 						new Fact(titleEntity, "<hasWikiCategory>",
 								FactComponent.forForeignWikiCategory(category,
