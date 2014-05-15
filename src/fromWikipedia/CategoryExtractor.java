@@ -116,7 +116,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 				category = category.trim();
 				// There are sometimes categories of length 0
 				// This causes problems, so avoid them
-				if(category.length()<4) continue;
+				if(category.length()<4 || category.contains(":")) continue;
 				write(CATEGORYMEMBERS.inLanguage(language),
 						new Fact(titleEntity, "<hasWikiCategory>",
 								FactComponent.forForeignWikiCategory(category,
@@ -138,7 +138,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 		new CategoryExtractor(
 				"de",
 				new File(
-						"C:/Fabian/eclipseProjects/yago2s/testCases/fromWikipedia.CategoryExtractor/de/wikipedia/de_wikitest.xml"))
+						"C:/Fabian/eclipseProjects/yago3/testCases/fromWikipedia.CategoryExtractor/de/wikipedia/de_wikitest.xml"))
 				.extract(new File("c:/fabian/data/yago3"),
 						"Test on 1 wikipedia article");
 

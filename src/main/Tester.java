@@ -2,6 +2,7 @@ package main;
 
 import java.io.File;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
@@ -161,15 +162,16 @@ public class Tester {
 			if (inputFiles != null) {
 				for (File f : inputFiles) {
 					if (f.getName().startsWith("checkMe"))
-						in = new Theme(FileSet.newExtension(f, null).getName(),
-								"Facts to be checked by " + clss);
+						in = Theme.getOrCreate(FileSet.newExtension(f, null).getName(),
+								"Facts to be checked by " + clss,null);
 				}
 			}
 			if (in == null) {
 				Announce.error("FollowUpExtractors need a folder 'input' with an input theme called 'checkMe' or 'checkMe_XY'");
 			}
+			Theme out=Theme.getOrCreate("checked", "Facts checked by " + clss,null);
 			runTest(FollowUpExtractor.forName((Class<FollowUpExtractor>) clss,
-					in, new Theme("checked", "Facts checked by " + clss)),
+					in, out),
 					testCase, yagoFolder, outputFolder, gold);
 		} else if (superclasses.contains(Extractor.class)) {
 			File gold = getGold(testCase);
@@ -234,7 +236,7 @@ public class Tester {
 
 	/** Points the input themes to the testCases */
 	private static void setInputThemes(Extractor ex, File testCase) {
-		Theme.clear();
+		Theme.forgetAllFiles();
 		File inputThemeFolder = new File(testCase, "input");
 		if (!inputThemeFolder.exists() || !inputThemeFolder.isDirectory()) {
 			Announce.warning("A test case should contain a subfolder 'input':",
@@ -244,12 +246,13 @@ public class Tester {
 		List<File> files = new ArrayList<File>(Arrays.asList(inputThemeFolder
 				.listFiles()));
 		for (Theme t : ex.input()) {
-			t.forgetFile();
+			if (t.findFileInFolder(inputThemeFolder) == null)
+				continue;
 			try {
 				t.assignToFolder(inputThemeFolder);
-			} catch (Exception e) {
-				// file is not there, no problem, get it later from YAGO
-				continue;
+			} catch (IOException e) {
+				// Should not happen
+				e.printStackTrace();
 			}
 			files.remove(t.file());
 		}
@@ -281,6 +284,8 @@ public class Tester {
 		String singleTest = Parameters.get("singleTest", null);
 
 		if (singleTest != null) {
+			// Announce.setLevel(Announce.Level.DEBUG);
+			FactCollection.maxMessages = 100;
 			runTest(new File("testCases", singleTest), yagoFolder, outputFolder);
 		} else {
 			new RelationChecker().extract(yagoFolder, "Check relations");

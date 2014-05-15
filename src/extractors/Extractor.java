@@ -68,6 +68,7 @@ public abstract class Extractor implements Comparable<Extractor> {
 		}
 		Announce.done();
 		for (Theme out : output()) {
+			out.forgetFile();
 			out.openForWritingInFolder(outputFolder, header + "\n"
 					+ out.description + "\n" + out.themeGroup);
 		}

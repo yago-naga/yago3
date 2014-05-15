@@ -100,6 +100,7 @@ public class FlightExtractor extends EnglishWikipediaExtractor {
 					if (s.contains("}}\n\n") || s.contains("}}\r\n\r\n")
 							|| s.contains("}}\r\r") || s.contains("}}\n\r\n\r"))
 						break;
+					s=Char.decodeAmpersand(s);
 					if (s.contains("[[")) {
 						List<String> entities = TermParser.forWikiLink
 								.extractList(s);

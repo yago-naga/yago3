@@ -28,7 +28,6 @@
 <id_1gaoy63_1fx_1bzhcez>	<Carlo_Azeglio_Ciampi>	<infobox/en/birthdate>	"{{birth date and age|df=yes|1920|12|9}}"@en
 <id_1gaoy63_1b4_19qucya>	<Carlo_Azeglio_Ciampi>	<infobox/en/birthplace>	"[[Livorno]], Italy"@en
 <id_1gaoy63_o48_1ukmvht>	<Carlo_Azeglio_Ciampi>	<infobox/en/constituency>	"Former president"@en
-<id_1gaoy63_gbo_zik0zk>	<Carlo_Azeglio_Ciampi>	<infobox/en/honorificprefix>	""@en
 <id_1gaoy63_n4z_1bcyl2j>	<Carlo_Azeglio_Ciampi>	<infobox/en/image>	"Ciampi ritratto.jpg"@en
 <id_1gaoy63_1qm_6vqivb>	<Carlo_Azeglio_Ciampi>	<infobox/en/name>	"\nCarlo Azeglio Ciampi"@en
 <id_1gaoy63_32a_16e6njr>	<Carlo_Azeglio_Ciampi>	<infobox/en/nationality>	"[[Italians|Italian]]"@en
@@ -80,7 +79,6 @@
 <id_7r55ul_aza_zk06zc>	<Forza_Italia>	<infobox/en/international>	"None"@en
 <id_7r55ul_1b9_ken6g1>	<Forza_Italia>	<infobox/en/leadername>	"[[Silvio Berlusconi]],\n[[Giulio Tremonti]]"@en
 <id_7r55ul_18m_1rys2yj>	<Forza_Italia>	<infobox/en/leadertitle>	"Former leaders"@en
-<id_7r55ul_1qm_zik0zk>	<Forza_Italia>	<infobox/en/logo>	""@en
 <id_7r55ul_5do_14wv330>	<Forza_Italia>	<infobox/en/membership>	"401,014"@en
 <id_7r55ul_1ex_zjgz45>	<Forza_Italia>	<infobox/en/membershipyear>	"2007"@en
 <id_7r55ul_8rn_1ptpu9b>	<Forza_Italia>	<infobox/en/merged>	"[[The People of Freedom]]"@en
@@ -645,7 +643,6 @@
 <id_zuuepc_18m_1hgs23k>	<The_People_of_Freedom>	<infobox/en/leadertitle>	"President"@en
 <id_zuuepc_18m_1kfczh4>	<The_People_of_Freedom>	<infobox/en/leadertitle>	"Secretary"@en
 <id_zuuepc_18m_12mxqcc>	<The_People_of_Freedom>	<infobox/en/leadertitle>	"Spokesperson"@en
-<id_zuuepc_1qm_zik0zk>	<The_People_of_Freedom>	<infobox/en/logo>	""@en
 <id_zuuepc_5do_ftohp1>	<The_People_of_Freedom>	<infobox/en/membership>	"1,150,000"@en
 <id_zuuepc_1ex_zjgz4u>	<The_People_of_Freedom>	<infobox/en/membershipyear>	"2011"@en
 <id_zuuepc_8rn_6ubfdn>	<The_People_of_Freedom>	<infobox/en/merger>	"[[Forza Italia]], [[National Alliance (Italy)|National Alliance]], minor parties"@en
@@ -669,7 +666,6 @@
 <id_prkzmu_ovy_10byhjt>	<University_of_Milan>	<infobox/en/faculty>	"4,210"@en
 <id_prkzmu_1ql_1qcqnne>	<University_of_Milan>	<infobox/en/free>	"CUS Milano\n(http://www.cusmilano.it/)"@en
 <id_prkzmu_1sx_azkzxx>	<University_of_Milan>	<infobox/en/freelabel>	"Sports teams"@en
-<id_prkzmu_n4z_zik0zk>	<University_of_Milan>	<infobox/en/image>	""@en
 <id_prkzmu_n78_cir6r8>	<University_of_Milan>	<infobox/en/motto>	"Scientia illuminans dignus"@en
 <id_prkzmu_1ea_1m5xeuk>	<University_of_Milan>	<infobox/en/mottoeng>	"Knowledge enlightening the worthy"@en
 <id_prkzmu_1qm_wbur5y>	<University_of_Milan>	<infobox/en/name>	"University of Milan"@en
@@ -710,9 +706,7 @@
 <id_11qatgv_jeg_jdk8mg>	<Cherie_Blair>	<infobox/en/termend>	"27 June 2007"@en
 <id_11qatgv_ypr_1rih7ww>	<Cherie_Blair>	<infobox/en/termstart>	"1 May 1997"@en
 <id_11qatgv_1r6_xc83vw>	<Cherie_Blair>	<infobox/en/website>	"[http://www.cherieblair.org/ Official website]"@en
-<id_z038xo_bj1_zik0zk>	<Edinburgh>	<infobox/en/areablanksqmi>	""@en
 <id_z038xo_p6j_zjfpy7>	<Edinburgh>	<infobox/en/areacode>	"0131"@en
-<id_z038xo_1gu_zik0zk>	<Edinburgh>	<infobox/en/arealandkm>	""@en
 <id_z038xo_19r_1nh19gd>	<Edinburgh>	<infobox/en/areatotalsqmi>	"100.00"@en
 <id_z038xo_vnw_tvwxiy>	<Edinburgh>	<infobox/en/blankemblemlink>	"The City of Edinburgh Council"@en
 <id_z038xo_vo0_10aguqc>	<Edinburgh>	<infobox/en/blankemblemsize>	"150px"@en
@@ -727,8 +721,6 @@
 <id_z038xo_s55_8044xo>	<Edinburgh>	<infobox/en/blankname>	"[[ONS coding system|ONS code]]"@en
 <id_z038xo_1yy_nfdoqt>	<Edinburgh>	<infobox/en/coordinatesdisplay>	"inline,title"@en
 <id_z038xo_1u4_zik2qj>	<Edinburgh>	<infobox/en/coordinatesregion>	"GB"@en
-<id_z038xo_ozq_zik0zk>	<Edinburgh>	<infobox/en/elevationfootnotes>	""@en
-<id_z038xo_2ym_zik0zk>	<Edinburgh>	<infobox/en/elevationft>	""@en
 <id_z038xo_d3h_zjgcwz>	<Edinburgh>	<infobox/en/establisheddate>	"1125"@en
 <id_z038xo_d3h_10aiw82>	<Edinburgh>	<infobox/en/establisheddate>	"1889\n"@en
 <id_z038xo_d3h_8iz7xd>	<Edinburgh>	<infobox/en/establisheddate>	"prior to the 7th century"@en
@@ -760,20 +752,15 @@
 <id_z038xo_n6o_zik27y>	<Edinburgh>	<infobox/en/longs>	"20"@en
 <id_z038xo_n78_e4n5sr>	<Edinburgh>	<infobox/en/motto>	"\u0022Nisi Dominus Frustra\u0022 \n"@en
 <id_z038xo_1qm_17475uw>	<Edinburgh>	<infobox/en/name>	"City of Edinburgh"@en
-<id_z038xo_7v4_zik0zk>	<Edinburgh>	<infobox/en/nativename>	""@en
 <id_z038xo_1hw_jearyx>	<Edinburgh>	<infobox/en/nickname>	"\u0022Auld Reekie\u0022, \u0022Athens of the North\u0022, \u0022Edina\u0022, \u0022Dunedin\u0022"@en
 <id_z038xo_xt4_17475uw>	<Edinburgh>	<infobox/en/officialname>	"City of Edinburgh"@en
-<id_z038xo_13r_zik0zk>	<Edinburgh>	<infobox/en/othername>	""@en
 <id_z038xo_lu0_zjgz4t>	<Edinburgh>	<infobox/en/populationasof>	"2010"@en
-<id_z038xo_11l_zik0zk>	<Edinburgh>	<infobox/en/populationblank>	""@en
 <id_z038xo_hjy_zjieg2>	<Edinburgh>	<infobox/en/populationdensityurbansqmi>	"4776"@en
 <id_z038xo_11v_18rz1yt>	<Edinburgh>	<infobox/en/populationtotal>	"486,120"@en
 <id_z038xo_1ot_1ymfri4>	<Edinburgh>	<infobox/en/postalcode>	"[[EH postcode area|EH]]"@en
 <id_z038xo_1vx_1d40mnh>	<Edinburgh>	<infobox/en/postalcodetype>	"Postcode"@en
-<id_z038xo_hai_zik0zk>	<Edinburgh>	<infobox/en/pushpinlabelposition>	""@en
 <id_z038xo_1vj_xw99i8>	<Edinburgh>	<infobox/en/pushpinmap>	"Scotland "@en
 <id_z038xo_14e_1uzf1jk>	<Edinburgh>	<infobox/en/pushpinmapcaption>	"Location in Scotland"@en
-<id_z038xo_cid_zik0zk>	<Edinburgh>	<infobox/en/pushpinmapsize>	""@en
 <id_z038xo_1m9_1glhsfc>	<Edinburgh>	<infobox/en/settlementtype>	"[[Subdivisions of Scotland|Unitary authority]] & [[City status in the United Kingdom|city]]"@en
 <id_z038xo_54d_17475uw>	<Edinburgh>	<infobox/en/subdivisionname>	"City of Edinburgh"@en
 <id_z038xo_54d_z038xo>	<Edinburgh>	<infobox/en/subdivisionname>	"Edinburgh"@en
@@ -787,14 +774,12 @@
 <id_z038xo_54h_1pjhg5a>	<Edinburgh>	<infobox/en/subdivisiontype>	"[[List of sovereign states|Sovereign state]]"@en
 <id_z038xo_ie4_1j7i16q>	<Edinburgh>	<infobox/en/timezone>	"[[Greenwich Mean Time]]"@en
 <id_z038xo_1it_1pzicxt>	<Edinburgh>	<infobox/en/timezonedst>	"[[British Summer Time]]"@en
-<id_z038xo_1bw_zik0zk>	<Edinburgh>	<infobox/en/unitpref>	""@en
 <id_z038xo_4nf_zik21x>	<Edinburgh>	<infobox/en/utcoffset>	"+0"@en
 <id_z038xo_1b6_zik21y>	<Edinburgh>	<infobox/en/utcoffsetdst>	"+1"@en
 <id_z038xo_1r6_16bi077>	<Edinburgh>	<infobox/en/website>	"[http://www.edinburgh.gov.uk/ www.edinburgh.gov.uk] (Official Council site)\n[http://www.edinburgh-inspiringcapital.com/ www.edinburgh-inspiringcapital.com] (Visitor-facing site)"@en
 <id_z038xo_1ms_sl7oao>	<Edinburgh>	<infobox/en/country>	"Scotland"@en
 <id_z038xo_dzb_ftpigx>	<Edinburgh>	<infobox/en/criteria>	"ii, iv"@en
 <id_z038xo_1ln_zil70d>	<Edinburgh>	<infobox/en/id>	"728"@en
-<id_z038xo_n4z_zik0zk>	<Edinburgh>	<infobox/en/image>	""@en
 <id_z038xo_1qm_1s66ti2>	<Edinburgh>	<infobox/en/link>	"http://whc.unesco.org/en/list/728"@en
 <id_z038xo_b4o_1ca9oqz>	<Edinburgh>	<infobox/en/region>	"[[List of World Heritage Sites in Europe|Europe and North America]]"@en
 <id_z038xo_4qp_zjgkgs>	<Edinburgh>	<infobox/en/session>	"19th"@en
@@ -928,7 +913,6 @@
 <id_177pmny_2wn_zjgi6c>	<Inns_of_Court_School_of_Law>	<infobox/en/established>	"1852"@en
 <id_177pmny_1qm_11u9s11>	<Inns_of_Court_School_of_Law>	<infobox/en/head>	"Adrian Keane"@en
 <id_177pmny_18p_1wxwmaj>	<Inns_of_Court_School_of_Law>	<infobox/en/homepage>	"http://www.city.ac.uk/law/index.html"@en
-<id_177pmny_n4z_zik0zk>	<Inns_of_Court_School_of_Law>	<infobox/en/image>	""@en
 <id_177pmny_1qm_1gthbtp>	<Inns_of_Court_School_of_Law>	<infobox/en/name>	"Inns of Court School of Law"@en
 <id_177pmny_1qm_1luejqb>	<Inns_of_Court_School_of_Law>	<infobox/en/type>	"Private"@en
 <id_g6y5dz_exz_1y04foz>	<Jack_Straw>	<infobox/en/almamater>	"[[University of Leeds]]\n[[Inns of Court School of Law|Inns of Court]]"@en
@@ -1136,7 +1120,6 @@
 <id_10cbk3o_8aa_wddtre>	<Labour_Party_(UK)>	<infobox/en/leader>	"[[Ed Miliband]] [[Member of Parliament|MP]]"@en
 <id_10cbk3o_1b9_663m3h>	<Labour_Party_(UK)>	<infobox/en/leadername>	"[[Harriet Harman]] [[Member of Parliament|MP]]"@en
 <id_10cbk3o_18m_799lry>	<Labour_Party_(UK)>	<infobox/en/leadertitle>	"Deputy Leader"@en
-<id_10cbk3o_1qm_zik0zk>	<Labour_Party_(UK)>	<infobox/en/logo>	""@en
 <id_10cbk3o_5do_166lxv>	<Labour_Party_(UK)>	<infobox/en/membership>	"193,961"@en
 <id_10cbk3o_1ex_zjgz4t>	<Labour_Party_(UK)>	<infobox/en/membershipyear>	"2010"@en
 <id_10cbk3o_1qm_j3ab6t>	<Labour_Party_(UK)>	<infobox/en/name>	"Labour Party"@en
@@ -1384,8 +1367,6 @@
 <id_1bx19fo_6lc_1rh9i3u>	<St_John's_College,_Oxford>	<infobox/en/mcrpresident>	"David J. Townsend"@en
 <id_1bx19fo_1qm_6z00bs>	<St_John's_College,_Oxford>	<infobox/en/name>	"St John Baptist College"@en
 <id_1bx19fo_c58_zodzhe>	<St_John's_College,_Oxford>	<infobox/en/namedfor>	"[[Saint John the Baptist]]"@en
-<id_1bx19fo_n8r_zik0zk>	<St_John's_College,_Oxford>	<infobox/en/photo>	""@en
-<id_1bx19fo_bne_zik0zk>	<St_John's_College,_Oxford>	<infobox/en/shield>	""@en
 <id_1bx19fo_11h_yjdj8s>	<St_John's_College,_Oxford>	<infobox/en/sistercollege>	"[[Sidney Sussex College, Cambridge]]"@en
 <id_1bx19fo_1jq_zil47e>	<St_John's_College,_Oxford>	<infobox/en/undergraduates>	"390"@en
 <id_1bx19fo_uoc_3rux50>	<St_John's_College,_Oxford>	<infobox/en/university>	"Oxford"@en
@@ -1538,7 +1519,6 @@
 <id_t9jepg_1ex_zjgz4u>	<Christian_Democratic_Union_(Germany)>	<infobox/en/membershipyear>	"2011"@en
 <id_t9jepg_7v4_17oe0bt>	<Christian_Democratic_Union_(Germany)>	<infobox/en/nativename>	"Christlich Demokratische Union Deutschlands"@en
 <id_t9jepg_649_10vb0kv>	<Christian_Democratic_Union_(Germany)>	<infobox/en/newspaper>	"Union"@en
-<id_t9jepg_16e_zik0zk>	<Christian_Democratic_Union_(Germany)>	<infobox/en/partylogo>	""@en
 <id_t9jepg_16e_1jysq8l>	<Christian_Democratic_Union_(Germany)>	<infobox/en/partyname>	"Christian Democratic Union of Germany"@en
 <id_t9jepg_1t3_umox8q>	<Christian_Democratic_Union_(Germany)>	<infobox/en/position>	"[[Centre-right]]"@en
 <id_t9jepg_nac_12enai4>	<Christian_Democratic_Union_(Germany)>	<infobox/en/seats>	"{{Infobox political party/seats|193|620|hex=#F59D07}}"@en
@@ -1724,12 +1704,10 @@
 <id_1ps9evn_1qm_zik28u>	<Germany>	<infobox/en/latm>	"31"@en
 <id_1ps9evn_n6f_zik11q>	<Germany>	<infobox/en/latns>	"N"@en
 <id_1ps9evn_1b9_1yr2p7q>	<Germany>	<infobox/en/leadername>	"[[Joachim Gauck]] -->"@en
-<id_1ps9evn_1b9_zik0zk>	<Germany>	<infobox/en/leadername>	""@en
 <id_1ps9evn_1b9_28qejc>	<Germany>	<infobox/en/leadername>	"[[Angela Merkel]]"@en
 <id_1ps9evn_1b9_imw60y>	<Germany>	<infobox/en/leadername>	"[[Horst Seehofer]]\n<!--"@en
 <id_1ps9evn_1b9_117b71k>	<Germany>	<infobox/en/leadername>	"[[Norbert Lammert]]"@en
 <id_1ps9evn_18m_odsttc>	<Germany>	<infobox/en/leadertitle>	"[[President of Germany|President-elect]]"@en
-<id_1ps9evn_18m_zik0zk>	<Germany>	<infobox/en/leadertitle>	""@en
 <id_1ps9evn_18m_4cylkq>	<Germany>	<infobox/en/leadertitle>	"[[Chancellor of Germany (Federal Republic of Germany)|Chancellor]]"@en
 <id_1ps9evn_18m_1rr6c1i>	<Germany>	<infobox/en/leadertitle>	"[[President of the Bundesrat]]"@en
 <id_1ps9evn_18m_1rs9nl7>	<Germany>	<infobox/en/leadertitle>	"[[President of the Bundestag]]"@en
@@ -1808,7 +1786,6 @@
 <id_3gfkn0_b6n_13r5vbh>	<Hamburg>	<infobox/en/plz>	"20001–21149, 22001–22769"@en
 <id_3gfkn0_10f_njttrn>	<Hamburg>	<infobox/en/popdate>	"2011-09-31"@en
 <id_3gfkn0_1rq_16bipld>	<Hamburg>	<infobox/en/popmetro>	"4300000"@en
-<id_3gfkn0_ac9_zik0zk>	<Hamburg>	<infobox/en/popref>	""@en
 <id_3gfkn0_1t3_yufed9>	<Hamburg>	<infobox/en/population>	"1,796,077"@en
 <id_3gfkn0_14k_10tnfvh>	<Hamburg>	<infobox/en/rulingparty>	"SPD\n "@en
 <id_3gfkn0_3hy_1h1rhvu>	<Hamburg>	<infobox/en/statecoa>	"Coat of arms of Hamburg.svg"@en
@@ -1885,7 +1862,6 @@
 <id_1cm9d6p_9q2_1nk7e76>	<Jürgen_Trittin>	<infobox/en/office>	"Chairman of Parliamentary Group of [[Alliance '90/The Greens]]\n"@en
 <id_1cm9d6p_9q2_2tbuo5>	<Jürgen_Trittin>	<infobox/en/office>	"Minister for Federal and European Affairs, [[Lower Saxony]], [[Germany]]"@en
 <id_1cm9d6p_9q2_vflmiv>	<Jürgen_Trittin>	<infobox/en/office>	"[[Federal Ministry for Environment, Nature Conservation and Nuclear Safety (Germany)|Federal Minister of the Environment, Nature Conservation and Nuclear Safety]], {{GER}}"@en
-<id_1cm9d6p_ttx_zik0zk>	<Jürgen_Trittin>	<infobox/en/partner>	""@en
 <id_1cm9d6p_n8m_d0rkkm>	<Jürgen_Trittin>	<infobox/en/party>	"[[Bündnis 90/Die Grünen]]"@en
 <id_1cm9d6p_14q_1hnwzdp>	<Jürgen_Trittin>	<infobox/en/predecessor>	"[[:de:Heinrich Jürgens|Heinrich Jürgens]]"@en
 <id_1cm9d6p_14q_28qejc>	<Jürgen_Trittin>	<infobox/en/predecessor>	"[[Angela Merkel]]"@en
@@ -2240,7 +2216,6 @@
 <id_jfqfk4_2wn_zjgi82>	<Institut_d'Études_Politiques_de_Paris>	<infobox/en/established>	"1872"@en
 <id_jfqfk4_1qm_1j1682u>	<Institut_d'Études_Politiques_de_Paris>	<infobox/en/head>	"[[Richard Descoings]]"@en
 <id_jfqfk4_1wh_14nj54c>	<Institut_d'Études_Politiques_de_Paris>	<infobox/en/headlabel>	"Director"@en
-<id_jfqfk4_n4z_zik0zk>	<Institut_d'Études_Politiques_de_Paris>	<infobox/en/image>	""@en
 <id_jfqfk4_16i_10sbxbf>	<Institut_d'Études_Politiques_de_Paris>	<infobox/en/maincampus>	"Paris"@en
 <id_jfqfk4_1qm_atf1me>	<Institut_d'Études_Politiques_de_Paris>	<infobox/en/name>	"Sciences Po (Paris Institute of Political Studies)"@en
 <id_jfqfk4_7v4_cekbh9>	<Institut_d'Études_Politiques_de_Paris>	<infobox/en/nativename>	"Sciences Po (Institut d'études politiques de Paris)"@en
@@ -2410,18 +2385,15 @@
 <id_vkf2e7_ypr_caxa5d>	<Nicolas_Sarkozy>	<infobox/en/termstart>	"31 March 2004"@en
 <id_vkf2e7_ypr_180hv9g>	<Nicolas_Sarkozy>	<infobox/en/termstart>	"7 May 2002"@en
 <id_vkf2e7_1r6_1n9kant>	<Nicolas_Sarkozy>	<infobox/en/website>	"[http://www.sarkozy.fr/home/ Official website]"@en
-<id_vkf2e7_n4z_zik0zk>	<Nicolas_Sarkozy>	<infobox/en/image>	""@en
 <id_vkf2e7_1qm_1qj0mwu>	<Nicolas_Sarkozy>	<infobox/en/name>	"Nicolas Sarkozy"@en
 <id_vkf2e7_1km_kki4kz>	<Nicolas_Sarkozy>	<infobox/en/reference>	"Son Excellence (Monsieur)"@en
 <id_vkf2e7_brx_1ykezvh>	<Nicolas_Sarkozy>	<infobox/en/spoken>	"Monsieur le Président"@en
-<id_vkf2e7_n4z_zik0zk>	<Nicolas_Sarkozy>	<infobox/en/image>	""@en
 <id_vkf2e7_1qm_1qj0mwu>	<Nicolas_Sarkozy>	<infobox/en/name>	"Nicolas Sarkozy"@en
 <id_vkf2e7_1km_sr0k8f>	<Nicolas_Sarkozy>	<infobox/en/reference>	"His Serene Highness"@en
 <id_vkf2e7_brx_bnntjk>	<Nicolas_Sarkozy>	<infobox/en/spoken>	"Your Serene Highness"@en
 <id_17gzuo3_hhh_aw1aac>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/affiliations>	"[[University of Paris]]"@en
 <id_17gzuo3_1ql_yspxtq>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/city>	"[[Nanterre]], [[Île-de-France (region)|Île-de-France]]"@en
 <id_17gzuo3_2wn_zngwnf>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/established>	"1964, following the division of the [[University of Paris]] (1253)"@en
-<id_17gzuo3_n4z_zik0zk>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/image>	""@en
 <id_17gzuo3_1qm_4kmiip>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/name>	"Université Paris Ouest Nanterre La Défense"@en
 <id_17gzuo3_1kq_yj0f5w>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/president>	"Bernadette Madeuf"@en
 <id_17gzuo3_cq2_1ohsyqu>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/students>	"35,000"@en
@@ -2455,7 +2427,6 @@
 <id_1snxdw5_aza_9zu7qe>	<Rally_for_the_Republic>	<infobox/en/international>	"[[International Democrat Union]]"@en
 <id_1snxdw5_8rn_1a3zj3t>	<Rally_for_the_Republic>	<infobox/en/merged>	"[[Union for a Popular Movement|UMP]]"@en
 <id_1snxdw5_7v4_1tj5osj>	<Rally_for_the_Republic>	<infobox/en/nativename>	"Rassemblement pour la République"@en
-<id_1snxdw5_16e_zik0zk>	<Rally_for_the_Republic>	<infobox/en/partylogo>	""@en
 <id_1snxdw5_16e_1q7500o>	<Rally_for_the_Republic>	<infobox/en/partyname>	"Rally for the Republic"@en
 <id_1snxdw5_14q_frifo3>	<Rally_for_the_Republic>	<infobox/en/predecessor>	"[[Union of Democrats for the Republic|UDR]]"@en
 <id_1snxdw5_1kq_wv6gpd>	<Rally_for_the_Republic>	<infobox/en/president>	"[[Michèle Alliot-Marie]] (last)"@en
@@ -2474,7 +2445,6 @@
 <id_1as8dix_18m_1hgs23k>	<Union_for_a_Popular_Movement>	<infobox/en/leadertitle>	"President"@en
 <id_1as8dix_18m_6354mr>	<Union_for_a_Popular_Movement>	<infobox/en/leadertitle>	"Secretary-general"@en
 <id_1as8dix_7v4_vj1fin>	<Union_for_a_Popular_Movement>	<infobox/en/nativename>	"Union pour un Mouvement Populaire"@en
-<id_1as8dix_16e_zik0zk>	<Union_for_a_Popular_Movement>	<infobox/en/partylogo>	""@en
 <id_1as8dix_16e_vv1cot>	<Union_for_a_Popular_Movement>	<infobox/en/partyname>	"Union for a Popular Movement"@en
 <id_1as8dix_1t3_umox8q>	<Union_for_a_Popular_Movement>	<infobox/en/position>	"[[Centre-right]]"@en
 <id_1as8dix_nac_1vhwi2b>	<Union_for_a_Popular_Movement>	<infobox/en/seats>	"{{Infobox political party/seats|132|348|hex=#0066CC}}"@en
@@ -2682,7 +2652,6 @@
 <id_1ng0idk_ypr_1yjug6u>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/termstart>	"17 April 2004"@en
 <id_1ng0idk_ypr_pwm79g>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/termstart>	"22 June 1986"@en
 <id_1ng0idk_1xa_uylgka>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/alternative>	"Señor Zapatero, [[Don (honorific)|Don]] José Luis"@en
-<id_1ng0idk_n4z_zik0zk>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/image>	""@en
 <id_1ng0idk_1qm_1f2t5rd>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/name>	"José Luis Rodríguez Zapatero"@en
 <id_1ng0idk_1km_18qqso1>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/reference>	"Excelentísimo Señor (Don)"@en
 <id_1ng0idk_brx_h3hz7>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/spoken>	"Señor Presidente"@en
@@ -2803,7 +2772,6 @@
 <id_1vmvigz_o48_1vahh4o>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/constituency>	"[[Madrid (Spanish Congress Electoral District)|Madrid]]"@en
 <id_1vmvigz_o48_1tlikcw>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/constituency>	"[[Segovia (Spanish Congress Electoral District)|Segovia]]"@en
 <id_1vmvigz_o48_n7vxdk>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/constituency>	"[[Valencia (Spanish Congress Electoral District)|Valencia]]"@en
-<id_1vmvigz_gbo_zik0zk>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/honorificprefix>	""@en
 <id_1vmvigz_n4z_rfevhr>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/image>	"De la Vega2 cropped.jpg"@en
 <id_1vmvigz_1rd_lml37x>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/monarch>	"[[Juan Carlos I]]"@en
 <id_1vmvigz_1qm_eo8bue>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/name>	"{{nowrap begin}}María Teresa Fernández de la Vega{{nowrap end}}"@en
@@ -2811,12 +2779,10 @@
 <id_1vmvigz_9q2_1pg0lmq>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/office>	"Member of the [[Congress of Deputies (Spain)|Congress of Deputies]]"@en
 <id_1vmvigz_9q2_19yba73>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/office>	"[[First Vice President of the Government (Spain)| Deputy Prime Minister of Spain]]"@en
 <id_1vmvigz_os5_16dpq6r>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/otherparty>	"[[Unified Socialist Party of Catalonia|PSUC]]"@en
-<id_1vmvigz_ttx_zik0zk>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/partner>	""@en
 <id_1vmvigz_n8m_1vjzfn2>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/party>	"[[Spanish Socialist Workers' Party|PSOE]]"@en
 <id_1vmvigz_14q_1islzl0>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/predecessor>	"[[Rodrigo Rato]]"@en
 <id_1vmvigz_1ei_1rk4izt>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/primeminister>	"[[José Luis Rodríguez Zapatero]]"@en
 <id_1vmvigz_7j2_20lv5v>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/profession>	"[[Jurist]]"@en
-<id_1vmvigz_1c1_zik0zk>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/smallimage>	""@en
 <id_1vmvigz_gjb_1khr2a6>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/successor>	"[[Alfredo Pérez Rubalcaba]]"@en
 <id_1vmvigz_jeg_seun5o>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/termend>	"14 March 2004"@en
 <id_1vmvigz_jeg_138wr1b>	<María_Teresa_Fernández_de_la_Vega>	<infobox/en/termend>	"20 October 2010"@en
@@ -2840,7 +2806,6 @@
 <id_1i5m33a_1ev_1u142ro>	<Spanish_Socialist_Workers'_Party>	<infobox/en/headquarters>	"Calle de Ferraz, 70\n28008 {{allcaps|Madrid}}"@en
 <id_1i5m33a_1eh_gw52r3>	<Spanish_Socialist_Workers'_Party>	<infobox/en/ideology>	"(modern)\n[[Social democracy]], [[Third Way (centrism)|Third Way]]\n(historical)\n[[Marxism]], [[democratic socialism]]"@en
 <id_1i5m33a_aza_dlz0mj>	<Spanish_Socialist_Workers'_Party>	<infobox/en/international>	"[[Socialist International]]"@en
-<id_1i5m33a_1qm_zik0zk>	<Spanish_Socialist_Workers'_Party>	<infobox/en/logo>	""@en
 <id_1i5m33a_5do_17ql0tu>	<Spanish_Socialist_Workers'_Party>	<infobox/en/membership>	"460,000"@en
 <id_1i5m33a_1qm_1dlwy4n>	<Spanish_Socialist_Workers'_Party>	<infobox/en/name>	"Spanish Socialist Workers' Party"@en
 <id_1i5m33a_7v4_1mavxzj>	<Spanish_Socialist_Workers'_Party>	<infobox/en/nativename>	"Partido Socialista Obrero Español"@en
@@ -2871,7 +2836,6 @@
 <id_cacb9n_14s_xc073d>	<University_of_León>	<infobox/en/endowment>	" Euro  97 million "@en
 <id_cacb9n_2wn_zjgiyy>	<University_of_León>	<infobox/en/established>	"1979"@en
 <id_cacb9n_ovy_zil8k4>	<University_of_León>	<infobox/en/faculty>	"950"@en
-<id_cacb9n_n4z_zik0zk>	<University_of_León>	<infobox/en/image>	""@en
 <id_cacb9n_n78_1op20t3>	<University_of_León>	<infobox/en/motto>	"Universitas legionensis"@en
 <id_cacb9n_1qm_lsuggm>	<University_of_León>	<infobox/en/name>	"<big>University of León</big>"@en
 <id_cacb9n_7v4_17eofrl>	<University_of_León>	<infobox/en/nativename>	"Universidad de León"@en
@@ -2911,19 +2875,15 @@
 <id_13dzdeu_n6o_zik29r>	<Valladolid>	<infobox/en/longm>	"43"@en
 <id_13dzdeu_n6o_zik10w>	<Valladolid>	<infobox/en/longs>	"0"@en
 <id_13dzdeu_1qm_13dzdeu>	<Valladolid>	<infobox/en/name>	"Valladolid"@en
-<id_13dzdeu_7v4_zik0zk>	<Valladolid>	<infobox/en/nativename>	""@en
-<id_13dzdeu_xt4_zik0zk>	<Valladolid>	<infobox/en/officialname>	""@en
 <id_13dzdeu_lu0_zjgz4u>	<Valladolid>	<infobox/en/populationasof>	"2011"@en
 <id_13dzdeu_1ub_tqe6x6>	<Valladolid>	<infobox/en/populationdemonym>	"Vallisoletano, -a (unformally, pucelano, -a)"@en
 <id_13dzdeu_qv4_zkcgbz>	<Valladolid>	<infobox/en/populationdensitykm>	"auto"@en
-<id_13dzdeu_1lf_zik0zk>	<Valladolid>	<infobox/en/populationfootnotes>	""@en
 <id_13dzdeu_11r_1owtxy7>	<Valladolid>	<infobox/en/populationmetro>	"416756"@en
 <id_13dzdeu_11v_1ofqcbn>	<Valladolid>	<infobox/en/populationtotal>	"313437"@en
 <id_13dzdeu_1ot_ewk4x9>	<Valladolid>	<infobox/en/postalcode>	"47001 - 47016"@en
 <id_13dzdeu_1vx_1dgsnss>	<Valladolid>	<infobox/en/postalcodetype>	"[[List of postal codes in Spain|Postal code]]"@en
 <id_13dzdeu_1vj_10u8jah>	<Valladolid>	<infobox/en/pushpinmap>	"Spain"@en
 <id_13dzdeu_14e_vk2ml5>	<Valladolid>	<infobox/en/pushpinmapcaption>	"Location in Spain"@en
-<id_13dzdeu_1vg_zik0zk>	<Valladolid>	<infobox/en/seattype>	""@en
 <id_13dzdeu_1m9_1lf84ya>	<Valladolid>	<infobox/en/settlementtype>	"[[Municipalities of Spain|Municipality]]"@en
 <id_13dzdeu_54d_13dzdeu>	<Valladolid>	<infobox/en/subdivisionname>	"Valladolid"@en
 <id_13dzdeu_54d_csjalb>	<Valladolid>	<infobox/en/subdivisionname>	"[[Campiña del Pisuerga]]"@en

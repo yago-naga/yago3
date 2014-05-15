@@ -1,4 +1,4 @@
-// Test
+// Test on 1 wikipedia article
 // Sources for the facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated
 // INTERNAL
 
@@ -34,104 +34,54 @@
 	<id_4jy5bx_115_191i61r>	<extractionTechnique>	"CategoryExtractor"
 <id_d4k9lh_115_hifs6w>	<id_1e250cu_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/A>
 	<id_d4k9lh_115_hifs6w>	<extractionTechnique>	"CategoryExtractor"
-<id_f8ibdt_115_hifs6w>	<id_1e250cu_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/A>
-	<id_f8ibdt_115_hifs6w>	<extractionTechnique>	"CategoryExtractor"
 <id_564rmi_115_hifs73>	<id_1e250d1_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/H>
 	<id_564rmi_115_hifs73>	<extractionTechnique>	"CategoryExtractor"
-<id_7a2teu_115_hifs73>	<id_1e250d1_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/H>
-	<id_7a2teu_115_hifs73>	<extractionTechnique>	"CategoryExtractor"
 <id_he9nbn_115_hifs6y>	<id_1e250cw_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/C>
 	<id_he9nbn_115_hifs6y>	<extractionTechnique>	"CategoryExtractor"
-<id_ji7p3z_115_hifs6y>	<id_1e250cw_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/C>
-	<id_ji7p3z_115_hifs6y>	<extractionTechnique>	"CategoryExtractor"
 <id_7azghl_115_hifs74>	<id_1e250d2_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/I>
 	<id_7azghl_115_hifs74>	<extractionTechnique>	"CategoryExtractor"
-<id_9exi9x_115_hifs74>	<id_1e250d2_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/I>
-	<id_9exi9x_115_hifs74>	<extractionTechnique>	"CategoryExtractor"
 <id_bkou7r_115_hifs76>	<id_1e250d4_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/K>
 	<id_bkou7r_115_hifs76>	<extractionTechnique>	"CategoryExtractor"
-<id_domw03_115_hifs76>	<id_1e250d4_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/K>
-	<id_domw03_115_hifs76>	<extractionTechnique>	"CategoryExtractor"
 <id_9fu5co_115_hifs75>	<id_1e250d3_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/J>
 	<id_9fu5co_115_hifs75>	<extractionTechnique>	"CategoryExtractor"
-<id_bjs750_115_hifs75>	<id_1e250d3_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/J>
-	<id_bjs750_115_hifs75>	<extractionTechnique>	"CategoryExtractor"
 <id_1ba7bet_115_hifs7h>	<id_1e250df_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/V>
 	<id_1ba7bet_115_hifs7h>	<extractionTechnique>	"CategoryExtractor"
-<id_1de5d75_115_hifs7h>	<id_1e250df_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/V>
-	<id_1de5d75_115_hifs7h>	<extractionTechnique>	"CategoryExtractor"
 <id_31a2rf_115_hifs72>	<id_1e250d0_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/G>
 	<id_31a2rf_115_hifs72>	<extractionTechnique>	"CategoryExtractor"
-<id_5584jr_115_hifs72>	<id_1e250d0_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/G>
-	<id_5584jr_115_hifs72>	<extractionTechnique>	"CategoryExtractor"
 <id_1df209w_115_hifs7i>	<id_1e250dg_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/W>
 	<id_1df209w_115_hifs7i>	<extractionTechnique>	"CategoryExtractor"
-<id_1fj0228_115_hifs7i>	<id_1e250dg_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/W>
-	<id_1fj0228_115_hifs7i>	<extractionTechnique>	"CategoryExtractor"
 <id_f9eygk_115_hifs6x>	<id_1e250cv_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/B>
 	<id_f9eygk_115_hifs6x>	<extractionTechnique>	"CategoryExtractor"
-<id_hdd08w_115_hifs6x>	<id_1e250cv_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/B>
-	<id_hdd08w_115_hifs6x>	<extractionTechnique>	"CategoryExtractor"
 <id_jj4c6q_115_hifs6z>	<id_1e250cx_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/D>
 	<id_jj4c6q_115_hifs6z>	<extractionTechnique>	"CategoryExtractor"
-<id_ln2dz2_115_hifs6z>	<id_1e250cx_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/D>
-	<id_ln2dz2_115_hifs6z>	<extractionTechnique>	"CategoryExtractor"
 <id_14vn8tk_115_hifs7e>	<id_1e250dc_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/S>
 	<id_14vn8tk_115_hifs7e>	<extractionTechnique>	"CategoryExtractor"
-<id_16zlalw_115_hifs7e>	<id_1e250dc_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/S>
-	<id_16zlalw_115_hifs7e>	<extractionTechnique>	"CategoryExtractor"
 <id_170hxon_115_hifs7f>	<id_1e250dd_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/T>
 	<id_170hxon_115_hifs7f>	<extractionTechnique>	"CategoryExtractor"
-<id_194fzgz_115_hifs7f>	<id_1e250dd_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/T>
-	<id_194fzgz_115_hifs7f>	<extractionTechnique>	"CategoryExtractor"
 <id_fue7xx_115_hifs78>	<id_1e250d6_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/M>
 	<id_fue7xx_115_hifs78>	<extractionTechnique>	"CategoryExtractor"
-<id_hyc9q9_115_hifs78>	<id_1e250d6_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/M>
-	<id_hyc9q9_115_hifs78>	<extractionTechnique>	"CategoryExtractor"
 <id_k43lo3_115_hifs7a>	<id_1e250d8_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/O>
 	<id_k43lo3_115_hifs7a>	<extractionTechnique>	"CategoryExtractor"
-<id_m81ngf_115_hifs7a>	<id_1e250d8_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/O>
-	<id_m81ngf_115_hifs7a>	<extractionTechnique>	"CategoryExtractor"
 <id_nstpww_115_hifs71>	<id_1e250cz_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/F>
 	<id_nstpww_115_hifs71>	<extractionTechnique>	"CategoryExtractor"
-<id_pwrrp8_115_hifs71>	<id_1e250cz_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/F>
-	<id_pwrrp8_115_hifs71>	<extractionTechnique>	"CategoryExtractor"
 <id_lnz11t_115_hifs70>	<id_1e250cy_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/E>
 	<id_lnz11t_115_hifs70>	<extractionTechnique>	"CategoryExtractor"
-<id_nrx2u5_115_hifs70>	<id_1e250cy_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/E>
-	<id_nrx2u5_115_hifs70>	<extractionTechnique>	"CategoryExtractor"
 <id_dpjj2u_115_hifs77>	<id_1e250d5_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/L>
 	<id_dpjj2u_115_hifs77>	<extractionTechnique>	"CategoryExtractor"
-<id_fthkv6_115_hifs77>	<id_1e250d5_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/L>
-	<id_fthkv6_115_hifs77>	<extractionTechnique>	"CategoryExtractor"
 <id_hz8wt0_115_hifs79>	<id_1e250d7_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/N>
 	<id_hz8wt0_115_hifs79>	<extractionTechnique>	"CategoryExtractor"
-<id_k36ylc_115_hifs79>	<id_1e250d7_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/N>
-	<id_k36ylc_115_hifs79>	<extractionTechnique>	"CategoryExtractor"
 <id_m8yaj6_115_hifs7b>	<id_1e250d9_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/P>
 	<id_m8yaj6_115_hifs7b>	<extractionTechnique>	"CategoryExtractor"
-<id_ocwcbi_115_hifs7b>	<id_1e250d9_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/P>
-	<id_ocwcbi_115_hifs7b>	<extractionTechnique>	"CategoryExtractor"
 <id_10lxv3e_115_hifs7c>	<id_1e250da_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Q>
 	<id_10lxv3e_115_hifs7c>	<extractionTechnique>	"CategoryExtractor"
-<id_12pvwvq_115_hifs7c>	<id_1e250da_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Q>
-	<id_12pvwvq_115_hifs7c>	<extractionTechnique>	"CategoryExtractor"
 <id_12qsjyh_115_hifs7d>	<id_1e250db_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/R>
 	<id_12qsjyh_115_hifs7d>	<extractionTechnique>	"CategoryExtractor"
-<id_14uqlqt_115_hifs7d>	<id_1e250db_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/R>
-	<id_14uqlqt_115_hifs7d>	<extractionTechnique>	"CategoryExtractor"
 <id_195cmjq_115_hifs7g>	<id_1e250de_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/U>
 	<id_195cmjq_115_hifs7g>	<extractionTechnique>	"CategoryExtractor"
-<id_1b9aoc2_115_hifs7g>	<id_1e250de_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/U>
-	<id_1b9aoc2_115_hifs7g>	<extractionTechnique>	"CategoryExtractor"
 <id_1hore02_115_hifs7k>	<id_1e250di_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Y>
 	<id_1hore02_115_hifs7k>	<extractionTechnique>	"CategoryExtractor"
-<id_1jspfse_115_hifs7k>	<id_1e250di_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Y>
-	<id_1jspfse_115_hifs7k>	<extractionTechnique>	"CategoryExtractor"
 <id_1jtm2v5_115_hifs7l>	<id_1e250dj_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Z>
 	<id_1jtm2v5_115_hifs7l>	<extractionTechnique>	"CategoryExtractor"
-<id_1lxk4nh_115_hifs7l>	<id_1e250dj_phb_pyskyl>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Liste_von_Autoren/Z>
-	<id_1lxk4nh_115_hifs7l>	<extractionTechnique>	"CategoryExtractor"
 <id_uouuch_115_31pp0l>	<id_ykgyd7_phb_lkoqho>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella>
 	<id_uouuch_115_31pp0l>	<extractionTechnique>	"CategoryExtractor"
 <id_s6t272_115_31pp0l>	<id_ykgyd7_phb_gbx3sb>	<extractionSource>	<http://en.wikipedia.org/wiki/de/Anthony_Minghella>

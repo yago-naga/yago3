@@ -271,7 +271,7 @@ public class ParallelCaller {
 			D.p("Reusing existing themes");
 			for (Theme t : Theme.all()) {
 				File f = t.findFileInFolder(outputFolder);
-				if (f == null || f.length() < 100)
+				if (f == null || f.length() < 200)
 					continue;
 				t.assignToFolder(outputFolder);
 				themesWeHave.add(t);

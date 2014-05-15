@@ -77,16 +77,16 @@ public abstract class TermParser {
 	}
 
 	/** Returns all available parsers */
-	public static List<TermParser> all(Map<String, String> preferredMeanings,
+	public static List<TermParser> allParsers(Map<String, String> preferredMeanings,
 			String language) {
-		List<TermParser> all = new ArrayList<>(all());
-		all.add(new TermParser.ForClass(preferredMeanings));
+		List<TermParser> all = new ArrayList<>(literalParsers());
+		if(language.startsWith("en")) all.add(new TermParser.ForClass(preferredMeanings));
 		all.add(new TermParser.ForWikiLink(language));
 		return all;
 	}
 
 	/** Returns all available parsers, excluding the class parser */
-	public static List<TermParser> all() {
+	public static List<TermParser> literalParsers() {
 		return Arrays.asList(forDate, forString, forUrl, forNumber);
 	}
 
@@ -172,7 +172,7 @@ public abstract class TermParser {
 			if (s.startsWith("[[")) {
 				for (String link : forWikiLink.extractList(s)) {
 					result.add(FactComponent.forString(FactComponent
-							.stripBrackets(link).replace('_', ' ')));
+							.stripBracketsAndLanguage(link).replace('_', ' ')));
 				}
 				return (result);
 			}
@@ -238,7 +238,7 @@ public abstract class TermParser {
 					if (c.contains(" ") && c.matches("[\\p{L} ]+")) {
 						Announce.debug("Finding suboptimal wikilink", c, "in",
 								s);
-						links.add(FactComponent.forWikipediaTitle(c));
+						links.add(FactComponent.forForeignYagoEntity(c,language));
 					}
 				}
 			}

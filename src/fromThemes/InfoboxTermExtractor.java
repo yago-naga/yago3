@@ -3,6 +3,7 @@ package fromThemes;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -83,6 +84,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 		Map<String, String> preferredMeanings = WordnetExtractor.PREFMEANINGS
 				.factCollection().getPreferredMeanings();
 
+		List<TermParser> parsers = TermParser.allParsers(preferredMeanings, language);
+
 		for (Fact f : InfoboxExtractor.INFOBOX_ATTRIBUTES
 				.inLanguage(this.language)) {
 			String val = f.getObjectAsJavaString();
@@ -97,7 +100,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 			if (val.length() == 0)
 				continue;
 			Set<String> objects = new HashSet<>();
-			for (TermParser termParser : TermParser.all(preferredMeanings, language)) {
+			for (TermParser termParser : parsers) {
 				objects.addAll(termParser.extractList(val));
 			}
 			for (String object : objects) {
