@@ -15,6 +15,14 @@ import fromOtherSources.DictionaryExtractor;
  */
 
 public class InfoboxTemplateTranslator extends EntityTranslator {
+
+	@Override
+	protected String translateObject(String me) {
+		// Return NULL in case we cannot translate
+		String trans = objectDictionaryCache.getObject(me, "<_hasTranslation>");
+		return (trans);
+	}
+
 	public InfoboxTemplateTranslator(Theme in, Theme out, Extractor parent) {
 		super(in, out, parent);
 		objectDictionary = DictionaryExtractor.INFOBOX_TEMPLATE_DICTIONARY

@@ -88,7 +88,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 			String val = f.getObjectAsJavaString();
 			val = Char.decodeAmpersand(val);
 			// Sometimes we get empty values here
-			if(val==null || val.isEmpty()) continue;
+			if (val == null || val.isEmpty())
+				continue;
 			val = replacements.transform(val);
 			val = val
 					.replace("$0", FactComponent.stripBrackets(f.getSubject()));
@@ -96,8 +97,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 			if (val.length() == 0)
 				continue;
 			Set<String> objects = new HashSet<>();
-			for (TermParser extractor : TermParser.all(preferredMeanings)) {
-				objects.addAll(extractor.extractList(val));
+			for (TermParser termParser : TermParser.all(preferredMeanings, language)) {
+				objects.addAll(termParser.extractList(val));
 			}
 			for (String object : objects) {
 				INFOBOXTERMS_TOREDIRECT.inLanguage(language).write(

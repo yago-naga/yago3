@@ -1,5 +1,7 @@
 package followUp;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 
 import javatools.datatypes.FinalSet;
@@ -24,21 +26,32 @@ public class EntityTranslator extends FollowUpExtractor {
 	/** Target language */
 	protected String language;
 
-	/** Dictionary for the objects */
+	/** Object dictionary */
 	protected Theme objectDictionary;
+
+	/** Caches the dictionary of subjects */
+	protected FactCollection subjectDictionaryCache;
+
+	/** Caches the dictionary of objects */
+	protected FactCollection objectDictionaryCache;
 
 	@Override
 	public Set<Theme> input() {
-		return (new FinalSet<>(checkMe,
+		// Do not use a FinalSet here because 
+		// objectDictionary might be equivalent to
+		// entiyDictionary
+		return (new HashSet<>(Arrays.asList(checkMe,
 				DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language),
-				objectDictionary));
+				objectDictionary)));
 	}
 
 	@Override
 	public Set<Theme> inputCached() {
-		return (new FinalSet<>(
-				DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language),
-				objectDictionary));
+		// Do not use a FinalSet here because 
+		// objectDictionary might be equivalent to
+		// entiyDictionary
+		return (new HashSet<>(Arrays.asList(
+				DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language),objectDictionary)));
 	}
 
 	@Override
@@ -46,36 +59,45 @@ public class EntityTranslator extends FollowUpExtractor {
 		return new FinalSet<Theme>(checked);
 	}
 
-	/** Translates a word, returns default by default */
-	protected static String translate(String me, FactCollection dic, String def) {
-		String trans = dic.getObject(me, "<_hasTranslation>");
+	/** Translates an entity, returns the entity itself by default */
+	protected String translateSubject(String me) {
+		String trans = subjectDictionaryCache
+				.getObject(me, "<_hasTranslation>");
 		if (trans == null)
-			return (def);
+			return (me);
+		return (trans);
+	}
+
+	/** Translates an entity, returns the entity itself by default */
+	protected String translateObject(String me) {
+		String trans = objectDictionaryCache
+				.getObject(me, "<_hasTranslation>");
+		if (trans == null)
+			return (me);
 		return (trans);
 	}
 
 	@Override
 	public void extract() throws Exception {
 
-		FactCollection subjectDictionaryCache = DictionaryExtractor.ENTITY_DICTIONARY
+		subjectDictionaryCache = DictionaryExtractor.ENTITY_DICTIONARY
 				.inLanguage(language).factCollection();
-		FactCollection objectDictionaryCache = objectDictionary
-				.factCollection();
 
+		objectDictionaryCache=objectDictionary.factCollection();
+		
 		for (Fact f : checkMe) {
-			String translatedSubject = translate(f.getSubject(),
-					subjectDictionaryCache, f.getSubject());
-			String translatedObject = translate(f.getObject(),
-					objectDictionaryCache, f.getObject());
-			checked.write(new Fact(translatedSubject, f.getRelation(),
-					translatedObject));
+			String translatedSubject = translateSubject(f.getSubject());
+			String translatedObject = translateObject(f.getObject());
+			if (translatedSubject != null && translatedObject != null)
+				checked.write(new Fact(translatedSubject, f.getRelation(),
+						translatedObject));
 		}
 	}
 
 	public EntityTranslator(Theme in, Theme out, Extractor parent) {
 		super(in, out, parent);
 		this.language = in.language();
-		if (language == null || language.equals("en"))
+		if (language == null || language.startsWith("en"))
 			throw new RuntimeException(
 					"Don't translate English. This is useless and very costly.");
 		// By default, we translate entities.

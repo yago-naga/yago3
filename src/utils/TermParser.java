@@ -77,16 +77,17 @@ public abstract class TermParser {
 	}
 
 	/** Returns all available parsers */
-	public static List<TermParser> all(Map<String, String> preferredMeanings) {
+	public static List<TermParser> all(Map<String, String> preferredMeanings,
+			String language) {
 		List<TermParser> all = new ArrayList<>(all());
 		all.add(new TermParser.ForClass(preferredMeanings));
+		all.add(new TermParser.ForWikiLink(language));
 		return all;
 	}
 
 	/** Returns all available parsers, excluding the class parser */
 	public static List<TermParser> all() {
-		return Arrays
-				.asList(forWikiLink, forDate, forString, forUrl, forNumber);
+		return Arrays.asList(forDate, forString, forUrl, forNumber);
 	}
 
 	// also needs to match \ for yago-encoded stuff
@@ -161,16 +162,6 @@ public abstract class TermParser {
 
 	};
 
-	/** Extracts an entity form a string */
-	public static TermParser forEntity = new TermParser("entity") {
-
-		@Override
-		public List<String> extractList(String s) {
-			return Arrays.asList(FactComponent.forYagoEntity(s));
-		}
-
-	};
-
 	/** Extracts a YAGO string from a string */
 	public static TermParser forString = new TermParser("string") {
 
@@ -202,61 +193,19 @@ public abstract class TermParser {
 		}
 	};
 
-	/** Extracts a cleaned YAGO string form a part of text */
-	public static TermParser forText = new TermParser("text") {
+	/** Extracts Wikipedia entity form a wiki link */
+	public static class ForWikiLink extends TermParser {
 
-		@Override
-		public List<String> extractList(String s) {
-			StringBuilder sb = new StringBuilder();
-			int brackets = 0;
+		/** language in which the entities will be generated */
+		protected String language;
 
-			for (int i = 0; i < s.length(); i++) {
-				char current = s.charAt(i);
-
-				if (current == '{') {
-					brackets++;
-				} else if (current == '}') {
-					brackets--;
-				} else if (brackets == 0) {
-					sb.append(current);
-				}
-			}
-
-			String clean = sb.toString().trim();
-
-			clean = clean.replaceAll("\\s+", " ");
-			clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]",
-					"$1");
-			clean = clean.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
-			clean = clean.replaceAll("\\[https?:.*?\\]", "");
-			clean = clean.replaceAll("'{2,}", "");
-			clean = clean.trim();
-
-			if (clean.length() == 0) {
-				Announce.debug("Could not find text in", s);
-				return (Arrays.asList());
-			}
-
-			return Arrays.asList(FactComponent.forString(clean));
+		protected ForWikiLink(String language) {
+			super("forEntity(" + language + ")");
+			this.language = language;
 		}
-	};
 
-	/** Extracts a language form a string */
-	public static TermParser forLanguageCode = new TermParser("language") {
-
-		@Override
-		public List<String> extractList(String s) {
-			return (Arrays.asList()); // TODO not yet implemented
-			// String language = Basics.code2language.get(s);
-			// return (language == null ? new ArrayList<String>() :
-			// Arrays.asList(language));
-		}
-	};
-
-	/** Extracts a wiki link form a string */
-	public static TermParser forWikiLink = new TermParser("wikilink") {
-
-		Pattern wikipediaLink = Pattern
+		/** Wikipedia link pattern */
+		protected static Pattern wikipediaLink = Pattern
 				.compile("\\[\\[([^\\|\\]]+)(?:\\|([^\\]]+))?\\]\\]");
 
 		@Override
@@ -280,8 +229,7 @@ public abstract class TermParser {
 				if (result.isEmpty())
 					continue; // the result was composed only of whitespaces
 
-				result = result.replace(' ', '_');
-				links.add(FactComponent.forWikipediaTitle(result));
+				links.add(FactComponent.forForeignYagoEntity(result, language));
 			}
 
 			if (links.isEmpty()) {
@@ -301,6 +249,9 @@ public abstract class TermParser {
 		}
 
 	};
+
+	/** Extracts an English YAGO entity string */
+	public static TermParser forWikiLink = new ForWikiLink("eng");
 
 	/** Extracts a wordnet class form a string */
 	public static class ForClass extends TermParser {
