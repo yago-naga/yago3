@@ -74,8 +74,7 @@ public class CategoryTypeExtractor extends MultilingualExtractor {
 		for (Fact f : categoryMembs) {
 			if (!f.getRelation().equals("<hasWikiCategory>"))
 				continue;
-			String category = FactComponent.forWikiCategory(f
-					.getObjectAsJavaString());
+			String category = f.getObject();
 			if (!validClasses.contains(category))
 				continue;
 			write(CATEGORYTYPES.inLanguage(language), new Fact(f.getSubject(),
