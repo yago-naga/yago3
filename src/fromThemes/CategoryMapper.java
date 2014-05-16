@@ -7,10 +7,10 @@ import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import utils.FactTemplateExtractor;
-import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
+import basics.MultilingualTheme;
 import basics.Theme;
 import extractors.MultilingualExtractor;
 import followUp.FollowUpExtractor;
@@ -94,8 +94,7 @@ public class CategoryMapper extends MultilingualExtractor {
 
 		for (Fact f : factSource) {
 			for (Fact fact : categoryPatterns.extract(
-					FactComponent.stripQuotes(f.getArg(2).replace('_', ' ')),
-					f.getArg(1))) {
+					FactComponent.stripCat(f.getObject()), f.getSubject())) {
 				if (fact != null) {
 					write(CATEGORYFACTS_TOREDIRECT.inLanguage(language), fact,
 							CATEGORYSOURCES.inLanguage(language),

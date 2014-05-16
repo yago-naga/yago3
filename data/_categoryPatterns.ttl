@@ -3,15 +3,15 @@
 # This file contains (1) the category patterns and (2) the non-conceptual words
 # It is used by the CategoryExtractor
 
-@base <http://yago-knowledge.org/resource/> @Entity($1)" .
-@prefix dc: <http://purl.org/dc/terms/> @Entity($1)" .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> @Entity($1)" .
-@prefix owl: <http://www.w3.org/2002/07/owl#> @Entity($1)" .
-@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> @Entity($1)" .
-@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> @Entity($1)" .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> @Entity($1)" .
-@prefix vcard: <http://www.w3.org/2006/vcard/ns#> @Entity($1)" .
-@prefix xsd: <http://www.w3.org/2001/XMLSchema#> @Entity($1)" .
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
 # Category patterns
 "Recipients of the (.+)"	<_categoryPattern>	"$0 <hasWonPrize> @Entity($1)" .

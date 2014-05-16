@@ -54,6 +54,7 @@ public class CategoryClassExtractor extends Extractor {
 
 	/** Maps a category to a wordnet class */
 	public String category2class(String categoryName) {
+		categoryName = FactComponent.stripCat(categoryName);
 		// Check out whether the new category is worth being added
 		NounGroup category = new NounGroup(categoryName);
 		if (category.head() == null) {
@@ -125,17 +126,16 @@ public class CategoryClassExtractor extends Extractor {
 	 * 
 	 * @param classWriter
 	 */
-	protected void extractClassStatement(String category, String titleEntity)
-			throws IOException {
-		String concept = category2class(category);
+	protected void extractClassStatement(String categoryEntity) throws IOException {
+		String concept = category2class(categoryEntity);
 		if (concept == null)
 			return;
-		CATEGORYCLASSES.write(new Fact(FactComponent.forWikiCategory(category),
+		CATEGORYCLASSES.write(new Fact(FactComponent.forWikiCategory(categoryEntity),
 				RDFS.subclassOf, concept));
-		String name = new NounGroup(category).stemmed().replace('_', ' ');
+		String name = new NounGroup(categoryEntity).stemmed().replace('_', ' ');
 		if (!name.isEmpty())
 			CATEGORYCLASSES.write(new Fact(null, FactComponent
-					.forWikiCategory(category), RDFS.label, FactComponent
+					.forWikiCategory(categoryEntity), RDFS.label, FactComponent
 					.forStringWithLanguage(name, "eng")));
 	}
 
@@ -153,11 +153,11 @@ public class CategoryClassExtractor extends Extractor {
 		for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inEnglish()) {
 			if (!f.getRelation().equals("<hasWikiCategory>"))
 				continue;
-			String category = f.getArgJavaString(2);
+			String category = f.getObject();
 			if (categoriesDone.contains(category))
 				continue;
 			categoriesDone.add(category);
-			extractClassStatement(category, f.getArg(1));
+			extractClassStatement(category);
 		}
 		this.nonConceptualCategories = null;
 		this.preferredMeanings = null;

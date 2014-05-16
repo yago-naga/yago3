@@ -27,25 +27,25 @@ import basics.FactComponent;
  * @author Fabian M. Suchanek
  * 
  */
-public class FactTemplate {  
+public class FactTemplate {
 	/** Argument 1 */
 	public String arg1;
 	/** Relation */
 	public String relation;
 	/** Argument 2 */
 	public String arg2;
-	
+
 	/** Pattern for checking URLs */
 	private static Pattern urlPattern = Pattern.compile("^https?://.+");
 
 	/** Constructor */
 	public FactTemplate(String arg1, String relation, String arg2) {
 		super();
-//		this.arg1 = arg1.intern();
+		// this.arg1 = arg1.intern();
 		this.arg1 = arg1;
-//		this.relation = relation.intern();
+		// this.relation = relation.intern();
 		this.relation = relation;
-//		this.arg2 = arg2.intern();
+		// this.arg2 = arg2.intern();
 		this.arg2 = arg2;
 	}
 
@@ -93,11 +93,12 @@ public class FactTemplate {
 
 	/** Creates a fact component for a formatted string of the form @XXX() */
 	public static String format(String word) {
-		final Pattern formattedPattern = Pattern.compile("@([a-zA-Z]+)\\((.*?)\\)");
+		final Pattern formattedPattern = Pattern
+				.compile("@([a-zA-Z]+)\\((.*?)\\)");
 		Matcher m = formattedPattern.matcher(word);
 		if (!m.matches()) {
 			Announce.debug("Ill-formed formatter", word);
-			return(null);
+			return (null);
 		}
 		String thing = m.group(2).trim();
 		if (thing.isEmpty()) {
@@ -107,7 +108,7 @@ public class FactTemplate {
 		switch (m.group(1)) {
 		case "Text":
 		case "String":
-			return (FactComponent.forStringWithLanguage(thing,"eng"));
+			return (FactComponent.forStringWithLanguage(thing, "eng"));
 		case "Url":
 			if (!urlPattern.matcher(thing).matches()) {
 				Announce.debug("Not an URL:", thing);
@@ -115,6 +116,11 @@ public class FactTemplate {
 			}
 			return (FactComponent.forUri(thing));
 		case "Entity":
+			// There is a bug somewhere that introduces final >'s for
+			// CategoryMapper.
+			// TODO: Remove this hack if the bug is gone...
+			if (thing.endsWith(">"))
+				thing = thing.substring(0, thing.length() - 1);
 			return (FactComponent.forWikipediaTitle(thing));
 		case "Date":
 			String date = DateParser.normalize(thing);
@@ -123,11 +129,12 @@ public class FactTemplate {
 				Announce.debug("Not a date:", thing);
 				return (null);
 			}
-			return (FactComponent.forDate(DateParser.newDate(datecomp[0], datecomp[1], datecomp[2])));
+			return (FactComponent.forDate(DateParser.newDate(datecomp[0],
+					datecomp[1], datecomp[2])));
 		default:
 			Announce.warning("Unknown formatter", word);
 		}
-		return (null); 
+		return (null);
 	}
 
 	/** Reads facts from a fact template */
@@ -144,17 +151,21 @@ public class FactTemplate {
 			while (argNum < 3) {
 				while (factTemplate.charAt(pos) == ' ')
 					if (++pos >= factTemplate.length())
-						throw new RuntimeException("Template must have 3 components: " + factTemplate);
+						throw new RuntimeException(
+								"Template must have 3 components: "
+										+ factTemplate);
 				if (factTemplate.charAt(pos) == '"') {
 					int endPos = factTemplate.indexOf('"', pos + 1);
 					if (endPos == -1)
-						throw new RuntimeException("Closing quote is missing in: " + factTemplate);
+						throw new RuntimeException(
+								"Closing quote is missing in: " + factTemplate);
 					split[argNum] = factTemplate.substring(pos, endPos + 1);
 					pos = endPos + 1;
 				} else if (factTemplate.charAt(pos) == '\'') {
 					int endPos = factTemplate.indexOf('\'', pos + 1);
 					if (endPos == -1)
-						throw new RuntimeException("Closing quote is missing in: " + factTemplate);
+						throw new RuntimeException(
+								"Closing quote is missing in: " + factTemplate);
 					split[argNum] = factTemplate.substring(pos + 1, endPos);
 					pos = endPos + 1;
 				} else {
@@ -165,12 +176,14 @@ public class FactTemplate {
 				argNum++;
 			}
 			if (pos != factTemplate.length())
-				throw new RuntimeException("Too many components in template:" + factTemplate);
+				throw new RuntimeException("Too many components in template:"
+						+ factTemplate);
 			FactTemplate result = new FactTemplate(split[0], split[1], split[2]);
 			if (result.arg1.startsWith("#")) {
 				if (result.arg1.length() != 2)
-					throw new RuntimeException("A template list can only contain template references of the form #x: "
-							+ factTemplate);
+					throw new RuntimeException(
+							"A template list can only contain template references of the form #x: "
+									+ factTemplate);
 				int factId = result.arg1.charAt(1) - '0';
 				if (factId < 1 || factId > factList.size())
 					throw new RuntimeException(
@@ -183,7 +196,8 @@ public class FactTemplate {
 	}
 
 	/** Instantiates fact templates with variables */
-	public static List<Fact> instantiate(List<FactTemplate> templates, Map<String, String> variables) {
+	public static List<Fact> instantiate(List<FactTemplate> templates,
+			Map<String, String> variables) {
 		List<Fact> factList = new ArrayList<Fact>();
 		Set<Integer> factReferences = new TreeSet<>();
 		for (FactTemplate template : templates) {
@@ -192,11 +206,12 @@ public class FactTemplate {
 		for (int i = 0; i < templates.size(); i++) {
 			if (factReferences.contains(i + 1)) {
 				Fact fact = templates.get(i).instantiate(variables, true);
-				if(fact==null) {
-					Announce.warning("Can't instantiate",i,"in",templates);
+				if (fact == null) {
+					Announce.warning("Can't instantiate", i, "in", templates);
 					continue;
 				}
-				if(fact.getId()==null) fact.makeId();
+				if (fact.getId() == null)
+					fact.makeId();
 				variables.put("#" + (i + 1), fact.getId());
 				factList.add(fact);
 			} else {
@@ -217,7 +232,8 @@ public class FactTemplate {
 		int result = 1;
 		result = prime * result + ((arg1 == null) ? 0 : arg1.hashCode());
 		result = prime * result + ((arg2 == null) ? 0 : arg2.hashCode());
-		result = prime * result + ((relation == null) ? 0 : relation.hashCode());
+		result = prime * result
+				+ ((relation == null) ? 0 : relation.hashCode());
 		return result;
 	}
 
@@ -281,7 +297,8 @@ public class FactTemplate {
 	}
 
 	/** Instantiates the fact templates partially */
-	public static List<FactTemplate> instantiatePartially(List<FactTemplate> templates, Map<String, String> variables) {
+	public static List<FactTemplate> instantiatePartially(
+			List<FactTemplate> templates, Map<String, String> variables) {
 		List<FactTemplate> result = new ArrayList<>();
 		for (FactTemplate t : templates)
 			result.add(t.instantiatePartially(variables));
