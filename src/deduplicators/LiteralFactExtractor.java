@@ -42,6 +42,8 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 				SchemaExtractor.YAGOSCHEMA,
 				FlightIATAcodeExtractor.AIRPORT_CODE,
 				SchemaExtractor.YAGOSCHEMA,
+				CoordinateExtractor.COORDINATES,
+				FlightIATAcodeExtractor.AIRPORT_CODE,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 
 		input.add(CoordinateExtractor.COORDINATES);

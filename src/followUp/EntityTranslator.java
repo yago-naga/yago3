@@ -7,6 +7,8 @@ import java.util.Set;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactCollection;
+import basics.FactComponent;
+import basics.MultilingualTheme;
 import basics.Theme;
 import extractors.Extractor;
 import fromOtherSources.DictionaryExtractor;
@@ -37,7 +39,7 @@ public class EntityTranslator extends FollowUpExtractor {
 
 	@Override
 	public Set<Theme> input() {
-		// Do not use a FinalSet here because 
+		// Do not use a FinalSet here because
 		// objectDictionary might be equivalent to
 		// entiyDictionary
 		return (new HashSet<>(Arrays.asList(checkMe,
@@ -47,11 +49,12 @@ public class EntityTranslator extends FollowUpExtractor {
 
 	@Override
 	public Set<Theme> inputCached() {
-		// Do not use a FinalSet here because 
+		// Do not use a FinalSet here because
 		// objectDictionary might be equivalent to
 		// entiyDictionary
 		return (new HashSet<>(Arrays.asList(
-				DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language),objectDictionary)));
+				DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language),
+				objectDictionary)));
 	}
 
 	@Override
@@ -70,11 +73,9 @@ public class EntityTranslator extends FollowUpExtractor {
 
 	/** Translates an entity, returns the entity itself by default */
 	protected String translateObject(String me) {
-		String trans = objectDictionaryCache
-				.getObject(me, "<_hasTranslation>");
-		if (trans == null)
+		if (FactComponent.isLiteral(me))
 			return (me);
-		return (trans);
+		return (translateSubject(me));
 	}
 
 	@Override
@@ -83,8 +84,8 @@ public class EntityTranslator extends FollowUpExtractor {
 		subjectDictionaryCache = DictionaryExtractor.ENTITY_DICTIONARY
 				.inLanguage(language).factCollection();
 
-		objectDictionaryCache=objectDictionary.factCollection();
-		
+		objectDictionaryCache = objectDictionary.factCollection();
+
 		for (Fact f : checkMe) {
 			String translatedSubject = translateSubject(f.getSubject());
 			String translatedObject = translateObject(f.getObject());
@@ -97,7 +98,7 @@ public class EntityTranslator extends FollowUpExtractor {
 	public EntityTranslator(Theme in, Theme out, Extractor parent) {
 		super(in, out, parent);
 		this.language = in.language();
-		if (language == null || language.startsWith("en"))
+		if (language == null || MultilingualTheme.isEnglish(language))
 			throw new RuntimeException(
 					"Don't translate English. This is useless and very costly.");
 		// By default, we translate entities.

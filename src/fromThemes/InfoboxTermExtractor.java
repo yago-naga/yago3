@@ -70,7 +70,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 		result.add(new Redirector(INFOBOXTERMS_TOREDIRECT
 				.inLanguage(this.language), INFOBOXTERMS
 				.inLanguage(this.language), this));
-		if (!language.equals("en"))
+		if (!isEnglish())
 			result.add(new EntityTranslator(INFOBOXTERMS.inLanguage(language),
 					INFOBOXTERMSTRANSLATED.inLanguage(this.language), this));
 		return (result);

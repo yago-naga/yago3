@@ -41,7 +41,7 @@ public class FactExtractor extends SimpleDeduplicator {
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA,
 				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
-				SchemaExtractor.YAGOSCHEMA));
+				SchemaExtractor.YAGOSCHEMA, GenderExtractor.PERSONS_GENDER));
 		input.addAll(CategoryMapper.CATEGORYFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(InfoboxMapper.INFOBOXFACTS

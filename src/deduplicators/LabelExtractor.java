@@ -19,7 +19,6 @@ import fromThemes.InfoboxMapper;
 import fromThemes.PersonNameExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
-import fromWikipedia.RedirectExtractor;
 
 /**
  * YAGO2s - LabelExtractor
@@ -41,12 +40,11 @@ public class LabelExtractor extends SimpleDeduplicator {
 				PersonNameExtractor.PERSONNAMES, WordnetExtractor.WORDNETWORDS,
 				SchemaExtractor.YAGOSCHEMA, WordnetExtractor.WORDNETGLOSSES,
 				FlightIATAcodeExtractor.AIRPORT_CODE,
+				WikidataLabelExtractor.WIKIDATAMULTILABELS,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 		input.addAll(CategoryMapper.CATEGORYFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(InfoboxMapper.INFOBOXFACTS
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
-		input.addAll(RedirectExtractor.REDIRECTLABELS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return input;
 	}

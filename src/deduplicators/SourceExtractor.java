@@ -12,7 +12,10 @@ import basics.Theme.ThemeGroup;
 import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
+import fromGeonames.GeoNamesClassMapper;
+import fromGeonames.GeoNamesEntityMapper;
 import fromOtherSources.WikidataLabelExtractor;
+import fromOtherSources.WordnetDomainExtractor;
 import fromThemes.CategoryMapper;
 import fromThemes.CategoryTypeExtractor;
 import fromThemes.InfoboxMapper;
@@ -21,6 +24,7 @@ import fromThemes.RuleExtractor;
 import fromWikipedia.CoordinateExtractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.FlightIATAcodeExtractor;
+import fromWikipedia.GenderExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
 /**
@@ -40,7 +44,11 @@ public class SourceExtractor extends Extractor {
 				PersonNameExtractor.PERSONNAMESOURCES,
 				RuleExtractor.RULESOURCES,
 				WikidataLabelExtractor.WIKIPEDIALABELSOURCES,
+				WikidataLabelExtractor.WIKIDATAMULTILABELSOURCES,
+				GeoNamesClassMapper.GEONAMESSOURCES,
 				FlightExtractor.FLIGHTSOURCE,
+				GenderExtractor.PERSONS_GENDER_SOURCES,
+				WordnetDomainExtractor.WORDNETDOMAINSOURCES,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES,
 				FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE));
 		input.add(CoordinateExtractor.COORDINATE_SOURCES);

@@ -3,6 +3,7 @@ package extractors;
 import java.util.Arrays;
 import java.util.List;
 
+import basics.MultilingualTheme;
 import javatools.administrative.Announce;
 
 /**
@@ -24,12 +25,17 @@ public abstract class MultilingualExtractor extends Extractor {
 	public static List<String> wikipediaLanguages = Arrays.asList("en", "de",
 			"fr");
 
+	/** List of all languages except English */
+	public static List<String> allLanguagesExceptEnglish() {
+		return(wikipediaLanguages.subList(1, wikipediaLanguages.size()));
+	}
+	
 	/** The language of this extractor */
 	public final String language;
 
 	/** TRUE if the language is english*/
 	public boolean isEnglish() {
-		return(language.startsWith("en"));
+		return(MultilingualTheme.isEnglish(language));
 	}
 
 	@Override

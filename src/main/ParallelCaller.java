@@ -219,7 +219,7 @@ public class ParallelCaller {
 			List<String> wikis) {
 		if (wikis == null || wikis.isEmpty() || languages == null
 				|| languages.isEmpty() || wikis.size() > languages.size()
-				|| !languages.get(0).equals("en")) {
+				|| !languages.get(0).startsWith("en")) {
 			Announce.help(
 					"Error: No wikipedias given. The ini file should contain:",
 					"   wikipedias = wiki_en.xml, wiki_de.xml, ...",

@@ -35,20 +35,15 @@ public class CategoryClassExtractor extends Extractor {
 			"categoryClasses",
 			"Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
 
-	/** Classes deduced from categories */
-	public static final Theme CATEGORYCLASS_SOURCES = new Theme(
-			"categoryClassSources",
-			"Sources for the classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
-
 	public Set<Theme> input() {
 		return (new FinalSet<Theme>(PatternHardExtractor.CATEGORYPATTERNS,
 				WordnetExtractor.PREFMEANINGS,
-				CategoryExtractor.CATEGORYMEMBERS.inLanguage("en")));
+				CategoryExtractor.CATEGORYMEMBERS.inEnglish()));
 	}
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(CATEGORYCLASSES, CATEGORYCLASS_SOURCES);
+		return new FinalSet<Theme>(CATEGORYCLASSES);
 	}
 
 	/** Holds the nonconceptual categories */
@@ -135,19 +130,13 @@ public class CategoryClassExtractor extends Extractor {
 		String concept = category2class(category);
 		if (concept == null)
 			return;
-		write(CATEGORYCLASSES, new Fact(
-				FactComponent.forWikiCategory(category), RDFS.subclassOf,
-				concept), CATEGORYCLASS_SOURCES,
-				FactComponent.wikipediaURL(titleEntity),
-				"CategoryTypeExtractor from category");
+		CATEGORYCLASSES.write(new Fact(FactComponent.forWikiCategory(category),
+				RDFS.subclassOf, concept));
 		String name = new NounGroup(category).stemmed().replace('_', ' ');
 		if (!name.isEmpty())
-			write(CATEGORYCLASSES,
-					new Fact(null, FactComponent.forWikiCategory(category),
-							RDFS.label, FactComponent.forStringWithLanguage(
-									name, "eng")), CATEGORYCLASS_SOURCES,
-					FactComponent.wikipediaURL(titleEntity),
-					"CategoryTypeExtractor from stemmed name");
+			CATEGORYCLASSES.write(new Fact(null, FactComponent
+					.forWikiCategory(category), RDFS.label, FactComponent
+					.forStringWithLanguage(name, "eng")));
 	}
 
 	@Override
@@ -161,8 +150,8 @@ public class CategoryClassExtractor extends Extractor {
 		Set<String> categoriesDone = new HashSet<>();
 
 		// Extract the information
-		for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inLanguage("en")) {
-			if (!f.getRelation().equals("<hasWikiCategory/en>"))
+		for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inEnglish()) {
+			if (!f.getRelation().equals("<hasWikiCategory>"))
 				continue;
 			String category = f.getArgJavaString(2);
 			if (categoriesDone.contains(category))

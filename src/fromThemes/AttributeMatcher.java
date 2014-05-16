@@ -37,15 +37,11 @@ public class AttributeMatcher extends MultilingualExtractor {
 			"matchedAttributes",
 			"Attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
 
-	public static final MultilingualTheme MATCHED_INFOBOXATTS_SOURCES = new MultilingualTheme(
-			"matchedAttributeSources",
-			"Sources for the attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
-
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<Theme>(InfoboxMapper.INFOBOXFACTS.inLanguage("en"),
+		return new FinalSet<Theme>(InfoboxMapper.INFOBOXFACTS.inEnglish(),
 				isEnglish() ? InfoboxTermExtractor.INFOBOXTERMS
-						.inLanguage("en")
+						.inEnglish()
 						: InfoboxTermExtractor.INFOBOXTERMSTRANSLATED
 								.inLanguage(language));
 	}
@@ -57,8 +53,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<>(MATCHED_INFOBOXATTS.inLanguage(language),
-				MATCHED_INFOBOXATTS_SOURCES.inLanguage(language));
+		return new FinalSet<>(MATCHED_INFOBOXATTS.inLanguage(language));
 	}
 
 	@Override
@@ -66,8 +61,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 		Theme out = MATCHED_INFOBOXATTS.inLanguage(language);
 		Writer tsv = FileUtils.getBufferedUTF8Writer(new File(out.file()
-				.getParent(), "attributeMatches_" + language + ".tsv"));
-		Theme sources = MATCHED_INFOBOXATTS_SOURCES.inLanguage(language);
+				.getParent(), "_attributeMatches_" + language + ".tsv"));
 
 		Theme germanFacts = isEnglish() ? InfoboxTermExtractor.INFOBOXTERMS
 				.inLanguage(language)
@@ -83,7 +77,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 		// Counts for every german attribute how many facts there are
 		Map<String, Integer> germanFactCountPerAttribute = new HashMap<>();
 
-		yagoFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en")
+		yagoFacts = InfoboxMapper.INFOBOXFACTS.inEnglish()
 				.factCollection();
 
 		// We collect all objects for a subject and a relation
@@ -168,8 +162,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 				Fact matchFact = new Fact(germanAttribute, "<_infoboxPattern>",
 						yagoRelation);
 				matchFact.makeId();
-				write(out, matchFact, sources,
-						FactComponent.forTheme(germanFacts), "Counting");
+				out.write(matchFact);
 				out.write(new Fact(matchFact.getId(), "<_hasTotal>",
 						FactComponent.forNumber(total)));
 				out.write(new Fact(matchFact.getId(), "<_hasCorrect>",

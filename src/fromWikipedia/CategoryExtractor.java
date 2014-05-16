@@ -38,10 +38,6 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 			"categoryMembers",
 			"Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
 
-	public static final MultilingualTheme CATEGORYMEMBERS_SOURCES = new MultilingualTheme(
-			"categoryMemberSources",
-			"Sources for the facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
-
 	public static final MultilingualTheme CATEGORYMEMBERS_TRANSLATED = new MultilingualTheme(
 			"categoryMembersTranslated",
 			"Category Members facts with translated subjects and objects");
@@ -62,9 +58,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(
-				CATEGORYMEMBERS_SOURCES.inLanguage(language),
-				CATEGORYMEMBERS.inLanguage(language));
+		return new FinalSet<Theme>(CATEGORYMEMBERS.inLanguage(language));
 	}
 
 	@Override
@@ -116,14 +110,12 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 				category = category.trim();
 				// There are sometimes categories of length 0
 				// This causes problems, so avoid them
-				if(category.length()<4 || category.contains(":")) continue;
-				write(CATEGORYMEMBERS.inLanguage(language),
+				if (category.length() < 4 || category.contains(":"))
+					continue;
+				CATEGORYMEMBERS.inLanguage(language).write(
 						new Fact(titleEntity, "<hasWikiCategory>",
 								FactComponent.forForeignWikiCategory(category,
-										language)),
-						CATEGORYMEMBERS_SOURCES.inLanguage(language),
-						FactComponent.wikipediaURL(titleEntity),
-						"CategoryExtractor");
+										language)));
 				break;
 			}
 		}

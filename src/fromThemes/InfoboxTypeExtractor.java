@@ -31,10 +31,6 @@ import fromWikipedia.InfoboxExtractor;
 public class InfoboxTypeExtractor extends MultilingualExtractor {
 
 	/** Sources for category facts */
-	public static final MultilingualTheme INFOBOXTYPESOURCES = new MultilingualTheme(
-			"infoboxTypeSources", "The sources of infobox type facts");
-
-	/** Sources for category facts */
 	public static final MultilingualTheme INFOBOXTYPES = new MultilingualTheme(
 			"infoboxTypes", "The infobox type facts");
 
@@ -42,12 +38,14 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 		if (isEnglish())
 			return (new FinalSet<Theme>(
 					InfoboxExtractor.INFOBOX_TEMPLATES.inLanguage(language),
-					PatternHardExtractor.INFOBOXPATTERNS, WordnetExtractor.PREFMEANINGS));
+					PatternHardExtractor.INFOBOXPATTERNS,
+					WordnetExtractor.PREFMEANINGS));
 		else
 			return (new FinalSet<Theme>(
 					InfoboxExtractor.INFOBOX_TEMPLATES_TRANSLATED
 							.inLanguage(language),
-					PatternHardExtractor.INFOBOXPATTERNS, WordnetExtractor.PREFMEANINGS));
+					PatternHardExtractor.INFOBOXPATTERNS,
+					WordnetExtractor.PREFMEANINGS));
 	}
 
 	@Override
@@ -57,8 +55,7 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(INFOBOXTYPES.inLanguage(language),
-				INFOBOXTYPESOURCES.inLanguage(language));
+		return new FinalSet<Theme>(INFOBOXTYPES.inLanguage(language));
 	}
 
 	/** Holds the nonconceptual infoboxes */
@@ -149,10 +146,8 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 			String clss = infobox2class(f.getObjectAsJavaString());
 			if (clss == null)
 				continue;
-			write(INFOBOXTYPES.inLanguage(language), new Fact(f.getSubject(),
-					RDFS.type, clss), INFOBOXTYPESOURCES.inLanguage(language),
-					FactComponent.wikipediaURL(f.getSubject()),
-					"InfoboxTypeExtractor");
+			INFOBOXTYPES.inLanguage(language).write(new Fact(f.getSubject(),
+					RDFS.type, clss));
 		}
 		this.nonConceptualInfoboxes = null;
 		this.preferredMeanings = null;
@@ -163,8 +158,8 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new InfoboxTypeExtractor("en")
-		.extract(new File("c:/fabian/data/yago3"), "Test");
+		new InfoboxTypeExtractor("en").extract(
+				new File("c:/fabian/data/yago3"), "Test");
 	}
 
 }

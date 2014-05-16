@@ -86,7 +86,7 @@ public class CategoryMapper extends MultilingualExtractor {
 				"<_categoryPattern>");
 
 		FactSource factSource;
-		if (language.equals("en"))
+		if (isEnglish())
 			factSource = CategoryExtractor.CATEGORYMEMBERS.inLanguage(language);
 		else
 			factSource = CategoryExtractor.CATEGORYMEMBERS_TRANSLATED

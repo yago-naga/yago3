@@ -10,9 +10,9 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.parsers.Char;
-import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
+import basics.MultilingualTheme;
 import basics.N4Reader;
 import basics.Theme;
 import extractors.DataExtractor;
@@ -51,7 +51,7 @@ public class DictionaryExtractor extends DataExtractor {
 	public DictionaryExtractor(File wikidata) {
 		super(wikidata);
 	}
-	
+
 	public DictionaryExtractor() {
 		this(new File("./data/wikidata.rdf"));
 	}
@@ -65,12 +65,12 @@ public class DictionaryExtractor extends DataExtractor {
 	public Set<Theme> output() {
 		Set<Theme> result = new HashSet<Theme>();
 		result.add(CATEGORYWORDS);
-		result.addAll(CATEGORY_DICTIONARY
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
-		result.addAll(ENTITY_DICTIONARY
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		result.addAll(CATEGORY_DICTIONARY.inLanguages(MultilingualExtractor
+				.allLanguagesExceptEnglish()));
+		result.addAll(ENTITY_DICTIONARY.inLanguages(MultilingualExtractor
+				.allLanguagesExceptEnglish()));
 		result.addAll(INFOBOX_TEMPLATE_DICTIONARY
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+				.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
 		return (result);
 	}
 
@@ -115,7 +115,7 @@ public class DictionaryExtractor extends DataExtractor {
 						.keySet());
 				if (mostEnglishLan != null) {
 					String mostEnglishName = language2name.get(mostEnglishLan);
-					if (mostEnglishLan.equals("en")
+					if (MultilingualTheme.isEnglish(mostEnglishLan)
 							&& mostEnglishName.startsWith("Category:")) {
 						for (String lan : language2name.keySet()) {
 							String catword = language2name.get(lan);
@@ -130,20 +130,23 @@ public class DictionaryExtractor extends DataExtractor {
 										FactComponent.forString(catword)));
 								categoryWordLanguages.add(lan);
 							}
-							CATEGORY_DICTIONARY
-									.inLanguage(lan)
-									.write(new Fact(
-											FactComponent
-													.forForeignWikiCategory(
-															name, lan),
-											"<_hasTranslation>",
-											FactComponent
-													.forWikiCategory(mostEnglishName
-															.substring(9))));
+							if (!MultilingualTheme.isEnglish(lan))
+								CATEGORY_DICTIONARY
+										.inLanguage(lan)
+										.write(new Fact(
+												FactComponent
+														.forForeignWikiCategory(
+																name, lan),
+												"<_hasTranslation>",
+												FactComponent
+														.forWikiCategory(mostEnglishName
+																.substring(9))));
 						}
-					} else if (mostEnglishLan.equals("en")
+					} else if (MultilingualTheme.isEnglish(mostEnglishLan)
 							&& mostEnglishName.startsWith("Template:Infobox_")) {
 						for (String lan : language2name.keySet()) {
+							if (MultilingualTheme.isEnglish(lan))
+								continue;
 							String name = language2name.get(lan);
 							int cutpos = name.indexOf('_');
 							if (cutpos == -1)
@@ -159,6 +162,8 @@ public class DictionaryExtractor extends DataExtractor {
 						}
 					} else {
 						for (String lan : language2name.keySet()) {
+							if (MultilingualTheme.isEnglish(lan))
+								continue;
 							ENTITY_DICTIONARY
 									.inLanguage(lan)
 									.write(new Fact(

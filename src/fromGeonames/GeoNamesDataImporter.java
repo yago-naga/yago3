@@ -36,8 +36,6 @@ public class GeoNamesDataImporter extends DataExtractor {
 
 	public static final String GEO_ENTITY_PREFIX = "geoentity_";
 
-	protected File inputDataFile;
-
 	/** geonames data for mapped entities */
 	public static final Theme GEONAMESMAPPEDDATA = new Theme(
 			"mappedGeonamesData",
@@ -59,7 +57,7 @@ public class GeoNamesDataImporter extends DataExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				GeoNamesClassMapper.GEONAMESCLASSSIDS,
 				GeoNamesEntityMapper.GEONAMESENTITYIDS,
-				InfoboxMapper.INFOBOXFACTS.inLanguage("en")));
+				InfoboxMapper.INFOBOXFACTS.inEnglish()));
 	}
 
 	@Override
@@ -88,16 +86,16 @@ public class GeoNamesDataImporter extends DataExtractor {
 				.factCollection();
 		Map<String, String> geoClassId2yago = mappedClassIds
 				.getReverseMap("<hasGeonamesClassId>");
-		FactSource ibFacts = InfoboxMapper.INFOBOXFACTS.inLanguage("en");
+		FactSource ibFacts = InfoboxMapper.INFOBOXFACTS.inEnglish();
 
 		Map<Integer, String> geoId2name = extractAllCountries(new File(
-				inputDataFile, "allCountries.txt"), GEONAMESMAPPEDDATA,
+				inputData, "allCountries.txt"), GEONAMESMAPPEDDATA,
 				GEONAMESONLYDATA, GEONAMESTYPES, geoEntityId2yago,
 				geoClassId2yago);
-		extractHierarchy(new File(inputDataFile, "hierarchy.txt"),
+		extractHierarchy(new File(inputData, "hierarchy.txt"),
 				GEONAMESMAPPEDDATA, GEONAMESONLYDATA, geoEntityId2yago,
 				geoId2name);
-		extractCountryInfo(new File(inputDataFile, "countryInfo.txt"),
+		extractCountryInfo(new File(inputData, "countryInfo.txt"),
 				GEONAMESMAPPEDDATA, ibFacts);
 	}
 

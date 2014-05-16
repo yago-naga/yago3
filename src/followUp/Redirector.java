@@ -26,7 +26,7 @@ public class Redirector extends FollowUpExtractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<Theme>(checkMe,
-				RedirectExtractor.REDIRECTFACTS_DIRTY.inLanguage(this.language));
+				RedirectExtractor.REDIRECTFACTS.inLanguage(this.language));
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class Redirector extends FollowUpExtractor {
 	@Override
 	public Set<Theme> inputCached() {
 		return new FinalSet<>(
-				RedirectExtractor.REDIRECTFACTS_DIRTY.inLanguage(this.language));
+				RedirectExtractor.REDIRECTFACTS.inLanguage(this.language));
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class Redirector extends FollowUpExtractor {
 		// Extract the information
 		Map<String, String> redirects = new HashMap<>();
 		Announce.doing("Loading redirects");
-		for (Fact f : RedirectExtractor.REDIRECTFACTS_DIRTY
+		for (Fact f : RedirectExtractor.REDIRECTFACTS
 				.inLanguage(this.language)) {
 			redirects.put(
 					FactComponent.forYagoEntity(FactComponent.asJavaString(

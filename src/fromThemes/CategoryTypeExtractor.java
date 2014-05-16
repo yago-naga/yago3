@@ -7,10 +7,10 @@ import java.util.TreeSet;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
+import basics.MultilingualTheme;
 import basics.Theme;
 import extractors.MultilingualExtractor;
 import fromWikipedia.CategoryExtractor;
@@ -63,16 +63,16 @@ public class CategoryTypeExtractor extends MultilingualExtractor {
 				.factCollection().getSubjects();
 
 		FactSource categoryMembs;
-		if (this.language.equals("en"))
-			categoryMembs = CategoryExtractor.CATEGORYMEMBERS.inLanguage(
-					language);
+		if (isEnglish())
+			categoryMembs = CategoryExtractor.CATEGORYMEMBERS
+					.inLanguage(language);
 		else
 			categoryMembs = CategoryExtractor.CATEGORYMEMBERS_TRANSLATED
 					.inLanguage(language);
 
 		// Extract the information
 		for (Fact f : categoryMembs) {
-			if (!f.getRelation().startsWith("<hasWikiCategory/"))
+			if (!f.getRelation().equals("<hasWikiCategory>"))
 				continue;
 			String category = FactComponent.forWikiCategory(f
 					.getObjectAsJavaString());
@@ -92,8 +92,8 @@ public class CategoryTypeExtractor extends MultilingualExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new CategoryTypeExtractor("en").extract(new File("c:/fabian/data/yago3"),
-				"Test");
+		new CategoryTypeExtractor("en").extract(
+				new File("c:/fabian/data/yago3"), "Test");
 	}
 
 }

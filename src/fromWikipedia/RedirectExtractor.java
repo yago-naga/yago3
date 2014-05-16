@@ -14,13 +14,11 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
-import basics.MultilingualTheme;
 import basics.Fact;
 import basics.FactComponent;
+import basics.MultilingualTheme;
 import basics.Theme;
 import extractors.MultilingualWikipediaExtractor;
-import followUp.FollowUpExtractor;
-import followUp.TypeChecker;
 
 /**
  * Extracts all redirects from Wikipedia
@@ -38,24 +36,14 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 	private static final Pattern pattern = Pattern
 			.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
-	public static final MultilingualTheme REDIRECTFACTS_DIRTY = new MultilingualTheme(
+	public static final MultilingualTheme REDIRECTFACTS = new MultilingualTheme(
 			"redirectLabelsDirty",
 			"Redirect facts from Wikipedia redirect pages (to be type checked)");
-
-	public static final MultilingualTheme REDIRECTLABELS = new MultilingualTheme(
-			"redirectLabels", "Redirect facts from Wikipedia redirect pages");
 
 	@Override
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(
-				REDIRECTFACTS_DIRTY.inLanguage(this.language));
-	}
-
-	@Override
-	public Set<FollowUpExtractor> followUp() {
-		return new FinalSet<FollowUpExtractor>(new TypeChecker(
-				REDIRECTFACTS_DIRTY.inLanguage(this.language),
-				REDIRECTLABELS.inLanguage(this.language), this));
+				REDIRECTFACTS.inLanguage(this.language));
 	}
 
 	@Override
@@ -90,12 +78,13 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 			}
 		}
 
-		Theme out = REDIRECTFACTS_DIRTY.inLanguage(this.language);
+		Theme out = REDIRECTFACTS.inLanguage(this.language);
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
-			out.write(new Fact(FactComponent.forYagoEntity(redirect.getValue()
-					), "<redirectedFrom>", FactComponent
-					.forStringWithLanguage(redirect.getKey(),
+			out.write(new Fact(
+					FactComponent.forYagoEntity(redirect.getValue()),
+					"<redirectedFrom>", FactComponent.forStringWithLanguage(
+							redirect.getKey(),
 							this.language.equals("en") ? "eng" : this.language)));
 		}
 
