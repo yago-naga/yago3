@@ -2,6 +2,7 @@
 // Facts of infobox to be redirected and type-checked
 // INTERNAL
 
+<id_y9qq7a_789_2yccfx>	<Campania>	<hasCapital>	"Naples"
 <id_y9qq7a_l7i_l2w2vm>	<Campania>	<hasNumberOfPeople>	"882-##-##"^^xsd:date
 <id_y9qq7a_l7i_53t9bs>	<Campania>	<hasNumberOfPeople>	"954-##-##"^^xsd:date
 <id_y9qq7a_l7i_1nx0f7z>	<Campania>	<hasNumberOfPeople>	"5954882"^^xsd:integer
@@ -139,6 +140,12 @@
 <id_1q29rbl_1ia_jb1na3>	<Italian_Chamber_of_Deputies>	rdfs:label	"Camera dei Deputati"
 <id_1q29rbl_1ia_wddcm1>	<Italian_Chamber_of_Deputies>	rdfs:label	<Camera_dei_Deputati>
 <id_1q29rbl_ice_5i8uej>	<Italian_Chamber_of_Deputies>	<hasWebsite>	<http://english.camera.it/>
+<id_1kw13uu_789_1y2whp0>	<Kingdom_of_Italy_(1861–1946)>	<hasCapital>	<Florence>
+<id_1kw13uu_789_10uvvfa>	<Kingdom_of_Italy_(1861–1946)>	<hasCapital>	"Turin"
+<id_1kw13uu_789_zk2qwl>	<Kingdom_of_Italy_(1861–1946)>	<hasCapital>	"Rome"
+<id_1kw13uu_789_10uvvfa>	<Kingdom_of_Italy_(1861–1946)>	<hasCapital>	<Turin>
+<id_1kw13uu_789_zk2qwl>	<Kingdom_of_Italy_(1861–1946)>	<hasCapital>	<Rome>
+<id_1kw13uu_789_1y2whp0>	<Kingdom_of_Italy_(1861–1946)>	<hasCapital>	"Florence"
 <id_1kw13uu_1ia_10ot5dv>	<Kingdom_of_Italy_(1861–1946)>	rdfs:label	"Italy"
 <id_1kw13uu_z7a_10ot5dv>	<Kingdom_of_Italy_(1861–1946)>	<isLocatedIn>	"Italy"
 <id_1kw13uu_lje_1c75obv>	<Kingdom_of_Italy_(1861–1946)>	<hasCurrency>	<Italian_lira>
@@ -149,6 +156,8 @@
 <id_1kw13uu_88c_d8lur>	<Kingdom_of_Italy_(1861–1946)>	rdf:type	<representative_democracy>
 <id_1kw13uu_88c_1blz4s0>	<Kingdom_of_Italy_(1861–1946)>	rdf:type	<Constitutional_monarchy>
 <id_1kw13uu_88c_cyz169>	<Kingdom_of_Italy_(1861–1946)>	rdf:type	"Constitutional monarchy"
+<id_1kw13uu_11k_1cgysky>	<Kingdom_of_Italy_(1861–1946)>	<hasMotto>	"We are Bound by Treaty and Religion"
+<id_1kw13uu_11k_zju79d>	<Kingdom_of_Italy_(1861–1946)>	<hasMotto>	<FERT>
 <id_1kw13uu_z7a_9tm2dz>	<Kingdom_of_Italy_(1861–1946)>	<isLocatedIn>	"Mediterranean"
 <id_184v0j1_10x_1yqlkjv>	<Lamberto_Dini>	<graduatedFrom>	"University of Florence"
 <id_184v0j1_10x_qrz0mj>	<Lamberto_Dini>	<graduatedFrom>	<University_of_Florence>
@@ -176,11 +185,13 @@
 <id_184v0j1_12k_zk2qwl>	<Lamberto_Dini>	<livesIn>	<Rome>
 <id_184v0j1_16x_gxuna4>	<Lamberto_Dini>	<isMarriedTo>	"Donatella Zigone"
 <id_184v0j1_16x_i8dtnf>	<Lamberto_Dini>	<isMarriedTo>	<Donatella_Zigone>
+<id_10q4wvf_789_zk2qwl>	<Lazio>	<hasCapital>	"Rome"
 <id_10q4wvf_z7a_10ot5dv>	<Lazio>	<isLocatedIn>	"Italy"
 <id_10q4wvf_z7a_10ot5dv>	<Lazio>	<isLocatedIn>	<Italy>
 <id_10q4wvf_l7i_1mxs6nm>	<Lazio>	<hasNumberOfPeople>	"5732212"^^xsd:integer
 <id_10q4wvf_ice_qxndqs>	<Lazio>	<hasWebsite>	<http://www.regione.lazio.it>
 <id_10q4wvf_ice_1hmw8d7>	<Lazio>	<hasWebsite>	<http://www.regione.lazio.it/>
+<id_1qfjlq_789_10qtisd>	<Lombardy>	<hasCapital>	"Milan"
 <id_1qfjlq_l7i_1bkgypx>	<Lombardy>	<hasNumberOfPeople>	"9939193"^^xsd:integer
 <id_1qfjlq_ice_p231nn>	<Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it/>
 <id_1qfjlq_ice_ulfqfg>	<Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it>
@@ -213,10 +224,13 @@
 <id_10qtisd_siu_zil47k>	<Milan>	<wasCreatedOnDate>	"396"^^xsd:integer
 <id_10qtisd_siu_112x4bu>	<Milan>	<wasCreatedOnDate>	<circa>
 <id_10qtisd_1ia_2lmawi>	<Milan>	rdfs:label	"Milano"
+<id_10qtisd_1ia_1rzhy7i>	<Milan>	rdfs:label	"The Economic Capital of Italy"
+<id_10qtisd_1ia_8434j2>	<Milan>	rdfs:label	<The_Economic_Capital_of_Italy>
 <id_10qtisd_1ia_1u7esoo>	<Milan>	rdfs:label	"Comune di Milano"
 <id_10qtisd_1ia_4t876g>	<Milan>	rdfs:label	<Comune_di_Milano>
 <id_10qtisd_z7a_1qfjlq>	<Milan>	<isLocatedIn>	<Lombardy>
 <id_10qtisd_z7a_1qfjlq>	<Milan>	<isLocatedIn>	"Lombardy"
+<id_2ox8i9_789_1h78kea>	<Molise>	<hasCapital>	"Campobasso"
 <id_2ox8i9_l7i_hqszf>	<Molise>	<hasNumberOfPeople>	"319-##-##"^^xsd:date
 <id_2ox8i9_l7i_1ofu97i>	<Molise>	<hasNumberOfPeople>	"319834"^^xsd:integer
 <id_2ox8i9_l7i_1cdsdyx>	<Molise>	<hasNumberOfPeople>	"834-##-##"^^xsd:date
@@ -352,6 +366,8 @@
 <id_prkzmu_z7a_10ot5dv>	<University_of_Milan>	<isLocatedIn>	<Italy>
 <id_prkzmu_siu_zjgiui>	<University_of_Milan>	<wasCreatedOnDate>	"1924"^^xsd:integer
 <id_prkzmu_siu_17ifpai>	<University_of_Milan>	<wasCreatedOnDate>	"1924-##-##"^^xsd:date
+<id_prkzmu_11k_14f7rtg>	<University_of_Milan>	<hasMotto>	<Scientia_illuminans_dignus>
+<id_prkzmu_11k_cir6r8>	<University_of_Milan>	<hasMotto>	"Scientia illuminans dignus"
 <id_prkzmu_1ia_140wjjy>	<University_of_Milan>	rdfs:label	"Università degli Studi di Milano"
 <id_prkzmu_1ia_mf0asg>	<University_of_Milan>	rdfs:label	<Università_degli_Studi_di_Milano>
 <id_prkzmu_ice_18bm07t>	<University_of_Milan>	<hasWebsite>	<http://www.unimi.it/>
@@ -437,6 +453,12 @@
 <id_i2ap8f_1c7_z038xo>	"6"^^xsd:integer	<isLeaderOf>	<Edinburgh>
 <id_164eql1_1c7_z038xo>	<Marco_Biagi_(politician)>	<isLeaderOf>	<Edinburgh>
 <id_62bia5_1c7_z038xo>	<Gordon_MacDonald_(Scottish_politician)>	<isLeaderOf>	<Edinburgh>
+<id_z038xo_11k_4ou3qp>	<Edinburgh>	<hasMotto>	<Nisi_Dominus_Frustra>
+<id_z038xo_11k_1yd201b>	<Edinburgh>	<hasMotto>	"Nisi Dominus Frustra"
+<id_z038xo_1ia_10mbx6l>	<Edinburgh>	rdfs:label	"Edina"
+<id_z038xo_1ia_p9gach>	<Edinburgh>	rdfs:label	"Dunedin"
+<id_z038xo_1ia_8v9kyg>	<Edinburgh>	rdfs:label	"Athens of the North"
+<id_z038xo_1ia_ikdyax>	<Edinburgh>	rdfs:label	"Auld Reekie"
 <id_z038xo_1ia_tvx1oo>	<Edinburgh>	rdfs:label	<City_of_Edinburgh>
 <id_z038xo_1ia_17475uw>	<Edinburgh>	rdfs:label	"City of Edinburgh"
 <id_z038xo_l7i_1p0odkt>	<Edinburgh>	<hasNumberOfPeople>	"486120"^^xsd:integer
@@ -736,6 +758,8 @@
 <id_17c51vo_z7a_okgqmk>	<World_Economic_Forum>	<isLocatedIn>	"Canton of Geneva"
 <id_1i8r7a9_1c7_17c51vo>	<Klaus_Schwab>	<isLeaderOf>	<World_Economic_Forum>
 <id_7lvyse_1c7_17c51vo>	"Klaus Schwab"	<isLeaderOf>	<World_Economic_Forum>
+<id_17c51vo_11k_1amnnm>	<World_Economic_Forum>	<hasMotto>	<Entrepreneurship_in_the_global_public_interest>
+<id_17c51vo_11k_yreh6r>	<World_Economic_Forum>	<hasMotto>	"Entrepreneurship in the global public interest"
 <id_17c51vo_ice_19757c0>	<World_Economic_Forum>	<hasWebsite>	<http://www.weforum.org>
 <id_1fpq28n_10x_py5vtt>	<Angela_Merkel>	<graduatedFrom>	<University_of_Leipzig>
 <id_1fpq28n_10x_bbsx6p>	<Angela_Merkel>	<graduatedFrom>	"University of Leipzig"
@@ -842,6 +866,8 @@
 <id_107bpbp_16x_b1mtzl>	<Gerhard_Schröder>	<isMarriedTo>	"Eva Schubach"
 <id_107bpbp_16x_i4tzwr>	<Gerhard_Schröder>	<isMarriedTo>	<Doris_Schröder-Köpf>
 <id_107bpbp_16x_1sinjha>	<Gerhard_Schröder>	<isMarriedTo>	"Anne Taschenmacher"
+<id_1ps9evn_789_1wd5e4i>	<Germany>	<hasCapital>	"Berlin"
+<id_1ps9evn_789_1wd5e4i>	<Germany>	<hasCapital>	<Berlin>
 <id_1ps9evn_f9j_zil1kf>	<Germany>	<hasTLD>	".de"
 <id_1ps9evn_f9j_zil1kf>	<Germany>	<hasTLD>	<.de>
 <id_1ps9evn_f9j_zik10z>	<Germany>	<hasTLD>	"3"^^xsd:integer
@@ -865,6 +891,9 @@
 <id_1ps9evn_siu_zjgj0f>	<Germany>	<wasCreatedOnDate>	"1990"^^xsd:integer
 <id_1ps9evn_siu_18px7c3>	<Germany>	<wasCreatedOnDate>	"1990-10-03"^^xsd:date
 <id_1ps9evn_siu_zik10z>	<Germany>	<wasCreatedOnDate>	"3"^^xsd:integer
+<id_1ps9evn_f9j_1clozfr>	<Germany>	<hasGDP>	"3628000000000"^^<dollar>
+<id_1ps9evn_f9j_1v0v1ek>	<Germany>	<hasGDP>	"628-##-##"^^xsd:date
+<id_1ps9evn_1b1_zik285>	<Germany>	<hasGini>	"27"^^xsd:integer
 <id_1ps9evn_88c_1to572t>	<Germany>	rdf:type	<constitutional_republic>
 <id_1ps9evn_88c_v153h2>	<Germany>	rdf:type	"constitutional republic"
 <id_1yrlgc_1c7_1ps9evn>	"Joachim Gauck"	<isLeaderOf>	<Germany>
@@ -1005,6 +1034,7 @@
 <id_py5vtt_z7a_5bpmr4>	<University_of_Leipzig>	<isLocatedIn>	"Saxony"
 <id_py5vtt_z7a_5bpmr4>	<University_of_Leipzig>	<isLocatedIn>	<Saxony>
 <id_py5vtt_ice_1l6natu>	<University_of_Leipzig>	<hasWebsite>	<http://www.uni-leipzig.de/>
+<id_1dmdk4j_789_zjsj59>	<West_Germany>	<hasCapital>	"Bonn"
 <id_1dmdk4j_f9j_zil1kf>	<West_Germany>	<hasTLD>	".de"
 <id_1dmdk4j_f9j_zil1kf>	<West_Germany>	<hasTLD>	<.de>
 <id_1dmdk4j_1ia_9jv2o2>	<West_Germany>	rdfs:label	"West Germany"
@@ -1024,6 +1054,7 @@
 <id_1dmdk4j_lje_163xu3j>	<West_Germany>	<hasCurrency>	<Deutsche_Mark>
 <id_1dmdk4j_88c_aym4et>	<West_Germany>	rdf:type	"Parliamentary republic"
 <id_1dmdk4j_88c_19lm80k>	<West_Germany>	rdf:type	<Parliamentary_republic>
+<id_1dmdk4j_11k_gxfn95>	<West_Germany>	<hasMotto>	<Das_Lied_der_Deutschen>
 <id_1dmdk4j_1ia_lndspq>	<West_Germany>	rdfs:label	"Bundesrepublik Deutschland"
 <id_1dmdk4j_1ia_e2v75r>	<West_Germany>	rdfs:label	<Bundesrepublik_Deutschland>
 <id_1dmdk4j_z7a_1ps9evn>	<West_Germany>	<isLocatedIn>	"Germany"
@@ -1182,12 +1213,16 @@
 <id_efriae_12k_ip9qyo>	<François_Fillon>	<livesIn>	"Hôtel Matignon"
 <id_efriae_16x_1rxxghb>	<François_Fillon>	<isMarriedTo>	<Penelope_Clarke>
 <id_efriae_16x_1qnea40>	<François_Fillon>	<isMarriedTo>	"Penelope Clarke"
+<id_1fvzpek_789_10sbxbf>	<French_Fourth_Republic>	<hasCapital>	"Paris"
 <id_1fvzpek_1ia_1yg6dyz>	<French_Fourth_Republic>	rdfs:label	"France"
 <id_1fvzpek_z7a_1yg6dyz>	<French_Fourth_Republic>	<isLocatedIn>	"France"
 <id_1fvzpek_lje_1r071j8>	<French_Fourth_Republic>	<hasCurrency>	"French Franc"
 <id_1fvzpek_lje_lsx6ed>	<French_Fourth_Republic>	<hasCurrency>	<French_Franc>
 <id_1fvzpek_88c_aym4et>	<French_Fourth_Republic>	rdf:type	"Parliamentary republic"
 <id_1fvzpek_88c_19lm80k>	<French_Fourth_Republic>	rdf:type	<Parliamentary_republic>
+<id_1fvzpek_11k_s23gq>	<French_Fourth_Republic>	<hasMotto>	<Liberté,_égalité,_fraternité>
+<id_1fvzpek_11k_1nljf7e>	<French_Fourth_Republic>	<hasMotto>	<wordnet_equality_104747899>
+<id_1fvzpek_11k_pzy696>	<French_Fourth_Republic>	<hasMotto>	"Liberté, égalité, fraternité"
 <id_1fvzpek_1ia_1qv016u>	<French_Fourth_Republic>	rdfs:label	"République française"
 <id_1fvzpek_1ia_6a9bb>	<French_Fourth_Republic>	rdfs:label	<République_française>
 <id_jfqfk4_z7a_10sbxbf>	<Institut_d'Études_Politiques_de_Paris>	<isLocatedIn>	"Paris"
@@ -1370,6 +1405,8 @@
 <id_krjrbp_88c_g2xpit>	<Elena_Salgado>	rdf:type	<Industrial_Engineer>
 <id_krjrbp_88c_1x9tonu>	<Elena_Salgado>	rdf:type	<wordnet_economist_110043643>
 <id_krjrbp_88c_1gh1nw6>	<Elena_Salgado>	rdf:type	"Industrial Engineer"
+<id_1u5uyhb_789_2h36ql>	<Francoist_Spain>	<hasCapital>	"Madrid"
+<id_1u5uyhb_789_2h36ql>	<Francoist_Spain>	<hasCapital>	<Madrid>
 <id_1u5uyhb_1ia_10u8jah>	<Francoist_Spain>	rdfs:label	"Spain"
 <id_1u5uyhb_z7a_10u8jah>	<Francoist_Spain>	<isLocatedIn>	"Spain"
 <id_1u5uyhb_lje_qhq8an>	<Francoist_Spain>	<hasCurrency>	<Spanish_peseta>
@@ -1378,6 +1415,8 @@
 <id_1u5uyhb_88c_1gzxe4y>	<Francoist_Spain>	rdf:type	"single-party state"
 <id_1u5uyhb_88c_bsnj03>	<Francoist_Spain>	rdf:type	<single-party_state>
 <id_1u5uyhb_88c_ayprz4>	<Francoist_Spain>	rdf:type	"absolute monarchy"
+<id_1u5uyhb_11k_1p7x38m>	<Francoist_Spain>	<hasMotto>	"Plus Ultra"
+<id_1u5uyhb_11k_k0n83r>	<Francoist_Spain>	<hasMotto>	<Plus_Ultra>
 <id_1m0lrpx_10x_2eoor5>	<Joaquín_Almunia>	<graduatedFrom>	"John F. Kennedy School of Government"
 <id_1m0lrpx_10x_2z1w0g>	<Joaquín_Almunia>	<graduatedFrom>	<John_F._Kennedy_School_of_Government>
 <id_1m0lrpx_10x_15z0igj>	<Joaquín_Almunia>	<graduatedFrom>	<École_pratique_des_hautes_études>
@@ -1515,6 +1554,8 @@
 <id_cacb9n_z7a_1jd33ep>	<University_of_León>	<isLocatedIn>	"León, Spain"
 <id_cacb9n_siu_1bx7bsa>	<University_of_León>	<wasCreatedOnDate>	"1979-##-##"^^xsd:date
 <id_cacb9n_siu_zjgiyy>	<University_of_León>	<wasCreatedOnDate>	"1979"^^xsd:integer
+<id_cacb9n_11k_1op20t3>	<University_of_León>	<hasMotto>	"Universitas legionensis"
+<id_cacb9n_11k_1h4jf94>	<University_of_León>	<hasMotto>	<Universitas_legionensis>
 <id_cacb9n_1ia_17eofrl>	<University_of_León>	rdfs:label	"Universidad de León"
 <id_cacb9n_1ia_depwmp>	<University_of_León>	rdfs:label	<Universidad_de_León>
 <id_cacb9n_ice_8u0sd9>	<University_of_León>	<hasWebsite>	<http://www.unileon.es>

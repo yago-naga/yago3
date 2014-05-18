@@ -95,8 +95,13 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
 	/** normalizes an attribute name */
 	public static String normalizeAttribute(String a) {
-		return (a.trim().toLowerCase().replace("_", "").replace(" ", "")
-				.replace("-", "").replaceAll("\\d", ""));
+		// Be aggressive here: numbers have to go away, so that city1=city2.
+		// Bad characters such as TABs are poisonous and have to leave.
+		// Spaces and underbars have to go.
+		// Still accept non-latin characters.
+		// Vertical bars have to stay, because they indicate several
+		// collated attributes that we will split later.
+		return (a.trim().toLowerCase().replaceAll("[^\\p{L}|]",""));
 	}
 
 	/** For cleaning up values */
@@ -314,7 +319,6 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				}
 				Map<String, Set<String>> attributes = readInfobox(in);
 
-				/* new version */
 				for (String attribute : attributes.keySet()) {
 					for (String value : attributes.get(attribute)) {
 						value = valueCleaner.transform(value);

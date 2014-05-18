@@ -53,7 +53,7 @@ public class DBpediaLinker extends Extractor {
 			if (!fact.getRelation().equals(RDFS.type)
 					|| instances.contains(fact.getArg(1)))
 				continue;
-			if (!fact.getArg(2).startsWith("<wikicategory_"))
+			if (!fact.getArg(2).startsWith("<wikicat_"))
 				continue;
 			if (!fact.getArg(1).startsWith("<"))
 				continue;

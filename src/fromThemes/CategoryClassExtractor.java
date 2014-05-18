@@ -130,12 +130,11 @@ public class CategoryClassExtractor extends Extractor {
 		String concept = category2class(categoryEntity);
 		if (concept == null)
 			return;
-		CATEGORYCLASSES.write(new Fact(FactComponent.forWikiCategory(categoryEntity),
+		CATEGORYCLASSES.write(new Fact(categoryEntity,
 				RDFS.subclassOf, concept));
 		String name = new NounGroup(categoryEntity).stemmed().replace('_', ' ');
 		if (!name.isEmpty())
-			CATEGORYCLASSES.write(new Fact(null, FactComponent
-					.forWikiCategory(categoryEntity), RDFS.label, FactComponent
+			CATEGORYCLASSES.write(new Fact(null, categoryEntity, RDFS.label, FactComponent
 					.forStringWithLanguage(name, "eng")));
 	}
 

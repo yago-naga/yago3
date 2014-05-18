@@ -14,6 +14,7 @@ import javatools.parsers.DateParser;
 import javatools.parsers.NumberParser;
 import javatools.parsers.PlingStemmer;
 import basics.FactComponent;
+import basics.MultilingualTheme;
 import basics.RDFS;
 import basics.YAGO;
 
@@ -80,7 +81,7 @@ public abstract class TermParser {
 	public static List<TermParser> allParsers(Map<String, String> preferredMeanings,
 			String language) {
 		List<TermParser> all = new ArrayList<>(literalParsers());
-		if(language.startsWith("en")) all.add(new TermParser.ForClass(preferredMeanings));
+		if(MultilingualTheme.isEnglish(language)) all.add(new TermParser.ForClass(preferredMeanings));
 		all.add(new TermParser.ForWikiLink(language));
 		return all;
 	}

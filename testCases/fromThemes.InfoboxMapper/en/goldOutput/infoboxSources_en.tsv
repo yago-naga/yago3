@@ -2,6 +2,8 @@
 // Sources of infobox facts
 // INTERNAL
 
+<id_1vja781_115_14objtc>	<id_y9qq7a_789_2yccfx>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania>
+	<id_1vja781_115_14objtc>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1kia7ze_115_14objtc>	<id_y9qq7a_l7i_l2w2vm>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania>
 	<id_1kia7ze_115_14objtc>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/population>"
 <id_uhb0na_115_14objtc>	<id_y9qq7a_l7i_53t9bs>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania>
@@ -276,6 +278,18 @@
 	<id_11ei1xw_115_15b7bzb>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_1btm3dk_115_15b7bzb>	<id_1q29rbl_ice_5i8uej>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies>
 	<id_1btm3dk_115_15b7bzb>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1bv91qo_115_1guye28>	<id_1kw13uu_789_1y2whp0>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
+	<id_1bv91qo_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_ebshwm_115_1guye28>	<id_1kw13uu_789_10uvvfa>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
+	<id_ebshwm_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_aotbjk_115_1guye28>	<id_1kw13uu_789_zk2qwl>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
+	<id_aotbjk_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_ebshwm_115_1guye28>	<id_1kw13uu_789_10uvvfa>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
+	<id_ebshwm_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_aotbjk_115_1guye28>	<id_1kw13uu_789_zk2qwl>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
+	<id_aotbjk_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_1bv91qo_115_1guye28>	<id_1kw13uu_789_1y2whp0>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
+	<id_1bv91qo_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_19528nd_115_1guye28>	<id_1kw13uu_1ia_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
 	<id_19528nd_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/commonname>"
 <id_r2i3wk_115_1guye28>	<id_1kw13uu_z7a_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
@@ -296,6 +310,10 @@
 	<id_v8ltf6_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
 <id_1yv4sy8_115_1guye28>	<id_1kw13uu_88c_cyz169>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
 	<id_1yv4sy8_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_na11gl_115_1guye28>	<id_1kw13uu_11k_1cgysky>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
+	<id_na11gl_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
+<id_1avtggl_115_1guye28>	<id_1kw13uu_11k_zju79d>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
+	<id_1avtggl_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
 <id_lqiwvp_115_1guye28>	<id_1kw13uu_z7a_9tm2dz>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
 	<id_lqiwvp_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
 <id_x13t3t_115_jis3n>	<id_184v0j1_10x_1yqlkjv>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini>
@@ -350,6 +368,8 @@
 	<id_1qngv4u_115_jis3n>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1qm2jyw_115_jis3n>	<id_184v0j1_16x_i8dtnf>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini>
 	<id_1qm2jyw_115_jis3n>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1l147qi_115_1a1l5mp>	<id_10q4wvf_789_zk2qwl>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
+	<id_1l147qi_115_1a1l5mp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_171mqdm_115_1a1l5mp>	<id_10q4wvf_z7a_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
 	<id_171mqdm_115_1a1l5mp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
 <id_171mqdm_115_1a1l5mp>	<id_10q4wvf_z7a_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
@@ -360,6 +380,8 @@
 	<id_feuohd_115_1a1l5mp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_s1uhrs_115_1a1l5mp>	<id_10q4wvf_ice_1hmw8d7>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
 	<id_s1uhrs_115_1a1l5mp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1b3yx33_115_850d7s>	<id_1qfjlq_789_10qtisd>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy>
+	<id_1b3yx33_115_850d7s>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1bcklc1_115_850d7s>	<id_1qfjlq_l7i_1bkgypx>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy>
 	<id_1bcklc1_115_850d7s>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/population>"
 <id_l9amkm_115_850d7s>	<id_1qfjlq_ice_p231nn>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy>
@@ -424,6 +446,10 @@
 	<id_1k9guja_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/establisheddate>"
 <id_x2o9k1_115_1a29rjn>	<id_10qtisd_1ia_2lmawi>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
 	<id_x2o9k1_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_j8gpq3_115_1a29rjn>	<id_10qtisd_1ia_1rzhy7i>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
+	<id_j8gpq3_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nickname>"
+<id_z13jqe_115_1a29rjn>	<id_10qtisd_1ia_8434j2>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
+	<id_z13jqe_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nickname>"
 <id_jmpd34_115_1a29rjn>	<id_10qtisd_1ia_1u7esoo>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
 	<id_jmpd34_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/officialname>"
 <id_y47435_115_1a29rjn>	<id_10qtisd_1ia_4t876g>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
@@ -432,6 +458,8 @@
 	<id_bgvvtb_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
 <id_bgvvtb_115_1a29rjn>	<id_10qtisd_z7a_1qfjlq>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
 	<id_bgvvtb_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
+<id_1a6gc9m_115_7fgk3f>	<id_2ox8i9_789_1h78kea>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
+	<id_1a6gc9m_115_7fgk3f>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1mis893_115_7fgk3f>	<id_2ox8i9_l7i_hqszf>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
 	<id_1mis893_115_7fgk3f>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/population>"
 <id_qwj827_115_7fgk3f>	<id_2ox8i9_l7i_1ofu97i>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
@@ -702,6 +730,10 @@
 	<id_12mjwug_115_1ijbcxo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
 <id_ustc9f_115_1ijbcxo>	<id_prkzmu_siu_17ifpai>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan>
 	<id_ustc9f_115_1ijbcxo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_1kl39ob_115_1ijbcxo>	<id_prkzmu_11k_14f7rtg>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan>
+	<id_1kl39ob_115_1ijbcxo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
+<id_1t9lug6_115_1ijbcxo>	<id_prkzmu_11k_cir6r8>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan>
+	<id_1t9lug6_115_1ijbcxo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
 <id_unh2af_115_1ijbcxo>	<id_prkzmu_1ia_140wjjy>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan>
 	<id_unh2af_115_1ijbcxo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_pksxxy_115_1ijbcxo>	<id_prkzmu_1ia_mf0asg>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Milan>
@@ -872,6 +904,18 @@
 	<id_kxi3db_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
 <id_1y66v68_115_kgol02>	<id_62bia5_1c7_z038xo>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
 	<id_1y66v68_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
+<id_1joindh_115_kgol02>	<id_z038xo_11k_4ou3qp>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_1joindh_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
+<id_1gubpqm_115_kgol02>	<id_z038xo_11k_1yd201b>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_1gubpqm_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
+<id_1sbxmt7_115_kgol02>	<id_z038xo_1ia_10mbx6l>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_1sbxmt7_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nickname>"
+<id_12wulgn_115_kgol02>	<id_z038xo_1ia_p9gach>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_12wulgn_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nickname>"
+<id_db224d_115_kgol02>	<id_z038xo_1ia_8v9kyg>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_db224d_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nickname>"
+<id_10czj65_115_kgol02>	<id_z038xo_1ia_ikdyax>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_10czj65_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nickname>"
 <id_15quepm_115_kgol02>	<id_z038xo_1ia_tvx1oo>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
 	<id_15quepm_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/officialname>"
 <id_1ur3x5b_115_kgol02>	<id_z038xo_1ia_17475uw>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
@@ -1470,6 +1514,10 @@
 	<id_qgwx6a_115_btdsj2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
 <id_y7gxvr_115_btdsj2>	<id_7lvyse_1c7_17c51vo>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum>
 	<id_y7gxvr_115_btdsj2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
+<id_13esv85_115_btdsj2>	<id_17c51vo_11k_1amnnm>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum>
+	<id_13esv85_115_btdsj2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
+<id_2q4u1p_115_btdsj2>	<id_17c51vo_11k_yreh6r>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum>
+	<id_2q4u1p_115_btdsj2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
 <id_1fsr5ll_115_btdsj2>	<id_17c51vo_ice_19757c0>	<extractionSource>	<http://en.wikipedia.org/wiki/World_Economic_Forum>
 	<id_1fsr5ll_115_btdsj2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_67oqjl_115_84dtt9>	<id_1fpq28n_10x_py5vtt>	<extractionSource>	<http://en.wikipedia.org/wiki/Angela_Merkel>
@@ -1682,6 +1730,10 @@
 	<id_1r7f9on_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_ulp2sh_115_lykx5r>	<id_107bpbp_16x_1sinjha>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
 	<id_ulp2sh_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_evq74h_115_1ukoa5l>	<id_1ps9evn_789_1wd5e4i>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_evq74h_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_evq74h_115_1ukoa5l>	<id_1ps9evn_789_1wd5e4i>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_evq74h_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_b5vasi_115_1ukoa5l>	<id_1ps9evn_f9j_zil1kf>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
 	<id_b5vasi_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/cctld>"
 <id_b5vasi_115_1ukoa5l>	<id_1ps9evn_f9j_zil1kf>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
@@ -1728,6 +1780,12 @@
 	<id_e1gej1_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/establisheddate>"
 <id_1moa5hm_115_1ukoa5l>	<id_1ps9evn_siu_zik10z>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
 	<id_1moa5hm_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/establisheddate>"
+<id_1h42c0u_115_1ukoa5l>	<id_1ps9evn_f9j_1clozfr>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_1h42c0u_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/gdpnominal>"
+<id_1p70gnt_115_1ukoa5l>	<id_1ps9evn_f9j_1v0v1ek>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_1p70gnt_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/gdpnominal>"
+<id_e3x1fh_115_1ukoa5l>	<id_1ps9evn_1b1_zik285>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_e3x1fh_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/gini>"
 <id_703a6h_115_1ukoa5l>	<id_1ps9evn_88c_1to572t>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
 	<id_703a6h_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
 <id_1l1qgsq_115_1ukoa5l>	<id_1ps9evn_88c_v153h2>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
@@ -2008,6 +2066,8 @@
 	<id_1pdqse0_115_1789lmf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/state>"
 <id_upyyoa_115_1789lmf>	<id_py5vtt_ice_1l6natu>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Leipzig>
 	<id_upyyoa_115_1789lmf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_13a337i_115_1pyoefh>	<id_1dmdk4j_789_zjsj59>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany>
+	<id_13a337i_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1pezj7n_115_1pyoefh>	<id_1dmdk4j_f9j_zil1kf>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany>
 	<id_1pezj7n_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/cctld>"
 <id_1pezj7n_115_1pyoefh>	<id_1dmdk4j_f9j_zil1kf>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany>
@@ -2046,6 +2106,8 @@
 	<id_rgdjo6_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
 <id_19922n6_115_1pyoefh>	<id_1dmdk4j_88c_19lm80k>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany>
 	<id_19922n6_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_1uo3k51_115_1pyoefh>	<id_1dmdk4j_11k_gxfn95>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany>
+	<id_1uo3k51_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
 <id_ojc3sk_115_1pyoefh>	<id_1dmdk4j_1ia_lndspq>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany>
 	<id_ojc3sk_115_1pyoefh>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_kbbbal_115_1pyoefh>	<id_1dmdk4j_1ia_e2v75r>	<extractionSource>	<http://en.wikipedia.org/wiki/West_Germany>
@@ -2362,6 +2424,8 @@
 	<id_1ykodv9_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1xxsj23_115_u0mwx8>	<id_efriae_16x_1qnea40>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
 	<id_1xxsj23_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_onrfsx_115_jcah8m>	<id_1fvzpek_789_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
+	<id_onrfsx_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_iw6wb6_115_jcah8m>	<id_1fvzpek_1ia_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
 	<id_iw6wb6_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/commonname>"
 <id_tmrkd_115_jcah8m>	<id_1fvzpek_z7a_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
@@ -2374,6 +2438,12 @@
 	<id_1i7g5m8_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
 <id_m6yb9k_115_jcah8m>	<id_1fvzpek_88c_19lm80k>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
 	<id_m6yb9k_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_wy5jtw_115_jcah8m>	<id_1fvzpek_11k_s23gq>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
+	<id_wy5jtw_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
+<id_12xf8hr_115_jcah8m>	<id_1fvzpek_11k_1nljf7e>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
+	<id_12xf8hr_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
+<id_qova2m_115_jcah8m>	<id_1fvzpek_11k_pzy696>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
+	<id_qova2m_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
 <id_fbxwpm_115_jcah8m>	<id_1fvzpek_1ia_1qv016u>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
 	<id_fbxwpm_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_7p2s1e_115_jcah8m>	<id_1fvzpek_1ia_6a9bb>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
@@ -2738,6 +2808,10 @@
 	<id_x4b6m2_115_1c7bkvf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
 <id_pr753o_115_1c7bkvf>	<id_krjrbp_88c_1gh1nw6>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado>
 	<id_pr753o_115_1c7bkvf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_17gd5xr_115_apmb51>	<id_1u5uyhb_789_2h36ql>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain>
+	<id_17gd5xr_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_17gd5xr_115_apmb51>	<id_1u5uyhb_789_2h36ql>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain>
+	<id_17gd5xr_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1n9coh1_115_apmb51>	<id_1u5uyhb_1ia_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain>
 	<id_1n9coh1_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/commonname>"
 <id_156sjq8_115_apmb51>	<id_1u5uyhb_z7a_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain>
@@ -2754,6 +2828,10 @@
 	<id_1u5ygrk_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
 <id_1ts93lw_115_apmb51>	<id_1u5uyhb_88c_ayprz4>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain>
 	<id_1ts93lw_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_16r6wow_115_apmb51>	<id_1u5uyhb_11k_1p7x38m>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain>
+	<id_16r6wow_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
+<id_yrh5bq_115_apmb51>	<id_1u5uyhb_11k_k0n83r>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain>
+	<id_yrh5bq_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
 <id_1blfwal_115_2kd4dn>	<id_1m0lrpx_10x_2eoor5>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
 	<id_1blfwal_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
 <id_1bvw3yk_115_2kd4dn>	<id_1m0lrpx_10x_2z1w0g>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
@@ -3028,6 +3106,10 @@
 	<id_1099r1z_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
 <id_1mre96j_115_xu51th>	<id_cacb9n_siu_zjgiyy>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
 	<id_1mre96j_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_1xk8e8i_115_xu51th>	<id_cacb9n_11k_1op20t3>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
+	<id_1xk8e8i_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
+<id_1tcy7rr_115_xu51th>	<id_cacb9n_11k_1h4jf94>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
+	<id_1tcy7rr_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
 <id_hrpvip_115_xu51th>	<id_cacb9n_1ia_17eofrl>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
 	<id_hrpvip_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_15gu7d6_115_xu51th>	<id_cacb9n_1ia_depwmp>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
