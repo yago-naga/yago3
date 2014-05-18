@@ -97,8 +97,8 @@ public class AttributeMatcher extends MultilingualExtractor {
 			 * this level, it still has the chance to be processed if appears
 			 * with 'good' subject and object in other facts
 			 */
-			if (!yagoFacts.containsSubject(germanSubject))
-				continue;
+			//if (!yagoFacts.containsSubject(germanSubject))
+			//	continue;
 			//if (!FactComponent.isLiteral(germanObject)
 			//		&& !yagoFacts.containsObject(germanObject))
 			//	continue;
