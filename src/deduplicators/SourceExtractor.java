@@ -13,7 +13,6 @@ import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import fromGeonames.GeoNamesClassMapper;
-import fromGeonames.GeoNamesEntityMapper;
 import fromOtherSources.WikidataLabelExtractor;
 import fromOtherSources.WordnetDomainExtractor;
 import fromThemes.CategoryMapper;

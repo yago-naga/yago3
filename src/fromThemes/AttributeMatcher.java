@@ -99,9 +99,9 @@ public class AttributeMatcher extends MultilingualExtractor {
 			 */
 			if (!yagoFacts.containsSubject(germanSubject))
 				continue;
-			if (!FactComponent.isLiteral(germanObject)
-					&& !yagoFacts.containsObject(germanObject))
-				continue;
+			//if (!FactComponent.isLiteral(germanObject)
+			//		&& !yagoFacts.containsObject(germanObject))
+			//	continue;
 
 			if (currentSubject.equals(germanSubject)
 					&& currentRelation.equals(germanRelation)) {
@@ -192,7 +192,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 	public static void main(String[] args) throws Exception {
 
-		new AttributeMatcher("de").extract(new File("D:/data3/yago2s"),
+		new AttributeMatcher("de").extract(new File(args[0]),
 				"mapping infobox attributes in different languages");
 	}
 
