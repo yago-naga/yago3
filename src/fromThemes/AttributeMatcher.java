@@ -87,6 +87,11 @@ public class AttributeMatcher extends MultilingualExtractor {
 		String currentRelation = "";
 		Set<String> currentObjects = new HashSet<>();
 
+		int before=0;
+		int after=0;
+		int third=0;
+		int fourth=0;
+		
 		for (Fact germanFact : germanFacts) {
 			String germanRelation = germanFact.getRelation();
 			String germanSubject = germanFact.getArg(1);
@@ -97,8 +102,13 @@ public class AttributeMatcher extends MultilingualExtractor {
 			 * this level, it still has the chance to be processed if appears
 			 * with 'good' subject and object in other facts
 			 */
-			//if (!yagoFacts.containsSubject(germanSubject))
-			//	continue;
+			if(germanRelation.equals("<infobox/de/staat>")) before++;
+			
+			if (!yagoFacts.containsSubject(germanSubject))
+				continue;
+			
+			if(germanRelation.equals("<infobox/de/staat>")) after++;
+			
 			//if (!FactComponent.isLiteral(germanObject)
 			//		&& !yagoFacts.containsObject(germanObject))
 			//	continue;
@@ -109,9 +119,12 @@ public class AttributeMatcher extends MultilingualExtractor {
 				continue;
 			}
 
+			if(germanRelation.equals("<infobox/de/staat>")) third++;
+
 			// Come here if we have a new relation.
 			// Treat currentRelation and currentObjects
 			if (!currentObjects.isEmpty()) {
+				if(currentRelation.equals("<infobox/de/staat>")) fourth++;
 				// We increase the counter for the attribute of the german fact
 				D.addKeyValue(germanFactCountPerAttribute, currentRelation, 1);
 				// System.out.println(germanFactCountPerAttribute.get(germanRelation));
@@ -174,6 +187,8 @@ public class AttributeMatcher extends MultilingualExtractor {
 			}
 		}
 		tsv.close();
+		
+		D.p(before,after,third,fourth);
 	}
 
 	/** TRUE if intersection is non-empty */
