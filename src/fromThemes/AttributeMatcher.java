@@ -102,12 +102,12 @@ public class AttributeMatcher extends MultilingualExtractor {
 			 * this level, it still has the chance to be processed if appears
 			 * with 'good' subject and object in other facts
 			 */
-			if(germanRelation.equals("<infobox/de/staat>")) before++;
+			if(germanRelation.equals("<infobox/de/namerumänisch>")) before++;
 			
 			if (!yagoFacts.containsSubject(germanSubject))
 				continue;
 			
-			if(germanRelation.equals("<infobox/de/staat>")) after++;
+			if(germanRelation.equals("<infobox/de/namerumänisch>")) after++;
 			
 			//if (!FactComponent.isLiteral(germanObject)
 			//		&& !yagoFacts.containsObject(germanObject))
@@ -119,12 +119,12 @@ public class AttributeMatcher extends MultilingualExtractor {
 				continue;
 			}
 
-			if(germanRelation.equals("<infobox/de/staat>")) third++;
+			if(germanRelation.equals("<infobox/de/namerumänisch>")) third++;
 
 			// Come here if we have a new relation.
 			// Treat currentRelation and currentObjects
 			if (!currentObjects.isEmpty()) {
-				if(currentRelation.equals("<infobox/de/staat>")) fourth++;
+				if(currentRelation.equals("<infobox/de/namerumänisch>")) fourth++;
 				// We increase the counter for the attribute of the german fact
 				D.addKeyValue(germanFactCountPerAttribute, currentRelation, 1);
 				// System.out.println(germanFactCountPerAttribute.get(germanRelation));
