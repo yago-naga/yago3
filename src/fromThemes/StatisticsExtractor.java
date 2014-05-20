@@ -3,14 +3,7 @@ package fromThemes;
 import java.io.File;
 import java.util.Set;
 
-import deduplicators.ClassExtractor;
-import deduplicators.FactExtractor;
-import deduplicators.LabelExtractor;
-import deduplicators.LiteralFactExtractor;
-import deduplicators.MetaFactExtractor;
-import deduplicators.SchemaExtractor;
 import javatools.administrative.Announce;
-import javatools.datatypes.ByteString;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.IntHashMap;
 import javatools.parsers.NumberFormatter;
@@ -20,9 +13,13 @@ import basics.RDFS;
 import basics.Theme;
 import basics.Theme.ThemeGroup;
 import basics.YAGO;
+import deduplicators.ClassExtractor;
+import deduplicators.FactExtractor;
+import deduplicators.LabelExtractor;
+import deduplicators.LiteralFactExtractor;
+import deduplicators.MetaFactExtractor;
+import deduplicators.SchemaExtractor;
 import extractors.Extractor;
-import fromOtherSources.WordnetExtractor;
-import fromWikipedia.WikiInfoExtractor;
 
 /**
  * YAGO2s - StatisticsExtractor
@@ -40,8 +37,7 @@ public class StatisticsExtractor extends Extractor {
 				CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
 				LabelExtractor.YAGOLABELS, MetaFactExtractor.YAGOMETAFACTS,
 				SchemaExtractor.YAGOSCHEMA,
-				LiteralFactExtractor.YAGOLITERALFACTS,
-				WordnetExtractor.WORDNETIDS, WikiInfoExtractor.WIKIINFO);
+				LiteralFactExtractor.YAGOLITERALFACTS);
 	}
 
 	/** YAGO statistics theme */
@@ -55,32 +51,30 @@ public class StatisticsExtractor extends Extractor {
 
 	@Override
 	public void extract() throws Exception {
-		// TransitiveTypeExtractor.freeMemory();
-		// WordnetExtractor.freeMemory();
 		Set<String> definedRelations = new IntHashMap<>();
 		IntHashMap<String> relations = new IntHashMap<>();
-		Set<ByteString> instances = new IntHashMap<>();
+		Set<String> instances = new IntHashMap<>();
+		IntHashMap<String> entityLanguages = new IntHashMap<>();
+
 		Announce.doing("Making YAGO statistics");
 		for (Theme t : input()) {
 			Announce.doing("Analyzing", t);
 			int counter = 0;
 			for (Fact f : t) {
 				counter++;
-				ByteString arg1 = ByteString.of(f.getArg(1));
 				if ((f.getRelation().equals(RDFS.domain) || f.getRelation()
 						.equals(RDFS.range))) {
 					definedRelations.add(f.getArg(1));
 				}
 				relations.increase(f.getRelation());
 				if (f.getRelation().equals(RDFS.type)) {
-					instances.add(arg1);
+					instances.add(f.getSubject());
 				}
 			}
 			STATISTICS.write(new Fact(FactComponent.forTheme(t),
 					YAGO.hasNumber, FactComponent.forNumber(counter)));
 			Announce.done();
 		}
-		Announce.doing("Writing results");
 		for (String rel : relations.keys()) {
 			STATISTICS.write(new Fact(rel.toString(), YAGO.hasNumber,
 					FactComponent.forNumber(relations.get(rel))));
@@ -91,7 +85,17 @@ public class StatisticsExtractor extends Extractor {
 			if (!relations.containsKey(rel))
 				Announce.warning("Unused relation:", rel);
 		}
-		Announce.done();
+		for (String entity : instances) {
+			String lan = FactComponent.getLanguage(entity);
+			if (lan != null)
+				entityLanguages.increase(lan);
+		}
+		for (String lan : entityLanguages) {
+			Announce.message(lan, ":", entityLanguages.get(lan), "things");
+			STATISTICS.write(new Fact(FactComponent.forString(lan),
+					FactComponent.forYagoEntity("hasNumberOfThings"),
+					FactComponent.forNumber(entityLanguages.get(lan))));
+		}
 		Announce.message(instances.size(), "things");
 		STATISTICS.write(new Fact(YAGO.yago, FactComponent
 				.forYagoEntity("hasNumberOfThings"), FactComponent

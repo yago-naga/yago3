@@ -30,7 +30,7 @@ public class ClassExtractor extends SimpleDeduplicator {
 	public Set<Theme> input() {
 		HashSet<Theme> input = new HashSet<Theme>(Arrays.asList(
 				HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES,
-				CategoryClassExtractor.CATEGORYCLASSES
+				CategoryClassExtractor.CATEGORYCLASSES, SchemaExtractor.YAGOSCHEMA
 		// GeoNamesClassMapper.GEONAMESCLASSES
 				));
 		return input;

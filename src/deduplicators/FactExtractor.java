@@ -80,7 +80,7 @@ public class FactExtractor extends SimpleDeduplicator {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		new FactExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
+		new FactExtractor().extract(new File("C:/fabian/data/yago3"), "test");
 	}
 
 }

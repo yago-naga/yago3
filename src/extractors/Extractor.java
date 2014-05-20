@@ -63,8 +63,11 @@ public abstract class Extractor implements Comparable<Extractor> {
 		Announce.doing("Running", this.name());
 		Announce.doing("Loading input");
 		for (Theme theme : input()) {
-			if (!theme.isAvailableForReading())
+			if (!theme.isAvailableForReading()) {
+				// If you want to run extractors even if the input is absent, use this
+				//if(theme.findFileInFolder(inputFolder)!=null)  
 				theme.assignToFolder(inputFolder);
+			}
 		}
 		Announce.done();
 		for (Theme out : output()) {

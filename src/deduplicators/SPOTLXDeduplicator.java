@@ -24,7 +24,7 @@ import basics.Theme;
 public class SPOTLXDeduplicator extends SimpleDeduplicator {
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(SPOTLXDeductiveExtractor.RULERESULTS);
+    return new FinalSet<>(SPOTLXDeductiveExtractor.RULERESULTS, SchemaExtractor.YAGOSCHEMA);
   }
   
   public static final Theme SPOTLXFACTS = new Theme("spotlxFacts", "SPOTLX deduced facts");

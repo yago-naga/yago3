@@ -56,7 +56,7 @@ public class SchemaExtractor extends SimpleDeduplicator {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		new SchemaExtractor().extract(new File("/home/jbiega/data/yago2s"),
+		new SchemaExtractor().extract(new File("c:/fabian/data/yago3"),
 				"test");
 	}
 
