@@ -263,6 +263,13 @@ public class ParallelCaller {
 				: Parameters.getFile("yagoFolder");
 		extractorsToDo = extractors(Parameters.getList("extractors"));
 		addFollowUps(extractorsToDo);
+		// Make sure all themes are generated.
+		// This is to make sure that Theme.all() works,
+		// which is important for the 'reuse'-flag further down to work.
+		for (Extractor e : extractorsToDo) {
+			e.input();
+			e.output();
+		}
 
 		extractorsRunning.clear();
 		extractorsFailed.clear();
@@ -271,9 +278,12 @@ public class ParallelCaller {
 			D.p("Reusing existing themes");
 			for (Theme t : Theme.all()) {
 				File f = t.findFileInFolder(outputFolder);
-				if (f == null || f.length() < 200)
+				if (f == null || f.length() < 200) {
+					D.p(" Not found:", t);
 					continue;
+				}
 				t.assignToFolder(outputFolder);
+				D.p(" Reusing:", t);
 				themesWeHave.add(t);
 			}
 		}
