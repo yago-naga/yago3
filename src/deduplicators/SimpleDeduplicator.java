@@ -10,11 +10,11 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.IntHashMap;
 import javatools.util.FileUtils;
+import utils.FactCollection;
+import utils.FactCollection.Add;
+import utils.Theme;
 import basics.Fact;
-import basics.FactCollection;
-import basics.FactCollection.Add;
 import basics.RDFS;
-import basics.Theme;
 import basics.YAGO;
 import extractors.Extractor;
 
@@ -31,9 +31,17 @@ public abstract class SimpleDeduplicator extends Extractor {
 	/** Theme that I want to output */
 	public abstract Theme myOutput();
 
+	/** Theme where I store conflicts (or NULL) */
+	public Theme conflicts() {
+		return (null);
+	}
+
 	@Override
 	public final Set<Theme> output() {
-		return new FinalSet<>(myOutput());
+		if (conflicts() == null)
+			return new FinalSet<>(myOutput());
+		else
+			return (new FinalSet<>(myOutput(), conflicts()));
 	}
 
 	@Override
@@ -74,8 +82,17 @@ public abstract class SimpleDeduplicator extends Extractor {
 			Announce.doing("Loading from", theme);
 			IntHashMap<FactCollection.Add> added = new IntHashMap<>();
 			for (Fact fact : theme) {
-				if (isMyRelation(fact))
-					added.increase(batch.add(fact, functions));
+				if (isMyRelation(fact)) {
+					Add whatHappened = batch.add(fact, functions);
+					added.increase(whatHappened);
+					if (whatHappened == Add.FUNCLASH && conflicts() != null) {
+						fact.makeId();
+						conflicts().write(fact);
+						conflicts().write(
+								new Fact(fact.getId(), YAGO.extractionSource,
+										theme.asYagoEntity()));
+					}
+				}
 			}
 			Announce.message(added);
 			tsv.write(theme.toString());

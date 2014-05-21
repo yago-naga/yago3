@@ -3,10 +3,11 @@ package fromThemes;
 import java.io.File;
 import java.util.Set;
 
+import utils.FactCollection;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import basics.FactCollection;
-import basics.Theme;
+import deduplicators.DateExtractor;
 import deduplicators.FactExtractor;
 import deduplicators.LiteralFactExtractor;
 import fromOtherSources.HardExtractor;
@@ -36,7 +37,7 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
 	public Set<Theme> input() {
 		return new FinalSet<>(PatternHardExtractor.SPOTLX_ENTITY_RULES,
 				PatternHardExtractor.HARDWIREDFACTS,
-				TransitiveTypeExtractor.TRANSITIVETYPE,
+				TransitiveTypeExtractor.TRANSITIVETYPE,DateExtractor.YAGODATEFACTS,
 				FactExtractor.YAGOFACTS, LiteralFactExtractor.YAGOLITERALFACTS);
 	}
 

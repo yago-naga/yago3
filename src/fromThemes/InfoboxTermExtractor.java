@@ -9,12 +9,12 @@ import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
+import utils.MultilingualTheme;
 import utils.PatternList;
 import utils.TermParser;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
-import basics.MultilingualTheme;
-import basics.Theme;
 import extractors.MultilingualExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;

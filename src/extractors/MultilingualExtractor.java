@@ -3,7 +3,7 @@ package extractors;
 import java.util.Arrays;
 import java.util.List;
 
-import basics.MultilingualTheme;
+import basics.FactComponent;
 import javatools.administrative.Announce;
 
 /**
@@ -35,7 +35,7 @@ public abstract class MultilingualExtractor extends Extractor {
 
 	/** TRUE if the language is english*/
 	public boolean isEnglish() {
-		return(MultilingualTheme.isEnglish(language));
+		return(FactComponent.isEnglish(language));
 	}
 
 	@Override

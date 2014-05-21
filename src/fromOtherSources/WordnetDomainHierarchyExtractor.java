@@ -3,12 +3,12 @@ package fromOtherSources;
 import java.io.File;
 import java.util.Set;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 
 /**
  * WordnetDomainHierarchyExtractor - YAGO2s

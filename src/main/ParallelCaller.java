@@ -11,11 +11,11 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
-import basics.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;

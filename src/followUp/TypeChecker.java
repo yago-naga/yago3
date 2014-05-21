@@ -3,13 +3,13 @@ package followUp;
 import java.util.HashSet;
 import java.util.Set;
 
+import utils.FactCollection;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
 import basics.YAGO;
 import extractors.Extractor;
 import fromOtherSources.HardExtractor;

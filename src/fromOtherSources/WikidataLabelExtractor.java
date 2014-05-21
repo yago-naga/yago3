@@ -6,15 +6,15 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import utils.FactCollection;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
 import basics.N4Reader;
 import basics.RDFS;
-import basics.Theme;
 import basics.YAGO;
 import extractors.DataExtractor;
 import fromThemes.TransitiveTypeExtractor;

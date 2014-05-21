@@ -5,11 +5,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import utils.FactCollection;
+import utils.Theme;
 import deduplicators.ClassExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import basics.FactCollection;
-import basics.Theme;
 import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;

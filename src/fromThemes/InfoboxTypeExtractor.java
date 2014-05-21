@@ -4,6 +4,8 @@ import java.io.File;
 import java.util.Map;
 import java.util.Set;
 
+import utils.MultilingualTheme;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Name;
@@ -12,9 +14,7 @@ import javatools.parsers.PlingStemmer;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
-import basics.MultilingualTheme;
 import basics.RDFS;
-import basics.Theme;
 import extractors.MultilingualExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;

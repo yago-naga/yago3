@@ -7,11 +7,11 @@ import java.util.Set;
 
 import javatools.datatypes.FinalSet;
 import utils.FactTemplateExtractor;
+import utils.MultilingualTheme;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
-import basics.MultilingualTheme;
-import basics.Theme;
 import extractors.MultilingualExtractor;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;

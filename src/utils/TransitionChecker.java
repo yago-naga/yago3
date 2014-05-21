@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 
 import javatools.administrative.Announce;
-import basics.FactCollection;
 
 public class TransitionChecker {
 

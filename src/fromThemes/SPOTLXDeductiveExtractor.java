@@ -3,10 +3,11 @@ package fromThemes;
 import java.io.File;
 import java.util.Set;
 
+import utils.FactCollection;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import basics.FactCollection;
-import basics.Theme;
+import deduplicators.DateExtractor;
 import deduplicators.FactExtractor;
 import deduplicators.LabelExtractor;
 import deduplicators.LiteralFactExtractor;
@@ -54,7 +55,7 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
 				PatternHardExtractor.SPOTLX_ENTITY_RULES,
 				PatternHardExtractor.SPOTLX_FACT_RULES,
 				TransitiveTypeExtractor.TRANSITIVETYPE,
-				LabelExtractor.YAGOLABELS, SPOTLXRuleExtractor.RULERESULTS,
+				LabelExtractor.YAGOLABELS, SPOTLXRuleExtractor.RULERESULTS, DateExtractor.YAGODATEFACTS,
 				FactExtractor.YAGOFACTS, LiteralFactExtractor.YAGOLITERALFACTS);
 	}
 

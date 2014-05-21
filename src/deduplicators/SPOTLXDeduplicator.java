@@ -6,11 +6,11 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 
+import utils.Theme;
 import fromThemes.SPOTLXDeductiveExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.Theme;
 
 /**
  * YAGO2s - SPOTLXDeduplicator

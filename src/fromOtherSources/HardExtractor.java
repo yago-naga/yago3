@@ -4,11 +4,11 @@ import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
 
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;
-import basics.Theme;
 import extractors.DataExtractor;
 
 /**

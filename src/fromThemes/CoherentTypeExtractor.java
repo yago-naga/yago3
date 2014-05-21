@@ -8,14 +8,14 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+import utils.FactCollection;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.IntHashMap;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;

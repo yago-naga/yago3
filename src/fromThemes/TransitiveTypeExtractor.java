@@ -7,14 +7,14 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 
+import utils.FactCollection;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.FactCollection;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import deduplicators.ClassExtractor;
 import extractors.Extractor;
 

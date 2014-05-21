@@ -4,12 +4,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import utils.FactCollection;
+import utils.Theme;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
-import basics.MultilingualTheme;
-import basics.Theme;
 import extractors.Extractor;
 import fromOtherSources.DictionaryExtractor;
 
@@ -98,7 +97,7 @@ public class EntityTranslator extends FollowUpExtractor {
 	public EntityTranslator(Theme in, Theme out, Extractor parent) {
 		super(in, out, parent);
 		this.language = in.language();
-		if (language == null || MultilingualTheme.isEnglish(language))
+		if (language == null || FactComponent.isEnglish(language))
 			throw new RuntimeException(
 					"Don't translate English. This is useless and very costly.");
 		// By default, we translate entities.

@@ -4,14 +4,14 @@ import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import deduplicators.ClassExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import extractors.Extractor;
 
 /**

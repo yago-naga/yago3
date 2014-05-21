@@ -5,12 +5,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import basics.Fact;
 import basics.FactComponent;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import extractors.DataExtractor;
 import followUp.FollowUpExtractor;
 import followUp.TypeChecker;

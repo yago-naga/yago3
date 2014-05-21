@@ -10,14 +10,14 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import utils.MultilingualTheme;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactComponent;
-import basics.MultilingualTheme;
-import basics.Theme;
 import extractors.MultilingualWikipediaExtractor;
 
 /**

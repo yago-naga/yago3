@@ -5,10 +5,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromThemes.CategoryClassExtractor;

@@ -10,6 +10,8 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -18,8 +20,6 @@ import main.ParallelCaller;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import basics.YAGO;
 import extractors.DataExtractor;
 

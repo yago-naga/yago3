@@ -5,10 +5,10 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 
+import utils.Theme;
 import javatools.administrative.Announce;
 import basics.Fact;
 import basics.FactComponent;
-import basics.Theme;
 import basics.YAGO;
 import followUp.FollowUpExtractor;
 

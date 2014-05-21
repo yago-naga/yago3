@@ -3,6 +3,8 @@ package deduplicators;
 import java.io.File;
 import java.util.Set;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import fromOtherSources.HardExtractor;
 import fromThemes.RuleExtractor;
 import fromWikipedia.FlightExtractor;
@@ -15,9 +17,7 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
-import basics.Theme;
 import basics.YAGO;
-import basics.Theme.ThemeGroup;
 
 /**
  * YAGO2s - FactExtractor

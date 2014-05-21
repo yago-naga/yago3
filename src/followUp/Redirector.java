@@ -4,11 +4,11 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
-import basics.Theme;
 import extractors.Extractor;
 import fromWikipedia.RedirectExtractor;
 

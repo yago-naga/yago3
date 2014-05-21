@@ -8,7 +8,6 @@ import java.util.regex.Pattern;
 import javatools.administrative.Announce;
 import javatools.datatypes.Pair;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactSource;
 
 /**

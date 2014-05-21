@@ -5,13 +5,13 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import extractors.MultilingualExtractor;
 import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
@@ -53,6 +53,10 @@ public class FactExtractor extends SimpleDeduplicator {
 	public static final Theme YAGOFACTS = new Theme("yagoFacts",
 			"All facts of YAGO that hold between instances", ThemeGroup.CORE);
 
+	/** All facts of YAGO */
+	public static final Theme FACTCONFLICTS = new Theme("_factConflicts",
+			"Facts that were not added because they conflicted with an existing fact");
+
 	/** relations that we exclude, because they are treated elsewhere */
 	public static final Set<String> relationsExcluded = new FinalSet<>(
 			RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range,
@@ -65,6 +69,11 @@ public class FactExtractor extends SimpleDeduplicator {
 		return YAGOFACTS;
 	}
 
+	@Override
+	public Theme conflicts() {
+		return FACTCONFLICTS;
+	}
+	
 	@Override
 	public boolean isMyRelation(Fact fact) {
 		if (fact.getRelation().startsWith("<_"))

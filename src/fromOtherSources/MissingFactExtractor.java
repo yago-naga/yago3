@@ -5,11 +5,11 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import utils.FactCollection;
+import utils.Theme;
 import basics.Fact;
-import basics.FactCollection;
-import basics.FactComponent;
 import basics.FactSource;
-import basics.Theme;
+import deduplicators.DateExtractor;
 import deduplicators.FactExtractor;
 import deduplicators.LabelExtractor;
 import deduplicators.LiteralFactExtractor;
@@ -29,7 +29,7 @@ public class MissingFactExtractor extends DataExtractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<>(FactExtractor.YAGOFACTS,
-				LiteralFactExtractor.YAGOLITERALFACTS,
+				LiteralFactExtractor.YAGOLITERALFACTS,DateExtractor.YAGODATEFACTS,
 				LabelExtractor.YAGOLABELS, MetaFactExtractor.YAGOMETAFACTS);
 	}
 
@@ -69,8 +69,8 @@ public class MissingFactExtractor extends DataExtractor {
 				old.remove(f);
 			}
 			Announce.done(old.size() + " facts missing");
-			MISSING_FACTS.write(new Fact(FactComponent.forTheme(checkMe),
-					"rdf:type", "<follows>"));
+			MISSING_FACTS.write(new Fact(checkMe.asYagoEntity(), "rdf:type",
+					"<follows>"));
 			for (Fact f : old) {
 				MISSING_FACTS.write(f);
 			}

@@ -7,13 +7,14 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.IntHashMap;
 import javatools.parsers.NumberFormatter;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import basics.YAGO;
 import deduplicators.ClassExtractor;
+import deduplicators.DateExtractor;
 import deduplicators.FactExtractor;
 import deduplicators.LabelExtractor;
 import deduplicators.LiteralFactExtractor;
@@ -36,7 +37,7 @@ public class StatisticsExtractor extends Extractor {
 		return new FinalSet<>(ClassExtractor.YAGOTAXONOMY,
 				CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
 				LabelExtractor.YAGOLABELS, MetaFactExtractor.YAGOMETAFACTS,
-				SchemaExtractor.YAGOSCHEMA,
+				SchemaExtractor.YAGOSCHEMA, DateExtractor.YAGODATEFACTS,
 				LiteralFactExtractor.YAGOLITERALFACTS);
 	}
 
@@ -71,8 +72,8 @@ public class StatisticsExtractor extends Extractor {
 					instances.add(f.getSubject());
 				}
 			}
-			STATISTICS.write(new Fact(FactComponent.forTheme(t),
-					YAGO.hasNumber, FactComponent.forNumber(counter)));
+			STATISTICS.write(new Fact(t.asYagoEntity(), YAGO.hasNumber,
+					FactComponent.forNumber(counter)));
 			Announce.done();
 		}
 		for (String rel : relations.keys()) {

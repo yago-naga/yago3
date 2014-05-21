@@ -2,9 +2,9 @@ package followUp;
 
 import java.util.Set;
 
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import basics.Theme;
 import extractors.Extractor;
 
 /** A Dummy class to indicate extractors that are called en suite */

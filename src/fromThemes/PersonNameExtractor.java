@@ -4,13 +4,13 @@ import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
 
+import utils.Theme;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
 import javatools.parsers.Name.PersonName;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
 import basics.YAGO;
 import extractors.Extractor;
 
@@ -45,8 +45,7 @@ public class PersonNameExtractor extends Extractor {
 	@Override
 	public void extract() throws Exception {
 		Set<String> people = new TreeSet<>();
-		String source = FactComponent
-				.forTheme(TransitiveTypeExtractor.TRANSITIVETYPE);
+		String source = TransitiveTypeExtractor.TRANSITIVETYPE.asYagoEntity();
 		for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
 			if (!f.getRelation().equals(RDFS.type)
 					|| !f.getArg(2).equals(YAGO.person))

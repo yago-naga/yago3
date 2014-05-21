@@ -5,13 +5,13 @@ import java.util.Arrays;
 import java.util.Set;
 import java.util.TreeSet;
 
+import utils.MultilingualTheme;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
-import basics.MultilingualTheme;
-import basics.Theme;
 import extractors.MultilingualExtractor;
 import fromWikipedia.CategoryExtractor;
 

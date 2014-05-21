@@ -7,13 +7,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import utils.FactCollection;
+import utils.MultilingualTheme;
+import utils.Theme;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.util.FileUtils;
 import basics.Fact;
-import basics.FactCollection;
-import basics.MultilingualTheme;
-import basics.Theme;
 import extractors.MultilingualExtractor;
 
 /**

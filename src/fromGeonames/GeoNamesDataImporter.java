@@ -10,16 +10,16 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import utils.FactCollection;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import extractors.DataExtractor;
 import fromThemes.InfoboxMapper;
 

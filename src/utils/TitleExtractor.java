@@ -7,7 +7,6 @@ import java.util.Set;
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char;
-import basics.FactCollection;
 import basics.FactComponent;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;

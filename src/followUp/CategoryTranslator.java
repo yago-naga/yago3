@@ -2,7 +2,7 @@ package followUp;
 
 import java.io.File;
 
-import basics.Theme;
+import utils.Theme;
 import extractors.Extractor;
 import fromOtherSources.DictionaryExtractor;
 import fromWikipedia.CategoryExtractor;

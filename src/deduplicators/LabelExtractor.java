@@ -4,11 +4,11 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import extractors.MultilingualExtractor;
 import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;

@@ -3,11 +3,11 @@ package fromOtherSources;
 import java.io.File;
 import java.util.Set;
 
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.FactSource;
-import basics.Theme;
 
 /**
  * PatternHardExtractor - YAGO2s

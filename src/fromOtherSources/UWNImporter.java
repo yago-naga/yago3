@@ -6,14 +6,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import extractors.DataExtractor;
 
 /**

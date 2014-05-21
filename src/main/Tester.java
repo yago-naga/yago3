@@ -9,11 +9,11 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import utils.FactCollection;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
 import javatools.filehandlers.FileSet;
-import basics.FactCollection;
-import basics.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;

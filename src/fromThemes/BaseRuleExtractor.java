@@ -12,12 +12,12 @@ import java.util.TreeMap;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.parsers.NumberFormatter;
+import utils.FactCollection;
 import utils.FactTemplate;
+import utils.Theme;
 import basics.Fact;
-import basics.FactCollection;
 import basics.FactSource;
 import basics.FactWriter;
-import basics.Theme;
 import extractors.Extractor;
 
 /**

@@ -7,11 +7,11 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
-import basics.Theme;
-import basics.Theme.ThemeGroup;
 import extractors.MultilingualExtractor;
 import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
@@ -41,8 +41,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
 				SchemaExtractor.YAGOSCHEMA,
 				FlightIATAcodeExtractor.AIRPORT_CODE,
-				SchemaExtractor.YAGOSCHEMA,
-				CoordinateExtractor.COORDINATES,
+				SchemaExtractor.YAGOSCHEMA, CoordinateExtractor.COORDINATES,
 				FlightIATAcodeExtractor.AIRPORT_CODE,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 
@@ -59,12 +58,22 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 			"All facts of YAGO that contain literals (except labels)",
 			ThemeGroup.CORE);
 
+	/** All facts of YAGO */
+	public static final Theme LITERALFACTCONFLICTS = new Theme(
+			"_literalFactConflicts",
+			"Literal facts that were not added because they conflicted with an existing fact");
+
+	@Override
+	public Theme conflicts() {
+		return LITERALFACTCONFLICTS;
+	}
+
 	/** relations that we exclude, because they are treated elsewhere */
 	public static final Set<String> relationsExcluded = new FinalSet<>(
 			RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range,
 			RDFS.subpropertyOf, RDFS.label, "skos:prefLabel",
 			"<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>",
-			"<hasGloss>", "<hasConfidence>", "<redirectedFrom>");
+			"<hasGloss>", "<hasConfidence>", "<redirectedFrom>", "<wasBornOnDate>", "<diedOnDate>", "<wasCreatedOnDate>", "<wasDestroyedOnDate>", "<happenedOnDate>", "<startedOnDate>","<endedOnDate>");
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);

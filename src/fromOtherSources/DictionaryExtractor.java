@@ -8,13 +8,13 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
+import utils.MultilingualTheme;
+import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.parsers.Char;
 import basics.Fact;
 import basics.FactComponent;
-import basics.MultilingualTheme;
 import basics.N4Reader;
-import basics.Theme;
 import extractors.DataExtractor;
 import extractors.MultilingualExtractor;
 
@@ -115,7 +115,7 @@ public class DictionaryExtractor extends DataExtractor {
 						.keySet());
 				if (mostEnglishLan != null) {
 					String mostEnglishName = language2name.get(mostEnglishLan);
-					if (MultilingualTheme.isEnglish(mostEnglishLan)
+					if (FactComponent.isEnglish(mostEnglishLan)
 							&& mostEnglishName.startsWith("Category:")) {
 						for (String lan : language2name.keySet()) {
 							String catword = language2name.get(lan);
@@ -130,7 +130,7 @@ public class DictionaryExtractor extends DataExtractor {
 										FactComponent.forString(catword)));
 								categoryWordLanguages.add(lan);
 							}
-							if (!MultilingualTheme.isEnglish(lan))
+							if (!FactComponent.isEnglish(lan))
 								CATEGORY_DICTIONARY
 										.inLanguage(lan)
 										.write(new Fact(
@@ -142,10 +142,10 @@ public class DictionaryExtractor extends DataExtractor {
 														.forWikiCategory(mostEnglishName
 																.substring(9))));
 						}
-					} else if (MultilingualTheme.isEnglish(mostEnglishLan)
+					} else if (FactComponent.isEnglish(mostEnglishLan)
 							&& mostEnglishName.startsWith("Template:Infobox_")) {
 						for (String lan : language2name.keySet()) {
-							if (MultilingualTheme.isEnglish(lan))
+							if (FactComponent.isEnglish(lan))
 								continue;
 							String name = language2name.get(lan);
 							int cutpos = name.indexOf('_');
@@ -162,7 +162,7 @@ public class DictionaryExtractor extends DataExtractor {
 						}
 					} else {
 						for (String lan : language2name.keySet()) {
-							if (MultilingualTheme.isEnglish(lan))
+							if (FactComponent.isEnglish(lan))
 								continue;
 							ENTITY_DICTIONARY
 									.inLanguage(lan)
