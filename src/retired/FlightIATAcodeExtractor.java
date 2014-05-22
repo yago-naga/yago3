@@ -1,4 +1,4 @@
-package fromWikipedia;
+package retired;
 
 import java.io.File;
 import java.io.Reader;
@@ -20,6 +20,10 @@ import followUp.TypeChecker;
 
 /**
  * YAGO2s - FlightIATAcodeExtractor
+ * 
+ * 
+ * @deprecated
+ * Now done simply in the infobox extractor. the code below produces numerous duplicates.
  * 
  * Extracts all the IATA airport codes from "List of airports by IATA code"
  * wikipedia pages.

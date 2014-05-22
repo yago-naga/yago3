@@ -1,14 +1,15 @@
 package deduplicators;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
-import utils.Theme;
-import utils.Theme.ThemeGroup;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -34,18 +35,21 @@ import fromWikipedia.TemporalInfoboxExtractor;
 public class FactExtractor extends SimpleDeduplicator {
 
 	@Override
-	public Set<Theme> input() {
-		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
-				GenderExtractor.PERSONS_GENDER, HardExtractor.HARDWIREDFACTS,
-				RuleExtractor.RULERESULTS, FlightExtractor.FLIGHTS,
+	@ImplementationNote("Hardwired facts go first. Infoboxes should go before categories")
+	public List<Theme> inputOrdered() {
+		List<Theme> input = new ArrayList<Theme>();
+		input.add(SchemaExtractor.YAGOSCHEMA);
+		input.add(HardExtractor.HARDWIREDFACTS);
+		input.addAll(InfoboxMapper.INFOBOXFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(CategoryMapper.CATEGORYFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(Arrays.asList(RuleExtractor.RULERESULTS,
+				FlightExtractor.FLIGHTS,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA,
 				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
-				SchemaExtractor.YAGOSCHEMA, GenderExtractor.PERSONS_GENDER));
-		input.addAll(CategoryMapper.CATEGORYFACTS
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
-		input.addAll(InfoboxMapper.INFOBOXFACTS
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+				GenderExtractor.PERSONS_GENDER));
 		return input;
 	}
 
@@ -73,7 +77,7 @@ public class FactExtractor extends SimpleDeduplicator {
 	public Theme conflicts() {
 		return FACTCONFLICTS;
 	}
-	
+
 	@Override
 	public boolean isMyRelation(Fact fact) {
 		if (fact.getRelation().startsWith("<_"))

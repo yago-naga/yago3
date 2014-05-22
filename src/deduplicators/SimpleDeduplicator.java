@@ -2,7 +2,7 @@ package deduplicators;
 
 import java.io.File;
 import java.io.Writer;
-import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -44,6 +44,19 @@ public abstract class SimpleDeduplicator extends Extractor {
 			return (new FinalSet<>(myOutput(), conflicts()));
 	}
 
+	/** The list of input themes, ordered by authority. */
+	@ImplementationNote("If two facts contradict, the *earlier* one will prevail")
+	public abstract List<Theme> inputOrdered();
+
+	/**
+	 * Returns just the inputOrdered() to satisfy Extractor.input(). Do not
+	 * implement this, implement rather inputOrdered.
+	 */
+	@Override
+	public final Set<Theme> input() {
+		return (new HashSet<Theme>(inputOrdered()));
+	};
+
 	@Override
 	public Set<Theme> inputCached() {
 		return new FinalSet<>(SchemaExtractor.YAGOSCHEMA);
@@ -68,15 +81,7 @@ public abstract class SimpleDeduplicator extends Extractor {
 				"_factStatistics_" + this.getClass().getSimpleName() + ".tsv"));
 		Announce.doing("Loading");
 		FactCollection batch = new FactCollection();
-		List<Theme> inputs = new ArrayList<>();
-		// Make sure that the English languages go first
-		for (Theme t : input()) {
-			if (t.isEnglishOrDefault())
-				inputs.add(0, t);
-			else
-				inputs.add(t);
-		}
-		for (Theme theme : inputs) {
+		for (Theme theme : inputOrdered()) {
 			if (!theme.isAvailableForReading())
 				continue;
 			Announce.doing("Loading from", theme);

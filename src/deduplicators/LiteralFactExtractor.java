@@ -1,8 +1,9 @@
 package deduplicators;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javatools.administrative.Announce;
@@ -19,7 +20,6 @@ import fromThemes.CategoryMapper;
 import fromThemes.InfoboxMapper;
 import fromThemes.RuleExtractor;
 import fromWikipedia.CoordinateExtractor;
-import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
@@ -34,22 +34,20 @@ import fromWikipedia.TemporalInfoboxExtractor;
 public class LiteralFactExtractor extends SimpleDeduplicator {
 
 	@Override
-	public Set<Theme> input() {
-		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
-				HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS,
-				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
-				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
-				SchemaExtractor.YAGOSCHEMA,
-				FlightIATAcodeExtractor.AIRPORT_CODE,
-				SchemaExtractor.YAGOSCHEMA, CoordinateExtractor.COORDINATES,
-				FlightIATAcodeExtractor.AIRPORT_CODE,
-				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
-
+	@ImplementationNote("Hardwired facts go first. Infoboxes should go before categories")
+	public List<Theme> inputOrdered() {
+		List<Theme> input = new ArrayList<>();
+		input.add(SchemaExtractor.YAGOSCHEMA);
+		input.add(HardExtractor.HARDWIREDFACTS);
 		input.add(CoordinateExtractor.COORDINATES);
-		input.addAll(CategoryMapper.CATEGORYFACTS
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(InfoboxMapper.INFOBOXFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(CategoryMapper.CATEGORYFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(Arrays.asList(RuleExtractor.RULERESULTS,
+				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
+				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 		return input;
 	}
 
@@ -73,7 +71,10 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 			RDFS.type, RDFS.subclassOf, RDFS.domain, RDFS.range,
 			RDFS.subpropertyOf, RDFS.label, "skos:prefLabel",
 			"<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>",
-			"<hasGloss>", "<hasConfidence>", "<redirectedFrom>", "<wasBornOnDate>", "<diedOnDate>", "<wasCreatedOnDate>", "<wasDestroyedOnDate>", "<happenedOnDate>", "<startedOnDate>","<endedOnDate>");
+			"<hasGloss>", "<hasConfidence>", "<redirectedFrom>",
+			"<wasBornOnDate>", "<diedOnDate>", "<wasCreatedOnDate>",
+			"<wasDestroyedOnDate>", "<happenedOnDate>", "<startedOnDate>",
+			"<endedOnDate>");
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);

@@ -5,8 +5,8 @@ import java.io.IOException;
 import java.util.Collections;
 import java.util.Set;
 
-import utils.Theme;
 import javatools.administrative.Announce;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.YAGO;
@@ -22,6 +22,11 @@ import followUp.FollowUpExtractor;
  * 
  */
 public abstract class Extractor implements Comparable<Extractor> {
+
+	/** Use this to annotate hacks that are needed to make YAGO work*/
+	public @interface ImplementationNote {
+		String value();
+	}
 
 	/** The themes required */
 	public abstract Set<Theme> input();
@@ -64,8 +69,9 @@ public abstract class Extractor implements Comparable<Extractor> {
 		Announce.doing("Loading input");
 		for (Theme theme : input()) {
 			if (!theme.isAvailableForReading()) {
-				// If you want to run extractors even if the input is absent, use this
-				//if(theme.findFileInFolder(inputFolder)!=null)  
+				// If you want to run extractors even if the input is absent,
+				// use this
+				// if(theme.findFileInFolder(inputFolder)!=null)
 				theme.assignToFolder(inputFolder);
 			}
 		}

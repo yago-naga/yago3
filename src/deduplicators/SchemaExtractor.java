@@ -1,16 +1,18 @@
 package deduplicators;
 
 import java.io.File;
+import java.util.Arrays;
+import java.util.List;
 import java.util.Set;
 
-import utils.Theme;
-import utils.Theme.ThemeGroup;
-import fromOtherSources.HardExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.RDFS;
 import basics.YAGO;
+import fromOtherSources.HardExtractor;
 
 /**
  * YAGO2s - SchemaExtractor
@@ -25,8 +27,8 @@ import basics.YAGO;
 public class SchemaExtractor extends SimpleDeduplicator {
 
 	@Override
-	public Set<Theme> input() {
-		return new FinalSet<>(HardExtractor.HARDWIREDFACTS);
+	public List<Theme> inputOrdered() {
+		return Arrays.asList(HardExtractor.HARDWIREDFACTS);
 	}
 
 	/** All facts of YAGO */
@@ -56,8 +58,7 @@ public class SchemaExtractor extends SimpleDeduplicator {
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		new SchemaExtractor().extract(new File("c:/fabian/data/yago3"),
-				"test");
+		new SchemaExtractor().extract(new File("c:/fabian/data/yago3"), "test");
 	}
 
 }

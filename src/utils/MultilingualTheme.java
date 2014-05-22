@@ -1,12 +1,12 @@
 package utils;
 
-import java.util.Collection;
+import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import utils.Theme.ThemeGroup;
+import extractors.Extractor.ImplementationNote;
 
 /**
  * Class MultilingualTheme
@@ -47,9 +47,10 @@ public class MultilingualTheme {
 	/** Maps languages to themes */
 	protected Map<String, Theme> language2theme = new HashMap<String, Theme>();
 
-	/** Returns the theme in the given languages */
-	public Collection<Theme> inLanguages(Collection<String> languages) {
-		Set<Theme> result = new HashSet<>();
+	/** Returns the theme in the given languages, in that order */
+	@ImplementationNote("The order is important, because in case of fact conflict, the first language prevails")
+	public List<Theme> inLanguages(List<String> languages) {
+		List<Theme> result = new ArrayList<>();
 		for (String language : languages)
 			result.add(inLanguage(language));
 		return (result);

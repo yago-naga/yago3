@@ -4,10 +4,10 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-import utils.Theme;
-import utils.Theme.ThemeGroup;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.YAGO;
 import extractors.Extractor;
@@ -22,7 +22,6 @@ import fromThemes.PersonNameExtractor;
 import fromThemes.RuleExtractor;
 import fromWikipedia.CoordinateExtractor;
 import fromWikipedia.FlightExtractor;
-import fromWikipedia.FlightIATAcodeExtractor;
 import fromWikipedia.GenderExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
@@ -48,8 +47,7 @@ public class SourceExtractor extends Extractor {
 				FlightExtractor.FLIGHTSOURCE,
 				GenderExtractor.PERSONS_GENDER_SOURCES,
 				WordnetDomainExtractor.WORDNETDOMAINSOURCES,
-				TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES,
-				FlightIATAcodeExtractor.AIRPORT_CODE_SOURCE));
+				TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES));
 		input.add(CoordinateExtractor.COORDINATE_SOURCES);
 		input.addAll(InfoboxMapper.INFOBOXSOURCES
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));

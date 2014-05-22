@@ -1,12 +1,13 @@
 package deduplicators;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
+import javatools.datatypes.FinalSet;
 import utils.Theme;
 import utils.Theme.ThemeGroup;
-import javatools.datatypes.FinalSet;
 import basics.Fact;
 import basics.RDFS;
 import extractors.MultilingualExtractor;
@@ -18,7 +19,6 @@ import fromThemes.CategoryMapper;
 import fromThemes.InfoboxMapper;
 import fromThemes.PersonNameExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
-import fromWikipedia.FlightIATAcodeExtractor;
 
 /**
  * YAGO2s - LabelExtractor
@@ -32,14 +32,15 @@ import fromWikipedia.FlightIATAcodeExtractor;
 public class LabelExtractor extends SimpleDeduplicator {
 
 	@Override
-	public Set<Theme> input() {
-		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
+	@ImplementationNote("We don't have conflicts here, so let's just take any order")
+	public List<Theme> inputOrdered() {
+		List<Theme> input = new ArrayList<>(Arrays.asList(
+				SchemaExtractor.YAGOSCHEMA,
 				DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,
 				HardExtractor.HARDWIREDFACTS,
 				WikidataLabelExtractor.WIKIPEDIALABELS,
 				PersonNameExtractor.PERSONNAMES, WordnetExtractor.WORDNETWORDS,
 				SchemaExtractor.YAGOSCHEMA, WordnetExtractor.WORDNETGLOSSES,
-				FlightIATAcodeExtractor.AIRPORT_CODE,
 				WikidataLabelExtractor.WIKIDATAMULTILABELS,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 		input.addAll(CategoryMapper.CATEGORYFACTS

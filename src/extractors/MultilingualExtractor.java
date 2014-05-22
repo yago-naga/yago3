@@ -3,8 +3,8 @@ package extractors;
 import java.util.Arrays;
 import java.util.List;
 
-import basics.FactComponent;
 import javatools.administrative.Announce;
+import basics.FactComponent;
 
 /**
  * MultilingualExtractor - Yago2s
@@ -22,20 +22,24 @@ import javatools.administrative.Announce;
 public abstract class MultilingualExtractor extends Extractor {
 
 	/** List of language suffixes from most English to least English. */
+	@ImplementationNote("The order is important, because "
+			+ "(1) the name for an entity that exists in several languages "
+			+ "will be the most-English name "
+			+ "(2) if two facts contradict, the one in the first language will prevail.")
 	public static List<String> wikipediaLanguages = Arrays.asList("en", "de",
 			"fr");
 
 	/** List of all languages except English */
 	public static List<String> allLanguagesExceptEnglish() {
-		return(wikipediaLanguages.subList(1, wikipediaLanguages.size()));
+		return (wikipediaLanguages.subList(1, wikipediaLanguages.size()));
 	}
-	
+
 	/** The language of this extractor */
 	public final String language;
 
-	/** TRUE if the language is english*/
+	/** TRUE if the language is english */
 	public boolean isEnglish() {
-		return(FactComponent.isEnglish(language));
+		return (FactComponent.isEnglish(language));
 	}
 
 	@Override

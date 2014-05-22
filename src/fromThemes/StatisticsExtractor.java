@@ -87,7 +87,7 @@ public class StatisticsExtractor extends Extractor {
 				Announce.warning("Unused relation:", rel);
 		}
 		for (String entity : instances) {
-			String lan = FactComponent.getLanguage(entity);
+			String lan = FactComponent.getLanguageOfEntity(entity);
 			if (lan != null)
 				entityLanguages.increase(lan);
 		}

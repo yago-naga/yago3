@@ -17,8 +17,8 @@ import javatools.util.FileUtils;
 import utils.MultilingualTheme;
 import utils.PatternList;
 import utils.Theme;
-import utils.TitleExtractor;
 import utils.Theme.ThemeGroup;
+import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
@@ -94,14 +94,15 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	/** normalizes an attribute name */
+	@ImplementationNote("Be aggressive here: numbers have to go away, so that city1=city2."
+			+ "Bad characters such as TABs are poisonous and have to leave. "
+			+ "Spaces and underbars have to go."
+			+ "Still accept non-latin characters."
+			+ "Lowercase because manual infobox patterns might be in uppercase."
+			+ "Vertical bars have to stay, "
+			+ "because they indicate several collated attributes that we will split later.")
 	public static String normalizeAttribute(String a) {
-		// Be aggressive here: numbers have to go away, so that city1=city2.
-		// Bad characters such as TABs are poisonous and have to leave.
-		// Spaces and underbars have to go.
-		// Still accept non-latin characters.
-		// Vertical bars have to stay, because they indicate several
-		// collated attributes that we will split later.
-		return (a.trim().toLowerCase().replaceAll("[^\\p{L}|]",""));
+		return (a.trim().toLowerCase().replaceAll("[^\\p{L}|]", ""));
 	}
 
 	/** For cleaning up values */

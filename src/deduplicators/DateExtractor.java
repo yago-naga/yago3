@@ -1,8 +1,8 @@
 package deduplicators;
 
 import java.io.File;
-import java.util.Arrays;
-import java.util.HashSet;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Set;
 
 import javatools.administrative.Announce;
@@ -29,16 +29,18 @@ import fromWikipedia.TemporalInfoboxExtractor;
 public class DateExtractor extends SimpleDeduplicator {
 
 	@Override
-	public Set<Theme> input() {
-		Set<Theme> input = new HashSet<Theme>(Arrays.asList(
-				HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS,
-				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
-				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
-				SchemaExtractor.YAGOSCHEMA));
-		input.addAll(CategoryMapper.CATEGORYFACTS
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+	@ImplementationNote("Hardwired facts go first. Infoboxes should go before categories")
+	public List<Theme> inputOrdered() {
+		List<Theme> input = new ArrayList<Theme>();
+		input.add(SchemaExtractor.YAGOSCHEMA);
+		input.add(HardExtractor.HARDWIREDFACTS);
 		input.addAll(InfoboxMapper.INFOBOXFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(CategoryMapper.CATEGORYFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.add(RuleExtractor.RULERESULTS);
+		input.add(TemporalCategoryExtractor.TEMPORALCATEGORYFACTS);
+		input.add(TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
 		return input;
 	}
 

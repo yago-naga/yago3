@@ -263,6 +263,7 @@
 <infobox/en/place>  <_infoboxPattern> <happenedIn> .
 <infobox/en/dat>    <_infoboxPattern> <happenedOnDate> .
 <infobox/en/year> <_infoboxPattern> <happenedOnDate> .
+<infobox/en/IATA>	<_infoboxPattern> <hasAirportCode> .
 
 # ------------ Replacements ----------
 "<br ?/>"	<_infoboxReplace>	"\n" .

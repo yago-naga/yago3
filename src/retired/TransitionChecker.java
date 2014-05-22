@@ -1,8 +1,9 @@
-package utils;
+package retired;
 
 import java.io.File;
 import java.io.IOException;
 
+import utils.FactCollection;
 import javatools.administrative.Announce;
 
 public class TransitionChecker {

@@ -2,8 +2,7 @@ package deduplicators;
 
 import java.io.File;
 import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 import utils.Theme;
 import utils.Theme.ThemeGroup;
@@ -27,13 +26,12 @@ import fromThemes.CategoryClassExtractor;
 public class ClassExtractor extends SimpleDeduplicator {
 
 	@Override
-	public Set<Theme> input() {
-		HashSet<Theme> input = new HashSet<Theme>(Arrays.asList(
+	public List<Theme> inputOrdered() {
+		return (Arrays.asList(SchemaExtractor.YAGOSCHEMA,
 				HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES,
-				CategoryClassExtractor.CATEGORYCLASSES, SchemaExtractor.YAGOSCHEMA
+				CategoryClassExtractor.CATEGORYCLASSES
 		// GeoNamesClassMapper.GEONAMESCLASSES
 				));
-		return input;
 	}
 
 	/** The YAGO taxonomy */
