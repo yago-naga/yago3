@@ -28,7 +28,7 @@ import extractors.MultilingualExtractor;
 public class AttributeMatcher extends MultilingualExtractor {
 
 	/** Minimum requires support for output */
-	public static final int MINSUPPORT = 5;
+	public static final int MINSUPPORT = 1;
 
 	private static FactCollection yagoFacts = null;
 
