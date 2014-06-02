@@ -123,7 +123,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 							if (lan == null || lan.length() != 3)
 								continue;
 							write(WIKIDATAMULTILABELS,
-									new Fact(yagoEntity, YAGO.hasPreferredName,
+									new Fact(yagoEntity, RDFS.label,
 											FactComponent
 													.forStringWithLanguage(
 															foreignName, lan)),

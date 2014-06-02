@@ -192,7 +192,7 @@ public class FactCollection extends AbstractSet<Fact> {
 		}
 
 		// Add the fact
-		Fact newFact = changed ? new Fact(canonicalizedSubject,
+		Fact newFact = changed ? new Fact(fact.getId(),canonicalizedSubject,
 				canonicalizedRelation, canonicalizedObject) : fact;
 		relindex.get(fact.getRelation()).add(newFact);
 		relation2facts.get(fact.getRelation()).add(newFact);
