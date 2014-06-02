@@ -290,8 +290,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 		String titleEntity = null;
 		while (true) {
 			/* nested comments not supported */
-			switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox",
-					"{{ Infobox", "<comment>")) {
+			switch (FileLines.findIgnoreCase(in, "<title>", "<comment>", "{{")) {
 			case -1:
 				// Announce.progressDone();
 				in.close();
@@ -300,13 +299,19 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				// Announce.progressStep();
 				titleEntity = titleExtractor.getTitleEntity(in);
 				break;
-			case 3:
+			case 1:
 				FileLines.readToBoundary(in, "</comment>");
 				break;
 			default:
 				if (titleEntity == null)
 					continue;
 				String cls = FileLines.readTo(in, '}', '|').toString();
+				
+				if (!cls.contains("infobox") && !cls.contains("Infobox")) {
+					continue;
+				}
+				cls = cls.replace("infobox", "").replace("Infobox", "");
+
 				cls = Char.decodeAmpersand(cls);
 				cls = valueCleaner.transform(cls);
 				// Let's avoid writing nonsense here
@@ -350,10 +355,10 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
 	public static void main(String[] args) throws Exception {
 		new InfoboxExtractor(
-				"en",
+				"pl",
 				new File(
-						"C:/Fabian/eclipseProjects/yago2s/testCases/fromWikipedia.InfoboxExtractor/en/wikipedia/en_wikitest.xml"))
-				.extract(new File("c:/fabian/data/yago3"), "Test");
+						"/home/jbiega/Downloads/pl_wiki.xml"))
+				.extract(new File("/home/jbiega/data/yago2s"), "Test");
 
 	}
 }
