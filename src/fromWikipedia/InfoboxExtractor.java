@@ -276,6 +276,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	@Override
+	@ImplementationNote("We cannot search for '{{ infobox' because the Polish Wikipedia puts the template name first")
 	public void extract() throws Exception {
 
 		TitleExtractor titleExtractor = new TitleExtractor(language);
@@ -306,7 +307,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				if (titleEntity == null)
 					continue;
 				String cls = FileLines.readTo(in, '}', '|').toString();
-				
+
 				if (!cls.contains("infobox") && !cls.contains("Infobox")) {
 					continue;
 				}
@@ -354,11 +355,9 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new InfoboxExtractor(
-				"pl",
-				new File(
-						"/home/jbiega/Downloads/pl_wiki.xml"))
-				.extract(new File("/home/jbiega/data/yago2s"), "Test");
+		new InfoboxExtractor("pl", new File(
+				"/home/jbiega/Downloads/pl_wiki.xml")).extract(new File(
+				"/home/jbiega/data/yago2s"), "Test");
 
 	}
 }
