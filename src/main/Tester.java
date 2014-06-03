@@ -6,14 +6,15 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import utils.FactCollection;
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
 import javatools.filehandlers.FileSet;
+import utils.FactCollection;
+import utils.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;
@@ -113,7 +114,7 @@ public class Tester {
 			s = s.getSuperclass();
 		}
 		if (superclasses.contains(MultilingualWikipediaExtractor.class)) {
-			for (File language : testCase.listFiles()) {
+			for (File language : listFiles(testCase)) {
 				if (language.isFile() || language.getName().length() != 2) {
 					Announce.warning(
 							"Folder for MultilingualWikipediaExtractor should contain subfolders for each language, and not",
@@ -127,7 +128,7 @@ public class Tester {
 						outputFolder, gold);
 			}
 		} else if (superclasses.contains(MultilingualExtractor.class)) {
-			for (File language : testCase.listFiles()) {
+			for (File language : listFiles(testCase)) {
 				if (language.isFile() || language.getName().length() != 2) {
 					Announce.warning(
 							"Folder for MultilingualDataExtractor should contain subfolders for each language, and not",
@@ -152,12 +153,12 @@ public class Tester {
 					dataInput), testCase, yagoFolder, outputFolder, gold);
 		} else if (superclasses.contains(FollowUpExtractor.class)) {
 			File gold = getGold(testCase);
-			File[] goldFiles = gold.listFiles();
-			if (goldFiles.length != 1
-					|| !goldFiles[0].getName().startsWith("checked.")) {
+			List<File> goldFiles = listFiles(gold);			
+			if (goldFiles.size()!= 1
+					|| !goldFiles.get(0).getName().startsWith("checked.")) {
 				Announce.error("FollowUpExtractors need exactly one gold output theme called 'checked'");
 			}
-			File[] inputFiles = new File(testCase, "input").listFiles();
+			List<File> inputFiles = listFiles(new File(testCase, "input"));
 			Theme in = null;
 			if (inputFiles != null) {
 				for (File f : inputFiles) {
@@ -186,6 +187,19 @@ public class Tester {
 		Announce.done();
 	}
 
+	/** Lists all files except hidden files*/
+	private static List<File> listFiles(File gold) {
+		List<File> result=new ArrayList<>(Arrays.asList(gold.listFiles()));
+		Iterator<File> it=result.iterator();
+		while(it.hasNext()) if(isHidden(it.next())) it.remove();
+		return(result);
+	}
+
+	/** TRUE if this is an SVN file*/
+	private static boolean isHidden(File language) {
+		return language.getName().startsWith(".");
+	}
+
 	/** Returns the gold folder */
 	private static File getGold(File testCase) {
 		File gold = new File(testCase, "goldOutput");
@@ -205,13 +219,13 @@ public class Tester {
 					"A test case for a WikipediaExtractor should contain a folder 'wikipedia':",
 					language);
 		}
-		File[] files = dataInput.listFiles();
-		if (files.length != 1) {
+		List<File> files = listFiles(dataInput);
+		if (files.size()!= 1) {
 			Announce.error(
 					"The 'wikipedia' folder for a WikipediaExtractor should contain exactly one file:",
 					dataInput);
 		}
-		return (files[0]);
+		return (files.get(0));
 	}
 
 	/** Returns the file for the data input */
@@ -222,14 +236,14 @@ public class Tester {
 					"A test case for a DataExtractor should contain a folder 'dataInput':",
 					testCase);
 		}
-		File[] files = dataInput.listFiles();
-		if (files.length == 0) {
+		List<File> files = listFiles(dataInput);
+		if (files.size()== 0) {
 			Announce.error(
 					"The 'dataInput' folder for a DataExtractor should contain one or more data input files:",
 					dataInput);
 		}
-		if (files.length == 1)
-			return (files[0]);
+		if (files.size() == 1)
+			return (files.get(0));
 		else
 			return (dataInput);
 	}
@@ -243,8 +257,7 @@ public class Tester {
 					testCase);
 			return;
 		}
-		List<File> files = new ArrayList<File>(Arrays.asList(inputThemeFolder
-				.listFiles()));
+		List<File> files = listFiles(inputThemeFolder);
 		for (Theme t : ex.input()) {
 			if (t.findFileInFolder(inputThemeFolder) == null)
 				continue;
@@ -290,7 +303,7 @@ public class Tester {
 		} else {
 			new RelationChecker().extract(yagoFolder, "Check relations");
 			File testCases = new File("testCases");
-			for (File testCase : testCases.listFiles()) {
+			for (File testCase : listFiles(testCases)) {
 				runTest(testCase, yagoFolder, outputFolder);
 			}
 		}
