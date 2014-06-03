@@ -86,7 +86,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<FollowUpExtractor> followUp() {
-		if (language.equals("en"))
+		if (isEnglish())
 			return (Collections.emptySet());
 		return (new FinalSet<FollowUpExtractor>(new InfoboxTemplateTranslator(
 				INFOBOX_TEMPLATES.inLanguage(this.language),

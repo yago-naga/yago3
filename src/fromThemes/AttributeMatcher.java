@@ -7,13 +7,14 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import utils.FactCollection;
-import utils.MultilingualTheme;
-import utils.Theme;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.util.FileUtils;
+import utils.FactCollection;
+import utils.MultilingualTheme;
+import utils.Theme;
 import basics.Fact;
+import extractors.Extractor;
 import extractors.MultilingualExtractor;
 
 /**
@@ -28,25 +29,32 @@ import extractors.MultilingualExtractor;
 public class AttributeMatcher extends MultilingualExtractor {
 
 	/** Minimum requires support for output */
-	public static final int MINSUPPORT = 2;
-
-	private static FactCollection yagoFacts = null;
+	public static final int MINSUPPORT = 1;
 
 	public static final MultilingualTheme MATCHED_INFOBOXATTS = new MultilingualTheme(
 			"matchedAttributes",
 			"Attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.");
 
+	/**
+	 * Our input theme. This is a separate field so that it can be set from
+	 * outside for testing purposes.
+	 */
+	public Theme inputTheme;
+
+	/**
+	 * The English YAGO facts. This is a separate field so that it can be set
+	 * from outside for testing purposes.
+	 */
+	public Theme referenceTheme = InfoboxMapper.INFOBOXFACTS.inEnglish();
+
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<Theme>(InfoboxMapper.INFOBOXFACTS.inEnglish(),
-				isEnglish() ? InfoboxTermExtractor.INFOBOXTERMS.inEnglish()
-						: InfoboxTermExtractor.INFOBOXTERMSTRANSLATED
-								.inLanguage(language));
+		return new FinalSet<Theme>(referenceTheme, inputTheme);
 	}
 
 	@Override
 	public Set<Theme> inputCached() {
-		return new FinalSet<>(InfoboxMapper.INFOBOXFACTS.inLanguage("en"));
+		return new FinalSet<>(referenceTheme);
 	}
 
 	@Override
@@ -61,10 +69,8 @@ public class AttributeMatcher extends MultilingualExtractor {
 		Writer tsv = FileUtils.getBufferedUTF8Writer(new File(out.file()
 				.getParent(), "_attributeMatches_" + language + ".tsv"));
 
-		Theme germanFacts = isEnglish() ? InfoboxTermExtractor.INFOBOXTERMS
-				.inLanguage(language)
-				: InfoboxTermExtractor.INFOBOXTERMSTRANSLATED
-						.inLanguage(language);
+		Theme germanFacts = inputTheme;
+
 		// Counts, for every german attribute, how often it appears with every
 		// YAGO relation
 		Map<String, Map<String, Integer>> german2yago2count = new HashMap<String, Map<String, Integer>>();
@@ -75,7 +81,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 		// Counts for every german attribute how many facts there are
 		Map<String, Integer> germanFactCountPerAttribute = new HashMap<>();
 
-		yagoFacts = InfoboxMapper.INFOBOXFACTS.inEnglish().factCollection();
+		FactCollection yagoFacts = referenceTheme.factCollection();
 
 		// We collect all objects for a subject and a relation
 		// to account for the fact that we have the same object
@@ -153,6 +159,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 						+ "\t" + correct + "\t" + wrong + "\n");
 			}
 			// Write the best YAGO relation
+			// TODO: Filter the matches by Wilson!
 			if (bestRelation != null)
 				out.write(new Fact(germanAttribute, "<_infoboxPattern>",
 						bestRelation));
@@ -172,6 +179,55 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 	public AttributeMatcher(String secondLang) {
 		super(secondLang);
+		inputTheme = isEnglish() ? InfoboxTermExtractor.INFOBOXTERMS
+				.inLanguage(language)
+				: InfoboxTermExtractor.INFOBOXTERMSTRANSLATED
+						.inLanguage(language);
+	}
+
+	/** Constructor used to test the matching with/of other sources */
+	protected AttributeMatcher(Theme inputTheme, Theme referenceTheme,
+			String outputSuffix) {
+		super(outputSuffix);
+		this.inputTheme = inputTheme;
+		this.referenceTheme = referenceTheme;
+	}
+
+	/**
+	 * Use this class if you want to match any attributes (not necessarily
+	 * multilingual ones).
+	 */
+	public static class CustomAttributeMatcher extends Extractor {
+
+		/** We have a small matcher that does the work */
+		protected AttributeMatcher amatch;
+
+		@Override
+		public Set<Theme> input() {
+			return amatch.input();
+		}
+
+		@Override
+		public Set<Theme> output() {
+			return amatch.output();
+		}
+
+		@Override
+		public Set<Theme> inputCached() {
+			return amatch.inputCached();
+		}
+
+		public CustomAttributeMatcher(Theme inputTheme, Theme referenceTheme,
+				String outputSuffix) {
+			super();
+			amatch = new AttributeMatcher(inputTheme, referenceTheme,
+					outputSuffix);
+		}
+
+		@Override
+		public void extract() throws Exception {
+			amatch.extract();
+		}
 	}
 
 	public static void main(String[] args) throws Exception {

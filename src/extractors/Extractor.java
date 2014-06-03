@@ -70,7 +70,7 @@ public abstract class Extractor implements Comparable<Extractor> {
 		for (Theme theme : input()) {
 			if (!theme.isAvailableForReading()) {
 				// If you want to run extractors even if the input is absent,
-				// use this
+				// use this:
 				// if(theme.findFileInFolder(inputFolder)!=null)
 				theme.assignToFolder(inputFolder);
 			}
