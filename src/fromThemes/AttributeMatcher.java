@@ -10,6 +10,8 @@ import java.util.Set;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.util.FileUtils;
+import utils.AttributeMappingMeasure;
+import utils.AttributeMappingMeasure.Wilson;
 import utils.FactCollection;
 import utils.MultilingualTheme;
 import utils.Theme;
@@ -28,8 +30,8 @@ import extractors.MultilingualExtractor;
 
 public class AttributeMatcher extends MultilingualExtractor {
 
-	/** Minimum requires support for output */
-	public static final int MINSUPPORT = 1;
+	/** Strategy for matching */
+	public AttributeMappingMeasure measure = new Wilson(0.03);
 
 	public static final MultilingualTheme MATCHED_INFOBOXATTS = new MultilingualTheme(
 			"matchedAttributes",
@@ -139,28 +141,32 @@ public class AttributeMatcher extends MultilingualExtractor {
 		for (String germanAttribute : german2yago2count.keySet()) {
 			// Find the best YAGO relation
 			String bestRelation = null;
-			int bestMatch = 0;
+			int bestCorrect = 0;
+			int bestWrong = 0;
+			int bestTotal = 0;
 			for (String yagoRelation : german2yago2count.get(germanAttribute)
 					.keySet()) {
 				int correct = german2yago2count.get(germanAttribute).get(
 						yagoRelation);
-				if (correct < MINSUPPORT)
+				if (correct == 0)
 					continue;
-				if (correct > bestMatch) {
-					bestMatch = correct;
-					bestRelation = yagoRelation;
-				}
 				Integer wrong = german2yagowrong2count.get(germanAttribute)
 						.get(yagoRelation);
 				if (wrong == null)
 					wrong = 0;
 				int total = germanFactCountPerAttribute.get(germanAttribute);
+				if (correct > bestCorrect) {
+					bestCorrect = correct;
+					bestTotal = total;
+					bestWrong = wrong;
+					bestRelation = yagoRelation;
+				}
 				tsv.write(germanAttribute + "\t" + yagoRelation + "\t" + total
 						+ "\t" + correct + "\t" + wrong + "\n");
 			}
 			// Write the best YAGO relation
-			// TODO: Filter the matches by Wilson!
-			if (bestRelation != null)
+			if (bestRelation != null
+					&& measure.measure(bestTotal, bestCorrect, bestWrong))
 				out.write(new Fact(germanAttribute, "<_infoboxPattern>",
 						bestRelation));
 		}

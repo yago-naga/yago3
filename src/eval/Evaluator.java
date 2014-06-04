@@ -10,6 +10,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import utils.AttributeMappingMeasure;
 import javatools.administrative.D;
 import javatools.filehandlers.TSVFile;
 
@@ -20,108 +21,6 @@ import javatools.filehandlers.TSVFile;
  * 
  */
 public class Evaluator {
-
-	public abstract static class Measure {
-		public abstract boolean measure(int total, int correct, int wrong);
-
-		public double ratio;
-
-		@Override
-		public String toString() {
-			return this.getClass().getSimpleName() + ": "
-					+ String.format("%.3f", (double) ratio);
-		}
-
-		public String measureName() {
-			return this.getClass().getSimpleName();
-		}
-
-		@Override
-		public boolean equals(Object arg0) {
-			return arg0.getClass().equals(this.getClass())
-					&& Math.round(((Measure) arg0).ratio * 1000) == Math
-							.round(ratio * 1000);
-		}
-
-		@Override
-		public int hashCode() {
-			return getClass().hashCode() ^ (int) Math.round(ratio * 1000);
-		}
-	}
-
-	public static class Support extends Measure {
-
-		public Support(int cutoff) {
-			this.ratio = cutoff;
-		}
-
-		@Override
-		public boolean measure(int total, int correct, int wrong) {
-			return correct >= ratio;
-		}
-	}
-
-	public static class All extends Support {
-		public All() {
-			super(0);
-		}
-	}
-
-	public static class Pca extends Measure {
-
-		public Pca(double r) {
-			ratio = r;
-		}
-
-		@Override
-		public boolean measure(int total, int correct, int wrong) {
-			return correct / (double) (correct + wrong) >= ratio;
-		}
-	}
-
-	public static class Confidence extends Measure {
-
-		public Confidence(double r) {
-			ratio = r;
-		}
-
-		@Override
-		public boolean measure(int total, int correct, int wrong) {
-			return correct / (double) total >= ratio;
-		}
-	}
-
-	public static class Wilson extends Measure {
-
-		public Wilson(double r) {
-			ratio = r;
-		}
-
-		@Override
-		public boolean measure(int total, int correct, int wrong) {
-			double wilson[] = wilson(total, correct);
-			return (wilson[0] - wilson[1] > ratio);
-		}
-	}
-
-	/**
-	 * Computes the Wilson Interval (see
-	 * http://en.wikipedia.org/wiki/Binomial_proportion_confidence_interval
-	 * #Wilson_score_interval) Given the total number of events and the number
-	 * of "correct" events, returns in a double-array in the first component the
-	 * center of the Wilson interval and in the second component the width of
-	 * the interval. alpha=95%.
-	 */
-	public static double[] wilson(int total, int correct) {
-		double z = 1.96;
-		double p = (double) correct / total;
-		double center = (p + 1 / 2.0 / total * z * z)
-				/ (1 + 1.0 / total * z * z);
-		double d = z
-				* Math.sqrt((p * (1 - p) + 1 / 4.0 / total * z * z) / total)
-				/ (1 + 1.0 / total * z * z);
-		return (new double[] { center, d });
-	}
 
 	public static boolean exclude(String yagoRel) {
 		// return(yagoRel.equals("<hasNumberOfPeople>") ||
@@ -140,16 +39,16 @@ public class Evaluator {
 		// List<String> languages = Arrays.asList("de");
 		args = new String[] { "c:/fabian/Dropbox/Shared/multiYAGO/AttributeMatches/" };
 		// Measures for which we want details
-		Collection<Measure> littleDarlings = Arrays.asList(
-				(Measure) new Wilson(0.030), new Wilson(0.035),
-				new Wilson(0.04));
-		List<Measure> measures = new ArrayList<Measure>();
+		Collection<AttributeMappingMeasure> littleDarlings = Arrays.asList(
+				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(0.030), new AttributeMappingMeasure.Wilson(0.035),
+				new AttributeMappingMeasure.Wilson(0.04),new AttributeMappingMeasure.Wilson(0.05));
+		List<AttributeMappingMeasure> measures = new ArrayList<AttributeMappingMeasure>();
 		final int numSteps = 31;
 		for (double i = 0; i <= 1.0; i += 1.0 / (numSteps - 1)) {
-			measures.add(new Support((int) (i * 100)));
-			measures.add(new Confidence(i));
-			measures.add(new Pca(i));
-			Wilson willie = new Wilson(i * 0.05);
+			measures.add(new AttributeMappingMeasure.Support((int) (i * 100)));
+			measures.add(new AttributeMappingMeasure.Confidence(i));
+			measures.add(new AttributeMappingMeasure.Pca(i));
+			AttributeMappingMeasure.Wilson willie = new AttributeMappingMeasure.Wilson(i * 0.05);
 			measures.add(willie);
 		}
 		// Contains for each measure the number of languages
