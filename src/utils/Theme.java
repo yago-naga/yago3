@@ -238,7 +238,7 @@ public class Theme extends FactSource.FileFactSource implements
 	}
 
 	/** returns the cache, or creates a cache */
-	public FactCollection factCollection() throws IOException {
+	public synchronized FactCollection factCollection() throws IOException {
 		if (factWriter != null)
 			throw new IOException("Theme " + this
 					+ " is currently being written");

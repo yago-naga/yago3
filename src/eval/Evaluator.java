@@ -30,24 +30,23 @@ public class Evaluator {
 	}
 
 	public static void main(String[] args) throws Exception {
-		boolean dowinnerplot = true;
+		boolean dowinnerplot = false;
 		boolean dolanguageplot = true;
-		boolean printProblems = false;
+		boolean printProblems = true;
 		boolean weighted = true;
-		List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr",
-				"it", "ro");
-		// List<String> languages = Arrays.asList("de");
+		//List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr",				"it", "ro", "dde");
+		List<String> languages = Arrays.asList("es");
 		args = new String[] { "c:/fabian/Dropbox/Shared/multiYAGO/AttributeMatches/" };
 		// Measures for which we want details
 		Collection<AttributeMappingMeasure> littleDarlings = Arrays.asList(
-				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(0.030), new AttributeMappingMeasure.Wilson(0.035),
-				new AttributeMappingMeasure.Wilson(0.04),new AttributeMappingMeasure.Wilson(0.05));
+				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(0.020), new AttributeMappingMeasure.Wilson(0.025),
+				new AttributeMappingMeasure.Wilson(0.03),new AttributeMappingMeasure.Wilson(0.035));
 		List<AttributeMappingMeasure> measures = new ArrayList<AttributeMappingMeasure>();
 		final int numSteps = 31;
 		for (double i = 0; i <= 1.0; i += 1.0 / (numSteps - 1)) {
-			measures.add(new AttributeMappingMeasure.Support((int) (i * 100)));
-			measures.add(new AttributeMappingMeasure.Confidence(i));
-			measures.add(new AttributeMappingMeasure.Pca(i));
+			//measures.add(new AttributeMappingMeasure.Support((int) (i * 100)));
+			//measures.add(new AttributeMappingMeasure.Confidence(i));
+			//measures.add(new AttributeMappingMeasure.Pca(i));
 			AttributeMappingMeasure.Wilson willie = new AttributeMappingMeasure.Wilson(i * 0.05);
 			measures.add(willie);
 		}
