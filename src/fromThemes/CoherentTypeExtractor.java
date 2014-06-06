@@ -2,17 +2,19 @@ package fromThemes;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import utils.FactCollection;
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.IntHashMap;
+import javatools.util.FileUtils;
+import utils.FactCollection;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -37,9 +39,9 @@ public class CoherentTypeExtractor extends Extractor {
 		result.add(WordnetExtractor.WORDNETCLASSES);
 		result.add(HardExtractor.HARDWIREDFACTS);
 		result.add(CategoryClassExtractor.CATEGORYCLASSES);
-		result.addAll(CategoryTypeExtractor.CATEGORYTYPES
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		result.addAll(InfoboxTypeExtractor.INFOBOXTYPES
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		result.addAll(CategoryTypeExtractor.CATEGORYTYPES
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return result;
 	}
@@ -65,27 +67,47 @@ public class CoherentTypeExtractor extends Extractor {
 	/** Holds the entire type facts */
 	protected FactCollection typeFacts;
 
+	/** Maps a type fact id to the theme where it's from */
+	protected Map<String, Theme> sources;
+
+	/** Maps a Theme to its number of type facts */
+	protected IntHashMap<Theme> numTypeFacts;
+
 	@Override
 	public void extract() throws Exception {
 
 		yagoBranches = new HashMap<String, String>();
 		subclassFacts = new FactCollection();
 		typeFacts = new FactCollection();
+		sources = new HashMap<>();
 		for (Theme theme : input()) {
 			for (Fact f : theme) {
-				if (f.getRelation().equals(RDFS.type))
+				if (f.getRelation().equals(RDFS.type)) {
+					f.makeId();
+					// Add only the first source
+					if (!sources.containsKey(f.getId()))
+						sources.put(f.getId(), theme);
 					typeFacts.justAdd(f);
+				}
 				if (f.getRelation().equals(RDFS.subclassOf))
 					subclassFacts.justAdd(f);
 			}
 		}
+		numTypeFacts = new IntHashMap<>();
 		for (String currentEntity : typeFacts.getSubjects()) {
 			flush(currentEntity,
 					typeFacts.collectObjects(currentEntity, RDFS.type));
 		}
+		try (Writer w = FileUtils.getBufferedUTF8Writer(new File(YAGOTYPES
+				.file().getParent(), "_typeStatistics.tsv"))) {
+			for (Theme theme : numTypeFacts) {
+				w.write(theme.name + "\t" + numTypeFacts.get(theme) + "\n");
+			}
+		}
 		yagoBranches = null;
 		typeFacts = null;
 		subclassFacts = null;
+		sources = null;
 		Announce.done();
 	}
 
@@ -136,19 +158,26 @@ public class CoherentTypeExtractor extends Extractor {
 		for (String type : types) {
 			String branch = yagoBranchForClass(type);
 			if (branch == null || !branch.equals(yagoBranch)) {
-				Announce.debug("Wrong branch:", type, branch,". Expected branch:",yagoBranch);
+				Announce.debug("Wrong branch:", type, branch,
+						". Expected branch:", yagoBranch);
 			} else {
-				write(YAGOTYPES, new Fact(entity, RDFS.type, type),
-						YAGOTYPESSOURCES, FactComponent.wikipediaURL(entity),
-						"CoherentTypeExtractor");
+				Fact f = new Fact(entity, RDFS.type, type);
+				f.makeId();
+				Theme source = sources.get(f.getId());
+				if (source == null)
+					continue;
+				numTypeFacts.increase(source);
+				write(YAGOTYPES, f, YAGOTYPESSOURCES,
+						FactComponent.wikipediaURL(entity),
+						FactComponent.forString(source.name));
 			}
 		}
 	}
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		MultilingualExtractor.wikipediaLanguages=Arrays.asList("en");
-		new CoherentTypeExtractor()
-		.extract(new File("c:/fabian/data/yago3"), "test");
+		MultilingualExtractor.wikipediaLanguages = Arrays.asList("en");
+		new CoherentTypeExtractor().extract(new File("c:/fabian/data/yago3"),
+				"test");
 	}
 }

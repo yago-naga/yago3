@@ -30,25 +30,26 @@ public class Evaluator {
 	}
 
 	public static void main(String[] args) throws Exception {
-		boolean dowinnerplot = false;
+		boolean dowinnerplot = true;
 		boolean dolanguageplot = true;
-		boolean printProblems = true;
+		boolean printProblems = false;
 		boolean weighted = true;
-		//List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr",				"it", "ro", "dde");
-		List<String> languages = Arrays.asList("es");
+		List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr","it", "ro");
+		//List<String> languages = Arrays.asList("es");
 		args = new String[] { "c:/fabian/Dropbox/Shared/multiYAGO/AttributeMatches/" };
 		// Measures for which we want details
 		Collection<AttributeMappingMeasure> littleDarlings = Arrays.asList(
 				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(0.020), new AttributeMappingMeasure.Wilson(0.025),
 				new AttributeMappingMeasure.Wilson(0.03),new AttributeMappingMeasure.Wilson(0.035));
 		List<AttributeMappingMeasure> measures = new ArrayList<AttributeMappingMeasure>();
-		final int numSteps = 31;
-		for (double i = 0; i <= 1.0; i += 1.0 / (numSteps - 1)) {
-			//measures.add(new AttributeMappingMeasure.Support((int) (i * 100)));
-			//measures.add(new AttributeMappingMeasure.Confidence(i));
-			//measures.add(new AttributeMappingMeasure.Pca(i));
-			AttributeMappingMeasure.Wilson willie = new AttributeMappingMeasure.Wilson(i * 0.05);
+		final int numSteps = 20;
+		for (int i = 0; i < numSteps; i ++) {
+			measures.add(new AttributeMappingMeasure.Support(((i * 100)/numSteps)));
+			measures.add(new AttributeMappingMeasure.Confidence(i*1.0/numSteps));
+			measures.add(new AttributeMappingMeasure.Pca(i*1.0/numSteps));
+			AttributeMappingMeasure.Wilson willie = new AttributeMappingMeasure.Wilson(i * 0.1/numSteps);
 			measures.add(willie);
+			D.p(i, measures.subList(measures.size()-4, measures.size()));
 		}
 		// Contains for each measure the number of languages
 		// for which precision > 95%
@@ -144,8 +145,9 @@ public class Evaluator {
 								/ (double) weightedyells[m + i * numMeasures]
 								: correctYells[m + i * numMeasures]
 										/ (double) yells[m + i * numMeasures];
-						if (prec > 0.95)
+						if (Math.round(prec*100) >= 95)
 							numLanHit[m + i * numMeasures]++;
+						else if(littleDarlings.contains(measures.get(m))) D.p(measures.get(m),"did not make it for",lan,":",prec);
 						double rec = weighted ? weightedcorrectYells[m + i
 								* numMeasures]
 								/ weightedgoldYells : correctYells[m + i
