@@ -34,13 +34,12 @@ public class Evaluator {
 		boolean dolanguageplot = true;
 		boolean printProblems = false;
 		boolean weighted = true;
-		List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr","it", "ro");
-		//List<String> languages = Arrays.asList("es");
+		List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr","it", "ro", "nl");
+		//List<String> languages = Arrays.asList("nl");
 		args = new String[] { "c:/fabian/Dropbox/Shared/multiYAGO/AttributeMatches/" };
 		// Measures for which we want details
 		Collection<AttributeMappingMeasure> littleDarlings = Arrays.asList(
-				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(0.020), new AttributeMappingMeasure.Wilson(0.025),
-				new AttributeMappingMeasure.Wilson(0.03),new AttributeMappingMeasure.Wilson(0.035));
+				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(0.03));
 		List<AttributeMappingMeasure> measures = new ArrayList<AttributeMappingMeasure>();
 		final int numSteps = 20;
 		for (int i = 0; i < numSteps; i ++) {
