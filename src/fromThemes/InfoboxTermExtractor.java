@@ -1,6 +1,7 @@
 package fromThemes;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -84,7 +85,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 		Map<String, String> preferredMeanings = WordnetExtractor.PREFMEANINGS
 				.factCollection().getPreferredMeanings();
 
-		List<TermParser> parsers = TermParser.allParsers(preferredMeanings, language);
+		List<TermParser> parsers = TermParser.allParsers(preferredMeanings,
+				language);
 
 		for (Fact f : InfoboxExtractor.INFOBOX_ATTRIBUTES
 				.inLanguage(this.language)) {
@@ -99,7 +101,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 			val = val.trim();
 			if (val.length() == 0)
 				continue;
-			Set<String> objects = new HashSet<>();
+			@ImplementationNote("This has to be a list, because the first date mentioned is usually the right one")
+			List<String> objects = new ArrayList<>();
 			for (TermParser termParser : parsers) {
 				objects.addAll(termParser.extractList(val));
 			}
