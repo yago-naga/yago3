@@ -8,11 +8,12 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
-import utils.AttributeMappingMeasure;
 import javatools.administrative.D;
 import javatools.filehandlers.TSVFile;
+import utils.AttributeMappingMeasure;
 
 /**
  * This class is only for the evaluation of the Multilingual YAGO stuff
@@ -34,21 +35,26 @@ public class Evaluator {
 		boolean dolanguageplot = true;
 		boolean printProblems = false;
 		boolean weighted = true;
-		List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr","it", "ro", "nl");
-		//List<String> languages = Arrays.asList("nl");
+		List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr",
+				"it", "nl", "pl", "ro");
+		// List<String> languages = Arrays.asList("pl");
 		args = new String[] { "c:/fabian/Dropbox/Shared/multiYAGO/AttributeMatches/" };
 		// Measures for which we want details
 		Collection<AttributeMappingMeasure> littleDarlings = Arrays.asList(
-				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(0.03));
+				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(
+						0.30), new AttributeMappingMeasure.Confidence(0.14));
 		List<AttributeMappingMeasure> measures = new ArrayList<AttributeMappingMeasure>();
-		final int numSteps = 20;
-		for (int i = 0; i < numSteps; i ++) {
-			measures.add(new AttributeMappingMeasure.Support(((i * 100)/numSteps)));
-			measures.add(new AttributeMappingMeasure.Confidence(i*1.0/numSteps));
-			measures.add(new AttributeMappingMeasure.Pca(i*1.0/numSteps));
-			AttributeMappingMeasure.Wilson willie = new AttributeMappingMeasure.Wilson(i * 0.1/numSteps);
+		final int numSteps = 50;
+		for (int i = 0; i < numSteps; i++) {
+			measures.add(new AttributeMappingMeasure.Support(
+					((i * 500) / numSteps)));
+			measures.add(new AttributeMappingMeasure.Confidence(i * 1.0
+					/ numSteps));
+			measures.add(new AttributeMappingMeasure.Pca(i * 1.0 / numSteps));
+			AttributeMappingMeasure.Wilson willie = new AttributeMappingMeasure.Wilson(
+					i * 0.5 / numSteps);
 			measures.add(willie);
-			D.p(i, measures.subList(measures.size()-4, measures.size()));
+			D.p(i, measures.subList(measures.size() - 4, measures.size()));
 		}
 		// Contains for each measure the number of languages
 		// for which precision > 95%
@@ -119,7 +125,8 @@ public class Evaluator {
 							weightedcorrectYells[i] += lastTotal;
 						}
 						if (m) {
-							if (!val && printProblems)
+							if (!val && printProblems
+									&& littleDarlings.contains(measures.get(i)))
 								D.p("Incorrect:", measures.get(i), lastAttr,
 										lastTarget, lastTotal);
 							yells[i]++;
@@ -144,9 +151,20 @@ public class Evaluator {
 								/ (double) weightedyells[m + i * numMeasures]
 								: correctYells[m + i * numMeasures]
 										/ (double) yells[m + i * numMeasures];
-						if (Math.round(prec*100) >= 95)
+						if (Double.isNaN(prec))
+							prec = 0;
+						if (Math.round(prec * 100) >= 95) {
 							numLanHit[m + i * numMeasures]++;
-						else if(littleDarlings.contains(measures.get(m))) D.p(measures.get(m),"did not make it for",lan,":",prec);
+							if (numLanHit[m + i * numMeasures] == languages
+									.size())
+								D.p("Winner:",
+										measures.get(m + i * numMeasures));
+						} else if (littleDarlings.contains(measures.get(m + i
+								* numMeasures))) {
+							D.p("Did not make it:",
+									measures.get(m + i * numMeasures), lan,
+									prec);
+						}
 						double rec = weighted ? weightedcorrectYells[m + i
 								* numMeasures]
 								/ weightedgoldYells : correctYells[m + i
@@ -154,8 +172,12 @@ public class Evaluator {
 								/ goldYells;
 						if (littleDarlings.contains(measures.get(m + i
 								* numMeasures)))
-							D.p(lan, measures.get(m + i * numMeasures), prec,
-									rec);
+							D.p(String.format(Locale.US,
+									"%s     %s & %.0f & %.0f & %.0f\\\\",
+									measures.get(m + i * numMeasures)
+											.toString(), lan, prec * 100,
+									rec * 100, prec * rec * 2 / (prec + rec)
+											* 100));
 						w.write(prec + "\t" + rec + "\n");
 						recalls.get(m + i * numMeasures).put(lan, rec);
 					}

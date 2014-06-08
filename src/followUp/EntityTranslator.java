@@ -65,8 +65,9 @@ public class EntityTranslator extends FollowUpExtractor {
 	protected String translateSubject(String me) {
 		String trans = subjectDictionaryCache
 				.getObject(me, "<_hasTranslation>");
-		if (trans == null)
-			return (me);
+		// Translate to itself?
+		// If so, we get duplicates in case of missing links
+		//if (trans == null) return (me);
 		return (trans);
 	}
 

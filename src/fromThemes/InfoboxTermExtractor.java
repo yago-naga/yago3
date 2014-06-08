@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char;
 import utils.MultilingualTheme;
@@ -119,7 +120,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 
 	public static void main(String[] args) throws Exception {
 		InfoboxTermExtractor extractor = new InfoboxTermExtractor("en");
-		extractor.extract(new File("/home/jbiega/data/yago2s/"),
+		extractor.extract(new File("c:/fabian/data/yago3"),
 				"mapping infobox attributes into infobox facts");
 	}
 
