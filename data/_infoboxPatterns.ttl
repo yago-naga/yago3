@@ -315,3 +315,4 @@
 "</?span[^>]*>"	<_infoboxReplace>	"" .
 "<ref.+?</ref>"	<_infoboxReplace>	"" .
 "<ref.+?/>" <_infoboxReplace> "" .
+"\\{\\{BirthDeathAge\\|[^0-9]*\\d{3-4}\\|\\d{1-2}\\|\\d{1-2}"	<_infoboxReplace> "" .
