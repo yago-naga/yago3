@@ -1,6 +1,7 @@
 package followUp;
 
 import java.io.File;
+import java.util.Map;
 
 import utils.Theme;
 import extractors.Extractor;
@@ -18,18 +19,16 @@ import fromWikipedia.CategoryExtractor;
  */
 
 public class CategoryTranslator extends EntityTranslator {
-	
+
 	@Override
-	protected String translateObject(String me) {
-		// Return NULL in case we cannot translate
-		String trans = objectDictionaryCache
-				.getObject(me, "<_hasTranslation>");
-		return (trans);
+	protected String translateObject(String object,
+			Map<String, String> dictionary) {
+		return dictionary.get(object);
 	}
 	
 	public CategoryTranslator(Theme in, Theme out, Extractor parent) {
 		super(in, out, parent);
-		objectDictionary = DictionaryExtractor.CATEGORY_DICTIONARY
+		objectDictionaryTheme = DictionaryExtractor.CATEGORY_DICTIONARY
 				.inLanguage(language);
 	}
 

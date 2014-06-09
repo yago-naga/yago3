@@ -2,11 +2,11 @@ package followUp;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
-import utils.FactCollection;
-import utils.Theme;
 import javatools.datatypes.FinalSet;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.Extractor;
@@ -28,13 +28,7 @@ public class EntityTranslator extends FollowUpExtractor {
 	protected String language;
 
 	/** Object dictionary */
-	protected Theme objectDictionary;
-
-	/** Caches the dictionary of subjects */
-	protected FactCollection subjectDictionaryCache;
-
-	/** Caches the dictionary of objects */
-	protected FactCollection objectDictionaryCache;
+	protected Theme objectDictionaryTheme;
 
 	@Override
 	public Set<Theme> input() {
@@ -43,7 +37,7 @@ public class EntityTranslator extends FollowUpExtractor {
 		// entiyDictionary
 		return (new HashSet<>(Arrays.asList(checkMe,
 				DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language),
-				objectDictionary)));
+				objectDictionaryTheme)));
 	}
 
 	@Override
@@ -53,7 +47,7 @@ public class EntityTranslator extends FollowUpExtractor {
 		// entiyDictionary
 		return (new HashSet<>(Arrays.asList(
 				DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language),
-				objectDictionary)));
+				objectDictionaryTheme)));
 	}
 
 	@Override
@@ -61,37 +55,35 @@ public class EntityTranslator extends FollowUpExtractor {
 		return new FinalSet<Theme>(checked);
 	}
 
-	/** Translates an entity, returns the entity itself by default */
-	protected String translateSubject(String me) {
-		String trans = subjectDictionaryCache
-				.getObject(me, "<_hasTranslation>");
-		// Translate to itself?
-		// If so, we get duplicates in case of missing links
-		//if (trans == null) return (me);
-		return (trans);
-	}
-
-	/** Translates an entity, returns the entity itself by default */
-	protected String translateObject(String me) {
-		if (FactComponent.isLiteral(me))
-			return (me);
-		return (translateSubject(me));
+	/**
+	 * Translates the object as an entity, or returns it simply if it's a
+	 * literal. To be overwritten in subclasses.
+	 */
+	protected String translateObject(String object,
+			Map<String, String> dictionary) {
+		if (FactComponent.isLiteral(object))
+			return (object);
+		return (dictionary.get(object));
 	}
 
 	@Override
 	public void extract() throws Exception {
 
-		subjectDictionaryCache = DictionaryExtractor.ENTITY_DICTIONARY
-				.inLanguage(language).factCollection();
-
-		objectDictionaryCache = objectDictionary.factCollection();
+		Map<String, String> subjectDictionary = DictionaryExtractor.ENTITY_DICTIONARY
+				.inLanguage(language).dictionary();
+		Map<String, String> objectDictionary = objectDictionaryTheme
+				.dictionary();
 
 		for (Fact f : checkMe) {
-			String translatedSubject = translateSubject(f.getSubject());
-			String translatedObject = translateObject(f.getObject());
-			if (translatedSubject != null && translatedObject != null)
-				checked.write(new Fact(translatedSubject, f.getRelation(),
-						translatedObject));
+			String translatedSubject = subjectDictionary.get(f
+					.getSubject());
+			if (translatedSubject == null)
+				continue;
+			String translatedObject = translateObject(f.getObject(), objectDictionary);
+			if (translatedObject == null)
+				continue;
+			checked.write(new Fact(translatedSubject, f.getRelation(),
+					translatedObject));
 		}
 	}
 
@@ -103,7 +95,7 @@ public class EntityTranslator extends FollowUpExtractor {
 					"Don't translate English. This is useless and very costly.");
 		// By default, we translate entities.
 		// May be overwritten in subclasses
-		objectDictionary = DictionaryExtractor.ENTITY_DICTIONARY
+		objectDictionaryTheme = DictionaryExtractor.ENTITY_DICTIONARY
 				.inLanguage(language);
 	}
 

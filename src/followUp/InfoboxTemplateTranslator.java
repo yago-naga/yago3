@@ -1,5 +1,7 @@
 package followUp;
 
+import java.util.Map;
+
 import utils.Theme;
 import extractors.Extractor;
 import fromOtherSources.DictionaryExtractor;
@@ -15,17 +17,15 @@ import fromOtherSources.DictionaryExtractor;
  */
 
 public class InfoboxTemplateTranslator extends EntityTranslator {
-
 	@Override
-	protected String translateObject(String me) {
-		// Return NULL in case we cannot translate
-		String trans = objectDictionaryCache.getObject(me, "<_hasTranslation>");
-		return (trans);
+	protected String translateObject(String object,
+			Map<String, String> dictionary) {
+		return dictionary.get(object);
 	}
 
 	public InfoboxTemplateTranslator(Theme in, Theme out, Extractor parent) {
 		super(in, out, parent);
-		objectDictionary = DictionaryExtractor.INFOBOX_TEMPLATE_DICTIONARY
+		objectDictionaryTheme = DictionaryExtractor.INFOBOX_TEMPLATE_DICTIONARY
 				.inLanguage(language);
 	}
 }

@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collection;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
@@ -259,6 +260,19 @@ public class Theme extends FactSource.FileFactSource implements
 	/** Removes the cache */
 	public void killCache() {
 		cache = null;
+	}
+
+	/** Returns a dictionary from subjects to objects */
+	public Map<String, String> dictionary() {
+		Map<String, String> result = new HashMap<>();
+		Announce.doing("Loading dictionary", this);
+		for (Fact f : this) {
+			if (!f.getRelation().equals("<_hasTranslation>"))
+				continue;
+			result.put(f.getSubject(), f.getObject());
+		}
+		Announce.done();
+		return (result);
 	}
 
 }
