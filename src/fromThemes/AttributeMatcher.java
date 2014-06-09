@@ -31,7 +31,7 @@ import extractors.MultilingualExtractor;
 public class AttributeMatcher extends MultilingualExtractor {
 
 	/** Strategy for matching */
-	public AttributeMappingMeasure measure = new Wilson(0.03);
+	public AttributeMappingMeasure measure = new Wilson(0.04);
 
 	public static final MultilingualTheme MATCHED_INFOBOXATTS = new MultilingualTheme(
 			"matchedAttributes",

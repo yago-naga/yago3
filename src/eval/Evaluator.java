@@ -37,12 +37,13 @@ public class Evaluator {
 		boolean weighted = true;
 		List<String> languages = Arrays.asList("ar", "de", "es", "fa", "fr",
 				"it", "nl", "pl", "ro");
-		// List<String> languages = Arrays.asList("pl");
+		// List<String> languages = Arrays.asList("dbp");
 		args = new String[] { "c:/fabian/Dropbox/Shared/multiYAGO/AttributeMatches/" };
 		// Measures for which we want details
 		Collection<AttributeMappingMeasure> littleDarlings = Arrays.asList(
 				(AttributeMappingMeasure) new AttributeMappingMeasure.Wilson(
-						0.30), new AttributeMappingMeasure.Confidence(0.14));
+						0.04), new AttributeMappingMeasure.Confidence(0.16), new AttributeMappingMeasure.Support(110));
+		
 		List<AttributeMappingMeasure> measures = new ArrayList<AttributeMappingMeasure>();
 		final int numSteps = 50;
 		for (int i = 0; i < numSteps; i++) {
