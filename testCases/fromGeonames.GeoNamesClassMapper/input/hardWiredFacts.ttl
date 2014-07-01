@@ -954,10 +954,6 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <endedOnDate>	rdfs:range	xsd:date .
 <endedOnDate>	rdfs:subPropertyOf	<endsExistingOnDate> .
 <endedOnDate>	rdf:type	<yagoFunction> .
-<hasGeonamesId>	rdfs:domain	<wordnet_location_100027167> .
-<hasGeonamesId>	rdfs:range	<geonamesId> .
-<hasGeonamesId>	rdf:type	<yagoFunction> .
-<hasGeonamesId>	rdf:type	<permanentRelationToSubject> .
 rdfs:label	<hasGloss>	"By '$1', someone could mean $2" .
 rdf:type	<hasGloss>	"$1 is a or was a (potentially fictional) $2" .
 #@ <id13>

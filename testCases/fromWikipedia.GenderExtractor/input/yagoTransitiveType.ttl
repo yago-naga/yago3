@@ -8663,7 +8663,6 @@ rdfs:subClassOf	rdf:type	rdf:Property .
 <World_Economic_Forum>	rdf:type	<wordnet_foundation_113790712> .
 <World_Economic_Forum>	rdf:type	<wordnet_relation_100031921> .
 <World_Economic_Forum>	rdf:type	owl:Thing .
-<hasGeonamesId>	rdf:type	rdf:Property .
 <Francis_Mer>	rdf:type	<wordnet_causal_agent_100007347> .
 <Francis_Mer>	rdf:type	<wordnet_leader_109623038> .
 <Francis_Mer>	rdf:type	<wordnet_living_thing_100004258> .
