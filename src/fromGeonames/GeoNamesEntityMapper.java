@@ -88,7 +88,7 @@ public class GeoNamesEntityMapper extends DataExtractor {
 	}
 
 	public GeoNamesEntityMapper() {
-		this(new File("./data/geonames/allCountries.txt"));
+		this(new File("./data/geonames/alternateNames/alternateNames.txt"));
 	}
 	
 	public static void main(String[] args) throws Exception {
