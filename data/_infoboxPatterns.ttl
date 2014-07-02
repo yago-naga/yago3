@@ -43,8 +43,8 @@
 
 <infobox/en/clubs>  <_infoboxPattern> <playsFor> .
 <infobox/en/pages>  <_infoboxPattern> <hasPages> .
-<infobox/en/_latitude>  <_infoboxPattern> <hasLatitude> .
-<infobox/en/_longitude> <_infoboxPattern> <hasLongitude> .
+<infobox/en/latitude>  <_infoboxPattern> <hasLatitude> .
+<infobox/en/longitude> <_infoboxPattern> <hasLongitude> .
 <infobox/en/latitude> <_infoboxPattern> <hasLatitude> .
 <infobox/en/longitude>  <_infoboxPattern> <hasLongitude> .
 <infobox/en/Nickname> <_infoboxPattern> rdfs:label .
@@ -83,13 +83,13 @@
 <infobox/en/cctld>  <_infoboxPattern> <hasTLD> .
 <infobox/en/currency> <_infoboxPattern> <hasCurrency> .
 <infobox/en/expenses> <_infoboxPattern> <hasExpenses> .
-<infobox/en/export-goods> <_infoboxPattern> <exports> .
-<infobox/en/export-partners>  <_infoboxPattern> <dealsWith> .
+<infobox/en/exportgoods> <_infoboxPattern> <exports> .
+<infobox/en/exportpartners>  <_infoboxPattern> <dealsWith> .
 <infobox/en/exports>  <_infoboxPattern> <hasExport> .
 <infobox/en/growth> <_infoboxPattern> <hasEconomicGrowth> .
 #<infobox/en/hdi> <_infoboxPattern> <hasHDI> . # Bad results here
-<infobox/en/import-goods> <_infoboxPattern> <imports> .
-<infobox/en/import-partners>  <_infoboxPattern> <dealsWith> .
+<infobox/en/importgoods> <_infoboxPattern> <imports> .
+<infobox/en/importpartners>  <_infoboxPattern> <dealsWith> .
 <infobox/en/imports>  <_infoboxPattern> <hasImport> .
 <infobox/en/inflation>  <_infoboxPattern> <hasInflation> .
 <infobox/en/localname>  <_infoboxPattern> rdfs:label .
@@ -101,10 +101,10 @@
 <infobox/en/roof> <_infoboxPattern> <hasHeight> .
 <infoBoxId4>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
 #@ <infoBoxId5>
-<infobox/en/subdivision_name1>  <_infoboxPattern> <isLocatedIn> .
+<infobox/en/subdivisionname1>  <_infoboxPattern> <isLocatedIn> .
 <infoBoxId5>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
 #@ <infoBoxId6>
-<infobox/en/subdivision_name> <_infoboxPattern> <isLocatedIn> .
+<infobox/en/subdivisionname> <_infoboxPattern> <isLocatedIn> .
 <infoBoxId6>  rdfs:comment  "Added 2011-04-26 for jeopardy" .
 <infobox/en/locationcity> <_infoboxPattern> <isLocatedIn> .
 <infobox/en/officiallanguages>  <_infoboxPattern> <hasOfficialLanguage> .
@@ -176,7 +176,7 @@
 <infobox/en/artist> <_infoboxPattern> <created-> .
 <infobox/en/baftaawards>  <_infoboxPattern> <hasWonPrize> .
 <infobox/en/commander>  <_infoboxPattern> <isLeaderOf-> .
-<infobox/en/commander-in-chief> <_infoboxPattern> <isLeaderOf-> .
+<infobox/en/commanderinchief> <_infoboxPattern> <isLeaderOf-> .
 <infobox/en/famousworks>  <_infoboxPattern> <created> .
 <infobox/en/founded>  <_infoboxPattern> <wasCreatedOnDate> .
 <infobox/en/goldenglobeawards>  <_infoboxPattern> <hasWonPrize> .
