@@ -17,7 +17,7 @@ import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.PatternList;
@@ -166,7 +166,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 					factCollection, replacements);
 		} else {
 			Fact baseFact = new Fact("", "", "");
-			valueString = replacements.transform(Char
+			valueString = replacements.transform(Char17
 					.decodeAmpersand(valueString));
 			valueString = valueString.replace("$0",
 					FactComponent.stripBrackets(entity));
@@ -179,7 +179,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			String cls;
 			if (relation.endsWith("->")) {
 				inverse = true;
-				relation = Char.cutLast(Char.cutLast(relation)) + '>';
+				relation = Char17.cutLast(Char17.cutLast(relation)) + '>';
 				cls = factCollection.getObject(relation, RDFS.domain);
 			} else {
 				inverse = false;
@@ -324,7 +324,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			valueString = values[i];
 			if (valueString.equals("NULL"))
 				continue;
-			valueString = replacements.transform(Char
+			valueString = replacements.transform(Char17
 					.decodeAmpersand(valueString));
 			valueString = valueString.replace("$0",
 					FactComponent.stripBrackets(entity));
@@ -337,7 +337,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			String cls;
 			if (relation.endsWith("->")) {
 				inverse = true;
-				relation = Char.cutLast(Char.cutLast(relation)) + '>';
+				relation = Char17.cutLast(Char17.cutLast(relation)) + '>';
 				cls = factCollection.getObject(relation, RDFS.domain);
 			} else {
 				inverse = false;

@@ -11,7 +11,7 @@ import java.util.Set;
 import utils.MultilingualTheme;
 import utils.Theme;
 import javatools.administrative.Announce;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
@@ -106,7 +106,7 @@ public class DictionaryExtractor extends DataExtractor {
 				String lan = FactComponent.stripQuotes(f.getObject());
 				if (!MultilingualExtractor.wikipediaLanguages.contains(lan))
 					continue;
-				language2name.put(lan, FactComponent.stripPrefix(Char
+				language2name.put(lan, FactComponent.stripPrefix(Char17
 						.decodePercentage(f.getSubject())));
 			} else if (f.getObject().endsWith("#Item>")
 					&& !language2name.isEmpty()) {

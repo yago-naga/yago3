@@ -10,7 +10,7 @@ import utils.FactCollection;
 import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
@@ -103,7 +103,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 			// Record a new name in the map
 			if (f.getRelation().endsWith("/inLanguage>")) {
 				String lan = FactComponent.stripQuotes(f.getObject());
-				language2name.put(lan, FactComponent.stripPrefix(Char
+				language2name.put(lan, FactComponent.stripPrefix(Char17
 						.decodePercentage(f.getSubject())));
 			} else if (f.getArg(2).endsWith("#Item>")
 					&& !language2name.isEmpty()) {
@@ -143,7 +143,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 		Set<String> result = new TreeSet<>();
 		String name = preferredName(titleEntity);
 		result.add(name);
-		String norm = Char.normalize(name);
+		String norm = Char17.normalize(name);
 		if (!norm.contains("[?]"))
 			result.add(norm);
 		if (name.contains(" (")) {
@@ -157,7 +157,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 
 	/** returns the preferred name */
 	public static String preferredName(String titleEntity) {
-		return (Char.decode(FactComponent.stripBracketsAndLanguage(titleEntity)
+		return (Char17.decode(FactComponent.stripBracketsAndLanguage(titleEntity)
 				.replace('_', ' ')));
 	}
 

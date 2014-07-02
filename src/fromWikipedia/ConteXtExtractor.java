@@ -9,7 +9,7 @@ import java.util.Set;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.FactTemplateExtractor;
@@ -96,7 +96,7 @@ public class ConteXtExtractor extends EnglishWikipediaExtractor {
 					continue;
 
 				String page = FileLines.readBetween(in, "<text", "</text>");
-				String normalizedPage = Char.decodeAmpersand(Char
+				String normalizedPage = Char17.decodeAmpersand(Char17
 						.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+",
 								" ")));
 

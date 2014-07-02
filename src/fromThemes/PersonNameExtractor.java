@@ -6,7 +6,7 @@ import java.util.TreeSet;
 
 import utils.Theme;
 import javatools.datatypes.FinalSet;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import javatools.parsers.Name.PersonName;
 import basics.Fact;
 import basics.FactComponent;
@@ -54,7 +54,7 @@ public class PersonNameExtractor extends Extractor {
 				continue;
 			people.add(f.getArg(1));
 			String n = FactComponent.stripBrackets(f.getArg(1));
-			n = Char.decode(n);
+			n = Char17.decode(n);
 			PersonName name = new PersonName(n);
 			String given = name.givenName();
 			if (given == null)

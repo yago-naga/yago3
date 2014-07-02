@@ -10,7 +10,7 @@ import java.util.Set;
 
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import utils.MultilingualTheme;
 import utils.PatternList;
 import utils.TermParser;
@@ -92,7 +92,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 		for (Fact f : InfoboxExtractor.INFOBOX_ATTRIBUTES
 				.inLanguage(this.language)) {
 			String val = f.getObjectAsJavaString();
-			val = Char.decodeAmpersand(val);
+			val = Char17.decodeAmpersand(val);
 			// Sometimes we get empty values here
 			if (val == null || val.isEmpty())
 				continue;

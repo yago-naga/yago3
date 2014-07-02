@@ -8,7 +8,7 @@ import java.util.Set;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.TermParser;
 import utils.Theme;
@@ -100,7 +100,7 @@ public class FlightExtractor extends EnglishWikipediaExtractor {
 					if (s.contains("}}\n\n") || s.contains("}}\r\n\r\n")
 							|| s.contains("}}\r\r") || s.contains("}}\n\r\n\r"))
 						break;
-					s=Char.decodeAmpersand(s);
+					s=Char17.decodeAmpersand(s);
 					if (s.contains("[[")) {
 						List<String> entities = TermParser.forWikiLink
 								.extractList(s);
@@ -112,7 +112,7 @@ public class FlightExtractor extends EnglishWikipediaExtractor {
 					}
 					if (airline == null)
 						continue;
-					s = Char.decodeAmpersand(s).replaceAll("\\[.*\\]", "");
+					s = Char17.decodeAmpersand(s).replaceAll("\\[.*\\]", "");
 					if (s.length() < 4 || s.contains("<") || s.contains("'''")
 							|| s.contains("\n") || s.contains("]]")
 							|| s.contains("="))

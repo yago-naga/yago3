@@ -9,7 +9,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import javatools.administrative.Announce;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import javatools.parsers.DateParser;
 import javatools.parsers.NumberParser;
 import javatools.parsers.PlingStemmer;
@@ -181,7 +181,7 @@ public abstract class TermParser {
 				w = w.replace("(", "").replace(")", ""); // remove remaining
 															// brackets
 				w = w.trim();
-				w = Char.decodeAmpersand(w);
+				w = Char17.decodeAmpersand(w);
 				// Before:
 				// w.length() > 2 && !w.contains("{{") && !w.contains("[[")
 				if (w.matches("[\\p{IsAlphabetic} ]{2,}"))

@@ -9,7 +9,7 @@ import java.util.Set;
 import utils.Theme;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -98,7 +98,7 @@ public class WordnetDomainExtractor extends DataExtractor {
 			String[] split = line.split("\\s");
 			if (split.length < 2 || !split[0].endsWith("-n"))
 				continue;
-			String subject = Char.cutLast(Char.cutLast(split[0]));
+			String subject = Char17.cutLast(Char17.cutLast(split[0]));
 			subject = mappings.get(subject);
 			if (subject == null)
 				continue;

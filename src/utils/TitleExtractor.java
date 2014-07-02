@@ -6,7 +6,7 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import basics.FactComponent;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
@@ -76,7 +76,7 @@ public class TitleExtractor {
 	/** Reads the title entity, supposes that the reader is after "<title>" */
 	public String getTitleEntity(Reader in) throws IOException {
 		String title = FileLines.readToBoundary(in, "</title>");
-		title = replacer.transform(Char.decodeAmpersand(title));
+		title = replacer.transform(Char17.decodeAmpersand(title));
 		if (title == null)
 			return (null);
 		if (wordnetWords != null && wordnetWords.contains(title.toLowerCase()))

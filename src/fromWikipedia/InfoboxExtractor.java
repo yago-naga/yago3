@@ -12,7 +12,7 @@ import java.util.TreeSet;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.MultilingualTheme;
 import utils.PatternList;
@@ -264,7 +264,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				}
 
 				D.addKeyValue(result, attribute,
-						Char.decodeAmpersand(Char.decodeAmpersand(valueStr)),
+						Char17.decodeAmpersand(Char17.decodeAmpersand(valueStr)),
 						TreeSet.class);
 			}
 			if (c == '}' || c == -1 || c == -2) {
@@ -313,7 +313,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				}
 				cls = cls.replace("infobox", "").replace("Infobox", "");
 
-				cls = Char.decodeAmpersand(cls);
+				cls = Char17.decodeAmpersand(cls);
 				cls = valueCleaner.transform(cls);
 				// Let's avoid writing nonsense here
 				if (cls != null && cls.length() > 3) {

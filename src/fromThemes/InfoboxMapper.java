@@ -12,7 +12,7 @@ import utils.MultilingualTheme;
 import utils.Theme;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
-import javatools.parsers.Char;
+import javatools.parsers.Char17;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -102,7 +102,7 @@ public class InfoboxMapper extends MultilingualExtractor {
 			for (String relation : relations) {
 				Fact fact;
 				if (relation.endsWith("->")) {
-					relation = Char.cutLast(Char.cutLast(relation)) + '>';
+					relation = Char17.cutLast(Char17.cutLast(relation)) + '>';
 					fact = new Fact(f.getObject(), relation, f.getSubject());
 				} else {
 					fact = new Fact(f.getSubject(), relation, f.getObject());
