@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -19,6 +20,8 @@ import javatools.util.FileUtils;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
+import followUp.FollowUpExtractor;
+import followUp.TypeChecker;
 
 /**
  * Extracts all redirects from Wikipedia
@@ -36,14 +39,25 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 	private static final Pattern pattern = Pattern
 			.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
-	public static final MultilingualTheme REDIRECTFACTS = new MultilingualTheme(
+	public static final MultilingualTheme REDIRECTFACTSDIRTY = new MultilingualTheme(
 			"redirectLabelsDirty",
 			"Redirect facts from Wikipedia redirect pages (to be type checked)");
 
+	public static final MultilingualTheme REDIRECTFACTS = new MultilingualTheme(
+			"yagoRedirectLabels",
+			"Labels from Wikipedia redirect pages");
+
+	@Override
+	public Set<FollowUpExtractor> followUp() {
+		HashSet<FollowUpExtractor> s=new HashSet<>();
+		s.add(new TypeChecker(REDIRECTFACTSDIRTY.inLanguage(language), REDIRECTFACTS.inLanguage(language)));
+		return s;
+	}
+	
 	@Override
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(
-				REDIRECTFACTS.inLanguage(this.language));
+				REDIRECTFACTSDIRTY.inLanguage(this.language));
 	}
 
 	@Override
@@ -78,7 +92,7 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 			}
 		}
 
-		Theme out = REDIRECTFACTS.inLanguage(this.language);
+		Theme out = REDIRECTFACTSDIRTY.inLanguage(this.language);
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
 			out.write(new Fact(

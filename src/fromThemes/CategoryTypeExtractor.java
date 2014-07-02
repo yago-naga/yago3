@@ -72,7 +72,7 @@ public class CategoryTypeExtractor extends MultilingualExtractor {
 
 		// Extract the information
 		for (Fact f : categoryMembs) {
-			if (!f.getRelation().equals("<hasWikiCategory>"))
+			if (!f.getRelation().equals("<hasWikipediaCategory>"))
 				continue;
 			String category = f.getObject();
 			if (!validClasses.contains(category))

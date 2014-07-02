@@ -21,6 +21,7 @@ import deduplicators.LiteralFactExtractor;
 import deduplicators.MetaFactExtractor;
 import deduplicators.SchemaExtractor;
 import extractors.Extractor;
+import fromWikipedia.WikiInfoExtractor;
 
 /**
  * YAGO2s - StatisticsExtractor
@@ -38,7 +39,7 @@ public class StatisticsExtractor extends Extractor {
 				CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
 				LabelExtractor.YAGOLABELS, MetaFactExtractor.YAGOMETAFACTS,
 				SchemaExtractor.YAGOSCHEMA, DateExtractor.YAGODATEFACTS,
-				LiteralFactExtractor.YAGOLITERALFACTS);
+				LiteralFactExtractor.YAGOLITERALFACTS, WikiInfoExtractor.WIKIINFO);
 	}
 
 	/** YAGO statistics theme */

@@ -1042,9 +1042,6 @@
 #@ <id_4ola6b_14p_1d1ait6>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Antalya> .
 <id_4ola6b_14p_1d1ait6>	<byTransport>	<Onur_Air> .
-#@ <id_4ola6b_14p_15kr2ej>
-<Amsterdam_Airport_Schiphol>	<isConnectedTo>	<{{nowrap> .
-<id_4ola6b_14p_15kr2ej>	<byTransport>	<Onur_Air> .
 #@ <id_4ola6b_14p_unqe4y>
 <Amsterdam_Airport_Schiphol>	<isConnectedTo>	<Islamabad> .
 <id_4ola6b_14p_unqe4y>	<byTransport>	<Pakistan_International_Airlines> .

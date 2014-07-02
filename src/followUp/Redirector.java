@@ -4,9 +4,9 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.Extractor;
@@ -26,7 +26,7 @@ public class Redirector extends FollowUpExtractor {
 	@Override
 	public Set<Theme> input() {
 		return new FinalSet<Theme>(checkMe,
-				RedirectExtractor.REDIRECTFACTS.inLanguage(this.language));
+				RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(this.language));
 	}
 
 	@Override
@@ -37,7 +37,7 @@ public class Redirector extends FollowUpExtractor {
 	@Override
 	public Set<Theme> inputCached() {
 		return new FinalSet<>(
-				RedirectExtractor.REDIRECTFACTS.inLanguage(this.language));
+				RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(this.language));
 	}
 
 	@Override
@@ -45,7 +45,7 @@ public class Redirector extends FollowUpExtractor {
 		// Extract the information
 		Map<String, String> redirects = new HashMap<>();
 		Announce.doing("Loading redirects");
-		for (Fact f : RedirectExtractor.REDIRECTFACTS
+		for (Fact f : RedirectExtractor.REDIRECTFACTSDIRTY
 				.inLanguage(this.language)) {
 			redirects.put(
 					FactComponent.forYagoEntity(FactComponent.asJavaString(

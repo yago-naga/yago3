@@ -374,7 +374,7 @@
 <Zulu_language>	<hasLanguageCode>	"zu" .
 <musicBrainsId>	rdfs:subClassOf	<yagoIdentifier> .
 <geonamesId>	rdfs:subClassOf	<yagoIdentifier> .
-<m^2>	rdfs:subClassOf	<yagoQuantity> .
+<m\u005e2>	rdfs:subClassOf	<yagoQuantity> .
 <yagoTLD>	<_hasTypeCheckPattern>	"[a-z]{2,5}" .
 <yagoTLD>	rdfs:subClassOf	<yagoIdentifier> .
 xsd:boolean	<_hasTypeCheckPattern>	"true|false" .
@@ -382,7 +382,7 @@ xsd:boolean	rdfs:subClassOf	<yagoLiteral> .
 <yagoChar>	<_hasTypeCheckPattern>	"." .
 <yagoChar>	rdfs:subClassOf	xsd:string .
 <yagoFormula>	rdfs:subClassOf	xsd:string .
-</km^2>	rdfs:subClassOf	<yagoQuantity> .
+</km\u005e2>	rdfs:subClassOf	<yagoQuantity> .
 <s>	rdfs:subClassOf	<yagoQuantity> .
 <yagoIdentifier>	<_hasTypeCheckPattern>	".*" .
 <yagoIdentifier>	rdfs:subClassOf	xsd:string .
@@ -820,7 +820,7 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <exports>	rdfs:range	rdf:Class .
 <exports>	rdf:type	rdf:Property .
 <hasArea>	rdfs:domain	<wordnet_location_100027167> .
-<hasArea>	rdfs:range	<m^2> .
+<hasArea>	rdfs:range	<m\u005e2> .
 <hasArea>	rdf:type	<yagoFunction> .
 <hasCapital>	rdfs:domain	<wordnet_location_100027167> .
 <hasCapital>	rdfs:range	<wordnet_location_100027167> .
@@ -862,7 +862,7 @@ rdfs:label	rdf:type	<permanentRelationToObject> .
 <hasOfficialLanguage>	rdfs:range	<wordnet_language_106282651> .
 <hasOfficialLanguage>	rdf:type	rdf:Property .
 <hasPopulationDensity>	rdfs:domain	<wordnet_location_100027167> .
-<hasPopulationDensity>	rdfs:range	</km^2> .
+<hasPopulationDensity>	rdfs:range	</km\u005e2> .
 <hasPopulationDensity>	rdf:type	<yagoFunction> .
 <hasPopulation>	rdfs:domain	<wordnet_location_100027167> .
 <hasPopulation>	rdfs:range	xsd:integer .

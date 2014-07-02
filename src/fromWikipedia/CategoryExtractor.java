@@ -113,7 +113,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 				if (category.length() < 4 || category.contains(":"))
 					continue;
 				CATEGORYMEMBERS.inLanguage(language).write(
-						new Fact(titleEntity, "<hasWikiCategory>",
+						new Fact(titleEntity, "<hasWikipediaCategory>",
 								FactComponent.forForeignWikiCategory(category,
 										language)));
 				break;

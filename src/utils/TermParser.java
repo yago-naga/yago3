@@ -60,9 +60,11 @@ public abstract class TermParser {
 		case "xsd:decimal":
 		case "<degrees>":
 		case "<m^2>":
+		case "<m\\u005e2>":
 		case "<yagoMonetaryValue>":
 		case "<%>":
 		case "</km^2>":
+		case "</km\\u005e2>":
 		case "xsd:integer":
 		case "xsd:duration":
 		case "<g>":

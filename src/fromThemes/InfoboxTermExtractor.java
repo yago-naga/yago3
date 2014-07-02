@@ -8,7 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.MultilingualTheme;
@@ -105,7 +104,9 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 			@ImplementationNote("This has to be a list, because the first date mentioned is usually the right one")
 			List<String> objects = new ArrayList<>();
 			for (TermParser termParser : parsers) {
-				objects.addAll(termParser.extractList(val));
+				for(String s : termParser.extractList(val)) {
+					if(!objects.contains(s)) objects.add(s);
+				}
 			}
 			for (String object : objects) {
 				INFOBOXTERMS_TOREDIRECT.inLanguage(language).write(

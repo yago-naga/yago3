@@ -6,12 +6,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -126,16 +126,17 @@ public class CategoryClassExtractor extends Extractor {
 	 * 
 	 * @param classWriter
 	 */
-	protected void extractClassStatement(String categoryEntity) throws IOException {
+	protected void extractClassStatement(String categoryEntity)
+			throws IOException {
 		String concept = category2class(categoryEntity);
 		if (concept == null)
 			return;
-		CATEGORYCLASSES.write(new Fact(categoryEntity,
-				RDFS.subclassOf, concept));
+		CATEGORYCLASSES
+				.write(new Fact(categoryEntity, RDFS.subclassOf, concept));
 		String name = new NounGroup(categoryEntity).stemmed().replace('_', ' ');
 		if (!name.isEmpty())
-			CATEGORYCLASSES.write(new Fact(null, categoryEntity, RDFS.label, FactComponent
-					.forStringWithLanguage(name, "eng")));
+			CATEGORYCLASSES.write(new Fact(null, categoryEntity, RDFS.label,
+					FactComponent.forStringWithLanguage(name, "eng")));
 	}
 
 	@Override
@@ -150,7 +151,7 @@ public class CategoryClassExtractor extends Extractor {
 
 		// Extract the information
 		for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inEnglish()) {
-			if (!f.getRelation().equals("<hasWikiCategory>"))
+			if (!f.getRelation().equals("<hasWikipediaCategory>"))
 				continue;
 			String category = f.getObject();
 			if (categoriesDone.contains(category))

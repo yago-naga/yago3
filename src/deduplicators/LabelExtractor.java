@@ -19,6 +19,7 @@ import fromThemes.CategoryMapper;
 import fromThemes.InfoboxMapper;
 import fromThemes.PersonNameExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
+import fromWikipedia.RedirectExtractor;
 
 /**
  * YAGO2s - LabelExtractor
@@ -46,6 +47,8 @@ public class LabelExtractor extends SimpleDeduplicator {
 		input.addAll(CategoryMapper.CATEGORYFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(InfoboxMapper.INFOBOXFACTS
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(RedirectExtractor.REDIRECTFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return input;
 	}
