@@ -1,7 +1,13 @@
 package main;
 
 import java.io.File;
+import java.io.IOException;
+import java.lang.reflect.Modifier;
+import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -11,11 +17,12 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
+import javatools.util.FileUtils;
+import utils.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;
@@ -172,6 +179,7 @@ public class ParallelCaller {
 				weneed.removeAll(themesWeHave);
 				Announce.warning("Could not call", e.name(),
 						"because of missing", weneed);
+				ParallelCaller.printNeededExtractorsForThemes(weneed);
 			}
 			Announce.warning("Nobody produced or will produce", culprits());
 		}
@@ -244,6 +252,94 @@ public class ParallelCaller {
 			wikipedias.put(languages.get(i), wiki);
 		}
 	}
+	
+	/** Get extractors that produce themes. */
+	public static void printNeededExtractorsForThemes(Set<Theme> themes) {
+	  Map<Theme, Extractor> theme2extractor = new HashMap<>();
+	  Enumeration<URL> roots = null;
+    try {
+      roots = ParallelCaller.class.getClassLoader().getResources("");
+    } catch (IOException e) {
+      e.printStackTrace();
+    } 
+	  while (roots.hasMoreElements()) {
+	    URL rootURL = roots.nextElement();
+	    File root = new File(rootURL.getPath());
+	    for (File file : FileUtils.getAllFiles(root)) {
+	      if (file.getName().endsWith(".class") &&
+	          !file.getName().contains("$")) {
+	        String fullClassName = 
+	            file.getAbsolutePath().replace(root.getAbsolutePath() + "/", "")
+	            .replace("/", ".");
+	        fullClassName = fullClassName.substring(0, fullClassName.lastIndexOf("."));
+	        List<Extractor> es = null;
+	        try {
+	          es = getExtractorForClassIfPossible(fullClassName);
+	        } catch (Exception e) {
+	        } 
+	        if(es != null) {
+  	        for (Extractor e : es) { 
+    	        for (Theme t : e.output()) {
+    	          theme2extractor.put(t, e);
+    	        }
+    	        for (FollowUpExtractor fe : e.followUp()) {
+                for (Theme t : fe.output()) {
+                  theme2extractor.put(t, e);
+                }
+              }
+  	        }
+	        }
+	      }
+	    }
+	  }
+	  
+	  Set<Theme> stillMissing = new HashSet<>(themes);
+	  Set<Theme> unresolvable = new HashSet<>();
+	  Set<Extractor> extractorsToRun = new HashSet<>();
+	  
+	  System.out.println(theme2extractor);
+	  
+	  while (!stillMissing.isEmpty()) {
+	    Theme t = stillMissing.iterator().next();
+	    stillMissing.remove(t);
+	    Extractor toRun = theme2extractor.get(t);
+	    if (toRun == null) {
+	      unresolvable.add(t);
+	    } else if (!extractorsToRun.contains(toRun)) {
+	      stillMissing.addAll(toRun.input());
+	      extractorsToRun.add(toRun);
+	    }
+	  }
+	  Announce.warning("Try adding the following extractors to resolve missing inputs:");
+	  List<Extractor> sortedExtractorsToRun = new ArrayList<>(extractorsToRun);
+	  Collections.sort(sortedExtractorsToRun, new Comparator<Extractor>() {
+
+      @Override
+      public int compare(Extractor o1, Extractor o2) {
+        return o1.getClass().getCanonicalName().compareTo(o2.getClass().getCanonicalName());
+      }
+    });
+	  for (Extractor e : sortedExtractorsToRun) {
+	    System.out.println(e.getClass().getCanonicalName() + ",");
+	  }
+	  Announce.warning("Themes that are still missing: " + unresolvable);
+	}
+
+  private static List<Extractor> getExtractorForClassIfPossible(String fullClassName) {
+    List<Extractor> es = null;
+    try {
+      @SuppressWarnings("rawtypes")
+      Class cls = Class.forName(fullClassName);
+      if (Extractor.class.isAssignableFrom(cls) && 
+          !FollowUpExtractor.class.isAssignableFrom(cls) && 
+          !Modifier.isAbstract(cls.getModifiers())) {
+        return extractorsForCall(fullClassName);
+      }
+    } catch (ClassNotFoundException cnfe) {
+    } catch (SecurityException e1) {
+    }
+    return es;
+  }
 
 	/** Run */
 	public static void main(String[] args) throws Exception {
