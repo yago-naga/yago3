@@ -228,6 +228,7 @@
 <infobox/en/designer> <_infoboxPattern> <created-> .
 <infobox/en/developer>  <_infoboxPattern> <created-> .
 <infobox/en/imdbid> <_infoboxPattern> <hasImdb> .
+<infobox/en/imdb> <_infoboxPattern> <hasImdb> .
 # <infobox/en/production company> <_infoboxPattern> <produced-> . # Had bad results here
 <infobox/en/revenue>  <_infoboxPattern> <hasRevenue> .
 <infobox/en/slogan> <_infoboxPattern> <hasMotto> .
