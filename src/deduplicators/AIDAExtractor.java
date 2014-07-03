@@ -33,6 +33,10 @@ public class AIDAExtractor extends SimpleDeduplicator {
 	@ImplementationNote("Hardwired facts go first. Infoboxes should go before categories")
 	public List<Theme> inputOrdered() {
 		List<Theme> input = new ArrayList<Theme>();
+		
+		// For YAGO compliance.
+		input.add(SchemaExtractor.YAGOSCHEMA);
+		
 		// Dictionary.
 		input.add(StructureExtractor.STRUCTUREFACTS); // also gives links and anchor texts.
 		input.add(DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS);
