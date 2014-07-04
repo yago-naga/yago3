@@ -112,8 +112,10 @@ public abstract class SimpleDeduplicator extends Extractor {
 		tsv.close();
 
 		Announce.doing("Writing");
-		for (Fact f : batch)
+		for (Fact f : batch) {
+			f.makeId();
 			myOutput().write(f);
+		}
 		Announce.done();
 
 		Announce.done();
