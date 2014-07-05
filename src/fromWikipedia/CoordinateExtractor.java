@@ -59,20 +59,20 @@ public class CoordinateExtractor extends EnglishWikipediaExtractor {
 		return (new FinalSet<Theme>(COORDINATE_SOURCES, COORDINATES));
 	}
 
-	public static final String bar = "\\s*\\|\\s*";
+	public static final String bar = "\\s*\\|\\s*(?:display\\s*=\\s*title\\s*\\|)?";
 
 	/** {{Coord|57|18|22|N|4|27|32|W|display=title}} */
-	public static final Pattern coordPattern1 = Pattern.compile("coord" + bar
+	public static final Pattern coordPattern1 = Pattern.compile("(?i)coord" + bar
 			+ "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar + "(.)"
 			+ bar + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar
 			+ "(.)");
 
 	/** {{Coord|44.112|N|87.913|W|display=title}} */
-	public static final Pattern coordPattern2 = Pattern.compile("coord" + bar
+	public static final Pattern coordPattern2 = Pattern.compile("(?i)coord" + bar
 			+ "([\\d\\.]+)" + bar + "(.)" + bar + "([\\d\\.]+)" + bar + "(.)");
 
 	/** {{Coord|44.112|-87.913|display=title}} */
-	public static final Pattern coordPattern3 = Pattern.compile("coord" + bar
+	public static final Pattern coordPattern3 = Pattern.compile("(?i)coord" + bar
 			+ "([\\-\\d\\.]+)" + bar + "([\\-\\d\\.]+)");
 
 	protected void writeCoords(String entity, String lat, String lon)
