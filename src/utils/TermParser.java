@@ -186,7 +186,7 @@ public abstract class TermParser {
 				w = Char17.decodeAmpersand(w);
 				// Before:
 				// w.length() > 2 && !w.contains("{{") && !w.contains("[[")
-				if (w.matches("[\\p{IsAlphabetic} ]{2,}"))
+				if (w.matches("[\\p{Alnum} ]{2,}"))
 					result.add(FactComponent.forString(w));
 			}
 			if (result.size() == 0)
@@ -292,5 +292,10 @@ public abstract class TermParser {
 		}
 
 	};
+	
+	public static void main(String[] args) throws Exception {
+		System.out.println(TermParser.forString.extractList("012436437"));
+		
+	}
 
 }
