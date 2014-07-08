@@ -9,6 +9,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -285,8 +286,10 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 		valueCleaner = new PatternList(
 				PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
 				"<_infoboxReplace>");
+		Announce.doing("Loading patterns of", "<_hasPredefinedUnit>");
 		unitDictionary = PatternHardExtractor.INFOBOXPATTERNS.factCollection()
-				.collectSubjectAndObjectAsStrings("<_hasPredefinedUnit>");
+				.getReverseMap("<_hasPredefinedUnit>");
+		Announce.done();
 		
 		String typeRelation = FactComponent
 				.forInfoboxTypeRelation(this.language);
