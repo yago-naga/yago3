@@ -36,10 +36,10 @@
 "<londeg> degrees <lonmin> minutes <lonsec> seconds <londir>"	<_infoboxCombine>	"_longitude" .
 
 # --------- Atrribute units --------------
-<populationdensitykm>	<_hasPredefinedUnit>	"/km^2" .
-<area>	<_hasPredefinedUnit>	"km^2" .
-<areakm>	<_hasPredefinedUnit>	"km^2" .
-<areatotalkm>	<_hasPredefinedUnit>	"km^2" .
+<populationdensitykm>	<_hasPredefinedUnit>	</km\u005e2> .
+<area>	<_hasPredefinedUnit>	<km\u005e2> .
+<areakm>	<_hasPredefinedUnit>	<km\u005e2> .
+<areatotalkm>	<_hasPredefinedUnit>	<km\u005e2> .
 
 # --------- Infobox patterns --------------
 
