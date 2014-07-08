@@ -22,10 +22,6 @@
 "baseball biography"	rdf:type	<_yagoNonConceptualInfobox> . # Has multiple biographie son one page
 
 # --------- Combinations of Infobox attributes --------------
-"<populationdensitykm> /km^2"	<_infoboxCombine>	"my_population_density" .
-"<areakm> km^2"	<_infoboxCombine>	"myarea" .
-"<areatotalkm> km^2"	<_infoboxCombine>	"myarea" .
-"<area> km^2"	<_infoboxCombine>	"myarea" .
 "<latitude> degrees 0 minutes 0 seconds E"	<_infoboxCombine>	"_latitude" .
 "<longitude> degrees 0 minutes 0 seconds N"	<_infoboxCombine>	"_longitude" .
 "<latd> degrees <latm> minutes <lats> seconds <latNS>"	<_infoboxCombine>	"_latitude" .
@@ -39,14 +35,18 @@
 "<latdeg> degrees <latmin> minutes <latsec> seconds <latdir>"	<_infoboxCombine>	"_latitude" .
 "<londeg> degrees <lonmin> minutes <lonsec> seconds <londir>"	<_infoboxCombine>	"_longitude" .
 
+# --------- Atrribute units --------------
+<populationdensitykm>	<_hasPredefinedUnit>	"/km^2"
+<area>	<_hasPredefinedUnit>	"km^2"
+<areakm>	<_hasPredefinedUnit>	"km^2"
+<areatotalkm>	<_hasPredefinedUnit>	"km^2"
+
 # --------- Infobox patterns --------------
 
 <infobox/en/clubs>  <_infoboxPattern> <playsFor> .
 <infobox/en/pages>  <_infoboxPattern> <hasPages> .
 <infobox/en/latitude>  <_infoboxPattern> <hasLatitude> .
 <infobox/en/longitude> <_infoboxPattern> <hasLongitude> .
-<infobox/en/latitude> <_infoboxPattern> <hasLatitude> .
-<infobox/en/longitude>  <_infoboxPattern> <hasLongitude> .
 <infobox/en/Nickname> <_infoboxPattern> rdfs:label .
 <infobox/en/nativename> <_infoboxPattern> rdfs:label .
 <infobox/en/commonname> <_infoboxPattern> rdfs:label .
@@ -74,9 +74,11 @@
 <infobox/en/governmenttype> <_infoboxPattern> rdf:type .
 <infobox/en/leadername> <_infoboxPattern> <isLeaderOf-> .
 <infobox/en/establisheddate>  <_infoboxPattern> <wasCreatedOnDate> .
-<infobox/en/myarea> <_infoboxPattern> <hasArea> .
+<infobox/en/area> <_infoboxPattern> <hasArea> .
+<infobox/en/areakm> <_infoboxPattern> <hasArea> .
+<infobox/en/areatotalkm> <_infoboxPattern> <hasArea> .
 <infobox/en/populationestimate> <_infoboxPattern> <hasNumberOfPeople> .
-<infobox/en/my_population_density>  <_infoboxPattern> <hasPopulationDensity> .
+<infobox/en/populationdensitykm>  <_infoboxPattern> <hasPopulationDensity> .
 <infobox/en/GDPnominal> <_infoboxPattern> <hasGDP> .
 <infobox/en/Gini> <_infoboxPattern> <hasGini> .
 #<infobox/en/utcoffset> <_infoboxPattern> <hasUTCOffset> .
