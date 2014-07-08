@@ -12,6 +12,7 @@ import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.RDFS;
 import extractors.MultilingualExtractor;
+import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.PersonNameExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import fromWikipedia.CategoryExtractor;
@@ -43,6 +44,8 @@ public class AIDAExtractor extends SimpleDeduplicator {
 		input.add(PersonNameExtractor.PERSONNAMES);
 		input.addAll(RedirectExtractor.REDIRECTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.add(GenderExtractor.PERSONS_GENDER);
+		//input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
+		input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
 		
 		// Metadata.
 		input.add(WikiInfoExtractor.WIKIINFO);
