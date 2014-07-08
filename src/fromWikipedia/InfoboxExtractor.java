@@ -107,6 +107,8 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
 	/** For cleaning up values */
 	protected PatternList valueCleaner;
+	
+	protected Map<String, String> unitDictionary;
 
 	// /** Extracts a relation from a string */
 	// protected void extract(String entity, String string, String relation,
@@ -283,6 +285,9 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 		valueCleaner = new PatternList(
 				PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
 				"<_infoboxReplace>");
+		unitDictionary = PatternHardExtractor.INFOBOXPATTERNS.factCollection()
+				.collectSubjectAndObjectAsStrings("<_hasPredefinedUnit>");
+		
 		String typeRelation = FactComponent
 				.forInfoboxTypeRelation(this.language);
 		// Extract the information
@@ -331,12 +336,24 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 						value = valueCleaner.transform(value);
 						// Here, too, avoid nonsense
 						if (value != null && !value.isEmpty()) {
+							
+							String object;
+							//If the object should have an unit specified, and the object is numerical
+							if(unitDictionary.containsKey(attribute) && value.matches("[-+]?\\d+(\\.\\d+)?")) {
+								
+								object = FactComponent.forStringWithDatatype(value,
+												unitDictionary.get(attribute));
+								
+							} else {
+								
+								object = FactComponent.forStringWithLanguage(value, language);
+							
+							}
+							
 							write(INFOBOX_ATTRIBUTES.inLanguage(language),
 									new Fact(titleEntity, FactComponent
 											.forInfoboxAttribute(this.language,
-													attribute), FactComponent
-											.forStringWithLanguage(value,
-													language)),
+													attribute), object),
 									INFOBOX_ATTRIBUTE_SOURCES
 											.inLanguage(language),
 									FactComponent.wikipediaURL(titleEntity),
