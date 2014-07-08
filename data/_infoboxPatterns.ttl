@@ -36,10 +36,10 @@
 "<londeg> degrees <lonmin> minutes <lonsec> seconds <londir>"	<_infoboxCombine>	"_longitude" .
 
 # --------- Atrribute units --------------
-<populationdensitykm>	<_hasPredefinedUnit>	"/km^2"
-<area>	<_hasPredefinedUnit>	"km^2"
-<areakm>	<_hasPredefinedUnit>	"km^2"
-<areatotalkm>	<_hasPredefinedUnit>	"km^2"
+<populationdensitykm>	<_hasPredefinedUnit>	"/km^2" .
+<area>	<_hasPredefinedUnit>	"km^2" .
+<areakm>	<_hasPredefinedUnit>	"km^2" .
+<areatotalkm>	<_hasPredefinedUnit>	"km^2" .
 
 # --------- Infobox patterns --------------
 
@@ -67,7 +67,7 @@
 #<infobox/en/ICD10>  <_infoboxPattern> <hasICD10> .
 <infobox/en/Capital>  <_infoboxPattern> <hasCapital> .
 <infobox/en/OfficialLang> <_infoboxPattern> <hasOfficialLanguage> .
-# <infobox/en/---Governor>  <_infoboxPattern> <isLeaderOf-> . // Often goes for the president with his governor
+# <infobox/en/---Governor>  <_infoboxPattern> <isLeabio markt saarbrueckenderOf-> . // Often goes for the president with his governor
 <infobox/en/Senators> <_infoboxPattern> <isPoliticianOf-> .
 <infobox/en/Motto>  <_infoboxPattern> <hasMotto> .
 <infobox/en/nationalMotto>  <_infoboxPattern> <hasMotto> .
