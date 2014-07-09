@@ -341,6 +341,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 						if (value != null && !value.isEmpty()) {
 							
 							String object;
+							attribute = FactComponent.forInfoboxAttribute(this.language, attribute);
 							//If the object should have an unit specified, and the object is numerical
 							if(unitDictionary.containsKey(attribute) && value.matches("[-+]?\\d+(\\.\\d+)?")) {
 								
@@ -354,9 +355,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 							}
 							
 							write(INFOBOX_ATTRIBUTES.inLanguage(language),
-									new Fact(titleEntity, FactComponent
-											.forInfoboxAttribute(this.language,
-													attribute), object),
+									new Fact(titleEntity, attribute, object),
 									INFOBOX_ATTRIBUTE_SOURCES
 											.inLanguage(language),
 									FactComponent.wikipediaURL(titleEntity),
