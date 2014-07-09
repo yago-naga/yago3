@@ -74,7 +74,7 @@ public class AIDAExtractor extends SimpleDeduplicator {
 			"<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>",
 			"<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>",
 			"<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
-			"<hasWikiCategory>", "<hasWikipediaAnchorText>");
+			"<hasWikipediaCategory>", "<hasWikipediaAnchorText>");
 
 	@Override
 	public Theme myOutput() {
