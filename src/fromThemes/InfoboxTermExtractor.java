@@ -16,6 +16,7 @@ import utils.TermParser;
 import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
+import basics.YAGO;
 import extractors.MultilingualExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
@@ -82,6 +83,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 		PatternList replacements = new PatternList(
 				PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
 				"<_infoboxReplace>");
+		Map<String, String> unitDictionary = PatternHardExtractor.INFOBOXPATTERNS.factCollection()
+				.getMap("<_hasPredefinedUnit>");
 		Map<String, String> preferredMeanings = WordnetExtractor.PREFMEANINGS
 				.factCollection().getPreferredMeanings();
 
@@ -105,6 +108,17 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 			List<String> objects = new ArrayList<>();
 			for (TermParser termParser : parsers) {
 				for(String s : termParser.extractList(val)) {
+					
+					//Add predefined units
+					if (unitDictionary.containsKey(f.getRelation())) {
+						String datatype = FactComponent.getDatatype(s);
+						if (datatype.equals(YAGO.decimal) || datatype.equals(YAGO.integer)) {
+							String value = FactComponent.getString(s);
+							s = FactComponent.forStringWithDatatype(value, 
+									unitDictionary.get(f.getRelation()));
+						}
+					}
+					
 					if(!objects.contains(s)) objects.add(s);
 				}
 			}

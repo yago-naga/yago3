@@ -286,10 +286,6 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 		valueCleaner = new PatternList(
 				PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
 				"<_infoboxReplace>");
-		Announce.doing("Loading patterns of", "<_hasPredefinedUnit>");
-		unitDictionary = PatternHardExtractor.INFOBOXPATTERNS.factCollection()
-				.getMap("<_hasPredefinedUnit>");
-		Announce.done();
 		
 		String typeRelation = FactComponent
 				.forInfoboxTypeRelation(this.language);
@@ -340,21 +336,8 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 						value = value.trim();
 						// Here, too, avoid nonsense
 						if (value != null && !value.isEmpty()) {
-							
-							String object;
+							String object = FactComponent.forStringWithLanguage(value, language);
 							attribute = FactComponent.forInfoboxAttribute(this.language, attribute);
-							//If the object should have an unit specified, and the object is numerical
-							if(unitDictionary.containsKey(attribute) && value.matches("[-+]?[\\d,]+(\\.\\d+)?")) {
-								
-								object = FactComponent.forStringWithDatatype(value,
-												unitDictionary.get(attribute));
-								
-							} else {
-								
-								object = FactComponent.forStringWithLanguage(value, language);
-							
-							}
-							
 							write(INFOBOX_ATTRIBUTES.inLanguage(language),
 									new Fact(titleEntity, attribute, object),
 									INFOBOX_ATTRIBUTE_SOURCES
