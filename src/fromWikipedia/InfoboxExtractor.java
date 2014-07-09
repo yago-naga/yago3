@@ -337,6 +337,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				for (String attribute : attributes.keySet()) {
 					for (String value : attributes.get(attribute)) {
 						value = valueCleaner.transform(value);
+						value = value.trim();
 						// Here, too, avoid nonsense
 						if (value != null && !value.isEmpty()) {
 							
