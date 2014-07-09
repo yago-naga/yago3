@@ -288,7 +288,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 				"<_infoboxReplace>");
 		Announce.doing("Loading patterns of", "<_hasPredefinedUnit>");
 		unitDictionary = PatternHardExtractor.INFOBOXPATTERNS.factCollection()
-				.getReverseMap("<_hasPredefinedUnit>");
+				.getMap("<_hasPredefinedUnit>");
 		Announce.done();
 		
 		String typeRelation = FactComponent
