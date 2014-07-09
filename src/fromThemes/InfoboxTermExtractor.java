@@ -112,7 +112,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 					//Add predefined units
 					if (unitDictionary.containsKey(f.getRelation())) {
 						String datatype = FactComponent.getDatatype(s);
-						if (datatype.equals(YAGO.decimal) || datatype.equals(YAGO.integer)) {
+						if (datatype != null 
+								&& (datatype.equals(YAGO.decimal) || datatype.equals(YAGO.integer))) {
 							String value = FactComponent.getString(s);
 							s = FactComponent.forStringWithDatatype(value, 
 									unitDictionary.get(f.getRelation()));
