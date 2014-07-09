@@ -114,7 +114,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 						String datatype = FactComponent.getDatatype(s);
 						if (datatype != null 
 								&& (datatype.equals(YAGO.decimal) || datatype.equals(YAGO.integer))) {
-							String value = FactComponent.getString(s);
+							String value = FactComponent.stripQuotes(FactComponent.getString(s));
 							s = FactComponent.forStringWithDatatype(value, 
 									unitDictionary.get(f.getRelation()));
 						}
