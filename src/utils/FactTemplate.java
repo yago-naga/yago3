@@ -67,11 +67,11 @@ public class FactTemplate {
 			set.add(arg2.charAt(1) - '0');
 	}
 
-	/** Instantiates the fact template (or returns NULL) */
-	public Fact instantiate(Map<String, String> variables, boolean makeId) {
-		String a1 = instantiate(arg1, variables);
-		String r = instantiate(relation, variables);
-		String a2 = instantiate(arg2, variables);
+	/** Instantiates the fact template (or returns NULL) for a specific langauge */
+	public Fact instantiate(Map<String, String> variables, boolean makeId, String langauge) {
+		String a1 = instantiate(arg1, variables, langauge);
+		String r = instantiate(relation, variables, langauge);
+		String a2 = instantiate(arg2, variables, langauge);
 		if (a1 == null || a2 == null || r == null)
 			return (null);
 		Fact fact = new Fact(a1, r, a2);
@@ -80,19 +80,19 @@ public class FactTemplate {
 		return (fact);
 	}
 
-	/** Creates a fact component from a string with variables */
-	public static String instantiate(String s, Map<String, String> variables) {
+	/** Creates a fact component from a string with variables for a specific langauge*/
+	public static String instantiate(String s, Map<String, String> variables, String langauge) {
 		for (Entry<String, String> rep : variables.entrySet())
 			s = s.replace(rep.getKey(), rep.getValue());
 		if (s.startsWith("@"))
-			return (format(s));
+			return (format(s, langauge));
 		if (isVariable(s) || isFactReference(s))
 			return (null);
 		return (FactComponent.forAny(s));
 	}
 
 	/** Creates a fact component for a formatted string of the form @XXX() */
-	public static String format(String word) {
+	public static String format(String word, String language) {
 		final Pattern formattedPattern = Pattern
 				.compile("@([a-zA-Z]+)\\((.*?)\\)");
 		Matcher m = formattedPattern.matcher(word);
@@ -108,7 +108,7 @@ public class FactTemplate {
 		switch (m.group(1)) {
 		case "Text":
 		case "String":
-			return (FactComponent.forStringWithLanguage(thing, "eng"));
+			return (FactComponent.forStringWithLanguage(thing, language));
 		case "Url":
 			if (!urlPattern.matcher(thing).matches()) {
 				Announce.debug("Not an URL:", thing);
@@ -195,9 +195,15 @@ public class FactTemplate {
 		return (factList);
 	}
 
-	/** Instantiates fact templates with variables */
+	 /** Instantiates fact templates with variables */
+  public static List<Fact> instantiate(List<FactTemplate> templates,
+      Map<String, String> variables) {
+    return instantiate(templates, variables, "eng");
+  }
+
+	/** Instantiates fact templates with variables for a specific language */
 	public static List<Fact> instantiate(List<FactTemplate> templates,
-			Map<String, String> variables) {
+			Map<String, String> variables, String langauge) {
 		List<Fact> factList = new ArrayList<Fact>();
 		Set<Integer> factReferences = new TreeSet<>();
 		for (FactTemplate template : templates) {
@@ -205,7 +211,7 @@ public class FactTemplate {
 		}
 		for (int i = 0; i < templates.size(); i++) {
 			if (factReferences.contains(i + 1)) {
-				Fact fact = templates.get(i).instantiate(variables, true);
+				Fact fact = templates.get(i).instantiate(variables, true, langauge);
 				if (fact == null) {
 					Announce.warning("Can't instantiate", i, "in", templates);
 					continue;
@@ -215,7 +221,7 @@ public class FactTemplate {
 				variables.put("#" + (i + 1), fact.getId());
 				factList.add(fact);
 			} else {
-				factList.add(templates.get(i).instantiate(variables, false));
+				factList.add(templates.get(i).instantiate(variables, false, langauge));
 			}
 		}
 		return (factList);

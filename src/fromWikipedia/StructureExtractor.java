@@ -12,10 +12,11 @@ import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.FactTemplateExtractor;
+import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
 import basics.Fact;
-import extractors.EnglishWikipediaExtractor;
+import extractors.MultilingualWikipediaExtractor;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
@@ -28,7 +29,7 @@ import fromOtherSources.WordnetExtractor;
  * @author Johannes Hoffart
  * 
  */
-public class StructureExtractor extends EnglishWikipediaExtractor {
+public class StructureExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -41,27 +42,27 @@ public class StructureExtractor extends EnglishWikipediaExtractor {
 	@Override
 	public Set<FollowUpExtractor> followUp() {
 		return new FinalSet<FollowUpExtractor>(new Redirector(
-				DIRTYSTRUCTUREFACTS, REDIRECTEDSTRUCTUREFACTS, this),
-				new TypeChecker(REDIRECTEDSTRUCTUREFACTS, STRUCTUREFACTS, this));
+				DIRTYSTRUCTUREFACTS.inLanguage(language), REDIRECTEDSTRUCTUREFACTS.inLanguage(language), this),
+				new TypeChecker(REDIRECTEDSTRUCTUREFACTS.inLanguage(language), STRUCTUREFACTS.inLanguage(language), this));
 	}
 
 	/** Facts representing the Wikipedia structure (e.g. links) */
-	public static final Theme DIRTYSTRUCTUREFACTS = new Theme(
+	public static final MultilingualTheme DIRTYSTRUCTUREFACTS = new MultilingualTheme(
 			"structureFactsNeedTypeCheckingRedirecting",
 			"Regular structure from Wikipedia, e.g. links - needs redirecting and typechecking");
 
 	/** Facts representing the Wikipedia structure (e.g. links) */
-	public static final Theme REDIRECTEDSTRUCTUREFACTS = new Theme(
+	public static final MultilingualTheme REDIRECTEDSTRUCTUREFACTS = new MultilingualTheme(
 			"structureFactsNeedTypeChecking",
 			"Regular structure from Wikipedia, e.g. links - needs typechecking");
 
 	/** Facts representing the Wikipedia structure (e.g. links) */
-	public static final Theme STRUCTUREFACTS = new Theme("structureFacts",
+	public static final MultilingualTheme STRUCTUREFACTS = new MultilingualTheme("structureFacts",
 			"Regular structure from Wikipedia, e.g. links");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(DIRTYSTRUCTUREFACTS);
+		return new FinalSet<Theme>(DIRTYSTRUCTUREFACTS.inLanguage(language));
 	}
 
 	@Override
@@ -69,7 +70,7 @@ public class StructureExtractor extends EnglishWikipediaExtractor {
 		// Extract the information
 		Announce.doing("Extracting structure facts");
 
-		BufferedReader in = FileUtils.getBufferedUTF8Reader(inputData);
+		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		TitleExtractor titleExtractor = new TitleExtractor("en");
 
 		FactCollection structurePatternCollection = PatternHardExtractor.STRUCTUREPATTERNS
@@ -94,9 +95,9 @@ public class StructureExtractor extends EnglishWikipediaExtractor {
 						" ");
 
 				for (Fact fact : structurePatterns.extract(normalizedPage,
-						titleEntity)) {
+						titleEntity, language)) {
 					if (fact != null)
-						DIRTYSTRUCTUREFACTS.write(fact);
+						DIRTYSTRUCTUREFACTS.inLanguage(language).write(fact);
 				}
 			}
 		}
@@ -108,8 +109,8 @@ public class StructureExtractor extends EnglishWikipediaExtractor {
 	 * @param wikipedia
 	 *            Wikipedia XML dump
 	 */
-	public StructureExtractor(File wikipedia) {
-		super(wikipedia);
+	public StructureExtractor(String lang, File wikipedia) {
+	  super(lang, wikipedia);
 	}
 
 }

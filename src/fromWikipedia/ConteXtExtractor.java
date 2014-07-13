@@ -13,10 +13,11 @@ import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.FactTemplateExtractor;
+import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
 import basics.Fact;
-import extractors.EnglishWikipediaExtractor;
+import extractors.MultilingualWikipediaExtractor;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
@@ -31,7 +32,7 @@ import fromOtherSources.WordnetExtractor;
  * @author Johannes Hoffart
  * 
  */
-public class ConteXtExtractor extends EnglishWikipediaExtractor {
+public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -42,30 +43,30 @@ public class ConteXtExtractor extends EnglishWikipediaExtractor {
 	}
 
 	/** Context for entities */
-	public static final Theme DIRTYCONTEXTFACTS = new Theme(
+	public static final MultilingualTheme DIRTYCONTEXTFACTS = new MultilingualTheme(
 			"conteXtFactsDirty",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs redirecting and typechecking");
 
-	public static final Theme REDIRECTEDCONTEXTFACTS = new Theme(
+	public static final MultilingualTheme REDIRECTEDCONTEXTFACTS = new MultilingualTheme(
 			"conteXtFactsRedirected",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names - needs typechecking");
 
 	/** Context for entities */
-	public static final Theme CONTEXTFACTS = new Theme(
+	public static final MultilingualTheme CONTEXTFACTS = new MultilingualTheme(
 			"yagoConteXtFacts",
 			"Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
 	@Override
 	public Set<Theme> output() {
 		// return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);
-		return new FinalSet<Theme>(DIRTYCONTEXTFACTS);
+		return new FinalSet<Theme>(DIRTYCONTEXTFACTS.inLanguage(language));
 	}
 
 	@Override
 	public Set<FollowUpExtractor> followUp() {
 		return new FinalSet<FollowUpExtractor>(new Redirector(
-				DIRTYCONTEXTFACTS, REDIRECTEDCONTEXTFACTS, this),
-				new TypeChecker(REDIRECTEDCONTEXTFACTS, CONTEXTFACTS, this));
+				DIRTYCONTEXTFACTS.inLanguage(language), REDIRECTEDCONTEXTFACTS.inLanguage(language), this),
+				new TypeChecker(REDIRECTEDCONTEXTFACTS.inLanguage(language), CONTEXTFACTS.inLanguage(language), this));
 	}
 
 	@Override
@@ -73,7 +74,7 @@ public class ConteXtExtractor extends EnglishWikipediaExtractor {
 		// Extract the information
 		Announce.doing("Extracting context facts");
 
-		BufferedReader in = FileUtils.getBufferedUTF8Reader(inputData);
+		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		TitleExtractor titleExtractor = new TitleExtractor("en");
 
 		FactCollection contextPatternCollection = PatternHardExtractor.CONTEXTPATTERNS
@@ -111,7 +112,7 @@ public class ConteXtExtractor extends EnglishWikipediaExtractor {
 				for (Fact fact : contextPatterns.extract(normalizedPage,
 						titleEntity)) {
 					if (fact != null) {
-						DIRTYCONTEXTFACTS.write(fact);
+						DIRTYCONTEXTFACTS.inLanguage(language).write(fact);
 					}
 				}
 			}
@@ -124,8 +125,8 @@ public class ConteXtExtractor extends EnglishWikipediaExtractor {
 	 * @param wikipedia
 	 *            Wikipedia XML dump
 	 */
-	public ConteXtExtractor(File wikipedia) {
-		super(wikipedia);
+	public ConteXtExtractor(String lang, File wikipedia) {
+		super(lang, wikipedia);
 	}
 
 }

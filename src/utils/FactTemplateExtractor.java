@@ -60,28 +60,40 @@ public class FactTemplateExtractor {
 	 * @return Collection of facts
 	 */
 	public Collection<Fact> extract(String string, String dollarZero) {
-		List<Fact> result = new ArrayList<>();
-		for (Pair<Pattern, List<FactTemplate>> pattern : patterns) {
-			Matcher m = pattern.first().matcher(string);
-			while (m.find()) {
-				Map<String, String> variables = new TreeMap<>();
-				variables.put("$0", dollarZero);
-				for (int i = 1; i <= m.groupCount(); i++) {
-					if (m.group(i).trim().isEmpty()) {
-						Announce.debug("$" + i
-								+ " was empty, skipping fact for pattern: "
-								+ pattern);
-						continue;
-					} else {
-						variables.put("$" + i, m.group(i));
-					}
-				}
-				result.addAll(FactTemplate.instantiate(pattern.second(),
-						variables));
-			}
-		}
-		return (result);
+	  return extract(string, dollarZero, "eng");
 	}
+	
+	 /**
+   * Extracts facts using patterns without provenance for a specific language
+   * 
+   * @param string
+   * @param dollarZero
+   * @return Collection of facts
+   */
+  public Collection<Fact> extract(String string, String dollarZero, String langauge) {
+    List<Fact> result = new ArrayList<>();
+    for (Pair<Pattern, List<FactTemplate>> pattern : patterns) {
+      Matcher m = pattern.first().matcher(string);
+      while (m.find()) {
+        Map<String, String> variables = new TreeMap<>();
+        variables.put("$0", dollarZero);
+        for (int i = 1; i <= m.groupCount(); i++) {
+          if (m.group(i).trim().isEmpty()) {
+            Announce.debug("$" + i
+                + " was empty, skipping fact for pattern: "
+                + pattern);
+            continue;
+          } else {
+            variables.put("$" + i, m.group(i));
+          }
+        }
+        result.addAll(FactTemplate.instantiate(pattern.second(),
+            variables, langauge));
+      }
+    }
+    return (result);
+  }
+
 
 	/**
 	 * Extracts facts using patterns including provenance
@@ -110,7 +122,7 @@ public class FactTemplateExtractor {
 					}
 				}
 				for (Fact f : FactTemplate.instantiate(pattern.second(),
-						variables)) {
+						variables, "eng")) {
 					result.add(new Pair<Fact, String>(f, pattern.first
 							.toString() + " -> " + pattern.second.toString()));
 				}

@@ -1,7 +1,6 @@
 package deduplicators;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
@@ -35,21 +34,20 @@ public class LabelExtractor extends SimpleDeduplicator {
 	@Override
 	@ImplementationNote("We don't have conflicts here, so let's just take any order")
 	public List<Theme> inputOrdered() {
-		List<Theme> input = new ArrayList<>(Arrays.asList(
-				SchemaExtractor.YAGOSCHEMA,
-				DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS,
-				HardExtractor.HARDWIREDFACTS,
-				WikidataLabelExtractor.WIKIPEDIALABELS,
-				PersonNameExtractor.PERSONNAMES, WordnetExtractor.WORDNETWORDS,
-				SchemaExtractor.YAGOSCHEMA, WordnetExtractor.WORDNETGLOSSES,
-				WikidataLabelExtractor.WIKIDATAMULTILABELS,
-				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
-		input.addAll(CategoryMapper.CATEGORYFACTS
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
-		input.addAll(InfoboxMapper.INFOBOXFACTS
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
-		input.addAll(RedirectExtractor.REDIRECTFACTS
-				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		List<Theme> input = new ArrayList<>();
+    input.add(SchemaExtractor.YAGOSCHEMA);
+    input.addAll(DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.add(HardExtractor.HARDWIREDFACTS);
+    input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
+    input.add(PersonNameExtractor.PERSONNAMES);
+    input.add(WordnetExtractor.WORDNETWORDS);
+    input.add(SchemaExtractor.YAGOSCHEMA);
+    input.add(WordnetExtractor.WORDNETGLOSSES);
+    input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
+    input.add(GeoNamesDataImporter.GEONAMESMAPPEDDATA);
+    input.addAll(CategoryMapper.CATEGORYFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.addAll(InfoboxMapper.INFOBOXFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.addAll(RedirectExtractor.REDIRECTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return input;
 	}
 

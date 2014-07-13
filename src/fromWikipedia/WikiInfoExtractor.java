@@ -8,11 +8,12 @@ import java.util.Set;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
+import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
-import extractors.EnglishWikipediaExtractor;
+import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.TransitiveTypeExtractor;
 
@@ -24,7 +25,7 @@ import fromThemes.TransitiveTypeExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class WikiInfoExtractor extends EnglishWikipediaExtractor {
+public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -39,14 +40,14 @@ public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 	}
 
 	/** The importance scores for the type facts */
-	public static final Theme WIKIINFO = new Theme(
+	public static final MultilingualTheme WIKIINFO = new MultilingualTheme(
 			"yagoWikipediaInfo",
 			"Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities.",
 			Theme.ThemeGroup.OTHER);
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<>(WIKIINFO);
+		return new FinalSet<>(WIKIINFO.inLanguage(language));
 	}
 
 	@Override
@@ -56,7 +57,7 @@ public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 		TitleExtractor titleExtractor = new TitleExtractor("en");
 		// Extract the information
 		// Announce.progressStart("Extracting", 3_900_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
+		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		while (FileLines.scrollTo(in, "<title>")) {
 			String entity = titleExtractor.getTitleEntity(in);
 			if (entity == null)
@@ -68,10 +69,10 @@ public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 			String page = FileLines.readToBoundary(in, "</text>");
 			if (page == null)
 				continue;
-			WIKIINFO.write(new Fact(entity, "<hasWikipediaArticleLength>",
+			WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>",
 					FactComponent.forNumber(page.length())));
-			WIKIINFO.write(new Fact(entity, "<hasWikipediaUrl>", FactComponent
-					.wikipediaURL(entity)));
+			WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent
+					.wikipediaURL(entity, language)));
 			Set<String> targets = new HashSet<>();
 			for (int pos = page.indexOf("[["); pos != -1; pos = page.indexOf(
 					"[[", pos + 2)) {
@@ -88,16 +89,16 @@ public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 				targets.add(target);
 			}
 			for (String target : targets)
-				WIKIINFO.write(new Fact(entity, "<linksTo>", target));
+				WIKIINFO.inLanguage(language).write(new Fact(entity, "<linksTo>", target));
 		}
 	}
 
-	public WikiInfoExtractor(File wikipediaFile) {
-		super(wikipediaFile);
+	public WikiInfoExtractor(String lang,File wikipediaFile) {
+		super(lang,wikipediaFile);
 	}
 
 	public static void main(String[] args) throws Exception {
-		new WikiInfoExtractor(
+		new WikiInfoExtractor("en",
 				new File(
 						"c:/Fabian/eclipseProjects/yago2s/testCases/extractors.CategoryExtractor/wikitest.xml"))
 				.extract(new File("c:/fabian/data/yago3"),

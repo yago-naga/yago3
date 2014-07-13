@@ -39,23 +39,23 @@ public class AIDAExtractor extends SimpleDeduplicator {
 		input.add(SchemaExtractor.YAGOSCHEMA);
 		
 		// Dictionary.
-		input.add(StructureExtractor.STRUCTUREFACTS); // also gives links and anchor texts.
-		input.add(DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS);
+		input.addAll(StructureExtractor.STRUCTUREFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages)); // also gives links and anchor texts.
+		input.addAll(DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.add(PersonNameExtractor.PERSONNAMES);
 		input.addAll(RedirectExtractor.REDIRECTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.add(GenderExtractor.PERSONS_GENDER);
-		//input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
-		input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
+		input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
+		//input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
 		
 		// Metadata.
-		input.add(WikiInfoExtractor.WIKIINFO);
+		input.addAll(WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		
 		// Types and Taxonomy.
 		input.add(TransitiveTypeExtractor.TRANSITIVETYPE);
 		input.add(ClassExtractor.YAGOTAXONOMY);
 		
 		// Keyphrases.
-		input.add(ConteXtExtractor.CONTEXTFACTS);
+		input.addAll(ConteXtExtractor.CONTEXTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		return input;
 	}

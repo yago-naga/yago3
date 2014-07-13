@@ -12,9 +12,10 @@ import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.FactTemplateExtractor;
+import utils.MultilingualTheme;
 import utils.Theme;
 import basics.Fact;
-import extractors.EnglishWikipediaExtractor;
+import extractors.MultilingualWikipediaExtractor;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
@@ -26,7 +27,7 @@ import fromOtherSources.PatternHardExtractor;
  * @author Johannes Hoffart
  * 
  */
-public class DisambiguationPageExtractor extends EnglishWikipediaExtractor {
+public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -37,29 +38,29 @@ public class DisambiguationPageExtractor extends EnglishWikipediaExtractor {
 	@Override
 	public Set<FollowUpExtractor> followUp() {
 		return new FinalSet<FollowUpExtractor>(new Redirector(
-				DIRTYDISAMBIGUATIONMEANSFACTS,
-				REDIRECTEDDISAMBIGUATIONMEANSFACTS, this), new TypeChecker(
-				REDIRECTEDDISAMBIGUATIONMEANSFACTS, DISAMBIGUATIONMEANSFACTS,
+				DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language),
+				REDIRECTEDDISAMBIGUATIONMEANSFACTS.inLanguage(language), this), new TypeChecker(
+				REDIRECTEDDISAMBIGUATIONMEANSFACTS.inLanguage(language), DISAMBIGUATIONMEANSFACTS.inLanguage(language),
 				this));
 	}
 
 	/** Means facts from disambiguation pages */
-	public static final Theme DIRTYDISAMBIGUATIONMEANSFACTS = new Theme(
+	public static final MultilingualTheme DIRTYDISAMBIGUATIONMEANSFACTS = new MultilingualTheme(
 			"disambiguationMeansFactsDirty",
 			"Means facts from disambiguation pages - needs redirecting and typechecking");
 
 	/** Means facts from disambiguation pages */
-	public static final Theme REDIRECTEDDISAMBIGUATIONMEANSFACTS = new Theme(
+	public static final MultilingualTheme REDIRECTEDDISAMBIGUATIONMEANSFACTS = new MultilingualTheme(
 			"disambiguationMeansFactsRedirected",
 			"Means facts from disambiguation pages - needs typechecking");
 
 	/** Means facts from disambiguation pages */
-	public static final Theme DISAMBIGUATIONMEANSFACTS = new Theme(
+	public static final MultilingualTheme DISAMBIGUATIONMEANSFACTS = new MultilingualTheme(
 			"disambiguationMeansFacts", "Means facts from disambiguation pages");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(DIRTYDISAMBIGUATIONMEANSFACTS);
+		return new FinalSet<Theme>(DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language));
 	}
 
 	@Override
@@ -67,7 +68,7 @@ public class DisambiguationPageExtractor extends EnglishWikipediaExtractor {
 		// Extract the information
 		Announce.doing("Extracting disambiguation means");
 
-		BufferedReader in = FileUtils.getBufferedUTF8Reader(inputData);
+		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 
 		FactCollection disambiguationPatternCollection = PatternHardExtractor.DISAMBIGUATIONTEMPLATES
 				.factCollection();
@@ -96,7 +97,7 @@ public class DisambiguationPageExtractor extends EnglishWikipediaExtractor {
 					for (Fact fact : disambiguationPatterns.extract(page,
 							titleEntity)) {
 						if (fact != null)
-							DIRTYDISAMBIGUATIONMEANSFACTS.write(fact);
+							DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language).write(fact);
 					}
 				}
 			}
@@ -134,8 +135,8 @@ public class DisambiguationPageExtractor extends EnglishWikipediaExtractor {
 	 * @param wikipedia
 	 *            Wikipedia XML dump
 	 */
-	public DisambiguationPageExtractor(File wikipedia) {
-		super(wikipedia);
+	public DisambiguationPageExtractor(String lang, File wikipedia) {
+		super(lang, wikipedia);
 	}
 
 	public static void main(String[] args) throws Exception {
