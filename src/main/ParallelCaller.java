@@ -311,16 +311,14 @@ public class ParallelCaller {
 	    }
 	  }
 	  Announce.warning("Try adding the following extractors to resolve missing inputs:");
-	  List<Extractor> sortedExtractorsToRun = new ArrayList<>(extractorsToRun);
-	  Collections.sort(sortedExtractorsToRun, new Comparator<Extractor>() {
-
-      @Override
-      public int compare(Extractor o1, Extractor o2) {
-        return o1.getClass().getCanonicalName().compareTo(o2.getClass().getCanonicalName());
-      }
-    });
-	  for (Extractor e : sortedExtractorsToRun) {
-	    System.out.println(e.getClass().getCanonicalName() + ",");
+	  Set<String> extractorsToRunSet = new HashSet<>();
+	  for(Extractor e: extractorsToRun) {
+	    extractorsToRunSet.add(e.getClass().getCanonicalName());
+	  }
+	  List<String> sortedExtractorsToRun = new ArrayList<>(extractorsToRunSet);
+	  Collections.sort(sortedExtractorsToRun);
+	  for (String e : sortedExtractorsToRun) {
+	    System.out.println(e+ ",");
 	  }
 	  Announce.warning("Themes that are still missing: " + unresolvable);
 	}
