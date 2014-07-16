@@ -42,6 +42,7 @@ public class AIDAExtractor extends SimpleDeduplicator {
 		input.addAll(StructureExtractor.STRUCTUREFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages)); // also gives links and anchor texts.
 		input.addAll(DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.add(PersonNameExtractor.PERSONNAMES);
+		input.add(PersonNameExtractor.PERSONNAMEHEURISTICS);
 		input.addAll(RedirectExtractor.REDIRECTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.add(GenderExtractor.PERSONS_GENDER);
 		input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);

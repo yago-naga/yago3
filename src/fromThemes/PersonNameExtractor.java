@@ -36,10 +36,14 @@ public class PersonNameExtractor extends Extractor {
 	/** Sources */
 	public static final Theme PERSONNAMESOURCES = new Theme(
 			"personNameSources", "Sources for the names of people");
+	
+	 /** Sources */
+  public static final Theme PERSONNAMEHEURISTICS = new Theme(
+      "personNameHeuristics", "Generates rdfs:label in the form of 'FirstName FamilyName'");
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<>(PERSONNAMES, PERSONNAMESOURCES);
+		return new FinalSet<>(PERSONNAMES, PERSONNAMESOURCES, PERSONNAMEHEURISTICS);
 	}
 
 	@Override
@@ -66,6 +70,10 @@ public class PersonNameExtractor extends Extractor {
 				write(PERSONNAMES, new Fact(f.getArg(1), "<hasGivenName>",
 						FactComponent.forStringWithLanguage(given, "eng")),
 						PERSONNAMESOURCES, source, "PersonNameExtractor");
+				
+        write(PERSONNAMEHEURISTICS, new Fact(f.getArg(1), RDFS.label,
+            FactComponent.forStringWithLanguage(given + " " + family, "eng")),
+            PERSONNAMESOURCES, source, "PersonNameExtractor");
 			}
 			write(PERSONNAMES, new Fact(f.getArg(1), "<hasFamilyName>",
 					FactComponent.forStringWithLanguage(family, "eng")),
