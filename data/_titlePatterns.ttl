@@ -35,4 +35,3 @@
 "Co-Princes of"	<_titleReplace>	"NIL" .
 "[bB]rothers"	<_titleReplace>	"NIL" .
 "Leader of"	<_titleReplace>	"NIL" .
-"^\\d+"	<_titleReplace>	"NIL" .
