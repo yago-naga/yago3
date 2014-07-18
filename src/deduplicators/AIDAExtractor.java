@@ -45,8 +45,8 @@ public class AIDAExtractor extends SimpleDeduplicator {
 		input.add(PersonNameExtractor.PERSONNAMEHEURISTICS);
 		input.addAll(RedirectExtractor.REDIRECTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.add(GenderExtractor.PERSONS_GENDER);
+		input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
 		input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
-		//input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
 		
 		// Metadata.
 		input.addAll(WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages));
