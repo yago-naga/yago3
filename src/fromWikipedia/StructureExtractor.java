@@ -17,6 +17,7 @@ import utils.Theme;
 import utils.TitleExtractor;
 import basics.Fact;
 import extractors.MultilingualWikipediaExtractor;
+import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
@@ -41,20 +42,37 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<FollowUpExtractor> followUp() {
-		return new FinalSet<FollowUpExtractor>(new Redirector(
-				DIRTYSTRUCTUREFACTS.inLanguage(language), REDIRECTEDSTRUCTUREFACTS.inLanguage(language), this),
-				new TypeChecker(REDIRECTEDSTRUCTUREFACTS.inLanguage(language), STRUCTUREFACTS.inLanguage(language), this));
+	  
+	  Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
+
+        
+	  result.add(new Redirector(
+        DIRTYSTRUCTUREFACTS.inLanguage(language), REDIRECTEDSTRUCTUREFACTS.inLanguage(language), this));
+
+    if (!isEnglish()) {
+      result.add(new EntityTranslator(REDIRECTEDSTRUCTUREFACTS.inLanguage(language), TRANSLATEDREDIRECTEDSTRUCTUREFACTS.inLanguage(this.language), this));
+      result.add(new TypeChecker(TRANSLATEDREDIRECTEDSTRUCTUREFACTS.inLanguage(language), STRUCTUREFACTS.inLanguage(language), this));
+    } else {
+      result.add(new TypeChecker(REDIRECTEDSTRUCTUREFACTS.inLanguage(language), STRUCTUREFACTS.inLanguage(language), this));
+    }
+    return result;
 	}
 
 	/** Facts representing the Wikipedia structure (e.g. links) */
 	public static final MultilingualTheme DIRTYSTRUCTUREFACTS = new MultilingualTheme(
-			"structureFactsNeedTypeCheckingRedirecting",
-			"Regular structure from Wikipedia, e.g. links - needs redirecting and typechecking");
-
+			"structureFactsNeedTranslationTypeCheckingRedirecting",
+			"Regular structure from Wikipedia, e.g. links - needs redirecting, translation and typechecking");
+	
 	/** Facts representing the Wikipedia structure (e.g. links) */
 	public static final MultilingualTheme REDIRECTEDSTRUCTUREFACTS = new MultilingualTheme(
-			"structureFactsNeedTypeChecking",
-			"Regular structure from Wikipedia, e.g. links - needs typechecking");
+	    "structureFactsNeedTranslationTypeChecking",
+	    "Regular structure from Wikipedia, e.g. links - needs translation and typechecking");
+
+	 /** Facts representing the Wikipedia structure (e.g. links) */
+  public static final MultilingualTheme TRANSLATEDREDIRECTEDSTRUCTUREFACTS = new MultilingualTheme(
+      "structureFactsNeedTypeChecking",
+      "Regular structure from Wikipedia, e.g. links - needs typechecking");
+	
 
 	/** Facts representing the Wikipedia structure (e.g. links) */
 	public static final MultilingualTheme STRUCTUREFACTS = new MultilingualTheme("structureFacts",
