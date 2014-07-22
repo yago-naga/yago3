@@ -121,7 +121,7 @@ public class FactTemplate {
 			// TODO: Remove this hack if the bug is gone...
 			if (thing.endsWith(">"))
 				thing = thing.substring(0, thing.length() - 1);
-			return (FactComponent.forWikipediaTitle(thing));
+			return (FactComponent.forForeignWikipediaTitle(thing, language));
 		case "Date":
 			String date = DateParser.normalize(thing);
 			String[] datecomp = DateParser.getDate(date);
