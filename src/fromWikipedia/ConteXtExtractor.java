@@ -76,12 +76,12 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 	   result.add(new Redirector(
 	       DIRTYCONTEXTFACTS.inLanguage(language), REDIRECTEDCONTEXTFACTS.inLanguage(language), this));
 
-	    if (!isEnglish()) {
+	    //if (!isEnglish()) {
 	      result.add(new EntityTranslator(REDIRECTEDCONTEXTFACTS.inLanguage(language), TRANSLATEDREDIRECTEDCONTEXTFACTS.inLanguage(this.language), this));
 	      result.add(new TypeChecker(TRANSLATEDREDIRECTEDCONTEXTFACTS.inLanguage(language), CONTEXTFACTS.inLanguage(language), this));
-	    } else {
-	      result.add(new TypeChecker(REDIRECTEDCONTEXTFACTS.inLanguage(language), CONTEXTFACTS.inLanguage(language), this));
-	    }
+	    //} else {
+	    //  result.add(new TypeChecker(REDIRECTEDCONTEXTFACTS.inLanguage(language), CONTEXTFACTS.inLanguage(language), this));
+	    //}
 		return result;
 	}
 
