@@ -49,12 +49,12 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 	  result.add(new Redirector(
         DIRTYSTRUCTUREFACTS.inLanguage(language), REDIRECTEDSTRUCTUREFACTS.inLanguage(language), this));
 
-    //if (!isEnglish()) {
+    if (!isEnglish()) {
       result.add(new EntityTranslator(REDIRECTEDSTRUCTUREFACTS.inLanguage(language), TRANSLATEDREDIRECTEDSTRUCTUREFACTS.inLanguage(this.language), this));
       result.add(new TypeChecker(TRANSLATEDREDIRECTEDSTRUCTUREFACTS.inLanguage(language), STRUCTUREFACTS.inLanguage(language), this));
-    //} else {
-    //  result.add(new TypeChecker(REDIRECTEDSTRUCTUREFACTS.inLanguage(language), STRUCTUREFACTS.inLanguage(language), this));
-    //}
+    } else {
+      result.add(new TypeChecker(REDIRECTEDSTRUCTUREFACTS.inLanguage(language), STRUCTUREFACTS.inLanguage(language), this));
+    }
     return result;
 	}
 
