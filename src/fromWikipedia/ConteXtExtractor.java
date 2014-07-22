@@ -91,7 +91,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 		Announce.doing("Extracting context facts");
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-		TitleExtractor titleExtractor = new TitleExtractor("en");
+		TitleExtractor titleExtractor = new TitleExtractor(language);
 
 		FactCollection contextPatternCollection = PatternHardExtractor.CONTEXTPATTERNS
 				.factCollection();

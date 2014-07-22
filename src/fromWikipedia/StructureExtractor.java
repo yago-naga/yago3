@@ -89,7 +89,7 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 		Announce.doing("Extracting structure facts");
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-		TitleExtractor titleExtractor = new TitleExtractor("en");
+		TitleExtractor titleExtractor = new TitleExtractor(language);
 
 		FactCollection structurePatternCollection = PatternHardExtractor.STRUCTUREPATTERNS
 				.factCollection();
