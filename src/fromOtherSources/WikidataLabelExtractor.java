@@ -6,11 +6,11 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import utils.FactCollection;
-import utils.Theme;
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
@@ -73,8 +73,9 @@ public class WikidataLabelExtractor extends DataExtractor {
 
 	@Override
 	public void extract() throws Exception {
-		FactCollection languagemap = PatternHardExtractor.LANGUAGECODEMAPPING
-				.factCollection();
+		Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING
+				.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
+		D.p(languagemap.get("de"));
 		Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE
 				.factCollection().getSubjects();
 
@@ -118,8 +119,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 						for (String lan : language2name.keySet()) {
 							String foreignName = language2name.get(lan);
 							if (lan.length() == 2)
-								lan = languagemap.getObject(lan,
-										"<hasThreeLetterLanguageCode>");
+								lan = languagemap.get(lan);
 							if (lan == null || lan.length() != 3)
 								continue;
 							write(WIKIDATAMULTILABELS,
@@ -157,15 +157,13 @@ public class WikidataLabelExtractor extends DataExtractor {
 
 	/** returns the preferred name */
 	public static String preferredName(String titleEntity) {
-		return (Char17.decode(FactComponent.stripBracketsAndLanguage(titleEntity)
-				.replace('_', ' ')));
+		return (Char17.decode(FactComponent.stripBracketsAndLanguage(
+				titleEntity).replace('_', ' ')));
 	}
 
 	public static void main(String[] args) throws Exception {
 		Announce.setLevel(Announce.Level.DEBUG);
-		new HardExtractor(new File("../basics2s/data")).extract(new File(
-				"c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
-		new PatternHardExtractor(new File("./data")).extract(new File(
-				"c:/fabian/data/yago2s"), "Test on 1 wikipedia article");
+		new WikidataLabelExtractor().extract(new File("c:/fabian/data/yago3"),
+				"test");
 	}
 }

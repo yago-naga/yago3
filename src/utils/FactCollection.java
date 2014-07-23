@@ -565,6 +565,25 @@ public class FactCollection extends AbstractSet<Fact> {
 	}
 
 	/**
+	 * Creates a map for quickly getting arg2 for a given arg1, both as strings.
+	 * Notice that this might overwrite arg2s that occur multiple times, make 
+	 * sure you know that they are unique.
+
+	 * @param relation
+	 *            relation for which to generate the reverse map
+	 * @return map
+	 */
+	public Map<String, String> getStringMap(String relation) {
+		Map<String, String> map = new HashMap<>();
+
+		for (Fact f : getFactsWithRelation(relation)) {
+			map.put(f.getArgJavaString(1), f.getArgJavaString(2));
+		}
+
+		return map;
+	}
+
+	/**
 	 * Caches the preferred meanings map from the objects (as Java Strings) to
 	 * the subjects (as entities)
 	 */
