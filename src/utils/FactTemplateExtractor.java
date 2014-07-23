@@ -10,6 +10,7 @@ import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import fromOtherSources.PatternHardExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.Pair;
 import basics.Fact;
@@ -71,6 +72,14 @@ public class FactTemplateExtractor {
    * @return Collection of facts
    */
   public Collection<Fact> extract(String string, String dollarZero, String langauge) {
+    Map<String, String> languageMap = null;
+    try {
+      languageMap = PatternHardExtractor.LANGUAGECODEMAPPING
+          .factCollection().getStringMap("<hasThreeLetterLanguageCode>");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    
     List<Fact> result = new ArrayList<>();
     for (Pair<Pattern, List<FactTemplate>> pattern : patterns) {
       Matcher m = pattern.first().matcher(string);
@@ -88,7 +97,7 @@ public class FactTemplateExtractor {
           }
         }
         result.addAll(FactTemplate.instantiate(pattern.second(),
-            variables, langauge));
+            variables, langauge, languageMap));
       }
     }
     return (result);
@@ -105,6 +114,14 @@ public class FactTemplateExtractor {
 	 */
 	public Collection<Pair<Fact, String>> extractWithProvenance(String string,
 			String dollarZero) {
+    Map<String, String> languageMap = null;
+    try {
+      languageMap = PatternHardExtractor.LANGUAGECODEMAPPING
+          .factCollection().getStringMap("<hasThreeLetterLanguageCode>");
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    
 		List<Pair<Fact, String>> result = new LinkedList<>();
 		for (Pair<Pattern, List<FactTemplate>> pattern : patterns) {
 			Matcher m = pattern.first().matcher(string);
@@ -122,7 +139,7 @@ public class FactTemplateExtractor {
 					}
 				}
 				for (Fact f : FactTemplate.instantiate(pattern.second(),
-						variables, "eng")) {
+						variables, "eng", languageMap)) {
 					result.add(new Pair<Fact, String>(f, pattern.first
 							.toString() + " -> " + pattern.second.toString()));
 				}
