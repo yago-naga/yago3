@@ -95,7 +95,7 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 
 				if (isDisambiguationPage(page, templates)) {
 					for (Fact fact : disambiguationPatterns.extract(page,
-							titleEntity)) {
+							titleEntity, language)) {
 						if (fact != null)
 							DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language).write(fact);
 					}
