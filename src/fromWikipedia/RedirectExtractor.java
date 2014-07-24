@@ -22,6 +22,7 @@ import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
+import fromOtherSources.PatternHardExtractor;
 
 /**
  * Extracts all redirects from Wikipedia
@@ -65,6 +66,9 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 		// Extract the information
 		Announce.doing("Extracting Redirects");
 		Map<String, String> redirects = new HashMap<>();
+		
+		Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING
+		    .factCollection().getStringMap("<hasThreeLetterLanguageCode>");
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 
@@ -99,7 +103,7 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 					FactComponent.forYagoEntity(redirect.getValue()),
 					"<redirectedFrom>", FactComponent.forStringWithLanguage(
 							redirect.getKey(),
-							this.language.equals("en") ? "eng" : this.language)));
+							this.language, languagemap)));
 		}
 
 		Announce.done();
