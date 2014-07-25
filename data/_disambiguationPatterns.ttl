@@ -36,7 +36,6 @@
 "{{Taxonomy_disambiguation}}"	rdf:type	<_yagoDisambiguationTemplate> .
 "{{Species_Latin_name_disambiguation}}"	rdf:type	<_yagoDisambiguationTemplate> .
 "{{WP_disambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
-
 "{{توضيح}}"	rdf:type	<_yagoDisambiguationTemplate> .
 
 
