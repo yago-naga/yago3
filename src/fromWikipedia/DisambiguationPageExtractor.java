@@ -16,6 +16,7 @@ import utils.MultilingualTheme;
 import utils.Theme;
 import basics.Fact;
 import extractors.MultilingualWikipediaExtractor;
+import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
@@ -35,25 +36,37 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 				Arrays.asList(PatternHardExtractor.DISAMBIGUATIONTEMPLATES));
 	}
 
-	@Override
-	public Set<FollowUpExtractor> followUp() {
-		return new FinalSet<FollowUpExtractor>(new Redirector(
-				DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language),
-				REDIRECTEDDISAMBIGUATIONMEANSFACTS.inLanguage(language), this), new TypeChecker(
-				REDIRECTEDDISAMBIGUATIONMEANSFACTS.inLanguage(language), DISAMBIGUATIONMEANSFACTS.inLanguage(language),
-				this));
-	}
+  @Override
+  public Set<FollowUpExtractor> followUp() {
+    Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
+    result.add(new Redirector(DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language), REDIRECTEDDISAMBIGUATIONMEANSFACTS.inLanguage(language), this));
+    if (!isEnglish()) {
+      result.add(new EntityTranslator(REDIRECTEDDISAMBIGUATIONMEANSFACTS.inLanguage(language), TRANSLATEDREDIRECTEDDISAMBIGUATIONMEANSFACTS
+          .inLanguage(language), this));
+      result.add(new TypeChecker(TRANSLATEDREDIRECTEDDISAMBIGUATIONMEANSFACTS.inLanguage(language), DISAMBIGUATIONMEANSFACTS.inLanguage(language),
+          this));
+    } else {
+      result.add(new TypeChecker(REDIRECTEDDISAMBIGUATIONMEANSFACTS.inLanguage(language), DISAMBIGUATIONMEANSFACTS.inLanguage(language), this));
+    }
+    return result;
+  }
 
 	/** Means facts from disambiguation pages */
 	public static final MultilingualTheme DIRTYDISAMBIGUATIONMEANSFACTS = new MultilingualTheme(
 			"disambiguationMeansFactsDirty",
-			"Means facts from disambiguation pages - needs redirecting and typechecking");
+			"Means facts from disambiguation pages - needs redirecting and translation, typechecking");
 
 	/** Means facts from disambiguation pages */
 	public static final MultilingualTheme REDIRECTEDDISAMBIGUATIONMEANSFACTS = new MultilingualTheme(
 			"disambiguationMeansFactsRedirected",
-			"Means facts from disambiguation pages - needs typechecking");
+			"Means facts from disambiguation pages - needs translation and typechecking");
 
+	 /** Means facts from disambiguation pages */
+  public static final MultilingualTheme TRANSLATEDREDIRECTEDDISAMBIGUATIONMEANSFACTS = new MultilingualTheme(
+      "disambiguationMeansFactsTranslated",
+      "Means facts from disambiguation pages - needs translation and typechecking");
+  
+  
 	/** Means facts from disambiguation pages */
 	public static final MultilingualTheme DISAMBIGUATIONMEANSFACTS = new MultilingualTheme(
 			"disambiguationMeansFacts", "Means facts from disambiguation pages");
