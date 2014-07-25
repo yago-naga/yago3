@@ -33,7 +33,7 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(
-				Arrays.asList(PatternHardExtractor.DISAMBIGUATIONTEMPLATES));
+				Arrays.asList(PatternHardExtractor.DISAMBIGUATIONTEMPLATES, PatternHardExtractor.LANGUAGECODEMAPPING));
 	}
 
   @Override
@@ -121,6 +121,9 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 		if (titleEntity.indexOf("(disambiguation)") > -1) {
 			titleEntity = titleEntity.substring(0,
 					titleEntity.indexOf("(disambiguation)")).trim();
+		} else if (titleEntity.indexOf("(توضيح)") > -1) {//for Arabic
+		  titleEntity = titleEntity.substring(0,
+          titleEntity.indexOf("(توضيح)")).trim();
 		}
 		return titleEntity;
 	}
