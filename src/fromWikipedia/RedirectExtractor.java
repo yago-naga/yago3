@@ -2,7 +2,6 @@ package fromWikipedia;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -11,12 +10,12 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import utils.MultilingualTheme;
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
+import utils.MultilingualTheme;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
@@ -34,7 +33,7 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
-		return Collections.emptySet();
+    return new FinalSet<Theme>(PatternHardExtractor.LANGUAGECODEMAPPING);
 	}
 
 	private static final Pattern pattern = Pattern
