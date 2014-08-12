@@ -53,7 +53,7 @@ public class CategoryClassExtractor extends Extractor {
 	protected Map<String, String> preferredMeanings;
 
 	/** Maps a category to a wordnet class */
-	public String category2class(String categoryName, boolean pluralityIsImportant) {
+	public String category2class(String categoryName) {
 		categoryName = FactComponent.stripCat(categoryName);
 		// Check out whether the new category is worth being added
 		NounGroup category = new NounGroup(categoryName);
@@ -72,14 +72,14 @@ public class CategoryClassExtractor extends Extractor {
 		category = new NounGroup(categoryName.toLowerCase());
 
 		// Only plural words are good hypernyms
-		if(pluralityIsImportant){
+		
 			if (PlingStemmer.isSingular(category.head())
 					&& !category.head().equals("people")) {
 				Announce.debug("Could not find type in", categoryName,
 						"(is singular)");
 				return (null);
 			}
-		}
+		
 		String stemmedHead = PlingStemmer.stem(category.head());
 
 		// Exclude the bad guys
@@ -130,7 +130,7 @@ public class CategoryClassExtractor extends Extractor {
 	 */
 	protected void extractClassStatement(String categoryEntity)
 			throws IOException {
-		String concept = category2class(categoryEntity, true);
+		String concept = category2class(categoryEntity);
 		if (concept == null)
 			return;
 		CATEGORYCLASSES
