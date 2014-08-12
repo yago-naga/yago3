@@ -295,7 +295,6 @@ public abstract class TermParser {
 	
 	public static void main(String[] args) throws Exception {
 		System.out.println(TermParser.forString.extractList("012436437"));
-		
 	}
 
 }
