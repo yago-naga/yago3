@@ -29,7 +29,7 @@ import fromWikipedia.InfoboxExtractor;
 /**
  * YAGO2s - InfoboxTermExtractor
  * 
- * Extracts the terms from the
+ * Extracts the terms from the Infobox templates.
  * 
  * @author Fabian
  * 

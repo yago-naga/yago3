@@ -90,7 +90,7 @@ public class InfoboxMapper extends MultilingualExtractor {
 		}
 		Map<String, Set<String>> attribute2relations = new HashMap<>();
 		for (Fact f : infoboxAttributeMappings
-				.getFactsWithRelation("<_infoboxPattern>")) {
+				.getFactsWithRelation("<_infoboxPattern>")) {			
 			D.addKeyValue(attribute2relations, f.getSubject().toLowerCase(),
 					f.getObject(), HashSet.class);
 		}
