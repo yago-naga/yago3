@@ -18,6 +18,9 @@ import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char17;
+import javatools.parsers.Name;
+import javatools.parsers.NounGroup;
+import javatools.parsers.PlingStemmer;
 import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.PatternList;
@@ -35,6 +38,7 @@ import followUp.TypeChecker;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
+import fromThemes.CategoryClassExtractor;
 
 /**
  * TemporalInfoboxExtractor - YAGO2s
@@ -57,6 +61,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(
+				PatternHardExtractor.CATEGORYPATTERNS,
+				WordnetExtractor.PREFMEANINGS,
 				PatternHardExtractor.INFOBOXTEMPORALPATTERNS,
 				WordnetExtractor.WORDNETWORDS,
 				PatternHardExtractor.TITLEPATTERNS,
@@ -87,7 +93,11 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 		return new FinalSet<Theme>(TEMPORALDIRTYINFOBOXFACTS, INFOBOXTYPES,
 				TEMPORALINFOBOXSOURCES);
 	}
+	/** Holds the nonconceptual categories. Needed for political role extraction. */
+	protected Set<String> nonConceptualCategories;
 
+	/** Holds the preferred meanings. Needed for political role extraction. */
+	protected Map<String, String> preferredMeanings;
 	@Override
 	public Set<Theme> inputCached() {
 		return new FinalSet<>(HardExtractor.HARDWIREDFACTS);
@@ -95,6 +105,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
 	public void extract() throws Exception {
 
+
+		
 		FactCollection infoboxFacts = PatternHardExtractor.INFOBOXTEMPORALPATTERNS
 				.factCollection();
 		FactCollection hardWiredFacts = HardExtractor.HARDWIREDFACTS
@@ -160,6 +172,9 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			Map<String, String> preferredMeanings,
 			FactCollection factCollection, PatternList replacements)
 			throws IOException {
+		
+
+		
 		// If the relation is for a combined attribute
 		if (relation.contains(",")) {
 			extractMetaFact(entity, valueString, relation, preferredMeanings,
@@ -193,8 +208,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			// Get the term extractor
 			TermParser extractor = cls.equals(RDFS.clss) ? new TermParser.ForClass(
 					preferredMeanings) : TermParser.forType(cls);
-			String syntaxChecker = FactComponent.asJavaString(factCollection
-					.getObject(cls, "<_hasTypeCheckPattern>"));
+//			String syntaxChecker = FactComponent.asJavaString(factCollection
+//					.getObject(cls, "<_hasTypeCheckPattern>"));
 
 			// Extract all terms
 			List<String> objects = extractor.extractList(valueString);
@@ -221,14 +236,14 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			for (int i = 0; i < objects.size(); i++) {
 				String object = objects.get(i);
 				// Check syntax
-				if (syntaxChecker != null
-						&& !FactComponent.asJavaString(object).matches(
-								syntaxChecker)) {
-					Announce.debug("Extraction", object, "for", entity,
-							relation, "does not match syntax check",
-							syntaxChecker);
-					continue;
-				}
+//				if (syntaxChecker != null
+//						&& !FactComponent.asJavaString(object).matches(
+//								syntaxChecker)) {
+//					Announce.debug("Extraction", object, "for", entity,
+//							relation, "does not match syntax check",
+//							syntaxChecker);
+//					continue;
+//				}
 				// Check data type
 				if (FactComponent.isLiteral(object)) {
 					String datatype = FactComponent.getDatatype(object);
@@ -245,6 +260,12 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 						}
 						object = FactComponent.setDataType(object, cls);
 					}
+				}
+				// check if the relation is <holdsPoliticalPosition>, then map arg2 to particular wordnet position.
+				if(relation.equals("<holdsPoliticalPosition>")){
+					object= getWordnetClassForPoliticalPosition(object, preferredMeanings);
+					if(object==null)
+						continue;
 				}
 				if (inverse) {
 					baseFact = new Fact(object, relation, entity);
@@ -306,6 +327,72 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
 	}
 
+	private String getWordnetClassForPoliticalPosition(String object, Map<String, String> preferredMeanings) {
+		// TODO Auto-generated method stub
+		return category2class(object,preferredMeanings,false);
+	}
+	public String category2class(String categoryName, Map<String, String> preferredMeanings, boolean pluralityIsImportant) {
+		categoryName = FactComponent.stripCat(categoryName);
+		// Check out whether the new category is worth being added
+		NounGroup category = new NounGroup(categoryName);
+		if (category.head() == null) {
+			Announce.debug("Could not find type in", categoryName,
+					"(has empty head)");
+			return (null);
+		}
+
+		// If the category is an acronym, drop it
+		if (Name.isAbbreviation(category.head())) {
+			Announce.debug("Could not find type in", categoryName,
+					"(is abbreviation)");
+			return (null);
+		}
+		category = new NounGroup(categoryName.toLowerCase());
+
+		// Only plural words are good hypernyms
+		if(pluralityIsImportant){
+			if (PlingStemmer.isSingular(category.head())
+					&& !category.head().equals("people")) {
+				Announce.debug("Could not find type in", categoryName,
+						"(is singular)");
+				return (null);
+			}
+		}
+		String stemmedHead = PlingStemmer.stem(category.head());
+
+		// Try all premodifiers (reducing the length in each step) + head
+		if (category.preModifier() != null) {
+			String wordnet = null;
+			String preModifier = category.preModifier().replace('_', ' ');
+
+			for (int start = 0; start != -1 && start < preModifier.length() - 2; start = preModifier
+					.indexOf(' ', start + 1)) {
+				wordnet = preferredMeanings
+						.get((start == 0 ? preModifier : preModifier
+								.substring(start + 1)) + " " + stemmedHead);
+				// take the longest matching sequence
+				if (wordnet != null)
+					return (wordnet);
+			}
+		}
+
+		// Try postmodifiers to catch "head of state"
+		if (category.postModifier() != null && category.preposition() != null
+				&& category.preposition().equals("of")) {
+			String wordnet = preferredMeanings.get(stemmedHead + " of "
+					+ category.postModifier().head());
+			if (wordnet != null)
+				return (wordnet);
+		}
+
+		// Try head
+		String wordnet = preferredMeanings.get(stemmedHead);
+		if (wordnet != null)
+			return (wordnet);
+		Announce.debug("Could not find type in", categoryName, "("
+				+ stemmedHead + ") (no wordnet match)");
+		return (null);
+	}
 	/** Extracts a base fact and a metafact by using combined attributes */
 
 	private void extractMetaFact(String entity, String valueString,
@@ -351,21 +438,21 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			// Get the term extractor
 			TermParser extractor = cls.equals(RDFS.clss) ? new TermParser.ForClass(
 					preferredMeanings) : TermParser.forType(cls);
-			String syntaxChecker = FactComponent.asJavaString(factCollection
-					.getObject(cls, "<_hasTypeCheckPattern>"));
+//			String syntaxChecker = FactComponent.asJavaString(factCollection
+//					.getObject(cls, "<_hasTypeCheckPattern>"));
 
 			// Extract all terms
 			List<String> objects = extractor.extractList(valueString);
 			for (String object : objects) {
 				// Check syntax
-				if (syntaxChecker != null
-						&& !FactComponent.asJavaString(object).matches(
-								syntaxChecker)) {
-					Announce.debug("Extraction", object, "for", entity,
-							relation, "does not match syntax check",
-							syntaxChecker);
-					continue;
-				}
+//				if (syntaxChecker != null
+//						&& !FactComponent.asJavaString(object).matches(
+//								syntaxChecker)) {
+//					Announce.debug("Extraction", object, "for", entity,
+//							relation, "does not match syntax check",
+//							syntaxChecker);
+//					continue;
+//				}
 				// Check data type
 				if (FactComponent.isLiteral(object) && i == 0) {
 					String[] value = FactComponent
@@ -380,6 +467,13 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 					FactComponent.setDataType(object, cls);
 				}
 
+				// check if the relation is <holdsPoliticalPosition>, then map arg2 to particular wordnet position.
+				if(relation.equals("<holdsPoliticalPosition>")){
+					object= getWordnetClassForPoliticalPosition(object, preferredMeanings);
+					if(object==null)
+						continue;
+				}
+				
 				if (inverse)
 					write(TEMPORALDIRTYINFOBOXFACTS, new Fact(object, relation,
 							entity), TEMPORALINFOBOXSOURCES,
