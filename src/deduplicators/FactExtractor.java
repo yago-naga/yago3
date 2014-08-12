@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
@@ -21,7 +22,6 @@ import fromThemes.InfoboxMapper;
 import fromThemes.RuleExtractor;
 import fromWikipedia.FlightExtractor;
 import fromWikipedia.GenderExtractor;
-import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
 /**
@@ -47,7 +47,7 @@ public class FactExtractor extends SimpleDeduplicator {
 		input.addAll(Arrays.asList(RuleExtractor.RULERESULTS,
 				FlightExtractor.FLIGHTS,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA,
-				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+//				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
 				GenderExtractor.PERSONS_GENDER));
 		return input;

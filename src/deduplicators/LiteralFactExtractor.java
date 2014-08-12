@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
@@ -20,7 +21,6 @@ import fromThemes.CategoryMapper;
 import fromThemes.InfoboxMapper;
 import fromThemes.RuleExtractor;
 import fromWikipedia.CoordinateExtractor;
-import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
 /**
@@ -45,7 +45,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 		input.addAll(CategoryMapper.CATEGORYFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(Arrays.asList(RuleExtractor.RULERESULTS,
-				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+//				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
 				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
 		return input;

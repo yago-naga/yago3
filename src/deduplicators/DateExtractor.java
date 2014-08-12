@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
@@ -15,7 +16,6 @@ import fromOtherSources.HardExtractor;
 import fromThemes.CategoryMapper;
 import fromThemes.InfoboxMapper;
 import fromThemes.RuleExtractor;
-import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
 /**
@@ -39,7 +39,7 @@ public class DateExtractor extends SimpleDeduplicator {
 		input.addAll(CategoryMapper.CATEGORYFACTS
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.add(RuleExtractor.RULERESULTS);
-		input.add(TemporalCategoryExtractor.TEMPORALCATEGORYFACTS);
+//		input.add(TemporalCategoryExtractor.TEMPORALCATEGORYFACTS);
 		input.add(TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
 		return input;
 	}

@@ -5,6 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Set;
 
+
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
@@ -15,7 +16,6 @@ import basics.YAGO;
 import fromOtherSources.HardExtractor;
 import fromThemes.RuleExtractor;
 import fromWikipedia.FlightExtractor;
-import fromWikipedia.TemporalCategoryExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 
 /**
@@ -33,7 +33,7 @@ public class MetaFactExtractor extends SimpleDeduplicator {
 		return Arrays.asList(SchemaExtractor.YAGOSCHEMA,
 				HardExtractor.HARDWIREDFACTS, RuleExtractor.RULERESULTS,
 				FlightExtractor.FLIGHTS,
-				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
+//				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
 	}
 
