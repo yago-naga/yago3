@@ -58,7 +58,7 @@ public class DBpediaLinker extends Extractor {
 			if (!fact.getArg(1).startsWith("<"))
 				continue;
 			String dbp = FactComponent.forUri("http://dbpedia.org/resource/"
-					+ FactComponent.stripBrackets(fact.getArg(1)));
+					+ FactComponent.stripCat(fact.getArg(1)));
 			YAGODBPEDIAINSTANCES.write(new Fact(fact.getArg(1), "owl:sameAs",
 					dbp));
 			instances.add(fact.getArg(1));

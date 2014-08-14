@@ -135,7 +135,7 @@ public class CategoryClassExtractor extends Extractor {
 			return;
 		CATEGORYCLASSES
 				.write(new Fact(categoryEntity, RDFS.subclassOf, concept));
-		String name = new NounGroup(categoryEntity).stemmed().replace('_', ' ');
+		String name = new NounGroup(FactComponent.stripCat(categoryEntity)).stemmed().replace('_', ' ');
 		if (!name.isEmpty())
 			CATEGORYCLASSES.write(new Fact(null, categoryEntity, RDFS.label,
 					FactComponent.forStringWithLanguage(name, "eng")));

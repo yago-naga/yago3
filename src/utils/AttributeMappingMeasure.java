@@ -1,5 +1,7 @@
 package utils;
 
+import java.util.Locale;
+
 /**
  * Class AttributeMappingMeasure
  * 
@@ -28,8 +30,11 @@ public abstract class AttributeMappingMeasure {
 
 	@Override
 	public String toString() {
-		return String.format("%s(%.3f)", this.getClass().getSimpleName(),
-				threshold);
+		if(threshold==(int)threshold)
+		return String.format(Locale.US, "%s(%d)", this.getClass()
+				.getSimpleName(), (int)threshold);
+		else return String.format(Locale.US, "%s(%.3f)", this.getClass()
+				.getSimpleName(), threshold);
 	}
 
 	/** Returns the name of the measure without the threshold */
@@ -46,7 +51,8 @@ public abstract class AttributeMappingMeasure {
 
 	@Override
 	public int hashCode() {
-		return getClass().hashCode() ^ (int) Math.round(threshold * 1000);
+		long bits = Double.doubleToLongBits(threshold);
+		return getClass().hashCode() ^ (int) (bits ^ (bits >>> 32));
 	}
 
 	/** Maps if correct>threshold */

@@ -168,8 +168,7 @@ public class CoherentTypeExtractor extends Extractor {
 					continue;
 				numTypeFacts.increase(source);
 				write(YAGOTYPES, f, YAGOTYPESSOURCES,
-						FactComponent.wikipediaURL(entity),
-						FactComponent.forString(source.name));
+						FactComponent.wikipediaURL(entity), source.name);
 			}
 		}
 	}

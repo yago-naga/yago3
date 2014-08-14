@@ -7,7 +7,6 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.Theme;
@@ -75,7 +74,6 @@ public class WikidataLabelExtractor extends DataExtractor {
 	public void extract() throws Exception {
 		Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING
 				.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
-		D.p(languagemap.get("de"));
 		Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE
 				.factCollection().getSubjects();
 
