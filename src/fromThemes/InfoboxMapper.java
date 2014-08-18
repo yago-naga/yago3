@@ -7,12 +7,12 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import utils.FactCollection;
-import utils.MultilingualTheme;
-import utils.Theme;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
+import utils.FactCollection;
+import utils.MultilingualTheme;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -90,7 +90,7 @@ public class InfoboxMapper extends MultilingualExtractor {
 		}
 		Map<String, Set<String>> attribute2relations = new HashMap<>();
 		for (Fact f : infoboxAttributeMappings
-				.getFactsWithRelation("<_infoboxPattern>")) {			
+				.getFactsWithRelation("<_infoboxPattern>")) {
 			D.addKeyValue(attribute2relations, f.getSubject().toLowerCase(),
 					f.getObject(), HashSet.class);
 		}
@@ -111,9 +111,11 @@ public class InfoboxMapper extends MultilingualExtractor {
 				// we get subjects that are strings. This is always wrong.
 				if (FactComponent.isLiteral(f.getSubject()))
 					continue;
+				String source = isEnglish() ? FactComponent.wikipediaURL(f
+						.getSubject()) : FactComponent
+						.wikipediaBaseURL(language);
 				write(INFOBOXFACTS_TOREDIRECT.inLanguage(language), fact,
-						INFOBOXSOURCES.inLanguage(language),
-						FactComponent.wikipediaURL(f.getSubject()),
+						INFOBOXSOURCES.inLanguage(language), source,
 						"InfoboxExtractor from " + f.getRelation());
 			}
 		}

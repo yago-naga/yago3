@@ -1,7 +1,4 @@
-// Test
-// Facts of infobox to be redirected and type-checked
-// INTERNAL
-
+	<yagoTheme_infoboxFactsToRedirect_en>	<hasGloss>	"Test Facts of infobox to be redirected and type-checked INTERNAL"
 <id_y9qq7a_789_2yccfx>	<Campania>	<hasCapital>	"Naples"
 <id_y9qq7a_l7i_l2w2vm>	<Campania>	<hasNumberOfPeople>	"882-##-##"^^xsd:date
 <id_y9qq7a_l7i_53t9bs>	<Campania>	<hasNumberOfPeople>	"954-##-##"^^xsd:date

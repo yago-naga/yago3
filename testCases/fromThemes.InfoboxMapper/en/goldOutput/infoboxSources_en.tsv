@@ -1,7 +1,4 @@
-// Test
-// Sources of infobox facts
-// INTERNAL
-
+	<yagoTheme_infoboxSources_en>	<hasGloss>	"Test Sources of infobox facts INTERNAL"
 <id_1vja781_115_14objtc>	<id_y9qq7a_789_2yccfx>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania>
 	<id_1vja781_115_14objtc>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1kia7ze_115_14objtc>	<id_y9qq7a_l7i_l2w2vm>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania>
@@ -278,44 +275,44 @@
 	<id_11ei1xw_115_15b7bzb>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_1btm3dk_115_15b7bzb>	<id_1q29rbl_ice_5i8uej>	<extractionSource>	<http://en.wikipedia.org/wiki/Italian_Chamber_of_Deputies>
 	<id_1btm3dk_115_15b7bzb>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_1bv91qo_115_1guye28>	<id_1kw13uu_789_1y2whp0>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_1bv91qo_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
-<id_ebshwm_115_1guye28>	<id_1kw13uu_789_10uvvfa>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_ebshwm_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
-<id_aotbjk_115_1guye28>	<id_1kw13uu_789_zk2qwl>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_aotbjk_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
-<id_ebshwm_115_1guye28>	<id_1kw13uu_789_10uvvfa>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_ebshwm_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
-<id_aotbjk_115_1guye28>	<id_1kw13uu_789_zk2qwl>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_aotbjk_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
-<id_1bv91qo_115_1guye28>	<id_1kw13uu_789_1y2whp0>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_1bv91qo_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
-<id_19528nd_115_1guye28>	<id_1kw13uu_1ia_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_19528nd_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/commonname>"
-<id_r2i3wk_115_1guye28>	<id_1kw13uu_z7a_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_r2i3wk_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
-<id_130bhpz_115_1guye28>	<id_1kw13uu_lje_1c75obv>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_130bhpz_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/currency>"
-<id_12kqu96_115_1guye28>	<id_1kw13uu_lje_1b8imy4>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_12kqu96_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/currency>"
-<id_xtiqly_115_1guye28>	<id_1kw13uu_88c_1gzxe4y>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_xtiqly_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
-<id_11ww9bf_115_1guye28>	<id_1kw13uu_88c_1r1ydqa>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_11ww9bf_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
-<id_1yalx9s_115_1guye28>	<id_1kw13uu_88c_bsnj03>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_1yalx9s_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
-<id_10mzwnp_115_1guye28>	<id_1kw13uu_88c_d8lur>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_10mzwnp_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
-<id_v8ltf6_115_1guye28>	<id_1kw13uu_88c_1blz4s0>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_v8ltf6_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
-<id_1yv4sy8_115_1guye28>	<id_1kw13uu_88c_cyz169>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_1yv4sy8_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
-<id_na11gl_115_1guye28>	<id_1kw13uu_11k_1cgysky>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_na11gl_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
-<id_1avtggl_115_1guye28>	<id_1kw13uu_11k_zju79d>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_1avtggl_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
-<id_lqiwvp_115_1guye28>	<id_1kw13uu_z7a_9tm2dz>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_(1861–1946)>
-	<id_lqiwvp_115_1guye28>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
+<id_1bv91qo_115_9jpaet>	<id_1kw13uu_789_1y2whp0>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_1bv91qo_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_ebshwm_115_9jpaet>	<id_1kw13uu_789_10uvvfa>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_ebshwm_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_aotbjk_115_9jpaet>	<id_1kw13uu_789_zk2qwl>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_aotbjk_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_ebshwm_115_9jpaet>	<id_1kw13uu_789_10uvvfa>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_ebshwm_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_aotbjk_115_9jpaet>	<id_1kw13uu_789_zk2qwl>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_aotbjk_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_1bv91qo_115_9jpaet>	<id_1kw13uu_789_1y2whp0>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_1bv91qo_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
+<id_19528nd_115_9jpaet>	<id_1kw13uu_1ia_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_19528nd_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/commonname>"
+<id_r2i3wk_115_9jpaet>	<id_1kw13uu_z7a_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_r2i3wk_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
+<id_130bhpz_115_9jpaet>	<id_1kw13uu_lje_1c75obv>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_130bhpz_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/currency>"
+<id_12kqu96_115_9jpaet>	<id_1kw13uu_lje_1b8imy4>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_12kqu96_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/currency>"
+<id_xtiqly_115_9jpaet>	<id_1kw13uu_88c_1gzxe4y>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_xtiqly_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_11ww9bf_115_9jpaet>	<id_1kw13uu_88c_1r1ydqa>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_11ww9bf_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_1yalx9s_115_9jpaet>	<id_1kw13uu_88c_bsnj03>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_1yalx9s_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_10mzwnp_115_9jpaet>	<id_1kw13uu_88c_d8lur>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_10mzwnp_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_v8ltf6_115_9jpaet>	<id_1kw13uu_88c_1blz4s0>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_v8ltf6_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_1yv4sy8_115_9jpaet>	<id_1kw13uu_88c_cyz169>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_1yv4sy8_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/governmenttype>"
+<id_na11gl_115_9jpaet>	<id_1kw13uu_11k_1cgysky>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_na11gl_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
+<id_1avtggl_115_9jpaet>	<id_1kw13uu_11k_zju79d>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_1avtggl_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
+<id_lqiwvp_115_9jpaet>	<id_1kw13uu_z7a_9tm2dz>	<extractionSource>	<http://en.wikipedia.org/wiki/Kingdom_of_Italy_%281861%E2%80%931946%29>
+	<id_lqiwvp_115_9jpaet>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
 <id_x13t3t_115_jis3n>	<id_184v0j1_10x_1yqlkjv>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini>
 	<id_x13t3t_115_jis3n>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
 <id_xk07m7_115_jis3n>	<id_184v0j1_10x_qrz0mj>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini>
@@ -1186,72 +1183,72 @@
 	<id_zuguk6_115_pn08x2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_efjpp0_115_pn08x2>	<id_1x8chcg_16x_17qmow3>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Prescott>
 	<id_efjpp0_115_pn08x2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1uef7dk_115_1uokdex>	<id_4ftjb3_10x_c5w335>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_1uef7dk_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_2wxiiy_115_1uokdex>	<id_4ftjb3_10x_qs91q9>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_2wxiiy_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_118ntzq_115_1uokdex>	<id_4ftjb3_1xk_zikzkf>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_118ntzq_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_118mb9z_115_1uokdex>	<id_4ftjb3_1xk_zik23w>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_118mb9z_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_dzebld_115_1uokdex>	<id_4ftjb3_1xk_1o82n1i>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_dzebld_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1194qap_115_1uokdex>	<id_4ftjb3_1xk_zjgivh>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_1194qap_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1lwac5w_115_1uokdex>	<id_4ftjb3_oyl_1qko5p2>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_1lwac5w_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1lwac5w_115_1uokdex>	<id_4ftjb3_oyl_1qko5p2>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_1lwac5w_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_bmggk7_115_1uokdex>	<id_4ftjb3_1ug_zik115>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_bmggk7_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
-<id_a4u8ng_115_1uokdex>	<id_4ftjb3_1ug_wdxom7>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_a4u8ng_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
-<id_bmggk3_115_1uokdex>	<id_4ftjb3_1ug_zik111>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_bmggk3_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
-<id_bmyvhn_115_1uokdex>	<id_4ftjb3_1ug_zjgj0j>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_bmyvhn_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
-<id_18m768_115_1uokdex>	<id_4ftjb3_1ug_1o82n1i>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_18m768_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
-<id_bmghg3_115_1uokdex>	<id_4ftjb3_1ug_zik276>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_bmghg3_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
-<id_bmywf6_115_1uokdex>	<id_4ftjb3_1ug_zjgivh>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_bmywf6_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
-<id_bmghg2_115_1uokdex>	<id_4ftjb3_1ug_zik275>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_bmghg2_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
-<id_1yw7oi_115_1uokdex>	<id_4ftjb3_dhj_27wsag>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_1yw7oi_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathplace>"
-<id_1yw7oi_115_1uokdex>	<id_4ftjb3_dhj_27wsag>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_1yw7oi_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathplace>"
-<id_6pn08_115_1uokdex>	<id_4ftjb3_1s2_10cbk3o>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_6pn08_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_ua7azc_115_1uokdex>	<id_4ftjb3_1s2_1otu1ja>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_ua7azc_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_922tue_115_1uokdex>	<id_4ftjb3_16x_7hwzxl>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_922tue_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1mlmf66_115_1uokdex>	<id_4ftjb3_16x_1ypu9yi>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_(Labour_Party_leader)>
-	<id_1mlmf66_115_1uokdex>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_l196zg_115_kzxmu2>	<id_10cbk3o_z7a_c9xm8t>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_l196zg_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
-<id_eh5966_115_kzxmu2>	<id_10cbk3o_z7a_1oe34ql>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_eh5966_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
-<id_1ooadrc_115_kzxmu2>	<id_10cbk3o_siu_zjgiso>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_1ooadrc_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/foundation>"
-<id_y061o3_115_kzxmu2>	<id_10cbk3o_siu_1x7tq88>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_y061o3_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/foundation>"
-<id_wnfs25_115_kzxmu2>	<id_10cbk3o_z7a_zil2gj>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_wnfs25_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_wnf3xg_115_kzxmu2>	<id_10cbk3o_z7a_zik292>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_wnf3xg_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_1m7ygov_115_kzxmu2>	<id_10cbk3o_z7a_15oa25m>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_1m7ygov_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_wnf30x_115_kzxmu2>	<id_10cbk3o_z7a_zik10w>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_wnf30x_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_1ou9ia6_115_kzxmu2>	<id_76n8fw_1c7_10cbk3o>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_1ou9ia6_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
-<id_1o7ly19_115_kzxmu2>	<id_ivttd0_1c7_10cbk3o>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_1o7ly19_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
-<id_14j6uq8_115_kzxmu2>	<id_10cbk3o_ice_1gx97om>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_(UK)>
-	<id_14j6uq8_115_kzxmu2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1uef7dk_115_1ljkmn>	<id_4ftjb3_10x_c5w335>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_1uef7dk_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_2wxiiy_115_1ljkmn>	<id_4ftjb3_10x_qs91q9>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_2wxiiy_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_118ntzq_115_1ljkmn>	<id_4ftjb3_1xk_zikzkf>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_118ntzq_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_118mb9z_115_1ljkmn>	<id_4ftjb3_1xk_zik23w>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_118mb9z_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_dzebld_115_1ljkmn>	<id_4ftjb3_1xk_1o82n1i>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_dzebld_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1194qap_115_1ljkmn>	<id_4ftjb3_1xk_zjgivh>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_1194qap_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1lwac5w_115_1ljkmn>	<id_4ftjb3_oyl_1qko5p2>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_1lwac5w_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1lwac5w_115_1ljkmn>	<id_4ftjb3_oyl_1qko5p2>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_1lwac5w_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_bmggk7_115_1ljkmn>	<id_4ftjb3_1ug_zik115>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_bmggk7_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
+<id_a4u8ng_115_1ljkmn>	<id_4ftjb3_1ug_wdxom7>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_a4u8ng_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
+<id_bmggk3_115_1ljkmn>	<id_4ftjb3_1ug_zik111>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_bmggk3_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
+<id_bmyvhn_115_1ljkmn>	<id_4ftjb3_1ug_zjgj0j>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_bmyvhn_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
+<id_18m768_115_1ljkmn>	<id_4ftjb3_1ug_1o82n1i>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_18m768_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
+<id_bmghg3_115_1ljkmn>	<id_4ftjb3_1ug_zik276>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_bmghg3_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
+<id_bmywf6_115_1ljkmn>	<id_4ftjb3_1ug_zjgivh>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_bmywf6_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
+<id_bmghg2_115_1ljkmn>	<id_4ftjb3_1ug_zik275>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_bmghg2_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathdate>"
+<id_1yw7oi_115_1ljkmn>	<id_4ftjb3_dhj_27wsag>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_1yw7oi_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathplace>"
+<id_1yw7oi_115_1ljkmn>	<id_4ftjb3_dhj_27wsag>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_1yw7oi_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/deathplace>"
+<id_6pn08_115_1ljkmn>	<id_4ftjb3_1s2_10cbk3o>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_6pn08_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_ua7azc_115_1ljkmn>	<id_4ftjb3_1s2_1otu1ja>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_ua7azc_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_922tue_115_1ljkmn>	<id_4ftjb3_16x_7hwzxl>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_922tue_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1mlmf66_115_1ljkmn>	<id_4ftjb3_16x_1ypu9yi>	<extractionSource>	<http://en.wikipedia.org/wiki/John_Smith_%28Labour_Party_leader%29>
+	<id_1mlmf66_115_1ljkmn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_l196zg_115_1v7694q>	<id_10cbk3o_z7a_c9xm8t>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_l196zg_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
+<id_eh5966_115_1v7694q>	<id_10cbk3o_z7a_1oe34ql>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_eh5966_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
+<id_1ooadrc_115_1v7694q>	<id_10cbk3o_siu_zjgiso>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_1ooadrc_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/foundation>"
+<id_y061o3_115_1v7694q>	<id_10cbk3o_siu_1x7tq88>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_y061o3_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/foundation>"
+<id_wnfs25_115_1v7694q>	<id_10cbk3o_z7a_zil2gj>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_wnfs25_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_wnf3xg_115_1v7694q>	<id_10cbk3o_z7a_zik292>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_wnf3xg_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_1m7ygov_115_1v7694q>	<id_10cbk3o_z7a_15oa25m>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_1m7ygov_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_wnf30x_115_1v7694q>	<id_10cbk3o_z7a_zik10w>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_wnf30x_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_1ou9ia6_115_1v7694q>	<id_76n8fw_1c7_10cbk3o>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_1ou9ia6_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
+<id_1o7ly19_115_1v7694q>	<id_ivttd0_1c7_10cbk3o>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_1o7ly19_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
+<id_14j6uq8_115_1v7694q>	<id_10cbk3o_ice_1gx97om>	<extractionSource>	<http://en.wikipedia.org/wiki/Labour_Party_%28UK%29>
+	<id_14j6uq8_115_1v7694q>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_19s3rc1_115_smya26>	<id_16vp284_1xk_zjgiw7>	<extractionSource>	<http://en.wikipedia.org/wiki/Margaret_Beckett>
 	<id_19s3rc1_115_smya26>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
 <id_10dh2ei_115_smya26>	<id_16vp284_1xk_fnkl3e>	<extractionSource>	<http://en.wikipedia.org/wiki/Margaret_Beckett>
@@ -1352,34 +1349,34 @@
 	<id_b0d2i5_115_jrx472>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1jkfp32_115_jrx472>	<id_7fm9w4_16x_17umusi>	<extractionSource>	<http://en.wikipedia.org/wiki/Neil_Kinnock>
 	<id_1jkfp32_115_jrx472>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_ahzctz_115_rcezse>	<id_104s7no_1xk_zik28u>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_ahzctz_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_ahzbvd_115_rcezse>	<id_104s7no_1xk_zik111>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_ahzbvd_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_aihrqu_115_rcezse>	<id_104s7no_1xk_zjgix8>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_aihrqu_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_12nxgmo_115_rcezse>	<id_104s7no_1xk_1pij9id>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_12nxgmo_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1vbbd4_115_rcezse>	<id_104s7no_oyl_1a556dl>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_1vbbd4_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1eixc44_115_rcezse>	<id_104s7no_oyl_10it2g9>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_1eixc44_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1eixc44_115_rcezse>	<id_104s7no_oyl_10it2g9>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_1eixc44_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_34ctrd_115_rcezse>	<id_104s7no_oyl_1bfocqw>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_34ctrd_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_15l2mev_115_rcezse>	<id_104s7no_tje_1blrg33>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_15l2mev_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_6kj4a5_115_rcezse>	<id_104s7no_tje_7j8ymm>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_6kj4a5_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_53tthd_115_rcezse>	<id_104s7no_1s2_ruz67a>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_53tthd_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1a1g9gu_115_rcezse>	<id_104s7no_1s2_3dgoro>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_1a1g9gu_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_8d9r03_115_rcezse>	<id_104s7no_16x_nk07z4>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_8d9r03_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_86k6fo_115_rcezse>	<id_104s7no_16x_1sra33z>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_(British_politician)>
-	<id_86k6fo_115_rcezse>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_ahzctz_115_7pzvny>	<id_104s7no_1xk_zik28u>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_ahzctz_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_ahzbvd_115_7pzvny>	<id_104s7no_1xk_zik111>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_ahzbvd_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_aihrqu_115_7pzvny>	<id_104s7no_1xk_zjgix8>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_aihrqu_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_12nxgmo_115_7pzvny>	<id_104s7no_1xk_1pij9id>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_12nxgmo_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1vbbd4_115_7pzvny>	<id_104s7no_oyl_1a556dl>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_1vbbd4_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1eixc44_115_7pzvny>	<id_104s7no_oyl_10it2g9>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_1eixc44_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1eixc44_115_7pzvny>	<id_104s7no_oyl_10it2g9>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_1eixc44_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_34ctrd_115_7pzvny>	<id_104s7no_oyl_1bfocqw>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_34ctrd_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_15l2mev_115_7pzvny>	<id_104s7no_tje_1blrg33>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_15l2mev_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_6kj4a5_115_7pzvny>	<id_104s7no_tje_7j8ymm>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_6kj4a5_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_53tthd_115_7pzvny>	<id_104s7no_1s2_ruz67a>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_53tthd_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1a1g9gu_115_7pzvny>	<id_104s7no_1s2_3dgoro>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_1a1g9gu_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_8d9r03_115_7pzvny>	<id_104s7no_16x_nk07z4>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_8d9r03_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_86k6fo_115_7pzvny>	<id_104s7no_16x_1sra33z>	<extractionSource>	<http://en.wikipedia.org/wiki/Phil_Wilson_%28British_politician%29>
+	<id_86k6fo_115_7pzvny>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_or6y45_115_1hjzuqo>	<id_1jce2gm_10x_ca9zyc>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley>
 	<id_or6y45_115_1hjzuqo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
 <id_dr0ptz_115_1hjzuqo>	<id_1jce2gm_10x_16a8j38>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley>
@@ -1406,36 +1403,36 @@
 	<id_ak4xru_115_1hjzuqo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
 <id_ak4xru_115_1hjzuqo>	<id_1jce2gm_88c_dhad5f>	<extractionSource>	<http://en.wikipedia.org/wiki/Roy_Hattersley>
 	<id_ak4xru_115_1hjzuqo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_1i36pvi_115_1cmy7pt>	<id_lwoiij_z7a_1a556dl>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)>
-	<id_1i36pvi_115_1cmy7pt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/county>"
-<id_1jc889r_115_1cmy7pt>	<id_lwoiij_z7a_1bfocqw>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)>
-	<id_1jc889r_115_1cmy7pt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/county>"
-<id_12jclnw_115_1cmy7pt>	<id_lwoiij_1s2_j3ab6t>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)>
-	<id_12jclnw_115_1cmy7pt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_vpoone_115_1cmy7pt>	<id_lwoiij_z7a_10it2g9>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)>
-	<id_vpoone_115_1cmy7pt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
-<id_1gox4m6_115_1cmy7pt>	<id_lwoiij_u5f_zjgitr>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)>
-	<id_1gox4m6_115_1cmy7pt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/year>"
-<id_ii9k1a_115_1cmy7pt>	<id_lwoiij_u5f_2dab5b>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)>
-	<id_ii9k1a_115_1cmy7pt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/year>"
-<id_1gox4r8_115_1cmy7pt>	<id_lwoiij_u5f_zjgizn>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)>
-	<id_1gox4r8_115_1cmy7pt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/year>"
-<id_1uswgzx_115_1cmy7pt>	<id_lwoiij_u5f_1npk5hf>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_(UK_Parliament_constituency)>
-	<id_1uswgzx_115_1cmy7pt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/year>"
-<id_19d9f81_115_4vmd7e>	<id_1bx19fo_siu_1f4tbxg>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford>
-	<id_19d9f81_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_md59ok_115_4vmd7e>	<id_1bx19fo_siu_zjgfyc>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford>
-	<id_md59ok_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_vouf0n_115_4vmd7e>	<id_v0jh7u_1gi_1bx19fo>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford>
-	<id_vouf0n_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founder>"
-<id_19lo3lb_115_4vmd7e>	<id_1mjfuzc_1gi_1bx19fo>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford>
-	<id_19lo3lb_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founder>"
-<id_1vkiloj_115_4vmd7e>	<id_1bx19fo_ice_1vvzutj>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford>
-	<id_1vkiloj_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/homepage>"
-<id_wayobi_115_4vmd7e>	<id_1bx19fo_1n8_vzrl9j>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford>
-	<id_wayobi_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/latitude>"
-<id_13l1ha2_115_4vmd7e>	<id_1bx19fo_jto_l1jtn4>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John's_College,_Oxford>
-	<id_13l1ha2_115_4vmd7e>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/longitude>"
+<id_1i36pvi_115_see5yp>	<id_lwoiij_z7a_1a556dl>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_%28UK_Parliament_constituency%29>
+	<id_1i36pvi_115_see5yp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/county>"
+<id_1jc889r_115_see5yp>	<id_lwoiij_z7a_1bfocqw>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_%28UK_Parliament_constituency%29>
+	<id_1jc889r_115_see5yp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/county>"
+<id_12jclnw_115_see5yp>	<id_lwoiij_1s2_j3ab6t>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_%28UK_Parliament_constituency%29>
+	<id_12jclnw_115_see5yp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_vpoone_115_see5yp>	<id_lwoiij_z7a_10it2g9>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_%28UK_Parliament_constituency%29>
+	<id_vpoone_115_see5yp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
+<id_1gox4m6_115_see5yp>	<id_lwoiij_u5f_zjgitr>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_%28UK_Parliament_constituency%29>
+	<id_1gox4m6_115_see5yp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/year>"
+<id_ii9k1a_115_see5yp>	<id_lwoiij_u5f_2dab5b>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_%28UK_Parliament_constituency%29>
+	<id_ii9k1a_115_see5yp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/year>"
+<id_1gox4r8_115_see5yp>	<id_lwoiij_u5f_zjgizn>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_%28UK_Parliament_constituency%29>
+	<id_1gox4r8_115_see5yp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/year>"
+<id_1uswgzx_115_see5yp>	<id_lwoiij_u5f_1npk5hf>	<extractionSource>	<http://en.wikipedia.org/wiki/Sedgefield_%28UK_Parliament_constituency%29>
+	<id_1uswgzx_115_see5yp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/year>"
+<id_19d9f81_115_n12t2l>	<id_1bx19fo_siu_1f4tbxg>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John%27s_College%2C_Oxford>
+	<id_19d9f81_115_n12t2l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_md59ok_115_n12t2l>	<id_1bx19fo_siu_zjgfyc>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John%27s_College%2C_Oxford>
+	<id_md59ok_115_n12t2l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_vouf0n_115_n12t2l>	<id_v0jh7u_1gi_1bx19fo>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John%27s_College%2C_Oxford>
+	<id_vouf0n_115_n12t2l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founder>"
+<id_19lo3lb_115_n12t2l>	<id_1mjfuzc_1gi_1bx19fo>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John%27s_College%2C_Oxford>
+	<id_19lo3lb_115_n12t2l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founder>"
+<id_1vkiloj_115_n12t2l>	<id_1bx19fo_ice_1vvzutj>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John%27s_College%2C_Oxford>
+	<id_1vkiloj_115_n12t2l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/homepage>"
+<id_wayobi_115_n12t2l>	<id_1bx19fo_1n8_vzrl9j>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John%27s_College%2C_Oxford>
+	<id_wayobi_115_n12t2l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/latitude>"
+<id_13l1ha2_115_n12t2l>	<id_1bx19fo_jto_l1jtn4>	<extractionSource>	<http://en.wikipedia.org/wiki/St_John%27s_College%2C_Oxford>
+	<id_13l1ha2_115_n12t2l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/longitude>"
 <id_11lffsg_115_1qyd4q9>	<id_gg7cuf_10x_1gthbtp>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair>
 	<id_11lffsg_115_1qyd4q9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
 <id_dxvgl1_115_1qyd4q9>	<id_gg7cuf_10x_177pmny>	<extractionSource>	<http://en.wikipedia.org/wiki/Tony_Blair>
@@ -1568,24 +1565,24 @@
 	<id_b9devx_115_tjrjy1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_1xdk3x2_115_1tzfle1>	<id_1cpbvlf_ice_9lmbq4>	<extractionSource>	<http://en.wikipedia.org/wiki/Chancellor_of_Germany>
 	<id_1xdk3x2_115_1tzfle1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_3s4qqh_115_1w15wda>	<id_t9jepg_z7a_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_3s4qqh_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
-<id_1s9l6h7_115_1w15wda>	<id_t9jepg_siu_18syvnt>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_1s9l6h7_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/foundation>"
-<id_5bd6d4_115_1w15wda>	<id_t9jepg_siu_zjgiw9>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_5bd6d4_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/foundation>"
-<id_1898eml_115_1w15wda>	<id_t9jepg_z7a_10adrlh>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_1898eml_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_6v4l2c_115_1w15wda>	<id_t9jepg_z7a_1wd5e4i>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_6v4l2c_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_1cblxiv_115_1w15wda>	<id_t9jepg_z7a_zik114>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_1cblxiv_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_1tusa98_115_1w15wda>	<id_t9jepg_1ia_17oe0bt>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_1tusa98_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_mm61w0_115_1w15wda>	<id_t9jepg_1ia_1rg8l9i>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_mm61w0_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_tcvwgn_115_1w15wda>	<id_t9jepg_ice_1heq0qs>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_(Germany)>
-	<id_tcvwgn_115_1w15wda>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_3s4qqh_115_1h8e0bo>	<id_t9jepg_z7a_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_3s4qqh_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
+<id_1s9l6h7_115_1h8e0bo>	<id_t9jepg_siu_18syvnt>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_1s9l6h7_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/foundation>"
+<id_5bd6d4_115_1h8e0bo>	<id_t9jepg_siu_zjgiw9>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_5bd6d4_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/foundation>"
+<id_1898eml_115_1h8e0bo>	<id_t9jepg_z7a_10adrlh>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_1898eml_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_6v4l2c_115_1h8e0bo>	<id_t9jepg_z7a_1wd5e4i>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_6v4l2c_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_1cblxiv_115_1h8e0bo>	<id_t9jepg_z7a_zik114>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_1cblxiv_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_1tusa98_115_1h8e0bo>	<id_t9jepg_1ia_17oe0bt>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_1tusa98_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_mm61w0_115_1h8e0bo>	<id_t9jepg_1ia_1rg8l9i>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_mm61w0_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_tcvwgn_115_1h8e0bo>	<id_t9jepg_ice_1heq0qs>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Democratic_Union_%28Germany%29>
+	<id_tcvwgn_115_1h8e0bo>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_1nhwxwp_115_zbvg7y>	<id_jr01l4_10x_tqqkp2>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff>
 	<id_1nhwxwp_115_zbvg7y>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
 <id_1fusdan_115_zbvg7y>	<id_jr01l4_10x_16z0ova>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff>
@@ -1662,74 +1659,74 @@
 	<id_1xq6p9a_115_39y5n4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
 <id_clc004_115_39y5n4>	<id_ht3f3u_1s2_1ynmbgy>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank-Walter_Steinmeier>
 	<id_clc004_115_39y5n4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1mc4nve_115_14sbsn>	<id_gh6929_1xk_zjgiw4>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_1mc4nve_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1mbm8wz_115_14sbsn>	<id_gh6929_1xk_zik279>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_1mbm8wz_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_25esy3_115_14sbsn>	<id_gh6929_1xk_16nhseg>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_25esy3_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1mbm820_115_14sbsn>	<id_gh6929_1xk_zik10x>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_1mbm820_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_3hqy2v_115_14sbsn>	<id_gh6929_oyl_1vhs3ar>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_3hqy2v_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_3hqy2v_115_14sbsn>	<id_gh6929_oyl_1vhs3ar>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_3hqy2v_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_siykr_115_14sbsn>	<id_gh6929_oyl_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_siykr_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_siykr_115_14sbsn>	<id_gh6929_oyl_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_siykr_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_135w1a0_115_14sbsn>	<id_gh6929_tje_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_135w1a0_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_135w1a0_115_14sbsn>	<id_gh6929_tje_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_135w1a0_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_1h2rxll_115_14sbsn>	<id_gh6929_88c_1kbo50g>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_1h2rxll_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
-<id_1eacaus_115_14sbsn>	<id_gh6929_1s2_mcz636>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_1eacaus_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1d863am_115_14sbsn>	<id_gh6929_1s2_1ynmbgy>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_Müntefering>
-	<id_1d863am_115_14sbsn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1262n8j_115_lykx5r>	<id_107bpbp_10x_za3879>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1262n8j_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_vb8unt_115_lykx5r>	<id_107bpbp_10x_m1t411>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_vb8unt_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1wiva8t_115_lykx5r>	<id_107bpbp_1xk_zjgiw8>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1wiva8t_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1wicue9_115_lykx5r>	<id_107bpbp_1xk_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1wicue9_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1wicue6_115_lykx5r>	<id_107bpbp_1xk_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1wicue6_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1u0tnrt_115_lykx5r>	<id_107bpbp_1xk_uc0s97>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1u0tnrt_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_48vrib_115_lykx5r>	<id_107bpbp_1ia_blav7v>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_48vrib_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthname>"
-<id_6svlrh_115_lykx5r>	<id_107bpbp_1ia_gxkm6k>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_6svlrh_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthname>"
-<id_1aueyrh_115_lykx5r>	<id_107bpbp_oyl_6iw2kn>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1aueyrh_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_xz6pir_115_lykx5r>	<id_107bpbp_oyl_1u9ifjw>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_xz6pir_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1xp94my_115_lykx5r>	<id_107bpbp_oyl_h4fe14>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1xp94my_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_xz6pir_115_lykx5r>	<id_107bpbp_oyl_1u9ifjw>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_xz6pir_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1oh2x83_115_lykx5r>	<id_107bpbp_1s2_mcz636>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1oh2x83_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_9vj2vj_115_lykx5r>	<id_107bpbp_1s2_1ynmbgy>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_9vj2vj_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1nl9awr_115_lykx5r>	<id_107bpbp_88c_20du78>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1nl9awr_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_cyjz3t_115_lykx5r>	<id_107bpbp_88c_1inhq0u>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_cyjz3t_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_1nl9awr_115_lykx5r>	<id_107bpbp_88c_20du78>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1nl9awr_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_qgsg1q_115_lykx5r>	<id_107bpbp_16x_1l3ta6j>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_qgsg1q_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1nubxur_115_lykx5r>	<id_107bpbp_16x_b1mtzl>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1nubxur_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1r7f9on_115_lykx5r>	<id_107bpbp_16x_i4tzwr>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_1r7f9on_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_ulp2sh_115_lykx5r>	<id_107bpbp_16x_1sinjha>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schröder>
-	<id_ulp2sh_115_lykx5r>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1mc4nve_115_uubs60>	<id_gh6929_1xk_zjgiw4>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_1mc4nve_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1mbm8wz_115_uubs60>	<id_gh6929_1xk_zik279>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_1mbm8wz_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_25esy3_115_uubs60>	<id_gh6929_1xk_16nhseg>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_25esy3_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1mbm820_115_uubs60>	<id_gh6929_1xk_zik10x>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_1mbm820_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_3hqy2v_115_uubs60>	<id_gh6929_oyl_1vhs3ar>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_3hqy2v_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_3hqy2v_115_uubs60>	<id_gh6929_oyl_1vhs3ar>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_3hqy2v_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_siykr_115_uubs60>	<id_gh6929_oyl_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_siykr_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_siykr_115_uubs60>	<id_gh6929_oyl_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_siykr_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_135w1a0_115_uubs60>	<id_gh6929_tje_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_135w1a0_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_135w1a0_115_uubs60>	<id_gh6929_tje_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_135w1a0_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_1h2rxll_115_uubs60>	<id_gh6929_88c_1kbo50g>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_1h2rxll_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
+<id_1eacaus_115_uubs60>	<id_gh6929_1s2_mcz636>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_1eacaus_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1d863am_115_uubs60>	<id_gh6929_1s2_1ynmbgy>	<extractionSource>	<http://en.wikipedia.org/wiki/Franz_M%C3%BCntefering>
+	<id_1d863am_115_uubs60>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1262n8j_115_1yaxtc9>	<id_107bpbp_10x_za3879>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1262n8j_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_vb8unt_115_1yaxtc9>	<id_107bpbp_10x_m1t411>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_vb8unt_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1wiva8t_115_1yaxtc9>	<id_107bpbp_1xk_zjgiw8>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1wiva8t_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1wicue9_115_1yaxtc9>	<id_107bpbp_1xk_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1wicue9_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1wicue6_115_1yaxtc9>	<id_107bpbp_1xk_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1wicue6_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1u0tnrt_115_1yaxtc9>	<id_107bpbp_1xk_uc0s97>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1u0tnrt_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_48vrib_115_1yaxtc9>	<id_107bpbp_1ia_blav7v>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_48vrib_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthname>"
+<id_6svlrh_115_1yaxtc9>	<id_107bpbp_1ia_gxkm6k>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_6svlrh_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthname>"
+<id_1aueyrh_115_1yaxtc9>	<id_107bpbp_oyl_6iw2kn>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1aueyrh_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_xz6pir_115_1yaxtc9>	<id_107bpbp_oyl_1u9ifjw>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_xz6pir_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1xp94my_115_1yaxtc9>	<id_107bpbp_oyl_h4fe14>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1xp94my_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_xz6pir_115_1yaxtc9>	<id_107bpbp_oyl_1u9ifjw>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_xz6pir_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1oh2x83_115_1yaxtc9>	<id_107bpbp_1s2_mcz636>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1oh2x83_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_9vj2vj_115_1yaxtc9>	<id_107bpbp_1s2_1ynmbgy>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_9vj2vj_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1nl9awr_115_1yaxtc9>	<id_107bpbp_88c_20du78>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1nl9awr_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_cyjz3t_115_1yaxtc9>	<id_107bpbp_88c_1inhq0u>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_cyjz3t_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_1nl9awr_115_1yaxtc9>	<id_107bpbp_88c_20du78>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1nl9awr_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_qgsg1q_115_1yaxtc9>	<id_107bpbp_16x_1l3ta6j>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_qgsg1q_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1nubxur_115_1yaxtc9>	<id_107bpbp_16x_b1mtzl>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1nubxur_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1r7f9on_115_1yaxtc9>	<id_107bpbp_16x_i4tzwr>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_1r7f9on_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_ulp2sh_115_1yaxtc9>	<id_107bpbp_16x_1sinjha>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
+	<id_ulp2sh_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_evq74h_115_1ukoa5l>	<id_1ps9evn_789_1wd5e4i>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
 	<id_evq74h_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_evq74h_115_1ukoa5l>	<id_1ps9evn_789_1wd5e4i>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
@@ -1902,40 +1899,40 @@
 	<id_15l8kjz_115_1kz2868>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1546x4d_115_1kz2868>	<id_zycb9m_16x_1r88lja>	<extractionSource>	<http://en.wikipedia.org/wiki/Helmut_Kohl>
 	<id_1546x4d_115_1kz2868>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_blsg0y_115_2u8wl5>	<id_1pj249b_10x_og1hoo>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_blsg0y_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_idkcw8_115_2u8wl5>	<id_1pj249b_10x_1fiizqg>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_idkcw8_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1b29zva_115_2u8wl5>	<id_1pj249b_1xk_zik280>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_1b29zva_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1b2set6_115_2u8wl5>	<id_1pj249b_1xk_zjgiw7>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_1b2set6_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_11o5abd_115_2u8wl5>	<id_1pj249b_1xk_fnl83p>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_11o5abd_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1b29yzq_115_2u8wl5>	<id_1pj249b_1xk_zik10y>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_1b29yzq_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_19ujx4r_115_2u8wl5>	<id_1pj249b_oyl_aq6naj>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_19ujx4r_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1dylbdd_115_2u8wl5>	<id_1pj249b_oyl_171fdrd>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_1dylbdd_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_19ujx4r_115_2u8wl5>	<id_1pj249b_oyl_aq6naj>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_19ujx4r_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1d36dlt_115_2u8wl5>	<id_1pj249b_oyl_hl9uy0>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_1d36dlt_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_181tfr0_115_2u8wl5>	<id_1pj249b_1s2_1c5ki7n>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_181tfr0_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_15oyu6r_115_2u8wl5>	<id_1pj249b_1s2_t9jepg>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_15oyu6r_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1vd8wel_115_2u8wl5>	<id_1pj249b_88c_neqgof>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_1vd8wel_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_1vd8wel_115_2u8wl5>	<id_1pj249b_88c_neqgof>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_1vd8wel_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_1spycq3_115_2u8wl5>	<id_1pj249b_88c_1x9tonu>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_1spycq3_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_14a26pl_115_2u8wl5>	<id_1pj249b_16x_f0wvxo>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_14a26pl_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_15i9w0o_115_2u8wl5>	<id_1pj249b_16x_gbg2az>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_Köhler>
-	<id_15i9w0o_115_2u8wl5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_blsg0y_115_1efzjab>	<id_1pj249b_10x_og1hoo>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_blsg0y_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_idkcw8_115_1efzjab>	<id_1pj249b_10x_1fiizqg>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_idkcw8_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1b29zva_115_1efzjab>	<id_1pj249b_1xk_zik280>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_1b29zva_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1b2set6_115_1efzjab>	<id_1pj249b_1xk_zjgiw7>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_1b2set6_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_11o5abd_115_1efzjab>	<id_1pj249b_1xk_fnl83p>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_11o5abd_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1b29yzq_115_1efzjab>	<id_1pj249b_1xk_zik10y>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_1b29yzq_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_19ujx4r_115_1efzjab>	<id_1pj249b_oyl_aq6naj>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_19ujx4r_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1dylbdd_115_1efzjab>	<id_1pj249b_oyl_171fdrd>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_1dylbdd_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_19ujx4r_115_1efzjab>	<id_1pj249b_oyl_aq6naj>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_19ujx4r_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1d36dlt_115_1efzjab>	<id_1pj249b_oyl_hl9uy0>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_1d36dlt_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_181tfr0_115_1efzjab>	<id_1pj249b_1s2_1c5ki7n>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_181tfr0_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_15oyu6r_115_1efzjab>	<id_1pj249b_1s2_t9jepg>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_15oyu6r_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1vd8wel_115_1efzjab>	<id_1pj249b_88c_neqgof>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_1vd8wel_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_1vd8wel_115_1efzjab>	<id_1pj249b_88c_neqgof>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_1vd8wel_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_1spycq3_115_1efzjab>	<id_1pj249b_88c_1x9tonu>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_1spycq3_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_14a26pl_115_1efzjab>	<id_1pj249b_16x_f0wvxo>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_14a26pl_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_15i9w0o_115_1efzjab>	<id_1pj249b_16x_gbg2az>	<extractionSource>	<http://en.wikipedia.org/wiki/Horst_K%C3%B6hler>
+	<id_15i9w0o_115_1efzjab>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_77du5k_115_4ypmpc>	<id_1ck1v4q_1xk_wow5f5>	<extractionSource>	<http://en.wikipedia.org/wiki/Joachim_Sauer>
 	<id_77du5k_115_4ypmpc>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
 <id_8j06md_115_4ypmpc>	<id_1ck1v4q_1xk_zik27c>	<extractionSource>	<http://en.wikipedia.org/wiki/Joachim_Sauer>
@@ -1968,80 +1965,80 @@
 	<id_bwzfvi_115_4ypmpc>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_b9fn7v_115_4ypmpc>	<id_1ck1v4q_16x_1ef6vvc>	<extractionSource>	<http://en.wikipedia.org/wiki/Joachim_Sauer>
 	<id_b9fn7v_115_4ypmpc>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_faj0wn_115_1atv5gr>	<id_1cm9d6p_10x_za3879>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_faj0wn_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_8fp8bx_115_1atv5gr>	<id_1cm9d6p_10x_m1t411>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_8fp8bx_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_19mt8z3_115_1atv5gr>	<id_1cm9d6p_1xk_zik283>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_19mt8z3_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_19mt82d_115_1atv5gr>	<id_1cm9d6p_1xk_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_19mt82d_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_19nbnxn_115_1atv5gr>	<id_1cm9d6p_1xk_zjgix3>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_19nbnxn_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1omekvg_115_1atv5gr>	<id_1cm9d6p_1xk_1n5p6bn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_1omekvg_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_10t0vav_115_1atv5gr>	<id_1cm9d6p_oyl_1wk2fnl>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_10t0vav_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_10t0vav_115_1atv5gr>	<id_1cm9d6p_oyl_1wk2fnl>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_10t0vav_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_xm8bnc_115_1atv5gr>	<id_1cm9d6p_oyl_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_xm8bnc_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_xm8bnc_115_1atv5gr>	<id_1cm9d6p_oyl_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_xm8bnc_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_yhcdh_115_1atv5gr>	<id_1cm9d6p_tje_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_yhcdh_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_yhcdh_115_1atv5gr>	<id_1cm9d6p_tje_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_yhcdh_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_13qgzz4_115_1atv5gr>	<id_1cm9d6p_1s2_qsvi92>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_13qgzz4_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_aik3kj_115_1atv5gr>	<id_1cm9d6p_1s2_1xlixxi>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_aik3kj_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_17u5j1a_115_1atv5gr>	<id_1cm9d6p_1s2_zik2dz>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_17u5j1a_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_vf1h3a_115_1atv5gr>	<id_1cm9d6p_ice_tffo4h>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_vf1h3a_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_w26mgy_115_1atv5gr>	<id_1cm9d6p_ice_uqigpa>	<extractionSource>	<http://en.wikipedia.org/wiki/Jürgen_Trittin>
-	<id_w26mgy_115_1atv5gr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_tl0dum_115_1b7daw5>	<id_1czrim3_10x_o8uoja>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_tl0dum_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_ylsdp9_115_1b7daw5>	<id_1czrim3_10x_xl0vxw>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_ylsdp9_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1tq4pex_115_1b7daw5>	<id_1czrim3_1xk_zik282>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1tq4pex_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1r05fx1_115_1b7daw5>	<id_1czrim3_1xk_v3clb8>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1r05fx1_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1tqn4g5_115_1b7daw5>	<id_1czrim3_1xk_zjgiys>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1tqn4g5_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1tq4ojb_115_1b7daw5>	<id_1czrim3_1xk_zik10y>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1tq4ojb_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1pdfkk1_115_1b7daw5>	<id_1czrim3_oyl_17zocdh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1pdfkk1_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1sya7e0_115_1b7daw5>	<id_1czrim3_oyl_d12ruu>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1sya7e0_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_q9olq5_115_1b7daw5>	<id_1czrim3_11e_zjgz46>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_q9olq5_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_l8p2la_115_1b7daw5>	<id_1czrim3_11e_q8bwh2>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_l8p2la_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_1jkg284_115_1b7daw5>	<id_1czrim3_tje_1ps9evh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1jkg284_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_1jkg284_115_1b7daw5>	<id_1czrim3_tje_1ps9evh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1jkg284_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_1yonna9_115_1b7daw5>	<id_1czrim3_88c_1msgfm2>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1yonna9_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
-<id_194sfz5_115_1b7daw5>	<id_1czrim3_88c_17thdh9>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_194sfz5_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
-<id_1mtwgeg_115_1b7daw5>	<id_1czrim3_1s2_opmyyg>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1mtwgeg_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_ycnrer_115_1b7daw5>	<id_1czrim3_1s2_17lo2gn>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_ycnrer_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_u6orhd_115_1b7daw5>	<id_1czrim3_12k_10ru4fh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_u6orhd_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
-<id_u6orhd_115_1b7daw5>	<id_1czrim3_12k_10ru4fh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_u6orhd_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
-<id_1m44kmp_115_1b7daw5>	<id_1czrim3_16x_17thdh9>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1m44kmp_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1ied03r_115_1b7daw5>	<id_1czrim3_ice_1yx2yp2>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_Rösler>
-	<id_1ied03r_115_1b7daw5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_faj0wn_115_146zbi8>	<id_1cm9d6p_10x_za3879>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_faj0wn_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_8fp8bx_115_146zbi8>	<id_1cm9d6p_10x_m1t411>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_8fp8bx_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_19mt8z3_115_146zbi8>	<id_1cm9d6p_1xk_zik283>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_19mt8z3_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_19mt82d_115_146zbi8>	<id_1cm9d6p_1xk_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_19mt82d_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_19nbnxn_115_146zbi8>	<id_1cm9d6p_1xk_zjgix3>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_19nbnxn_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1omekvg_115_146zbi8>	<id_1cm9d6p_1xk_1n5p6bn>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_1omekvg_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_10t0vav_115_146zbi8>	<id_1cm9d6p_oyl_1wk2fnl>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_10t0vav_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_10t0vav_115_146zbi8>	<id_1cm9d6p_oyl_1wk2fnl>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_10t0vav_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_xm8bnc_115_146zbi8>	<id_1cm9d6p_oyl_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_xm8bnc_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_xm8bnc_115_146zbi8>	<id_1cm9d6p_oyl_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_xm8bnc_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_yhcdh_115_146zbi8>	<id_1cm9d6p_tje_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_yhcdh_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_yhcdh_115_146zbi8>	<id_1cm9d6p_tje_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_yhcdh_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_13qgzz4_115_146zbi8>	<id_1cm9d6p_1s2_qsvi92>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_13qgzz4_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_aik3kj_115_146zbi8>	<id_1cm9d6p_1s2_1xlixxi>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_aik3kj_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_17u5j1a_115_146zbi8>	<id_1cm9d6p_1s2_zik2dz>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_17u5j1a_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_vf1h3a_115_146zbi8>	<id_1cm9d6p_ice_tffo4h>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_vf1h3a_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_w26mgy_115_146zbi8>	<id_1cm9d6p_ice_uqigpa>	<extractionSource>	<http://en.wikipedia.org/wiki/J%C3%BCrgen_Trittin>
+	<id_w26mgy_115_146zbi8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_tl0dum_115_1hdvm9t>	<id_1czrim3_10x_o8uoja>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_tl0dum_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_ylsdp9_115_1hdvm9t>	<id_1czrim3_10x_xl0vxw>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_ylsdp9_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1tq4pex_115_1hdvm9t>	<id_1czrim3_1xk_zik282>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1tq4pex_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1r05fx1_115_1hdvm9t>	<id_1czrim3_1xk_v3clb8>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1r05fx1_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1tqn4g5_115_1hdvm9t>	<id_1czrim3_1xk_zjgiys>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1tqn4g5_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1tq4ojb_115_1hdvm9t>	<id_1czrim3_1xk_zik10y>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1tq4ojb_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1pdfkk1_115_1hdvm9t>	<id_1czrim3_oyl_17zocdh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1pdfkk1_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1sya7e0_115_1hdvm9t>	<id_1czrim3_oyl_d12ruu>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1sya7e0_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_q9olq5_115_1hdvm9t>	<id_1czrim3_11e_zjgz46>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_q9olq5_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_l8p2la_115_1hdvm9t>	<id_1czrim3_11e_q8bwh2>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_l8p2la_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_1jkg284_115_1hdvm9t>	<id_1czrim3_tje_1ps9evh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1jkg284_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_1jkg284_115_1hdvm9t>	<id_1czrim3_tje_1ps9evh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1jkg284_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_1yonna9_115_1hdvm9t>	<id_1czrim3_88c_1msgfm2>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1yonna9_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
+<id_194sfz5_115_1hdvm9t>	<id_1czrim3_88c_17thdh9>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_194sfz5_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
+<id_1mtwgeg_115_1hdvm9t>	<id_1czrim3_1s2_opmyyg>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1mtwgeg_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_ycnrer_115_1hdvm9t>	<id_1czrim3_1s2_17lo2gn>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_ycnrer_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_u6orhd_115_1hdvm9t>	<id_1czrim3_12k_10ru4fh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_u6orhd_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
+<id_u6orhd_115_1hdvm9t>	<id_1czrim3_12k_10ru4fh>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_u6orhd_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
+<id_1m44kmp_115_1hdvm9t>	<id_1czrim3_16x_17thdh9>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1m44kmp_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1ied03r_115_1hdvm9t>	<id_1czrim3_ice_1yx2yp2>	<extractionSource>	<http://en.wikipedia.org/wiki/Philipp_R%C3%B6sler>
+	<id_1ied03r_115_1hdvm9t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_4d63rp_115_1789lmf>	<id_py5vtt_z7a_1s0921k>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Leipzig>
 	<id_4d63rp_115_1789lmf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
 <id_4d63rp_115_1789lmf>	<id_py5vtt_z7a_1s0921k>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Leipzig>
@@ -2130,22 +2127,22 @@
 	<id_q6myu7_115_ozn4l3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
 <id_s394l5_115_ozn4l3>	<id_1wkzd0h_1s2_1wr3l4s>	<extractionSource>	<http://en.wikipedia.org/wiki/Albert_Pintat>
 	<id_s394l5_115_ozn4l3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1kh4bbv_115_14djy5h>	<id_s193uj_1xk_zjgixx>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí>
-	<id_1kh4bbv_115_14djy5h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_m830ij_115_14djy5h>	<id_s193uj_1xk_2a99tw>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí>
-	<id_m830ij_115_14djy5h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1kglwaj_115_14djy5h>	<id_s193uj_1xk_zik273>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí>
-	<id_1kglwaj_115_14djy5h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1kglwak_115_14djy5h>	<id_s193uj_1xk_zik274>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí>
-	<id_1kglwak_115_14djy5h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_7zr5pq_115_14djy5h>	<id_s193uj_oyl_1csqvex>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí>
-	<id_7zr5pq_115_14djy5h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_7zr5pq_115_14djy5h>	<id_s193uj_oyl_1csqvex>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí>
-	<id_7zr5pq_115_14djy5h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_vedbrc_115_14djy5h>	<id_s193uj_1s2_17v2x8g>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí>
-	<id_vedbrc_115_14djy5h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_lw9x5v_115_14djy5h>	<id_s193uj_1s2_5byr5u>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Martí>
-	<id_lw9x5v_115_14djy5h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1kh4bbv_115_r3iewr>	<id_s193uj_1xk_zjgixx>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Mart%C3%AD>
+	<id_1kh4bbv_115_r3iewr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_m830ij_115_r3iewr>	<id_s193uj_1xk_2a99tw>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Mart%C3%AD>
+	<id_m830ij_115_r3iewr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1kglwaj_115_r3iewr>	<id_s193uj_1xk_zik273>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Mart%C3%AD>
+	<id_1kglwaj_115_r3iewr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1kglwak_115_r3iewr>	<id_s193uj_1xk_zik274>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Mart%C3%AD>
+	<id_1kglwak_115_r3iewr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_7zr5pq_115_r3iewr>	<id_s193uj_oyl_1csqvex>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Mart%C3%AD>
+	<id_7zr5pq_115_r3iewr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_7zr5pq_115_r3iewr>	<id_s193uj_oyl_1csqvex>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Mart%C3%AD>
+	<id_7zr5pq_115_r3iewr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_vedbrc_115_r3iewr>	<id_s193uj_1s2_17v2x8g>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Mart%C3%AD>
+	<id_vedbrc_115_r3iewr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_lw9x5v_115_r3iewr>	<id_s193uj_1s2_5byr5u>	<extractionSource>	<http://en.wikipedia.org/wiki/Antoni_Mart%C3%AD>
+	<id_lw9x5v_115_r3iewr>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
 <id_1oswydy_115_1pmhj9c>	<id_14lrmcq_1xk_zjgiy1>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni>
 	<id_1oswydy_115_1pmhj9c>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
 <id_yr1caq_115_1pmhj9c>	<id_14lrmcq_1xk_1ozv1qh>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni>
@@ -2190,88 +2187,88 @@
 	<id_3du11k_115_1pmhj9c>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1qh09v4_115_1pmhj9c>	<id_14lrmcq_16x_vkf2e7>	<extractionSource>	<http://en.wikipedia.org/wiki/Carla_Bruni>
 	<id_1qh09v4_115_1pmhj9c>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_tfd53l_115_2ooh4b>	<id_4h2ou9_1xk_zjgix6>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_tfd53l_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_teuq45_115_2ooh4b>	<id_4h2ou9_1xk_zik275>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_teuq45_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_teuq44_115_2ooh4b>	<id_4h2ou9_1xk_zik274>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_teuq44_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_r6smmh_115_2ooh4b>	<id_4h2ou9_1xk_w67xnv>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_r6smmh_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_12oxejh_115_2ooh4b>	<id_4h2ou9_oyl_y6wvzx>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_12oxejh_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_12oxejh_115_2ooh4b>	<id_4h2ou9_oyl_y6wvzx>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_12oxejh_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1oyzyha_115_2ooh4b>	<id_4h2ou9_11e_zik280>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1oyzyha_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_y202qs_115_2ooh4b>	<id_4h2ou9_11e_1blip6x>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_y202qs_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_1ozici8_115_2ooh4b>	<id_4h2ou9_11e_zjgj0m>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1ozici8_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_rdrzhh_115_2ooh4b>	<id_4h2ou9_11e_3kd4jg>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_rdrzhh_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_s8g1v5_115_2ooh4b>	<id_4h2ou9_11e_5dzucj>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_s8g1v5_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_1ozidje_115_2ooh4b>	<id_4h2ou9_11e_zjgizr>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1ozidje_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_1oyzyhb_115_2ooh4b>	<id_4h2ou9_11e_zik281>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1oyzyhb_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_1oyzxkm_115_2ooh4b>	<id_4h2ou9_11e_zik112>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1oyzxkm_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_1oyzxko_115_2ooh4b>	<id_4h2ou9_11e_zik114>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1oyzxko_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_1oyzxkk_115_2ooh4b>	<id_4h2ou9_11e_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1oyzxkk_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_1ozidjb_115_2ooh4b>	<id_4h2ou9_11e_zjgizo>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1ozidjb_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_wz58s6_115_2ooh4b>	<id_4h2ou9_16x_zjgz45>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_wz58s6_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_lmcwkn_115_2ooh4b>	<id_4h2ou9_16x_bjxm91>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_lmcwkn_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_wz4wv5_115_2ooh4b>	<id_4h2ou9_16x_zjgj0l>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_wz4wv5_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1yag3lv_115_2ooh4b>	<id_4h2ou9_16x_3cudqc>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_1yag3lv_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_te7i0a_115_2ooh4b>	<id_4h2ou9_16x_rwwk2q>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_te7i0a_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_q8gmhx_115_2ooh4b>	<id_4h2ou9_16x_1sqt3zc>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_q8gmhx_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_oogj6i_115_2ooh4b>	<id_4h2ou9_16x_1pj9f8l>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_oogj6i_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_v3gglh_115_2ooh4b>	<id_4h2ou9_16x_vkf2e7>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_v3gglh_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_wz4xw9_115_2ooh4b>	<id_4h2ou9_16x_zjgizo>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_wz4xw9_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_wz4xwd_115_2ooh4b>	<id_4h2ou9_16x_zjgizs>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_wz4xwd_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_srbp7o_115_2ooh4b>	<id_4h2ou9_16x_qmddpf>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_srbp7o_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_q7hrjx_115_2ooh4b>	<id_4h2ou9_16x_lae7hl>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_q7hrjx_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_obii8t_115_2ooh4b>	<id_4h2ou9_16x_1q2fimg>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_obii8t_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_wz58s7_115_2ooh4b>	<id_4h2ou9_16x_zjgz46>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_wz58s7_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_ry5pnc_115_2ooh4b>	<id_4h2ou9_16x_q8bwh2>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_ry5pnc_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_p5cleb_115_2ooh4b>	<id_4h2ou9_16x_1qj0mwu>	<extractionSource>	<http://en.wikipedia.org/wiki/Cécilia_Attias>
-	<id_p5cleb_115_2ooh4b>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_16vcwrr_115_ya5b9x>	<id_1dmj8jj_1xk_zjgiw6>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont>
-	<id_16vcwrr_115_ya5b9x>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_18ss0eo_115_ya5b9x>	<id_1dmj8jj_1xk_rs0zq>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont>
-	<id_18ss0eo_115_ya5b9x>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_kstbm2_115_ya5b9x>	<id_1dmj8jj_oyl_5obby1>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont>
-	<id_kstbm2_115_ya5b9x>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_gmunzw_115_ya5b9x>	<id_1dmj8jj_oyl_1loge24>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont>
-	<id_gmunzw_115_ya5b9x>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_gmunzw_115_ya5b9x>	<id_1dmj8jj_oyl_1loge24>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont>
-	<id_gmunzw_115_ya5b9x>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_k5zvtc_115_ya5b9x>	<id_1dmj8jj_oyl_4ds5kq>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont>
-	<id_k5zvtc_115_ya5b9x>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1josdo4_115_ya5b9x>	<id_1dmj8jj_1s2_1as8dix>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont>
-	<id_1josdo4_115_ya5b9x>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_13c5ldt_115_ya5b9x>	<id_1dmj8jj_1s2_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Frémont>
-	<id_13c5ldt_115_ya5b9x>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_tfd53l_115_1z07dq4>	<id_4h2ou9_1xk_zjgix6>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_tfd53l_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_teuq45_115_1z07dq4>	<id_4h2ou9_1xk_zik275>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_teuq45_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_teuq44_115_1z07dq4>	<id_4h2ou9_1xk_zik274>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_teuq44_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_r6smmh_115_1z07dq4>	<id_4h2ou9_1xk_w67xnv>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_r6smmh_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_12oxejh_115_1z07dq4>	<id_4h2ou9_oyl_y6wvzx>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_12oxejh_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_12oxejh_115_1z07dq4>	<id_4h2ou9_oyl_y6wvzx>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_12oxejh_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1oyzyha_115_1z07dq4>	<id_4h2ou9_11e_zik280>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1oyzyha_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_y202qs_115_1z07dq4>	<id_4h2ou9_11e_1blip6x>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_y202qs_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_1ozici8_115_1z07dq4>	<id_4h2ou9_11e_zjgj0m>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1ozici8_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_rdrzhh_115_1z07dq4>	<id_4h2ou9_11e_3kd4jg>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_rdrzhh_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_s8g1v5_115_1z07dq4>	<id_4h2ou9_11e_5dzucj>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_s8g1v5_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_1ozidje_115_1z07dq4>	<id_4h2ou9_11e_zjgizr>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1ozidje_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_1oyzyhb_115_1z07dq4>	<id_4h2ou9_11e_zik281>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1oyzyhb_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_1oyzxkm_115_1z07dq4>	<id_4h2ou9_11e_zik112>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1oyzxkm_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_1oyzxko_115_1z07dq4>	<id_4h2ou9_11e_zik114>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1oyzxko_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_1oyzxkk_115_1z07dq4>	<id_4h2ou9_11e_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1oyzxkk_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_1ozidjb_115_1z07dq4>	<id_4h2ou9_11e_zjgizo>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1ozidjb_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_wz58s6_115_1z07dq4>	<id_4h2ou9_16x_zjgz45>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_wz58s6_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_lmcwkn_115_1z07dq4>	<id_4h2ou9_16x_bjxm91>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_lmcwkn_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_wz4wv5_115_1z07dq4>	<id_4h2ou9_16x_zjgj0l>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_wz4wv5_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1yag3lv_115_1z07dq4>	<id_4h2ou9_16x_3cudqc>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_1yag3lv_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_te7i0a_115_1z07dq4>	<id_4h2ou9_16x_rwwk2q>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_te7i0a_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_q8gmhx_115_1z07dq4>	<id_4h2ou9_16x_1sqt3zc>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_q8gmhx_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_oogj6i_115_1z07dq4>	<id_4h2ou9_16x_1pj9f8l>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_oogj6i_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_v3gglh_115_1z07dq4>	<id_4h2ou9_16x_vkf2e7>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_v3gglh_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_wz4xw9_115_1z07dq4>	<id_4h2ou9_16x_zjgizo>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_wz4xw9_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_wz4xwd_115_1z07dq4>	<id_4h2ou9_16x_zjgizs>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_wz4xwd_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_srbp7o_115_1z07dq4>	<id_4h2ou9_16x_qmddpf>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_srbp7o_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_q7hrjx_115_1z07dq4>	<id_4h2ou9_16x_lae7hl>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_q7hrjx_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_obii8t_115_1z07dq4>	<id_4h2ou9_16x_1q2fimg>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_obii8t_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_wz58s7_115_1z07dq4>	<id_4h2ou9_16x_zjgz46>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_wz58s7_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_ry5pnc_115_1z07dq4>	<id_4h2ou9_16x_q8bwh2>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_ry5pnc_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_p5cleb_115_1z07dq4>	<id_4h2ou9_16x_1qj0mwu>	<extractionSource>	<http://en.wikipedia.org/wiki/C%C3%A9cilia_Attias>
+	<id_p5cleb_115_1z07dq4>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_16vcwrr_115_b8obv0>	<id_1dmj8jj_1xk_zjgiw6>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Fr%C3%A9mont>
+	<id_16vcwrr_115_b8obv0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_18ss0eo_115_b8obv0>	<id_1dmj8jj_1xk_rs0zq>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Fr%C3%A9mont>
+	<id_18ss0eo_115_b8obv0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_kstbm2_115_b8obv0>	<id_1dmj8jj_oyl_5obby1>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Fr%C3%A9mont>
+	<id_kstbm2_115_b8obv0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_gmunzw_115_b8obv0>	<id_1dmj8jj_oyl_1loge24>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Fr%C3%A9mont>
+	<id_gmunzw_115_b8obv0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_gmunzw_115_b8obv0>	<id_1dmj8jj_oyl_1loge24>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Fr%C3%A9mont>
+	<id_gmunzw_115_b8obv0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_k5zvtc_115_b8obv0>	<id_1dmj8jj_oyl_4ds5kq>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Fr%C3%A9mont>
+	<id_k5zvtc_115_b8obv0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1josdo4_115_b8obv0>	<id_1dmj8jj_1s2_1as8dix>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Fr%C3%A9mont>
+	<id_1josdo4_115_b8obv0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_13c5ldt_115_b8obv0>	<id_1dmj8jj_1s2_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Fr%C3%A9mont>
+	<id_13c5ldt_115_b8obv0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
 <id_i6abps_115_19lc4dz>	<id_sb8eld_10x_1em09e>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin>
 	<id_i6abps_115_19lc4dz>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
 <id_1fmsag_115_19lc4dz>	<id_sb8eld_10x_1t4z0v4>	<extractionSource>	<http://en.wikipedia.org/wiki/Dominique_de_Villepin>
@@ -2338,92 +2335,92 @@
 	<id_iv16li_115_thfhsk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
 <id_1knx9cb_115_thfhsk>	<id_18ttf26_1xk_4f6ki2>	<extractionSource>	<http://en.wikipedia.org/wiki/Emmanuelle_Mignon>
 	<id_1knx9cb_115_thfhsk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_79k3bm_115_1cizvx2>	<id_1qrqo30_1xk_zik26a>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_79k3bm_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_7a2i9o_115_1cizvx2>	<id_1qrqo30_1xk_zjgiun>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_7a2i9o_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1i5pwh_115_1cizvx2>	<id_1qrqo30_1xk_1a2rw8c>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_1i5pwh_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_79k3bp_115_1cizvx2>	<id_1qrqo30_1xk_zik26d>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_79k3bp_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_mfotwy_115_1cizvx2>	<id_1qrqo30_oyl_147xp70>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_mfotwy_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_aqh9ep_115_1cizvx2>	<id_1qrqo30_oyl_klm91r>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_aqh9ep_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_mfotwy_115_1cizvx2>	<id_1qrqo30_oyl_147xp70>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_mfotwy_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_rkizva_115_1cizvx2>	<id_1qrqo30_88c_neqgof>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_rkizva_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
-<id_12ik9oi_115_1cizvx2>	<id_1qrqo30_88c_1x9tonu>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_12ik9oi_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
-<id_htipvd_115_1cizvx2>	<id_1qrqo30_1s2_1as8dix>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_htipvd_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_3qv6vw_115_1cizvx2>	<id_1qrqo30_1s2_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Édouard_Balladur>
-	<id_3qv6vw_115_1cizvx2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_14p5s0b_115_18s9k3o>	<id_hchqjy_z7a_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace>
-	<id_14p5s0b_115_18s9k3o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/location>"
-<id_40y40b_115_18s9k3o>	<id_hchqjy_z7a_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace>
-	<id_40y40b_115_18s9k3o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/location>"
-<id_14p5s0b_115_18s9k3o>	<id_hchqjy_z7a_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace>
-	<id_14p5s0b_115_18s9k3o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/location>"
-<id_40y40b_115_18s9k3o>	<id_hchqjy_z7a_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Élysée_Palace>
-	<id_40y40b_115_18s9k3o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/location>"
-<id_3bseug_115_s05yln>	<id_cfajyt_1xk_zik27z>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_3bseug_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_3cattv_115_s05yln>	<id_cfajyt_1xk_zjgixz>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_3cattv_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_3bsdwl_115_s05yln>	<id_cfajyt_1xk_zik112>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_3bsdwl_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1htwc8_115_s05yln>	<id_cfajyt_1xk_vml8n4>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_1htwc8_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_15fi525_115_s05yln>	<id_cfajyt_oyl_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_15fi525_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_4rah25_115_s05yln>	<id_cfajyt_oyl_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_4rah25_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_15fi525_115_s05yln>	<id_cfajyt_oyl_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_15fi525_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_4rah25_115_s05yln>	<id_cfajyt_oyl_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_4rah25_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_11swpp7_115_s05yln>	<id_cfajyt_1s2_1as8dix>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_11swpp7_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1yu7kca_115_s05yln>	<id_cfajyt_1s2_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Baroin>
-	<id_1yu7kca_115_s05yln>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_10ia97y_115_u0mwx8>	<id_efriae_10x_z3ztpf>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_10ia97y_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_zklmt3_115_u0mwx8>	<id_efriae_10x_x4t3lc>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_zklmt3_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_111nzcs_115_u0mwx8>	<id_efriae_10x_yvcm8h>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_111nzcs_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_sh14w2_115_u0mwx8>	<id_efriae_10x_grz3oh>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_sh14w2_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_snn44v_115_u0mwx8>	<id_efriae_1xk_1n5mmbs>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_snn44v_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1vikdpq_115_u0mwx8>	<id_efriae_1xk_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_1vikdpq_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1vj2tl3_115_u0mwx8>	<id_efriae_1xk_zjgix3>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_1vj2tl3_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1vikdqx_115_u0mwx8>	<id_efriae_1xk_zik10z>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_1vikdqx_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_26zpeu_115_u0mwx8>	<id_efriae_oyl_1qvh7s0>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_26zpeu_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_2mkby2_115_u0mwx8>	<id_efriae_oyl_1ru495r>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_2mkby2_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1w0yksh_115_u0mwx8>	<id_efriae_oyl_1fvzpek>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_1w0yksh_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1w2d6u4_115_u0mwx8>	<id_efriae_oyl_1fylxks>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_1w2d6u4_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_12rv0j4_115_u0mwx8>	<id_efriae_1s2_1as8dix>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_12rv0j4_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1rzvi6d_115_u0mwx8>	<id_efriae_1s2_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_1rzvi6d_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_14wcdbj_115_u0mwx8>	<id_efriae_12k_1hc9ukf>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_14wcdbj_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
-<id_l28p1l_115_u0mwx8>	<id_efriae_12k_ip9qyo>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_l28p1l_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
-<id_1ykodv9_115_u0mwx8>	<id_efriae_16x_1rxxghb>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_1ykodv9_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1xxsj23_115_u0mwx8>	<id_efriae_16x_1qnea40>	<extractionSource>	<http://en.wikipedia.org/wiki/François_Fillon>
-	<id_1xxsj23_115_u0mwx8>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_79k3bm_115_1et11q2>	<id_1qrqo30_1xk_zik26a>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_79k3bm_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_7a2i9o_115_1et11q2>	<id_1qrqo30_1xk_zjgiun>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_7a2i9o_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1i5pwh_115_1et11q2>	<id_1qrqo30_1xk_1a2rw8c>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_1i5pwh_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_79k3bp_115_1et11q2>	<id_1qrqo30_1xk_zik26d>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_79k3bp_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_mfotwy_115_1et11q2>	<id_1qrqo30_oyl_147xp70>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_mfotwy_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_aqh9ep_115_1et11q2>	<id_1qrqo30_oyl_klm91r>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_aqh9ep_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_mfotwy_115_1et11q2>	<id_1qrqo30_oyl_147xp70>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_mfotwy_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_rkizva_115_1et11q2>	<id_1qrqo30_88c_neqgof>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_rkizva_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
+<id_12ik9oi_115_1et11q2>	<id_1qrqo30_88c_1x9tonu>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_12ik9oi_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/occupation>"
+<id_htipvd_115_1et11q2>	<id_1qrqo30_1s2_1as8dix>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_htipvd_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_3qv6vw_115_1et11q2>	<id_1qrqo30_1s2_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89douard_Balladur>
+	<id_3qv6vw_115_1et11q2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_14p5s0b_115_m2yst1>	<id_hchqjy_z7a_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89lys%C3%A9e_Palace>
+	<id_14p5s0b_115_m2yst1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/location>"
+<id_40y40b_115_m2yst1>	<id_hchqjy_z7a_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89lys%C3%A9e_Palace>
+	<id_40y40b_115_m2yst1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/location>"
+<id_14p5s0b_115_m2yst1>	<id_hchqjy_z7a_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89lys%C3%A9e_Palace>
+	<id_14p5s0b_115_m2yst1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/location>"
+<id_40y40b_115_m2yst1>	<id_hchqjy_z7a_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/%C3%89lys%C3%A9e_Palace>
+	<id_40y40b_115_m2yst1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/location>"
+<id_3bseug_115_a2wrbk>	<id_cfajyt_1xk_zik27z>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_3bseug_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_3cattv_115_a2wrbk>	<id_cfajyt_1xk_zjgixz>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_3cattv_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_3bsdwl_115_a2wrbk>	<id_cfajyt_1xk_zik112>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_3bsdwl_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1htwc8_115_a2wrbk>	<id_cfajyt_1xk_vml8n4>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_1htwc8_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_15fi525_115_a2wrbk>	<id_cfajyt_oyl_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_15fi525_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_4rah25_115_a2wrbk>	<id_cfajyt_oyl_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_4rah25_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_15fi525_115_a2wrbk>	<id_cfajyt_oyl_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_15fi525_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_4rah25_115_a2wrbk>	<id_cfajyt_oyl_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_4rah25_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_11swpp7_115_a2wrbk>	<id_cfajyt_1s2_1as8dix>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_11swpp7_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1yu7kca_115_a2wrbk>	<id_cfajyt_1s2_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Baroin>
+	<id_1yu7kca_115_a2wrbk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_10ia97y_115_c3dpn5>	<id_efriae_10x_z3ztpf>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_10ia97y_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_zklmt3_115_c3dpn5>	<id_efriae_10x_x4t3lc>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_zklmt3_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_111nzcs_115_c3dpn5>	<id_efriae_10x_yvcm8h>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_111nzcs_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_sh14w2_115_c3dpn5>	<id_efriae_10x_grz3oh>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_sh14w2_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_snn44v_115_c3dpn5>	<id_efriae_1xk_1n5mmbs>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_snn44v_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1vikdpq_115_c3dpn5>	<id_efriae_1xk_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_1vikdpq_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1vj2tl3_115_c3dpn5>	<id_efriae_1xk_zjgix3>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_1vj2tl3_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1vikdqx_115_c3dpn5>	<id_efriae_1xk_zik10z>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_1vikdqx_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_26zpeu_115_c3dpn5>	<id_efriae_oyl_1qvh7s0>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_26zpeu_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_2mkby2_115_c3dpn5>	<id_efriae_oyl_1ru495r>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_2mkby2_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1w0yksh_115_c3dpn5>	<id_efriae_oyl_1fvzpek>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_1w0yksh_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1w2d6u4_115_c3dpn5>	<id_efriae_oyl_1fylxks>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_1w2d6u4_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_12rv0j4_115_c3dpn5>	<id_efriae_1s2_1as8dix>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_12rv0j4_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1rzvi6d_115_c3dpn5>	<id_efriae_1s2_vv1cot>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_1rzvi6d_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_14wcdbj_115_c3dpn5>	<id_efriae_12k_1hc9ukf>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_14wcdbj_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
+<id_l28p1l_115_c3dpn5>	<id_efriae_12k_ip9qyo>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_l28p1l_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
+<id_1ykodv9_115_c3dpn5>	<id_efriae_16x_1rxxghb>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_1ykodv9_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1xxsj23_115_c3dpn5>	<id_efriae_16x_1qnea40>	<extractionSource>	<http://en.wikipedia.org/wiki/Fran%C3%A7ois_Fillon>
+	<id_1xxsj23_115_c3dpn5>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_onrfsx_115_jcah8m>	<id_1fvzpek_789_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
 	<id_onrfsx_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_iw6wb6_115_jcah8m>	<id_1fvzpek_1ia_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
@@ -2448,28 +2445,28 @@
 	<id_fbxwpm_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_7p2s1e_115_jcah8m>	<id_1fvzpek_1ia_6a9bb>	<extractionSource>	<http://en.wikipedia.org/wiki/French_Fourth_Republic>
 	<id_7p2s1e_115_jcah8m>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_1f2jwhe_115_dp6pi2>	<id_jfqfk4_z7a_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_1f2jwhe_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
-<id_eec8he_115_dp6pi2>	<id_jfqfk4_z7a_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_eec8he_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
-<id_1fcpkh9_115_dp6pi2>	<id_jfqfk4_siu_zjgi82>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_1fcpkh9_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_i7dsgc_115_dp6pi2>	<id_jfqfk4_siu_1a3nezm>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_i7dsgc_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_16cl8jd_115_dp6pi2>	<id_jfqfk4_1ia_w7k46o>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_16cl8jd_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_1izbazx_115_dp6pi2>	<id_jfqfk4_ice_8nw5q5>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_1izbazx_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_auhfwg_115_dp6pi2>	<id_jfqfk4_ice_qj8lvt>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_auhfwg_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_1382vlr_115_dp6pi2>	<id_jfqfk4_ice_1ofhm2y>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_1382vlr_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_1382vme_115_dp6pi2>	<id_jfqfk4_ice_1ofhm3q>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_1382vme_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_auhee3_115_dp6pi2>	<id_jfqfk4_ice_qj8l7p>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_auhee3_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_f4qamw_115_dp6pi2>	<id_jfqfk4_ice_zjgz4t>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d'Études_Politiques_de_Paris>
-	<id_f4qamw_115_dp6pi2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1f2jwhe_115_90yhb3>	<id_jfqfk4_z7a_10sbxbf>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_1f2jwhe_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
+<id_eec8he_115_90yhb3>	<id_jfqfk4_z7a_1yg6dyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_eec8he_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
+<id_1fcpkh9_115_90yhb3>	<id_jfqfk4_siu_zjgi82>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_1fcpkh9_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_i7dsgc_115_90yhb3>	<id_jfqfk4_siu_1a3nezm>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_i7dsgc_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_16cl8jd_115_90yhb3>	<id_jfqfk4_1ia_w7k46o>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_16cl8jd_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_1izbazx_115_90yhb3>	<id_jfqfk4_ice_8nw5q5>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_1izbazx_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_auhfwg_115_90yhb3>	<id_jfqfk4_ice_qj8lvt>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_auhfwg_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1382vlr_115_90yhb3>	<id_jfqfk4_ice_1ofhm2y>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_1382vlr_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1382vme_115_90yhb3>	<id_jfqfk4_ice_1ofhm3q>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_1382vme_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_auhee3_115_90yhb3>	<id_jfqfk4_ice_qj8l7p>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_auhee3_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_f4qamw_115_90yhb3>	<id_jfqfk4_ice_zjgz4t>	<extractionSource>	<http://en.wikipedia.org/wiki/Institut_d%27%C3%89tudes_Politiques_de_Paris>
+	<id_f4qamw_115_90yhb3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_z8prks_115_1gtgvff>	<id_1ilv35d_10x_1t4z0v4>	<extractionSource>	<http://en.wikipedia.org/wiki/Jacques_Chirac>
 	<id_z8prks_115_1gtgvff>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
 <id_1wwnn23_115_1gtgvff>	<id_1ilv35d_10x_dxm37o>	<extractionSource>	<http://en.wikipedia.org/wiki/Jacques_Chirac>
@@ -2580,26 +2577,26 @@
 	<id_1gwdlx3_115_1t809w0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
 <id_1imxh9b_115_1t809w0>	<id_ppnh9i_1s2_zjgz40>	<extractionSource>	<http://en.wikipedia.org/wiki/Jean-Pierre_Raffarin>
 	<id_1imxh9b_115_1t809w0>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_813dh6_115_1g960c7>	<id_5iwrwt_1xk_zik282>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_813dh6_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_6pi8sd_115_1g960c7>	<id_5iwrwt_1xk_woy2eg>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_6pi8sd_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_81lsg9_115_1g960c7>	<id_5iwrwt_1xk_zjgiwd>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_81lsg9_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_813ckh_115_1g960c7>	<id_5iwrwt_1xk_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_813ckh_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_18w14m6_115_1g960c7>	<id_5iwrwt_oyl_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_18w14m6_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_5uynqb_115_1g960c7>	<id_5iwrwt_oyl_1u5uyhb>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_5uynqb_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_c1fmgu_115_1g960c7>	<id_5iwrwt_oyl_n2w2ob>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_c1fmgu_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_c1fmgu_115_1g960c7>	<id_5iwrwt_oyl_n2w2ob>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_c1fmgu_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_uxr88e_115_1g960c7>	<id_5iwrwt_88c_167c1rk>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_uxr88e_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_tiut7z_115_1g960c7>	<id_5iwrwt_88c_11unvxu>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sicília>
-	<id_tiut7z_115_1g960c7>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_813dh6_115_sywqi9>	<id_5iwrwt_1xk_zik282>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_813dh6_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_6pi8sd_115_sywqi9>	<id_5iwrwt_1xk_woy2eg>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_6pi8sd_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_81lsg9_115_sywqi9>	<id_5iwrwt_1xk_zjgiwd>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_81lsg9_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_813ckh_115_sywqi9>	<id_5iwrwt_1xk_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_813ckh_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_18w14m6_115_sywqi9>	<id_5iwrwt_oyl_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_18w14m6_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_5uynqb_115_sywqi9>	<id_5iwrwt_oyl_1u5uyhb>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_5uynqb_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_c1fmgu_115_sywqi9>	<id_5iwrwt_oyl_n2w2ob>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_c1fmgu_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_c1fmgu_115_sywqi9>	<id_5iwrwt_oyl_n2w2ob>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_c1fmgu_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_uxr88e_115_sywqi9>	<id_5iwrwt_88c_167c1rk>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_uxr88e_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_tiut7z_115_sywqi9>	<id_5iwrwt_88c_11unvxu>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
+	<id_tiut7z_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
 <id_1ajx1l3_115_1dzyujs>	<id_1tccrte_1n8_11hvuah>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine>
 	<id_1ajx1l3_115_1dzyujs>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/latitude>"
 <id_1dyh04z_115_1dzyujs>	<id_1tccrte_1n8_18nsieb>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine>
@@ -2654,32 +2651,32 @@
 	<id_1yzglzy_115_1b5ah11>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1dcx9pa_115_1b5ah11>	<id_vkf2e7_ice_4rurel>	<extractionSource>	<http://en.wikipedia.org/wiki/Nicolas_Sarkozy>
 	<id_1dcx9pa_115_1b5ah11>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_15cnyi1_115_hj5qvt>	<id_17gzuo3_z7a_1vqh5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_15cnyi1_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
-<id_psbcpp_115_hj5qvt>	<id_17gzuo3_z7a_b442h7>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_psbcpp_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
-<id_vqiers_115_hj5qvt>	<id_17gzuo3_z7a_1bi80uk>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_vqiers_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
-<id_15cnyi1_115_hj5qvt>	<id_17gzuo3_z7a_1vqh5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_15cnyi1_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
-<id_1pei4u3_115_hj5qvt>	<id_17gzuo3_siu_pt3e5w>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_1pei4u3_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_1u0dmt2_115_hj5qvt>	<id_17gzuo3_siu_zjgdq7>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_1u0dmt2_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_pujs32_115_hj5qvt>	<id_17gzuo3_siu_14f8rvj>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_pujs32_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_1u0dqqe_115_hj5qvt>	<id_17gzuo3_siu_zjgixy>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_1u0dqqe_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_1l4j76z_115_hj5qvt>	<id_17gzuo3_siu_gqphl2>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_1l4j76z_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_trvpah_115_hj5qvt>	<id_17gzuo3_ice_zik273>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_trvpah_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_1st1p1v_115_hj5qvt>	<id_17gzuo3_ice_1k7bb8e>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_Défense>
-	<id_1st1p1v_115_hj5qvt>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_zq271m_115_14k6h1t>	<id_1isx97r_1s2_5s78gw>	<extractionSource>	<http://en.wikipedia.org/wiki/Pere_López_Agràs>
-	<id_zq271m_115_14k6h1t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1fzulw3_115_14k6h1t>	<id_1isx97r_1s2_1lxa6xt>	<extractionSource>	<http://en.wikipedia.org/wiki/Pere_López_Agràs>
-	<id_1fzulw3_115_14k6h1t>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_15cnyi1_115_36rs0o>	<id_17gzuo3_z7a_1vqh5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_15cnyi1_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
+<id_psbcpp_115_36rs0o>	<id_17gzuo3_z7a_b442h7>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_psbcpp_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
+<id_vqiers_115_36rs0o>	<id_17gzuo3_z7a_1bi80uk>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_vqiers_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
+<id_15cnyi1_115_36rs0o>	<id_17gzuo3_z7a_1vqh5vd>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_15cnyi1_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
+<id_1pei4u3_115_36rs0o>	<id_17gzuo3_siu_pt3e5w>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_1pei4u3_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_1u0dmt2_115_36rs0o>	<id_17gzuo3_siu_zjgdq7>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_1u0dmt2_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_pujs32_115_36rs0o>	<id_17gzuo3_siu_14f8rvj>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_pujs32_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_1u0dqqe_115_36rs0o>	<id_17gzuo3_siu_zjgixy>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_1u0dqqe_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_1l4j76z_115_36rs0o>	<id_17gzuo3_siu_gqphl2>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_1l4j76z_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_trvpah_115_36rs0o>	<id_17gzuo3_ice_zik273>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_trvpah_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1st1p1v_115_36rs0o>	<id_17gzuo3_ice_1k7bb8e>	<extractionSource>	<http://en.wikipedia.org/wiki/Paris_West_University_Nanterre_La_D%C3%A9fense>
+	<id_1st1p1v_115_36rs0o>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_zq271m_115_1atrski>	<id_1isx97r_1s2_5s78gw>	<extractionSource>	<http://en.wikipedia.org/wiki/Pere_L%C3%B3pez_Agr%C3%A0s>
+	<id_zq271m_115_1atrski>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1fzulw3_115_1atrski>	<id_1isx97r_1s2_1lxa6xt>	<extractionSource>	<http://en.wikipedia.org/wiki/Pere_L%C3%B3pez_Agr%C3%A0s>
+	<id_1fzulw3_115_1atrski>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
 <id_1d5y9gc_115_peivmg>	<id_13n9nse_1xk_unqotn>	<extractionSource>	<http://en.wikipedia.org/wiki/Philippe_Massoni>
 	<id_1d5y9gc_115_peivmg>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
 <id_1fgsorx_115_peivmg>	<id_13n9nse_1xk_zjgivf>	<extractionSource>	<http://en.wikipedia.org/wiki/Philippe_Massoni>
@@ -2724,52 +2721,52 @@
 	<id_1u83lgp_115_16r5nqb>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_1lta7yb_115_16r5nqb>	<id_1as8dix_ice_1itk391>	<extractionSource>	<http://en.wikipedia.org/wiki/Union_for_a_Popular_Movement>
 	<id_1lta7yb_115_16r5nqb>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_8cmia8_115_4jg3xi>	<id_j2lde8_10x_wceha4>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_8cmia8_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_fqs8d_115_4jg3xi>	<id_j2lde8_10x_flc80t>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_fqs8d_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_14212ev_115_4jg3xi>	<id_j2lde8_1xk_zik286>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_14212ev_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_142jhd9_115_4jg3xi>	<id_j2lde8_1xk_zjgix0>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_142jhd9_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_14211i2_115_4jg3xi>	<id_j2lde8_1xk_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_14211i2_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_trza16_115_4jg3xi>	<id_j2lde8_1xk_f4ibnn>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_trza16_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1bpn3fy_115_4jg3xi>	<id_j2lde8_oyl_tgmsjz>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_1bpn3fy_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1bpn3fy_115_4jg3xi>	<id_j2lde8_oyl_tgmsjz>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_1bpn3fy_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_17ji296_115_4jg3xi>	<id_j2lde8_oyl_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_17ji296_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_17ji296_115_4jg3xi>	<id_j2lde8_oyl_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_17ji296_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_15xf3n7_115_4jg3xi>	<id_j2lde8_oyl_hb9be0>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_15xf3n7_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_15xf3n7_115_4jg3xi>	<id_j2lde8_oyl_hb9be0>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_15xf3n7_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_16rqol6_115_4jg3xi>	<id_j2lde8_1s2_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_16rqol6_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_158z326_115_4jg3xi>	<id_j2lde8_1s2_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_158z326_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_wu56nd_115_4jg3xi>	<id_j2lde8_88c_4anzi5>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_wu56nd_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_wu56nd_115_4jg3xi>	<id_j2lde8_88c_4anzi5>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_wu56nd_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_u8ye8a_115_4jg3xi>	<id_j2lde8_88c_1880c8b>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_u8ye8a_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_10gq92k_115_4jg3xi>	<id_j2lde8_16x_kfy8r0>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_10gq92k_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_10x0l0g_115_4jg3xi>	<id_j2lde8_16x_lela4r>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_Pérez_Rubalcaba>
-	<id_10x0l0g_115_4jg3xi>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1cy8t5x_115_s1au4d>	<id_w2djwz_1ia_1gebrsf>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)>
-	<id_1cy8t5x_115_s1au4d>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_1ysddqe_115_s1au4d>	<id_w2djwz_1ia_d5cju6>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)>
-	<id_1ysddqe_115_s1au4d>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_1ri9fb0_115_s1au4d>	<id_w2djwz_ice_1mv0ke7>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)>
-	<id_1ri9fb0_115_s1au4d>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_1mtzxvb_115_s1au4d>	<id_w2djwz_ice_1cxo6vk>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_(Spain)>
-	<id_1mtzxvb_115_s1au4d>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_8cmia8_115_1p49nev>	<id_j2lde8_10x_wceha4>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_8cmia8_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_fqs8d_115_1p49nev>	<id_j2lde8_10x_flc80t>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_fqs8d_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_14212ev_115_1p49nev>	<id_j2lde8_1xk_zik286>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_14212ev_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_142jhd9_115_1p49nev>	<id_j2lde8_1xk_zjgix0>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_142jhd9_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_14211i2_115_1p49nev>	<id_j2lde8_1xk_zik113>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_14211i2_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_trza16_115_1p49nev>	<id_j2lde8_1xk_f4ibnn>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_trza16_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1bpn3fy_115_1p49nev>	<id_j2lde8_oyl_tgmsjz>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_1bpn3fy_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1bpn3fy_115_1p49nev>	<id_j2lde8_oyl_tgmsjz>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_1bpn3fy_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_17ji296_115_1p49nev>	<id_j2lde8_oyl_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_17ji296_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_17ji296_115_1p49nev>	<id_j2lde8_oyl_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_17ji296_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_15xf3n7_115_1p49nev>	<id_j2lde8_oyl_hb9be0>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_15xf3n7_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_15xf3n7_115_1p49nev>	<id_j2lde8_oyl_hb9be0>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_15xf3n7_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_16rqol6_115_1p49nev>	<id_j2lde8_1s2_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_16rqol6_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_158z326_115_1p49nev>	<id_j2lde8_1s2_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_158z326_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_wu56nd_115_1p49nev>	<id_j2lde8_88c_4anzi5>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_wu56nd_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_wu56nd_115_1p49nev>	<id_j2lde8_88c_4anzi5>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_wu56nd_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_u8ye8a_115_1p49nev>	<id_j2lde8_88c_1880c8b>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_u8ye8a_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_10gq92k_115_1p49nev>	<id_j2lde8_16x_kfy8r0>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_10gq92k_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_10x0l0g_115_1p49nev>	<id_j2lde8_16x_lela4r>	<extractionSource>	<http://en.wikipedia.org/wiki/Alfredo_P%C3%A9rez_Rubalcaba>
+	<id_10x0l0g_115_1p49nev>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1cy8t5x_115_1rdbetf>	<id_w2djwz_1ia_1gebrsf>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_%28Spain%29>
+	<id_1cy8t5x_115_1rdbetf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_1ysddqe_115_1rdbetf>	<id_w2djwz_1ia_d5cju6>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_%28Spain%29>
+	<id_1ysddqe_115_1rdbetf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_1ri9fb0_115_1rdbetf>	<id_w2djwz_ice_1mv0ke7>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_%28Spain%29>
+	<id_1ri9fb0_115_1rdbetf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1mtzxvb_115_1rdbetf>	<id_w2djwz_ice_1cxo6vk>	<extractionSource>	<http://en.wikipedia.org/wiki/Congress_of_Deputies_%28Spain%29>
+	<id_1mtzxvb_115_1rdbetf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_g1ean1_115_1c7bkvf>	<id_krjrbp_10x_d1lx9y>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado>
 	<id_g1ean1_115_1c7bkvf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
 <id_psm1xi_115_1c7bkvf>	<id_krjrbp_10x_wceha4>	<extractionSource>	<http://en.wikipedia.org/wiki/Elena_Salgado>
@@ -2832,106 +2829,106 @@
 	<id_16r6wow_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
 <id_yrh5bq_115_apmb51>	<id_1u5uyhb_11k_k0n83r>	<extractionSource>	<http://en.wikipedia.org/wiki/Francoist_Spain>
 	<id_yrh5bq_115_apmb51>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationalmotto>"
-<id_1blfwal_115_2kd4dn>	<id_1m0lrpx_10x_2eoor5>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_1blfwal_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1bvw3yk_115_2kd4dn>	<id_1m0lrpx_10x_2z1w0g>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_1bvw3yk_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_hksxez_115_2kd4dn>	<id_1m0lrpx_10x_15z0igj>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_hksxez_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1yi0pl4_115_2kd4dn>	<id_1m0lrpx_10x_d3efgx>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_1yi0pl4_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_e5zz95_115_2kd4dn>	<id_1m0lrpx_10x_104crw3>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_e5zz95_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1c3g6jz_115_2kd4dn>	<id_1m0lrpx_10x_3ggz01>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_1c3g6jz_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_vzfrnw_115_2kd4dn>	<id_1m0lrpx_1xk_i0j564>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_vzfrnw_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_14x2lyy_115_2kd4dn>	<id_1m0lrpx_1xk_zjgiwc>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_14x2lyy_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_14wk70c_115_2kd4dn>	<id_1m0lrpx_1xk_zik27a>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_14wk70c_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_14wk636_115_2kd4dn>	<id_1m0lrpx_1xk_zik112>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_14wk636_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_14ofnsr_115_2kd4dn>	<id_1m0lrpx_oyl_e601fq>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_14ofnsr_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_w6t7f8_115_2kd4dn>	<id_1m0lrpx_oyl_1wf8iyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_w6t7f8_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_w6t7f8_115_2kd4dn>	<id_1m0lrpx_oyl_1wf8iyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_w6t7f8_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_q05g4s_115_2kd4dn>	<id_1m0lrpx_oyl_1jd9wkl>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_q05g4s_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1x27msh_115_2kd4dn>	<id_1m0lrpx_1s2_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_1x27msh_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1vjg19h_115_2kd4dn>	<id_1m0lrpx_1s2_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaquín_Almunia>
-	<id_1vjg19h_115_2kd4dn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1831h4m_115_1jexsky>	<id_1ng0idk_10x_16aauej>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_1831h4m_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_eaos1d_115_1jexsky>	<id_1ng0idk_10x_cacb9n>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_eaos1d_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1fxlhzz_115_1jexsky>	<id_1ng0idk_1xk_t9r5fi>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_1fxlhzz_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1jin7kz_115_1jexsky>	<id_1ng0idk_1xk_zjgixu>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_1jin7kz_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1ji4rnw_115_1jexsky>	<id_1ng0idk_1xk_zik114>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_1ji4rnw_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1ji4rns_115_1jexsky>	<id_1ng0idk_1xk_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_1ji4rns_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_owvz1w_115_1jexsky>	<id_1ng0idk_oyl_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_owvz1w_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1kwxk55_115_1jexsky>	<id_1ng0idk_oyl_1u5uyhb>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_1kwxk55_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_qdvlba_115_1jexsky>	<id_1ng0idk_oyl_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_qdvlba_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_qdvlba_115_1jexsky>	<id_1ng0idk_oyl_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_qdvlba_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_11wzph9_115_1jexsky>	<id_1ng0idk_11e_10q4tdb>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_11wzph9_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_g1vmpd_115_1jexsky>	<id_1ng0idk_11e_zjrtmy>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_g1vmpd_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_of5trd_115_1jexsky>	<id_1ng0idk_1s2_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_of5trd_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_mwe88d_115_1jexsky>	<id_1ng0idk_1s2_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_mwe88d_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1dy8118_115_1jexsky>	<id_1ng0idk_16x_gbjwix>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_1dy8118_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1c0qduu_115_1jexsky>	<id_1ng0idk_16x_1gpnuwa>	<extractionSource>	<http://en.wikipedia.org/wiki/José_Luis_Rodríguez_Zapatero>
-	<id_1c0qduu_115_1jexsky>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_lxl2qh_115_72hycf>	<id_lb8qid_10x_wceha4>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_lxl2qh_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_e0pcom_115_72hycf>	<id_lb8qid_10x_flc80t>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_e0pcom_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1hni1tk_115_72hycf>	<id_lb8qid_1xk_zjgix2>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_1hni1tk_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1hmzmv1_115_72hycf>	<id_lb8qid_1xk_zik283>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_1hmzmv1_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1hmzlze_115_72hycf>	<id_lb8qid_1xk_zik10y>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_1hmzlze_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_1yv7243_115_72hycf>	<id_lb8qid_1xk_18h7p5z>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_1yv7243_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_124k40s_115_72hycf>	<id_lb8qid_oyl_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_124k40s_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1y4lp41_115_72hycf>	<id_lb8qid_oyl_1u5uyhb>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_1y4lp41_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_u1445e_115_72hycf>	<id_lb8qid_oyl_2h36ql>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_u1445e_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_u1445e_115_72hycf>	<id_lb8qid_oyl_2h36ql>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_u1445e_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_a7usu3_115_72hycf>	<id_lb8qid_11e_1pcsz2m>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_a7usu3_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_ca4lpg_115_72hycf>	<id_lb8qid_11e_viys8d>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_ca4lpg_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_e62ka9_115_72hycf>	<id_lb8qid_11e_zilfw4>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_e62ka9_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_deu04t_115_72hycf>	<id_lb8qid_11e_1vzwgna>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_deu04t_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
-<id_laeibw_115_72hycf>	<id_lb8qid_1s2_9wzrxn>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_laeibw_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_19xxg0b_115_72hycf>	<id_lb8qid_1s2_1yel549>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_19xxg0b_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1si18ev_115_72hycf>	<id_lb8qid_16x_1no08pj>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_1si18ev_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
-<id_1hz829x_115_72hycf>	<id_lb8qid_16x_speo6w>	<extractionSource>	<http://en.wikipedia.org/wiki/José_María_Aznar>
-	<id_1hz829x_115_72hycf>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1blfwal_115_ftk7i1>	<id_1m0lrpx_10x_2eoor5>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_1blfwal_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1bvw3yk_115_ftk7i1>	<id_1m0lrpx_10x_2z1w0g>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_1bvw3yk_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_hksxez_115_ftk7i1>	<id_1m0lrpx_10x_15z0igj>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_hksxez_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1yi0pl4_115_ftk7i1>	<id_1m0lrpx_10x_d3efgx>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_1yi0pl4_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_e5zz95_115_ftk7i1>	<id_1m0lrpx_10x_104crw3>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_e5zz95_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1c3g6jz_115_ftk7i1>	<id_1m0lrpx_10x_3ggz01>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_1c3g6jz_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_vzfrnw_115_ftk7i1>	<id_1m0lrpx_1xk_i0j564>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_vzfrnw_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_14x2lyy_115_ftk7i1>	<id_1m0lrpx_1xk_zjgiwc>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_14x2lyy_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_14wk70c_115_ftk7i1>	<id_1m0lrpx_1xk_zik27a>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_14wk70c_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_14wk636_115_ftk7i1>	<id_1m0lrpx_1xk_zik112>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_14wk636_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_14ofnsr_115_ftk7i1>	<id_1m0lrpx_oyl_e601fq>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_14ofnsr_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_w6t7f8_115_ftk7i1>	<id_1m0lrpx_oyl_1wf8iyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_w6t7f8_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_w6t7f8_115_ftk7i1>	<id_1m0lrpx_oyl_1wf8iyz>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_w6t7f8_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_q05g4s_115_ftk7i1>	<id_1m0lrpx_oyl_1jd9wkl>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_q05g4s_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1x27msh_115_ftk7i1>	<id_1m0lrpx_1s2_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_1x27msh_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1vjg19h_115_ftk7i1>	<id_1m0lrpx_1s2_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Joaqu%C3%ADn_Almunia>
+	<id_1vjg19h_115_ftk7i1>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1831h4m_115_usj4q3>	<id_1ng0idk_10x_16aauej>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_1831h4m_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_eaos1d_115_usj4q3>	<id_1ng0idk_10x_cacb9n>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_eaos1d_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1fxlhzz_115_usj4q3>	<id_1ng0idk_1xk_t9r5fi>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_1fxlhzz_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1jin7kz_115_usj4q3>	<id_1ng0idk_1xk_zjgixu>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_1jin7kz_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1ji4rnw_115_usj4q3>	<id_1ng0idk_1xk_zik114>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_1ji4rnw_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1ji4rns_115_usj4q3>	<id_1ng0idk_1xk_zik110>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_1ji4rns_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_owvz1w_115_usj4q3>	<id_1ng0idk_oyl_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_owvz1w_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1kwxk55_115_usj4q3>	<id_1ng0idk_oyl_1u5uyhb>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_1kwxk55_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_qdvlba_115_usj4q3>	<id_1ng0idk_oyl_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_qdvlba_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_qdvlba_115_usj4q3>	<id_1ng0idk_oyl_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_qdvlba_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_11wzph9_115_usj4q3>	<id_1ng0idk_11e_10q4tdb>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_11wzph9_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_g1vmpd_115_usj4q3>	<id_1ng0idk_11e_zjrtmy>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_g1vmpd_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_of5trd_115_usj4q3>	<id_1ng0idk_1s2_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_of5trd_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_mwe88d_115_usj4q3>	<id_1ng0idk_1s2_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_mwe88d_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1dy8118_115_usj4q3>	<id_1ng0idk_16x_gbjwix>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_1dy8118_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1c0qduu_115_usj4q3>	<id_1ng0idk_16x_1gpnuwa>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Luis_Rodr%C3%ADguez_Zapatero>
+	<id_1c0qduu_115_usj4q3>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_lxl2qh_115_xohpm2>	<id_lb8qid_10x_wceha4>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_lxl2qh_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_e0pcom_115_xohpm2>	<id_lb8qid_10x_flc80t>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_e0pcom_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1hni1tk_115_xohpm2>	<id_lb8qid_1xk_zjgix2>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_1hni1tk_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1hmzmv1_115_xohpm2>	<id_lb8qid_1xk_zik283>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_1hmzmv1_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1hmzlze_115_xohpm2>	<id_lb8qid_1xk_zik10y>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_1hmzlze_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_1yv7243_115_xohpm2>	<id_lb8qid_1xk_18h7p5z>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_1yv7243_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_124k40s_115_xohpm2>	<id_lb8qid_oyl_10c0rn2>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_124k40s_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1y4lp41_115_xohpm2>	<id_lb8qid_oyl_1u5uyhb>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_1y4lp41_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_u1445e_115_xohpm2>	<id_lb8qid_oyl_2h36ql>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_u1445e_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_u1445e_115_xohpm2>	<id_lb8qid_oyl_2h36ql>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_u1445e_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_a7usu3_115_xohpm2>	<id_lb8qid_11e_1pcsz2m>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_a7usu3_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_ca4lpg_115_xohpm2>	<id_lb8qid_11e_viys8d>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_ca4lpg_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_e62ka9_115_xohpm2>	<id_lb8qid_11e_zilfw4>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_e62ka9_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_deu04t_115_xohpm2>	<id_lb8qid_11e_1vzwgna>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_deu04t_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/children>"
+<id_laeibw_115_xohpm2>	<id_lb8qid_1s2_9wzrxn>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_laeibw_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_19xxg0b_115_xohpm2>	<id_lb8qid_1s2_1yel549>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_19xxg0b_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1si18ev_115_xohpm2>	<id_lb8qid_16x_1no08pj>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_1si18ev_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1hz829x_115_xohpm2>	<id_lb8qid_16x_speo6w>	<extractionSource>	<http://en.wikipedia.org/wiki/Jos%C3%A9_Mar%C3%ADa_Aznar>
+	<id_1hz829x_115_xohpm2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1m1rc0_115_gdd4xp>	<id_1cx2d3n_1xk_zik111>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain>
 	<id_1m1rc0_115_gdd4xp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
 <id_1a27kok_115_gdd4xp>	<id_1cx2d3n_1xk_1o7xj4h>	<extractionSource>	<http://en.wikipedia.org/wiki/Juan_Carlos_I_of_Spain>
@@ -3036,86 +3033,86 @@
 	<id_bxr6m7_115_vlm3pv>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_1ba16mu_115_vlm3pv>	<id_45ua65_ice_zik274>	<extractionSource>	<http://en.wikipedia.org/wiki/Mariano_Rajoy>
 	<id_1ba16mu_115_vlm3pv>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_1w3lt99_115_8atwgp>	<id_1vmvigz_10x_wceha4>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_1w3lt99_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_1o6q37e_115_8atwgp>	<id_1vmvigz_10x_flc80t>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_1o6q37e_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
-<id_rgbm90_115_8atwgp>	<id_1vmvigz_1xk_woxfe3>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_rgbm90_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_sseqdr_115_8atwgp>	<id_1vmvigz_1xk_zjgiwd>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_sseqdr_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_srwbed_115_8atwgp>	<id_1vmvigz_1xk_zik26e>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_srwbed_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_srwbdz_115_8atwgp>	<id_1vmvigz_1xk_zik278>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_srwbdz_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
-<id_12havz9_115_8atwgp>	<id_1vmvigz_1ia_hrlys6>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_12havz9_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthname>"
-<id_1kgowz5_115_8atwgp>	<id_1vmvigz_1ia_wusza>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_1kgowz5_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthname>"
-<id_8asgyu_115_8atwgp>	<id_1vmvigz_oyl_1pwo77o>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_8asgyu_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1hwdi6_115_8atwgp>	<id_1vmvigz_oyl_1blc6hj>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_1hwdi6_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_1epeysv_115_8atwgp>	<id_1vmvigz_oyl_14ihwlx>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_1epeysv_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_wawf4n_115_8atwgp>	<id_1vmvigz_oyl_kpec2t>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_wawf4n_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
-<id_gb83sa_115_8atwgp>	<id_1vmvigz_tje_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_gb83sa_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_gb83sa_115_8atwgp>	<id_1vmvigz_tje_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_gb83sa_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
-<id_1c77pe5_115_8atwgp>	<id_1vmvigz_1s2_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_1c77pe5_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_1aog3v5_115_8atwgp>	<id_1vmvigz_1s2_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_1aog3v5_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
-<id_k5j6jd_115_8atwgp>	<id_1vmvigz_88c_1d6ytf>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_k5j6jd_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_1burqcj_115_8atwgp>	<id_1vmvigz_88c_krkayn>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_1burqcj_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_k5j6jd_115_8atwgp>	<id_1vmvigz_88c_1d6ytf>	<extractionSource>	<http://en.wikipedia.org/wiki/María_Teresa_Fernández_de_la_Vega>
-	<id_k5j6jd_115_8atwgp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
-<id_3s3haa_115_19d8v80>	<id_1i5m33a_z7a_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_3s3haa_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
-<id_mbf583_115_19d8v80>	<id_1i5m33a_siu_zik26a>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_mbf583_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founded>"
-<id_mbf586_115_19d8v80>	<id_1i5m33a_siu_zik26d>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_mbf586_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founded>"
-<id_1pew117_115_19d8v80>	<id_1i5m33a_siu_6zo4ee>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_1pew117_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founded>"
-<id_mbxio5_115_19d8v80>	<id_1i5m33a_siu_zjgi89>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_mbxio5_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founded>"
-<id_yw2y87_115_19d8v80>	<id_1owvdrp_1gi_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_yw2y87_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founder>"
-<id_e11z4i_115_19d8v80>	<id_1lbjvu2_1gi_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_e11z4i_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founder>"
-<id_1tc6da1_115_19d8v80>	<id_1i5m33a_z7a_zik2c9>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_1tc6da1_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_3hjjpe_115_19d8v80>	<id_1i5m33a_z7a_10b2ipe>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_3hjjpe_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
-<id_1ixvoxt_115_19d8v80>	<id_1i5m33a_1ia_1vpfpsg>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_1ixvoxt_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_1egikdr_115_19d8v80>	<id_1i5m33a_1ia_1mavxzj>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_1egikdr_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_1tpwao5_115_19d8v80>	<id_1i5m33a_ice_1uagrqt>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers'_Party>
-	<id_1tpwao5_115_19d8v80>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
-<id_k05hg4_115_xu51th>	<id_cacb9n_z7a_e5t89u>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_k05hg4_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
-<id_nstaya_115_xu51th>	<id_cacb9n_z7a_1jd33ep>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_nstaya_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
-<id_1099r1z_115_xu51th>	<id_cacb9n_siu_1bx7bsa>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_1099r1z_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_1mre96j_115_xu51th>	<id_cacb9n_siu_zjgiyy>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_1mre96j_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
-<id_1xk8e8i_115_xu51th>	<id_cacb9n_11k_1op20t3>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_1xk8e8i_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
-<id_1tcy7rr_115_xu51th>	<id_cacb9n_11k_1h4jf94>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_1tcy7rr_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
-<id_hrpvip_115_xu51th>	<id_cacb9n_1ia_17eofrl>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_hrpvip_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_15gu7d6_115_xu51th>	<id_cacb9n_1ia_depwmp>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_15gu7d6_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
-<id_1qgmfua_115_xu51th>	<id_cacb9n_ice_8u0sd9>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_León>
-	<id_1qgmfua_115_xu51th>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1w3lt99_115_qxhld2>	<id_1vmvigz_10x_wceha4>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_1w3lt99_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_1o6q37e_115_qxhld2>	<id_1vmvigz_10x_flc80t>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_1o6q37e_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/almamater>"
+<id_rgbm90_115_qxhld2>	<id_1vmvigz_1xk_woxfe3>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_rgbm90_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_sseqdr_115_qxhld2>	<id_1vmvigz_1xk_zjgiwd>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_sseqdr_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_srwbed_115_qxhld2>	<id_1vmvigz_1xk_zik26e>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_srwbed_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_srwbdz_115_qxhld2>	<id_1vmvigz_1xk_zik278>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_srwbdz_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthdate>"
+<id_12havz9_115_qxhld2>	<id_1vmvigz_1ia_hrlys6>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_12havz9_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthname>"
+<id_1kgowz5_115_qxhld2>	<id_1vmvigz_1ia_wusza>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_1kgowz5_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthname>"
+<id_8asgyu_115_qxhld2>	<id_1vmvigz_oyl_1pwo77o>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_8asgyu_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1hwdi6_115_qxhld2>	<id_1vmvigz_oyl_1blc6hj>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_1hwdi6_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_1epeysv_115_qxhld2>	<id_1vmvigz_oyl_14ihwlx>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_1epeysv_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_wawf4n_115_qxhld2>	<id_1vmvigz_oyl_kpec2t>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_wawf4n_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/birthplace>"
+<id_gb83sa_115_qxhld2>	<id_1vmvigz_tje_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_gb83sa_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_gb83sa_115_qxhld2>	<id_1vmvigz_tje_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_gb83sa_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nationality>"
+<id_1c77pe5_115_qxhld2>	<id_1vmvigz_1s2_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_1c77pe5_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_1aog3v5_115_qxhld2>	<id_1vmvigz_1s2_1dlwy4n>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_1aog3v5_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/party>"
+<id_k5j6jd_115_qxhld2>	<id_1vmvigz_88c_1d6ytf>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_k5j6jd_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_1burqcj_115_qxhld2>	<id_1vmvigz_88c_krkayn>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_1burqcj_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_k5j6jd_115_qxhld2>	<id_1vmvigz_88c_1d6ytf>	<extractionSource>	<http://en.wikipedia.org/wiki/Mar%C3%ADa_Teresa_Fern%C3%A1ndez_de_la_Vega>
+	<id_k5j6jd_115_qxhld2>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_3s3haa_115_do87df>	<id_1i5m33a_z7a_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_3s3haa_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/country>"
+<id_mbf583_115_do87df>	<id_1i5m33a_siu_zik26a>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_mbf583_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founded>"
+<id_mbf586_115_do87df>	<id_1i5m33a_siu_zik26d>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_mbf586_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founded>"
+<id_1pew117_115_do87df>	<id_1i5m33a_siu_6zo4ee>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_1pew117_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founded>"
+<id_mbxio5_115_do87df>	<id_1i5m33a_siu_zjgi89>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_mbxio5_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founded>"
+<id_yw2y87_115_do87df>	<id_1owvdrp_1gi_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_yw2y87_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founder>"
+<id_e11z4i_115_do87df>	<id_1lbjvu2_1gi_1i5m33a>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_e11z4i_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/founder>"
+<id_1tc6da1_115_do87df>	<id_1i5m33a_z7a_zik2c9>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_1tc6da1_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_3hjjpe_115_do87df>	<id_1i5m33a_z7a_10b2ipe>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_3hjjpe_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/headquarters>"
+<id_1ixvoxt_115_do87df>	<id_1i5m33a_1ia_1vpfpsg>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_1ixvoxt_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_1egikdr_115_do87df>	<id_1i5m33a_1ia_1mavxzj>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_1egikdr_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_1tpwao5_115_do87df>	<id_1i5m33a_ice_1uagrqt>	<extractionSource>	<http://en.wikipedia.org/wiki/Spanish_Socialist_Workers%27_Party>
+	<id_1tpwao5_115_do87df>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_k05hg4_115_zjt377>	<id_cacb9n_z7a_e5t89u>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_k05hg4_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
+<id_nstaya_115_zjt377>	<id_cacb9n_z7a_1jd33ep>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_nstaya_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/city>"
+<id_1099r1z_115_zjt377>	<id_cacb9n_siu_1bx7bsa>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_1099r1z_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_1mre96j_115_zjt377>	<id_cacb9n_siu_zjgiyy>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_1mre96j_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/established>"
+<id_1xk8e8i_115_zjt377>	<id_cacb9n_11k_1op20t3>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_1xk8e8i_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
+<id_1tcy7rr_115_zjt377>	<id_cacb9n_11k_1h4jf94>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_1tcy7rr_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/motto>"
+<id_hrpvip_115_zjt377>	<id_cacb9n_1ia_17eofrl>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_hrpvip_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_15gu7d6_115_zjt377>	<id_cacb9n_1ia_depwmp>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_15gu7d6_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
+<id_1qgmfua_115_zjt377>	<id_cacb9n_ice_8u0sd9>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
+	<id_1qgmfua_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_du1vxb_115_ev13bk>	<id_13dzdeu_siu_143dei>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
 	<id_du1vxb_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/establisheddate>"
 <id_1d8yd8b_115_ev13bk>	<id_13dzdeu_siu_zjgcai>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
