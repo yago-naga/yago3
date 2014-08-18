@@ -80,7 +80,7 @@ public class CategoryTypeExtractor extends MultilingualExtractor {
 			write(CATEGORYTYPES.inLanguage(language), new Fact(f.getSubject(),
 					"rdf:type", category),
 					CATEGORYTYPESOURCES.inLanguage(language),
-					FactComponent.wikipediaURL(f.getSubject()),
+					FactComponent.wikipediaSourceURL(f.getSubject(),language),
 					"By membership in conceptual category");
 		}
 		Announce.done();

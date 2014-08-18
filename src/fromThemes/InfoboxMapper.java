@@ -111,11 +111,9 @@ public class InfoboxMapper extends MultilingualExtractor {
 				// we get subjects that are strings. This is always wrong.
 				if (FactComponent.isLiteral(f.getSubject()))
 					continue;
-				String source = isEnglish() ? FactComponent.wikipediaURL(f
-						.getSubject()) : FactComponent
-						.wikipediaBaseURL(language);
 				write(INFOBOXFACTS_TOREDIRECT.inLanguage(language), fact,
-						INFOBOXSOURCES.inLanguage(language), source,
+						INFOBOXSOURCES.inLanguage(language), FactComponent.wikipediaSourceURL(f
+								.getSubject(),language),
 						"InfoboxExtractor from " + f.getRelation());
 			}
 		}

@@ -98,7 +98,7 @@ public class CategoryMapper extends MultilingualExtractor {
 				if (fact != null) {
 					write(CATEGORYFACTS_TOREDIRECT.inLanguage(language), fact,
 							CATEGORYSOURCES.inLanguage(language),
-							FactComponent.wikipediaURL(f.getArg(1)),
+							FactComponent.wikipediaSourceURL(f.getArg(1),language),
 							"CategoryMapper");
 				}
 			}

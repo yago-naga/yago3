@@ -4,13 +4,13 @@ import java.io.File;
 import java.util.Map;
 import java.util.Set;
 
-import utils.MultilingualTheme;
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Name;
 import javatools.parsers.NounGroup;
 import javatools.parsers.PlingStemmer;
+import utils.MultilingualTheme;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -30,9 +30,13 @@ import fromWikipedia.InfoboxExtractor;
  */
 public class InfoboxTypeExtractor extends MultilingualExtractor {
 
-	/** Sources for category facts */
+	/** Infobox type facts */
 	public static final MultilingualTheme INFOBOXTYPES = new MultilingualTheme(
 			"infoboxTypes", "The infobox type facts");
+
+	/** Sources for these facts */
+	public static final MultilingualTheme INFOBOXTYPESOURCES = new MultilingualTheme(
+			"infoboxTypeSources", "Sources for the infobox type facts");
 
 	public Set<Theme> input() {
 		if (isEnglish())
@@ -55,7 +59,8 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(INFOBOXTYPES.inLanguage(language));
+		return new FinalSet<Theme>(INFOBOXTYPES.inLanguage(language),
+				INFOBOXTYPESOURCES.inLanguage(language));
 	}
 
 	/** Holds the nonconceptual infoboxes */
@@ -146,8 +151,11 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 			String clss = infobox2class(f.getObjectAsJavaString());
 			if (clss == null)
 				continue;
-			INFOBOXTYPES.inLanguage(language).write(new Fact(f.getSubject(),
-					RDFS.type, clss));
+			write(INFOBOXTYPES.inLanguage(language), new Fact(f.getSubject(),
+					RDFS.type, clss), INFOBOXTYPESOURCES.inLanguage(language),
+					FactComponent.wikipediaSourceURL(f.getSubject(), language),
+					FactComponent.forString("Infobox template extractor from "
+							+ f.getObject()));
 		}
 		this.nonConceptualInfoboxes = null;
 		this.preferredMeanings = null;
