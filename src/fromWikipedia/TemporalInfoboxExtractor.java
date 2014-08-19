@@ -38,7 +38,6 @@ import followUp.TypeChecker;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.CategoryClassExtractor;
 
 /**
  * TemporalInfoboxExtractor - YAGO2s
@@ -296,20 +295,20 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 								&& (FactComponent.isUri(baseFact.getArg(2)) || FactComponent
 										.isLiteral(baseFact.getArg(2)))) {
 							write(TEMPORALDIRTYINFOBOXFACTS, baseFact,
-									TEMPORALINFOBOXSOURCES, entity,
+									TEMPORALINFOBOXSOURCES, FactComponent.wikipediaURL(entity),
 									"TemporalInfoboxExtractor: from "
 											+ valueString);
 							Fact metafact = baseFact.metaFact("<occursSince>",
 									dates.get(0));
 							write(TEMPORALDIRTYINFOBOXFACTS, metafact,
-									TEMPORALINFOBOXSOURCES, entity,
+									TEMPORALINFOBOXSOURCES, FactComponent.wikipediaURL(entity),
 									"TemporalInfoboxExtractor: from "
 											+ valueString);
 							if (dates.size() > 1) {
 								metafact = baseFact.metaFact("<occursUntil>",
 										dates.get(1));
 								write(TEMPORALDIRTYINFOBOXFACTS, metafact,
-										TEMPORALINFOBOXSOURCES, entity,
+										TEMPORALINFOBOXSOURCES, FactComponent.wikipediaURL(entity),
 										"TemporalInfoboxExtractor: from "
 												+ valueString);
 							}

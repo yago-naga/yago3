@@ -121,9 +121,9 @@ public class FlightExtractor extends EnglishWikipediaExtractor {
 					s = FactComponent.forWikipediaTitle(s);
 					Fact f = new Fact(titleEntity, "<isConnectedTo>", s);
 					Fact by = f.metaFact("<byTransport>", airline);
-					write(FLIGHTSNEEDRED, f, FLIGHTSOURCE, titleEntity,
+					write(FLIGHTSNEEDRED, f, FLIGHTSOURCE, FactComponent.wikipediaURL(titleEntity),
 							"FlightExtractor");
-					write(FLIGHTSNEEDRED, by, FLIGHTSOURCE, titleEntity,
+					write(FLIGHTSNEEDRED, by, FLIGHTSOURCE, FactComponent.wikipediaURL(titleEntity),
 							"FlightExtractor");
 				}
 			}

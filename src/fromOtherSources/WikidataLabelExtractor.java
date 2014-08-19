@@ -82,12 +82,12 @@ public class WikidataLabelExtractor extends DataExtractor {
 			write(WIKIPEDIALABELS,
 					new Fact(yagoEntity, YAGO.hasPreferredName, FactComponent
 							.forStringWithLanguage(preferredName(yagoEntity),
-									"eng")), WIKIPEDIALABELSOURCES, "Wikidata",
+									"eng")), WIKIPEDIALABELSOURCES, "<http://wikidata.org>",
 					"WikidataLabelExtractor");
 			for (String name : trivialNamesOf(yagoEntity)) {
 				write(WIKIPEDIALABELS, new Fact(yagoEntity, RDFS.label,
 						FactComponent.forStringWithLanguage(name, "eng")),
-						WIKIPEDIALABELSOURCES, "Wikidata",
+						WIKIPEDIALABELSOURCES, "<http://wikidata.org>",
 						"WikidataLabelExtractor");
 			}
 

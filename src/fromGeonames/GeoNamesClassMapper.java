@@ -116,7 +116,7 @@ public class GeoNamesClassMapper extends DataExtractor {
 					: GEO_CLASS;
 
 			write(GEONAMESCLASSES, new Fact(null, geoClass, RDFS.subclassOf,
-					parentClass), GEONAMESSOURCES, "GeoNames",
+					parentClass), GEONAMESSOURCES, "<http://www.geonames.org/>",
 					"GeoNamesClassMapper");
 			GEONAMESCLASSSIDS
 					.write(new Fact(null, geoClass, "<hasGeonamesClassId>",
