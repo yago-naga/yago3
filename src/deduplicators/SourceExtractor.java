@@ -18,6 +18,7 @@ import fromOtherSources.WordnetDomainExtractor;
 import fromThemes.CategoryMapper;
 import fromThemes.CategoryTypeExtractor;
 import fromThemes.InfoboxMapper;
+import fromThemes.InfoboxTypeExtractor;
 import fromThemes.PersonNameExtractor;
 import fromThemes.RuleExtractor;
 import fromWikipedia.CoordinateExtractor;
@@ -51,6 +52,8 @@ public class SourceExtractor extends Extractor {
 		input.add(CoordinateExtractor.COORDINATE_SOURCES);
 		input.addAll(InfoboxMapper.INFOBOXSOURCES
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.addAll(InfoboxTypeExtractor.INFOBOXTYPESOURCES
+				.inLanguages(MultilingualExtractor.wikipediaLanguages));		
 		input.addAll(CategoryMapper.CATEGORYSOURCES
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(CategoryTypeExtractor.CATEGORYTYPESOURCES
