@@ -416,6 +416,7 @@ public class FactCollection extends AbstractSet<Fact> {
 	/** Checks if all of my facts are in the other set, prints differences */
 	public boolean checkContainedIn(FactCollection goldStandard, String name) {
 		boolean matches = true;
+		int counter=maxMessages;
 		next: for (Fact fact : facts) {
 			for (Fact other : goldStandard.getFactsWithSubjectAndRelation(
 					fact.getSubject(), fact.getRelation())) {
@@ -427,7 +428,7 @@ public class FactCollection extends AbstractSet<Fact> {
 			}
 			Announce.message("Not found in", name, ":", fact);
 			matches = false;
-			if (--maxMessages <= 0)
+			if (--counter <= 0)
 				break;
 		}
 		return (matches);

@@ -1,0 +1,226 @@
+<?xml version="1.0"?>
+<literalparser>
+	<patterns>
+		<pattern name="non-breaking-whitespace" regex="[ \t\u00A0\u202F\uFEFF]+" addToResults="false"/>
+		<pattern name="whitespace" regex="[ \t\n\u00A0\u202F\uFEFF]+" addToResults="false"/>
+
+		<!-- define normal integers: 0, ..., 9, 10, ..., 99, 100, ... -->
+		
+		<pattern name="positive-integer-base" regex="\d+" type="numerical-number"/>
+		
+        <pattern name="positive-integer-sep"  type="numerical-number"> 
+            <regex value="\d{1,3}(?:,\d{3})+"/>
+            <regex value="\d{1,3}(?: \d{3})+[^\d]" type="numerical-number"/>
+        </pattern>
+		
+		<pattern name="positive-integer" type="numerical-number">
+			<regex value="\c{positive-integer-sep}"/>
+			<regex value="\c{positive-integer-base}"/>
+		</pattern>
+		<!-- define integer with 1000 separator -->
+		<!--<pattern name="positive-integer" regex="\d{1,3}(?:,\d{3})*"/>-->
+		<!-- negative integer -->
+		<pattern name="integer" regex="-?\c{positive-integer}" type="numerical-number"/>
+		
+		<!-- positive-float -->
+		<pattern name="positive-float" type="numerical-number">
+			<regex value="\c{positive-integer}?\.\c{positive-integer}"/>
+			<regex value="\c{positive-integer}\.\c{positive-integer}?"/>
+		</pattern>
+		<!-- floats -->
+		<pattern name="float" regex="-?\c{positive-float}(?:E\c{integer})?" type="numerical-number"/>
+		<pattern name="numerical-number" regex="\c{float}|\c{integer}"/>
+		
+		<!-- textual numbers, US, Canada and modern British, short scale;
+		compare http://en.wikipedia.org/wiki/Names_of_large_numbers#Extensions_of_the_standard_dictionary_numbers -->
+		<pattern name="number-name" ignoreCase="true" type="number-name">
+			<regex value="hundreds?"      converterArgument="100"/>
+			<regex value="thousands?"     converterArgument="1000"/>
+			<regex value="millions?"      converterArgument="1E6"/>
+			<regex value="billions?"      converterArgument="1E9"/>
+			<regex value="trillions?"     converterArgument="1E12"/>
+			<regex value="quadrillions?"  converterArgument="1E15"/>
+			<regex value="quintillions?"  converterArgument="1E18"/>
+			<regex value="sextillions?"   converterArgument="1E21"/>
+			<regex value="septillions?"   converterArgument="1E24"/>
+			<regex value="octillions?"    converterArgument="1E27"/>
+		</pattern>
+		
+		<pattern name="textual-number" regex="\c{numerical-number}\c{whitespace}*\c{number-name}"/>
+		<pattern name="number">
+			<regex value="\c{textual-number}"/>
+			<regex value="\c{numerical-number}"/>
+		</pattern>
+		
+		<!-- quantities -->
+		<!-- SI prefixes, compare http://en.wikipedia.org/wiki/Metric_prefix -->
+		<pattern name="prefix" type="number-name" addToResults="false">
+			<regex value="T" converterArgument="1E12"/>
+			<regex value="G" converterArgument="1E9"/>
+			<regex value="M" converterArgument="1E6"/>
+			<regex value="k" converterArgument="1E3"/>
+			<regex value="h" converterArgument="1E2"/>
+			<regex value="da" converterArgument="1E1"/>
+			<regex value="d" converterArgument="1E-1"/>
+			<regex value="c" converterArgument="1E-2"/>
+			<regex value="m" converterArgument="1E-3"/>
+			<regex value="μ" converterArgument="1E-6"/>
+			<regex value="n" converterArgument="1E-9"/>
+			<regex value="p" converterArgument="1E-12"/>
+		</pattern>
+		<!-- units -->
+		<pattern name="base-unit" addToResults="false">
+			<regex value="g/cm\^3\b"/>
+			<regex value="mol\b|m/s\b|m^2\b|m^3\b"/>
+			<regex value="m\b|s\b|g\b|A\b|K\b|cd\b"/>
+			<regex value="Hz\b|°C\b|px\b|Pa\b"/>
+			<regex value="%"/>
+		</pattern>
+		<pattern name="derived-unit" addToResults="false">
+			<regex value="metres\b" converterArgument="1 m"/>
+			<regex value="km2\b" converterArgument="1E6 m^2"/>
+			<regex value="km\^2\b" converterArgument="1E6 m^2"/>
+			<regex value="km3\b" converterArgument="1E9 m^3"/>
+			<regex value="km\^3\b" converterArgument="1E9 m^3"/>
+			
+			<regex value="m/s2\b" converterArgument="1 m/s^2"/>
+			<regex value="g/cm3\b" converterArgument="1 g/cm^3"/>
+			
+			<regex value="m2\b" converterArgument="1 m^2"/>
+			<regex value="minutes?\b|min\b" converterArgument="60 s"/>
+			<regex value="h\b" converterArgument="3600 s"/>
+			
+			<regex value="km/h" converterArgument="0.277777777777777 m/s"/>
+			<regex value="km/s" converterArgument="1000 m/s"/>
+		</pattern>
+		
+		<pattern name="prefixed-unit" regex="\c{prefix}\c{base-unit}" addToResults="false" type="quantity"/>
+		
+		<pattern name="unit" addToResults="false">
+			<regex value="\c{derived-unit}"/>
+			<regex value="\c{prefixed-unit}"/>
+			<regex value="\c{base-unit}"/>
+		</pattern>
+		
+		<pattern name="wiki-exponent-quantity">
+			<regex value="\{\{val\|\c{number}\|e=\c{integer}\|ul?=\c{unit}\}\}"/>
+		</pattern>
+		
+		<pattern name="quantity">
+			<regex value="\{\{convert\|\c{number}\|\c{unit}\|"/>
+			<regex value="\{\{val\|\c{number}\|ul?=\c{unit}\}\}"/> <!--{{val|6378.1|u=km}}-->
+			<regex value="\c{number}\c{whitespace}*\[\[\c{unit}\]\]"/>
+			<regex value="\c{number}\c{whitespace}*\c{unit}"/>
+			<regex value="\c{wiki-exponent-quantity"/>
+		</pattern>
+		
+		
+		<!-- time duration -->		
+		<pattern name="wiki-duration">
+			<regex value="\{\{duration\|h=\c{number}\|m=\c{number}\|s=\c{number}\}\}"/>
+			<regex value="\{\{duration\|m=\c{number}\|s=\c{number}\}\}"/>
+		</pattern>
+		
+		<pattern name="duration" type="duration">
+			<regex value="\d+:\d{2}:\d{2}"/>
+			<regex value="\d+:\d{2}"/>
+		</pattern>
+		
+		<!-- currencies -->
+		<pattern name="currency-symbol" regex="\$|€|¥|£|₤" addToResults="false"/>
+		<pattern name="currency-name" regex="dollar|euro?|yen|gbp" addToResults="false"/>
+		<pattern name="currency" type="quantity">
+			<regex value="\c{currency-symbol}\c{number}"/>
+			<regex value="\c{number} *\c{currency-name}"/>
+		</pattern>
+		
+		<!-- date -->
+		<pattern name="counter-suffix" regex="st|nd|rd|th" addToResults="false"/>
+		<pattern name="day" regex="\c{positive-integer}\c{counter-suffix}?" type="numerical-number" addToResults="false"/>
+
+		<pattern name="textual-month" ignoreCase="true" addToResults="false" type="month">
+			<!-- English -->
+			<regex value="january" converterArgument="1"/>
+			<regex value="february" converterArgument="2"/>
+			<regex value="march" converterArgument="3"/>
+			<regex value="april" converterArgument="4"/>
+			<regex value="may" converterArgument="5"/>
+			<regex value="june" converterArgument="6"/>
+			<regex value="july" converterArgument="7"/>
+			<regex value="august" converterArgument="8"/>
+			<regex value="september" converterArgument="9"/>
+			<regex value="october" converterArgument="10"/>
+			<regex value="november" converterArgument="11"/>
+			<regex value="december" converterArgument="12"/>
+			
+			<!-- German, only differences -->
+			<regex value="januar" converterArgument="1"/>
+			<regex value="februar" converterArgument="2"/>
+			<regex value="märz" converterArgument="3"/>
+			
+			<regex value="mai" converterArgument="5"/>
+			<regex value="juni" converterArgument="6"/>
+			<regex value="juli" converterArgument="7"/>
+			
+			<regex value="oktober" converterArgument="10"/>
+			
+			<regex value="dezember" converterArgument="12"/>
+			
+			<!-- French -->
+			<regex value="janvier" converterArgument="1"/>
+			<regex value="février" converterArgument="2"/>
+			<regex value="mars" converterArgument="3"/>
+			<regex value="avril" converterArgument="4"/>
+			
+			<regex value="juin" converterArgument="6"/>
+			<regex value="juillet" converterArgument="7"/>
+			<regex value="août" converterArgument="8"/>
+			<regex value="septembre" converterArgument="9"/>
+			<regex value="octobre" converterArgument="10"/>
+			<regex value="novembre" converterArgument="11"/>
+			<regex value="décembre" converterArgument="12"/>
+			
+			<!-- English short -->
+			<regex value="jan" converterArgument="1"/>
+			<regex value="feb" converterArgument="2"/>
+			<regex value="mar" converterArgument="3"/>
+			<regex value="apr" converterArgument="4"/>
+			
+			<regex value="aug" converterArgument="8"/>
+			<regex value="sept" converterArgument="9"/>
+			<regex value="oct" converterArgument="10"/>
+			<regex value="nov" converterArgument="11"/>
+			<regex value="dec" converterArgument="12"/>
+		</pattern>
+		<pattern name="numerical-month" regex="0?\d|1(?:0|1|2)" addToResults="false" type="month"/>
+		<pattern name="month" regex="\c{numerical-month}|\c{textual-month}" addToResults="false"/>
+		
+		<pattern name="year" regex="\d{2,4}" addToResults="false"/>
+		<pattern name="date">
+			<regex value="\c{day}\c{whitespace}+(?:of\c{whitespace})\c{month}\c{whitespace}\c{year}"/> <!-- e.g. 8th of January 1935 -->
+			<regex value="\c{day}.?\c{whitespace}\c{textual-month}\c{whitespace}\c{year}"/> <!-- e.g. 8 January 1935 -->
+			<regex value="\c{month}\c{whitespace}\c{day},\c{whitespace}\c{year}"/> <!-- e.g. January 8, 1935 -->
+			<regex value="\c{year}\|\c{month}\|\c{day}"/> <!-- e.g. 1935|1|8 -->
+			<regex value="\c{year}-\c{month}-\c{day}"/> <!-- e.g. 1935-01-08 -->
+			<regex value="\c{textual-month}\c{whitespace}\c{year}"/> <!-- e.g. 8 January 1935 -->
+		</pattern>
+		
+		<!-- ISBN -->
+		<pattern name="isbn-sep" regex="[ -]" addToResults="false">
+			<!--<ancestor name="integer"/> NOT YET SUPPORTED-->
+		</pattern>
+		<pattern name="isbn-10" regex="\d{1,5}\c{isbn-sep}\d{1,}\c{isbn-sep}\d{1,}\c{isbn-sep}(?:\d|X|x)\b"/>
+		<pattern name="isbn-13" regex="97(8|9)\c{isbn-sep}\c{isbn-10}\b"/> <!-- e.g. 978-3-86680-1 -->
+		<pattern name="isbn-num" regex="\c{isbn-10}|\c{isbn-13}"/>
+		<pattern name="isbn" regex="(?:ISBN|isbn)\c{whitespace}*\c{isbn-num}"/> <!-- e.g. ISBN 978-3-86680-1 -->
+		
+		<!-- URL -->
+		<pattern name="tld" regex="\.[\p{Alpha}-]{2,}"/>
+		<pattern name="domain" regex="[\p{Alnum}-]+(?:\.[\p{Alnum}-]+)*\c{tld}"/>
+		<pattern name="url" regex="\p{Alnum}+://\c{domain}(:?[:/][\p{Alnum}-_.~!*'();:@&amp;=+$,/?#\[\]%]*)?"/>
+		
+		<!-- various -->
+		<pattern name="unicode-character" regex="\\u[\p{XDigit}]{2,4}" addToResults="false"/>
+		
+	</patterns>
+</literalparser>

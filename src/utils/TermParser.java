@@ -1,7 +1,9 @@
 package utils;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
@@ -13,6 +15,16 @@ import javatools.parsers.Char17;
 import javatools.parsers.DateParser;
 import javatools.parsers.NumberParser;
 import javatools.parsers.PlingStemmer;
+import literalparser.Generator;
+import literalparser.configuration.XMLConfiguration;
+import literalparser.literal.Literal;
+import literalparser.literal.Literal.BigDecimalLiteral;
+import literalparser.literal.Literal.DateLiteral;
+import literalparser.literal.Literal.QuantityValueLiteral;
+import literalparser.literal.Literal.StringLiteral;
+import literalparser.literal.LiteralFind;
+import literalparser.parser.dag.DAGParser;
+import literalparser.parser.dag.LinearGetLiteralsStrategy;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
@@ -29,8 +41,17 @@ public abstract class TermParser {
 	/** Holds the name of the extractor */
 	public final String name;
 
+	protected DAGParser parser = null;
+
 	protected TermParser(String n) {
 		name = "TermParser for " + n;
+		if (n == "literal") {
+			XMLConfiguration c = new XMLConfiguration(
+					"./data/literalparser.xml");
+			DAGParser.Builder builder = new DAGParser.Builder();
+			builder.useGetLiteralsStrategy(new LinearGetLiteralsStrategy());
+			parser = (new Generator()).createParser(c, builder);
+		}
 	}
 
 	@Override
@@ -79,17 +100,18 @@ public abstract class TermParser {
 	}
 
 	/** Returns all available parsers */
-	public static List<TermParser> allParsers(Map<String, String> preferredMeanings,
-			String language) {
+	public static List<TermParser> allParsers(
+			Map<String, String> preferredMeanings, String language) {
 		List<TermParser> all = new ArrayList<>(literalParsers());
-		if(FactComponent.isEnglish(language)) all.add(new TermParser.ForClass(preferredMeanings));
+		if (FactComponent.isEnglish(language))
+			all.add(new TermParser.ForClass(preferredMeanings));
 		all.add(new TermParser.ForWikiLink(language));
 		return all;
 	}
 
 	/** Returns all available parsers, excluding the class parser */
 	public static List<TermParser> literalParsers() {
-		return Arrays.asList(forDate, forString, forUrl, forNumber);
+		return Arrays.asList(forLiterals, forString);
 	}
 
 	// also needs to match \ for yago-encoded stuff
@@ -162,6 +184,43 @@ public abstract class TermParser {
 			return (result);
 		}
 
+	};
+
+	public static TermParser forLiterals = new TermParser("literal") {
+
+		@Override
+		public List<String> extractList(String s) {
+			List<String> result = new ArrayList<String>();
+			for (LiteralFind literalFind : parser.getLiterals(s)) {
+				Literal literal = literalFind.literal;
+				if (literal instanceof QuantityValueLiteral) {
+					result.add(FactComponent.forStringWithDatatype(
+							((QuantityValueLiteral) literal).getValue() + "",
+							FactComponent
+									.forYagoEntity(((QuantityValueLiteral) literal)
+											.getUnit())));
+				}
+				else if (literal instanceof DateLiteral)
+					result.add(FactComponent.forDate(((DateLiteral) literal)
+							.toString()));
+				else if (literal instanceof BigDecimalLiteral) {
+					BigDecimalLiteral lit = (BigDecimalLiteral) literal;
+					if ((lit.getValue().intValue() < Calendar.getInstance()
+							.get(Calendar.YEAR))) {
+						String year = lit.toString().replace("-","");
+						if (year.length()>2 && year.indexOf(".") == -1)
+							result.add(FactComponent.forYear(lit.toString()));
+					}
+					result.add(FactComponent.forNumber(lit.toString()));
+				} 
+				else if (literal instanceof StringLiteral) {
+					result.add(FactComponent
+							.forString(((StringLiteral) literal).toString()));
+				}
+			}
+
+			return result;
+		}
 	};
 
 	/** Extracts a YAGO string from a string */
@@ -240,7 +299,8 @@ public abstract class TermParser {
 					if (c.contains(" ") && c.matches("[\\p{L} ]+")) {
 						Announce.debug("Finding suboptimal wikilink", c, "in",
 								s);
-						links.add(FactComponent.forForeignYagoEntity(c,language));
+						links.add(FactComponent.forForeignYagoEntity(c,
+								language));
 					}
 				}
 			}
@@ -292,7 +352,7 @@ public abstract class TermParser {
 		}
 
 	};
-	
+
 	public static void main(String[] args) throws Exception {
 		System.out.println(TermParser.forString.extractList("012436437"));
 	}
