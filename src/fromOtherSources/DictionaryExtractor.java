@@ -8,10 +8,10 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import utils.MultilingualTheme;
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.parsers.Char17;
+import utils.MultilingualTheme;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
@@ -106,8 +106,10 @@ public class DictionaryExtractor extends DataExtractor {
 				String lan = FactComponent.stripQuotes(f.getObject());
 				if (!MultilingualExtractor.wikipediaLanguages.contains(lan))
 					continue;
-				language2name.put(lan, FactComponent.stripPrefix(Char17
-						.decodePercentage(f.getSubject())));
+				String object = FactComponent.stripBrackets(f.getSubject());
+				object = object.substring(object.indexOf("/wiki/") + 6);
+				object = Char17.decodePercentage(object);
+				language2name.put(lan, object);
 			} else if (f.getObject().endsWith("#Item>")
 					&& !language2name.isEmpty()) {
 				// New item starts, let's flush out the previous one

@@ -16,6 +16,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -192,7 +193,7 @@ public class FactCollection extends AbstractSet<Fact> {
 		}
 
 		// Add the fact
-		Fact newFact = changed ? new Fact(fact.getId(),canonicalizedSubject,
+		Fact newFact = changed ? new Fact(fact.getId(), canonicalizedSubject,
 				canonicalizedRelation, canonicalizedObject) : fact;
 		relindex.get(fact.getRelation()).add(newFact);
 		relation2facts.get(fact.getRelation()).add(newFact);
@@ -545,7 +546,7 @@ public class FactCollection extends AbstractSet<Fact> {
 
 		return reverseMap;
 	}
-	
+
 	/**
 	 * Creates a map for quickly getting arg2 for a given arg1. Notice that this
 	 * might overwrite arg2s that occur multiple times, make sure you know that
@@ -609,4 +610,11 @@ public class FactCollection extends AbstractSet<Fact> {
 		return index.keySet();
 	}
 
+	public static void main(String[] args) throws Exception {
+		FactCollection f1 = new FactCollection();
+		f1.add(new Fact("<blah>", "<blub>", "\"980-##-##\"^^xsd:date"));
+		FactCollection f2 = new FactCollection();
+		f2.add(new Fact("<blah>", "<blub>", "\"980\"^^xsd:integer"));
+		D.p(f1.checkEqual(f2, "f1", "f2"));
+	}
 }
