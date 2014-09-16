@@ -126,7 +126,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 				// "ConteXtExtractor from: " + fact.second);
 				// }
 				for (Fact fact : contextPatterns.extract(normalizedPage,
-						titleEntity)) {
+						titleEntity, language)) {
 					if (fact != null) {
 						DIRTYCONTEXTFACTS.inLanguage(language).write(fact);
 					}
