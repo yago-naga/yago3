@@ -51,7 +51,7 @@ public class AIDAExtractor extends SimpleDeduplicator {
 		input.add(HardExtractor.HARDWIREDFACTS);
 		
 		// Metadata.
-		input.addAll(WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages));
+		input.add(WikiInfoExtractor.WIKIINFO);
 		
 		// Types and Taxonomy.
 		input.add(TransitiveTypeExtractor.TRANSITIVETYPE);

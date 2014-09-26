@@ -9,7 +9,6 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
-import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -108,7 +107,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
 	/** For cleaning up values */
 	protected PatternList valueCleaner;
-	
+
 	protected Map<String, String> unitDictionary;
 
 	// /** Extracts a relation from a string */
@@ -266,9 +265,8 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 						attribute = parts[parts.length - 1];
 				}
 
-				D.addKeyValue(result, attribute,
-						Char17.decodeAmpersand(Char17.decodeAmpersand(valueStr)),
-						TreeSet.class);
+				D.addKeyValue(result, attribute, Char17.decodeAmpersand(Char17
+						.decodeAmpersand(valueStr)), TreeSet.class);
 			}
 			if (c == '}' || c == -1 || c == -2) {
 				break;
@@ -286,7 +284,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 		valueCleaner = new PatternList(
 				PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
 				"<_infoboxReplace>");
-		
+
 		String typeRelation = FactComponent
 				.forInfoboxTypeRelation(this.language);
 		// Extract the information
@@ -336,8 +334,10 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 						value = value.trim();
 						// Here, too, avoid nonsense
 						if (value != null && !value.isEmpty()) {
-							String object = FactComponent.forStringWithLanguage(value, language);
-							attribute = FactComponent.forInfoboxAttribute(this.language, attribute);
+							String object = FactComponent
+									.forStringWithLanguage(value, language);
+							attribute = FactComponent.forInfoboxAttribute(
+									this.language, attribute);
 							write(INFOBOX_ATTRIBUTES.inLanguage(language),
 									new Fact(titleEntity, attribute, object),
 									INFOBOX_ATTRIBUTE_SOURCES

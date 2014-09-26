@@ -39,7 +39,7 @@ public class StatisticsExtractor extends Extractor {
 				CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS,
 				LabelExtractor.YAGOLABELS, MetaFactExtractor.YAGOMETAFACTS,
 				SchemaExtractor.YAGOSCHEMA, DateExtractor.YAGODATEFACTS,
-				LiteralFactExtractor.YAGOLITERALFACTS, WikiInfoExtractor.WIKIINFO.inLanguage("en"));
+				LiteralFactExtractor.YAGOLITERALFACTS, WikiInfoExtractor.WIKIINFO);
 	}
 
 	/** YAGO statistics theme */

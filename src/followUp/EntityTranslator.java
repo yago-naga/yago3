@@ -34,7 +34,7 @@ public class EntityTranslator extends FollowUpExtractor {
 	public Set<Theme> input() {
 		// Do not use a FinalSet here because
 		// objectDictionary might be equivalent to
-		// entiyDictionary
+		// entityDictionary
 		return (new HashSet<>(Arrays.asList(checkMe,
 				DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language),
 				objectDictionaryTheme)));
