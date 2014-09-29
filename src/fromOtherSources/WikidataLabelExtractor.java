@@ -124,7 +124,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 									new Fact(yagoEntity, RDFS.label,
 											FactComponent
 													.forStringWithLanguage(
-															foreignName, lan)),
+															preferredName(foreignName), lan)),
 									WIKIDATAMULTILABELSOURCES, "Wikidata",
 									"WikidataLabelExtractor");
 						}
