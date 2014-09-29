@@ -50,15 +50,21 @@ public class DBpediaLinker extends Extractor {
 		Announce.doing("Mapping instances");
 		Set<String> instances = new TreeSet<>();
 		for (Fact fact : CoherentTypeExtractor.YAGOTYPES) {
-			if (!fact.getRelation().equals(RDFS.type)
-					|| instances.contains(fact.getArg(1)))
+			// Take only type facts
+			if (!fact.getRelation().equals(RDFS.type)) continue;
+			// Don't write out the same entity twice
+			if(instances.contains(fact.getArg(1))) continue;
+			// Take only entities
+			if (!FactComponent.isUri(fact.getArg(1)) && !fact.getArg(1).startsWith("<http:"))
 				continue;
-			if (!fact.getArg(2).startsWith("<wikicat_"))
+			// Take only English entities
+			if(FactComponent.getLanguageOfEntity(fact.getArg(1))!=null)
 				continue;
-			if (!fact.getArg(1).startsWith("<"))
+			// Take only instances of Wikipedia 
+			if (!FactComponent.isCat(fact.getArg(2)))
 				continue;
 			String dbp = FactComponent.forUri("http://dbpedia.org/resource/"
-					+ FactComponent.stripCat(fact.getArg(1)));
+					+ FactComponent.stripBrackets(fact.getArg(1)));
 			YAGODBPEDIAINSTANCES.write(new Fact(fact.getArg(1), "owl:sameAs",
 					dbp));
 			instances.add(fact.getArg(1));
@@ -81,6 +87,6 @@ public class DBpediaLinker extends Extractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new DBpediaLinker().extract(new File("c:/fabian/data/yago2s"), "test");
+		new DBpediaLinker().extract(new File("c:/fabian/data/yago3"), "test");
 	}
 }
