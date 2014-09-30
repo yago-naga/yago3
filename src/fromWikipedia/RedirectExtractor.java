@@ -13,6 +13,7 @@ import java.util.regex.Pattern;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
+import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.MultilingualTheme;
 import utils.Theme;
@@ -79,7 +80,8 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 				in.close();
 				break redirect;
 			case 0:
-				titleEntity = FileLines.readToBoundary(in, "</title>");
+				titleEntity = Char17.decodeAmpersand(
+				    FileLines.readToBoundary(in, "</title>"));
 				break;
 			default:
 				if (titleEntity == null)
