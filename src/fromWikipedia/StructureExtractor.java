@@ -9,6 +9,7 @@ import java.util.Set;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
+import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.FactTemplateExtractor;
@@ -109,8 +110,9 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 					continue;
 
 				String page = FileLines.readBetween(in, "<text", "</text>");
-				String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+",
-						" ");
+				String normalizedPage = 
+				    Char17.decodeAmpersand(
+				        page.replaceAll("[\\s\\x00-\\x1F]+"," "));
 
 				for (Fact fact : structurePatterns.extract(normalizedPage,
 						titleEntity, language)) {
