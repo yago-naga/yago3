@@ -30,7 +30,7 @@ import basics.RDFS;
 import basics.YAGO;
 
 /**
- * Class TermExtractor
+ * Class TermParser
  * 
  * Methods that extract entities from Wikipedia strings
  * 
