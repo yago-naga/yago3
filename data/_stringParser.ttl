@@ -1,15 +1,21 @@
+# This is a hand-coded file!
+# Do not overwrite!
+# The order of rules matters!
 
-		
-# ISBN
-"[ -]" mapsTo "<isbn-sep>"
-			<!--<ancestor "<integer>"/> NOT YET SUPPORTED-->
-		</pattern>
-		<pattern name="isbn-10" regex="\d{1,5}<isbn-sep>\d{1,}<isbn-sep>\d{1,}<isbn-sep>(?:\d|X|x)\b" mapsTo 
-		<pattern name="isbn-13" regex="97(8|9)<isbn-sep>\c{isbn-10}\b"/> <!-- e.g. 978-3-86680-1
-"\c{isbn-10}|\c{isbn-13}" mapsTo "<isbn-num>"
-"(?:ISBN|isbn)<whitespace>*<isbn-num>" mapsTo "<isbn>"
-		
-# URL
-"\.[\p{Alpha}-]{2,}" mapsTo "<tld>"
-"[\p{Alnum}-]+(?:\.[\p{Alnum}-]+)*<tld>" mapsTo "<domain>"
-"\p{Alnum}+://<domain>(:?[:/][\p{Alnum}-_.~!*'();:@&amp;=+$,/?#\[\]%]*)?" mapsTo "<url>"
+# Remove bracketed parts
+"\([^\)]*+\)" <mapsTo> "" .
+
+# Remove remaining brackets
+"\(" <mapsTo>	"" .
+"\)" <mapsTo>	"" .
+
+# Find Wiki Links
+"\\[\\[([^\\|\\]]+)(?:\\|([^\\]]+))?\\]\\]"	<mapsTo>	"_result_$1__" .
+
+# Put delimiters
+"(;|,?\n|'''|''|, ?;|\")+"	<mapsTo>	"_delim_" .
+"^"	<mapsTo>	"_delim_" .
+"$"	<mapsTo>	"_delim_" .
+
+# Extract strings
+"_delim_([\\p{Alnum} ]{2,})_delim_"	<mapsTo>	"result_$1__" .

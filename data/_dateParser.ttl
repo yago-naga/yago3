@@ -1,70 +1,65 @@
+# This is a hand-coded file!
+# Do not overwrite!
+# The order of rules matters!
+# These patterns are derived from the ones that Thomas Rebele built in 2014
 
-# date
-"st|nd|rd|th" mapsTo "<counter-suffix>"
-"<positive-integer><counter-suffix>?" mapsTo "<day>"
+# Normalize spaces and underbars
+"[ \t\n\u00A0\u202F\uFEFF_]++" <mapsTo> " " .
 
-		<pattern "<textual-month>" ignoreCase="true" addToResults="false" type="month">
-	# English
-"january" converterArgument="1" mapsTo 
-"february" converterArgument="2" mapsTo 
-"march" converterArgument="3" mapsTo 
-"april" converterArgument="4" mapsTo 
-"may" converterArgument="5" mapsTo 
-"june" converterArgument="6" mapsTo 
-"july" converterArgument="7" mapsTo 
-"august" converterArgument="8" mapsTo 
-"september" converterArgument="9" mapsTo 
-"october" converterArgument="10" mapsTo 
-"november" converterArgument="11" mapsTo 
-"december" converterArgument="12" mapsTo 
-			
-	# German, only differences
-"januar" converterArgument="1" mapsTo 
-"februar" converterArgument="2" mapsTo 
-"märz" converterArgument="3" mapsTo 
-			
-"mai" converterArgument="5" mapsTo 
-"juni" converterArgument="6" mapsTo 
-"juli" converterArgument="7" mapsTo 
-			
-"oktober" converterArgument="10" mapsTo 
-			
-"dezember" converterArgument="12" mapsTo 
-			
-	# French
-"janvier" converterArgument="1" mapsTo 
-"février" converterArgument="2" mapsTo 
-"mars" converterArgument="3" mapsTo 
-"avril" converterArgument="4" mapsTo 
-			
-"juin" converterArgument="6" mapsTo 
-"juillet" converterArgument="7" mapsTo 
-"août" converterArgument="8" mapsTo 
-"septembre" converterArgument="9" mapsTo 
-"octobre" converterArgument="10" mapsTo 
-"novembre" converterArgument="11" mapsTo 
-"décembre" converterArgument="12" mapsTo 
-			
-	# English short
-"jan" converterArgument="1" mapsTo 
-"feb" converterArgument="2" mapsTo 
-"mar" converterArgument="3" mapsTo 
-"apr" converterArgument="4" mapsTo 
-			
-"aug" converterArgument="8" mapsTo 
-"sept" converterArgument="9" mapsTo 
-"oct" converterArgument="10" mapsTo 
-"nov" converterArgument="11" mapsTo 
-"dec" converterArgument="12" mapsTo 
-		</pattern>
-"0?\d|1(?:0|1|2)" mapsTo "<numerical-month>"
-"<numerical-month>|<textual-month>" mapsTo "<month>"
-		
-"\d{2,4}" mapsTo "<year>"
-		<pattern "<date>">
-"<day><whitespace>+(?:of<whitespace>)<month><whitespace><year>"/> <!-- e.g. 8th of January 1935
-"<day>.?<whitespace><textual-month><whitespace><year>"/> <!-- e.g. 8 January 1935
-"<month><whitespace><day>,<whitespace><year>"/> <!-- e.g. January 8, 1935
-"<year>\|<month>\|<day>"/> <!-- e.g. 1935|1|8
-"<year>-<month>-<day>"/> <!-- e.g. 1935-01-08
-		</pattern>
+# Eliminate suffixes
+"st|nd|rd|th" <mapsTo> "" .
+
+# English months
+"January" <mapsTo> "_monthName_1_" .
+"February" <mapsTo>  "_monthName_2_" .
+"March" <mapsTo>  "_monthName_3_" .
+"April" <mapsTo>  "_monthName_4_" .
+"May" <mapsTo>  "_monthName_5_" .
+"June" <mapsTo>  "_monthName_6_" .
+"July" <mapsTo>  "_monthName_7_" .
+"August" <mapsTo>  "_monthName_8_" .
+"September" <mapsTo>  "_monthName_9_" .
+"October" <mapsTo>  "_monthName_10_" .
+"November" <mapsTo>  "_monthName_11_" .
+"December" <mapsTo>  "_monthName_12_" .
+
+# English months in short
+"Jan" <mapsTo> "_monthName_1_" .
+"Feb" <mapsTo>  "_monthName_2_" .
+"Mar" <mapsTo>  "_monthName_3_" .
+"Apr" <mapsTo>  "_monthName_4_" .
+"Jun" <mapsTo>  "_monthName_6_" .
+"Jul" <mapsTo>  "_monthName_7_" .
+"Aug" <mapsTo>  "_monthName_8_" .
+"Sep" <mapsTo>  "_monthName_9_" .
+"Oct" <mapsTo>  "_monthName_10_" .
+"Nov" <mapsTo>  "_monthName_11_" .
+"Dec" <mapsTo>  "_monthName_12_" .
+
+# Before Common Era
+"BCE"	<mapsTo>	"_bce_" .
+
+# 1935-01-08
+# Put this pattern first because otherwise it applies to date results
+"(\d{2,4})-(\d+)-(\d+) ?_bce_" <mapsTo> "_result_-$1-$2-$3__" .
+"(\d{2,4})-(\d+)-(\d+)" <mapsTo> "_result_$1-$2-$3_" .
+
+# 8th of January 1935
+"(\d+) of _monthName_(\d+)_ (\d{2,4}) ?_bce_" <mapsTo> "_result_-$3-$2-$1__" .
+"(\d+) of _monthName_(\d+)_ (\d{2,4})" <mapsTo> "_result_$3-$2-$1__" .
+
+# 8 January 1935
+"(\d+).? _monthName_(\d+)_ (\d{2,4}) ?_bce_" <mapsTo> "_result_-$3-$2-$1__" .
+"(\d+).? _monthName_(\d+)_ (\d{2,4})" <mapsTo> "_result_$3-$2-$1__" .
+
+# January 8, 1935
+"_monthName_(\d+)_ (\d+), (\d{2,4}) ?_bce_" <mapsTo>  "_result_-$3-$1-$2__" .
+"_monthName_(\d+)_ (\d+), (\d{2,4})" <mapsTo>  "_result_$3-$1-$2__" .
+
+# 1935|1|8
+"(\d{2,4})\|(\d+)\|(\d+)" <mapsTo> "_result_$1-$2-$3__" .
+
+# 1935
+"\\b(\d{2,4})\\b ?_bce_" <mapsTo> "_result_-$1-##-##__" .
+"^(\d{2,4})\\b" <mapsTo> "_result_$1-##-##__" .
+"[^\\d_-](\d{2,4})\\b" <mapsTo> "_result_$1-##-##__" .

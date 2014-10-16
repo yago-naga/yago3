@@ -51,7 +51,9 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.INFOBOXPATTERNS,
 				WordnetExtractor.PREFMEANINGS, HardExtractor.HARDWIREDFACTS,
-				InfoboxExtractor.INFOBOX_ATTRIBUTES.inLanguage(this.language)));
+				InfoboxExtractor.INFOBOX_ATTRIBUTES.inLanguage(this.language),PatternHardExtractor.DATEPARSER,
+				PatternHardExtractor.STRINGPARSER,
+				PatternHardExtractor.NUMBERPARSER));
 	}
 
 	@Override
@@ -63,7 +65,9 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 	@Override
 	public Set<Theme> inputCached() {
 		return new FinalSet<>(PatternHardExtractor.INFOBOXPATTERNS,
-				WordnetExtractor.PREFMEANINGS);
+				WordnetExtractor.PREFMEANINGS, PatternHardExtractor.DATEPARSER,
+				PatternHardExtractor.STRINGPARSER,
+				PatternHardExtractor.NUMBERPARSER);
 	}
 
 	@Override
@@ -83,8 +87,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 		PatternList replacements = new PatternList(
 				PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
 				"<_infoboxReplace>");
-		Map<String, String> unitDictionary = PatternHardExtractor.INFOBOXPATTERNS.factCollection()
-				.getMap("<_hasPredefinedUnit>");
+		Map<String, String> unitDictionary = PatternHardExtractor.INFOBOXPATTERNS
+				.factCollection().getMap("<_hasPredefinedUnit>");
 		Map<String, String> preferredMeanings = WordnetExtractor.PREFMEANINGS
 				.factCollection().getPreferredMeanings();
 
@@ -107,20 +111,23 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 			@ImplementationNote("This has to be a list, because the first date mentioned is usually the right one")
 			List<String> objects = new ArrayList<>();
 			for (TermParser termParser : parsers) {
-				for(String s : termParser.extractList(val)) {
-					
-					//Add predefined units
+				for (String s : termParser.extractList(val)) {
+
+					// Add predefined units
 					if (unitDictionary.containsKey(f.getRelation())) {
 						String datatype = FactComponent.getDatatype(s);
-						if (datatype != null 
-								&& (datatype.equals(YAGO.decimal) || datatype.equals(YAGO.integer))) {
-							String value = FactComponent.stripQuotes(FactComponent.getString(s));
-							s = FactComponent.forStringWithDatatype(value, 
+						if (datatype != null
+								&& (datatype.equals(YAGO.decimal) || datatype
+										.equals(YAGO.integer))) {
+							String value = FactComponent
+									.stripQuotes(FactComponent.getString(s));
+							s = FactComponent.forStringWithDatatype(value,
 									unitDictionary.get(f.getRelation()));
 						}
 					}
-					
-					if(!objects.contains(s)) objects.add(s);
+
+					if (!objects.contains(s))
+						objects.add(s);
 				}
 			}
 			for (String object : objects) {

@@ -1,0 +1,101 @@
+# This is a hand-coded file!
+# Do not overwrite!
+# The order of rules matters!
+# These patterns are derived from the ones that Thomas Rebele built in 2014
+
+# Normalize spaces and underbars
+"[ \t\n\u00A0\u202F\uFEFF_]++" <mapsTo> " " .
+
+# Remove commas
+"(\d),(\d)"	<mapsTo>	"$1$2" .
+
+# Define numbers
+"-?\d++(\.\d++)?+(E-?\d+)?+" <mapsTo> "_number_$0_"	.	
+		
+# textual numbers, US, Canada and modern British, short scale;
+# compare http_//en.wikipedia.org/wiki/Names_of_large_numbers#Extensions_of_the_standard_dictionary_numbers
+"hundreds?" <mapsTo> "_numberName_100_" .
+"thousands?" <mapsTo> "_numberName_1000_" .
+"millions?"  <mapsTo>  "_numberName_1E6_" .
+"billions?" <mapsTo> "_numberName_1E9_" .
+"trillions?"   <mapsTo> "_numberName_1E12_" .
+"quadrillions?"  <mapsTo> "_numberName_1E15_" .
+"quintillions?" <mapsTo> "_numberName_1E18_" .
+"sextillions?"   <mapsTo> "_numberName_1E21_" .
+"septillions?"   <mapsTo> "_numberName_1E24_" .
+"octillions?"   <mapsTo> "_numberName_1E27_" .
+		
+"_number_([^_]++)_ _numberName_([^_]++)_" <mapsTo> "_number_$1*$2_" .
+
+# time duration				
+"\{\{duration\|h=_number_([^_]++)_\|m=_number_([^_]++)_\|s=_number_([^_]++)_\}\}" <mapsTo> "_number_$1*3600+$2*60+$3_ s " .
+"\{\{duration\|m=_number_([^_]++)_\|s=_number_([^_]++)_\}\}" <mapsTo> "_number_$1*60+$2_ s " .
+"(\d+):(\d{2}):(\d{2})" <mapsTo> "_number_$3*3600+$2*60+$3_ s " .
+"(\d+):(\d{2})" <mapsTo> "_number_$2*60+$3_ s " .
+
+# quantities
+
+# units
+"g/cm\^3\\b" <mapsTo> "_unit_$0_1_" .
+"mol\\b|m/s\\b|m^2\\b|m^3\\b" <mapsTo> "_unit_$0_1_" .
+"m\\b|s\\b|g\\b|A\\b|K\\b|cd\\b" <mapsTo> "_unit_$0_1_" .
+"Hz\\b|°C\\b|px\\b|Pa\\b" <mapsTo> "_unit_$0_1_" .
+
+"metres\\b" <mapsTo> "_unit_m_1_" .
+"km_number_2_\\b"  <mapsTo> "_unit_m^2_1E6_" .
+"km\^_number_2_\\b" <mapsTo>  "_unit_m^2_1E6_" .
+"km_number_3_\\b" <mapsTo> "_unit_m^3_1E9_" .
+"km\^_number_3_\\b" <mapsTo> "_unit_m^3_1E9_" .
+			
+"m/s_number_2_\\b" <mapsTo> "_unit_m/s^2_1_" .
+			
+"m_number_2_\\b" <mapsTo> "_unit_m^2_1_" .
+"minutes?\\b|min\\b" <mapsTo> "_unit_s_60_" .
+"h\\b" <mapsTo> "_unit_s_3600_" .
+			
+"km/h" <mapsTo> "_unit_m/s_0.277777777777777_" .
+"km/s" <mapsTo> "_unit_m/s_1000_" .
+
+# SI prefixes, compare http_//en.wikipedia.org/wiki/Metric_prefix		
+"T_unit_([^_]++)_([^_]++)_" <mapsTo> "_unit_$1_$2*1E12_" .
+"G_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E9_" .
+"M_unit_([^_]++)_([^_]++)_" <mapsTo>  "_unit_$1_$2*1E6_" .
+"k_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E3_" .
+"h_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E2_" .
+"da_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E1_" .
+"d_unit_([^_]++)_([^_]++)_" <mapsTo>  "_unit_$1_$2*1E-1_" .
+"c_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E-2_" .
+"m_unit_([^_]++)_([^_]++)_" <mapsTo>  "_unit_$1_$2*1E-3_" .
+"μ_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E-6_" .
+"n_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E-9_" .
+"p_unit_([^_]++)_([^_]++)_" <mapsTo>  "_unit_$1_$2*1E-12_" .
+
+# Free Wikipedia-specific expressions such as  {{val|6378.1|u=km}}
+"\{\{val\|_number_([^_]++)_\|e=_number_([^_]++)_\|ul?=_unit_([^_]++)_\}\}" <mapsTo> "_number_$1E$2_ _unit_$3_" .
+"\{\{convert\|_number_([^_]++)_\|_unit_([^_]++)_\|" <mapsTo> "_number_$1_ _unit_$2_" .
+"\{\{val\|_number_([^_]++)_\|ul?=_unit_([^_]++)_\}\}" <mapsTo> "_number_$1_ _unit_$2_" .
+"_number_([^_]++)_ ?\[\[_unit_([^_]++)_\]\]" <mapsTo> "_number_$1_ _unit_$2_" .
+
+"_number_([^_]++)_ ?_unit_([^_]++)_([^_]++)_"	<mapsTo> "_number_$1*$3_ _bunit_$2_" .
+"_number_([^_]++)_ ?_bunit_([^_]++)_"	<mapsTo> "_valueResult_$1_<$2>_" .
+		
+		
+# currencies
+"\$" <mapsTo> "_currencyName_dollar_" .
+"€" <mapsTo> "_currencyName_euro_" .
+"¥" <mapsTo> "_currencyName_yen_" .
+"£" <mapsTo> "_currencyName_pound_" .
+"₤" <mapsTo> "_currencyName_pound_" .
+"dollars?" <mapsTo> "_currencyName_dollar_" .
+"euros?" <mapsTo> "_currencyName_euro_" .
+"yen" <mapsTo> "_currencyName_yen_" .
+"pounds?" <mapsTo> "_currencyName_pound_" .
+"gbp" <mapsTo> "_currencyName_pound_" .
+
+"_number_([^_]++)_ ?_currencyName_([^_]++)_" <mapsTo> "_result_$1_$2_" .
+		
+		
+# Any left-over numbers are just plain numbers
+"_number_([^_]++)_ ?%" <mapsTo> "_result_ $1 _ <%> _" .
+"_number_(-?\d++)_" <mapsTo> "_result_ $1 _ xsd:integer _" .
+"_number_([^_]++)_" <mapsTo> "_result_ $1 _ xsd:decimal _" .

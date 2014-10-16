@@ -1,0 +1,29 @@
+# This is a hand-coded file!
+# Do not overwrite!
+# The order of rules matters!
+
+# Find URLs
+"(http[s]?://([-\\w\\./\\\\]+))"	<mapsTo>	"_result_<$1>__" .
+"www\\.[-\\w\\./\\\\]+"	<mapsTo>	"_result_<http://$1>__" .
+
+# Find Wiki Links
+"\\[\\[([^\\|\\]]+)(?:\\|([^\\]]+))?\\]\\]"	<mapsTo>	"_entity_$1_" .
+
+# Remove entities with #
+"_entity_([^#]++)#([^_]++)_"	<mapsTo>	"" .
+
+# Remove entities with :
+"_entity_([^:]++):([^_]++)_"	<mapsTo>	"" .
+
+# Remove entities with " and "
+"_entity_.* and ([^_]++)_"	<mapsTo>	"" .
+
+# Remove entities followed by other entities, because these are adjectives
+"_entity_([^_]++)_ _entity_"	<mapsTo>	"_entity_" .
+
+# Remove numbers, because these are the year in which something happened
+"_entity_(\d++)_"	<mapsTo>	"" .
+
+# Find links that do not have [[...]]
+"^([^_]++)$"	<mapsTo>	"_nonefound_$1" .
+"_nonefound_(.*)"	<mapsTo>	"_nonefound_$1" .

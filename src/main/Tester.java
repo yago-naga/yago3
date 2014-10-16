@@ -276,7 +276,7 @@ public class Tester {
 
 	/** Runs the tester */
 	public static void main(String[] args) throws Exception {
-		args = new String[] { "scripts/yago_test.ini" };
+		args = new String[] { "yagoTest.ini" };
 		if (args.length < 1)
 			Announce.help("Tester yago.ini [ logFile.log ]", "",
 					"Runs all tests in the test folder");

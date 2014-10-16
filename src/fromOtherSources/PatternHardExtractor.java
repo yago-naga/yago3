@@ -3,9 +3,9 @@ package fromOtherSources;
 import java.io.File;
 import java.util.Set;
 
-import utils.Theme;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import utils.Theme;
 import basics.Fact;
 import basics.FactSource;
 
@@ -32,6 +32,15 @@ public class PatternHardExtractor extends HardExtractor {
 	/** Patterns of titles */
 	public static final Theme TITLEPATTERNS = new Theme("_titlePatterns",
 			"The replacement patterns for Wikipedia titles used in YAGO");
+	/** Patterns of strings for the TermParser */
+	public static final Theme STRINGPARSER = new Theme("_stringParser",
+			"The replacement patterns for string extraction");
+	/** Patterns of titles */
+	public static final Theme DATEPARSER = new Theme("_dateParser",
+			"The replacement patterns for date extraction");
+	/** Patterns of titles */
+	public static final Theme NUMBERPARSER = new Theme("_numberParser",
+			"The replacement patterns for number extraction");
 	/** Patterns of categories */
 	public static final Theme CATEGORYPATTERNS = new Theme("_categoryPatterns",
 			"The Wikipedia category patterns used in YAGO");
@@ -65,7 +74,7 @@ public class PatternHardExtractor extends HardExtractor {
 				TITLEPATTERNS, CATEGORYPATTERNS, TEMPORALCATEGORYPATTERNS,
 				RULES, DISAMBIGUATIONTEMPLATES, CONTEXTPATTERNS,
 				STRUCTUREPATTERNS, LANGUAGECODEMAPPING, SPOTLX_ENTITY_RULES,
-				SPOTLX_FACT_RULES));
+				SPOTLX_FACT_RULES, STRINGPARSER, NUMBERPARSER, DATEPARSER));
 	}
 
 	@Override

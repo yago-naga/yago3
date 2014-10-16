@@ -13,6 +13,7 @@ import javatools.util.FileUtils;
 import utils.TermParser;
 import utils.Theme;
 import utils.TitleExtractor;
+import utils.literalParsers.WikiLinkParser;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.EnglishWikipediaExtractor;
@@ -72,7 +73,7 @@ public class FlightExtractor extends EnglishWikipediaExtractor {
 	@Override
 	public void extract() throws Exception {
 		TitleExtractor titleExtractor = new TitleExtractor("en");
-
+		WikiLinkParser wikiLinkParser=new WikiLinkParser("en");
 		// Extract the information
 		// Announce.progressStart("Extracting", 4_500_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
@@ -102,7 +103,7 @@ public class FlightExtractor extends EnglishWikipediaExtractor {
 						break;
 					s=Char17.decodeAmpersand(s);
 					if (s.contains("[[")) {
-						List<String> entities = TermParser.forWikiLink
+						List<String> entities = wikiLinkParser
 								.extractList(s);
 						if ((entities.size() == 1 || entities.size() == 2)) {
 							airline = entities.get(0);
