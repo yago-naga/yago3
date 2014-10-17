@@ -1945,6 +1945,7 @@
 	<Edinburgh>	<infobox/en/establisheddate>	"1889-##-##"^^xsd:date
 	<Edinburgh>	<infobox/en/establisheddate>	"7"^^xsd:integer
 	<Edinburgh>	<infobox/en/establisheddate>	"prior to the 7th century"
+	<Edinburgh>	<infobox/en/establisheddate>	"07##-##-##"^^xsd:date
 	<Edinburgh>	<infobox/en/establishedtitle>	<City_status>
 	<Edinburgh>	<infobox/en/establishedtitle>	"City status"
 	<Edinburgh>	<infobox/en/establishedtitle>	"Founded"

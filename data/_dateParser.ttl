@@ -7,7 +7,7 @@
 "[ \t\n\u00A0\u202F\uFEFF_]++" <mapsTo> " " .
 
 # Eliminate suffixes
-"\d(st|nd|rd|th)" <mapsTo> "" .
+"(\d)(st|nd|rd|th)" <mapsTo> "$1" .
 
 # English months
 "January" <mapsTo> "_monthName_01_" .
