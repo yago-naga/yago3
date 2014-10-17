@@ -10,7 +10,6 @@ import java.util.regex.Pattern;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.parsers.NumberParser;
 import javatools.util.FileUtils;
 import utils.Theme;
 import utils.TitleExtractor;
@@ -62,35 +61,51 @@ public class CoordinateExtractor extends EnglishWikipediaExtractor {
 	public static final String bar = "\\s*\\|\\s*(?:display\\s*=\\s*title\\s*\\|)?";
 
 	/** {{Coord|57|18|22|N|4|27|32|W|display=title}} */
-	public static final Pattern coordPattern1 = Pattern.compile("(?i)coord" + bar
-			+ "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar + "(.)"
+	public static final Pattern coordPattern1 = Pattern.compile("(?i)coord"
 			+ bar + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar
-			+ "(.)");
+			+ "(.)" + bar + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)"
+			+ bar + "(.)");
 
 	/** {{Coord|44.112|N|87.913|W|display=title}} */
-	public static final Pattern coordPattern2 = Pattern.compile("(?i)coord" + bar
-			+ "([\\d\\.]+)" + bar + "(.)" + bar + "([\\d\\.]+)" + bar + "(.)");
+	public static final Pattern coordPattern2 = Pattern.compile("(?i)coord"
+			+ bar + "([\\d\\.]+)" + bar + "(.)" + bar + "([\\d\\.]+)" + bar
+			+ "(.)");
 
 	/** {{Coord|44.112|-87.913|display=title}} */
-	public static final Pattern coordPattern3 = Pattern.compile("(?i)coord" + bar
-			+ "([\\-\\d\\.]+)" + bar + "([\\-\\d\\.]+)");
+	public static final Pattern coordPattern3 = Pattern.compile("(?i)coord"
+			+ bar + "([\\-\\d\\.]+)" + bar + "([\\-\\d\\.]+)");
 
-	protected void writeCoords(String entity, String lat, String lon)
+	protected void writeCoords(String entity, Double la, Double lo)
 			throws IOException {
-		Double la = NumberParser.getDouble(lat);
 		if (la != null)
 			write(COORDINATES,
 					new Fact(entity, "<hasLatitude>", FactComponent
 							.forDegree(la)), COORDINATE_SOURCES,
 					FactComponent.wikipediaURL(entity), "CoordinateExtractor");
-		Double lo = NumberParser.getDouble(lon);
 		if (lo != null)
 			write(COORDINATES,
 					new Fact(entity, "<hasLongitude>", FactComponent
 							.forDegree(lo)), COORDINATE_SOURCES,
 					FactComponent.wikipediaURL(entity), "CoordinateExtractor");
-		Announce.debug(" Latitude", lat, la);
-		Announce.debug(" Longitude", lon, lo);
+		Announce.debug(" Latitude", la);
+		Announce.debug(" Longitude", lo);
+	}
+
+	/** Converts a latitude/longitude expression to a Double (or NULL) */
+	public static Double getCoord(String degree, String minute, String second,
+			String eastWestNorthSouth) {
+		int sign = 1;
+		if (!eastWestNorthSouth.isEmpty()
+				&& "SswW".indexOf(eastWestNorthSouth.charAt(0)) != -1)
+			sign = -1;
+		try {
+			double deg = Double.parseDouble(degree);
+			double min = Double.parseDouble(minute);
+			double sec = Double.parseDouble(second);
+			return ((deg + min / 60 + sec / 60 / 60) * sign);
+		} catch (NumberFormatException ex) {
+			return (null);
+		}
 	}
 
 	@Override
@@ -120,28 +135,26 @@ public class CoordinateExtractor extends EnglishWikipediaExtractor {
 				Announce.debug(val);
 				Matcher m = coordPattern1.matcher(val);
 				if (m.find()) {
-					writeCoords(titleEntity,
-							m.group(1) + " degrees " + m.group(2) + " minutes "
-									+ m.group(3) + " seconds " + m.group(4),
-							m.group(5) + " degrees " + m.group(6) + " minutes "
-									+ m.group(7) + " seconds " + m.group(8));
+					writeCoords(
+							titleEntity,
+							getCoord(m.group(1), m.group(2), m.group(3),
+									m.group(4)),
+							getCoord(m.group(5), m.group(6), m.group(7),
+									m.group(8)));
 					break;
 				}
 				m = coordPattern2.matcher(val);
 				if (m.find()) {
-					writeCoords(
-							titleEntity,
-							m.group(1) + " degrees 0 minutes 0 seconds "
-									+ m.group(2),
-							m.group(3) + " degrees 0 minutes 0 seconds "
-									+ m.group(4));
+					writeCoords(titleEntity,
+							getCoord(m.group(1), "0", "0", m.group(2)),
+							getCoord(m.group(3), "0", "0", m.group(4)));
 					break;
 				}
 				m = coordPattern3.matcher(val);
 				if (m.find()) {
-					writeCoords(titleEntity, m.group(1)
-							+ " degrees 0 minutes 0 seconds N", m.group(2)
-							+ " degrees 0 minutes 0 seconds E");
+					writeCoords(titleEntity,
+							getCoord(m.group(1), "0", "0", "N"),
+							getCoord(m.group(2), "0", "0", "E"));
 					break;
 				}
 

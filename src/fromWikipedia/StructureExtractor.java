@@ -38,9 +38,17 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.STRUCTUREPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
-				WordnetExtractor.PREFMEANINGS));
+				WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
 	}
 
+	@Override
+	public Set<Theme> inputCached() {
+		return new HashSet<Theme>(Arrays.asList(
+				PatternHardExtractor.STRUCTUREPATTERNS,
+				PatternHardExtractor.TITLEPATTERNS,
+				WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
+	}
+	
 	@Override
 	public Set<FollowUpExtractor> followUp() {
 	  

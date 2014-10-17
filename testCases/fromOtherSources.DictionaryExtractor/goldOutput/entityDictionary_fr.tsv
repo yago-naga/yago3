@@ -1,13 +1,6 @@
-// Test
-// Maps a foreign entity to a YAGO entity. Data from (http://http://www.wikidata.org/).
-// INTERNAL
-
+	<yagoTheme_entityDictionary_fr>	<hasGloss>	"Test Maps a foreign entity to a YAGO entity. Data from (http://http://www.wikidata.org/). INTERNAL"
 	<fr/Espagne>	<_hasTranslation>	<Spain>
 	<fr/États-Unis>	<_hasTranslation>	<United_States>
-	<fr/Univers>	<_hasTranslation>	<Universe>
-	<fr/Vie>	<_hasTranslation>	<Life>
-	<fr/Mort>	<_hasTranslation>	<Death>
-	<fr/Turquie>	<_hasTranslation>	<Turkey>
 	<fr/Club-Mate>	<_hasTranslation>	<Club-Mate>
 	<fr/Pays-Bas>	<_hasTranslation>	<Netherlands>
 	<fr/New_York>	<_hasTranslation>	<New_York_City>

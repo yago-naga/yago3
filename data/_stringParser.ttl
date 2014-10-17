@@ -3,19 +3,20 @@
 # The order of rules matters!
 
 # Remove bracketed parts
-"\([^\)]*+\)" <mapsTo> "" .
+" ?\([^\)]*+\)" <mapsTo> "" .
 
 # Remove remaining brackets
 "\(" <mapsTo>	"" .
 "\)" <mapsTo>	"" .
 
 # Find Wiki Links
-"\\[\\[([^\\|\\]]+)(?:\\|([^\\]]+))?\\]\\]"	<mapsTo>	"_result_$1__" .
+"\[\[([^\|\]]++)\|([^\]]++)\]\]"	<mapsTo>	"_result_$2__" .
+"\[\[([^\|\]]++)(?:\|([^\]]++))?\]\]"	<mapsTo>	"_result_$1__" .
 
 # Put delimiters
-"(;|,?\n|'''|''|, ?;|\")+"	<mapsTo>	"_delim_" .
-"^"	<mapsTo>	"_delim_" .
-"$"	<mapsTo>	"_delim_" .
+" ?(;|,?\n|'''|''|, ?;|\")+ ?"	<mapsTo>	"_delim_" .
+"^ ?"	<mapsTo>	"_delim_" .
+" ?$"	<mapsTo>	"_delim_" .
 
 # Extract strings
-"_delim_([\\p{Alnum} ]{2,})_delim_"	<mapsTo>	"result_$1__" .
+"_delim_([\p{L} \p{Nd}]{2,})(?=_delim_)"	<mapsTo>	"_result_$1__" .

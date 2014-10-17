@@ -427,6 +427,8 @@ public class FactCollection extends AbstractSet<Fact> {
 					continue next;
 				}
 			}
+			// Let's not be picky about the glosses of YAGO themes.
+			if(fact.getSubject().startsWith("<yagoTheme") && fact.getRelation().equals(YAGO.hasGloss)) continue;
 			Announce.message("Not found in", name, ":", fact);
 			matches = false;
 			if (--counter <= 0)

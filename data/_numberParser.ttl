@@ -7,10 +7,16 @@
 "[ \t\n\u00A0\u202F\uFEFF_]++" <mapsTo> " " .
 
 # Remove commas
-"(\d),(\d)"	<mapsTo>	"$1$2" .
+"(\d),(\d{3})"	<mapsTo>	"$1$2" .
+
+# Translate the remaining commas to dots (for German)
+"(\d),(\d)"	<mapsTo>	"$1.$2" .
+
+# Remove number suffixes (otherwise "th" maps to "thousand hours")
+"(\d)(th|rd|st)"	<mapsTo>	"$1" .
 
 # Define numbers
-"-?\d++(\.\d++)?+(E-?\d+)?+" <mapsTo> "_number_$0_"	.	
+"-?\d++(\.\d++)?+(E-?\d++)?+" <mapsTo> "_number_$0_"	.	
 		
 # textual numbers, US, Canada and modern British, short scale;
 # compare http_//en.wikipedia.org/wiki/Names_of_large_numbers#Extensions_of_the_standard_dictionary_numbers
@@ -77,25 +83,27 @@
 "_number_([^_]++)_ ?\[\[_unit_([^_]++)_\]\]" <mapsTo> "_number_$1_ _unit_$2_" .
 
 "_number_([^_]++)_ ?_unit_([^_]++)_([^_]++)_"	<mapsTo> "_number_$1*$3_ _bunit_$2_" .
-"_number_([^_]++)_ ?_bunit_([^_]++)_"	<mapsTo> "_valueResult_$1_<$2>_" .
+"_number_([^_]++)_ ?_bunit_([^_]++)_"	<mapsTo> "_result_$1_<$2>_" .
 		
 		
-# currencies
-"\$" <mapsTo> "_currencyName_dollar_" .
-"€" <mapsTo> "_currencyName_euro_" .
-"¥" <mapsTo> "_currencyName_yen_" .
-"£" <mapsTo> "_currencyName_pound_" .
-"₤" <mapsTo> "_currencyName_pound_" .
+# currencies. Put words before symbols, because otherwise the patterns will apply twice.
 "dollars?" <mapsTo> "_currencyName_dollar_" .
 "euros?" <mapsTo> "_currencyName_euro_" .
 "yen" <mapsTo> "_currencyName_yen_" .
 "pounds?" <mapsTo> "_currencyName_pound_" .
 "gbp" <mapsTo> "_currencyName_pound_" .
+"\$" <mapsTo> "_currencyName_dollar_" .
+"€" <mapsTo> "_currencyName_euro_" .
+"¥" <mapsTo> "_currencyName_yen_" .
+"£" <mapsTo> "_currencyName_pound_" .
+"₤" <mapsTo> "_currencyName_pound_" .
 
-"_number_([^_]++)_ ?_currencyName_([^_]++)_" <mapsTo> "_result_$1_$2_" .
-		
+"_number_([^_]++)_ ?_currencyName_([^_]++)_" <mapsTo> "_result_$1_<$2>_" .
+"_currencyName_([^_]++)_ ?_number_([^_]++)_" <mapsTo> "_result_$2_<$1>_" .		
 		
 # Any left-over numbers are just plain numbers
-"_number_([^_]++)_ ?%" <mapsTo> "_result_ $1 _ <%> _" .
-"_number_(-?\d++)_" <mapsTo> "_result_ $1 _ xsd:integer _" .
-"_number_([^_]++)_" <mapsTo> "_result_ $1 _ xsd:decimal _" .
+"_number_([^_]++)_ ?%" <mapsTo> "_result_$1_<%>_" .
+"_number_([^_]++)_" <mapsTo> "_result_$1_xsd:decimal_" .
+
+# Convert decimals to integer where possible
+"_result_(-?\d++)_xsd:decimal_" <mapsTo> "_result_$1_xsd:integer_" .

@@ -22,6 +22,7 @@ import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
+import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 
@@ -40,9 +41,17 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.CONTEXTPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
-				WordnetExtractor.PREFMEANINGS));
+				WordnetExtractor.PREFMEANINGS,PatternHardExtractor.LANGUAGECODEMAPPING));
 	}
 
+	@Override
+	public Set<Theme> inputCached() {
+		return new HashSet<Theme>(Arrays.asList(
+				PatternHardExtractor.CONTEXTPATTERNS,
+				PatternHardExtractor.TITLEPATTERNS,
+				WordnetExtractor.PREFMEANINGS,PatternHardExtractor.LANGUAGECODEMAPPING));
+	}
+	
 	/** Context for entities */
 	public static final MultilingualTheme DIRTYCONTEXTFACTS = new MultilingualTheme(
 			"conteXtFactsDirty",

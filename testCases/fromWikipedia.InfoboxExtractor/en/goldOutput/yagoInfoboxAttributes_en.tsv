@@ -1,7 +1,4 @@
-// Test
-// Raw facts from the Wikipedia infoboxes
-// WIKIPEDIA
-
+	<yagoTheme_yagoInfoboxAttributes_en>	<hasGloss>	"Test Raw facts from the Wikipedia infoboxes WIKIPEDIA"
 <id_y9qq7a_1ql_10afn3e>	<Campania>	<infobox/en/area>	"13590"@en
 <id_y9qq7a_1te_zil4or>	<Campania>	<infobox/en/areapercent>	"4.5"@en
 <id_y9qq7a_p6s_zjgf9x>	<Campania>	<infobox/en/arearank>	"12th"@en
@@ -29,7 +26,7 @@
 <id_1gaoy63_1b4_19qucya>	<Carlo_Azeglio_Ciampi>	<infobox/en/birthplace>	"[[Livorno]], Italy"@en
 <id_1gaoy63_o48_1ukmvht>	<Carlo_Azeglio_Ciampi>	<infobox/en/constituency>	"Former president"@en
 <id_1gaoy63_n4z_1bcyl2j>	<Carlo_Azeglio_Ciampi>	<infobox/en/image>	"Ciampi ritratto.jpg"@en
-<id_1gaoy63_1qm_6vqivb>	<Carlo_Azeglio_Ciampi>	<infobox/en/name>	"\nCarlo Azeglio Ciampi"@en
+<id_1gaoy63_1qm_16yiqrh>	<Carlo_Azeglio_Ciampi>	<infobox/en/name>	"Carlo Azeglio Ciampi"@en
 <id_1gaoy63_32a_16e6njr>	<Carlo_Azeglio_Ciampi>	<infobox/en/nationality>	"[[Italians|Italian]]"@en
 <id_1gaoy63_n8d_151inyl>	<Carlo_Azeglio_Ciampi>	<infobox/en/order>	"49th [[Prime Minister of Italy]]"@en
 <id_1gaoy63_n8d_1d55p93>	<Carlo_Azeglio_Ciampi>	<infobox/en/order>	"Italian Minister of Exchequer, Budget and Economy Programming"@en
@@ -83,7 +80,7 @@
 <id_7r55ul_1ex_zjgz45>	<Forza_Italia>	<infobox/en/membershipyear>	"2007"@en
 <id_7r55ul_8rn_1ptpu9b>	<Forza_Italia>	<infobox/en/merged>	"[[The People of Freedom]]"@en
 <id_7r55ul_ld0_6glzha>	<Forza_Italia>	<infobox/en/nameenglish>	"Forza Italia"@en
-<id_7r55ul_fiy_140vcrc>	<Forza_Italia>	<infobox/en/national>	"[[Pole of Freedoms]]/[[Pole of Good Government]] ,\n[[Pole for Freedoms]] ,\n[[House of Freedoms]] "@en
+<id_7r55ul_fiy_1ov5knc>	<Forza_Italia>	<infobox/en/national>	"[[Pole of Freedoms]]/[[Pole of Good Government]] ,\n[[Pole for Freedoms]] ,\n[[House of Freedoms]]"@en
 <id_7r55ul_1t3_umox8q>	<Forza_Italia>	<infobox/en/position>	"[[Centre-right]]"@en
 <id_1qqn7vt_exz_kilmua>	<Gianfranco_Fini>	<infobox/en/almamater>	"[[La Sapienza]]"@en
 <id_1qqn7vt_1ed_1gg968o>	<Gianfranco_Fini>	<infobox/en/alongside>	"[[Marco Follini]] (2004–2005),\n [[Giulio Tremonti]] (2005–2006)"@en
@@ -92,7 +89,6 @@
 <id_1qqn7vt_956_8lqkd3>	<Gianfranco_Fini>	<infobox/en/children>	"Giuliana Fini \n Carolina Fini"@en
 <id_1qqn7vt_o48_4p9q6m>	<Gianfranco_Fini>	<infobox/en/constituency>	"XI - [[Emilia Romagna]]"@en
 <id_1qqn7vt_b6n_bh6dxo>	<Gianfranco_Fini>	<infobox/en/dog>	"[[Roman Catholic]]"@en
-<id_1qqn7vt_gbo_zik0zu>	<Gianfranco_Fini>	<infobox/en/honorificprefix>	"\n"@en
 <id_1qqn7vt_n4z_177duxp>	<Gianfranco_Fini>	<infobox/en/image>	"Gianfranco Fini.jpg"@en
 <id_1qqn7vt_1qm_1ps06i2>	<Gianfranco_Fini>	<infobox/en/name>	"Gianfranco Fini"@en
 <id_1qqn7vt_32a_1jnojjb>	<Gianfranco_Fini>	<infobox/en/nationality>	"[[Italy|Italian]]"@en
@@ -122,8 +118,8 @@
 <id_1vo5vis_9q2_191qx8k>	<Giorgio_Napolitano>	<infobox/en/office>	"[[Italian Chamber of Deputies|President of the Chamber of Deputies]]"@en
 <id_1vo5vis_9q2_1qa79jw>	<Giorgio_Napolitano>	<infobox/en/office>	"[[Italian Minister of the Interior|Minister of the Interior]]"@en
 <id_1vo5vis_9q2_6q12rc>	<Giorgio_Napolitano>	<infobox/en/office>	"[[List of Presidents of the Italian Republic|11th]] [[President of Italy]]"@en
-<id_1vo5vis_os5_1pyujsl>	<Giorgio_Napolitano>	<infobox/en/otherparty>	"[[Italian Communist Party]] "@en
-<id_1vo5vis_n8m_qdaro3>	<Giorgio_Napolitano>	<infobox/en/party>	"[[Democrats of the Left]] "@en
+<id_1vo5vis_os5_1yql617>	<Giorgio_Napolitano>	<infobox/en/otherparty>	"[[Italian Communist Party]]"@en
+<id_1vo5vis_n8m_gw19gt>	<Giorgio_Napolitano>	<infobox/en/party>	"[[Democrats of the Left]]"@en
 <id_1vo5vis_14q_b9vvel>	<Giorgio_Napolitano>	<infobox/en/predecessor>	"[[Carlo Azeglio Ciampi]]"@en
 <id_1vo5vis_14q_1vq1jjp>	<Giorgio_Napolitano>	<infobox/en/predecessor>	"[[Giovanni Rinaldo Coronas]]"@en
 <id_1vo5vis_14q_55bszl>	<Giorgio_Napolitano>	<infobox/en/predecessor>	"[[Oscar Luigi Scalfaro]]"@en
@@ -151,7 +147,7 @@
 <id_1rnvp37_9q2_1qa79jw>	<Giuliano_Amato>	<infobox/en/office>	"[[Italian Minister of the Interior|Minister of the Interior]]"@en
 <id_1rnvp37_9q2_1nr2lq4>	<Giuliano_Amato>	<infobox/en/office>	"[[Italian Minister of the Treasury|Minister of the Treasury]]"@en
 <id_1rnvp37_9q2_1r35g4a>	<Giuliano_Amato>	<infobox/en/office>	"[[Minister without portfolio]] for Reforms"@en
-<id_1rnvp37_os5_topm52>	<Giuliano_Amato>	<infobox/en/otherparty>	"[[Italian Socialist Party|Socialist Party]] "@en
+<id_1rnvp37_os5_1oj5dze>	<Giuliano_Amato>	<infobox/en/otherparty>	"[[Italian Socialist Party|Socialist Party]]"@en
 <id_1rnvp37_n8m_1pibjbi>	<Giuliano_Amato>	<infobox/en/party>	"[[Democratic Party (Italy)|Democratic Party]]"@en
 <id_1rnvp37_14q_b9vvel>	<Giuliano_Amato>	<infobox/en/predecessor>	"[[Carlo Azeglio Ciampi]]"@en
 <id_1rnvp37_14q_v8gdy5>	<Giuliano_Amato>	<infobox/en/predecessor>	"[[Franco Bassanini]]"@en
@@ -205,7 +201,7 @@
 <id_1bclsii_17o_1pjtb89>	<Giulio_Tremonti>	<infobox/en/religion>	"[[Catholic Church|Roman Catholicism]]"@en
 <id_1bclsii_gjb_r4uhgv>	<Giulio_Tremonti>	<infobox/en/successor>	"[[Augusto Fantozzi]]"@en
 <id_1bclsii_gjb_1n6adk5>	<Giulio_Tremonti>	<infobox/en/successor>	"[[Mario Monti]]"@en
-<id_1bclsii_gjb_17gcddw>	<Giulio_Tremonti>	<infobox/en/successor>	"[[Silvio Berlusconi]] "@en
+<id_1bclsii_gjb_f5dyho>	<Giulio_Tremonti>	<infobox/en/successor>	"[[Silvio Berlusconi]]"@en
 <id_1bclsii_gjb_161ap8p>	<Giulio_Tremonti>	<infobox/en/successor>	"[[Tommaso Padoa-Schioppa]]"@en
 <id_1bclsii_jeg_td106p>	<Giulio_Tremonti>	<infobox/en/termend>	"16 November 2011"@en
 <id_1bclsii_jeg_9zzp5g>	<Giulio_Tremonti>	<infobox/en/termend>	"17 January 1995"@en
@@ -233,7 +229,7 @@
 <id_1q29rbl_60a_10axge2>	<Italian_Chamber_of_Deputies>	<infobox/en/structureres>	"200px"@en
 <id_1q29rbl_1it_f8guub>	<Italian_Chamber_of_Deputies>	<infobox/en/textcolor>	"#FFFFFF"@en
 <id_1q29rbl_1r6_5i8uej>	<Italian_Chamber_of_Deputies>	<infobox/en/website>	"http://english.camera.it/"@en
-<id_1kw13uu_1g2_h5m0uj>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/capital>	"[[Turin]]\n\n[[Florence]]\n\n[[Rome]]\n"@en
+<id_1kw13uu_1g2_c0cz6n>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/capital>	"[[Turin]]\n\n[[Florence]]\n\n[[Rome]]"@en
 <id_1kw13uu_1vl_os8n7g>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/commonlanguages>	"[[Italian language|Italian]]"@en
 <id_1kw13uu_1b5_10ot5dv>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/commonname>	"Italy"@en
 <id_1kw13uu_1t8_1y1316q>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/continent>	"Europe"@en
@@ -248,7 +244,7 @@
 <id_1kw13uu_1ut_5b1iss>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/datepre>	"November 10, 1859"@en
 <id_1kw13uu_1w3_14jouv7>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/datestart>	"March 17"@en
 <id_1kw13uu_4i7_1wqkjfl>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/deputy>	"[[Alcide De Gasperi]] <small>(last)<small>"@en
-<id_1kw13uu_4i7_n1gsia>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/deputy>	"[[Benito Mussolini]]\n"@en
+<id_1kw13uu_4i7_nnmr3s>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/deputy>	"[[Benito Mussolini]]"@en
 <id_1kw13uu_4i7_uiyrz5>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/deputy>	"[[Camillo Benso, Count of Cavour|Camillo Benso]] <small>(first)<small>"@en
 <id_1kw13uu_n2y_1w23tqz>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/event>	"[[Armistice of villa Giusti|1918 Armistice]]"@en
 <id_1kw13uu_n2y_kxmd9g>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/event>	"[[Capture of Rome]]"@en
@@ -276,8 +272,8 @@
 <id_1kw13uu_n3b_1s75lbm>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/flags>	"Free Territory Trieste Flag.svg"@en
 <id_1kw13uu_8el_zjv0jw>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/flagtype>	"Flag"@en
 <id_1kw13uu_1pc_cjf59n>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/footnotes>	"1: Unofficial anthem \u0022[[Giovinezza]]\u0022 (\u0022The Youth\u0022) 1922–1943"@en
-<id_1kw13uu_1mi_dy2r3z>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/governmenttype>	"[[Constitutional monarchy]],\n[[Unitary state|Unitary]] [[representative democracy]]\n\n[[Fascism|Fascist]] [[single-party state]]\n"@en
-<id_1kw13uu_n4h_1vgv9dr>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/house>	"[[Chamber of Deputies of Italy|Chamber of Deputies]],\n[[Chamber of Fasci and Corporations]] "@en
+<id_1kw13uu_1mi_ghlwob>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/governmenttype>	"[[Constitutional monarchy]],\n[[Unitary state|Unitary]] [[representative democracy]]\n\n[[Fascism|Fascist]] [[single-party state]]"@en
+<id_1kw13uu_n4h_154mz29>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/house>	"[[Chamber of Deputies of Italy|Chamber of Deputies]],\n[[Chamber of Fasci and Corporations]]"@en
 <id_1kw13uu_n4h_htykpa>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/house>	"[[Senate of Italy|Senate]]"@en
 <id_1kw13uu_1le_1v5tmvn>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/imagecoat>	"Coat of arms of the Kingdom of Italy (1890).svg"@en
 <id_1kw13uu_1le_1qpfmxs>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/imageflag>	"Flag of Italy (1861-1946).svg"@en
@@ -292,7 +288,7 @@
 <id_1kw13uu_vwz_4uvb60>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/nationalmotto>	"\u0022[[FERT|Foedere et Religione Tenemur]]\u0022\n \u0022We are Bound by Treaty and Religion\u0022"@en
 <id_1kw13uu_7v4_18emnks>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/nativename>	"Regno d'Italia"@en
 <id_1kw13uu_1ik_1s0bux1>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/p>	"Kingdom of Lombardy–Venetia"@en
-<id_1kw13uu_1ik_14aqwrz>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/p>	"Kingdom of Sardinia "@en
+<id_1kw13uu_1ik_jmp51t>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/p>	"Kingdom of Sardinia"@en
 <id_1kw13uu_1ik_obtd4u>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/p>	"Kingdom of the Two Sicilies"@en
 <id_1kw13uu_1ik_rswh08>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/p>	"Papal States"@en
 <id_1kw13uu_1ik_1f7nf7t>	<Kingdom_of_Italy_(1861–1946)>	<infobox/en/p>	"United Provinces of Central Italy"@en
@@ -333,7 +329,6 @@
 <id_184v0j1_1fx_s2fmix>	<Lamberto_Dini>	<infobox/en/birthdate>	"{{birth date and age|1931|3|1}}"@en
 <id_184v0j1_1b4_i43ldn>	<Lamberto_Dini>	<infobox/en/birthplace>	"[[Florence]], [[Italy]]"@en
 <id_184v0j1_o48_188wki1>	<Lamberto_Dini>	<infobox/en/constituency>	"Toscana"@en
-<id_184v0j1_gbo_zik1re>	<Lamberto_Dini>	<infobox/en/honorificprefix>	" \n"@en
 <id_184v0j1_n4z_13l3d1d>	<Lamberto_Dini>	<infobox/en/image>	"Lamberto dini pl.jpg"@en
 <id_184v0j1_1qm_1767z5a>	<Lamberto_Dini>	<infobox/en/name>	"Lamberto Dini"@en
 <id_184v0j1_32a_16e6njr>	<Lamberto_Dini>	<infobox/en/nationality>	"[[Italians|Italian]]"@en
@@ -424,7 +419,7 @@
 <id_4o2xc6_14q_eaxowh>	<Mario_Monti>	<infobox/en/predecessor>	"[[Karel Van Miert]]"@en
 <id_4o2xc6_14q_f5dyho>	<Mario_Monti>	<infobox/en/predecessor>	"[[Silvio Berlusconi]]"@en
 <id_4o2xc6_1kq_ackxlh>	<Mario_Monti>	<infobox/en/president>	"[[Giorgio Napolitano]]"@en
-<id_4o2xc6_1kq_l0qumw>	<Mario_Monti>	<infobox/en/president>	"[[Jacques Santer]]\n[[Manuel Marín]] "@en
+<id_4o2xc6_1kq_1qjknm0>	<Mario_Monti>	<infobox/en/president>	"[[Jacques Santer]]\n[[Manuel Marín]]"@en
 <id_4o2xc6_1kq_199lffo>	<Mario_Monti>	<infobox/en/president>	"[[Romano Prodi]]"@en
 <id_4o2xc6_17o_4d1l69>	<Mario_Monti>	<infobox/en/religion>	"[[Roman Catholicism|Roman Catholic]]"@en
 <id_4o2xc6_brx_u6uwou>	<Mario_Monti>	<infobox/en/spouse>	"Elsa Antonioli"@en
@@ -458,7 +453,7 @@
 <id_10qtisd_7v4_2lmawi>	<Milan>	<infobox/en/nativename>	"Milano"@en
 <id_10qtisd_1hw_1rzhy7i>	<Milan>	<infobox/en/nickname>	"The Economic Capital of Italy"@en
 <id_10qtisd_xt4_1u7esoo>	<Milan>	<infobox/en/officialname>	"Comune di Milano"@en
-<id_10qtisd_1lf_kkd65w>	<Milan>	<infobox/en/populationfootnotes>	"\n|population_total= 1338436\n|population_as_of= 30 September 2011\n|pop_density_footnotes=\n|population_demonym= Milanees/Milanese\n|elevation_footnotes=\n|elevation_m= 120\n|twin1=\n|twin1_country=\n|saint= [[Ambrose]]\n|day= 7 December\n|postal_code= 20100, 20121-20162\n|area_code= 02\n|gdp_per capita= 175, 252 $\n|website= {{Official website|http://www.comune.milano.it}}\n|footnotes=\n}}\nMilan ([[Western dialects of Lombard language|Western Lombard language]]: [miˈlan];  \u0022Milano\u0022  {{IPA-it|miˈlaːno||It-Milano.ogg}}) is the [[List of cities in Italy by population|second-largest]] city in [[Italy]] and the capital city of the [[regions of Italy|region]] of [[Lombardy]] and of the [[province of Milan]]. The city proper has a population of about 1.3 million, while its urban area, roughly coinciding with its administrative [[Province of Milan|province]] and the bordering [[Province of Monza and Brianza]] (created in 2004 splitting the northern part from the province of Milan itself), is one of Europe's largest with an estimated population of over 4 million spread over  1980 km² , with a consequent population density of more than 2,000 inhabitants/km². The growth of many suburbs and satellite settlements around the city proper following the great [[Italian economic miracle|economic boom of the 1950s–60s]] and massive commuting flows suggest that socioeconomic linkages have expanded well beyond the boundaries of the city proper and its agglomeration, creating a [[metropolitan area]] of 7.4 million population expanded all over the central section of [[Lombardy]] region. It has been suggested that the [[Milan metropolitan area]] is part of the so-called [[Blue Banana]], the area of Europe with the highest population and industrial density.\n\nThe city was founded by the [[Insubres]], a [[Celts|Celtic]] people.\nMilan was later captured by the Romans in 222 BC, and later was the capital city of the [[Western Roman Empire]] from 286 until 402 AD. Milan became one of the most prosperous Italian cities during the [[High Middle Ages]], playing a primary role in the [[Lombard League]]. Later Milan became the capital city of the [[Duchy of Milan]], being ruled by the [[House of Visconti|Visconti]], the [[House of Sforza|Sforza]], the [[Kingdom of Spain|Spanish]] and the [[Austrian Empire|Austria]]ns. In 1796, Milan was conquered by the French troops of [[Napoleon I]], who made it the capital of the puppet state of the [[Kingdom of Italy (Napoleonic)|Kingdom of Italy]] in 1805.<ref name=\u0022britannica.com\u0022>{{cite web|author=Britannica Concise Encyclopedia |url=http://www.britannica.com/EBchecked/topic/382069/Milan#|title=Milan (Italy) – Britannica Online Encyclopedia|publisher=Brit"@en
+<id_10qtisd_1lf_1eohhpm>	<Milan>	<infobox/en/populationfootnotes>	"|population_total= 1338436\n|population_as_of= 30 September 2011\n|pop_density_footnotes=\n|population_demonym= Milanees/Milanese\n|elevation_footnotes=\n|elevation_m= 120\n|twin1=\n|twin1_country=\n|saint= [[Ambrose]]\n|day= 7 December\n|postal_code= 20100, 20121-20162\n|area_code= 02\n|gdp_per capita= 175, 252 $\n|website= {{Official website|http://www.comune.milano.it}}\n|footnotes=\n}}\nMilan ([[Western dialects of Lombard language|Western Lombard language]]: [miˈlan];  \u0022Milano\u0022  {{IPA-it|miˈlaːno||It-Milano.ogg}}) is the [[List of cities in Italy by population|second-largest]] city in [[Italy]] and the capital city of the [[regions of Italy|region]] of [[Lombardy]] and of the [[province of Milan]]. The city proper has a population of about 1.3 million, while its urban area, roughly coinciding with its administrative [[Province of Milan|province]] and the bordering [[Province of Monza and Brianza]] (created in 2004 splitting the northern part from the province of Milan itself), is one of Europe's largest with an estimated population of over 4 million spread over  1980 km² , with a consequent population density of more than 2,000 inhabitants/km². The growth of many suburbs and satellite settlements around the city proper following the great [[Italian economic miracle|economic boom of the 1950s–60s]] and massive commuting flows suggest that socioeconomic linkages have expanded well beyond the boundaries of the city proper and its agglomeration, creating a [[metropolitan area]] of 7.4 million population expanded all over the central section of [[Lombardy]] region. It has been suggested that the [[Milan metropolitan area]] is part of the so-called [[Blue Banana]], the area of Europe with the highest population and industrial density.\n\nThe city was founded by the [[Insubres]], a [[Celts|Celtic]] people.\nMilan was later captured by the Romans in 222 BC, and later was the capital city of the [[Western Roman Empire]] from 286 until 402 AD. Milan became one of the most prosperous Italian cities during the [[High Middle Ages]], playing a primary role in the [[Lombard League]]. Later Milan became the capital city of the [[Duchy of Milan]], being ruled by the [[House of Visconti|Visconti]], the [[House of Sforza|Sforza]], the [[Kingdom of Spain|Spanish]] and the [[Austrian Empire|Austria]]ns. In 1796, Milan was conquered by the French troops of [[Napoleon I]], who made it the capital of the puppet state of the [[Kingdom of Italy (Napoleonic)|Kingdom of Italy]] in 1805.<ref name=\u0022britannica.com\u0022>{{cite web|author=Britannica Concise Encyclopedia |url=http://www.britannica.com/EBchecked/topic/382069/Milan#|title=Milan (Italy) – Britannica Online Encyclopedia|publisher=Brit"@en
 <id_10qtisd_10e_w0iqlc>	<Milan>	<infobox/en/province>	"[[Province of Milan|Milan]] (MI)"@en
 <id_10qtisd_b4o_8urm2m>	<Milan>	<infobox/en/region>	"[[Lombardy]]"@en
 <id_2ox8i9_1ql_zjic4l>	<Molise>	<infobox/en/area>	"4438"@en
@@ -482,13 +477,12 @@
 <id_2ox8i9_1t3_qtwxzc>	<Molise>	<infobox/en/population>	"319,834"@en
 <id_2ox8i9_249_15tu1wz>	<Molise>	<infobox/en/regioncoa>	"Regione-Molise-Stemma.svg"@en
 <id_2ox8i9_1r6_1gzenlj>	<Molise>	<infobox/en/website>	"[http://www.regione.molise.it/ www.regione.molise.it]"@en
-<id_1re08hr_1fx_3s38hl>	<Oscar_Luigi_Scalfaro>	<infobox/en/birthdate>	" 1918-9-9 "@en
+<id_1re08hr_1fx_zjzktj>	<Oscar_Luigi_Scalfaro>	<infobox/en/birthdate>	"1918-9-9"@en
 <id_1re08hr_1b4_1g1x0xn>	<Oscar_Luigi_Scalfaro>	<infobox/en/birthplace>	"[[Novara]], [[Kingdom of Italy (1861–1946)|Italy]]"@en
 <id_1re08hr_956_vqcnuw>	<Oscar_Luigi_Scalfaro>	<infobox/en/children>	"Marianna Scalfaro"@en
 <id_1re08hr_o48_somt3l>	<Oscar_Luigi_Scalfaro>	<infobox/en/constituency>	"Former President"@en
 <id_1re08hr_1hi_1ntvxdk>	<Oscar_Luigi_Scalfaro>	<infobox/en/deathdate>	"{{Death date and age|2012|1|29|1918|9|9|df=y}}"@en
 <id_1re08hr_pdc_14tnsze>	<Oscar_Luigi_Scalfaro>	<infobox/en/deathplace>	"[[Rome]], [[Italy]]"@en
-<id_1re08hr_gbo_zik1re>	<Oscar_Luigi_Scalfaro>	<infobox/en/honorificprefix>	" \n"@en
 <id_1re08hr_n4z_fmsyo7>	<Oscar_Luigi_Scalfaro>	<infobox/en/image>	"Oscar Luigi Scalfaro 3.jpg"@en
 <id_1re08hr_1qm_kpd3up>	<Oscar_Luigi_Scalfaro>	<infobox/en/name>	"Oscar Luigi Scalfaro"@en
 <id_1re08hr_32a_16e6njr>	<Oscar_Luigi_Scalfaro>	<infobox/en/nationality>	"[[Italians|Italian]]"@en
@@ -524,7 +518,7 @@
 <id_93sgke_9q2_1dfu4nk>	<Roberto_Maroni>	<infobox/en/office>	"Minister of Labour and Welfare"@en
 <id_93sgke_9q2_1qa79jw>	<Roberto_Maroni>	<infobox/en/office>	"[[Italian Minister of the Interior|Minister of the Interior]]"@en
 <id_93sgke_n8m_yl5d4n>	<Roberto_Maroni>	<infobox/en/party>	"[[Lega Nord|Northern League]]"@en
-<id_93sgke_14q_1tdztoj>	<Roberto_Maroni>	<infobox/en/predecessor>	"[[Carlo Azeglio Ciampi]] "@en
+<id_93sgke_14q_b9vvel>	<Roberto_Maroni>	<infobox/en/predecessor>	"[[Carlo Azeglio Ciampi]]"@en
 <id_93sgke_14q_1knxij8>	<Roberto_Maroni>	<infobox/en/predecessor>	"[[Cesare Salvi]]"@en
 <id_93sgke_14q_lpgbhe>	<Roberto_Maroni>	<infobox/en/predecessor>	"[[Giuliano Amato]]"@en
 <id_93sgke_1ei_f5dyho>	<Roberto_Maroni>	<infobox/en/primeminister>	"[[Silvio Berlusconi]]"@en
@@ -549,17 +543,17 @@
 <id_1uqzhxh_9q2_6nw87l>	<Romano_Prodi>	<infobox/en/office>	"President of the [[Institute for Industrial Reconstruction]]"@en
 <id_1uqzhxh_9q2_1bi76oi>	<Romano_Prodi>	<infobox/en/office>	"[[Italian Chamber of Deputies|Member of the Italian Chamber of Deputies]]"@en
 <id_1uqzhxh_9q2_gdk0c3>	<Romano_Prodi>	<infobox/en/office>	"[[Italian Minister of Economic Development|Minister of Industry, Commerce and Craftsmanship]]"@en
-<id_1uqzhxh_9q2_6hqbqc>	<Romano_Prodi>	<infobox/en/office>	"[[Italian Minister of Justice|Minister of Justice]]\n"@en
+<id_1uqzhxh_9q2_17qsvs6>	<Romano_Prodi>	<infobox/en/office>	"[[Italian Minister of Justice|Minister of Justice]]"@en
 <id_1uqzhxh_9q2_13ig86c>	<Romano_Prodi>	<infobox/en/office>	"[[President of the European Commission]]"@en
 <id_1uqzhxh_9q2_4uezsk>	<Romano_Prodi>	<infobox/en/office>	"[[Prime Minister of Italy]]"@en
-<id_1uqzhxh_os5_1vkxta>	<Romano_Prodi>	<infobox/en/otherparty>	"[[Christian Democracy (Italy)|Christian Democracy]] \n[[The Olive Tree (political coalition)|The Olive Tree]] \n[[The Union (political coalition)|The Union]] "@en
-<id_1uqzhxh_n8m_1nz07ki>	<Romano_Prodi>	<infobox/en/party>	"[[Democratic Party (Italy)|Democratic Party]] "@en
+<id_1uqzhxh_os5_1gre4vm>	<Romano_Prodi>	<infobox/en/otherparty>	"[[Christian Democracy (Italy)|Christian Democracy]] \n[[The Olive Tree (political coalition)|The Olive Tree]] \n[[The Union (political coalition)|The Union]]"@en
+<id_1uqzhxh_n8m_1pibjbi>	<Romano_Prodi>	<infobox/en/party>	"[[Democratic Party (Italy)|Democratic Party]]"@en
 <id_1uqzhxh_14q_edqm4j>	<Romano_Prodi>	<infobox/en/predecessor>	"Carlo Donat-Cattin"@en
 <id_1uqzhxh_14q_4jzmw0>	<Romano_Prodi>	<infobox/en/predecessor>	"Franco Nobili"@en
 <id_1uqzhxh_14q_1wgtz4o>	<Romano_Prodi>	<infobox/en/predecessor>	"Pietro Sette"@en
 <id_1uqzhxh_14q_au6486>	<Romano_Prodi>	<infobox/en/predecessor>	"[[Clemente Mastella]]"@en
 <id_1uqzhxh_14q_1vv0ajy>	<Romano_Prodi>	<infobox/en/predecessor>	"[[Lamberto Dini]]"@en
-<id_1uqzhxh_14q_qmx5qz>	<Romano_Prodi>	<infobox/en/predecessor>	"[[Manuel Marin]] "@en
+<id_1uqzhxh_14q_1jumsf9>	<Romano_Prodi>	<infobox/en/predecessor>	"[[Manuel Marin]]"@en
 <id_1uqzhxh_14q_f5dyho>	<Romano_Prodi>	<infobox/en/predecessor>	"[[Silvio Berlusconi]]"@en
 <id_1uqzhxh_1kq_ackxlh>	<Romano_Prodi>	<infobox/en/president>	"[[Giorgio Napolitano]]"@en
 <id_1uqzhxh_1kq_55bszl>	<Romano_Prodi>	<infobox/en/president>	"[[Oscar Luigi Scalfaro]]"@en
@@ -597,15 +591,15 @@
 <id_wz05y3_1fx_1rylriu>	<Silvio_Berlusconi>	<infobox/en/birthdate>	"{{birth date and age|1936|9|29|df=y}}"@en
 <id_wz05y3_1b4_620brx>	<Silvio_Berlusconi>	<infobox/en/birthplace>	"[[Milan]], [[Kingdom of Italy (1861–1946)|Italy]]"@en
 <id_wz05y3_956_1asoeoi>	<Silvio_Berlusconi>	<infobox/en/children>	"[[Marina Berlusconi|Marina]]\n[[Pier Silvio Berlusconi|Pier Silvio]]\nBarbara\nEleonora\nLuigi"@en
-<id_wz05y3_o48_168hrwh>	<Silvio_Berlusconi>	<infobox/en/constituency>	"XV – [[Lazio]] I \nIII – [[Lombardy]] I \nXIX – [[Campania]] I \nXVIII – [[Molise]] I "@en
+<id_wz05y3_o48_1frru67>	<Silvio_Berlusconi>	<infobox/en/constituency>	"XV – [[Lazio]] I \nIII – [[Lombardy]] I \nXIX – [[Campania]] I \nXVIII – [[Molise]] I"@en
 <id_wz05y3_4i7_ihhpb0>	<Silvio_Berlusconi>	<infobox/en/deputy>	"[[Berlusconi I Cabinet|Giuseppe Tatarella]]\n[[Roberto Maroni]]"@en
 <id_wz05y3_4i7_d7jzh2>	<Silvio_Berlusconi>	<infobox/en/deputy>	"[[Giulio Tremonti]]\n[[Gianfranco Fini]]\n[[Marco Follini]]"@en
 <id_wz05y3_n4z_yd0xbv>	<Silvio_Berlusconi>	<infobox/en/image>	"Silvio Berlusconi (2010).jpg"@en
 <id_wz05y3_1qm_1mf5org>	<Silvio_Berlusconi>	<infobox/en/name>	"Silvio Berlusconi"@en
 <id_wz05y3_9q2_1lq7jrm>	<Silvio_Berlusconi>	<infobox/en/office>	"[[Italian Chamber of Deputies|Member of the Chamber of Deputies]]"@en
 <id_wz05y3_9q2_4uezsk>	<Silvio_Berlusconi>	<infobox/en/office>	"[[Prime Minister of Italy]]"@en
-<id_wz05y3_os5_1mwbywy>	<Silvio_Berlusconi>	<infobox/en/otherparty>	"[[Forza Italia]] "@en
-<id_wz05y3_n8m_1xsbmoh>	<Silvio_Berlusconi>	<infobox/en/party>	"[[The People of Freedom]] "@en
+<id_wz05y3_os5_12k74gu>	<Silvio_Berlusconi>	<infobox/en/otherparty>	"[[Forza Italia]]"@en
+<id_wz05y3_n8m_1ptpu9b>	<Silvio_Berlusconi>	<infobox/en/party>	"[[The People of Freedom]]"@en
 <id_wz05y3_14q_b9vvel>	<Silvio_Berlusconi>	<infobox/en/predecessor>	"[[Carlo Azeglio Ciampi]]"@en
 <id_wz05y3_14q_lpgbhe>	<Silvio_Berlusconi>	<infobox/en/predecessor>	"[[Giuliano Amato]]"@en
 <id_wz05y3_14q_199lffo>	<Silvio_Berlusconi>	<infobox/en/predecessor>	"[[Romano Prodi]]"@en
@@ -615,7 +609,7 @@
 <id_wz05y3_7j2_1sl1a49>	<Silvio_Berlusconi>	<infobox/en/profession>	"[[Entrepreneur]]"@en
 <id_wz05y3_17o_1pjtb89>	<Silvio_Berlusconi>	<infobox/en/religion>	"[[Catholic Church|Roman Catholicism]]"@en
 <id_wz05y3_in6_7jcyve>	<Silvio_Berlusconi>	<infobox/en/signature>	"Silvio Berlusconi Signature.svg"@en
-<id_wz05y3_brx_1tkth2z>	<Silvio_Berlusconi>	<infobox/en/spouse>	"Carla Dall'Oglio\n\n[[Veronica Lario]]\n"@en
+<id_wz05y3_brx_1bxwlkf>	<Silvio_Berlusconi>	<infobox/en/spouse>	"Carla Dall'Oglio\n\n[[Veronica Lario]]"@en
 <id_wz05y3_gjb_1vv0ajy>	<Silvio_Berlusconi>	<infobox/en/successor>	"[[Lamberto Dini]]"@en
 <id_wz05y3_gjb_1n6adk5>	<Silvio_Berlusconi>	<infobox/en/successor>	"[[Mario Monti]]"@en
 <id_wz05y3_gjb_199lffo>	<Silvio_Berlusconi>	<infobox/en/successor>	"[[Romano Prodi]]"@en
@@ -677,18 +671,17 @@
 <id_7qjadl_1fx_qxfp1l>	<Veronica_Lario>	<infobox/en/birthdate>	"{{Birth date and age|1956|7|19}}"@en
 <id_7qjadl_1fx_105uv4j>	<Veronica_Lario>	<infobox/en/birthname>	"Miriam Raffaella Bartolini"@en
 <id_7qjadl_1b4_182lld1>	<Veronica_Lario>	<infobox/en/birthplace>	"[[Bologna]], [[Italy]]"@en
-<id_7qjadl_956_1mf9k1g>	<Veronica_Lario>	<infobox/en/children>	"Barbara \nEleonora \nLuigi "@en
+<id_7qjadl_956_1wbzgfg>	<Veronica_Lario>	<infobox/en/children>	"Barbara \nEleonora \nLuigi"@en
 <id_7qjadl_n4z_gplxge>	<Veronica_Lario>	<infobox/en/image>	"Veronica Lario.svg"@en
 <id_7qjadl_1ao_1366tqg>	<Veronica_Lario>	<infobox/en/knownfor>	"Ex-wife of [[Silvio Berlusconi]]"@en
 <id_7qjadl_1i9_1n8fj2d>	<Veronica_Lario>	<infobox/en/occupation>	"[[Actress]]"@en
-<id_7qjadl_brx_17gcddw>	<Veronica_Lario>	<infobox/en/spouse>	"[[Silvio Berlusconi]] "@en
+<id_7qjadl_brx_f5dyho>	<Veronica_Lario>	<infobox/en/spouse>	"[[Silvio Berlusconi]]"@en
 <id_7qjadl_19w_1lb66ew>	<Veronica_Lario>	<infobox/en/yearsactive>	"1979-present"@en
 <id_11qatgv_exz_8c2bq1>	<Cherie_Blair>	<infobox/en/almamater>	"[[London School of Economics]]"@en
 <id_11qatgv_1fx_1kkfg8o>	<Cherie_Blair>	<infobox/en/birthdate>	"{{Birth date and age|df=yes|1954|09|23}}"@en
 <id_11qatgv_1fx_7wiu84>	<Cherie_Blair>	<infobox/en/birthname>	"Cherie Booth"@en
 <id_11qatgv_1b4_6zzwyw>	<Cherie_Blair>	<infobox/en/birthplace>	"[[Bury]], [[Lancashire]], UK"@en
-<id_11qatgv_956_iu4gcx>	<Cherie_Blair>	<infobox/en/children>	"Euan Blair \nNicholas Blair \nKathryn Blair \nLeo Blair "@en
-<id_11qatgv_hsh_zik0zu>	<Cherie_Blair>	<infobox/en/honorificsuffix>	"\n"@en
+<id_11qatgv_956_c2b8z3>	<Cherie_Blair>	<infobox/en/children>	"Euan Blair \nNicholas Blair \nKathryn Blair \nLeo Blair"@en
 <id_11qatgv_n4z_1e3ap9m>	<Cherie_Blair>	<infobox/en/image>	"Cherie Blair Allan Warren.JPG"@en
 <id_11qatgv_1rd_1c0ob4m>	<Cherie_Blair>	<infobox/en/monarch>	"[[Elizabeth II of the United Kingdom|Elizabeth II]]"@en
 <id_11qatgv_1qm_7wgmmm>	<Cherie_Blair>	<infobox/en/name>	"Cherie Blair"@en
@@ -700,7 +693,7 @@
 <id_11qatgv_7j2_1gkvjp4>	<Cherie_Blair>	<infobox/en/profession>	"[[Barrister]]"@en
 <id_11qatgv_rfl_ge50kw>	<Cherie_Blair>	<infobox/en/relations>	"[[Antony Booth]], [[Lauren Booth]], [[Booth family]]"@en
 <id_11qatgv_17o_yhlu6k>	<Cherie_Blair>	<infobox/en/religion>	"Roman Catholic"@en
-<id_11qatgv_100_qp7h9k>	<Cherie_Blair>	<infobox/en/residence>	"[[10 Downing Street]] \n[[Connaught Square]] "@en
+<id_11qatgv_100_v08oo>	<Cherie_Blair>	<infobox/en/residence>	"[[10 Downing Street]] \n[[Connaught Square]]"@en
 <id_11qatgv_brx_oo3wz>	<Cherie_Blair>	<infobox/en/spouse>	"[[Tony Blair]] (1980–present)"@en
 <id_11qatgv_gjb_81307k>	<Cherie_Blair>	<infobox/en/successor>	"[[Sarah Brown (spouse)|Sarah Brown]]"@en
 <id_11qatgv_jeg_jdk8mg>	<Cherie_Blair>	<infobox/en/termend>	"27 June 2007"@en
@@ -722,7 +715,7 @@
 <id_z038xo_1yy_nfdoqt>	<Edinburgh>	<infobox/en/coordinatesdisplay>	"inline,title"@en
 <id_z038xo_1u4_zik2qj>	<Edinburgh>	<infobox/en/coordinatesregion>	"GB"@en
 <id_z038xo_d3h_zjgcwz>	<Edinburgh>	<infobox/en/establisheddate>	"1125"@en
-<id_z038xo_d3h_10aiw82>	<Edinburgh>	<infobox/en/establisheddate>	"1889\n"@en
+<id_z038xo_d3h_zjgi94>	<Edinburgh>	<infobox/en/establisheddate>	"1889"@en
 <id_z038xo_d3h_8iz7xd>	<Edinburgh>	<infobox/en/establisheddate>	"prior to the 7th century"@en
 <id_z038xo_1f3_oyzbqf>	<Edinburgh>	<infobox/en/establishedtitle>	"City status"@en
 <id_z038xo_1f3_1fvzfcx>	<Edinburgh>	<infobox/en/establishedtitle>	"Founded"@en
@@ -750,7 +743,7 @@
 <id_z038xo_8g1_zik11z>	<Edinburgh>	<infobox/en/longew>	"W"@en
 <id_z038xo_n6o_zik274>	<Edinburgh>	<infobox/en/longm>	"11"@en
 <id_z038xo_n6o_zik27y>	<Edinburgh>	<infobox/en/longs>	"20"@en
-<id_z038xo_n78_e4n5sr>	<Edinburgh>	<infobox/en/motto>	"\u0022Nisi Dominus Frustra\u0022 \n"@en
+<id_z038xo_n78_14tc7e9>	<Edinburgh>	<infobox/en/motto>	"\u0022Nisi Dominus Frustra\u0022"@en
 <id_z038xo_1qm_17475uw>	<Edinburgh>	<infobox/en/name>	"City of Edinburgh"@en
 <id_z038xo_1hw_jearyx>	<Edinburgh>	<infobox/en/nickname>	"\u0022Auld Reekie\u0022, \u0022Athens of the North\u0022, \u0022Edina\u0022, \u0022Dunedin\u0022"@en
 <id_z038xo_xt4_17475uw>	<Edinburgh>	<infobox/en/officialname>	"City of Edinburgh"@en
@@ -759,12 +752,12 @@
 <id_z038xo_11v_18rz1yt>	<Edinburgh>	<infobox/en/populationtotal>	"486,120"@en
 <id_z038xo_1ot_1ymfri4>	<Edinburgh>	<infobox/en/postalcode>	"[[EH postcode area|EH]]"@en
 <id_z038xo_1vx_1d40mnh>	<Edinburgh>	<infobox/en/postalcodetype>	"Postcode"@en
-<id_z038xo_1vj_xw99i8>	<Edinburgh>	<infobox/en/pushpinmap>	"Scotland "@en
+<id_z038xo_1vj_sl7oao>	<Edinburgh>	<infobox/en/pushpinmap>	"Scotland"@en
 <id_z038xo_14e_1uzf1jk>	<Edinburgh>	<infobox/en/pushpinmapcaption>	"Location in Scotland"@en
 <id_z038xo_1m9_1glhsfc>	<Edinburgh>	<infobox/en/settlementtype>	"[[Subdivisions of Scotland|Unitary authority]] & [[City status in the United Kingdom|city]]"@en
 <id_z038xo_54d_17475uw>	<Edinburgh>	<infobox/en/subdivisionname>	"City of Edinburgh"@en
 <id_z038xo_54d_z038xo>	<Edinburgh>	<infobox/en/subdivisionname>	"Edinburgh"@en
-<id_z038xo_54d_1fr34ou>	<Edinburgh>	<infobox/en/subdivisionname>	"Edinburgh City Centre\n"@en
+<id_z038xo_54d_vgfqj0>	<Edinburgh>	<infobox/en/subdivisionname>	"Edinburgh City Centre"@en
 <id_z038xo_54d_wbsyww>	<Edinburgh>	<infobox/en/subdivisionname>	"[[Scotland]]"@en
 <id_z038xo_54d_ylk3im>	<Edinburgh>	<infobox/en/subdivisionname>	"[[United Kingdom]]"@en
 <id_z038xo_54h_kk0qsa>	<Edinburgh>	<infobox/en/subdivisiontype>	"Admin HQ"@en
@@ -805,22 +798,20 @@
 <id_13977z3_1ow_ech231>	<Elizabeth_II>	<infobox/en/regtype>	"Prime Ministers"@en
 <id_13977z3_n9s_y3c0g7>	<Elizabeth_II>	<infobox/en/reign>	"6 February 1952 – present"@en
 <id_13977z3_17o_12vg4kh>	<Elizabeth_II>	<infobox/en/religion>	"[[Church of England]]\n[[Church of Scotland]]"@en
-<id_13977z3_brx_1ggu76t>	<Elizabeth_II>	<infobox/en/spouse>	"[[Prince Philip, Duke of Edinburgh]] "@en
+<id_13977z3_brx_1oxhnf>	<Elizabeth_II>	<infobox/en/spouse>	"[[Prince Philip, Duke of Edinburgh]]"@en
 <id_13977z3_feu_1x6keo3>	<Elizabeth_II>	<infobox/en/succession>	"Queen of the [[Commonwealth realm]]s \n{{List collapsed|title= |1=[[United Kingdom]] (1952–)\n[[Canada]] (1952–)\n[[Australia]] (1952–)\n[[New Zealand]] (1952–)\n[[Dominion of Pakistan|Pakistan]] (1952–56)\n[[Union of South Africa|South Africa]] (1952–61)\n[[Dominion of Ceylon|Ceylon]] (1952–72)\n[[Ghana]] (1957–60)\n[[Nigeria]] (1960–63)\n[[Sierra Leone]] (1961–71)\n[[Tanganyika]] (1961–62)\n[[Jamaica]] (1962–)\n[[Trinidad and Tobago]] (1962–76)\n[[Uganda]] (1962–63)\n[[Kenya]] (1963–64)\n[[Malawi]] (1964–66)\n[[Malta]] (1964–74)\n[[The Gambia]] (1965–70)\n[[Guyana]] (1966–70)\n[[Barbados]] (1966–)\n[[Mauritius]] (1968–92)\n[[Fiji]] (1970–87)\n[[The Bahamas]] (1973–)\n[[Grenada]] (1974–)\n[[Papua New Guinea]] (1975–)\n[[Solomon Islands]] (1978–)\n[[Tuvalu]] (1978–)\n[[Saint Lucia]] (1979–)\n[[Saint Vincent and the Grenadines]] (1979–)\n[[Belize]] (1981–)\n[[Antigua and Barbuda]] (1981–)\n[[Saint Kitts and Nevis]] (1983–)}}"@en
 <id_13977z3_gjb_1wad012>	<Elizabeth_II>	<infobox/en/successor>	"[[Charles, Prince of Wales]]"@en
 <id_13977z3_c2n_jmc2gj>	<Elizabeth_II>	<infobox/en/suctype>	"Heir apparent"@en
 <id_1e3a5c8_exz_8c2bq1>	<Frank_Dobson>	<infobox/en/almamater>	"[[London School of Economics]]"@en
 <id_1e3a5c8_1fx_vmmfyq>	<Frank_Dobson>	<infobox/en/birthdate>	"{{bda|1940|3|15|df=y}}"@en
 <id_1e3a5c8_1b4_zb0alv>	<Frank_Dobson>	<infobox/en/birthplace>	"[[Dunnington]], [[Yorkshire]], [[England]]"@en
-<id_1e3a5c8_gbo_zik0zu>	<Frank_Dobson>	<infobox/en/honorificprefix>	"\n"@en
-<id_1e3a5c8_hsh_zik0zu>	<Frank_Dobson>	<infobox/en/honorificsuffix>	"\n"@en
 <id_1e3a5c8_8aa_1wnj61b>	<Frank_Dobson>	<infobox/en/leader>	"[[John Smith (Labour Party leader)|John Smith]]"@en
 <id_1e3a5c8_8aa_u5kc8u>	<Frank_Dobson>	<infobox/en/leader>	"[[John Smith (Labour Party leader)|John Smith]]\n[[Margaret Beckett]]"@en
 <id_1e3a5c8_8aa_15c22nn>	<Frank_Dobson>	<infobox/en/leader>	"[[Neil Kinnock]]"@en
 <id_1e3a5c8_8aa_4qsug6>	<Frank_Dobson>	<infobox/en/leader>	"[[Tony Blair]]"@en
 <id_1e3a5c8_1h3_hovl9d>	<Frank_Dobson>	<infobox/en/majority>	"9,942 (17.9%)"@en
 <id_1e3a5c8_1qm_1csqyyx>	<Frank_Dobson>	<infobox/en/name>	"Frank Dobson"@en
-<id_1e3a5c8_9q2_1ohlqny>	<Frank_Dobson>	<infobox/en/office>	"[[Member of Parliament (UK)|Member of Parliament]] \n for [[Holborn and St Pancras (UK Parliament constituency)|Holborn and St. Pancras]]\n"@en
+<id_1e3a5c8_9q2_1weds98>	<Frank_Dobson>	<infobox/en/office>	"[[Member of Parliament (UK)|Member of Parliament]] \n for [[Holborn and St Pancras (UK Parliament constituency)|Holborn and St. Pancras]]"@en
 <id_1e3a5c8_9q2_77vaar>	<Frank_Dobson>	<infobox/en/office>	"[[Secretary of State for Health]]"@en
 <id_1e3a5c8_9q2_1f8b1a8>	<Frank_Dobson>	<infobox/en/office>	"[[Shadow Leader of the House of Commons]]"@en
 <id_1e3a5c8_9q2_15b99eb>	<Frank_Dobson>	<infobox/en/office>	"[[Shadow Secretary of State for Employment]]"@en
@@ -862,8 +853,6 @@
 <id_max52o_1g2_1iydt3l>	<Gordon_Brown>	<infobox/en/caption>	"Gordon Brown in 2009"@en
 <id_max52o_956_s22re6>	<Gordon_Brown>	<infobox/en/children>	"Jennifer Jane \nJohn Macaulay\nJames Fraser"@en
 <id_max52o_4i7_zfq2n6>	<Gordon_Brown>	<infobox/en/deputy>	"[[Harriet Harman]]"@en
-<id_max52o_gbo_zik0zu>	<Gordon_Brown>	<infobox/en/honorificprefix>	"\n"@en
-<id_max52o_hsh_zik0zu>	<Gordon_Brown>	<infobox/en/honorificsuffix>	"\n"@en
 <id_max52o_n4z_sf347n>	<Gordon_Brown>	<infobox/en/image>	"GordonBrown1234_cropped_.jpg"@en
 <id_max52o_1le_10ayqd4>	<Gordon_Brown>	<infobox/en/imagesize>	"220px"@en
 <id_max52o_8aa_d7798h>	<Gordon_Brown>	<infobox/en/leader>	"[[John Smith (Labour Party leader)|John Smith]]\n[[Tony Blair]]"@en
@@ -875,7 +864,7 @@
 <id_max52o_9q2_ck3slr>	<Gordon_Brown>	<infobox/en/office>	"[[Chancellor of the Exchequer]]"@en
 <id_max52o_9q2_1dwzavi>	<Gordon_Brown>	<infobox/en/office>	"[[Department for Business, Innovation and Skills|Shadow Secretary of State for Trade]]"@en
 <id_max52o_9q2_1trhpb1>	<Gordon_Brown>	<infobox/en/office>	"[[Leader of the Labour Party (UK)|Leader of the Labour Party]]"@en
-<id_max52o_9q2_1y1n2zw>	<Gordon_Brown>	<infobox/en/office>	"[[Member of Parliament (UK)|Member of Parliament]] \n for [[Kirkcaldy and Cowdenbeath (UK Parliament constituency)|Kirkcaldy and Cowdenbeath]]\n"@en
+<id_max52o_9q2_w1oice>	<Gordon_Brown>	<infobox/en/office>	"[[Member of Parliament (UK)|Member of Parliament]] \n for [[Kirkcaldy and Cowdenbeath (UK Parliament constituency)|Kirkcaldy and Cowdenbeath]]"@en
 <id_max52o_9q2_oow03w>	<Gordon_Brown>	<infobox/en/office>	"[[Prime Minister of the United Kingdom]]"@en
 <id_max52o_9q2_1ft6uzz>	<Gordon_Brown>	<infobox/en/office>	"[[Shadow Chancellor of the Exchequer]]"@en
 <id_max52o_n8m_nn2j91>	<Gordon_Brown>	<infobox/en/party>	"[[Labour Party (UK)|Labour]]"@en
@@ -888,9 +877,9 @@
 <id_max52o_7j2_w3b21m>	<Gordon_Brown>	<infobox/en/profession>	"Lecturer\nPolitician"@en
 <id_max52o_rfl_1vpbo6q>	<Gordon_Brown>	<infobox/en/relations>	"[[Andrew Brown (media strategist)|Andrew Brown]] (brother)"@en
 <id_max52o_17o_66xn9s>	<Gordon_Brown>	<infobox/en/religion>	"[[Church of Scotland]]"@en
-<id_max52o_100_qclnm2>	<Gordon_Brown>	<infobox/en/residence>	"[[North Queensferry]] "@en
+<id_max52o_100_nrh3py>	<Gordon_Brown>	<infobox/en/residence>	"[[North Queensferry]]"@en
 <id_max52o_in6_xr0xt7>	<Gordon_Brown>	<infobox/en/signature>	"Signature of Gordon Brown.png"@en
-<id_max52o_brx_1kqx55a>	<Gordon_Brown>	<infobox/en/spouse>	"[[Sarah Brown (wife of Gordon Brown)|Sarah Brown]]\n"@en
+<id_max52o_brx_1wa1dmk>	<Gordon_Brown>	<infobox/en/spouse>	"[[Sarah Brown (wife of Gordon Brown)|Sarah Brown]]"@en
 <id_max52o_gjb_11lngeu>	<Gordon_Brown>	<infobox/en/successor>	"[[Alistair Darling]]"@en
 <id_max52o_gjb_1y19wkv>	<Gordon_Brown>	<infobox/en/successor>	"[[David Cameron]]"@en
 <id_max52o_gjb_8gidgv>	<Gordon_Brown>	<infobox/en/successor>	"[[Ed Miliband]]"@en
@@ -921,8 +910,6 @@
 <id_g6y5dz_1b4_6bb0a8>	<Jack_Straw>	<infobox/en/birthplace>	"[[Buckhurst Hill]], [[Essex]], United Kingdom"@en
 <id_g6y5dz_956_hn43p5>	<Jack_Straw>	<infobox/en/children>	"Daughter (deceased), son"@en
 <id_g6y5dz_kxc_51tngq>	<Jack_Straw>	<infobox/en/constituencymp>	"[[Blackburn (UK Parliament constituency)|Blackburn]]"@en
-<id_g6y5dz_gbo_zik0zu>	<Jack_Straw>	<infobox/en/honorificprefix>	"\n"@en
-<id_g6y5dz_hsh_zik0zu>	<Jack_Straw>	<infobox/en/honorificsuffix>	"\n"@en
 <id_g6y5dz_n4z_fu6mso>	<Jack_Straw>	<infobox/en/image>	"Jack Straw meeting with Rumsfeld at Pentagon, May 19, 2005, cropped.jpg"@en
 <id_g6y5dz_8aa_zfq2n6>	<Jack_Straw>	<infobox/en/leader>	"[[Harriet Harman]]"@en
 <id_g6y5dz_8aa_c5by2v>	<Jack_Straw>	<infobox/en/leader>	"[[Harriet Harman]]\n[[Ed Miliband]]"@en
@@ -953,7 +940,7 @@
 <id_g6y5dz_1ei_lzd89b>	<Jack_Straw>	<infobox/en/primeminister>	"[[Gordon Brown]]"@en
 <id_g6y5dz_1ei_4qsug6>	<Jack_Straw>	<infobox/en/primeminister>	"[[Tony Blair]]"@en
 <id_g6y5dz_17o_ok5cru>	<Jack_Straw>	<infobox/en/religion>	"[[Anglicanism]]"@en
-<id_g6y5dz_brx_1vcftob>	<Jack_Straw>	<infobox/en/spouse>	"Anthea Weston \n[[Alice Perkins]] "@en
+<id_g6y5dz_brx_1ivf4qt>	<Jack_Straw>	<infobox/en/spouse>	"Anthea Weston \n[[Alice Perkins]]"@en
 <id_g6y5dz_gjb_4l25yh>	<Jack_Straw>	<infobox/en/successor>	"[[Ann Taylor, Baroness Taylor of Bolton|Ann Taylor]] <small>(Education)<small/>"@en
 <id_g6y5dz_gjb_2sofop>	<Jack_Straw>	<infobox/en/successor>	"[[David Blunkett]]"@en
 <id_g6y5dz_gjb_nvr2h5>	<Jack_Straw>	<infobox/en/successor>	"[[Frank Dobson]]"@en
@@ -984,8 +971,6 @@
 <id_1xvi8at_1g2_cg82mx>	<John_Major>	<infobox/en/caption>	"Major in 2007"@en
 <id_1xvi8at_956_1gc999b>	<John_Major>	<infobox/en/children>	"Son and daughter"@en
 <id_1xvi8at_4i7_nkwquo>	<John_Major>	<infobox/en/deputy>	"[[Michael Heseltine]]"@en
-<id_1xvi8at_gbo_zik0zu>	<John_Major>	<infobox/en/honorificprefix>	"\n"@en
-<id_1xvi8at_hsh_zik0zu>	<John_Major>	<infobox/en/honorificsuffix>	"\n"@en
 <id_1xvi8at_n4z_590ygg>	<John_Major>	<infobox/en/image>	"John Major, October 2007.jpg"@en
 <id_1xvi8at_1rd_f2fhcw>	<John_Major>	<infobox/en/monarch>	"[[Elizabeth II]]"@en
 <id_1xvi8at_1qm_1astxs8>	<John_Major>	<infobox/en/name>	"Sir John Major"@en
@@ -994,7 +979,7 @@
 <id_1xvi8at_9q2_10lilro>	<John_Major>	<infobox/en/office>	"[[Chief Secretary to the Treasury]]"@en
 <id_1xvi8at_9q2_1jlqaan>	<John_Major>	<infobox/en/office>	"[[Leader of the Opposition (United Kingdom)|Leader of the Opposition]]"@en
 <id_1xvi8at_9q2_1bb39sr>	<John_Major>	<infobox/en/office>	"[[Leaders of the Conservative Party|Leader of the Conservative Party]]"@en
-<id_1xvi8at_9q2_vbi50w>	<John_Major>	<infobox/en/office>	"[[Member of Parliament (United Kingdom)|Member of Parliament]] \n for [[Huntingdon (UK Parliament constituency)|Huntingdon]]\n"@en
+<id_1xvi8at_9q2_h1s7kq>	<John_Major>	<infobox/en/office>	"[[Member of Parliament (United Kingdom)|Member of Parliament]] \n for [[Huntingdon (UK Parliament constituency)|Huntingdon]]"@en
 <id_1xvi8at_9q2_oow03w>	<John_Major>	<infobox/en/office>	"[[Prime Minister of the United Kingdom]]"@en
 <id_1xvi8at_9q2_cqhym6>	<John_Major>	<infobox/en/office>	"[[Secretary of State for Foreign and Commonwealth Affairs]]"@en
 <id_1xvi8at_n8m_h8y4cx>	<John_Major>	<infobox/en/party>	"[[Conservative Party (UK)|Conservative]]"@en
@@ -1033,8 +1018,6 @@
 <id_1x8chcg_1b4_9114ls>	<John_Prescott>	<infobox/en/birthplace>	"[[Prestatyn]], Wales"@en
 <id_1x8chcg_956_1nqic7j>	<John_Prescott>	<infobox/en/children>	"2 sons"@en
 <id_1x8chcg_1pc_1ob1h0s>	<John_Prescott>	<infobox/en/footnotes>	"a. {{note|aaa}}Office vacant from 2 May 1997 to 8 June 2001. b. {{note|aab}}Office vacant from 27 June 2007 to 5 June 2009. c. {{note|aac}}Office vacant from 27 June 2007 to 11 May 2010."@en
-<id_1x8chcg_gbo_zik0zu>	<John_Prescott>	<infobox/en/honorificprefix>	"\n"@en
-<id_1x8chcg_hsh_zik0zu>	<John_Prescott>	<infobox/en/honorificsuffix>	"\n"@en
 <id_1x8chcg_n4z_113gi07>	<John_Prescott>	<infobox/en/image>	"John Prescott on his last day as Deputy Prime Minister, June 2007.jpg"@en
 <id_1x8chcg_8aa_4qsug6>	<John_Prescott>	<infobox/en/leader>	"[[Tony Blair]]"@en
 <id_1x8chcg_1qm_tfajq0>	<John_Prescott>	<infobox/en/name>	"The Lord Prescott"@en
@@ -1045,16 +1028,16 @@
 <id_1x8chcg_9q2_11ot7un>	<John_Prescott>	<infobox/en/office>	"[[Secretary of State for the Environment, Transport and the Regions]]"@en
 <id_1x8chcg_n8m_nn2j91>	<John_Prescott>	<infobox/en/party>	"[[Labour Party (UK)|Labour]]"@en
 <id_1x8chcg_14q_1bxbs6y>	<John_Prescott>	<infobox/en/predecessor>	"[[Harry Pursey]]"@en
-<id_1x8chcg_14q_1p5y0j>	<John_Prescott>	<infobox/en/predecessor>	"[[John Gummer, Baron Deben|John Gummer]] \n[[Sir George Young, 6th Baronet|George Young]] "@en
+<id_1x8chcg_14q_1z13h>	<John_Prescott>	<infobox/en/predecessor>	"[[John Gummer, Baron Deben|John Gummer]] \n[[Sir George Young, 6th Baronet|George Young]]"@en
 <id_1x8chcg_14q_xhxpsz>	<John_Prescott>	<infobox/en/predecessor>	"[[Margaret Beckett]]"@en
 <id_1x8chcg_14q_nkwquo>	<John_Prescott>	<infobox/en/predecessor>	"[[Michael Heseltine]]"@en
 <id_1x8chcg_14q_ymsr41>	<John_Prescott>	<infobox/en/predecessor>	"[[Michael Heseltine]]{{Ref label|aaa|a}}"@en
 <id_1x8chcg_1ei_4qsug6>	<John_Prescott>	<infobox/en/primeminister>	"[[Tony Blair]]"@en
-<id_1x8chcg_17o_10rh6tk>	<John_Prescott>	<infobox/en/religion>	"None "@en
+<id_1x8chcg_17o_zk06zc>	<John_Prescott>	<infobox/en/religion>	"None"@en
 <id_1x8chcg_brx_1abp17t>	<John_Prescott>	<infobox/en/spouse>	"Pauline (née Tilston, 1961–present)"@en
 <id_1x8chcg_gjb_zfq2n6>	<John_Prescott>	<infobox/en/successor>	"[[Harriet Harman]]"@en
-<id_1x8chcg_gjb_44uwpx>	<John_Prescott>	<infobox/en/successor>	"[[Karl Turner (UK politician)|Karl Turner]] "@en
-<id_1x8chcg_gjb_1xi8sm1>	<John_Prescott>	<infobox/en/successor>	"[[Margaret Beckett]] \n[[Stephen Byers]] "@en
+<id_1x8chcg_gjb_n1odaz>	<John_Prescott>	<infobox/en/successor>	"[[Karl Turner (UK politician)|Karl Turner]]"@en
+<id_1x8chcg_gjb_12wimuf>	<John_Prescott>	<infobox/en/successor>	"[[Margaret Beckett]] \n[[Stephen Byers]]"@en
 <id_1x8chcg_gjb_5yylue>	<John_Prescott>	<infobox/en/successor>	"[[Nick Clegg]]{{Ref label|aac|c}}"@en
 <id_1x8chcg_gjb_tcdeq6>	<John_Prescott>	<infobox/en/successor>	"[[Peter Mandelson|Lord Mandelson]]{{Ref label|aab|b}}"@en
 <id_1x8chcg_jeg_11i0w9x>	<John_Prescott>	<infobox/en/termend>	"24 June 2007"@en
@@ -1066,13 +1049,11 @@
 <id_1x8chcg_ypr_zqkz9m>	<John_Prescott>	<infobox/en/termstart>	"21 July 1994"@en
 <id_1x8chcg_ypr_ozawut>	<John_Prescott>	<infobox/en/termstart>	"8 June 2001"@en
 <id_4ftjb3_exz_9limqp>	<John_Smith_(Labour_Party_leader)>	<infobox/en/almamater>	"[[University of Glasgow]]"@en
-<id_4ftjb3_1fx_wrszuy>	<John_Smith_(Labour_Party_leader)>	<infobox/en/birthdate>	" 1938-9-13 "@en
+<id_4ftjb3_1fx_1u3qo3a>	<John_Smith_(Labour_Party_leader)>	<infobox/en/birthdate>	"1938-9-13"@en
 <id_4ftjb3_1b4_zbgt94>	<John_Smith_(Labour_Party_leader)>	<infobox/en/birthplace>	"[[Dalmally]], United Kingdom"@en
 <id_4ftjb3_1hi_181rwt>	<John_Smith_(Labour_Party_leader)>	<infobox/en/deathdate>	"{{death date and age|1994|5|12|1938|9|13|df=y}}"@en
 <id_4ftjb3_pdc_1xqlhiy>	<John_Smith_(Labour_Party_leader)>	<infobox/en/deathplace>	"[[London]], United Kingdom"@en
 <id_4ftjb3_4i7_xhxpsz>	<John_Smith_(Labour_Party_leader)>	<infobox/en/deputy>	"[[Margaret Beckett]]"@en
-<id_4ftjb3_gbo_zik0zu>	<John_Smith_(Labour_Party_leader)>	<infobox/en/honorificprefix>	"\n"@en
-<id_4ftjb3_hsh_zik18g>	<John_Smith_(Labour_Party_leader)>	<infobox/en/honorificsuffix>	"\n\n"@en
 <id_4ftjb3_n4z_1qyg7r4>	<John_Smith_(Labour_Party_leader)>	<infobox/en/image>	"JOHN SMITH PORTRAIT.JPG"@en
 <id_4ftjb3_8aa_15c22nn>	<John_Smith_(Labour_Party_leader)>	<infobox/en/leader>	"[[Neil Kinnock]]"@en
 <id_4ftjb3_1h3_1iyk45j>	<John_Smith_(Labour_Party_leader)>	<infobox/en/majority>	"11,747 (37.7%)"@en
@@ -1093,7 +1074,7 @@
 <id_4ftjb3_1ei_sn6jn9>	<John_Smith_(Labour_Party_leader)>	<infobox/en/primeminister>	"[[James Callaghan]]"@en
 <id_4ftjb3_1ei_1pwqwro>	<John_Smith_(Labour_Party_leader)>	<infobox/en/primeminister>	"[[John Major]]"@en
 <id_4ftjb3_17o_66xn9s>	<John_Smith_(Labour_Party_leader)>	<infobox/en/religion>	"[[Church of Scotland]]"@en
-<id_4ftjb3_brx_2x75qo>	<John_Smith_(Labour_Party_leader)>	<infobox/en/spouse>	"[[Elizabeth Smith, Baroness Smith of Gilmorehill|Elizabeth Bennett]] "@en
+<id_4ftjb3_brx_1wu0o5s>	<John_Smith_(Labour_Party_leader)>	<infobox/en/spouse>	"[[Elizabeth Smith, Baroness Smith of Gilmorehill|Elizabeth Bennett]]"@en
 <id_4ftjb3_gjb_6xv5xh>	<John_Smith_(Labour_Party_leader)>	<infobox/en/successor>	"Constituency Abolished"@en
 <id_4ftjb3_gjb_lzd89b>	<John_Smith_(Labour_Party_leader)>	<infobox/en/successor>	"[[Gordon Brown]]"@en
 <id_4ftjb3_gjb_1r23q1s>	<John_Smith_(Labour_Party_leader)>	<infobox/en/successor>	"[[Helen Liddell]]"@en
@@ -1145,8 +1126,6 @@
 <id_16vp284_1fx_9et0kt>	<Margaret_Beckett>	<infobox/en/birthdate>	"{{birth date and age|1943|1|15|df=y}}"@en
 <id_16vp284_1fx_1rg2hfp>	<Margaret_Beckett>	<infobox/en/birthname>	"Margaret Mary Jackson"@en
 <id_16vp284_1b4_zdw59a>	<Margaret_Beckett>	<infobox/en/birthplace>	"[[Ashton-under-Lyne]], [[Greater Manchester]], [[England]]"@en
-<id_16vp284_gbo_zik0zu>	<Margaret_Beckett>	<infobox/en/honorificprefix>	"\n"@en
-<id_16vp284_hsh_zik0zu>	<Margaret_Beckett>	<infobox/en/honorificsuffix>	"\n"@en
 <id_16vp284_n4z_jx153k>	<Margaret_Beckett>	<infobox/en/image>	"Margaret Beckett May 2007.jpg"@en
 <id_16vp284_8aa_1wnj61b>	<Margaret_Beckett>	<infobox/en/leader>	"[[John Smith (Labour Party leader)|John Smith]]"@en
 <id_16vp284_8aa_15c22nn>	<Margaret_Beckett>	<infobox/en/leader>	"[[Neil Kinnock]]"@en
@@ -1171,7 +1150,7 @@
 <id_16vp284_14q_k6378a>	<Margaret_Beckett>	<infobox/en/predecessor>	"[[Dick Taverne]]"@en
 <id_16vp284_14q_1j8jfso>	<Margaret_Beckett>	<infobox/en/predecessor>	"[[Ian Lang]]"@en
 <id_16vp284_14q_15sh0di>	<Margaret_Beckett>	<infobox/en/predecessor>	"[[Jack Straw]]"@en
-<id_16vp284_14q_1do4qzw>	<Margaret_Beckett>	<infobox/en/predecessor>	"[[John Prescott]] \n[[Nick Brown]] "@en
+<id_16vp284_14q_1ycb1mc>	<Margaret_Beckett>	<infobox/en/predecessor>	"[[John Prescott]] \n[[Nick Brown]]"@en
 <id_16vp284_14q_1wnj61b>	<Margaret_Beckett>	<infobox/en/predecessor>	"[[John Smith (Labour Party leader)|John Smith]]"@en
 <id_16vp284_14q_183oblj>	<Margaret_Beckett>	<infobox/en/predecessor>	"[[Roy Hattersley]]"@en
 <id_16vp284_14q_xfbshl>	<Margaret_Beckett>	<infobox/en/predecessor>	"[[Walter Johnson (UK politician)|Walter Johnson]]"@en
@@ -1184,7 +1163,7 @@
 <id_16vp284_gjb_1hpjwpd>	<Margaret_Beckett>	<infobox/en/successor>	"[[John Healey]]"@en
 <id_16vp284_gjb_1q4o9e9>	<Margaret_Beckett>	<infobox/en/successor>	"[[John Prescott]]"@en
 <id_16vp284_gjb_gk9br0>	<Margaret_Beckett>	<infobox/en/successor>	"[[Kenneth Carlisle]]"@en
-<id_16vp284_gjb_1wd7tlf>	<Margaret_Beckett>	<infobox/en/successor>	"[[Peter Mandelson]] "@en
+<id_16vp284_gjb_1ud1lbh>	<Margaret_Beckett>	<infobox/en/successor>	"[[Peter Mandelson]]"@en
 <id_16vp284_gjb_19qjbni>	<Margaret_Beckett>	<infobox/en/successor>	"[[Robin Cook]]"@en
 <id_16vp284_gjb_4qsug6>	<Margaret_Beckett>	<infobox/en/successor>	"[[Tony Blair]]"@en
 <id_16vp284_jeg_ooo21p>	<Margaret_Beckett>	<infobox/en/termend>	"12 May 1994"@en
@@ -1213,13 +1192,11 @@
 <id_27r2yr_1fx_vtjaa3>	<Michael_Meacher>	<infobox/en/birthdate>	"{{Birth date and age|1939|11|4|df=y}}"@en
 <id_27r2yr_1b4_145jcxm>	<Michael_Meacher>	<infobox/en/birthplace>	"[[Hemel Hempstead]], [[Hertfordshire]], England"@en
 <id_27r2yr_1g2_1pptpus>	<Michael_Meacher>	<infobox/en/caption>	"Meacher at a rally outside the American Embassy, 9 December 2005."@en
-<id_27r2yr_gbo_zik0zu>	<Michael_Meacher>	<infobox/en/honorificprefix>	"\n"@en
-<id_27r2yr_hsh_zik0zu>	<Michael_Meacher>	<infobox/en/honorificsuffix>	"\n"@en
 <id_27r2yr_n4z_1uyeqe4>	<Michael_Meacher>	<infobox/en/image>	"Michael Meacher 2005-12-09.jpg"@en
 <id_27r2yr_1le_10axge2>	<Michael_Meacher>	<infobox/en/imagesize>	"200px"@en
 <id_27r2yr_1h3_1f2jrv6>	<Michael_Meacher>	<infobox/en/majority>	"9,352 (21.8%)"@en
 <id_27r2yr_1qm_x6cnhe>	<Michael_Meacher>	<infobox/en/name>	"Michael Meacher"@en
-<id_27r2yr_9q2_1n8jc9w>	<Michael_Meacher>	<infobox/en/office>	"[[Member of Parliament (UK)|Member of Parliament]] \n for [[Oldham West and Royton (UK Parliament constituency)|Oldham West and Royton]]\n"@en
+<id_27r2yr_9q2_vp4nae>	<Michael_Meacher>	<infobox/en/office>	"[[Member of Parliament (UK)|Member of Parliament]] \n for [[Oldham West and Royton (UK Parliament constituency)|Oldham West and Royton]]"@en
 <id_27r2yr_9q2_1ew1lrn>	<Michael_Meacher>	<infobox/en/office>	"[[Secretary of State for the Environment, Transport and the Regions|Minister of State for the Environment]]"@en
 <id_27r2yr_n8m_nn2j91>	<Michael_Meacher>	<infobox/en/party>	"[[Labour Party (UK)|Labour]]"@en
 <id_27r2yr_14q_1t18cox>	<Michael_Meacher>	<infobox/en/predecessor>	"Position established"@en
@@ -1235,8 +1212,6 @@
 <id_7fm9w4_1b4_shdj70>	<Neil_Kinnock>	<infobox/en/birthplace>	"[[Tredegar]], Wales"@en
 <id_7fm9w4_956_14xyw7b>	<Neil_Kinnock>	<infobox/en/children>	"[[Stephen Kinnock]]\nRachel"@en
 <id_7fm9w4_4i7_183oblj>	<Neil_Kinnock>	<infobox/en/deputy>	"[[Roy Hattersley]]"@en
-<id_7fm9w4_gbo_zik0zu>	<Neil_Kinnock>	<infobox/en/honorificprefix>	"\n"@en
-<id_7fm9w4_hsh_zik0zu>	<Neil_Kinnock>	<infobox/en/honorificsuffix>	"\n"@en
 <id_7fm9w4_n4z_1dyyosa>	<Neil_Kinnock>	<infobox/en/image>	"Kinnock, Neil.jpg"@en
 <id_7fm9w4_8aa_18ojbi4>	<Neil_Kinnock>	<infobox/en/leader>	"[[James Callaghan]]\n[[Michael Foot]]"@en
 <id_7fm9w4_1rd_f2fhcw>	<Neil_Kinnock>	<infobox/en/monarch>	"[[Elizabeth II]]"@en
@@ -1283,7 +1258,7 @@
 <id_104s7no_1fx_17drarg>	<Phil_Wilson_(British_politician)>	<infobox/en/birthdate>	"{{Birth date and age|1959|5|31|df=y}}"@en
 <id_104s7no_1b4_mpnavg>	<Phil_Wilson_(British_politician)>	<infobox/en/birthplace>	"[[County Durham]], [[England]]"@en
 <id_104s7no_hsh_163r5qz>	<Phil_Wilson_(British_politician)>	<infobox/en/honorificsuffix>	"[[Member of Parliament|MP]]"@en
-<id_104s7no_n4z_yaor5u>	<Phil_Wilson_(British_politician)>	<infobox/en/image>	"Replace this image male.svg "@en
+<id_104s7no_n4z_uw5zdq>	<Phil_Wilson_(British_politician)>	<infobox/en/image>	"Replace this image male.svg"@en
 <id_104s7no_1le_10aguqc>	<Phil_Wilson_(British_politician)>	<infobox/en/imagesize>	"150px"@en
 <id_104s7no_1h3_1bajvki>	<Phil_Wilson_(British_politician)>	<infobox/en/majority>	"8,696 (21.6%)"@en
 <id_104s7no_1qm_8rhsm5>	<Phil_Wilson_(British_politician)>	<infobox/en/name>	"Phil Wilson"@en
@@ -1297,8 +1272,6 @@
 <id_1jce2gm_exz_qnijl0>	<Roy_Hattersley>	<infobox/en/almamater>	"[[University of Hull]]"@en
 <id_1jce2gm_1fx_z8b2wn>	<Roy_Hattersley>	<infobox/en/birthdate>	"{{Birth date and age|1932|12|28|df=y}}"@en
 <id_1jce2gm_1b4_1iors2u>	<Roy_Hattersley>	<infobox/en/birthplace>	"[[Sheffield]], United Kingdom"@en
-<id_1jce2gm_gbo_zik0zu>	<Roy_Hattersley>	<infobox/en/honorificprefix>	"\n"@en
-<id_1jce2gm_hsh_zik0zu>	<Roy_Hattersley>	<infobox/en/honorificsuffix>	"\n"@en
 <id_1jce2gm_n4z_1jseh0i>	<Roy_Hattersley>	<infobox/en/image>	"Royhattersley.jpg"@en
 <id_1jce2gm_8aa_1nga893>	<Roy_Hattersley>	<infobox/en/leader>	"[[Michael Foot]]"@en
 <id_1jce2gm_8aa_15c22nn>	<Roy_Hattersley>	<infobox/en/leader>	"[[Neil Kinnock]]"@en
@@ -1380,7 +1353,6 @@
 <id_gg7cuf_956_14o6n48>	<Tony_Blair>	<infobox/en/children>	"Euan\nNicky\nKathryn\nLeo"@en
 <id_gg7cuf_4i7_ylcdqp>	<Tony_Blair>	<infobox/en/deputy>	"John Prescott"@en
 <id_gg7cuf_4i7_1q4o9e9>	<Tony_Blair>	<infobox/en/deputy>	"[[John Prescott]]"@en
-<id_gg7cuf_gbo_zik0zu>	<Tony_Blair>	<infobox/en/honorificprefix>	"\n"@en
 <id_gg7cuf_n4z_11vy0l7>	<Tony_Blair>	<infobox/en/image>	"WORLD ECONOMIC FORUM ANNUAL MEETING 2009 - Tony Blair.jpg"@en
 <id_gg7cuf_8aa_12e7uer>	<Tony_Blair>	<infobox/en/leader>	"Neil Kinnock"@en
 <id_gg7cuf_8aa_1wnj61b>	<Tony_Blair>	<infobox/en/leader>	"[[John Smith (Labour Party leader)|John Smith]]"@en
@@ -1405,10 +1377,10 @@
 <id_gg7cuf_14q_183oblj>	<Tony_Blair>	<infobox/en/predecessor>	"[[Roy Hattersley]]"@en
 <id_gg7cuf_1ei_141o1gk>	<Tony_Blair>	<infobox/en/primeminister>	"John Major"@en
 <id_gg7cuf_7j2_20du78>	<Tony_Blair>	<infobox/en/profession>	"Lawyer"@en
-<id_gg7cuf_17o_lo937t>	<Tony_Blair>	<infobox/en/religion>	"[[Roman Catholicism]] "@en
+<id_gg7cuf_17o_188fjw7>	<Tony_Blair>	<infobox/en/religion>	"[[Roman Catholicism]]"@en
 <id_gg7cuf_100_9e4tai>	<Tony_Blair>	<infobox/en/residence>	"[[Connaught Square]]"@en
 <id_gg7cuf_in6_19tn5qa>	<Tony_Blair>	<infobox/en/signature>	"Signature of Tony Blair.png"@en
-<id_gg7cuf_brx_1h521qw>	<Tony_Blair>	<infobox/en/spouse>	"[[Cherie Blair|Cherie Booth]]\n"@en
+<id_gg7cuf_brx_vi1rle>	<Tony_Blair>	<infobox/en/spouse>	"[[Cherie Blair|Cherie Booth]]"@en
 <id_gg7cuf_gjb_1csqyyx>	<Tony_Blair>	<infobox/en/successor>	"Frank Dobson"@en
 <id_gg7cuf_gjb_1ri707j>	<Tony_Blair>	<infobox/en/successor>	"Gordon Brown"@en
 <id_gg7cuf_gjb_141o1gk>	<Tony_Blair>	<infobox/en/successor>	"John Major"@en
@@ -1443,7 +1415,7 @@
 <id_1fpq28n_exz_1msercx>	<Angela_Merkel>	<infobox/en/almamater>	"[[University of Leipzig]]"@en
 <id_1fpq28n_1fx_hlg4nl>	<Angela_Merkel>	<infobox/en/birthdate>	"{{birth date and age|1954|7|17|df=y}}"@en
 <id_1fpq28n_1fx_aab67a>	<Angela_Merkel>	<infobox/en/birthname>	"Angela Dorothea Kasner"@en
-<id_1fpq28n_1b4_1d916e0>	<Angela_Merkel>	<infobox/en/birthplace>	"[[Hamburg]], [[West Germany]]\n"@en
+<id_1fpq28n_1b4_1mvdrci>	<Angela_Merkel>	<infobox/en/birthplace>	"[[Hamburg]], [[West Germany]]"@en
 <id_1fpq28n_1pf_19r38wb>	<Angela_Merkel>	<infobox/en/chancellor>	"[[Helmut Kohl]]"@en
 <id_1fpq28n_o48_1ti9b5m>	<Angela_Merkel>	<infobox/en/constituency>	"[[Stralsund – Nordvorpommern – Rügen (electoral district)|Stralsund-Nordvorpommern-\nRügen]]"@en
 <id_1fpq28n_4i7_1mujnjy>	<Angela_Merkel>	<infobox/en/deputy>	"[[Franz Müntefering]]\n[[Frank-Walter Steinmeier]]\n[[Guido Westerwelle]]\n[[Philipp Rösler]]"@en
@@ -1452,8 +1424,8 @@
 <id_1fpq28n_9q2_1cgpn0z>	<Angela_Merkel>	<infobox/en/office>	"[[Chancellor of Germany]]"@en
 <id_1fpq28n_9q2_6sblu8>	<Angela_Merkel>	<infobox/en/office>	"[[Federal Ministry for Environment, Nature Conservation and Nuclear Safety|Minister for the Environment, Nature Conservation and Nuclear Safety]]"@en
 <id_1fpq28n_9q2_1nii14c>	<Angela_Merkel>	<infobox/en/office>	"[[Federal Ministry of Family Affairs, Senior Citizens, Women and Youth|Minister for Women and Youth]]"@en
-<id_1fpq28n_os5_2ey2ua>	<Angela_Merkel>	<infobox/en/otherparty>	"[[Democratic Awakening]] \n"@en
-<id_1fpq28n_n8m_1m7apfm>	<Angela_Merkel>	<infobox/en/party>	"[[Christian Democratic Union (Germany)|Christian Democratic Union]] "@en
+<id_1fpq28n_os5_zumcjc>	<Angela_Merkel>	<infobox/en/otherparty>	"[[Democratic Awakening]]"@en
+<id_1fpq28n_n8m_b1jg66>	<Angela_Merkel>	<infobox/en/party>	"[[Christian Democratic Union (Germany)|Christian Democratic Union]]"@en
 <id_1fpq28n_14q_7fp7i>	<Angela_Merkel>	<infobox/en/predecessor>	"Constituency established"@en
 <id_1fpq28n_14q_17i135i>	<Angela_Merkel>	<infobox/en/predecessor>	"[[Gerhard Schröder]]"@en
 <id_1fpq28n_14q_oa8sp3>	<Angela_Merkel>	<infobox/en/predecessor>	"[[Klaus Töpfer]]"@en
@@ -1462,7 +1434,7 @@
 <id_1fpq28n_7j2_1s2v8np>	<Angela_Merkel>	<infobox/en/profession>	"[[Physical chemistry|Physical chemist]]"@en
 <id_1fpq28n_17o_17mwkrx>	<Angela_Merkel>	<infobox/en/religion>	"[[Evangelical Church in Germany|Lutheran]]"@en
 <id_1fpq28n_in6_4wwgjq>	<Angela_Merkel>	<infobox/en/signature>	"Angela Merkel Signature.svg"@en
-<id_1fpq28n_brx_tg8jg6>	<Angela_Merkel>	<infobox/en/spouse>	"Ulrich Merkel \n[[Joachim Sauer]] "@en
+<id_1fpq28n_brx_1d2fsoa>	<Angela_Merkel>	<infobox/en/spouse>	"Ulrich Merkel \n[[Joachim Sauer]]"@en
 <id_1fpq28n_gjb_w9ub8b>	<Angela_Merkel>	<infobox/en/successor>	"[[Claudia Nolte]]"@en
 <id_1fpq28n_gjb_egbx9c>	<Angela_Merkel>	<infobox/en/successor>	"[[Jürgen Trittin]]"@en
 <id_1fpq28n_jeg_1iakmhj>	<Angela_Merkel>	<infobox/en/termend>	"17 November 1994"@en
@@ -1487,7 +1459,7 @@
 <id_18367vn_1qm_10vs7xv>	<Bundestag>	<infobox/en/name>	"Federal Diet of Germany"@en
 <id_18367vn_7v4_pu2zew>	<Bundestag>	<infobox/en/nativename>	"Deutscher Bundestag"@en
 <id_18367vn_n8m_2x9n9n>	<Bundestag>	<infobox/en/party>	"[[Christian Democratic Union (Germany)|CDU]]"@en
-<id_18367vn_1x5_16kk9ul>	<Bundestag>	<infobox/en/politicalgroups>	"\n{{colorbox|#000000}} [[Merkel Cabinet II|Government]] (331)\n* {{colorbox|#000000}} [[Christian Democratic Union (Germany)|CDU]] (195)\n* {{colorbox|#ffff00}} [[Free Democratic Party (Germany)|FDP]] (93)\n* {{colorbox|#3091ea}} [[Christian Social Union of Bavaria|CSU]] (43)\n\nOpposition Parties\n\n*{{colorbox|#ff0000}} [[Social Democratic Party of Germany|SPD]] (146)\n*{{colorbox|#660000}} [[The Left (Germany)|The Left]] (76)\n*{{colorbox|#00ff00}} [[Alliance '90/The Greens|The Greens]] (68)"@en
+<id_18367vn_1x5_1mnf6c3>	<Bundestag>	<infobox/en/politicalgroups>	"{{colorbox|#000000}} [[Merkel Cabinet II|Government]] (331)\n* {{colorbox|#000000}} [[Christian Democratic Union (Germany)|CDU]] (195)\n* {{colorbox|#ffff00}} [[Free Democratic Party (Germany)|FDP]] (93)\n* {{colorbox|#3091ea}} [[Christian Social Union of Bavaria|CSU]] (43)\n\nOpposition Parties\n\n*{{colorbox|#ff0000}} [[Social Democratic Party of Germany|SPD]] (146)\n*{{colorbox|#660000}} [[The Left (Germany)|The Left]] (76)\n*{{colorbox|#00ff00}} [[Alliance '90/The Greens|The Greens]] (68)"@en
 <id_18367vn_165_4w4q10>	<Bundestag>	<infobox/en/sessionroom>	"Reichstag Plenarsaal des Bundestags.jpg"@en
 <id_18367vn_3a1_3r6m3n>	<Bundestag>	<infobox/en/structure>	"17th Bundestag of Germany.svg"@en
 <id_18367vn_60a_10b00c6>	<Bundestag>	<infobox/en/structureres>	"240px"@en
@@ -1533,7 +1505,7 @@
 <id_t9jepg_7km_1wcad53>	<Christian_Democratic_Union_(Germany)>	<infobox/en/youthwing>	"[[Young Union]]"@en
 <id_jr01l4_exz_u3ldpi>	<Christian_Wulff>	<infobox/en/almamater>	"[[University of Osnabrück]]"@en
 <id_jr01l4_1fx_9o0par>	<Christian_Wulff>	<infobox/en/birthdate>	"{{birth date and age|1959|6|19|df=y}}"@en
-<id_jr01l4_1b4_1vucm2f>	<Christian_Wulff>	<infobox/en/birthplace>	"[[Osnabrück]], [[West Germany]]\n"@en
+<id_jr01l4_1b4_bcqh83>	<Christian_Wulff>	<infobox/en/birthplace>	"[[Osnabrück]], [[West Germany]]"@en
 <id_jr01l4_1pf_28qejc>	<Christian_Wulff>	<infobox/en/chancellor>	"[[Angela Merkel]]"@en
 <id_jr01l4_956_qn2g8h>	<Christian_Wulff>	<infobox/en/children>	"Annalena\nLinus"@en
 <id_jr01l4_n4z_c3pnal>	<Christian_Wulff>	<infobox/en/image>	"Landtag Niedersachsen DSCF7770.JPG"@en
@@ -1634,7 +1606,7 @@
 <id_107bpbp_7j2_1gu56w4>	<Gerhard_Schröder>	<infobox/en/profession>	"[[Lawyer]]"@en
 <id_107bpbp_17o_17mwkrx>	<Gerhard_Schröder>	<infobox/en/religion>	"[[Evangelical Church in Germany|Lutheran]]"@en
 <id_107bpbp_in6_c7p82s>	<Gerhard_Schröder>	<infobox/en/signature>	"Gerhard Schröder Signature.svg"@en
-<id_107bpbp_brx_1wi81d2>	<Gerhard_Schröder>	<infobox/en/spouse>	"Eva Schubach \nAnne Taschenmacher \nHiltrud Hampel \n[[Doris Schröder-Köpf|Doris Köpf]] "@en
+<id_107bpbp_brx_12vcsxm>	<Gerhard_Schröder>	<infobox/en/spouse>	"Eva Schubach \nAnne Taschenmacher \nHiltrud Hampel \n[[Doris Schröder-Köpf|Doris Köpf]]"@en
 <id_107bpbp_gjb_28qejc>	<Gerhard_Schröder>	<infobox/en/successor>	"[[Angela Merkel]]"@en
 <id_107bpbp_gjb_b0arls>	<Gerhard_Schröder>	<infobox/en/successor>	"[[Franz Müntefering]]"@en
 <id_107bpbp_gjb_totje3>	<Gerhard_Schröder>	<infobox/en/successor>	"[[Gerhard Glogowski]]"@en
@@ -1653,7 +1625,7 @@
 <id_1ps9evn_3a0_sozoew>	<Germany>	<infobox/en/areakm>	"357,021"@en
 <id_1ps9evn_ly5_10a3u0m>	<Germany>	<infobox/en/areamagnitude>	"1 E11"@en
 <id_1ps9evn_p6s_zjjmwf>	<Germany>	<infobox/en/arearank>	"63rd"@en
-<id_1ps9evn_p6t_l6l22k>	<Germany>	<infobox/en/areasqmi>	"137,847 "@en
+<id_1ps9evn_p6t_1xf8350>	<Germany>	<infobox/en/areasqmi>	"137,847"@en
 <id_1ps9evn_1yd_32a5p3>	<Germany>	<infobox/en/callingcode>	"[[Telephone numbers in Germany|49]]"@en
 <id_1ps9evn_1g2_xuisea>	<Germany>	<infobox/en/capital>	"[[Berlin]]"@en
 <id_1ps9evn_n1i_2zs0ah>	<Germany>	<infobox/en/cctld>	"[[.de]] {{Ref|3}}"@en
@@ -1715,13 +1687,13 @@
 <id_1ps9evn_8g1_zik11h>	<Germany>	<infobox/en/longew>	"E"@en
 <id_1ps9evn_n6o_zik281>	<Germany>	<infobox/en/longm>	"23"@en
 <id_1ps9evn_b2s_76chba>	<Germany>	<infobox/en/mapcaption>	"{{map caption|location_color=dark green|region=Europe|region_color=dark grey|subregion=the [[European Union]]|subregion_color=green|legend=EU-Germany.svg}}"@en
-<id_1ps9evn_1oa_d5x2pw>	<Germany>	<infobox/en/nationalanthem>	"<center></center>\nThe third stanza of  \u0022[[Deutschlandlied|Das Lied der Deutschen]]\u0022  \n\n"@en
+<id_1ps9evn_1oa_14uwbt0>	<Germany>	<infobox/en/nationalanthem>	"<center></center>\nThe third stanza of  \u0022[[Deutschlandlied|Das Lied der Deutschen]]\u0022"@en
 <id_1ps9evn_7v4_gfpsuy>	<Germany>	<infobox/en/nativename>	"{{native name|de|Bundesrepublik Deutschland|icon=no}}"@en
 <id_1ps9evn_n7j_1x1l7tk>	<Germany>	<infobox/en/officiallanguages>	"[[German language|German]]{{Ref|1}}"@en
 <id_1ps9evn_t7o_10aw7tp>	<Germany>	<infobox/en/percentwater>	"2.416"@en
 <id_1ps9evn_qv4_zil3ax>	<Germany>	<infobox/en/populationdensitykm>	"229"@en
 <id_1ps9evn_wbx_zjj1g4>	<Germany>	<infobox/en/populationdensityrank>	"55th"@en
-<id_1ps9evn_wby_zjj2sx>	<Germany>	<infobox/en/populationdensitysqmi>	"593 "@en
+<id_1ps9evn_wby_zil5ov>	<Germany>	<infobox/en/populationdensitysqmi>	"593"@en
 <id_1ps9evn_k6w_1tzgy26>	<Germany>	<infobox/en/populationestimate>	"81,799,600"@en
 <id_1ps9evn_1qc_zjghi0>	<Germany>	<infobox/en/populationestimaterank>	"15th"@en
 <id_1ps9evn_1qd_zjgz4t>	<Germany>	<infobox/en/populationestimateyear>	"2010"@en
@@ -1733,7 +1705,7 @@
 <id_1ps9evn_512_zik11g>	<Germany>	<infobox/en/vehiclecode>	"D"@en
 <id_18vc8ci_exz_1lcgym8>	<Guido_Westerwelle>	<infobox/en/almamater>	"[[University of Bonn]]\n[[FernUniversität Hagen|Distance University of Hagen]]"@en
 <id_18vc8ci_1fx_1k8qcv0>	<Guido_Westerwelle>	<infobox/en/birthdate>	"{{birth date and age|1961|12|27|df=y}}"@en
-<id_18vc8ci_1b4_zdoo2v>	<Guido_Westerwelle>	<infobox/en/birthplace>	"[[Bad Honnef]], [[West Germany]] "@en
+<id_18vc8ci_1b4_5q27vd>	<Guido_Westerwelle>	<infobox/en/birthplace>	"[[Bad Honnef]], [[West Germany]]"@en
 <id_18vc8ci_1g2_9t1cf5>	<Guido_Westerwelle>	<infobox/en/caption>	"Westerwelle at a meeting with Swedish Foreign Minister [[Carl Bildt]] in 2010"@en
 <id_18vc8ci_1pf_28qejc>	<Guido_Westerwelle>	<infobox/en/chancellor>	"[[Angela Merkel]]"@en
 <id_18vc8ci_o48_12neym>	<Guido_Westerwelle>	<infobox/en/constituency>	"[[Nordrhein-Westfalen]], [[party list|list (no. 01)]]"@en
@@ -1748,7 +1720,7 @@
 <id_18vc8ci_14q_j1etyz>	<Guido_Westerwelle>	<infobox/en/predecessor>	"[[Frank-Walter Steinmeier]]"@en
 <id_18vc8ci_14q_1v20kog>	<Guido_Westerwelle>	<infobox/en/predecessor>	"[[Wolfgang Gerhardt]]"@en
 <id_18vc8ci_7j2_1gu56w4>	<Guido_Westerwelle>	<infobox/en/profession>	"[[Lawyer]]"@en
-<id_18vc8ci_100_10aygo7>	<Guido_Westerwelle>	<infobox/en/residence>	"[[Berlin]] \n[[Bonn]] "@en
+<id_18vc8ci_100_o319ax>	<Guido_Westerwelle>	<infobox/en/residence>	"[[Berlin]] \n[[Bonn]]"@en
 <id_18vc8ci_gjb_bbl0pw>	<Guido_Westerwelle>	<infobox/en/successor>	"[[Philipp Rösler ]]"@en
 <id_18vc8ci_gjb_1sisrng>	<Guido_Westerwelle>	<infobox/en/successor>	"[[Philipp Rösler]]"@en
 <id_18vc8ci_jeg_lfojdj>	<Guido_Westerwelle>	<infobox/en/termend>	"13 May 2011"@en
@@ -1787,7 +1759,7 @@
 <id_3gfkn0_10f_njttrn>	<Hamburg>	<infobox/en/popdate>	"2011-09-31"@en
 <id_3gfkn0_1rq_16bipld>	<Hamburg>	<infobox/en/popmetro>	"4300000"@en
 <id_3gfkn0_1t3_yufed9>	<Hamburg>	<infobox/en/population>	"1,796,077"@en
-<id_3gfkn0_14k_10tnfvh>	<Hamburg>	<infobox/en/rulingparty>	"SPD\n "@en
+<id_3gfkn0_14k_zilshz>	<Hamburg>	<infobox/en/rulingparty>	"SPD"@en
 <id_3gfkn0_3hy_1h1rhvu>	<Hamburg>	<infobox/en/statecoa>	"Coat of arms of Hamburg.svg"@en
 <id_3gfkn0_1hh_zil1v0>	<Hamburg>	<infobox/en/vorwahl>	"040"@en
 <id_3gfkn0_nc6_zik10z>	<Hamburg>	<infobox/en/votes>	"3"@en
@@ -1801,14 +1773,14 @@
 <id_zycb9m_n4z_1o8i50y>	<Helmut_Kohl>	<infobox/en/image>	"Bundesarchiv B 145 Bild-F074398-0021, Bonn, Pressekonferenz Bundestagswahlkampf, Kohl.jpg"@en
 <id_zycb9m_9q2_1ot427k>	<Helmut_Kohl>	<infobox/en/office>	"[[Chancellor of Germany (Federal Republic of Germany)|Chancellor of Germany]]"@en
 <id_zycb9m_9q2_w5xtso>	<Helmut_Kohl>	<infobox/en/office>	"[[Minister-President]] of [[Rhineland-Palatinate]]"@en
-<id_zycb9m_os5_19gkpvm>	<Helmut_Kohl>	<infobox/en/otherparty>	"[[Centre Party (Germany)|Centre Party]] "@en
-<id_zycb9m_n8m_1syp0>	<Helmut_Kohl>	<infobox/en/party>	"[[Christian Democratic Union of Germany|Christian Democratic Union]] "@en
+<id_zycb9m_os5_cx8afy>	<Helmut_Kohl>	<infobox/en/otherparty>	"[[Centre Party (Germany)|Centre Party]]"@en
+<id_zycb9m_n8m_960anw>	<Helmut_Kohl>	<infobox/en/party>	"[[Christian Democratic Union of Germany|Christian Democratic Union]]"@en
 <id_zycb9m_14q_1jr7n0h>	<Helmut_Kohl>	<infobox/en/predecessor>	"[[Helmut Schmidt]]"@en
 <id_zycb9m_14q_o6pia1>	<Helmut_Kohl>	<infobox/en/predecessor>	"[[Peter Altmeier]]"@en
 <id_zycb9m_1kq_1blncy4>	<Helmut_Kohl>	<infobox/en/president>	"[[Karl Carstens]]\n[[Richard von Weizsäcker]]\n[[Roman Herzog]]"@en
 <id_zycb9m_17o_bh6dxo>	<Helmut_Kohl>	<infobox/en/religion>	"[[Roman Catholic]]"@en
 <id_zycb9m_in6_126qk9>	<Helmut_Kohl>	<infobox/en/signature>	"Helmut Kohl Signature.svg"@en
-<id_zycb9m_brx_1exw2y2>	<Helmut_Kohl>	<infobox/en/spouse>	"[[Hannelore Kohl|Hannelore Renner]] \nMaike Richter "@en
+<id_zycb9m_brx_14lg16e>	<Helmut_Kohl>	<infobox/en/spouse>	"[[Hannelore Kohl|Hannelore Renner]] \nMaike Richter"@en
 <id_zycb9m_gjb_1nbl35p>	<Helmut_Kohl>	<infobox/en/successor>	"[[Bernhard Vogel (politician)|Bernhard Vogel]]"@en
 <id_zycb9m_gjb_17i135i>	<Helmut_Kohl>	<infobox/en/successor>	"[[Gerhard Schröder]]"@en
 <id_zycb9m_jeg_brxqc4>	<Helmut_Kohl>	<infobox/en/termend>	"2 December 1976"@en
@@ -1859,7 +1831,7 @@
 <id_1cm9d6p_n4z_1o1zclc>	<Jürgen_Trittin>	<infobox/en/image>	"Juergen Trittin 20090925-DSCF3370.jpg"@en
 <id_1cm9d6p_1qm_8jqvq8>	<Jürgen_Trittin>	<infobox/en/name>	"Jürgen Trittin"@en
 <id_1cm9d6p_32a_1n63hin>	<Jürgen_Trittin>	<infobox/en/nationality>	"[[Germany|German]]"@en
-<id_1cm9d6p_9q2_1nk7e76>	<Jürgen_Trittin>	<infobox/en/office>	"Chairman of Parliamentary Group of [[Alliance '90/The Greens]]\n"@en
+<id_1cm9d6p_9q2_vpi73c>	<Jürgen_Trittin>	<infobox/en/office>	"Chairman of Parliamentary Group of [[Alliance '90/The Greens]]"@en
 <id_1cm9d6p_9q2_2tbuo5>	<Jürgen_Trittin>	<infobox/en/office>	"Minister for Federal and European Affairs, [[Lower Saxony]], [[Germany]]"@en
 <id_1cm9d6p_9q2_vflmiv>	<Jürgen_Trittin>	<infobox/en/office>	"[[Federal Ministry for Environment, Nature Conservation and Nuclear Safety (Germany)|Federal Minister of the Environment, Nature Conservation and Nuclear Safety]], {{GER}}"@en
 <id_1cm9d6p_n8m_d0rkkm>	<Jürgen_Trittin>	<infobox/en/party>	"[[Bündnis 90/Die Grünen]]"@en
@@ -1973,9 +1945,9 @@
 <id_1dmdk4j_n6o_zik113>	<West_Germany>	<infobox/en/longd>	"7"@en
 <id_1dmdk4j_8g1_zik11h>	<West_Germany>	<infobox/en/longew>	"E"@en
 <id_1dmdk4j_n6o_zik112>	<West_Germany>	<infobox/en/longm>	"6"@en
-<id_1dmdk4j_1oa_p2jv1r>	<West_Germany>	<infobox/en/nationalanthem>	"The third stanza of  \u0022[[Deutschlandlied|Das Lied der Deutschen]]\u0022 \n"@en
-<id_1dmdk4j_vwz_l03bsh>	<West_Germany>	<infobox/en/nationalmotto>	" \u0022[[Das Lied der Deutschen|Einigkeit und Recht und Freiheit]]\u0022 \n"@en
-<id_1dmdk4j_7v4_xpm4wu>	<West_Germany>	<infobox/en/nativename>	" \u0022Bundesrepublik Deutschland\u0022 "@en
+<id_1dmdk4j_1oa_1r5c4lh>	<West_Germany>	<infobox/en/nationalanthem>	"The third stanza of  \u0022[[Deutschlandlied|Das Lied der Deutschen]]\u0022"@en
+<id_1dmdk4j_vwz_1hmgw2v>	<West_Germany>	<infobox/en/nationalmotto>	"\u0022[[Das Lied der Deutschen|Einigkeit und Recht und Freiheit]]\u0022"@en
+<id_1dmdk4j_7v4_uoj55u>	<West_Germany>	<infobox/en/nativename>	"\u0022Bundesrepublik Deutschland\u0022"@en
 <id_1dmdk4j_17h_ziml7r>	<West_Germany>	<infobox/en/noautocat>	"yes"@en
 <id_1dmdk4j_1ik_10aevzr>	<West_Germany>	<infobox/en/p>	"Allied-occupied Germany"@en
 <id_1dmdk4j_1ik_18oshj6>	<West_Germany>	<infobox/en/p>	"Saar (protectorate)"@en
@@ -2009,9 +1981,9 @@
 <id_1dmdk4j_1sa_zjgiwd>	<West_Germany>	<infobox/en/yearstart>	"1949"@en
 <id_1wkzd0h_exz_zc3313>	<Albert_Pintat>	<infobox/en/almamater>	"[[University of Fribourg]]"@en
 <id_1wkzd0h_1fx_grdtdn>	<Albert_Pintat>	<infobox/en/birthdate>	"{{Bda|1943|06|23|df=y}}"@en
-<id_1wkzd0h_ttq_kd1nc4>	<Albert_Pintat>	<infobox/en/governorgeneral>	"\n[[Philippe Massoni]]\n[[Emmanuelle Mignon]]\n[[Christian Frémont]]\n\n[[Nemesi Marqués Oste]]"@en
+<id_1wkzd0h_ttq_77huzy>	<Albert_Pintat>	<infobox/en/governorgeneral>	"[[Philippe Massoni]]\n[[Emmanuelle Mignon]]\n[[Christian Frémont]]\n\n[[Nemesi Marqués Oste]]"@en
 <id_1wkzd0h_n4z_uw5zdq>	<Albert_Pintat>	<infobox/en/image>	"Replace this image male.svg"@en
-<id_1wkzd0h_1rd_tp5522>	<Albert_Pintat>	<infobox/en/monarch>	"\n[[Jacques Chirac]]\n[[Nicolas Sarkozy]]\n\n[[Joan Enric Vives Sicília]]"@en
+<id_1wkzd0h_1rd_1yfml00>	<Albert_Pintat>	<infobox/en/monarch>	"[[Jacques Chirac]]\n[[Nicolas Sarkozy]]\n\n[[Joan Enric Vives Sicília]]"@en
 <id_1wkzd0h_1qm_53hmrd>	<Albert_Pintat>	<infobox/en/name>	"Albert Pintat Santolària"@en
 <id_1wkzd0h_n8d_1lqz0ue>	<Albert_Pintat>	<infobox/en/order>	"[[Head of Government of Andorra]]"@en
 <id_1wkzd0h_n8m_1rn3jl2>	<Albert_Pintat>	<infobox/en/party>	"[[Liberal Party of Andorra|PLA]]"@en
@@ -2021,18 +1993,18 @@
 <id_1wkzd0h_ypr_1dqxtmh>	<Albert_Pintat>	<infobox/en/termstart>	"27 May 2005"@en
 <id_s193uj_1fx_1p13zsr>	<Antoni_Martí>	<infobox/en/birthdate>	"{{birth date and age|1963|11|10}}"@en
 <id_s193uj_1b4_1x6tle1>	<Antoni_Martí>	<infobox/en/birthplace>	"[[Andorra]]"@en
-<id_s193uj_ttq_bysoz4>	<Antoni_Martí>	<infobox/en/governorgeneral>	"\n[[Christian Frémont]]\n\n[[Nemesi Marqués Oste]]"@en
+<id_s193uj_ttq_155w8o6>	<Antoni_Martí>	<infobox/en/governorgeneral>	"[[Christian Frémont]]\n\n[[Nemesi Marqués Oste]]"@en
 <id_s193uj_n4z_1esxyn0>	<Antoni_Martí>	<infobox/en/image>	"Antoni Martí (2011).jpg"@en
-<id_s193uj_1rd_1q69u72>	<Antoni_Martí>	<infobox/en/monarch>	"\n[[Nicolas Sarkozy]]\n\n[[Joan Enric Vives Sicília]]"@en
+<id_s193uj_1rd_ux9vqg>	<Antoni_Martí>	<infobox/en/monarch>	"[[Nicolas Sarkozy]]\n\n[[Joan Enric Vives Sicília]]"@en
 <id_s193uj_1qm_1fvlug4>	<Antoni_Martí>	<infobox/en/name>	"Antoni Martí Petit"@en
 <id_s193uj_9q2_vneqns>	<Antoni_Martí>	<infobox/en/office>	"[[List of heads of government of Andorra|Prime Minister of Andorra]]"@en
 <id_s193uj_n8m_rpuyo>	<Antoni_Martí>	<infobox/en/party>	"[[Democrats for Andorra]]"@en
-<id_s193uj_14q_j4duhn>	<Antoni_Martí>	<infobox/en/predecessor>	"[[Pere López Agràs]] "@en
+<id_s193uj_14q_1hbf2g5>	<Antoni_Martí>	<infobox/en/predecessor>	"[[Pere López Agràs]]"@en
 <id_s193uj_ypr_oooi60>	<Antoni_Martí>	<infobox/en/termstart>	"12 May 2011"@en
 <id_14lrmcq_1fx_rxsxag>	<Carla_Bruni>	<infobox/en/birthdate>	"{{birth date and age|1967|12|23|df=yes}}"@en
 <id_14lrmcq_1fx_uk0sey>	<Carla_Bruni>	<infobox/en/birthname>	"Carla Gilberta Bruni Tedeschi"@en
 <id_14lrmcq_1b4_960tvd>	<Carla_Bruni>	<infobox/en/birthplace>	"[[Turin]], Italy"@en
-<id_14lrmcq_956_qiqale>	<Carla_Bruni>	<infobox/en/children>	"Aurélien Enthoven \n[[Giulia Sarkozy]] "@en
+<id_14lrmcq_956_q25rr2>	<Carla_Bruni>	<infobox/en/children>	"Aurélien Enthoven \n[[Giulia Sarkozy]]"@en
 <id_14lrmcq_1le_1drsbzo>	<Carla_Bruni>	<infobox/en/imagename>	"Carla Bruni-Sarkozy (3).jpg"@en
 <id_14lrmcq_1le_10ayu2l>	<Carla_Bruni>	<infobox/en/imagesize>	"225px"@en
 <id_14lrmcq_32a_g06hun>	<Carla_Bruni>	<infobox/en/nationality>	"[[French nationality law|French]]; [[Italian nationality law|Italian]]"@en
@@ -2040,9 +2012,9 @@
 <id_14lrmcq_14q_179ss8j>	<Carla_Bruni>	<infobox/en/predecessor>	"[[Cécilia Ciganer-Albéniz]]"@en
 <id_14lrmcq_1kq_1va38hq>	<Carla_Bruni>	<infobox/en/president>	"[[Nicolas Sarkozy]]"@en
 <id_14lrmcq_7j2_1dybibg>	<Carla_Bruni>	<infobox/en/profession>	"Singer-songwriter, model"@en
-<id_14lrmcq_rfl_4pj0h1>	<Carla_Bruni>	<infobox/en/relations>	"[[Valeria Bruni Tedeschi]] \n[[Guillaume Sarkozy]] \n[[Olivier Sarkozy]] \n[[Jean Sarkozy]] "@en
+<id_14lrmcq_rfl_70xisb>	<Carla_Bruni>	<infobox/en/relations>	"[[Valeria Bruni Tedeschi]] \n[[Guillaume Sarkozy]] \n[[Olivier Sarkozy]] \n[[Jean Sarkozy]]"@en
 <id_14lrmcq_100_17el0ef>	<Carla_Bruni>	<infobox/en/residence>	"[[Élysée Palace]] (official)\n[[16th arrondissement of Paris|Paris XVI]] (personnal)"@en
-<id_14lrmcq_brx_psiq02>	<Carla_Bruni>	<infobox/en/spouse>	"[[Nicolas Sarkozy]] "@en
+<id_14lrmcq_brx_1va38hq>	<Carla_Bruni>	<infobox/en/spouse>	"[[Nicolas Sarkozy]]"@en
 <id_14lrmcq_ypr_1lrmqk6>	<Carla_Bruni>	<infobox/en/termstart>	"2 February 2008"@en
 <id_4h2ou9_1fx_12p9p88>	<Cécilia_Attias>	<infobox/en/birthdate>	"{{birth date and age|1957|11|12|df=y}}"@en
 <id_4h2ou9_1b4_13hyt0x>	<Cécilia_Attias>	<infobox/en/birthplace>	"[[France]] [[Boulogne-Billancourt]], France"@en
@@ -2234,8 +2206,8 @@
 <id_1ilv35d_9q2_1kh887i>	<Jacques_Chirac>	<infobox/en/office>	"[[Minister of the Interior (Italy)|Minister of the Interior]]"@en
 <id_1ilv35d_9q2_1b4msk>	<Jacques_Chirac>	<infobox/en/office>	"[[President of France]]"@en
 <id_1ilv35d_9q2_ydyjfu>	<Jacques_Chirac>	<infobox/en/office>	"[[Prime Minister of France]]"@en
-<id_1ilv35d_os5_ifrjkg>	<Jacques_Chirac>	<infobox/en/otherparty>	"[[French Communist Party|Communist Party]] \n[[Union of Democrats for the Republic]] \n[[Rally for the Republic]] "@en
-<id_1ilv35d_n8m_to30qr>	<Jacques_Chirac>	<infobox/en/party>	"[[Union for a Popular Movement]] "@en
+<id_1ilv35d_os5_l7srww>	<Jacques_Chirac>	<infobox/en/otherparty>	"[[French Communist Party|Communist Party]] \n[[Union of Democrats for the Republic]] \n[[Rally for the Republic]]"@en
+<id_1ilv35d_n8m_1t43rct>	<Jacques_Chirac>	<infobox/en/party>	"[[Union for a Popular Movement]]"@en
 <id_1ilv35d_14q_wl6wr8>	<Jacques_Chirac>	<infobox/en/predecessor>	"Office established"@en
 <id_1ilv35d_14q_1xv2skj>	<Jacques_Chirac>	<infobox/en/predecessor>	"[[François Mitterrand]]"@en
 <id_1ilv35d_14q_1phmlfr>	<Jacques_Chirac>	<infobox/en/predecessor>	"[[Laurent Fabius]]"@en
@@ -2266,13 +2238,13 @@
 <id_1ilv35d_ypr_18dwvt4>	<Jacques_Chirac>	<infobox/en/termstart>	"27 February 1974"@en
 <id_1ilv35d_ypr_1dqxdh7>	<Jacques_Chirac>	<infobox/en/termstart>	"27 May 1974"@en
 <id_64w4aa_1fx_650dp9>	<Jaume_Bartumeu>	<infobox/en/birthdate>	"{{birth date and age|1954|11|10|df=y}}"@en
-<id_64w4aa_ttq_bysoz4>	<Jaume_Bartumeu>	<infobox/en/governorgeneral>	"\n[[Christian Frémont]]\n\n[[Nemesi Marqués Oste]]"@en
-<id_64w4aa_1rd_1q69u72>	<Jaume_Bartumeu>	<infobox/en/monarch>	"\n[[Nicolas Sarkozy]]\n\n[[Joan Enric Vives Sicília]]"@en
+<id_64w4aa_ttq_155w8o6>	<Jaume_Bartumeu>	<infobox/en/governorgeneral>	"[[Christian Frémont]]\n\n[[Nemesi Marqués Oste]]"@en
+<id_64w4aa_1rd_ux9vqg>	<Jaume_Bartumeu>	<infobox/en/monarch>	"[[Nicolas Sarkozy]]\n\n[[Joan Enric Vives Sicília]]"@en
 <id_64w4aa_1qm_16j02nn>	<Jaume_Bartumeu>	<infobox/en/name>	"Jaume Bartumeu"@en
 <id_64w4aa_n8d_1s10bwk>	<Jaume_Bartumeu>	<infobox/en/order>	"[[Head of Government of Andorra|Prime Minister of Andorra]]"@en
 <id_64w4aa_n8m_636abg>	<Jaume_Bartumeu>	<infobox/en/party>	"[[Social Democratic Party (Andorra)|Social Democratic Party]]"@en
 <id_64w4aa_14q_hmah5u>	<Jaume_Bartumeu>	<infobox/en/predecessor>	"[[Albert Pintat]]"@en
-<id_64w4aa_gjb_j4duhn>	<Jaume_Bartumeu>	<infobox/en/successor>	"[[Pere López Agràs]] "@en
+<id_64w4aa_gjb_1hbf2g5>	<Jaume_Bartumeu>	<infobox/en/successor>	"[[Pere López Agràs]]"@en
 <id_64w4aa_jeg_1vu0hv6>	<Jaume_Bartumeu>	<infobox/en/termend>	"28 April 2011"@en
 <id_64w4aa_ypr_173rkii>	<Jaume_Bartumeu>	<infobox/en/termstart>	"5 June 2009"@en
 <id_7rtptc_1fx_sm5o61>	<Jean_Sarkozy>	<infobox/en/birthdate>	"{{Birth date and age|1986|9|1|df=yes}}"@en
@@ -2285,7 +2257,7 @@
 <id_7rtptc_32a_wznogx>	<Jean_Sarkozy>	<infobox/en/nationality>	"[[French people|French]]"@en
 <id_7rtptc_1i9_1jts3iy>	<Jean_Sarkozy>	<infobox/en/occupation>	"[[Student]] / [[Politician]]"@en
 <id_7rtptc_ttn_1sllfph>	<Jean_Sarkozy>	<infobox/en/parents>	"[[Nicolas Sarkozy]]\n[[Nicolas Sarkozy#Marie-Dominique Culioli|Marie-Dominique Culioli]]"@en
-<id_7rtptc_17o_mxq50>	<Jean_Sarkozy>	<infobox/en/religion>	"[[Roman Catholic]] "@en
+<id_7rtptc_17o_bh6dxo>	<Jean_Sarkozy>	<infobox/en/religion>	"[[Roman Catholic]]"@en
 <id_7rtptc_brx_1ga8hz7>	<Jean_Sarkozy>	<infobox/en/spouse>	"Jessica Sebaoun"@en
 <id_ppnh9i_1fx_mjstwg>	<Jean-Pierre_Raffarin>	<infobox/en/birthdate>	"{{birth date and age|df=yes|1948|08|03}}"@en
 <id_ppnh9i_1b4_efkt7a>	<Jean-Pierre_Raffarin>	<infobox/en/birthplace>	"[[Poitiers]], France"@en
@@ -2311,7 +2283,6 @@
 <id_5iwrwt_1fx_re9g4b>	<Joan_Enric_Vives_Sicília>	<infobox/en/birthdate>	"{{birth date and age|1949|7|24|df=y}}"@en
 <id_5iwrwt_1b4_10gh03g>	<Joan_Enric_Vives_Sicília>	<infobox/en/birthplace>	"[[Barcelona]], [[Francoist Spain|Spain]]"@en
 <id_5iwrwt_ttq_1sbown8>	<Joan_Enric_Vives_Sicília>	<infobox/en/governorgeneral>	"[[Nemesi Marqués Oste]]"@en
-<id_5iwrwt_gbo_zik0zu>	<Joan_Enric_Vives_Sicília>	<infobox/en/honorificprefix>	"\n"@en
 <id_5iwrwt_n4z_fq00gp>	<Joan_Enric_Vives_Sicília>	<infobox/en/image>	"Joan Enric Vives.jpg"@en
 <id_5iwrwt_1qm_1ts8p2i>	<Joan_Enric_Vives_Sicília>	<infobox/en/name>	"Joan Enric Vives Sicília"@en
 <id_5iwrwt_9q2_16iinq3>	<Joan_Enric_Vives_Sicília>	<infobox/en/office>	"[[Co-Princes of Andorra|Co-Prince of Andorra]]"@en
@@ -2343,7 +2314,7 @@
 <id_vkf2e7_1fx_1bx790s>	<Nicolas_Sarkozy>	<infobox/en/birthdate>	"{{birth date and age|1955|1|28|df=y}}"@en
 <id_vkf2e7_1fx_1epr034>	<Nicolas_Sarkozy>	<infobox/en/birthname>	"Nicolas Paul Stéphane Sarközy de Nagy-Bocsa"@en
 <id_vkf2e7_1b4_4bnsu4>	<Nicolas_Sarkozy>	<infobox/en/birthplace>	"[[Paris]], [[French Fourth Republic|France]]"@en
-<id_vkf2e7_956_12lsrsw>	<Nicolas_Sarkozy>	<infobox/en/children>	"Pierre \n[[Jean Sarkozy|Jean]] \nLouis "@en
+<id_vkf2e7_956_ezr9eo>	<Nicolas_Sarkozy>	<infobox/en/children>	"Pierre \n[[Jean Sarkozy|Jean]] \nLouis"@en
 <id_vkf2e7_ttq_hg0dcm>	<Nicolas_Sarkozy>	<infobox/en/governorgeneral>	"[[Philippe Massoni]]\n[[Emmanuelle Mignon]]\n[[Christian Frémont]]"@en
 <id_vkf2e7_n4z_1vmczil>	<Nicolas_Sarkozy>	<infobox/en/image>	"Flickr - europeanpeoplesparty - EPP Summit October 2010 (105).jpg"@en
 <id_vkf2e7_9q2_rmnrk1>	<Nicolas_Sarkozy>	<infobox/en/office>	"Mayor of [[Neuilly-sur-Seine]]"@en
@@ -2352,8 +2323,8 @@
 <id_vkf2e7_9q2_sdc8r8>	<Nicolas_Sarkozy>	<infobox/en/office>	"[[Minister of the Economy, Industry and Employment (France)|Minister of Finance]]"@en
 <id_vkf2e7_9q2_sysmts>	<Nicolas_Sarkozy>	<infobox/en/office>	"[[Minister of the Interior (France)|Minister of the Interior]]"@en
 <id_vkf2e7_9q2_1b4msk>	<Nicolas_Sarkozy>	<infobox/en/office>	"[[President of France]]"@en
-<id_vkf2e7_os5_13nib48>	<Nicolas_Sarkozy>	<infobox/en/otherparty>	"[[Rally for the Republic]] "@en
-<id_vkf2e7_n8m_to30qr>	<Nicolas_Sarkozy>	<infobox/en/party>	"[[Union for a Popular Movement]] "@en
+<id_vkf2e7_os5_afzyag>	<Nicolas_Sarkozy>	<infobox/en/otherparty>	"[[Rally for the Republic]]"@en
+<id_vkf2e7_n8m_1t43rct>	<Nicolas_Sarkozy>	<infobox/en/party>	"[[Union for a Popular Movement]]"@en
 <id_vkf2e7_14q_49r4w3>	<Nicolas_Sarkozy>	<infobox/en/predecessor>	"[[Achille Peretti]]"@en
 <id_vkf2e7_14q_zanv3e>	<Nicolas_Sarkozy>	<infobox/en/predecessor>	"[[Daniel Vaillant]]"@en
 <id_vkf2e7_14q_rev329>	<Nicolas_Sarkozy>	<infobox/en/predecessor>	"[[Dominique de Villepin]]"@en
@@ -2367,7 +2338,7 @@
 <id_vkf2e7_1ei_3cz6y5>	<Nicolas_Sarkozy>	<infobox/en/primeminister>	"[[Édouard Balladur]]"@en
 <id_vkf2e7_100_4evyun>	<Nicolas_Sarkozy>	<infobox/en/residence>	"[[Élysée Palace]]"@en
 <id_vkf2e7_in6_r3biq4>	<Nicolas_Sarkozy>	<infobox/en/signature>	"Nicolas Sarkozy signature.svg"@en
-<id_vkf2e7_brx_h0cw4t>	<Nicolas_Sarkozy>	<infobox/en/spouse>	"Marie-Dominique Culioli \n[[Cécilia Attias|Cécilia Ciganer-Albéniz]] \n[[Carla Bruni]] "@en
+<id_vkf2e7_brx_s1lq6r>	<Nicolas_Sarkozy>	<infobox/en/spouse>	"Marie-Dominique Culioli \n[[Cécilia Attias|Cécilia Ciganer-Albéniz]] \n[[Carla Bruni]]"@en
 <id_vkf2e7_gjb_rev329>	<Nicolas_Sarkozy>	<infobox/en/successor>	"[[Dominique de Villepin]]"@en
 <id_vkf2e7_gjb_1667psm>	<Nicolas_Sarkozy>	<infobox/en/successor>	"[[François Baroin]]"@en
 <id_vkf2e7_gjb_1forf5d>	<Nicolas_Sarkozy>	<infobox/en/successor>	"[[François d'Aubert]]"@en
@@ -2399,8 +2370,8 @@
 <id_17gzuo3_cq2_1ohsyqu>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/students>	"35,000"@en
 <id_17gzuo3_1qm_b1rp40>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/type>	"[[Public university|Public]]"@en
 <id_17gzuo3_1r6_14uvgsu>	<Paris_West_University_Nanterre_La_Défense>	<infobox/en/website>	"[http://www.u-paris10.fr/ u-paris10.fr]"@en
-<id_1isx97r_ttq_bysoz4>	<Pere_López_Agràs>	<infobox/en/governorgeneral>	"\n[[Christian Frémont]]\n\n[[Nemesi Marqués Oste]]"@en
-<id_1isx97r_1rd_1q69u72>	<Pere_López_Agràs>	<infobox/en/monarch>	"\n[[Nicolas Sarkozy]]\n\n[[Joan Enric Vives Sicília]]"@en
+<id_1isx97r_ttq_155w8o6>	<Pere_López_Agràs>	<infobox/en/governorgeneral>	"[[Christian Frémont]]\n\n[[Nemesi Marqués Oste]]"@en
+<id_1isx97r_1rd_ux9vqg>	<Pere_López_Agràs>	<infobox/en/monarch>	"[[Nicolas Sarkozy]]\n\n[[Joan Enric Vives Sicília]]"@en
 <id_1isx97r_9q2_vneqns>	<Pere_López_Agràs>	<infobox/en/office>	"[[List of heads of government of Andorra|Prime Minister of Andorra]]"@en
 <id_1isx97r_n8m_13crg80>	<Pere_López_Agràs>	<infobox/en/party>	"[[Social Democratic Party (Andorra)]]"@en
 <id_1isx97r_14q_14g8u01>	<Pere_López_Agràs>	<infobox/en/predecessor>	"[[Jaume Bartumeu Cassany]]"@en
@@ -2476,7 +2447,7 @@
 <id_j2lde8_1ei_1rk4izt>	<Alfredo_Pérez_Rubalcaba>	<infobox/en/primeminister>	"[[José Luis Rodríguez Zapatero]]"@en
 <id_j2lde8_1ei_16yf21o>	<Alfredo_Pérez_Rubalcaba>	<infobox/en/primeminister>	"[[Mariano Rajoy]]"@en
 <id_j2lde8_7j2_1r5ksjh>	<Alfredo_Pérez_Rubalcaba>	<infobox/en/profession>	"[[Chemist]]"@en
-<id_j2lde8_brx_1thl3h0>	<Alfredo_Pérez_Rubalcaba>	<infobox/en/spouse>	"Pilar Goya "@en
+<id_j2lde8_brx_kfy8r0>	<Alfredo_Pérez_Rubalcaba>	<infobox/en/spouse>	"Pilar Goya"@en
 <id_j2lde8_gjb_1d7681>	<Alfredo_Pérez_Rubalcaba>	<infobox/en/successor>	"[[Antonio Camacho Vizcaino]]"@en
 <id_j2lde8_gjb_1c79u9g>	<Alfredo_Pérez_Rubalcaba>	<infobox/en/successor>	"[[Elena Salgado]]"@en
 <id_j2lde8_gjb_1rrwmw1>	<Alfredo_Pérez_Rubalcaba>	<infobox/en/successor>	"[[Francisco Álvarez Cascos]]"@en
@@ -2528,9 +2499,9 @@
 <id_krjrbp_7j2_vcgfk5>	<Elena_Salgado>	<infobox/en/profession>	"[[Industrial Engineer]], [[Economist]]"@en
 <id_krjrbp_17o_bh6dxo>	<Elena_Salgado>	<infobox/en/religion>	"[[Roman Catholic]]"@en
 <id_krjrbp_gjb_g1lts>	<Elena_Salgado>	<infobox/en/successor>	"[[Bernat Soria]]"@en
-<id_krjrbp_gjb_a5ifvh>	<Elena_Salgado>	<infobox/en/successor>	"[[Luis de Guindos]] \n[[Cristóbal Montoro Romero|Cristóbal Montoro]] "@en
+<id_krjrbp_gjb_yp3pur>	<Elena_Salgado>	<infobox/en/successor>	"[[Luis de Guindos]] \n[[Cristóbal Montoro Romero|Cristóbal Montoro]]"@en
 <id_krjrbp_gjb_1ae1146>	<Elena_Salgado>	<infobox/en/successor>	"[[Manuel Chaves]]"@en
-<id_krjrbp_gjb_hgmv3u>	<Elena_Salgado>	<infobox/en/successor>	"[[Manuel Chaves]] "@en
+<id_krjrbp_gjb_1ae1146>	<Elena_Salgado>	<infobox/en/successor>	"[[Manuel Chaves]]"@en
 <id_krjrbp_gjb_1p0si3e>	<Elena_Salgado>	<infobox/en/successor>	"[[Soraya Sáenz de Santamaría]]"@en
 <id_krjrbp_jeg_xlqqiu>	<Elena_Salgado>	<infobox/en/termend>	"11 July 2011"@en
 <id_krjrbp_jeg_1pw8jaw>	<Elena_Salgado>	<infobox/en/termend>	"21 December 2011"@en
@@ -2544,7 +2515,7 @@
 <id_1u5uyhb_1vl_tqxflt>	<Francoist_Spain>	<infobox/en/commonlanguages>	"[[Spanish language|Spanish]] ([[Official language|official]]) \n[[Catalan language|Catalan]], [[Galician language|Galician]], [[Basque language|Basque]], [[Languages of Spain|others]] (unofficial; [[Language policies of Francoist Spain|discouraged and suppressed]] by the Franco regime)"@en
 <id_1u5uyhb_1b5_10u8jah>	<Francoist_Spain>	<infobox/en/commonname>	"Spain"@en
 <id_1u5uyhb_1t8_1y1316q>	<Francoist_Spain>	<infobox/en/continent>	"Europe"@en
-<id_1u5uyhb_1f5_f5e2oq>	<Francoist_Spain>	<infobox/en/conventionallongname>	"Estado Español\nSpanish State\n"@en
+<id_1u5uyhb_1f5_by13w0>	<Francoist_Spain>	<infobox/en/conventionallongname>	"Estado Español\nSpanish State"@en
 <id_1u5uyhb_1ms_10u8jah>	<Francoist_Spain>	<infobox/en/country>	"Spain"@en
 <id_1u5uyhb_1q8_ygp0n4>	<Francoist_Spain>	<infobox/en/currency>	"[[Spanish peseta]]"@en
 <id_1u5uyhb_1ut_mcjhtg>	<Francoist_Spain>	<infobox/en/dateend>	"20 November"@en
@@ -2561,7 +2532,7 @@
 <id_1u5uyhb_n3b_1vdg702>	<Francoist_Spain>	<infobox/en/flagp>	"Flag of Spain 1931 1939.svg"@en
 <id_1u5uyhb_n3b_29ylab>	<Francoist_Spain>	<infobox/en/flags>	"Flag of Spain 1977 1981.svg"@en
 <id_1u5uyhb_1pc_pqddsy>	<Francoist_Spain>	<infobox/en/footnotes>	"¹ Franco was titled [[Caudillo]] de España, [[By the Grace of God|por la gracia de Dios]], and was the de facto [[dictator]] of Spain. After the formal restoration of the [[Monarchy of Spain|Spanish monarchy]] in 1947, he became effectively the country's [[Absolute monarchy|absolute]] [[regent]] until his death, when his designated successor, [[Juan Carlos I|Prince Juan Carlos]], ascended to the Spanish throne as king. \n¹ All legislation was passed by the Government until the [[Spanish transition to democracy|transition to democracy]]."@en
-<id_1u5uyhb_1mi_1u2vcem>	<Francoist_Spain>	<infobox/en/governmenttype>	"[[Falangism|Falangist]] [[single-party state]]\n[[Interregnum|Interregnal]] [[absolute monarchy]]\n"@en
+<id_1u5uyhb_1mi_4f83y4>	<Francoist_Spain>	<infobox/en/governmenttype>	"[[Falangism|Falangist]] [[single-party state]]\n[[Interregnum|Interregnal]] [[absolute monarchy]]"@en
 <id_1u5uyhb_1le_1n307x8>	<Francoist_Spain>	<infobox/en/imagecoat>	"Coat of Arms of Spain (1945-1977).svg"@en
 <id_1u5uyhb_1le_qiobop>	<Francoist_Spain>	<infobox/en/imageflag>	"Flag of Spain 1945 1977.svg"@en
 <id_1u5uyhb_12i_1flzxsw>	<Francoist_Spain>	<infobox/en/imagemap>	"Spanish State.png"@en
@@ -2629,8 +2600,6 @@
 <id_1ng0idk_o48_1u3wh20>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/constituency>	"[[León (Spanish Congress Electoral District)|León]]"@en
 <id_1ng0idk_o48_1vahh4o>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/constituency>	"[[Madrid (Spanish Congress Electoral District)|Madrid]]"@en
 <id_1ng0idk_4i7_nzg6pe>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/deputy>	"[[María Teresa Fernández de la Vega]]\n[[Alfredo Pérez Rubalcaba]]\n[[Elena Salgado]]"@en
-<id_1ng0idk_gbo_zik0zu>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/honorificprefix>	"\n"@en
-<id_1ng0idk_hsh_zik0zu>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/honorificsuffix>	"\n"@en
 <id_1ng0idk_n4z_io0f16>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/image>	"José Luis Rodríguez Zapatero en el Foro Económico Mundial (recortada).jpg"@en
 <id_1ng0idk_1rd_14ty1sj>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/monarch>	"[[Juan Carlos I of Spain]]"@en
 <id_1ng0idk_1qm_tezosm>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/name>	"Don José Luis Rodríguez Zapatero"@en
@@ -2642,7 +2611,7 @@
 <id_1ng0idk_14q_19bwlir>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/predecessor>	"[[José María Aznar]]"@en
 <id_1ng0idk_1ei_19bwlir>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/primeminister>	"[[José María Aznar]]"@en
 <id_1ng0idk_in6_p5c4uv>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/signature>	"José Luis Rodríguez Zapatero Signature.svg"@en
-<id_1ng0idk_brx_12ehzzq>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/spouse>	"[[Sonsoles Espinosa]] "@en
+<id_1ng0idk_brx_1xz7zl6>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/spouse>	"[[Sonsoles Espinosa]]"@en
 <id_1ng0idk_gjb_16yf21o>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/successor>	"[[Mariano Rajoy]]"@en
 <id_1ng0idk_jeg_seun5o>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/termend>	"14 March 2004"@en
 <id_1ng0idk_jeg_1yjug6u>	<José_Luis_Rodríguez_Zapatero>	<infobox/en/termend>	"17 April 2004"@en
@@ -2660,14 +2629,13 @@
 <id_lb8qid_1b4_14f3rvu>	<José_María_Aznar>	<infobox/en/birthplace>	"[[Madrid]], [[Francoist Spain|Spain]]"@en
 <id_lb8qid_956_1636rh5>	<José_María_Aznar>	<infobox/en/children>	"José María\nAna\nAlonso"@en
 <id_lb8qid_4i7_1mi7d23>	<José_María_Aznar>	<infobox/en/deputy>	"[[Francisco Álvarez Cascos]]\n[[Mariano Rajoy]]\n[[Rodrigo Rato]]"@en
-<id_lb8qid_gbo_zik0zu>	<José_María_Aznar>	<infobox/en/honorificprefix>	"\n"@en
 <id_lb8qid_n4z_8qugdn>	<José_María_Aznar>	<infobox/en/image>	"Aznar at the Azores, March 17, 2003.jpg"@en
 <id_lb8qid_1rd_1nw6ahw>	<José_María_Aznar>	<infobox/en/monarch>	"[[Juan Carlos I of Spain|Juan Carlos I]]"@en
 <id_lb8qid_1qm_1y31777>	<José_María_Aznar>	<infobox/en/name>	"José María Aznar"@en
 <id_lb8qid_9q2_rd4h2s>	<José_María_Aznar>	<infobox/en/office>	"[[Leader of the Opposition (Spain)|Leader of the Opposition]]"@en
 <id_lb8qid_9q2_7nx3dm>	<José_María_Aznar>	<infobox/en/office>	"[[Prime Minister of Spain]]"@en
-<id_lb8qid_os5_8anwvw>	<José_María_Aznar>	<infobox/en/otherparty>	"[[People's Alliance (Spain)|People's Alliance]] "@en
-<id_lb8qid_n8m_5h957w>	<José_María_Aznar>	<infobox/en/party>	"[[People's Party (Spain)|People's Party]] "@en
+<id_lb8qid_os5_753hic>	<José_María_Aznar>	<infobox/en/otherparty>	"[[People's Alliance (Spain)|People's Alliance]]"@en
+<id_lb8qid_n8m_dxadbo>	<José_María_Aznar>	<infobox/en/party>	"[[People's Party (Spain)|People's Party]]"@en
 <id_lb8qid_14q_yk1ggz>	<José_María_Aznar>	<infobox/en/predecessor>	"[[Felipe González]]"@en
 <id_lb8qid_14q_vxcdu9>	<José_María_Aznar>	<infobox/en/predecessor>	"[[Manuel Fraga]]"@en
 <id_lb8qid_1ei_yk1ggz>	<José_María_Aznar>	<infobox/en/primeminister>	"[[Felipe González]]"@en
@@ -2693,7 +2661,7 @@
 <id_1cx2d3n_8x6_45btd8>	<Juan_Carlos_I_of_Spain>	<infobox/en/mother>	"[[Princess María de las Mercedes of Bourbon-Two Sicilies]]"@en
 <id_1cx2d3n_1qm_1rg8eq5>	<Juan_Carlos_I_of_Spain>	<infobox/en/name>	"Juan Carlos I"@en
 <id_1cx2d3n_32a_vbshxp>	<Juan_Carlos_I_of_Spain>	<infobox/en/nationality>	"[[Italy]] [[Italian]] - [[Spain]] [[Spanish]]"@en
-<id_1cx2d3n_14q_1tmy5m9>	<Juan_Carlos_I_of_Spain>	<infobox/en/predecessor>	"[[Alejandro Rodríguez de Valcárcel]] "@en
+<id_1cx2d3n_14q_1l3x9u7>	<Juan_Carlos_I_of_Spain>	<infobox/en/predecessor>	"[[Alejandro Rodríguez de Valcárcel]]"@en
 <id_1cx2d3n_b4o_1opdq7m>	<Juan_Carlos_I_of_Spain>	<infobox/en/regent>	"{{List collapsed|title=See list|1=[[Carlos Arias-Navarro, 1st Marquis of Arias Navarro|Carlos Arias-Navarro]]\n[[Fernando de Santiago y Díaz]]\n[[Adolfo Suárez, 1st Duke of Suárez|Adolfo Suárez]]\n[[Leopoldo Calvo-Sotelo, 1st Marquis of the Ría de Ribadeo|Leopoldo Calvo-Sotelo]]\n[[Felipe González]]\n[[José María Aznar]]\n[[José Luis Rodríguez Zapatero]]\n[[Mariano Rajoy]]}}"@en
 <id_1cx2d3n_1ow_1ea2cq3>	<Juan_Carlos_I_of_Spain>	<infobox/en/regtype>	"[[Prime Minister of Spain|Prime Ministers]]"@en
 <id_1cx2d3n_n9s_w4dbk2>	<Juan_Carlos_I_of_Spain>	<infobox/en/reign>	"22 November 1975 – present"@en
@@ -2716,7 +2684,6 @@
 <id_45ua65_o48_1vahh4o>	<Mariano_Rajoy>	<infobox/en/constituency>	"[[Madrid (Spanish Congress Electoral District)|Madrid]]"@en
 <id_45ua65_o48_qakifs>	<Mariano_Rajoy>	<infobox/en/constituency>	"[[Pontevedra (Spanish Congress Electoral District)|Pontevedra]]"@en
 <id_45ua65_4i7_1p0si3e>	<Mariano_Rajoy>	<infobox/en/deputy>	"[[Soraya Sáenz de Santamaría]]"@en
-<id_45ua65_gbo_zik0zu>	<Mariano_Rajoy>	<infobox/en/honorificprefix>	"\n"@en
 <id_45ua65_n4z_13b0xzj>	<Mariano_Rajoy>	<infobox/en/image>	"Mariano Rajoy en Bilbao2.png"@en
 <id_45ua65_1rd_1nw6ahw>	<Mariano_Rajoy>	<infobox/en/monarch>	"[[Juan Carlos I of Spain|Juan Carlos I]]"@en
 <id_45ua65_9q2_1pg0lmq>	<Mariano_Rajoy>	<infobox/en/office>	"Member of the [[Congress of Deputies (Spain)|Congress of Deputies]]"@en
@@ -2727,8 +2694,8 @@
 <id_45ua65_9q2_tbamln>	<Mariano_Rajoy>	<infobox/en/office>	"[[Ministry of Education (Spain)|Minister of Education and Culture]]"@en
 <id_45ua65_9q2_g02pcq>	<Mariano_Rajoy>	<infobox/en/office>	"[[Ministry of the Interior (Spain)|Minister of the Interior]]"@en
 <id_45ua65_9q2_7nx3dm>	<Mariano_Rajoy>	<infobox/en/office>	"[[Prime Minister of Spain]]"@en
-<id_45ua65_os5_8anwvw>	<Mariano_Rajoy>	<infobox/en/otherparty>	"[[People's Alliance (Spain)|People's Alliance]] "@en
-<id_45ua65_n8m_5h957w>	<Mariano_Rajoy>	<infobox/en/party>	"[[People's Party (Spain)|People's Party]] "@en
+<id_45ua65_os5_753hic>	<Mariano_Rajoy>	<infobox/en/otherparty>	"[[People's Alliance (Spain)|People's Alliance]]"@en
+<id_45ua65_n8m_dxadbo>	<Mariano_Rajoy>	<infobox/en/party>	"[[People's Party (Spain)|People's Party]]"@en
 <id_45ua65_14q_r32vda>	<Mariano_Rajoy>	<infobox/en/predecessor>	"[[Esperanza Aguirre]]"@en
 <id_45ua65_14q_1rrwmw1>	<Mariano_Rajoy>	<infobox/en/predecessor>	"[[Francisco Álvarez Cascos]]"@en
 <id_45ua65_14q_96r8a3>	<Mariano_Rajoy>	<infobox/en/predecessor>	"[[Jaime Mayor Oreja]]"@en
@@ -2740,11 +2707,11 @@
 <id_45ua65_17o_6lojmz>	<Mariano_Rajoy>	<infobox/en/religion>	"[[Catholicism|Catholic]]"@en
 <id_45ua65_100_yv0tau>	<Mariano_Rajoy>	<infobox/en/residence>	"[[Palace of Moncloa]]"@en
 <id_45ua65_in6_wmq5yo>	<Mariano_Rajoy>	<infobox/en/signature>	"Firma de Mariano Rajoy.svg"@en
-<id_45ua65_brx_6faxw3>	<Mariano_Rajoy>	<infobox/en/spouse>	"Elvira Fernández Balboa "@en
+<id_45ua65_brx_1a17m3x>	<Mariano_Rajoy>	<infobox/en/spouse>	"Elvira Fernández Balboa"@en
 <id_45ua65_gjb_1khr2a6>	<Mariano_Rajoy>	<infobox/en/successor>	"[[Alfredo Pérez Rubalcaba]]"@en
 <id_45ua65_gjb_iumfed>	<Mariano_Rajoy>	<infobox/en/successor>	"[[Javier Arenas (Spanish politician)|Javier Arenas]]"@en
 <id_45ua65_gjb_1i9iv3j>	<Mariano_Rajoy>	<infobox/en/successor>	"[[Juan José Lucas]]"@en
-<id_45ua65_gjb_v6quzu>	<Mariano_Rajoy>	<infobox/en/successor>	"[[Pilar del Castillo]] "@en
+<id_45ua65_gjb_q7kvw6>	<Mariano_Rajoy>	<infobox/en/successor>	"[[Pilar del Castillo]]"@en
 <id_45ua65_gjb_1islzl0>	<Mariano_Rajoy>	<infobox/en/successor>	"[[Rodrigo Rato]]"@en
 <id_45ua65_gjb_owb8x8>	<Mariano_Rajoy>	<infobox/en/successor>	"[[Ángel Acebes]]"@en
 <id_45ua65_jeg_seun5o>	<Mariano_Rajoy>	<infobox/en/termend>	"14 March 2004"@en
@@ -2833,7 +2800,7 @@
 <id_cacb9n_46l_php28l>	<University_of_León>	<infobox/en/colors>	"[[Red]] and [[Green]]             "@en
 <id_cacb9n_1ms_1hefkte>	<University_of_León>	<infobox/en/country>	"{{ESP}}"@en
 <id_cacb9n_1uy_10acd5b>	<University_of_León>	<infobox/en/doctoral>	"1.172"@en
-<id_cacb9n_14s_xc073d>	<University_of_León>	<infobox/en/endowment>	" Euro  97 million "@en
+<id_cacb9n_14s_tjxek7>	<University_of_León>	<infobox/en/endowment>	"Euro  97 million"@en
 <id_cacb9n_2wn_zjgiyy>	<University_of_León>	<infobox/en/established>	"1979"@en
 <id_cacb9n_ovy_zil8k4>	<University_of_León>	<infobox/en/faculty>	"950"@en
 <id_cacb9n_n78_1op20t3>	<University_of_León>	<infobox/en/motto>	"Universitas legionensis"@en

@@ -246,12 +246,11 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 		Map<String, Set<String>> result = new TreeMap<String, Set<String>>();
 
 		while (true) {
-			StringBuilder attr = new StringBuilder();
-			int r = FileLines.find(in, attr, "</page>", "=", "}");
-			if (r == -1 || r == 0) {
+			String attribute= FileLines.readTo(in, "</page>", "=", "}");
+			if (attribute==null || attribute.isEmpty()) {
 				return result;
 			}
-			String attribute = normalizeAttribute(attr.toString().trim());
+			attribute = normalizeAttribute(attribute.trim());
 			if (attribute.length() == 0)
 				return result;
 
@@ -323,12 +322,14 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 					write(INFOBOX_TEMPLATES.inLanguage(language), new Fact(
 							titleEntity, typeRelation, cls),
 							INFOBOX_TEMPLATE_SOURCES.inLanguage(language),
-							FactComponent.wikipediaURL(titleEntity),
+							FactComponent.wikipediaURL(titleEntity,language),
 							"InfoboxExtractor");
 				}
 				Map<String, Set<String>> attributes = readInfobox(in);
 
 				for (String attribute : attributes.keySet()) {
+					String relation = FactComponent.forInfoboxAttribute(
+							this.language, attribute);									
 					for (String value : attributes.get(attribute)) {
 						value = valueCleaner.transform(value);
 						value = value.trim();
@@ -336,13 +337,11 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 						if (value != null && !value.isEmpty()) {
 							String object = FactComponent
 									.forStringWithLanguage(value, language);
-							attribute = FactComponent.forInfoboxAttribute(
-									this.language, attribute);
 							write(INFOBOX_ATTRIBUTES.inLanguage(language),
-									new Fact(titleEntity, attribute, object),
+									new Fact(titleEntity, relation, object),
 									INFOBOX_ATTRIBUTE_SOURCES
 											.inLanguage(language),
-									FactComponent.wikipediaURL(titleEntity),
+									FactComponent.wikipediaURL(titleEntity,language),
 									"Infobox Extractor");
 						}
 					}
@@ -358,9 +357,9 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new InfoboxExtractor("pl", new File(
-				"/home/jbiega/Downloads/pl_wiki.xml")).extract(new File(
-				"/home/jbiega/data/yago2s"), "Test");
+		new InfoboxExtractor("en", new File(
+				"c:/fabian/data/wikipedia/westgermany.xml")).extract(new File(
+				"c:/fabian/data/yago3"), "Test");
 
 	}
 }

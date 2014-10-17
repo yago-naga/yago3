@@ -7,31 +7,31 @@
 "[ \t\n\u00A0\u202F\uFEFF_]++" <mapsTo> " " .
 
 # Eliminate suffixes
-"st|nd|rd|th" <mapsTo> "" .
+"\d(st|nd|rd|th)" <mapsTo> "" .
 
 # English months
-"January" <mapsTo> "_monthName_1_" .
-"February" <mapsTo>  "_monthName_2_" .
-"March" <mapsTo>  "_monthName_3_" .
-"April" <mapsTo>  "_monthName_4_" .
-"May" <mapsTo>  "_monthName_5_" .
-"June" <mapsTo>  "_monthName_6_" .
-"July" <mapsTo>  "_monthName_7_" .
-"August" <mapsTo>  "_monthName_8_" .
-"September" <mapsTo>  "_monthName_9_" .
+"January" <mapsTo> "_monthName_01_" .
+"February" <mapsTo>  "_monthName_02_" .
+"March" <mapsTo>  "_monthName_03_" .
+"April" <mapsTo>  "_monthName_04_" .
+"May" <mapsTo>  "_monthName_05_" .
+"June" <mapsTo>  "_monthName_06_" .
+"July" <mapsTo>  "_monthName_07_" .
+"August" <mapsTo>  "_monthName_08_" .
+"September" <mapsTo>  "_monthName_09_" .
 "October" <mapsTo>  "_monthName_10_" .
 "November" <mapsTo>  "_monthName_11_" .
 "December" <mapsTo>  "_monthName_12_" .
 
 # English months in short
-"Jan" <mapsTo> "_monthName_1_" .
-"Feb" <mapsTo>  "_monthName_2_" .
-"Mar" <mapsTo>  "_monthName_3_" .
-"Apr" <mapsTo>  "_monthName_4_" .
-"Jun" <mapsTo>  "_monthName_6_" .
-"Jul" <mapsTo>  "_monthName_7_" .
-"Aug" <mapsTo>  "_monthName_8_" .
-"Sep" <mapsTo>  "_monthName_9_" .
+"Jan" <mapsTo> "_monthName_01_" .
+"Feb" <mapsTo>  "_monthName_02_" .
+"Mar" <mapsTo>  "_monthName_03_" .
+"Apr" <mapsTo>  "_monthName_04_" .
+"Jun" <mapsTo>  "_monthName_06_" .
+"Jul" <mapsTo>  "_monthName_07_" .
+"Aug" <mapsTo>  "_monthName_08_" .
+"Sep" <mapsTo>  "_monthName_09_" .
 "Oct" <mapsTo>  "_monthName_10_" .
 "Nov" <mapsTo>  "_monthName_11_" .
 "Dec" <mapsTo>  "_monthName_12_" .
@@ -39,27 +39,40 @@
 # Before Common Era
 "BCE"	<mapsTo>	"_bce_" .
 
+# Make days and months two digit
+"\\b(\d)\\b"	<mapsTo>	"0$1" .
+
+# Mark years
+"\\b[12]\d{3}\\b"	<mapsTo>	"_year_$0_" .
+"\\b[123456789]\d{2}\\b"	<mapsTo>	"_year_$0_" .
+
 # 1935-01-08
-# Put this pattern first because otherwise it applies to date results
-"(\d{2,4})-(\d+)-(\d+) ?_bce_" <mapsTo> "_result_-$1-$2-$3__" .
-"(\d{2,4})-(\d+)-(\d+)" <mapsTo> "_result_$1-$2-$3_" .
+"_year_([^_]++)_-(\d++)-(\d++) ?_bce_" <mapsTo> "_result_-$1-$2-$3__" .
+"_year_([^_]++)_-(\d++)-(\d++)" <mapsTo> "_result_$1-$2-$3__" .
 
 # 8th of January 1935
-"(\d+) of _monthName_(\d+)_ (\d{2,4}) ?_bce_" <mapsTo> "_result_-$3-$2-$1__" .
-"(\d+) of _monthName_(\d+)_ (\d{2,4})" <mapsTo> "_result_$3-$2-$1__" .
+"(\d+) of _monthName_(\d++)_ _year_([^_]++)_ ?_bce_" <mapsTo> "_result_-$3-$2-$1__" .
+"(\d+) of _monthName_(\d++)_ _year_([^_]++)_" <mapsTo> "_result_$3-$2-$1__" .
 
 # 8 January 1935
-"(\d+).? _monthName_(\d+)_ (\d{2,4}) ?_bce_" <mapsTo> "_result_-$3-$2-$1__" .
-"(\d+).? _monthName_(\d+)_ (\d{2,4})" <mapsTo> "_result_$3-$2-$1__" .
+"(\d+).? _monthName_(\d++)_ _year_([^_]++)_ ?_bce_" <mapsTo> "_result_-$3-$2-$1__" .
+"(\d+).? _monthName_(\d++)_ _year_([^_]++)_" <mapsTo> "_result_$3-$2-$1__" .
 
 # January 8, 1935
-"_monthName_(\d+)_ (\d+), (\d{2,4}) ?_bce_" <mapsTo>  "_result_-$3-$1-$2__" .
-"_monthName_(\d+)_ (\d+), (\d{2,4})" <mapsTo>  "_result_$3-$1-$2__" .
+"_monthName_(\d++)_ (\d++), _year_([^_]++)_ ?_bce_" <mapsTo>  "_result_-$3-$1-$2__" .
+"_monthName_(\d++)_ (\d++), _year_([^_]++)_" <mapsTo>  "_result_$3-$1-$2__" .
+
+# January 1935. Should come after "8 January 1935" to avoid duplicate application.
+"_monthName_(\d++)_ _year_([^_]++)_ ?_bce_" <mapsTo> "_result_-$2-$1-##__" .
+"_monthName_(\d++)_ _year_([^_]++)_" <mapsTo> "_result_$2-$1-##__" .
 
 # 1935|1|8
-"(\d{2,4})\|(\d+)\|(\d+)" <mapsTo> "_result_$1-$2-$3__" .
+"_year_([^_]++)_\|(\d++)\|(\d++)" <mapsTo> "_result_$1-$2-$3__" .
+
+# nth century
+"(\d{1,2}) [Cc]entury _bce_" <mapsTo> "_result_-$1##-##-##__" .
+"(\d{1,2}) [cC]entury" <mapsTo> "_result_$1##-##-##__" .
 
 # 1935
-"\\b(\d{2,4})\\b ?_bce_" <mapsTo> "_result_-$1-##-##__" .
-"^(\d{2,4})\\b" <mapsTo> "_result_$1-##-##__" .
-"[^\\d_-](\d{2,4})\\b" <mapsTo> "_result_$1-##-##__" .
+"_year_([^_]++)_ ?_bce_" <mapsTo> "_result_-$1-##-##__" .
+"_year_([^_]++)_" <mapsTo> "_result_$1-##-##__" .

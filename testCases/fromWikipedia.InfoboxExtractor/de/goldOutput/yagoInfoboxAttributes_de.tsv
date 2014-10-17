@@ -1,13 +1,10 @@
-// Test
-// Raw facts from the Wikipedia infoboxes
-// WIKIPEDIA
-
+	<yagoTheme_yagoInfoboxAttributes_de>	<hasGloss>	"Test Raw facts from the Wikipedia infoboxes WIKIPEDIA"
 <id_1r9izo8_141_zkfbds>	<de/Actinium>	<infobox/de/aggregatzustand>	"fest"@de
 <id_1r9izo8_1co_zbo3js>	<de/Actinium>	<infobox/de/atommasse>	"227,0278"@de
 <id_1r9izo8_jpx_zil2q5>	<de/Actinium>	<infobox/de/atomradius>	"195"@de
 <id_1r9izo8_1s2_1y4egjo>	<de/Actinium>	<infobox/de/aussehen>	"silbrig"@de
 <id_1r9izo8_pdw_pv0zpl>	<de/Actinium>	<infobox/de/basizität>	"mäßig basisch"@de
-<id_1r9izo8_465_zik3dy>	<de/Actinium>	<infobox/de/block>	"d\n"@de
+<id_1r9izo8_465_zik12c>	<de/Actinium>	<infobox/de/block>	"d"@de
 <id_1r9izo8_akn_11nc074>	<de/Actinium>	<infobox/de/cas>	"7440-34-8"@de
 <id_1r9izo8_1n6_1i9uejs>	<de/Actinium>	<infobox/de/dichte>	"10,07 g/cm<sup>3</sup>"@de
 <id_1r9izo8_4vr_zil2eu>	<de/Actinium>	<infobox/de/elektronegativität>	"1,1"@de
@@ -22,7 +19,7 @@
 <id_1r9izo8_1ts_1aljhul>	<de/Actinium>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| Massenzahl= 224\n| Symbol= Ac\n| NH= 0\n| Halbwertszeit= 2,9 [[Stunde|h]]\n| AnzahlZerfallstypen= 3\n| Zerfallstyp1ZM= [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE= 1,403\n| Zerfallstyp1ZP= [[Radium|<sup>224</sup>Ra]]\n| Zerfallstyp2ZM= [[Alphastrahlung|α]]\n| Zerfallstyp2ZE= 9,100\n| Zerfallstyp2ZP= [[Francium|<sup>220</sup>Fr]]\n| Zerfallstyp3ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp3ZE= 0,232\n| Zerfallstyp3ZP= [[Thorium|<sup>224</sup>Th]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 225\n| Symbol= Ac\n| NH= 0\n| Halbwertszeit= 10 [[Tag|d]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Alphastrahlung|α]]\n| Zerfallstyp1ZE= 5,935\n| Zerfallstyp1ZP= [[Francium|<sup>221</sup>Fr]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 226\n| Symbol= Ac\n| NH= 0\n| Halbwertszeit= 29,4 [[Stunde|h]]\n| AnzahlZerfallstypen= 3\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 0,640\n| Zerfallstyp1ZP= [[Thorium|<sup>226</sup>Th]]\n| Zerfallstyp2ZM= [[Elektronen-Einfang|ε]]\n| Zerfallstyp2ZE= 1,116\n| Zerfallstyp2ZP= [[Radium|<sup>226</sup>Ra]]\n| Zerfallstyp3ZM= [[Alphastrahlung|α]]\n| Zerfallstyp3ZE= 5,536\n| Zerfallstyp3ZP= [[Francium|<sup>222</sup>Fr]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 227\n| Symbol= Ac\n| NH= 100\n| Halbwertszeit= 21,773 [[Jahr|a]]\n| AnzahlZerfallstypen= 2\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 0,045\n| Zerfallstyp1ZP= [[Thorium|<sup>227</sup>Th]]\n| Zerfallstyp2ZM= [[Alphastrahlung|α]]\n| Zerfallstyp2ZE= 5,536\n| Zerfallstyp2ZP= [[Francium|<sup>223</sup>Fr]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 228\n| Symbol= Ac\n| NH= -1\n| Halbwertszeit= 6,15 h\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 2,127\n| Zerfallstyp1ZP= [[Thorium|<sup>228</sup>Th]]\n}}"@de
 <id_1r9izo8_1k5_zil39y>	<de/Actinium>	<infobox/de/kovalenterradius>	"215"@de
 <id_1r9izo8_17o_8y8k0g>	<de/Actinium>	<infobox/de/kristallstruktur>	"[[Kubisches Kristallsystem|kubisch flächenzentriert]]"@de
-<id_1r9izo8_1ki_qddyjj>	<de/Actinium>	<infobox/de/massenanteil>	"6 · 10<sup>−14</sup> ppm\n"@de
+<id_1r9izo8_1ki_1vargwb>	<de/Actinium>	<infobox/de/massenanteil>	"6 · 10<sup>−14</sup> ppm"@de
 <id_1r9izo8_zrr_zil3av>	<de/Actinium>	<infobox/de/massenzahl>	"227"@de
 <id_1r9izo8_1xz_1stpeev>	<de/Actinium>	<infobox/de/molaresvolumen>	"22,55 · 10<sup>−6</sup>"@de
 <id_1r9izo8_17o_96zcju>	<de/Actinium>	<infobox/de/name>	"Actinium"@de
@@ -34,7 +31,7 @@
 <id_1r9izo8_1gz_zik2x4>	<de/Actinium>	<infobox/de/quellegefstkz>	"NV"@de
 <id_1r9izo8_wfi_zik2x4>	<de/Actinium>	<infobox/de/quelleghskz>	"NV"@de
 <id_1r9izo8_1ik_1melc06>	<de/Actinium>	<infobox/de/r>	"{{R-Sätze|/}}"@de
-<id_1r9izo8_d6d_zilm6r>	<de/Actinium>	<infobox/de/radioaktiv>	"Ja\n"@de
+<id_1r9izo8_d6d_zik2tz>	<de/Actinium>	<infobox/de/radioaktiv>	"Ja"@de
 <id_1r9izo8_1ri_zil3gs>	<de/Actinium>	<infobox/de/reftempspezifischewärmekapazität>	"293"@de
 <id_1r9izo8_1ik_soqfgn>	<de/Actinium>	<infobox/de/s>	"{{S-Sätze|/}}"@de
 <id_1r9izo8_13i_zjgc8q>	<de/Actinium>	<infobox/de/schmelzpunktc>	"1050"@de
@@ -45,7 +42,7 @@
 <id_1r9izo8_138_1oi01gp>	<de/Actinium>	<infobox/de/siedepunktk>	"3573 K"@de
 <id_1r9izo8_1ui_zik2ma>	<de/Actinium>	<infobox/de/symbol>	"Ac"@de
 <id_1r9izo8_1dc_1gkv06e>	<de/Actinium>	<infobox/de/verdampfungswärme>	"400 kJ/mol"@de
-<id_1r9izo8_gl2_zil2ix>	<de/Actinium>	<infobox/de/wärmeleitfähigkeit>	"12\n"@de
+<id_1r9izo8_gl2_zik275>	<de/Actinium>	<infobox/de/wärmeleitfähigkeit>	"12"@de
 <id_l4kogx_rwp_zjlfaw>	<de/The_Visitors>	<infobox/de/anzahltitel>	"9/13"@de
 <id_l4kogx_1vo_qmdfif>	<de/The_Visitors>	<infobox/de/besetzung>	"* [[Gesang]]: [[Agnetha Fältskog]], [[Anni-Frid Lyngstad]], [[Björn Ulvaeus]]\n* [[E-Bass|Bass]]: Rutger Gunnarsson\n* [[Gitarre]]: Lasse Wellander, [[Björn Ulvaeus]]\n* [[Schlagzeug]]: [[Ola Brunkert]]\n* [[Keyboard]] & Synthesizers: [[Benny Andersson]]"@de
 <id_l4kogx_jw8_1lg6qg3>	<de/The_Visitors>	<infobox/de/formate>	"CD, LP, MC"@de
@@ -64,7 +61,7 @@
 <id_z5e1bf_jpx_zil2k4>	<de/Aluminium>	<infobox/de/atomradius>	"125"@de
 <id_z5e1bf_1pm_zil2jc>	<de/Aluminium>	<infobox/de/atomradiusberechnet>	"118"@de
 <id_z5e1bf_1s2_1y4egjo>	<de/Aluminium>	<infobox/de/aussehen>	"silbrig"@de
-<id_z5e1bf_3j3_1lr2a3k>	<de/Aluminium>	<infobox/de/austrittsarbeit>	"4,06–4,26 eV "@de
+<id_z5e1bf_3j3_19ebukg>	<de/Aluminium>	<infobox/de/austrittsarbeit>	"4,06–4,26 eV"@de
 <id_z5e1bf_pdw_13is646>	<de/Aluminium>	<infobox/de/basizität>	"[[amphoter]]"@de
 <id_z5e1bf_465_zik12o>	<de/Aluminium>	<infobox/de/block>	"p"@de
 <id_z5e1bf_akn_ck1s94>	<de/Aluminium>	<infobox/de/cas>	"7429-90-5"@de
@@ -79,15 +76,14 @@
 <id_z5e1bf_pa3_1yq5m2r>	<de/Aluminium>	<infobox/de/ghssignalwort>	"Gefahr"@de
 <id_z5e1bf_1oq_zik276>	<de/Aluminium>	<infobox/de/gruppe>	"13"@de
 <id_z5e1bf_1ik_udhssr>	<de/Aluminium>	<infobox/de/h>	"{{H-Sätze|250|261}}"@de
-<id_z5e1bf_1i7_zik0zu>	<de/Aluminium>	<infobox/de/hauptquelle>	"\n"@de
 <id_z5e1bf_sx1_1nlgf13>	<de/Aluminium>	<infobox/de/ionisierungsenergie>	"1816,7"@de
-<id_z5e1bf_sx1_ex6a8p>	<de/Aluminium>	<infobox/de/ionisierungsenergie>	"2744,8\n"@de
+<id_z5e1bf_sx1_1o204b5>	<de/Aluminium>	<infobox/de/ionisierungsenergie>	"2744,8"@de
 <id_z5e1bf_sx1_10cpela>	<de/Aluminium>	<infobox/de/ionisierungsenergie>	"577,5"@de
 <id_z5e1bf_1ts_wtgosl>	<de/Aluminium>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| Massenzahl = 25\n| Symbol = Al\n| NH = 0\n| Halbwertszeit = 7,183 [[Sekunde|s]]\n| AnzahlZerfallstypen = 1\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 4,277\n| Zerfallstyp1ZP = [[Magnesium|<sup>25</sup>Mg]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 26\n| Symbol = Al\n| NH = -1\n| Halbwertszeit = 7,17 · 10<sup>5</sup> [[Jahr|a]]\n| AnzahlZerfallstypen = 1\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 4,004\n| Zerfallstyp1ZP = [[Magnesium|<sup>26</sup>Mg]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 0\n| OZ = 13\n| Massenzahl = 27\n| Symbol = Al\n| NH = 100\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 28\n| Symbol = Al\n| NH = 0\n| Halbwertszeit = 2,2414 [[Minute|min]]\n| AnzahlZerfallstypen = 1\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 4,642\n| Zerfallstyp1ZP = [[Silicium|<sup>28</sup>Si]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 29\n| Symbol = Al\n| NH = 0\n| Halbwertszeit = 6,56 [[Minute|min]]\n| AnzahlZerfallstypen = 1\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 3,680\n| Zerfallstyp1ZP = [[Silicium|<sup>29</sup>Si]]\n}}"@de
 <id_z5e1bf_1k5_zil2k0>	<de/Aluminium>	<infobox/de/kovalenterradius>	"121"@de
 <id_z5e1bf_17o_icy95c>	<de/Aluminium>	<infobox/de/kristallstruktur>	"[[Kubisches Kristallsystem|kubisch]] flächenzentriert"@de
 <id_z5e1bf_1bj_1ei0x11>	<de/Aluminium>	<infobox/de/magnetismus>	"[[Paramagnetismus|paramagnetisch]] ([[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = 2,1 · 10<sup>−5</sup>)"@de
-<id_z5e1bf_1ki_c3598u>	<de/Aluminium>	<infobox/de/massenanteil>	"7,57 %\n"@de
+<id_z5e1bf_1ki_1q976nw>	<de/Aluminium>	<infobox/de/massenanteil>	"7,57 %"@de
 <id_z5e1bf_e6w_zjgwbc>	<de/Aluminium>	<infobox/de/mohshärte>	"2,75"@de
 <id_z5e1bf_1xz_26z9y0>	<de/Aluminium>	<infobox/de/molaresvolumen>	"10,00 · 10<sup>−6</sup>"@de
 <id_z5e1bf_17o_1rp6fy1>	<de/Aluminium>	<infobox/de/name>	"Aluminium"@de
@@ -115,14 +111,14 @@
 <id_z5e1bf_1ui_zik2mj>	<de/Aluminium>	<infobox/de/symbol>	"Al"@de
 <id_z5e1bf_145_zil2p9>	<de/Aluminium>	<infobox/de/vanderwaalsradius>	"184"@de
 <id_z5e1bf_1dc_69kpnw>	<de/Aluminium>	<infobox/de/verdampfungswärme>	"284 kJ/mol"@de
-<id_z5e1bf_gl2_zjh1fa>	<de/Aluminium>	<infobox/de/wärmeleitfähigkeit>	"235\n"@de
+<id_z5e1bf_gl2_zil3bo>	<de/Aluminium>	<infobox/de/wärmeleitfähigkeit>	"235"@de
 <id_1chqlks_141_zkfbds>	<de/Antimon>	<infobox/de/aggregatzustand>	"fest"@de
 <id_1chqlks_1co_1wuvogm>	<de/Antimon>	<infobox/de/atommasse>	"121,750"@de
 <id_1chqlks_jpx_zil2lu>	<de/Antimon>	<infobox/de/atomradius>	"145"@de
 <id_1chqlks_1pm_zil2kx>	<de/Antimon>	<infobox/de/atomradiusberechnet>	"133"@de
 <id_1chqlks_1s2_1nf9rgz>	<de/Antimon>	<infobox/de/aussehen>	"silbrig glänzend grau"@de
 <id_1chqlks_pdw_1p0jkha>	<de/Antimon>	<infobox/de/basizität>	"leicht [[Säure|sauer]]"@de
-<id_1chqlks_465_zik3oa>	<de/Antimon>	<infobox/de/block>	"p\n"@de
+<id_1chqlks_465_zik12o>	<de/Antimon>	<infobox/de/block>	"p"@de
 <id_1chqlks_akn_11nc1oa>	<de/Antimon>	<infobox/de/cas>	"7440-36-0"@de
 <id_1chqlks_1n6_xm0rem>	<de/Antimon>	<infobox/de/dichte>	"6,697 g/cm<sup>3</sup>"@de
 <id_1chqlks_1uu_gfe53u>	<de/Antimon>	<infobox/de/elektrischeleitfähigkeit>	"2,5 · 10<sup>6</sup>"@de
@@ -137,13 +133,13 @@
 <id_1chqlks_sx1_1njy3nw>	<de/Antimon>	<infobox/de/ionisierungsenergie>	"1594,9"@de
 <id_1chqlks_sx1_zjh266>	<de/Antimon>	<infobox/de/ionisierungsenergie>	"2440"@de
 <id_1chqlks_sx1_zjiapk>	<de/Antimon>	<infobox/de/ionisierungsenergie>	"4260"@de
-<id_1chqlks_sx1_10cnci3>	<de/Antimon>	<infobox/de/ionisierungsenergie>	"5400\n"@de
+<id_1chqlks_sx1_zjiz1b>	<de/Antimon>	<infobox/de/ionisierungsenergie>	"5400"@de
 <id_1chqlks_sx1_zil7rt>	<de/Antimon>	<infobox/de/ionisierungsenergie>	"834"@de
 <id_1chqlks_1ts_1hofroh>	<de/Antimon>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = Sb\n| Massenzahl = 119\n| NH = 0\n| Halbwertszeit = 38,19 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 0,594\n| Zerfallstyp1ZP = [[Zinn|<sup>119</sup>Sn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = Sb\n| Massenzahl = 120\n| NH = 0\n| Halbwertszeit = 5,76 [[Tag|d]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 2,681\n| Zerfallstyp1ZP = [[Zinn|<sup>120</sup>Sn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 0\n| Symbol = Sb\n| Massenzahl = 121\n| NH = 57,36\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = Sb\n| Massenzahl = 122\n| NH = 0\n| Halbwertszeit = 2,7238 [[Tag|d]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 1,979\n| Zerfallstyp1ZP = [[Tellur|<sup>122</sup>Te]]\n| Zerfallstyp2ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp2ZE = 1,620\n| Zerfallstyp2ZP = [[Zinn|<sup>122</sup>Sn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 0\n| Symbol = Sb\n| Massenzahl = 123\n| NH = 42,64\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = Sb\n| Massenzahl = 124\n| NH = 0\n| Halbwertszeit = 60,20 [[Tag|d]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 2,905\n| Zerfallstyp1ZP = [[Tellur|<sup>124</sup>Te]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = Sb\n| Massenzahl = 125\n| NH = 0\n| Halbwertszeit = 2,7582 [[Jahr|a]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 0,767\n| Zerfallstyp1ZP = [[Tellur|<sup>125</sup>Te]]\n}}"@de
 <id_1chqlks_1k5_zil2l3>	<de/Antimon>	<infobox/de/kovalenterradius>	"139"@de
 <id_1chqlks_17o_1odlt9i>	<de/Antimon>	<infobox/de/kristallstruktur>	"trigonal"@de
 <id_1chqlks_1bj_1p5yaq4>	<de/Antimon>	<infobox/de/magnetismus>	"[[Diamagnetismus|diamagnetisch]] ([[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = −6,8 · 10<sup>−5</sup>)"@de
-<id_1chqlks_1ki_1dthm2q>	<de/Antimon>	<infobox/de/massenanteil>	"0,65 ppm\n"@de
+<id_1chqlks_1ki_ve6ww8>	<de/Antimon>	<infobox/de/massenanteil>	"0,65 ppm"@de
 <id_1chqlks_e6w_zil3w7>	<de/Antimon>	<infobox/de/mohshärte>	"3,0"@de
 <id_1chqlks_1xz_qa0gmw>	<de/Antimon>	<infobox/de/molaresvolumen>	"18,19 · 10<sup>−6</sup>"@de
 <id_1chqlks_17o_1d1fn7u>	<de/Antimon>	<infobox/de/name>	"Antimon"@de
@@ -155,7 +151,7 @@
 <id_1chqlks_jvg_zik111>	<de/Antimon>	<infobox/de/periode>	"5"@de
 <id_1chqlks_wfi_zhyylf>	<de/Antimon>	<infobox/de/quelleghskz>	"{{CLP|CAS=7440-36-0|ZVG=8390}}"@de
 <id_1chqlks_1ik_p92x9>	<de/Antimon>	<infobox/de/r>	"{{R-Sätze|36/37/38}}"@de
-<id_1chqlks_1ik_exq6ty>	<de/Antimon>	<infobox/de/s>	"{{S-Sätze|26|37}}\n"@de
+<id_1chqlks_1ik_52bk38>	<de/Antimon>	<infobox/de/s>	"{{S-Sätze|26|37}}"@de
 <id_1chqlks_13i_1pvwpva>	<de/Antimon>	<infobox/de/schmelzpunktc>	"630,63"@de
 <id_1chqlks_13i_1r9g49d>	<de/Antimon>	<infobox/de/schmelzpunktk>	"903,78"@de
 <id_1chqlks_1tl_zjgipf>	<de/Antimon>	<infobox/de/schmelzwärme>	"19,7"@de
@@ -171,7 +167,7 @@
 <id_jn0juv_1pm_zik2ca>	<de/Argon>	<infobox/de/atomradiusberechnet>	"71"@de
 <id_jn0juv_1s2_msia4s>	<de/Argon>	<infobox/de/aussehen>	"farbloses Gas"@de
 <id_jn0juv_465_zik12o>	<de/Argon>	<infobox/de/block>	"p"@de
-<id_jn0juv_akn_p6slra>	<de/Argon>	<infobox/de/cas>	"7440-37-1 \n"@de
+<id_jn0juv_akn_11nc2f0>	<de/Argon>	<infobox/de/cas>	"7440-37-1"@de
 <id_jn0juv_1n6_91ecy0>	<de/Argon>	<infobox/de/dichte>	"1,784 kg · m<sup>−3</sup>"@de
 <id_jn0juv_11u_98h67t>	<de/Argon>	<infobox/de/elektronenkonfiguration>	"[[[Neon|Ne]]] 3[[S-Orbital|s]]<sup>2</sup> 3[[P-Orbital|p]]<sup>6</sup>"@de
 <id_jn0juv_akn_hmogne>	<de/Argon>	<infobox/de/euh>	"{{EUH-Sätze|-}}"@de
@@ -180,10 +176,9 @@
 <id_jn0juv_pa3_17njgio>	<de/Argon>	<infobox/de/ghssignalwort>	"Achtung"@de
 <id_jn0juv_1oq_zik27b>	<de/Argon>	<infobox/de/gruppe>	"18"@de
 <id_jn0juv_1ik_1pnqdpz>	<de/Argon>	<infobox/de/h>	"{{H-Sätze|280}}"@de
-<id_jn0juv_1i7_zik0zu>	<de/Argon>	<infobox/de/hauptquelle>	"\n"@de
 <id_jn0juv_sx1_1njtjse>	<de/Argon>	<infobox/de/ionisierungsenergie>	"1520,8"@de
 <id_jn0juv_sx1_1o1hmfj>	<de/Argon>	<infobox/de/ionisierungsenergie>	"2665,8"@de
-<id_jn0juv_sx1_10bn0hy>	<de/Argon>	<infobox/de/ionisierungsenergie>	"3931\n"@de
+<id_jn0juv_sx1_zjhsuc>	<de/Argon>	<infobox/de/ionisierungsenergie>	"3931"@de
 <id_jn0juv_1ts_18e56p4>	<de/Argon>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| Massenzahl= 35\n| Symbol= Ar\n| NH= 0\n| Halbwertszeit= 1,775 [[Sekunde|s]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE= 5,965\n| Zerfallstyp1ZP= [[Chlor|<sup>35</sup>Cl]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 36\n| OZ = 18\n| Symbol= Ar\n| NH= 0,336\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 37\n| Symbol= Ar\n| NH= 0\n| Halbwertszeit= 35,04 [[Tag|d]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE= 0,813\n| Zerfallstyp1ZP= [[Chlor|<sup>37</sup>Cl]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 0\n| Massenzahl= 38\n| OZ= 18\n| Symbol= Ar\n| NH= 0,063\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 39\n| Symbol= Ar\n| NH= -1\n| Halbwertszeit= 269 [[Jahr|a]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 0,565\n| Zerfallstyp1ZP= [[Kalium|<sup>39</sup>K]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 0\n| Massenzahl= 40\n| OZ= 18\n| Symbol= Ar\n| NH= 99,6\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 41\n| Symbol= Ar\n| NH= 0\n| Halbwertszeit= 109,34 [[Minute|min]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 2,492\n| Zerfallstyp1ZP= [[Kalium|<sup>41</sup>K]]\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl= 42\n| Symbol= Ar\n| NH= 0\n| Halbwertszeit= 32,9 [[Jahr|a]]\n| AnzahlZerfallstypen= 1\n| Zerfallstyp1ZM= [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE= 0,600\n| Zerfallstyp1ZP= [[Kalium|<sup>42</sup>K]]\n}}"@de
 <id_jn0juv_1k5_zil2if>	<de/Argon>	<infobox/de/kovalenterradius>	"106"@de
 <id_jn0juv_17o_8lcfrg>	<de/Argon>	<infobox/de/kristallstruktur>	"kubisch flächenzentriert"@de
@@ -197,7 +192,7 @@
 <id_jn0juv_1ik_1melais>	<de/Argon>	<infobox/de/r>	"{{R-Sätze|-}}"@de
 <id_jn0juv_e5r_zil3f2>	<de/Argon>	<infobox/de/reftempdichtek>	"273"@de
 <id_jn0juv_1gi_1o32wp0>	<de/Argon>	<infobox/de/reftempschallgeschwindigkeitk>	"293,15"@de
-<id_jn0juv_1ik_10xddnp>	<de/Argon>	<infobox/de/s>	"{{S-Sätze|-}}\n"@de
+<id_jn0juv_1ik_soqdz9>	<de/Argon>	<infobox/de/s>	"{{S-Sätze|-}}"@de
 <id_jn0juv_1n4_zil40r>	<de/Argon>	<infobox/de/schallgeschwindigkeit>	"319"@de
 <id_jn0juv_13i_1a4zd47>	<de/Argon>	<infobox/de/schmelzpunktc>	"−189,3"@de
 <id_jn0juv_13i_zjkv5z>	<de/Argon>	<infobox/de/schmelzpunktk>	"83,8"@de
@@ -215,7 +210,7 @@
 <id_jn0sil_1pm_zil2j8>	<de/Arsen>	<infobox/de/atomradiusberechnet>	"114"@de
 <id_jn0sil_1s2_gzgzh5>	<de/Arsen>	<infobox/de/aussehen>	"metallisch grau, gelb oder schwarz"@de
 <id_jn0sil_pdw_13is646>	<de/Arsen>	<infobox/de/basizität>	"[[amphoter]]"@de
-<id_jn0sil_465_zik3oa>	<de/Arsen>	<infobox/de/block>	"p\n"@de
+<id_jn0sil_465_zik12o>	<de/Arsen>	<infobox/de/block>	"p"@de
 <id_jn0sil_akn_11nc35q>	<de/Arsen>	<infobox/de/cas>	"7440-38-2"@de
 <id_jn0sil_1n6_1tjfa23>	<de/Arsen>	<infobox/de/dichte>	"5,72 g/cm<sup>3</sup> (grau)\n1,97 g/cm<sup>3</sup> (gelb)\n4,7–5,1 g/cm<sup>3</sup> (schwarz)"@de
 <id_jn0sil_1uu_1yb7wyh>	<de/Arsen>	<infobox/de/elektrischeleitfähigkeit>	"3,03 · 10<sup>6</sup>"@de
@@ -230,13 +225,13 @@
 <id_jn0sil_sx1_zjghj9>	<de/Arsen>	<infobox/de/ionisierungsenergie>	"1798"@de
 <id_jn0sil_sx1_zjh4dj>	<de/Arsen>	<infobox/de/ionisierungsenergie>	"2735"@de
 <id_jn0sil_sx1_zjif3c>	<de/Arsen>	<infobox/de/ionisierungsenergie>	"4837"@de
-<id_jn0sil_sx1_10d4o6p>	<de/Arsen>	<infobox/de/ionisierungsenergie>	"6043\n"@de
+<id_jn0sil_sx1_zjjj5l>	<de/Arsen>	<infobox/de/ionisierungsenergie>	"6043"@de
 <id_jn0sil_sx1_10euo00>	<de/Arsen>	<infobox/de/ionisierungsenergie>	"947,0"@de
 <id_jn0sil_1ts_1c1872s>	<de/Arsen>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 1\n|Symbol = As\n|Massenzahl = 72\n|NH = 0\n|Halbwertszeit = 26 [[Stunde|h]]\n|Zerfallstyp1ZM = [[Elektroneneinfang|ε]]\n|Zerfallstyp1ZE = 4,356\n|Zerfallstyp1ZP = [[Germanium|<sup>72</sup>Ge]]\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 1\n|Symbol = As\n|Massenzahl = 73\n|NH = 0\n|Halbwertszeit = 80,3 [[Tag|d]]\n|Zerfallstyp1ZM = [[Elektroneneinfang|ε]]\n|Zerfallstyp1ZE = 0,341\n|Zerfallstyp1ZP = [[Germanium|<sup>73</sup>Ge]]\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 2\n|Symbol = As\n|Massenzahl = 74\n|NH = 0\n|Halbwertszeit = 17,77 [[Tag|d]]\n|Zerfallstyp1ZM = [[Elektroneneinfang|ε]]\n|Zerfallstyp1ZE = 2,562\n|Zerfallstyp1ZP = [[Germanium|<sup>74</sup>Ge]]\n|Zerfallstyp2ZM = [[Betastrahlung|β<sup>−</sup>]]\n|Zerfallstyp2ZE = 1,353\n|Zerfallstyp2ZP = [[Selen|<sup>74</sup>Se]]\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 0\n|Symbol = As\n|Massenzahl = 75\n|NH = 100\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 1\n|Symbol = As\n|Massenzahl = 76\n|NH = 0\n|Halbwertszeit = 1,0778 [[Tag|d]]\n|Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n|Zerfallstyp1ZE = 2,962\n|Zerfallstyp1ZP = [[Selen|<sup>76</sup>Se]]\n}}\n{{Infobox Chemisches Element/Isotop\n|AnzahlZerfallstypen = 1\n|Symbol = As\n|Massenzahl = 77\n|NH = 0\n|Halbwertszeit = 39 [[Stunde|h]]\n|Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n|Zerfallstyp1ZE = 0,683\n|Zerfallstyp1ZP = [[Selen|<sup>77</sup>Se]]\n}}"@de
 <id_jn0sil_1k5_zil2jd>	<de/Arsen>	<infobox/de/kovalenterradius>	"119"@de
 <id_jn0sil_17o_at6gsc>	<de/Arsen>	<infobox/de/kristallstruktur>	"trigonal (grau)"@de
 <id_jn0sil_1bj_1vlz3pr>	<de/Arsen>	<infobox/de/magnetismus>	"[[Diamagnetismus|diamagnetisch]] (grau: [[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = −2,2 · 10<sup>−5</sup>\ngelb: <math>\\chi_{m}</math> = −1,8 · 10<sup>−6</sup>\nschwarz: <math>\\chi_{m}</math> = −1,9 · 10<sup>−5</sup>)"@de
-<id_jn0sil_1ki_yl0vtr>	<de/Arsen>	<infobox/de/massenanteil>	"5,5 ppm\n"@de
+<id_jn0sil_1ki_1htdhl7>	<de/Arsen>	<infobox/de/massenanteil>	"5,5 ppm"@de
 <id_jn0sil_1eg_zik10z>	<de/Arsen>	<infobox/de/modifikationen>	"3"@de
 <id_jn0sil_e6w_1fy67g1>	<de/Arsen>	<infobox/de/mohshärte>	"graues As: 3,5"@de
 <id_jn0sil_1xz_h6zotu>	<de/Arsen>	<infobox/de/molaresvolumen>	"12,95 · 10<sup>−6</sup>"@de
@@ -266,7 +261,7 @@
 <id_jn1g5j_1co_6x4n7u>	<de/Astat>	<infobox/de/atommasse>	"209,9871"@de
 <id_jn1g5j_1pm_zil2k6>	<de/Astat>	<infobox/de/atomradiusberechnet>	"127"@de
 <id_jn1g5j_1s2_1pl7c9g>	<de/Astat>	<infobox/de/aussehen>	"metallisch"@de
-<id_jn1g5j_465_zik3oa>	<de/Astat>	<infobox/de/block>	"p\n"@de
+<id_jn1g5j_465_zik12o>	<de/Astat>	<infobox/de/block>	"p"@de
 <id_jn1g5j_akn_11ne04h>	<de/Astat>	<infobox/de/cas>	"7440-68-8"@de
 <id_jn1g5j_4vr_zil35k>	<de/Astat>	<infobox/de/elektronegativität>	"2,2"@de
 <id_jn1g5j_11u_rrf3ir>	<de/Astat>	<infobox/de/elektronenkonfiguration>	"[[[Xenon|Xe]]] 4[[F-Orbital|f]]<sup>14</sup> 5[[D-Orbital|d]]<sup>10</sup> 6[[S-Orbital|s]]<sup>2</sup> 6[[P-Orbital|p]]<sup>5</sup>"@de
@@ -278,7 +273,7 @@
 <id_jn1g5j_sx1_zil8hj>	<de/Astat>	<infobox/de/ionisierungsenergie>	"920"@de
 <id_jn1g5j_1ts_16zkof9>	<de/Astat>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 209\n| NH = 0\n| Halbwertszeit = 5,41 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 3,486\n| Zerfallstyp1ZP = [[Polonium|<sup>209</sup>Po]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 5,757\n| Zerfallstyp2ZP = [[Bismut|<sup>205</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 210\n| NH = 0\n| Halbwertszeit = 8,3 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 3,981\n| Zerfallstyp1ZP = [[Polonium|<sup>210</sup>Po]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 5,631\n| Zerfallstyp2ZP = [[Bismut|<sup>206</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 211\n| NH = 0\n| Halbwertszeit = 7,124 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 0,786\n| Zerfallstyp1ZP = [[Polonium|<sup>211</sup>Po]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 5,982\n| Zerfallstyp2ZP = [[Bismut|<sup>207</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 3\n| Symbol = At\n| Massenzahl = 212\n| NH = 0\n| Halbwertszeit = 0,314 s\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]]\n| Zerfallstyp1ZE = 1,754\n| Zerfallstyp1ZP = [[Polonium|<sup>212</sup>Po]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 7,829\n| Zerfallstyp2ZP = [[Bismut|<sup>208</sup>Bi]]\n| Zerfallstyp3ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp3ZE = 0,043\n| Zerfallstyp3ZP = [[Radon|<sup>212</sup>Rn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = At\n| Massenzahl = 213\n| NH = 0\n| Halbwertszeit = 125 ns\n| Zerfallstyp1ZM = [[Alphastrahlung|α]]\n| Zerfallstyp1ZE = 9.254\n| Zerfallstyp1ZP = [[Bismut|<sup>209</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 1\n| Symbol = At\n| Massenzahl = 214\n| NH = 0\n| Halbwertszeit = 558 ns\n| Zerfallstyp1ZM = [[Alphastrahlung|α]]\n| Zerfallstyp1ZE = 8.987\n| Zerfallstyp1ZP = [[Bismut|<sup>210</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = At\n| Massenzahl = 215\n| NH = -1\n| Halbwertszeit = 0,10 [[Sekunde|ms]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]]\n| Zerfallstyp1ZE = 8,178\n| Zerfallstyp1ZP = [[Bismut|<sup>211</sup>Bi]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= -1 \n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 218\n| NH = -1\n| Halbwertszeit = 1,5 [[Sekunde|s]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]] (99,90 %)\n| Zerfallstyp1ZE = 6,874\n| Zerfallstyp1ZP = [[Bismut|<sup>214</sup>Bi]]\n| Zerfallstyp2ZM = [[Betastrahlung|β<sup>−</sup>]] (0,10 %)\n| Zerfallstyp2ZE = 2,883\n| Zerfallstyp2ZP = [[Radon|<sup>218</sup>Rn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Symbol = At\n| Massenzahl = 219\n| NH = -1\n| Halbwertszeit = 56 [[Sekunde|s]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]] (97 %)\n| Zerfallstyp1ZE = 6,390\n| Zerfallstyp1ZP = [[Bismut|<sup>215</sup>Bi]]\n| Zerfallstyp2ZM = [[Betastrahlung|β<sup>−</sup>]] (3 %)\n| Zerfallstyp2ZE = 1,700\n| Zerfallstyp2ZP = [[Radon|<sup>219</sup>Rn]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 1\n| Symbol = At\n| Massenzahl = 220\n| NH = 0\n| Halbwertszeit = 3,71 [[Minute|min]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]]\n| Zerfallstyp1ZE = 9,900\n| Zerfallstyp1ZP = [[Radon|<sup>220</sup>Rn]]\n}}"@de
 <id_jn1g5j_1k5_zil2mk>	<de/Astat>	<infobox/de/kovalenterradius>	"150"@de
-<id_jn1g5j_1ki_1b56lq8>	<de/Astat>	<infobox/de/massenanteil>	"3 · 10<sup>−21</sup> ppm\n"@de
+<id_jn1g5j_1ki_junbnu>	<de/Astat>	<infobox/de/massenanteil>	"3 · 10<sup>−21</sup> ppm"@de
 <id_jn1g5j_zrr_zil39t>	<de/Astat>	<infobox/de/massenzahl>	"210"@de
 <id_jn1g5j_17o_10kejh1>	<de/Astat>	<infobox/de/name>	"Astat"@de
 <id_jn1g5j_4ro_zik2d9>	<de/Astat>	<infobox/de/ordnungszahl>	"85"@de
@@ -288,7 +283,7 @@
 <id_jn1g5j_1gz_zik2x4>	<de/Astat>	<infobox/de/quellegefstkz>	"NV"@de
 <id_jn1g5j_wfi_zik2x4>	<de/Astat>	<infobox/de/quelleghskz>	"NV"@de
 <id_jn1g5j_1ik_1melc06>	<de/Astat>	<infobox/de/r>	"{{R-Sätze|/}}"@de
-<id_jn1g5j_d6d_zilm6r>	<de/Astat>	<infobox/de/radioaktiv>	"Ja\n"@de
+<id_jn1g5j_d6d_zik2tz>	<de/Astat>	<infobox/de/radioaktiv>	"Ja"@de
 <id_jn1g5j_1ik_soqfgn>	<de/Astat>	<infobox/de/s>	"{{S-Sätze|/}}"@de
 <id_jn1g5j_13i_zil3zp>	<de/Astat>	<infobox/de/schmelzpunktc>	"302"@de
 <id_jn1g5j_13i_zil5n7>	<de/Astat>	<infobox/de/schmelzpunktk>	"575"@de
@@ -297,7 +292,7 @@
 <id_jn1g5j_1ui_zik2mr>	<de/Astat>	<infobox/de/symbol>	"At"@de
 <id_jn1g5j_145_zil390>	<de/Astat>	<infobox/de/vanderwaalsradius>	"202"@de
 <id_jn1g5j_1dc_1qej5ce>	<de/Astat>	<infobox/de/verdampfungswärme>	"ca. 40 kJ/mol"@de
-<id_jn1g5j_gl2_zik26w>	<de/Astat>	<infobox/de/wärmeleitfähigkeit>	"2\n"@de
+<id_jn1g5j_gl2_zik10y>	<de/Astat>	<infobox/de/wärmeleitfähigkeit>	"2"@de
 <id_10d55g4_1oq_zik2mk>	<de/Alkalimetalle>	<infobox/de/gruppe>	"Am"@de
 <id_10d55g4_101_y2lfqa>	<de/Alkalimetalle>	<infobox/de/gruppea>	"Alkalimetalle"@de
 <id_10d55g4_101_nte2i3>	<de/Alkalimetalle>	<infobox/de/gruppen>	"Erdalkalimetalle"@de
@@ -321,9 +316,8 @@
 <id_18l17uo_1rs_qqiyc4>	<de/Americium>	<infobox/de/ghspiktogramme>	"{{GHS-Piktogramme|/}}"@de
 <id_18l17uo_1oq_zik2ma>	<de/Americium>	<infobox/de/gruppe>	"Ac"@de
 <id_18l17uo_1ik_fm3jw>	<de/Americium>	<infobox/de/h>	"{{H-Sätze|/}}"@de
-<id_18l17uo_1i7_zik0zu>	<de/Americium>	<infobox/de/hauptquelle>	"\n"@de
 <id_18l17uo_sx1_zil5na>	<de/Americium>	<infobox/de/ionisierungsenergie>	"578"@de
-<id_18l17uo_1ts_18v0sjq>	<de/Americium>	<infobox/de/isotope>	"\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 238\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 98 [[Minute|min]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]] (≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>238</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]] (1,0 · 10<sup>−4</sup> %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>234</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 239\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 11,9 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]] (≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>239</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]] (0,010 %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>235</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 240\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 50,8 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]] (≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>240</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]] (1,9 · 10<sup>−4</sup> %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>236</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 2\n| Massenzahl = 241\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 432,2 [[Jahr|a]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]] (≈ 100 %)\n| Zerfallstyp1ZE = 5,486\n| Zerfallstyp1ZP = [[Neptunium|<sup>237</sup>Np]]\n| Zerfallstyp2ZM = [[Spontane Spaltung|SF]] (4,3 · 10<sup>−10</sup> %)\n| Zerfallstyp2ZE = ?\n| Zerfallstyp2ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 242\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 16,02 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]] (82,7 %)\n| Zerfallstyp1ZE = 0,665\n| Zerfallstyp1ZP = [[Curium|<sup>242</sup>Cm]]\n| Zerfallstyp2ZM = [[Elektronen-Einfang|ε]] (17,3 %)\n| Zerfallstyp2ZE = 0,751\n| Zerfallstyp2ZP = [[Plutonium|<sup>242</sup>Pu]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 3\n| Massenzahl = 242m1\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 141 [[Jahr|a]]\n| Zerfallstyp1ZM = [[Isomerie-Übergang|IT]] (≈ 100 %)\n| Zerfallstyp1ZE = 0,049\n| Zerfallstyp1ZP = <sup>242</sup>Am\n| Zerfallstyp2ZM = [[Alphastrahlung|α]] (0,45 %)\n| Zerfallstyp2ZE = 5,637\n| Zerfallstyp2ZP = [[Neptunium|<sup>238</sup>Np]]\n| Zerfallstyp3ZM = [[Spontane Spaltung|SF]] (4,7 · 10<sup>−9</sup> %)\n| Zerfallstyp3ZE = ?\n| Zerfallstyp3ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 242m2\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 14,0 m[[Sekunde|s]]\n| AnzahlZerfallstypen = 3\n| Zerfallstyp1ZM = [[Spontane Spaltung|SF]] (≈ 100 %)\n| Zerfallstyp1ZE = ?\n| Zerfallstyp1ZP = ?\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 7,788\n| Zerfallstyp2ZP = [[Neptunium|<sup>238</sup>Np]]\n| Zerfallstyp3ZM = [[Isomerie-Übergang|IT]]\n| Zerfallstyp3ZE = 2,2\n| Zerfallstyp3ZP = <sup>242</sup>Am\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 243\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 7370 [[Jahr|a]]\n| AnzahlZerfallstypen = 2\n| Zerfallstyp1ZM = [[Alphastrahlung|α]] (≈ 100 %)\n| Zerfallstyp1ZE = 5,438\n| Zerfallstyp1ZP = [[Neptunium|<sup>239</sup>Np]]\n| Zerfallstyp2ZM = [[Spontane Spaltung|SF]] (4,7 · 10<sup>−9</sup> %)\n| Zerfallstyp2ZE = ?\n| Zerfallstyp2ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 244\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 10,1&"@de
+<id_18l17uo_1ts_1dv1cuo>	<de/Americium>	<infobox/de/isotope>	"{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 238\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 98 [[Minute|min]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]] (≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>238</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]] (1,0 · 10<sup>−4</sup> %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>234</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 239\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 11,9 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]] (≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>239</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]] (0,010 %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>235</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 240\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 50,8 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Elektronen-Einfang|ε]] (≈ 100 %)\n| Zerfallstyp1ZE = \n| Zerfallstyp1ZP = [[Plutonium|<sup>240</sup>Pu]]\n| Zerfallstyp2ZM = [[Alphastrahlung|α]] (1,9 · 10<sup>−4</sup> %)\n| Zerfallstyp2ZE = \n| Zerfallstyp2ZP = [[Neptunium|<sup>236</sup>Np]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen= 2\n| Massenzahl = 241\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 432,2 [[Jahr|a]]\n| Zerfallstyp1ZM = [[Alphastrahlung|α]] (≈ 100 %)\n| Zerfallstyp1ZE = 5,486\n| Zerfallstyp1ZP = [[Neptunium|<sup>237</sup>Np]]\n| Zerfallstyp2ZM = [[Spontane Spaltung|SF]] (4,3 · 10<sup>−10</sup> %)\n| Zerfallstyp2ZE = ?\n| Zerfallstyp2ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 2\n| Massenzahl = 242\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 16,02 [[Stunde|h]]\n| Zerfallstyp1ZM = [[Betastrahlung|β<sup>−</sup>]] (82,7 %)\n| Zerfallstyp1ZE = 0,665\n| Zerfallstyp1ZP = [[Curium|<sup>242</sup>Cm]]\n| Zerfallstyp2ZM = [[Elektronen-Einfang|ε]] (17,3 %)\n| Zerfallstyp2ZE = 0,751\n| Zerfallstyp2ZP = [[Plutonium|<sup>242</sup>Pu]]\n}}\n{{Infobox Chemisches Element/Isotop\n| AnzahlZerfallstypen = 3\n| Massenzahl = 242m1\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 141 [[Jahr|a]]\n| Zerfallstyp1ZM = [[Isomerie-Übergang|IT]] (≈ 100 %)\n| Zerfallstyp1ZE = 0,049\n| Zerfallstyp1ZP = <sup>242</sup>Am\n| Zerfallstyp2ZM = [[Alphastrahlung|α]] (0,45 %)\n| Zerfallstyp2ZE = 5,637\n| Zerfallstyp2ZP = [[Neptunium|<sup>238</sup>Np]]\n| Zerfallstyp3ZM = [[Spontane Spaltung|SF]] (4,7 · 10<sup>−9</sup> %)\n| Zerfallstyp3ZE = ?\n| Zerfallstyp3ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 242m2\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 14,0 m[[Sekunde|s]]\n| AnzahlZerfallstypen = 3\n| Zerfallstyp1ZM = [[Spontane Spaltung|SF]] (≈ 100 %)\n| Zerfallstyp1ZE = ?\n| Zerfallstyp1ZP = ?\n| Zerfallstyp2ZM = [[Alphastrahlung|α]]\n| Zerfallstyp2ZE = 7,788\n| Zerfallstyp2ZP = [[Neptunium|<sup>238</sup>Np]]\n| Zerfallstyp3ZM = [[Isomerie-Übergang|IT]]\n| Zerfallstyp3ZE = 2,2\n| Zerfallstyp3ZP = <sup>242</sup>Am\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 243\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 7370 [[Jahr|a]]\n| AnzahlZerfallstypen = 2\n| Zerfallstyp1ZM = [[Alphastrahlung|α]] (≈ 100 %)\n| Zerfallstyp1ZE = 5,438\n| Zerfallstyp1ZP = [[Neptunium|<sup>239</sup>Np]]\n| Zerfallstyp2ZM = [[Spontane Spaltung|SF]] (4,7 · 10<sup>−9</sup> %)\n| Zerfallstyp2ZE = ?\n| Zerfallstyp2ZP = ?\n}}\n{{Infobox Chemisches Element/Isotop\n| Massenzahl = 244\n| Symbol = Am\n| NH = 0\n| Halbwertszeit = 10,1&"@de
 <id_18l17uo_17o_1y0fbyb>	<de/Americium>	<infobox/de/kristallstruktur>	"[[Hexagonales Kristallsystem|hexagonal]]"@de
 <id_18l17uo_1bj_1u8piep>	<de/Americium>	<infobox/de/magnetismus>	"[[Paramagnetismus|paramagnetisch]] ([[Magnetische Suszeptibilität|<math>\\chi_{m}</math>]] = 7,1 · 10<sup>−4</sup>)"@de
 <id_18l17uo_zrr_zil3ch>	<de/Americium>	<infobox/de/massenzahl>	"243"@de
@@ -337,9 +331,9 @@
 <id_18l17uo_1gz_zik2x4>	<de/Americium>	<infobox/de/quellegefstkz>	"NV"@de
 <id_18l17uo_wfi_zik2x4>	<de/Americium>	<infobox/de/quelleghskz>	"NV"@de
 <id_18l17uo_1ik_1melc06>	<de/Americium>	<infobox/de/r>	"{{R-Sätze|/}}"@de
-<id_18l17uo_d6d_zilm6r>	<de/Americium>	<infobox/de/radioaktiv>	"Ja\n"@de
+<id_18l17uo_d6d_zik2tz>	<de/Americium>	<infobox/de/radioaktiv>	"Ja"@de
 <id_18l17uo_y4f_1o32wp0>	<de/Americium>	<infobox/de/reftempelektrischeleitfähigkeitk>	"293,15"@de
-<id_18l17uo_1ch_zjhm2f>	<de/Americium>	<infobox/de/reftempwärmeleitfähigkeitk>	"300\n"@de
+<id_18l17uo_1ch_zil3zn>	<de/Americium>	<infobox/de/reftempwärmeleitfähigkeitk>	"300"@de
 <id_18l17uo_1ik_soqfgn>	<de/Americium>	<infobox/de/s>	"{{S-Sätze|/}}"@de
 <id_18l17uo_13i_zjgd1b>	<de/Americium>	<infobox/de/schmelzpunktc>	"1176"@de
 <id_18l17uo_13i_zjgf6w>	<de/Americium>	<infobox/de/schmelzpunktk>	"1449"@de
@@ -443,15 +437,15 @@
 <id_2k3bw6_rwm_10adqrh>	<de/Afghanistan>	<infobox/de/bildwappenbreite>	"104px"@de
 <id_2k3bw6_akn_1k9ke6o>	<de/Afghanistan>	<infobox/de/bip>	"2010\n* 15,61 Mrd. US$\n* 27,36 Mrd. US$\n* 500 US$\n* 900 US$"@de
 <id_2k3bw6_ltk_5qoj4n>	<de/Afghanistan>	<infobox/de/biperweitert>	"* Total (Nominal)\n* Total ([[Kaufkraftparität|KKP]])\n* BIP/Einw. (Nominal)\n* BIP/Einw. (KKP)"@de
-<id_2k3bw6_sc1_1qmah20>	<de/Afghanistan>	<infobox/de/einwohner>	"29,8 Mio. "@de
+<id_2k3bw6_sc1_4b7fpk>	<de/Afghanistan>	<infobox/de/einwohner>	"29,8 Mio."@de
 <id_2k3bw6_1o8_1mctmc>	<de/Afghanistan>	<infobox/de/fläche>	"652.230"@de
 <id_2k3bw6_18n_yj2kx>	<de/Afghanistan>	<infobox/de/gründung>	"1747 (Entstehung des [[Durrani-Reich]]s, des Vorgängerstaats des modernen Afghanistan)"@de
 <id_2k3bw6_1s0_l2nt1f>	<de/Afghanistan>	<infobox/de/hauptstadt>	"[[Kabul]]"@de
-<id_2k3bw6_akn_16vm8et>	<de/Afghanistan>	<infobox/de/hdi>	"{{Gestiegen}} 0,398 "@de
+<id_2k3bw6_akn_xgmagb>	<de/Afghanistan>	<infobox/de/hdi>	"{{Gestiegen}} 0,398"@de
 <id_2k3bw6_j7o_1tfp2kz>	<de/Afghanistan>	<infobox/de/internettld>	"[[.af]]"@de
 <id_2k3bw6_ako_17ifcaa>	<de/Afghanistan>	<infobox/de/iso>	"[[ISO 3166-2:AF|AF]], AFG, 004"@de
 <id_2k3bw6_17b_zhzw1j>	<de/Afghanistan>	<infobox/de/kfzkennzeichen>	"[[Kfz-Kennzeichen (Afghanistan)|AFG]]"@de
-<id_2k3bw6_131_1b6q7w2>	<de/Afghanistan>	<infobox/de/nameamtssprache>	"د افغانستان اسلامي جمهوریت\nDa Afġānistān Islāmī Jomhoriyat\n\nجمهوری اسلامی افغانستان\nJomhūrī-ye Eslāmī-ye Afġānistān\n"@de
+<id_2k3bw6_131_1vyxo60>	<de/Afghanistan>	<infobox/de/nameamtssprache>	"د افغانستان اسلامي جمهوریت\nDa Afġānistān Islāmī Jomhoriyat\n\nجمهوری اسلامی افغانستان\nJomhūrī-ye Eslāmī-ye Afġānistān"@de
 <id_2k3bw6_1io_1j7hfs0>	<de/Afghanistan>	<infobox/de/namedeutsch>	"Islamische Republik Afghanistan"@de
 <id_2k3bw6_b1a_1ecb5rf>	<de/Afghanistan>	<infobox/de/nationalfeiertag>	"19. August (Unabhängigkeitstag)"@de
 <id_2k3bw6_szo_1ux74v3>	<de/Afghanistan>	<infobox/de/nationalhymne>	"[[Milli Tharana]]\n[[Datei:National anthem of Afghanistan.ogg|noicon|120px]]"@de
@@ -461,7 +455,7 @@
 <id_2k3bw6_ydb_ziky9x>	<de/Afghanistan>	<infobox/de/telefonvorwahl>	"+93"@de
 <id_2k3bw6_ekn_g37tje>	<de/Afghanistan>	<infobox/de/unabhängigkeit>	"19. August 1919 (formal vom [[Vereinigtes Königreich|Vereinigten Königreich]], faktisch nie kolonisiert)"@de
 <id_2k3bw6_1ux_1xwee62>	<de/Afghanistan>	<infobox/de/wappenopt>	"Emblem"@de
-<id_2k3bw6_14j_110r2k4>	<de/Afghanistan>	<infobox/de/währung>	"1 [[Afghani]] = 100 Puls\n 1 € = {{Wechselkurs|EUR|AFN|NKS=2}} AFN\n 100 AFN = {{Wechselkurs|AFN|EUR|Faktor=100|NKS=2}} €\n"@de
+<id_2k3bw6_14j_cnfgnq>	<de/Afghanistan>	<infobox/de/währung>	"1 [[Afghani]] = 100 Puls\n 1 € = {{Wechselkurs|EUR|AFN|NKS=2}} AFN\n 100 AFN = {{Wechselkurs|AFN|EUR|Faktor=100|NKS=2}} €"@de
 <id_2k3bw6_1bu_181t0tn>	<de/Afghanistan>	<infobox/de/zeitzone>	"[[Koordinierte Weltzeit|UTC]][[UTC+4:30|+4:30]]"@de
 <id_4sru8v_gmd_enmore>	<de/Alexandria>	<infobox/de/amtname>	"{{Ar|الإسكندرية}}"@de
 <id_4sru8v_17o_18tt8b9>	<de/Alexandria>	<infobox/de/bild>	"Alexandria harbour (February 2007).jpg"@de
@@ -497,10 +491,10 @@
 <id_jmzgh8_17o_1spdwxy>	<de/Apple>	<infobox/de/isin>	"US0378331005"@de
 <id_jmzgh8_w28_1dlgx7h>	<de/Apple>	<infobox/de/leitung>	"[[Tim Cook]] ([[Chief Executive Officer|CEO]])\n[[Arthur D. Levinson]] ([[Board of Directors|Chairman]])"@de
 <id_jmzgh8_17o_o5z76y>	<de/Apple>	<infobox/de/logo>	"[[Datei:Apple logo black.svg|150px|Logo]]"@de
-<id_jmzgh8_v2v_etlel7>	<de/Apple>	<infobox/de/mitarbeiterzahl>	"72.800 "@de
+<id_jmzgh8_v2v_1qcdig5>	<de/Apple>	<infobox/de/mitarbeiterzahl>	"72.800"@de
 <id_jmzgh8_17o_1nicpcm>	<de/Apple>	<infobox/de/name>	"Apple Inc."@de
 <id_jmzgh8_17o_f9ga05>	<de/Apple>	<infobox/de/sitz>	"[[Cupertino]] [[Kalifornien|CA]], [[Vereinigte Staaten]]"@de
-<id_jmzgh8_1va_zm7psn>	<de/Apple>	<infobox/de/umsatz>	"156,5 Mrd. [[US-Dollar|USD]] "@de
+<id_jmzgh8_1va_1tb0fe1>	<de/Apple>	<infobox/de/umsatz>	"156,5 Mrd. [[US-Dollar|USD]]"@de
 <id_jmzgh8_18i_10uh3uu>	<de/Apple>	<infobox/de/unternehmensform>	"[[Gesellschaftsrecht der Vereinigten Staaten#Corporation|Incorporated]]"@de
 <id_1b35psn_149_gysjml>	<de/Algerien>	<infobox/de/amtssprache>	"[[Arabische Sprache|Arabisch]] („Amts- und Nationalsprache“)\n [[Tamazight|Mazirisch]] („Nationalsprache“)"@de
 <id_1b35psn_54j_wprkus>	<de/Algerien>	<infobox/de/artikelflagge>	"Flagge Algeriens"@de
@@ -513,12 +507,12 @@
 <id_1b35psn_109_1lqo2dy>	<de/Algerien>	<infobox/de/bildlageimagemap>	"NordafrikaGlobus1"@de
 <id_1b35psn_1m2_sddoy9>	<de/Algerien>	<infobox/de/bildwappen>	"Seal of Algeria.svg"@de
 <id_1b35psn_rwm_10aexrr>	<de/Algerien>	<infobox/de/bildwappenbreite>	"120px"@de
-<id_1b35psn_akn_zwi71y>	<de/Algerien>	<infobox/de/bip>	"2011\n* $ 190,7 Milliarden \n* $ 263,6 Milliarden \n* $ 5.304 \n* $ 7.333 "@de
+<id_1b35psn_akn_ls2xbe>	<de/Algerien>	<infobox/de/bip>	"2011\n* $ 190,7 Milliarden \n* $ 263,6 Milliarden \n* $ 5.304 \n* $ 7.333"@de
 <id_1b35psn_ltk_hko3pz>	<de/Algerien>	<infobox/de/biperweitert>	"* Total (nominal)\n* Total ([[Kaufkraftparität|KKP]])\n* BIP/Einw. (nominal)\n* BIP/Einw. (KKP)"@de
-<id_1b35psn_sc1_1hsg4dg>	<de/Algerien>	<infobox/de/einwohner>	"32 Mio. "@de
+<id_1b35psn_sc1_qxttvg>	<de/Algerien>	<infobox/de/einwohner>	"32 Mio."@de
 <id_1b35psn_1o8_3c80ja>	<de/Algerien>	<infobox/de/fläche>	"2.381.741"@de
 <id_1b35psn_1s0_vhcjtm>	<de/Algerien>	<infobox/de/hauptstadt>	"[[Algier]]"@de
-<id_1b35psn_akn_16vo5de>	<de/Algerien>	<infobox/de/hdi>	"{{Gestiegen}} 0,698 "@de
+<id_1b35psn_akn_xgmcoe>	<de/Algerien>	<infobox/de/hdi>	"{{Gestiegen}} 0,698"@de
 <id_1b35psn_j7o_1tfredg>	<de/Algerien>	<infobox/de/internettld>	"[[.dz]]"@de
 <id_1b35psn_ako_1is22cm>	<de/Algerien>	<infobox/de/iso>	"[[ISO 3166-2:DZ|DZ]], DZA, 012"@de
 <id_1b35psn_17b_zik2om>	<de/Algerien>	<infobox/de/kfzkennzeichen>	"DZ"@de
@@ -532,7 +526,7 @@
 <id_1b35psn_ydb_zjcjpl>	<de/Algerien>	<infobox/de/telefonvorwahl>	"+213"@de
 <id_1b35psn_1mi_1mmc1f2>	<de/Algerien>	<infobox/de/transkription>	"al-Ǧumhūriyya al-Ǧazāʾiriyya\nad-Dīmūqrāṭiyya aš-Šaʿbiyya</font> (arab.)"@de
 <id_1b35psn_ekn_1cukg4d>	<de/Algerien>	<infobox/de/unabhängigkeit>	"von [[Frankreich]] am 5. Juli [[1962]]"@de
-<id_1b35psn_gbe_smvsew>	<de/Algerien>	<infobox/de/wahlspruch>	"من الشعب و للشعب\n"@de
+<id_1b35psn_gbe_166122a>	<de/Algerien>	<infobox/de/wahlspruch>	"من الشعب و للشعب"@de
 <id_1b35psn_1ux_5frolb>	<de/Algerien>	<infobox/de/wappenopt>	"Siegel"@de
 <id_1b35psn_14j_1cih6y7>	<de/Algerien>	<infobox/de/währung>	"1 [[Algerischer Dinar]] (DA) = 100 Centimes\n1 € = {{Wechselkurs|EUR|DZD|NKS=2}} DZD\n100 DZD = {{Wechselkurs|DZD|EUR|Faktor=100|NKS=2}} €\n(Stand: {{Wechselkurs|EUR|DZD|Datum=1}})"@de
 <id_1b35psn_1bu_10w1mmf>	<de/Algerien>	<infobox/de/zeitzone>	"[[Koordinierte Weltzeit|UTC]][[UTC+1|+1]]"@de

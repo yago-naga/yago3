@@ -64,10 +64,14 @@ public class Tester {
 			try {
 				goldStandard = new FactCollection(
 						theme.findFileInFolder(goldFolder));
-				result = new FactCollection(
-						theme.findFileInFolder(outputFolder));
 			} catch (Exception ex) {
-				Announce.message(ex);
+				Announce.warning("Can't load gold theme",theme,"in",goldFolder);
+			}
+			try {
+			result = new FactCollection(
+					theme.findFileInFolder(outputFolder));
+			} catch (Exception ex) {
+				Announce.warning("Can't load test theme",theme,"in",outputFolder);
 			}
 			if (result == null
 					|| goldStandard == null

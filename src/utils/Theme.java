@@ -187,7 +187,7 @@ public class Theme extends FactSource.FileFactSource implements
 		File f = findFileInFolder(folder);
 		if (f == null)
 			throw new FileNotFoundException("Cannot find theme " + this
-					+ " in " + folder);
+					+ " in " + folder.getCanonicalPath());
 		if (file != null) {
 			if (file.equals(f))
 				return (this);

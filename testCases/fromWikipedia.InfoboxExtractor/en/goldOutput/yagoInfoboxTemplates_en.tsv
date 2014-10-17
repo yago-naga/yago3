@@ -1,7 +1,4 @@
-// Test
-// Raw infobox templates from the Wikipedia infoboxes
-// WIKIPEDIA
-
+	<yagoTheme_yagoInfoboxTemplates_en>	<hasGloss>	"Test Raw infobox templates from the Wikipedia infoboxes WIKIPEDIA"
 <id_y9qq7a_1qm_bdtl1i>	<Campania>	<infobox/en/type>	"region of italy"@en
 <id_1gaoy63_1qm_kbo2io>	<Carlo_Azeglio_Ciampi>	<infobox/en/type>	"president"@en
 <id_7r55ul_1qm_vbv6yr>	<Forza_Italia>	<infobox/en/type>	"political party"@en
