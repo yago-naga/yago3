@@ -108,6 +108,6 @@ public abstract class TermParser {
 		PatternHardExtractor.NUMBERPARSER.assignToFolder(new File("./data"));
 		WordnetExtractor.PREFMEANINGS.assignToFolder(new File("../../data/yago3"));
 		TermParser parsi = new NumberParser();
-		parsi.test(" [[Alphastrahlung|α]] (0,010 %)");		
+		parsi.test("mail.ukcdogs.com/ukcweb.nsf/80de88211ee3f2dc8525703f004ccb1e/059D6E6E45AB582E8525704D004D9588?OpenDocument");		
 	}
 }

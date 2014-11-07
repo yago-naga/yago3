@@ -107,3 +107,6 @@
 
 # Convert decimals to integer where possible
 "_result_(-?\d++)_xsd:decimal_" <mapsTo> "_result_$1_xsd:integer_" .
+
+# Important: Remove numbers that are clearly not numbers
+"_result_(-?[0-9\.]+)[eE]\d{3,}" <mapsTo> "" .

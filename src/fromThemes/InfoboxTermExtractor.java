@@ -110,7 +110,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 				continue;
 			@ImplementationNote("This has to be a list, because the first date mentioned is usually the right one")
 			List<String> objects = new ArrayList<>();
-			for (TermParser termParser : parsers) {
+			for (TermParser termParser : parsers) {				
 				for (String s : termParser.extractList(val)) {
 
 					// Add predefined units
@@ -142,7 +142,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		InfoboxTermExtractor extractor = new InfoboxTermExtractor("en");
+		InfoboxTermExtractor extractor = new InfoboxTermExtractor("fa");
 		extractor.extract(new File("c:/fabian/data/yago3"),
 				"mapping infobox attributes into infobox facts");
 	}

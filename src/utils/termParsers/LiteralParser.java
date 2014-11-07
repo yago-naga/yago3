@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javatools.administrative.Announce;
 import utils.PatternList;
 import utils.Theme;
 
@@ -45,9 +46,12 @@ public abstract class LiteralParser extends TermParser {
 		if (input == null)
 			return (Collections.emptyList());
 		List<String> result = new ArrayList<>();
+		//Announce.debug("Done, transformed:", input);
 		Matcher m = resultPattern.matcher(input);
 		while (m.find()) {
+			//Announce.debug("Result entity:", m.group());
 			String resultEntity = resultEntity(m);
+			//Announce.debug("Result entity transformed:", resultEntity);
 			if (resultEntity != null)
 				result.add(resultEntity);
 		}
