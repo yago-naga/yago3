@@ -201,6 +201,15 @@ public class FactCollection extends AbstractSet<Fact> {
 		return (true);
 	}
 
+	/** Adds all facts of a collection, does not check for duplicates */
+	public boolean justAddAll(Collection<? extends Fact> c) {
+		boolean modified = false;
+        for (Fact f : c)
+            if (justAdd(f))
+                modified = true;
+        return modified;
+	}
+	
 	/** Empty list */
 	protected static final List<Fact> EMPTY = new ArrayList<Fact>(0);
 
@@ -528,6 +537,20 @@ public class FactCollection extends AbstractSet<Fact> {
 		return (set);
 	}
 
+	/**
+	 * Creates a fact collection for quickly getting arg1 for a given arg2. 
+	 * 
+	 * This is useful for iterating over a graph in the other direction
+	 * 
+	 * @return reverse fact collection
+	 */
+	public FactCollection getReverse() {
+		FactCollection reverseFactCollection = new FactCollection();
+		for (Fact f : this)
+			reverseFactCollection.justAdd(new Fact(f.getObject(), f.getRelation(), f.getSubject()));
+		return reverseFactCollection;
+	}
+	
 	/**
 	 * Creates a map for quickly getting arg1 for a given arg2. Notice that this
 	 * might overwrite arg1s that occur multiple times, make sure you know that

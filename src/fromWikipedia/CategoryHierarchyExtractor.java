@@ -9,10 +9,10 @@ import java.util.TreeSet;
 
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
+import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.MultilingualTheme;
 import utils.Theme;
-import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
@@ -25,23 +25,23 @@ import fromOtherSources.WordnetExtractor;
 /**
  * CategoryExtractor - YAGO2s
  * 
- * Extracts facts from Wikipedia categories.
+ * Extracts the Wikipedia category hierarchy.
  * 
- * @author Fabian
- * @author Farzaneh Mahdisoltani
+ * @author Felix Keller
+ * @author Johannes Hoffart
  * 
  */
 
-public class CategoryExtractor extends MultilingualWikipediaExtractor {
+public class CategoryHierarchyExtractor extends MultilingualWikipediaExtractor {
 
-	public static final MultilingualTheme CATEGORYMEMBERS = new MultilingualTheme(
-			"categoryMembers",
-			"Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
+	public static final MultilingualTheme CATEGORYHIERARCHY = new MultilingualTheme(
+			"categoryHierarchy",
+			"Wikipedia category hierarchy, still to be translated");
 
-	public static final MultilingualTheme CATEGORYMEMBERS_TRANSLATED = new MultilingualTheme(
-			"categoryMembersTranslated",
-			"Category Members facts with translated subjects and objects");
-
+	public static final MultilingualTheme CATEGORYHIERARCHY_TRANSLATED = new MultilingualTheme(
+			"categoryHierarchyTranslated",
+			"Wikipedia category hierarchy translated subjects and objects");
+	
 	@Override
 	public Set<Theme> input() {
 		return new TreeSet<Theme>(Arrays.asList(
@@ -52,13 +52,12 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> inputCached() {
-		return new FinalSet<>(WordnetExtractor.PREFMEANINGS,
-				DictionaryExtractor.CATEGORYWORDS);
+		return new FinalSet<>(DictionaryExtractor.CATEGORYWORDS);
 	}
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(CATEGORYMEMBERS.inLanguage(language));
+		return new FinalSet<Theme>(CATEGORYHIERARCHY.inLanguage(language));
 	}
 
 	@Override
@@ -66,18 +65,16 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 		if (language.equals("en"))
 			return (Collections.emptySet());
 		return (new FinalSet<FollowUpExtractor>(new CategoryTranslator(
-				CATEGORYMEMBERS.inLanguage(this.language),
-				CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language), this)));
+				CATEGORYHIERARCHY.inLanguage(this.language),
+				CATEGORYHIERARCHY_TRANSLATED.inLanguage(this.language), this)));
 	}
 
 	@Override
 	public void extract() throws Exception {
-		TitleExtractor titleExtractor = new TitleExtractor(language);
-
 		// Extract the information
 		// Announce.progressStart("Extracting", 3_900_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-		String titleEntity = null;
+		String pageCategory = null;
 		/**
 		 * categoryWord holds the synonym of the word "Category" in different
 		 * languages. It is needed to distinguish the category part in Wiki
@@ -90,6 +87,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 			throw new Exception("Category word undefined in language "
 					+ language);
 		categoryWord = FactComponent.asJavaString(categoryWord);
+		String categoryTitlePrefix = categoryWord + ":";
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "[["
 					+ categoryWord + ":")) {
@@ -99,11 +97,19 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 				return;
 			case 0:
 				// Announce.progressStep();
-				titleEntity = titleExtractor.getTitleEntity(in);
+				String title = FileLines.readToBoundary(in, "</title>");
+				title = Char17.decodeAmpersand(title);
+				if (title.startsWith("Category:")) {
+					pageCategory = title.substring("Category:".length());
+				} else if (title.startsWith(categoryTitlePrefix)) {
+					pageCategory = title.substring(categoryTitlePrefix.length());
+				} else {
+					pageCategory = null;
+				}
 				break;
 			case 1:
 			case 2:
-				if (titleEntity == null) {
+				if (pageCategory == null) {
 					continue;
 				}
 				String category = FileLines.readTo(in, ']', '|').toString();
@@ -111,27 +117,29 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 				// There are sometimes categories of length 0
 				// This causes problems, so avoid them
 				if (category.length() >= 4 && !category.contains(":")) {
-					CATEGORYMEMBERS.inLanguage(language).write(
-							new Fact(titleEntity, "<hasWikipediaCategory>",
+					CATEGORYHIERARCHY.inLanguage(language).write(
+							new Fact(FactComponent.forForeignWikiCategory(pageCategory,
+										language),
+									"<wikipediaSubCategoryOf>",
 									FactComponent.forForeignWikiCategory(category,
-											language)));
+										language)));
 				}
 				break;
 			}
 		}
 	}
 
-	public CategoryExtractor(String lang, File wikipedia) {
+	public CategoryHierarchyExtractor(String lang, File wikipedia) {
 		super(lang, wikipedia);
 	}
 
 	public static void main(String[] args) throws Exception {
-
-		new CategoryExtractor(
+		
+		new CategoryHierarchyExtractor(
 				"de",
 				new File(
-						"C:/Fabian/eclipseProjects/yago3/testCases/fromWikipedia.CategoryExtractor/de/wikipedia/de_wikitest.xml"))
-				.extract(new File("c:/fabian/data/yago3"),
+						"testCases/fromWikipedia.CategoryExtractor/de/wikipedia/de_wikitest.xml"))
+				.extract(new File("data"),
 						"Test on 1 wikipedia article");
 
 	}

@@ -27,6 +27,7 @@ rdfs:subClassOf	<_wordnetFileOf>	"wn_hyp.pl" .
 "update"	rdf:type	<yagoNonConceptualWord> .
 <id_20120207175542_29>	<_hasComment>	"For 1911_Britannica_articles_needing_updates\u0022" .
 "article"	rdf:type	<yagoNonConceptualWord> .
+"template"	rdf:type	<yagoNonConceptualWord> .
 "dispute"	rdf:type	<yagoNonConceptualWord> .
 "list"	rdf:type	<yagoNonConceptualWord> .
 "name"	rdf:type	<yagoNonConceptualWord> .
