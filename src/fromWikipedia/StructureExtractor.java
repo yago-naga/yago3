@@ -14,6 +14,7 @@ import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.FactTemplateExtractor;
 import utils.MultilingualTheme;
+import utils.PatternList;
 import utils.Theme;
 import utils.TitleExtractor;
 import basics.Fact;
@@ -46,6 +47,7 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.STRUCTUREPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
+				PatternHardExtractor.INFOBOXPATTERNS,
 				WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
 	}
 	
@@ -104,7 +106,10 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 				.factCollection();
 		FactTemplateExtractor structurePatterns = new FactTemplateExtractor(
 				structurePatternCollection, "<_extendedStructureWikiPattern>");
-
+    PatternList replacements = new PatternList(
+        PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
+        "<_infoboxReplace>");
+    
 		String titleEntity = null;
 		while (true) {
 			switch (FileLines.findIgnoreCase(in, "<title>")) {
@@ -121,8 +126,9 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 				String normalizedPage = 
 				    Char17.decodeAmpersand(
 				        page.replaceAll("[\\s\\x00-\\x1F]+"," "));
+				String transformedPage = replacements.transform(normalizedPage);
 
-				for (Fact fact : structurePatterns.extract(normalizedPage,
+				for (Fact fact : structurePatterns.extract(transformedPage,
 						titleEntity, language)) {
 					if (fact != null)
 						DIRTYSTRUCTUREFACTS.inLanguage(language).write(fact);

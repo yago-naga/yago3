@@ -14,6 +14,7 @@ import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.FactTemplateExtractor;
 import utils.MultilingualTheme;
+import utils.PatternList;
 import utils.Theme;
 import utils.TitleExtractor;
 import basics.Fact;
@@ -22,7 +23,6 @@ import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
-import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 
@@ -41,6 +41,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.CONTEXTPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
+				PatternHardExtractor.INFOBOXPATTERNS,
 				WordnetExtractor.PREFMEANINGS,PatternHardExtractor.LANGUAGECODEMAPPING));
 	}
 
@@ -106,6 +107,9 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 				.factCollection();
 		FactTemplateExtractor contextPatterns = new FactTemplateExtractor(
 				contextPatternCollection, "<_extendedContextWikiPattern>");
+		PatternList replacements = new PatternList(
+        PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
+        "<_infoboxReplace>");
 
 		// FactWriter outSources = output.get(CONTEXTSOURCES);
 
@@ -125,6 +129,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 				String normalizedPage = Char17.decodeAmpersand(Char17
 						.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+",
 								" ")));
+				String transformedPage = replacements.transform(normalizedPage);
 
 				// for (Pair<Fact, String> fact :
 				// contextPatterns.extractWithProvenance(normalizedPage,
@@ -134,7 +139,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 				// FactComponent.wikipediaURL(titleEntity),
 				// "ConteXtExtractor from: " + fact.second);
 				// }
-				for (Fact fact : contextPatterns.extract(normalizedPage,
+				for (Fact fact : contextPatterns.extract(transformedPage,
 						titleEntity, language)) {
 					if (fact != null) {
 						DIRTYCONTEXTFACTS.inLanguage(language).write(fact);
