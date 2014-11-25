@@ -192,6 +192,7 @@
 "climber"	rdf:type	<_yagoNonConceptualWord> .
 "cross"	rdf:type	<_yagoNonConceptualWord> .
 "recipient" rdf:type	<_yagoNonConceptualWord> .
+"template" rdf:type	<_yagoNonConceptualWord> .
 #@ <id_20120207175542_31>
 "vega"	rdf:type	<_yagoNonConceptualWord> .
 <id_20120207175542_31>	rdfs:comment	"For 'Las Vegas'" .
