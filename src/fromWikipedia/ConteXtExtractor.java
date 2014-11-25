@@ -50,6 +50,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.CONTEXTPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
+        PatternHardExtractor.INFOBOXPATTERNS,
 				WordnetExtractor.PREFMEANINGS,PatternHardExtractor.LANGUAGECODEMAPPING));
 	}
 	
