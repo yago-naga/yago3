@@ -1,12 +1,20 @@
 package fromThemes;
 
-import basics.*;
-import com.sun.istack.internal.NotNull;
-import extractors.MultilingualExtractor;
-import fromOtherSources.HardExtractor;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromWikipedia.CategoryHierarchyExtractor;
+import java.io.File;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+import java.util.Stack;
+import java.util.TreeSet;
+
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
@@ -16,10 +24,16 @@ import javatools.parsers.PlingStemmer;
 import utils.FactCollection;
 import utils.MultilingualTheme;
 import utils.Theme;
-
-import java.io.File;
-import java.io.PrintWriter;
-import java.util.*;
+import basics.Fact;
+import basics.FactComponent;
+import basics.FactSource;
+import basics.RDFS;
+import basics.YAGO;
+import extractors.MultilingualExtractor;
+import fromOtherSources.HardExtractor;
+import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
+import fromWikipedia.CategoryHierarchyExtractor;
 
 /**
  * WikipediaCategoryClassHierarchyExtractor - YAGO2s
@@ -977,7 +991,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 		}
 
 		@Override
-		public int compareTo(@NotNull CycleNode cn) {
+		public int compareTo(CycleNode cn) {
 			int result;
 			if (modified && !cn.modified) return -1;
 			else if (!modified && cn.modified) return 1;
