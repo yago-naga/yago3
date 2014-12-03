@@ -20,8 +20,8 @@
 # Citations - TODO this is not useable in non-English!
 "(?i)\\{\\{[Cc]it[ae][^\\}]+title\\s*=\\s*([^\\}\\|]+)"	<_extendedContextWikiPattern>	"$0 <hasCitationTitle> @String($1)" .
 
-# Section titles
-"(?i)(={1,5})\\s*([^=\\n]+?)\\s*\\1"	<_extendedContextWikiPattern>	"$0 <hasTitleText> @String($2)" .
+# Section titles - NOT USED FOR NOW
+# "(?i)(={1,5})\\s*([^=\\n]+?)\\s*\\1"	<_extendedContextWikiPattern>	"$0 <hasTitleText> @String($2)" .
 
 # External links without anchor text
 "(?i)\\[https?://[^\\s\\]\\n]+\\s+([^\\]\\n]+)\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaAnchorText> @String($1)" .
