@@ -39,7 +39,7 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.STRUCTUREPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
-        PatternHardExtractor.INFOBOXPATTERNS,
+        PatternHardExtractor.AIDACLEANINGPATTERNS,
 				WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
 	}
 
@@ -48,7 +48,7 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 		return new HashSet<Theme>(Arrays.asList(
 				PatternHardExtractor.STRUCTUREPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
-				PatternHardExtractor.INFOBOXPATTERNS,
+				PatternHardExtractor.AIDACLEANINGPATTERNS,
 				WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
 	}
 	
