@@ -1,13 +1,16 @@
 package fromThemes;
 
 import java.io.File;
+import java.io.IOException;
+import java.text.Normalizer;
+import java.text.Normalizer.Form;
 import java.util.Set;
 import java.util.TreeSet;
 
-import utils.Theme;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import javatools.parsers.Name.PersonName;
+import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -71,17 +74,34 @@ public class PersonNameExtractor extends Extractor {
 						FactComponent.forStringWithLanguage(given, "eng")),
 						PERSONNAMESOURCES, source, "PersonNameExtractor");
 				
+				writeNormalized(f.getArg(1), given, source);
+				
         write(PERSONNAMEHEURISTICS, new Fact(f.getArg(1), RDFS.label,
             FactComponent.forStringWithLanguage(given + " " + family, "eng")),
             PERSONNAMESOURCES, source, "PersonNameExtractor");
+        
+        writeNormalized(f.getArg(1), given + " " + family, source);
+
 			}
 			write(PERSONNAMES, new Fact(f.getArg(1), "<hasFamilyName>",
 					FactComponent.forStringWithLanguage(family, "eng")),
 					PERSONNAMESOURCES, source, "PersonNameExtractor");
+			
+      writeNormalized(f.getArg(1), family, source);
 		}
 	}
 
-	public static void main(String[] args) throws Exception {
+	private void writeNormalized(String entity, String name, String source) throws IOException {
+	  String normalizedName =  Normalizer.normalize(name, Form.NFD)
+        .replaceAll("\\p{InCombiningDiacriticalMarks}+", "");
+	  if (!normalizedName.equals(name)) {
+	    write(PERSONNAMEHEURISTICS, 
+	        new Fact(entity, RDFS.label, FactComponent.forStringWithLanguage(normalizedName, "eng")), 
+	        PERSONNAMESOURCES, source, "PersonNameExtractor_normalized");
+	  }
+  }
+
+  public static void main(String[] args) throws Exception {
 		new PersonNameExtractor().extract(new File("c:/fabian/data/yago2s"),
 				"test");
 	}
