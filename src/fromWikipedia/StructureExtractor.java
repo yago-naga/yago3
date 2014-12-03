@@ -108,8 +108,8 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 		FactTemplateExtractor structurePatterns = new FactTemplateExtractor(
 				structurePatternCollection, "<_extendedStructureWikiPattern>");
     PatternList replacements = new PatternList(
-        PatternHardExtractor.INFOBOXPATTERNS.factCollection(),
-        "<_infoboxReplace>");
+        PatternHardExtractor.AIDACLEANINGPATTERNS.factCollection(),
+        "<_aidaCleaning>");
     
 		String titleEntity = null;
 		while (true) {

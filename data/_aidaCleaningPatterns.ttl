@@ -1,0 +1,42 @@
+# Manually coded facts of YAGO2s.
+#  DO NOT OVERWRITE!
+# This file contains the infobox patterns, infobox replacements and infobox combinations.
+# It is used by the InfoboxExtractor.
+# Infobox patterns are not case sensitive.
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# ------------ Replacements ----------
+"<br ?/>"	<_aidaCleaning>	"\n" .
+"<br ?>"	<_aidaCleaning>	"\n" .
+"</ ?br ?>"	<_aidaCleaning>	"\n" .
+"'''"	<_aidaCleaning>	"" .
+"''"	<_aidaCleaning>	"" .
+"\\[\\[File:[^\\]]*\\]\\]"	<_aidaCleaning>	"" .
+"\\[\\[Image:[^\\]]*\\]\\]"	<_aidaCleaning>	"" .
+"\\[\\[wp:[^\\]]*\\]\\]"	<_aidaCleaning>	"" .
+"\\[\\[minute\\]\\]s?"	<_aidaCleaning>	" minutes " .
+"\\[\\[1000000000000 \\(number\\)\\|.*?\\]\\]"	<_aidaCleaning>	" trillion " .
+"\\[\\[1000000000 \\(number\\)\\|.*?\\]\\]"	<_aidaCleaning>	" billion " .
+"\\[\\[1000000 \\(number\\)\\|.*?\\]\\]"	<_aidaCleaning>	" million " .
+"\\[\\[1000 \\(number\\)\\|.*?\\]\\]"	<_aidaCleaning>	" thousand " .
+"\\[\\[euro\\|.*?\\]\\]"	<_aidaCleaning>	" Euro " .
+"\\{\\{USA\\}\\}"	<_aidaCleaning>	"[[United_States]]" .
+"\\{\\{RUS\\}\\}"	<_aidaCleaning>	"[[Russia]]" .
+"\\{\\{FRA\\}\\}"	<_aidaCleaning>	"[[France]]" .
+"\\{\\{ARG\\}\\}"	<_aidaCleaning>	"[[Argentina]]" .
+"\\{\\{AUS\\}\\}"	<_aidaCleaning>	"[[Australia]]" .
+"\\{\\{PAK\\}\\}"	<_aidaCleaning>	"[[Pakistan]]" .
+"\\{\\{UK\\}\\}"	<_aidaCleaning>	"[[United_Kingdom]]" .
+"\\{\\{GBR\\}\\}"	<_aidaCleaning>	"[[United_Kingdom]]" .
+"\\{\\{CHINA\\}\\}"	<_aidaCleaning>	"[[China]]" .
+"\\{\\{PAGENAME\\}\\}"	<_aidaCleaning>	"[[$0]]" .
+"\\{\\{flag ?(icon)?\\|(.*?)\\}\\}"	<_aidaCleaning>	"[[$2]]" .

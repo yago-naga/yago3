@@ -22,6 +22,9 @@ public class PatternHardExtractor extends HardExtractor {
 	/** Patterns of infoboxes */
 	public static final Theme INFOBOXPATTERNS = new Theme("_infoboxPatterns",
 			"The Wikipedia infobox patterns used in YAGO");
+	 /** Patterns for cleaning article texts */
+  public static final Theme AIDACLEANINGPATTERNS = new Theme("_aidaCleaningPatterns",
+      "The AIDA cleaning patterns used in YAGO");
 	/** Language codes */
 	public static final Theme LANGUAGECODEMAPPING = new Theme(
 			"_languageCodeMappings",
