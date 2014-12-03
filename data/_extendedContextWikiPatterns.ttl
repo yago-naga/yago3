@@ -18,7 +18,7 @@
 "(?i)\\[\\[([^\\]\\n\\|:]+?)\\]\\]"	<_extendedContextWikiPattern>	"$0 <hasWikipediaAnchorText> @String($1)" .
 
 # Citations - TODO this is not useable in non-English!
-"(?i)\\{\\{Cit[ae][^\\}]+title\\s*=\\s*([^\\}\\|]+)"	<_extendedContextWikiPattern>	"$0 <hasCitationTitle> @String($1)" .
+"(?i)\\{\\{[Cc]it[ae][^\\}]+title\\s*=\\s*([^\\}\\|]+)"	<_extendedContextWikiPattern>	"$0 <hasCitationTitle> @String($1)" .
 
 # Section titles
 "(?i)(={1,5})\\s*([^=\\n]+?)\\s*\\1"	<_extendedContextWikiPattern>	"$0 <hasTitleText> @String($2)" .
