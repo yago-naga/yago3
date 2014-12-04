@@ -64,7 +64,7 @@ public class AIDAOneShotExtractor extends SimpleDeduplicator {
   }
 
   /** All facts of YAGO */
-  public static final Theme AIDAFACTS = new Theme("aidaFacts",
+  public static final Theme AIDAFACTS = new Theme("aidaFactsOneShot",
       "All facts necessary for AIDA", ThemeGroup.OTHER);
 
   /** All facts of YAGO */
