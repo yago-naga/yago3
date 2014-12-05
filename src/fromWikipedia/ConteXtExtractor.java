@@ -89,7 +89,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 
     FactCollection contextPatternCollection = PatternHardExtractor.CONTEXTPATTERNS.factCollection();
     FactTemplateExtractor contextPatterns = new FactTemplateExtractor(contextPatternCollection, "<_extendedContextWikiPattern>");
-    PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS.factCollection(), "<_aidaCleaningPatterns>");
+    PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS.factCollection(), "<_aidaCleaning>");
 
     // FactWriter outSources = output.get(CONTEXTSOURCES);
 

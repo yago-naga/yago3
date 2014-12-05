@@ -109,7 +109,7 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 				structurePatternCollection, "<_extendedStructureWikiPattern>");
     PatternList replacements = new PatternList(
         PatternHardExtractor.AIDACLEANINGPATTERNS.factCollection(),
-        "<_aidaCleaningPatterns>");
+        "<_aidaCleaning>");
     
 		String titleEntity = null;
 		while (true) {
