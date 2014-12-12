@@ -107,6 +107,8 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           String page = FileLines.readBetween(in, "<text", "</text>");
           String normalizedPage = Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
           String transformedPage = replacements.transform(normalizedPage);
+          System.out.println(transformedPage);
+          
 
           // for (Pair<Fact, String> fact :
           // contextPatterns.extractWithProvenance(normalizedPage,
