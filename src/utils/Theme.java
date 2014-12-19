@@ -203,6 +203,7 @@ public class Theme extends FactSource.FileFactSource implements
 
 	/** Writes a fact */
 	public void write(Fact f) throws IOException {
+		if(factWriter==null) throw new RuntimeException("Theme "+this+" is not open for writing. Maybe you forgot to declare it as the output of the extractor?");
 		factWriter.write(f);
 	}
 
