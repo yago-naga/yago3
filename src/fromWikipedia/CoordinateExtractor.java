@@ -186,7 +186,7 @@ public class CoordinateExtractor extends EnglishWikipediaExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Announce.setLevel(Announce.Level.DEBUG);
+		//Announce.setLevel(Announce.Level.DEBUG);
 		new CoordinateExtractor(
 				new File(
 						"/san/jbiega/multiWikiSymlinks/en_wiki-20121201-pages-articles.xml"))
