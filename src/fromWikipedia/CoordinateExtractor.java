@@ -58,22 +58,38 @@ public class CoordinateExtractor extends EnglishWikipediaExtractor {
 		return (new FinalSet<Theme>(COORDINATE_SOURCES, COORDINATES));
 	}
 
+	/** vertical bar*/
 	public static final String bar = "\\s*\\|\\s*(?:display\\s*=\\s*title\\s*\\|)?";
+
+	/** Direction indicator*/
+	public static final String dir = "([NSWE])";
+
+	/** Integer*/
+	public static final String integer = "(-?\\d+)";
+
+	/** Float*/
+	public static final String flote= "(-?[\\d\\.]+)";
 
 	/** {{Coord|57|18|22|N|4|27|32|W|display=title}} */
 	public static final Pattern coordPattern1 = Pattern.compile("(?i)coord"
-			+ bar + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)" + bar
-			+ "(.)" + bar + "(\\d+)" + bar + "(\\d+)" + bar + "([\\d\\.]+)"
-			+ bar + "(.)");
+			+ bar + integer + bar + integer + bar + flote + bar
+			+ dir + bar + integer + bar + integer + bar + flote
+			+ bar + dir);
 
 	/** {{Coord|44.112|N|87.913|W|display=title}} */
 	public static final Pattern coordPattern2 = Pattern.compile("(?i)coord"
-			+ bar + "([\\d\\.]+)" + bar + "(.)" + bar + "([\\d\\.]+)" + bar
-			+ "(.)");
+			+ bar + flote + bar + dir + bar + flote + bar
+			+ dir);
+
+	/** {{Coord|57|18|N|4|27|W|display=title}} */
+	public static final Pattern coordPattern3 = Pattern.compile("(?i)coord"
+			+ bar + integer + bar + flote + bar
+			+ dir + bar + integer + bar + flote
+			+ bar + dir);
 
 	/** {{Coord|44.112|-87.913|display=title}} */
-	public static final Pattern coordPattern3 = Pattern.compile("(?i)coord"
-			+ bar + "([\\-\\d\\.]+)" + bar + "([\\-\\d\\.]+)");
+	public static final Pattern coordPattern4 = Pattern.compile("(?i)coord"
+			+ bar + flote + bar + flote);
 
 	protected void writeCoords(String entity, Double la, Double lo)
 			throws IOException {
@@ -153,6 +169,13 @@ public class CoordinateExtractor extends EnglishWikipediaExtractor {
 				m = coordPattern3.matcher(val);
 				if (m.find()) {
 					writeCoords(titleEntity,
+							getCoord(m.group(1), m.group(2), "0", m.group(3)),
+							getCoord(m.group(4), m.group(5), "0", m.group(6)));
+					break;
+				}
+				m = coordPattern4.matcher(val);
+				if (m.find()) {
+					writeCoords(titleEntity,
 							getCoord(m.group(1), "0", "0", "N"),
 							getCoord(m.group(2), "0", "0", "E"));
 					break;
@@ -166,8 +189,8 @@ public class CoordinateExtractor extends EnglishWikipediaExtractor {
 		Announce.setLevel(Announce.Level.DEBUG);
 		new CoordinateExtractor(
 				new File(
-						"c:/Fabian/eclipseProjects\\yago2s\\testCases\\fromWikipedia.CoordinateExtractor\\de/wikipedia/de_wikitest.xml"))
-				.extract(new File("c:/fabian/data/yago3"), "test");
+						"/san/jbiega/multiWikiSymlinks/en_wiki-20121201-pages-articles.xml"))
+				.extract(new File("/san/suchanek/yago3"), "Single run.");
 	}
 
 }

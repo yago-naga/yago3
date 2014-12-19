@@ -1,8 +1,8 @@
 	<yagoTheme_coordinateSources>	<hasGloss>	"Test Sources for coordinate facts from Wikipedia INTERNAL"
-<id_1v9fsa2_115_1a1l5mp>	<id_10q4wvf_1n8_zji9rz>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
-	<id_1v9fsa2_115_1a1l5mp>	<extractionTechnique>	"CoordinateExtractor"
-<id_9d5ywa_115_1a1l5mp>	<id_10q4wvf_jto_zjiyzl>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
-	<id_9d5ywa_115_1a1l5mp>	<extractionTechnique>	"CoordinateExtractor"
+<id_1v9fs93_115_1a1l5mp>	<id_10q4wvf_1n8_zji9s8>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
+	<id_1v9fs93_115_1a1l5mp>	<extractionTechnique>	"CoordinateExtractor"
+<id_17w50or_115_1a1l5mp>	<id_10q4wvf_jto_1252btc>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
+	<id_17w50or_115_1a1l5mp>	<extractionTechnique>	"CoordinateExtractor"
 <id_1jfhfxh_115_7fgk3f>	<id_2ox8i9_1n8_15cfwfm>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
 	<id_1jfhfxh_115_7fgk3f>	<extractionTechnique>	"CoordinateExtractor"
 <id_1wc0abs_115_7fgk3f>	<id_2ox8i9_jto_1xrhssm>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
