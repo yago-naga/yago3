@@ -48,7 +48,7 @@ public class GeoNamesDataImporter extends DataExtractor {
 			ThemeGroup.GEONAMES);
 
 	/** geonames types */
-	public static final Theme GEONAMESTYPES = new Theme("geonamesTypes",
+	public static final Theme GEONAMESTYPES = new Theme("yagoGeonamesTypes",
 			"All GeoNames types for both mapped and non-mapped entities.",
 			ThemeGroup.GEONAMES);
 
