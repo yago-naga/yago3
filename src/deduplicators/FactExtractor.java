@@ -46,7 +46,7 @@ public class FactExtractor extends SimpleDeduplicator {
 				.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		input.addAll(Arrays.asList(RuleExtractor.RULERESULTS,
 				FlightExtractor.FLIGHTS,
-				GeoNamesDataImporter.GEONAMESMAPPEDDATA,
+				GeoNamesDataImporter.GEONAMES_MAPPED_DATA,
 //				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
 				GenderExtractor.PERSONS_GENDER));

@@ -47,7 +47,7 @@ public class LiteralFactExtractor extends SimpleDeduplicator {
 		input.addAll(Arrays.asList(RuleExtractor.RULERESULTS,
 //				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
 				TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS,
-				GeoNamesDataImporter.GEONAMESMAPPEDDATA));
+				GeoNamesDataImporter.GEONAMES_MAPPED_DATA));
 		return input;
 	}
 

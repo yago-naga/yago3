@@ -44,7 +44,7 @@ public class LabelExtractor extends SimpleDeduplicator {
     input.add(SchemaExtractor.YAGOSCHEMA);
     input.add(WordnetExtractor.WORDNETGLOSSES);
     input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
-    input.add(GeoNamesDataImporter.GEONAMESMAPPEDDATA);
+    input.add(GeoNamesDataImporter.GEONAMES_MAPPED_DATA);
     input.addAll(CategoryMapper.CATEGORYFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(InfoboxMapper.INFOBOXFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(RedirectExtractor.REDIRECTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));

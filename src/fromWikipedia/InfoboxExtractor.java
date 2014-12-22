@@ -346,7 +346,6 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 						}
 					}
 				}
-
 			}
 		}
 	}
