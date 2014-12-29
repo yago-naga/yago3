@@ -107,7 +107,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           String page = FileLines.readBetween(in, "<text", "</text>");
           String normalizedPage = Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
           String transformedPage = replacements.transform(normalizedPage);
-          System.out.println(transformedPage);
+          //System.out.println(transformedPage);
           
 
           // for (Pair<Fact, String> fact :
@@ -119,6 +119,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           // "ConteXtExtractor from: " + fact.second);
           // }
           for (Fact fact : contextPatterns.extract(transformedPage, titleEntity, language)) {
+            System.out.println(fact);
             if (fact != null) {
               CONTEXTFACTS.inLanguage(language).write(fact);
             }
