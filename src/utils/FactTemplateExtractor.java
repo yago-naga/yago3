@@ -6,6 +6,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -95,6 +96,10 @@ public class FactTemplateExtractor {
           } else {
             variables.put("$" + i, m.group(i));
           }
+        }
+        //for debugging
+        for(Entry<String,String> e: variables.entrySet()) {
+          System.out.println(e.getKey() + "\t-->\t" + e.getValue());
         }
         result.addAll(FactTemplate.instantiate(pattern.second(),
             variables, langauge, languageMap));
