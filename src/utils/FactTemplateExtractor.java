@@ -98,11 +98,15 @@ public class FactTemplateExtractor {
           }
         }
         //for debugging
-        for(Entry<String,String> e: variables.entrySet()) {
+        for (Entry<String, String> e : variables.entrySet()) {
           System.out.println(e.getKey() + "\t-->\t" + e.getValue());
         }
-        result.addAll(FactTemplate.instantiate(pattern.second(),
-            variables, langauge, languageMap));
+        List<Fact> facts = FactTemplate.instantiate(pattern.second(), variables, langauge, languageMap);
+        result.addAll(facts);
+        //for debugging
+        for (Fact f : facts) {
+          System.out.println(f);
+        }
       }
     }
     return (result);
