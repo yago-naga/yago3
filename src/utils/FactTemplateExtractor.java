@@ -6,16 +6,15 @@ import java.util.Collection;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.TreeMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import fromOtherSources.PatternHardExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.Pair;
 import basics.Fact;
 import basics.FactSource;
+import fromOtherSources.PatternHardExtractor;
 
 /**
  * YAGO2s - FactTemplateExtractor
@@ -97,16 +96,9 @@ public class FactTemplateExtractor {
             variables.put("$" + i, m.group(i));
           }
         }
-        //for debugging
-        for (Entry<String, String> e : variables.entrySet()) {
-          System.out.println(e.getKey() + "\t-->\t" + e.getValue());
-        }
         List<Fact> facts = FactTemplate.instantiate(pattern.second(), variables, langauge, languageMap);
         result.addAll(facts);
-        //for debugging
-        for (Fact f : facts) {
-          System.out.println(f);
-        }
+
       }
     }
     return (result);
