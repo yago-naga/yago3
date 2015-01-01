@@ -119,7 +119,11 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           // }
           for (Fact fact : contextPatterns.extract(transformedPage, titleEntity, language)) {
             if (fact != null) {
-              CONTEXTFACTS.inLanguage(language).write(fact);
+              if(isEnglish()) {
+                CONTEXTFACTS.inLanguage(language).write(fact);
+              } else {
+                CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language).write(fact);
+              }
             }
           }
       }
