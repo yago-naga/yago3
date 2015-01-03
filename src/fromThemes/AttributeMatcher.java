@@ -16,8 +16,10 @@ import utils.FactCollection;
 import utils.MultilingualTheme;
 import utils.Theme;
 import basics.Fact;
+import basics.RDFS;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
+import fromOtherSources.PatternHardExtractor;
 
 /**
  * YAGO2s - AttributeMatcher
@@ -51,12 +53,12 @@ public class AttributeMatcher extends MultilingualExtractor {
 
 	@Override
 	public Set<Theme> input() {
-		return new FinalSet<Theme>(referenceTheme, inputTheme);
+		return new FinalSet<Theme>(referenceTheme, inputTheme, PatternHardExtractor.MULTILINGUALATTRIBUTES);
 	}
 
 	@Override
 	public Set<Theme> inputCached() {
-		return new FinalSet<>(referenceTheme);
+		return new FinalSet<>(referenceTheme, PatternHardExtractor.MULTILINGUALATTRIBUTES);
 	}
 
 	@Override
@@ -72,6 +74,9 @@ public class AttributeMatcher extends MultilingualExtractor {
 				.getParent(), "_attributeMatches_" + language + ".tsv"));
 
 		Theme germanFacts = inputTheme;
+
+		// Load the map of manual mappings
+		Map<String,String> manualMapping=PatternHardExtractor.MULTILINGUALATTRIBUTES.factCollection().getMap("<_infoboxPattern>");
 
 		// Counts, for every german attribute, how often it appears with every
 		// YAGO relation
@@ -140,10 +145,17 @@ public class AttributeMatcher extends MultilingualExtractor {
 		// Now output the matches
 		for (String germanAttribute : german2yago2count.keySet()) {
 			// Find the best YAGO relation
-			String bestRelation = null;
 			int bestCorrect = 0;
 			int bestWrong = 0;
 			int bestTotal = 0;
+			String bestRelation = manualMapping.get(germanAttribute);
+			if(bestRelation!=null) {
+				bestCorrect=Integer.MAX_VALUE;
+				bestWrong=0;
+				bestTotal=bestCorrect;
+				tsv.write(germanAttribute + "\t" + bestCorrect+ "\t" + bestTotal
+						+ "\t" + bestCorrect+ "\t" + bestWrong+ "\n");
+			}
 			for (String yagoRelation : german2yago2count.get(germanAttribute)
 					.keySet()) {
 				int correct = german2yago2count.get(germanAttribute).get(
@@ -165,7 +177,7 @@ public class AttributeMatcher extends MultilingualExtractor {
 						+ "\t" + correct + "\t" + wrong + "\n");
 			}
 			// Write the best YAGO relation
-			if (bestRelation != null
+			if (bestRelation != null && !bestRelation.equals(RDFS.nothing)
 					&& measure.measure(bestTotal, bestCorrect, bestWrong))
 				out.write(new Fact(germanAttribute, "<_infoboxPattern>",
 						bestRelation));

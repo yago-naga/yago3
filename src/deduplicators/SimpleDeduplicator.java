@@ -17,6 +17,7 @@ import basics.Fact;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
+import fromOtherSources.PatternHardExtractor;
 
 /**
  * YAGO2s - SimpleDeduplicator
@@ -54,7 +55,9 @@ public abstract class SimpleDeduplicator extends Extractor {
 	 */
 	@Override
 	public final Set<Theme> input() {
-		return (new HashSet<Theme>(inputOrdered()));
+		Set<Theme> result = new HashSet<Theme>(inputOrdered());
+		result.add(PatternHardExtractor.FALSEFACTS);
+		return (result);
 	};
 
 	@Override
@@ -68,12 +71,15 @@ public abstract class SimpleDeduplicator extends Extractor {
 	@Override
 	public void extract() throws Exception {
 		Announce.doing("Running", this.getClass().getSimpleName());
+		@ImplementationNote("We also count functions in time as functions, because many functions ini time have bogus integer values after the real value in the infoboxes.")
 		Set<String> functions = null;
 		if (!input().contains(SchemaExtractor.YAGOSCHEMA)) {
 			Announce.warning("Deduplicators should have SchemaExtractor.YAGOSCHEMA, in their required input so that they can check functional relations!");
 		} else {
 			functions = SchemaExtractor.YAGOSCHEMA.factCollection()
 					.seekSubjects(RDFS.type, YAGO.function);
+			functions.addAll(SchemaExtractor.YAGOSCHEMA.factCollection()
+					.seekSubjects(RDFS.type, YAGO.functionInTime));
 		}
 
 		Writer tsv = FileUtils.getBufferedUTF8Writer(new File(
@@ -110,6 +116,13 @@ public abstract class SimpleDeduplicator extends Extractor {
 		}
 		Announce.done();
 		tsv.close();
+
+		Announce.doing("Removing false facts");
+		for (Fact f : PatternHardExtractor.FALSEFACTS) {
+			f.makeId();
+			batch.remove(f);
+		}
+		Announce.done();
 
 		Announce.doing("Writing");
 		for (Fact f : batch) {

@@ -29,6 +29,14 @@ public class PatternHardExtractor extends HardExtractor {
 	public static final Theme LANGUAGECODEMAPPING = new Theme(
 			"_languageCodeMappings",
 			"Mappings from ISO 639-1 codes to ISO 639-2/T codes.");
+	/** False facts*/
+	public static final Theme FALSEFACTS= new Theme(
+			"_falseFacts",
+			"Facts that shall be excluded from YAGO");
+	/** Manual multilingual attribute mappings*/
+	public static final Theme MULTILINGUALATTRIBUTES= new Theme(
+			"_multilingualAttributes",
+			"Manual mappings for multilingual attributes where the automatic mapping fails.");
 	public static final Theme INFOBOXTEMPORALPATTERNS = new Theme(
 			"_infoboxTemporalPatterns",
 			"The Wikipedia infobox patterns used in YAGO");
@@ -46,9 +54,6 @@ public class PatternHardExtractor extends HardExtractor {
 			"The replacement patterns for number extraction");
 	/** Patterns of categories */
 	public static final Theme CATEGORYPATTERNS = new Theme("_categoryPatterns",
-			"The Wikipedia category patterns used in YAGO");
-	public static final Theme TEMPORALCATEGORYPATTERNS = new Theme(
-			"_categoryTemporalPatterns",
 			"The Wikipedia category patterns used in YAGO");
 	/** Patterns of disambiguation pages */
 	public static final Theme DISAMBIGUATIONTEMPLATES = new Theme(
@@ -74,11 +79,11 @@ public class PatternHardExtractor extends HardExtractor {
 
 	public Set<Theme> output() {
 		return (new FinalSet<Theme>(INFOBOXPATTERNS, INFOBOXTEMPORALPATTERNS,
-				TITLEPATTERNS, CATEGORYPATTERNS, TEMPORALCATEGORYPATTERNS,
+				TITLEPATTERNS, CATEGORYPATTERNS,
 				RULES, DISAMBIGUATIONTEMPLATES, CONTEXTPATTERNS,
 				STRUCTUREPATTERNS, LANGUAGECODEMAPPING, SPOTLX_ENTITY_RULES,
 				SPOTLX_FACT_RULES, STRINGPARSER, NUMBERPARSER, DATEPARSER, 
-				AIDACLEANINGPATTERNS));
+				AIDACLEANINGPATTERNS, FALSEFACTS, MULTILINGUALATTRIBUTES));
 	}
 
 	@Override

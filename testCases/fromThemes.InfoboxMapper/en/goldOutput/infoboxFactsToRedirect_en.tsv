@@ -1,4 +1,5 @@
 	<yagoTheme_infoboxFactsToRedirect_en>	<hasGloss>	"Test Facts of infobox to be redirected and type-checked INTERNAL"
+<id_y9qq7a_1b1_10afn3e>	<Campania>	<hasArea>	"13590"^^xsd:integer
 <id_y9qq7a_789_2yccfx>	<Campania>	<hasCapital>	"Naples"
 <id_y9qq7a_l7i_l2w2vm>	<Campania>	<hasNumberOfPeople>	"882-##-##"^^xsd:date
 <id_y9qq7a_l7i_53t9bs>	<Campania>	<hasNumberOfPeople>	"954-##-##"^^xsd:date
@@ -182,12 +183,14 @@
 <id_184v0j1_12k_zk2qwl>	<Lamberto_Dini>	<livesIn>	<Rome>
 <id_184v0j1_16x_gxuna4>	<Lamberto_Dini>	<isMarriedTo>	"Donatella Zigone"
 <id_184v0j1_16x_i8dtnf>	<Lamberto_Dini>	<isMarriedTo>	<Donatella_Zigone>
+<id_10q4wvf_1b1_10ai4of>	<Lazio>	<hasArea>	"17236"^^xsd:integer
 <id_10q4wvf_789_zk2qwl>	<Lazio>	<hasCapital>	"Rome"
 <id_10q4wvf_z7a_10ot5dv>	<Lazio>	<isLocatedIn>	"Italy"
 <id_10q4wvf_z7a_10ot5dv>	<Lazio>	<isLocatedIn>	<Italy>
 <id_10q4wvf_l7i_1mxs6nm>	<Lazio>	<hasNumberOfPeople>	"5732212"^^xsd:integer
 <id_10q4wvf_ice_qxndqs>	<Lazio>	<hasWebsite>	<http://www.regione.lazio.it>
 <id_10q4wvf_ice_1hmw8d7>	<Lazio>	<hasWebsite>	<http://www.regione.lazio.it/>
+<id_1qfjlq_1b1_10azhsn>	<Lombardy>	<hasArea>	"23844"^^xsd:integer
 <id_1qfjlq_789_10qtisd>	<Lombardy>	<hasCapital>	"Milan"
 <id_1qfjlq_l7i_1bkgypx>	<Lombardy>	<hasNumberOfPeople>	"9939193"^^xsd:integer
 <id_1qfjlq_ice_p231nn>	<Lombardy>	<hasWebsite>	<http://www.regione.lombardia.it/>
@@ -216,6 +219,8 @@
 <id_4o2xc6_1s2_1jvigea>	<Mario_Monti>	<isAffiliatedTo>	<Independent_(politician)>
 <id_4o2xc6_16x_u6uwou>	<Mario_Monti>	<isMarriedTo>	"Elsa Antonioli"
 <id_4o2xc6_16x_12j96sf>	<Mario_Monti>	<isMarriedTo>	<Elsa_Antonioli>
+<id_10qtisd_1b1_1nlg9cz>	<Milan>	<hasArea>	"181.76"^^xsd:decimal
+<id_10qtisd_1b1_2jxs96>	<Milan>	<hasArea>	"181-##-##"^^xsd:date
 <id_10qtisd_siu_18zbmuo>	<Milan>	<wasCreatedOnDate>	"396-##-##"^^xsd:date
 <id_10qtisd_siu_r5de2l>	<Milan>	<wasCreatedOnDate>	<Before_Christ>
 <id_10qtisd_siu_zil47k>	<Milan>	<wasCreatedOnDate>	"396"^^xsd:integer
@@ -227,6 +232,8 @@
 <id_10qtisd_1ia_4t876g>	<Milan>	rdfs:label	<Comune_di_Milano>
 <id_10qtisd_z7a_1qfjlq>	<Milan>	<isLocatedIn>	<Lombardy>
 <id_10qtisd_z7a_1qfjlq>	<Milan>	<isLocatedIn>	"Lombardy"
+<id_2ox8i9_1b1_1lnvcw5>	<Molise>	<hasArea>	"4438-##-##"^^xsd:date
+<id_2ox8i9_1b1_zjic4l>	<Molise>	<hasArea>	"4438"^^xsd:integer
 <id_2ox8i9_789_1h78kea>	<Molise>	<hasCapital>	"Campobasso"
 <id_2ox8i9_l7i_hqszf>	<Molise>	<hasNumberOfPeople>	"319-##-##"^^xsd:date
 <id_2ox8i9_l7i_1ofu97i>	<Molise>	<hasNumberOfPeople>	"319834"^^xsd:integer
@@ -461,6 +468,15 @@
 <id_z038xo_l7i_1p0odkt>	<Edinburgh>	<hasNumberOfPeople>	"486120"^^xsd:integer
 <id_z038xo_l7i_1lap6z6>	<Edinburgh>	<hasNumberOfPeople>	"486-##-##"^^xsd:date
 <id_z038xo_l7i_s14tlb>	<Edinburgh>	<hasNumberOfPeople>	"120-##-##"^^xsd:date
+<id_z038xo_z7a_tvx1oo>	<Edinburgh>	<isLocatedIn>	<City_of_Edinburgh>
+<id_z038xo_z7a_17475uw>	<Edinburgh>	<isLocatedIn>	"City of Edinburgh"
+<id_z038xo_z7a_z038xo>	<Edinburgh>	<isLocatedIn>	"Edinburgh"
+<id_z038xo_z7a_p6gbcc>	<Edinburgh>	<isLocatedIn>	<Edinburgh_City_Centre>
+<id_z038xo_z7a_vgfqj0>	<Edinburgh>	<isLocatedIn>	"Edinburgh City Centre"
+<id_z038xo_z7a_sl7oao>	<Edinburgh>	<isLocatedIn>	<Scotland>
+<id_z038xo_z7a_sl7oao>	<Edinburgh>	<isLocatedIn>	"Scotland"
+<id_z038xo_z7a_1blrg33>	<Edinburgh>	<isLocatedIn>	<United_Kingdom>
+<id_z038xo_z7a_7j8ymm>	<Edinburgh>	<isLocatedIn>	"United Kingdom"
 <id_z038xo_ice_1le17kh>	<Edinburgh>	<hasWebsite>	<http://www.edinburgh.gov.uk>
 <id_z038xo_ice_o7m35>	<Edinburgh>	<hasWebsite>	<http://www.edinburgh-inspiringcapital.com/>
 <id_z038xo_ice_icoin2>	<Edinburgh>	<hasWebsite>	<http://www.edinburgh-inspiringcapital.com>
@@ -814,6 +830,8 @@
 <id_jr01l4_16x_1vwne04>	<Christian_Wulff>	<isMarriedTo>	"2006-##-##"^^xsd:date
 <id_jr01l4_16x_nkiphk>	<Christian_Wulff>	<isMarriedTo>	<Bettina_Wulff>
 <id_jr01l4_ice_1894bxa>	<Christian_Wulff>	<hasWebsite>	<http://www.christianwulff.de/>
+<id_tu1ps7_1b1_1ps9evn>	<Evangelical_Church_in_Germany>	<hasArea>	"Germany"
+<id_tu1ps7_1b1_1ps9evn>	<Evangelical_Church_in_Germany>	<hasArea>	<Germany>
 <id_tu1ps7_ice_6nsaxe>	<Evangelical_Church_in_Germany>	<hasWebsite>	<http://ekd.de/english/index.html>
 <id_ht3f3u_10x_asymxh>	<Frank-Walter_Steinmeier>	<graduatedFrom>	"University of Giessen"
 <id_ht3f3u_10x_pfblkl>	<Frank-Walter_Steinmeier>	<graduatedFrom>	<University_of_Giessen>
@@ -863,6 +881,9 @@
 <id_107bpbp_16x_b1mtzl>	<Gerhard_Schröder>	<isMarriedTo>	"Eva Schubach"
 <id_107bpbp_16x_i4tzwr>	<Gerhard_Schröder>	<isMarriedTo>	<Doris_Schröder-Köpf>
 <id_107bpbp_16x_1sinjha>	<Gerhard_Schröder>	<isMarriedTo>	"Anne Taschenmacher"
+<id_1ps9evn_1b1_fec2t1>	<Germany>	<hasArea>	"357-##-##"^^xsd:date
+<id_1ps9evn_1b1_1ohzzne>	<Germany>	<hasArea>	"357021"^^xsd:integer
+<id_1ps9evn_1b1_1kj2mn>	<Germany>	<hasArea>	"021-##-##"^^xsd:date
 <id_1ps9evn_789_1wd5e4i>	<Germany>	<hasCapital>	"Berlin"
 <id_1ps9evn_789_1wd5e4i>	<Germany>	<hasCapital>	<Berlin>
 <id_1ps9evn_f9j_zil1kf>	<Germany>	<hasTLD>	".de"
@@ -904,6 +925,8 @@
 <id_1ps9evn_1kn_3jkg5t>	<Germany>	<hasOfficialLanguage>	<German_language>
 <id_1ps9evn_1kn_zik10x>	<Germany>	<hasOfficialLanguage>	"1"^^xsd:integer
 <id_1ps9evn_1kn_13xoej6>	<Germany>	<hasOfficialLanguage>	"German language"
+<id_1ps9evn_ibw_zil3ax>	<Germany>	<hasPopulationDensity>	"229"^^xsd:integer
+<id_1ps9evn_ibw_1n7hau1>	<Germany>	<hasPopulationDensity>	"229-##-##"^^xsd:date
 <id_1ps9evn_l7i_1fq3p4o>	<Germany>	<hasNumberOfPeople>	"81799600"^^xsd:integer
 <id_1ps9evn_l7i_14h6gc7>	<Germany>	<hasNumberOfPeople>	"799-##-##"^^xsd:date
 <id_1ps9evn_l7i_y0nxg6>	<Germany>	<hasNumberOfPeople>	"600-##-##"^^xsd:date
@@ -929,6 +952,8 @@
 <id_18vc8ci_12k_zjsj59>	<Guido_Westerwelle>	<livesIn>	<Bonn>
 <id_18vc8ci_12k_1wd5e4i>	<Guido_Westerwelle>	<livesIn>	<Berlin>
 <id_18vc8ci_ice_3uctt7>	<Guido_Westerwelle>	<hasWebsite>	<http://www.guido-westerwelle.de/>
+<id_3gfkn0_1b1_zil72v>	<Hamburg>	<hasArea>	"755"^^xsd:integer
+<id_3gfkn0_1b1_8jbj5j>	<Hamburg>	<hasArea>	"755-##-##"^^xsd:date
 <id_3gfkn0_l7i_knozcg>	<Hamburg>	<hasNumberOfPeople>	"077-##-##"^^xsd:date
 <id_3gfkn0_l7i_1vh3nn8>	<Hamburg>	<hasNumberOfPeople>	"796-##-##"^^xsd:date
 <id_3gfkn0_l7i_bkbxp>	<Hamburg>	<hasNumberOfPeople>	"1796077"^^xsd:integer
@@ -1298,6 +1323,7 @@
 <id_5iwrwt_oyl_n2w2ob>	<Joan_Enric_Vives_Sicília>	<wasBornIn>	<Barcelona>
 <id_5iwrwt_88c_167c1rk>	<Joan_Enric_Vives_Sicília>	rdf:type	"Bishop (Catholic Church)"
 <id_5iwrwt_88c_11unvxu>	<Joan_Enric_Vives_Sicília>	rdf:type	<Bishop_(Catholic_Church)>
+<id_1tccrte_1b1_zjhks7>	<Neuilly-sur-Seine>	<hasArea>	"3.73"^^xsd:decimal
 <id_1tccrte_1n8_11hvuah>	<Neuilly-sur-Seine>	<hasLatitude>	"8881-##-##"^^xsd:date
 <id_1tccrte_1n8_18nsieb>	<Neuilly-sur-Seine>	<hasLatitude>	"48.8881"^^xsd:decimal
 <id_1tccrte_jto_1nx0qri>	<Neuilly-sur-Seine>	<hasLongitude>	"2.2686"^^xsd:decimal
@@ -1556,10 +1582,21 @@
 <id_cacb9n_1ia_17eofrl>	<University_of_León>	rdfs:label	"Universidad de León"
 <id_cacb9n_1ia_depwmp>	<University_of_León>	rdfs:label	<Universidad_de_León>
 <id_cacb9n_ice_8u0sd9>	<University_of_León>	<hasWebsite>	<http://www.unileon.es>
+<id_13dzdeu_1b1_1nm3vx3>	<Valladolid>	<hasArea>	"197.91"^^xsd:decimal
+<id_13dzdeu_1b1_1cetwof>	<Valladolid>	<hasArea>	"197-##-##"^^xsd:date
 <id_13dzdeu_siu_143dei>	<Valladolid>	<wasCreatedOnDate>	"1072-##-##"^^xsd:date
 <id_13dzdeu_siu_zjgcai>	<Valladolid>	<wasCreatedOnDate>	"1072"^^xsd:integer
 <id_o4ergv_1c7_13dzdeu>	"Francisco Javier León de la Riva"	<isLeaderOf>	<Valladolid>
 <id_1iwux02_1c7_13dzdeu>	"2007"^^xsd:integer	<isLeaderOf>	<Valladolid>
 <id_1iuysl6_1c7_13dzdeu>	"2007-##-##"^^xsd:date	<isLeaderOf>	<Valladolid>
+<id_13dzdeu_ibw_zkcgbz>	<Valladolid>	<hasPopulationDensity>	"auto"
+<id_13dzdeu_ibw_2sczqq>	<Valladolid>	<hasPopulationDensity>	<wordnet_car_102958343>
 <id_13dzdeu_l7i_1ofqcbn>	<Valladolid>	<hasNumberOfPeople>	"313437"^^xsd:integer
+<id_13dzdeu_z7a_13dzdeu>	<Valladolid>	<isLocatedIn>	"Valladolid"
+<id_13dzdeu_z7a_1ei90d>	<Valladolid>	<isLocatedIn>	<Campiña_del_Pisuerga>
+<id_13dzdeu_z7a_1ndalnj>	<Valladolid>	<isLocatedIn>	"Campiña del Pisuerga"
+<id_13dzdeu_z7a_16xs8sr>	<Valladolid>	<isLocatedIn>	"Valladolid (province)"
+<id_13dzdeu_z7a_hhmpze>	<Valladolid>	<isLocatedIn>	<Valladolid_(province)>
+<id_13dzdeu_z7a_10u8jah>	<Valladolid>	<isLocatedIn>	"Spain"
+<id_13dzdeu_z7a_10u8jah>	<Valladolid>	<isLocatedIn>	<Spain>
 <id_13dzdeu_ice_1xgqqoy>	<Valladolid>	<hasWebsite>	<http://www.valladolid.es/>

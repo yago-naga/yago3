@@ -42,7 +42,7 @@ public class TemporalCategoryExtractor extends EnglishWikipediaExtractor {
 	@Override
 	public Set<Theme> input() {
 		return new HashSet<Theme>(Arrays.asList(
-				PatternHardExtractor.TEMPORALCATEGORYPATTERNS,
+				//PatternHardExtractor.TEMPORALCATEGORYPATTERNS,
 				PatternHardExtractor.TITLEPATTERNS,
 				WordnetExtractor.WORDNETWORDS, HardExtractor.HARDWIREDFACTS));
 	}
@@ -63,8 +63,8 @@ public class TemporalCategoryExtractor extends EnglishWikipediaExtractor {
 
 	@Override
 	public void extract() throws IOException {
-		FactCollection categoryPatternCollection = PatternHardExtractor.TEMPORALCATEGORYPATTERNS
-				.factCollection();
+		FactCollection categoryPatternCollection = null;
+		//				PatternHardExtractor.TEMPORALCATEGORYPATTERNS	.factCollection();
 		FactTemplateExtractor categoryPatterns = new FactTemplateExtractor(
 				categoryPatternCollection, "<_categoryPattern>");
 		TitleExtractor titleExtractor = new TitleExtractor("en");

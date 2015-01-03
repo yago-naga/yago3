@@ -1,4 +1,6 @@
 	<yagoTheme_infoboxSources_en>	<hasGloss>	"Test Sources of infobox facts INTERNAL"
+<id_1gaj86k_115_14objtc>	<id_y9qq7a_1b1_10afn3e>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania>
+	<id_1gaj86k_115_14objtc>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
 <id_1vja781_115_14objtc>	<id_y9qq7a_789_2yccfx>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania>
 	<id_1vja781_115_14objtc>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1kia7ze_115_14objtc>	<id_y9qq7a_l7i_l2w2vm>	<extractionSource>	<http://en.wikipedia.org/wiki/Campania>
@@ -365,6 +367,8 @@
 	<id_1qngv4u_115_jis3n>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1qm2jyw_115_jis3n>	<id_184v0j1_16x_i8dtnf>	<extractionSource>	<http://en.wikipedia.org/wiki/Lamberto_Dini>
 	<id_1qm2jyw_115_jis3n>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_qtadev_115_1a1l5mp>	<id_10q4wvf_1b1_10ai4of>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
+	<id_qtadev_115_1a1l5mp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
 <id_1l147qi_115_1a1l5mp>	<id_10q4wvf_789_zk2qwl>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
 	<id_1l147qi_115_1a1l5mp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_171mqdm_115_1a1l5mp>	<id_10q4wvf_z7a_10ot5dv>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
@@ -377,6 +381,8 @@
 	<id_feuohd_115_1a1l5mp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_s1uhrs_115_1a1l5mp>	<id_10q4wvf_ice_1hmw8d7>	<extractionSource>	<http://en.wikipedia.org/wiki/Lazio>
 	<id_s1uhrs_115_1a1l5mp>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_17owt8a_115_850d7s>	<id_1qfjlq_1b1_10azhsn>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy>
+	<id_17owt8a_115_850d7s>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
 <id_1b3yx33_115_850d7s>	<id_1qfjlq_789_10qtisd>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy>
 	<id_1b3yx33_115_850d7s>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1bcklc1_115_850d7s>	<id_1qfjlq_l7i_1bkgypx>	<extractionSource>	<http://en.wikipedia.org/wiki/Lombardy>
@@ -433,6 +439,10 @@
 	<id_1bfrtj0_115_posu8s>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_187xsti_115_posu8s>	<id_4o2xc6_16x_12j96sf>	<extractionSource>	<http://en.wikipedia.org/wiki/Mario_Monti>
 	<id_187xsti_115_posu8s>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_1i2mwdq_115_1a29rjn>	<id_10qtisd_1b1_1nlg9cz>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
+	<id_1i2mwdq_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/areatotalkm>"
+<id_1ubid8a_115_1a29rjn>	<id_10qtisd_1b1_2jxs96>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
+	<id_1ubid8a_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/areatotalkm>"
 <id_1oo0j0t_115_1a29rjn>	<id_10qtisd_siu_18zbmuo>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
 	<id_1oo0j0t_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/establisheddate>"
 <id_1xc53qh_115_1a29rjn>	<id_10qtisd_siu_r5de2l>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
@@ -455,6 +465,10 @@
 	<id_bgvvtb_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
 <id_bgvvtb_115_1a29rjn>	<id_10qtisd_z7a_1qfjlq>	<extractionSource>	<http://en.wikipedia.org/wiki/Milan>
 	<id_bgvvtb_115_1a29rjn>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/region>"
+<id_19rlqkx_115_7fgk3f>	<id_2ox8i9_1b1_1lnvcw5>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
+	<id_19rlqkx_115_7fgk3f>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
+<id_12aq3pr_115_7fgk3f>	<id_2ox8i9_1b1_zjic4l>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
+	<id_12aq3pr_115_7fgk3f>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
 <id_1a6gc9m_115_7fgk3f>	<id_2ox8i9_789_1h78kea>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
 	<id_1a6gc9m_115_7fgk3f>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_1mis893_115_7fgk3f>	<id_2ox8i9_l7i_hqszf>	<extractionSource>	<http://en.wikipedia.org/wiki/Molise>
@@ -923,6 +937,24 @@
 	<id_12bh8f2_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/populationtotal>"
 <id_axulpa_115_kgol02>	<id_z038xo_l7i_s14tlb>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
 	<id_axulpa_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/populationtotal>"
+<id_kjgyvz_115_kgol02>	<id_z038xo_z7a_tvx1oo>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_kjgyvz_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_1cojsei_115_kgol02>	<id_z038xo_z7a_17475uw>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_1cojsei_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_ma1712_115_kgol02>	<id_z038xo_z7a_z038xo>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_ma1712_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_hntslh_115_kgol02>	<id_z038xo_z7a_p6gbcc>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_hntslh_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_l914au_115_kgol02>	<id_z038xo_z7a_vgfqj0>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_l914au_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_jvt61v_115_kgol02>	<id_z038xo_z7a_sl7oao>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_jvt61v_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_jvt61v_115_kgol02>	<id_z038xo_z7a_sl7oao>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_jvt61v_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_1xxco98_115_kgol02>	<id_z038xo_z7a_1blrg33>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_1xxco98_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_1qh55vc_115_kgol02>	<id_z038xo_z7a_7j8ymm>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
+	<id_1qh55vc_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
 <id_x1if1s_115_kgol02>	<id_z038xo_ice_1le17kh>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
 	<id_x1if1s_115_kgol02>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_u2s5ii_115_kgol02>	<id_z038xo_ice_o7m35>	<extractionSource>	<http://en.wikipedia.org/wiki/Edinburgh>
@@ -1629,6 +1661,10 @@
 	<id_j9rev1_115_zbvg7y>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_1wcbrpn_115_zbvg7y>	<id_jr01l4_ice_1894bxa>	<extractionSource>	<http://en.wikipedia.org/wiki/Christian_Wulff>
 	<id_1wcbrpn_115_zbvg7y>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_l09ug2_115_1ayxm3h>	<id_tu1ps7_1b1_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany>
+	<id_l09ug2_115_1ayxm3h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
+<id_l09ug2_115_1ayxm3h>	<id_tu1ps7_1b1_1ps9evn>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany>
+	<id_l09ug2_115_1ayxm3h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
 <id_26yxb2_115_1ayxm3h>	<id_tu1ps7_ice_6nsaxe>	<extractionSource>	<http://en.wikipedia.org/wiki/Evangelical_Church_in_Germany>
 	<id_26yxb2_115_1ayxm3h>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
 <id_zw802e_115_39y5n4>	<id_ht3f3u_10x_asymxh>	<extractionSource>	<http://en.wikipedia.org/wiki/Frank-Walter_Steinmeier>
@@ -1727,6 +1763,12 @@
 	<id_1r7f9on_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
 <id_ulp2sh_115_1yaxtc9>	<id_107bpbp_16x_1sinjha>	<extractionSource>	<http://en.wikipedia.org/wiki/Gerhard_Schr%C3%B6der>
 	<id_ulp2sh_115_1yaxtc9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/spouse>"
+<id_4kocph_115_1ukoa5l>	<id_1ps9evn_1b1_fec2t1>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_4kocph_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/areakm>"
+<id_80fpuf_115_1ukoa5l>	<id_1ps9evn_1b1_1ohzzne>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_80fpuf_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/areakm>"
+<id_1elto4t_115_1ukoa5l>	<id_1ps9evn_1b1_1kj2mn>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_1elto4t_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/areakm>"
 <id_evq74h_115_1ukoa5l>	<id_1ps9evn_789_1wd5e4i>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
 	<id_evq74h_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/capital>"
 <id_evq74h_115_1ukoa5l>	<id_1ps9evn_789_1wd5e4i>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
@@ -1809,6 +1851,10 @@
 	<id_bmmkoj_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/officiallanguages>"
 <id_190k36q_115_1ukoa5l>	<id_1ps9evn_1kn_13xoej6>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
 	<id_190k36q_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/officiallanguages>"
+<id_2wrct5_115_1ukoa5l>	<id_1ps9evn_ibw_zil3ax>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_2wrct5_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/populationdensitykm>"
+<id_er6x9f_115_1ukoa5l>	<id_1ps9evn_ibw_1n7hau1>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
+	<id_er6x9f_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/populationdensitykm>"
 <id_1iq29ew_115_1ukoa5l>	<id_1ps9evn_l7i_1fq3p4o>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
 	<id_1iq29ew_115_1ukoa5l>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/populationestimate>"
 <id_uwwrq6_115_1ukoa5l>	<id_1ps9evn_l7i_14h6gc7>	<extractionSource>	<http://en.wikipedia.org/wiki/Germany>
@@ -1859,6 +1905,10 @@
 	<id_1cxecut_115_tiyb2w>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/residence>"
 <id_25qlvn_115_tiyb2w>	<id_18vc8ci_ice_3uctt7>	<extractionSource>	<http://en.wikipedia.org/wiki/Guido_Westerwelle>
 	<id_25qlvn_115_tiyb2w>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1pwzxlp_115_88ufwy>	<id_3gfkn0_1b1_zil72v>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg>
+	<id_1pwzxlp_115_88ufwy>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
+<id_uofc6m_115_88ufwy>	<id_3gfkn0_1b1_8jbj5j>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg>
+	<id_uofc6m_115_88ufwy>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/area>"
 <id_1repa37_115_88ufwy>	<id_3gfkn0_l7i_knozcg>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg>
 	<id_1repa37_115_88ufwy>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/population>"
 <id_1gjbphj_115_88ufwy>	<id_3gfkn0_l7i_1vh3nn8>	<extractionSource>	<http://en.wikipedia.org/wiki/Hamburg>
@@ -2597,6 +2647,8 @@
 	<id_uxr88e_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
 <id_tiut7z_115_sywqi9>	<id_5iwrwt_88c_11unvxu>	<extractionSource>	<http://en.wikipedia.org/wiki/Joan_Enric_Vives_Sic%C3%ADlia>
 	<id_tiut7z_115_sywqi9>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/profession>"
+<id_v71ke1_115_1dzyujs>	<id_1tccrte_1b1_zjhks7>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine>
+	<id_v71ke1_115_1dzyujs>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/areakm>"
 <id_1ajx1l3_115_1dzyujs>	<id_1tccrte_1n8_11hvuah>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine>
 	<id_1ajx1l3_115_1dzyujs>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/latitude>"
 <id_1dyh04z_115_1dzyujs>	<id_1tccrte_1n8_18nsieb>	<extractionSource>	<http://en.wikipedia.org/wiki/Neuilly-sur-Seine>
@@ -3113,6 +3165,10 @@
 	<id_15gu7d6_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/nativename>"
 <id_1qgmfua_115_zjt377>	<id_cacb9n_ice_8u0sd9>	<extractionSource>	<http://en.wikipedia.org/wiki/University_of_Le%C3%B3n>
 	<id_1qgmfua_115_zjt377>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"
+<id_1y3j85k_115_ev13bk>	<id_13dzdeu_1b1_1nm3vx3>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_1y3j85k_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/areatotalkm>"
+<id_1sssjs7_115_ev13bk>	<id_13dzdeu_1b1_1cetwof>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_1sssjs7_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/areatotalkm>"
 <id_du1vxb_115_ev13bk>	<id_13dzdeu_siu_143dei>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
 	<id_du1vxb_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/establisheddate>"
 <id_1d8yd8b_115_ev13bk>	<id_13dzdeu_siu_zjgcai>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
@@ -3123,7 +3179,25 @@
 	<id_1s2tppf_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
 <id_1e4cgyo_115_ev13bk>	<id_1iuysl6_1c7_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
 	<id_1e4cgyo_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/leadername>"
+<id_1sj08j9_115_ev13bk>	<id_13dzdeu_ibw_zkcgbz>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_1sj08j9_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/populationdensitykm>"
+<id_uk67c0_115_ev13bk>	<id_13dzdeu_ibw_2sczqq>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_uk67c0_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/populationdensitykm>"
 <id_1ec1zoe_115_ev13bk>	<id_13dzdeu_l7i_1ofqcbn>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
 	<id_1ec1zoe_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/populationtotal>"
+<id_1m2mj6i_115_ev13bk>	<id_13dzdeu_z7a_13dzdeu>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_1m2mj6i_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_1lmok56_115_ev13bk>	<id_13dzdeu_z7a_1ei90d>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_1lmok56_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_eyqdxo_115_ev13bk>	<id_13dzdeu_z7a_1ndalnj>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_eyqdxo_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_1nslx11_115_ev13bk>	<id_13dzdeu_z7a_16xs8sr>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_1nslx11_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_cosu4w_115_ev13bk>	<id_13dzdeu_z7a_hhmpze>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_cosu4w_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_1kvo5al_115_ev13bk>	<id_13dzdeu_z7a_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_1kvo5al_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
+<id_1kvo5al_115_ev13bk>	<id_13dzdeu_z7a_10u8jah>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
+	<id_1kvo5al_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/subdivisionname>"
 <id_1daywj3_115_ev13bk>	<id_13dzdeu_ice_1xgqqoy>	<extractionSource>	<http://en.wikipedia.org/wiki/Valladolid>
 	<id_1daywj3_115_ev13bk>	<extractionTechnique>	"InfoboxExtractor from <infobox/en/website>"

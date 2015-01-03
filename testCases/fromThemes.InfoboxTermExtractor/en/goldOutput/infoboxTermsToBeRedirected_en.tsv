@@ -1,5 +1,5 @@
 	<yagoTheme_infoboxTermsToBeRedirected_en>	<hasGloss>	"Test The attribute facts of the Wikipedia infoboxes, split into terms, still to be redirected. INTERNAL"
-	<Campania>	<infobox/en/area>	"13590"^^xsd:integer
+	<Campania>	<infobox/en/area>	"13590"^^<km\\u005e2>
 	<Campania>	<infobox/en/area>	"13590"
 	<Campania>	<infobox/en/areapercent>	"4.5"^^xsd:decimal
 	<Campania>	<infobox/en/arearank>	"12"^^xsd:integer
@@ -954,7 +954,7 @@
 	<Lamberto_Dini>	<infobox/en/termstart>	"19"^^xsd:integer
 	<Lamberto_Dini>	<infobox/en/termstart>	"1995"^^xsd:integer
 	<Lamberto_Dini>	<infobox/en/termstart>	"1995-10-19"^^xsd:date
-	<Lazio>	<infobox/en/area>	"17236"^^xsd:integer
+	<Lazio>	<infobox/en/area>	"17236"^^<km\\u005e2>
 	<Lazio>	<infobox/en/area>	"17236"
 	<Lazio>	<infobox/en/areapercent>	"5.7"^^xsd:decimal
 	<Lazio>	<infobox/en/arearank>	"9"^^xsd:integer
@@ -992,7 +992,7 @@
 	<Lazio>	<infobox/en/population>	"5732212"
 	<Lazio>	<infobox/en/website>	<http://www.regione.lazio.it/>
 	<Lazio>	<infobox/en/website>	<http://www.regione.lazio.it>
-	<Lombardy>	<infobox/en/area>	"23844"^^xsd:integer
+	<Lombardy>	<infobox/en/area>	"23844"^^<km\\u005e2>
 	<Lombardy>	<infobox/en/area>	"23844"
 	<Lombardy>	<infobox/en/areapercent>	"7.9"^^xsd:decimal
 	<Lombardy>	<infobox/en/arearank>	"4"^^xsd:integer
@@ -1111,7 +1111,7 @@
 	<Mario_Monti>	<infobox/en/termstart>	"2011"^^xsd:integer
 	<Mario_Monti>	<infobox/en/termstart>	"9 November 2011"
 	<Mario_Monti>	<infobox/en/termstart>	"2011-11-09"^^xsd:date
-	<Milan>	<infobox/en/areatotalkm>	"181.76"^^xsd:decimal
+	<Milan>	<infobox/en/areatotalkm>	"181.76"^^<km\\u005e2>
 	<Milan>	<infobox/en/areatotalkm>	"181-##-##"^^xsd:date
 	<Milan>	<infobox/en/coordinatesdisplay>	<wordnet_title_106345993>
 	<Milan>	<infobox/en/coordinatesdisplay>	"title"
@@ -1248,7 +1248,7 @@
 	<Milan>	<infobox/en/province>	"Milan"
 	<Milan>	<infobox/en/region>	<Lombardy>
 	<Milan>	<infobox/en/region>	"Lombardy"
-	<Molise>	<infobox/en/area>	"4438"^^xsd:integer
+	<Molise>	<infobox/en/area>	"4438"^^<km\\u005e2>
 	<Molise>	<infobox/en/area>	"4438"
 	<Molise>	<infobox/en/areapercent>	"1.5"^^xsd:decimal
 	<Molise>	<infobox/en/arearank>	"19"^^xsd:integer
@@ -4517,7 +4517,7 @@
 	<Germany>	<infobox/en/accessioneudate>	"25 March 1957"
 	<Germany>	<infobox/en/accessioneudate>	"1957-03-25"^^xsd:date
 	<Germany>	<infobox/en/altsportcode>	"GER"
-	<Germany>	<infobox/en/areakm>	"357021"^^xsd:integer
+	<Germany>	<infobox/en/areakm>	"357021"^^<km\\u005e2>
 	<Germany>	<infobox/en/areakm>	"357-##-##"^^xsd:date
 	<Germany>	<infobox/en/areamagnitude>	"1"^^xsd:integer
 	<Germany>	<infobox/en/areamagnitude>	"11"^^xsd:integer
@@ -4672,7 +4672,7 @@
 	<Germany>	<infobox/en/officiallanguages>	"German"
 	<Germany>	<infobox/en/percentwater>	"2.416"^^xsd:decimal
 	<Germany>	<infobox/en/percentwater>	"416-##-##"^^xsd:date
-	<Germany>	<infobox/en/populationdensitykm>	"229"^^xsd:integer
+	<Germany>	<infobox/en/populationdensitykm>	"229"^^</km\\u005e2>
 	<Germany>	<infobox/en/populationdensitykm>	"229"
 	<Germany>	<infobox/en/populationdensitykm>	"229-##-##"^^xsd:date
 	<Germany>	<infobox/en/populationdensityrank>	"55"^^xsd:integer
@@ -4770,7 +4770,7 @@
 	<Guido_Westerwelle>	<infobox/en/termstart>	"4 May 2001"
 	<Guido_Westerwelle>	<infobox/en/termstart>	"2001-05-04"^^xsd:date
 	<Guido_Westerwelle>	<infobox/en/website>	<http://www.guido-westerwelle.de/>
-	<Hamburg>	<infobox/en/area>	"755"^^xsd:integer
+	<Hamburg>	<infobox/en/area>	"755"^^<km\\u005e2>
 	<Hamburg>	<infobox/en/area>	"755"
 	<Hamburg>	<infobox/en/area>	"755-##-##"^^xsd:date
 	<Hamburg>	<infobox/en/coasize>	"70"^^xsd:integer
@@ -6229,7 +6229,7 @@
 	<Joan_Enric_Vives_Sicília>	<infobox/en/termstart>	"2003"^^xsd:integer
 	<Joan_Enric_Vives_Sicília>	<infobox/en/termstart>	"12 May 2003"
 	<Joan_Enric_Vives_Sicília>	<infobox/en/termstart>	"2003-05-12"^^xsd:date
-	<Neuilly-sur-Seine>	<infobox/en/areakm>	"3.73"^^xsd:decimal
+	<Neuilly-sur-Seine>	<infobox/en/areakm>	"3.73"^^<km\\u005e2>
 	<Neuilly-sur-Seine>	<infobox/en/arrondissement>	"Nanterre"
 	<Neuilly-sur-Seine>	<infobox/en/canton>	"Neuilly-Nord"
 	<Neuilly-sur-Seine>	<infobox/en/canton>	"Neuilly-Sud"
@@ -7653,7 +7653,7 @@
 	<Valladolid>	<infobox/en/areacode>	"983-##-##"^^xsd:date
 	<Valladolid>	<infobox/en/areacodetype>	<Telephone_numbers_in_Spain>
 	<Valladolid>	<infobox/en/areacodetype>	"Dialing code"
-	<Valladolid>	<infobox/en/areatotalkm>	"197.91"^^xsd:decimal
+	<Valladolid>	<infobox/en/areatotalkm>	"197.91"^^<km\\u005e2>
 	<Valladolid>	<infobox/en/areatotalkm>	"197-##-##"^^xsd:date
 	<Valladolid>	<infobox/en/blankinfosec>	"Spanish"
 	<Valladolid>	<infobox/en/blanknamesec>	<Languages_of_Spain>
