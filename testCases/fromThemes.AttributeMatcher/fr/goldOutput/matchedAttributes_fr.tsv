@@ -1,0 +1,28 @@
+// Test
+// Attributes of the Wikipedia infoboxes in different languages with their YAGO counterparts.
+// This is a fake gold standard, which is based on the English attributes.
+// It does test, though, whether 	<infobox/fr/successeur> is correctly absent from the mapping, as defined manually in _multilingualAttributes
+
+	<infobox/fr/founded>	<_infoboxPattern>	<wasCreatedOnDate>
+	<infobox/fr/country>	<_infoboxPattern>	rdfs:label
+	<infobox/fr/established>	<_infoboxPattern>	<wasCreatedOnDate>
+	<infobox/fr/population>	<_infoboxPattern>	<hasNumberOfPeople>
+	<infobox/fr/nativename>	<_infoboxPattern>	rdfs:label
+	<infobox/fr/populationtotal>	<_infoboxPattern>	<hasNumberOfPeople>
+	<infobox/fr/year>	<_infoboxPattern>	<happenedOnDate>
+	<infobox/fr/occupation>	<_infoboxPattern>	rdf:type
+	<infobox/fr/officialname>	<_infoboxPattern>	rdfs:label
+	<infobox/fr/deathdate>	<_infoboxPattern>	<wasBornOnDate>
+	<infobox/fr/populationfootnotes>	<_infoboxPattern>	rdfs:label
+	<infobox/fr/foundation>	<_infoboxPattern>	<wasCreatedOnDate>
+	<infobox/fr/homepage>	<_infoboxPattern>	<hasWebsite>
+	<infobox/fr/establisheddate>	<_infoboxPattern>	<wasCreatedOnDate>
+	<infobox/fr/birthdate>	<_infoboxPattern>	<wasBornOnDate>
+	<infobox/fr/fullname>	<_infoboxPattern>	rdfs:label
+	<infobox/fr/subdivisionname>	<_infoboxPattern>	rdfs:label
+	<infobox/fr/website>	<_infoboxPattern>	<hasWebsite>
+	<infobox/fr/s>	<_infoboxPattern>	rdfs:label
+	<infobox/fr/cctld>	<_infoboxPattern>	<hasTLD>
+	<infobox/fr/commonname>	<_infoboxPattern>	rdfs:label
+	<infobox/fr/populationestimate>	<_infoboxPattern>	<hasNumberOfPeople>
+	<infobox/fr/birthname>	<_infoboxPattern>	rdfs:label
