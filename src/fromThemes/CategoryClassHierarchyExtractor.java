@@ -373,7 +373,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 		// removing all bad categories
 		Announce.progressStart("Removing the bad nodes", badCategories.size());
 		{
-			int count = 0;
+//			int count = 0;
 			// for every bed category
 			for (Integer badCategoryId : badCategories) {
 				Announce.progressStep();
@@ -782,7 +782,8 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 			visitors = new HashSet<>();
 		}
 
-		public boolean removeParentById(Integer id) {
+		@SuppressWarnings("unused")
+    public boolean removeParentById(Integer id) {
 			return visitors.remove(new Visitor(id, null, null));
 		}
 
@@ -1154,7 +1155,8 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 			return key.equals(other.key);
 		}
 
-		private CategoryClassHierarchyExtractor getOuterType() {
+		@SuppressWarnings("unused")
+    private CategoryClassHierarchyExtractor getOuterType() {
 			return CategoryClassHierarchyExtractor.this;
 		}
 	}
@@ -1189,7 +1191,8 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 		return remove;
 	}
 
-	private List<Integer> sortedNodes(IndexedGraph graph) {
+	@SuppressWarnings("unused")
+  private List<Integer> sortedNodes(IndexedGraph graph) {
 		Set<Integer> leaves = new HashSet<>();
 		IndexedGraph graphReversed = graph.getReversed();
 		for (Integer wpCatSubId : graph.keySet()) {
