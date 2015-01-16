@@ -64,8 +64,7 @@ public class PatternList {
 	/** Replaces all patterns in the string */
 	public String transform(String input) {
 		if (input == null)
-			return (null);
-		Announce.setLevel(null);
+			return (null);		
 		//Announce.debug("Input:", input);
 		for (Pair<Pattern, String> pattern : patterns) {
 			//Announce.debug("Pattern:", pattern);
