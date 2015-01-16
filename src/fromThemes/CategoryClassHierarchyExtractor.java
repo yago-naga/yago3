@@ -90,7 +90,10 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 
 	@Override
 	public void extract() throws Exception {
-		Announce.Level oldLevel = Announce.setLevel(Announce.Level.DEBUG);
+		// Fabian: Don't do that, switching this on in a parallel system
+		// will generate gigabytes of output because it influences the
+		// other extractors 
+		//Announce.Level oldLevel = Announce.setLevel(Announce.Level.DEBUG);
 		Announce.doing("Extracting the CategoryClassHierarchy");
 //		debugWriter_removeBadCats = new PrintWriter(new File("debugOutput_removeBadCats.txt"));
 //		debugWriter_removeBadFacts = new PrintWriter(new File("debugOutput_removeBadFacts.txt"));
@@ -214,7 +217,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 		}
 
 		Announce.done();
-		Announce.setLevel(oldLevel);
+		//Announce.setLevel(oldLevel);
 	}
 
 

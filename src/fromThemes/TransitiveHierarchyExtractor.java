@@ -49,7 +49,10 @@ public class TransitiveHierarchyExtractor extends Extractor {
 
 	@Override
 	public void extract() throws Exception {
-    Announce.Level oldLevel = Announce.setLevel(Announce.Level.STATE);
+		// Fabian: Don't do that, switching this on in a parallel system
+		// will generate gigabytes of output because it influences the
+		// other extractors 
+    //Announce.Level oldLevel = Announce.setLevel(Announce.Level.STATE);
     Announce.doing("Caching locations");
 		FactCollection locationHierarchy = new FactCollection();
 		Set<String> locations = new HashSet<>();
@@ -93,7 +96,7 @@ public class TransitiveHierarchyExtractor extends Extractor {
 						TRANSITIVEHIERARCHY.write(new Fact(e.getKey(), HAS_PART_OF_PROPERTY, f.getObject()));
 			}
 		}
-    Announce.setLevel(oldLevel);
+    //Announce.setLevel(oldLevel);
 	}
 
 	protected static Set<String> getPossibleTPs(String category, Set<String> locations, Set<String> nonLocationEntities) {

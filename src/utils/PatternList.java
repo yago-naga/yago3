@@ -65,11 +65,12 @@ public class PatternList {
 	public String transform(String input) {
 		if (input == null)
 			return (null);
-		Announce.debug("Input:", input);
+		Announce.setLevel(null);
+		//Announce.debug("Input:", input);
 		for (Pair<Pattern, String> pattern : patterns) {
-			Announce.debug("Pattern:", pattern);
+			//Announce.debug("Pattern:", pattern);
 			input = pattern.first.matcher(input).replaceAll(pattern.second);
-			Announce.debug("Result:", input);
+			//Announce.debug("Result:", input);
 			if (input.contains("NIL") && pattern.second.equals("NIL"))
 				return (null);
 		}
