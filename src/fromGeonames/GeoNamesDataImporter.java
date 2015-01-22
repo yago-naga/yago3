@@ -74,7 +74,7 @@ public class GeoNamesDataImporter extends DataExtractor {
 	@Override
 	public Set<Theme> output() {
 		return new FinalSet<Theme>(GEONAMES_MAPPED_DATA, GEONAMES_ONLY_DATA,
-				GEONAMES_TYPES);
+				GEONAMES_TYPES, GEONAMES_MAPPED_DATA_SOURCES);
 	}
 
 	@Override
