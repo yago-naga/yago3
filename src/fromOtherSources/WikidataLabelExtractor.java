@@ -120,13 +120,14 @@ public class WikidataLabelExtractor extends DataExtractor {
 								lan = languagemap.get(lan);
 							if (lan == null || lan.length() != 3)
 								continue;
-							write(WIKIDATAMULTILABELS,
-									new Fact(yagoEntity, RDFS.label,
-											FactComponent
-													.forStringWithLanguage(
-															preferredName(foreignName), lan)),
-									WIKIDATAMULTILABELSOURCES, "Wikidata",
-									"WikidataLabelExtractor");
+							for(String name: trivialNamesOf(foreignName)) {
+		             write(WIKIDATAMULTILABELS,
+		                  new Fact(yagoEntity, RDFS.label,
+		                      FactComponent.forStringWithLanguage(name, lan)),
+		                  WIKIDATAMULTILABELSOURCES, "Wikidata",
+		                  "WikidataLabelExtractor");
+							}
+
 						}
 					}
 				}
@@ -160,8 +161,8 @@ public class WikidataLabelExtractor extends DataExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		Announce.setLevel(Announce.Level.DEBUG);
-		new WikidataLabelExtractor().extract(new File("c:/fabian/data/yago3"),
-				"test");
+    Announce.setLevel(Announce.Level.DEBUG);
+    new WikidataLabelExtractor().extract(new File("c:/fabian/data/yago3"),
+        "test");
 	}
 }
