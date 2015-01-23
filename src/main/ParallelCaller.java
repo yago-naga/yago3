@@ -297,7 +297,8 @@ public class ParallelCaller {
 		Set<Theme> unresolvable = new HashSet<>();
 		Set<Extractor> extractorsToRun = new HashSet<>();
 
-		System.out.println(theme2extractor);
+		// This produces a large map in the log file:
+                // System.out.println(theme2extractor);
 
 		while (!stillMissing.isEmpty()) {
 			Theme t = stillMissing.iterator().next();
