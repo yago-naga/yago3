@@ -28,8 +28,7 @@ public class AIDAExtractorMerger extends Extractor {
   
   /** Relations that AIDA needs. */
   public static final Set<String> relations = new FinalSet<>(
-      RDFS.type, RDFS.subclassOf, RDFS.label, "skos:prefLabel",
-      "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>",
+      RDFS.type, RDFS.subclassOf, RDFS.label, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>",
       "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>");
@@ -40,7 +39,7 @@ public class AIDAExtractorMerger extends Extractor {
     Set<Theme> input = new HashSet<Theme>();
     
     //YAGO functional facts needed for AIDA
-    //hasWIkipediaUrl, isPrefferredMeaningOf, skof:prefLabel, hasGender
+    //hasWIkipediaUrl, hasGender
     //hasGivenName, hasFamilyName
     input.add(AIDAFunctionalExtractor.AIDAFUNCTIONALFACTS);
     

@@ -73,8 +73,7 @@ public class AIDAOneShotExtractor extends SimpleDeduplicator {
 
   /** Relations that AIDA needs. */
   public static final Set<String> relations = new FinalSet<>(
-      RDFS.type, RDFS.subclassOf, RDFS.label, "skos:prefLabel",
-      "<isPreferredMeaningOf>", "<hasGivenName>", "<hasFamilyName>",
+      RDFS.type, RDFS.subclassOf, RDFS.label, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>",
       "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>");
