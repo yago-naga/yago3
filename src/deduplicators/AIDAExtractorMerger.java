@@ -11,6 +11,7 @@ import basics.Fact;
 import basics.RDFS;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
+import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.HardExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import fromWikipedia.CategoryExtractor;
@@ -31,7 +32,7 @@ public class AIDAExtractorMerger extends Extractor {
       RDFS.type, RDFS.subclassOf, RDFS.label, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>",
       "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
-      "<hasWikipediaCategory>", "<hasWikipediaAnchorText>");
+      "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>");
 
   
   @Override
@@ -57,6 +58,11 @@ public class AIDAExtractorMerger extends Extractor {
     // Keyphrases.
     input.addAll(ConteXtExtractor.CONTEXTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    
+    // Translation.
+    input.addAll(DictionaryExtractor.ENTITY_DICTIONARY.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.addAll(DictionaryExtractor.CATEGORY_DICTIONARY.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    
     return input;
   }
 
