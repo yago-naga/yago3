@@ -1,6 +1,7 @@
 package deduplicators;
 
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import javatools.administrative.Announce;
@@ -60,8 +61,10 @@ public class AIDAExtractorMerger extends Extractor {
     input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     
     // Translation.
-    input.addAll(DictionaryExtractor.ENTITY_DICTIONARY.inLanguages(MultilingualExtractor.wikipediaLanguages));
-    input.addAll(DictionaryExtractor.CATEGORY_DICTIONARY.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    List<String> nonEnglishLanguages = MultilingualExtractor.wikipediaLanguages;
+    nonEnglishLanguages.remove("en");
+    input.addAll(DictionaryExtractor.ENTITY_DICTIONARY.inLanguages(nonEnglishLanguages));
+    input.addAll(DictionaryExtractor.CATEGORY_DICTIONARY.inLanguages(nonEnglishLanguages));
     
     return input;
   }
