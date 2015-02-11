@@ -61,6 +61,7 @@ public class PersonNameExtractor extends Extractor {
 				continue;
 			people.add(f.getArg(1));
 			String n = FactComponent.stripBrackets(f.getArg(1));
+			n = FactComponent.stripQualifier(n);
 			n = Char17.decode(n);
 			PersonName name = new PersonName(n);
 			String given = name.givenName();
