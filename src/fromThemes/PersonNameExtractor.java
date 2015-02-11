@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.text.Normalizer;
 import java.text.Normalizer.Form;
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -26,6 +28,10 @@ import extractors.Extractor;
  * 
  */
 public class PersonNameExtractor extends Extractor {
+
+  /** 2-letter language codes for language which the extractor should consider
+   * when applying the first name/family name heuristics*/
+  private final Set<String> supportedLanguages = new HashSet<String>(Arrays.asList("en", "de"));
 
 	@Override
 	public Set<Theme> input() {
@@ -60,7 +66,12 @@ public class PersonNameExtractor extends Extractor {
 			if (people.contains(f.getArg(1)))
 				continue;
 			people.add(f.getArg(1));
-			String n = FactComponent.stripBrackets(f.getArg(1));
+			String entity = f.getArg(1);
+			String lang = FactComponent.getLanguageOfEntity(entity);
+      if (lang != null && !supportedLanguages.contains(lang)) {
+        continue;
+      }
+			String n = FactComponent.stripBracketsAndLanguage(entity);
 			n = FactComponent.stripQualifier(n);
 			n = Char17.decode(n);
 			PersonName name = new PersonName(n);
