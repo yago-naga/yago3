@@ -31,7 +31,7 @@ public class PersonNameExtractor extends Extractor {
 
   /** 2-letter language codes for language which the extractor should consider
    * when applying the first name/family name heuristics*/
-  private final Set<String> supportedLanguages = new HashSet<String>(Arrays.asList("en", "de"));
+  private final Set<String> supportedLanguages = new HashSet<String>(Arrays.asList("en", "de",  "es", "it", "pl", "nl", "ro", "fr"));
 
 	@Override
 	public Set<Theme> input() {
