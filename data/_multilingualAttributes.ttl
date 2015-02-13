@@ -15,3 +15,4 @@
 <infobox/nl/periode>    <_infoboxPattern>	owl:Nothing .
 <infobox/fr/successeur>    <_infoboxPattern>	owl:Nothing .
 <infobox/fr/cotitulaire>    <_infoboxPattern>	owl:Nothing .
+<infobox/de/isin>    <_infoboxPattern>	<hasISIN> .
