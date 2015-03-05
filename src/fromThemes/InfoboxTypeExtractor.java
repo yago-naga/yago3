@@ -154,8 +154,8 @@ public class InfoboxTypeExtractor extends MultilingualExtractor {
 			write(INFOBOXTYPES.inLanguage(language), new Fact(f.getSubject(),
 					RDFS.type, clss), INFOBOXTYPESOURCES.inLanguage(language),
 					FactComponent.wikipediaSourceURL(f.getSubject(), language),
-					FactComponent.forString("Infobox template extractor from "
-							+ f.getObject()));
+					"Infobox template extractor from "
+							+ f.getObjectAsJavaString());
 		}
 		this.nonConceptualInfoboxes = null;
 		this.preferredMeanings = null;

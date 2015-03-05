@@ -9,11 +9,17 @@
 # Remove commas
 "(\d),(\d{3})"	<mapsTo>	"$1$2" .
 
-# Remove spaces (for Polish)
-"\b(\d{1,3}) (\d{3})\b"	<mapsTo>	"$1$2" .
-
 # Translate the remaining commas to dots (for German)
 "(\d),(\d)"	<mapsTo>	"$1.$2" .
+
+# Remove spaces (for Polish; in order of decreasing length)
+"\\b(\d{1,3}) (\d{3}) (\d{3}) (\d{3})\\b"	<mapsTo>	"$1$2$3$4" .
+"\\b(\d{1,3}) (\d{3}) (\d{3})\\b"	<mapsTo>	"$1$2$3" .
+"\\b(\d{1,3}) (\d{3})\\b"	<mapsTo>	"$1$2" .
+
+# Remove dots (for German; in order of decreasing length)
+"\\b(\d{1,3})\.(\d{3})\.(\d{3})\.(\d{3})\\b"	<mapsTo>	"$1$2$3$4" .
+"\\b(\d{1,3})\.(\d{3})\.(\d{3})\\b"	<mapsTo>	"$1$2$3" .
 
 # Remove number suffixes (otherwise "th" maps to "thousand hours")
 "(\d)(th|rd|st)"	<mapsTo>	"$1" .
