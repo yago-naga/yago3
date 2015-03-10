@@ -260,6 +260,7 @@
 "</ ?br ?>"	<_infoboxReplace>	"\n" .
 "'''"	<_infoboxReplace>	"" .
 "''"	<_infoboxReplace>	"" .
+"\\{\\{efn.*"	<_infoboxReplace>	"" .
 "\\[\\[File:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[Image:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[wp:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .

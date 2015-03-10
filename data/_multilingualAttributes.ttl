@@ -18,3 +18,4 @@
 <infobox/de/isin>    <_infoboxPattern>	<hasISIN> .
 <infobox/fr/notes>    <_infoboxPattern>	owl:Nothing .
 <infobox/nl/opvolger>    <_infoboxPattern>	owl:Nothing .
+<infobox/fr/plusgrandeville>    <_infoboxPattern>	owl:Nothing .

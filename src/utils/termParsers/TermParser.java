@@ -107,7 +107,7 @@ public abstract class TermParser {
 		PatternHardExtractor.DATEPARSER.assignToFolder(new File("./data"));
 		PatternHardExtractor.NUMBERPARSER.assignToFolder(new File("./data"));
 		WordnetExtractor.PREFMEANINGS.assignToFolder(new File("../../data/yago3"));
-		TermParser parsi = new NumberParser();		
-		parsi.test("12.702.379 (Zensus 2010) ");		
+		TermParser parsi = new DateParser();		
+		parsi.test("2 BC");		
 	}
 }

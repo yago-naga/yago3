@@ -38,6 +38,7 @@
 
 # Before Common Era
 "BCE"	<mapsTo>	"_bce_" .
+"BC"	<mapsTo>	"_bce_" .
 
 # Make days and months two digit
 "\\b(\d)\\b"	<mapsTo>	"0$1" .
