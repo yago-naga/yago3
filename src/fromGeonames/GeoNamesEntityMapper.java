@@ -42,7 +42,7 @@ public class GeoNamesEntityMapper extends DataExtractor {
 			"yagoGeonamesEntityIds", "IDs from GeoNames entities",
 			ThemeGroup.LINK);
 	
-	public static final String GEONAMES_NAMESPACE = " http://sws.geonames.org/";
+	public static final String GEONAMES_NAMESPACE = "http://sws.geonames.org/";
 
 	@Override
 	public Set<Theme> input() {
@@ -79,8 +79,7 @@ public class GeoNamesEntityMapper extends DataExtractor {
 					// Links missing in YAGO will be dropped by the
 					// type-checker.
 					DIRTYGEONAMESENTITYIDS.write(new Fact(geoEntity,
-							RDFS.sameas, FactComponent
-									.forString(GEONAMES_NAMESPACE + geoId)));
+							RDFS.sameas, FactComponent.forUri(GEONAMES_NAMESPACE + geoId)));
 				}
 			}
 		}
