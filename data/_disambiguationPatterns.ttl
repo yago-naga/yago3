@@ -37,6 +37,7 @@
 "{{Species_Latin_name_disambiguation}}"	rdf:type	<_yagoDisambiguationTemplate> .
 "{{WP_disambig}}"	rdf:type	<_yagoDisambiguationTemplate> .
 "{{توضيح}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"{{disambig|geo}}"	rdf:type	<_yagoDisambiguationTemplate> .
 
 
 "\\*.{1,5}\\[\\[([^\\]\\n:]+?)\\|([^\\]\\n]+?)\\]\\]"	<_disambiguationPattern>	"@Entity($1) rdfs:label @String($0)" .
