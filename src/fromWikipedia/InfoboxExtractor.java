@@ -331,9 +331,9 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 					String relation = FactComponent.forInfoboxAttribute(
 							this.language, attribute);									
 					for (String value : attributes.get(attribute)) {
-						if(attribute.equals("commonname")) {
-							System.out.println();
-						}
+//						if(attribute.equals("commonname")) {
+//							System.out.println();
+//						}
 						value = valueCleaner.transform(value);
 						if(value!=null) value = value.trim();
 						// Here, too, avoid nonsense
