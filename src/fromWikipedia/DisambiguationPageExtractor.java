@@ -124,6 +124,9 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 		} else if (titleEntity.indexOf("(توضيح)") > -1) {//for Arabic
 		  titleEntity = titleEntity.substring(0,
           titleEntity.indexOf("(توضيح)")).trim();
+		} else if (titleEntity.indexOf("(Begriffsklärung)") > -1) {
+      titleEntity = titleEntity.substring(0,
+          titleEntity.indexOf("(Begriffsklärung)")).trim();
 		}
 		return titleEntity;
 	}

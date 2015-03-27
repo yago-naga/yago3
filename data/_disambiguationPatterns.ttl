@@ -41,5 +41,11 @@
 "{{surname}}"	rdf:type	<_yagoDisambiguationTemplate> .
 "{{given name}}"	rdf:type	<_yagoDisambiguationTemplate> .
 
+# Below is DE
+"{{Begriffsklärung}}"	rdf:type	<_yagoDisambiguationTemplate> .
+"[[Kategorie:Familienname]]"	rdf:type	<_yagoDisambiguationTemplate> .
+"[[Kategorie:Männlicher Vorname]]"	rdf:type	<_yagoDisambiguationTemplate> .
+"[[Kategorie:Weiblicher Vorname]]"	rdf:type	<_yagoDisambiguationTemplate> .
+
 "\\*.{1,5}\\[\\[([^\\]\\n:]+?)\\|([^\\]\\n]+?)\\]\\]"	<_disambiguationPattern>	"@Entity($1) rdfs:label @String($0)" .
 "\\*.{1,5}\\[\\[([^\\]\\n:\\|]+?)\\]\\]"	<_disambiguationPattern>	"@Entity($1) rdfs:label @String($0)" .
