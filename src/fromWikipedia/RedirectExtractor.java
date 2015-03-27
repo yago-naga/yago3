@@ -20,6 +20,7 @@ import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
+import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
@@ -41,17 +42,26 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 			.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
 	public static final MultilingualTheme REDIRECTFACTSDIRTY = new MultilingualTheme(
-			"redirectLabelsDirty",
-			"Redirect facts from Wikipedia redirect pages (to be type checked)");
+			"redirectLabelsNeedsTranslationTypeChecking",
+			"Redirect facts from Wikipedia redirect pages (to be type checked and translated)");
 
+	public static final MultilingualTheme TRANSLATEDREDIRECTFACTSDIRTY = new MultilingualTheme(
+      "redirectLabelsNeedsTypeChecking",
+      "Redirect facts from Wikipedia redirect pages (to be type checked)");
+	
 	public static final MultilingualTheme REDIRECTFACTS = new MultilingualTheme(
 			"yagoRedirectLabels",
 			"Labels from Wikipedia redirect pages");
 
-	@Override
+	@Override	
 	public Set<FollowUpExtractor> followUp() {
 		HashSet<FollowUpExtractor> s=new HashSet<>();
-		s.add(new TypeChecker(REDIRECTFACTSDIRTY.inLanguage(language), REDIRECTFACTS.inLanguage(language)));
+		if (isEnglish()) {
+		  s.add(new TypeChecker(REDIRECTFACTSDIRTY.inLanguage(language), REDIRECTFACTS.inLanguage(language)));
+		} else {
+		  s.add(new EntityTranslator(REDIRECTFACTSDIRTY.inLanguage(language), TRANSLATEDREDIRECTFACTSDIRTY.inLanguage(language), this));
+		  s.add(new TypeChecker(TRANSLATEDREDIRECTFACTSDIRTY.inLanguage(language), REDIRECTFACTS.inLanguage(language)));
+		}
 		return s;
 	}
 	
