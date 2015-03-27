@@ -83,20 +83,20 @@ public class PersonNameExtractor extends Extractor {
 				continue;
 			if (!given.endsWith(".") && given.length() > 1) {
 				write(PERSONNAMES, new Fact(f.getArg(1), "<hasGivenName>",
-						FactComponent.forStringWithLanguage(given, "eng")),
+						FactComponent.forStringWithLanguage(given, lang)),
 						PERSONNAMESOURCES, source, "PersonNameExtractor");
 				
 				writeNormalized(f.getArg(1), given, source);
 				
         write(PERSONNAMEHEURISTICS, new Fact(f.getArg(1), RDFS.label,
-            FactComponent.forStringWithLanguage(given + " " + family, "eng")),
+            FactComponent.forStringWithLanguage(given + " " + family, lang)),
             PERSONNAMESOURCES, source, "PersonNameExtractor");
         
         writeNormalized(f.getArg(1), given + " " + family, source);
 
 			}
 			write(PERSONNAMES, new Fact(f.getArg(1), "<hasFamilyName>",
-					FactComponent.forStringWithLanguage(family, "eng")),
+					FactComponent.forStringWithLanguage(family, lang)),
 					PERSONNAMESOURCES, source, "PersonNameExtractor");
 			
       writeNormalized(f.getArg(1), family, source);
