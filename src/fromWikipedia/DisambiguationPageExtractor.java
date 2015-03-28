@@ -15,6 +15,7 @@ import utils.FactTemplateExtractor;
 import utils.MultilingualTheme;
 import utils.Theme;
 import basics.Fact;
+import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
@@ -118,17 +119,21 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 	}
 
 	protected static String cleanDisambiguationEntity(String titleEntity) {
-		if (titleEntity.indexOf("(disambiguation)") > -1) {
-			titleEntity = titleEntity.substring(0,
-					titleEntity.indexOf("(disambiguation)")).trim();
-		} else if (titleEntity.indexOf("(توضيح)") > -1) {//for Arabic
-		  titleEntity = titleEntity.substring(0,
-          titleEntity.indexOf("(توضيح)")).trim();
-		} else if (titleEntity.indexOf("(Begriffsklärung)") > -1) {
-      titleEntity = titleEntity.substring(0,
-          titleEntity.indexOf("(Begriffsklärung)")).trim();
-		}
-		return titleEntity;
+	  // Remove the () part of the title. Should work for all languages
+	  // and other disambiguation-style pages like names.
+	  return FactComponent.stripQualifier(titleEntity);
+	  
+//		if (titleEntity.indexOf("(disambiguation)") > -1) {
+//			titleEntity = titleEntity.substring(0,
+//					titleEntity.indexOf("(disambiguation)")).trim();
+//		} else if (titleEntity.indexOf("(توضيح)") > -1) {//for Arabic
+//		  titleEntity = titleEntity.substring(0,
+//          titleEntity.indexOf("(توضيح)")).trim();
+//		} else if (titleEntity.indexOf("(Begriffsklärung)") > -1) {
+//      titleEntity = titleEntity.substring(0,
+//          titleEntity.indexOf("(Begriffsklärung)")).trim();
+//		}
+//		return titleEntity;
 	}
 
 	/** Returns the set of disambiguation templates */
