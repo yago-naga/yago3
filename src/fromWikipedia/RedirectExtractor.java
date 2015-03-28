@@ -111,8 +111,8 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 
 		for (Entry<String, String> redirect : redirects.entrySet()) {
 			out.write(new Fact(
-					FactComponent.forYagoEntity(redirect.getValue()),
-					"<redirectedFrom>", FactComponent.forStringWithLanguage(
+			    FactComponent.forForeignYagoEntity(redirect.getValue(), this.language),
+			    "<redirectedFrom>", FactComponent.forStringWithLanguage(
 							redirect.getKey(),
 							this.language, languagemap)));
 		}
