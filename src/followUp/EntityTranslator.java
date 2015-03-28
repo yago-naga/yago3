@@ -68,22 +68,34 @@ public class EntityTranslator extends FollowUpExtractor {
 
 	@Override
 	public void extract() throws Exception {
-
 		Map<String, String> subjectDictionary = DictionaryExtractor.ENTITY_DICTIONARY
 				.inLanguage(language).dictionary();
 		Map<String, String> objectDictionary = objectDictionaryTheme
 				.dictionary();
+		
+		boolean baseFactWasTranslated = false;
 
 		for (Fact f : checkMe) {
-			String translatedSubject = subjectDictionary.get(f
-					.getSubject());
-			if (translatedSubject == null)
-				continue;
-			String translatedObject = translateObject(f.getObject(), objectDictionary);
-			if (translatedObject == null)
-				continue;
-			checked.write(new Fact(translatedSubject, f.getRelation(),
-					translatedObject));
+		  // Translate metafacts if the preceding basefact was translated as well.
+		  if (FactComponent.isFactId(f.getSubject()) && baseFactWasTranslated) {
+	      String translatedObject = translateObject(f.getObject(), objectDictionary);
+	      if (translatedObject != null) {
+	       checked.write(new Fact(f.getId(), f.getSubject(), f.getRelation(),
+	            translatedObject));
+	      }
+		  } else {
+  		  baseFactWasTranslated = false;
+  			String translatedSubject = subjectDictionary.get(f
+  					.getSubject());
+  			if (translatedSubject == null)
+  				continue;
+  			String translatedObject = translateObject(f.getObject(), objectDictionary);
+  			if (translatedObject == null)
+  				continue;
+  			checked.write(new Fact(f.getId(), translatedSubject, f.getRelation(),
+  					translatedObject));
+  			baseFactWasTranslated = true;
+		  }
 		}
 	}
 
