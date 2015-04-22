@@ -230,7 +230,7 @@ public class GeoNamesDataImporter extends DataExtractor {
 		Map<String, String> tld2yago = new HashMap<>();
 		for (Fact f : ibFacts) {
 			if (f.getRelation().equals("<hasTLD>")) {
-				tld2yago.put(f.getArg(2), f.getArg(1));
+				tld2yago.put(FactComponent.asJavaString(f.getArg(2)), f.getArg(1));
 			}
 		}
 
