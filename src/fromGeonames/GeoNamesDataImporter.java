@@ -262,7 +262,7 @@ public class GeoNamesDataImporter extends DataExtractor {
 
 				for (String nbTLD : neighborTLDs) {
 					String country = tld2yago.get(tld);
-					String neighbor = tld2yago.get(nbTLD);
+					String neighbor = tld2yago.get("." + nbTLD.toLowerCase() + "");
 
 					if (neighbor != null) {
 						writeFact(mappedOut, new Fact(country, "<hasNeighbor>",
