@@ -21,6 +21,8 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Extracts all articles that are non-entities (concepts).
@@ -29,6 +31,12 @@ import java.util.Set;
  *
  */
 public class NonEntityExtractor extends MultilingualWikipediaExtractor {
+
+  private static Pattern emptyStringPattern = Pattern.compile("\\s+");
+
+  private static Pattern abstractPattern = Pattern.compile("(?is)(.*?)==");
+
+  private static Pattern linkPattern = Pattern.compile("\\[\\[.*?\\]\\]]");
 
   @Override public Set<Theme> input() {
     return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
@@ -68,21 +76,53 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
     Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
     PatternList replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS.factCollection(), "<_titleReplace>");
 
-    String title = null;
+    String titleEntity = null;
     while (true) {
-      switch (FileLines.findIgnoreCase(in, "<title>")) {
+      switch (FileLines.findIgnoreCase(in, "<title>", "<text>")) {
         case -1:
           Announce.done();
           in.close();
           return;
         case 0:
+          String title = (String) FileLines.readTo(in, "</title>");
           title = replacer.transform(title);
           if (title == null) {
             continue;
           }
-          String entity = FactComponent.forForeignYagoEntity(title, language);
-          if (!entities.contains(entity)) {
-            Fact f = new Fact(FactComponent.forWikipediaTitle(title), RDFS.type, "<NonEntityArticle>");
+          titleEntity = FactComponent.forWikipediaTitle(title);
+          if (!entities.contains(titleEntity)) {
+            Fact f = new Fact(titleEntity, RDFS.type, "<NonEntityArticle>");
+            if (isEnglish()) {
+              NONENTITIES.inLanguage(language).write(f);
+            } else {
+              NONENTITIESNEEDSTRANSLATION.inLanguage(language).write(f);
+            }
+          }
+        case 1:
+          if (titleEntity == null) {
+            continue;
+          }
+          CharSequence text = FileLines.readTo(in, "</text>");
+
+          // Count links.
+          Matcher linkMatcher = linkPattern.matcher(text);
+          int linkCount = 0;
+          while (linkMatcher.find()) {
+            ++linkCount;
+          }
+          Fact f = new Fact(titleEntity, "<hasLinkCount>", FactComponent.forNumber(linkCount));
+          if (isEnglish()) {
+            NONENTITIES.inLanguage(language).write(f);
+          } else {
+            NONENTITIESNEEDSTRANSLATION.inLanguage(language).write(f);
+          }
+
+          // Extract abstract.
+          Matcher textMatcher = abstractPattern.matcher(text);
+          if (textMatcher.find()) {
+            String abstr = textMatcher.group(1);
+            abstr = cleanText(abstr);
+            f = new Fact(titleEntity, "<hasAbstract>", FactComponent.forString(abstr));
             if (isEnglish()) {
               NONENTITIES.inLanguage(language).write(f);
             } else {
@@ -92,6 +132,40 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
         default:
           break;
       }
+    }
+  }
+
+  private String cleanText(String s) {
+    StringBuilder sb = new StringBuilder();
+
+    int brackets = 0;
+
+    for (int i = 0; i < s.length(); i++) {
+      char current = s.charAt(i);
+
+      if (current == '{') {
+        brackets++;
+      } else if (current == '}') {
+        brackets--;
+      } else if (brackets == 0) {
+        sb.append(current);
+      }
+    }
+
+    String clean = sb.toString().trim();
+
+    clean = clean.replaceAll("\\s+", " ");
+    // Leave Wikipedia links.
+//    clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
+//    clean = clean.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
+    clean = clean.replaceAll("\\[https?:.*?\\]", "");
+    clean = clean.replaceAll("'{2,}", "");
+
+
+    if (!emptyStringPattern.matcher(clean).matches()) {
+      return null;
+    } else {
+      return clean;
     }
   }
 
