@@ -102,7 +102,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
           if (titleEntity == null) {
             continue;
           }
-          String text = FileLines.readBetween(in, "<text", "</text>");
+          String text = FileLines.readBetween(in, "<text xml:space=\"preserve\">", "</text>");
 
           // Count links.
           Matcher linkMatcher = linkPattern.matcher(text);
@@ -160,9 +160,10 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
     // Leave Wikipedia links.
 //    clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
 //    clean = clean.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
-    clean = clean.replaceAll("\\[https?:.*?\\]", "");
+    clean = clean.replaceAll("\\[https?:.*?\\]", " ");
+    clean = clean.replaceAll("\\[\\[.*?:.*?\\]\\]", " ");
     clean = clean.replaceAll("'{2,}", "");
-
+    clean = Char17.decodeAmpersand(clean);
 
     if (emptyStringPattern.matcher(clean).matches()) {
       return null;
