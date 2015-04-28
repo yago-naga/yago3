@@ -84,7 +84,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
           in.close();
           return;
         case 0:
-          String title = FileLines.readTo(in, "</title>").toString();
+          String title = FileLines.readToBoundary(in, "</title>");
           title = replacer.transform(title);
           if (title == null) {
             continue;
@@ -102,7 +102,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
           if (titleEntity == null) {
             continue;
           }
-          CharSequence text = FileLines.readTo(in, "</text>");
+          String text = FileLines.readToBoundary(in, "</text>");
 
           // Count links.
           Matcher linkMatcher = linkPattern.matcher(text);
