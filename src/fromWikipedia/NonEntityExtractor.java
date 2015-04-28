@@ -89,8 +89,10 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
           if (title == null) {
             continue;
           }
-          titleEntity = FactComponent.forWikipediaTitle(title);
-          if (!entities.contains(titleEntity)) {
+          String tmpTitleEntity = FactComponent.forWikipediaTitle(title);
+          if (!entities.contains(tmpTitleEntity)) {
+            // keep titleEntity to extract the text later.
+            titleEntity = tmpTitleEntity;
             Fact f = new Fact(titleEntity, RDFS.type, "<NonEntityArticle>");
             if (isEnglish()) {
               NONENTITIES.inLanguage(language).write(f);
@@ -131,6 +133,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
               }
             }
           }
+          titleEntity = null;
         default:
           break;
       }
