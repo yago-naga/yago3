@@ -36,7 +36,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
   private static Pattern abstractPattern = Pattern.compile("(?is)(.*?)==");
 
-  private static Pattern linkPattern = Pattern.compile("\\[\\[.*?\\]\\]]");
+  private static Pattern linkPattern = Pattern.compile("\\[\\[.*?\\]\\]");
 
   @Override public Set<Theme> input() {
     return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
@@ -102,7 +102,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
           if (titleEntity == null) {
             continue;
           }
-          String text = FileLines.readToBoundary(in, "</text>");
+          String text = FileLines.readBetween(in, "<text", "</text>");
 
           // Count links.
           Matcher linkMatcher = linkPattern.matcher(text);
@@ -164,7 +164,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
     clean = clean.replaceAll("'{2,}", "");
 
 
-    if (!emptyStringPattern.matcher(clean).matches()) {
+    if (emptyStringPattern.matcher(clean).matches()) {
       return null;
     } else {
       return clean;
