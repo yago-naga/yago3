@@ -84,7 +84,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
           in.close();
           return;
         case 0:
-          String title = (String) FileLines.readTo(in, "</title>");
+          String title = FileLines.readTo(in, "</title>").toString();
           title = replacer.transform(title);
           if (title == null) {
             continue;
