@@ -122,11 +122,13 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
           if (textMatcher.find()) {
             String abstr = textMatcher.group(1);
             abstr = cleanText(abstr);
-            f = new Fact(titleEntity, "<hasAbstract>", FactComponent.forString(abstr));
-            if (isEnglish()) {
-              NONENTITIES.inLanguage(language).write(f);
-            } else {
-              NONENTITIESNEEDSTRANSLATION.inLanguage(language).write(f);
+            if (abstr != null) {
+              f = new Fact(titleEntity, "<hasAbstract>", FactComponent.forString(abstr));
+              if (isEnglish()) {
+                NONENTITIES.inLanguage(language).write(f);
+              } else {
+                NONENTITIESNEEDSTRANSLATION.inLanguage(language).write(f);
+              }
             }
           }
         default:
