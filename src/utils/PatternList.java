@@ -61,15 +61,19 @@ public class PatternList {
 		Announce.done();
 	}
 
+	/** TRUE to print the result after each pattern application*/
+	public static boolean printDebug=false;
+	
 	/** Replaces all patterns in the string */
 	public String transform(String input) {
 		if (input == null)
 			return (null);		
-		//Announce.debug("Input:", input);
+		if(printDebug) System.out.println("Input: "+ input);
 		for (Pair<Pattern, String> pattern : patterns) {
-			//Announce.debug("Pattern:", pattern);
+			if(printDebug) System.out.println("Pattern: "+ pattern);
+			String previous=input;
 			input = pattern.first.matcher(input).replaceAll(pattern.second);
-			//Announce.debug("Result:", input);
+			if(printDebug && !previous.equals(input)) System.out.println("--------> "+ input);
 			if (input.contains("NIL") && pattern.second.equals("NIL"))
 				return (null);
 		}

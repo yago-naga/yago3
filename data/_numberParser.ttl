@@ -6,7 +6,10 @@
 # Normalize spaces and underbars
 "[ \t\n\u00A0\u202F\uFEFF_]++" <mapsTo> " " .
 
-# Remove commas
+# Remove commas (in order of decreasing length; necessary because patterns cannot overlap)
+"(\d),(\d{3}),(\d{3}),(\d{3}),(\d{3})"	<mapsTo>	"$1$2$3$4$5" .
+"(\d),(\d{3}),(\d{3}),(\d{3})"	<mapsTo>	"$1$2$3$4" .
+"(\d),(\d{3}),(\d{3})"	<mapsTo>	"$1$2$3" .
 "(\d),(\d{3})"	<mapsTo>	"$1$2" .
 
 # Translate the remaining commas to dots (for German)
@@ -51,20 +54,17 @@
 # quantities
 
 # units
-"g/cm\^3\\b" <mapsTo> "_unit_$0_1_" .
-"mol\\b|m/s\\b|m^2\\b|m^3\\b" <mapsTo> "_unit_$0_1_" .
-"m\\b|s\\b|g\\b|A\\b|K\\b|cd\\b" <mapsTo> "_unit_$0_1_" .
-"Hz\\b|°C\\b|px\\b|Pa\\b" <mapsTo> "_unit_$0_1_" .
-
 "metres\\b" <mapsTo> "_unit_m_1_" .
-"km_number_2_\\b"  <mapsTo> "_unit_m^2_1E6_" .
-"km\^_number_2_\\b" <mapsTo>  "_unit_m^2_1E6_" .
-"km_number_3_\\b" <mapsTo> "_unit_m^3_1E9_" .
-"km\^_number_3_\\b" <mapsTo> "_unit_m^3_1E9_" .
-			
-"m/s_number_2_\\b" <mapsTo> "_unit_m/s^2_1_" .
-			
-"m_number_2_\\b" <mapsTo> "_unit_m^2_1_" .
+"km²" <mapsTo> "_unit_m^2_1E6_" .
+"m\^?_number_2_" <mapsTo>  "_unit_m^2_1_" .
+"m\^?_number_3_" <mapsTo> "_unit_m^3_1_" .
+"k_unit_m\^2_1_\\b"  <mapsTo> "_unit_m^2_1E6_" . # the exponent is different for square meters than for meters
+"k_unit_m\^3_1_\\b"  <mapsTo> "_unit_m^2_1E9_" . # the exponent is different for cubic meters than for meters
+
+"(?<!_unit_)m\\b" <mapsTo> "_unit_m_1_" . # Negative lookahead to avoid replacing an "m" that is already a unit
+"s\\b" <mapsTo> "_unit_s_1_" .
+"g\\b" <mapsTo> "_unit_g_1_" .
+"px\\b" <mapsTo> "_unit_px_1_" .
 "minutes?\\b|min\\b" <mapsTo> "_unit_s_60_" .
 "h\\b" <mapsTo> "_unit_s_3600_" .
 			
@@ -91,9 +91,13 @@
 "\{\{val\|_number_([^_]++)_\|ul?=_unit_([^_]++)_\}\}" <mapsTo> "_number_$1_ _unit_$2_" .
 "_number_([^_]++)_ ?\[\[_unit_([^_]++)_\]\]" <mapsTo> "_number_$1_ _unit_$2_" .
 
+# Final mapping for numbers with units
 "_number_([^_]++)_ ?_unit_([^_]++)_([^_]++)_"	<mapsTo> "_number_$1*$3_ _bunit_$2_" .
 "_number_([^_]++)_ ?_bunit_([^_]++)_"	<mapsTo> "_result_$1_<$2>_" .
-		
+
+# Encode "^" in units
+"_<m\^2>_"	<mapsTo> "_<m\\\\u005e2>_" .
+"_<m\^3>_"	<mapsTo> "_<m\\\\u005e3>_" .
 		
 # currencies. Put words before symbols, because otherwise the patterns will apply twice.
 "dollars?" <mapsTo> "_currencyName_dollar_" .
@@ -107,6 +111,8 @@
 "£" <mapsTo> "_currencyName_pound_" .
 "₤" <mapsTo> "_currencyName_pound_" .
 
+"_currencyName_([^_]++)_ ?_result_([^_]++)_<m>" <mapsTo> "_result_$2*1E6_<$1>_" .		
+"_currencyName_([^_]++)_ ?_number_([^_]++)_B" <mapsTo> "_result_$2*1E9_<$1>_" .		
 "_number_([^_]++)_ ?_currencyName_([^_]++)_" <mapsTo> "_result_$1_<$2>_" .
 "_currencyName_([^_]++)_ ?_number_([^_]++)_" <mapsTo> "_result_$2_<$1>_" .		
 		

@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import utils.PatternList;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import javatools.administrative.Announce;
@@ -107,7 +108,8 @@ public abstract class TermParser {
 		PatternHardExtractor.DATEPARSER.assignToFolder(new File("./data"));
 		PatternHardExtractor.NUMBERPARSER.assignToFolder(new File("./data"));
 		WordnetExtractor.PREFMEANINGS.assignToFolder(new File("../../data/yago3"));
-		TermParser parsi = new DateParser();		
-		parsi.test("2 BC");		
+		PatternList.printDebug=true;
+		TermParser parsi = new NumberParser();		
+		parsi.test("€100b");		
 	}
 }
