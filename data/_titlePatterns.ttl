@@ -38,3 +38,6 @@
 
 # DE specific title patterns
 "\\(Begriffsklärung\\)"	<_titleReplace>	"NIL" .
+
+# CN specific title patterns
+"\\(消歧义\\)"	<_titleReplace>	"NIL" .
