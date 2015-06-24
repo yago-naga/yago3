@@ -23,7 +23,7 @@ import java.util.*;
 public class MetadataExtractor extends Extractor {
 
 	/** Our output */
-	public static final Theme METADATAFACTS = new Theme("hardWiredFacts",
+	public static final Theme METADATAFACTS = new Theme("metadataFacts",
 			"The metadata facts of YAGO");
 
 	@Override public Set<Theme> input() {
