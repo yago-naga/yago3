@@ -32,7 +32,8 @@ public class AIDAExtractorMerger extends Extractor {
       RDFS.type, RDFS.subclassOf, RDFS.label, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>",
       "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
-      "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>");
+      "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>",
+      "<hasWikipediaId>", "<_yagoMetadata>");
 
   
   @Override
