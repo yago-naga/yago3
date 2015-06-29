@@ -55,8 +55,13 @@ public class WikiIdExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(
-				WIKIPEDIAIDFACTSNEEDSTRANSLATION.inLanguage(this.language));
+		if (isEnglish()) {
+			return new FinalSet<Theme>(
+					WIKIPEDIAIDFACTS.inLanguage(language));
+		} else {
+			return new FinalSet<Theme>(
+					WIKIPEDIAIDFACTSNEEDSTRANSLATION.inLanguage(language));
+		}
 	}
 
 	@Override
