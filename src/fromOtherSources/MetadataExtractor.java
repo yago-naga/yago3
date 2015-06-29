@@ -57,7 +57,7 @@ public class MetadataExtractor extends Extractor {
 				new Fact(
 						FactComponent.forString("CreationDate"),
 						"<_yagoMetadata>",
-						FactComponent.forString(FactComponent.forString(dateString))
+						FactComponent.forString(dateString)
 				)
 		);
 	}
