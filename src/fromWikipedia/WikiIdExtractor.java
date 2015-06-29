@@ -21,7 +21,10 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Extracts all Wikipedia IDs.
+ * Extracts all Wikipedia IDs. It writes facts of the kind
+ *
+ * entity <hasWikipediaId> "en/123"
+ * entity <hasWikipediaId> "de/234"
  * 
  * @author Johannes Hoffart
  * 
@@ -78,12 +81,12 @@ public class WikiIdExtractor extends MultilingualWikipediaExtractor {
 				if (titleEntity == null)
 					continue;
 				Integer id = Integer.parseInt(FileLines.readTo(in, "</id>").toString());
-        // Make sure to take only the first id encountered after the title. Other ids might be revisions etc.
-				titleEntity = null;
+				String langId = language + "/" + id;
 				out.write(new Fact(
 						titleEntity, "<hasWikipediaId>",
-						FactComponent.forNumber(id))
-				);
+						FactComponent.forString(langId)));
+				// Make sure to take only the first id encountered after the title. Other ids might be revisions etc.
+				titleEntity = null;
 			}
 		}
 
