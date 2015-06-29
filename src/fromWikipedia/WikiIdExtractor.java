@@ -65,7 +65,6 @@ public class WikiIdExtractor extends MultilingualWikipediaExtractor {
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		TitleExtractor titleExtractor = new TitleExtractor(language);
-		Theme out = WIKIPEDIAIDFACTSNEEDSTRANSLATION.inLanguage(this.language);
 
 		String titleEntity = null;
 		redirect: while (true) {
@@ -82,9 +81,15 @@ public class WikiIdExtractor extends MultilingualWikipediaExtractor {
 					continue;
 				Integer id = Integer.parseInt(FileLines.readToBoundary(in, "</id>").toString());
 				String langId = language + "/" + id;
-				out.write(new Fact(
+				Fact f = new Fact(
 						titleEntity, "<hasWikipediaId>",
-						FactComponent.forString(langId)));
+						FactComponent.forString(langId));
+				if (isEnglish()) {
+					WIKIPEDIAIDFACTS.inLanguage(language).write(f);
+				} else {
+					WIKIPEDIAIDFACTSNEEDSTRANSLATION.inLanguage(language).write(f);
+				}
+
 				// Make sure to take only the first id encountered after the title. Other ids might be revisions etc.
 				titleEntity = null;
 			}
