@@ -11,6 +11,7 @@ import javatools.datatypes.FinalSet;
 import utils.Theme;
 
 import java.io.File;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -48,8 +49,10 @@ public class MetadataExtractor extends Extractor {
 						FactComponent.forString(dumpName)));
 		}
 
-		Date now = new Date();
-		String dateString = new SimpleDateFormat("yyyy-MM-ddTHH:mmZ").format(now);
+		TimeZone tz = TimeZone.getTimeZone("UTC");
+		DateFormat df = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm'Z'");
+		df.setTimeZone(tz);
+		String dateString = df.format(new Date());
 		METADATAFACTS.write(
 				new Fact(
 						FactComponent.forString("CreationDate"),
