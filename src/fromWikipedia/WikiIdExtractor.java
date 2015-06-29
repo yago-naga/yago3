@@ -41,7 +41,7 @@ public class WikiIdExtractor extends MultilingualWikipediaExtractor {
 			"Extracted IDs from Wikipedia articles pages (to be translated)");
 
 	public static final MultilingualTheme WIKIPEDIAIDFACTS = new MultilingualTheme(
-			"wikipediaIds",
+			"yagoWikipediaIds",
 			"Extracted IDs from Wikipedia articles pages");
 
 	@Override
@@ -80,7 +80,7 @@ public class WikiIdExtractor extends MultilingualWikipediaExtractor {
 			case 1:
 				if (titleEntity == null)
 					continue;
-				Integer id = Integer.parseInt(FileLines.readTo(in, "</id>").toString());
+				Integer id = Integer.parseInt(FileLines.readToBoundary(in, "</id>").toString());
 				String langId = language + "/" + id;
 				out.write(new Fact(
 						titleEntity, "<hasWikipediaId>",
