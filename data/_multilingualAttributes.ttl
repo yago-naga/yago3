@@ -19,3 +19,5 @@
 <infobox/fr/notes>    <_infoboxPattern>	owl:Nothing .
 <infobox/nl/opvolger>    <_infoboxPattern>	owl:Nothing .
 <infobox/fr/plusgrandeville>    <_infoboxPattern>	<isLocatedIn-> .
+<infobox/de/kontrahent>	<_infoboxPattern>	<participatedIn-> .
+<infobox/nl/combatant>	<_infoboxPattern>	<participatedIn-> .

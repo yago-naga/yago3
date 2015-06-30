@@ -31,6 +31,7 @@
 "Prime Minister of"	<_titleReplace>	"NIL" .
 "Minister of"	<_titleReplace>	"NIL" .
 "President of"	<_titleReplace>	"NIL" .
+"Presidency of"	<_titleReplace>	"NIL" .
 "Prince of"	<_titleReplace>	"NIL" .
 "Co-Princes of"	<_titleReplace>	"NIL" .
 "[bB]rothers"	<_titleReplace>	"NIL" .

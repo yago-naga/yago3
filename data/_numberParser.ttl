@@ -35,6 +35,7 @@
 "hundreds?" <mapsTo> "_numberName_100_" .
 "thousands?" <mapsTo> "_numberName_1000_" .
 "millions?"  <mapsTo>  "_numberName_1E6_" .
+"mil"  <mapsTo>  "_numberName_1E6_" .
 "billions?" <mapsTo> "_numberName_1E9_" .
 "trillions?"   <mapsTo> "_numberName_1E12_" .
 "quadrillions?"  <mapsTo> "_numberName_1E15_" .
@@ -43,7 +44,7 @@
 "septillions?"   <mapsTo> "_numberName_1E24_" .
 "octillions?"   <mapsTo> "_numberName_1E27_" .
 		
-"_number_([^_]++)_ _numberName_([^_]++)_" <mapsTo> "_number_$1*$2_" .
+"_number_([^_]++)_ ?_numberName_([^_]++)_" <mapsTo> "_number_$1*$2_" .
 
 # time duration				
 "\{\{duration\|h=_number_([^_]++)_\|m=_number_([^_]++)_\|s=_number_([^_]++)_\}\}" <mapsTo> "_number_$1*3600+$2*60+$3_ s " .
@@ -74,7 +75,7 @@
 # SI prefixes, compare http_//en.wikipedia.org/wiki/Metric_prefix		
 "T_unit_([^_]++)_([^_]++)_" <mapsTo> "_unit_$1_$2*1E12_" .
 "G_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E9_" .
-"M_unit_([^_]++)_([^_]++)_" <mapsTo>  "_unit_$1_$2*1E6_" .
+"(?-i)M_unit_([^_]++)_([^_]++)_" <mapsTo>  "_unit_$1_$2*1E6_" .
 "k_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E3_" .
 "h_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E2_" .
 "da_unit_([^_]++)_([^_]++)_"  <mapsTo>  "_unit_$1_$2*1E1_" .
@@ -86,10 +87,10 @@
 "p_unit_([^_]++)_([^_]++)_" <mapsTo>  "_unit_$1_$2*1E-12_" .
 
 # Free Wikipedia-specific expressions such as  {{val|6378.1|u=km}}
-"\{\{val\|_number_([^_]++)_\|e=_number_([^_]++)_\|ul?=_unit_([^_]++)_\}\}" <mapsTo> "_number_$1E$2_ _unit_$3_" .
-"\{\{convert\|_number_([^_]++)_\|_unit_([^_]++)_\|" <mapsTo> "_number_$1_ _unit_$2_" .
-"\{\{val\|_number_([^_]++)_\|ul?=_unit_([^_]++)_\}\}" <mapsTo> "_number_$1_ _unit_$2_" .
-"_number_([^_]++)_ ?\[\[_unit_([^_]++)_\]\]" <mapsTo> "_number_$1_ _unit_$2_" .
+"\{\{val\|_number_([^_]++)_\|e=_number_([^_]++)_\|ul?=_unit_([^_]++)_([^_]++)_\}\}" <mapsTo> "_number_$1E$2_ _unit_$3_$4_" .
+"\{\{convert\|_number_([^_]++)_\|_unit_([^_]++)_([^_]++)_\|" <mapsTo> "_number_$1_ _unit_$2_$3_" .
+"\{\{val\|_number_([^_]++)_\|ul?=_unit_([^_]++)_([^_]++)_\}\}" <mapsTo> "_number_$1_ _unit_$2_$3_" .
+"_number_([^_]++)_ ?\[\[_unit_([^_]++)_([^_]++)_\]\]" <mapsTo> "_number_$1_ _unit_$2_$3_" .
 
 # Final mapping for numbers with units
 "_number_([^_]++)_ ?_unit_([^_]++)_([^_]++)_"	<mapsTo> "_number_$1*$3_ _bunit_$2_" .

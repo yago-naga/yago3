@@ -110,6 +110,6 @@ public abstract class TermParser {
 		WordnetExtractor.PREFMEANINGS.assignToFolder(new File("../../data/yago3"));
 		PatternList.printDebug=true;
 		TermParser parsi = new NumberParser();		
-		parsi.test("€100b");		
+		parsi.test("1,450 mm");		
 	}
 }

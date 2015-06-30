@@ -161,6 +161,8 @@ public class WikidataLabelExtractor extends DataExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
+		System.out.println(preferredName("<nl/Sønder Rind>"));
+		System.exit(0);
     Announce.setLevel(Announce.Level.DEBUG);
     new WikidataLabelExtractor().extract(new File("c:/fabian/data/yago3"),
         "test");
