@@ -5,9 +5,14 @@ import java.io.Reader;
 import java.util.HashSet;
 import java.util.Set;
 
+import extractors.MultilingualExtractor;
+import extractors.MultilingualWikipediaExtractor;
+import followUp.EntityTranslator;
+import followUp.FollowUpExtractor;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
+import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
 import basics.Fact;
@@ -24,7 +29,7 @@ import fromThemes.TransitiveTypeExtractor;
  * @author Fabian M. Suchanek
  * 
  */
-public class WikiInfoExtractor extends EnglishWikipediaExtractor {
+public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
 
 	@Override
 	public Set<Theme> input() {
@@ -38,25 +43,43 @@ public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 				PatternHardExtractor.TITLEPATTERNS);
 	}
 
-	/** The importance scores for the type facts */
-	public static final Theme WIKIINFO = new Theme(
+	public static final MultilingualTheme WIKIINFONEEDSTRANSLATION = new MultilingualTheme(
+			"wikipediaInfoNeedsTranslation",
+			"Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities.");
+
+	public static final MultilingualTheme WIKIINFO = new MultilingualTheme(
 			"yagoWikipediaInfo",
 			"Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities.",
 			Theme.ThemeGroup.OTHER);
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<>(WIKIINFO);
+		if (isEnglish()) {
+			return new FinalSet<Theme>(
+					WIKIINFO.inLanguage(language));
+		} else {
+			return new FinalSet<Theme>(
+					WIKIINFONEEDSTRANSLATION.inLanguage(language));
+		}
+	}
+
+	@Override
+	public Set<FollowUpExtractor> followUp() {
+		HashSet<FollowUpExtractor> s=new HashSet<>();
+		if (!isEnglish()) {
+			s.add(new EntityTranslator(WIKIINFONEEDSTRANSLATION.inLanguage(language), WIKIINFO.inLanguage(language), this));
+		}
+		return s;
 	}
 
 	@Override
 	public void extract() throws Exception {
 		Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE
 				.factCollection().getSubjects();
-		TitleExtractor titleExtractor = new TitleExtractor("en");
+		TitleExtractor titleExtractor = new TitleExtractor(language);
 		// Extract the information
 		// Announce.progressStart("Extracting", 3_900_000);
-		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
+		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		while (FileLines.scrollTo(in, "<title>")) {
 			String entity = titleExtractor.getTitleEntity(in);
 			if (entity == null)
@@ -68,10 +91,14 @@ public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 			String page = FileLines.readToBoundary(in, "</text>");
 			if (page == null)
 				continue;
-			WIKIINFO.write(new Fact(entity, "<hasWikipediaArticleLength>",
-					FactComponent.forNumber(page.length())));
-			WIKIINFO.write(new Fact(entity, "<hasWikipediaUrl>", FactComponent
-					.wikipediaURL(entity)));
+			if (isEnglish()) {
+				WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
+				WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
+			} else {
+				// If the article size of non-English WPs is needed, this needs to be captured properly.
+//				WIKIINFONEEDSTRANSLATION.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
+				WIKIINFONEEDSTRANSLATION.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
+			}
 			Set<String> targets = new HashSet<>();
 			for (int pos = page.indexOf("[["); pos != -1; pos = page.indexOf(
 					"[[", pos + 2)) {
@@ -87,20 +114,26 @@ public class WikiInfoExtractor extends EnglishWikipediaExtractor {
 					continue;
 				targets.add(target);
 			}
-			for (String target : targets)
-				WIKIINFO.write(new Fact(entity, "<linksTo>", target));
+
+			MultilingualTheme out = WIKIINFO;
+			if (!isEnglish()) {
+				out = WIKIINFONEEDSTRANSLATION;
+			}
+
+			for (String target : targets) {
+				out.inLanguage(language).write(new Fact(entity, "<linksTo>", target));
+			}
 		}
 	}
 
-	public WikiInfoExtractor(File wikipediaFile) {
-		super(wikipediaFile);
+	public WikiInfoExtractor(String lang, File wikipedia) {
+		super(lang, wikipedia);
 	}
 
 	public static void main(String[] args) throws Exception {
-		new WikiInfoExtractor(
+		new WikiInfoExtractor("en",
 				new File(
 						"c:/Fabian/eclipseProjects/yago2s/testCases/extractors.CategoryExtractor/wikitest.xml"))
-				.extract(new File("c:/fabian/data/yago3"),
-						"Test on 1 wikipedia article\n");
+				.extract(new File("c:/fabian/data/yago3"), "Test on 1 wikipedia article\n");
 	}
 }
