@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
+import extractors.MultilingualExtractor;
 import javatools.administrative.Announce;
 import utils.Theme;
 import utils.Theme.ThemeGroup;
@@ -38,7 +39,7 @@ public class AIDAFunctionalExtractor extends SimpleDeduplicator {
 		input.add(HardExtractor.HARDWIREDFACTS);
 		
 		// Metadata.
-		input.add(WikiInfoExtractor.WIKIINFO);
+		input.addAll(WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages));
 		
 		return input;
 	}

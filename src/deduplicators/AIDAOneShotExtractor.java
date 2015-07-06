@@ -51,7 +51,7 @@ public class AIDAOneShotExtractor extends SimpleDeduplicator {
     input.add(HardExtractor.HARDWIREDFACTS);
     
     // Metadata.
-    input.add(WikiInfoExtractor.WIKIINFO);
+    input.addAll(WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages));
     
     // Types and Taxonomy.
     input.add(TransitiveTypeExtractor.TRANSITIVETYPE);
