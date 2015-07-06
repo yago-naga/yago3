@@ -42,7 +42,8 @@ public class WikiIdExtractor extends MultilingualWikipediaExtractor {
 
 	public static final MultilingualTheme WIKIPEDIAIDFACTS = new MultilingualTheme(
 			"yagoWikipediaIds",
-			"Extracted IDs from Wikipedia articles pages");
+			"Extracted IDs from Wikipedia articles pages",
+			Theme.ThemeGroup.OTHER);
 
 	@Override
 	public Set<FollowUpExtractor> followUp() {
