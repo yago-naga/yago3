@@ -295,7 +295,9 @@
 "\\{\\{height\\|ft=(\\d+)\\|in=(\\d+\\.?\\d*)\\}\\}"	<_infoboxReplace>	" $1 feet $2 inches " .
 "\\{\\{([a-z]+) to [a-z]+\\|(\\d+\\.?\\d*).*?\\}\\}"	<_infoboxReplace>	" $2 $1 " .
 "\\{\\{bday\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
-"\\{\\{flag ?(icon)?\\|(.*?)\\}\\}"	<_infoboxReplace>	"[[$2]]" .
+#"\\{\\{flag ?(icon)?\\|(.*?)\\}\\}"	<_infoboxReplace>	"[[$2]]" .
+"\\{\\{flag ?(icon)?\\|([^\\|\\}]+)[^\\}]*\\}\\}"	<_infoboxReplace>	"[[$2]]" .
+"\\{\\{flagcountry\\|([^\\|\\}]+)[^\\}]*\\}\\}"	<_infoboxReplace>	"[[$1]]" .
 "\\{\\{awd\\|"	<_infoboxReplace>	"" .
 "\\{\\{award\\|"	<_infoboxReplace>	"" .
 "\\{\\{birth-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
