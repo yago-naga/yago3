@@ -18,6 +18,7 @@
 "Political divisions"	<_titleReplace>	"NIL" .
 "List of"	<_titleReplace>	"NIL" .
 "[^:<]+:[^<]+"	<_titleReplace>	"NIL" .
+"players"	<_titleReplace>	"NIL" .
 "History of"	<_titleReplace>	"NIL" .
 "Comparison of"	<_titleReplace>	"NIL" .
 "Demography of"	<_titleReplace>	"NIL" .
@@ -36,6 +37,8 @@
 "Co-Princes of"	<_titleReplace>	"NIL" .
 "[bB]rothers"	<_titleReplace>	"NIL" .
 "Leader of"	<_titleReplace>	"NIL" .
+"family"	<_titleReplace>	"NIL" .
+"Presidency of"	<_titleReplace>	"NIL" .
 
 # DE specific title patterns
 "\\(Begriffsklärung\\)"	<_titleReplace>	"NIL" .

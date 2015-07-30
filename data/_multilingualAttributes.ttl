@@ -21,3 +21,4 @@
 <infobox/fr/plusgrandeville>    <_infoboxPattern>	<isLocatedIn-> .
 <infobox/de/kontrahent>	<_infoboxPattern>	<participatedIn-> .
 <infobox/nl/combatant>	<_infoboxPattern>	<participatedIn-> .
+<infobox/fr/filmsnotables>	<_infoboxPattern>	<directed> .
