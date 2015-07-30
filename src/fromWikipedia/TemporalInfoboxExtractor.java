@@ -34,6 +34,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor.ImplementationNote;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
@@ -102,6 +103,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
 	/** Holds the preferred meanings. Needed for political role extraction. */
 	protected Map<String, String> preferredMeanings;
+	protected PatternList valueCleaner;
 
 	@Override
 	public Set<Theme> inputCached() {
@@ -117,21 +119,26 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 				.factCollection();
 		Map<String, Set<String>> patterns = TemporalInfoboxExtractor
 				.infoboxPatterns(infoboxFacts);
-		PatternList replacements = new PatternList(infoboxFacts,
-				"<_infoboxReplace>");
+//		PatternList replacements = new PatternList(infoboxFacts,
+//				"<_infoboxReplace>");
 		Map<String, String> combinations = infoboxFacts
 				.collectSubjectAndObjectAsStrings("<_infoboxCombine>");
 		Map<String, String> preferredMeaning = WordnetExtractor.PREFMEANINGS
 				.factCollection().getPreferredMeanings();
 		TitleExtractor titleExtractor = new TitleExtractor("en");
 
+		valueCleaner = new PatternList(
+				PatternHardExtractor.INFOBOXTEMPORALPATTERNS.factCollection(),
+				"<_infoboxReplace>");
+		String typeRelation = FactComponent
+				.forInfoboxTypeRelation("en");
 		// Extract the information
 		// Announce.progressStart("Extracting", 4_500_000);
 		Reader in = FileUtils.getBufferedUTF8Reader(inputData);
 		String titleEntity = null;
 		while (true) {
-			switch (FileLines.findIgnoreCase(in, "<title>", "{{Infobox",
-					"{{ Infobox")) {
+			/* nested comments not supported */
+			switch (FileLines.findIgnoreCase(in, "<title>", "<comment>", "{{")) {
 			case -1:
 				// Announce.progressDone();
 				in.close();
@@ -144,8 +151,16 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 				if (titleEntity == null)
 					continue;
 				String cls = FileLines.readTo(in, '}', '|').toString().trim();
+				if (!cls.contains("infobox") && !cls.contains("Infobox")) {
+					continue;
+				}
+				cls = cls.replace("infobox", "").replace("Infobox", "");
+
+				cls = Char17.decodeAmpersand(cls);
+				cls = valueCleaner.transform(cls);
+				
 				String type = preferredMeaning.get(cls);
-				if (type != null) {
+				if (type != null && type.length() > 3) {
 					write(INFOBOXTYPES, new Fact(null, titleEntity, RDFS.type,
 							type), TEMPORALINFOBOXSOURCES,
 							FactComponent.wikipediaURL(titleEntity),
@@ -162,7 +177,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 						for (String value : attributes.get(attribute)) {
 							extract(titleEntity, value, relation,
 									preferredMeaning, hardWiredFacts,
-									replacements);
+									valueCleaner);
 						}
 					}
 				}
@@ -184,10 +199,14 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 					factCollection, replacements);
 		} else {
 			Fact baseFact = new Fact("", "", "");
+
+
 			valueString = replacements.transform(Char17
 					.decodeAmpersand(valueString));
+
 			valueString = valueString.replace("$0",
 					FactComponent.stripBrackets(entity));
+
 			valueString = valueString.trim();
 			if (valueString.length() == 0)
 				return;
@@ -214,121 +233,124 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			// String syntaxChecker = FactComponent.asJavaString(factCollection
 			// .getObject(cls, "<_hasTypeCheckPattern>"));
 
-			// Extract all terms
-			List<String> objects = extractor.extractList(valueString);
+			// Extract all terms //change it. Extract terms per value in the valuestring ;-)
+			
+			
+			// split the values based on list items:"* " 
 			// extract multivalues, such as,
 			// spouse=[[[Shawn Andrews(actor)|Shawn Andrews]] (1992-1993)\n[[Luc
 			// Besson]] (1997-1999)
 			String[] multiValues = valueString.split("\\n");
-			ArrayList<List<String>> dateObjectsList = new ArrayList<>(10);
-			if (multiValues.length > 1) {
-				for (int i = 0; i < multiValues.length; i++) {
-					dateObjectsList.add(dateParser.extractList(multiValues[i]));
-
-				}
-			} else if (valueString.contains("\t")) {
-				multiValues = new String[] { valueString };
-				for (int i = 0; i < multiValues.length; i++) {
-					dateObjectsList.add(dateParser.extractList(multiValues[i]
-							.substring(multiValues[i].indexOf('\t'))));
-				}
-			}
-
-			for (int i = 0; i < objects.size(); i++) {
-				String object = objects.get(i);
-				// Check syntax
-				// if (syntaxChecker != null
-				// && !FactComponent.asJavaString(object).matches(
-				// syntaxChecker)) {
-				// Announce.debug("Extraction", object, "for", entity,
-				// relation, "does not match syntax check",
-				// syntaxChecker);
-				// continue;
-				// }
-				// Check data type
-				if (FactComponent.isLiteral(object)) {
-					String datatype = FactComponent.getDatatype(object);
-					if (datatype == null)
-						datatype = YAGO.string;
-					if (cls.equals(YAGO.languageString)
-							&& datatype.equals(YAGO.string)) {
-						object = FactComponent.setLanguage(object, "eng");
-					} else {
-						if (!factCollection.isSubClassOf(datatype, cls)) {
-							Announce.debug("Extraction", object, "for", entity,
-									relation, "does not match typecheck", cls);
-							continue;
-						}
-						object = FactComponent.setDataType(object, cls);
+			
+			for(String value:multiValues){
+				value=value.replaceAll("\\{\\{flag.*?\\}\\}", "");
+				List<String> objects = extractor.extractList(value);
+				ArrayList<List<String>> dateObjectsList = new ArrayList<>(10);
+//				String date_value=new String(value);
+				
+				dateObjectsList.add(dateParser.extractList(value.replaceAll("\\[\\[.*?\\]\\]", "")));
+				
+				if (value.contains("\t")) {
+					String[] values = new String[] { value };
+					for (int i = 0; i < values.length; i++) {
+						dateObjectsList.add(dateParser.extractList(value
+								.substring(value.indexOf('\t'))));
 					}
 				}
-				// check if the relation is <holdsPoliticalPosition>, then map
-				// arg2 to particular wordnet position.
-				if (relation.equals("<holdsPoliticalPosition>")) {
-					object = getWordnetClassForPoliticalPosition(object,
-							preferredMeanings);
-					if (object == null)
-						continue;
-				}
-				if (inverse) {
-					baseFact = new Fact(object, relation, entity);
-					if (baseFact.getArg(2).contains("xsd:date")) // type
-																	// checking
-																	// for dates
-						write(TEMPORALDIRTYINFOBOXFACTS, new Fact(object,
-								relation, entity), TEMPORALINFOBOXSOURCES,
-								FactComponent.wikipediaURL(entity),
-								"TemporalInfoboxExtractor: from " + valueString);
-				} else {
-					baseFact = new Fact(entity, relation, object);
-					if (baseFact.getArg(2).contains("xsd:date"))
-						write(TEMPORALDIRTYINFOBOXFACTS, baseFact,
-								TEMPORALINFOBOXSOURCES,
-								FactComponent.wikipediaURL(entity),
-								"TemporalInfoboxExtractor: from " + valueString);
-
-				}
-
-				// attaching dates to basefacts
-				// if (dateObjectsList.size() < 1 || multiValues.length < 2)
-				// return;
-				if (dateObjectsList.size() > 0) {
-					try {
-						List<String> dates = dateObjectsList.get(i);
-						if (dates.size() > 0
-								&& (FactComponent.isUri(baseFact.getArg(2)) || FactComponent
-										.isLiteral(baseFact.getArg(2)))) {
+				
+				//Extraction
+				for (int i = 0; i < objects.size(); i++) {
+					String object = objects.get(i);
+					// Check data type
+					if (FactComponent.isLiteral(object)) {
+						String datatype = FactComponent.getDatatype(object);
+						if (datatype == null)
+							datatype = YAGO.string;
+						if (cls.equals(YAGO.languageString)
+								&& datatype.equals(YAGO.string)) {
+							object = FactComponent.setLanguage(object, "eng");
+						} else {
+							if (!factCollection.isSubClassOf(datatype, cls)) {
+								Announce.debug("Extraction", object, "for", entity,
+										relation, "does not match typecheck", cls);
+								continue;
+							}
+							object = FactComponent.setDataType(object, cls);
+						}
+					}
+					// check if the relation is <holdsPoliticalPosition>, then map
+					// arg2 to particular wordnet position.
+					if (relation.equals("<holdsPoliticalPosition>")) {
+						object = getWordnetClassForPoliticalPosition(object,
+								preferredMeanings);
+						if (object == null)
+							continue;
+					}
+					if (inverse) {
+						baseFact = new Fact(object, relation, entity);
+						if (baseFact.getArg(2).contains("xsd:date")) // type
+																		// checking
+																		// for dates
+							write(TEMPORALDIRTYINFOBOXFACTS, new Fact(object,
+									relation, entity), TEMPORALINFOBOXSOURCES,
+									FactComponent.wikipediaURL(entity),
+									"TemporalInfoboxExtractor: from " + valueString);
+					} else {
+						baseFact = new Fact(entity, relation, object);
+						if (baseFact.getArg(2).contains("xsd:date"))
 							write(TEMPORALDIRTYINFOBOXFACTS, baseFact,
 									TEMPORALINFOBOXSOURCES,
 									FactComponent.wikipediaURL(entity),
-									"TemporalInfoboxExtractor: from "
-											+ valueString);
-							Fact metafact = baseFact.metaFact("<occursSince>",
-									dates.get(0));
-							write(TEMPORALDIRTYINFOBOXFACTS, metafact,
-									TEMPORALINFOBOXSOURCES,
-									FactComponent.wikipediaURL(entity),
-									"TemporalInfoboxExtractor: from "
-											+ valueString);
-							if (dates.size() > 1) {
-								metafact = baseFact.metaFact("<occursUntil>",
-										dates.get(1));
+									"TemporalInfoboxExtractor: from " + valueString);
+
+					}
+
+					// attaching dates to basefacts
+					// if (dateObjectsList.size() < 1 || multiValues.length < 2)
+					// return;
+					if (dateObjectsList.size() > 0) {
+						try {
+							List<String> dates = dateObjectsList.get(i);
+							if (dates.size() > 0
+									&& (FactComponent.isUri(baseFact.getArg(2)) || FactComponent
+											.isLiteral(baseFact.getArg(2)))) {
+								write(TEMPORALDIRTYINFOBOXFACTS, baseFact,
+										TEMPORALINFOBOXSOURCES,
+										FactComponent.wikipediaURL(entity),
+										"TemporalInfoboxExtractor: from "
+												+ valueString);
+								Fact metafact = baseFact.metaFact("<occursSince>",
+										dates.get(0));
 								write(TEMPORALDIRTYINFOBOXFACTS, metafact,
 										TEMPORALINFOBOXSOURCES,
 										FactComponent.wikipediaURL(entity),
 										"TemporalInfoboxExtractor: from "
 												+ valueString);
+								if (dates.size() > 1) {
+									metafact = baseFact.metaFact("<occursUntil>",
+											dates.get(1));
+									write(TEMPORALDIRTYINFOBOXFACTS, metafact,
+											TEMPORALINFOBOXSOURCES,
+											FactComponent.wikipediaURL(entity),
+											"TemporalInfoboxExtractor: from "
+													+ valueString);
+								}
+
 							}
-
+						} catch (Exception e) {
+							continue;
 						}
-					} catch (Exception e) {
-						continue;
-					}
 
+					}
+					if (factCollection.contains(relation, RDFS.type, YAGO.function))
+						break;
 				}
-				if (factCollection.contains(relation, RDFS.type, YAGO.function))
-					break;
+				
 			}
+			
+
+
+
 		}
 
 	}
@@ -421,10 +443,16 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			valueString = values[i];
 			if (valueString.equals("NULL"))
 				continue;
+//			System.out.println("meta original: "+valueString);
+
 			valueString = replacements.transform(Char17
 					.decodeAmpersand(valueString));
+//			System.out.println("meta char17: "+valueString);
+
 			valueString = valueString.replace("$0",
 					FactComponent.stripBrackets(entity));
+//			System.out.println("meta strip brackets: "+valueString);
+
 			valueString = valueString.trim();
 			if (valueString.length() == 0)
 				return;
@@ -523,7 +551,17 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 	public static String normalizeAttribute2(String a) {
 		return (a.trim().toLowerCase().replace("_", "").replace(" ", ""));
 	}
-
+	/** normalizes an attribute name */
+	@ImplementationNote("Be aggressive here: numbers have to go away, so that city1=city2."
+			+ "Bad characters such as TABs are poisonous and have to leave. "
+			+ "Spaces and underbars have to go."
+			+ "Still accept non-latin characters."
+			+ "Lowercase because manual infobox patterns might be in uppercase."
+			+ "Vertical bars have to stay, "
+			+ "because they indicate several collated attributes that we will split later.")
+	public static String normalizeAttribute3(String a) {
+		return (a.trim().toLowerCase().replaceAll("[^\\p{L}|]", ""));
+	}
 	/** reads an infobox */
 	public static Map<String, Set<String>> readInfobox(Reader in,
 			Map<String, String> combinations) throws IOException {
@@ -531,7 +569,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 		Map<String, Set<String>> resultUnNormalized = new TreeMap<String, Set<String>>();
 
 		while (true) {
-			String attribute = FileLines.readTo(in, '=', '}').toString();
+			String attribute = FileLines.readTo(in,"</page>", "=", "}").toString();
 			String normalizedAttribute = normalizeAttribute(attribute);
 
 			if (normalizedAttribute.length() == 0) {
