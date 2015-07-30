@@ -165,9 +165,13 @@
 "<br ?/>"	<_infoboxReplace>	"\n" .
 "<br ?>"	<_infoboxReplace>	"\n" .
 "</ ?br ?>"	<_infoboxReplace>	"\n" .
+"'''"	<_infoboxReplace>	"" .
+"''"	<_infoboxReplace>	"" .
+"\\{\\{efn.*"	<_infoboxReplace>	"" .
 "\\[\\[File:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[Image:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
 "\\[\\[wp:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
+"\\[\\[minute\\]\\]s?"	<_infoboxReplace>	" minutes " .
 "\\[\\[1000000000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" trillion " .
 "\\[\\[1000000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" billion " .
 "\\[\\[1000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" million " .
@@ -184,11 +188,11 @@
 "\\{\\{UK\\}\\}"	<_infoboxReplace>	"[[United_Kingdom]]" .
 "\\{\\{GBR\\}\\}"	<_infoboxReplace>	"[[United_Kingdom]]" .
 "\\{\\{CHINA\\}\\}"	<_infoboxReplace>	"[[China]]" .
-"\\{\\{PAGENAME\\}\\}"	<_infoboxReplace>	"[[$0]]" .
+"\\{\\{PAGENAME\\}\\}"	<_infoboxReplace>	"NIL" . # We don't know how to handle this at this level
 "\\{\\{nowrap\\|(.*?)\\}\\}"	<_infoboxReplace>	"$1" .
 "\\{\\{birth date(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)(\\|[^\\|\\d]+)?\\}\\}"	<_infoboxReplace>	" $2-$3-$4 " .
 "\\{\\{Death date and age(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)\\|\\d+\\|\\d+\\|\\d+\\}\\}"	<_infoboxReplace>	" $2-$3-$4 " .
-"\\{\\{BirthDeathAge\\|([^\\|\\d]+)?\\|\\d*\\|\\d*\\|\\d*\\|(\\d*)\\|(\\d*)\\|(\\d*)[^\\}]*\\}\\}"  <_infoboxReplace> " $2-$3-$4 " .
+"\\{\\{BirthDeathAge\\|([^\\|\\d]+)?\\|\\d*\\|\\d*\\|\\d*\\|(\\d+)\\|(\\d+)\\|(\\d+)[^\\}]*\\}\\}"  <_infoboxReplace> " $2-$3-$4 " .
 "\\{\\{dda(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)\\|\\d+\\|\\d+\\|\\d+\\}\\}"	<_infoboxReplace>	" $1-$2-$3 " .
 "\\{\\{polytonic\\|(.*?)\\}\\}"	<_infoboxReplace>	" ''$1'' " .
 "\\{\\{lang[\\|\\-].*?\\|(.*?)\\}\\}"	<_infoboxReplace>	" ''$1'' " .
@@ -197,12 +201,17 @@
 "\\{\\{height\\|ft=(\\d+)\\|in=(\\d+\\.?\\d*)\\}\\}"	<_infoboxReplace>	" $1 feet $2 inches " .
 "\\{\\{([a-z]+) to [a-z]+\\|(\\d+\\.?\\d*).*?\\}\\}"	<_infoboxReplace>	" $2 $1 " .
 "\\{\\{bday\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
-"\\{\\{flag ?(icon)?\\|(.*?)\\}\\}"	<_infoboxReplace>	"[[$2]]" .
+#"\\{\\{flag ?(icon)?\\|(.*?)\\}\\}"	<_infoboxReplace>	"[[$2]]" .
+"\\{\\{flag ?(icon)?\\|([^\\|\\}]+)[^\\}]*\\}\\}"	<_infoboxReplace>	"[[$2]]" .
+"\\{\\{flagcountry\\|([^\\|\\}]+)[^\\}]*\\}\\}"	<_infoboxReplace>	"[[$1]]" .
 "\\{\\{awd\\|"	<_infoboxReplace>	"" .
 "\\{\\{award\\|"	<_infoboxReplace>	"" .
 "\\{\\{birth-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
 "\\{\\{death-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
 "''"	<_infoboxReplace>	"\u0022" .
-#"<small>.*</small>"	<_infoboxReplace>	"" .
+"<small>.*</small>"	<_infoboxReplace>	"" .
 "<!--.*-->"	<_infoboxReplace>	"" .
 "</?span[^>]*>"	<_infoboxReplace>	"" .
+"<ref.+?</ref>"	<_infoboxReplace>	"" .
+"<ref.+?/>" <_infoboxReplace> "" .
+"\\{\\{BirthDeathAge\\|[^0-9]*\\d{3,4}\\|\\d{1,2}\\|\\d{1,2}"	<_infoboxReplace> "" .
