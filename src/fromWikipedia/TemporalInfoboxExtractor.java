@@ -201,13 +201,19 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			Fact baseFact = new Fact("", "", "");
 
 
-			valueString = replacements.transform(Char17
-					.decodeAmpersand(valueString));
+			try {
+				valueString = replacements.transform(Char17
+						.decodeAmpersand(valueString));
 
-			valueString = valueString.replace("$0",
-					FactComponent.stripBrackets(entity));
 
-			valueString = valueString.trim();
+				valueString = valueString.replace("$0",
+						FactComponent.stripBrackets(entity));
+
+				
+				valueString = valueString.trim();
+			} catch (Exception e) {
+				return;
+			}
 			if (valueString.length() == 0)
 				return;
 
@@ -443,17 +449,18 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 			valueString = values[i];
 			if (valueString.equals("NULL"))
 				continue;
-//			System.out.println("meta original: "+valueString);
+			try {
+				valueString = replacements.transform(Char17
+						.decodeAmpersand(valueString));
 
-			valueString = replacements.transform(Char17
-					.decodeAmpersand(valueString));
-//			System.out.println("meta char17: "+valueString);
+				valueString = valueString.replace("$0",
+						FactComponent.stripBrackets(entity));
 
-			valueString = valueString.replace("$0",
-					FactComponent.stripBrackets(entity));
-//			System.out.println("meta strip brackets: "+valueString);
+				valueString = valueString.trim();
+			} catch (Exception e) {
+				return;
+			}
 
-			valueString = valueString.trim();
 			if (valueString.length() == 0)
 				return;
 
@@ -689,8 +696,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 		// File("/var/tmp/Wikipedia_Archive/DavidBeckham.xml")).extract(new
 		// File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
 		new TemporalInfoboxExtractor(
-				new File("/home/jbiega/Downloads/wiki.xml")).extract(new File(
-				"/home/jbiega/data/yago2s"), "Test on 1 wikipedia article");
+				new File("./testCases/en_wikitest.xml")).extract(new File(
+				"./out"), "Test on 1 wikipedia article");
 
 	}
 }
