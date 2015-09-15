@@ -1,0 +1,34 @@
+How to update the YAGO downloads
+
+1.
+From the yago putput themes, convert TSV files to TTL files. For this you can use
+basics3/src/basics/Tsv2Ttl.java
+
+2.
+Run Carte.java from yago3/src/utils/Carte.java to generate the carte.html file.
+
+3. 
+Run the compressYago.sh from yago3/scripts/compressYago.sh to compress tsv and ttl to 7z
+
+
+4. 
+Move all ttl.7z and tsv.tz files from 
+/www/inf-resources-0/resources.mpi-inf.mpg.de/yago-naga/yago/download/yago
+to
+the particular archive storage, for example to
+/www/inf-resources-0/resources.mpi-inf.mpg.de/yago-naga/yago3
+
+Note that the first path is the actual download folder for yago.
+
+5.
+Move all newly generated ttl.7z and tsv.tz files (output of compressYago.sh script) to the web storage:
+/www/inf-resources-0/resources.mpi-inf.mpg.de/yago-naga/yago/download/yago
+
+6. Arrange the html code for the downloads page in typo3 cms.
+6.1 Replace the code from carte.html to the particular part of the downloads.html
+6.2 Typo3 cms is under the url: https://web.mpi-inf.mpg.de/typo3/index.php
+You need a direct access to MPI to use this system.
+
+7. Test the download links from 
+https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/downloads/
+whether they work properly.
