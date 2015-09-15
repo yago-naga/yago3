@@ -30,6 +30,13 @@ Move all newly generated ttl.7z and tsv.tz files (output of compressYago.sh scri
 6.2 Typo3 cms is under the url: https://web.mpi-inf.mpg.de/typo3/index.php
 You need a direct access to MPI to use this system.
 
-7. Test the download links from 
+7.
+Add a new section to the archive page. And put links the old archive.
+
+8. Test the download links in 
 https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/downloads/
+
+and in
+https://www.mpi-inf.mpg.de/departments/databases-and-information-systems/research/yago-naga/yago/archive/
+
 whether they work properly.
