@@ -1,3 +1,4 @@
+This file is located in yago3/policies.
 How to update the YAGO downloads
 
 1.
