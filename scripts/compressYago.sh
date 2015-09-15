@@ -4,8 +4,8 @@ webpage="/san/ekuzey/publishYagoDownloads/www"
 echo $yagoFolder
 
 echo Creating YAGO La Carte archives.
-echo This process runs in the background and logs to publishYago.log.
-echo Pressing CTRL+C will not stop the process.
+echo This process runs in the background and may use lots of processors.
+echo Pressing CTRL+C may not stop the process.
 
 for file in $yagoFolder/yago*; do 7za a -t7z $webpage/${file/\/*\//}.7z $file -mmt & done
 sleep 20s
