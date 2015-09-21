@@ -52,7 +52,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
   @Override
   public Set<Theme> output() {
     if (isEnglish()) {
-      return new FinalSet<Theme>(WIKIINFO.inLanguage(language));
+      return new FinalSet<Theme>(WIKIINFONEEDSTYPECHECK.inLanguage(language));
     } else {
       return new FinalSet<Theme>(WIKIINFONEEDSTRANSLATION.inLanguage(language));
     }
@@ -82,8 +82,8 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
       String page = FileLines.readToBoundary(in, "</text>");
       if (page == null) continue;
       if (isEnglish()) {
-        WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
-        WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
+        WIKIINFONEEDSTYPECHECK.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
+        WIKIINFONEEDSTYPECHECK.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
       } else {
         // If the article size of non-English WPs is needed, this needs to be captured properly.
         //				WIKIINFONEEDSTRANSLATION.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
@@ -100,10 +100,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
         targets.add(target);
       }
 
-      MultilingualTheme out = WIKIINFONEEDSTYPECHECK;
-      if (!isEnglish()) {
-        out = WIKIINFONEEDSTRANSLATION;
-      }
+      MultilingualTheme out = isEnglish() ? WIKIINFONEEDSTYPECHECK : WIKIINFONEEDSTRANSLATION;
 
       for (String target : targets) {
         out.inLanguage(language).write(new Fact(entity, "<linksTo>", target));
