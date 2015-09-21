@@ -5,12 +5,6 @@ import java.io.Reader;
 import java.util.HashSet;
 import java.util.Set;
 
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
-import utils.MultilingualTheme;
-import utils.Theme;
-import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
@@ -19,14 +13,20 @@ import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.TransitiveTypeExtractor;
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import javatools.util.FileUtils;
+import utils.MultilingualTheme;
+import utils.Theme;
+import utils.TitleExtractor;
 
 /**
  * YAGO2s - Wikipedia Info Extractor
- * 
+ *
  * Extracts the size of the Wikipedia pages, outlinks, etc.
- * 
+ *
  * @author Fabian M. Suchanek
- * 
+ *
  */
 public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
 
@@ -62,7 +62,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
   public Set<FollowUpExtractor> followUp() {
     HashSet<FollowUpExtractor> s = new HashSet<>();
     if (!isEnglish()) {
-      s.add(new EntityTranslator(WIKIINFONEEDSTRANSLATION.inLanguage(language), WIKIINFONEEDSTYPECHECK.inLanguage(language), this));
+      s.add(new EntityTranslator(WIKIINFONEEDSTRANSLATION.inLanguage(language), WIKIINFONEEDSTYPECHECK.inLanguage(language), this, true));
     }
     s.add(new TypeChecker(WIKIINFONEEDSTYPECHECK.inLanguage(language), WIKIINFO.inLanguage(language), this));
     return s;
@@ -116,7 +116,10 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new WikiInfoExtractor("en", new File("c:/Fabian/eclipseProjects/yago2s/testCases/extractors.CategoryExtractor/wikitest.xml")).extract(new File(
-        "c:/fabian/data/yago3"), "Test on 1 wikipedia article\n");
+    /*    new WikiInfoExtractor("en", new File("c:/Fabian/eclipseProjects/yago2s/testCases/extractors.CategoryExtractor/wikitest.xml")).extract(new File(
+        "c:/fabian/data/yago3"), "Test on 1 wikipedia article\n");*/
+
+    new WikiInfoExtractor("ro", new File(args[1])).extract(new File(args[0]), "WikiInfoExtractor test");
+
   }
 }
