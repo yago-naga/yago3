@@ -307,7 +307,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
           Map<String, Set<String>> attributes = readInfobox(in);
 
           for (String attribute : attributes.keySet()) {
-            D.addKeyValue(template2attributes, cls, attribute, HashSet.class);
+            if (cls != null && cls.length() > 3) D.addKeyValue(template2attributes, cls, attribute, HashSet.class);
             String relation = FactComponent.forInfoboxAttribute(this.language, attribute);
             for (String value : attributes.get(attribute)) {
               //						if(attribute.equals("commonname")) {
@@ -333,7 +333,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new InfoboxExtractor("en", new File("c:/fabian/data/wikipedia/westgermany.xml")).extract(new File("c:/fabian/data/yago3"), "Test");
+    new InfoboxExtractor("en", new File("c:/fabian/data/wikipedia/wikitest_en.xml")).extract(new File("c:/fabian/data/yago3"), "Test");
 
   }
 }
