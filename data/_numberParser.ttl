@@ -118,7 +118,7 @@
 "_currencyName_([^_]++)_ ?_number_([^_]++)_" <mapsTo> "_result_$2_<$1>_" .		
 		
 # Any left-over numbers are just plain numbers
-"_number_([^_]++)_ ?%" <mapsTo> "_result_$1_<%>_" .
+"_number_([^_]++)_ ?%" <mapsTo> "_result_$1_<percent>_" .
 "_number_([^_]++)_" <mapsTo> "_result_$1_xsd:decimal_" .
 
 # Convert decimals to integer where possible

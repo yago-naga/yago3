@@ -58,6 +58,7 @@ public abstract class TermParser {
       case "<m\\u005e2>":
       case "<yagoMonetaryValue>":
       case "<%>":
+      case "<percent>":
       case "</km^2>":
       case "</km\\u005e2>":
       case "xsd:integer":
@@ -107,6 +108,6 @@ public abstract class TermParser {
     WordnetExtractor.PREFMEANINGS.assignToFolder(new File("../../data/yago3"));
     PatternList.printDebug = true;
     TermParser parsi = new NumberParser();
-    parsi.test("$40Million");
+    parsi.test("10% of all");
   }
 }

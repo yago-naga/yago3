@@ -16,6 +16,12 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javatools.administrative.Announce;
+import javatools.administrative.D;
+import javatools.administrative.Parameters;
+import javatools.parsers.NumberFormatter;
+import javatools.util.FileUtils;
+import utils.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;
@@ -23,12 +29,6 @@ import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.FollowUpExtractor;
 import fromThemes.AttributeMatcher;
-import javatools.administrative.Announce;
-import javatools.administrative.D;
-import javatools.administrative.Parameters;
-import javatools.parsers.NumberFormatter;
-import javatools.util.FileUtils;
-import utils.Theme;
 
 /**
  * YAGO2s -- ParallelCaller
@@ -356,7 +356,7 @@ public class ParallelCaller {
   }
 
   /** Header for the YAGO files */
-  public static String header = "This file is part of the ontology YAGO2s\n"
+  public static String header = "This file is part of the ontology YAGO3.\n"
       + "It is licensed under a Creative-Commons Attribution License by the YAGO team\n" + "at the Max Planck Institute for Informatics/Germany.\n"
       + "See http://yago-knowledge.org for all details.\n" + "This file was generated on ";
 
