@@ -57,10 +57,10 @@
 # units
 "metres\\b" <mapsTo> "_unit_m_1_" .
 "km²" <mapsTo> "_unit_m^2_1E6_" .
-"m\^?_number_2_" <mapsTo>  "_unit_m^2_1_" .
-"m\^?_number_3_" <mapsTo> "_unit_m^3_1_" .
-"k_unit_m\^2_1_\\b"  <mapsTo> "_unit_m^2_1E6_" . # the exponent is different for square meters than for meters
-"k_unit_m\^3_1_\\b"  <mapsTo> "_unit_m^2_1E9_" . # the exponent is different for cubic meters than for meters
+"m\^?_number_2_" <mapsTo>  "_unit_m2_1_" .
+"m\^?_number_3_" <mapsTo> "_unit_m3_1_" .
+"k_unit_m\^2_1_\\b"  <mapsTo> "_unit_m2_1E6_" . # the exponent is different for square meters than for meters
+"k_unit_m\^3_1_\\b"  <mapsTo> "_unit_m3_1E9_" . # the exponent is different for cubic meters than for meters
 
 "(?<!_unit_)m\\b" <mapsTo> "_unit_m_1_" . # Negative lookahead to avoid replacing an "m" that is already a unit
 "s\\b" <mapsTo> "_unit_s_1_" .
@@ -96,10 +96,6 @@
 "_number_([^_]++)_ ?_unit_([^_]++)_([^_]++)_"	<mapsTo> "_number_$1*$3_ _bunit_$2_" .
 "_number_([^_]++)_ ?_bunit_([^_]++)_"	<mapsTo> "_result_$1_<$2>_" .
 
-# Encode "^" in units
-"_<m\^2>_"	<mapsTo> "_<m\\\\u005e2>_" .
-"_<m\^3>_"	<mapsTo> "_<m\\\\u005e3>_" .
-		
 # currencies. Put words before symbols, because otherwise the patterns will apply twice.
 "dollars?" <mapsTo> "_currencyName_dollar_" .
 "euros?" <mapsTo> "_currencyName_euro_" .

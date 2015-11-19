@@ -54,13 +54,10 @@ public abstract class TermParser {
         return (new UrlParser());
       case "xsd:decimal":
       case "<degrees>":
-      case "<m^2>":
-      case "<m\\u005e2>":
+      case "<m2>":
       case "<yagoMonetaryValue>":
-      case "<%>":
       case "<percent>":
-      case "</km^2>":
-      case "</km\\u005e2>":
+      case "</km2>":
       case "xsd:integer":
       case "xsd:duration":
       case "<g>":

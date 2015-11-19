@@ -22,11 +22,11 @@
 "baseball biography"	rdf:type	<_yagoNonConceptualInfobox> . # Has multiple biographie son one page
 
 # --------- Attribute units --------------
-<infobox/en/populationdensitykm>	<_hasPredefinedUnit>	</km\u005e2> .
-<infobox/en/area>	<_hasPredefinedUnit>	<km\u005e2> .
-<infobox/en/areakm>	<_hasPredefinedUnit>	<km\u005e2> .
-<infobox/en/areatotalkm>	<_hasPredefinedUnit>	<km\u005e2> .
-<infobox/en/unemployment> <_hasPredefinedUnit>	<%> .
+<infobox/en/populationdensitykm>	<_hasPredefinedUnit>	</km2> .
+<infobox/en/area>	<_hasPredefinedUnit>	<km2> .
+<infobox/en/areakm>	<_hasPredefinedUnit>	<km2> .
+<infobox/en/areatotalkm>	<_hasPredefinedUnit>	<km2> .
+<infobox/en/unemployment> <_hasPredefinedUnit>	<percent> .
 
 # --------- Infobox patterns --------------
 
