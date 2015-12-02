@@ -333,7 +333,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new InfoboxExtractor("en", new File("c:/fabian/data/wikipedia/wikitest_en.xml")).extract(new File("c:/fabian/data/yago3"), "Test");
+    new InfoboxExtractor("en", new File("c:/fabian/data/wikipedia/algeria.xml")).extract(new File("c:/fabian/data/yago3"), "Test");
 
   }
 }

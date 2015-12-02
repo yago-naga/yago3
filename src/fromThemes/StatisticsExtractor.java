@@ -37,7 +37,7 @@ public class StatisticsExtractor extends Extractor {
   public Set<Theme> input() {
     return new FinalSet<Theme>(ClassExtractor.YAGOTAXONOMY, CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
         MetaFactExtractor.YAGOMETAFACTS, SchemaExtractor.YAGOSCHEMA, DateExtractor.YAGODATEFACTS, LiteralFactExtractor.YAGOLITERALFACTS,
-        WikiInfoExtractor.WIKIINFO.inLanguage("eng"));
+        WikiInfoExtractor.WIKIINFO.inLanguage("en"));
   }
 
   /** YAGO statistics theme */
