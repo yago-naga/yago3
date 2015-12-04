@@ -34,11 +34,16 @@ public class Carte {
 
   /** Creates the HTML carte for YAGO. First argument: YAGO folder. Second argument: Folder where the carte and previews should go.*/
   public static void main(String[] args) throws Exception {
-    args = new String[] { "c:/fabian/data/yago3", "c:/fabian/data/yago3" };
+    //args = new String[] { "c:/fabian/data/yago3", "c:/fabian/data/yago3" };
     if (args.length != 2) Announce.help("Carte <YAGO folder> <Web folder>", "", "Creates carte.html and preview files for all YAGO themes");
     Announce.doing("Creating Web page 'YAGO a la Carte'");
     File yagoFolder = new File(args[0]);
     File targetFolder = new File(args[1]);
+    Announce.message("Yago folder:", yagoFolder);
+    Announce.message("Web folder:", targetFolder);
+    if (yagoFolder.listFiles() == null) Announce.error("Yago folder does not exist");
+    if (targetFolder.listFiles() == null) Announce.error("Web folder does not exist");
+
     Map<ThemeGroup, Set<File>> groups = new HashMap<>();
     Map<File, String> descriptions = new HashMap<>();
 
