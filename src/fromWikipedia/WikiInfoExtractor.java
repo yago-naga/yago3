@@ -5,6 +5,12 @@ import java.io.Reader;
 import java.util.HashSet;
 import java.util.Set;
 
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import javatools.util.FileUtils;
+import utils.MultilingualTheme;
+import utils.Theme;
+import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
@@ -13,12 +19,6 @@ import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.TransitiveTypeExtractor;
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
-import utils.MultilingualTheme;
-import utils.Theme;
-import utils.TitleExtractor;
 
 /**
  * YAGO2s - Wikipedia Info Extractor
@@ -47,7 +47,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
       "Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities.");
 
   public static final MultilingualTheme WIKIINFO = new MultilingualTheme("yagoWikipediaInfo",
-      "Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities.", Theme.ThemeGroup.OTHER);
+      "Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities", Theme.ThemeGroup.WIKIPEDIA);
 
   @Override
   public Set<Theme> output() {

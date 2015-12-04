@@ -25,32 +25,29 @@ import fromThemes.CategoryClassExtractor;
  */
 public class ClassExtractor extends SimpleDeduplicator {
 
-	@Override
-	public List<Theme> inputOrdered() {
-		return (Arrays.asList(SchemaExtractor.YAGOSCHEMA,
-				HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES,
-				CategoryClassExtractor.CATEGORYCLASSES
-		// GeoNamesClassMapper.GEONAMESCLASSES
-				));
-	}
+  @Override
+  public List<Theme> inputOrdered() {
+    return (Arrays.asList(SchemaExtractor.YAGOSCHEMA, HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES,
+        CategoryClassExtractor.CATEGORYCLASSES
+    // GeoNamesClassMapper.GEONAMESCLASSES
+        ));
+  }
 
-	/** The YAGO taxonomy */
-	public static final Theme YAGOTAXONOMY = new Theme(
-			"yagoTaxonomy",
-			"The entire YAGO taxonomy. These are all rdfs:subClassOf facts derived from multilingual Wikipedia and from WordNet.",
-			ThemeGroup.TAXONOMY);
+  /** The YAGO taxonomy */
+  public static final Theme YAGOTAXONOMY = new Theme("yagoTaxonomy",
+      "The entire YAGO taxonomy. These are all rdfs:subClassOf facts derived from multilingual Wikipedia and from WordNet", ThemeGroup.TAXONOMY);
 
-	@Override
-	public Theme myOutput() {
-		return YAGOTAXONOMY;
-	}
+  @Override
+  public Theme myOutput() {
+    return YAGOTAXONOMY;
+  }
 
-	@Override
-	public boolean isMyRelation(Fact fact) {
-		return fact.getRelation().equals(RDFS.subclassOf);
-	}
+  @Override
+  public boolean isMyRelation(Fact fact) {
+    return fact.getRelation().equals(RDFS.subclassOf);
+  }
 
-	public static void main(String[] args) throws Exception {
-		new ClassExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
-	}
+  public static void main(String[] args) throws Exception {
+    new ClassExtractor().extract(new File("c:/fabian/data/yago2s"), "test");
+  }
 }
