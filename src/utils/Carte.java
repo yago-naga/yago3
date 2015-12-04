@@ -10,11 +10,13 @@ import java.util.Set;
 
 import javatools.administrative.Announce;
 import javatools.administrative.D;
-import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileSet;
 import utils.Theme.ThemeGroup;
-import basics.FactComponent;
+import basics.Fact;
+import basics.FactSource;
+import basics.N4Writer;
 import basics.TsvReader;
+import basics.YAGO;
 
 /**
  * YAGO3 - Carte
@@ -34,7 +36,7 @@ public class Carte {
 
   /** Creates the HTML carte for YAGO. First argument: YAGO folder. Second argument: Folder where the carte and previews should go.*/
   public static void main(String[] args) throws Exception {
-    //args = new String[] { "c:/fabian/data/yago3", "c:/fabian/data/yago3" };
+    args = new String[] { "c:/fabian/data/yago3", "c:/fabian/data/yago3" };
     if (args.length != 2) Announce.help("Carte <YAGO folder> <Web folder>", "", "Creates carte.html and preview files for all YAGO themes");
     Announce.doing("Creating Web page 'YAGO a la Carte'");
     File yagoFolder = new File(args[0]);
@@ -51,20 +53,18 @@ public class Carte {
     for (File f : yagoFolder.listFiles()) {
       if (!f.getName().startsWith("yago") || !f.getName().endsWith(".ttl")) continue;
       Announce.doing("Treating", f.getName());
-      try (Writer preview = new FileWriter(new File(targetFolder, FileSet.newExtension(f.getName(), "txt")))) {
-        try (FileLines lines = new FileLines(f)) {
-          int counter = 0;
-          for (String line : lines) {
-            if (descriptions.get(f) == null && line.contains("<hasGloss>")) {
-              String[] glossAndGroup = TsvReader.glossAndGroup(FactComponent.getString(line.split("\t")[2]));
-              descriptions.put(f, glossAndGroup[0]);
-              ThemeGroup group = glossAndGroup[1] == null ? null : ThemeGroup.valueOf(glossAndGroup[1]);
-              if (group == null) group = ThemeGroup.OTHER;
-              D.addKeyValue(groups, group, f, HashSet.class);
-            }
-            preview.write(line + "\n");
-            if (counter++ > previewLines) break;
+      try (N4Writer preview = new N4Writer(new File(targetFolder, FileSet.newExtension(f.getName(), "txt")), null)) {
+        int counter = 0;
+        for (Fact fact : FactSource.from(f)) {
+          if (descriptions.get(f) == null && fact.getRelation().equals(YAGO.hasGloss)) {
+            String[] glossAndGroup = TsvReader.glossAndGroup(fact.getArgJavaString(2));
+            descriptions.put(f, glossAndGroup[0]);
+            ThemeGroup group = ThemeGroup.of(glossAndGroup[1]);
+            if (group == null) group = ThemeGroup.OTHER;
+            D.addKeyValue(groups, group, f, HashSet.class);
           }
+          preview.write(fact);
+          if (counter++ > previewLines) break;
         }
       }
       Announce.done();
