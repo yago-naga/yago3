@@ -32,7 +32,7 @@ public class Carte {
   public static final int previewLines = 100;
 
   /** Colors to use in the list of themes*/
-  public static final String[] colors = { "Lavender", "SandyBrown", "PaleGreen", "LightBlue", "LightPink", "Khaki", "WhiteSmoke", "LightPink" };
+  public static final String[] colors = { "Lavender", "SandyBrown", "PaleGreen", "LightBlue", "LightPink", "Khaki", "WhiteSmoke" };
 
   /** Creates the HTML carte for YAGO. First argument: YAGO folder. Second argument: Folder where the carte and previews should go.*/
   public static void main(String[] args) throws Exception {
@@ -82,7 +82,7 @@ public class Carte {
         }
         boolean wroteGroup = false;
         for (File f : groups.get(group)) {
-          w.write("<tr style='background-color:" + colors[group.ordinal()] + "'><td>");
+          w.write("<tr style='background-color:" + colors[group.ordinal() % colors.length] + "'><td>");
           if (!wroteGroup) w.write(group.toString());
           wroteGroup = true;
           w.write("\n  <td><b>" + FileSet.newExtension(f.getName(), null) + "</b>\n");
