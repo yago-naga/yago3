@@ -36,7 +36,7 @@ public class Carte {
 
   /** Creates the HTML carte for YAGO. First argument: YAGO folder. Second argument: Folder where the carte and previews should go.*/
   public static void main(String[] args) throws Exception {
-    args = new String[] { "c:/fabian/data/yago3", "c:/fabian/data/yago3" };
+    //args = new String[] { "c:/fabian/data/yago3", "c:/fabian/data/yago3" };
     if (args.length != 2) Announce.help("Carte <YAGO folder> <Web folder>", "", "Creates carte.html and preview files for all YAGO themes");
     Announce.doing("Creating Web page 'YAGO a la Carte'");
     File yagoFolder = new File(args[0]);
@@ -80,14 +80,16 @@ public class Carte {
           Announce.warning("No themes in group", group);
           continue;
         }
-        w.write("<tr style='background-color:" + colors[group.ordinal()] + "'><td>");
-        w.write(group.toString());
+        boolean wroteGroup = false;
         for (File f : groups.get(group)) {
-          w.write("<td><b>" + FileSet.newExtension(f.getName(), null) + "</b>");
-          w.write("<br>" + descriptions.get(f));
-          w.write("<td><a href='" + FileSet.newExtension(f.getName(), "txt") + "'>Preview</a>");
-          w.write("<td><a href='" + FileSet.newExtension(f.getName(), "ttl.7z") + "'>Download&nbsp;TTL</a>");
-          w.write("<td><a href='" + FileSet.newExtension(f.getName(), "tsv.7z") + "'>Download&nbsp;TSV</a>");
+          w.write("<tr style='background-color:" + colors[group.ordinal()] + "'><td>");
+          if (!wroteGroup) w.write(group.toString());
+          wroteGroup = true;
+          w.write("\n  <td><b>" + FileSet.newExtension(f.getName(), null) + "</b>\n");
+          w.write("      <br>" + descriptions.get(f) + "\n");
+          w.write("  <td><a href='" + FileSet.newExtension(f.getName(), "txt") + "'>Preview</a>\n");
+          w.write("  <td><a href='" + FileSet.newExtension(f.getName(), "ttl.7z") + "'>Download&nbsp;TTL</a>\n");
+          w.write("  <td><a href='" + FileSet.newExtension(f.getName(), "tsv.7z") + "'>Download&nbsp;TSV</a>\n");
         }
       }
       w.write("</BODY></HTML>");
