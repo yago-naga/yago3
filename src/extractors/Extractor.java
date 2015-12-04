@@ -23,102 +23,99 @@ import followUp.FollowUpExtractor;
  */
 public abstract class Extractor implements Comparable<Extractor> {
 
-	/** Use this to annotate hacks that are needed to make YAGO work*/
-	public @interface ImplementationNote {
-		String value();
-	}
+  /** Use this to annotate hacks that are needed to make YAGO work*/
+  public @interface ImplementationNote {
 
-	/** The themes required */
-	public abstract Set<Theme> input();
+    String value();
+  }
 
-	/** The cached themes required */
-	public Set<Theme> inputCached() {
-		return (Collections.emptySet());
-	}
+  /** The themes required */
+  public abstract Set<Theme> input();
 
-	/** Themes produced */
-	public abstract Set<Theme> output();
+  /** The cached themes required */
+  public Set<Theme> inputCached() {
+    return (Collections.emptySet());
+  }
 
-	/** Returns other extractors to be called en suite */
-	public Set<FollowUpExtractor> followUp() {
-		return (Collections.emptySet());
-	}
+  /** Themes produced */
+  public abstract Set<Theme> output();
 
-	/** Returns the name */
-	public String name() {
-		return (this.getClass().getName());
-	}
+  /** Returns other extractors to be called en suite */
+  public Set<FollowUpExtractor> followUp() {
+    return (Collections.emptySet());
+  }
 
-	@Override
-	public String toString() {
-		return name();
-	}
+  /** Returns the name */
+  public String name() {
+    return (this.getClass().getName());
+  }
 
-	/** Main method */
-	public abstract void extract() throws Exception;
+  @Override
+  public String toString() {
+    return name();
+  }
 
-	/** Convenience method */
-	public void extract(File inputFolder, String header) throws Exception {
-		extract(inputFolder, inputFolder, header);
-	}
+  /** Main method */
+  public abstract void extract() throws Exception;
 
-	/** Convenience method */
-	public void extract(File inputFolder, File outputFolder, String header)
-			throws Exception {
-		Announce.doing("Running", this.name());
-		Announce.doing("Loading input");
-		for (Theme theme : input()) {
-			if (!theme.isAvailableForReading()) {
-				// If you want to run extractors even if the input is absent,
-				// use this:
-				// if(theme.findFileInFolder(inputFolder)!=null)
-				theme.assignToFolder(inputFolder);
-			}
-		}
-		Announce.done();
-		for (Theme out : output()) {
-			out.forgetFile();
-			out.openForWritingInFolder(outputFolder, header + "\n"
-					+ out.description + "\n" + out.themeGroup);
-		}
-		Announce.doing("Extracting");
-		extract();
-		Announce.done();
-		for (Theme out : output())
-			out.close();
-		Announce.done();
-	}
+  /** Convenience method */
+  public void extract(File inputFolder, String header) throws Exception {
+    extract(inputFolder, inputFolder, header);
+  }
 
-	/** Creates an extractor given by name */
-	public static Extractor forName(Class<Extractor> className) {
-		Announce.doing("Creating extractor", className);
-		Extractor extractor = null;
-		try {
-			extractor = className.newInstance();
-		} catch (Exception ex) {
-			Announce.error(ex);
-		}
-		Announce.done();
-		return (extractor);
-	}
+  /** Convenience method */
+  public void extract(File inputFolder, File outputFolder, String header) throws Exception {
+    Announce.doing("Running", this.name());
+    Announce.doing("Loading input");
+    for (Theme theme : input()) {
+      if (!theme.isAvailableForReading()) {
+        // If you want to run extractors even if the input is absent,
+        // use this:
+        // if(theme.findFileInFolder(inputFolder)!=null)
+        theme.assignToFolder(inputFolder);
+      }
+    }
+    Announce.done();
+    for (Theme out : output()) {
+      out.forgetFile();
+      // Coordinate how the header is written with TsvReader.glossAndGroup()
+      out.openForWritingInFolder(outputFolder, header + "\n" + out.description + "\n" + out.themeGroup);
+    }
+    Announce.doing("Extracting");
+    extract();
+    Announce.done();
+    for (Theme out : output())
+      out.close();
+    Announce.done();
+  }
 
-	@Override
-	public int compareTo(Extractor o) {
-		return this.name().compareTo(o.name());
-	}
+  /** Creates an extractor given by name */
+  public static Extractor forName(Class<Extractor> className) {
+    Announce.doing("Creating extractor", className);
+    Extractor extractor = null;
+    try {
+      extractor = className.newInstance();
+    } catch (Exception ex) {
+      Announce.error(ex);
+    }
+    Announce.done();
+    return (extractor);
+  }
 
-	/**
-	 * Creates provenance facts, writes fact and meta facts;source will be made
-	 * a URI, technique will be made a string
-	 */
-	public void write(Theme factTheme, Fact f, Theme metaFactTheme,
-			String source, String technique) throws IOException {
-		Fact sourceFact = f.metaFact(YAGO.extractionSource,
-				FactComponent.forUri(source));
-		Fact techniqueFact = sourceFact.metaFact(YAGO.extractionTechnique,
-				FactComponent.forString(technique));
-		factTheme.write(f);
-		metaFactTheme.write(sourceFact);
-		metaFactTheme.write(techniqueFact);
-	}
+  @Override
+  public int compareTo(Extractor o) {
+    return this.name().compareTo(o.name());
+  }
+
+  /**
+   * Creates provenance facts, writes fact and meta facts;source will be made
+   * a URI, technique will be made a string
+   */
+  public void write(Theme factTheme, Fact f, Theme metaFactTheme, String source, String technique) throws IOException {
+    Fact sourceFact = f.metaFact(YAGO.extractionSource, FactComponent.forUri(source));
+    Fact techniqueFact = sourceFact.metaFact(YAGO.extractionTechnique, FactComponent.forString(technique));
+    factTheme.write(f);
+    metaFactTheme.write(sourceFact);
+    metaFactTheme.write(techniqueFact);
+  }
 }
