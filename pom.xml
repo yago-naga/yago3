@@ -38,6 +38,18 @@
 					<argLine>-Xmx15G</argLine>
 				</configuration>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>exec-maven-plugin</artifactId>
+				<configuration>
+					<mainClass>main.ParallelCaller</mainClass>
+					<executable>java</executable>
+					<arguments>
+						<argument>configuration/yago.ini</argument>
+					</arguments>
+					<outputFile>yago.log</outputFile>
+				</configuration>
+			</plugin>
 		</plugins>
 	</build>
 	<dependencies>
