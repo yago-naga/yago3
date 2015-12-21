@@ -52,6 +52,61 @@
 			</plugin>
 		</plugins>
 	</build>
+	<distributionManagement>
+		<repository>
+			<id>artifactory.mpi-inf.mpg.de</id>
+			<name>artifactory.mpi-inf.mpg.de-releases</name>
+			<url>http://artifactory.mpi-inf.mpg.de:8080/artifactory/libs-release-local</url>
+		</repository>
+		<snapshotRepository>
+			<id>artifactory.mpi-inf.mpg.de</id>
+			<name>artifactory.mpi-inf.mpg.de-snapshot</name>
+			<url>http://artifactory.mpi-inf.mpg.de:8080/artifactory/libs-snapshot-local</url>
+		</snapshotRepository>
+	</distributionManagement>
+	<repositories>
+		<!-- Include main maven repo as primary repository to check first -->
+		<repository>
+			<id>libs-release</id>
+			<url>http://artifactory.mpi-inf.mpg.de:8080/artifactory/libs-release</url>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+		<repository>
+			<id>libs-snapshot</id>
+			<url>http://artifactory.mpi-inf.mpg.de:8080/artifactory/libs-snapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+		</repository>
+		<repository>
+			<id>Maven</id>
+			<name>Maven</name>
+			<url>http://repo.maven.apache.org/maven2</url>
+		</repository>
+		<repository>
+			<id>oracleReleases</id>
+			<name>Oracle Released Java Packages</name>
+			<url>http://download.oracle.com/maven</url>
+			<layout>default</layout>
+		</repository>
+		<repository>
+			<id>CogcompSoftware</id>
+			<name>CogcompSoftware</name>
+			<url>http://cogcomp.cs.illinois.edu/m2repo/</url>
+		</repository>
+		<repository>
+			<id>hoffart_dmap</id>
+			<name>Hoffart DMap</name>
+			<url>https://raw.github.com/hoffart/dmap/mvn-repo</url>
+		</repository>
+		<repository>
+			<id>yago-naga_ternarytree</id>
+			<name>YAGO-NAGA TernaryTree</name>
+			<url>https://raw.github.com/yago-naga/ternarytree/mvn-repo</url>
+		</repository>
+	</repositories>
 	<dependencies>
 		<dependency>
 			<groupId>org.yago-knowledge</groupId>
