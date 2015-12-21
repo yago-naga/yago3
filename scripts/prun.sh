@@ -2,6 +2,10 @@
 
 # Call it like this: ./prun.sh configuration/my_configuration_file.ini
 
+# Get the absolute dir of this script and navigate there
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$DIR/.."
+
 #if [ `hostname` != "d5blade09" ]; then
 #  echo We should not run this on contact!
 #  exit
