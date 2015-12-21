@@ -15,7 +15,7 @@ echo Starting YAGO in parallel, output written to yago.log
 #nohup /local/java/bin/java -Xmx44G -cp "../javatools/bin:../basics3/bin:bin" main.ParallelCaller yago.ini > yago.log &
 
 export MAVEN_OPTS=-Xmx44G
-mvn exec:java -Dexec.args="$1"
+mvn -U clean install exec:java -Dexec.args="$1"
 
 sleep 5s
 tail -f yago.log
