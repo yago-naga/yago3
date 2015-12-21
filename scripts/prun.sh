@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Call it like this: ./prun.sh configuration/my_configuration_file.ini
 
