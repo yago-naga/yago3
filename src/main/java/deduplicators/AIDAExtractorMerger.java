@@ -3,6 +3,7 @@ package deduplicators;
 import java.util.HashSet;
 import java.util.Set;
 
+import fromOtherSources.MetadataExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
@@ -65,6 +66,9 @@ public class AIDAExtractorMerger extends Extractor {
         .allLanguagesExceptEnglish()));
     input.addAll(DictionaryExtractor.CATEGORY_DICTIONARY.inLanguages(MultilingualExtractor
         .allLanguagesExceptEnglish()));
+
+    // Metadata.
+    input.add(MetadataExtractor.METADATAFACTS);
     
     return input;
   }
