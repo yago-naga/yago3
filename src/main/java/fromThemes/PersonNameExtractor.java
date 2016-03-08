@@ -68,6 +68,10 @@ public class PersonNameExtractor extends Extractor {
 			people.add(f.getArg(1));
 			String entity = f.getArg(1);
 			String lang = FactComponent.getLanguageOfEntity(entity);
+			if (lang == null) {
+				// If the entity does not have any language, the default language is English.
+				lang = "en";
+			}
       if (lang != null && !supportedLanguages.contains(lang)) {
         continue;
       }
