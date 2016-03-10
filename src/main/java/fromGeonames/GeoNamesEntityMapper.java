@@ -62,8 +62,7 @@ public class GeoNamesEntityMapper extends DataExtractor {
 
 	@Override
 	public void extract() throws Exception {
-		for (String line : new FileLines(inputData, "UTF-8",
-				"Reading GeoNames Wikipedia mappings")) {
+		for (String line : new FileLines(inputData, "UTF-8", "Reading GeoNames Wikipedia mappings")) {
 			String[] data = line.split("\t");
 
 			String lang = data[2];
@@ -71,15 +70,11 @@ public class GeoNamesEntityMapper extends DataExtractor {
 				// Skip non-Wikipedia link alternate names.
 				String alternateName = data[3];
 				if (alternateName.startsWith(ENWIKI_PREFIX)) {
-					String geoEntity = FactComponent
-							.forWikipediaTitle(alternateName.substring(
-									ENWIKI_PREFIX.length(),
-									alternateName.length()));
+					String geoEntity = FactComponent.forWikipediaURL(alternateName);
 					String geoId = data[1];
 					// Links missing in YAGO will be dropped by the
 					// type-checker.
-					DIRTYGEONAMESENTITYIDS.write(new Fact(geoEntity,
-							RDFS.sameas, FactComponent.forUri(GEONAMES_NAMESPACE + geoId)));
+					DIRTYGEONAMESENTITYIDS.write(new Fact(geoEntity, RDFS.sameas, FactComponent.forUri(GEONAMES_NAMESPACE + geoId)));
 				}
 			}
 		}
