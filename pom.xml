@@ -15,19 +15,7 @@
 				<excludes>
 					<exclude>**/*.java</exclude>
 				</excludes>
-			</resource>
-			<resource>
-				<directory>configuration</directory>
-				<targetPath>configuration</targetPath>
-			</resource>
-			<resource>
-				<directory>data</directory>
-				<targetPath>data</targetPath>
-			</resource>
-			<resource>
-				<directory>policies</directory>
-				<targetPath>policies</targetPath>
-			</resource>			
+			</resource>		
 		</resources>
 		<plugins>
 			<plugin>
