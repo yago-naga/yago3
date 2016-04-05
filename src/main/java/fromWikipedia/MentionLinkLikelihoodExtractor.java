@@ -77,7 +77,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 	  addFacts(fs);
   }
 
-private void addFacts(List<Fact> fs) {
+  private void addFacts(List<Fact> fs) {
 	for (Fact f : fs) {
 		  String mention = f.getObjectAsJavaString();
 		  for(String mentionToken : mention.split(" ")){
@@ -87,9 +87,10 @@ private void addFacts(List<Fact> fs) {
 			  }
 		  }
 	  }
-}
+  }
 
-/** Context for entities */
+
+  /** Context for entities */
   public static final MultilingualTheme LIKELIHOODFACTS = new MultilingualTheme(
       "mentionLikelihoodFacts",
       "Mention link likelihoods estimated by counting how often a mention occurs linked vs. occurs overall (by article).");
