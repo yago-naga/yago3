@@ -5,17 +5,16 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeMap;
 
-import javatools.administrative.Announce;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.FactWriter;
 import basics.YAGO;
+import javatools.administrative.Announce;
 
 /**
  * Class Theme
@@ -193,8 +192,8 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
 
   /** Writes a fact */
   public void write(Fact f) throws IOException {
-    if (factWriter == null) throw new RuntimeException("Theme " + this
-        + " is not open for writing. Maybe you forgot to declare it as the output of the extractor?");
+    if (factWriter == null)
+      throw new RuntimeException("Theme " + this + " is not open for writing. Maybe you forgot to declare it as the output of the extractor?");
     factWriter.write(f);
   }
 
@@ -217,8 +216,8 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
 
   @Override
   public Iterator<Fact> iterator() {
-    if (file == null) throw new RuntimeException("Theme " + this
-        + " has not yet been assigned to a file.\nMaybe the theme was not declared as an input to an extractor?");
+    if (file == null) throw new RuntimeException(
+        "Theme " + this + " has not yet been assigned to a file.\nMaybe the theme was not declared as an input to an extractor?");
     if (factWriter != null) throw new RuntimeException("Theme " + this + " is currently being written");
     return (super.iterator());
   }
@@ -226,8 +225,8 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
   /** returns the cache, or creates a cache */
   public synchronized FactCollection factCollection() throws IOException {
     if (factWriter != null) throw new IOException("Theme " + this + " is currently being written");
-    if (file == null) throw new IOException("Theme " + this + " has not yet been assigned to a file.\n"
-        + "Maybe it was not declared as input to an extractor?");
+    if (file == null)
+      throw new IOException("Theme " + this + " has not yet been assigned to a file.\n" + "Maybe it was not declared as input to an extractor?");
     if (cache == null) cache = new FactCollection(file, true);
     return (cache);
   }
@@ -273,11 +272,12 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
       @Override
       public String get(Object arg0) {
         if (cache == null) throw new RuntimeException("Cache of " + this + " was killed");
-        Map<String, List<Fact>> map = cache.index.get(arg0);
+        return (cache.getObject((String) arg0, YAGO.hasTranslation));
+        /*Map<String, List<Fact>> map = cache.index.get(arg0);
         if (map == null) return null;
         List<Fact> objects = map.get(YAGO.hasTranslation);
         if (objects == null || objects.isEmpty()) return (null);
-        return (objects.get(0).getObject());
+        return (objects.get(0).getObject());*/
       }
 
       @Override

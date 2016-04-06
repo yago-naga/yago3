@@ -82,9 +82,9 @@ public class CoherentTypeExtractor extends Extractor {
           f.makeId();
           // Add only the first source
           if (!sources.containsKey(f.getId())) sources.put(f.getId(), theme);
-          typeFacts.justAdd(f);
+          typeFacts.addFast(f);
         }
-        if (f.getRelation().equals(RDFS.subclassOf)) subclassFacts.justAdd(f);
+        if (f.getRelation().equals(RDFS.subclassOf)) subclassFacts.addFast(f);
       }
     }
     numTypeFacts = new IntHashMap<>();
