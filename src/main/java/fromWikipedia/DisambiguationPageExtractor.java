@@ -35,7 +35,7 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 
 	private FactCollection types;
 
-	private static final String LANGUAGE = "wordnet_language_106282651";
+	private static final String LANGUAGE = "<wordnet_language_106282651>";
 
 	@Override
 	public Set<Theme> input() {
