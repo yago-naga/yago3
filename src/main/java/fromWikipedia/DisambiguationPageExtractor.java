@@ -6,6 +6,8 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import basics.RDFS;
+import fromThemes.TransitiveTypeExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -31,10 +33,17 @@ import fromOtherSources.PatternHardExtractor;
  */
 public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor {
 
+	private FactCollection types;
+
+	private static final String LANGUAGE = "wordnet_language_106282651";
+
 	@Override
 	public Set<Theme> input() {
-		return new HashSet<Theme>(
-				Arrays.asList(PatternHardExtractor.DISAMBIGUATIONTEMPLATES, PatternHardExtractor.LANGUAGECODEMAPPING));
+		return new HashSet<>(
+				Arrays.asList(
+						PatternHardExtractor.DISAMBIGUATIONTEMPLATES,
+						PatternHardExtractor.LANGUAGECODEMAPPING,
+						TransitiveTypeExtractor.TRANSITIVETYPE));
 	}
 
   @Override
@@ -74,13 +83,16 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 
 	@Override
 	public Set<Theme> output() {
-		return new FinalSet<Theme>(DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language));
+		return new FinalSet<>(DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language));
 	}
 
 	@Override
 	public void extract() throws Exception {
 		// Extract the information
 		Announce.doing("Extracting disambiguation means");
+
+		// Needed for checking constraints
+		types = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
 
 		BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 
@@ -110,12 +122,26 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 				if (isDisambiguationPage(page, templates)) {
 					for (Fact fact : disambiguationPatterns.extract(page,
 							titleEntity, language)) {
-						if (fact != null)
+						if (fact != null &&
+								!hasLanguageAsSubject(fact))
 							DIRTYDISAMBIGUATIONMEANSFACTS.inLanguage(language).write(fact);
 					}
 				}
 			}
 		}
+	}
+
+	private boolean hasLanguageAsSubject(Fact fact) {
+		Set<Fact> subjectTypes =
+				types.getFactsWithSubjectAndRelation(fact.getSubject(), RDFS.type);
+
+		for (Fact f : subjectTypes) {
+			if (f.getObject().equals(LANGUAGE)) {
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	protected static String cleanDisambiguationEntity(String titleEntity) {
