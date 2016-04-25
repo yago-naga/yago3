@@ -23,12 +23,6 @@ import followUp.FollowUpExtractor;
  */
 public abstract class Extractor implements Comparable<Extractor> {
 
-  /** Use this to annotate hacks that are needed to make YAGO work*/
-  public @interface ImplementationNote {
-
-    String value();
-  }
-
   /** The themes required */
   public abstract Set<Theme> input();
 

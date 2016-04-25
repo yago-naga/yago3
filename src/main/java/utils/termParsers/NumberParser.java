@@ -5,8 +5,9 @@ import java.math.BigDecimal;
 import java.util.regex.Matcher;
 
 import javatools.administrative.Announce;
+import basics.Fact;
+import basics.Fact.ImplementationNote;
 import basics.FactComponent;
-import extractors.Extractor.ImplementationNote;
 import fromOtherSources.PatternHardExtractor;
 
 /** Class NumberParser
@@ -55,7 +56,7 @@ public class NumberParser extends LiteralParser {
 
 	@Override
 	public String resultEntity(Matcher resultMatch) {
-		@ImplementationNote("Use toPlainString() so that subsequent regular expression type checks can identify integers")
+		@Fact.ImplementationNote("Use toPlainString() so that subsequent regular expression type checks can identify integers")
 		BigDecimal bigdec = parseNumerical(resultMatch.group(1));
 		String unit = resultMatch.group(2).trim();
 		if (bigdec == null) {

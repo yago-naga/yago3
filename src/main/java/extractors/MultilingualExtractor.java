@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import javatools.administrative.Announce;
+import basics.Fact;
 import basics.FactComponent;
 
 /**
@@ -22,7 +23,7 @@ import basics.FactComponent;
 public abstract class MultilingualExtractor extends Extractor {
 
 	/** List of language suffixes from most English to least English. */
-	@ImplementationNote("The order is important, because "
+	@Fact.ImplementationNote("The order is important, because "
 			+ "(1) the name for an entity that exists in several languages "
 			+ "will be the most-English name "
 			+ "(2) if two facts contradict, the one in the first language will prevail.")

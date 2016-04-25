@@ -88,7 +88,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
       val = val.replace("$0", FactComponent.stripBrackets(f.getSubject()));
       val = val.trim();
       if (val.length() == 0) continue;
-      @ImplementationNote("This has to be a list, because the first date mentioned is usually the right one")
+      @Fact.ImplementationNote("This has to be a list, because the first date mentioned is usually the right one")
       List<String> objects = new ArrayList<>();
       for (TermParser termParser : parsers) {
         for (String s : termParser.extractList(val)) {

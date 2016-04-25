@@ -82,7 +82,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
   }
 
   /** normalizes an attribute name */
-  @ImplementationNote("Be aggressive here: numbers have to go away, so that city1=city2."
+  @Fact.ImplementationNote("Be aggressive here: numbers have to go away, so that city1=city2."
       + "Bad characters such as TABs are poisonous and have to leave. " + "Spaces and underbars have to go." + "Still accept non-latin characters."
       + "Lowercase because manual infobox patterns might be in uppercase." + "Vertical bars have to stay, "
       + "because they indicate several collated attributes that we will split later.")
@@ -253,7 +253,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
   }
 
   @Override
-  @ImplementationNote("We cannot search for '{{ infobox' because the Polish Wikipedia puts the template name first")
+  @Fact.ImplementationNote("We cannot search for '{{ infobox' because the Polish Wikipedia puts the template name first")
   public void extract() throws Exception {
 
     TitleExtractor titleExtractor = new TitleExtractor(language);

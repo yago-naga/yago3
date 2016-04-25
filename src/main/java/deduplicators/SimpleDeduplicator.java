@@ -46,7 +46,7 @@ public abstract class SimpleDeduplicator extends Extractor {
 	}
 
 	/** The list of input themes, ordered by authority. */
-	@ImplementationNote("If two facts contradict, the *earlier* one will prevail")
+	@Fact.ImplementationNote("If two facts contradict, the *earlier* one will prevail")
 	public abstract List<Theme> inputOrdered();
 
 	/**
@@ -71,7 +71,7 @@ public abstract class SimpleDeduplicator extends Extractor {
 	@Override
 	public void extract() throws Exception {
 		Announce.doing("Running", this.getClass().getSimpleName());
-		@ImplementationNote("We also count functions in time as functions, because many functions ini time have bogus integer values after the real value in the infoboxes.")
+		@Fact.ImplementationNote("We also count functions in time as functions, because many functions ini time have bogus integer values after the real value in the infoboxes.")
 		Set<String> functions = null;
 		if (!input().contains(SchemaExtractor.YAGOSCHEMA)) {
 			Announce.warning("Deduplicators should have SchemaExtractor.YAGOSCHEMA, in their required input so that they can check functional relations!");

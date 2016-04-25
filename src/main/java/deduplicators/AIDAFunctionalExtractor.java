@@ -23,7 +23,7 @@ import fromWikipedia.WikiInfoExtractor;
 public class AIDAFunctionalExtractor extends SimpleDeduplicator {
 
 	@Override
-	@ImplementationNote("Hardwired facts go first. Infoboxes should go before categories")
+	@Fact.ImplementationNote("Hardwired facts go first. Infoboxes should go before categories")
 	public List<Theme> inputOrdered() {
 		List<Theme> input = new ArrayList<Theme>();
 		

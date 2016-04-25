@@ -30,11 +30,11 @@ import utils.termParsers.ClassParser;
 import utils.termParsers.DateParser;
 import utils.termParsers.TermParser;
 import basics.Fact;
+import basics.Fact.ImplementationNote;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.EnglishWikipediaExtractor;
-import extractors.Extractor.ImplementationNote;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
@@ -559,7 +559,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 		return (a.trim().toLowerCase().replace("_", "").replace(" ", ""));
 	}
 	/** normalizes an attribute name */
-	@ImplementationNote("Be aggressive here: numbers have to go away, so that city1=city2."
+	@Fact.ImplementationNote("Be aggressive here: numbers have to go away, so that city1=city2."
 			+ "Bad characters such as TABs are poisonous and have to leave. "
 			+ "Spaces and underbars have to go."
 			+ "Still accept non-latin characters."
