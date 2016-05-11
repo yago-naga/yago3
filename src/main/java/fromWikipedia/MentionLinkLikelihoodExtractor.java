@@ -10,6 +10,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -37,13 +38,22 @@ import utils.TitleExtractor;
  * 
  */
 public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtractor {
-
+	
   /**
    * counts the link statistics for all tokens found in Wikipedia articles
    * int[0]: how many times has the token been found as link in Wikipedia articles
    * int[1]: how many times has the token been found in general in Wikipeida articles
    */
   private static Map<String, int[]> mentionTokensLinkCount = new HashMap<>();
+  
+  //Extract set of all link surface forms via regex.
+  // [[target|linkname]] or [[target]]
+  private static final String linkRegex = "\\[\\[(.*?)\\]\\]";
+  private static final Pattern linkPattern = Pattern.compile(linkRegex);
+  
+  // match links with anchor text [[target|linkname]]
+  private static final String anchorTextRegex = "\\|(.*$)";
+  private static final Pattern anchorTextPattern = Pattern.compile(anchorTextRegex);
 	
   @Override
   public Set<Theme> input() {
@@ -72,16 +82,16 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 	  
 	  addFacts(fs);
 	  
-	  fs = StructureExtractor.STRUCTUREFACTS.inLanguage(language).factCollection().getFactsWithRelation("<hasAnchorText>");
+//	  fs = StructureExtractor.STRUCTUREFACTS.inLanguage(language).factCollection().getFactsWithRelation("<hasAnchorText>");
 	  
-	  addFacts(fs);
+//	  addFacts(fs);
   }
 
   private void addFacts(List<Fact> fs) {
 	for (Fact f : fs) {
 		  String mention = f.getObjectAsJavaString();
+		  mention = clean(mention);
 		  for(String mentionToken : mention.split(" ")){
-			  mentionToken = mentionToken.toUpperCase();
 			  if(!mentionTokensLinkCount.containsKey(mentionToken)){
 				  mentionTokensLinkCount.put(mentionToken, new int[2]);
 			  }
@@ -113,15 +123,8 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     // Load all mentions.
     loadMentions();
     
-    // Extract set of all link surface forms via regex.
-    // [[target|linkname]] or [[target]]
-    String linkRegex = "\\[\\[(.*?)\\]\\]";
-    Pattern linkPattern = Pattern.compile(linkRegex);
+    int pagesProcessed = 0;
     
-    // match links with anchor text [[target|linkname]]
-    String anchorTextRegex = "\\|(.*$)";
-    Pattern anchorTextPattern = Pattern.compile(anchorTextRegex);
-
     String titleEntity = null;
     while (true) {
       switch (FileLines.findIgnoreCase(in, "<title>")) {
@@ -141,6 +144,11 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
           in.close();
           return;
         case 0:
+          pagesProcessed++;
+          if(pagesProcessed % 10_000 == 0){
+        	  System.out.println("MentionLinkLikelihoodExtractor: " + pagesProcessed + " pages Processed");
+          }
+        	
           titleEntity = titleExtractor.getTitleEntity(in);
           if (titleEntity == null) continue;
 
@@ -148,38 +156,47 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
           String normalizedPage = Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
           String transformedPage = replacements.transform(normalizedPage);
           
-          //TODO: deal with periods at end of sentence, commas etc.
-          Set<String> pageVocabulary = new HashSet<>(Arrays.asList(transformedPage.split(" ")));
-          
-          // extract all linked tokens
-          List<String> linkedTokens = new ArrayList<>();
-          Matcher linkMatcher = linkPattern.matcher(transformedPage);
-          for (int i = 0; i < linkMatcher.groupCount(); i++) {
-        	  String group = linkMatcher.group(i + 1);
-        	  String[] split = null;
-        	  
-        	  // Get rid of link format.
-        	  if(group.contains("|")){
-        		  Matcher anchorTextMatcher = anchorTextPattern.matcher(group);
-        		  String anchorText = anchorTextMatcher.group(1);
-        		  split = anchorText.split(" ");
-        	  } else {
-        		  split = group.split(" ");
-        	  }
-        	  
-        	  linkedTokens.addAll(Arrays.asList(split));
-          }
-          
+          Set<String> pageVocabulary = new HashSet<>(Arrays.asList(clean(transformedPage.replaceAll("\\[\\[.*?\\]\\]", "")).split(" ")));
+
+   		  // extract all linked tokens
+  		  List<String> linkedTokens = new ArrayList<>();
+  		  Matcher linkMatcher = linkPattern.matcher(transformedPage);
+  		  while (linkMatcher.find()) {
+  			  for (int i = 0; i < linkMatcher.groupCount(); i++) {
+  				  String group = linkMatcher.group(i + 1);
+  				  
+  				  if(group.contains(":")){
+					  continue;
+				  }
+  				  
+  				  String[] split = null;
+
+  				  // Take surface form of links if applicable
+  				  if (group.contains("|")) {
+  					  Matcher anchorTextMatcher = anchorTextPattern.matcher(group);
+  					  if (anchorTextMatcher.find()) {
+  						  String anchorText = anchorTextMatcher.group(1);
+  						  anchorText = clean(anchorText);
+  						  split = anchorText.split(" ");
+  				 	  } else {
+  						  System.err.println("RegEx for anchor did not match, anchorText = " + group);
+  					  }
+  				  } else {
+  					  group = clean(group);
+  					  split = group.split(" ");
+  				  }
+
+  				  linkedTokens.addAll(Arrays.asList(split));
+  			  }
+  		  }
           
           // increase denumerator in token counts for all tokens of the article, 
           // excluding linked tokens
           for(String token : pageVocabulary) {
-			if(mentionTokensLinkCount.containsKey(token)){
-				if(!linkedTokens.contains(token)){
-					int[] counts = mentionTokensLinkCount.get(token);
-					counts[1]++;
-					mentionTokensLinkCount.put(token, counts);
-				}
+			if(mentionTokensLinkCount.containsKey(token) && !linkedTokens.contains(token)){
+				int[] counts = mentionTokensLinkCount.get(token);
+				counts[1]++;
+				mentionTokensLinkCount.put(token, counts);
 			}
 		  }
           
@@ -209,6 +226,16 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
    */
   public MentionLinkLikelihoodExtractor(String lang, File wikipedia) {
     super(lang, wikipedia);
+  }
+  
+  /**
+   * Turns text to lowercase and removes non alpha-numeric characters
+   * 
+   * @param text
+   * 		   Input text
+   */			
+  private String clean(String text){
+	  return text.replaceAll("[^\\p{L}\\p{N} ]", "");
   }
 
 }
