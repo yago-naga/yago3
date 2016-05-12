@@ -13,15 +13,13 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.TreeSet;
 
-import javatools.administrative.Announce;
-import javatools.administrative.D;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
 import basics.RDFS;
 import basics.YAGO;
+import javatools.administrative.Announce;
 
 /**
  * Class FactCollection
@@ -42,17 +40,14 @@ import basics.YAGO;
  */
 public class FactCollection extends AbstractSet<Fact> {
 
-  /** Holds the facts */
-  protected Set<Fact> facts = new HashSet<Fact>();
-
-  /** Holds the objects */
-  protected Map<String, String> objects = new HashMap<String, String>();
+  /** Holds the number of facts*/
+  protected int size = 0;
 
   /** Maps first arg to relation to facts */
-  protected Map<String, Map<String, List<Fact>>> index = new HashMap<String, Map<String, List<Fact>>>();
+  protected Map<String, Map<String, Set<Fact>>> index = new HashMap<String, Map<String, Set<Fact>>>();
 
   /** Maps relation to facts */
-  protected Map<String, List<Fact>> relindex = new HashMap<String, List<Fact>>();
+  protected Map<String, Set<Fact>> relindex = new HashMap<String, Set<Fact>>();
 
   /** Adds a fact, adds a source fact and a technique fact */
   public boolean add(Fact fact, String source, String technique) {
@@ -69,8 +64,9 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** Type of things that happen when a fact is added */
   public enum Add {
-    NULL(false, false, false, false), DUPLICATE(false, false, false, true), TOOGENERAL(false, false, false, true), NOID(false, false, false, false), FUNCLASH(
-        false, false, true, false), MORESPECIFIC(true, true, false, true), ADDED(true, false, false, false), HASID(true, true, false, true);
+    NULL(false, false, false, false), DUPLICATE(false, false, false, true), TOOGENERAL(false, false, false, true), NOID(false, false, false,
+        false), FUNCLASH(false, false, true, false), MORESPECIFIC(true, true, false, true), ADDED(true, false, false, false), HASID(true, true, false,
+            true);
 
     public final boolean added;
 
@@ -94,16 +90,12 @@ public class FactCollection extends AbstractSet<Fact> {
       Announce.debug("Null fact not added:", fact);
       return (Add.NULL);
     }
-    if (facts.contains(fact)) {
-      Announce.debug("Duplicate fact not added:", fact);
-      return (Add.DUPLICATE);
-    }
     if (fact.getSubject().equals(fact.getObject())) {
       Announce.debug("Identical arguments not added", fact);
       return (Add.DUPLICATE);
     }
     Add result = Add.ADDED;
-    Map<String, List<Fact>> map = index.get(fact.getSubject());
+    Map<String, Set<Fact>> map = index.get(fact.getSubject());
     if (map != null && map.containsKey(fact.getRelation())) {
       for (Fact other : map.get(fact.getRelation())) {
         if (FactComponent.isMoreSpecific(fact.getObject(), other.getObject())) {
@@ -133,17 +125,17 @@ public class FactCollection extends AbstractSet<Fact> {
         return (Add.FUNCLASH);
       }
     }
-    return (justAdd(fact) ? result : Add.DUPLICATE);
+    return (addFast(fact) ? result : Add.DUPLICATE);
   }
 
-  /** Adds a fact, does not check for duplicates */
+  /** Adds a fact, does not check for duplicates. This is the old code, which was slow. 
   public boolean justAdd(final Fact fact) {
     if (facts.contains(fact)) {
       Announce.debug("Duplicate fact not added:", fact);
       return (false);
     }
     boolean changed = false;
-
+  
     // Handle relation
     String canonicalizedRelation = fact.getRelation();
     List<Fact> factsWithRelation = relindex.get(fact.getRelation());
@@ -153,7 +145,7 @@ public class FactCollection extends AbstractSet<Fact> {
       canonicalizedRelation = factsWithRelation.get(0).getRelation();
       changed = true;
     }
-
+  
     // Handle subject
     String canonicalizedSubject = fact.getSubject();
     Map<String, List<Fact>> relation2facts = index.get(fact.getSubject());
@@ -167,22 +159,30 @@ public class FactCollection extends AbstractSet<Fact> {
        * List<Fact> anyFacts = relation2facts.get(anyRel); if
        * (!anyFacts.isEmpty()) { canonicalizedSubject =
        * anyFacts.get(0).getSubject(); changed = true; }
-       */
+       
     }
     if (!relation2facts.containsKey(fact.getRelation())) relation2facts.put(fact.getRelation(), new ArrayList<Fact>(1));
-
-    String canonicalizedObject = objects.get(fact.getObject());
-    if (canonicalizedObject == null) {
+  
+    String canonicalizedObject = fact.getObject();
+    /*if (canonicalizedObject == null) {
       objects.put(canonicalizedObject = fact.getObject(), fact.getObject());
     } else {
       changed = true;
     }
-
+  
     // Add the fact
     Fact newFact = changed ? new Fact(fact.getId(), canonicalizedSubject, canonicalizedRelation, canonicalizedObject) : fact;
     relindex.get(fact.getRelation()).add(newFact);
     relation2facts.get(fact.getRelation()).add(newFact);
-    facts.add(newFact);
+    return (true);
+  }*/
+
+  /** Adds a fact, does not check for duplicates, does not canonicalize */
+  public boolean addFast(final Fact fact) {
+    if (!index.computeIfAbsent(fact.getSubject(), k -> new HashMap<>()).computeIfAbsent(fact.getRelation(), k -> new HashSet<>(1)).add(fact))
+      return (false);
+    size++;
+    relindex.computeIfAbsent(fact.getRelation(), k -> new HashSet<>()).add(fact);
     return (true);
   }
 
@@ -190,12 +190,9 @@ public class FactCollection extends AbstractSet<Fact> {
   public boolean justAddAll(Collection<? extends Fact> c) {
     boolean modified = false;
     for (Fact f : c)
-      if (justAdd(f)) modified = true;
+      if (addFast(f)) modified = true;
     return modified;
   }
-
-  /** Empty list */
-  protected static final List<Fact> EMPTY = new ArrayList<Fact>(0);
 
   /** Returns relations of this subject (or NULL) */
   public Set<String> getRelations(String arg1) {
@@ -203,11 +200,11 @@ public class FactCollection extends AbstractSet<Fact> {
   }
 
   /** Returns facts with matching first arg and relation */
-  public List<Fact> getFactsWithSubjectAndRelation(String arg1, String relation) {
-    Map<String, List<Fact>> map = index.get(arg1);
-    if (map == null) return (Collections.emptyList());
-    List<Fact> list = map.get(relation);
-    if (list == null) return (Collections.emptyList());
+  public Set<Fact> getFactsWithSubjectAndRelation(String arg1, String relation) {
+    Map<String, Set<Fact>> map = index.get(arg1);
+    if (map == null) return (Collections.emptySet());
+    Set<Fact> list = map.get(relation);
+    if (list == null) return (Collections.emptySet());
     return (list);
   }
 
@@ -218,13 +215,8 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** TRUE if the subject exists with this relation*/
   public boolean containsSubjectWithRelation(String arg1, String rel) {
-    Map<String, List<Fact>> map = index.get(arg1);
+    Map<String, Set<Fact>> map = index.get(arg1);
     return (map != null && map.containsKey(rel));
-  }
-
-  /** TRUE if the object exists */
-  public boolean containsObject(String arg1) {
-    return (objects.containsKey(arg1));
   }
 
   /** Returns facts with matching first arg */
@@ -239,21 +231,16 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** Returns the first object (or null) */
   public String getObject(String arg1, String relation) {
-    Map<String, List<Fact>> map = index.get(arg1);
+    Map<String, Set<Fact>> map = index.get(arg1);
     if (map == null) return (null);
-    List<Fact> list = map.get(relation);
+    Set<Fact> list = map.get(relation);
     if (list == null || list.isEmpty()) return (null);
-    return (list.get(0).getObject());
-  }
-
-  /** Returns the objects */
-  public Set<String> getObjects() {
-    return (objects.keySet());
+    return (list.iterator().next().getObject());
   }
 
   /** Returns the objects with a given subject and relation */
   public Set<String> collectObjects(String subject, String relation) {
-    Set<String> result = new TreeSet<>();
+    Set<String> result = new HashSet<>();
     for (Fact f : getFactsWithSubjectAndRelation(subject, relation)) {
       result.add(f.getArg(2));
     }
@@ -262,7 +249,7 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** Returns the relations between this subject and this object */
   public Set<String> collectRelationsBetween(String arg1, String arg2) {
-    Set<String> result = new TreeSet<>();
+    Set<String> result = new HashSet<>();
     for (Fact f : getFactsWithRelation(arg1)) {
       if (f.getObject().equals(arg2)) result.add(f.getRelation());
     }
@@ -270,8 +257,8 @@ public class FactCollection extends AbstractSet<Fact> {
   }
 
   /** Returns facts with matching relation */
-  public List<Fact> getFactsWithRelation(String relation) {
-    if (!relindex.containsKey(relation)) return (EMPTY);
+  public Set<Fact> getFactsWithRelation(String relation) {
+    if (!relindex.containsKey(relation)) return (Collections.emptySet());
     return (relindex.get(relation));
   }
 
@@ -280,7 +267,7 @@ public class FactCollection extends AbstractSet<Fact> {
    * slow.
    */
   public List<Fact> seekFactsWithRelationAndObject(String relation, String arg2) {
-    if (!relindex.containsKey(relation)) return (EMPTY);
+    if (!relindex.containsKey(relation)) return (Collections.emptyList());
     List<Fact> result = new ArrayList<Fact>();
     for (Fact f : relindex.get(relation)) {
       if (f.getObject().equals(arg2)) result.add(f);
@@ -300,7 +287,7 @@ public class FactCollection extends AbstractSet<Fact> {
     return (result);
   }
 
-  /** Loads from N4 file */
+  /** Loads from N4 file. Checks duplicates. */
   public FactCollection(File n4File) throws IOException {
     this(n4File, false);
   }
@@ -310,7 +297,7 @@ public class FactCollection extends AbstractSet<Fact> {
     this(FactSource.from(n4File), fast);
   }
 
-  /** Loads from N4 file. FAST does not check duplicates */
+  /** Loads from N4 file. Checks duplicates */
   public FactCollection(FactSource n4File) throws IOException {
     this(n4File, false);
   }
@@ -325,7 +312,7 @@ public class FactCollection extends AbstractSet<Fact> {
 
   }
 
-  /** Add facts */
+  /** Add facts. Checks duplicates */
   public boolean add(Iterable<Fact> facts) {
     boolean change = false;
     for (Fact f : facts)
@@ -336,9 +323,14 @@ public class FactCollection extends AbstractSet<Fact> {
   /** Removes a fact */
   @Override
   public boolean remove(Object f) {
-    if (!facts.remove(f)) return (false);
+    if (!(f instanceof Fact)) return (false);
     Fact fact = (Fact) f;
-    index.get(fact.getSubject()).get(fact.getRelation()).remove(fact);
+    Map<String, Set<Fact>> rel2facts = index.get(fact.getSubject());
+    if (rel2facts == null) return (false);
+    Set<Fact> facts = rel2facts.get(fact.getRelation());
+    if (facts == null) return (false);
+    facts.remove(fact);
+    size--;
     relindex.get(fact.getRelation()).remove(fact);
     if (fact.getId() != null) {
       List<Fact> metaFacts = collectFactsWithSubject(fact.getId());
@@ -352,9 +344,9 @@ public class FactCollection extends AbstractSet<Fact> {
   /** Removes all facts */
   @Override
   public void clear() {
-    facts.clear();
     index.clear();
     relindex.clear();
+    size = 0;
   }
 
   /** Loads from N4 file */
@@ -371,7 +363,7 @@ public class FactCollection extends AbstractSet<Fact> {
   public void loadFast(FactSource reader) throws IOException {
     Announce.doing("Fast loading", reader);
     for (Fact f : reader) {
-      justAdd(f);
+      addFast(f);
     }
     Announce.done();
   }
@@ -387,17 +379,20 @@ public class FactCollection extends AbstractSet<Fact> {
 
   @Override
   public Iterator<Fact> iterator() {
-    return facts.iterator();
+    return (relindex.entrySet().stream().flatMap(entry -> entry.getValue().stream()).iterator());
   }
 
   @Override
   public int size() {
-    return facts.size();
+    return size;
   }
 
   @Override
   public String toString() {
-    return facts.toString();
+    StringBuilder b = new StringBuilder("FactCollection: {");
+    this.stream().limit(20).forEach(f -> b.append(f).append(", "));
+    b.append("...}, ").append(size).append(" facts");
+    return b.toString();
   }
 
   /** Maximal messages for comparison of fact collectioms */
@@ -407,7 +402,7 @@ public class FactCollection extends AbstractSet<Fact> {
   public boolean checkContainedIn(FactCollection goldStandard, String name) {
     boolean matches = true;
     int counter = maxMessages;
-    next: for (Fact fact : facts) {
+    next: for (Fact fact : this) {
       for (Fact other : goldStandard.getFactsWithSubjectAndRelation(fact.getSubject(), fact.getRelation())) {
         if (other.getObject().equals(fact.getObject())) {
           // if (!D.equal(fact.getId(), other.getId()))
@@ -437,9 +432,9 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** TRUE if this collection contains this fact with any id */
   public boolean contains(String arg1, String rel, String arg2) {
-    Map<String, List<Fact>> map = index.get(arg1);
+    Map<String, Set<Fact>> map = index.get(arg1);
     if (map == null) return (false);
-    List<Fact> facts = map.get(rel);
+    Set<Fact> facts = map.get(rel);
     if (facts == null) return (false);
     for (Fact f : facts) {
       if (f.getArg(2).equals(arg2)) return (true);
@@ -459,7 +454,7 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** Returns a set of strings for a type */
   public Set<String> seekStringsOfType(String type) {
-    Set<String> result = new TreeSet<String>();
+    Set<String> result = new HashSet<String>();
     for (Fact fact : seekFactsWithRelationAndObject("rdf:type", type)) {
       result.add(fact.getArgJavaString(1));
     }
@@ -500,7 +495,7 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** Adds the superclasses of this class */
   public Set<String> superClasses(String sub) {
-    Set<String> set = new TreeSet<>();
+    Set<String> set = new HashSet<>();
     superClasses(sub, set);
     return (set);
   }
@@ -515,7 +510,7 @@ public class FactCollection extends AbstractSet<Fact> {
   public FactCollection getReverse() {
     FactCollection reverseFactCollection = new FactCollection();
     for (Fact f : this)
-      reverseFactCollection.justAdd(new Fact(f.getObject(), f.getRelation(), f.getSubject()));
+      reverseFactCollection.addFast(new Fact(f.getObject(), f.getRelation(), f.getSubject()));
     return reverseFactCollection;
   }
 
@@ -544,7 +539,7 @@ public class FactCollection extends AbstractSet<Fact> {
    * Creates a map for quickly getting arg2 for a given arg1. Notice that this
    * might overwrite arg2s that occur multiple times, make sure you know that
    * they are unique.
-
+  
    * @param relation
    *            relation for which to generate the reverse map
    * @return map
@@ -563,7 +558,7 @@ public class FactCollection extends AbstractSet<Fact> {
    * Creates a map for quickly getting arg2 for a given arg1, both as strings.
    * Notice that this might overwrite arg2s that occur multiple times, make 
    * sure you know that they are unique.
-
+  
    * @param relation
    *            relation for which to generate the reverse map
    * @return map
@@ -603,10 +598,16 @@ public class FactCollection extends AbstractSet<Fact> {
   }
 
   public static void main(String[] args) throws Exception {
-    FactCollection f1 = new FactCollection();
-    f1.add(new Fact("<blah>", "<blub>", "\"980-##-##\"^^xsd:date"));
-    FactCollection f2 = new FactCollection();
-    f2.add(new Fact("<blah>", "<blub>", "\"980\"^^xsd:integer"));
-    D.p(f1.checkEqual(f2, "f1", "f2"));
+    FactCollection f = new FactCollection();
+    f.add(new Fact("Elvis", "bornIn", FactComponent.forDate("1935-##-##")));
+    System.out.println(f);
+    f.add(new Fact("Elvis", "bornIn", FactComponent.forDate("1935-##-##")));
+    System.out.println(f);
+    f.add(new Fact("Elvis", "bornIn", FactComponent.forDate("1935-01-08")));
+    System.out.println(f);
+    f.add(new Fact("Elvis", "livesIn", "Tupelo"));
+    System.out.println(f);
+    f.remove(new Fact("Elvis", "livesIn", "Tupelo"));
+    System.out.println(f);
   }
 }

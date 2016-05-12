@@ -262,10 +262,10 @@ public class Tester {
     if (singleTest != null) {
       // Announce.setLevel(Announce.Level.DEBUG);
       FactCollection.maxMessages = 100;
-      runTest(new File("testCases", singleTest), yagoFolder, outputFolder);
+      runTest(new File("src/test/resources", singleTest), yagoFolder, outputFolder);
     } else {
       new RelationChecker().extract(yagoFolder, "Check relations");
-      File testCases = new File("testCases");
+      File testCases = new File("src/test/resources");
       for (File testCase : listFiles(testCases)) {
         runTest(testCase, yagoFolder, outputFolder);
       }

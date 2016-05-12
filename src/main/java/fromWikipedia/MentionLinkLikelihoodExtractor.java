@@ -5,6 +5,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
@@ -74,7 +75,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
   }
   
   private void loadMentions() throws IOException {	  
-	  List<Fact> fs = DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS.inLanguage(language).factCollection().getFactsWithRelation(RDFS.label);
+	  Collection<Fact> fs = DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS.inLanguage(language).factCollection().getFactsWithRelation(RDFS.label);
 	  
 	  addFacts(fs);
 
@@ -87,7 +88,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 //	  addFacts(fs);
   }
 
-  private void addFacts(List<Fact> fs) {
+  private void addFacts(Collection<Fact> fs) {
 	for (Fact f : fs) {
 		  String mention = f.getObjectAsJavaString();
 		  mention = clean(mention);

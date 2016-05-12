@@ -32,7 +32,7 @@ import fromWikipedia.RedirectExtractor;
 public class LabelExtractor extends SimpleDeduplicator {
 
 	@Override
-	@ImplementationNote("We don't have conflicts here, so let's just take any order")
+	@Fact.ImplementationNote("We don't have conflicts here, so let's just take any order")
 	public List<Theme> inputOrdered() {
 		List<Theme> input = new ArrayList<>();
     input.add(SchemaExtractor.YAGOSCHEMA);

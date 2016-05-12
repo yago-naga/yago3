@@ -5,8 +5,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import basics.Fact;
+import basics.Fact.ImplementationNote;
 import utils.Theme.ThemeGroup;
-import extractors.Extractor.ImplementationNote;
 
 /**
  * Class MultilingualTheme
@@ -48,7 +49,7 @@ public class MultilingualTheme {
 	protected Map<String, Theme> language2theme = new HashMap<String, Theme>();
 
 	/** Returns the theme in the given languages, in that order */
-	@ImplementationNote("The order is important, because in case of fact conflict, the first language prevails")
+	@Fact.ImplementationNote("The order is important, because in case of fact conflict, the first language prevails")
 	public List<Theme> inLanguages(List<String> languages) {
 		List<Theme> result = new ArrayList<>();
 		for (String language : languages)
