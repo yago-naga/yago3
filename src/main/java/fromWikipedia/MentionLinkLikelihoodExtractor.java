@@ -11,7 +11,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -65,27 +64,36 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     input.add(RedirectExtractor.REDIRECTFACTS.inLanguage(language));
 	input.add(PersonNameExtractor.PERSONNAMES);
 	input.add(PersonNameExtractor.PERSONNAMEHEURISTICS);
-	input.add(GenderExtractor.PERSONS_GENDER);
 	input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
 	input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
 	
-    // TODO hasGivenName hasFamilyName
-    
     return input;
   }
   
   private void loadMentions() throws IOException {	  
 	  Collection<Fact> fs = DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS.inLanguage(language).factCollection().getFactsWithRelation(RDFS.label);
-	  
 	  addFacts(fs);
 
 	  fs  = RedirectExtractor.REDIRECTFACTS.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
-	  
 	  addFacts(fs);
 	  
 //	  fs = StructureExtractor.STRUCTUREFACTS.inLanguage(language).factCollection().getFactsWithRelation("<hasAnchorText>");
-	  
 //	  addFacts(fs);
+	  
+	  fs = PersonNameExtractor.PERSONNAMES.factCollection().getFactsWithRelation("<hasGivenName>");
+	  addFacts(fs);
+
+	  fs = PersonNameExtractor.PERSONNAMES.factCollection().getFactsWithRelation("<hasFamilyName>");
+	  addFacts(fs);
+
+	  fs = PersonNameExtractor.PERSONNAMES.factCollection().getFactsWithRelation(RDFS.label);
+	  addFacts(fs);
+	  
+	  fs = WikidataLabelExtractor.WIKIPEDIALABELS.factCollection().getFactsWithRelation(RDFS.label);
+	  addFacts(fs);
+	  
+	  fs = WikidataLabelExtractor.WIKIDATAMULTILABELS.factCollection().getFactsWithRelation(RDFS.label);
+	  addFacts(fs);
   }
 
   private void addFacts(Collection<Fact> fs) {
@@ -146,7 +154,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
           return;
         case 0:
           pagesProcessed++;
-          if(pagesProcessed % 10_000 == 0){
+          if(pagesProcessed % 100_000 == 0){
         	  System.out.println("MentionLinkLikelihoodExtractor: " + pagesProcessed + " pages Processed");
           }
         	
@@ -230,7 +238,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
   }
   
   /**
-   * Turns text to lowercase and removes non alpha-numeric characters
+   * Removes non alpha-numeric characters
    * 
    * @param text
    * 		   Input text
