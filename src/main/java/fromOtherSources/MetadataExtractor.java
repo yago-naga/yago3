@@ -28,11 +28,11 @@ public class MetadataExtractor extends Extractor {
 			"The metadata facts of YAGO");
 
 	@Override public Set<Theme> input() {
-		return new HashSet<Theme>();
+		return new HashSet<>();
 	}
 
 	public Set<Theme> output() {
-		return (new FinalSet<Theme>(METADATAFACTS));
+		return (new FinalSet<>(METADATAFACTS));
 	}
 
 	@Override
@@ -40,12 +40,13 @@ public class MetadataExtractor extends Extractor {
 		Announce.doing("Storing metadata");
 
 		List<String> wikipedias = Parameters.getList("wikipedias");
+		int wikiId = 0;
 		for (String wikipedia : wikipedias) {
 			File wikipediaFile = new File(wikipedia);
 			String dumpName = wikipediaFile.getName();
 			METADATAFACTS.write(
 					new Fact(
-						FactComponent.forString("WikipediaSource"), "<_yagoMetadata>",
+						FactComponent.forString("WikipediaSource_" + wikiId++), "<_yagoMetadata>",
 						FactComponent.forString(dumpName)));
 		}
 
