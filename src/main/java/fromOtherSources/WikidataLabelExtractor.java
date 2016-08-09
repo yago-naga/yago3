@@ -7,6 +7,7 @@ import java.util.Set;
 import java.util.TreeSet;
 
 import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.Theme;
@@ -33,7 +34,8 @@ public class WikidataLabelExtractor extends DataExtractor {
   }
 
   public WikidataLabelExtractor() {
-    this(new File("./data/wikidata.rdf"));
+    this(Parameters.getFile("wikidata"));
+    
   }
 
   @Override
@@ -139,6 +141,7 @@ public class WikidataLabelExtractor extends DataExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new WikidataLabelExtractor().extract(new File("c:/fabian/data/yago3"), "test");
+	Parameters.init("configuration/yago_aida_ghazale.ini");
+    new WikidataLabelExtractor().extract(new File("/home/ghazaleh/Projects/data/test"), "test");
   }
 }
