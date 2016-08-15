@@ -16,12 +16,6 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import javatools.administrative.Announce;
-import javatools.administrative.D;
-import javatools.administrative.Parameters;
-import javatools.parsers.NumberFormatter;
-import javatools.util.FileUtils;
-import utils.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;
@@ -29,6 +23,12 @@ import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.FollowUpExtractor;
 import fromThemes.AttributeMatcher;
+import javatools.administrative.Announce;
+import javatools.administrative.D;
+import javatools.administrative.Parameters;
+import javatools.parsers.NumberFormatter;
+import javatools.util.FileUtils;
+import utils.Theme;
 
 /**
  * YAGO2s -- ParallelCaller
@@ -390,6 +390,7 @@ public class ParallelCaller {
 
     List<Extractor> extractors = new ArrayList<Extractor>();
     for (String extractorName : extractorNames) {
+      if (extractorName.trim().startsWith("#")) continue;
       extractors.addAll(extractorsForCall(extractorName));
     }
     Announce.done();
