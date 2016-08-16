@@ -29,12 +29,14 @@ import fromThemes.TransitiveTypeExtractor;
  */
 public class WikidataLabelExtractor extends DataExtractor {
 
+  private static final String WIKIDATA = "wikidata";
+
   public WikidataLabelExtractor(File wikidata) {
     super(wikidata);
   }
 
   public WikidataLabelExtractor() {
-    this(Parameters.getFile("wikidata"));
+    this(Parameters.getFile(WIKIDATA));
     
   }
 
