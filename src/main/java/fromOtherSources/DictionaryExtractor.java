@@ -44,7 +44,9 @@ public class DictionaryExtractor extends DataExtractor {
 	public static final MultilingualTheme INFOBOX_TEMPLATE_DICTIONARY = new MultilingualTheme(
 			"infoboxTemplateDictionary",
 			"Maps a foreign infobox template name to the English name.");
-
+	
+	private static final String WIKIDATA = "wikidata";
+	
 	/**
 	 * This TitleExtractor makes sure every foreign word gets mapped to a valid
 	 * English one

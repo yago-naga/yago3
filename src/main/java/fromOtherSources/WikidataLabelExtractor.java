@@ -14,6 +14,7 @@ import basics.YAGO;
 import extractors.DataExtractor;
 import fromThemes.CoherentTypeExtractor;
 import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.Theme;
@@ -28,12 +29,14 @@ import utils.Theme;
  */
 public class WikidataLabelExtractor extends DataExtractor {
 
+  private static final String WIKIDATA = "wikidata";
+
   public WikidataLabelExtractor(File wikidata) {
     super(wikidata);
   }
 
   public WikidataLabelExtractor() {
-    this(new File("./data/wikidata.rdf"));
+    this(Parameters.getFile(WIKIDATA));
   }
 
   @Override
