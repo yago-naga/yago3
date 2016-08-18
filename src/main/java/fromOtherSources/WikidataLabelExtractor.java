@@ -6,25 +6,25 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.parsers.Char17;
-import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
-import fromThemes.TransitiveTypeExtractor;
+import fromThemes.CoherentTypeExtractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import javatools.parsers.Char17;
+import utils.Theme;
 
 /**
  * WikidataLabelExtractor - YAGO2s
- * 
+ *
  * Extracts labels from wikidata
- * 
+ *
  * @author Fabian
- * 
+ *
  */
 public class WikidataLabelExtractor extends DataExtractor {
 
@@ -38,12 +38,12 @@ public class WikidataLabelExtractor extends DataExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.LANGUAGECODEMAPPING);
+    return new FinalSet<Theme>(CoherentTypeExtractor.YAGOTYPES, PatternHardExtractor.LANGUAGECODEMAPPING);
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<Theme>(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.LANGUAGECODEMAPPING);
+    return new FinalSet<Theme>(CoherentTypeExtractor.YAGOTYPES, PatternHardExtractor.LANGUAGECODEMAPPING);
   }
 
   /** Facts deduced from categories */
@@ -51,6 +51,9 @@ public class WikidataLabelExtractor extends DataExtractor {
 
   /** Sources */
   public static final Theme WIKIPEDIALABELSOURCES = new Theme("wikipediaLabelSources", "Sources for the Wikipedia labels");
+
+  /** Wikidata QIDs */
+  public static final Theme WIKIDATAINSTANCES = new Theme("wikidataInstances", "Mappings of YAGO instances to Wikidata QIDs");
 
   /** Facts deduced from categories */
   public static final Theme WIKIDATAMULTILABELS = new Theme("wikidataMultiLabels", "Labels from Wikidata in multiple languages");
@@ -60,13 +63,13 @@ public class WikidataLabelExtractor extends DataExtractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(WIKIPEDIALABELSOURCES, WIKIPEDIALABELS, WIKIDATAMULTILABELSOURCES, WIKIDATAMULTILABELS);
+    return new FinalSet<Theme>(WIKIPEDIALABELSOURCES, WIKIPEDIALABELS, WIKIDATAINSTANCES, WIKIDATAMULTILABELSOURCES, WIKIDATAMULTILABELS);
   }
 
   @Override
   public void extract() throws Exception {
     Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
-    Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
+    Set<String> entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
 
     Announce.message("Loaded", languagemap.size(), "languages and ", entities.size(), "entities");
 
@@ -85,6 +88,7 @@ public class WikidataLabelExtractor extends DataExtractor {
     N4Reader nr = new N4Reader(inputData);
     // Maps a language such as "en" to the name in that language
     Map<String, String> language2name = new HashMap<String, String>();
+    String lastqid = null;
     while (nr.hasNext()) {
       Fact f = nr.next();
       // Record a new name in the map
@@ -92,26 +96,32 @@ public class WikidataLabelExtractor extends DataExtractor {
         String lan = FactComponent.stripQuotes(f.getObject());
         String nam = FactComponent.stripWikipediaPrefix(Char17.decodePercentage(f.getSubject()));
         if (nam != null) language2name.put(lan, nam);
-      } else if (f.getArg(2).endsWith("#Item>") && !language2name.isEmpty()) {
-        // New item starts, let's flush out the previous one
-        String mostEnglishLan = DictionaryExtractor.mostEnglishLanguage(language2name.keySet());
-        if (mostEnglishLan != null) {
-          String mostEnglishName = language2name.get(mostEnglishLan);
-          String yagoEntity = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
-          if (entities.contains(yagoEntity)) {
-            for (String lan : language2name.keySet()) {
-              String foreignName = language2name.get(lan);
-              if (lan.length() == 2) lan = languagemap.get(lan);
-              if (lan == null || lan.length() != 3) continue;
-              for (String name : trivialNamesOf(foreignName)) {
-                write(WIKIDATAMULTILABELS, new Fact(yagoEntity, RDFS.label, FactComponent.forStringWithLanguage(name, lan)),
-                    WIKIDATAMULTILABELSOURCES, "<http://wikidata.org>", "WikidataLabelExtractor");
+      } else if (f.getArg(2).endsWith("#Item>")) {
+        if (!language2name.isEmpty()) {
+          // New item starts, let's flush out the previous one
+          String mostEnglishLan = DictionaryExtractor.mostEnglishLanguage(language2name.keySet());
+          if (mostEnglishLan != null) {
+            String mostEnglishName = language2name.get(mostEnglishLan);
+            String yagoEntity = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
+
+            WIKIDATAINSTANCES.write(new Fact(yagoEntity, RDFS.sameas, lastqid));
+
+            if (entities.contains(yagoEntity)) {
+              for (String lan : language2name.keySet()) {
+                String foreignName = language2name.get(lan);
+                if (lan.length() == 2) lan = languagemap.get(lan);
+                if (lan == null || lan.length() != 3) continue;
+                for (String name : trivialNamesOf(foreignName)) {
+                  write(WIKIDATAMULTILABELS, new Fact(yagoEntity, RDFS.label, FactComponent.forStringWithLanguage(name, lan)),
+                      WIKIDATAMULTILABELSOURCES, "<http://wikidata.org>", "WikidataLabelExtractor");
+                }
               }
             }
           }
-
+          language2name.clear();
         }
-        language2name.clear();
+
+        lastqid = f.getSubject();
       }
     }
     nr.close();
