@@ -133,6 +133,10 @@
 ".*introduced in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
 ".*discovered in (\u005cd+)"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
 
+# HIERARCHICAL category patterns
+
+# "^Men$"	<_hierarchicalCategoryPattern>	"$0 <hasGender> <male>" .
+# "^Women$"	<_hierarchicalCategoryPattern>	"$0 <hasGender> <female>" .
 
 # Non-conceptual words
 #@<id_surname>

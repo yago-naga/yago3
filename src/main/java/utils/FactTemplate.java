@@ -10,22 +10,22 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import basics.Fact;
+import basics.FactComponent;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.parsers.DateParser;
-import basics.Fact;
-import basics.FactComponent;
 
 /**
  * YAGO2s - FactTemplate
- * 
+ *
  * This class can instantiate a template of the form "S P O; S P O; ..."
  * ...where the components can be (1) constants (2) variables of the form $i (3)
  * fact references of the form #i (4) typed variables of the form @XXX($i),
  * where XXX is String, Url, WikiLink, Date or Number
- * 
+ *
  * @author Fabian M. Suchanek
- * 
+ *
  */
 public class FactTemplate {
 
@@ -68,29 +68,39 @@ public class FactTemplate {
     if (isFactReference(arg2)) set.add(arg2.charAt(1) - '0');
   }
 
-  /** Instantiates the fact template (or returns NULL) for a specific langauge 
+  /** Instantiates the fact template (or returns NULL) for a specific language
    * @param languageMap */
-  public Fact instantiate(Map<String, String> variables, boolean makeId, String langauge, Map<String, String> languageMap) {
-    String a1 = instantiate(arg1, variables, langauge, languageMap);
-    String r = instantiate(relation, variables, langauge, languageMap);
-    String a2 = instantiate(arg2, variables, langauge, languageMap);
+  public Fact instantiate(Map<String, String> variables, boolean makeId, String language, Map<String, String> languageMap) {
+    String a1 = instantiate(arg1, variables, language, languageMap);
+    String r = instantiate(relation, variables, language, languageMap);
+    String a2 = instantiate(arg2, variables, language, languageMap);
     if (a1 == null || a2 == null || r == null) return (null);
     Fact fact = new Fact(a1, r, a2);
     if (makeId) fact.makeId();
     return (fact);
   }
 
-  /** Creates a fact component from a string with variables for a specific langauge
+  /** Creates a fact component from a string with variables for a specific language
    * @param languageMap */
-  public static String instantiate(String s, Map<String, String> variables, String langauge, Map<String, String> languageMap) {
+  public static String instantiate(String s, Map<String, String> variables, String language, Map<String, String> languageMap) {
     for (Entry<String, String> rep : variables.entrySet())
       s = s.replace(rep.getKey(), rep.getValue());
-    if (s.startsWith("@")) return (format(s, langauge, languageMap));
+    if (s.startsWith("@")) return (format(s, language, languageMap));
     if (isVariable(s) || isFactReference(s)) return (null);
     return (FactComponent.forAny(s));
   }
 
-  /** Creates a fact component for a formatted string of the form @XXX() 
+  /** Creates a fact component from a string with variables for a specific language
+   * @param languageMap */
+  public static String instantiatePartially(String s, Map<String, String> variables, String language, Map<String, String> languageMap) {
+    for (Entry<String, String> rep : variables.entrySet())
+      s = s.replace(rep.getKey(), rep.getValue());
+    if (s.startsWith("@")) return (format(s, language, languageMap));
+    if (isVariable(s) || isFactReference(s)) return s;
+    return (FactComponent.forAny(s));
+  }
+
+  /** Creates a fact component for a formatted string of the form @XXX()
    * @param LanguageMap */
   public static String format(String word, String language, Map<String, String> languageMap) {
     final Pattern formattedPattern = Pattern.compile("@([a-zA-Z]+)\\((.*?)\\)");
@@ -167,32 +177,33 @@ public class FactTemplate {
       if (pos != factTemplate.length()) throw new RuntimeException("Too many components in template:" + factTemplate);
       FactTemplate result = new FactTemplate(split[0], split[1], split[2]);
       if (result.arg1.startsWith("#")) {
-        if (result.arg1.length() != 2) throw new RuntimeException("A template list can only contain template references of the form #x: "
-            + factTemplate);
+        if (result.arg1.length() != 2)
+          throw new RuntimeException("A template list can only contain template references of the form #x: " + factTemplate);
         int factId = result.arg1.charAt(1) - '0';
-        if (factId < 1 || factId > factList.size()) throw new RuntimeException(
-            "#x in a template can only refer to preceding templates by their id, 1-based: " + factTemplate);
+        if (factId < 1 || factId > factList.size())
+          throw new RuntimeException("#x in a template can only refer to preceding templates by their id, 1-based: " + factTemplate);
       }
       factList.add(result);
     }
     return (factList);
   }
 
-  /** Instantiates fact templates with variables 
+  /** Instantiates fact templates with variables
    * @param languageMap */
   public static List<Fact> instantiate(List<FactTemplate> templates, Map<String, String> variables) {
     return instantiate(templates, variables, null);
   }
 
-  /** Instantiates fact templates with variables 
+  /** Instantiates fact templates with variables
   * @param languageMap */
   public static List<Fact> instantiate(List<FactTemplate> templates, Map<String, String> variables, Map<String, String> languageMap) {
     return instantiate(templates, variables, "eng", languageMap);
   }
 
-  /** Instantiates fact templates with variables for a specific language 
+  /** Instantiates fact templates with variables for a specific language
    * @param languageMap */
-  public static List<Fact> instantiate(List<FactTemplate> templates, Map<String, String> variables, String langauge, Map<String, String> languageMap) {
+  public static List<Fact> instantiate(List<FactTemplate> templates, Map<String, String> variables, String language,
+      Map<String, String> languageMap) {
     List<Fact> factList = new ArrayList<Fact>();
     Set<Integer> factReferences = new TreeSet<>();
     for (FactTemplate template : templates) {
@@ -200,7 +211,7 @@ public class FactTemplate {
     }
     for (int i = 0; i < templates.size(); i++) {
       if (factReferences.contains(i + 1)) {
-        Fact fact = templates.get(i).instantiate(variables, true, langauge, languageMap);
+        Fact fact = templates.get(i).instantiate(variables, true, language, languageMap);
         if (fact == null) {
           Announce.message("Can't instantiate", i, "in", templates, "with", variables);
           continue;
@@ -209,7 +220,7 @@ public class FactTemplate {
         variables.put("#" + (i + 1), fact.getId());
         factList.add(fact);
       } else {
-        factList.add(templates.get(i).instantiate(variables, false, langauge, languageMap));
+        factList.add(templates.get(i).instantiate(variables, false, language, languageMap));
       }
     }
     return (factList);
@@ -273,12 +284,34 @@ public class FactTemplate {
     String a2 = D.getOr(variables, arg2, arg2);
     return (new FactTemplate(a1, r, a2));
   }
+  
+  /** Instantiates the fact template partially */
+  public FactTemplate instantiatePartially(Map<String, String> variables, String language, Map<String, String> languageMap) {
+    String a1 = instantiatePartially(arg1, variables, language, languageMap);
+    String r = instantiatePartially(relation, variables, language, languageMap);
+    String a2 = instantiatePartially(arg2, variables, language, languageMap);
+    if (a1 == null || a2 == null || r == null) return (null);
+    return new FactTemplate(a1, r, a2);
+  }
 
   /** Instantiates the fact templates partially */
   public static List<FactTemplate> instantiatePartially(List<FactTemplate> templates, Map<String, String> variables) {
     List<FactTemplate> result = new ArrayList<>();
     for (FactTemplate t : templates)
       result.add(t.instantiatePartially(variables));
+    return (result);
+  }
+  
+  /** Instantiates the fact templates partially */
+  public static List<FactTemplate> instantiatePartially(List<FactTemplate> templates, Map<String, String> variables, String language,
+      Map<String, String> languageMap) {
+    List<FactTemplate> result = new ArrayList<>();
+    for (FactTemplate t : templates) {
+      FactTemplate inst = t.instantiatePartially(variables, language, languageMap);
+      if (inst != null) {
+        result.add(inst);
+      }
+    }
     return (result);
   }
 
