@@ -6,12 +6,6 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.parsers.Name;
-import javatools.parsers.NounGroup;
-import javatools.parsers.PlingStemmer;
-import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -19,155 +13,139 @@ import extractors.Extractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.CategoryExtractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import javatools.parsers.Name;
+import javatools.parsers.NounGroup;
+import javatools.parsers.PlingStemmer;
+import utils.Theme;
 
 /**
  * CategoryClassExtractor - YAGO2s
- * 
+ *
  * Extracts classes from the English category membership facts.
- * 
+ *
  * @author Fabian
- * 
+ *
  */
 public class CategoryClassExtractor extends Extractor {
 
-	/** Classes deduced from categories with their connection to WordNet */
-	public static final Theme CATEGORYCLASSES = new Theme(
-			"categoryClasses",
-			"Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
+  /** Classes deduced from categories with their connection to WordNet */
+  public static final Theme CATEGORYCLASSES = new Theme("categoryClasses",
+      "Classes derived from the Wikipedia categories, with their connection to the WordNet class hierarchy leaves");
 
-	public Set<Theme> input() {
-		return (new FinalSet<Theme>(PatternHardExtractor.CATEGORYPATTERNS,
-				WordnetExtractor.PREFMEANINGS,
-				CategoryExtractor.CATEGORYMEMBERS.inEnglish()));
-	}
+  @Override
+  public Set<Theme> input() {
+    return (new FinalSet<Theme>(PatternHardExtractor.CATEGORYPATTERNS, WordnetExtractor.PREFMEANINGS, CategoryExtractor.CATEGORYMEMBERS.inEnglish()));
+  }
 
-	@Override
-	public Set<Theme> output() {
-		return new FinalSet<Theme>(CATEGORYCLASSES);
-	}
+  @Override
+  public Set<Theme> output() {
+    return new FinalSet<Theme>(CATEGORYCLASSES);
+  }
 
-	/** Holds the nonconceptual categories */
-	protected Set<String> nonConceptualCategories;
+  /** Holds the nonconceptual categories */
+  protected Set<String> nonConceptualCategories;
 
-	/** Holds the preferred meanings */
-	protected Map<String, String> preferredMeanings;
+  /** Holds the preferred meanings */
+  protected Map<String, String> preferredMeanings;
 
-	/** Maps a category to a wordnet class */
-	public String category2class(String categoryName) {
-		categoryName = FactComponent.stripCat(categoryName);
-		// Check out whether the new category is worth being added
-		NounGroup category = new NounGroup(categoryName);
-		if (category.head() == null) {
-			Announce.debug("Could not find type in", categoryName,
-					"(has empty head)");
-			return (null);
-		}
+  /** Maps a category to a wordnet class */
+  public String category2class(String categoryName) {
+    categoryName = FactComponent.stripCat(categoryName);
+    // Check out whether the new category is worth being added
+    NounGroup category = new NounGroup(categoryName);
+    if (category.head() == null) {
+      Announce.debug("Could not find type in", categoryName, "(has empty head)");
+      return (null);
+    }
 
-		// If the category is an acronym, drop it
-		if (Name.isAbbreviation(category.head())) {
-			Announce.debug("Could not find type in", categoryName,
-					"(is abbreviation)");
-			return (null);
-		}
-		category = new NounGroup(categoryName.toLowerCase());
+    // If the category is an acronym, drop it
+    if (Name.isAbbreviation(category.head())) {
+      Announce.debug("Could not find type in", categoryName, "(is abbreviation)");
+      return (null);
+    }
+    category = new NounGroup(categoryName.toLowerCase());
 
-		// Only plural words are good hypernyms
-		
-			if (PlingStemmer.isSingular(category.head())
-					&& !category.head().equals("people")) {
-				Announce.debug("Could not find type in", categoryName,
-						"(is singular)");
-				return (null);
-			}
-		
-		String stemmedHead = PlingStemmer.stem(category.head());
+    // Only plural words are good hypernyms
 
-		// Exclude the bad guys
-		if (nonConceptualCategories.contains(stemmedHead)) {
-			Announce.debug("Could not find type in", categoryName,
-					"(is non-conceptual)");
-			return (null);
-		}
+    if (PlingStemmer.isSingular(category.head()) && !category.head().equals("people")) {
+      Announce.debug("Could not find type in", categoryName, "(is singular)");
+      return (null);
+    }
 
-		// Try all premodifiers (reducing the length in each step) + head
-		if (category.preModifier() != null) {
-			String wordnet = null;
-			String preModifier = category.preModifier().replace('_', ' ');
+    String stemmedHead = PlingStemmer.stem(category.head());
 
-			for (int start = 0; start != -1 && start < preModifier.length() - 2; start = preModifier
-					.indexOf(' ', start + 1)) {
-				wordnet = preferredMeanings
-						.get((start == 0 ? preModifier : preModifier
-								.substring(start + 1)) + " " + stemmedHead);
-				// take the longest matching sequence
-				if (wordnet != null)
-					return (wordnet);
-			}
-		}
+    // Exclude the bad guys
+    if (nonConceptualCategories.contains(stemmedHead)) {
+      Announce.debug("Could not find type in", categoryName, "(is non-conceptual)");
+      return (null);
+    }
 
-		// Try postmodifiers to catch "head of state"
-		if (category.postModifier() != null && category.preposition() != null
-				&& category.preposition().equals("of")) {
-			String wordnet = preferredMeanings.get(stemmedHead + " of "
-					+ category.postModifier().head());
-			if (wordnet != null)
-				return (wordnet);
-		}
+    // Try all premodifiers (reducing the length in each step) + head
+    if (category.preModifier() != null) {
+      String wordnet = null;
+      String preModifier = category.preModifier().replace('_', ' ');
 
-		// Try head
-		String wordnet = preferredMeanings.get(stemmedHead);
-		if (wordnet != null)
-			return (wordnet);
-		Announce.debug("Could not find type in", categoryName, "("
-				+ stemmedHead + ") (no wordnet match)");
-		return (null);
-	}
+      for (int start = 0; start != -1 && start < preModifier.length() - 2; start = preModifier.indexOf(' ', start + 1)) {
+        wordnet = preferredMeanings.get((start == 0 ? preModifier : preModifier.substring(start + 1)) + " " + stemmedHead);
+        // take the longest matching sequence
+        if (wordnet != null) return (wordnet);
+      }
+    }
 
-	/**
-	 * Extracts the statement subclassOf(category name, wordnetclass)
-	 * 
-	 * @param classWriter
-	 */
-	protected void extractClassStatement(String categoryEntity)
-			throws IOException {
-		String concept = category2class(categoryEntity);
-		if (concept == null)
-			return;
-		CATEGORYCLASSES
-				.write(new Fact(categoryEntity, RDFS.subclassOf, concept));
-		String name = new NounGroup(FactComponent.stripCat(categoryEntity)).stemmed().replace('_', ' ');
-		if (!name.isEmpty())
-			CATEGORYCLASSES.write(new Fact(null, categoryEntity, RDFS.label,
-					FactComponent.forStringWithLanguage(name, "eng")));
-	}
+    // Try postmodifiers to catch "head of state"
+    if (category.postModifier() != null && category.preposition() != null && category.preposition().equals("of")) {
+      String wordnet = preferredMeanings.get(stemmedHead + " of " + category.postModifier().head());
+      if (wordnet != null) return (wordnet);
+    }
 
-	@Override
-	public void extract() throws Exception {
-		nonConceptualCategories = PatternHardExtractor.CATEGORYPATTERNS
-				.factCollection().seekStringsOfType("<_yagoNonConceptualWord>");
-		preferredMeanings = WordnetExtractor.PREFMEANINGS.factCollection()
-				.getPreferredMeanings();
+    // Try head
+    String wordnet = preferredMeanings.get(stemmedHead);
+    if (wordnet != null) return (wordnet);
+    Announce.debug("Could not find type in", categoryName, "(" + stemmedHead + ") (no wordnet match)");
+    return (null);
+  }
 
-		// Holds the categories we already did
-		Set<String> categoriesDone = new HashSet<>();
+  /**
+   * Extracts the statement subclassOf(category name, wordnetclass)
+   *
+   * @param classWriter
+   */
+  protected void extractClassStatement(String categoryEntity) throws IOException {
+    String concept = category2class(categoryEntity);
+    if (concept == null) return;
+    CATEGORYCLASSES.write(new Fact(categoryEntity, RDFS.subclassOf, concept));
+    String name = new NounGroup(FactComponent.stripCat(categoryEntity)).stemmed().replace('_', ' ');
+    if (!name.isEmpty()) CATEGORYCLASSES.write(new Fact(null, categoryEntity, RDFS.label, FactComponent.forStringWithLanguage(name, "eng")));
 
-		// Extract the information
-		for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inEnglish()) {
-			if (!f.getRelation().equals("<hasWikipediaCategory>"))
-				continue;
-			String category = f.getObject();
-			if (categoriesDone.contains(category))
-				continue;
-			categoriesDone.add(category);
-			extractClassStatement(category);
-		}
-		this.nonConceptualCategories = null;
-		this.preferredMeanings = null;
-	}
+    if (categoryEntity.startsWith("<wikicat_Fictional_")) { // added for wikidata project
+      CATEGORYCLASSES.write(new Fact(categoryEntity, RDFS.subclassOf, "<wordnet_imaginary_being_109483738>"));
+    }
+  }
 
-	public static void main(String[] args) throws Exception {
-		new CategoryClassExtractor().extract(new File("c:/fabian/data/yago3"),
-				"Test");
-	}
+  @Override
+  public void extract() throws Exception {
+    nonConceptualCategories = PatternHardExtractor.CATEGORYPATTERNS.factCollection().seekStringsOfType("<_yagoNonConceptualWord>");
+    preferredMeanings = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings();
+
+    // Holds the categories we already did
+    Set<String> categoriesDone = new HashSet<>();
+
+    // Extract the information
+    for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inEnglish()) {
+      if (!f.getRelation().equals("<hasWikipediaCategory>")) continue;
+      String category = f.getObject();
+      if (categoriesDone.contains(category)) continue;
+      categoriesDone.add(category);
+      extractClassStatement(category);
+    }
+    this.nonConceptualCategories = null;
+    this.preferredMeanings = null;
+  }
+
+  public static void main(String[] args) throws Exception {
+    new CategoryClassExtractor().extract(new File("c:/fabian/data/yago3"), "Test");
+  }
 
 }

@@ -1,7 +1,6 @@
 package fromThemes;
 
 import java.io.File;
-import java.util.HashSet;
 import java.util.Set;
 
 import basics.Fact;
@@ -36,55 +35,83 @@ public class YagoForWikidataExtractor extends Extractor {
   }
 
   /** The theme of simple types */
-  public static final Theme WIKIDATATYPES = new Theme("yagoForWikidata",
-      "A simplified rdf:type system. This theme contains all instances, and links them with rdf:type facts to the leaf level of WordNet (use with yagoSimpleTaxonomy)",
+  public static final Theme WIKIDATA_TAXONOMY_BRANCHES = new Theme("yagoForWikidataTaxonomyBranches",
+      "A simplified rdf:type system. This theme contains all instances, and links them with the taxonomy branch (person, organization, building, location, artifact, abstraction, physicalEntity). Fictional entities have the type<wordnet_imaginary_being_109483738>",
+      Theme.ThemeGroup.INTERNAL);
+
+  /** The theme of simple types */
+  public static final Theme WIKIDATATA_WORDNET_LEAVES = new Theme("yagoForWikidataWordnetLeaves",
+      "A simplified rdf:type system. This theme contains all instances, and links them with the taxonomy branch (person, organization, building, location, artifact, abstraction, physicalEntity)",
       Theme.ThemeGroup.INTERNAL);
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(WIKIDATATYPES);
+    return new FinalSet<>(WIKIDATA_TAXONOMY_BRANCHES, WIKIDATATA_WORDNET_LEAVES);
   }
 
   @Override
   public void extract() throws Exception {
-
-    System.out.println(WIKIDATATYPES.file().getAbsolutePath());
-
-    FactCollection types = new FactCollection();
+    FactCollection branches = new FactCollection(), leaves = new FactCollection();
     FactCollection taxonomy = ClassExtractor.YAGOTAXONOMY.factCollection();
-    Set<String> leafClasses = new HashSet<>();
     Announce.doing("Loading YAGO types");
     for (Fact f : CoherentTypeExtractor.YAGOTYPES) {
       if (!f.getRelation().equals(RDFS.type)) continue;
       String clss = f.getArg(2);
       if (clss.startsWith("<wikicategory")) clss = taxonomy.getObject(clss, RDFS.subclassOf);
-      leafClasses.add(clss);
-      types.add(new Fact(f.getArg(1), RDFS.type, clss));
+      branches.add(new Fact(f.getArg(1), RDFS.type, clss));
 
       String yagoBranch = SimpleTypeExtractor.yagoBranch(clss, taxonomy);
       if (yagoBranch != null) {
-        types.add(new Fact(f.getArg(1), RDFS.type, yagoBranch));
+        branches.add(new Fact(f.getArg(1), RDFS.type, yagoBranch));
       } else {
         Announce.message("no branch for " + f.getArg(1));
       }
 
+      Set<String> superClasses = taxonomy.superClasses(clss);
+      if (superClasses.contains("<wordnet_imaginary_being_109483738>")) {
+        branches.add(new Fact(f.getArg(1), RDFS.type, "<wordnet_imaginary_being_109483738>"));
+      }
+
       String wordnetLeafType = wordnetLeafType(clss, taxonomy);
       if (wordnetLeafType != null) {
-        types.add(new Fact(f.getArg(1), RDFS.type, wordnetLeafType));
+        leaves.add(new Fact(f.getArg(1), RDFS.type, wordnetLeafType));
       }
+
     }
     Announce.done();
 
     Announce.doing("Writing types");
-    for (Fact f : types) {
-      WIKIDATATYPES.write(f);
+    for (Fact f : branches) {
+      WIKIDATA_TAXONOMY_BRANCHES.write(f);
+    }
+    for (Fact f : leaves) {
+      WIKIDATATA_WORDNET_LEAVES.write(f);
     }
     Announce.done();
-    types = null;
+    branches = null;
   }
 
   public static void main(String[] args) throws Exception {
     new YagoForWikidataExtractor().extract(new File("/san/suchanek/yago3/"), "test\n");
+  }
+
+  /**
+   * Adds parent categories of cat to the set, i.e. follows "&lt;wikipediaSubCategoryOf&gt;" links
+   */
+  protected void wikiSuperCategories(String cat, Set<String> superCats, FactCollection fc) {
+    wikiSuperCategories(cat, superCats, fc, null);
+  }
+
+  protected void wikiSuperCategories(String cat, Set<String> superCats, FactCollection fc, String prefix) {
+    if (!superCats.add(cat)) {
+      return;
+    }
+    /*if (prefix != null) {
+      System.out.println(prefix + cat);
+    }*/
+    for (String s : fc.collectObjects(cat, CategoryClassHierarchyExtractor.WIKIPEDIA_RELATION)) {
+      wikiSuperCategories(s, superCats, fc, prefix == null ? null : prefix + "  ");
+    }
   }
 
   public static String wordnetLeafType(String clss, FactCollection fc) {
