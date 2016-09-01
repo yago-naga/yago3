@@ -1,4 +1,4 @@
-package fromThemes;
+package export;
 
 import java.io.File;
 import java.util.Set;
@@ -9,6 +9,9 @@ import basics.RDFS;
 import basics.YAGO;
 import deduplicators.ClassExtractor;
 import extractors.Extractor;
+import fromThemes.CategoryClassHierarchyExtractor;
+import fromThemes.CoherentTypeExtractor;
+import fromThemes.SimpleTypeExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.FactCollection;
@@ -23,7 +26,7 @@ import utils.Theme;
  *
  */
 
-public class YagoForWikidataExtractor extends Extractor {
+public class WikidataTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
@@ -95,7 +98,7 @@ public class YagoForWikidataExtractor extends Extractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new YagoForWikidataExtractor().extract(new File("/san/suchanek/yago3/"), "test\n");
+    new WikidataTypeExtractor().extract(new File("/san/suchanek/yago3/"), "test\n");
   }
 
   /**
