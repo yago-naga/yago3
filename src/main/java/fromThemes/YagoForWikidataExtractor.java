@@ -6,6 +6,7 @@ import java.util.Set;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
+import basics.YAGO;
 import deduplicators.ClassExtractor;
 import extractors.Extractor;
 import javatools.administrative.Announce;
@@ -64,7 +65,7 @@ public class YagoForWikidataExtractor extends Extractor {
       if (yagoBranch != null) {
         branches.add(new Fact(f.getArg(1), RDFS.type, yagoBranch));
       } else {
-        Announce.message("no branch for " + f.getArg(1));
+        Announce.debug("no branch for " + f.getArg(1));
       }
 
       Set<String> superClasses = taxonomy.superClasses(clss);
@@ -73,8 +74,10 @@ public class YagoForWikidataExtractor extends Extractor {
       }
 
       String wordnetLeafType = wordnetLeafType(clss, taxonomy);
-      if (wordnetLeafType != null) {
+      if (wordnetLeafType != null && !YAGO.person.equals(yagoBranch)) {
         leaves.add(new Fact(f.getArg(1), RDFS.type, wordnetLeafType));
+      } else if (yagoBranch != null) {
+        leaves.add(new Fact(f.getArg(1), RDFS.type, yagoBranch));
       }
 
     }
