@@ -13,6 +13,7 @@ import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import javatools.datatypes.FinalSet;
+import javatools.datatypes.FrequencyVector;
 import javatools.parsers.Char17;
 import javatools.parsers.Name.PersonName;
 import utils.Theme;
@@ -58,9 +59,8 @@ public class GenderNameExtractor extends Extractor {
   protected static String gender(Map<String, int[]> givenName2gender, String givenName) {
     int[] gender = givenName2gender.get(givenName);
     if (gender == null) return (null);
-    if (gender[0] + gender[1] < 100) return (null);
-    if (gender[0] > 0.95 * (gender[0] + gender[1])) return ("<male>");
-    else if (gender[1] > 0.95 * (gender[0] + gender[1])) return ("<female>");
+    if (FrequencyVector.wilson(gender[0] + gender[1], gender[0])[0] > 0.95) return ("<male>");
+    if (FrequencyVector.wilson(gender[0] + gender[1], gender[1])[0] > 0.95) return ("<female>");
     return (null);
   }
 
