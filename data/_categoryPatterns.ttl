@@ -139,8 +139,8 @@
 
 # HIERARCHICAL category patterns
 
-# "^Men$"	<_hierarchicalCategoryPattern>	"$0 <hasGender> <male>" .
-# "^Women$"	<_hierarchicalCategoryPattern>	"$0 <hasGender> <female>" .
+"\\bmen\\b"	<_categoryPattern>	"$0 <hasGender> <male>" .
+"\\bwomen\\b"	<_categoryPattern>	"$0 <hasGender> <female>" .
 
 # Non-conceptual words
 #@<id_surname>
