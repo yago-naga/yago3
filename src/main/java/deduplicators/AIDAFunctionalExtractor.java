@@ -33,7 +33,7 @@ public class AIDAFunctionalExtractor extends SimpleDeduplicator {
 		// Dictionary.
 		input.add(PersonNameExtractor.PERSONNAMES);
 		input.add(PersonNameExtractor.PERSONNAMEHEURISTICS);
-		input.add(GenderExtractor.PERSONS_GENDER);
+		input.add(GenderExtractor.GENDERBYPRONOUN);
 		input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
 		input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
 		input.add(HardExtractor.HARDWIREDFACTS);

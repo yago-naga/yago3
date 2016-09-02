@@ -45,7 +45,7 @@ public class AIDAOneShotExtractor extends SimpleDeduplicator {
     input.add(PersonNameExtractor.PERSONNAMES);
     input.add(PersonNameExtractor.PERSONNAMEHEURISTICS);
     input.addAll(RedirectExtractor.REDIRECTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
-    input.add(GenderExtractor.PERSONS_GENDER);
+    input.add(GenderExtractor.GENDERBYPRONOUN);
     input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
     input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
     input.add(HardExtractor.HARDWIREDFACTS);

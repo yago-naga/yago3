@@ -206,7 +206,7 @@ public class CategoryMapper extends MultilingualExtractor {
     folder = new File("/san/suchanek/yago3-debug");
     folder = new File("/san/suchanek/yago3");
     PatternHardExtractor.LANGUAGECODEMAPPING.assignToFolder(folder);
-    GenderExtractor.PERSONS_GENDER.assignToFolder(folder);
+    GenderExtractor.GENDERBYPRONOUN.assignToFolder(folder);
 
     new CategoryMapper("en").extract(folder, "mapping categories into facts");
   }

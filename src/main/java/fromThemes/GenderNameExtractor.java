@@ -11,7 +11,6 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
-import extractors.MultilingualExtractor;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.FrequencyVector;
 import javatools.parsers.Char17;
@@ -19,9 +18,9 @@ import javatools.parsers.Name.PersonName;
 import utils.Theme;
 
 /**
- * YAGO2s - PersonNameExtractor
+ * YAGO2s - GenderNameExtractor
  * 
- * Extracts given name and family name for people.
+ * Extracts the gender from categories and first names.
  * 
  * @author Fabian M. Suchanek
  * 
@@ -35,19 +34,21 @@ public class GenderNameExtractor extends Extractor {
   public static final Theme GENDERSBYNAME = new Theme("genderByName", "Gender of people, derived from the given name");
 
   /** Sources */
-  public static final Theme GENDERSOURCES = new Theme("genderByNameSources", "Sources for the genders determined by given name.");
+  public static final Theme GENDERSOURCES = new Theme("genderSources", "Sources for the genders determined by given name.");
+
+  /** Sources for category facts */
+  public static final Theme GENDERSBYCATEGORY = new Theme("genderByCategory", "Genders derived from the Wikipedia categories");
 
   @Override
   public Set<Theme> input() {
     Set<Theme> result = new HashSet<>();
     result.add(TransitiveTypeExtractor.TRANSITIVETYPE);
-    result.addAll(CategoryGenderExtractor.CATEGORYGENDER.inLanguages(MultilingualExtractor.wikipediaLanguages));
     return (result);
   }
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(GENDERNAMES, GENDERSBYNAME, GENDERSOURCES);
+    return new FinalSet<>(GENDERNAMES, GENDERSBYNAME, GENDERSBYCATEGORY, GENDERSOURCES);
   }
 
   /** Returns the given name of a person (or null)*/
@@ -75,28 +76,42 @@ public class GenderNameExtractor extends Extractor {
 
   @Override
   public void extract() throws Exception {
-    // Run through all people of whom we know the gender
+    String source = TransitiveTypeExtractor.TRANSITIVETYPE.asYagoEntity();
     Map<String, int[]> givenName2gender = new HashMap<>();
-    for (Theme categoryGenders : CategoryGenderExtractor.CATEGORYGENDER.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      for (Fact f : categoryGenders) {
-        if (!f.getRelation().equals("<hasGender>")) continue;
-        registerGender(givenName2gender, f.getSubject(), f.getObject());
+
+    // Run through all people, guess gender from the category, register their first name
+    String lastEntity = "";
+    boolean isPerson = false;
+    String gender = null;
+    for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
+      if (!f.getRelation().equals(RDFS.type)) continue;
+      if (!lastEntity.equals(f.getSubject())) {
+        if (isPerson && gender != null) {
+          registerGender(givenName2gender, lastEntity, gender);
+          write(GENDERSBYCATEGORY, new Fact(lastEntity, "<hasGender>", gender), GENDERSOURCES, source, "Gender from category");
+        }
+        lastEntity = f.getSubject();
+        isPerson = false;
+        gender = null;
       }
+      String category = f.getObject();
+      if (category.equals(YAGO.person)) isPerson = true;
+      else if (category.startsWith("<wikicat_Male_")) gender = "<male>";
+      else if (category.startsWith("<wikicat_Female_")) gender = "<female>";
     }
 
     // Write out the given names with their determined gender
     for (String givenName : givenName2gender.keySet()) {
-      String gender = gender(givenName2gender, givenName);
+      gender = gender(givenName2gender, givenName);
       if (gender != null) GENDERNAMES.write(new Fact(FactComponent.forString(givenName), "<hasGender>", gender));
     }
 
-    // Write out the gender of all other people
-    String source = TransitiveTypeExtractor.TRANSITIVETYPE.asYagoEntity();
+    // Deduce the gender from the first name
     for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
       if (f.getRelation().equals(RDFS.type) && f.getObject().equals(YAGO.person)) {
         String givenName = givenName(f.getSubject());
         if (givenName != null) {
-          String gender = gender(givenName2gender, givenName);
+          gender = gender(givenName2gender, givenName);
           if (gender != null) {
             write(GENDERSBYNAME, new Fact(f.getSubject(), "<hasGender>", gender), GENDERSOURCES, source, "Gender derived from given name.");
           }
