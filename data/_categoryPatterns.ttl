@@ -79,6 +79,10 @@
 "Attractions in (?:the )?(.+)"	<_categoryPattern>	"$0 <isLocatedIn> @Entity($1)" .
 "(?:Presidents|Governors|Chancellors|Vice Presidents|Deputy Prime Ministers|Ministers|Prime Ministers) of (?:the )?(.+)"	<_categoryPattern>	"$0 <isPoliticianOf> @Entity($1)" .
 
+# experimental
+"(\u005cd+.*century( BC)?) .*"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
+"(\u005cd+.*century( BC)?) .*"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .
+
 "(\u005cd+) births"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
 "(\u005cd+) deaths"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .
 "(\u005cd+) .*novels"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
