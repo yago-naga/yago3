@@ -14,6 +14,7 @@ import fromGeonames.GeoNamesDataImporter;
 import fromOtherSources.HardExtractor;
 import fromThemes.CategoryGenderExtractor;
 import fromThemes.CategoryMapper;
+import fromThemes.GenderNameExtractor;
 import fromThemes.InfoboxMapper;
 import fromThemes.RuleExtractor;
 import fromWikipedia.FlightExtractor;
@@ -35,7 +36,7 @@ import utils.Theme.ThemeGroup;
 public class FactExtractor extends SimpleDeduplicator {
 
   @Override
-  @Fact.ImplementationNote("Hardwired facts go first. Infoboxes should go before categories")
+  @Fact.ImplementationNote("Authoritative facts go first. Hardwired facts go first. Infoboxes go before categories")
   public List<Theme> inputOrdered() {
     List<Theme> input = new ArrayList<Theme>();
     input.add(SchemaExtractor.YAGOSCHEMA);
@@ -43,6 +44,7 @@ public class FactExtractor extends SimpleDeduplicator {
     input.addAll(InfoboxMapper.INFOBOXFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(CategoryMapper.CATEGORYFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(CategoryGenderExtractor.CATEGORYGENDER.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.add(GenderNameExtractor.GENDERSBYNAME);
     input.addAll(Arrays.asList(RuleExtractor.RULERESULTS, FlightExtractor.FLIGHTS, GeoNamesDataImporter.GEONAMES_MAPPED_DATA,
         //				TemporalCategoryExtractor.TEMPORALCATEGORYFACTS,
         TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS, GenderExtractor.PERSONS_GENDER));

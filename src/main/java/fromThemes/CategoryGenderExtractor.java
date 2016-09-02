@@ -80,6 +80,7 @@ public class CategoryGenderExtractor extends MultilingualExtractor {
         lastEntity = f.getSubject();
       }
     }
+
   }
 
   public static void main(String[] args) throws Exception {
