@@ -101,7 +101,8 @@ public class FactTemplateExtractor {
       while (m.find()) {
         Map<String, String> variables = new TreeMap<>();
         for (int i = 1; i <= m.groupCount(); i++) {
-          if (m.group(i).trim().isEmpty()) {
+          // somehow a NullPointerException occurred in the next line
+          if (m.group(i) == null || m.group(i).trim().isEmpty()) {
             Announce.debug("$" + i + " was empty, skipping fact for pattern: " + pattern);
             continue;
           } else {

@@ -71,8 +71,8 @@
 "_year_([^_]++)_\|(\d++)\|(\d++)" <mapsTo> "_result_$1-$2-$3__" .
 
 # nth century
-"(\d{1,2}) [Cc]entury _bce_" <mapsTo> "_result_-$1##-##-##__" .
-"(\d{1,2}) [cC]entury" <mapsTo> "_result_$1##-##-##__" .
+"(\d{1,2})(-| )[Cc]entury _bce_" <mapsTo> "_result_-$1##-##-##__" .
+"(\d{1,2})(-| )[cC]entury" <mapsTo> "_result_$1##-##-##__" .
 
 # 1935
 "_year_([^_]++)_ ?_bce_" <mapsTo> "_result_-$1-##-##__" .
