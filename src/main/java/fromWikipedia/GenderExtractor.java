@@ -85,6 +85,29 @@ public class GenderExtractor extends EnglishWikipediaExtractor {
             if (!types.contains(titleEntity, RDFS.type, YAGO.person)) continue;
             String page = FileLines.readBetween(in, "<text", "</text>");
             String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
+            // New heuristics: First pronoun
+            // Scroll to beginning of the article
+            int startPos = normalizedPage.indexOf("'''");
+            if (startPos == -1) startPos = 0;
+            Matcher heMatcher = he.matcher(normalizedPage);
+            int hePos = heMatcher.find(startPos) ? heMatcher.start() : Integer.MAX_VALUE;
+            Matcher sheMatcher = she.matcher(normalizedPage);
+            int shePos = sheMatcher.find(startPos) ? sheMatcher.start() : Integer.MAX_VALUE;
+            //System.out.printf("He: %d %s", hePos, normalizedPage.substring(hePos - 30, hePos + 30));
+            //System.out.printf("She: %d %s", shePos, normalizedPage.substring(shePos - 30, shePos + 30));
+            if (hePos < shePos) {
+              write(GENDERBYPRONOUN, new Fact(titleEntity, "<hasGender>", "<male>"), GENDERBYPRONOUNSOURCES, FactComponent.wikipediaURL(titleEntity),
+                  "GenderExtractor by first pronoun");
+              continue;
+            }
+            if (shePos < hePos) {
+              write(GENDERBYPRONOUN, new Fact(titleEntity, "<hasGender>", "<female>"), GENDERBYPRONOUNSOURCES,
+                  FactComponent.wikipediaURL(titleEntity), "GenderExtractor by first pronoun");
+              continue;
+            }
+            // Otherwise: give up
+
+            /* Old heuristics
             int male = 0;
             Matcher gm = he.matcher(normalizedPage);
             while (gm.find())
@@ -100,6 +123,7 @@ public class GenderExtractor extends EnglishWikipediaExtractor {
               write(GENDERBYPRONOUN, new Fact(titleEntity, "<hasGender>", "<female>"), GENDERBYPRONOUNSOURCES,
                   FactComponent.wikipediaURL(titleEntity), "GenderExtractor");
             }
+            */
           }
           break;
       }
@@ -108,6 +132,6 @@ public class GenderExtractor extends EnglishWikipediaExtractor {
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
-    new GenderExtractor(new File("c:/fabian/data/wikipedia/testset/angie.xml")).extract(new File("c:/fabian/data/yago2s"), "test");
+    new GenderExtractor(new File("c:/fabian/data/wikipedia/wikitest_en.xml")).extract(new File("c:/fabian/data/yago3"), "test");
   }
 }
