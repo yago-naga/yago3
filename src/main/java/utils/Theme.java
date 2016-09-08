@@ -230,14 +230,6 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
     if (cache == null) cache = new FactCollection(file, true);
     return (cache);
   }
-  
-  public synchronized FactCollection factCollection(boolean fast) throws IOException {
-    if (factWriter != null) throw new IOException("Theme " + this + " is currently being written");
-    if (file == null)
-      throw new IOException("Theme " + this + " has not yet been assigned to a file.\n" + "Maybe it was not declared as input to an extractor?");
-    if (cache == null) cache = new FactCollection(file, fast);
-    return (cache);
-  }
 
   /** TRUE if is cached */
   public boolean isCached() {
@@ -253,8 +245,7 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
    * @throws IOException */
   public Map<String, String> dictionary() throws IOException {
     // Force the loading
-	// Fast loading here is slower than normal loading, so we are using not fast loading
-    factCollection(false);
+	factCollection();
     return (new Map<String, String>() {
 
       @Override
