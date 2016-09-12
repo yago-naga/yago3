@@ -114,8 +114,8 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
   public static void main(String[] args) throws Exception {
 
-    new CategoryExtractor("de", new File("C:/Fabian/eclipseProjects/yago3/testCases/fromWikipedia.CategoryExtractor/de/wikipedia/de_wikitest.xml"))
-        .extract(new File("c:/fabian/data/yago3"), "Test on 1 wikipedia article");
+    new CategoryExtractor("en", new File("C:/Fabian/data/wikipedia/roxana.xml")).extract(new File("c:/fabian/data/yago3"),
+        "Test on 1 wikipedia article");
 
   }
 

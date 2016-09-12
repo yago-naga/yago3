@@ -21,7 +21,6 @@ import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryHierarchyExtractor;
-import fromWikipedia.GenderExtractor;
 import javatools.datatypes.FinalSet;
 import utils.FactCollection;
 import utils.FactTemplate;
@@ -61,7 +60,8 @@ public class CategoryMapper extends MultilingualExtractor {
 
   @Override
   public Set<Theme> input() {
-    Set<Theme> result = new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, CategoryClassExtractor.CATEGORYCLASSES));
+    Set<Theme> result = new HashSet<Theme>(
+        Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, CategoryClassExtractor.CATEGORYCLASSES, PatternHardExtractor.LANGUAGECODEMAPPING));
     if (isEnglish()) {
       result.add(CategoryExtractor.CATEGORYMEMBERS.inLanguage(language));
       result.add(CategoryHierarchyExtractor.CATEGORYHIERARCHY.inLanguage(language));
@@ -141,6 +141,7 @@ public class CategoryMapper extends MultilingualExtractor {
             result.addAll(hierarchicalCategoryPatterns.makeTemplates(FactComponent.stripCat(superCat), language));
           }
         }
+        System.out.println(result);
         return result;
       });
       if (templates != null && templates.size() > 0) {
@@ -202,13 +203,7 @@ public class CategoryMapper extends MultilingualExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    File folder;
-    folder = new File("/san/suchanek/yago3-debug");
-    folder = new File("/san/suchanek/yago3");
-    PatternHardExtractor.LANGUAGECODEMAPPING.assignToFolder(folder);
-    GenderExtractor.GENDERBYPRONOUN.assignToFolder(folder);
-
-    new CategoryMapper("en").extract(folder, "mapping categories into facts");
+    new CategoryMapper("en").extract(new File("c:/fabian/data/yago3"), "mapping categories into facts");
   }
 
 }

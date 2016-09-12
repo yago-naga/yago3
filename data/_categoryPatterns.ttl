@@ -83,8 +83,8 @@
 "(\u005cd+.*century( BC)?) .*"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
 "(\u005cd+.*century( BC)?) .*"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .
 
-"(\u005cd+) births"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
-"(\u005cd+) deaths"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .
+"(\u005cd+s?( BC)?) births"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
+"(\u005cd+s?( BC)?) deaths"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .
 "(\u005cd+) .*novels"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
 "(\u005cd+) .*books"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .
 "(\u005cd+) .*poems"	<_categoryPattern>	"$0 <wasCreatedOnDate> @Date($1)" .

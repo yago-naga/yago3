@@ -98,6 +98,7 @@ public class FactTemplateExtractor {
     List<FactTemplate> result = new ArrayList<>();
     for (Pair<Pattern, List<FactTemplate>> pattern : patterns) {
       Matcher m = pattern.first().matcher(string);
+      System.out.println(pattern + " match " + string);
       while (m.find()) {
         Map<String, String> variables = new TreeMap<>();
         for (int i = 1; i <= m.groupCount(); i++) {
