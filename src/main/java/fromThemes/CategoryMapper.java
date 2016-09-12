@@ -141,7 +141,6 @@ public class CategoryMapper extends MultilingualExtractor {
             result.addAll(hierarchicalCategoryPatterns.makeTemplates(FactComponent.stripCat(superCat), language));
           }
         }
-        System.out.println(result);
         return result;
       });
       if (templates != null && templates.size() > 0) {

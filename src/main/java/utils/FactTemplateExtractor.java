@@ -45,7 +45,7 @@ public class FactTemplateExtractor {
       patterns.add(new Pair<Pattern, List<FactTemplate>>(fact.getArgPattern(1), FactTemplate.create(fact.getArgJavaString(2))));
     }
     if (patterns.isEmpty()) {
-      Announce.warning("No patterns found!");
+      Announce.warning("No patterns found for relation " + relation);
     }
     Announce.done();
   }
