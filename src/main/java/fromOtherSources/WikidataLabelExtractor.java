@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
+
 import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
@@ -152,6 +153,7 @@ public class WikidataLabelExtractor extends DataExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new WikidataLabelExtractor().extract(new File("c:/fabian/data/yago3"), "test");
+	Parameters.init("configuration/yago_aida_ghazale.ini");
+    new WikidataLabelExtractor().extract(new File("/home/ghazaleh/Projects/data/test"), "test");
   }
 }
