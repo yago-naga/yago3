@@ -5,12 +5,6 @@ import java.io.Reader;
 import java.util.HashSet;
 import java.util.Set;
 
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
-import utils.MultilingualTheme;
-import utils.Theme;
-import utils.TitleExtractor;
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
@@ -19,6 +13,12 @@ import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.TransitiveTypeExtractor;
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import javatools.util.FileUtils;
+import utils.MultilingualTheme;
+import utils.Theme;
+import utils.TitleExtractor;
 
 /**
  * YAGO2s - Wikipedia Info Extractor
@@ -63,8 +63,8 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
     HashSet<FollowUpExtractor> s = new HashSet<>();
     if (!isEnglish()) {
       s.add(new EntityTranslator(WIKIINFONEEDSTRANSLATION.inLanguage(language), WIKIINFONEEDSTYPECHECK.inLanguage(language), this, true));
+      s.add(new TypeChecker(WIKIINFONEEDSTYPECHECK.inLanguage(language), WIKIINFO.inLanguage(language), this));
     }
-    s.add(new TypeChecker(WIKIINFONEEDSTYPECHECK.inLanguage(language), WIKIINFO.inLanguage(language), this));
     return s;
   }
 
@@ -82,8 +82,8 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
       String page = FileLines.readToBoundary(in, "</text>");
       if (page == null) continue;
       if (isEnglish()) {
-        WIKIINFONEEDSTYPECHECK.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
-        WIKIINFONEEDSTYPECHECK.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
+        WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
+        WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
       } else {
         // If the article size of non-English WPs is needed, this needs to be captured properly.
         //				WIKIINFONEEDSTRANSLATION.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
@@ -97,10 +97,11 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
         endPos = target.indexOf('|');
         if (endPos != -1) target = target.substring(0, endPos);
         target = FactComponent.forForeignWikipediaTitle(target, language);
+        if (isEnglish() && !titleExtractor.entities.contains(target)) continue;
         targets.add(target);
       }
 
-      MultilingualTheme out = isEnglish() ? WIKIINFONEEDSTYPECHECK : WIKIINFONEEDSTRANSLATION;
+      MultilingualTheme out = isEnglish() ? WIKIINFO : WIKIINFONEEDSTRANSLATION;
 
       for (String target : targets) {
         out.inLanguage(language).write(new Fact(entity, "<linksTo>", target));
