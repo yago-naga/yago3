@@ -49,7 +49,7 @@ public class DictionaryExtractor extends DataExtractor {
 			"infoboxTemplateDictionary",
 			"Maps a foreign infobox template name to the English name.");
 	
-	private static final String WIKIDATA = "wikidata";
+	private static final String WIKIDATA_SITELINKS = "wikidata_sitelinks";
 
 	/**
 	 * This TitleExtractor makes sure every foreign word gets mapped to a valid
@@ -67,7 +67,7 @@ public class DictionaryExtractor extends DataExtractor {
 	}
 
 	public DictionaryExtractor() {
-		this(Parameters.getFile(WIKIDATA));
+		this(Parameters.getFile(WIKIDATA_SITELINKS));
 	}
 
 	@Override
@@ -225,7 +225,7 @@ public class DictionaryExtractor extends DataExtractor {
 
 	public static void main(String[] args) throws Exception {
 		Parameters.init("configuration/yago_aida_ghazale.ini");
-		File wikidata = Parameters.getFile(WIKIDATA);
+		File wikidata = Parameters.getFile(WIKIDATA_SITELINKS);
 		new DictionaryExtractor(wikidata).extract(
 				new File("/home/ghazaleh/Projects/data/test"), "test");
 	}

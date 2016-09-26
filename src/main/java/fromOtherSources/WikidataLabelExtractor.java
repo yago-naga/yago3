@@ -30,14 +30,14 @@ import utils.Theme;
  */
 public class WikidataLabelExtractor extends DataExtractor {
 
-  private static final String WIKIDATA = "wikidata";
+  private static final String WIKIDATA_SITELINKS = "wikidata_sitelinks";
 
   public WikidataLabelExtractor(File wikidata) {
     super(wikidata);
   }
 
   public WikidataLabelExtractor() {
-    this(Parameters.getFile(WIKIDATA));
+    this(Parameters.getFile(WIKIDATA_SITELINKS));
   }
 
   @Override
