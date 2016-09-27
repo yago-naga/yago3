@@ -15,9 +15,7 @@ import basics.N4Reader;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
-import extractors.MultilingualExtractor;
 import fromThemes.TransitiveTypeExtractor;
-import fromWikipedia.CategoryExtractor;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
@@ -37,7 +35,6 @@ public class WikidataImageExtractor extends DataExtractor {
 	public static final Theme WIKIDATAIMAGES = new Theme("wikidataImages", 
 			"Images in wikidata dump for entities");
 	
-	//How to keep these?
 	private static final Map<String, List<String>> imageRelations;
 	static {
 		Map<String, List<String>> tempMap = new HashMap<String, List<String>>();
@@ -81,7 +78,8 @@ public class WikidataImageExtractor extends DataExtractor {
 		Map<String, String> images = new HashMap<String, String>();
 		while(nr.hasNext()) {
 			Fact f = nr.next();
-			
+			// example: <http://www.wikidata.org/entity/Q1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/ontology#Item> 
+			// We reached a new entity and until the next appearance of "#Item", the statements are about this entity.
 			if(f.getObject().endsWith("#Item>")){
 				if(!images.isEmpty()){
 					String image = null;
@@ -92,7 +90,7 @@ public class WikidataImageExtractor extends DataExtractor {
 							break;
 						}
 					}
-					// If there were some image(s) but not in the expected types, select first one
+					// If there were some image(s) but not in the expected types, select first one.
 					if(image == null){
 						image = images.entrySet().iterator().next().getValue();
 					}
@@ -102,12 +100,14 @@ public class WikidataImageExtractor extends DataExtractor {
 				yagoEntity = wikiDataIdEntityMap.get(f.getSubject());
 				prevImage = null;
 			}
-			// Select the first image per relation for an entity, unless there is a PreferredRank which is replaced
+			// Select the first image per relation for an entity, unless there is a PreferredRank.
+			// Format of regular expression is taken from: https://www.wikidata.org/wiki/Property:P18
 			else if(f.getObject().matches(".*(jpg|jpeg|png|svg|tif|tiff|gif)>$") && yagoEntity != null){
 				if(!images.containsKey(f.getRelation()))
 					images.put(f.getRelation(), f.getObject());
 				prevImage = f;
 			}
+			// If the rank of the image was "PreferredRank", replace the existing image with this preferred image.
 			else if(prevImage != null && prevImage.getSubject().equals(f.getSubject()) && f.getRelation().endsWith("#rank>")){
 				if(f.getObject().endsWith("#PreferredRank>"))
 					images.put(prevImage.getRelation(), prevImage.getObject());
@@ -148,8 +148,4 @@ public class WikidataImageExtractor extends DataExtractor {
 		return category;
 	}
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
 }

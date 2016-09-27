@@ -4,12 +4,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 import fromOtherSources.MetadataExtractor;
+import fromOtherSources.WikidataImageExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
 import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.RDFS;
+import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import fromOtherSources.DictionaryExtractor;
@@ -34,7 +36,7 @@ public class AIDAExtractorMerger extends Extractor {
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>",
       "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>",
-      "<hasWikipediaId>", "<_yagoMetadata>");
+      "<hasWikipediaId>", "<_yagoMetadata>", YAGO.hasWikiDataImageUrl);
 
   
   @Override
@@ -69,6 +71,9 @@ public class AIDAExtractorMerger extends Extractor {
 
     // Metadata.
     input.add(MetadataExtractor.METADATAFACTS);
+    
+    // Image.
+    input.add(WikidataImageExtractor.WIKIDATAIMAGES);
     
     return input;
   }
