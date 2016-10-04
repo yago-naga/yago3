@@ -35,9 +35,13 @@ import utils.MultilingualTheme;
 import utils.Theme;
 
 /**
- * WikipediaCategoryClassHierarchyExtractor - YAGO2s
- * <p/>
- * Extracts the hierarchy of subcategories of classes.
+ * CategoryClassHierarchyExtractor - YAGO3
+ *
+ * Extracts the hierarchy of Wikipedia categories, matching them to WordNet on the coarsest granular level possible.
+ * This means that we extract for example:
+ *
+ * Clothing Companies from Italy -> Cothing Comapnies -> Companies
+ * from Wikipedia categories, them natch Companies to the proper WordNet synset.
  *
  * @author Felix Keller
  */
@@ -82,9 +86,11 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
     return new FinalSet<>(CATEGORYCLASSHIERARCHY.inLanguage(language));
   }
 
-  public static final String WORDNET_RELATION = "rdfs:subClassOf";
+  public static final String WORDNET_RELATION = RDFS.subclassOf;
 
-  public static final String WIKIPEDIA_RELATION = "<wikipediaSubCategoryOf>";
+  // Write everything as subclassOf, everything is a class.
+  public static final String WIKIPEDIA_RELATION = RDFS.subclassOf;
+//  public static final String WIKIPEDIA_RELATION = "<wikipediaSubCategoryOf>";
 
   private PrintWriter debugWriter_removeBadCats;
 
