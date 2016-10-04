@@ -5,7 +5,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -18,6 +17,7 @@ import extractors.DataExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
+import javatools.parsers.Char17;
 import utils.Theme;
 
 /**
@@ -64,9 +64,7 @@ public class WikidataImageExtractor extends DataExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		Set<Theme> result = new HashSet<Theme>();
-		result.add(WIKIDATAIMAGES);
-		return result;
+		return (new FinalSet<>(WIKIDATAIMAGES));
 	}
 
 	@Override
@@ -94,7 +92,7 @@ public class WikidataImageExtractor extends DataExtractor {
 					if(image == null){
 						image = images.entrySet().iterator().next().getValue();
 					}
-					WIKIDATAIMAGES.write(new Fact(yagoEntity, YAGO.hasWikiDataImageUrl, image));
+					WIKIDATAIMAGES.write(new Fact(yagoEntity, YAGO.hasWikiDataImageUrl, Char17.decodeBackslash(image)));
 				}
 				images.clear();
 				yagoEntity = wikiDataIdEntityMap.get(f.getSubject());
