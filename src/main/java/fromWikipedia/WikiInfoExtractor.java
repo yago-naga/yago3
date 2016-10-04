@@ -77,11 +77,17 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
     while (FileLines.scrollTo(in, "<title>")) {
       String entity = titleExtractor.getTitleEntity(in);
       if (entity == null) continue;
+      boolean debug = entity.equals("<James_Le_Fevre>");
+      if (debug) System.out.println("Found title: " + entity);
       if (!FileLines.scrollTo(in, "<text")) continue;
+      if (debug) System.out.println("Scrolled to text");
       if (!FileLines.scrollTo(in, ">")) continue;
+      if (debug) System.out.println("Scrolled to end text");
       String page = FileLines.readToBoundary(in, "</text>");
+      if (debug) System.out.println("Read text: " + page);
       if (page == null) continue;
       if (isEnglish()) {
+        if (debug) System.out.println("Printed info");
         WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
         WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
       } else {
@@ -117,7 +123,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
     /*    new WikiInfoExtractor("en", new File("c:/Fabian/eclipseProjects/yago2s/testCases/extractors.CategoryExtractor/wikitest.xml")).extract(new File(
         "c:/fabian/data/yago3"), "Test on 1 wikipedia article\n");*/
 
-    new WikiInfoExtractor("ro", new File(args[1])).extract(new File(args[0]), "WikiInfoExtractor test");
+    new WikiInfoExtractor("en", new File("c:/fabian/data/wikipedia/james.xml")).extract(new File("c:/fabian/data/yago3"), "WikiInfoExtractor test");
 
   }
 }
