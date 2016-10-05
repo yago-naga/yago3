@@ -77,17 +77,17 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
     while (FileLines.scrollTo(in, "<title>")) {
       String entity = titleExtractor.getTitleEntity(in);
       if (entity == null) continue;
-      boolean debug = entity.equals("<James_Le_Fevre>");
-      if (debug) System.out.println("Found title: " + entity);
+      //boolean debug = entity.equals("<James_Le_Fevre>");
+      //if (debug) System.out.println("Found title: " + entity);
       if (!FileLines.scrollTo(in, "<text")) continue;
-      if (debug) System.out.println("Scrolled to text");
+      //if (debug) System.out.println("Scrolled to text");
       if (!FileLines.scrollTo(in, ">")) continue;
-      if (debug) System.out.println("Scrolled to end text");
+      //if (debug) System.out.println("Scrolled to end text");
       String page = FileLines.readToBoundary(in, "</text>");
-      if (debug) System.out.println("Read text: " + page);
+      //if (debug) System.out.println("Read text: " + page);
       if (page == null) continue;
       if (isEnglish()) {
-        if (debug) System.out.println("Printed info");
+        //if (debug) System.out.println("Printed info");
         WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
         WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
       } else {
