@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Set;
 
 import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.MultilingualTheme;
@@ -44,6 +45,8 @@ public class DictionaryExtractor extends DataExtractor {
 	public static final MultilingualTheme INFOBOX_TEMPLATE_DICTIONARY = new MultilingualTheme(
 			"infoboxTemplateDictionary",
 			"Maps a foreign infobox template name to the English name.");
+	
+	private static final String WIKIDATA_SITELINKS = "wikidata_sitelinks";
 
 	/**
 	 * This TitleExtractor makes sure every foreign word gets mapped to a valid
@@ -61,7 +64,7 @@ public class DictionaryExtractor extends DataExtractor {
 	}
 
 	public DictionaryExtractor() {
-		this(new File("./data/wikidata.rdf"));
+		this(Parameters.getFile(WIKIDATA_SITELINKS));
 	}
 
 	@Override
@@ -218,8 +221,10 @@ public class DictionaryExtractor extends DataExtractor {
 	}
 
 	public static void main(String[] args) throws Exception {
-		new DictionaryExtractor(new File("./data/wikidata.rdf")).extract(
-				new File("c:/fabian/data/yago3"), "test");
+		Parameters.init("configuration/yago_aida_ghazale.ini");
+		File wikidata = Parameters.getFile(WIKIDATA_SITELINKS);
+		new DictionaryExtractor(wikidata).extract(
+				new File("/home/ghazaleh/Projects/data/test"), "test");
 	}
 
 }

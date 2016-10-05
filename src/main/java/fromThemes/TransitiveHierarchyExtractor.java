@@ -19,8 +19,10 @@ import basics.FactComponent;
 import extractors.Extractor;
 
 /**
- * CategoryClassExtractor - YAGO2s
- * 
+ * Extracts locations in categories and writes the transitive hierarchy.
+ * What is missing is the transformation of this structured information into
+ * real class names.
+ *
  * @author Felix Keller
  */
 public class TransitiveHierarchyExtractor extends Extractor {

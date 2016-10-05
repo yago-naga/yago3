@@ -245,7 +245,7 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
    * @throws IOException */
   public Map<String, String> dictionary() throws IOException {
     // Force the loading
-    factCollection();
+	factCollection();
     return (new Map<String, String>() {
 
       @Override
