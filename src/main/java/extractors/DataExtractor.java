@@ -37,7 +37,7 @@ public abstract class DataExtractor extends Extractor {
         Announce.done();
         return (extractor);
       } catch (Exception ex) {
-        throw new RuntimeException("No data input, and no default constructor for " + className);
+        throw new RuntimeException("No data input, and no default constructor for " + className + ". Exception: " + ex);
       }
     }
     Announce.doing("Creating extractor", className + "(" + datainput + ")");
