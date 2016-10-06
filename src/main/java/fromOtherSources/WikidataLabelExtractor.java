@@ -108,9 +108,8 @@ public class WikidataLabelExtractor extends DataExtractor {
             String mostEnglishName = language2name.get(mostEnglishLan);
             String yagoEntity = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
 
-            WIKIDATAINSTANCES.write(new Fact(yagoEntity, RDFS.sameas, lastqid));
-
             if (entities.contains(yagoEntity)) {
+              WIKIDATAINSTANCES.write(new Fact(yagoEntity, RDFS.sameas, lastqid));
               for (String lan : language2name.keySet()) {
                 String foreignName = language2name.get(lan);
                 if (lan.length() == 2) lan = languagemap.get(lan);
