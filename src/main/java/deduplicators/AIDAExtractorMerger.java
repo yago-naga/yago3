@@ -3,8 +3,8 @@ package deduplicators;
 import java.util.HashSet;
 import java.util.Set;
 
-import fromOtherSources.MetadataExtractor;
-import fromOtherSources.WikidataImageExtractor;
+import fromOtherSources.*;
+import fromWikipedia.*;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
@@ -14,15 +14,7 @@ import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
-import fromOtherSources.DictionaryExtractor;
-import fromOtherSources.HardExtractor;
 import fromThemes.TransitiveTypeExtractor;
-import fromWikipedia.CategoryExtractor;
-import fromWikipedia.ConteXtExtractor;
-import fromWikipedia.DisambiguationPageExtractor;
-import fromWikipedia.RedirectExtractor;
-import fromWikipedia.StructureExtractor;
-
 
 public class AIDAExtractorMerger extends Extractor {
 
@@ -32,7 +24,7 @@ public class AIDAExtractorMerger extends Extractor {
   
   /** Relations that AIDA needs. */
   public static final Set<String> relations = new FinalSet<>(
-      RDFS.type, RDFS.subclassOf, RDFS.label, "<hasGivenName>", "<hasFamilyName>",
+      RDFS.type, RDFS.subclassOf, RDFS.label, RDFS.sameas, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>",
       "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>",
@@ -71,10 +63,14 @@ public class AIDAExtractorMerger extends Extractor {
 
     // Metadata.
     input.add(MetadataExtractor.METADATAFACTS);
-    
+    input.addAll(WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages));
+
     // Image.
     input.add(WikidataImageExtractor.WIKIDATAIMAGES);
-    
+
+    // WikiData links.
+    input.add(WikidataLabelExtractor.WIKIDATAINSTANCES);
+
     return input;
   }
 
