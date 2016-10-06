@@ -50,7 +50,7 @@
 "\{\{duration\|h=_number_([^_]++)_\|m=_number_([^_]++)_\|s=_number_([^_]++)_\}\}" <mapsTo> "_number_$1*3600+$2*60+$3_ s " .
 "\{\{duration\|m=_number_([^_]++)_\|s=_number_([^_]++)_\}\}" <mapsTo> "_number_$1*60+$2_ s " .
 "(\d+):(\d{2}):(\d{2})" <mapsTo> "_number_$3*3600+$2*60+$3_ s " .
-"(\d+):(\d{2})" <mapsTo> "_number_$2*60+$3_ s " .
+"(\d+):(\d{2})" <mapsTo> "_number_$1*60+$2_ s " .
 
 # quantities
 
