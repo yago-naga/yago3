@@ -43,6 +43,8 @@ import utils.Theme;
  * Clothing Companies from Italy -> Cothing Comapnies -> Companies
  * from Wikipedia categories, them natch Companies to the proper WordNet synset.
  *
+ * TODO this is multilingual but the heuristics only work for English - probably a mistake!
+ *
  * @author Felix Keller
  */
 public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
