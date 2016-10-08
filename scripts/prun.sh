@@ -14,7 +14,7 @@ cd "$DIR/.."
 echo Starting YAGO in parallel, output written to yago.log
 #nohup /local/java/bin/java -Xmx44G -cp "../javatools/bin:../basics3/bin:bin" main.ParallelCaller yago.ini > yago.log &
 
-export MAVEN_OPTS=-Xmx128G
+export MAVEN_OPTS=-Xmx212G
 mvn -U clean compile exec:java -Dexec.args="$DIR/../$1"
 
 sleep 5s
