@@ -28,10 +28,10 @@ public class TitleExtractor {
   /** Holds the patterns to apply to titles */
   protected PatternList replacer;
 
-  /** Holds the words of wordnet */
+  /** Holds the words of wordnet -- only for English title extractors*/
   protected Set<String> wordnetWords;
 
-  /** Holds all entities of Wikipedia */
+  /** Holds all entities of Wikipedia -- only for English title extractors */
   public final Set<String> entities;
 
   /** Language of Wikipedia */
@@ -54,18 +54,22 @@ public class TitleExtractor {
       throw new RuntimeException("The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
     }
     replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS.factCollection(), "<_titleReplace>");
-    if (FactComponent.isEnglish(language) && !WordnetExtractor.PREFMEANINGS.isAvailableForReading()
-        && !TransitiveTypeExtractor.TRANSITIVETYPE.isAvailableForReading()) {
-      Announce.error("The English TitleExtractor needs WordnetExtractor.PREFMEANINGS or TransitiveTypeExtractor.TRANSITIVETYPE as input. "
-          + "This is in order to avoid that Wikipedia articles that describe common nouns (such as 'table') become instances in YAGO.");
-    }
-    if (TransitiveTypeExtractor.TRANSITIVETYPE.isAvailableForReading()) {
-      this.entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
-    } else if (FactComponent.isEnglish(language)) {
-      this.wordnetWords = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings().keySet();
-      this.entities = null;
+    if (FactComponent.isEnglish(language)) {
+      if (TransitiveTypeExtractor.TRANSITIVETYPE.isAvailableForReading()) {
+        this.entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
+        this.wordnetWords = null;
+      } else if (WordnetExtractor.PREFMEANINGS.isAvailableForReading()) {
+        this.wordnetWords = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings().keySet();
+        this.entities = null;
+      } else {
+        Announce.error("The English TitleExtractor needs WordnetExtractor.PREFMEANINGS or TransitiveTypeExtractor.TRANSITIVETYPE as input. "
+            + "This is in order to avoid that Wikipedia articles that describe common nouns (such as 'table') become instances in YAGO.");
+        this.entities = null;
+        this.wordnetWords = null;
+      }
     } else {
       this.entities = null;
+      this.wordnetWords = null;
     }
     this.language = language;
   }
