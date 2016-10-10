@@ -4,6 +4,7 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.List;
 
+import fromThemes.CategoryClassHierarchyExtractor;
 import utils.Theme;
 import utils.Theme.ThemeGroup;
 import basics.Fact;
@@ -28,7 +29,7 @@ public class ClassExtractor extends SimpleDeduplicator {
   @Override
   public List<Theme> inputOrdered() {
     return (Arrays.asList(SchemaExtractor.YAGOSCHEMA, HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES,
-        CategoryClassExtractor.CATEGORYCLASSES
+        CategoryClassExtractor.CATEGORYCLASSES, CategoryClassHierarchyExtractor.CATEGORYCLASSHIERARCHY.inEnglish()
     // GeoNamesClassMapper.GEONAMESCLASSES
         ));
   }
