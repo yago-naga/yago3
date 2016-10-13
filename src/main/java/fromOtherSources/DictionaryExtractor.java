@@ -188,9 +188,9 @@ public class DictionaryExtractor extends DataExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    Parameters.init("configuration/yago_aida_ghazale.ini");
-    File wikidata = Parameters.getFile(WIKIDATA_SITELINKS);
-    new DictionaryExtractor(wikidata).extract(new File("/home/ghazaleh/Projects/data/test"), "test");
+    //Parameters.init("configuration/yago_aida_ghazale.ini");
+    //File wikidata = Parameters.getFile(WIKIDATA_SITELINKS);
+    new DictionaryExtractor(new File("c:/fabian/data/wikidata/links.n4")).extract(new File("c:/fabian/data/yago3"), "test");
   }
 
 }
