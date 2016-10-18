@@ -74,7 +74,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 
   @Override
   public void extract() throws Exception {
-    // !!!
+    //TODO: check where to get available languages from.
     List <String> availableLanguages = MultilingualExtractor.allLanguagesExceptEnglish();
     availableLanguages.add("en");
     
@@ -103,32 +103,36 @@ public class WikidataLabelExtractor extends DataExtractor {
       Fact f = nr.next();
       // Record a new name in the map
       if (f.getRelation().endsWith("/inLanguage>")) {
-        String lan = FactComponent.stripQuotes(f.getObject());
-        String nam = FactComponent.stripWikipediaPrefix(Char17.decodePercentage(f.getSubject()));
-        if (nam != null) language2name.put(lan, nam);
+        String lang = FactComponent.stripQuotes(f.getObject());
+        String name = FactComponent.stripWikipediaPrefix(Char17.decodePercentage(f.getSubject()));
+        if (name != null) language2name.put(lang, name);
       } 
       // Get to the line that information about a new item begin from.
       // example: <http://www.wikidata.org/entity/Q1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/ontology#Item> .
       else if (f.getArg(2).endsWith("#Item>")) {
-        // Write the previous item:
+        // Write the previous item: (data between 2 "#Item" belong to previous one)
         if (!language2name.isEmpty()) {
           // New item starts, let's flush out the previous one
+          // mostEnglish is based on the input language order from most to least
           String mostEnglishLan = DictionaryExtractor.mostEnglishLanguage(language2name.keySet());
           if (mostEnglishLan != null) {
             String mostEnglishName = language2name.get(mostEnglishLan);
             String yagoEntity = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
               
             if (entities.contains(yagoEntity)) {
-              for (String lan : language2name.keySet()) {
-                String foreignName = language2name.get(lan);
+              // For on all languages
+              for (String lang : language2name.keySet()) {
+                String foreignName = language2name.get(lang);
                 
-                if(availableLanguages.contains(lan))
-                  WIKIDATAINSTANCES.write(new Fact(FactComponent.forForeignYagoEntity(foreignName, lan), RDFS.sameas, lastqid));
+                // Check if the language is available (input languages)
+                if(availableLanguages.contains(lang))
+                  WIKIDATAINSTANCES.write(new Fact(FactComponent.forForeignYagoEntity(foreignName, lang), RDFS.sameas, lastqid));
                 
-                if (lan.length() == 2) lan = languagemap.get(lan);
-                if (lan == null || lan.length() != 3) continue;
+                // Change 2-letter language code to 3-letter
+                if (lang.length() == 2) lang = languagemap.get(lang);
+                if (lang == null || lang.length() != 3) continue;
                 for (String name : trivialNamesOf(foreignName)) {
-                  write(WIKIDATAMULTILABELS, new Fact(yagoEntity, RDFS.label, FactComponent.forStringWithLanguage(name, lan)),
+                  write(WIKIDATAMULTILABELS, new Fact(yagoEntity, RDFS.label, FactComponent.forStringWithLanguage(name, lang)),
                       WIKIDATAMULTILABELSOURCES, "<http://wikidata.org>", "WikidataLabelExtractor");
                 }
               }
