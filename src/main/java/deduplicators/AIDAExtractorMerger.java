@@ -28,7 +28,7 @@ public class AIDAExtractorMerger extends Extractor {
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>",
       "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>",
-      "<hasWikipediaId>", "<_yagoMetadata>", YAGO.hasWikiDataImageUrl);
+      "<hasWikipediaId>", "<_yagoMetadata>", YAGO.hasWikiDataImageUrl, YAGO.hasGloss);
 
   
   @Override
@@ -70,6 +70,9 @@ public class AIDAExtractorMerger extends Extractor {
 
     // WikiData links.
     input.add(WikidataLabelExtractor.WIKIDATAINSTANCES);
+
+    // Wikipedia Category Gloss.
+    input.add(CategoryGlossExtractor.CATEGORYGLOSSES);
     
     return input;
   }
