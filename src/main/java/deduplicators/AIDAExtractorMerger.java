@@ -72,7 +72,7 @@ public class AIDAExtractorMerger extends Extractor {
     input.add(WikidataLabelExtractor.WIKIDATAINSTANCES);
 
     // Wikipedia Category Gloss.
-    input.add(CategoryGlossExtractor.CATEGORYGLOSSES);
+    input.addAll(CategoryGlossExtractor.CATEGORYGLOSSES.inLanguages(MultilingualExtractor.wikipediaLanguages));
     
     return input;
   }
