@@ -100,7 +100,7 @@ public class WikidataImageExtractor extends DataExtractor {
 			}
 			// Select the first image per relation for an entity, unless there is a PreferredRank.
 			// Format of regular expression is taken from: https://www.wikidata.org/wiki/Property:P18
-			else if(f.getObject().matches(".*(jpg|jpeg|png|svg|tif|tiff|gif)>$") && yagoEntity != null){
+			else if(f.getObject().matches(".*\\.(jpg|jpeg|png|svg|tif|tiff|gif)>$") && yagoEntity != null){
 				if(!images.containsKey(f.getRelation()))
 					images.put(f.getRelation(), f.getObject());
 				prevImage = f;
