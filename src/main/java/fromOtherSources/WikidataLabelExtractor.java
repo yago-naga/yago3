@@ -75,8 +75,7 @@ public class WikidataLabelExtractor extends DataExtractor {
   @Override
   public void extract() throws Exception {
     //TODO: check where to get available languages from.
-    List <String> availableLanguages = MultilingualExtractor.allLanguagesExceptEnglish();
-    availableLanguages.add("en");
+    List <String> availableLanguages = MultilingualExtractor.wikipediaLanguages;
     
     Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
     Set<String> entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
