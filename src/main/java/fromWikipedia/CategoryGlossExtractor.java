@@ -90,42 +90,23 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
     if (match.find()) {
       gloss = match.group(1);
     } 
+//    else {
+//      int start = page.indexOf(">");
+//      page = page.substring(start + 1);
+//      page = removePatterns(page);      
+//      if (emptyStringPattern.matcher(page).matches()) {
+//        return null;
+//      }
+//      gloss = page;
+//    }
     else {
-      // Extracting gloss text by removing some patterns that are observed to not have clean and good information
       int start = page.indexOf(">");
       page = page.substring(start + 1);
-      page = page.replaceAll("(([Ss]ee [Aa]lso.*?)|([Ff]or more.*?)|([Ff]or specific.*?)|([Ss]ee [Tt]he)|([Ss]ee:)|(For .+?[,-] see)|([Cc]lick [Oo]n))(.*)", "");
-      page = page.replaceAll("(([Ss]iehe auch))(.*)", "");// This is not a solution.
-      page = page.replaceAll("<br */>", " ");
-      page = page.replaceAll("<br *>", " ");
-      page = page.replaceAll("</ *br *>", " ");
-      page = Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
       page = removeBrackets(page);
-      page = page.replaceAll("\\[\\[Category:(.+?)\\]\\]", "");
-      page = page.replaceAll("\\[\\[" + categoryWord + ":(.+?)\\]\\]", "");
-      page = page.replaceAll("<!--(.*?)-->", "");
-      page = page.replaceAll("\\[\\[.{0,3}:[Cc]ategory:(.+?)\\]\\]", "");
-      page = page.replaceAll("\\[\\[.{0,3}:" + categoryWord + ":(.+?)\\]\\]", "");
-      page = page.replaceAll("\\[\\[File:(.+?)\\]\\]", "");
-      page = page.replaceAll("\\[\\[Datei:(.+?)\\]\\]", "");// "Datei" is German for "File", it was observed in results
-      page = page.replaceAll("\\[\\[Image:(.+?)\\]\\]", "");
-      page = page.replaceAll("\\[\\[wp:(.+?)\\]\\]", "");
-      page = page.replaceAll("==(.*?)==", "");
-      page = page.replaceAll("The (.*?)magic word(.*?) <nowiki>__NOGALLERY__</nowiki> is used in this category to turn off thumbnail display since this category list unfree images, the display of which is restricted to certain areas of Wikipedia.", "");
-      page = page.replaceAll("<table(.*?)>(.*?)</table>", "");
-      page = page.replaceAll("<gallery>(.*)</gallery>", "");
-      page = page.replaceAll("<imagemap>(.*)</imagemap>", "");
-      //page = replacement.transform(page); // the patterns above where in the pattern file before.
-      page = page.replaceAll("__.*?__", "");
-      page = page.replaceAll("<(.*?)>", "");
-      page = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
-      
-      if (emptyStringPattern.matcher(page).matches()) {
-        return null;
-      }
-      gloss = page;
+      gloss = page.replaceAll("(.+)?\\n(.*)","$1");
     }
     
+    if (emptyStringPattern.matcher(gloss).matches()) return null;
     // Cleaning up the gloss text
     gloss = cleanText(gloss);
 
@@ -163,6 +144,37 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
     inputText = inputText.replaceAll("[^\\p{L}\\s]+(.*?[\\.\\?!:;,])", "$1");
     inputText = inputText.replaceAll("^\\s+", "");
     inputText = inputText.replaceAll("\\P{L}+$", ".");
+    return inputText;
+  }
+  
+  // Extracting gloss text by removing some patterns that are observed to not have clean and good information
+  private String removePatterns(String inputText) {
+    
+    inputText = inputText.replaceAll("(([Ss]ee [Aa]lso.*?)|([Ff]or more.*?)|([Ff]or specific.*?)|([Ss]ee [Tt]he)|([Ss]ee:)|(For .+?[,-] see)|([Cc]lick [Oo]n))(.*)", "");
+    //page = page.replaceAll("(([Ss]iehe auch))(.*)", "");// This is not a solution.
+    inputText = inputText.replaceAll("<br */>", " ");
+    inputText = inputText.replaceAll("<br *>", " ");
+    inputText = inputText.replaceAll("</ *br *>", " ");
+    inputText = Char17.decodeAmpersand(Char17.decodeAmpersand(inputText.replaceAll("[\\s\\x00-\\x1F]+", " ")));
+    //inputText = removeBrackets(inputText); moved to up
+    inputText = inputText.replaceAll("\\[\\[Category:(.+?)\\]\\]", "");
+    inputText = inputText.replaceAll("\\[\\[" + categoryWord + ":(.+?)\\]\\]", "");
+    inputText = inputText.replaceAll("<!--(.*?)-->", "");
+    inputText = inputText.replaceAll("\\[\\[.{0,3}:[Cc]ategory:(.+?)\\]\\]", "");
+    inputText = inputText.replaceAll("\\[\\[.{0,3}:" + categoryWord + ":(.+?)\\]\\]", "");
+    inputText = inputText.replaceAll("\\[\\[File:(.+?)\\]\\]", "");
+    //page = page.replaceAll("\\[\\[Datei:(.+?)\\]\\]", "");// "Datei" is German for "File", it was observed in results
+    inputText = inputText.replaceAll("\\[\\[Image:(.+?)\\]\\]", "");
+    inputText = inputText.replaceAll("\\[\\[wp:(.+?)\\]\\]", "");
+    inputText = inputText.replaceAll("==(.*?)==", "");
+    inputText = inputText.replaceAll("The (.*?)magic word(.*?) <nowiki>__NOGALLERY__</nowiki> is used in this category to turn off thumbnail display since this category list unfree images, the display of which is restricted to certain areas of Wikipedia.", "");
+    inputText = inputText.replaceAll("<table(.*?)>(.*?)</table>", "");
+    inputText = inputText.replaceAll("<gallery>(.*)</gallery>", "");
+    inputText = inputText.replaceAll("<imagemap>(.*)</imagemap>", "");
+    //page = replacement.transform(page); // the patterns above where in the pattern file before.
+    inputText = inputText.replaceAll("__.*?__", "");
+    inputText = inputText.replaceAll("<(.*?)>", "");
+    inputText = inputText.replaceAll("[\\s\\x00-\\x1F]+", " ");
     return inputText;
   }
   
