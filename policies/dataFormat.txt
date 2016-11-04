@@ -1,9 +1,9 @@
-YAGO2s Policy: Data format
+YAGO Policy: Data format
 Author: Fabian M. Suchanek
 
 -------------- Format --------------------
 
-The data format of YAGO2s is RDF/Turtle, as specified here:
+The data format of YAGO is RDF/Turtle, as specified here:
  http://www.w3.org/TeamSubmission/turtle/#sec-grammar-grammar 
 
 -------------- Design Choices --------------------
@@ -14,7 +14,7 @@ This is because qnames may not contain certain characters
 (2) All entities from standard namespaces are given as qnames
 This is to save space and keep readability.
 (3) All other entities are given as full URIs "<http://...>"
-(4) The encoding is UTF-8, backslash encodings are only used if necessary,
+(4) The encoding is UTF-8, backslash encodings are used only if necessary,
 and \uXXXX encodings are avoided wherever possible.
 
 -------------- Entities --------------------

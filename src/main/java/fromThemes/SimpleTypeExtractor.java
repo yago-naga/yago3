@@ -6,25 +6,39 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import utils.FactCollection;
-import utils.Theme;
-import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.RDFS;
 import basics.YAGO;
 import deduplicators.ClassExtractor;
 import extractors.Extractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import utils.FactCollection;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 
 /**
- * YAGO2s - SimpleTypeExtractor
- * 
  * Produces a simplified taxonomy of just 3 layers.
  * 
- * @author Fabian M. Suchanek
- * 
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 public class SimpleTypeExtractor extends Extractor {
 
@@ -43,15 +57,15 @@ public class SimpleTypeExtractor extends Extractor {
   }
 
   /** The theme of simple types */
-  public static final Theme SIMPLETYPES = new Theme(
-      "yagoSimpleTypes",
+  public static final Theme SIMPLETYPES = new Theme("yagoSimpleTypes",
       "A simplified rdf:type system. This theme contains all instances, and links them with rdf:type facts to the leaf level of WordNet (use with yagoSimpleTaxonomy)",
       Theme.ThemeGroup.SIMPLETAX);
 
   /** Simple taxonomy */
   public static final Theme SIMPLETAXONOMY = new Theme("yagoSimpleTaxonomy",
       "A simplified rdfs:subClassOf taxonomy. This taxonomy contains just WordNet leaves, the main YAGO branches, and " + YAGO.entity + " (use with "
-          + SIMPLETYPES + ")", ThemeGroup.SIMPLETAX);
+          + SIMPLETYPES + ")",
+      ThemeGroup.SIMPLETAX);
 
   @Override
   public Set<Theme> output() {

@@ -1,21 +1,5 @@
 package fromWikipedia;
 
-import basics.Fact;
-import basics.FactComponent;
-import basics.RDFS;
-import extractors.MultilingualWikipediaExtractor;
-import followUp.EntityTranslator;
-import followUp.FollowUpExtractor;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromThemes.TransitiveTypeExtractor;
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.parsers.Char17;
-import javatools.util.FileUtils;
-import utils.*;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.util.Arrays;
@@ -24,12 +8,45 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import basics.Fact;
+import basics.FactComponent;
+import basics.RDFS;
+import extractors.MultilingualWikipediaExtractor;
+import followUp.EntityTranslator;
+import followUp.FollowUpExtractor;
+import fromOtherSources.PatternHardExtractor;
+import fromThemes.TransitiveTypeExtractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import javatools.parsers.Char17;
+import javatools.util.FileUtils;
+import utils.MultilingualTheme;
+import utils.PatternList;
+import utils.Theme;
+
 /**
  * Extracts all articles that are non-entities (concepts).
  *
- * @author Johannes Hoffart
- *
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Johannes Hoffart.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
   private static Pattern emptyStringPattern = Pattern.compile("\\s+");
@@ -38,11 +55,13 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
   private static Pattern linkPattern = Pattern.compile("\\[\\[.*?\\]\\]");
 
-  @Override public Set<Theme> input() {
+  @Override
+  public Set<Theme> input() {
     return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
   }
 
-  @Override public Set<Theme> inputCached() {
+  @Override
+  public Set<Theme> inputCached() {
     return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
   }
 
@@ -51,7 +70,8 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
   public static final MultilingualTheme NONENTITIES = new MultilingualTheme("nonEntities", "Non-entity article");
 
-  @Override public Set<Theme> output() {
+  @Override
+  public Set<Theme> output() {
     if (isEnglish()) {
       return new FinalSet<>(NONENTITIES.inLanguage(language));
     } else {
@@ -59,7 +79,8 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
     }
   }
 
-  @Override public Set<FollowUpExtractor> followUp() {
+  @Override
+  public Set<FollowUpExtractor> followUp() {
     Set<FollowUpExtractor> result = new HashSet<>();
 
     if (!isEnglish()) {
@@ -68,7 +89,8 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
     return result;
   }
 
-  @Override public void extract() throws Exception {
+  @Override
+  public void extract() throws Exception {
     // Extract the information
     Announce.doing("Extracting context facts");
 
@@ -161,8 +183,8 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
     clean = clean.replaceAll("\\s+", " ");
     // Leave Wikipedia links.
-//    clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
-//    clean = clean.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
+    //    clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
+    //    clean = clean.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
     clean = clean.replaceAll("\\[https?:.*?\\]", " ");
     clean = clean.replaceAll("\\[\\[.*?:.*?\\]\\]", " ");
     clean = clean.replaceAll("'{2,}", "");

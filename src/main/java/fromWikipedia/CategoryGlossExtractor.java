@@ -20,14 +20,34 @@ import javatools.util.FileUtils;
 import utils.FactCollection;
 import utils.PatternList;
 import utils.Theme;
-import utils.TitleExtractor;
 
+/** Extracts category glosses from Wikipedia
+ * 
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Ghazaleh Haratinezhad.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class CategoryGlossExtractor extends EnglishWikipediaExtractor {
 
   private static Pattern categoryExplanation = Pattern.compile("\\{\\{Category explanation\\|(.*?)\\}\\}");
 
   private static Pattern emptyStringPattern = Pattern.compile("\\s*");
-  
+
   public static final Theme CATEGORYGLOSSES = new Theme("wikipediaCategoryGlosses", "Category glosses extracted from wikipedia");
 
   public CategoryGlossExtractor(File wikipedia) {
@@ -45,45 +65,42 @@ public class CategoryGlossExtractor extends EnglishWikipediaExtractor {
   }
 
   @Override
-	public void extract() throws Exception {
-    
+  public void extract() throws Exception {
+
     FactCollection patterns = new FactCollection();
     File categoryGlossCleaningFile = new File("/home/ghazaleh/Projects/data/_categoryGlossCleaning.tsv");
-    for(Fact f: FactSource.from(categoryGlossCleaningFile)){
+    for (Fact f : FactSource.from(categoryGlossCleaningFile)) {
       patterns.add(f);
     }
     PatternList replacement = new PatternList(patterns, "<_replaceBy>");
-    
-    
-		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia());
-		// Find pages about categories. example: <title>Category:Baroque_composers<\title>
-		while(FileLines.findIgnoreCase(in, "<title>Category:") != -1) {
-			
-			String title = FileLines.readToBoundary(in, "</title>");
-			title = Char17.decodeAmpersand(title);
-			
-			if (title != null){
-				String category = FactComponent.forWikiCategory(FactComponent.stripBrackets(title));
-				String page = FileLines.readBetween(in, "<text", "</text>");
-				
-		    String gloss = getGloss(page, replacement);
-		    
-		    
-        if (gloss != null)
-        	CATEGORYGLOSSES.write(new Fact(category, YAGO.hasGloss, gloss));
-        
-        if(category.equals("<wikicat_Romance_book_cover_images>") || category.equals("<wikicat_American_sportspeople_of_Afghan_descent>")) {
+
+    Reader in = FileUtils.getBufferedUTF8Reader(wikipedia());
+    // Find pages about categories. example: <title>Category:Baroque_composers<\title>
+    while (FileLines.findIgnoreCase(in, "<title>Category:") != -1) {
+
+      String title = FileLines.readToBoundary(in, "</title>");
+      title = Char17.decodeAmpersand(title);
+
+      if (title != null) {
+        String category = FactComponent.forWikiCategory(FactComponent.stripBrackets(title));
+        String page = FileLines.readBetween(in, "<text", "</text>");
+
+        String gloss = getGloss(page, replacement);
+
+        if (gloss != null) CATEGORYGLOSSES.write(new Fact(category, YAGO.hasGloss, gloss));
+
+        if (category.equals("<wikicat_Romance_book_cover_images>") || category.equals("<wikicat_American_sportspeople_of_Afghan_descent>")) {
           System.out.println("Title: " + title);
           System.out.println("Cat  : " + category);
           System.out.println("page : " + page);
           System.out.println("Gloss: " + gloss);
         }
-		        
-			}
-			
-		}
-		in.close();
-	}
+
+      }
+
+    }
+    in.close();
+  }
 
   private String getGloss(String page, PatternList replacement) {
     String gloss = null;
@@ -91,8 +108,7 @@ public class CategoryGlossExtractor extends EnglishWikipediaExtractor {
     Matcher match = categoryExplanation.matcher(Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " "))));
     if (match.find()) {
       gloss = match.group(1);
-    } 
-    else {
+    } else {
       int start = page.indexOf(">");
       page = page.substring(start + 1);
       page = page.replaceAll("(([Ss]ee [Aa]lso.*?)|([Ff]or more.*?)|([Ff]or specific.*?))(.*)", "");
@@ -103,41 +119,36 @@ public class CategoryGlossExtractor extends EnglishWikipediaExtractor {
       page = page.replaceAll("__[a-z]+__", "");
       page = page.replaceAll("<(.*?)>", "");
       page = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
-      
+
       if (emptyStringPattern.matcher(page).matches()) {
         return null;
       }
       gloss = page;
     }
-    
+
     gloss = gloss.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
     gloss = gloss.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
     gloss = gloss.replaceAll("'{2,}", "");
-    gloss =  gloss.replaceAll("^[^a-zA-Z0-9]+", "");
+    gloss = gloss.replaceAll("^[^a-zA-Z0-9]+", "");
     gloss = gloss.replaceAll("[^a-zA-Z0-9\\.]+$", "");
-    if(gloss.length() < 10)
-      return null;
+    if (gloss.length() < 10) return null;
     return gloss;
   }
-  
-// Remove lines such as: {{ text... }} 
+
+  // Remove lines such as: {{ text... }} 
   private String removeBrackets(String page) {
     StringBuilder result = new StringBuilder();
     int brackets = 0;
-    for(int i = 0; i < page.length(); i++){
+    for (int i = 0; i < page.length(); i++) {
       char current = page.charAt(i);
-      if(current == '{'){
+      if (current == '{') {
         brackets++;
-      }
-      else if (current == '}') {
+      } else if (current == '}') {
         brackets--;
-      }
-      else if( brackets == 0)
-        result.append(current);
+      } else if (brackets == 0) result.append(current);
     }
     return result.toString().trim();
   }
-  
 
 }
 

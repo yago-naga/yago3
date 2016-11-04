@@ -1,9 +1,9 @@
-/*     YAGO2s to Postgres database
+/*     YAGO to Postgres database
 *
-* This script loads YAGO2s into a Postgres database.
+* This script loads YAGO into a Postgres database.
 * 
 * The database has to be in UTF-8. To create such a database, say
-*   createdb yago2 --encoding utf8 --lc-ctype en_US.utf8  --lc-collate en_US.utf8 --template template0
+*   createdb yago --encoding utf8 --lc-ctype en_US.utf8  --lc-collate en_US.utf8 --template template0
 * 
 * After that, run this script as follows:
 *  - download YAGO in TSV format

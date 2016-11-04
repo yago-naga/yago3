@@ -9,12 +9,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.datatypes.IntHashMap;
-import javatools.util.FileUtils;
-import utils.FactCollection;
-import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -22,15 +16,35 @@ import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WordnetExtractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import javatools.datatypes.IntHashMap;
+import javatools.util.FileUtils;
+import utils.FactCollection;
+import utils.Theme;
 
 /**
- * YAGO2s - CoherentTypeExtractor
- * 
  * Extracts the coherent types from previous types
  * 
- * @author Farzaneh
- * 
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class CoherentTypeExtractor extends Extractor {
 
   @Override
@@ -130,7 +144,8 @@ public class CoherentTypeExtractor extends Extractor {
     String bestSoFar = null;
     for (String candidate : branches.keys()) {
       if (bestSoFar == null || branches.get(candidate) > branches.get(bestSoFar) || branches.get(candidate) == branches.get(bestSoFar)
-          && SimpleTypeExtractor.yagoBranches.indexOf(candidate) < SimpleTypeExtractor.yagoBranches.indexOf(bestSoFar)) bestSoFar = candidate;
+          && SimpleTypeExtractor.yagoBranches.indexOf(candidate) < SimpleTypeExtractor.yagoBranches.indexOf(bestSoFar))
+        bestSoFar = candidate;
     }
     return (bestSoFar);
   }

@@ -6,6 +6,12 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
+import basics.Fact;
+import extractors.MultilingualWikipediaExtractor;
+import followUp.EntityTranslator;
+import followUp.FollowUpExtractor;
+import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -17,21 +23,31 @@ import utils.MultilingualTheme;
 import utils.PatternList;
 import utils.Theme;
 import utils.TitleExtractor;
-import basics.Fact;
-import extractors.MultilingualWikipediaExtractor;
-import followUp.EntityTranslator;
-import followUp.FollowUpExtractor;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
 
 /**
  * Extracts context keyphrases (the X in SPOTLX) facts from Wikipedia.
  * 
  * For now, the provenance generation (yagoConteXtFacts) is disabled.
- * 
- * @author Johannes Hoffart
- * 
- */
+
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Johannes Hoffart.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 
   @Override
@@ -46,24 +62,18 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
         PatternHardExtractor.AIDACLEANINGPATTERNS, WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
   }
 
-  
-   public static final MultilingualTheme CONTEXTFACTSNEEDSTRANSLATION = new MultilingualTheme(
-        "conteXtFactsNeedsTranslation",
-        "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
-
-   
-  /** Context for entities */
-  public static final MultilingualTheme CONTEXTFACTS = new MultilingualTheme(
-      "yagoConteXtFacts",
+  public static final MultilingualTheme CONTEXTFACTSNEEDSTRANSLATION = new MultilingualTheme("conteXtFactsNeedsTranslation",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
-  
-  
+  /** Context for entities */
+  public static final MultilingualTheme CONTEXTFACTS = new MultilingualTheme("yagoConteXtFacts",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
+
   @Override
   public Set<Theme> output() {
     // return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);
-    if(isEnglish()) {
-      return new FinalSet<Theme>(CONTEXTFACTS.inLanguage(language));      
+    if (isEnglish()) {
+      return new FinalSet<Theme>(CONTEXTFACTS.inLanguage(language));
     } else {
       return new FinalSet<Theme>(CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language));
     }
@@ -107,7 +117,6 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           String page = FileLines.readBetween(in, "<text", "</text>");
           String normalizedPage = Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
           String transformedPage = replacements.transform(normalizedPage);
-          
 
           // for (Pair<Fact, String> fact :
           // contextPatterns.extractWithProvenance(normalizedPage,
@@ -119,7 +128,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           // }
           for (Fact fact : contextPatterns.extract(transformedPage, titleEntity, language)) {
             if (fact != null) {
-              if(isEnglish()) {
+              if (isEnglish()) {
                 CONTEXTFACTS.inLanguage(language).write(fact);
               } else {
                 CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language).write(fact);

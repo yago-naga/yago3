@@ -4,24 +4,38 @@ import java.io.File;
 import java.util.Set;
 import java.util.TreeSet;
 
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import utils.Theme;
-import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import deduplicators.ClassExtractor;
 import extractors.Extractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 
 /**
- * YAGO2s - DBpediaLinker
- * 
  * Computes the links to DBpedia.
  * 
- * @author Fabian M. Suchanek
- * 
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class DBpediaLinker extends Extractor {
 
   @Override
@@ -30,8 +44,7 @@ public class DBpediaLinker extends Extractor {
   }
 
   /** Mapping to DBpedia classes */
-  public static final Theme YAGODBPEDIACLASSES = new Theme(
-      "yagoDBpediaClasses",
+  public static final Theme YAGODBPEDIACLASSES = new Theme("yagoDBpediaClasses",
       "Mappings of YAGO classes to YAGO-based DBpedia classes. For the mappings between YAGO classes and other DBpedia classes, as well as the mapping between YAGO relations and DBpedia relations, see http://yago-knowledge.org -> Linking. Mappings of YAGO classes to YAGO-based DBpedia classes",
       ThemeGroup.LINK);
 

@@ -1,13 +1,13 @@
-YAGO2s Policy: Architecture
+YAGO Policy: Architecture
 Author: Fabian M. Suchanek
 
 -------------- Architecture --------------------
 
-The overall goal of the YAGO2s architecture is to enable
+The overall goal of the YAGO architecture is to enable
 cooperation of several contributors, facilitate debugging 
 and maintenance, and allow users to download only
 particular pieces of YAGO ("YAGO a la carte").
-In short: YAGO2s is modular, both in code and in data.
+In short: YAGO is modular, both in code and in data.
 
 The current architecture pursues the goal of modularity
 at the expense of longer running times and inefficiency.
@@ -17,8 +17,8 @@ work in return.
 
 -------------- Themes --------------------
 
-The YAGO2s data is split into "themes". Themes can overlap,
-but should not. The union of all themes constitutes "YAGO2s full".
+The YAGO data is split into "themes". Themes can overlap,
+but should not. The union of all themes constitutes "YAGO full".
 
 The class basics.Theme implements a theme.
 

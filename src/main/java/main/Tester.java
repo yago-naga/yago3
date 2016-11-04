@@ -10,11 +10,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-import javatools.administrative.Announce;
-import javatools.administrative.Parameters;
-import javatools.filehandlers.FileSet;
-import utils.FactCollection;
-import utils.Theme;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;
@@ -22,10 +17,13 @@ import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.FollowUpExtractor;
 import fromThemes.RelationChecker;
+import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
+import javatools.filehandlers.FileSet;
+import utils.FactCollection;
+import utils.Theme;
 
 /**
- * YAGO2s - Tester
- * 
  * Runs test cases for extractors in the folder "testCases"
  * 
  * How to run this: Call main(iniFile)
@@ -37,9 +35,25 @@ import fromThemes.RelationChecker;
  *      singleTest= fully specified name of a single extractor class
  *                  to test, e.g. fromThemes.InfoboxTermExtractor
  *      
- * @author Fabian
- * 
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class Tester {
 
   /** Total number of themes that should be produced */
@@ -150,8 +164,8 @@ public class Tester {
       Theme in = null;
       if (inputFiles != null) {
         for (File f : inputFiles) {
-          if (f.getName().startsWith("checkMe")) in = Theme.getOrCreate(FileSet.newExtension(f, null).getName(), "Facts to be checked by " + clss,
-              null);
+          if (f.getName().startsWith("checkMe"))
+            in = Theme.getOrCreate(FileSet.newExtension(f, null).getName(), "Facts to be checked by " + clss, null);
         }
       }
       if (in == null) {

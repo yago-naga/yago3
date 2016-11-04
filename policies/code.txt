@@ -1,9 +1,9 @@
-YAGO2s Policy: Code
+YAGO Policy: Code
 Author: Fabian M. Suchanek
 
 -------------- Code --------------------
 
-The YAGO2s project will be used and extended by
+The YAGO project will be used and extended by
 several people. Some people will join the project,
 others will leave. To facilitate such collaboration,
 we have to keep the code extremely clean.
@@ -36,7 +36,7 @@ the class if you want to add functionality)
 * be usable without undocumented constraints or side effects
 
 In particular, code snippets or methods for testing purposes
-or private projects should not be committed to the YAGO2s project.
+or private projects should not be committed to the YAGO project.
 
 -------------- Code Style --------------------
 

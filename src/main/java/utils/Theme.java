@@ -17,20 +17,29 @@ import basics.YAGO;
 import javatools.administrative.Announce;
 
 /**
- * Class Theme
- * 
- * This code is part of the YAGO project at the Max Planck Institute for
- * Informatics and the Telecom ParisTech University. It is licensed under a
- * Creative Commons Attribution License by the YAGO team:
- * https://creativecommons.org/licenses/by/3.0/
- * 
  * This class represents a theme. If a theme is assigned to a file, it is a file
  * fact source, i.e., it can iterate over the facts in the file. It can also
  * write facts.
  * 
- * @author Fabian M. Suchanek
- * 
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class Theme extends FactSource.FileFactSource implements Comparable<Theme> {
 
   /** Types of Theme */
@@ -245,7 +254,7 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
    * @throws IOException */
   public Map<String, String> dictionary() throws IOException {
     // Force the loading
-	factCollection();
+    factCollection();
     return (new Map<String, String>() {
 
       @Override

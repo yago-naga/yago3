@@ -11,6 +11,13 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import basics.Fact;
+import basics.FactComponent;
+import extractors.MultilingualWikipediaExtractor;
+import followUp.FollowUpExtractor;
+import followUp.InfoboxTemplateTranslator;
+import fromOtherSources.PatternHardExtractor;
+import fromOtherSources.WordnetExtractor;
 import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -21,22 +28,29 @@ import utils.PatternList;
 import utils.Theme;
 import utils.Theme.ThemeGroup;
 import utils.TitleExtractor;
-import basics.Fact;
-import basics.FactComponent;
-import extractors.MultilingualWikipediaExtractor;
-import followUp.FollowUpExtractor;
-import followUp.InfoboxTemplateTranslator;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
 
 /**
- * YAGO2s - InfoboxExtractor
- * 
  * Extracts facts from infoboxes for all languages.
  * 
- * @author Fabian M. Suchanek
- * @author Farzaneh Mahdisoltani
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek, with contributions from Farzaneh Mahdisoltani.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 
 public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
@@ -77,8 +91,8 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
   @Override
   public Set<FollowUpExtractor> followUp() {
     if (isEnglish()) return (Collections.emptySet());
-    return (new FinalSet<FollowUpExtractor>(new InfoboxTemplateTranslator(INFOBOX_TEMPLATES.inLanguage(this.language),
-        INFOBOX_TEMPLATES_TRANSLATED.inLanguage(this.language), this)));
+    return (new FinalSet<FollowUpExtractor>(
+        new InfoboxTemplateTranslator(INFOBOX_TEMPLATES.inLanguage(this.language), INFOBOX_TEMPLATES_TRANSLATED.inLanguage(this.language), this)));
   }
 
   /** normalizes an attribute name */
@@ -273,9 +287,9 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
           // Write out the template attributes
           for (String cls : template2attributes.keySet()) {
             for (String attribute : template2attributes.get(cls)) {
-              write(INFOBOX_TEMPLATE_ATTRIBUTES.inLanguage(language), new Fact(FactComponent.forInfoboxAttribute(language, attribute),
-                  "<template/appearsIn>", cls), INFOBOX_ATTRIBUTE_SOURCES.inLanguage(language), FactComponent.wikipediaBaseURL(language),
-                  "InfoboxExtractor");
+              write(INFOBOX_TEMPLATE_ATTRIBUTES.inLanguage(language),
+                  new Fact(FactComponent.forInfoboxAttribute(language, attribute), "<template/appearsIn>", cls),
+                  INFOBOX_ATTRIBUTE_SOURCES.inLanguage(language), FactComponent.wikipediaBaseURL(language), "InfoboxExtractor");
             }
           }
           in.close();

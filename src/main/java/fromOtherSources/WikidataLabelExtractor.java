@@ -7,7 +7,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
-
 import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
@@ -23,13 +22,27 @@ import javatools.parsers.Char17;
 import utils.Theme;
 
 /**
- * WikidataLabelExtractor - YAGO2s
- *
  * Extracts labels from wikidata
  *
- * @author Fabian
- *
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class WikidataLabelExtractor extends DataExtractor {
 
   private static final String WIKIDATA_SITELINKS = "wikidata_sitelinks";
@@ -75,8 +88,8 @@ public class WikidataLabelExtractor extends DataExtractor {
   @Override
   public void extract() throws Exception {
     //TODO: check where to get available languages from.
-    List <String> availableLanguages = MultilingualExtractor.wikipediaLanguages;
-    
+    List<String> availableLanguages = MultilingualExtractor.wikipediaLanguages;
+
     Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
     Set<String> entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
 
@@ -105,7 +118,7 @@ public class WikidataLabelExtractor extends DataExtractor {
         String lang = FactComponent.stripQuotes(f.getObject());
         String name = FactComponent.stripWikipediaPrefix(Char17.decodePercentage(f.getSubject()));
         if (name != null) language2name.put(lang, name);
-      } 
+      }
       // Get to the line that information about a new item begin from.
       // example: <http://www.wikidata.org/entity/Q1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/ontology#Item> .
       else if (f.getArg(2).endsWith("#Item>")) {
@@ -117,16 +130,16 @@ public class WikidataLabelExtractor extends DataExtractor {
           if (mostEnglishLan != null) {
             String mostEnglishName = language2name.get(mostEnglishLan);
             String yagoEntity = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
-              
+
             if (entities.contains(yagoEntity)) {
               // For on all languages
               for (String lang : language2name.keySet()) {
                 String foreignName = language2name.get(lang);
-                
+
                 // Check if the language is available (input languages)
-                if(availableLanguages.contains(lang))
+                if (availableLanguages.contains(lang))
                   WIKIDATAINSTANCES.write(new Fact(FactComponent.forForeignYagoEntity(foreignName, lang), RDFS.sameas, lastqid));
-                
+
                 // Change 2-letter language code to 3-letter
                 if (lang.length() == 2) lang = languagemap.get(lang);
                 if (lang == null || lang.length() != 3) continue;
@@ -168,7 +181,7 @@ public class WikidataLabelExtractor extends DataExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-	Parameters.init("configuration/yago_aida_ghazale.ini");
+    Parameters.init("configuration/yago_aida_ghazale.ini");
     new WikidataLabelExtractor().extract(new File("/home/ghazaleh/Projects/data/test"), "test");
   }
 }

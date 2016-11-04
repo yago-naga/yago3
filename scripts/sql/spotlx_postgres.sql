@@ -1,9 +1,9 @@
-/*     YAGO2s SPOTLX to Postgres database
+/*     YAGO SPOTLX to Postgres database
 *
-* This script loads YAGO2s SPOTLX into a Postgres database.
+* This script loads YAGO SPOTLX into a Postgres database.
 * 
 * The database has to be in UTF-8. To create such a database, say
-*   createdb yago2spotlx --encoding utf8 --lc-ctype en_US.utf8  --lc-collate en_US.utf8 --template template0
+*   createdb yago --encoding utf8 --lc-ctype en_US.utf8  --lc-collate en_US.utf8 --template template0
 * 
 *  (or template_postgis)
 * 

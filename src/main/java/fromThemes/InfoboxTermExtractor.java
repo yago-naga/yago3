@@ -8,12 +8,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javatools.datatypes.FinalSet;
-import javatools.parsers.Char17;
-import utils.MultilingualTheme;
-import utils.PatternList;
-import utils.Theme;
-import utils.termParsers.TermParser;
 import basics.Fact;
 import basics.FactComponent;
 import basics.YAGO;
@@ -25,15 +19,35 @@ import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.InfoboxExtractor;
+import javatools.datatypes.FinalSet;
+import javatools.parsers.Char17;
+import utils.MultilingualTheme;
+import utils.PatternList;
+import utils.Theme;
+import utils.termParsers.TermParser;
 
 /**
- * YAGO2s - InfoboxTermExtractor
- * 
  * Extracts the terms from the Infobox templates.
  * 
- * @author Fabian
- * 
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class InfoboxTermExtractor extends MultilingualExtractor {
 
   public static final MultilingualTheme INFOBOXTERMS = new MultilingualTheme("infoboxTerms",

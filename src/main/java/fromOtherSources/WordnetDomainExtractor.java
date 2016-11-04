@@ -6,18 +6,16 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.parsers.Char17;
-import utils.Theme;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import extractors.DataExtractor;
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import javatools.parsers.Char17;
+import utils.Theme;
 
 /**
- * YAGO2s - WordnetDomainExtractor
- * 
  * Adds the Wordnet domains from the Wordnet Domain project,
  * http://wndomains.fbk.eu
  * 
@@ -27,9 +25,25 @@ import extractors.DataExtractor;
  * Mapping project of the Universitat Politecnica de Catalunya,
  * http://www.lsi.upc.es/~nlp
  * 
- * @author Fabian M. Suchanek
- * 
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class WordnetDomainExtractor extends DataExtractor {
 
   /** File of wordnet domains from http://wndomains.fbk.eu */
@@ -39,8 +53,7 @@ public class WordnetDomainExtractor extends DataExtractor {
   protected File wordnetMappings;
 
   /** Output theme */
-  public static final Theme WORDNETDOMAINS = new Theme(
-      "yagoWordnetDomains",
+  public static final Theme WORDNETDOMAINS = new Theme("yagoWordnetDomains",
       "Thematic domains from the Wordnet Domains project of the Fondazione Bruno Kessler, http://wndomains.fbk.eu . "
           + "These domains group WordNet classes into topics such as 'Music', 'Arts', or 'Soccer'. "
           + "The data was generated using the WordNet mappings provided by the NLP Research Group of the Universitat Politecnica de Catalunya, http://www.lsi.upc.es/~nlp",
@@ -109,7 +122,8 @@ public class WordnetDomainExtractor extends DataExtractor {
     }
     // w.close();
     for (String label : labels) {
-      write(WORDNETDOMAINS, new Fact(label, RDFS.type, "<wordnetDomain>"), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>", "Wordnet Domain Mapper");
+      write(WORDNETDOMAINS, new Fact(label, RDFS.type, "<wordnetDomain>"), WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>",
+          "Wordnet Domain Mapper");
       write(WORDNETDOMAINS, new Fact(label, RDFS.label, FactComponent.forStringWithLanguage(label.substring(15, label.length() - 1), "eng")),
           WORDNETDOMAINSOURCES, "<http://wndomains.fbk.eu>", "Wordnet Domain Mapper");
     }

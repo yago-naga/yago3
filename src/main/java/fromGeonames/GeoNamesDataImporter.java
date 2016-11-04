@@ -10,12 +10,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import utils.FactCollection;
-import utils.Theme;
-import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
@@ -23,6 +17,12 @@ import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
 import fromThemes.InfoboxMapper;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import utils.FactCollection;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 
 /**
  * The GeoNamesEntityMapper maps geonames entities to Wikipedia entities.
@@ -30,9 +30,25 @@ import fromThemes.InfoboxMapper;
  * Needs a directory with these GeoNames files as input: - allCountries.txt -
  * countryInfo.txt - hierarchy.txt
  * 
- * @author Johannes Hoffart
- * 
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Johannes Hoffart.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class GeoNamesDataImporter extends DataExtractor {
 
   public static final String GEO_ENTITY_PREFIX = "geoentity_";
@@ -58,8 +74,8 @@ public class GeoNamesDataImporter extends DataExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(GeoNamesClassMapper.GEONAMESCLASSSIDS, GeoNamesEntityMapper.GEONAMESENTITYIDS,
-        InfoboxMapper.INFOBOXFACTS.inEnglish()));
+    return new HashSet<Theme>(
+        Arrays.asList(GeoNamesClassMapper.GEONAMESCLASSSIDS, GeoNamesEntityMapper.GEONAMESENTITYIDS, InfoboxMapper.INFOBOXFACTS.inEnglish()));
   }
 
   @Override
