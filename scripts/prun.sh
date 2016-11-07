@@ -6,16 +6,12 @@
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 cd "$DIR/.."
 
-#if [ `hostname` != "d5blade09" ]; then
-#  echo We should not run this on contact!
-#  exit
-#fi
+# Run the preflight checks and download all required resources
+$DIR/dumps/downloadDumps.py -y "$DIR/../$1"
 
-echo Starting YAGO in parallel, output written to yago.log
-#nohup /local/java/bin/java -Xmx44G -cp "../javatools/bin:../basics3/bin:bin" main.ParallelCaller yago.ini > yago.log &
+# Execute the ParallelCaller
+#export MAVEN_OPTS=-Xmx212G
+mvn -U clean compile exec:java -Dexec.args="$DIR/../$1.adapted.ini"
 
-export MAVEN_OPTS=-Xmx212G
-mvn -U clean compile exec:java -Dexec.args="$DIR/../$1"
-
-sleep 5s
-tail -f yago.log
+# Remove the dynamically adapted configuration
+rm "$DIR/../$1.adapted.ini"
