@@ -35,12 +35,11 @@ DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT = 'downloadWikipediaDump.sh'
 DOWNLOAD_WIKIDATA_DUMP_SCRIPT =  'downloadWikidataDump.sh'
 WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS = 365
 
-YAGO3_DUMPS_SUBDIR = 'dumps'
 YAGO3_ADAPTED_CONFIGURATION_EXTENSION = '.adapted.ini'
 
 YAGO3_LANGUAGES_PROPERTY = 'languages'
 YAGO3_WIKIPEDIAS_PROPERTY = 'wikipedias'
-YAGO3_YAGOFOLDER_PROPERTY = 'yagoFolder'
+YAGO3_DUMPSFOLDER_PROPERTY = 'dumpsFolder'
 YAGO3_WIKIDATA_SITELINKS_PROPERTY = 'wikidata_sitelinks'
 YAGO3_WIKIDATA_STATEMENTS_PROPERTY = 'wikidata_statements'
 
@@ -51,13 +50,12 @@ WIKIDATA_SITELINKS_FILE = 'wikidata-sitelinks.nt'
 WIKIDATA_STATEMENTS_FILE = 'wikidata-statements.nt'
 
 # Initialize variables
-yagoFolder = None
+dumpsFolder = None
 languages = None
 wikipedias = None
 wikidata_sitelinks = None
 wikidata_statements = None
 wikidataUrls = None
-dumpsDir = None
 
 
 class Usage(Exception):
@@ -65,7 +63,7 @@ class Usage(Exception):
     self.msg = msg
 
 def main(argv=None):
-  global yagoFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
+  global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
   
   print "Loading YAGO configuration..."
   loadYagoConfiguration()
@@ -92,15 +90,15 @@ def main(argv=None):
 Loads the YAGO configuration file.
 """  
 def loadYagoConfiguration():  
-  global yagoFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements, dumpsDir
+  global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
   
   for line in fileinput.input(yagoConfigurationFile):
-    if re.match('^' + YAGO3_YAGOFOLDER_PROPERTY + '\s*=', line):
-      yagoFolder = re.sub(r'\s', '', line).split("=")[1]
+    if re.match('^' + YAGO3_DUMPSFOLDER_PROPERTY + '\s*=', line):
+      dumpsFolder = re.sub(r'\s', '', line).split("=")[1]
       
-      # Make sure the folder is there
-      if not os.path.exists(yagoFolder):
-        os.makedirs(yagoFolder)  
+      # Make sure the folder exists
+      if not os.path.exists(dumpsFolder):
+        os.makedirs(dumpsFolder)  
             
     elif re.match('^' + YAGO3_LANGUAGES_PROPERTY + '\s*=', line):
       languages = re.sub(r'\s', '', line).split("=")[1].split(",")
@@ -110,19 +108,17 @@ def loadYagoConfiguration():
       wikidata_sitelinks = re.sub(r'\s', '', line).split("=")[1]
     elif re.match('^' + YAGO3_WIKIDATA_STATEMENTS_PROPERTY + '\s*=', line):  
       wikidata_statements = re.sub(r'\s', '', line).split("=")[1]
-      
-  # Set the target folder where all dumps will be downloaded to and make sure the folder is there.
-  dumpsDir = os.path.join(yagoFolder, YAGO3_DUMPS_SUBDIR)
-  
-  if not os.path.exists(dumpsDir):
-    os.makedirs(dumpsDir)
      
-  if languages == None and yagoFolder == None: 
-    print "ERROR: 'languages' and 'yagoFolder' are mandatory properties and must be set in the configuration file."
+  if languages == None: 
+    print "ERROR: 'languages' is a mandatory property and must be set in the configuration file."
     sys.exit(1)
     
   if (wikidata_sitelinks == None and wikidata_statements != None) or (wikidata_sitelinks != None and wikidata_statements == None):
     print "ERROR: 'wikidata_sitelinks' and 'wikidata_statements' must be set or unset as a pair."
+    sys.exit(1)
+    
+  if (wikipedias == None or wikidata_sitelinks == None) and dumpsFolder == None: 
+    print "ERROR: Some resources require downloading dumps before YAGO can be run. You must set the 'dumpsFolder' property in the configuration file."
     sys.exit(1)
   
   
@@ -130,16 +126,13 @@ def loadYagoConfiguration():
 Invokes the external shell script for downloading and extracting the Wikipedia dumps.
 """
 def downloadWikipediaDumps(languages):
-  global dumpsDir
+  global dumpsFolder
   
   # Determine the most recent Wikipedia dump versions.
   urls = getWikipediaDumpUrls(languages)
   
-  print dumpsDir
-  print urls
-  
   subprocess.call(
-    [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT), dumpsDir, ' '.join(urls)])
+    [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT), dumpsFolder, ' '.join(urls)])
     
   return getWikipedias(urls)
 
@@ -293,7 +286,7 @@ Gets a list of Wikipedia dump filenames (*-pages-articles.xml) in the specified 
 def getWikipedias(urls):
   wps = []
   for url in urls:
-    wps.append(os.path.join(dumpsDir, getLanguage(url), getFormattedDate(url), getExtractedFilename(url)))
+    wps.append(os.path.join(dumpsFolder, getLanguage(url), getFormattedDate(url), getExtractedFilename(url)))
   return wps
   
   
@@ -314,7 +307,7 @@ def getWikidataUrls():
       if r.status_code == requests.codes.ok and checkStatus(formattedDumpDate):
         print dumpFile[:-3] + " dump is available: " + formattedDumpDate
         urls[dumpFile] = url
-      elif os.path.isfile(os.path.join(dumpsDir, WIKIDATA_DIR, formattedDumpDate, dumpFile)):
+      elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, dumpFile)):
         print dumpFile[:-3] + " dump exist: " + formattedDumpDate
         urls[dumpFile] = url
       else:
@@ -332,7 +325,7 @@ def getWikidataUrls():
           print "Latest " + dumpFile[:-3] + " dump: " + formattedDumpDate
           urls[dumpFile] = url
           break
-        elif os.path.isfile(os.path.join(dumpsDir, WIKIDATA_DIR, formattedDumpDate, dumpFile)):
+        elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, dumpFile)):
           print "Wikidata dump exist: " + formattedDumpDate
           urls[dumpFile] = url
           break
@@ -375,7 +368,7 @@ def downloadWikidataDumps():
   
   subprocess.call(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIDATA_DUMP_SCRIPT),
-    dumpsDir, ' '.join(wikidataUrls.values())])
+    dumpsFolder, ' '.join(wikidataUrls.values())])
 
 
 """
@@ -385,7 +378,7 @@ def getWikidata(dumpFile):
   global wikidataUrls
   
   date = wikidataUrls[dumpFile][54:62]
-  return os.path.join(dumpsDir, WIKIDATA_DIR, date, dumpFile)
+  return os.path.join(dumpsFolder, WIKIDATA_DIR, date, dumpFile)
   
   
 if __name__ == "__main__":
