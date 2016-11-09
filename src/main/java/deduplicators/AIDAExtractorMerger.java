@@ -15,6 +15,7 @@ import fromOtherSources.WikidataImageExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import fromWikipedia.CategoryExtractor;
+import fromWikipedia.CategoryGlossExtractor;
 import fromWikipedia.ConteXtExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
 import fromWikipedia.RedirectExtractor;
@@ -55,7 +56,7 @@ public class AIDAExtractorMerger extends Extractor {
   /** Relations that AIDA needs. */
   public static final Set<String> relations = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.label, RDFS.sameas, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>", "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
-      "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>", YAGO.hasWikiDataImageUrl);
+      "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>", YAGO.hasWikiDataImageUrl, YAGO.hasGloss);
 
   @Override
   public Set<Theme> input() {
@@ -94,6 +95,9 @@ public class AIDAExtractorMerger extends Extractor {
 
     // WikiData links.
     input.add(WikidataLabelExtractor.WIKIDATAINSTANCES);
+    
+    // Wikipedie category glosses.
+    input.addAll(CategoryGlossExtractor.CATEGORYGLOSSES.inLanguages(MultilingualExtractor.wikipediaLanguages));
 
     return input;
   }
