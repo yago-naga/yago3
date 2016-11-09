@@ -3,8 +3,6 @@ package fromWikipedia;
 import java.io.File;
 import java.io.Reader;
 import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -20,13 +18,9 @@ import utils.Theme;
 
 public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
 
-  private static Pattern categoryExplanation = Pattern.compile("\\{\\{Category explanation\\|(.*?)\\}\\}");
-
-  private static Pattern emptyStringPattern = Pattern.compile("\\s*");
-  
   private String categoryWord = null;
   
-  private static final int MINTEXTLENGTH = 10;
+  private static final int MINTEXTLENGTH = 15;
   
   public static final MultilingualTheme CATEGORYGLOSSES = new MultilingualTheme("wikipediaCategoryGlosses", "Category glosses extracted from wikipedia");
 
@@ -46,8 +40,6 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
 
   @Override
 	public void extract() throws Exception {
- 
-    
     //TODO: make the pattern file and use this instead of lots of patterns in the code
     /*
     FactCollection patterns = new FactCollection();
@@ -69,7 +61,7 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
     
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 		// Find pages about categories. example in English: <title>Category:Baroque_composers<\title>
-		while(FileLines.findIgnoreCase(in, "<title>" + categoryWord + ":") != -1) {
+		while(FileLines.findIgnoreCase(in, "<title>" + categoryWord + ":", "<title>" + "Category:") != -1) {
 			String title = FileLines.readToBoundary(in, "</title>");
 			title = Char17.decodeAmpersand(title);
 			if (title != null){
@@ -86,27 +78,27 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
   private String getGloss(String page /*, PatternList replacement*/, String category) {
     String gloss = null;
     // If exist "Category explanation" use it
-    Matcher match = categoryExplanation.matcher(Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " "))));
-    if (match.find()) {
-      gloss = match.group(1);
-    } 
-//    else {
-//      int start = page.indexOf(">");
-//      page = page.substring(start + 1);
-//      page = removePatterns(page);      
-//      if (emptyStringPattern.matcher(page).matches()) {
-//        return null;
-//      }
-//      gloss = page;
-//    }
+    String normalizedPage = Char17.decodeAmpersand(page.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
+    if (normalizedPage.matches(".*\\{\\{[Cc]ategory [Ee]xplanation\\|.*")) {
+      gloss = extractCategoryExplanation(normalizedPage);
+    }
     else {
       int start = page.indexOf(">");
       page = page.substring(start + 1);
       page = removeBrackets(page);
+      page = Char17.decodeAmpersand(page);
+      // Choose the first paragraph:
       gloss = page.replaceAll("(.+)?\\n(.*)","$1");
+      
+      // For example: in the case below choosing a first paragraph is leading us to noise.
+      // <!-- BITTE bei den Biografien der entsprechenden Personen .... \n
+      // ... -->
+      if (gloss.matches("^\\s*(<|&lt;).*")) 
+        gloss = "";
+      
+      gloss = removePatterns(gloss);
     }
     
-    if (emptyStringPattern.matcher(gloss).matches()) return null;
     // Cleaning up the gloss text
     gloss = cleanText(gloss);
 
@@ -133,49 +125,95 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
     }
     return result.toString().trim();
   }
-
+  
+  // Cleaning the gloss before returning it as output.
   private String cleanText(String inputText){
+    // Replace links with text:
+    // examlpe: "[[Cavalier|Royalists]]" replace it with "Royalists"
+    //          "[[Robert Owen]]" replace it with "Robert Owen".
+    inputText = inputText.replaceAll("\\[\\[[^\\]\\n]+?\\|([^\\]\\n]+?)\\]\\]", "$1");
+    inputText = inputText.replaceAll("\\[\\[([^\\]\\n]+?)\\]\\]", "$1");
+    inputText = inputText.replaceAll("\\{\\{[^\\}\\n]+?\\|([^\\}\\n]+?)\\}\\}", "$1");
+    inputText = inputText.replaceAll("\\{\\{([^\\}\\n]+?)\\}\\}", "$1");
+    
     inputText = inputText.replaceAll("\\*", "");
     inputText = inputText.replaceAll( ":{2,}", "");
-    inputText = inputText.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
-    inputText = inputText.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
     inputText = inputText.replaceAll("'{2,}", "");
+    inputText = inputText.replaceAll("\\d+px", "");
+
+    // Remove whitespace before the punctuations:
     inputText = inputText.replaceAll("\\s+([\\.!;,\\?])", "$1");
-    inputText = inputText.replaceAll("[^\\p{L}\\s]+(.*?[\\.\\?!:;,])", "$1");
-    inputText = inputText.replaceAll("^\\s+", "");
-    inputText = inputText.replaceAll("\\P{L}+$", ".");
+    
+    // Remove Urls:
+    inputText = inputText.replaceAll("\\[(http|https)://[^\\p{Zl}\\p{Zs}\\p{Zp}]+[\\p{Zl}\\p{Zs}\\p{Zp}](.*?)\\]", "$2");
+    inputText = inputText.replaceAll("[\\[\\]]", "");
+    
+    // Remove punctuations from the beginning of the gloss.
+    inputText = inputText.replaceAll("^[\\.!;:,\\?]+", "");
+    // Remove Whitespaces from beginning and end of gloss:
+    inputText = inputText.replaceAll("^[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", "");
+    inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+$", "");
+    // Change any more than 1 whitespace to only 1 whitespace:
+    inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " ");
+
     return inputText;
   }
   
   // Extracting gloss text by removing some patterns that are observed to not have clean and good information
   private String removePatterns(String inputText) {
-    
-    inputText = inputText.replaceAll("(([Ss]ee [Aa]lso.*?)|([Ff]or more.*?)|([Ff]or specific.*?)|([Ss]ee [Tt]he)|([Ss]ee:)|(For .+?[,-] see)|([Cc]lick [Oo]n))(.*)", "");
-    //page = page.replaceAll("(([Ss]iehe auch))(.*)", "");// This is not a solution.
+    // Remove some language specific texts such as: see also:...
+    inputText = inputText.replaceAll("(([Ss]ee [Aa]lso.*?)|(Note:)|([Ff]or more.*?)|([Ff]or specific.*?)|([Ss]ee [Tt]he)|([Ss]ee:)|(For .+?[,-] see)|([Cc]lick [Oo]n))(.*)", "");
+    inputText = inputText.replaceAll("(([Ss]iehe [Aa]uch)|(Hinweis:))(.*)", "");
+    // Remove line breake in form of <br>
     inputText = inputText.replaceAll("<br */>", " ");
     inputText = inputText.replaceAll("<br *>", " ");
     inputText = inputText.replaceAll("</ *br *>", " ");
-    inputText = Char17.decodeAmpersand(Char17.decodeAmpersand(inputText.replaceAll("[\\s\\x00-\\x1F]+", " ")));
-    //inputText = removeBrackets(inputText); moved to up
+    // Replace new line, and any other whitespace with one whitespace:
+    inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " ");
+    // Remove HTML tags and what is inside them such as:
+    inputText = inputText.replaceAll("<table.*?>(.*)?</table>", "");
+    inputText = inputText.replaceAll("<gallery>(.*)?</gallery>", "");
+    inputText = inputText.replaceAll("<imagemap>(.*)?</imagemap>", "");
+    // Remove patterns such as below. They appeared to be noise.
+    inputText = inputText.replaceAll("<!--(.*?)-->", "");
+    inputText = inputText.replaceAll("==(.*?)==", "");
+    inputText = inputText.replaceAll("__(.*?)__", "");
+    inputText = inputText.replaceAll("<(.*?)>", "");
+    // Remove links to categories or files or images:
     inputText = inputText.replaceAll("\\[\\[Category:(.+?)\\]\\]", "");
     inputText = inputText.replaceAll("\\[\\[" + categoryWord + ":(.+?)\\]\\]", "");
-    inputText = inputText.replaceAll("<!--(.*?)-->", "");
     inputText = inputText.replaceAll("\\[\\[.{0,3}:[Cc]ategory:(.+?)\\]\\]", "");
     inputText = inputText.replaceAll("\\[\\[.{0,3}:" + categoryWord + ":(.+?)\\]\\]", "");
     inputText = inputText.replaceAll("\\[\\[File:(.+?)\\]\\]", "");
-    //page = page.replaceAll("\\[\\[Datei:(.+?)\\]\\]", "");// "Datei" is German for "File", it was observed in results
+    inputText = inputText.replaceAll("\\[\\[Datei:(.+?)\\]\\]", "");
     inputText = inputText.replaceAll("\\[\\[Image:(.+?)\\]\\]", "");
+    inputText = inputText.replaceAll("\\[\\[Bild:(.+?)\\]\\]", "");
     inputText = inputText.replaceAll("\\[\\[wp:(.+?)\\]\\]", "");
-    inputText = inputText.replaceAll("==(.*?)==", "");
+    // This text appeared in some wikipedia articles, and has no information. Remove it.
     inputText = inputText.replaceAll("The (.*?)magic word(.*?) <nowiki>__NOGALLERY__</nowiki> is used in this category to turn off thumbnail display since this category list unfree images, the display of which is restricted to certain areas of Wikipedia.", "");
-    inputText = inputText.replaceAll("<table(.*?)>(.*?)</table>", "");
-    inputText = inputText.replaceAll("<gallery>(.*)</gallery>", "");
-    inputText = inputText.replaceAll("<imagemap>(.*)</imagemap>", "");
-    //page = replacement.transform(page); // the patterns above where in the pattern file before.
-    inputText = inputText.replaceAll("__.*?__", "");
-    inputText = inputText.replaceAll("<(.*?)>", "");
-    inputText = inputText.replaceAll("[\\s\\x00-\\x1F]+", " ");
+    
+    
     return inputText;
   }
+  
+  // Return the text in category explanations: {{category explanation|text...}}
+  private String extractCategoryExplanation(String inputText) {
+    int start = inputText.toLowerCase().indexOf("{{category explanation|");
+    int end = inputText.length()-1;
+    int brackets = 0;
+    for (int i=start;i<inputText.length();i++) {
+      if (inputText.charAt(i) == '{')
+        brackets++;
+      else if (inputText.charAt(i) == '}')
+        brackets--;
+      if(brackets == 0) {
+        end = i+1;
+        break;
+      }
+    }
+    inputText = inputText.substring(start+"{{category explanation|".length(), end-"}}".length());
+    inputText = removePatterns(inputText);
+    return inputText;
+    }
   
 }
