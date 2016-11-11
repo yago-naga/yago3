@@ -10,7 +10,6 @@ Usage:
 Options:
   -d TARGET_DIR --target-dir=TARGET_DIR               directory to store the Wikipedia dumps
   -y YAGO_CONFIGURATION_FILE --yago-configuration-file=YAGO_CONFIGURATION_FILE      the YAGO3 ini file that holds the configuration to be used
-  -l LANGUAGE --language=LANGUAGE                     Wikipedia dump language 
   --date=DATE                                         Date of the Wikipedia dump
   --wikidata-date=WIKIDATA_DATE                       Date of the Wikidata dump
   -s START_DATE --start-date=START_DATE               Date from where the search for dumps starts backwards in time (default: today())
