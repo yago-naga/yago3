@@ -136,10 +136,10 @@ public abstract class BaseRuleExtractor extends Extractor {
 
     /** Adds a rule */
     public void add(Rule r) {
-      String rel = index(r.firstBody().relation);
+      String rel = index(r.firstBody().getRelation());
       Map<String, List<Rule>> map = rel2subj2rules.get(rel);
       if (map == null) rel2subj2rules.put(rel, map = new TreeMap<String, List<Rule>>());
-      String subj = index(r.firstBody().arg1);
+      String subj = index(r.firstBody().getArg1());
       D.addKeyValue(map, subj, r, ArrayList.class);
     }
 
@@ -237,7 +237,7 @@ public abstract class BaseRuleExtractor extends Extractor {
 
   /** TRUE if the relation of a fact(template) is negated */
   public static boolean isNegated(FactTemplate f) {
-    return (f.relation.startsWith("-"));
+    return (f.getRelation().startsWith("-"));
   }
 
   private void instantiate(Rule r, FactCollection allFacts) throws Exception {
@@ -250,9 +250,9 @@ public abstract class BaseRuleExtractor extends Extractor {
 
     else {
       FactTemplate firstBody = r.firstBody();
-      Boolean relBound = !FactTemplate.isVariable(firstBody.relation);
-      Boolean subjBound = !FactTemplate.isVariable(firstBody.arg1);
-      Boolean objBound = !FactTemplate.isVariable(firstBody.arg2);
+      Boolean relBound = !FactTemplate.isVariable(firstBody.getRelation());
+      Boolean subjBound = !FactTemplate.isVariable(firstBody.getArg1());
+      Boolean objBound = !FactTemplate.isVariable(firstBody.getArg2());
 
       Announce.debug("Currently processed rule: ", r);
 
@@ -264,7 +264,7 @@ public abstract class BaseRuleExtractor extends Extractor {
           return;
         }
         // If it is contained in the KB, just return
-        if (allFacts.contains(firstBody.arg1, firstBody.relation.substring(1), firstBody.arg2)) return;
+        if (allFacts.contains(firstBody.getArg1(), firstBody.getRelation().substring(1), firstBody.getArg2())) return;
         // Otherwise continue recursively
         instantiate(r.rest(Collections.<String, String> emptyMap(), null), allFacts);
         return;
@@ -273,11 +273,11 @@ public abstract class BaseRuleExtractor extends Extractor {
       Collection<Fact> fc = null;
 
       if (relBound && subjBound) {
-        fc = allFacts.getFactsWithSubjectAndRelation(r.firstBody().arg1, r.firstBody().relation);
+        fc = allFacts.getFactsWithSubjectAndRelation(r.firstBody().getArg1(), r.firstBody().getRelation());
       } else if (relBound) {
-        fc = allFacts.getFactsWithRelation(r.firstBody().relation);
+        fc = allFacts.getFactsWithRelation(r.firstBody().getRelation());
       } else if (subjBound) {
-        fc = allFacts.collectFactsWithSubject(r.firstBody().arg1);
+        fc = allFacts.collectFactsWithSubject(r.firstBody().getArg1());
       } else {
         fc = allFacts;
       }
