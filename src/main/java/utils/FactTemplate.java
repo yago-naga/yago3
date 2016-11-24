@@ -359,13 +359,13 @@ public class FactTemplate {
     for (int i = 0; i < templates.size(); i++) {
       FactTemplate t = templates.get(i);
       FactTemplate inst = t.instantiatePartially(variables, language, languageMap);
-      boolean finished = inst.isInstantiable();
-      if (finished && factReferences.contains(i + 1)) {
-        inst.id = new Fact(inst.arg1, inst.relation, inst.arg2).makeId();
-        variables.put("#" + (i + 1), inst.id);
-      }
-
       if (inst != null) {
+        boolean finished = inst.isInstantiable();
+        if (finished && factReferences.contains(i + 1)) {
+          inst.id = new Fact(inst.arg1, inst.relation, inst.arg2).makeId();
+          variables.put("#" + (i + 1), inst.id);
+        }
+
         result.add(inst);
       }
     }
