@@ -92,16 +92,22 @@ public class FactTemplateExtractor {
 
     Map<String, String> variables = new TreeMap<>();
     variables.put("$0", dollarZero);
-    return FactTemplate.instantiate(makeTemplates(string, language), variables, language, languageMap);
+    List<List<FactTemplate>> templateGroups = makeTemplateGroups(string, language);
+    List<Fact> facts = new ArrayList<>();
+    for (List<FactTemplate> template : templateGroups) {
+      facts.addAll(FactTemplate.instantiate(template, variables, language, languageMap));
+    }
+    return facts;
   }
 
   /**
    * Creates templates which are used for extraction.
+   * For every pattern it creates a new {@code FactTemplate} list, in order to preserve meta-fact references
    *
    * @param string
    * @return
    */
-  public List<FactTemplate> makeTemplates(String string, String language) {
+  public List<List<FactTemplate>> makeTemplateGroups(String string, String language) {
     Map<String, String> languageMap = null;
     try {
       languageMap = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
@@ -109,7 +115,7 @@ public class FactTemplateExtractor {
       e.printStackTrace();
     }
 
-    List<FactTemplate> result = new ArrayList<>();
+    List<List<FactTemplate>> result = new ArrayList<>();
     for (Pair<Pattern, List<FactTemplate>> pattern : patterns) {
       Matcher m = pattern.first().matcher(string);
       while (m.find()) {
@@ -123,8 +129,8 @@ public class FactTemplateExtractor {
             variables.put("$" + i, m.group(i));
           }
         }
-        List<FactTemplate> facts = FactTemplate.instantiatePartially(pattern.second(), variables, language, languageMap);
-        result.addAll(facts);
+        List<FactTemplate> templates = FactTemplate.instantiatePartially(pattern.second(), variables, language, languageMap);
+        result.add(templates);
       }
     }
     return (result);

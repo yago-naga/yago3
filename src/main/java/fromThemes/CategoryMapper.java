@@ -128,7 +128,7 @@ public class CategoryMapper extends MultilingualExtractor {
     Theme output = CATEGORYFACTS_TOREDIRECT.inLanguage(language);
     Theme outputSource = CATEGORYSOURCES.inLanguage(language);
 
-    Map<String, List<FactTemplate>> categoryToPatterns = new HashMap<>();
+    Map<String, List<List<FactTemplate>>> categoryToPatterns = new HashMap<>();
 
     // apply templates to facts
     Map<String, String> variables = new TreeMap<>();
@@ -136,10 +136,10 @@ public class CategoryMapper extends MultilingualExtractor {
       String source = FactComponent.wikipediaSourceURL(f.getArg(1), language);
 
       variables.put("$0", f.getSubject());
-      List<FactTemplate> templates = categoryToPatterns.computeIfAbsent(f.getObject(), category -> {
+      List<List<FactTemplate>> templateGroups = categoryToPatterns.computeIfAbsent(f.getObject(), category -> {
         String cat = FactComponent.stripCat(category);
-        List<FactTemplate> result = new ArrayList<>();
-        result.addAll(categoryPatterns.makeTemplates(cat, language));
+        List<List<FactTemplate>> result = new ArrayList<>();
+        result.addAll(categoryPatterns.makeTemplateGroups(cat, language));
 
         // preprocess categories hierarchically
         // infer more information by using Wikipedia category hierarchy
@@ -152,13 +152,12 @@ public class CategoryMapper extends MultilingualExtractor {
           Set<String> superCategories = new HashSet<>();
           wikiSuperCategories(category, superCategories, wikiCatHierarchy);
           for (String superCat : superCategories) {
-            result.addAll(hierarchicalCategoryPatterns.makeTemplates(FactComponent.stripCat(superCat), language));
+            result.addAll(hierarchicalCategoryPatterns.makeTemplateGroups(FactComponent.stripCat(superCat), language));
           }
         }
         return result;
       });
-      if (templates != null && templates.size() > 0) {
-        List<Fact> facts = FactTemplate.instantiate(templates, variables, language, languageMap);
+      if (templateGroups != null && templateGroups.size() > 0) {
 
         /*if (facts.toString().contains("<female>")) {
           if ("<male>".equals(genderInfo.getObject(f.getSubject(), "<hasGender>"))) {
@@ -167,9 +166,12 @@ public class CategoryMapper extends MultilingualExtractor {
           }
         }*/
 
-        for (Fact fact : facts) {
-          if (fact != null) {
-            write(output, fact, outputSource, source, "CategoryMapper");
+        for (List<FactTemplate> group : templateGroups) {
+          List<Fact> facts = FactTemplate.instantiate(group, variables, language, languageMap);
+          for (Fact fact : facts) {
+            if (fact != null) {
+              write(output, fact, outputSource, source, "CategoryMapper");
+            }
           }
         }
       }
