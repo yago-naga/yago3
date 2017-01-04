@@ -94,13 +94,6 @@ public class ImageLicenseExtractor extends Extractor{
 
   @Override
   public void extract() throws Exception {
-    String gh = "https://commons.wikimedia.org/w/index.php?title=File:%22Ode_to_the_Sea%22_-_A_complete_outfit.jpg&action=edit";
-    Connection connect = Jsoup.connect(gh);
-    Document doc = connect.get();
-    System.out.println(doc.getElementById("wpTextbox1").toString());
-    System.exit(1);
-    
-    
     Set<Fact> wikidataEntityImage = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasWikiDataImageUrl);
     
     for(Fact fact : wikidataEntityImage){
@@ -127,7 +120,6 @@ public class ImageLicenseExtractor extends Extractor{
       
       Connection connect = Jsoup.connect(imageUrl);
       Document doc = connect.get();
-      //Document doc = connect.get();
       Element imageContent = doc.getElementById("mw-imagepage-content");
       if (imageContent != null) {
         Elements children = imageContent.children();

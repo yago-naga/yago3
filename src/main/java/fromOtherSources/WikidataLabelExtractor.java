@@ -117,6 +117,7 @@ public class WikidataLabelExtractor extends DataExtractor {
       if (f.getRelation().endsWith("/inLanguage>")) {
         String lang = FactComponent.stripQuotes(f.getObject());
         String name = FactComponent.stripWikipediaPrefix(Char17.decodePercentage(f.getSubject()));
+
         if (name != null) language2name.put(lang, name);
       }
       // Get to the line that information about a new item begin from.
@@ -135,7 +136,7 @@ public class WikidataLabelExtractor extends DataExtractor {
               // For on all languages
               for (String lang : language2name.keySet()) {
                 String foreignName = language2name.get(lang);
-
+             
                 // Check if the language is available (input languages)
                 if (availableLanguages.contains(lang))
                   WIKIDATAINSTANCES.write(new Fact(FactComponent.forForeignYagoEntity(foreignName, lang), RDFS.sameas, lastqid));
