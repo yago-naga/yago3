@@ -80,9 +80,13 @@ public class WikidataLabelExtractor extends DataExtractor {
   /** Sources */
   public static final Theme WIKIDATAMULTILABELSOURCES = new Theme("wikidataMultiLabelSources", "Sources for the multilingual labels");
 
+  /** Number of translations */
+  public static final Theme WIKIDATATRANSLATIONS = new Theme("wikidataTranslations", "Number of translations per entity");
+
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(WIKIPEDIALABELSOURCES, WIKIPEDIALABELS, WIKIDATAINSTANCES, WIKIDATAMULTILABELSOURCES, WIKIDATAMULTILABELS);
+    return new FinalSet<Theme>(WIKIPEDIALABELSOURCES, WIKIPEDIALABELS, WIKIDATAINSTANCES, WIKIDATAMULTILABELSOURCES, WIKIDATAMULTILABELS,
+        WIKIDATATRANSLATIONS);
   }
 
   @Override
@@ -133,6 +137,7 @@ public class WikidataLabelExtractor extends DataExtractor {
             String yagoEntity = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
 
             if (entities.contains(yagoEntity)) {
+              WIKIDATATRANSLATIONS.write(new Fact(yagoEntity, "<numberOfTranslations>", "" + language2name.size()));
               // For on all languages
               for (String lang : language2name.keySet()) {
                 String foreignName = language2name.get(lang);
@@ -182,7 +187,7 @@ public class WikidataLabelExtractor extends DataExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    Parameters.init("configuration/yago_aida_ghazale.ini");
-    new WikidataLabelExtractor().extract(new File("/home/ghazaleh/Projects/data/test"), "test");
+    Parameters.init("configuration/yago_tr.ini");
+    new WikidataLabelExtractor().extract(new File("/san/suchanek/yago3-debug"), "test");
   }
 }

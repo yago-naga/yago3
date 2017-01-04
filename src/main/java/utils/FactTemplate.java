@@ -13,7 +13,6 @@ import java.util.regex.Pattern;
 import basics.Fact;
 import basics.FactComponent;
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.parsers.DateParser;
 
 /**
@@ -43,14 +42,17 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 public class FactTemplate {
 
+  /** FactID */
+  private String id = null;
+
   /** Argument 1 */
-  public String arg1;
+  private String arg1;
 
   /** Relation */
-  public String relation;
+  private String relation;
 
   /** Argument 2 */
-  public String arg2;
+  private String arg2;
 
   /** Pattern for checking URLs */
   private static Pattern urlPattern = Pattern.compile("^https?://.+");
@@ -76,6 +78,39 @@ public class FactTemplate {
     return (c.startsWith("#"));
   }
 
+  /** TRUE if the component is a typed variable */
+  public static boolean isTypedVariable(String c) {
+    return (c.startsWith("@"));
+  }
+
+  /** TRUE if the component does not contain variables */
+  private static boolean isInstantiated(String c) {
+    return !isVariable(c) && !isFactReference(c) && !isTypedVariable(c);
+  }
+
+  /** TRUE if template doesn't contain variables */
+  public boolean isInstantiable() {
+    if (id != null) return true;
+    if (arg1 == null || arg2 == null || relation == null) return false;
+    return isInstantiated(arg1) && isInstantiated(relation) && isInstantiated(arg2);
+  }
+
+  public String getId() {
+    return id;
+  }
+
+  public String getArg1() {
+    return arg1;
+  }
+
+  public String getRelation() {
+    return relation;
+  }
+
+  public String getArg2() {
+    return arg2;
+  }
+
   /** Adds the fact references used to a set */
   public void addFactReferencesTo(Set<Integer> set) {
     if (isFactReference(arg1)) set.add(arg1.charAt(1) - '0');
@@ -90,7 +125,7 @@ public class FactTemplate {
     String a2 = instantiate(arg2, variables, language, languageMap);
     if (a1 == null || a2 == null || r == null) return (null);
     Fact fact = new Fact(a1, r, a2);
-    if (makeId) fact.makeId();
+    if (makeId || id != null) fact.makeId();
     return (fact);
   }
 
@@ -242,7 +277,7 @@ public class FactTemplate {
 
   @Override
   public String toString() {
-    return arg1 + " " + relation + " " + arg2;
+    return (id != null ? id + " " : "") + arg1 + " " + relation + " " + arg2;
   }
 
   @Override
@@ -292,15 +327,7 @@ public class FactTemplate {
   }
 
   /** Instantiates the fact template partially */
-  public FactTemplate instantiatePartially(Map<String, String> variables) {
-    String a1 = D.getOr(variables, arg1, arg1);
-    String r = D.getOr(variables, relation, relation);
-    String a2 = D.getOr(variables, arg2, arg2);
-    return (new FactTemplate(a1, r, a2));
-  }
-
-  /** Instantiates the fact template partially */
-  public FactTemplate instantiatePartially(Map<String, String> variables, String language, Map<String, String> languageMap) {
+  private FactTemplate instantiatePartially(Map<String, String> variables, String language, Map<String, String> languageMap) {
     String a1 = instantiatePartially(arg1, variables, language, languageMap);
     String r = instantiatePartially(relation, variables, language, languageMap);
     String a2 = instantiatePartially(arg2, variables, language, languageMap);
@@ -310,19 +337,35 @@ public class FactTemplate {
 
   /** Instantiates the fact templates partially */
   public static List<FactTemplate> instantiatePartially(List<FactTemplate> templates, Map<String, String> variables) {
-    List<FactTemplate> result = new ArrayList<>();
-    for (FactTemplate t : templates)
-      result.add(t.instantiatePartially(variables));
-    return (result);
+    return instantiatePartially(templates, variables, "eng", null);
   }
 
-  /** Instantiates the fact templates partially */
+  /**
+   * Instantiates the fact templates partially.
+   * Creates FactIDs for templates if
+   * - it is referenced by another template in the {@code templates} list AND
+   * - it does not contain variables
+   */
   public static List<FactTemplate> instantiatePartially(List<FactTemplate> templates, Map<String, String> variables, String language,
       Map<String, String> languageMap) {
     List<FactTemplate> result = new ArrayList<>();
-    for (FactTemplate t : templates) {
+
+    // check which metafact references (#) appear
+    Set<Integer> factReferences = new TreeSet<>();
+    for (FactTemplate template : templates) {
+      template.addFactReferencesTo(factReferences);
+    }
+
+    for (int i = 0; i < templates.size(); i++) {
+      FactTemplate t = templates.get(i);
       FactTemplate inst = t.instantiatePartially(variables, language, languageMap);
       if (inst != null) {
+        boolean finished = inst.isInstantiable();
+        if (finished && factReferences.contains(i + 1)) {
+          inst.id = new Fact(inst.arg1, inst.relation, inst.arg2).makeId();
+          variables.put("#" + (i + 1), inst.id);
+        }
+
         result.add(inst);
       }
     }
