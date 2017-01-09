@@ -57,11 +57,12 @@ public class SourceExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    Set<Theme> input = new HashSet<Theme>(Arrays.asList(PersonNameExtractor.PERSONNAMESOURCES, RuleExtractor.RULESOURCES,
-        WikidataLabelExtractor.WIKIPEDIALABELSOURCES, WikidataLabelExtractor.WIKIDATAMULTILABELSOURCES, GeoNamesClassMapper.GEONAMESSOURCES,
-        FlightExtractor.FLIGHTSOURCE, GenderNameExtractor.GENDERSOURCES, GenderExtractor.GENDERBYPRONOUNSOURCES,
-        WordnetDomainExtractor.WORDNETDOMAINSOURCES, TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES));
+    Set<Theme> input = new HashSet<Theme>(
+        Arrays.asList(PersonNameExtractor.PERSONNAMESOURCES, RuleExtractor.RULESOURCES, WikidataLabelExtractor.WIKIPEDIALABELSOURCES,
+            WikidataLabelExtractor.WIKIDATAMULTILABELSOURCES, GeoNamesClassMapper.GEONAMESSOURCES, FlightExtractor.FLIGHTSOURCE,
+            GenderNameExtractor.GENDERSOURCES, WordnetDomainExtractor.WORDNETDOMAINSOURCES, TemporalInfoboxExtractor.TEMPORALINFOBOXSOURCES));
     input.add(CoordinateExtractor.COORDINATE_SOURCES);
+    input.addAll(GenderExtractor.GENDERBYPRONOUNSOURCES.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(InfoboxMapper.INFOBOXSOURCES.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(InfoboxTypeExtractor.INFOBOXTYPESOURCES.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(CategoryMapper.CATEGORYSOURCES.inLanguages(MultilingualExtractor.wikipediaLanguages));
