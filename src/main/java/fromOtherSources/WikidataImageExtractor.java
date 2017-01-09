@@ -1,7 +1,11 @@
 package fromOtherSources;
 
-import java.io.File;
+import java.io.File; 
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
+import java.math.BigInteger;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -10,6 +14,7 @@ import java.util.Map;
 import java.util.Set;
 
 import basics.Fact;
+import basics.FactComponent;
 import basics.N4Reader;
 import basics.RDFS;
 import basics.YAGO;
@@ -42,12 +47,15 @@ License for more details.
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 public class WikidataImageExtractor extends DataExtractor {
 
-	private static final String WIKIDATA_STATEMENTS = "wikidata_statements";
-	
 	public static final Theme WIKIDATAIMAGES = new Theme("wikidataImages", 
 			"Images in wikidata dump for entities");
+
+	private static final String WIKIDATA_STATEMENTS = "wikidata_statements";
+	private static final String IMAGE_ORIGINALURL_TEMPLATE = "https://upload.wikimedia.org/wikipedia/commons/";
+	private static final String IMAGETYPE = "image_";
 	
 	private static final Map<String, List<String>> imageRelations;
 	static {
@@ -87,6 +95,7 @@ public class WikidataImageExtractor extends DataExtractor {
 		N4Reader nr = new N4Reader(inputData);
 		String yagoEntity = null;
 		Fact prevImage = null;
+		int imageCounter = 1;
 		Map<String, String> images = new HashMap<String, String>();
 		while(nr.hasNext()) {
 			Fact f = nr.next();
@@ -106,7 +115,15 @@ public class WikidataImageExtractor extends DataExtractor {
 					if(image == null){
 						image = images.entrySet().iterator().next().getValue();
 					}
-					WIKIDATAIMAGES.write(new Fact(yagoEntity, YAGO.hasWikiDataImageUrl, Char17.decodeBackslash(image)));
+					
+					  
+					String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image), imageCounter));
+					String imageID = IMAGETYPE + imageCounter++;
+					
+					
+					WIKIDATAIMAGES.write(new Fact(yagoEntity, YAGO.hasWikiDataImage, imageID));
+					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, image));
+					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
 				}
 				images.clear();
 				yagoEntity = wikiDataIdEntityMap.get(f.getSubject());
@@ -116,7 +133,7 @@ public class WikidataImageExtractor extends DataExtractor {
 			// Format of regular expression is taken from: https://www.wikidata.org/wiki/Property:P18
 			else if(f.getObject().matches(".*commons\\.wikimedia.*\\.(jpg|jpeg|png|svg|tif|tiff|gif)>$") && yagoEntity != null){
 				if(!images.containsKey(f.getRelation()))
-					images.put(f.getRelation(), f.getObject());
+					images.put(f.getRelation(), Char17.decodeBackslash(f.getObject()));
 				prevImage = f;
 			}
 			// If the rank of the image was "PreferredRank", replace the existing image with this preferred image.
@@ -127,6 +144,25 @@ public class WikidataImageExtractor extends DataExtractor {
 			}
 		}
 		nr.close();
+	}
+	
+  /*
+   * To make the image's original url, we use the first 2 characters of md5 hashed version of the file name
+   * example: input= "https://commons.wikimedia.org/wiki/File:Spelterini_Blüemlisalp.jpg" 
+   * file name = "Spelterini_Blüemlisalp.jpg" hashed = "ae1a26d34d6a674d4400c8a1e6fe73f8"
+   * original url = https://upload.wikimedia.org/wikipedia/commons/a/ae/Spelterini_Bl%C3%BCemlisalp.jpg 
+   */
+	private String getOriginalImageUrl(String wikiUrl, int cnt) throws NoSuchAlgorithmException {
+	  MessageDigest md = MessageDigest.getInstance("MD5");
+	  String imageName = wikiUrl.substring(wikiUrl.indexOf("/wiki/File:") + "/wiki/File:".length());
+	  StringBuffer hashedName = new StringBuffer();
+	  md.update(imageName.getBytes());
+	  byte byteData[] = md.digest();
+	  for (int i = 0; i < byteData.length; i++) {
+	    hashedName.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
+	  }
+	  
+    return (IMAGE_ORIGINALURL_TEMPLATE + hashedName.charAt(0) + "/" + hashedName.charAt(0) + hashedName.charAt(1) + "/" + imageName);
 	}
 	
 	private String getHighlevelCategory(String entity) throws IOException {
