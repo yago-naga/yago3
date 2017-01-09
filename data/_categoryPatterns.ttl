@@ -223,3 +223,242 @@
 #@ <id_20120207175542_31>
 "vega"	rdf:type	<_yagoNonConceptualWord> .
 <id_20120207175542_31>	rdfs:comment	"For 'Las Vegas'" .
+
+# Nationalities as per https://en.wikipedia.org/wiki/Wikipedia:Category_names
+"Abkhazian .*" <_categoryPattern> "$0 <hasNationality> <Abkhazia>" .
+"Afghan .*" <_categoryPattern> "$0 <hasNationality> <Afghanistan>" .
+"Albanian.*" <categoryPattern> ""Albanian .*" <_categoryPattern> "$0 <hasNationality> <Albania>" .
+"Algerian .*" <_categoryPattern> "$0 <hasNationality> <Algeria>" .
+"American .*" <_categoryPattern> "$0 <hasNationality> <United_States>" .
+"American Samoan .*" <categoryPattern> "$0 <hasNationality> <American_Samoa>" .
+"Andorran .*" <_categoryPattern> "$0 <hasNationality> <Andorra>" .
+"Angolan .*" <_categoryPattern> "$0 <hasNationality> <Angola>" .
+"Anguillan .*" <_categoryPattern> "$0 <hasNationality> <Anguilla>" .
+"Antigua and Barbuda .*" <_categoryPattern> "$0 <hasNationality> <Antigua_and_Barbuda>" .
+"Argentine .*" <_categoryPattern> "$0 <hasNationality> <Argentina>" .
+"Armenian .*" <_categoryPattern> "$0 <hasNationality> <Armenia>" .
+"Aruban .*" <_categoryPattern> "$0 <hasNationality> <Aruba>" .
+"Australian .*" <_categoryPattern> "$0 <hasNationality> <Australia>" .
+"Austrian .*" <_categoryPattern> "$0 <hasNationality> <Austria>" .
+"Azerbaijani .*" <_categoryPattern> "$0 <hasNationality> <Azerbaijani>" .
+"Bahamaian .*" <_categoryPattern> "$0 <hasNationality> <The_Bahamas>" .
+"Bahraini .*" <_categoryPattern> "$0 <hasNationality> <Bahrain>" .
+"Bangladeshi .*" <_categoryPattern> "$0 <hasNationality> <Bangladesh>" .
+"Barbadian .*" <_categoryPattern> "$0 <hasNationality> <Barbados>" .
+"Belarusian .*" <_categoryPattern> "$0 <hasNationality> <Belarus>" .
+"Belgian .*" <_categoryPattern> "$0 <hasNationality> <Belgium>" .
+"Belizean .*" <_categoryPattern> "$0 <hasNationality> <Belize>" .
+"Beninese .*" <_categoryPattern> "$0 <hasNationality> <Benin>" .
+"Bermudian .*" <_categoryPattern> "$0 <hasNationality> <Bermuda>" .
+"Bhutanese .*" <_categoryPattern> "$0 <hasNationality> <Bhutan>" .
+"Bissau-Guinean .*" <_categoryPattern> "$0 <hasNationality> <Guinea-Bissau>" .
+"Bolivian .*" <_categoryPattern> "$0 <hasNationality> <Bolivia>" .
+"Bonaire .*" <_categoryPattern> "$0 <hasNationality> <Bonaire>" .
+"Bosnia and Herzegovina .*" <_categoryPattern> "$0 <hasNationality> <Bosnia_and_Herzegovina>" .
+"Botswana .*" <_categoryPattern> "$0 <hasNationality> <Botswana>" .
+"Brazilian .*" <_categoryPattern> "$0 <hasNationality> <Brazil>" .
+"British .*" <_categoryPattern> "$0 <hasNationality> <United_Kingdom>" .
+"British Antarctic Territory .*" <_categoryPattern> "$0 <hasNationality> <British_Antarctic_Territory>" .
+"British Indian Ocean Territory .*" <_categoryPattern> "$0 <hasNationality> <British_Indian_Ocean_Territory>" .
+"British Virgin Islands .*" <_categoryPattern> "$0 <hasNationality> <British_Virgin_Islands>" .
+"Bruneian .*" <_categoryPattern> "$0 <hasNationality> <Brunei>" .
+"Bulgarian .*" <_categoryPattern> "$0 <hasNationality> <Bulgaria>" .
+"Burkinabé .*" <_categoryPattern> "$0 <hasNationality> <Burkina_Faso>" .
+"Burmese .*" <_categoryPattern> "$0 <hasNationality> <Myanmar>" .
+"Burundian .*" <_categoryPattern> "$0 <hasNationality> <Burundi>" .
+"Cambodian .*" <_categoryPattern> "$0 <hasNationality> <Cambodia>" .
+"Cameroonian .*" <_categoryPattern> "$0 <hasNationality> <Cameroon>" .
+"Canadian .*" <_categoryPattern> "$0 <hasNationality> <Canada>" .
+"Cape Verdean .*" <_categoryPattern> "$0 <hasNationality> <Cape_Verde>" .
+"Caymanian .*" <_categoryPattern> "$0 <hasNationality> <Cayman_Islands>" .
+"Central African Republic .*" <_categoryPattern> "$0 <hasNationality> <Central_African_Republic>" .
+"Chadian .*" <_categoryPattern> "$0 <hasNationality> <Chad>" .
+"Chilean .*" <_categoryPattern> "$0 <hasNationality> <Chile>" .
+"Chinese .*" <_categoryPattern> "$0 <hasNationality> <China>" .
+"Colombian .*" <_categoryPattern> "$0 <hasNationality> <Colombia>" .
+"Comorian .*" <_categoryPattern> "$0 <hasNationality> <Comoros>" .
+"Democratic Republic of the Congo .*" <_categoryPattern> "$0 <hasNationality> <Democratic_Republic_of_the_Congo>" .
+"Republic of the Congo .*" <_categoryPattern> "$0 <hasNationality> <Republic_of_the_Congo>" .
+"Costa Rican .*" <_categoryPattern> "$0 <hasNationality> <Costa_Rica>" .
+"Croatian .*" <_categoryPattern> "$0 <hasNationality> <Croatia>" .
+"Cuban .*" <_categoryPattern> "$0 <hasNationality> <Cuba>" .
+"Curaçao .*" <_categoryPattern> "$0 <hasNationality> <Curaçao>" .
+"Cypriot .*" <_categoryPattern> "$0 <hasNationality> <Cyprus>" .
+"Czech .*" <_categoryPattern> "$0 <hasNationality> <Czech_Republic>" .
+"Danish .*" <_categoryPattern> "$0 <hasNationality> <Denmark>" .
+"Djiboutian .*" <_categoryPattern> "$0 <hasNationality> <Djibouti>" .
+"Dominica .*" <_categoryPattern> "$0 <hasNationality> <Dominica>" .
+"Dominican Republic .*" <_categoryPattern> "$0 <hasNationality> <Dominican_Republic>" .
+"Dutch .*" <_categoryPattern> "$0 <hasNationality> <Netherlands>" .
+"East Timorese .*" <_categoryPattern> "$0 <hasNationality> <East_Timor>" .
+"Ecuadorian .*" <_categoryPattern> "$0 <hasNationality> <Ecuador>" .
+"Egyptian .*" <_categoryPattern> "$0 <hasNationality> <Egypt>" .
+"Emirati .*" <_categoryPattern> "$0 <hasNationality> <United_Arab_Emirates>" .
+"English .*" <_categoryPattern> "$0 <hasNationality> <England>" .
+"Equatoguinean .*" <_categoryPattern> "$0 <hasNationality> <Equatorial_Guinea>" .
+"Eritrean .*" <_categoryPattern> "$0 <hasNationality> <Eritrea>" .
+"Estonian .*" <_categoryPattern> "$0 <hasNationality> <Estonia>" .
+"Ethiopian .*" <_categoryPattern> "$0 <hasNationality> <Ethiopia>" .
+"Falkland Islands .*" <_categoryPattern> "$0 <hasNationality> <Falkland_Islands>" .
+"Faroese .*" <_categoryPattern> "$0 <hasNationality> <Faroe_Islands>" .
+"Fijian .*" <_categoryPattern> "$0 <hasNationality> <Fiji>" .
+"Filipino .*"	<_categoryPattern>	"$0 <hasNationality> <Philippines>" .
+"Finnish .*" <_categoryPattern> "$0 <hasNationality> <Finland>" .
+"French .*" <_categoryPattern> "$0 <hasNationality> <France>" .
+"French Guianan .*" <_categoryPattern> "$0 <hasNationality> <French_Guiana>" .
+"French Polynesian .*" <_categoryPattern> "$0 <hasNationality> <French_Polynesia>" .
+"Gabonese .*" <_categoryPattern> "$0 <hasNationality> <Gabon>" .
+"Gambian .*" <_categoryPattern> "$0 <hasNationality> <The_Gambia>" .
+".* (from|of) Georgia"	<_categoryPattern>	"$0 <hasNationality> <Georgia_(country)>" .
+"German .*" <_categoryPattern> "$0 <hasNationality> <Germany>" .
+"Ghanaian .*" <_categoryPattern> "$0 <hasNationality> <Ghana>" .
+"Gibraltarian .*" <_categoryPattern> "$0 <hasNationality> <Gibraltar>" .
+"Greek .*" <_categoryPattern> "$0 <hasNationality> <Greece>" .
+"Greenlandic .*" <_categoryPattern> "$0 <hasNationality> <Greenland>" .
+"Grenadian .*" <_categoryPattern> "$0 <hasNationality> <Grenada>" .
+"Guadeloupean .*" <_categoryPattern> "$0 <hasNationality> <Guadeloupe>" .
+"Guam .*" <_categoryPattern> "$0 <hasNationality> <Guam>" .
+"Guatemalan .*" <_categoryPattern> "$0 <hasNationality> <Guatemala>" .
+"Guinean .*" <_categoryPattern> "$0 <hasNationality> <Guinea>" .
+"Guyanese .*" <_categoryPattern> "$0 <hasNationality> <Guyana>" .
+"Haitian .*" <_categoryPattern> "$0 <hasNationality> <Haiti>" .
+"Honduran .*" <_categoryPattern> "$0 <hasNationality> <Honduras>" .
+"Hong Kong .*" <_categoryPattern> "$0 <hasNationality> <Hong_Kong>" .
+"Hungarian .*" <_categoryPattern> "$0 <hasNationality> <Hungary>" .
+"Icelandic .*" <_categoryPattern> "$0 <hasNationality> <Iceland>" .
+"Indian .*" <_categoryPattern> "$0 <hasNationality> <India>" .
+"Indonesian .*" <_categoryPattern> "$0 <hasNationality> <Indonesia>" .
+"Iranian .*" <_categoryPattern> "$0 <hasNationality> <Iran>" .
+"Iraqi .*" <_categoryPattern> "$0 <hasNationality> <Iraq>" .
+"Irish .*" <_categoryPattern> "$0 <hasNationality> <Ireland>" .
+"Israeli .*" <_categoryPattern> "$0 <hasNationality> <Israel>" .
+"Italian .*" <_categoryPattern> "$0 <hasNationality> <Italy>" .
+"Ivorian .*" <_categoryPattern> "$0 <hasNationality> <Ivory_Coast>" .
+"Jamaican .*" <_categoryPattern> "$0 <hasNationality> <Jamaica>" .
+"Japanese .*" <_categoryPattern> "$0 <hasNationality> <Japan>" .
+"Jordanian .*" <_categoryPattern> "$0 <hasNationality> <Jordan>" .
+"Kazakhstani .*" <_categoryPattern> "$0 <hasNationality> <Kazakhstan>" .
+"Kenyan .*" <_categoryPattern> "$0 <hasNationality> <Kenya>" .
+"I-Kiribati .*" <_categoryPattern> "$0 <hasNationality> <Kiribati>" .
+"Kosovan .*" <_categoryPattern> "$0 <hasNationality> <Kosovo>" .
+"Kuwaiti .*" <_categoryPattern> "$0 <hasNationality> <Kuwait>" .
+"Kyrgyzstani .*" <_categoryPattern> "$0 <hasNationality> <Kyrgyzstan>" .
+"Laotian .*" <_categoryPattern> "$0 <hasNationality> <Laos>" .
+"Latvian .*" <_categoryPattern> "$0 <hasNationality> <Latvia>" .
+"Lebanese .*" <_categoryPattern> "$0 <hasNationality> <Lebanon>" .
+"Lesotho .*" <_categoryPattern> "$0 <hasNationality> <Lesotho>" .
+"Liberian .*" <_categoryPattern> "$0 <hasNationality> <Liberia>" .
+"Libyan .*" <_categoryPattern> "$0 <hasNationality> <Libya>" .
+"Liechtenstein .*" <_categoryPattern> "$0 <hasNationality> <Liechtenstein>" .
+"Lithuanian .*" <_categoryPattern> "$0 <hasNationality> <Lithuanian>" .
+"Luxembourgian .*" <_categoryPattern> "$0 <hasNationality> <Luxembourg>" .
+"Macau .*" <_categoryPattern> "$0 <hasNationality> <Macau>" .
+"Macedonian .*" <_categoryPattern> "$0 <hasNationality> <Republic_of_Macedonia>" .
+"Malagasy .*" <_categoryPattern> "$0 <hasNationality> <Madagascar>" .
+"Malawian .*" <_categoryPattern> "$0 <hasNationality> <Malawi>" .
+"Malaysian .*" <_categoryPattern> "$0 <hasNationality> <Malaysia>" .
+"Maldivian .*" <_categoryPattern> "$0 <hasNationality> <Maldives>" .
+"Malian .*" <_categoryPattern> "$0 <hasNationality> <Mali>" .
+"Maltese .*" <_categoryPattern> "$0 <hasNationality> <Malta>" .
+"Marshallese .*" <_categoryPattern> "$0 <hasNationality> <Marshall_Islands>" .
+"Mauritanian .*" <_categoryPattern> "$0 <hasNationality> <Mauritania>" .
+"Mauritian .*" <_categoryPattern> "$0 <hasNationality> <Mauritius>" .
+"Mexican .*" <_categoryPattern> "$0 <hasNationality> <Mexico>" .
+"Federated States of Micronesia .*" <_categoryPattern> "$0 <hasNationality> <Federated_States_of_Micronesia>" .
+"Monegasque .*" <_categoryPattern> "$0 <hasNationality> <Monaco>" .
+"Mongolian .*" <_categoryPattern> "$0 <hasNationality> <Mongolia>" .
+"Montenegrin .*" <_categoryPattern> "$0 <hasNationality> <Montenegro>" .
+"Montserratian .*" <_categoryPattern> "$0 <hasNationality> <Montserrat>" .
+"Moroccan .*" <_categoryPattern> "$0 <hasNationality> <Morocco>" .
+"Mozambican .*" <_categoryPattern> "$0 <hasNationality> <Mozambique>" .
+"Namibian .*" <_categoryPattern> "$0 <hasNationality> <Namibia>" .
+"Nauruan .*" <_categoryPattern> "$0 <hasNationality> <Nauru>" .
+"Nepalese .*" <_categoryPattern> "$0 <hasNationality> <Nepal>" .
+"New Caledonian .*" <_categoryPattern> "$0 <hasNationality> <New_Caledonia>" .
+"New Zealand .*" <_categoryPattern> "$0 <hasNationality> <New_Zealand>" .
+"Nicaragua .*" <_categoryPattern> "$0 <hasNationality> <Nicaraguan>" .
+"Nigerian .*" <_categoryPattern> "$0 <hasNationality> <Nigeria>" .
+"Nigerien .*" <_categoryPattern> "$0 <hasNationality> <Niger>" .
+"Niuean .*" <_categoryPattern> "$0 <hasNationality> <Niue>" .
+"North Korean .*" <_categoryPattern> "$0 <hasNationality> <North_Korea>" .
+"Northern Mariana Islands .*" <_categoryPattern> "$0 <hasNationality> <Northern_Mariana_Islands>" .
+"Norwegian .*" <_categoryPattern> "$0 <hasNationality> <Norway>" .
+"Omani .*" <_categoryPattern> "$0 <hasNationality> <Oman>" .
+"Pakistani .*" <_categoryPattern> "$0 <hasNationality> <Pakistan>" .
+"Palauan .*" <_categoryPattern> "$0 <hasNationality> <Palau>" .
+"Palestinian .*" <_categoryPattern> "$0 <hasNationality> <State_of_Palestine>" .
+"Panamanian .*" <_categoryPattern> "$0 <hasNationality> <Panama>" .
+"Papua New Guinean .*" <_categoryPattern> "$0 <hasNationality> <Papua_New_Guinea>" .
+"Paraguayan .*" <_categoryPattern> "$0 <hasNationality> <Paraguay>" .
+"Peruvian .*" <_categoryPattern> "$0 <hasNationality> <Peru>" .
+"Pitcairn Islands .*" <_categoryPattern> "$0 <hasNationality> <Pitcairn_Islands>" .
+"Polish .*" <_categoryPattern> "$0 <hasNationality> <Poland>" .
+"Portuguese .*" <_categoryPattern> "$0 <hasNationality> <Portugal>" .
+"Puerto Rican .*" <_categoryPattern> "$0 <hasNationality> <Puerto_Rico>" .
+"Qatari .*" <_categoryPattern> "$0 <hasNationality> <Qatar>" .
+"Romanian .*" <_categoryPattern> "$0 <hasNationality> <Romania>" .
+"Russian .*" <_categoryPattern> "$0 <hasNationality> <Russia>" .
+"Rwandan .*" <_categoryPattern> "$0 <hasNationality> <Rwanda>" .
+"Saba .*" <_categoryPattern> "$0 <hasNationality> <Saba>" .
+"Sahrawi .*" <_categoryPattern> "$0 <hasNationality> <Western_Sahara>" .
+"Saint Helena, Ascension and Tristan da Cunha .*" <_categoryPattern> "$0 <hasNationality> <Saint_Helena,_Ascension_and_Tristan_da_Cunha>" .
+"Saint Kitts and Nevis .*" <_categoryPattern> "$0 <hasNationality> <Saint_Kitts_and_Nevis>" .
+"Saint Lucian .*" <_categoryPattern> "$0 <hasNationality> <Saint_Lucia>" .
+"Saint Vincent and the Grenadines .*" <_categoryPattern> "$0 <hasNationality> <Saint_Vincent_and_the_Grenadines>" .
+"Salvadoran .*" <_categoryPattern> "$0 <hasNationality> <El_Salvador>" .
+"Samoan .*" <_categoryPattern> "$0 <hasNationality> <Samoa>" .
+"Sammarinese .*" <_categoryPattern> "$0 <hasNationality> <San_Marino>" .
+"São Tomé and Príncipe .*" <_categoryPattern> "$0 <hasNationality> <São_Tomé_and_Príncipe>" .
+"Saudi Arabian .*" <_categoryPattern> "$0 <hasNationality> <Saudi_Arabia>" .
+"Scottish .*" <_categoryPattern> "$0 <hasNationality> <Scotland>" .
+"Senegalese .*" <_categoryPattern> "$0 <hasNationality> <Senegal>" .
+"Serbian .*" <_categoryPattern> "$0 <hasNationality> <Serbia>" .
+"Seychellois .*" <_categoryPattern> "$0 <hasNationality> <Seychelles>" .
+"Sierra Leonean .*" <_categoryPattern> "$0 <hasNationality> <Sierra_Leone>" .
+"Singaporean .*" <_categoryPattern> "$0 <hasNationality> <Singapore>" .
+"Sint Eustatius .*" <_categoryPattern> "$0 <hasNationality> <Sint_Eustatius>" .
+"Sint Maarten .*" <_categoryPattern> "$0 <hasNationality> <Sint_Maarten>" .
+"Slovak .*" <_categoryPattern> "$0 <hasNationality> <Slovakia>" .
+"Slovenian .*" <_categoryPattern> "$0 <hasNationality> <Slovenia>" .
+"Solomon Islands .*" <_categoryPattern> "$0 <hasNationality> <Solomon_Islands>" .
+"Somalian .*" <_categoryPattern> "$0 <hasNationality> <Somalia>" .
+"Somaliland .*" <_categoryPattern> "$0 <hasNationality> <Somaliland>" .
+"South African .*" <_categoryPattern> "$0 <hasNationality> <South_Africa>" .
+"South Georgia and the South Sandwich Islands .*" <_categoryPattern> "$0 <hasNationality> <South_Georgia_and_the_South_Sandwich_Islands>" .
+"South Korean .*" <_categoryPattern> "$0 <hasNationality> <South_Korea>" .
+"South Ossetian .*" <_categoryPattern> "$0 <hasNationality> <South_Ossetia>" .
+"South Sudanese .*" <_categoryPattern> "$0 <hasNationality> <South_Sudan>" .
+"Spanish .*" <_categoryPattern> "$0 <hasNationality> <Spain>" .
+"Sri Lankan .*" <_categoryPattern> "$0 <hasNationality> <Sri_Lanka>" .
+"Sudanese .*" <_categoryPattern> "$0 <hasNationality> <Sudan>" .
+"Surinamese .*" <_categoryPattern> "$0 <hasNationality> <Suriname>" .
+"Swazi .*" <_categoryPattern> "$0 <hasNationality> <Swaziland>" .
+"Swedish .*" <_categoryPattern> "$0 <hasNationality> <Sweden>" .
+"Swiss .*" <_categoryPattern> "$0 <hasNationality> <Switzerland>" .
+"Syrian .*" <_categoryPattern> "$0 <hasNationality> <Syria>" .
+"Taiwanese .*" <_categoryPattern> "$0 <hasNationality> <Taiwan>" .
+"Tajikistani .*" <_categoryPattern> "$0 <hasNationality> <Tajikistan>" .
+"Tanzanian .*" <_categoryPattern> "$0 <hasNationality> <Tanzania>" .
+"Thai .*" <_categoryPattern> "$0 <hasNationality> <Thailand>" .
+"Tokelauan .*" <_categoryPattern> "$0 <hasNationality> <Tokelau>" .
+"Tongan .*" <_categoryPattern> "$0 <hasNationality> <Tonga>" .
+"Trinidad and Tobago .*" <_categoryPattern> "$0 <hasNationality> <Trinidad_and_Tobago>" .
+"Tunisian .*" <_categoryPattern> "$0 <hasNationality> <Tunisia>" .
+"Turkish .*" <_categoryPattern> "$0 <hasNationality> <Turkey>" .
+"Turkish Cypriot .*" <_categoryPattern> "$0 <hasNationality> <Northern_Cyprus>" .
+"Turkmenistan .*" <_categoryPattern> "$0 <hasNationality> <Turkmenistan>" .
+"Turks and Caicos Islands .*" <_categoryPattern> "$0 <hasNationality> <Turks_and_Caicos_Islands>" .
+"Tuvaluan .*" <_categoryPattern> "$0 <hasNationality> <Tuvalu>" .
+"Ugandan .*" <_categoryPattern> "$0 <hasNationality> <Uganda>" .
+"Ukrainian .*" <_categoryPattern> "$0 <hasNationality> <Ukraine>" .
+"United States Virgin Islands .*" <_categoryPattern> "$0 <hasNationality> <United_States_Virgin_Islands>" .
+"Uruguayan .*" <_categoryPattern> "$0 <hasNationality> <Uruguay>" .
+"Uzbekistani .*" <_categoryPattern> "$0 <hasNationality> <Uzbekistan>" .
+"Vanuatuan .*" <_categoryPattern> "$0 <hasNationality> <Vanuatu>" .
+"Vatican City .*" <_categoryPattern> "$0 <hasNationality> <Vatican_City>" .
+"Venezuelan .*" <_categoryPattern> "$0 <hasNationality> <Venezuela>" .
+"Vietnamese .*" <_categoryPattern> "$0 <hasNationality> <Vietnam>" .
+"Wallis and Futuna .*" <_categoryPattern> "$0 <hasNationality> <Wallis_and_Futuna>" .
+"Welsh .*" <_categoryPattern> "$0 <hasNationality> <Wales>" .
+"Zambian .*" <_categoryPattern> "$0 <hasNationality> <Zambia>" .
+"Zimbabwean .*" <_categoryPattern> "$0 <hasNationality> <Zimbabwe>" .
