@@ -141,6 +141,11 @@ public class DictionaryExtractor extends DataExtractor {
         language2name.clear();
       }
     }
+    // Not sure why they forgot this one fact in Wikidata... It find lots of genders.
+    if (MultilingualExtractor.wikipediaLanguages.contains("de")) {
+      CATEGORY_DICTIONARY.inLanguage("de").write(new Fact("<de/wikicat_Mann>", "<_hasTranslation>", "<wikicat_men>"));
+      CATEGORY_DICTIONARY.inLanguage("de").write(new Fact("<de/wikicat_Frau>", "<_hasTranslation>", "<wikicat_women>"));
+    }
     nr.close();
   }
 

@@ -218,7 +218,7 @@ public class CategoryMapper extends MultilingualExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new CategoryMapper("en").extract(new File("c:/fabian/data/yago3"), "mapping categories into facts");
+    new CategoryMapper("de").extract(new File("c:/fabian/data/yago3"), "mapping categories into facts");
   }
 
 }
