@@ -32,20 +32,25 @@ public class WikidataImageLicenseExtractor extends Extractor {
   public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageLicenses2", 
       "Licences extracted for wikidata Images");
   
+  
   private static final String wikipediaUsersUrl = "wikipedia.org/wiki/";
   private static final String flickerUsersUrl = "https://www.flickr.com/people/";
-  private static Pattern authorFieldPattern = Pattern.compile("\\|(?:[Aa]uthor|[Aa]rtist)=(.*?)(\\n\\||\\n?$)");
+  //private static Pattern whiteSpacePattern = Pattern.compile("^[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+$");
+  private static Pattern authorFieldPattern = Pattern.compile("\\|(?:[Aa]uthor|[Aa]rtist)(?:[\\p{Zl}\\p{Zs}\\p{Zp}\\n])*=(.*?)(\\n\\||\\n?$)");
   private static Map<String, Pattern> authorPatterns;
   static {
+    //TODO: camma for multiple author
     Map<String, Pattern> tempMap = new HashMap<String, Pattern>();
     tempMap.put("Unknown", Pattern.compile("\\{\\{[Uu]nknown\\|[Aa]uthor\\}\\}"));
     tempMap.put("wikiUser1", Pattern.compile("\\[\\[(?::?(.{2,3}):)?((?:[Uu]ser:)?.+?)(?:\\|(.+?))?\\]\\]"));
-    tempMap.put("wikiUser2", Pattern.compile("\\{\\{((?:(?:([Uu]ser)|(?:[Cc]reator)|(?:U)|(?:Ud)):.+?)\\}\\}"));
+    //TODO: creator to wikipage author to commons...
+    tempMap.put("wikiUser2", Pattern.compile("\\{\\{(?:(?:[Uu]ser)|(?:[Cc]reator)|(?:U)|(?:Ud)):(.+?)\\}\\}"));
     tempMap.put("flickrUser1", Pattern.compile("\\[\\[flickruser:(.+?)(?:\\|(.+))?\\]\\]"));
     tempMap.put("flickrUser2", Pattern.compile("\\[\\[flickruser:(.+?)(?:\\|(.+))?\\]\\]"));
     tempMap.put("wikiUserAtProject", Pattern.compile("\\{\\{(?:(?:user at project)|(?:original uploader))\\|(.*?)\\|(?:wikipedia\\|)?(.{2,3})\\}\\}"));
     authorPatterns = Collections.unmodifiableMap(tempMap);
   }
+  private static final String AUTHORTYPE = "author_";
   
   private static class authorUser {
     String name;
@@ -58,6 +63,7 @@ public class WikidataImageLicenseExtractor extends Extractor {
   }
   
   public static int cnt;
+  private static int imageCounter = 0;
   
   @Override
   public Set<Theme> input() {
@@ -73,14 +79,16 @@ public class WikidataImageLicenseExtractor extends Extractor {
   @Override
   public void extract() throws Exception {
     
-   cnt = 0;
-    Set<Fact> wikidataEntityImage = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasWikiDataImageUrl);
+    cnt = 0;
+    Set<Fact> wikidataEntityImage = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasWikiDataImage);
     for(Fact fact : wikidataEntityImage){
       String entityName = fact.getSubject();
-      String url = FactComponent.stripBrackets(fact.getObject());
+      String imageWikiPage = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getObject(fact.getObject(), YAGO.hasWikiPage); 
+      String url = FactComponent.stripBrackets(imageWikiPage);
       int fileNameIndex = url.indexOf("/wiki/") + "/wiki/".length();
       String fileName = url.substring(fileNameIndex);
       String editUrl = "https://commons.wikimedia.org/w/index.php?title=" + URLEncoder.encode(fileName, "UTF-8")  + "&action=edit";
+      imageCounter++;
       extractImageLicense(editUrl, FactComponent.forUri(url), entityName);
     }
     System.out.println("cnt = " + cnt);
@@ -96,6 +104,7 @@ public class WikidataImageLicenseExtractor extends Extractor {
         authorUser author = new authorUser();
         if (information != null) {
           // Find the author or artist of the image:
+          System.out.println(imageUrl);
           author = findAuthor(information);
         }
         else
@@ -105,13 +114,12 @@ public class WikidataImageLicenseExtractor extends Extractor {
         
         
         if (author.name != null || author.url != null) {
-          Fact f = new Fact(new Fact(printUrl, YAGO.hasAuthor, YAGO.author));
-          f.makeId();
-          WIKIDATAIMAGELICENSE.write(f);
+          String authorID = AUTHORTYPE + imageCounter;
+          WIKIDATAIMAGELICENSE.write(new Fact(new Fact(printUrl, YAGO.hasAuthor, authorID)));
           if (author.name != null)
-            WIKIDATAIMAGELICENSE.write(new Fact(f.getId(), YAGO.hasName, author.name));
+            WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasName, author.name));
           if (author.url != null)
-            WIKIDATAIMAGELICENSE.write(new Fact(f.getId(), YAGO.hasUrl, author.url));
+            WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasUrl, author.url));
         }
       }
       else {
@@ -126,6 +134,8 @@ public class WikidataImageLicenseExtractor extends Extractor {
     
   }
 
+  // Returns the text in information template which is the summary of the image
+  // {{Information ...some text... }}
   private static String getInformation(String textBox) {
    int start = -1;
    int offset = 0;
@@ -156,36 +166,51 @@ public class WikidataImageLicenseExtractor extends Extractor {
  }
   //check:
 //https://commons.wikimedia.org/w/index.php?title=File%3AWappen_Geringswalde.png&action=edit
-  
+ 
+  //Find the author of the image, using defined patterns
  private static authorUser findAuthor(String text) {
    authorUser author = new authorUser();
+   // Find if there is any author/artist template like: "artist  = {{creator:Rembrandt Peale}}"
    Matcher matcher = authorFieldPattern.matcher(text);
    if (matcher.find()) {
-     String match = matcher.group(1);
+     String authorFieldText = matcher.group(1);
      for (String key:authorPatterns.keySet()) {
-       Matcher matcherAuthorType = authorPatterns.get(key).matcher(match);
+       Matcher matcherAuthorType = authorPatterns.get(key).matcher(authorFieldText);
        if (matcherAuthorType.find()) {
-         if(key.equals("Unknown")) {
-           author.name = "Unknown";
+         switch(key){
+           
+           case "Unknown":
+             author.name = "Unknown";
+             break;
+             
+           case "wikiUser1":
+             if (matcherAuthorType.group(1) != null) 
+               author.url = "http://" + matcherAuthorType.group(1) + "." + wikipediaUsersUrl + matcherAuthorType.group(2).replaceAll(" ", "_");
+             else 
+               author.url = "http://commons." + wikipediaUsersUrl + matcherAuthorType.group(2).replaceAll(" ", "_");
+             if (matcherAuthorType.group(3) != null)
+               author.name = matcherAuthorType.group(3);
+             break;
+             
+           case "wikiUser2":
+             System.out.println(matcherAuthorType.group(1));
+             author.url = "http://commons." + wikipediaUsersUrl + matcherAuthorType.group(1).replaceAll(" ", "_");
+             author.name = matcherAuthorType.group(1);
+             break;
+             
+           case "flickrUser1":
+             author.url = flickerUsersUrl + matcherAuthorType.group(1);
+             break;
+             
+           case "wikiUserAtProject":
+             author.url = "http://" + matcherAuthorType.group(2) + "." + wikipediaUsersUrl + "User:" + matcherAuthorType.group(1).replaceAll(" ", "_");
+             break;
+             
          }
-         if (key.equals("wikiUser1")) {
-           if (matcherAuthorType.group(1) != null) 
-             author.url = "http://" + matcherAuthorType.group(1) + "." + wikipediaUsersUrl + matcherAuthorType.group(2).replaceAll(" ", "_");
-           else 
-             author.url = "http://commons." + wikipediaUsersUrl + matcherAuthorType.group(2).replaceAll(" ", "_");
-           if (matcherAuthorType.group(3) != null)
-             author.name = matcherAuthorType.group(3);
-         }
-         if (key.equals("wikiUser2"))
-           author.url = "http://commons." + wikipediaUsersUrl + matcherAuthorType.group(1).replaceAll(" ", "_");
-         if (key.equals("flickrUser1"))
-           author.url = flickerUsersUrl + matcher.group(1);
-         if (key.equals("wikiUserAtProject"))
-           author.url = "http://" + matcherAuthorType.group(2) + "." + wikipediaUsersUrl + "User:" + matcherAuthorType.group(1).replaceAll(" ", "_");;
        }
      }
      if (author.name == null && author.url == null)
-       author.name = match; // for now TODO: should change this later. now I want to inspect
+       System.out.println("NULL: " + authorFieldText);
    }
   return author;
  }
