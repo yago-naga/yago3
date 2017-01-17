@@ -212,9 +212,10 @@ public class WikidataImageExtractor extends DataExtractor {
 	 * To make the image's original url, we use the first 2 characters of md5 hashed version of the file name
    * example: input= "https://commons.wikimedia.org/wiki/File:Spelterini_Blüemlisalp.jpg" 
    * file name = "Spelterini_Blüemlisalp.jpg" hashed = "ae1a26d34d6a674d4400c8a1e6fe73f8"
-   * original url = https://upload.wikimedia.org/wikipedia/commons/a/ae/Spelterini_Bl%C3%BCemlisalp.jpg 
-	 * @param wikiUrl
-	 * @return originalUrl
+   * original url = https://upload.wikimedia.org/wikipedia/commons/a/ae/Spelterini_Bl%C3%BCemlisalp.jpg
+   * @see refrence 
+	 * @param wikiUrl description
+	 * @return description
 	 * @throws NoSuchAlgorithmException
 	 */
 	public static String getOriginalImageUrl(String wikiUrl) throws NoSuchAlgorithmException {

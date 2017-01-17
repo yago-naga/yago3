@@ -1,6 +1,7 @@
 package fromOtherSources;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.net.URLEncoder;
 import java.util.Arrays;
@@ -27,16 +28,16 @@ import javatools.datatypes.Pair;
 import javatools.parsers.Char17;
 import utils.Theme;
 
-public class WikidataImageLicenseExtractor extends Extractor {
+public class WikidataImageLicenseExtractorEdit extends Extractor {
 
-  public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageLicenses2", 
+  public static final Theme WIKIDATAIMAGELICENSE2 = new Theme("wikidataImageLicenses2", 
       "Licences extracted for wikidata Images");
   
   
   private static final String wikipediaUsersUrl = "wikipedia.org/wiki/";
   private static final String flickerUsersUrl = "https://www.flickr.com/people/";
   //private static Pattern whiteSpacePattern = Pattern.compile("^[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+$");
-  private static Pattern authorFieldPattern = Pattern.compile("\\|(?:[Aa]uthor|[Aa]rtist)(?:[\\p{Zl}\\p{Zs}\\p{Zp}\\n])*=(.*?)(\\n\\||\\n?$)");
+  private static Pattern authorFieldPattern = Pattern.compile("\\|\\s*(?:[Aa]uthor|[Aa]rtist)\\s*=\\s*(.*?)(?:\\n|$)");
   private static Map<String, Pattern> authorPatterns;
   static {
     //TODO: camma for multiple author
@@ -46,7 +47,7 @@ public class WikidataImageLicenseExtractor extends Extractor {
     //TODO: creator to wikipage author to commons...
     tempMap.put("wikiUser2", Pattern.compile("\\{\\{(?:(?:[Uu]ser)|(?:[Cc]reator)|(?:U)|(?:Ud)):(.+?)\\}\\}"));
     tempMap.put("flickrUser1", Pattern.compile("\\[\\[flickruser:(.+?)(?:\\|(.+))?\\]\\]"));
-    tempMap.put("flickrUser2", Pattern.compile("\\[\\[flickruser:(.+?)(?:\\|(.+))?\\]\\]"));
+    tempMap.put("externalLink", Pattern.compile("^\\[[^\\[](.*?)(?:(?:\\s+(.*)\\])|\\])"));
     tempMap.put("wikiUserAtProject", Pattern.compile("\\{\\{(?:(?:user at project)|(?:original uploader))\\|(.*?)\\|(?:wikipedia\\|)?(.{2,3})\\}\\}"));
     authorPatterns = Collections.unmodifiableMap(tempMap);
   }
@@ -65,6 +66,9 @@ public class WikidataImageLicenseExtractor extends Extractor {
   public static int cnt;
   private static int imageCounter = 0;
   
+  
+  private static PrintWriter writer;
+  
   @Override
   public Set<Theme> input() {
     return (new FinalSet<>(WikidataImageExtractor.WIKIDATAIMAGES));
@@ -73,11 +77,12 @@ public class WikidataImageLicenseExtractor extends Extractor {
   @Override
   public Set<Theme> output() {
     //return (new FinalSet<>());
-    return (new FinalSet<>(WIKIDATAIMAGELICENSE));
+    return (new FinalSet<>(WIKIDATAIMAGELICENSE2));
   }
 
   @Override
   public void extract() throws Exception {
+    writer = new PrintWriter("/home/ghazaleh/Projects/data/nullsYESEdit", "UTF-8");
     
     cnt = 0;
     Set<Fact> wikidataEntityImage = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasWikiDataImage);
@@ -92,6 +97,7 @@ public class WikidataImageLicenseExtractor extends Extractor {
       extractImageLicense(editUrl, FactComponent.forUri(url), entityName);
     }
     System.out.println("cnt = " + cnt);
+    writer.close();
   }
   
   private static void extractImageLicense(String imageUrl, String printUrl, String entity){
@@ -104,8 +110,7 @@ public class WikidataImageLicenseExtractor extends Extractor {
         authorUser author = new authorUser();
         if (information != null) {
           // Find the author or artist of the image:
-          System.out.println(imageUrl);
-          author = findAuthor(information);
+          author = findAuthor(information, imageUrl, printUrl);
         }
         else
           System.out.println("textBox is empty for: " + imageUrl + " " + textBox.val());
@@ -115,11 +120,11 @@ public class WikidataImageLicenseExtractor extends Extractor {
         
         if (author.name != null || author.url != null) {
           String authorID = AUTHORTYPE + imageCounter;
-          WIKIDATAIMAGELICENSE.write(new Fact(new Fact(printUrl, YAGO.hasAuthor, authorID)));
+          WIKIDATAIMAGELICENSE2.write(new Fact(new Fact(printUrl, YAGO.hasAuthor, authorID)));
           if (author.name != null)
-            WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasName, author.name));
+            WIKIDATAIMAGELICENSE2.write(new Fact(authorID, YAGO.hasName, author.name));
           if (author.url != null)
-            WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasUrl, author.url));
+            WIKIDATAIMAGELICENSE2.write(new Fact(authorID, YAGO.hasUrl, author.url));
         }
       }
       else {
@@ -168,7 +173,7 @@ public class WikidataImageLicenseExtractor extends Extractor {
 //https://commons.wikimedia.org/w/index.php?title=File%3AWappen_Geringswalde.png&action=edit
  
   //Find the author of the image, using defined patterns
- private static authorUser findAuthor(String text) {
+ private static authorUser findAuthor(String text, String url, String pringUrl) {
    authorUser author = new authorUser();
    // Find if there is any author/artist template like: "artist  = {{creator:Rembrandt Peale}}"
    Matcher matcher = authorFieldPattern.matcher(text);
@@ -193,13 +198,19 @@ public class WikidataImageLicenseExtractor extends Extractor {
              break;
              
            case "wikiUser2":
-             System.out.println(matcherAuthorType.group(1));
+             
              author.url = "http://commons." + wikipediaUsersUrl + matcherAuthorType.group(1).replaceAll(" ", "_");
              author.name = matcherAuthorType.group(1);
              break;
              
            case "flickrUser1":
              author.url = flickerUsersUrl + matcherAuthorType.group(1);
+             break;
+             
+           case "externalLink":
+             author.url = matcherAuthorType.group(1);
+             if(matcherAuthorType.group(2) != null)
+               author.name = matcherAuthorType.group(2);
              break;
              
            case "wikiUserAtProject":
@@ -210,8 +221,13 @@ public class WikidataImageLicenseExtractor extends Extractor {
        }
      }
      if (author.name == null && author.url == null)
-       System.out.println("NULL: " + authorFieldText);
+       author.name  = authorFieldText;
    }
+   else {
+     System.out.println("NULL: " + url );
+     writer.println(pringUrl);
+   }
+     
   return author;
  }
 

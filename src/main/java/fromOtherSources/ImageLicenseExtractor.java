@@ -1,6 +1,7 @@
 package fromOtherSources;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URI;
 import java.util.Collections;
 import java.util.HashMap;
@@ -27,7 +28,7 @@ import utils.Theme;
 public class ImageLicenseExtractor extends Extractor{
   
   //TODO: Can only keep 1 license in the theme ?
-  public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageLicenses", 
+  public static final Theme WIKIDATAIMAGELICENSE1 = new Theme("wikidataImageLicensesNoedit", 
       "Licences extracted for wikidata Images");
   
   private static Pattern whiteSpacePattern = Pattern.compile("^[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+$");
@@ -79,6 +80,8 @@ public class ImageLicenseExtractor extends Extractor{
     licenseURLs = Collections.unmodifiableMap(tempMap);
   }
   
+  private static PrintWriter writer;
+  
   @Override
   public Set<Theme> input() {
     return (new FinalSet<>(WikidataImageExtractor.WIKIDATAIMAGES));
@@ -87,26 +90,31 @@ public class ImageLicenseExtractor extends Extractor{
 
   @Override
   public Set<Theme> output() {
-    return (new FinalSet<>(WIKIDATAIMAGELICENSE));
+    return (new FinalSet<>(WIKIDATAIMAGELICENSE1));
 
   }
 
 
   @Override
   public void extract() throws Exception {
-    Set<Fact> wikidataEntityImage = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasWikiDataImageUrl);
+    writer = new PrintWriter("/home/ghazaleh/Projects/data/nullsNOEdit", "UTF-8");
+    Set<Fact> wikidataEntityImage = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasWikiDataImage);
     
     for(Fact fact : wikidataEntityImage){
-      String url = FactComponent.stripBrackets(fact.getObject());
+      String imageWikiPage = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getObject(fact.getObject(), YAGO.hasWikiPage);
+      String url = FactComponent.stripBrackets(imageWikiPage);
+
       //System.out.println(url);
       try {
         String uri = URI.create(url).toASCIIString();
         extractImageLicense(uri, FactComponent.forUri(url));
       }
       catch (Exception e) {
+        System.out.println("WARNING");
         extractImageLicense(url, FactComponent.forUri(url));
       }
     }
+    writer.close();
   }
 
   // This function extract licenses in image webpage.
@@ -135,8 +143,8 @@ public class ImageLicenseExtractor extends Extractor{
               Elements siblings = permission.siblingElements();
               for(Element sibling:siblings) {
                 String text = sibling.toString().replaceAll("[\\s\\x00-\\x1F]+", " ");
-                trademark = findTrademark(text);
-                licenses.addAll(matchLicense(text, printUrl));
+                //trademark = findTrademark(text);
+                //licenses.addAll(matchLicense(text, printUrl));
               }
             }
             
@@ -144,8 +152,8 @@ public class ImageLicenseExtractor extends Extractor{
           //Other text in content:
           else {
             String text = child.toString().replaceAll("[\\s\\x00-\\x1F]+", " ");
-            trademark = findTrademark(text);
-            licenses.addAll(matchLicense(text, printUrl));
+            //trademark = findTrademark(text);
+            //licenses.addAll(matchLicense(text, printUrl));
           }
         }        
       }
@@ -154,23 +162,24 @@ public class ImageLicenseExtractor extends Extractor{
       }
       
       if (author != null)
-        WIKIDATAIMAGELICENSE.write(new Fact(printUrl, YAGO.hasAuthor, author));
+        WIKIDATAIMAGELICENSE1.write(new Fact(printUrl, YAGO.hasAuthor, author));
       else {
         System.out.println("No author found for: " + imageUrl);
+        writer.println(printUrl);
       }
       
-      if (trademark)
-        WIKIDATAIMAGELICENSE.write(new Fact(printUrl, YAGO.hasTrademark, trademarkUrl));
-      
-      if(licenses.size() == 0) {
-        System.out.println("No license found in defined licenses for: " + imageUrl);
-      }
-      // write theme here:
-      else {
-        for(String license:licenses) {
-          WIKIDATAIMAGELICENSE.write(new Fact(printUrl, YAGO.hasLicense, license));
-        }
-      }
+//      if (trademark)
+//        WIKIDATAIMAGELICENSE1.write(new Fact(printUrl, YAGO.hasTrademark, trademarkUrl));
+//      
+//      if(licenses.size() == 0) {
+//        System.out.println("No license found in defined licenses for: " + imageUrl);
+//      }
+//      // write theme here:
+//      else {
+//        for(String license:licenses) {
+//          WIKIDATAIMAGELICENSE1.write(new Fact(printUrl, YAGO.hasLicense, license));
+//        }
+//      }
       
     }
     catch (IOException e) {

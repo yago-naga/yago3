@@ -23,6 +23,8 @@ import static org.junit.Assert.*;
 
 public class WikidataImageExtractorTest {
   
+  //Test getOriginalImageUrl function:
+  @Test
   private void testGetOriginalImageUrl() throws NoSuchAlgorithmException {
     
     List <String> inputImageWikiUrls = Arrays.asList(
@@ -61,8 +63,8 @@ public class WikidataImageExtractorTest {
   }
   
   public void compareFiles(String path) throws IOException{
-    String actual   = new String(Files.readAllBytes(Paths.get(path+"wikidataImages.tsv")));
-    String expected = new String(Files.readAllBytes(Paths.get(path+"Expected_wikidataImages.tsv")));
+    String actual   = new String(Files.readAllBytes(Paths.get(path + "wikidataImages.tsv")));
+    String expected = new String(Files.readAllBytes(Paths.get(path + "Expected_wikidataImages.tsv")));
     
     assertEquals(actual, expected);
   }
@@ -70,12 +72,8 @@ public class WikidataImageExtractorTest {
   @Test
   public void test() {
     
-    // Test getOriginalImageUrl function:
-    try {
-      testGetOriginalImageUrl();
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
-    }
+    
+
     
     // Set the languages to de and en:
     MultilingualExtractor.wikipediaLanguages = Arrays.asList("en", "de");
