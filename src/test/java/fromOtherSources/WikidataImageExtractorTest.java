@@ -9,6 +9,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.LinkedList;
 
+import org.junit.Before;
 import org.junit.Test;
 
 import extractors.MultilingualExtractor;
@@ -23,7 +24,14 @@ import static org.junit.Assert.*;
 
 public class WikidataImageExtractorTest {
   
-  private void testGetOriginalImageUrl() throws NoSuchAlgorithmException {
+  public static final String RESOURCESPATH = "src/test/resources/" + WikidataImageExtractor.class.getName();
+  
+  /**
+   * Test getOriginalImageUrl which should change the image's wiki page url to it's original url.
+   * @throws NoSuchAlgorithmException
+   */
+  @Test
+  public void testGetOriginalImageUrl() throws NoSuchAlgorithmException {
     
     List <String> inputImageWikiUrls = Arrays.asList(
         "http://commons.wikimedia.org/wiki/File:Breviarium_Grimani_-_November.jpg",
@@ -60,40 +68,37 @@ public class WikidataImageExtractorTest {
     
   }
   
-  public void compareFiles(String path) throws IOException{
-    String actual   = new String(Files.readAllBytes(Paths.get(path+"wikidataImages.tsv")));
-    String expected = new String(Files.readAllBytes(Paths.get(path+"Expected_wikidataImages.tsv")));
+  @Before
+  public void setup() {
+    // Set the languages to de and en:
+    MultilingualExtractor.wikipediaLanguages = Arrays.asList("en", "de");
+  }
+  
+  /**
+   * Testing the image extractor. It should extract one (for now) image from the sample file for each entity.
+   * @throws Exception
+   */
+  @Test
+  public void testImageExtractor() throws Exception {
+    // Test Extraction on small input sample-wikidata-statements.nt
+    WikidataImageExtractor ex = new WikidataImageExtractor(new File(RESOURCESPATH + "/input/sample-wikidata-statements.nt"));
+    
+    // The first argument should be the folder containing the themes needed in the extractor.
+    // WikidataImageExtractor needs following files: "wikidataInstances.tsv" and "yagoTransitiveType.tsv"
+    // I made small files for this test and save them in resources. But original files are also usable.
+    // Output of the extract function (wikidataImages.tsv) is written in the second second argument.
+    ex.extract(new File(RESOURCESPATH + "/input"), new File(RESOURCESPATH + "/output"),"testing WikidataImageExtractor");
+    
+    // Compare output file with the expected file
+    compareOutputWithExpected();
+  }
+  
+  public void compareOutputWithExpected() throws IOException{
+    String actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/wikidataImages.tsv")));
+    String expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_wikidataImages.tsv")));
     
     assertEquals(actual, expected);
   }
   
-  @Test
-  public void test() {
-    
-    // Test getOriginalImageUrl function:
-    try {
-      testGetOriginalImageUrl();
-    } catch (NoSuchAlgorithmException e) {
-      e.printStackTrace();
-    }
-    
-    // Set the languages to de and en:
-    MultilingualExtractor.wikipediaLanguages = Arrays.asList("en", "de");
-    
-    // Test Extraction on small input:
-    WikidataImageExtractor ex = new WikidataImageExtractor(new File("src/test/resources/fromOtherSources.WikidataImageExtractor/input/sample-wikidata-statements.nt"));
-    try {
-      // The first argument should be the folder containing the themes needed in the extractor.
-      // WikidataImageExtractor needs following files: "wikidataInstances.tsv" and "yagoTransitiveType.tsv"
-      // I made small files for this test and save them in resources. But original files are also usable.
-      // Output of the extract function (wikidataImages.tsv) is written in the second second argument.
-      ex.extract(new File("src/test/resources/fromOtherSources.WikidataImageExtractor/input"), new File("src/test/resources/fromOtherSources.WikidataImageExtractor/output"),"testing WikidataImageExtractor");
-      // Compare output file with the expected file
-      compareFiles("src/test/resources/fromOtherSources.WikidataImageExtractor/output/");
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-    
-  }
 
 }
