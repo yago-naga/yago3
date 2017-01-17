@@ -2,6 +2,7 @@ package fromOtherSources;
 
 import java.io.File;  
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
@@ -164,8 +165,8 @@ public class WikidataImageExtractor extends DataExtractor {
 	
 	/**
 	 * Return the most English entity name given all entity names available
-	 * @param entityFacts 
-	 * @return
+	 * @param entityFacts yago entity in different languages
+	 * @return most English entity name
 	 */
 	private static String getMostEnglishEntityName(Set<Fact> entityFacts){
 	  // Map of entity names for each language 
@@ -187,8 +188,8 @@ public class WikidataImageExtractor extends DataExtractor {
 	/**
 	 * Pick the best image with regard to its category using manual order for images for each category.
 	 * @param yagoEntity
-	 * @param images
-	 * @return image
+	 * @param images The images extracted for the yagoEntity
+	 * @return picked image
 	 * @throws IOException
 	 */
 	private static String pickImage(String yagoEntity, Map<String, String> images) throws IOException {
@@ -213,17 +214,26 @@ public class WikidataImageExtractor extends DataExtractor {
    * example: input= "https://commons.wikimedia.org/wiki/File:Spelterini_Blüemlisalp.jpg" 
    * file name = "Spelterini_Blüemlisalp.jpg" hashed = "ae1a26d34d6a674d4400c8a1e6fe73f8"
    * original url = https://upload.wikimedia.org/wikipedia/commons/a/ae/Spelterini_Bl%C3%BCemlisalp.jpg
+<<<<<<< HEAD
    * @see refrence 
 	 * @param wikiUrl description
 	 * @return description
+=======
+   * @see https://commons.wikimedia.org/wiki/Commons:FAQ#What_are_the_strangely_named_components_in_file_paths.3F 
+	 * @param wikiUrl Url to image's wiki page
+	 * @return Image's original url 
+>>>>>>> master
 	 * @throws NoSuchAlgorithmException
 	 */
 	public static String getOriginalImageUrl(String wikiUrl) throws NoSuchAlgorithmException {
 	  MessageDigest md = MessageDigest.getInstance("MD5");
+	  
 	  String imageName = wikiUrl.substring(wikiUrl.indexOf("/wiki/File:") + "/wiki/File:".length());
+	  
 	  StringBuffer hashedName = new StringBuffer();
-	  md.update(imageName.getBytes());
+	  md.update(imageName.getBytes(StandardCharsets.UTF_8));
 	  byte byteData[] = md.digest();
+	  
 	  for (int i = 0; i < byteData.length; i++) {
 	    hashedName.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
 	  }
@@ -233,8 +243,8 @@ public class WikidataImageExtractor extends DataExtractor {
 	
 	/**
 	 * Return the high level category of the entity based on yago transitive types
-	 * @param entity
-	 * @return category
+	 * @param entity Yago entity
+	 * @return High level category of the entity
 	 * @throws IOException
 	 */
 	private static String getHighlevelCategory(String entity) throws IOException {
