@@ -120,7 +120,7 @@ public class WikidataImageExtractor extends DataExtractor {
 					imageCounter++;
 					
 					// Saving imageID along with image wiki page url and image original url to the theme
-					WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasWikiDataImage, imageID));
+					WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
 					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, image));
 					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
 	        images.clear();
@@ -154,7 +154,7 @@ public class WikidataImageExtractor extends DataExtractor {
 		  String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
 		  String imageID = FactComponent.forYagoEntity(IMAGETYPE + imageCounter);
 		  
-      WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasWikiDataImage, imageID));
+      WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
       WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, image));
       WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
       images.clear();
