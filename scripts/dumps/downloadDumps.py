@@ -61,6 +61,10 @@ class Usage(Exception):
   def __init__(self, msg):
     self.msg = msg
 
+def execute(cmd):
+  proc = subprocess.Popen(cmd, stdout=PIPE, stderr=STDOUT, universal_newlines=True)
+  print proc.communicate()[0]
+
 def main(argv=None):
   global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
   
@@ -130,7 +134,7 @@ def downloadWikipediaDumps(languages):
   # Determine the most recent Wikipedia dump versions.
   urls = getWikipediaDumpUrls(languages)
   
-  subprocess.check_output(
+  execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT), dumpsFolder, ' '.join(urls)])
     
   return getWikipedias(urls)
@@ -365,7 +369,7 @@ def downloadWikidataDumps():
   # Determine the most recent Wikidata dump versions.
   wikidataUrls = getWikidataUrls()
   
-  subprocess.check_output(
+  execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIDATA_DUMP_SCRIPT),
     dumpsFolder, ' '.join(wikidataUrls.values())])
 
