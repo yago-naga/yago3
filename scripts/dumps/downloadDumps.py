@@ -130,7 +130,7 @@ def downloadWikipediaDumps(languages):
   # Determine the most recent Wikipedia dump versions.
   urls = getWikipediaDumpUrls(languages)
   
-  subprocess.call(
+  subprocess.check_output(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT), dumpsFolder, ' '.join(urls)])
     
   return getWikipedias(urls)
@@ -365,7 +365,7 @@ def downloadWikidataDumps():
   # Determine the most recent Wikidata dump versions.
   wikidataUrls = getWikidataUrls()
   
-  subprocess.call(
+  subprocess.check_output(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIDATA_DUMP_SCRIPT),
     dumpsFolder, ' '.join(wikidataUrls.values())])
 
