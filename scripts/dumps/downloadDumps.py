@@ -168,6 +168,9 @@ def adaptYagoConfiguration():
     
   # If the values couldn't be replaced because the property wasn't in the configuration yet, add it.
   with open(yagoAdaptedConfigurationFile, "a") as configFile:
+    # Make sure to start a new line first
+    configFile.write('\n')
+    
     if wikipediasDone == False:
       configFile.write(YAGO3_WIKIPEDIAS_PROPERTY + ' = ' + ','.join(wikipedias) + '\n')  
     if wikidataSitelinksDone == False:
