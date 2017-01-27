@@ -24,6 +24,7 @@ import requests
 import shutil
 import fileinput
 import subprocess
+from subprocess import PIPE, STDOUT
 import inspect
 from datetime import date, timedelta
 from docopt import docopt
