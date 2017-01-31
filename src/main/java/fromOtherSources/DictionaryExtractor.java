@@ -2,6 +2,7 @@ package fromOtherSources;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -25,9 +26,9 @@ import utils.TitleExtractor;
 
 /**
  * YAGO2s - DictionaryExtractor
- * 
+ *
  * Extracts inter-language links from Wikidata and builds dictionaries.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -143,8 +144,8 @@ public class DictionaryExtractor extends DataExtractor {
     }
     // Not sure why they forgot this one fact in Wikidata... It find lots of genders.
     if (MultilingualExtractor.wikipediaLanguages.contains("de")) {
-      CATEGORY_DICTIONARY.inLanguage("de").write(new Fact("<de/wikicat_Mann>", "<_hasTranslation>", "<wikicat_men>"));
-      CATEGORY_DICTIONARY.inLanguage("de").write(new Fact("<de/wikicat_Frau>", "<_hasTranslation>", "<wikicat_women>"));
+      CATEGORY_DICTIONARY.inLanguage("de").write(new Fact("<de/wikicat_Mann>", "<_hasTranslation>", "<wikicat_Men>"));
+      CATEGORY_DICTIONARY.inLanguage("de").write(new Fact("<de/wikicat_Frau>", "<_hasTranslation>", "<wikicat_Women>"));
     }
     nr.close();
   }
@@ -210,7 +211,10 @@ public class DictionaryExtractor extends DataExtractor {
   public static void main(String[] args) throws Exception {
     //Parameters.init("configuration/yago_aida_ghazale.ini");
     //File wikidata = Parameters.getFile(WIKIDATA_SITELINKS);
-    new DictionaryExtractor(new File("c:/fabian/data/wikidata/links.n4")).extract(new File("c:/fabian/data/yago3"), "test");
+    //new DictionaryExtractor(new File("c:/fabian/data/wikidata/links.n4")).extract(new File("c:/fabian/data/yago3"), "test");
+    Parameters.init("/san/suchanek/workspace/yago3/yagoDebug.ini");
+    MultilingualExtractor.wikipediaLanguages = Arrays.asList("en", "de");
+    new DictionaryExtractor(new File("/san/suchanek/yago3-debug/wikidata-sitelinks.nt")).extract(new File("/san/suchanek/yago3-debug/"), "test");
   }
 
 }

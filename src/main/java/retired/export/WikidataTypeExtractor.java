@@ -75,8 +75,10 @@ public class WikidataTypeExtractor extends Extractor {
     for (Fact f : CoherentTypeExtractor.YAGOTYPES) {
       if (!f.getRelation().equals(RDFS.type)) continue;
       String clss = f.getArg(2);
-      if (clss.startsWith("<wikicategory")) clss = taxonomy.getObject(clss, RDFS.subclassOf);
-      branches.add(new Fact(f.getArg(1), RDFS.type, clss));
+      if (clss.startsWith("<wikicategory")) {
+        clss = taxonomy.getObject(clss, RDFS.subclassOf);
+      }
+      //branches.add(new Fact(f.getArg(1), RDFS.type, clss));
 
       String yagoBranch = SimpleTypeExtractor.yagoBranch(clss, taxonomy);
       if (yagoBranch != null) {
