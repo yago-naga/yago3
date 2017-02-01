@@ -18,7 +18,7 @@ import static org.junit.Assert.*;
 
 /**
  * Test cases for WikidataImageExtractor
- * @author Ghazaleh Haratinezhad
+ * @author Ghazaleh Haratinezhad Torbati
  *
  */
 
