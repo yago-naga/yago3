@@ -151,6 +151,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   @Override
   public void extract() throws Exception {
     
+    int cntImagesNOLicense = 0;
+    int cntImages = 0;
+    
     writeHardcodedLicenses();
     
     Reader in = FileUtils.getBufferedUTF8Reader(inputData);
@@ -165,19 +168,21 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
       imageFileName = Char17.decodeAmpersand(imageFileName);
       // If the title was not null and was one of the image files that we extracted before:
       if (imageFileName != null && fileNameToUrl.containsKey(imageFileName)){
+        cntImages++;
+        
         String text = FileLines.readBetween(in, "<text", "</text>");
         
         authorUser author = new authorUser();
         licenseReturn licenses = new licenseReturn();
         String permissionOTRS = null; 
         Boolean trademark = false;
-        String attribution = null;
+        //String attribution = null;
         
         author = findAuthor(text);
         licenses = findLicense(text);
         permissionOTRS = findOTRSPermission(text);
         trademark = findTrademark(text);
-        attribution = findAttribution(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
+        //attribution = findAttribution(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
         String imageUrl = FactComponent.forYagoEntity(fileNameToUrl.get(imageFileName));
         
         // Write available information:
@@ -186,6 +191,8 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
           WIKIDATAIMAGELICENSE.write(new Fact(licenseID, YAGO.hasUrl, url));
         }
 
+        if (licenses.imageLicenses.isEmpty()) cntImagesNOLicense++;
+        
         for(String license:licenses.imageLicenses)
           WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasLicense, FactComponent.forYagoEntity(license)));
           
@@ -209,6 +216,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
         // something else: attcc : http://commons.wikimedia.org/wiki/File:Ph_locator_camiguin_mambajao.png
       }
     }
+    System.out.println("#images: " + cntImages);
+    System.out.println("#imagesWithNolicence: " + cntImagesNOLicense);
+    System.out.println(cntImagesNOLicense/cntImages);
     in.close();
     
   }
@@ -219,7 +229,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
    * @throws IOException
    */
   private Map<String, String> getFileNames() throws IOException {
-    Map<String, String> fileNameToUrl = getFileNames();
+    Map<String, String> fileNameToUrl = new HashMap<>();
 
     // Load extracted images. Facts here will be: <yagoEntity> <hasImageID> <image_ID>
     Set<Fact> entityImages = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasImageID);
