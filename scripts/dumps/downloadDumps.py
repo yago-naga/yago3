@@ -25,6 +25,7 @@ import requests
 import shutil
 import fileinput
 import subprocess
+from subprocess import PIPE, STDOUT
 import inspect
 from datetime import date, timedelta
 from docopt import docopt
@@ -66,6 +67,10 @@ commons_wiki = None
 class Usage(Exception):
   def __init__(self, msg):
     self.msg = msg
+
+def execute(cmd):
+  proc = subprocess.Popen(cmd, stdout=PIPE, stderr=STDOUT, universal_newlines=True)
+  print proc.communicate()[0]
 
 def main(argv=None):
   global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
@@ -144,7 +149,7 @@ def downloadWikipediaDumps(languages):
   # Determine the most recent Wikipedia dump versions.
   urls = getWikipediaDumpUrls(languages)
   
-  subprocess.call(
+  execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT), dumpsFolder, ' '.join(urls)])
     
   return getWikipedias(urls)
@@ -180,6 +185,9 @@ def adaptYagoConfiguration():
     
   # If the values couldn't be replaced because the property wasn't in the configuration yet, add it.
   with open(yagoAdaptedConfigurationFile, "a") as configFile:
+    # Make sure to start a new line first
+    configFile.write('\n')
+    
     if wikipediasDone == False:
       configFile.write(YAGO3_WIKIPEDIAS_PROPERTY + ' = ' + ','.join(wikipedias) + '\n')  
     if wikidataSitelinksDone == False:
@@ -384,7 +392,7 @@ def downloadWikidataDumps():
   # Determine the most recent Wikidata dump versions.
   wikidataUrls = getWikidataUrls()
   
-  subprocess.call(
+  execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIDATA_DUMP_SCRIPT),
     dumpsFolder, ' '.join(wikidataUrls.values())])
 

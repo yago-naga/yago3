@@ -120,7 +120,7 @@ public class WikidataImageExtractor extends DataExtractor {
 					imageCounter++;
 					
 					// Saving imageID along with image wiki page url and image original url to the theme
-					WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasWikiDataImage, imageID));
+					WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
 					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, image));
 					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
 	        images.clear();
@@ -154,7 +154,7 @@ public class WikidataImageExtractor extends DataExtractor {
 		  String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
 		  String imageID = FactComponent.forYagoEntity(IMAGETYPE + imageCounter);
 		  
-      WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasWikiDataImage, imageID));
+      WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
       WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, image));
       WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
       images.clear();
@@ -214,15 +214,9 @@ public class WikidataImageExtractor extends DataExtractor {
    * example: input= "https://commons.wikimedia.org/wiki/File:Spelterini_Blüemlisalp.jpg" 
    * file name = "Spelterini_Blüemlisalp.jpg" hashed = "ae1a26d34d6a674d4400c8a1e6fe73f8"
    * original url = https://upload.wikimedia.org/wikipedia/commons/a/ae/Spelterini_Bl%C3%BCemlisalp.jpg
-<<<<<<< HEAD
-   * @see refrence 
-	 * @param wikiUrl description
-	 * @return description
-=======
    * @see https://commons.wikimedia.org/wiki/Commons:FAQ#What_are_the_strangely_named_components_in_file_paths.3F 
 	 * @param wikiUrl Url to image's wiki page
 	 * @return Image's original url 
->>>>>>> master
 	 * @throws NoSuchAlgorithmException
 	 */
 	public static String getOriginalImageUrl(String wikiUrl) throws NoSuchAlgorithmException {

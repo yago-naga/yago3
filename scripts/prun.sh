@@ -10,8 +10,8 @@ cd "$DIR/.."
 $DIR/dumps/downloadDumps.py -y "$DIR/../$1"
 
 # Execute the ParallelCaller
-export MAVEN_OPTS=-Xmx212G
-mvn -U clean compile exec:java -Dexec.args="$DIR/../$1"
+export MAVEN_OPTS=-Xmx512G
+mvn -U clean compile exec:java -Dexec.args="$DIR/../$1.adapted.ini"
 
 # Remove the dynamically adapted configuration
 rm "$DIR/../$1.adapted.ini"
