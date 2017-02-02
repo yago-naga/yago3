@@ -415,7 +415,7 @@ def downloadCommonsWikiDump():
 """
 Gets the url that point to the most recent Commonswiki dump version
 """  
-def getCommonsWikiUrl(languages):
+def getCommonsWikiUrl():
   commonswikiUrl = None
 
   # Use the given date if it is available.  
