@@ -62,6 +62,7 @@ wikidata_sitelinks = None
 wikidata_statements = None
 wikidataUrls = None
 commons_wiki = None
+commonsWikiUrl = None
 
 
 class Usage(Exception):
@@ -416,7 +417,7 @@ def downloadCommonsWikiDump():
 Gets the url that point to the most recent Commonswiki dump version
 """  
 def getCommonsWikiUrl():
-  commonswikiUrl = None
+  resultUrl = None
 
   # Use the given date if it is available.  
   if commonswikiDate:
@@ -427,10 +428,10 @@ def getCommonsWikiUrl():
     
     if (r.status_code == requests.codes.ok):
       print "Commonswiki dump is available for the given date: " + formattedDumpDate
-      commonswikiUrl = url
+      resultUrl = url
     elif os.path.isfile(os.path.join(dumpsFolder, COMMONSWIKI_DIR, formattedDumpDate, 'commonswiki-' + formattedDumpDate + '-pages-articles.xml')):
       print "Commonswiki dump exist: " + formattedDumpDate
-      commonswikiUrl = url
+      resultUrl = url
     else:
       print "ERROR: No Commonswiki dump file found (neither remotely nor in local cache) for date: " + formattedDumpDate
       sys.exit(1)
@@ -444,11 +445,11 @@ def getCommonsWikiUrl():
 
       if (r.status_code == requests.codes.ok):
         print "Latest Commonswiki dump: " + formattedDumpDate
-        commonswikiUrl = url
+        resultUrl = url
         break
       elif os.path.isfile(os.path.join(dumpsFolder, COMMONSWIKI_DIR, formattedDumpDate, 'commonswiki-' + formattedDumpDate + '-pages-articles.xml')):
         print "Commonswiki dump exist: " + formattedDumpDate
-        commonswikiUrl = url
+        resultUrl = url
         break
       elif (startDate - dumpDate).days <= WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS:
         dumpDate -= timedelta(days = 1)
@@ -456,7 +457,7 @@ def getCommonsWikiUrl():
         print "ERROR: No Commonswiki dump file found (neither remotely nor in local cache), oldest dump date tried was: " + formattedDumpDate
         sys.exit(1)
   
-  return commonswikiUrl
+  return resultUrl
 
 
 """
