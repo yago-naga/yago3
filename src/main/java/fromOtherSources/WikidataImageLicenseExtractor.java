@@ -55,7 +55,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   private static final String wikimediaCommonUrl = "https://commons.wikimedia.org/wiki/";
   private static final String flickerUsersUrl = "https://www.flickr.com/people/";
   
-  private static final List<String> CC_TYPES = Arrays.asList("by","by-sa","by-nd","by-nc","by-nc-sa","by-nc-nd");
+  private static final List<String> CC_TYPES = Arrays.asList("BY","BY-SA","BY-ND","BY-NC","BY-NC-SA","BY-NC-ND");
   private static final List<String> CC_VERSIONS = Arrays.asList("1.0","2.0","2.5","3.0","4.0"); 
   
   private static int authorCnt = 0;
@@ -64,9 +64,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
 
   
   //TODO: check unicode flag
-  private static Pattern authorFieldPattern = Pattern.compile("\\|\\s*(?:author|artist|creator)\\s*=\\s*(.+?)(?:\\n|$)", Pattern.CASE_INSENSITIVE);
+  private static Pattern authorFieldPattern = Pattern.compile("\\|\\s*(?:author|artist|creator)\\s*=\\s*(.+?)(?!\\{\\{.*?\\|.*?\\}\\})(?:[^a-zA-Z]\\|)", Pattern.CASE_INSENSITIVE);
   private static Pattern trademark = Pattern.compile("\\{\\{trademarked(?:\\}\\}|\\|)", Pattern.CASE_INSENSITIVE);
-  private static Pattern attributionPattern = Pattern.compile("\\{\\{(attribution(.*?))\\}\\}", Pattern.CASE_INSENSITIVE);
+  //private static Pattern attributionPattern = Pattern.compile("\\{\\{(attribution(.*?))\\}\\}", Pattern.CASE_INSENSITIVE);
   private static Pattern OTRSPermissionPattern = Pattern.compile("(?:\\{\\{|\\|)(?:Permission)?OTRS\\|(?:id=)?(\\d+)(?:\\}\\}|\\|)");
   
   private static Map<String, Pattern> authorPatterns;
@@ -74,8 +74,8 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     Map<String, Pattern> tempMap = new HashMap<String, Pattern>();
     tempMap.put("Unknown", Pattern.compile("\\{\\{unknown\\|author\\}\\}", Pattern.CASE_INSENSITIVE));
     
-    tempMap.put("wikiLanguageUser", Pattern.compile("\\[\\[(?::?(.{2,3}):)?((?:user:)?.+?)(?:\\|(.+?))?\\]\\]", Pattern.CASE_INSENSITIVE));
-    tempMap.put("wikiCommonUser", Pattern.compile("\\{\\{((?:user|u|creator):(.+?))\\}\\}", Pattern.CASE_INSENSITIVE));// chk u:stuff
+    tempMap.put("wikiLanguageUser", Pattern.compile("\\[\\[(?::?(.{2,3}):)?((?!:File:)(?:user:)?.+?)(?:\\|(.+?))?\\]\\]", Pattern.CASE_INSENSITIVE));
+    tempMap.put("wikiCommonUser", Pattern.compile("\\{\\{((user|u|creator)(:|\\|)(.+?))\\}\\}", Pattern.CASE_INSENSITIVE));// chk u:stuff
     tempMap.put("wikiGermanUser", Pattern.compile("\\{\\{ud:(.+?)\\}\\}", Pattern.CASE_INSENSITIVE));
     tempMap.put("wikiUserAtProject", Pattern.compile("\\{\\{(?:(?:user at project)|(?:original uploader))\\|(.*?)\\|(?:wikipedia\\|)?(.{2,3})\\}\\}"));
     
@@ -102,7 +102,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
 
     tempMap.put("OpenDataCommonsLicense", Pattern.compile("(?:\\{\\{|\\|)(ODbL)(?:\\}\\}|\\|)"));
     
-    tempMap.put("publicDomainLicense", Pattern.compile("(?:\\{\\{|\\|)(PD[^\\|\\}]*)(?:\\}\\}|\\|)"));
+    tempMap.put("PublicDomainLicense", Pattern.compile("(?:\\{\\{|\\|)(PD[^\\|\\}]*)(?:\\}\\}|\\|)"));
     
     
     
@@ -114,7 +114,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   private static final Map<String, String> hardCodedLicenses;
   static {
     Map<String, String> tempMap = new HashMap<>();
-    tempMap.put("publicDomainLicense",            "https://en.wikipedia.org/wiki/Public_domain");
+    tempMap.put("PublicDomainLicense",            "https://en.wikipedia.org/wiki/Public_domain");
     tempMap.put("GNUFreeDocumentationLicense",    "https://www.gnu.org/licenses/gfdl");
     tempMap.put("GNUGeneralPublicLicense",        "https://www.gnu.org/licenses/gpl");
     tempMap.put("GNULesserGeneralPublicLicense",  "https://www.gnu.org/licenses/lgpl");
@@ -124,7 +124,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     
     for(String type:CC_TYPES)
       for(String version:CC_VERSIONS)
-        tempMap.put("CreativeCommonsLicense-" + type + "-" + version , "https://creativecommons.org/licenses/" + type + "/" + version);
+        tempMap.put("CreativeCommonsLicense-" + type + "-" + version , "https://creativecommons.org/licenses/" + type.toLowerCase() + "/" + version);
   
     hardCodedLicenses = Collections.unmodifiableMap(tempMap);
   }
@@ -150,7 +150,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
 
   @Override
   public void extract() throws Exception {
-    
+   
     int cntImagesNOLicense = 0;
     int cntImages = 0;
     
@@ -178,11 +178,12 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
         Boolean trademark = false;
         //String attribution = null;
         
-        author = findAuthor(text);
-        licenses = findLicense(text);
+        author = findAuthor(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "), imageFileName);
+        licenses = findLicense(text, imageFileName);
         permissionOTRS = findOTRSPermission(text);
         trademark = findTrademark(text);
         //attribution = findAttribution(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
+        
         String imageUrl = FactComponent.forYagoEntity(fileNameToUrl.get(imageFileName));
         
         // Write available information:
@@ -216,9 +217,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
         // something else: attcc : http://commons.wikimedia.org/wiki/File:Ph_locator_camiguin_mambajao.png
       }
     }
-    System.out.println("#images: " + cntImages);
-    System.out.println("#imagesWithNolicence: " + cntImagesNOLicense);
-    System.out.println(cntImagesNOLicense/cntImages);
+    //System.out.println("#total: " + fileNameToUrl.size());
+    //System.out.println("#images: " + cntImages);
+    //System.out.println("#imagesWithNolicence: " + cntImagesNOLicense);
     in.close();
     
   }
@@ -269,25 +270,25 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     }
   }
   
-  /**
-   * Find if there exist an Attribution tag.
-   * TODO: what to to with the info after it like user, ... There is also a Attribution-CC....
-   * @param text
-   * @return
-   */
-  private String findAttribution(String text) {
-    Matcher matcher = attributionPattern.matcher(text);
-    if(matcher.find())
-      return matcher.group(1);
-    return null;
-  }
+//  /**
+//   * Find if there exist an Attribution tag.
+//   * TODO: what to to with the info after it like user, ... There is also a Attribution-CC....
+//   * @param text
+//   * @return
+//   */
+//  private String findAttribution(String text) {
+//    Matcher matcher = attributionPattern.matcher(text);
+//    if(matcher.find())
+//      return matcher.group(1);
+//    return null;
+//  }
   
   /**
    * Find existing licenses from the defined licenses.
    * @param text
    * @return
    */
-  private static licenseReturn findLicense(String text) {
+  private static licenseReturn findLicense(String text, String imageFileName) {
     licenseReturn licenses = new licenseReturn();
     
     for(String key:imageLicensePatterns.keySet()) {
@@ -299,24 +300,27 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
         else if (key.equals("CreativeCommonsLicense") && licenseMatcher.group(3) == null) {
           if(licenseMatcher.group(2).equals("all"))
             for(String version:CC_VERSIONS)
-              licenses.imageLicenses.add(key + "-" + licenseMatcher.group(1) + "-" + version);
+              licenses.imageLicenses.add(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + version);
           else
-            licenses.imageLicenses.add(key + "-" + licenseMatcher.group(1) + "-" + licenseMatcher.group(2));
+            licenses.imageLicenses.add(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + licenseMatcher.group(2));
         }
         else {
           String licenseID = FactComponent.forYagoEntity("license_" + (++licenseCnt));
+          
+          
           licenses.imageLicenses.add(licenseID);
           
           String url = null;
           switch(key) {
             case "CreativeCommonsLicense":
-              if(licenseMatcher.group(2).equals("all"))
+              if(licenseMatcher.group(2).equals("all")) {
                 for(String version:CC_VERSIONS) {
-                  url = hardCodedLicenses.get(key + "-" + licenseMatcher.group(1) + "-" + version) + "/" + licenseMatcher.group(3);
+                  url = hardCodedLicenses.get(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + version) + "/" + licenseMatcher.group(3);
                   licenses.addedLicenses.put(licenseID, url);
                 }
+              }
               else {
-                url = hardCodedLicenses.get(key + "-" + licenseMatcher.group(1) + "-" + licenseMatcher.group(2)) + "/" + licenseMatcher.group(3);
+                url = hardCodedLicenses.get(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + licenseMatcher.group(2)) + "/" + licenseMatcher.group(3);
                 licenses.addedLicenses.put(licenseID, url);
               }
               break;
@@ -338,13 +342,14 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   /**
    * Find the author of the image, return its name and url if available.
    * @param text
+   * @param imageFileName 
    * @return
    */
-  private static authorUser findAuthor(String text) {
+  //TODO: multiple authors https://commons.wikimedia.org/wiki/File:N%C3%BCrnberger_Ringbahn.png
+  private static authorUser findAuthor(String text, String imageFileName) {
     
     authorUser author = new authorUser();
     Matcher matcher = authorFieldPattern.matcher(text);
-    
     if(matcher.find()) {
       String authorFieldText = matcher.group(1);
       for (String key:authorPatterns.keySet()) {
@@ -366,8 +371,11 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
               break;
               
             case "wikiCommonUser":
-              author.url = wikimediaCommonUrl + authorTypeMatcher.group(1);
-              author.name = authorTypeMatcher.group(2);
+              if(authorTypeMatcher.group(2).equals("creator") || authorTypeMatcher.group(2).equals("Creator"))
+                author.url = wikimediaCommonUrl + "Creator:" + authorTypeMatcher.group(4);
+              else
+                author.url = wikimediaCommonUrl + "User:" + authorTypeMatcher.group(4);
+              author.name = authorTypeMatcher.group(4);
               break;
               
             case "wikiGermanUser":
