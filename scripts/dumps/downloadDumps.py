@@ -99,7 +99,7 @@ def main(argv=None):
   print "Adapting the YAGO3 configuration..."
   adaptYagoConfiguration()
     
-  print "Wikipedia and Wikidata dumps are ready."
+  print "Wikipedia, Wikidata and Commonswiki dumps are ready."
 
   
 """
