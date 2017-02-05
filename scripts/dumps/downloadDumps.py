@@ -195,7 +195,7 @@ def adaptYagoConfiguration():
     if wikidataStatementsDone == False:
       configFile.write(YAGO3_WIKIDATA_STATEMENTS_PROPERTY + ' = ' + getWikidata(WIKIDATA_STATEMENTS_FILE) + '\n')
     if commonsWikiDone == False:
-      configFile.write(YAGO3_COMMONSWIKI_PROPERTY + ' = ' + PATHTOCOM + '\n')
+      configFile.write(YAGO3_COMMONSWIKI_PROPERTY + ' = ' + getCommonsWiki() + '\n')
 
 
 """
@@ -468,6 +468,16 @@ def getWikidata(dumpFile):
   date = wikidataUrls[dumpFile][54:62]
   return os.path.join(dumpsFolder, WIKIDATA_DIR, date, dumpFile)
   
+
+"""
+Gets the path to wikidata dump
+"""  
+def getCommonsWiki():
+  global commonsWikiUrl
+  
+  date = commomsWikiUrl[40:49]
+  return os.path.join(dumpsFolder, COMMONSWIKI_DIR, date, 'commonswiki-' + date + '-pages-articles.xml')
+
   
 if __name__ == "__main__":
   # parse options
