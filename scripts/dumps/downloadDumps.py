@@ -476,7 +476,7 @@ Gets the path to wikidata dump
 def getCommonsWiki():
   global commonsWikiUrl
   
-  date = commonsWikiUrl[40:49]
+  date = commonsWikiUrl[40:48]
   return os.path.join(dumpsFolder, COMMONSWIKI_DIR, date, 'commonswiki-' + date + '-pages-articles.xml')
 
   
