@@ -14,7 +14,6 @@ import basics.YAGO;
 
 import static org.junit.Assert.*;
 
-//TODO: continue to test for author trademark otrs
 /**
  * Test cases for WikidataImageLicenseExtractor
  * @author Ghazaleh Haratinezhad Torbati
@@ -39,6 +38,20 @@ public class WikidataImageLicenseExtractorTest {
     // I made small sample file for this matter.
     // Output of the extract function (wikidataImagesInformation.tsv) is written in the second second argument.
     ex.extract(new File(RESOURCESPATH + "/input"), new File(RESOURCESPATH + "/output"),"testing WikidataImageLicenseExtractor"); 
+  }
+  
+  @Test
+  public void testTrademark() throws IOException {
+    String imageUrl = "<http://commons.wikimedia.org/wiki/File:ETH_Zürich_wordmark.svg>";
+    assertNotNull(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getObject(imageUrl, YAGO.hasTrademark));
+    assertEquals("<true>", WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getObject(imageUrl, YAGO.hasTrademark));
+  }
+  
+  @Test
+  public void testOTRSPermission() throws IOException {
+    String imageUrl = "<http://commons.wikimedia.org/wiki/File:Belarus-Mir-Castle-9.jpg>";
+    assertNotNull(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getObject(imageUrl, YAGO.hasOTRSId));
+    assertEquals("<2013120910013806>", WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getObject(imageUrl, YAGO.hasOTRSId));
   }
   
   @Test
@@ -82,13 +95,13 @@ public class WikidataImageLicenseExtractorTest {
   public void testOpenGovernmentLicences() throws IOException {
     String licenseUrl =  "<https://www.nationalarchives.gov.uk/doc/open-government-licence/version/1>";
     String licenseId = "<license_2>";
-    assertTrue(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().contains(licenseId, YAGO.hasUrl, licenseUrl));
-    assertTrue(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().contains("<http://commons.wikimedia.org/wiki/File:Nemat_Shafik_Portrait.jpg>", YAGO.hasLicense, licenseId));
+    assertContain(licenseId, YAGO.hasUrl, licenseUrl);
+    assertContain("<http://commons.wikimedia.org/wiki/File:Nemat_Shafik_Portrait.jpg>", YAGO.hasLicense, licenseId);
 
     licenseUrl =  "<https://www.nationalarchives.gov.uk/doc/open-government-licence/version/2>";
     licenseId = "<license_3>";
-    assertTrue(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().contains(licenseId, YAGO.hasUrl, licenseUrl));
-    assertTrue(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().contains("<http://commons.wikimedia.org/wiki/File:Suresh_Premachandran.jpg>", YAGO.hasLicense, licenseId));
+    assertContain(licenseId, YAGO.hasUrl, licenseUrl);
+    assertContain("<http://commons.wikimedia.org/wiki/File:Suresh_Premachandran.jpg>", YAGO.hasLicense, licenseId);
 
   }
   
@@ -167,18 +180,97 @@ public class WikidataImageLicenseExtractorTest {
 
     licenseUrl =  "<https://creativecommons.org/licenses/by/2.5/pl>";
     String licenseId = "<license_1>";
-    assertTrue(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().contains(licenseId, YAGO.hasUrl, licenseUrl));
-    assertTrue(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().contains("<http://commons.wikimedia.org/wiki/File:Lighthouse,_Hirtshals,_Denmark.jpeg>", YAGO.hasLicense, licenseId));
+    assertContain(licenseId, YAGO.hasUrl, licenseUrl);
+    assertContain("<http://commons.wikimedia.org/wiki/File:Lighthouse,_Hirtshals,_Denmark.jpeg>", YAGO.hasLicense, licenseId);
     
   }
-  
-  
   
   private void checkLicense(String licenseUrl, String licenseName, List<String> imageUrls) throws IOException {
     assertEquals(licenseUrl, WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getObject(licenseName, YAGO.hasUrl));
     for(String url:imageUrls) {
-      Set<Fact> facts = WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getFactsWithSubjectAndRelation(url, YAGO.hasLicense);
-      assertTrue(facts.contains(new Fact(url, YAGO.hasLicense, licenseName)));
+      assertContain(url, YAGO.hasLicense, licenseName);
     }
+  }
+  
+  @Test
+  public void testAuthorUnknown() throws IOException {
+    String imageUrl = "<http://commons.wikimedia.org/wiki/File:ETH_Zürich_wordmark.svg>";
+    String authorId = "<author_8>";
+    String authorName = "<Unknown>";
+    assertContain(authorId, YAGO.hasName, authorName);
+    assertContain(imageUrl, YAGO.hasAuthor, authorId);
+  }
+  
+  @Test
+  public void testAuthorExternalLink() throws IOException {
+    String imageUrl = "<http://commons.wikimedia.org/wiki/File:Arthur_Goldstuck.jpg>";
+    String authorId = "<author_3>";
+    String authorName = "<Danie_van_der_Merwe>";
+    String authorUrl = "<http://www.flickr.com/people/12915821@N00>";
+    assertContain(imageUrl, YAGO.hasAuthor, authorId);
+    assertContain(authorId, YAGO.hasName, authorName);
+    assertContain(authorId, YAGO.hasUrl, authorUrl);
+    
+    imageUrl = "<http://commons.wikimedia.org/wiki/File:Nemat_Shafik_Portrait.jpg>";
+    authorId = "<author_5>";
+    authorName = "<UK's_Department_for_International_Development>";
+    authorUrl = "<http://www.flickr.com/photos/dfid/>";
+    assertContain(imageUrl, YAGO.hasAuthor, authorId);
+    assertContain(authorId, YAGO.hasName, authorName);
+    assertContain(authorId, YAGO.hasUrl, authorUrl);
+  }
+  
+  @Test
+  public void testCommonsWikiUsers() throws IOException {
+    String imageUrl = "<http://commons.wikimedia.org/wiki/File:Aztec_Empire_(orthographic_projection).svg>";
+    String authorId = "<author_4>";
+    String authorName = "<Yavidaxiu>";
+    String authorUrl = "<https://commons.wikimedia.org/wiki/User:Yavidaxiu>";
+    assertContain(imageUrl, YAGO.hasAuthor, authorId);
+    assertContain(authorId, YAGO.hasName, authorName);
+    assertContain(authorId, YAGO.hasUrl, authorUrl);
+    
+    imageUrl = "<http://commons.wikimedia.org/wiki/File:Groninger-museum.jpg>";
+    authorId = "<author_1>";
+    authorName = "<Andre_Engels>";
+    authorUrl = "<https://commons.wikimedia.org/wiki/User:Andre_Engels>";
+    assertContain(imageUrl, YAGO.hasAuthor, authorId);
+    assertContain(authorId, YAGO.hasName, authorName);
+    assertContain(authorId, YAGO.hasUrl, authorUrl);
+    
+    imageUrl = "<http://commons.wikimedia.org/wiki/File:Suresh_Premachandran.jpg>";
+    authorId = "<author_6>";
+    authorName = "<Foreign_and_Commonwealth_Office>";
+    authorUrl = "<https://commons.wikimedia.org/wiki/w:Foreign_and_Commonwealth_Office>";
+    assertContain(imageUrl, YAGO.hasAuthor, authorId);
+    assertContain(authorId, YAGO.hasName, authorName);
+    assertContain(authorId, YAGO.hasUrl, authorUrl);
+    
+  }
+  
+  @Test
+  public void testCreator() throws IOException {
+    String imageUrl = "<http://commons.wikimedia.org/wiki/File:Francisco_Goya_-_Casa_de_locos.jpg>";
+    String authorId = "<author_9>";
+    String authorName = "<Francisco_de_Goya_y_Lucientes>";
+    String authorUrl = "<https://commons.wikimedia.org/wiki/Creator:Francisco_de_Goya_y_Lucientes>";
+    assertContain(imageUrl, YAGO.hasAuthor, authorId);
+    assertContain(authorId, YAGO.hasName, authorName);
+    assertContain(authorId, YAGO.hasUrl, authorUrl);
+  }
+
+  @Test
+  public void testEnWikiAuthor() throws IOException {
+    String imageUrl = "<http://commons.wikimedia.org/wiki/File:Nürnberger_Ringbahn.png>";
+    String authorId = "<author_7>";
+    String authorName = "<SRTM>";
+    String authorUrl = "<http://en.wikipedia.org/wiki/Shuttle_Radar_Topography_Mission>";
+    assertContain(imageUrl, YAGO.hasAuthor, authorId);
+    assertContain(authorId, YAGO.hasName, authorName);
+    assertContain(authorId, YAGO.hasUrl, authorUrl);
+  }
+  
+  private void assertContain(String subject, String relation, String object) throws IOException {
+    assertTrue(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().contains(subject,relation, object));
   }
 }

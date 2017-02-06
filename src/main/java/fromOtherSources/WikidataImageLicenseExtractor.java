@@ -86,8 +86,8 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     tempMap.put("wikiGermanUser", Pattern.compile("\\{\\{ud:(.+?)\\}\\}", Pattern.CASE_INSENSITIVE));
     tempMap.put("wikiUserAtProject", Pattern.compile("\\{\\{(?:(?:user at project)|(?:original uploader))\\|(.*?)\\|(?:wikipedia\\|)?(.{2,3})\\}\\}"));
     
-    tempMap.put("flickrUser1", Pattern.compile("\\[\\[flickruser:(.+?)(?:\\|(.+))?\\]\\]"));
-    tempMap.put("externalLink", Pattern.compile("^\\[[^\\[](.*?)(?:(?:\\s+(.*)\\])|\\])"));
+    tempMap.put("flickrUser", Pattern.compile("\\[\\[flickruser:(.+?)(?:\\|(.+))?\\]\\]"));
+    tempMap.put("externalLink", Pattern.compile("^\\[([^\\[].*?)(?:(?:\\s+(.*)\\])|\\])"));
     
     authorPatterns = Collections.unmodifiableMap(tempMap);
   }
@@ -384,7 +384,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
               author.name = authorTypeMatcher.group(1);
               break;
               
-            case "flickrUser1":
+            case "flickrUser":
               author.url = flickerUsersUrl + authorTypeMatcher.group(1);
               break;
               
