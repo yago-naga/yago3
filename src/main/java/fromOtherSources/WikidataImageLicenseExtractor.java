@@ -25,6 +25,30 @@ import javatools.util.FileUtils;
 import utils.Theme;
 
 public class WikidataImageLicenseExtractor extends DataExtractor{
+ 
+  public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageInformation", 
+      "Licences extracted for wikidata Images");
+  
+  private static final String COMMONS_WIKI = "commons_wiki";
+  
+  private static final String wikipediaUrl = "wikipedia.org/wiki/";
+  private static final String wikimediaCommonUrl = "https://commons.wikimedia.org/wiki/";
+  private static final String flickerUsersUrl = "https://www.flickr.com/people/";
+  
+  private static final List<String> CC_TYPES = Arrays.asList("BY","BY-SA","BY-ND","BY-NC","BY-NC-SA","BY-NC-ND");
+  private static final List<String> CC_VERSIONS = Arrays.asList("1.0","2.0","2.5","3.0","4.0"); 
+  
+  private static int authorCnt = 0;
+  private static int licenseCnt = 0;
+  
+  public WikidataImageLicenseExtractor(File input) {
+    super(input);
+  }
+  
+  public WikidataImageLicenseExtractor() {
+    this(Parameters.getFile(COMMONS_WIKI));
+  }
+  
   
   public static class authorUser {
     String name;
@@ -45,23 +69,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
       addedLicenses = new HashMap<String, String>();
     }
   }
-  
-  public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageInformation", 
-      "Licences extracted for wikidata Images");
-  
-  private static final String COMMONS_WIKI = "commons_wiki";
-  
-  private static final String wikipediaUrl = "wikipedia.org/wiki/";
-  private static final String wikimediaCommonUrl = "https://commons.wikimedia.org/wiki/";
-  private static final String flickerUsersUrl = "https://www.flickr.com/people/";
-  
-  private static final List<String> CC_TYPES = Arrays.asList("BY","BY-SA","BY-ND","BY-NC","BY-NC-SA","BY-NC-ND");
-  private static final List<String> CC_VERSIONS = Arrays.asList("1.0","2.0","2.5","3.0","4.0"); 
-  
-  private static int authorCnt = 0;
-  private static int licenseCnt = 0;
-  
-
   
   //TODO: check unicode flag
   private static Pattern authorFieldPattern = Pattern.compile("\\|\\s*(?:author|artist|creator)\\s*=\\s*(.+?)(?!\\{\\{.*?\\|.*?\\}\\})(?:[^a-zA-Z]\\|)", Pattern.CASE_INSENSITIVE);
@@ -130,13 +137,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   }
   
   
-  public WikidataImageLicenseExtractor(File input) {
-    super(input);
-  }
-  
-  public WikidataImageLicenseExtractor() {
-    this(Parameters.getFile(COMMONS_WIKI));
-  }
+
   
   @Override
   public Set<Theme> input() {
