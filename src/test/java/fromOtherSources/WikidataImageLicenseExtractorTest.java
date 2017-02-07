@@ -4,20 +4,20 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Set;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import basics.Fact;
 import basics.YAGO;
 
 import static org.junit.Assert.*;
 
 /**
- * Test cases for WikidataImageLicenseExtractor
+ * Test cases for WikidataImageLicenseExtractor.
+ * For this matter, we provided a small commonswiki dump and a small 
+ * number of wikidataImages in the resources.
+ * It will test each output of the extractor such as license and trademark individually.
  * @author Ghazaleh Haratinezhad Torbati
- * 
  */
 
 public class WikidataImageLicenseExtractorTest {
@@ -25,9 +25,6 @@ public class WikidataImageLicenseExtractorTest {
   private static final String RESOURCESPATH = "src/test/resources/" + WikidataImageLicenseExtractor.class.getName();
   static WikidataImageLicenseExtractor ex;
 
-  // make small file for images
-  // check for each license if it is extracted for the expected ones
-  
   @BeforeClass
   public static void runExtractor() throws Exception {
     

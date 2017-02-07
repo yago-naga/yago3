@@ -24,9 +24,32 @@ import javatools.parsers.Char17;
 import javatools.util.FileUtils;
 import utils.Theme;
 
+/**
+ * Extract licenses for images from commons wiki dump.
+ * 
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2017 Ghazaleh Haratinezhad Torbati.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
 public class WikidataImageLicenseExtractor extends DataExtractor{
  
-  public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageInformation", 
+  public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageLicenses", 
       "Licences extracted for wikidata Images");
   
   private static final String COMMONS_WIKI = "commons_wiki";
@@ -70,7 +93,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     }
   }
   
-  //TODO: check unicode flag
   private static Pattern authorFieldPattern = Pattern.compile("\\|\\s*(?:author|artist|creator)\\s*=\\s*(.+?)(?!\\{\\{.*?\\|.*?\\}\\})(?:[^a-zA-Z]\\|)", Pattern.CASE_INSENSITIVE);
   private static Pattern trademark = Pattern.compile("\\{\\{trademarked(?:\\}\\}|\\|)", Pattern.CASE_INSENSITIVE);
   //private static Pattern attributionPattern = Pattern.compile("\\{\\{(attribution(.*?))\\}\\}", Pattern.CASE_INSENSITIVE);
@@ -159,7 +181,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     
     Reader in = FileUtils.getBufferedUTF8Reader(inputData);
     
-    // TODO: maybe add imageFileName to images.tsv?
     // Mapping of image file name to its url.
     Map<String, String> fileNameToUrl = getFileNames();
     
