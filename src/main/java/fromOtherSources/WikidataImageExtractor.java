@@ -32,7 +32,7 @@ This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
 
-This class is copyright 2016 Ghazaleh Haratinezhad.
+This class is copyright 2016 Ghazaleh Haratinezhad Torbati.
 
 YAGO is free software: you can redistribute it and/or modify it
 under the terms of the GNU General Public License as published

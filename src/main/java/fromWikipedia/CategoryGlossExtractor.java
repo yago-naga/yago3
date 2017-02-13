@@ -90,7 +90,7 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
 				String page = FileLines.readBetween(in, "<text", "</text>");
 		    String gloss = getGloss(page /*, replacement*/, category);
         if (gloss != null)
-        	CATEGORYGLOSSES.inLanguage(language).write(new Fact(category, YAGO.hasGloss, gloss));
+        	CATEGORYGLOSSES.inLanguage(language).write(new Fact(category, YAGO.hasGloss, FactComponent.forString(gloss)));
 			}
 		}
 		in.close();

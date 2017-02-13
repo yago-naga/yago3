@@ -4,12 +4,13 @@
 MINPARAMS=2
 if [ $# -lt "$MINPARAMS" ]
 then
-    echo "Usage: $0 <wd_dump_target_dir> <url>..."
+    echo "Usage: $0 <wd_dump_target_dir> <download_url>..."
     echo "  Parameters:"
     echo "    <wd_dumpd_target_dir>  e.g. /GW/aida/work/data/"
     echo "    <download_url>         e.g. http://tools.wmflabs.org/wikidata-exports/rdf/"
     echo "                                exports/20160801/wikidata-sitelinks.nt.gz"
     exit 1
+# Check if the target directory ends with "/", add it other wise
 else
     args=( "$@" )
 fi
@@ -18,7 +19,7 @@ wd_dump_dir="${args[0]}"
 wd_dump_download_links=("${args[@]:1}")
 
 # Create target directory
-# Check if the target directory ends with "/", add it other wise
+
 wikidata_dir="wikidata_dump"
 i=$((${#wd_dump_dir}-1))
 if [[ "/" == "${wd_dump_dir:$i:1}" ]]

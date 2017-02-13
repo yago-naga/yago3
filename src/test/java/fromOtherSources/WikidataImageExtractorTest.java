@@ -18,12 +18,12 @@ import static org.junit.Assert.*;
 
 /**
  * Test cases for WikidataImageExtractor
- * @author Ghazaleh Haratinezhad
+ * @author Ghazaleh Haratinezhad Torbati
  *
  */
 
 public class WikidataImageExtractorTest {
-  
+
   public static final String RESOURCESPATH = "src/test/resources/" + WikidataImageExtractor.class.getName();
   
   /**
@@ -68,6 +68,7 @@ public class WikidataImageExtractorTest {
     
   }
   
+
   @Before
   public void setup() {
     // Set the languages to de and en:
@@ -83,6 +84,7 @@ public class WikidataImageExtractorTest {
     // Test Extraction on small input sample-wikidata-statements.nt
     WikidataImageExtractor ex = new WikidataImageExtractor(new File(RESOURCESPATH + "/input/sample-wikidata-statements.nt"));
     
+
     // The first argument should be the folder containing the themes needed in the extractor.
     // WikidataImageExtractor needs following files: "wikidataInstances.tsv" and "yagoTransitiveType.tsv"
     // I made small files for this test and save them in resources. But original files are also usable.

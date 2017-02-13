@@ -12,6 +12,7 @@ import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.MetadataExtractor;
 import fromOtherSources.WikidataImageExtractor;
+import fromOtherSources.WikidataImageLicenseExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import fromWikipedia.CategoryExtractor;
@@ -56,7 +57,9 @@ public class AIDAExtractorMerger extends Extractor {
   /** Relations that AIDA needs. */
   public static final Set<String> relations = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.label, RDFS.sameas, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>", "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
-      "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>", YAGO.hasImageID, YAGO.hasWikiPage, YAGO.hasImageUrl, YAGO.hasGloss);
+      "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>",
+      YAGO.hasImageID, YAGO.hasWikiPage, YAGO.hasImageUrl, YAGO.hasGloss, YAGO.hasLicense, YAGO.hasAuthor, YAGO.hasTrademark,
+      YAGO.hasName, YAGO.hasUrl, YAGO.hasOTRSId);
 
   @Override
   public Set<Theme> input() {
@@ -98,6 +101,9 @@ public class AIDAExtractorMerger extends Extractor {
     
     // Wikipedie category glosses.
     input.addAll(CategoryGlossExtractor.CATEGORYGLOSSES.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    
+    // Image Licenses.
+    input.add(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE);
 
     return input;
   }

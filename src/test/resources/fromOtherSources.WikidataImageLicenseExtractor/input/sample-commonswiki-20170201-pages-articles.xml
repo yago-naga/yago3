@@ -1,0 +1,658 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="en">
+  <siteinfo>
+    <sitename>Wikimedia Commons</sitename>
+    <dbname>commonswiki</dbname>
+    <base>https://commons.wikimedia.org/wiki/Main_Page</base>
+    <generator>MediaWiki 1.29.0-wmf.9</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Commons</namespace>
+      <namespace key="5" case="first-letter">Commons talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="100" case="first-letter">Creator</namespace>
+      <namespace key="101" case="first-letter">Creator talk</namespace>
+      <namespace key="102" case="first-letter">TimedText</namespace>
+      <namespace key="103" case="first-letter">TimedText talk</namespace>
+      <namespace key="104" case="first-letter">Sequence</namespace>
+      <namespace key="105" case="first-letter">Sequence talk</namespace>
+      <namespace key="106" case="first-letter">Institution</namespace>
+      <namespace key="107" case="first-letter">Institution talk</namespace>
+      <namespace key="460" case="case-sensitive">Campaign</namespace>
+      <namespace key="461" case="case-sensitive">Campaign talk</namespace>
+      <namespace key="486" case="first-letter">Data</namespace>
+      <namespace key="487" case="first-letter">Data talk</namespace>
+      <namespace key="490" case="first-letter">GWToolset</namespace>
+      <namespace key="491" case="first-letter">GWToolset talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="1198" case="first-letter">Translations</namespace>
+      <namespace key="1199" case="first-letter">Translations talk</namespace>
+      <namespace key="2300" case="first-letter">Gadget</namespace>
+      <namespace key="2301" case="first-letter">Gadget talk</namespace>
+      <namespace key="2302" case="case-sensitive">Gadget definition</namespace>
+      <namespace key="2303" case="case-sensitive">Gadget definition talk</namespace>
+      <namespace key="2600" case="first-letter">Topic</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>File:Groninger-museum.jpg</title>
+    <ns>6</ns>
+    <id>85</id>
+    <revision>
+      <id>181681906</id>
+      <parentid>125864647</parentid>
+      <timestamp>2015-12-12T10:11:19Z</timestamp>
+      <contributor>
+        <username>BotAdventures</username>
+        <id>4447763</id>
+      </contributor>
+      <minor />
+      <comment>added [[Category:Taken with Fujifilm Digital Q1]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+{{Information
+|Description = 
+{{en|The Groninger museum, designed by [[Alessandro Mendini]], in [[Groningen]], the Netherlands, August 2004.}}
+{{de|Das Groninger Museum, designed von Alessandro Mendini, in Groningen, Niederlande}}
+|Source      = {{own photo}}&lt;br /&gt;Own picture from [[User:Andre Engels|Andre Engels]].
+|Date        = {{taken on|2004-08-26}} (according to EXIF data)
+|Author      = [[User:Andre Engels|Andre Engels]]
+|Permission  = {{Cc-by-1.0|[[User:Andre Engels|Andre Engels]]}}
+[[Commons:Freedom of panorama#Netherlands]]
+|other_versions =
+}}
+{{location dec|53.2120|6.5647|region:NL-GR|}}
+
+[[Category:Groninger Museum]]
+[[Category:Taken with Fujifilm Digital Q1]]</text>
+      <sha1>rg7ezg2oxc6uyv5554c3ljo37err8w2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Kenwood House.jpg</title>
+    <ns>6</ns>
+    <id>18904</id>
+    <revision>
+      <id>187987591</id>
+      <parentid>180107725</parentid>
+      <timestamp>2016-02-19T22:24:57Z</timestamp>
+      <contributor>
+        <username>RileyBot</username>
+        <id>2573119</id>
+      </contributor>
+      <minor />
+      <comment>[[User:RileyBot|Bot:]] Adding {{[[Template:ISOdate|ISOdate]]}})  (General fixes)  ([[User:RileyBot/9|Task 9]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+{{information
+| description    = Kenwood House 
+| author         = [[user:Mikegr]]
+| source         = {{own}}
+| date           = {{ISOdate|2004-10-31 17:02:06}}
+| permission     = 
+| other_versions = 
+}}
+{{Listed building England|1379242}}
+== {{int:license-header}} ==
+{{GFDL|migration=relicense}}
+{{cc-by-sa-2.0}}
+
+[[Category:Kenwood House]]
+[[Category:Kenwood House and Garden]]</text>
+      <sha1>d06ql8q0ur510kmu6o0rdnda7pee6h2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Napoli-capodimonte-royalpalace.jpg</title>
+    <ns>6</ns>
+    <id>345088</id>
+    <revision>
+      <id>162713194</id>
+      <parentid>162485191</parentid>
+      <timestamp>2015-06-06T09:15:27Z</timestamp>
+      <contributor>
+        <username>Nicola Quirico</username>
+        <id>1159134</id>
+      </contributor>
+      <comment>/* {{int:filedesc}} */ added italian description</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+{{Information
+|Description    = Royal Palace, Capodimonnte, Naples, Italy {{it|Museo Nazionale Capodimonte  (Palazzo Reale, Capodimonte, Napoli, Italia)}}
+|Source         = http://www.flickr.com/ Flickr.com
+|Date           = 2005-09-28
+|Author         = http://www.flickr.com/photos/goldenancy/ goldenancy
+|Permission     = 
+|Other_versions = http://www.flickr.com/photo_zoom.gne?id=47572439
+}}
+
+== {{int:license-header}} ==
+{{cc-by-2.5}}
+{{User:FlickreviewR/reviewed-pass|Golden puppy|http://flickr.com/photos/69628455@N00/47572439|08:47, 7 April 2007 (UTC)|cc-by-nc-2.0}}
+
+[[Category:Palace of Capodimonte - Facade]]</text>
+      <sha1>f8v9vxp5x4htbltmsoiynmh7p1pmlll</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Arthur Goldstuck.jpg</title>
+    <ns>6</ns>
+    <id>6245752</id>
+    <revision>
+      <id>209355390</id>
+      <parentid>209355139</parentid>
+      <timestamp>2016-10-10T19:22:12Z</timestamp>
+      <contributor>
+        <username>GeorgHH</username>
+        <id>16274</id>
+      </contributor>
+      <comment>/* {{int:license-header}} */ +{{Flickr-change-of-license|Cc-by-nc-sa-2.0}}</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Information
+|Description= Arthur Goldstuck, author of The Hitchiker's Guide to the Internet, addressing Govtech 2007 by videophone from South Africa.
+|Source=[http://www.flickr.com/photos/12915821@N00/1233750996/ Author Arthur Goldstuck addressing Govtech 2007]
+|Date=2007-08-25 20:52
+|Author=[http://www.flickr.com/people/12915821@N00 Danie van der Merwe] from Cape Town, South Africa
+|Permission=
+|other_versions=
+}}
+{{Location dec|-33.915158|18.425638|}}
+== {{int:license-header}} ==
+{{cc-by-2.0}}
+{{flickrreview|Yarnalgo|2009-03-16}}
+{{Flickr-change-of-license|Cc-by-nc-sa-2.0}}
+
+[[Category:Journalists from South Africa]]</text>
+      <sha1>9o39iruzh6sqrcrosrmpz3yors0bhp3</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:PalskoJezero-susno1.jpg</title>
+    <ns>6</ns>
+    <id>6245753</id>
+    <revision>
+      <id>133315854</id>
+      <parentid>38728174</parentid>
+      <timestamp>2014-09-01T01:20:05Z</timestamp>
+      <contributor>
+        <username>HiW-Bot</username>
+        <id>1815479</id>
+      </contributor>
+      <minor />
+      <comment>Bot: [[Com:IntRegex|Internationalisation]]. Grouping categories at the bottom.</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+{{Information
+|Description={{sl|1=Palško jezero, Slovenija - sušno obdobje}}
+|Source={{Own}}
+|Author=[[User:Sl-Ziga|Sl-Ziga]]
+|Date=2009
+|Permission=
+|other_versions=
+}}
+
+== {{int:license-header}} ==
+{{PD-self}}
+
+[[Category:Lake Palčje]]</text>
+      <sha1>s8hd6z3pjstg0soinck6zvcilc2do4k</sha1>
+    </revision>
+  </page>
+  <page>
+  <page>
+    <title>File:Hans Sünkel.jpg</title>
+    <ns>6</ns>
+    <id>11612002</id>
+    <revision>
+      <id>145701144</id>
+      <parentid>140609463</parentid>
+      <timestamp>2015-01-08T08:28:09Z</timestamp>
+      <contributor>
+        <username>YaCBot</username>
+        <id>3367542</id>
+      </contributor>
+      <minor />
+      <comment>Bot: [[Com:IntRegex|Internationalisation]]. [[Com:Regex#Categories|Category-cleanup]].</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+{{Information
+|Description={{de|1=Hans Sünkel, Rektor der TU Graz}}
+|Source=http://www.flickr.com/photos/farbfilmvergesser/4937859858/sizes/o/in/photostream/
+|Author=Michael Thurm
+|Date=2010-08-29
+|Permission=
+|other_versions=
+}}
+
+== {{int:license-header}} ==
+{{cc-by-sa-2.0}}
+{{User:FlickreviewR/reviewed-pass|michaelthurm|http://flickr.com/photos/27784190@N04/4937859858|14:15, 27 September 2010 (UTC)|cc-by-sa-2.0|}}
+{{Flickr-change-of-license|Cc-by-nc-nd-2.0}}
+
+[[Category:Hans Sünkel]]</text>
+      <sha1>g4mgyhczq7qnt5e752wqpxbzxjr8td2</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Lighthouse, Hirtshals, Denmark.jpeg</title>
+    <ns>6</ns>
+    <id>1377</id>
+    <revision>
+      <id>144395739</id>
+      <parentid>25926919</parentid>
+      <timestamp>2014-12-28T05:39:41Z</timestamp>
+      <contributor>
+        <username>JarektBot</username>
+        <id>472310</id>
+      </contributor>
+      <minor />
+      <comment>add [[Category:Media missing infobox template]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">[[Image:Hirtshals DK 2005 by tsca 05.jpeg|thumb|150px|Other version]]
+{{en | ''[[lighthouse]], [[Hirtshals]], [[Denmark]] ''}}
+{{pl | ''[[lighthouse|Latarnia morska]] w [[Hirtshals]] w [[Denmark|Danii]]'' }}
+
+photo © 2003 by {{user:tsca/info}} {{location dec|57.584609|9.942471|region:DK_heading:WNW}} {{cc-by-2.5}}{{cc-by-2.5-pl}} {{GFDL|migration=relicense}}
+
+[[Category:Hirtshals fyr]]
+[[Category:Media missing infobox template]]</text>
+      <sha1>fosgr32ptjh4fa9lrilc561855mosw5</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Xscreensaver xmatrix.png</title>
+    <ns>6</ns>
+    <id>23933</id>
+    <revision>
+      <id>205672099</id>
+      <parentid>205672051</parentid>
+      <timestamp>2016-09-05T02:24:57Z</timestamp>
+      <contributor>
+        <ip>80.221.159.67</ip>
+      </contributor>
+      <comment>/* {{int:license-header}} */ Add [[Template:Self]], based on infobox copyright claim</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">=={{int:filedesc}}==
+{{Information
+|Description={{en|1=A screenshot of xscreensaver-demo 4.18, demonstrating the &quot;XMatrix&quot; hack}}
+|Source={{own}}
+|Date={{unknown|date}}
+|Author=Jamie Zawinski
+|Permission={{Free screenshot|GPL}}
+|other_versions=
+}}
+=={{int:license-header}}==
+{{Self|GFDL|migration=not-eligible}}
+[[Category:Screenshots of GNOME]]
+[[Category:Xfce]]
+[[Category:XScreenSaver]]</text>
+      <sha1>tqxb2r78fhnuhe89041bnpve7scuys3</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Noia 64 apps cervisia.png</title>
+    <ns>6</ns>
+    <id>189429</id>
+    <revision>
+      <id>144517767</id>
+      <parentid>103915240</parentid>
+      <timestamp>2014-12-28T22:09:15Z</timestamp>
+      <contributor>
+        <username>JarektBot</username>
+        <id>472310</id>
+      </contributor>
+      <minor />
+      <comment>add [[Category:Media missing infobox template]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">Image from the Noia icon theme for KDE 3.x - http://www.carlitus.net/
+{{LGPL}}
+
+[[Category:Noia icons]]
+[[Category:Wall icons]]
+[[Category:Red icons]]
+[[Category:Media missing infobox template]]</text>
+      <sha1>k3n9jxdvrjr8aurtz8t262p3fmplrtk</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Phpfusionscreenshot.png</title>
+    <ns>6</ns>
+    <id>7392807</id>
+    <revision>
+      <id>152305818</id>
+      <parentid>40968704</parentid>
+      <timestamp>2015-03-06T17:57:36Z</timestamp>
+      <contributor>
+        <username>YaCBot</username>
+        <id>3367542</id>
+      </contributor>
+      <minor />
+      <comment>Bot: [[Com:IntRegex|Internationalisation]].</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+{{Information
+|Description=PHP-Fusion Screenshot
+|Source=http://www.php-fusion.co.uk/
+|Author=PHP-Fusion developers
+|Date=2009-07-26
+}}
+== {{int:license-header}} ==
+{{free screenshot|license={{AGPL}} }}
+
+[[Category:PHP-Fusion]]</text>
+      <sha1>17m9n66aahydn14lew99ymn2br6hv4e</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Aztec Empire (orthographic projection).svg</title>
+    <ns>6</ns>
+    <id>8955704</id>
+    <revision>
+      <id>197589778</id>
+      <parentid>171664439</parentid>
+      <timestamp>2016-05-30T05:28:03Z</timestamp>
+      <contributor>
+        <username>Sarang</username>
+        <id>371456</id>
+      </contributor>
+      <minor />
+      <comment>image generation</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+{{Information
+|Description=
+{{es|1=Imperio Azteca (Proyección ortográfica)}}
+{{en|1=Aztec Empire (orthographic projection)}}
+{{fr|1=Étendue de l'[[:fr:Empire aztèque|empire Aztèque]], vue sur une [[:fr:Projection orthographique|projection orthographique]] de la terre.}}
+|Source=
+* [[:File:Provincias tributarias de la Triple Alianza (s. XVI).svg]], from the ''Atlas del México prehispánico'' by María del Carmen Solanes Carraro &amp; Enrique Vela Ramírez, special edition n°5 of ''Arqueología Mexicana'', 2000-07-05, Editorial Raíces, México. (page?)
+* [[:File:Mexico (orthographic projection).svg]]
+|Author=
+* [[:File:Provincias tributarias de la Triple Alianza (s. XVI).svg]] : {{u|Yavidaxiu}}
+* [[:File:Mexico (orthographic projection).svg]] : {{u|Ssolbergj}}
+* Derivative work : {{Ut|Keepscases}}
+|Date=2010-01-10
+|Other versions =&lt;gallery&gt;
+File:Aztec Empire ME (orthographic projection).svg|With Aztec dominance between Teozapotlan and Xoconochco (map [http://commons.wikimedia.org/w/index.php?title=User_talk:Keepscases&amp;diff=34025755&amp;oldid=33703911 based] on the undocumented map [[:File:Aztecempirelocation.png]] by {{u|Gengiskanhg}})
+File:Aztecempirelocation.png|Undocumented map, by {{u|Gengiskanhg}}
+File:Aztecexpansion.png|Original research, so not enough reliable, [http://en.wikipedia.org/w/index.php?title=User_talk:Maunus&amp;diff=553779509&amp;oldid=553777793 according to its author]
+File:Mēxihcatlahtohcāyōtl 1519.svg|Undocumented map, by {{u|Ricardo gs}}
+&lt;/gallery&gt;
+|other_fields={{Credit line |Author = © Sémhur | Other = Wikimedia Commons |License = [http://creativecommons.org/licenses/by-sa/3.0/deed CC-BY-SA-3.0] (or [http://artlibre.org/licence/lal/en Free Art License])}}
+{{Igen|+|s=ggg|T={{Atelier graphique carte}}}}
+}}
+{{location dec|19.4095|-99.1307|type:satellite_region:MX_heading:0}}
+
+== {{int:license-header}} ==
+{{self|FAL|cc-by-sa-all}}
+
+[[Category:Maps of the Aztecs]]
+[[Category:SVG locator maps of former countries of North America (green and grey globe scheme)]]
+[[Category:Files modified by User:Sémhur]]
+[[Category:Maps by User:Sémhur]]</text>
+      <sha1>n474dbew3xktb074zsi63p0r42100ka</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Nemat Shafik Portrait.jpg</title>
+    <ns>6</ns>
+    <id>12835963</id>
+    <revision>
+      <id>182544226</id>
+      <parentid>153101429</parentid>
+      <timestamp>2015-12-22T08:43:34Z</timestamp>
+      <contributor>
+        <username>Robert Weemeyer</username>
+        <id>8564</id>
+      </contributor>
+      <minor />
+      <comment>removed [[Category:Department for International Development]]; added [[Category:Nemat Shafik]] using [[Help:Gadget-HotCat|HotCat]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+{{Information
+|Description    ={{en|1=Portrait of Nemat 'Minouche' Shafik, Permanent Secretary, UK Department for International Development}}
+|Source         =http://www.flickr.com/photos/dfid/4623560333/; http://www.flickr.com/photos/dfid/4623560333/sizes/l/in/photostream/
+|Author         =[http://www.flickr.com/photos/dfid/ UK's Department for International Development]
+|Date           =2009-03-18
+|Permission     ={{cc-by-2.0}}{{OGL}}
+{{User:FlickreviewR/reviewed-pass-change|DFID - UK Department for International Development|http://flickr.com/photos/14214150@N02/4623560333|03:20, 31 March 2011 (UTC)|cc-by-2.0|cc-by-sa-3.0}}
+;''Terms of use''
+
+''This image is posted under a [http://creativecommons.org/licenses/by/3.0/ Creative Commons - Attribution Licence], in accordance with the [http://www.nationalarchives.gov.uk/doc/open-government-licence/ Open Government Licence]. You are free to embed, download or otherwise re-use it, as long as you credit the source as 'Department for International Development'.''
+|other_versions =
+}}
+
+[[Category:Nemat Shafik]]
+[[Category:Files from Department for International Development Flickr stream]]
+[[Category:Images from Department for International Development]]</text>
+      <sha1>i73thdomteel5cntq1zopt506kj2g08</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Suresh Premachandran.jpg</title>
+    <ns>6</ns>
+    <id>31304544</id>
+    <revision>
+      <id>217693218</id>
+      <parentid>146509001</parentid>
+      <timestamp>2016-11-22T23:40:16Z</timestamp>
+      <contributor>
+        <username>SteinsplitterBot</username>
+        <id>3714013</id>
+      </contributor>
+      <minor />
+      <comment>Bot: Removing [[Special:Redirect/revision/209344599|phased-out category]].</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">=={{int:filedesc}}==
+{{Information
+|description={{en|1=[[w:Suresh Premachandran|Suresh Premachandran]], Sri Lankan Tamil politician}}
+|date=2013-11-14
+|source={{Infosplit|1={{Extracted from|William Hague with Tamil National Alliance leaders.jpg}}|2=https://www.gov.uk/government/news/foreign-secretary-meets-tamil-national-alliance-in-colombo}}
+|author=[[w:Foreign and Commonwealth Office|Foreign and Commonwealth Office]]
+|permission=
+|other_versions=
+|other_fields=
+}}
+
+=={{int:license-header}}==
+{{Custom license marker|year=2014|month=02|day=23}}
+{{OGL2}}
+
+[[Category:Suresh Premachandran]]</text>
+      <sha1>idfymkrcneiug2fixl81rsyw2589h0f</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Nürnberger Ringbahn.png</title>
+    <ns>6</ns>
+    <id>40089904</id>
+    <revision>
+      <id>162409947</id>
+      <parentid>160297226</parentid>
+      <timestamp>2015-06-02T13:26:32Z</timestamp>
+      <contributor>
+        <username>Pechristener</username>
+        <id>68621</id>
+      </contributor>
+      <comment>Pechristener uploaded a new version of [[File:Nürnberger Ringbahn.png]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">
+{{Information
+|Description={{de|Verlauf der Ringbahn Nürnberg}}
+|Source=Map was created using:  
+* [http://www.openstreetmap.org/ Open Street Map] Data
+|Date=2014-05-09
+|Author=
+* Raw data: OpenStreetMap contributers, [[:en:Shuttle Radar Topography Mission|SRTM]] 
+* Map rendering: [[User:Pechristener|Pechristener]] using [http://maperitive.net/ Maperitive]
+|Permission=Map data (c) OpenStreetMap (and) contributors, CC-BY-SA
+|other_versions=
+}}
+
+
+== {{int:license-header}} ==
+{{cc-by-sa-4.0}} 
+{{ODbL}}
+
+
+[[Category:Ringbahn Nürnberg]]
+[[Category:Rail transport maps of Bavaria]]
+[[Category:Maps of circular railways]]</text>
+      <sha1>ejo8i0tyubxfoyk6dvtlqcna23hm3ay</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:ETH Zürich wordmark.svg</title>
+    <ns>6</ns>
+    <id>3107146</id>
+    <revision>
+      <id>188038587</id>
+      <parentid>80790083</parentid>
+      <timestamp>2016-02-20T15:15:39Z</timestamp>
+      <contributor>
+        <username>MB-one</username>
+        <id>8873</id>
+      </contributor>
+      <minor />
+      <comment>added [[Category:Logos using TheSans]] using [[Help:Gadget-HotCat|HotCat]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Information
+|Description = {{de|Logo der [[:de:ETH Zürich|Eidgenössischen Technische Hochschule Zürich]]}}
+{{en|Wordmark of the Swiss Federal Institute of Technology}}
+|Source      = Captured from the front page of the PDF document [http://www.css.ethz.ch/sicherheit07.pdf ''Sicherheit 2007 — Aussen-, Sicherheits- und Verteidigungspolitische Meinungsbildung im Trend''].
+|Date        = 
+|Author      = {{unknown|author}}
+|Permission  = 
+|other_versions = 
+}}
+
+{{PD-textlogo}}
+{{Trademarked}}
+
+[[Category:ETH Zurich]]
+[[Category:SVG logos of universities and colleges]]
+[[Category:Logos using TheSans]]</text>
+      <sha1>ehzjuz22f8wyaygkr4tt33napg4e7zn</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Belarus-Mir-Castle-9.jpg</title>
+    <ns>6</ns>
+    <id>399523</id>
+    <revision>
+      <id>112500233</id>
+      <parentid>24965323</parentid>
+      <timestamp>2013-12-24T13:14:43Z</timestamp>
+      <contributor>
+        <username>JarektBot</username>
+        <id>472310</id>
+      </contributor>
+      <comment>add PermissionOTRS template</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Information
+|description=
+{{en|Castle, [[Mir, Belarus]].}}
+{{be|Замак. Мір, Беларусь.}}
+{{ru|Замок. Мир, Белоруссия.}}
+|source         = {{en| Photo made by [[User:EugeneZelenko|EugeneZelenko]]'s brother, Alex Zelenko.}}
+|author         = Alex Zelenko
+|date           = 2005-07-24
+|Permission     = {{PermissionOTRS|id=2013120910013806}}
+|other_versions =
+}}
+
+=={{int:license-header}}==
+{{self|GFDL|cc-by-sa-all|author=Alex Zelenko}}
+
+[[Category:Mir Castle Complex]]</text>
+      <sha1>dqozd3f3eac33g4p7b2ifngsh9j0amn</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>File:Francisco Goya - Casa de locos.jpg</title>
+    <ns>6</ns>
+    <id>345095</id>
+    <revision>
+      <id>161933229</id>
+      <parentid>146261459</parentid>
+      <timestamp>2015-05-28T11:23:15Z</timestamp>
+      <contributor>
+        <username>Bukk</username>
+        <id>50751</id>
+      </contributor>
+      <comment>amended, internationalisation, + =={{int:license-header}}==</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">== {{int:filedesc}} ==
+
+{{Artwork
+ | wikidata = Q8341785
+|Title = {{title|es=Casa de locos|en=Casa de locos (The Madhouse)|it=Casa de locos (Casa dei pazzi)|no=Casa de locos (Galehuset)}}
+|Artist = {{Creator:Francisco de Goya y Lucientes}}
+|Year = {{other date|-|1815|1819}}
+|Technique = {{technique|oil|panel}}
+|Dimensions = 
+|Gallery = Real Academia de Bellas Artes de San Fernando
+|Location = 
+|Notes = 
+|Source = {{Unknown|source}}
+|Permission = 
+|Other versions = 
+&lt;gallery&gt;
+File:Casa de locos.jpg
+File:Goya_-_La_casa_de_los_locos.jpg
+&lt;/gallery&gt;
+}}
+
+=={{int:license-header}}==
+{{PD-Art|PD-old-100}}
+
+[[Category:Rococo genre paintings]]
+[[Category:Classicist genre paintings]]
+[[Category:Realist genre paintings]]
+[[Category:Romantic genre paintings]]
+[[Category:1819 oil on canvas paintings in the United States]]
+[[Category:Mental and behavioural diseases and disorders|4d454e54414c20494c4c4e455353]]
+[[Category:Paintings by Goya in the Royal Academy of Fine Arts of San Fernando]]
+[[Category:Enlightenment in Spain]]
+[[Category:People in rooms in art]]
+[[Category:Paintings from Spain]]
+[[Category:Psychiatric institutions]]
+[[Category:Paintings by Francisco de Goya]]
+[[Category:Prisoners in paintings]]</text>
+      <sha1>7ac7v47uytjvpzkxw0ushcaplvuhb93</sha1>
+    </revision>
+  </page>
+
+

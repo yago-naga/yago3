@@ -4,12 +4,16 @@ import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 import basics.Fact;
 import basics.Fact.ImplementationNote;
 import basics.FactComponent;
+import basics.YAGO;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.CategoryTranslator;
 import followUp.FollowUpExtractor;
@@ -56,7 +60,8 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS, DictionaryExtractor.CATEGORYWORDS));
+    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS, 
+        DictionaryExtractor.CATEGORYWORDS, RedirectExtractor.REDIRECTFACTS.inLanguage(language)));
   }
 
   @Override
@@ -84,6 +89,16 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
     // Announce.progressStart("Extracting", 3_900_000);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
+    
+    // Create a set from all objects of relation "<redirectedFrom>", which are the redirect pages.
+    // Since we do not want to add redirect entities to Yago entities, we need them to check against extracted entities.
+    Set<String>  redirects = new HashSet<>();
+    Set<Fact> redirectFacts = RedirectExtractor.REDIRECTFACTS.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
+    for(Fact f:redirectFacts) {
+      String entity = titleExtractor.createTitleEntity(FactComponent.stripQuotesAndLanguage(f.getObject()));
+      redirects.add(entity);
+    }
+    
     /**
      * categoryWord holds the synonym of the word "Category" in different
      * languages. It is needed to distinguish the category part in Wiki
@@ -104,7 +119,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
           break;
         case 1:
         case 2:
-          if (titleEntity == null) {
+          if (titleEntity == null || redirects.contains(titleEntity)) {
             continue;
           }
           @ImplementationNote("All of these weird characters can erroneously appear in category names. We cut them away.")
