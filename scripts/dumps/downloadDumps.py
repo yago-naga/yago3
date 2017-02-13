@@ -69,9 +69,19 @@ class Usage(Exception):
   def __init__(self, msg):
     self.msg = msg
 
-def execute(cmd):
-  proc = subprocess.Popen(cmd, stdout=PIPE, stderr=STDOUT, universal_newlines=True)
-  print proc.communicate()[0]
+def execute(cmd, customEnv=None):
+  process = subprocess.Popen(cmd, stdout=PIPE, stderr=STDOUT, universal_newlines=True, env=customEnv)
+  
+  for line in iter(process.stdout.readline, ""):
+    print line,
+
+    process.wait()
+    exitCode = process.returncode
+
+    if (exitCode == 0):
+        return ''
+    else:
+        raise Exception(command, exitCode, output)
 
 def main(argv=None):
   global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
