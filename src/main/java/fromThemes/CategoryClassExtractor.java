@@ -10,6 +10,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import extractors.Extractor;
+import extractors.MultilingualExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.CategoryExtractor;
@@ -50,7 +51,12 @@ public class CategoryClassExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return (new FinalSet<Theme>(PatternHardExtractor.CATEGORYPATTERNS, WordnetExtractor.PREFMEANINGS, CategoryExtractor.CATEGORYMEMBERS.inEnglish()));
+    HashSet<Theme> input = new HashSet<>();
+    input.add(PatternHardExtractor.CATEGORYPATTERNS);
+    input.add(WordnetExtractor.PREFMEANINGS);
+    input.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
+    input.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
+    return input;
   }
 
   @Override
@@ -59,7 +65,7 @@ public class CategoryClassExtractor extends Extractor {
   }
 
   /** Holds the nonconceptual categories */
-  protected Set<String> nonConceptualCategories;
+  protected Set<String> nonConceptualCategories = new HashSet<>();
 
   /** Holds the preferred meanings */
   protected Map<String, String> preferredMeanings;
@@ -82,7 +88,6 @@ public class CategoryClassExtractor extends Extractor {
     category = new NounGroup(categoryName.toLowerCase());
 
     // Only plural words are good hypernyms
-
     if (PlingStemmer.isSingular(category.head()) && !category.head().equals("people")) {
       Announce.debug("Could not find type in", categoryName, "(is singular)");
       return (null);
@@ -147,12 +152,14 @@ public class CategoryClassExtractor extends Extractor {
     Set<String> categoriesDone = new HashSet<>();
 
     // Extract the information
-    for (Fact f : CategoryExtractor.CATEGORYMEMBERS.inEnglish()) {
-      if (!f.getRelation().equals("<hasWikipediaCategory>")) continue;
-      String category = f.getObject();
-      if (categoriesDone.contains(category)) continue;
-      categoriesDone.add(category);
-      extractClassStatement(category);
+    for (Theme t : input()) {
+      for (Fact f : t) {
+        if (!f.getRelation().equals("<hasWikipediaCategory>")) continue;
+        String category = f.getObject();
+        if (categoriesDone.contains(category)) continue;
+        categoriesDone.add(category);
+        extractClassStatement(category);
+      }
     }
     this.nonConceptualCategories = null;
     this.preferredMeanings = null;
