@@ -89,6 +89,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
     // Announce.progressStart("Extracting", 3_900_000);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
+    String title = null;
     
     // Create a set from all objects of relation "<redirectedFrom>", which are the redirect pages.
     // Since we do not want to add redirect entities to Yago entities, we need them to check against extracted entities.
@@ -127,7 +128,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
           category = category.trim();
           // There are sometimes categories of length 0
           // This causes problems, so avoid them
-          if (category.length() >= 4 && !category.contains(":")) {
+          if (category.length() >= 4 && !category.contains(":")) { //TODO: ask about ":", this eliminate categories such as: Kategorie:Wikipedia:Gesprochener Artikel
             CATEGORYMEMBERS.inLanguage(language)
                 .write(new Fact(titleEntity, "<hasWikipediaCategory>", FactComponent.forForeignWikiCategory(category, language)));
           }
