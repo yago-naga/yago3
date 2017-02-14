@@ -128,7 +128,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
           category = category.trim();
           // There are sometimes categories of length 0
           // This causes problems, so avoid them
-          if (category.length() >= 4 && !category.contains(":")) { //TODO: ask about ":", this eliminate categories such as: Kategorie:Wikipedia:Gesprochener Artikel
+          if (category.length() >= 4 && !category.contains(":")) {
             CATEGORYMEMBERS.inLanguage(language)
                 .write(new Fact(titleEntity, "<hasWikipediaCategory>", FactComponent.forForeignWikiCategory(category, language)));
           }
