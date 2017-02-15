@@ -4,16 +4,13 @@ import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.HashSet;
-import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 import basics.Fact;
 import basics.Fact.ImplementationNote;
 import basics.FactComponent;
-import basics.YAGO;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.CategoryTranslator;
 import followUp.FollowUpExtractor;
@@ -89,7 +86,6 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
     // Announce.progressStart("Extracting", 3_900_000);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     String titleEntity = null;
-    String title = null;
     
     // Create a set from all objects of relation "<redirectedFrom>", which are the redirect pages.
     // Since we do not want to add redirect entities to Yago entities, we need them to check against extracted entities.
