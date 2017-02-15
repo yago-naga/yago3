@@ -61,7 +61,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
   @Override
   public Set<Theme> input() {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS, 
-        DictionaryExtractor.CATEGORYWORDS, RedirectExtractor.REDIRECTFACTS.inLanguage(language)));
+        DictionaryExtractor.CATEGORYWORDS, RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(language)));
   }
 
   @Override
@@ -93,8 +93,10 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
     
     // Create a set from all objects of relation "<redirectedFrom>", which are the redirect pages.
     // Since we do not want to add redirect entities to Yago entities, we need them to check against extracted entities.
+    // The reason for using REDIRECTFACTSDIRTY instead of REDIRECTFACTS is that the former is created in a follow up 
+    // extractor that is depending on the output of this class to remove non named entity words.
     Set<String>  redirects = new HashSet<>();
-    Set<Fact> redirectFacts = RedirectExtractor.REDIRECTFACTS.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
+    Set<Fact> redirectFacts = RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
     for(Fact f:redirectFacts) {
       String entity = titleExtractor.createTitleEntity(FactComponent.stripQuotesAndLanguage(f.getObject()));
       redirects.add(entity);
