@@ -5,6 +5,8 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -19,7 +21,7 @@ import utils.Theme;
 
 /**
  * Extracts the gender from categories and first names.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -97,6 +99,8 @@ public class GenderNameExtractor extends Extractor {
     String lastEntity = "";
     boolean isPerson = false;
     String gender = null;
+    Matcher male = Pattern.compile("_male_", Pattern.CASE_INSENSITIVE).matcher("");
+    Matcher female = Pattern.compile("_female_", Pattern.CASE_INSENSITIVE).matcher("");
     for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
       if (!f.getRelation().equals(RDFS.type)) continue;
       if (!lastEntity.equals(f.getSubject())) {
@@ -110,8 +114,8 @@ public class GenderNameExtractor extends Extractor {
       }
       String category = f.getObject();
       if (category.equals(YAGO.person)) isPerson = true;
-      else if (category.startsWith("<wikicat_Male_")) gender = "<male>";
-      else if (category.startsWith("<wikicat_Female_")) gender = "<female>";
+      else if (male.reset(category).find()) gender = "<male>";
+      else if (female.reset(category).find()) gender = "<female>";
     }
 
     // Write out the given names with their determined gender
