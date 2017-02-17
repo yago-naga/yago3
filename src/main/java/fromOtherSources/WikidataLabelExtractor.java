@@ -14,6 +14,8 @@ import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
 import extractors.MultilingualExtractor;
+import followUp.FollowUpExtractor;
+import followUp.TypeChecker;
 import fromThemes.CoherentTypeExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
@@ -74,6 +76,9 @@ public class WikidataLabelExtractor extends DataExtractor {
   /** Wikidata QIDs */
   public static final Theme WIKIDATAINSTANCES = new Theme("wikidataInstances", "Mappings of YAGO instances to Wikidata QIDs");
 
+  /** Wikidata QIDs type checked */
+  public static final Theme YAGOWIKIDATAINSTANCES = new Theme("yagoWikidataInstances", "Mappings of YAGO instances to Wikidata QIDs");
+
   /** Facts deduced from categories */
   public static final Theme WIKIDATAMULTILABELS = new Theme("wikidataMultiLabels", "Labels from Wikidata in multiple languages");
 
@@ -87,6 +92,11 @@ public class WikidataLabelExtractor extends DataExtractor {
   public Set<Theme> output() {
     return new FinalSet<Theme>(WIKIPEDIALABELSOURCES, WIKIPEDIALABELS, WIKIDATAINSTANCES, WIKIDATAMULTILABELSOURCES, WIKIDATAMULTILABELS,
         WIKIDATATRANSLATIONS);
+  }
+
+  @Override
+  public Set<FollowUpExtractor> followUp() {
+    return new FinalSet<FollowUpExtractor>(new TypeChecker(WIKIDATAINSTANCES, YAGOWIKIDATAINSTANCES));
   }
 
   @Override
