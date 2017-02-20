@@ -73,15 +73,15 @@ def execute(cmd, customEnv=None):
   process = subprocess.Popen(cmd, stdout=PIPE, stderr=STDOUT, universal_newlines=True, env=customEnv)
   
   for line in iter(process.stdout.readline, ""):
-    print line,
+    print line
 
-    process.wait()
-    exitCode = process.returncode
+  process.wait()
+  exitCode = process.returncode
 
-    if (exitCode == 0):
-        return ''
-    else:
-        raise Exception(command, exitCode, output)
+  if (exitCode == 0):
+    return ''
+  else:
+    raise Exception(command, exitCode, output)
 
 def main(argv=None):
   global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
