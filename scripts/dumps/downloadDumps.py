@@ -75,13 +75,11 @@ def execute(cmd, customEnv=None):
   for line in iter(process.stdout.readline, ""):
     print line
 
-  process.wait()
-  exitCode = process.returncode
-
-  if (exitCode == 0):
-    return ''
-  else:
-    raise Exception(command, exitCode, output)
+  process.stdout.close()
+  return_code = process.wait()
+  
+  if return_code:
+    raise subprocess.CalledProcessError(return_code, cmd)
 
 def main(argv=None):
   global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
