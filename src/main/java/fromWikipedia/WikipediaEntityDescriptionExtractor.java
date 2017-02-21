@@ -86,7 +86,6 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
       String page = FileLines.readBetween(in, "<text", "</text>");
       // get first paragraph for desc clean it.
       String description = getDescription(page);
-      System.exit(0);
       if(description != null) 
         WIKIPEDIAENTITYDESCRIPTIONS.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(description)));
     }
