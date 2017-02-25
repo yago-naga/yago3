@@ -105,14 +105,14 @@ public class GenderNameExtractor extends Extractor {
     categoryMembers.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
 
     Map<String, String> entityToGender = new HashMap<>();
-    Matcher male = Pattern.compile("_male_", Pattern.CASE_INSENSITIVE).matcher("");
-    Matcher female = Pattern.compile("_female_", Pattern.CASE_INSENSITIVE).matcher("");
+    Matcher male = Pattern.compile("<wikicat.*_male_.*>", Pattern.CASE_INSENSITIVE).matcher("");
+    Matcher female = Pattern.compile("<wikicat.*_female_.*>", Pattern.CASE_INSENSITIVE).matcher("");
     for (Theme t : categoryMembers) {
       for (Fact f : t) {
         String category = f.getObject();
         String gender = null;
-        if (male.reset(category).find()) gender = "<male>";
-        else if (female.reset(category).find()) gender = "<female>";
+        if (male.reset(category).matches()) gender = "<male>";
+        else if (female.reset(category).matches()) gender = "<female>";
         if (gender != null) {
           entityToGender.put(f.getSubject(), gender);
         }
@@ -139,8 +139,8 @@ public class GenderNameExtractor extends Extractor {
       }
       String category = f.getObject();
       if (category.equals(YAGO.person)) isPerson = true;
-      else if (male.reset(category).find()) gender = "<male>";
-      else if (female.reset(category).find()) gender = "<female>";
+      else if (male.reset(category).matches()) gender = "<male>";
+      else if (female.reset(category).matches()) gender = "<female>";
     }
 
     // Write out the given names with their determined gender
