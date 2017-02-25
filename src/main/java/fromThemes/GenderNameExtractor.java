@@ -1,8 +1,10 @@
 package fromThemes;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
@@ -13,6 +15,8 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
+import extractors.MultilingualExtractor;
+import fromWikipedia.CategoryExtractor;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.FrequencyVector;
 import javatools.parsers.Char17;
@@ -95,18 +99,39 @@ public class GenderNameExtractor extends Extractor {
     String source = TransitiveTypeExtractor.TRANSITIVETYPE.asYagoEntity();
     Map<String, int[]> givenName2gender = new HashMap<>();
 
+    // run through category members, guess gender from the category, save in personToGender
+    List<Theme> categoryMembers = new ArrayList<>();
+    categoryMembers.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
+    categoryMembers.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
+
+    Map<String, String> entityToGender = new HashMap<>();
+    Matcher male = Pattern.compile("_male_", Pattern.CASE_INSENSITIVE).matcher("");
+    Matcher female = Pattern.compile("_female_", Pattern.CASE_INSENSITIVE).matcher("");
+    for (Theme t : categoryMembers) {
+      for (Fact f : t) {
+        String category = f.getObject();
+        String gender = null;
+        if (male.reset(category).find()) gender = "<male>";
+        else if (female.reset(category).find()) gender = "<female>";
+        if (gender != null) {
+          entityToGender.put(f.getSubject(), gender);
+        }
+      }
+    }
+
     // Run through all people, guess gender from the category, register their first name
     String lastEntity = "";
     boolean isPerson = false;
     String gender = null;
-    Matcher male = Pattern.compile("_male_", Pattern.CASE_INSENSITIVE).matcher("");
-    Matcher female = Pattern.compile("_female_", Pattern.CASE_INSENSITIVE).matcher("");
     for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
       if (!f.getRelation().equals(RDFS.type)) continue;
       if (!lastEntity.equals(f.getSubject())) {
-        if (isPerson && gender != null) {
-          registerGender(givenName2gender, lastEntity, gender);
-          write(GENDERSBYCATEGORY, new Fact(lastEntity, "<hasGender>", gender), GENDERSOURCES, source, "Gender from category");
+        if (isPerson) {
+          if (gender == null) gender = entityToGender.get(lastEntity);
+          if (gender != null) {
+            registerGender(givenName2gender, lastEntity, gender);
+            write(GENDERSBYCATEGORY, new Fact(lastEntity, "<hasGender>", gender), GENDERSOURCES, source, "Gender from category");
+          }
         }
         lastEntity = f.getSubject();
         isPerson = false;
