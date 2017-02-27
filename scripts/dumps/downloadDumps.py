@@ -44,6 +44,7 @@ YAGO3_WIKIPEDIAS_PROPERTY = 'wikipedias'
 YAGO3_DUMPSFOLDER_PROPERTY = 'dumpsFolder'
 YAGO3_WIKIDATA_SITELINKS_PROPERTY = 'wikidata_sitelinks'
 YAGO3_WIKIDATA_STATEMENTS_PROPERTY = 'wikidata_statements'
+YAGO3_WIKIDATA_TERMS_PROPERTY = 'wikidata_terms'
 YAGO3_COMMONSWIKI_PROPERTY = "commons_wiki"
 
 WIKIPEDIA_DUMPS_PAGE = 'https://dumps.wikimedia.org/'
@@ -53,6 +54,7 @@ WIKIDATA_DIR = 'wikidata_dump'
 COMMONSWIKI_DIR = 'commonswiki'
 WIKIDATA_SITELINKS_FILE = 'wikidata-sitelinks.nt'
 WIKIDATA_STATEMENTS_FILE = 'wikidata-statements.nt'
+WIKIDATA_TERMS_FILE = 'wikidata-terms.nt'
 
 # Initialize variables
 dumpsFolder = None
@@ -60,6 +62,7 @@ languages = None
 wikipedias = None
 wikidata_sitelinks = None
 wikidata_statements = None
+wikidata_terms = None
 wikidataUrls = None
 commons_wiki = None
 commonsWikiUrl = None
@@ -95,7 +98,7 @@ def main(argv=None):
   else:
     print "Wikipedia dump(s) already present."
  
-  if wikidata_sitelinks == None:
+  if (wikidata_sitelinks == None or wikidata_statements == None or wikidata_terms == None):
     print "Downloading Wikidata dump(s)..."
     downloadWikidataDumps()
   else:
@@ -117,7 +120,7 @@ def main(argv=None):
 Loads the YAGO configuration file.
 """  
 def loadYagoConfiguration():  
-  global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
+  global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements, wikidata_terms
   
   for line in fileinput.input(yagoConfigurationFile):
     if re.match('^' + YAGO3_DUMPSFOLDER_PROPERTY + '\s*=', line):
@@ -131,19 +134,22 @@ def loadYagoConfiguration():
       languages = re.sub(r'\s', '', line).split("=")[1].split(",")
     elif re.match('^' + YAGO3_WIKIPEDIAS_PROPERTY + '\s*=', line):
       wikipedias = re.sub(r'\s', '', line).split("=")[1].split(",")
+    elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
+      commons_wiki = re.sub(r'\s', '', line).split("=")[1]
     elif re.match('^' + YAGO3_WIKIDATA_SITELINKS_PROPERTY + '\s*=', line):
       wikidata_sitelinks = re.sub(r'\s', '', line).split("=")[1]
     elif re.match('^' + YAGO3_WIKIDATA_STATEMENTS_PROPERTY + '\s*=', line):  
       wikidata_statements = re.sub(r'\s', '', line).split("=")[1]
-    elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
-      commons_wiki = re.sub(r'\s', '', line).split("=")[1]
+    elif re.match('^' + YAGO3_WIKIDATA_TERMS_PROPERTY + '\s*=', line):  
+      wikidata_terms = re.sub(r'\s', '', line).split("=")[1]
+    
       
   if languages == None: 
     print "ERROR: 'languages' is a mandatory property and must be set in the configuration file."
     sys.exit(1)
-    
-  if (wikidata_sitelinks == None and wikidata_statements != None) or (wikidata_sitelinks != None and wikidata_statements == None):
-    print "ERROR: 'wikidata_sitelinks' and 'wikidata_statements' must be set or unset as a pair."
+  
+  if (not(wikidata_sitelinks != None and wikidata_statements != None and wikidata_terms != None) and not(wikidata_sitelinks == None and wikidata_statements == None and wikidata_terms == None)):
+    print "ERROR: 'wikidata_sitelinks', 'wikidata_statements' and 'wikidata_terms' must be set or unset as a triple."
     sys.exit(1)
     
   if (wikipedias == None or wikidata_sitelinks == None) and dumpsFolder == None: 
@@ -174,6 +180,7 @@ def adaptYagoConfiguration():
   wikipediasDone = False
   wikidataSitelinksDone = False
   wikidataStatementsDone = False
+  wikidataTermsDone = False
   commonsWikiDone = False
   
   yagoAdaptedConfigurationFile = os.path.join(
@@ -205,6 +212,8 @@ def adaptYagoConfiguration():
       configFile.write(YAGO3_WIKIDATA_SITELINKS_PROPERTY + ' = ' + getWikidata(WIKIDATA_SITELINKS_FILE) + '\n')  
     if wikidataStatementsDone == False:
       configFile.write(YAGO3_WIKIDATA_STATEMENTS_PROPERTY + ' = ' + getWikidata(WIKIDATA_STATEMENTS_FILE) + '\n')
+    if wikidataTermsDone == False:
+      configFile.write(YAGO3_WIKIDATA_TERMS_PROPERTY + ' = ' + getWikidata(WIKIDATA_TERMS_FILE) + '\n')
     if commonsWikiDone == False:
       configFile.write(YAGO3_COMMONSWIKI_PROPERTY + ' = ' + getCommonsWiki() + '\n')
 
@@ -333,7 +342,7 @@ Get the URL to the most recent wikidata dump
 def getWikidataUrls(): 
   urls = {}
     
-  for dumpFile in [WIKIDATA_SITELINKS_FILE, WIKIDATA_STATEMENTS_FILE]:
+  for dumpFile in [WIKIDATA_SITELINKS_FILE, WIKIDATA_STATEMENTS_FILE, WIKIDATA_TERMS_FILE]:
     # Use the given date if it is available.
     if wikidataDate:
       dumpDate = datetime.strptime(wikidataDate, "%Y%m%d")

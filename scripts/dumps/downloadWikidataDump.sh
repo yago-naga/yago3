@@ -66,6 +66,18 @@ do
 		    # Extract and delete the archieve file
 		    gunzip  wikidata-statements.nt.gz   
 		fi
+	elif [[ $wd_dump_download_link == *"terms"* ]]
+	then
+                if [ -e wikidata-terms.nt ]
+		then
+		    echo "$wd_dump_dir/$date/wikidata-terms.nt already exist."
+		else
+		    # Download the dump
+		    curl -O $wd_dump_download_link
+
+		    # Extract and delete the archieve file
+		    gunzip  wikidata-terms.nt.gz   
+		fi
 	else
 		echo "Download link is not correct: " + $wd_dump_download_link
 	fi
