@@ -11,6 +11,7 @@ import extractors.MultilingualExtractor;
 import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.MetadataExtractor;
+import fromOtherSources.WikidataEntityDescriptionExtractor;
 import fromOtherSources.WikidataImageExtractor;
 import fromOtherSources.WikidataImageLicenseExtractor;
 import fromOtherSources.WikidataLabelExtractor;
@@ -22,6 +23,7 @@ import fromWikipedia.DisambiguationPageExtractor;
 import fromWikipedia.RedirectExtractor;
 import fromWikipedia.StructureExtractor;
 import fromWikipedia.WikiInfoExtractor;
+import fromWikipedia.WikipediaEntityDescriptionExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
@@ -59,7 +61,7 @@ public class AIDAExtractorMerger extends Extractor {
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>", "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>",
       YAGO.hasImageID, YAGO.hasWikiPage, YAGO.hasImageUrl, YAGO.hasGloss, YAGO.hasLicense, YAGO.hasAuthor, YAGO.hasTrademark,
-      YAGO.hasName, YAGO.hasUrl, YAGO.hasOTRSId);
+      YAGO.hasName, YAGO.hasUrl, YAGO.hasOTRSId, YAGO.hasShortDescription, YAGO.hasLongDescription);
 
   @Override
   public Set<Theme> input() {
@@ -105,6 +107,10 @@ public class AIDAExtractorMerger extends Extractor {
     // Image Licenses.
     input.add(WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE);
 
+    // Entity descriptions.
+    input.add(WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS);
+    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIAENTITYDESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    
     return input;
   }
 
