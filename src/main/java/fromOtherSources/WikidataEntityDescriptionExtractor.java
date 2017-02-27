@@ -19,7 +19,7 @@ import utils.FactCollection;
 import utils.Theme;
 
 /**
- * Extract description from wikidata
+ * Extract description from wikidata.
  * 
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
@@ -42,7 +42,7 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 public class WikidataEntityDescriptionExtractor extends DataExtractor {
  
-  private static final Theme WIKIDATAENTITYDESCRIPTIONS = new Theme("wikidataEntityDescription", 
+  public static final Theme WIKIDATAENTITYDESCRIPTIONS = new Theme("wikidataEntityDescriptions", 
       "Description extracted from wikidata for entities.");
   
   private static final String WIKIDATA_TERMS = "wikidata_terms";

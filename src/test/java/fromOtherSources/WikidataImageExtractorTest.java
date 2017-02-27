@@ -24,7 +24,7 @@ import static org.junit.Assert.*;
 
 public class WikidataImageExtractorTest {
 
-  public static final String RESOURCESPATH = "src/test/resources/" + WikidataImageExtractor.class.getName();
+  private static final String RESOURCESPATH = "src/test/resources/" + WikidataImageExtractor.class.getName();
   
   /**
    * Test getOriginalImageUrl which should change the image's wiki page url to it's original url.
