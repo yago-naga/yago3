@@ -474,4 +474,5 @@ if __name__ == "__main__":
   else:
     startDate = datetime.today()
   
+  print "TEST1"
   sys.exit(main())
