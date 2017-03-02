@@ -17,36 +17,6 @@ fi
 wd_dump_dir="${args[0]}"
 wd_download_url="${args[1]}"
 
-# Create targer directory
-# Check if the target directory ends with "/", add it other wise
-wd_dir="wikidatawiki"
-i=$((${#wd_dump_dir}-1))
-if [[ "/" == "${wd_dump_dir:$i:1}" ]]
-then
-    wd_dump_dir="${wd_dump_dir}$wd_dir"
-else
-    wd_dump_dir="$wd_dump_dir/$wd_dir"
-fi
-mkdir -m 775 -p $wd_dump_dir
-
-
-# Go to the base directory
-cd $wd_dump_dir
-
-# Create and go to the inner directory
-date=${wd_download_url:50:8}
-mkdir -m 775 -p $date
-cd $date
-
-# Check if the file already exist
-wd_file_name="wikidata-${date}wikidata-20170227-all-BETA.ttl.bz2"
-    exit 1
-else
-    args=( "$@" )
-fi
-
-wd_dump_dir="${args[0]}"
-wd_download_url="${args[1]}"
 
 # Create targer directory
 # Check if the target directory ends with "/", add it other wise

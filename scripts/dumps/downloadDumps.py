@@ -370,8 +370,6 @@ def downloadWikidataDumps():
   # Determine the most recent Wikidata dump version.
   wikidataUrl = getWikidataUrl()
   
-  print "WIKIDATA URL: " + wikidataUrl
-  
   execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIDATA_DUMP_SCRIPT),
     dumpsFolder, wikidataUrl])
@@ -474,5 +472,4 @@ if __name__ == "__main__":
   else:
     startDate = datetime.today()
   
-  print "TEST1"
   sys.exit(main())
