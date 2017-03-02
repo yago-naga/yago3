@@ -2,7 +2,7 @@
 # encoding: utf-8
 
 """
-Downloads Wikipedia, Wikidata and commonswiki dumps for the specified languages unless they are explicitly specified in the YAGO configuration file via the properties named "wikipedias", "wikidata_sitelinks", "wikidata_statements", or "commons_wiki". For all dumps, the most recent version is downloaded unless an explicit date is set. 
+Downloads Wikipedia, Wikidata and commonswiki dumps for the specified languages unless they are explicitly specified in the YAGO configuration file via the properties named "wikipedias", "wikidata" or "commons_wiki". For all dumps, the most recent version is downloaded unless an explicit date is set. 
 
 Usage:
   downloadDumps.py -y YAGO_CONFIGURATION_FILE [(--date=DATE ...)] [--wikidata-date=WIKIDATA_DATE] [--commonswiki-date=COMMONSWIKI_DATE] [-s START_DATE]
@@ -42,28 +42,21 @@ YAGO3_ADAPTED_CONFIGURATION_EXTENSION = '.adapted.ini'
 YAGO3_LANGUAGES_PROPERTY = 'languages'
 YAGO3_WIKIPEDIAS_PROPERTY = 'wikipedias'
 YAGO3_DUMPSFOLDER_PROPERTY = 'dumpsFolder'
-YAGO3_WIKIDATA_SITELINKS_PROPERTY = 'wikidata_sitelinks'
-YAGO3_WIKIDATA_STATEMENTS_PROPERTY = 'wikidata_statements'
-YAGO3_WIKIDATA_TERMS_PROPERTY = 'wikidata_terms'
+YAGO3_WIKIDATA_PROPERTY = 'wikidata'
 YAGO3_COMMONSWIKI_PROPERTY = "commons_wiki"
 
 WIKIPEDIA_DUMPS_PAGE = 'https://dumps.wikimedia.org/'
-WIKIDATA_DUMPS_PAGE = 'http://tools.wmflabs.org/wikidata-exports/rdf/'
+WIKIDATA_DUMPS_PAGE = 'https://dumps.wikimedia.org/wikidatawiki/entities/'
 COMMONSWIKI_DUMP_PAGE = 'https://dumps.wikimedia.org/commonswiki/'
-WIKIDATA_DIR = 'wikidata_dump'
+WIKIDATA_DIR = 'wikidatawiki'
 COMMONSWIKI_DIR = 'commonswiki'
-WIKIDATA_SITELINKS_FILE = 'wikidata-sitelinks.nt'
-WIKIDATA_STATEMENTS_FILE = 'wikidata-statements.nt'
-WIKIDATA_TERMS_FILE = 'wikidata-terms.nt'
 
 # Initialize variables
 dumpsFolder = None
 languages = None
 wikipedias = None
-wikidata_sitelinks = None
-wikidata_statements = None
-wikidata_terms = None
-wikidataUrls = None
+wikidata = None
+wikidataUrl = None
 commons_wiki = None
 commonsWikiUrl = None
 
@@ -87,7 +80,7 @@ def execute(cmd, customEnv=None):
         raise Exception(command, exitCode, output)
 
 def main(argv=None):
-  global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements
+  global dumpsFolder, languages, wikipedias, wikidata
   
   print "Loading YAGO configuration..."
   loadYagoConfiguration()
@@ -98,7 +91,7 @@ def main(argv=None):
   else:
     print "Wikipedia dump(s) already present."
  
-  if (wikidata_sitelinks == None or wikidata_statements == None or wikidata_terms == None):
+  if (wikidata == None):
     print "Downloading Wikidata dump(s)..."
     downloadWikidataDumps()
   else:
@@ -120,7 +113,7 @@ def main(argv=None):
 Loads the YAGO configuration file.
 """  
 def loadYagoConfiguration():  
-  global dumpsFolder, languages, wikipedias, wikidata_sitelinks, wikidata_statements, wikidata_terms
+  global dumpsFolder, languages, wikipedias, wikidata
   
   for line in fileinput.input(yagoConfigurationFile):
     if re.match('^' + YAGO3_DUMPSFOLDER_PROPERTY + '\s*=', line):
@@ -136,23 +129,16 @@ def loadYagoConfiguration():
       wikipedias = re.sub(r'\s', '', line).split("=")[1].split(",")
     elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
       commons_wiki = re.sub(r'\s', '', line).split("=")[1]
-    elif re.match('^' + YAGO3_WIKIDATA_SITELINKS_PROPERTY + '\s*=', line):
-      wikidata_sitelinks = re.sub(r'\s', '', line).split("=")[1]
-    elif re.match('^' + YAGO3_WIKIDATA_STATEMENTS_PROPERTY + '\s*=', line):  
-      wikidata_statements = re.sub(r'\s', '', line).split("=")[1]
-    elif re.match('^' + YAGO3_WIKIDATA_TERMS_PROPERTY + '\s*=', line):  
-      wikidata_terms = re.sub(r'\s', '', line).split("=")[1]
+    elif re.match('^' + YAGO3_WIKIDATA_PROPERTY + '\s*=', line):
+      wikidata = re.sub(r'\s', '', line).split("=")[1]
     
       
   if languages == None: 
     print "ERROR: 'languages' is a mandatory property and must be set in the configuration file."
     sys.exit(1)
   
-  if (not(wikidata_sitelinks != None and wikidata_statements != None and wikidata_terms != None) and not(wikidata_sitelinks == None and wikidata_statements == None and wikidata_terms == None)):
-    print "ERROR: 'wikidata_sitelinks', 'wikidata_statements' and 'wikidata_terms' must be set or unset as a triple."
-    sys.exit(1)
     
-  if (wikipedias == None or wikidata_sitelinks == None) and dumpsFolder == None: 
+  if (wikipedias == None or wikidata == None) and dumpsFolder == None: 
     print "ERROR: Some resources require downloading dumps before YAGO can be run. You must set the 'dumpsFolder' property in the configuration file."
     sys.exit(1)
   
@@ -178,9 +164,7 @@ Duplicates the YAGO3 template ini file and adapts the properties as necessary
 def adaptYagoConfiguration():  
   global wikipedias
   wikipediasDone = False
-  wikidataSitelinksDone = False
-  wikidataStatementsDone = False
-  wikidataTermsDone = False
+  wikidataDone = False
   commonsWikiDone = False
   
   yagoAdaptedConfigurationFile = os.path.join(
@@ -191,10 +175,8 @@ def adaptYagoConfiguration():
   for line in fileinput.input(yagoAdaptedConfigurationFile, inplace=1):
     if re.match('^' + YAGO3_WIKIPEDIAS_PROPERTY + '\s*=', line):
       wikipediasDone = True
-    elif re.match('^' + YAGO3_WIKIDATA_SITELINKS_PROPERTY + '\s*=', line):
-      wikidataSitelinksDone = True
-    elif re.match('^' + YAGO3_WIKIDATA_STATEMENTS_PROPERTY + '\s*=', line):
-      wikidataStatementsDone = True
+    elif re.match('^' + YAGO3_WIKIDATA_PROPERTY + '\s*=', line):
+      wikidataDone = True
     elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
       commonsWikiDone = True
       
@@ -208,12 +190,8 @@ def adaptYagoConfiguration():
     
     if wikipediasDone == False:
       configFile.write(YAGO3_WIKIPEDIAS_PROPERTY + ' = ' + ','.join(wikipedias) + '\n')  
-    if wikidataSitelinksDone == False:
-      configFile.write(YAGO3_WIKIDATA_SITELINKS_PROPERTY + ' = ' + getWikidata(WIKIDATA_SITELINKS_FILE) + '\n')  
-    if wikidataStatementsDone == False:
-      configFile.write(YAGO3_WIKIDATA_STATEMENTS_PROPERTY + ' = ' + getWikidata(WIKIDATA_STATEMENTS_FILE) + '\n')
-    if wikidataTermsDone == False:
-      configFile.write(YAGO3_WIKIDATA_TERMS_PROPERTY + ' = ' + getWikidata(WIKIDATA_TERMS_FILE) + '\n')
+    if wikidataDone == False:
+      configFile.write(YAGO3_WIKIDATA_PROPERTY + ' = ' + getWikidata() + '\n')  
     if commonsWikiDone == False:
       configFile.write(YAGO3_COMMONSWIKI_PROPERTY + ' = ' + getCommonsWiki() + '\n')
 
@@ -339,82 +317,62 @@ def getWikipedias(urls):
 """
 Get the URL to the most recent wikidata dump
 """
-def getWikidataUrls(): 
-  urls = {}
+def getWikidataUrl():
+  resultUrl = None
+
+  # Use the given date if it is available.  
+  if wikidataDate:
+    dumpDate = datetime.strptime(wikidataDate, "%Y%m%d")
+    formattedDumpDate = dumpDate.strftime("%Y%m%d")
+    url= WIKIDATA_DUMPS_PAGE + formattedDumpDate + '/wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2'
+    r = requests.head(url)
     
-  for dumpFile in [WIKIDATA_SITELINKS_FILE, WIKIDATA_STATEMENTS_FILE, WIKIDATA_TERMS_FILE]:
-    # Use the given date if it is available.
-    if wikidataDate:
-      dumpDate = datetime.strptime(wikidataDate, "%Y%m%d")
+    if (r.status_code == requests.codes.ok):
+      print "Wikidata dump is available for the given date: " + formattedDumpDate
+      resultUrl = url
+    elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2')):
+      print "Wikidata dump exist: " + formattedDumpDate
+      resultUrl = url
+    else:
+      print "ERROR: No Wikidata dump file found (neither remotely nor in local cache) for date: " + formattedDumpDate
+      sys.exit(1)
+  
+  else:
+    dumpDate = startDate
+    while True:
       formattedDumpDate = dumpDate.strftime("%Y%m%d")
-      url= WIKIDATA_DUMPS_PAGE + 'exports/' + formattedDumpDate + '/' + dumpFile + '.gz'
+      url= WIKIDATA_DUMPS_PAGE + formattedDumpDate + '/wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2'
       r = requests.head(url)
 
-      if r.status_code == requests.codes.ok and checkStatus(formattedDumpDate):
-        print dumpFile[:-3] + " dump is available: " + formattedDumpDate
-        urls[dumpFile] = url
-      elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, dumpFile)):
-        print dumpFile[:-3] + " dump exist: " + formattedDumpDate
-        urls[dumpFile] = url
+      if (r.status_code == requests.codes.ok):
+        print "Latest Wikidata dump: " + formattedDumpDate
+        resultUrl = url
+        break
+      elif os.path.isfile(os.path.join(dumpsFolder, COMMONSWIKI_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2')):
+        print "Wikidata dump exist: " + formattedDumpDate
+        resultUrl = url
+        break
+      elif (startDate - dumpDate).days <= WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS:
+        dumpDate -= timedelta(days = 1)
       else:
-        print "ERROR: No " + dumpFile[:-3] + " dump file found (neither remotely nor in local cache) for date: " + wikidataDate
+        print "ERROR: No Wikidata dump file found (neither remotely nor in local cache), oldest dump date tried was: " + formattedDumpDate
         sys.exit(1)
   
-    else:
-      dumpDate = startDate
-      while True:
-        formattedDumpDate = dumpDate.strftime("%Y%m%d")
-        url = WIKIDATA_DUMPS_PAGE + 'exports/' + formattedDumpDate + '/' + dumpFile + '.gz'
-        r = requests.head(url)
-
-        if r.status_code == requests.codes.ok and checkStatus(formattedDumpDate):
-          print "Latest " + dumpFile[:-3] + " dump: " + formattedDumpDate
-          urls[dumpFile] = url
-          break
-        elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, dumpFile)):
-          print "Wikidata dump exist: " + formattedDumpDate
-          urls[dumpFile] = url
-          break
-        elif (startDate - dumpDate).days <= WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS:
-          dumpDate -= timedelta(days = 1)
-        else:
-          print "ERROR: No " + dumpFile[:-3] + " dump file found (neither remotely nor in local cache), oldest dump date tried was: " + formattedDumpDate
-          sys.exit(1)
-    
-  return urls
-
-
-"""
-Checks if dumps for given date are available or not yet(in progress)
-"""        
-def checkStatus(formattedDate):
-  r = requests.get(WIKIDATA_DUMPS_PAGE + 'exports.html')
-  html_parsed = BeautifulSoup(r.content)
-  table = html_parsed.find("table", attrs ={"class":"exports"})
-  tags = table.findAll("a", href=True)
-  href = "exports/" + formattedDate + "/dump_download.html"
-  for tag in tags:
-    if tag['href'] == href:
-      status = tag.findNext("a")
-      if status.get('class') == 'green-text' and status.contents[0] == 'available':
-        return True
-      elif status.get('class') == 'yellow-text' and status.contents[0] == 'in progress':
-        return False
-  return False
+  return resultUrl
 
 
 """
 Invokes the external shell script for downloading and extracting the Wikidata dump
 """
 def downloadWikidataDumps():
-  global wikidataUrls
+  global wikidataUrl
   
-  # Determine the most recent Wikidata dump versions.
-  wikidataUrls = getWikidataUrls()
+  # Determine the most recent Wikidata dump version.
+  wikidataUrl = getWikidataUrl()
   
   execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIDATA_DUMP_SCRIPT),
-    dumpsFolder, ' '.join(wikidataUrls.values())])
+    dumpsFolder, wikidataUrl])
 
 
 """
@@ -482,11 +440,11 @@ def getCommonsWikiUrl():
 """
 Gets the path to wikidata dump
 """  
-def getWikidata(dumpFile):
+def getWikidata():
   global wikidataUrls
   
-  date = wikidataUrls[dumpFile][54:62]
-  return os.path.join(dumpsFolder, WIKIDATA_DIR, date, dumpFile)
+  date = wikidataUrl[50:58]
+  return os.path.join(dumpsFolder, WIKIDATA_DIR, date, 'wikidata-' + date + '-all-BETA.ttl.bz2' )
   
 
 """
