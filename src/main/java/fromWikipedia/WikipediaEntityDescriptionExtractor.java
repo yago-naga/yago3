@@ -59,6 +59,7 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
 
   private static Pattern firstParagraph = Pattern.compile("^(.+?)\\n(.*)");
   private static final int MINTEXTLENGTH = 15;
+  private static final int MAX_ESTIMATED_PARAGRAPHSIZE = 30000;
 
   public WikipediaEntityDescriptionExtractor(String language, File wikipedia) {
     super(language, wikipedia);
@@ -106,9 +107,9 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
       // Write description to themes. If the language is not English, write it to a theme that needs translation which is done in follow up extractor.
       if(description != null) {
         if(isEnglish())
-          WIKIPEDIAENTITYDESCRIPTIONS.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(description)));
+          WIKIPEDIAENTITYDESCRIPTIONS.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(Char17.decodeBackslash(description))));
         else
-          WIKIPEDIAENTITYDESCRIPTIONSNEEDSTRANSLATION.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(description)));
+          WIKIPEDIAENTITYDESCRIPTIONSNEEDSTRANSLATION.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(Char17.decodeBackslash(description))));
       }
     }
   }
@@ -118,6 +119,8 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
     int start = page.indexOf(">");
     page = page.substring(start + 1);
     page = Char17.decodeAmpersand(page);
+    // Since the page is big and we do not want to go through the whole page we do a pre select:
+    //page = preSelect(page);
     page = removePatterns(page);
     // Choose the first paragraph:
     Matcher matcher = firstParagraph.matcher(page);
@@ -125,24 +128,7 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
       return cleanText(matcher.group(1));
     return null;
   }
-  
-// Remove lines such as: {{ text... }} 
- private static String removeBrackets(String page) {
-   StringBuilder result = new StringBuilder();
-   int brackets = 0;
-   for(int i = 0; i < page.length(); i++){
-     char current = page.charAt(i);
-     if(current == '{'){
-       brackets++;
-     }
-     else if (current == '}') {
-       brackets--;
-     }
-     else if( brackets == 0)
-       result.append(current);
-   }
-   return result.toString().trim();
- }
+
  
  // Remove links to Files, Images, .... [[File:....]]
  private static String preRemoveUselessLinks(String page) {
@@ -150,6 +136,8 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
    String removePatterns[] = {"[[File:","[[Datei", "[[Image:", "[[Bild:", "[[wp:"};
    for(int r=0; r < removePatterns.length; r++) {
      int idx = result.indexOf(removePatterns[r]);
+     if (idx > MAX_ESTIMATED_PARAGRAPHSIZE)
+       continue;
      if(idx != -1) {
        r--;
        int brackets = 0;
@@ -161,19 +149,42 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
          else if (current == ']') {
            brackets--;
          }
-         else if( brackets == 0) {
-           result.replace(idx, i, "");
+         if( brackets == 0 || current == '\n') {
+           result.delete(idx, i+1);
            break;
          }
+         if (brackets == -1)
+           brackets = 0;
        }
        
      }
    }
-  
+//   if (result.length() > MAX_ESTIMATED_PARAGRAPHSIZE)
+//     result.delete(MAX_ESTIMATED_PARAGRAPHSIZE, result.length());
+   
    return result.toString().trim();
  }
  
- 
+//Remove lines such as: {{ text... }} 
+private static String removeBrackets(String page) {
+ StringBuilder result = new StringBuilder();
+ int brackets = 0;
+ for(int i = 0; i < page.length(); i++){
+   char current = page.charAt(i);
+   if(current == '{'){
+     brackets++;
+   }
+   else if (current == '}') {
+     brackets--;
+   }
+   else if( brackets == 0)
+     result.append(current);
+   if(brackets == -1)
+     brackets = 0;
+ }
+ return result.toString().trim();
+}
+
 //Remove parenthesis. They were not useful in description.
  private static String removeParenthesis(String page) {
   StringBuilder result = new StringBuilder();
@@ -188,6 +199,8 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
     }
     else if( parenthes == 0)
       result.append(current);
+    if(parenthes == -1)
+      parenthes = 0;
   }
   return result.toString().trim();
 }
@@ -215,17 +228,23 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
    inputText = inputText.replaceAll("\\[(http|https)://[^\\p{Zl}\\p{Zs}\\p{Zp}]+[\\p{Zl}\\p{Zs}\\p{Zp}](.*?)\\]", "$2");
    inputText = inputText.replaceAll("[\\[\\]]", "");
    
-   // Remove empty parantesis
-   inputText = inputText.replaceAll("\\([\\p{Zl}\\p{Zs}\\p{Zp}]*\\)", "");
+//   // Remove empty parantesis
+//   inputText = inputText.replaceAll("\\([\\p{Zl}\\p{Zs}\\p{Zp}]*\\)", "");
+   
+   // Remove everything in parenthesis:
+   inputText = removeParenthesis(inputText);
    
    // Remove punctuations from the beginning of the gloss.
    inputText = inputText.replaceAll("^[\\.!;:,\\?]+", "");
+   // Remove whitespaces before punctuations.
+   inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+([\\.!;:,\\?])", "$1");
    // Remove Whitespaces from beginning and end of gloss:
    inputText = inputText.replaceAll("^[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", "");
    inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+$", "");
    // Change any more than 1 whitespace to only 1 whitespace:
    inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " ");
    inputText = inputText.replaceAll("&nbsp;", " ");
+   inputText = inputText.replaceAll("\\u0022", "\"");
 
    
    if(inputText.length() < MINTEXTLENGTH)
@@ -236,12 +255,14 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
  
  // Extracting gloss text by removing some patterns that are observed to not have clean and good information
  private static String removePatterns(String inputText) {
-   // Remove everything in curly brackets.
-   inputText = removeBrackets(inputText);
-   // Remove everything in parenthesis:
-   inputText = removeParenthesis(inputText);
    // Remove links to files and images.
    inputText = preRemoveUselessLinks(inputText);
+   // Remove everything in curly brackets.
+   inputText = removeBrackets(inputText);
+ //  // Remove everything in parenthesis:
+ //  inputText = removeParenthesis(inputText);
+
+   
    // Remove some language specific texts such as: see also:...
    inputText = inputText.replaceAll("(([Ss]ee [Aa]lso.*?)|(Note:)|([Ff]or more.*?)|([Ff]or specific.*?)|([Ss]ee [Tt]he)|([Ss]ee:)|(For .+?[,-] see)|([Cc]lick [Oo]n))(.*)", "");
    inputText = inputText.replaceAll("(([Ss]iehe [Aa]uch)|(Hinweis:))(.*)", "");
@@ -254,10 +275,10 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
    // Remove HTML tags and what is inside them such as:
    inputText = inputText.replaceAll("<(.*?)/>", "");
    inputText = inputText.replaceAll("<table.*?>(.*?)</table>", "");
-   inputText = inputText.replaceAll("<gallery>(.*?)</gallery>", "");
-   inputText = inputText.replaceAll("<imagemap>(.*?)</imagemap>", "");
-   inputText = inputText.replaceAll("<ref>(.*?)</ref>", "");
-   inputText = inputText.replaceAll("<nowiki>(.*?)</nowiki>", "");
+   inputText = inputText.replaceAll("<gallery.*?>(.*?)</gallery>", "");
+   inputText = inputText.replaceAll("<imagemap.*?>(.*?)</imagemap>", "");
+   inputText = inputText.replaceAll("<ref.*?>(.*?)</ref>", "");
+   inputText = inputText.replaceAll("<nowiki.*?>(.*?)</nowiki>", "");
    // Remove patterns such as below. They appeared to be noise.
    inputText = inputText.replaceAll("<!--(.*?)-->", "");
    inputText = inputText.replaceAll("==(.*?)==", "");

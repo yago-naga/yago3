@@ -60,14 +60,14 @@ public class WikipediaEntityDescriptionExtractorTest {
     String actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/wikipediaEntityDescriptions_" + language + ".tsv")));
     String expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_wikipediaEntityDescriptions_" + language + ".tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
     
     if(language == "en")  return;
     
     actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/wikipediaEntityDescriptionsNeedsTranslation_" + language + ".tsv")));
     expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_wikipediaEntityDescriptionsNeedsTranslation_" + language + ".tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
   }
 
 }
