@@ -1,9 +1,9 @@
-	<yagoTheme_wikidataEntityDescription>	<hasGloss>	"testing WikidataEntityDescriptionExtractorTest Description extracted from wikidata for entities. INTERNAL"	
+	<yagoTheme_wikidataEntityDescriptions>	<hasGloss>	"testing WikidataEntityDescriptionExtractorTest Description extracted from wikidata for entities. INTERNAL"	
 	<George_Washington>	<hasShortDescription>	"first President of the United States"@en	
 	<George_Washington>	<hasShortDescription>	"erster Präsident der Vereinigten Staaten von Amerika"@de	
 	<Jack_Bauer>	<hasShortDescription>	"character from the television series 24"@en	
 	<Jack_Bauer>	<hasShortDescription>	"Charakter der Fernsehserie 24"@de	
-	<Belgium>	<hasShortDescription>	"country in Europe"@en	
+	<Belgium>	<hasShortDescription>	"constitutional monarchy in Western Europe"@en	
 	<Belgium>	<hasShortDescription>	"Staat in Westeuropa"@de	
 	<de/Mustafa_Kaplan>	<hasShortDescription>	"türkischer Fußballspieler"@de	
 	<de/Mustafa_Kaplan>	<hasShortDescription>	"Turkish association football player"@en	

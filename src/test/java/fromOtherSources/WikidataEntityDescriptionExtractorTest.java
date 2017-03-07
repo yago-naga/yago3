@@ -26,7 +26,7 @@ public class WikidataEntityDescriptionExtractorTest {
   @Test
   public void extractorTest() throws Exception {
      MultilingualExtractor.wikipediaLanguages = Arrays.asList("en", "de");
-     ex = new WikidataEntityDescriptionExtractor(new File(RESOURCESPATH + "/input/sample-wikidata-terms.nt"));
+     ex = new WikidataEntityDescriptionExtractor(new File(RESOURCESPATH + "/input/sample-wikidata-20170220-all-BETA.ttl"));
      
      // The first argument should be the folder containing the themes needed in the extractor.
      // WikidataEntityDescriptionExtractorTest needs "wikidataInstances.tsv" as input.

@@ -45,7 +45,7 @@ public class WikidataEntityDescriptionExtractor extends DataExtractor {
   public static final Theme WIKIDATAENTITYDESCRIPTIONS = new Theme("wikidataEntityDescriptions", 
       "Description extracted from wikidata for entities.");
   
-  private static final String WIKIDATA_TERMS = "wikidata_terms";
+  private static final String WIKIDATA = "wikidata";
  
   private static final Map<String, String> yagoEntityMostEnglish = new HashMap<String, String>();
   
@@ -54,7 +54,7 @@ public class WikidataEntityDescriptionExtractor extends DataExtractor {
   }
   
   public WikidataEntityDescriptionExtractor() {
-    this(Parameters.getFile(WIKIDATA_TERMS));
+    this(Parameters.getFile(WIKIDATA));
   }
 
   @Override
