@@ -119,8 +119,6 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
     int start = page.indexOf(">");
     page = page.substring(start + 1);
     page = Char17.decodeAmpersand(page);
-    // Since the page is big and we do not want to go through the whole page we do a pre select:
-    //page = preSelect(page);
     page = removePatterns(page);
     // Choose the first paragraph:
     Matcher matcher = firstParagraph.matcher(page);
@@ -159,8 +157,6 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
        
      }
    }
-//   if (result.length() > MAX_ESTIMATED_PARAGRAPHSIZE)
-//     result.delete(MAX_ESTIMATED_PARAGRAPHSIZE, result.length());
    
    return result.toString().trim();
  }
