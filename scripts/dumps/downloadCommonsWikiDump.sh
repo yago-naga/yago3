@@ -17,6 +17,8 @@ fi
 cw_dump_dir="${args[0]}"
 cw_download_url="${args[1]}"
 
+echo "Processing $cw_download_url"
+
 # Create targer directory
 # Check if the target directory ends with "/", add it other wise
 cw_dir="commonswiki"
