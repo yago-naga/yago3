@@ -60,8 +60,12 @@ public class DictionaryExtractor extends DataExtractor {
   /** Translations of infobox templates */
   public static final MultilingualTheme INFOBOX_TEMPLATE_DICTIONARY = new MultilingualTheme("infoboxTemplateDictionary",
       "Maps a foreign infobox template name to the English name.");
+  
+  /** Translations of categories */
+  public static final MultilingualTheme CATEGORY_DICTIONARY = new MultilingualTheme("categoryDictionary",
+      "Maps a foreign category name to the English name.");
 
-  private static final String WIKIDATA_SITELINKS = "wikidata_sitelinks";
+  private static final String WIKIDATA = "wikidata";
 
   /**
    * This TitleExtractor makes sure every foreign word gets mapped to a valid
@@ -69,16 +73,14 @@ public class DictionaryExtractor extends DataExtractor {
    */
   protected TitleExtractor titleExtractor;
 
-  /** Translations of categories */
-  public static final MultilingualTheme CATEGORY_DICTIONARY = new MultilingualTheme("categoryDictionary",
-      "Maps a foreign category name to the English name.");
+
 
   public DictionaryExtractor(File wikidata) {
     super(wikidata);
   }
 
   public DictionaryExtractor() {
-    this(Parameters.getFile(WIKIDATA_SITELINKS));
+    this(Parameters.getFile(WIKIDATA));
   }
 
   @Override
@@ -135,12 +137,21 @@ public class DictionaryExtractor extends DataExtractor {
         // Just to make sure that stuff like "Category:" is handled correctly
         entity = Char17.decodePercentage(entity);
         language2name.put(lan, entity);
-      } else if (f.getObject().equals("<http://www.wikidata.org/ontology#Item>") && !language2name.isEmpty()) {
+      }
+      // This part was "<http://www.wikidata.org/ontology#Item>" when using the exported wikidata dumps
+      else if (f.getObject().equals("<http://schema.org/Dataset>") && !language2name.isEmpty()) {
         // New item starts, let's flush out the previous one
         String mostEnglishLan = mostEnglishLanguage(language2name.keySet());
         if (mostEnglishLan != null) flush(categoryWordLanguages, language2name, mostEnglishLan);
         language2name.clear();
       }
+    }
+    
+    // When reaching the end of file:
+    if(!language2name.isEmpty()) {
+      String mostEnglishLan = mostEnglishLanguage(language2name.keySet());
+      if (mostEnglishLan != null) flush(categoryWordLanguages, language2name, mostEnglishLan);
+      language2name.clear();
     }
     // Not sure why they forgot this one fact in Wikidata... It find lots of genders.
     if (MultilingualExtractor.wikipediaLanguages.contains("de")) {
@@ -155,7 +166,7 @@ public class DictionaryExtractor extends DataExtractor {
     String mostEnglishName = language2name.get(mostEnglishLan);
     if (FactComponent.isEnglish(mostEnglishLan) && mostEnglishName.startsWith("Category:")) {
       flushCategoryWord(categoryWordLanguages, language2name, mostEnglishName);
-    } else if (FactComponent.isEnglish(mostEnglishLan) && mostEnglishName.startsWith("Template:Infobox_")) {
+    } else if (FactComponent.isEnglish(mostEnglishLan) && mostEnglishName.startsWith("Template:Infobox")) {
       flushTemplateName(language2name, mostEnglishName);
     } else {
       flushEntity(language2name, mostEnglishLan, mostEnglishName);
@@ -182,7 +193,7 @@ public class DictionaryExtractor extends DataExtractor {
   private void flushTemplateName(Map<String, String> language2name, String mostEnglishName) throws IOException {
     for (String lan : language2name.keySet()) {
       if (FactComponent.isEnglish(lan)) continue;
-      String name = language2name.get(lan);
+      String name = language2name.get(lan).replaceAll(" ", "_");
       int cutpos = name.indexOf('_');
       if (cutpos == -1) continue;
       name = FactComponent.forInfoboxTemplate(name.substring(cutpos + 1), lan);
@@ -209,9 +220,6 @@ public class DictionaryExtractor extends DataExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    //Parameters.init("configuration/yago_aida_ghazale.ini");
-    //File wikidata = Parameters.getFile(WIKIDATA_SITELINKS);
-    //new DictionaryExtractor(new File("c:/fabian/data/wikidata/links.n4")).extract(new File("c:/fabian/data/yago3"), "test");
     Parameters.init("/san/suchanek/workspace/yago3/yagoDebug.ini");
     MultilingualExtractor.wikipediaLanguages = Arrays.asList("en", "de");
     new DictionaryExtractor(new File("/san/suchanek/yago3-debug/wikidata-sitelinks.nt")).extract(new File("/san/suchanek/yago3-debug/"), "test");
