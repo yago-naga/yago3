@@ -32,7 +32,7 @@ public class WikidataEntityDescriptionExtractorTest {
      // WikidataEntityDescriptionExtractorTest needs "wikidataInstances.tsv" as input.
      // I made small sample file for this matter.
      // Output of the extract function (wikidataEntityDescriptions.tsv) is written in the second second argument.
-     ex.extract(new File(RESOURCESPATH + "/input"), new File(RESOURCESPATH + "/output"),"testing WikidataEntityDescriptionExtractorTest");
+     ex.extract(new File(RESOURCESPATH + "/output"), new File(RESOURCESPATH + "/output"),"testing WikidataEntityDescriptionExtractorTest");
      compareOutputWithExpected();
   }
   
@@ -40,6 +40,6 @@ public class WikidataEntityDescriptionExtractorTest {
     String actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/wikidataEntityDescriptions.tsv")));
     String expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_wikidataEntityDescriptions.tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
   }
 }

@@ -1,4 +1,6 @@
 	<yagoTheme_wikidataEntityDescriptions>	<hasGloss>	"testing WikidataEntityDescriptionExtractorTest Description extracted from wikidata for entities. INTERNAL"	
+	<Monday>	<hasShortDescription>	"day of the week"@en	
+	<Monday>	<hasShortDescription>	"erster Wochentag"@de	
 	<George_Washington>	<hasShortDescription>	"first President of the United States"@en	
 	<George_Washington>	<hasShortDescription>	"erster Präsident der Vereinigten Staaten von Amerika"@de	
 	<Jack_Bauer>	<hasShortDescription>	"character from the television series 24"@en	

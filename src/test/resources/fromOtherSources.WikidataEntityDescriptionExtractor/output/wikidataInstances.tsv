@@ -14,6 +14,9 @@
 	<de/Flakpanzer_IV>	owl:sameAs	<http://www.wikidata.org/entity/Q26133418>	
 	<Flakpanzer_IV>	owl:sameAs	<http://www.wikidata.org/entity/Q26133418>	
 	<de/Hansa>	owl:sameAs	<http://www.wikidata.org/entity/Q24719046>	
-	<Hansa>	owl:sameAs	<http://www.wikidata.org/entity/Q24719046>		
+	<Hansa>	owl:sameAs	<http://www.wikidata.org/entity/Q24719046>	
+	<de/Montag>	owl:sameAs	<http://www.wikidata.org/entity/Q105>	
+	<Monday>	owl:sameAs	<http://www.wikidata.org/entity/Q105>	
+	
 	
 
