@@ -1,7 +1,10 @@
 package fromOtherSources;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -10,6 +13,7 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.zip.GZIPInputStream;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -120,7 +124,14 @@ public class DictionaryExtractor extends DataExtractor {
     // Categories for which we have already translated the word "category"
     Set<String> categoryWordLanguages = new HashSet<>();
 
-    N4Reader nr = new N4Reader(inputData);
+    N4Reader nr;
+    if (inputData.getName().endsWith(".gz")) {
+      GZIPInputStream gzip = new GZIPInputStream(new FileInputStream(inputData));
+      nr = new N4Reader(new BufferedReader(new InputStreamReader(gzip)));
+    } else {
+      nr = new N4Reader(inputData);
+    }
+
     // Maps a language such as "en" to the name in that language
     Map<String, String> language2name = new HashMap<String, String>();
     while (nr.hasNext()) {

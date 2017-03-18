@@ -1,11 +1,15 @@
 package fromOtherSources;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.zip.GZIPInputStream;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -121,7 +125,13 @@ public class WikidataLabelExtractor extends DataExtractor {
     }
 
     // Now write the foreign names
-    N4Reader nr = new N4Reader(inputData);
+    N4Reader nr;
+    if (inputData.getName().endsWith(".gz")) {
+      GZIPInputStream gzip = new GZIPInputStream(new FileInputStream(inputData));
+      nr = new N4Reader(new BufferedReader(new InputStreamReader(gzip)));
+    } else {
+      nr = new N4Reader(inputData);
+    }
     // Maps a language such as "en" to the name in that language
     Map<String, String> language2name = new HashMap<String, String>();
     String lastqid = null;
@@ -151,7 +161,7 @@ public class WikidataLabelExtractor extends DataExtractor {
               // For on all languages
               for (String lang : language2name.keySet()) {
                 String foreignName = language2name.get(lang);
-             
+
                 // Check if the language is available (input languages)
                 if (availableLanguages.contains(lang))
                   WIKIDATAINSTANCES.write(new Fact(FactComponent.forForeignYagoEntity(foreignName, lang), RDFS.sameas, lastqid));
