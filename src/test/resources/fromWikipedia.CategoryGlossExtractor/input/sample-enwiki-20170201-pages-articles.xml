@@ -1,0 +1,203 @@
+<mediawiki xmlns="http://www.mediawiki.org/xml/export-0.10/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mediawiki.org/xml/export-0.10/ http://www.mediawiki.org/xml/export-0.10.xsd" version="0.10" xml:lang="en">
+  <siteinfo>
+    <sitename>Wikipedia</sitename>
+    <dbname>enwiki</dbname>
+    <base>https://en.wikipedia.org/wiki/Main_Page</base>
+    <generator>MediaWiki 1.29.0-wmf.9</generator>
+    <case>first-letter</case>
+    <namespaces>
+      <namespace key="-2" case="first-letter">Media</namespace>
+      <namespace key="-1" case="first-letter">Special</namespace>
+      <namespace key="0" case="first-letter" />
+      <namespace key="1" case="first-letter">Talk</namespace>
+      <namespace key="2" case="first-letter">User</namespace>
+      <namespace key="3" case="first-letter">User talk</namespace>
+      <namespace key="4" case="first-letter">Wikipedia</namespace>
+      <namespace key="5" case="first-letter">Wikipedia talk</namespace>
+      <namespace key="6" case="first-letter">File</namespace>
+      <namespace key="7" case="first-letter">File talk</namespace>
+      <namespace key="8" case="first-letter">MediaWiki</namespace>
+      <namespace key="9" case="first-letter">MediaWiki talk</namespace>
+      <namespace key="10" case="first-letter">Template</namespace>
+      <namespace key="11" case="first-letter">Template talk</namespace>
+      <namespace key="12" case="first-letter">Help</namespace>
+      <namespace key="13" case="first-letter">Help talk</namespace>
+      <namespace key="14" case="first-letter">Category</namespace>
+      <namespace key="15" case="first-letter">Category talk</namespace>
+      <namespace key="100" case="first-letter">Portal</namespace>
+      <namespace key="101" case="first-letter">Portal talk</namespace>
+      <namespace key="108" case="first-letter">Book</namespace>
+      <namespace key="109" case="first-letter">Book talk</namespace>
+      <namespace key="118" case="first-letter">Draft</namespace>
+      <namespace key="119" case="first-letter">Draft talk</namespace>
+      <namespace key="446" case="first-letter">Education Program</namespace>
+      <namespace key="447" case="first-letter">Education Program talk</namespace>
+      <namespace key="710" case="first-letter">TimedText</namespace>
+      <namespace key="711" case="first-letter">TimedText talk</namespace>
+      <namespace key="828" case="first-letter">Module</namespace>
+      <namespace key="829" case="first-letter">Module talk</namespace>
+      <namespace key="2300" case="first-letter">Gadget</namespace>
+      <namespace key="2301" case="first-letter">Gadget talk</namespace>
+      <namespace key="2302" case="case-sensitive">Gadget definition</namespace>
+      <namespace key="2303" case="case-sensitive">Gadget definition talk</namespace>
+    </namespaces>
+  </siteinfo>
+  <page>
+    <title>Category:Algebra</title>
+    <ns>14</ns>
+    <id>690637</id>
+    <revision>
+      <id>731687746</id>
+      <parentid>695663089</parentid>
+      <timestamp>2016-07-26T21:56:50Z</timestamp>
+      <contributor>
+        <username>Uanfala</username>
+        <id>11049176</id>
+      </contributor>
+      <comment>+infobox library classification</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Infobox library classification|BC = ARS|CC = B2|DDC = 512|LCC = QA150-272.5|UDC = 512}}
+
+'''Algebra''' (from the [[Arabic language|Arabic]] الجبر (&quot;''al-djebr''&quot; meaning ''&quot;reunion&quot;'', ''&quot;connection&quot;'' or ''&quot;completion&quot;'')) is a branch of [[mathematics]] which may be defined as a generalization and extension of and is focused on finding patterns between groups of numbers, operators, and other mathematical objects. The following category includes articles about algebra. Algebra is also a branch of mathematics that substitutes letters for numbers, replacing the unknown value with a letter. 
+
+[[Category:Fields of mathematics]]</text>
+      <sha1>8mjzbln5qex4yfoxh5hv92fkubn8eku</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Entertainment</title>
+    <ns>14</ns>
+    <id>693016</id>
+    <revision>
+      <id>683495447</id>
+      <parentid>665052524</parentid>
+      <timestamp>2015-09-30T17:22:14Z</timestamp>
+      <contributor>
+        <username>Funandtrvl</username>
+        <id>2966869</id>
+      </contributor>
+      <comment>update</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Commons cat|Entertainment}}
+{{Cat main|Entertainment}}
+{{Infobox library classification |DDC=790 |LCC=GV |UDC=79}}
+'''Entertainment''' is an event, performance, or activity designed to give pleasure or relaxation to an audience. This category seeks to organize articles about entertainment.
+
+[[Category:Concepts in aesthetics]]
+[[Category:Humanities]]
+[[Category:Leisure]]
+[[Category:Personal life]]
+[[Category:Popular culture]]
+[[Category:Service industries]]</text>
+      <sha1>214ut1a7vbzz3za6t2md503kthtxm7m</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Aromatic hydrocarbons</title>
+    <ns>14</ns>
+    <id>696032</id>
+    <revision>
+      <id>547348940</id>
+      <parentid>535928813</parentid>
+      <timestamp>2013-03-27T23:32:08Z</timestamp>
+      <contributor>
+        <username>Addbot</username>
+        <id>6569922</id>
+      </contributor>
+      <minor />
+      <comment>[[User:Addbot|Bot:]] Migrating 36 interwiki links, now provided by [[Wikipedia:Wikidata|Wikidata]] on [[d:q8264661]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Cat main|Aromatic hydrocarbon}}
+An '''[[aromatic hydrocarbon]]''' or '''arene''' is a [[hydrocarbon]], the molecular structure of which incorporates one or more planar sets of six carbon atoms that are connected by delocalised electrons, the simplest of which is [[benzene]].
+{{Commons cat|Aromatic hydrocarbons}}
+
+[[Category:Hydrocarbons]]
+[[Category:Aromatic compounds]]</text>
+      <sha1>nz3zrqq8kaxvv5cyum5mfp8sha2xhoc</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Defence companies</title>
+    <ns>14</ns>
+    <id>1025502</id>
+    <revision>
+      <id>543854555</id>
+      <parentid>540690262</parentid>
+      <timestamp>2013-03-13T14:58:00Z</timestamp>
+      <contributor>
+        <username>Addbot</username>
+        <id>6569922</id>
+      </contributor>
+      <minor />
+      <comment>[[User:Addbot|Bot:]] Migrating 17 interwiki links, now provided by [[Wikipedia:Wikidata|Wikidata]] on [[d:q5924855]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{catdiffuse}}
+This [[Wikipedia:Category|category]] contains articles about companies involved in the full range of [[defense contractor|defense contracting]] from military vehicles to naval vessels to military aircraft and satellites.
+
+{{Commons cat|Armaments manufacturers}}
+
+[[Category:Military corporations]]</text>
+      <sha1>nukclwvz4ze94dbmvmn1uc06xz7c30p</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Artists</title>
+    <ns>14</ns>
+    <id>693616</id>
+    <revision>
+      <id>746857728</id>
+      <parentid>644471104</parentid>
+      <timestamp>2016-10-30T00:29:16Z</timestamp>
+      <contributor>
+        <username>Bearcat</username>
+        <id>24902</id>
+      </contributor>
+      <comment>removed [[Category:Arts]]; added [[Category:Visual arts]] using [[WP:HC|HotCat]]</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{catdiffuse}}
+{{Cat main|Artists}}
+{{See also|Category:Musicians|Category:Wikipedia categories named after artists}}
+{{Portal|Visual arts}}
+{{Commons cat|Artists}}
+This category is for artists who worked in the [[Visual arts]].
+
+[[Category:Visual arts]]
+[[Category:People by occupation]]</text>
+      <sha1>6c2cjnub6nwceste7vfn1zpb2ger8cf</sha1>
+    </revision>
+  </page>
+  <page>
+    <title>Category:Actors</title>
+    <ns>14</ns>
+    <id>694842</id>
+    <revision>
+      <id>737098654</id>
+      <parentid>703909051</parentid>
+      <timestamp>2016-08-31T19:13:13Z</timestamp>
+      <contributor>
+        <username>GoingBatty</username>
+        <id>11555324</id>
+      </contributor>
+      <comment>{{Category diffuse}}</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Commons category|Actors}}
+{{Cat main|Actor}}
+{{Category diffuse}}
+This is a [[Wikipedia:Category|category]] of [[film]], [[theatre|stage]], and [[List of television programs|television]] [[actor]]s, [[male]] and [[female]].
+
+{{See also|Category:Wikipedia categories named after actors|Category:Acting awards|Category:Works about actors}}
+
+[[Category:Acting]]
+[[Category:Entertainers]]
+[[Category:Theatrical occupations]]</text>
+      <sha1>72l21h1legodzzlfvuq4h15ii5lflok</sha1>
+    </revision>
+  </page>
+
+
