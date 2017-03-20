@@ -8,9 +8,12 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -20,6 +23,7 @@ import basics.YAGO;
 import extractors.DataExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import javatools.administrative.Parameters;
+import javatools.datatypes.FastFrequencyVector;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.FactCollection;
@@ -53,7 +57,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	public static final Theme WIKIDATAIMAGES = new Theme("wikidataImages", 
 			"Images in wikidata dump for entities");
 
-	private static final String WIKIDATA_STATEMENTS = "wikidata_statements";
+	 private static final String WIKIDATA = "wikidata";
 	private static final String IMAGE_ORIGINALURL_TEMPLATE = "https://upload.wikimedia.org/wikipedia/commons/";
 	private static final String IMAGETYPE = "image_";
 	private static FactCollection transitiveTypes = new FactCollection();
@@ -79,7 +83,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	}
 	
 	public WikidataImageExtractor() {
-		this(Parameters.getFile(WIKIDATA_STATEMENTS));
+		this(Parameters.getFile(WIKIDATA));
 	}
 
 	@Override
@@ -94,6 +98,9 @@ public class WikidataImageExtractor extends DataExtractor {
 
 	@Override
 	public void extract() throws Exception {
+	  //for checking:
+	  Set<String> allRelations = new HashSet<>();
+	  
 	  // Example of the facts in reverseWikidataInstances:
 	  // <http://www.wikidata.org/entity/Q23>  owl:sameAs <George_Washington>      
 	  reverseWikidataInstances = WikidataLabelExtractor.WIKIDATAINSTANCES.factCollection().getReverse();
@@ -112,16 +119,17 @@ public class WikidataImageExtractor extends DataExtractor {
 			// example: <http://www.wikidata.org/entity/Q1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/ontology#Item>
 			if(f.getObject().endsWith("#Item>")){
 				if(!images.isEmpty()){
-					String image = pickImage(yagoEntityMostEnglish, images);
-					
-					// Get original image url from image's wikipage url
+				  String image = Char17.decodePercentage(pickImage(yagoEntityMostEnglish, images)).replaceAll(" ", "_");
 					String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
+					
+					// Get image's wiki page:
+					String imageWikipage = image.replace("wiki/Special:FilePath/", "wiki/File:");
 					String imageID = FactComponent.forYagoEntity(IMAGETYPE + imageCounter);
 					imageCounter++;
 					
 					// Saving imageID along with image wiki page url and image original url to the theme
 					WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
-					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, image));
+					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, imageWikipage));
 					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
 	        images.clear();
 				}
@@ -134,15 +142,16 @@ public class WikidataImageExtractor extends DataExtractor {
 			// Format of regular expression is taken from: https://www.wikidata.org/wiki/Property:P18
 			// example: <some random id> <https://www.wikidata.org/wiki/Property:P18> <filename.jpg> .
 			else if(f.getObject().matches(".*commons\\.wikimedia.*\\.(jpg|jpeg|png|svg|tif|tiff|gif)>$") && yagoEntityMostEnglish != null){
+			  allRelations.add(f.getRelation());
 				if(!images.containsKey(f.getRelation()))
-					images.put(f.getRelation(), Char17.decodeBackslash(f.getObject()));
+					images.put(getRelation(f.getRelation()), Char17.decodeBackslash(f.getObject()));
 				prevImage = f;
 			}
 			// If the rank of the image was "PreferredRank", replace the existing image with this preferred image.
 			// example : <random id> <http://www.wikidata.org/ontology#rank> <http://www.wikidata.org/ontology#NormalRank> . 
 			else if(prevImage != null && prevImage.getSubject().equals(f.getSubject()) && f.getRelation().endsWith("#rank>")){
 				if(f.getObject().endsWith("#PreferredRank>"))
-					images.put(prevImage.getRelation(), prevImage.getObject());
+					images.put(getRelation(prevImage.getRelation()), prevImage.getObject());
 				prevImage = null;
 			}
 		}
@@ -150,20 +159,33 @@ public class WikidataImageExtractor extends DataExtractor {
     // Saving information of the last entity in the file
 		if (!images.isEmpty() && yagoEntityMostEnglish != null)
 		{
-		  String image = pickImage(yagoEntityMostEnglish, images);
-		  String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
+		  String image = Char17.decodePercentage(pickImage(yagoEntityMostEnglish, images)).replaceAll(" ", "_");
+      String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
+      String imageWikipage = image.replace("wiki/Special:FilePath/", "wiki/File:");
 		  String imageID = FactComponent.forYagoEntity(IMAGETYPE + imageCounter);
 		  
       WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
-      WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, image));
+      WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, imageWikipage));
       WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
       images.clear();
 		}
 		
 		nr.close();
+		
+		System.out.println(allRelations.size());
+		for(String r:allRelations)
+		  System.out.println(r);
 	}
 	
-	/**
+	private String getRelation(String relation) {
+	  Pattern relationPattern = Pattern.compile("<http:\\/\\/www.wikidata.org\\/(?:entity|prop)\\/(?:direct|statement)\\/(P\\d+)>");
+    Matcher matcher = relationPattern.matcher(relation);
+    if(matcher.find())
+      return matcher.group(1);
+    return null;
+  }
+
+  /**
 	 * Return the most English entity name given all entity names available
 	 * @param entityFacts yago entity in different languages
 	 * @return most English entity name
@@ -211,7 +233,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	
 	/**
 	 * To make the image's original url, we use the first 2 characters of md5 hashed version of the file name
-   * example: input= "https://commons.wikimedia.org/wiki/File:Spelterini_Blüemlisalp.jpg" 
+   * example: input= "http://commons.wikimedia.org/wiki/Special:FilePath/Spelterini_Blüemlisalp.jpg"
    * file name = "Spelterini_Blüemlisalp.jpg" hashed = "ae1a26d34d6a674d4400c8a1e6fe73f8"
    * original url = https://upload.wikimedia.org/wikipedia/commons/a/ae/Spelterini_Bl%C3%BCemlisalp.jpg
    * @see https://commons.wikimedia.org/wiki/Commons:FAQ#What_are_the_strangely_named_components_in_file_paths.3F 
@@ -222,7 +244,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	public static String getOriginalImageUrl(String wikiUrl) throws NoSuchAlgorithmException {
 	  MessageDigest md = MessageDigest.getInstance("MD5");
 	  
-	  String imageName = wikiUrl.substring(wikiUrl.indexOf("/wiki/File:") + "/wiki/File:".length());
+	  String imageName = wikiUrl.substring(wikiUrl.indexOf("/wiki/Special:FilePath/") + "/wiki/Special:FilePath/".length());
 	  
 	  StringBuffer hashedName = new StringBuffer();
 	  md.update(imageName.getBytes(StandardCharsets.UTF_8));
@@ -231,7 +253,6 @@ public class WikidataImageExtractor extends DataExtractor {
 	  for (int i = 0; i < byteData.length; i++) {
 	    hashedName.append(Integer.toString((byteData[i] & 0xff) + 0x100, 16).substring(1));
 	  }
-	  
     return (IMAGE_ORIGINALURL_TEMPLATE + hashedName.charAt(0) + "/" + hashedName.charAt(0) + hashedName.charAt(1) + "/" + imageName);
 	}
 	

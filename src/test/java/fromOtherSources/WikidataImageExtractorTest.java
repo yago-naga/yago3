@@ -34,16 +34,16 @@ public class WikidataImageExtractorTest {
   public void testGetOriginalImageUrl() throws NoSuchAlgorithmException {
     
     List <String> inputImageWikiUrls = Arrays.asList(
-        "http://commons.wikimedia.org/wiki/File:Breviarium_Grimani_-_November.jpg",
-        "http://commons.wikimedia.org/wiki/File:Flag_of_Moldova.svg",
-        "http://commons.wikimedia.org/wiki/File:POL_Kurów_COA.svg",
-        "http://commons.wikimedia.org/wiki/File:Champs-Élysées_from_the_Arc_de_Triomphe.jpg",
-        "http://commons.wikimedia.org/wiki/File:Corallushortulanus.png",
-        "http://commons.wikimedia.org/wiki/File:Aurélien_Clerc.jpg",
-        "http://commons.wikimedia.org/wiki/File:Nyiragongo_1994.jpg",
-        "http://commons.wikimedia.org/wiki/File:Torre_Belém_April_2009-4a.jpg",
-        "http://commons.wikimedia.org/wiki/File:De_fem_søstre_i_Århus_final_version.jpg",
-        "http://commons.wikimedia.org/wiki/File:Network_of_the_Presidents_of_the_Supreme_Judicial_Courts_of_the_European_Union_Logo.png");
+        "http://commons.wikimedia.org/wiki/Special:FilePath/Breviarium_Grimani_-_November.jpg",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/Flag_of_Moldova.svg",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/POL_Kurów_COA.svg",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/Champs-Élysées_from_the_Arc_de_Triomphe.jpg",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/Corallushortulanus.png",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/Aurélien_Clerc.jpg",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/Nyiragongo_1994.jpg",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/Torre_Belém_April_2009-4a.jpg",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/De_fem_søstre_i_Århus_final_version.jpg",
+        "http://commons.wikimedia.org/wiki/Special:FilePath/Network_of_the_Presidents_of_the_Supreme_Judicial_Courts_of_the_European_Union_Logo.png");
     
     List<String> outputOriginalUrls = Arrays.asList(
         "https://upload.wikimedia.org/wikipedia/commons/3/35/Breviarium_Grimani_-_November.jpg",
@@ -82,14 +82,14 @@ public class WikidataImageExtractorTest {
   @Test
   public void testImageExtractor() throws Exception {
     // Test Extraction on small input sample-wikidata-statements.nt
-    WikidataImageExtractor ex = new WikidataImageExtractor(new File(RESOURCESPATH + "/input/sample-wikidata-statements.nt"));
+    WikidataImageExtractor ex = new WikidataImageExtractor(new File(RESOURCESPATH + "/input/sample-wikidata-20170220-all-BETA.ttl"));
     
 
     // The first argument should be the folder containing the themes needed in the extractor.
     // WikidataImageExtractor needs following files: "wikidataInstances.tsv" and "yagoTransitiveType.tsv"
     // I made small files for this test and save them in resources. But original files are also usable.
     // Output of the extract function (wikidataImages.tsv) is written in the second second argument.
-    ex.extract(new File(RESOURCESPATH + "/input"), new File(RESOURCESPATH + "/output"),"testing WikidataImageExtractor");
+    ex.extract(new File(RESOURCESPATH + "/output"), new File(RESOURCESPATH + "/output"),"testing WikidataImageExtractor");
     
     // Compare output file with the expected file
     compareOutputWithExpected();
@@ -99,7 +99,7 @@ public class WikidataImageExtractorTest {
     String actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/wikidataImages.tsv")));
     String expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_wikidataImages.tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
   }
   
 
