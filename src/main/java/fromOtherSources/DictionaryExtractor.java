@@ -138,8 +138,7 @@ public class DictionaryExtractor extends DataExtractor {
         entity = Char17.decodePercentage(entity);
         language2name.put(lan, entity);
       }
-      // This part was "<http://www.wikidata.org/ontology#Item>" when using the exported wikidata dumps
-      else if (f.getObject().equals("<http://schema.org/Dataset>") && !language2name.isEmpty()) {
+      else if (f.getObject().endsWith("#Item>") && !language2name.isEmpty()) {
         // New item starts, let's flush out the previous one
         String mostEnglishLan = mostEnglishLanguage(language2name.keySet());
         if (mostEnglishLan != null) flush(categoryWordLanguages, language2name, mostEnglishLan);

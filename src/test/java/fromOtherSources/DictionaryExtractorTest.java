@@ -40,22 +40,22 @@ public class DictionaryExtractorTest {
     String actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/entityDictionary_de.tsv")));
     String expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_entityDictionary_de.tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
     
     actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/categoryDictionary_de.tsv")));
     expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_categoryDictionary_de.tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
     
     actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/categoryWords.tsv")));
     expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_categoryWords.tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
     
     actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/infoboxTemplateDictionary_de.tsv")));
     expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_infoboxTemplateDictionary_de.tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
   }
   
   
