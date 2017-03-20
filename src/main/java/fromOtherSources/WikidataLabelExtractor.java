@@ -1,6 +1,7 @@
 package fromOtherSources;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -47,14 +48,14 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 public class WikidataLabelExtractor extends DataExtractor {
 
-  private static final String WIKIDATA_SITELINKS = "wikidata_sitelinks";
+  private static final String WIKIDATA = "wikidata";
 
   public WikidataLabelExtractor(File wikidata) {
     super(wikidata);
   }
 
   public WikidataLabelExtractor() {
-    this(Parameters.getFile(WIKIDATA_SITELINKS));
+    this(Parameters.getFile(WIKIDATA));
   }
 
   @Override
@@ -101,8 +102,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 
   @Override
   public void extract() throws Exception {
-    //TODO: check where to get available languages from.
-    List<String> availableLanguages = MultilingualExtractor.wikipediaLanguages;
+    List<String> availableLanguages = new ArrayList<>(MultilingualExtractor.wikipediaLanguages);
 
     Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
     Set<String> entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
@@ -119,7 +119,6 @@ public class WikidataLabelExtractor extends DataExtractor {
       }
 
     }
-
     // Now write the foreign names
     N4Reader nr = new N4Reader(inputData);
     // Maps a language such as "en" to the name in that language

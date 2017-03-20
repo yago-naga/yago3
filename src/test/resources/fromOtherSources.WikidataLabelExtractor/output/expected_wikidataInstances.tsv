@@ -1,0 +1,15 @@
+	<yagoTheme_wikidataInstances>	<hasGloss>	"testing WikidataLabelExtractor Mappings of YAGO instances to Wikidata QIDs INTERNAL"	
+	<de/Montag>	owl:sameAs	<http://www.wikidata.org/entity/Q105>	
+	<Monday>	owl:sameAs	<http://www.wikidata.org/entity/Q105>	
+	<de/George_Washington>	owl:sameAs	<http://www.wikidata.org/entity/Q23>	
+	<George_Washington>	owl:sameAs	<http://www.wikidata.org/entity/Q23>	
+	<Jack_Bauer>	owl:sameAs	<http://www.wikidata.org/entity/Q24>	
+	<de/Belgien>	owl:sameAs	<http://www.wikidata.org/entity/Q31>	
+	<Belgium>	owl:sameAs	<http://www.wikidata.org/entity/Q31>	
+	<de/Mustafa_Kaplan>	owl:sameAs	<http://www.wikidata.org/entity/Q198250>	
+	<de/Jorge_Cramez>	owl:sameAs	<http://www.wikidata.org/entity/Q205026>	
+	<Entrepot_Secondary_School>	owl:sameAs	<http://www.wikidata.org/entity/Q26108209>	
+	<de/Flakpanzer_IV>	owl:sameAs	<http://www.wikidata.org/entity/Q26133418>	
+	<Flakpanzer_IV>	owl:sameAs	<http://www.wikidata.org/entity/Q26133418>	
+	<de/Hansa>	owl:sameAs	<http://www.wikidata.org/entity/Q24719046>	
+	<Hansa>	owl:sameAs	<http://www.wikidata.org/entity/Q24719046>	
