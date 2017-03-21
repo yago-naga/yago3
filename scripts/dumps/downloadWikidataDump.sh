@@ -7,7 +7,7 @@ then
     echo "Usage: $0 <dump_target_dir> <url>"
     echo "  Parameters:"
     echo "    <dump_targer_dir>  e.g. /GW/aida/work/data/"
-    echo "    <url>              e.g. https://dumps.wikimedia.org/wikidatawiki/20170227/"
+    echo "    <url>              e.g. https://dumps.wikimedia.org/wikidatawiki/entities/20170227/"
     echo "                            wikidata-20170227-all-BETA.ttl.bz2"
     exit 1
 else

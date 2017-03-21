@@ -369,7 +369,8 @@ def downloadWikidataDumps():
   
   # Determine the most recent Wikidata dump version.
   wikidataUrl = getWikidataUrl()
-  
+  print "WD URL= " + wikidataUrl
+  print "DumpFolder= " + dumpsFolder
   execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIDATA_DUMP_SCRIPT),
     dumpsFolder, wikidataUrl])
@@ -444,7 +445,7 @@ def getWikidata():
   global wikidataUrls
   
   date = wikidataUrl[50:58]
-  return os.path.join(dumpsFolder, WIKIDATA_DIR, date, 'wikidata-' + date + '-all-BETA.ttl.bz2' )
+  return os.path.join(dumpsFolder, WIKIDATA_DIR, date, 'wikidata-' + date + '-all-BETA.ttl' )
   
 
 """
