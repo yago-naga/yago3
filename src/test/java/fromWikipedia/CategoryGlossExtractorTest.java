@@ -38,9 +38,9 @@ public class CategoryGlossExtractorTest {
     // Output of the extract function (wikipediaCategoryGlosses and wikipediaCategoryGlossesNeedsTranslation) is written in the folder of the second argument.
     ex.extract(new File(RESOURCESPATH + "/output"), new File(RESOURCESPATH + "/output"),"testing CategoryExtraction in language: " + language);
     
-    //Set<FollowUpExtractor> followUps = ex.followUp();
-    //for(FollowUpExtractor fex:followUps)
-      //fex.extract(new File(RESOURCESPATH + "/output"), new File(RESOURCESPATH + "/output"),"testing followUp CategoryExtraction in language: " + language);
+    Set<FollowUpExtractor> followUps = ex.followUp();
+    for(FollowUpExtractor fex:followUps)
+      fex.extract(new File(RESOURCESPATH + "/output"), new File(RESOURCESPATH + "/output"),"testing followUp CategoryExtraction in language: " + language);
     compareOutputWithExpected(language);
   }
 
@@ -48,6 +48,13 @@ public class CategoryGlossExtractorTest {
     String actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/wikipediaCategoryGlosses_" + language + ".tsv")));
     String expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_wikipediaCategoryGlosses_" + language + ".tsv")));
     
-    assertEquals(actual, expected);
+    assertEquals(expected, actual);
+    
+    if(language == "en")  return;
+    
+    actual   = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/wikipediaCategoryGlossesNeedsTranslation_" + language + ".tsv")));
+    expected = new String(Files.readAllBytes(Paths.get(RESOURCESPATH + "/output/expected_wikipediaCategoryGlossesNeedsTranslation_" + language + ".tsv")));
+    
+    assertEquals(expected, actual);
   }
 }
