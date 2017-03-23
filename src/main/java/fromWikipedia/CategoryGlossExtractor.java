@@ -52,8 +52,7 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
   
   public static final MultilingualTheme CATEGORYGLOSSES = new MultilingualTheme("wikipediaCategoryGlosses", "Category glosses extracted from wikipedia");
   
-  //TODO: make a translated version also. I didn't do it now because there was some problem when running and I had some task with more priority.
-  //public static final MultilingualTheme CATEGORYGLOSSESNEEDSTRANSLATION = new MultilingualTheme("wikipediaCategoryGlossesNeedsTranslation", "Category glosses extracted from wikipedia");
+  public static final MultilingualTheme CATEGORYGLOSSESNEEDSTRANSLATION = new MultilingualTheme("wikipediaCategoryGlossesNeedsTranslation", "Category glosses extracted from wikipedia");
 
   public CategoryGlossExtractor(String language, File wikipedia) {
     super(language, wikipedia);
@@ -66,19 +65,21 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> output() {
-//    if (isEnglish())
+    if (isEnglish())
       return (new FinalSet<>(CATEGORYGLOSSES.inLanguage(language)));
-//    else
-//      return (new FinalSet<>(CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(language)));
+    else
+      return (new FinalSet<>(CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(language)));
     
   }
 
-//  @Override
-//  public Set<FollowUpExtractor> followUp() {
-//    if (isEnglish()) return (Collections.emptySet());
-//    return (new FinalSet<FollowUpExtractor>(
-//        new CategoryTranslator(CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(this.language), CATEGORYGLOSSES.inLanguage(this.language), this)));
-//  }
+
+  @Override
+  public Set<FollowUpExtractor> followUp() {
+    if (isEnglish()) return (Collections.emptySet());
+    return (new FinalSet<FollowUpExtractor>(
+        new CategoryTranslator(CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(this.language), CATEGORYGLOSSES.inLanguage(this.language), this, true, true)));
+  }
+  
   
   @Override
 	public void extract() throws Exception {
@@ -96,12 +97,11 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
 				String page = FileLines.readBetween(in, "<text", "</text>");
 		    String gloss = getGloss(page);
         if (gloss != null) {
-//          if(isEnglish())
+          if(isEnglish())
             CATEGORYGLOSSES.inLanguage(language).write(new Fact(category, YAGO.hasGloss, FactComponent.forString(gloss)));
-//          else {
-//            System.out.println(category);
-//            CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(language).write(new Fact(category, YAGO.hasGloss, FactComponent.forString(gloss)));
-//          }
+          else {
+            CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(language).write(new Fact(category, YAGO.hasGloss, FactComponent.forString(gloss)));
+          }
             
         }
 			}

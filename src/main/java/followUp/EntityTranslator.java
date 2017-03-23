@@ -48,6 +48,9 @@ public class EntityTranslator extends FollowUpExtractor {
 
   /** Object dictionary */
   protected Theme objectDictionaryTheme;
+  
+  /** Subject dictionary */
+  protected Theme subjectDictionaryTheme;
 
   /** Keep facts even if they cannot be translated */
   protected boolean gracefulTranslation;
@@ -57,7 +60,7 @@ public class EntityTranslator extends FollowUpExtractor {
     // Do not use a FinalSet here because
     // objectDictionary might be equivalent to
     // entityDictionary
-    return (new HashSet<>(Arrays.asList(checkMe, DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language), objectDictionaryTheme)));
+    return (new HashSet<>(Arrays.asList(checkMe, subjectDictionaryTheme, objectDictionaryTheme)));
   }
 
   @Override
@@ -65,7 +68,7 @@ public class EntityTranslator extends FollowUpExtractor {
     // Do not use a FinalSet here because
     // objectDictionary might be equivalent to
     // entiyDictionary
-    return (new HashSet<>(Arrays.asList(DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language), objectDictionaryTheme)));
+    return (new HashSet<>(Arrays.asList(subjectDictionaryTheme, objectDictionaryTheme)));
   }
 
   @Override
@@ -84,7 +87,7 @@ public class EntityTranslator extends FollowUpExtractor {
 
   @Override
   public void extract() throws Exception {
-    Map<String, String> subjectDictionary = DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language).dictionary();
+    Map<String, String> subjectDictionary = subjectDictionaryTheme.dictionary();
     Map<String, String> objectDictionary = objectDictionaryTheme.dictionary();
 
     boolean baseFactWasTranslated = false;
@@ -128,6 +131,8 @@ public class EntityTranslator extends FollowUpExtractor {
     // By default, we translate entities.
     // May be overwritten in subclasses
     objectDictionaryTheme = DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language);
+    
+    subjectDictionaryTheme = DictionaryExtractor.ENTITY_DICTIONARY.inLanguage(language);
 
     this.gracefulTranslation = graceful;
   }

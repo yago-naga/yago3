@@ -42,9 +42,17 @@ public class CategoryTranslator extends EntityTranslator {
   }
 
   public CategoryTranslator(Theme in, Theme out, Extractor parent) {
-    super(in, out, parent);
+    this(in, out, parent, false, false);
+  }
+  
+  public CategoryTranslator(Theme in, Theme out, Extractor parent, boolean categoryAsSubject, boolean graceful) {
+    super(in, out, parent, graceful);
+    if (categoryAsSubject) {
+      subjectDictionaryTheme = DictionaryExtractor.CATEGORY_DICTIONARY.inLanguage(language);
+    }
     objectDictionaryTheme = DictionaryExtractor.CATEGORY_DICTIONARY.inLanguage(language);
   }
+  
 
   public static void main(String[] args) throws Exception {
     Theme res = new Theme("categoryMembersTranslated_de", "");

@@ -74,7 +74,7 @@ public class CategoryHierarchyExtractor extends MultilingualWikipediaExtractor {
   public Set<FollowUpExtractor> followUp() {
     if (language.equals("en")) return (Collections.emptySet());
     return (new FinalSet<FollowUpExtractor>(
-        new CategoryTranslator(CATEGORYHIERARCHY.inLanguage(this.language), CATEGORYHIERARCHY_TRANSLATED.inLanguage(this.language), this)));
+        new CategoryTranslator(CATEGORYHIERARCHY.inLanguage(this.language), CATEGORYHIERARCHY_TRANSLATED.inLanguage(this.language), this, true, false)));
   }
 
   @Override
