@@ -8,7 +8,6 @@ Usage:
   downloadDumps.py -y YAGO_CONFIGURATION_FILE [(--date=DATE ...)] [--wikidata-date=WIKIDATA_DATE] [--commonswiki-date=COMMONSWIKI_DATE] [-s START_DATE]
   
 Options:
-  -d TARGET_DIR --target-dir=TARGET_DIR               directory to store the Wikipedia dumps
   -y YAGO_CONFIGURATION_FILE --yago-configuration-file=YAGO_CONFIGURATION_FILE      the YAGO3 ini file that holds the configuration to be used
   --date=DATE                                         Date of the Wikipedia dump
   --wikidata-date=WIKIDATA_DATE                       Date of the Wikidata dump
