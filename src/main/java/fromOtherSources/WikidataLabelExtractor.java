@@ -1,16 +1,12 @@
 package fromOtherSources;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.util.ArrayList;
-import java.io.FileInputStream;
-import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
-import java.util.zip.GZIPInputStream;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -124,13 +120,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 
     }
     // Now write the foreign names
-    N4Reader nr;
-    if (inputData.getName().endsWith(".gz")) {
-      GZIPInputStream gzip = new GZIPInputStream(new FileInputStream(inputData));
-      nr = new N4Reader(new BufferedReader(new InputStreamReader(gzip)));
-    } else {
-      nr = new N4Reader(inputData);
-    }
+    N4Reader nr = new N4Reader(inputData);
     // Maps a language such as "en" to the name in that language
     Map<String, String> language2name = new HashMap<String, String>();
     String lastqid = null;
