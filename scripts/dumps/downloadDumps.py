@@ -58,6 +58,7 @@ dumpsFolder = None
 yagoFolder = None
 languages = None
 wikipedias = None
+wikipediaIds = None
 wikidata = None
 wikidataUrl = None
 commons_wiki = None
@@ -88,7 +89,7 @@ def main(argv=None):
   
   if wikipedias == None:
     print "Downloading Wikipedia dump(s)..."
-    wikipediaIds = downloadWikipediaDumps(languages)
+    wikipedias = downloadWikipediaDumps(languages)
   else:
     print "Wikipedia dump(s) already present."
     wikipediaIds = getWikipediaIdsFromFile(wikipedias)
@@ -106,7 +107,7 @@ def main(argv=None):
     print "CommonsWiki dump already present."
     
   print "Adapting the YAGO3 configuration..."
-  adaptYagoConfiguration(wikipediaIds)
+  adaptYagoConfiguration()
     
   print "Wikipedia, Wikidata and Commonswiki dumps are ready."
 
@@ -150,14 +151,19 @@ Invokes the external shell script for downloading and extracting the Wikipedia d
 """
 def downloadWikipediaDumps(languages):
   global dumpsFolder
+  global wikipediaIds
   
   # Determine the most recent Wikipedia dump versions.
   urls = getWikipediaDumpUrls(languages)
   
   execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT), dumpsFolder, ' '.join(urls)])
+  
+  
+  wikipediaIds = getWikipediaIds(urls)
+  
+  return getWikipedias(urls)
     
-  return getWikipediaIds(urls)
 
 """
 Duplicates the YAGO3 template ini file and adapts the properties as necessary
