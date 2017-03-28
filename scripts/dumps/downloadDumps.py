@@ -5,7 +5,7 @@
 Downloads Wikipedia, Wikidata and commonswiki dumps for the specified languages unless they are explicitly specified in the YAGO configuration file via the properties named "wikipedias", "wikidata" or "commons_wiki". For all dumps, the most recent version is downloaded unless an explicit date is set. 
 
 Usage:
-  downloadDumps.py -y YAGO_CONFIGURATION_FILE [(--date=DATE ...)] [--wikidata-date=WIKIDATA_DATE] [--commonswiki-date=COMMONSWIKI_DATE] [-s START_DATE]
+  downloadDumps.py -y YAGO_CONFIGURATION_FILE -i YAGO_INDEX_DIR [(--date=DATE ...)] [--wikidata-date=WIKIDATA_DATE] [--commonswiki-date=COMMONSWIKI_DATE] [-s START_DATE]
   
 Options:
   -y YAGO_CONFIGURATION_FILE --yago-configuration-file=YAGO_CONFIGURATION_FILE      the YAGO3 ini file that holds the configuration to be used
