@@ -9,6 +9,7 @@ Usage:
   
 Options:
   -y YAGO_CONFIGURATION_FILE --yago-configuration-file=YAGO_CONFIGURATION_FILE      the YAGO3 ini file that holds the configuration to be used
+  -i YAGO_INDEX_DIR --yago-index-dir=YAGO_INDEX_DIR   directory where to store the generated YAGO3 index
   --date=DATE                                         Date of the Wikipedia dump
   --wikidata-date=WIKIDATA_DATE                       Date of the Wikidata dump
   --commonswiki-date=COMMONSWIKI_DATE                 Date of the CommonsWiki dump
@@ -38,11 +39,13 @@ WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS = 365
 
 YAGO3_ADAPTED_CONFIGURATION_EXTENSION = '.adapted.ini'
 
+YAGO3_DUMPSFOLDER_PROPERTY = 'dumpsFolder'
+YAGO3_YAGOFOLDER_PROPERTY = 'yagoFolder'
 YAGO3_LANGUAGES_PROPERTY = 'languages'
 YAGO3_WIKIPEDIAS_PROPERTY = 'wikipedias'
-YAGO3_DUMPSFOLDER_PROPERTY = 'dumpsFolder'
 YAGO3_WIKIDATA_PROPERTY = 'wikidata'
 YAGO3_COMMONSWIKI_PROPERTY = "commons_wiki"
+
 
 WIKIPEDIA_DUMPS_PAGE = 'https://dumps.wikimedia.org/'
 WIKIDATA_DUMPS_PAGE = 'https://dumps.wikimedia.org/wikidatawiki/entities/'
@@ -52,6 +55,7 @@ COMMONSWIKI_DIR = 'commonswiki'
 
 # Initialize variables
 dumpsFolder = None
+yagoFolder = None
 languages = None
 wikipedias = None
 wikidata = None
@@ -176,6 +180,9 @@ def adaptYagoConfiguration():
       wikidataDone = True
     elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
       commonsWikiDone = True
+    elif re.match('^' + YAGO3_YAGOFOLDER_PROPERTY + '\s*=', line):
+      yagoFolder = os.path.join(yagoIndexDir, 'yago_aida_' + '_'.join(getWikipediaIds(urls)))
+      line = YAGO3_YAGOFOLDER_PROPERTY + ' = ' + yagoFolder + '\n'
       
     # Write the (possibly modified) line back to the configuration file
     sys.stdout.write(line)
@@ -462,6 +469,7 @@ if __name__ == "__main__":
   wikidataDate = options['--wikidata-date']
   commonswikiDate = options['--commonswiki-date']
   yagoConfigurationFile = options['--yago-configuration-file']
+  yagoIndexDir = options['--yago-index-dir']
   
   # Read optional arguments with dynamic defaults
   if options['--start-date']:
