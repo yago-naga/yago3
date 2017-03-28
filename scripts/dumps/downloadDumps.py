@@ -88,9 +88,10 @@ def main(argv=None):
   
   if wikipedias == None:
     print "Downloading Wikipedia dump(s)..."
-    wikipedias = downloadWikipediaDumps(languages)
+    wikipediaIds = downloadWikipediaDumps(languages)
   else:
     print "Wikipedia dump(s) already present."
+    wikipediaIds = getWikipediaIdsFromFile(wikipedias)
  
   if (wikidata == None):
     print "Downloading Wikidata dump(s)..."
@@ -105,7 +106,7 @@ def main(argv=None):
     print "CommonsWiki dump already present."
     
   print "Adapting the YAGO3 configuration..."
-  adaptYagoConfiguration()
+  adaptYagoConfiguration(wikipediaIds)
     
   print "Wikipedia, Wikidata and Commonswiki dumps are ready."
 
@@ -156,13 +157,12 @@ def downloadWikipediaDumps(languages):
   execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT), dumpsFolder, ' '.join(urls)])
     
-  return getWikipedias(urls)
-
+  return getWikipediaIds(urls)
 
 """
 Duplicates the YAGO3 template ini file and adapts the properties as necessary
 """
-def adaptYagoConfiguration():  
+def adaptYagoConfiguration(wikipediaIds):  
   global wikipedias
   wikipediasDone = False
   wikidataDone = False
@@ -181,7 +181,7 @@ def adaptYagoConfiguration():
     elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
       commonsWikiDone = True
     elif re.match('^' + YAGO3_YAGOFOLDER_PROPERTY + '\s*=', line):
-      yagoFolder = os.path.join(yagoIndexDir, 'yago_aida_' + '_'.join(getWikipediaIds(urls)))
+      yagoFolder = os.path.join(yagoIndexDir, 'yago_aida_' + '_'.join(wikipediaIds))
       line = YAGO3_YAGOFOLDER_PROPERTY + ' = ' + yagoFolder + '\n'
       
     # Write the (possibly modified) line back to the configuration file
@@ -229,6 +229,14 @@ def getWikipediaIds(urls):
     wpIds.append(getLanguage(url) + getFormattedDate(url))
   return wpIds
 
+"""
+Convenience method for getting languageId + date identifiers from Wikipedia dump file paths.
+"""
+def getWikipediaIdsFromFile(files):
+  wpIds = []
+  for file in files:
+    wpIds.append(getLanguageFromFile(file) + getFormattedDateFromFile(file))
+  return wpIds
 
 """
 Constructs the database ID from a set of Wikipedia URLs.
@@ -256,6 +264,18 @@ Convenience method for getting the date string out of a Wikipedia dump URL.
 def getFormattedDate(url):
   return url[35:43]
 
+"""
+Convenience method for getting the ISO iso 639-1 language code out of a Wikipedia dump file path.
+"""
+def getLanguageFromFile(filePath):
+  return filePath[len(filePath)-34:len(filePath)-32]
+
+
+"""
+Convenience method for getting the date string out of a Wikipedia dump file path.
+"""  
+def getFormattedDateFromFile(filePath):
+  return filePath[len(filePath)-27:len(filePath)-19]
 
 """
 Convenience method for getting the ISO iso 639-1 language code out of a Wikipedia dump URL.
