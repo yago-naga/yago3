@@ -56,7 +56,7 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 
   private static final Pattern pattern = Pattern.compile("\\[\\[([^#\\]]*?)\\]\\]");
 
-  public static final MultilingualTheme REDIRECTFACTSDIRTY = new MultilingualTheme("redirectLabelsNeedsTranslationTypeChecking",
+  public static final MultilingualTheme REDIRECT_FACTS_DIRTY = new MultilingualTheme("redirectLabelsNeedsTranslationTypeChecking",
       "Redirect facts from Wikipedia redirect pages (to be type checked and translated)");
 
   public static final MultilingualTheme TRANSLATEDREDIRECTFACTSDIRTY = new MultilingualTheme("redirectLabelsNeedsTypeChecking",
@@ -68,9 +68,9 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
   public Set<FollowUpExtractor> followUp() {
     HashSet<FollowUpExtractor> s = new HashSet<>();
     if (isEnglish()) {
-      s.add(new TypeChecker(REDIRECTFACTSDIRTY.inLanguage(language), REDIRECTFACTS.inLanguage(language)));
+      s.add(new TypeChecker(REDIRECT_FACTS_DIRTY.inLanguage(language), REDIRECTFACTS.inLanguage(language)));
     } else {
-      s.add(new EntityTranslator(REDIRECTFACTSDIRTY.inLanguage(language), TRANSLATEDREDIRECTFACTSDIRTY.inLanguage(language), this));
+      s.add(new EntityTranslator(REDIRECT_FACTS_DIRTY.inLanguage(language), TRANSLATEDREDIRECTFACTSDIRTY.inLanguage(language), this));
       s.add(new TypeChecker(TRANSLATEDREDIRECTFACTSDIRTY.inLanguage(language), REDIRECTFACTS.inLanguage(language)));
     }
     return s;
@@ -78,7 +78,7 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(REDIRECTFACTSDIRTY.inLanguage(this.language));
+    return new FinalSet<Theme>(REDIRECT_FACTS_DIRTY.inLanguage(this.language));
   }
 
   @Override
@@ -113,7 +113,7 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
       }
     }
 
-    Theme out = REDIRECTFACTSDIRTY.inLanguage(this.language);
+    Theme out = REDIRECT_FACTS_DIRTY.inLanguage(this.language);
 
     for (Entry<String, String> redirect : redirects.entrySet()) {
       out.write(new Fact(FactComponent.forForeignYagoEntity(redirect.getValue(), this.language), "<redirectedFrom>",

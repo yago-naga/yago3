@@ -28,37 +28,36 @@ import utils.TitleExtractor;
 
 /** Extracts entity description from wikipedia.
  * 
-This class is part of the YAGO project at the Max Planck Institute
-for Informatics/Germany and Télécom ParisTech University/France:
-http://yago-knowledge.org
-
-This class is copyright 2017 Ghazaleh Haratinezhad Torbati.
-
-YAGO is free software: you can redistribute it and/or modify it
-under the terms of the GNU General Public License as published
-by the Free Software Foundation, either version 3 of the License,
-or (at your option) any later version.
-
-YAGO is distributed in the hope that it will be useful, but WITHOUT
-ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
-or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
-License for more details.
-
-You should have received a copy of the GNU General Public License
-along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+ * This class is part of the YAGO project at the Max Planck Institute
+ * for Informatics/Germany and Télécom ParisTech University/France:
+ * http://yago-knowledge.org
+ * 
+ * This class is copyright 2017 Ghazaleh Haratinezhad Torbati.
+ * 
+ * YAGO is free software: you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published
+ * by the Free Software Foundation, either version 3 of the License,
+ * or (at your option) any later version.
+ * 
+ * YAGO is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+ * or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+ * License for more details.
+ * 
+ * You should have received a copy of the GNU General Public License
+ * along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 
 public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaExtractor {
 
-  public static final MultilingualTheme WIKIPEDIAENTITYDESCRIPTIONS = new MultilingualTheme("wikipediaEntityDescriptions", 
-      "Description extracted from wikipedia for entities");
+  public static final MultilingualTheme WIKIPEDIA_ENTITY_DESCRIPTIONS = new MultilingualTheme("wikipediaEntityDescriptions", 
+      "Descriptions extracted from Wikipedia for entities.");
 
-  public static final MultilingualTheme WIKIPEDIAENTITYDESCRIPTIONSNEEDSTRANSLATION = new MultilingualTheme("wikipediaEntityDescriptionsNeedsTranslation", 
-      "Description extracted from wikipedia for entities");
-
+  public static final MultilingualTheme WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION = new MultilingualTheme("wikipediaEntityDescriptionsNeedTranslation", 
+      "Descriptions extracted from Wikipedia for entities.");
 
   private static Pattern firstParagraph = Pattern.compile("^(.+?)\\n(.*)");
-  private static final int MINTEXTLENGTH = 15;
+  private static final int MIN_TEXT_LENGTH = 15;
   private static final int MAX_ESTIMATED_PARAGRAPHSIZE = 30000;
 
   public WikipediaEntityDescriptionExtractor(String language, File wikipedia) {
@@ -68,22 +67,22 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
   @Override
   public Set<Theme> input() {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS,
-        RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(language)));
+        RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(language)));
   }
 
   @Override
   public Set<Theme> output() {
     if (isEnglish())
-      return (new FinalSet<>(WIKIPEDIAENTITYDESCRIPTIONS.inLanguage(language)));
+      return (new FinalSet<>(WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(language)));
     else
-      return (new FinalSet<>(WIKIPEDIAENTITYDESCRIPTIONSNEEDSTRANSLATION.inLanguage(language)));
+      return (new FinalSet<>(WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(language)));
   }
   
   @Override
   public Set<FollowUpExtractor> followUp() {
     if (isEnglish()) return (Collections.emptySet());
     return (new FinalSet<FollowUpExtractor>(
-        new EntityTranslator(WIKIPEDIAENTITYDESCRIPTIONSNEEDSTRANSLATION.inLanguage(this.language), WIKIPEDIAENTITYDESCRIPTIONS.inLanguage(this.language), this)));
+        new EntityTranslator(WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(this.language), WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(this.language), this)));
   }
 
   @Override
@@ -91,7 +90,7 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
     TitleExtractor titleExtractor = new TitleExtractor(language);
     
     Set<String>  redirects = new HashSet<>();
-    Set<Fact> redirectFacts = RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
+    Set<Fact> redirectFacts = RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
     for(Fact f:redirectFacts) {
       String entity = titleExtractor.createTitleEntity(FactComponent.stripQuotesAndLanguage(f.getObject()));
       redirects.add(entity);
@@ -107,23 +106,30 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
       // Write description to themes. If the language is not English, write it to a theme that needs translation which is done in follow up extractor.
       if(description != null) {
         if(isEnglish())
-          WIKIPEDIAENTITYDESCRIPTIONS.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(Char17.decodeBackslash(description))));
+          WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(Char17.decodeBackslash(description))));
         else
-          WIKIPEDIAENTITYDESCRIPTIONSNEEDSTRANSLATION.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(Char17.decodeBackslash(description))));
+          WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(Char17.decodeBackslash(description))));
       }
     }
   }
 
-  // Return the clean description.
-  private static String getDescription(String page) {
-    int start = page.indexOf(">");
-    page = page.substring(start + 1);
-    page = Char17.decodeAmpersand(page);
-    page = removePatterns(page);
-    // Choose the first paragraph:
-    Matcher matcher = firstParagraph.matcher(page);
+  /** 
+   * Returns a clean description.
+   * 
+   * @param pageTitle The title of a Wikipedia page.
+   * @return A clean description.
+   */
+  private static String getDescription(String pageTitle) {
+    int start = pageTitle.indexOf(">");
+    pageTitle = pageTitle.substring(start + 1);
+    pageTitle = Char17.decodeAmpersand(pageTitle);
+    pageTitle = removePatterns(pageTitle);
+    
+    // Choose the first paragraph.
+    Matcher matcher = firstParagraph.matcher(pageTitle);
     if (matcher.find())
       return cleanText(matcher.group(1));
+    
     return null;
   }
 
@@ -243,7 +249,7 @@ private static String removeBrackets(String page) {
    inputText = inputText.replaceAll("\\u0022", "\"");
 
    
-   if(inputText.length() < MINTEXTLENGTH)
+   if(inputText.length() < MIN_TEXT_LENGTH)
      return null;
    
    return inputText;
