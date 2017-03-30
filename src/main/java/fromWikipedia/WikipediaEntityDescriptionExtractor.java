@@ -7,6 +7,12 @@ import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -62,9 +68,8 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
   private static Pattern firstParagraph = Pattern.compile("^(.+?)\\n(.*)");
   private static final int MIN_TEXT_LENGTH = 15;
   private static final int MAX_ESTIMATED_PARAGRAPH_SIZE = 30000;
-  
-  private static final Logger logger = LoggerFactory.getLogger(WikipediaEntityDescriptionExtractor.class);
-  
+
+  private ExecutorService executor = Executors.newSingleThreadExecutor();
 
   public WikipediaEntityDescriptionExtractor(String language, File wikipedia) {
     super(language, wikipedia);
@@ -108,8 +113,6 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
     while (FileLines.findIgnoreCase(in, "<title>") != -1) {
       String titleEntity = titleExtractor.getTitleEntity(in);
       
-      logger.debug(titleEntity);
-      
       // If title is not a named entity or is a redirect, continue.
       if (titleEntity == null || redirects.contains(titleEntity))  continue;
       
@@ -125,27 +128,6 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
         }
       }
     }
-  }
-
-  /** 
-   * Returns a clean description.
-   * 
-   * @param pageTitle The title of a Wikipedia page.
-   * @return A clean description.
-   */
-  private static String getDescription(String pageTitle) {
-    int start = pageTitle.indexOf(">");
-    pageTitle = pageTitle.substring(start + 1);
-    pageTitle = Char17.decodeAmpersand(pageTitle);
-    pageTitle = removePatterns(pageTitle);
-    
-    // Choose the first paragraph.
-    Matcher matcher = firstParagraph.matcher(pageTitle);
-    if (matcher.find()) {
-      return cleanText(matcher.group(1));
-    }
-    
-    return null;
   }
 
  
@@ -238,54 +220,31 @@ private static String removeBrackets(String page) {
   
   return result.toString().trim();
 }
-
-
- // Cleaning the gloss before returning it as output.
- private static String cleanText(String inputText) {
-   // Replace links with text.
-   // Example: "[[Cavalier|Royalists]]" replace it with "Royalists"
-   //          "[[Robert Owen]]" replace it with "Robert Owen".
-   inputText = inputText.replaceAll("\\[\\[[^\\]\\n]+?\\|([^\\]\\n]+?)\\]\\]", "$1");
-   inputText = inputText.replaceAll("\\[\\[([^\\]\\n]+?)\\]\\]", "$1");
-   inputText = inputText.replaceAll("\\{\\{[^\\}\\n]+?\\|([^\\}\\n]+?)\\}\\}", "$1");
-   inputText = inputText.replaceAll("\\{\\{([^\\}\\n]+?)\\}\\}", "$1");
+ 
+ /** 
+  * Returns a clean description.
+  * 
+  * @param pageTitle The title of a Wikipedia page.
+  * @return A clean description.
+  */
+ private String getDescription(String pageTitle) {
+   int start = pageTitle.indexOf(">");
+   pageTitle = pageTitle.substring(start + 1);
+   pageTitle = Char17.decodeAmpersand(pageTitle);
+   pageTitle = removePatterns(pageTitle);
    
-   inputText = inputText.replaceAll("\\*", "");
-   inputText = inputText.replaceAll( ":{2,}", "");
-   inputText = inputText.replaceAll("'{2,}", "");
-   inputText = inputText.replaceAll("\\d+px", "");
-
-   // Remove whitespace before the punctuations:
-   inputText = inputText.replaceAll("\\s+([\\.!;,\\?])", "$1");
+   // Choose the first paragraph.
+   Matcher matcher = firstParagraph.matcher(pageTitle);
+   if (matcher.find()) {
+     try {
+       return executor.submit(new DescriptionCleanerCallable(matcher.group(1))).get(1, TimeUnit.SECONDS);
+     } catch (InterruptedException | ExecutionException | TimeoutException e) {
+       return null;
+     }
+   }
    
-   // Remove Urls:
-   inputText = inputText.replaceAll("\\[(http|https)://[^\\p{Zl}\\p{Zs}\\p{Zp}]+[\\p{Zl}\\p{Zs}\\p{Zp}](.*?)\\]", "$2");
-   inputText = inputText.replaceAll("[\\[\\]]", "");
-   
-//   // Remove empty parantesis
-//   inputText = inputText.replaceAll("\\([\\p{Zl}\\p{Zs}\\p{Zp}]*\\)", "");
-   
-   // Remove everything in parenthesis:
-   inputText = removeParentheses(inputText);
-   
-   // Remove punctuations from the beginning of the gloss.
-   inputText = inputText.replaceAll("^[\\.!;:,\\?]+", "");
-   // Remove whitespaces before punctuations.
-   inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+([\\.!;:,\\?])", "$1");
-   // Remove Whitespaces from beginning and end of gloss:
-   inputText = inputText.replaceAll("^[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", "");
-   inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+$", "");
-   // Change any more than 1 whitespace to only 1 whitespace:
-   inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " ");
-   inputText = inputText.replaceAll("&nbsp;", " ");
-   inputText = inputText.replaceAll("\\u0022", "\"");
-
-   
-   if(inputText.length() < MIN_TEXT_LENGTH)
-     return null;
-   
-   return inputText;
- }
+   return null;
+ } 
  
  // Extracting gloss text by removing some patterns that are observed to not have clean and good information
  private static String removePatterns(String inputText) {
@@ -327,5 +286,66 @@ private static String removeBrackets(String page) {
    
    return inputText;
  }
+ 
+  private class DescriptionCleanerCallable implements Callable<String> {
+
+    private String description;
+    
+    public DescriptionCleanerCallable(String description) {
+      this.description = description;
+    }
+    
+    @Override
+    public String call() throws Exception {
+      return cleanText(description);
+    }
+    
+ // Cleaning the gloss before returning it as output.
+    private String cleanText(String inputText) {
+      // Replace links with text.
+      // Example: "[[Cavalier|Royalists]]" replace it with "Royalists"
+      //          "[[Robert Owen]]" replace it with "Robert Owen".
+      inputText = inputText.replaceAll("\\[\\[[^\\]\\n]+?\\|([^\\]\\n]+?)\\]\\]", "$1");
+      inputText = inputText.replaceAll("\\[\\[([^\\]\\n]+?)\\]\\]", "$1");
+      inputText = inputText.replaceAll("\\{\\{[^\\}\\n]+?\\|([^\\}\\n]+?)\\}\\}", "$1");
+      inputText = inputText.replaceAll("\\{\\{([^\\}\\n]+?)\\}\\}", "$1");
+      
+      inputText = inputText.replaceAll("\\*", "");
+      inputText = inputText.replaceAll( ":{2,}", "");
+      inputText = inputText.replaceAll("'{2,}", "");
+      inputText = inputText.replaceAll("\\d+px", "");
+
+      // Remove whitespace before the punctuations:
+      inputText = inputText.replaceAll("\\s+([\\.!;,\\?])", "$1");
+      
+      // Remove Urls:
+      inputText = inputText.replaceAll("\\[(http|https)://[^\\p{Zl}\\p{Zs}\\p{Zp}]+[\\p{Zl}\\p{Zs}\\p{Zp}](.*?)\\]", "$2");
+      inputText = inputText.replaceAll("[\\[\\]]", "");
+      
+//      // Remove empty parantesis
+//      inputText = inputText.replaceAll("\\([\\p{Zl}\\p{Zs}\\p{Zp}]*\\)", "");
+      
+      // Remove everything in parenthesis:
+      inputText = removeParentheses(inputText);
+      
+      // Remove punctuations from the beginning of the gloss.
+      inputText = inputText.replaceAll("^[\\.!;:,\\?]+", "");
+      // Remove whitespaces before punctuations.
+      inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+([\\.!;:,\\?])", "$1");
+      // Remove Whitespaces from beginning and end of gloss:
+      inputText = inputText.replaceAll("^[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", "");
+      inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+$", "");
+      // Change any more than 1 whitespace to only 1 whitespace:
+      inputText = inputText.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " ");
+      inputText = inputText.replaceAll("&nbsp;", " ");
+      inputText = inputText.replaceAll("\\u0022", "\"");
+
+      
+      if(inputText.length() < MIN_TEXT_LENGTH)
+        return null;
+      
+      return inputText;
+    }
+  }
 
 }
