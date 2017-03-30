@@ -109,7 +109,7 @@ public class AIDAExtractorMerger extends Extractor {
 
     // Entity descriptions.
     input.add(WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS);
-    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIAENTITYDESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     
     return input;
   }

@@ -1,10 +1,7 @@
 package fromOtherSources;
 
-import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,7 +10,6 @@ import java.util.Map;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.zip.GZIPInputStream;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -64,7 +60,7 @@ public class DictionaryExtractor extends DataExtractor {
   /** Translations of infobox templates */
   public static final MultilingualTheme INFOBOX_TEMPLATE_DICTIONARY = new MultilingualTheme("infoboxTemplateDictionary",
       "Maps a foreign infobox template name to the English name.");
-  
+
   /** Translations of categories */
   public static final MultilingualTheme CATEGORY_DICTIONARY = new MultilingualTheme("categoryDictionary",
       "Maps a foreign category name to the English name.");
@@ -76,8 +72,6 @@ public class DictionaryExtractor extends DataExtractor {
    * English one
    */
   protected TitleExtractor titleExtractor;
-
-
 
   public DictionaryExtractor(File wikidata) {
     super(wikidata);
@@ -125,14 +119,7 @@ public class DictionaryExtractor extends DataExtractor {
 
     // Categories for which we have already translated the word "category"
     Set<String> categoryWordLanguages = new HashSet<>();
-
-    N4Reader nr;
-    if (inputData.getName().endsWith(".gz")) {
-      GZIPInputStream gzip = new GZIPInputStream(new FileInputStream(inputData));
-      nr = new N4Reader(new BufferedReader(new InputStreamReader(gzip)));
-    } else {
-      nr = new N4Reader(inputData);
-    }
+    N4Reader nr = new N4Reader(inputData);
 
     // Maps a language such as "en" to the name in that language
     Map<String, String> language2name = new HashMap<String, String>();
@@ -148,17 +135,16 @@ public class DictionaryExtractor extends DataExtractor {
         // Just to make sure that stuff like "Category:" is handled correctly
         entity = Char17.decodePercentage(entity);
         language2name.put(lan, entity);
-      }
-      else if (f.getObject().endsWith("#Item>") && !language2name.isEmpty()) {
+      } else if (f.getObject().endsWith("#Item>") && !language2name.isEmpty()) {
         // New item starts, let's flush out the previous one
         String mostEnglishLan = mostEnglishLanguage(language2name.keySet());
         if (mostEnglishLan != null) flush(categoryWordLanguages, language2name, mostEnglishLan);
         language2name.clear();
       }
     }
-    
+
     // When reaching the end of file:
-    if(!language2name.isEmpty()) {
+    if (!language2name.isEmpty()) {
       String mostEnglishLan = mostEnglishLanguage(language2name.keySet());
       if (mostEnglishLan != null) flush(categoryWordLanguages, language2name, mostEnglishLan);
       language2name.clear();
@@ -207,7 +193,10 @@ public class DictionaryExtractor extends DataExtractor {
       int cutpos = name.indexOf('_');
       if (cutpos == -1) continue;
       name = FactComponent.forInfoboxTemplate(name.substring(cutpos + 1), lan);
-      INFOBOX_TEMPLATE_DICTIONARY.inLanguage(lan)
+      if (mostEnglishName.length() < 17) {
+        Announce.warning("DictionaryExtractor: mostEnglishName too short: '", mostEnglishName, ",");
+        Announce.warning("language2name: ", language2name);
+      } else INFOBOX_TEMPLATE_DICTIONARY.inLanguage(lan)
           .write(new Fact(name, "<_hasTranslation>", FactComponent.forInfoboxTemplate(mostEnglishName.substring(17), "en")));
     }
   }

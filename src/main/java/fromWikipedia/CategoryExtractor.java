@@ -58,7 +58,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
   @Override
   public Set<Theme> input() {
     return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS, 
-        DictionaryExtractor.CATEGORYWORDS, RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(language)));
+        DictionaryExtractor.CATEGORYWORDS, RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(language)));
   }
 
   @Override
@@ -92,7 +92,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
     // The reason for using REDIRECTFACTSDIRTY instead of REDIRECTFACTS is that the former is created in a follow up 
     // extractor that is depending on the output of this class to remove non named entity words.
     Set<String>  redirects = new HashSet<>();
-    Set<Fact> redirectFacts = RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
+    Set<Fact> redirectFacts = RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
     for(Fact f:redirectFacts) {
       String entity = titleExtractor.createTitleEntity(FactComponent.stripQuotesAndLanguage(f.getObject()));
       redirects.add(entity);

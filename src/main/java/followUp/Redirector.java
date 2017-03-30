@@ -42,7 +42,7 @@ public class Redirector extends FollowUpExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(checkMe, RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(this.language));
+    return new FinalSet<Theme>(checkMe, RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(this.language));
   }
 
   @Override
@@ -52,7 +52,7 @@ public class Redirector extends FollowUpExtractor {
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<>(RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(this.language));
+    return new FinalSet<>(RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(this.language));
   }
 
   @Override
@@ -60,7 +60,7 @@ public class Redirector extends FollowUpExtractor {
     // Extract the information
     Map<String, String> redirects = new HashMap<>();
     Announce.doing("Loading redirects");
-    for (Fact f : RedirectExtractor.REDIRECTFACTSDIRTY.inLanguage(this.language)) {
+    for (Fact f : RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(this.language)) {
       redirects.put(FactComponent.forYagoEntity(FactComponent.asJavaString(f.getArg(2)).replace(' ', '_')), f.getArg(1));
     }
     Announce.done();
