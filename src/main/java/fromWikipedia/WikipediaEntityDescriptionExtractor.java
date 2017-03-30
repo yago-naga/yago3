@@ -117,8 +117,6 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
       // If title is not a named entity or is a redirect, continue.
       if (titleEntity == null || redirects.contains(titleEntity))  continue;
       
-      System.out.println(titleEntity);
-      
       
       String page = FileLines.readBetween(in, "<text", "</text>");
      // FileWriter f = new FileWriter(new File("/home/ghazaleh/Project/data/entityzh"));
