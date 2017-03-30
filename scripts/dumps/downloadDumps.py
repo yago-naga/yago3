@@ -69,7 +69,7 @@ def execute(cmd, customEnv=None):
   process = subprocess.Popen(cmd, stdout=PIPE, stderr=STDOUT, universal_newlines=True, env=customEnv)
   
   for line in iter(process.stdout.readline, ""):
-    print line.decode('utf8'),
+    print line,
 
   process.stdout.close()
   return_code = process.wait()
