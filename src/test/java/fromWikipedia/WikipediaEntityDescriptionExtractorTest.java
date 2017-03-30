@@ -29,14 +29,19 @@ public class WikipediaEntityDescriptionExtractorTest {
   private static String deWikiFileName = "sample-dewiki-20170201-pages-articles.xml";
   
   
-  @Test
-  public void testExtractorEn() throws Exception {
-    testExtractor("en", enWikiFileName);
-  }
+//  @Test
+//  public void testExtractorEn() throws Exception {
+//    testExtractor("en", enWikiFileName);
+//  }
+//  
+//  @Test
+//  public void testExtractorDe() throws Exception {
+//    testExtractor("de", deWikiFileName);
+//  }
   
   @Test
-  public void testExtractorDe() throws Exception {
-    testExtractor("de", deWikiFileName);
+  public void testZH() throws Exception {
+    testExtractor("zh", "/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation/tmp_dumps/zh/20170320/zhwiki-20170320-pages-articles.xml");
   }
   
   public void testExtractor(String language, String wikiFileName) throws Exception {
