@@ -252,7 +252,6 @@ private static String removeBrackets(String page) {
      try {
        return executor.submit(new DescriptionCleanerCallable(matcher.group(1))).get(1, TimeUnit.SECONDS);
      } catch (InterruptedException | ExecutionException | TimeoutException e) {
-       System.exit(0);
        return null;
      }
    }
