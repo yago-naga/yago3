@@ -5,11 +5,11 @@
 Downloads Wikipedia, Wikidata and commonswiki dumps for the specified languages unless they are explicitly specified in the YAGO configuration file via the properties named "wikipedias", "wikidata" or "commons_wiki". For all dumps, the most recent version is downloaded unless an explicit date is set. 
 
 Usage:
-  downloadDumps.py -y YAGO_CONFIGURATION_FILE -i YAGO_INDEX_DIR [(--date=DATE ...)] [--wikidata-date=WIKIDATA_DATE] [--commonswiki-date=COMMONSWIKI_DATE] [-s START_DATE]
+  downloadDumps.py -y YAGO_CONFIGURATION_FILE [(--date=DATE ...)] [--wikidata-date=WIKIDATA_DATE] [--commonswiki-date=COMMONSWIKI_DATE] [-s START_DATE]
   
 Options:
+  -d TARGET_DIR --target-dir=TARGET_DIR               directory to store the Wikipedia dumps
   -y YAGO_CONFIGURATION_FILE --yago-configuration-file=YAGO_CONFIGURATION_FILE      the YAGO3 ini file that holds the configuration to be used
-  -i YAGO_INDEX_DIR --yago-index-dir=YAGO_INDEX_DIR   directory where to store the generated YAGO3 index
   --date=DATE                                         Date of the Wikipedia dump
   --wikidata-date=WIKIDATA_DATE                       Date of the Wikidata dump
   --commonswiki-date=COMMONSWIKI_DATE                 Date of the CommonsWiki dump
@@ -39,13 +39,11 @@ WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS = 365
 
 YAGO3_ADAPTED_CONFIGURATION_EXTENSION = '.adapted.ini'
 
-YAGO3_DUMPSFOLDER_PROPERTY = 'dumpsFolder'
-YAGO3_YAGOFOLDER_PROPERTY = 'yagoFolder'
 YAGO3_LANGUAGES_PROPERTY = 'languages'
 YAGO3_WIKIPEDIAS_PROPERTY = 'wikipedias'
+YAGO3_DUMPSFOLDER_PROPERTY = 'dumpsFolder'
 YAGO3_WIKIDATA_PROPERTY = 'wikidata'
 YAGO3_COMMONSWIKI_PROPERTY = "commons_wiki"
-
 
 WIKIPEDIA_DUMPS_PAGE = 'https://dumps.wikimedia.org/'
 WIKIDATA_DUMPS_PAGE = 'https://dumps.wikimedia.org/wikidatawiki/entities/'
@@ -55,10 +53,8 @@ COMMONSWIKI_DIR = 'commonswiki'
 
 # Initialize variables
 dumpsFolder = None
-yagoFolder = None
 languages = None
 wikipedias = None
-wikipediaIds = None
 wikidata = None
 wikidataUrl = None
 commons_wiki = None
@@ -73,7 +69,7 @@ def execute(cmd, customEnv=None):
   process = subprocess.Popen(cmd, stdout=PIPE, stderr=STDOUT, universal_newlines=True, env=customEnv)
   
   for line in iter(process.stdout.readline, ""):
-    print line,
+    print line.decode('utf8'),
 
   process.stdout.close()
   return_code = process.wait()
@@ -92,7 +88,6 @@ def main(argv=None):
     wikipedias = downloadWikipediaDumps(languages)
   else:
     print "Wikipedia dump(s) already present."
-    wikipediaIds = getWikipediaIdsFromFile(wikipedias)
  
   if (wikidata == None):
     print "Downloading Wikidata dump(s)..."
@@ -151,24 +146,20 @@ Invokes the external shell script for downloading and extracting the Wikipedia d
 """
 def downloadWikipediaDumps(languages):
   global dumpsFolder
-  global wikipediaIds
   
   # Determine the most recent Wikipedia dump versions.
   urls = getWikipediaDumpUrls(languages)
   
   execute(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT), dumpsFolder, ' '.join(urls)])
-  
-  
-  wikipediaIds = getWikipediaIds(urls)
-  
-  return getWikipedias(urls)
     
+  return getWikipedias(urls)
+
 
 """
 Duplicates the YAGO3 template ini file and adapts the properties as necessary
 """
-def adaptYagoConfiguration(wikipediaIds):  
+def adaptYagoConfiguration():  
   global wikipedias
   wikipediasDone = False
   wikidataDone = False
@@ -186,9 +177,6 @@ def adaptYagoConfiguration(wikipediaIds):
       wikidataDone = True
     elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
       commonsWikiDone = True
-    elif re.match('^' + YAGO3_YAGOFOLDER_PROPERTY + '\s*=', line):
-      yagoFolder = os.path.join(yagoIndexDir, 'yago_aida_' + '_'.join(wikipediaIds))
-      line = YAGO3_YAGOFOLDER_PROPERTY + ' = ' + yagoFolder + '\n'
       
     # Write the (possibly modified) line back to the configuration file
     sys.stdout.write(line)
@@ -235,14 +223,6 @@ def getWikipediaIds(urls):
     wpIds.append(getLanguage(url) + getFormattedDate(url))
   return wpIds
 
-"""
-Convenience method for getting languageId + date identifiers from Wikipedia dump file paths.
-"""
-def getWikipediaIdsFromFile(files):
-  wpIds = []
-  for file in files:
-    wpIds.append(getLanguageFromFile(file) + getFormattedDateFromFile(file))
-  return wpIds
 
 """
 Constructs the database ID from a set of Wikipedia URLs.
@@ -270,18 +250,6 @@ Convenience method for getting the date string out of a Wikipedia dump URL.
 def getFormattedDate(url):
   return url[35:43]
 
-"""
-Convenience method for getting the ISO iso 639-1 language code out of a Wikipedia dump file path.
-"""
-def getLanguageFromFile(filePath):
-  return filePath[len(filePath)-34:len(filePath)-32]
-
-
-"""
-Convenience method for getting the date string out of a Wikipedia dump file path.
-"""  
-def getFormattedDateFromFile(filePath):
-  return filePath[len(filePath)-27:len(filePath)-19]
 
 """
 Convenience method for getting the ISO iso 639-1 language code out of a Wikipedia dump URL.
@@ -495,7 +463,6 @@ if __name__ == "__main__":
   wikidataDate = options['--wikidata-date']
   commonswikiDate = options['--commonswiki-date']
   yagoConfigurationFile = options['--yago-configuration-file']
-  yagoIndexDir = options['--yago-index-dir']
   
   # Read optional arguments with dynamic defaults
   if options['--start-date']:
