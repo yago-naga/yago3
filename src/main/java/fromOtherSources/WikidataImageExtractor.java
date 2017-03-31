@@ -23,7 +23,6 @@ import basics.YAGO;
 import extractors.DataExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import javatools.administrative.Parameters;
-import javatools.datatypes.FastFrequencyVector;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.FactCollection;
