@@ -172,13 +172,10 @@ public class WikidataImageExtractor extends DataExtractor {
 		
 		nr.close();
 		
-		System.out.println(allRelations.size());
-		for(String r:allRelations)
-		  System.out.println(r);
 	}
 	
 	private String getRelation(String relation) {
-	  Pattern relationPattern = Pattern.compile("<http:\\/\\/www.wikidata.org\\/(?:entity|prop)\\/(?:direct|statement)\\/(P\\d+)>");
+	  Pattern relationPattern = Pattern.compile("<http:\\/\\/www.wikidata.org\\/(?:entity|prop)\\/(?:direct|statement|qualifier)\\/(P\\d+)>");
     Matcher matcher = relationPattern.matcher(relation);
     if(matcher.find())
       return matcher.group(1);
