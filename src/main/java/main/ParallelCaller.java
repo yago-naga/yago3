@@ -247,7 +247,7 @@ public class ParallelCaller {
       if (!l.matches("[a-z]{2,3}")) Announce.error("Languages have to be 2 or 3-digit language codes, not", l);
       MultilingualExtractor.wikipediaLanguages.add(l);
     }
-    wikipedias = new HashMap<String, File>();
+    wikipedias = new HashMap<>();
     for (int i = 0; i < languages.size(); i++) {
       File wiki = new File(wikis.get(i));
       if (!wiki.exists()) Announce.error("Wikipedia not found:", wiki);
@@ -386,6 +386,12 @@ public class ParallelCaller {
     outputFolder = simulate ? Parameters.getFile("yagoSimulationFolder") : Parameters.getFile("yagoFolder");
     extractorsToDo = new ArrayList<>(extractors(Parameters.getList("extractors")));
 
+    String lockFile = outputFolder.getAbsolutePath() + "/yago.lock";
+    if (!lock(lockFile)) {
+      System.out.println("another instance of YAGO seems to be running. (Otherwise delete " + lockFile + ")");
+      System.exit(-1);
+    }
+
     addFollowUps(extractorsToDo);
     fillTheme2Extractor();
     // Make sure all themes are generated.
@@ -443,6 +449,19 @@ public class ParallelCaller {
     callNext(null, true);
   }
 
+  private static boolean lock(String lockFile) {
+    try {
+      final File file = new File(lockFile);
+      if (file.createNewFile()) {
+        file.deleteOnExit();
+        return true;
+      }
+      return false;
+    } catch (IOException e) {
+      return false;
+    }
+  }
+
   /** Header for the YAGO files */
   public static String header = "This file is part of the ontology YAGO3.\n"
       + "It is licensed under a Creative-Commons Attribution License by the YAGO team\n" + "at the Max Planck Institute for Informatics/Germany.\n"
@@ -476,7 +495,7 @@ public class ParallelCaller {
        */
     }
 
-    List<Extractor> extractors = new ArrayList<Extractor>();
+    List<Extractor> extractors = new ArrayList<>();
     for (String extractorName : extractorNames) {
       if (extractorName.trim().startsWith("#")) continue;
       extractors.addAll(extractorsForCall(extractorName));
@@ -495,7 +514,7 @@ public class ParallelCaller {
       if (!m.matches()) {
         Announce.error("Cannot parse extractor call:", extractorCall);
       }
-      List<Extractor> extractors = new ArrayList<Extractor>();
+      List<Extractor> extractors = new ArrayList<>();
       Class<? extends Extractor> clss;
       try {
         clss = (Class<? extends Extractor>) Class.forName(m.group(1));
