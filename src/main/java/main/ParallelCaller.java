@@ -143,7 +143,6 @@ public class ParallelCaller {
     }
     for (Theme theme : themesWeHave) {
       if (!requiredCaches.contains(theme) && !cachesWeKilled.contains(theme)) {
-        D.p("Killing cache", theme);
         theme.killCache();
         cachesWeKilled.add(theme);
       }

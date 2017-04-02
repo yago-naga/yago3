@@ -25,7 +25,7 @@ import utils.Theme;
 
 /**
  * Extracts the coherent types from previous types
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -49,7 +49,7 @@ public class CoherentTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    Set<Theme> result = new TreeSet<Theme>();
+    Set<Theme> result = new TreeSet<>();
     result.add(WordnetExtractor.WORDNETCLASSES);
     result.add(HardExtractor.HARDWIREDFACTS);
     result.add(CategoryClassExtractor.CATEGORYCLASSES);
@@ -65,7 +65,7 @@ public class CoherentTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(YAGOTYPES, YAGOTYPESSOURCES);
+    return new FinalSet<>(YAGOTYPES, YAGOTYPESSOURCES);
   }
 
   /** Caches the YAGO branches */
@@ -86,7 +86,7 @@ public class CoherentTypeExtractor extends Extractor {
   @Override
   public void extract() throws Exception {
 
-    yagoBranches = new HashMap<String, String>();
+    yagoBranches = new HashMap<>();
     subclassFacts = new FactCollection();
     typeFacts = new FactCollection();
     sources = new HashMap<>();

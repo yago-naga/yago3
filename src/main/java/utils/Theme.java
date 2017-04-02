@@ -15,12 +15,13 @@ import basics.FactSource;
 import basics.FactWriter;
 import basics.YAGO;
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 
 /**
  * This class represents a theme. If a theme is assigned to a file, it is a file
  * fact source, i.e., it can iterate over the facts in the file. It can also
  * write facts.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -247,10 +248,13 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
 
   /** Removes the cache */
   public void killCache() {
-    cache = null;
+    if (cache != null) {
+      D.p("Killing cache", this);
+      cache = null;
+    }
   }
 
-  /** Returns a dictionary from subjects to objects 
+  /** Returns a dictionary from subjects to objects
    * @throws IOException */
   public Map<String, String> dictionary() throws IOException {
     // Force the loading
