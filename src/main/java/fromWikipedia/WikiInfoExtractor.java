@@ -66,16 +66,18 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
   @Override
   public Set<Theme> output() {
     if (isEnglish()) {
-      return new FinalSet<Theme>(WIKIINFO.inLanguage(language));
+      return new FinalSet<>(WIKIINFONEEDSTYPECHECK.inLanguage(language));
     } else {
-      return new FinalSet<Theme>(WIKIINFONEEDSTRANSLATION.inLanguage(language));
+      return new FinalSet<>(WIKIINFONEEDSTRANSLATION.inLanguage(language));
     }
   }
 
   @Override
   public Set<FollowUpExtractor> followUp() {
     HashSet<FollowUpExtractor> s = new HashSet<>();
-    if (!isEnglish()) {
+    if (isEnglish()) {
+      s.add(new TypeChecker(WIKIINFONEEDSTYPECHECK.inLanguage(language), WIKIINFO.inLanguage(language), this));
+    } else {
       s.add(new EntityTranslator(WIKIINFONEEDSTRANSLATION.inLanguage(language), WIKIINFONEEDSTYPECHECK.inLanguage(language), this, true));
       s.add(new TypeChecker(WIKIINFONEEDSTYPECHECK.inLanguage(language), WIKIINFO.inLanguage(language), this));
     }
@@ -87,15 +89,15 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
     TitleExtractor titleExtractor = new TitleExtractor(language);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     while (FileLines.scrollTo(in, "<title>")) {
-      String entity = titleExtractor.getTitleEntity(in);
+      String entity = titleExtractor.getTitleEntityRaw(in);
       if (entity == null) continue;
       if (!FileLines.scrollTo(in, "<text")) continue;
       if (!FileLines.scrollTo(in, ">")) continue;
       String page = FileLines.readToBoundary(in, "</text>");
       if (page == null) continue;
       if (isEnglish()) {
-        WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
-        WIKIINFO.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
+        WIKIINFONEEDSTYPECHECK.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
+        WIKIINFONEEDSTYPECHECK.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
       } else {
         // This number is per Wikipedia language edition
         WIKIINFONEEDSTRANSLATION.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
@@ -113,7 +115,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
         targets.add(target);
       }
 
-      MultilingualTheme out = isEnglish() ? WIKIINFO : WIKIINFONEEDSTRANSLATION;
+      MultilingualTheme out = isEnglish() ? WIKIINFONEEDSTYPECHECK : WIKIINFONEEDSTRANSLATION;
 
       for (String target : targets) {
         out.inLanguage(language).write(new Fact(entity, "<linksTo>", target));
@@ -129,7 +131,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
     /*    new WikiInfoExtractor("en", new File("c:/Fabian/eclipseProjects/yago2s/testCases/extractors.CategoryExtractor/wikitest.xml")).extract(new File(
         "c:/fabian/data/yago3"), "Test on 1 wikipedia article\n");*/
 
-    new WikiInfoExtractor("en", new File("c:/fabian/data/wikipedia/james.xml")).extract(new File("c:/fabian/data/yago3"), "WikiInfoExtractor test");
+    new WikiInfoExtractor("en", new File("/home/tr/tmp/david_wilson_beaubier.txt")).extract(new File("data/yago3-debug"), "WikiInfoExtractor test");
 
   }
 }

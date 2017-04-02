@@ -14,12 +14,12 @@ import javatools.parsers.Char17;
 
 /**
  * Extracts Wikipedia title
- * 
+ *
  * This tool requires PatternHardExtractor.TITLEPATTERNS and - either
  * WordnetExtractor.WORDNETWORDS - or TransitiveTypeExtractor.TRANSITIVETYPE
- * 
+ *
  * It does a profound check whether this entity should become a YAGO entity.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -62,7 +62,7 @@ public class TitleExtractor {
 
   /**
    * Constructs a TitleExtractor
-   * 
+   *
    * @throws IOException
    */
   public TitleExtractor(String language) throws IOException {
@@ -92,8 +92,7 @@ public class TitleExtractor {
 
   /** Transforms the entity name to a YAGO entity, returns NULL if bad */
   public String createTitleEntity(String title) {
-    title = replacer.transform(title);
-    if (title == null) return (null);
+    title = createTitleEntityRaw(title);
     if (wordnetWords != null && wordnetWords.contains(title.toLowerCase())) return (null);
     String entity = FactComponent.forForeignYagoEntity(title, language);
     if (entities != null && !entities.contains(entity)) return (null);
@@ -106,4 +105,17 @@ public class TitleExtractor {
     title = Char17.decodeAmpersand(title);
     return (createTitleEntity(title));
   }
+
+  /** Transforms the entity name to a YAGO entity, without checkes */
+  public String createTitleEntityRaw(String title) {
+    return replacer.transform(title);
+  }
+
+  /** Reads the title entity without checks, supposes that the reader is after "<title>" */
+  public String getTitleEntityRaw(Reader in) throws IOException {
+    String title = FileLines.readToBoundary(in, "</title>");
+    title = Char17.decodeAmpersand(title);
+    return (createTitleEntityRaw(title));
+  }
+
 }
