@@ -108,7 +108,8 @@ public class TitleExtractor {
 
   /** Transforms the entity name to a YAGO entity, without checkes */
   public String createTitleEntityRaw(String title) {
-    return replacer.transform(title);
+    title = replacer.transform(title);
+    return FactComponent.forForeignYagoEntity(title, language);
   }
 
   /** Reads the title entity without checks, supposes that the reader is after "<title>" */
