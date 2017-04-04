@@ -92,7 +92,8 @@ public class TitleExtractor {
 
   /** Transforms the entity name to a YAGO entity, returns NULL if bad */
   public String createTitleEntity(String title) {
-    title = FactComponent.stripBracketsAndLanguage(createTitleEntityRaw(title));
+    title = replacer.transform(title);
+    if (title == null) return null;
     if (wordnetWords != null && wordnetWords.contains(title.toLowerCase())) return (null);
     String entity = FactComponent.forForeignYagoEntity(title, language);
     if (entities != null && !entities.contains(entity)) return (null);
@@ -109,6 +110,7 @@ public class TitleExtractor {
   /** Transforms the entity name to a YAGO entity, without checkes */
   public String createTitleEntityRaw(String title) {
     title = replacer.transform(title);
+    if (title == null) return null;
     return FactComponent.forForeignYagoEntity(title, language);
   }
 
