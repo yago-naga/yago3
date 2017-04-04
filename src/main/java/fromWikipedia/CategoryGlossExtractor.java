@@ -48,7 +48,7 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
   
   private static Pattern firstParagraph = Pattern.compile("^(.+?)\\n(.*)");
   private static final int MINTEXTLENGTH = 15;
-  private static final int MAX_ESTIMATED_PARAGRAPHSIZE = 30000;
+  private static final int MAX_ESTIMATED_PARAGRAPH_SIZE = 30000;
   
   public static final MultilingualTheme CATEGORYGLOSSES = new MultilingualTheme("wikipediaCategoryGlosses", "Category glosses extracted from wikipedia");
   
@@ -129,34 +129,43 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
    return null;
  }
 
-
-// Remove links to Files, Images, .... [[File:....]]
+ // Remove links to Files, Images, .... [[File:....]]
 private static String preRemoveUselessLinks(String page) {
   StringBuilder result = new StringBuilder(page);
   String removePatterns[] = {"[[File:","[[Datei", "[[Image:", "[[Bild:", "[[wp:"};
-  for(int r=0; r < removePatterns.length; r++) {
+  
+  for (int r = 0; r < removePatterns.length; r++) {
     int idx = result.indexOf(removePatterns[r]);
-    if (idx > MAX_ESTIMATED_PARAGRAPHSIZE)
+    
+    if (idx > MAX_ESTIMATED_PARAGRAPH_SIZE) {
       continue;
-    if(idx != -1) {
+    }
+    
+    if (idx != -1) {
       r--;
       int brackets = 0;
-      for(int i = idx ; i < result.length(); i++) {
+      
+      for (int i = idx ; i < result.length(); i++) {
         char current = result.charAt(i);
-        if(current == '['){
+        
+        if (current == '[') {
           brackets++;
         }
         else if (current == ']') {
           brackets--;
         }
-        if( brackets == 0 || current == '\n') {
+        
+        if (brackets == 0 || current == '\n') {
           result.delete(idx, i+1);
           break;
         }
+        
         if (brackets == -1)
           brackets = 0;
       }
-      
+      if(brackets != 0) {
+        result.delete(idx, result.length());
+      }
     }
   }
   
