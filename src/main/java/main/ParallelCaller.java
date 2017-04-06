@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
@@ -296,6 +297,9 @@ public class ParallelCaller {
     Map<T, HashSet<T>> map = new HashMap<>();
     for (T e : itemToAncestors.keySet()) {
       map.put(e, new HashSet<>(itemToAncestors.get(e)));
+      for (T a : itemToAncestors.get(e)) {
+        map.computeIfAbsent(a, k -> new HashSet<>());
+      }
     }
 
     List<T> result = new ArrayList<>();
@@ -315,11 +319,47 @@ public class ParallelCaller {
     }
 
     if (map.size() > 0) {
+      Announce.warning("Circular dependencies within following extractors:");
       Announce.warning(result);
-      Announce.warning("Circular dependencies");
-      for (T e : map.keySet()) {
-        Announce.warning(e, " --> ", map.get(e));
+
+      // print path
+      List<T> path = new ArrayList<>();
+      Map<T, Integer> toDistance = new HashMap<>();
+      Map<T, T> prev = new HashMap<>();
+      T start = map.keySet().iterator().next(), act = start;
+      int actDist = 0;
+      while (!done.contains(act)) {
+        done.add(act);
+        path.add(act);
+        toDistance.remove(act);
+        for (T neighbor : map.get(act)) {
+          if (!done.contains(neighbor) && map.containsKey(neighbor)) {
+            if (toDistance.containsKey(neighbor)) {
+              T fAct = act;
+              toDistance.merge(neighbor, actDist + 1, (a, b) -> {
+                prev.put(neighbor, fAct);
+                return Math.min(a, b);
+              });
+            } else {
+              toDistance.put(neighbor, actDist + 1);
+              prev.put(neighbor, act);
+            }
+          }
+        }
+        actDist = Integer.MAX_VALUE;
+        for (Entry<T, Integer> e : toDistance.entrySet()) {
+          if (actDist > e.getValue()) {
+            actDist = e.getValue();
+            act = e.getKey();
+          }
+        }
       }
+
+      do {
+        Announce.warning("path: ", act, " --> ", map.get(act));
+      } while ((act = prev.get(act)) != null);
+      Announce.warning("path: ", start, " --> ", map.get(start));
+
     }
     return result;
   }
