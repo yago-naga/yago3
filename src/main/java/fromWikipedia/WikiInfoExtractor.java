@@ -12,7 +12,6 @@ import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
-import fromThemes.TransitiveTypeExtractor;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.util.FileUtils;
@@ -46,12 +45,12 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.TITLEPATTERNS);
+    return new FinalSet<>(PatternHardExtractor.TITLEPATTERNS);
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.TITLEPATTERNS);
+    return new FinalSet<>(PatternHardExtractor.TITLEPATTERNS);
   }
 
   public static final MultilingualTheme WIKIINFONEEDSTRANSLATION = new MultilingualTheme("wikipediaInfoNeedsTranslation",
