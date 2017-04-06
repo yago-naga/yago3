@@ -378,6 +378,13 @@ public class ParallelCaller {
     Parameters.init(initFile);
     simulate = Parameters.getBoolean("simulate", false);
     rerunDependentExtractors = Parameters.getBoolean("rerunDependent", false);
+    List<Pattern> rerunDependentOn = new ArrayList<>();
+    List<String> rerunDependentOnRegex = Parameters.getList("rerunDependentOn");
+    if (rerunDependentOnRegex != null) {
+      for (String regex : rerunDependentOnRegex) {
+        rerunDependentOn.add(Pattern.compile(regex.trim()));
+      }
+    }
     if (simulate) D.p("Simulating a YAGO run");
     else D.p("Running YAGO extractors in parallel");
     numThreads = Parameters.getInt("numThreads", numThreads);
@@ -425,6 +432,14 @@ public class ParallelCaller {
         for (Extractor e : extractorsToDo) {
           if (!reusable.containsAll(e.input())) {
             reusable.removeAll(e.output());
+          } else pattern_loop: for (Pattern p : rerunDependentOn) {
+            for (Theme t : e.input()) {
+              Matcher m = p.matcher(t.name);
+              if (m.matches()) {
+                reusable.removeAll(e.output());
+                break pattern_loop;
+              }
+            }
           }
         }
       }
