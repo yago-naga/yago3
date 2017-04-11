@@ -61,6 +61,17 @@ public class PatternList {
   public PatternList(FactCollection facts, String relation) {
     load(facts, relation);
   }
+  
+  /**
+   * Constructor by array of patterns.
+   * 
+   * @param _patterns List of pattern and their replace string.
+   */
+  public PatternList(List<Pair<Pattern, String>> _patterns) {
+    for (Pair<Pattern, String> pattern : _patterns) {
+      patterns.add(pattern);
+    }
+  }
 
   /** Loads all patterns */
   protected void load(FactCollection facts, String relation) {

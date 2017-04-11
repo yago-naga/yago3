@@ -172,6 +172,31 @@ This category is for artists who worked in the [[Visual arts]].
     </revision>
   </page>
   <page>
+    <title>Category:Viticulturists</title>
+    <ns>14</ns>
+    <id>1205607</id>
+    <revision>
+      <id>671806861</id>
+      <parentid>546873311</parentid>
+      <timestamp>2015-07-17T04:04:39Z</timestamp>
+      <contributor>
+        <username>Slivicon</username>
+        <id>9433013</id>
+      </contributor>
+      <comment>templates and updating link to moved cat</comment>
+      <model>wikitext</model>
+      <format>text/x-wiki</format>
+      <text xml:space="preserve">{{Category explanation|[[viticulturist]]s, people who cultivate [[grape]]s, especially for winemaking}}
+{{For|people involved in the [[wine]] trade|Category:Wine merchants}}
+{{Category see also|Winemakers}}
+
+[[Category:People in agriculture]]
+[[Category:Viticulture]]
+[[Category:People associated with wine]]</text>
+      <sha1>5j82e3cc5ih4u904vh3jumzey87mi4m</sha1>
+    </revision>
+  </page>
+  <page>
     <title>Category:Actors</title>
     <ns>14</ns>
     <id>694842</id>
