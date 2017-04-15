@@ -4,8 +4,13 @@ import java.io.File;
 import java.io.Reader;
 import java.util.Collections;
 import java.util.Set;
+import java.util.concurrent.Callable;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -45,13 +50,16 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
 
+  public static final MultilingualTheme CATEGORYGLOSSES = new MultilingualTheme("wikipediaCategoryGlosses", 
+      "Category glosses extracted from wikipedia");
+  
+  public static final MultilingualTheme CATEGORYGLOSSESNEEDSTRANSLATION = new MultilingualTheme("wikipediaCategoryGlossesNeedsTranslation", 
+      "Category glosses extracted from wikipedia");
+
   private static String categoryWord = null;
   
+  private ExecutorService executor = Executors.newSingleThreadExecutor();
   
-  public static final MultilingualTheme CATEGORYGLOSSES = new MultilingualTheme("wikipediaCategoryGlosses", "Category glosses extracted from wikipedia");
-  
-  public static final MultilingualTheme CATEGORYGLOSSESNEEDSTRANSLATION = new MultilingualTheme("wikipediaCategoryGlossesNeedsTranslation", "Category glosses extracted from wikipedia");
-
   public CategoryGlossExtractor(String language, File wikipedia) {
     super(language, wikipedia);
   }
@@ -63,17 +71,20 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> output() {
-    if (isEnglish())
+    if (isEnglish()) {
       return (new FinalSet<>(CATEGORYGLOSSES.inLanguage(language)));
-    else
+    }
+    else {
       return (new FinalSet<>(CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(language)));
-    
+    }
   }
 
 
   @Override
   public Set<FollowUpExtractor> followUp() {
-    if (isEnglish()) return (Collections.emptySet());
+    if (isEnglish()) {
+      return (Collections.emptySet());
+    }
     return (new FinalSet<FollowUpExtractor>(
         new CategoryTranslator(CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(this.language), CATEGORYGLOSSES.inLanguage(this.language), this, true, true)));
   }
@@ -81,22 +92,31 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
   
   @Override
 	public void extract() throws Exception {
-
     categoryWord = DictionaryExtractor.CATEGORYWORDS.factCollection().getObject(FactComponent.forString(language), "<_hasCategoryWord>");
     categoryWord = FactComponent.stripQuotes(categoryWord);
     
 		Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
+		
 		// Find pages about categories. example in English: <title>Category:Baroque_composers<\title>
 		while(FileLines.findIgnoreCase(in, "<title>" + categoryWord + ":", "<title>" + "Category:") != -1) {
 			String title = FileLines.readToBoundary(in, "</title>");
 			title = Char17.decodeAmpersand(title);
-			if (title != null){
+			if (title != null) {
 				String category = FactComponent.forForeignWikiCategory(FactComponent.stripBrackets(title), language);
 				String page = FileLines.readBetween(in, "<text", "</text>");
-		    String gloss = getGloss(page);
+				String gloss;
+				// Due to not clean Wikipedia dumps, we use a time out to avoid getting into infinite loops.
+				try {
+				  gloss = executor.submit(new DescriptionExtractorCallable(page)).get(1, TimeUnit.SECONDS);
+				}
+				catch (InterruptedException | ExecutionException | TimeoutException e) {
+	        gloss = null;
+	      }
+				
         if (gloss != null) {
-          if(isEnglish())
+          if(isEnglish()) {
             CATEGORYGLOSSES.inLanguage(language).write(new Fact(category, YAGO.hasGloss, FactComponent.forString(gloss)));
+          }
           else {
             CATEGORYGLOSSESNEEDSTRANSLATION.inLanguage(language).write(new Fact(category, YAGO.hasGloss, FactComponent.forString(gloss)));
           }
@@ -107,29 +127,14 @@ public class CategoryGlossExtractor extends MultilingualWikipediaExtractor {
 		in.close();
 	}
 
-//Return the clean description.
- private static String getGloss(String page) {
-   // If exist "Category explanation" use it
-   String normalizedPage = Char17.decodeAmpersand(page.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
-   if (normalizedPage.matches(".*\\{\\{[Cc]ategory [Ee]xplanation\\|.*")) {
-     return cleanText(extractCategoryExplanation(normalizedPage));
-   }
-   else {
-     int start = page.indexOf(">");
-     page = page.substring(start + 1);
-     page = Char17.decodeAmpersand(page);
-     page = removePatterns(page);
-     // Choose the first paragraph:
-     Matcher matcher = WikipediaTextCleanerHelper.firstParagraph.matcher(page);
-     if (matcher.find())
-       return cleanText(matcher.group(1));
-   }
-   return null;
- }
 
-
-// Cleaning the gloss before returning it as output.
-private static String cleanText(String inputText){
+  /**
+   * Cleaning the text to human readable.
+   * 
+   * @param inputText The description for the entity that needs cleaning.
+   * @return Clean description text.
+   */
+  private static String cleanText(String inputText){
   
   //Replacing internal wikipedia links with their text.
   inputText = WikipediaTextCleanerHelper.internalLinks.transform(inputText);
@@ -157,7 +162,7 @@ private static String cleanText(String inputText){
   inputText = inputText.replaceAll("•", "");
   
   // Remove extra whites paces.
-  WikipediaTextCleanerHelper.whiteSpaces.transform(inputText);
+  inputText = WikipediaTextCleanerHelper.whiteSpaces.transform(inputText);
   
   
   if (inputText.matches("^\\s*(<|&lt;).*")) 
@@ -170,7 +175,12 @@ private static String cleanText(String inputText){
   return inputText;
 }
 
-// Extracting gloss text by removing some patterns that are observed to not have clean and good information
+/**
+ * Extracting description text by removing patterns to make the text human readable.
+ * 
+ * @param inputText Wikipedia page content from which the patterns are removed.
+ * @return The page with the pattern removed.
+ */
 private static String removePatterns(String inputText) {
   // Remove links to files and images.
   inputText = WikipediaTextCleanerHelper.removeUselessLinks(inputText);
@@ -232,5 +242,45 @@ private static String removePatterns(String inputText) {
     return inputText;
   }
 
+  private class DescriptionExtractorCallable implements Callable<String> {
+
+    private String text;
+    
+    public DescriptionExtractorCallable(String text) {
+      this.text = text;
+    }
+    
+    @Override
+    public String call() throws Exception {
+      return getGloss(text);
+    }
+    
+    
+  /** 
+   * Returns a clean gloss for a category.
+   * 
+   * @param page The Wikipedia page to get the gloss from.
+   * @return A clean gloss.
+   */
+    private String getGloss(String page) {
+      // If exist "Category explanation" use it
+      String normalizedPage = Char17.decodeAmpersand(page.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
+      if (normalizedPage.matches(".*\\{\\{[Cc]ategory [Ee]xplanation\\|.*")) {
+        return cleanText(extractCategoryExplanation(normalizedPage));
+      }
+      else {
+        int start = page.indexOf(">");
+        page = page.substring(start + 1);
+        page = Char17.decodeAmpersand(page);
+        page = removePatterns(page);
+        // Choose the first paragraph:
+        Matcher matcher = WikipediaTextCleanerHelper.firstParagraph.matcher(page);
+        if (matcher.find())
+          return cleanText(matcher.group(1));
+      }
+      return null;
+    }
+    
+  }
   
 }

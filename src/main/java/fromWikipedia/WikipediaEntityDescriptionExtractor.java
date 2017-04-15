@@ -1,10 +1,7 @@
 package fromWikipedia;
 
-import java.io.File;
+ import java.io.File;
 import java.io.Reader;
-import java.sql.Time;
-import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
@@ -17,7 +14,6 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -71,7 +67,6 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
       "Descriptions extracted from Wikipedia for entities.");
 
   
-  
   private static String categoryWord = null;
 
   private ExecutorService executor = Executors.newSingleThreadExecutor();
@@ -102,7 +97,9 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
   
   @Override
   public Set<FollowUpExtractor> followUp() {
-    if (isEnglish()) return (Collections.emptySet());
+    if (isEnglish()) {
+      return (Collections.emptySet());
+    }
     return (new FinalSet<FollowUpExtractor>(
         new EntityTranslator(WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(this.language), WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(this.language), this)));
   }
@@ -115,7 +112,10 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
     TitleExtractor titleExtractor = new TitleExtractor(language);
     
     Set<String> redirects = new HashSet<>();
-    Set<Fact> redirectFacts = RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(language).factCollection().getFactsWithRelation("<redirectedFrom>");
+    Set<Fact> redirectFacts = RedirectExtractor.REDIRECT_FACTS_DIRTY
+        .inLanguage(language)
+        .factCollection()
+        .getFactsWithRelation("<redirectedFrom>");
     
     for (Fact f : redirectFacts) {
       String entity = titleExtractor.createTitleEntity(FactComponent.stripQuotesAndLanguage(f.getObject()));
@@ -127,34 +127,45 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
     while (FileLines.findIgnoreCase(in, "<title>") != -1) {
       String titleEntity = titleExtractor.getTitleEntity(in);
       
-      // If title is not a named entity or is a redirect, continue.
-      if (titleEntity == null || redirects.contains(titleEntity))  continue;
-      
+      // We don't want to extract non named entity or redirects:
+      if (titleEntity == null || redirects.contains(titleEntity)) {
+        continue;
+      }
       
       String page = FileLines.readBetween(in, "<text", "</text>");
-     // FileWriter f = new FileWriter(new File("/home/ghazaleh/Project/data/entityzh"));
-      //f.write(page);
-      
       String description;
+      // Due to not clean Wikipedia dumps, we use a time out to avoid getting into infinite loops.
       try {
         description = executor.submit(new DescriptionExtractorCallable(page)).get(1, TimeUnit.SECONDS);
       } catch (InterruptedException | ExecutionException | TimeoutException e) {
         description = null;
       }
       
-      // Write description to themes. If the language is not English, write it to a theme that needs translation which is done in follow up extractor.
+      // Write description to themes. If the language is not English, write it to a theme that 
+      // needs translation which is done in follow up extractor.
       if(description != null) {
         if(isEnglish()) {
-          WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(Char17.decodeBackslash(description))));
+          WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(language).write(new Fact(
+              titleEntity, 
+              YAGO.hasLongDescription, 
+              FactComponent.forString(Char17.decodeBackslash(description))));
         } else {
-          WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(language).write(new Fact(titleEntity, YAGO.hasLongDescription, FactComponent.forString(Char17.decodeBackslash(description))));
+          WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(language).write(new Fact(
+              titleEntity, 
+              YAGO.hasLongDescription, 
+              FactComponent.forString(Char17.decodeBackslash(description))));
         }
       }
     }
   }
 
 
- // Extracting gloss text by removing some patterns that are observed to not have clean and good information
+ /**
+  * Extracting description text by removing patterns to make the text human readable.
+  * 
+  * @param inputText Wikipedia page content from which the patterns are removed.
+  * @return The page with the pattern removed.
+  */
  private static String removePatterns(String inputText) {
    
    // Remove links to files and images.
@@ -189,7 +200,12 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
    return inputText;
  }
  
-//Cleaning the gloss before returning it as output.
+ /**
+  * Cleaning the text to human readable.
+  * 
+  * @param inputText The description for the entity that needs cleaning.
+  * @return Clean description text.
+  */
  private String cleanText(String inputText) {
    
    // Replacing internal wikipedia links with their text.
@@ -214,7 +230,7 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
    inputText = inputText.replaceAll("^[\\.!;:,\\?]+", "");
    
    // Remove extra whites paces.
-   WikipediaTextCleanerHelper.whiteSpaces.transform(inputText);
+   inputText = WikipediaTextCleanerHelper.whiteSpaces.transform(inputText);
    
    inputText = inputText.replaceAll("&nbsp;", " ");
    inputText = inputText.replaceAll("\\u0022", "\"");
@@ -227,7 +243,7 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
  }
  
   private class DescriptionExtractorCallable implements Callable<String> {
-
+    
     private String text;
     
     public DescriptionExtractorCallable(String text) {
@@ -243,17 +259,17 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
     /** 
      * Returns a clean description.
      * 
-     * @param pageTitle The title of a Wikipedia page.
+     * @param page The Wikipedia page to get description from.
      * @return A clean description.
      */
-    private String getDescription(String pageTitle) {
-      int start = pageTitle.indexOf(">");
-      pageTitle = pageTitle.substring(start + 1);
-      pageTitle = Char17.decodeAmpersand(pageTitle);
-      pageTitle = removePatterns(pageTitle);
+    private String getDescription(String page) {
+      int start = page.indexOf(">");
+      page = page.substring(start + 1);
+      page = Char17.decodeAmpersand(page);
+      page = removePatterns(page);
       
       // Choose the first paragraph.
-      Matcher matcher = WikipediaTextCleanerHelper.firstParagraph.matcher(pageTitle);
+      Matcher matcher = WikipediaTextCleanerHelper.firstParagraph.matcher(page);
       if (matcher.find()) {
         return cleanText(matcher.group(1));
       }

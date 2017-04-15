@@ -1,6 +1,5 @@
 package utils;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.regex.Pattern;
 
@@ -190,8 +189,4 @@ public class WikipediaTextCleanerHelper {
     return result.toString().trim();
   }
 
-  public void a() {
-    
-  }
-  
 }
