@@ -190,6 +190,7 @@ def adaptYagoConfiguration():
     elif re.match('^' + YAGO3_YAGOFOLDER_PROPERTY + '\s*=', line):
       yagoFolder = os.path.join(yagoIndexDir, 'yago_aida_' + '_'.join(wikipediaIds))
       line = YAGO3_YAGOFOLDER_PROPERTY + ' = ' + yagoFolder + '\n'
+      print "yago folder line= " + line
       
     # Write the (possibly modified) line back to the configuration file
     sys.stdout.write(line)
