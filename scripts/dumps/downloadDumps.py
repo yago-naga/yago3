@@ -118,6 +118,8 @@ Loads the YAGO configuration file.
 def loadYagoConfiguration():  
   global dumpsFolder, languages, wikipedias, wikidata
   
+  print "config file: " + yagoConfigurationFile
+  
   for line in fileinput.input(yagoConfigurationFile):
     if re.match('^' + YAGO3_DUMPSFOLDER_PROPERTY + '\s*=', line):
       dumpsFolder = re.sub(r'\s', '', line).split("=")[1]
