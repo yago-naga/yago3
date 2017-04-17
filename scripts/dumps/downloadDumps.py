@@ -191,6 +191,10 @@ def adaptYagoConfiguration():
       yagoFolder = os.path.join(yagoIndexDir, 'yago_aida_' + '_'.join(wikipediaIds))
       line = YAGO3_YAGOFOLDER_PROPERTY + ' = ' + yagoFolder + '\n'
       
+      # Make sure the folder is there
+      if not os.path.exists(yagoFolder):
+          os.makedirs(yagoFolder)
+          
     # Write the (possibly modified) line back to the configuration file
     sys.stdout.write(line)
     
