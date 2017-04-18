@@ -218,6 +218,9 @@ public class ParallelCaller {
       boolean success = false;
       try {
         if (!simulate) ex.extract(outputFolder, ParallelCaller.header + NumberFormatter.ISOtime() + ".\n\n");
+        for (Theme o : ex.output()) {
+          o.flush();
+        }
         success = true;
       } catch (Exception e) {
         e.printStackTrace();
