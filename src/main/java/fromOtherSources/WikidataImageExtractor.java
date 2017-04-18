@@ -8,7 +8,6 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -57,13 +56,14 @@ public class WikidataImageExtractor extends DataExtractor {
 			"Images in wikidata dump for entities");
 
 	 private static final String WIKIDATA = "wikidata";
+	 
 	private static final String IMAGE_ORIGINALURL_TEMPLATE = "https://upload.wikimedia.org/wikipedia/commons/";
 	private static final String IMAGETYPE = "image_";
+	
 	private static FactCollection transitiveTypes = new FactCollection();
 	private static FactCollection reverseWikidataInstances = new FactCollection();
 	
-	
-	private static final Map<String, List<String>> imageRelations;
+	private static final Map<String, List<String>> imageRelationsInOrder;
 	static {
 		Map<String, List<String>> tempMap = new HashMap<String, List<String>>();
 		tempMap.put("person", Arrays.asList(ImageTypes.image, ImageTypes.imageOfGrave, ImageTypes.coatOfArmsImage, ImageTypes.signature));
@@ -74,7 +74,7 @@ public class WikidataImageExtractor extends DataExtractor {
 											  ImageTypes.detailMap, ImageTypes.locatorMapImage, ImageTypes.image));
 		tempMap.put("other", Arrays.asList(ImageTypes.image));
 		
-		imageRelations = Collections.unmodifiableMap(tempMap);
+		imageRelationsInOrder = Collections.unmodifiableMap(tempMap);
 	}
 		
 	public WikidataImageExtractor(File wikidata) {
@@ -97,13 +97,9 @@ public class WikidataImageExtractor extends DataExtractor {
 
 	@Override
 	public void extract() throws Exception {
-	  //for checking:
-	  Set<String> allRelations = new HashSet<>();
-	  
 	  // Example of the facts in reverseWikidataInstances:
 	  // <http://www.wikidata.org/entity/Q23>  owl:sameAs <George_Washington>      
 	  reverseWikidataInstances = WikidataLabelExtractor.WIKIDATAINSTANCES.factCollection().getReverse();
-		
 	  transitiveTypes = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
 		
 		N4Reader nr = new N4Reader(inputData);
@@ -116,8 +112,8 @@ public class WikidataImageExtractor extends DataExtractor {
 			 
 			// We reached a new entity and until the next appearance of "#Item", the statements are about this entity.
 			// example: <http://www.wikidata.org/entity/Q1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/ontology#Item>
-			if(f.getObject().endsWith("#Item>")){
-				if(!images.isEmpty()){
+			if(f.getObject().endsWith("#Item>")) {
+				if(!images.isEmpty()) {
 				  String image = Char17.decodePercentage(pickImage(yagoEntityMostEnglish, images)).replaceAll(" ", "_");
 					String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
 					
@@ -140,24 +136,24 @@ public class WikidataImageExtractor extends DataExtractor {
 			// Select the first image per relation for an entity, unless there is a PreferredRank.
 			// Format of regular expression is taken from: https://www.wikidata.org/wiki/Property:P18
 			// example: <some random id> <https://www.wikidata.org/wiki/Property:P18> <filename.jpg> .
-			else if(f.getObject().matches(".*commons\\.wikimedia.*\\.(jpg|jpeg|png|svg|tif|tiff|gif)>$") && yagoEntityMostEnglish != null){
-			  allRelations.add(f.getRelation());
-				if(!images.containsKey(f.getRelation()))
-					images.put(getRelation(f.getRelation()), Char17.decodeBackslash(f.getObject()));
+			else if(f.getObject().matches(".*commons\\.wikimedia.*\\.(jpg|jpeg|png|svg|tif|tiff|gif)>$") && yagoEntityMostEnglish != null) {
+				if(!images.containsKey(f.getRelation())) {
+					images.put(getImageRelationType(f.getRelation()), Char17.decodeBackslash(f.getObject()));
+				}
 				prevImage = f;
 			}
 			// If the rank of the image was "PreferredRank", replace the existing image with this preferred image.
 			// example : <random id> <http://www.wikidata.org/ontology#rank> <http://www.wikidata.org/ontology#NormalRank> . 
-			else if(prevImage != null && prevImage.getSubject().equals(f.getSubject()) && f.getRelation().endsWith("#rank>")){
-				if(f.getObject().endsWith("#PreferredRank>"))
-					images.put(getRelation(prevImage.getRelation()), prevImage.getObject());
+			else if(prevImage != null && prevImage.getSubject().equals(f.getSubject()) && f.getRelation().endsWith("#rank>")) {
+				if(f.getObject().endsWith("#PreferredRank>")) {
+					images.put(getImageRelationType(prevImage.getRelation()), prevImage.getObject());
+				}
 				prevImage = null;
 			}
 		}
 		
     // Saving information of the last entity in the file
-		if (!images.isEmpty() && yagoEntityMostEnglish != null)
-		{
+		if (!images.isEmpty() && yagoEntityMostEnglish != null) {
 		  String image = Char17.decodePercentage(pickImage(yagoEntityMostEnglish, images)).replaceAll(" ", "_");
       String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
       String imageWikipage = image.replace("wiki/Special:FilePath/", "wiki/File:");
@@ -173,11 +169,19 @@ public class WikidataImageExtractor extends DataExtractor {
 		
 	}
 	
-	private String getRelation(String relation) {
+	/**
+	 * Retrun the image type.
+	 * Example: P18
+	 * 
+	 * @param relationUrl The relation url to find which relation it is from.
+	 * @return The relation type.
+	 */
+	private String getImageRelationType(String relationUrl) {
 	  Pattern relationPattern = Pattern.compile("<http:\\/\\/www.wikidata.org\\/(?:entity|prop)\\/(?:direct|statement|qualifier)\\/(P\\d+)>");
-    Matcher matcher = relationPattern.matcher(relation);
-    if(matcher.find())
+    Matcher matcher = relationPattern.matcher(relationUrl);
+    if(matcher.find()) {
       return matcher.group(1);
+    }
     return null;
   }
 
@@ -186,16 +190,18 @@ public class WikidataImageExtractor extends DataExtractor {
 	 * @param entityFacts yago entity in different languages
 	 * @return most English entity name
 	 */
-	private static String getMostEnglishEntityName(Set<Fact> entityFacts){
+	private static String getMostEnglishEntityName(Set<Fact> entityFacts) {
 	  // Map of entity names for each language 
     Map<String, String> languageEntityName = new HashMap<>();
     // each entityFact is like: <http://www.wikidata.org/entity/Q23>  owl:sameAs <George_Washington>
-    for(Fact f:entityFacts){
+    for(Fact f:entityFacts) {
       String language = FactComponent.getLanguageOfEntity(f.getObject());
-      if (language != null)
+      if (language != null) {
         languageEntityName.put(language, f.getObject());
-      else
+      }
+      else {
         languageEntityName.put("en", f.getObject());
+      }
     }
     
     String mostEnglishLanguage = DictionaryExtractor.mostEnglishLanguage(languageEntityName.keySet());
@@ -213,14 +219,14 @@ public class WikidataImageExtractor extends DataExtractor {
 	private static String pickImage(String yagoEntity, Map<String, String> images) throws IOException {
 	  String image = null;
 	  String category = getHighlevelCategory(yagoEntity);
-    for(String key : imageRelations.get(category)){
-      if(images.containsKey(key)){
+    for(String key : imageRelationsInOrder.get(category)) {
+      if(images.containsKey(key)) {
         image = images.get(key);
         break;
       }
     }
     // If there were some image(s) but not in the expected types, select first one.
-    if(image == null){
+    if(image == null) {
       image = images.entrySet().iterator().next().getValue();
     }
 	  return image;
@@ -262,25 +268,25 @@ public class WikidataImageExtractor extends DataExtractor {
 		Set<Fact> facts = transitiveTypes.getFactsWithSubjectAndRelation(entity, RDFS.type);
 		String category = "other";
 		
-		for (Fact fact:facts){
+		for (Fact fact:facts) {
 			String factObject = fact.getObject();
-			if (factObject.contains("person")){
+			if (factObject.contains("person")) {
 				category = "person";
 				break;
 			}
-			if (factObject.contains("location")){
+			if (factObject.contains("location")) {
 				category = "location";
 				break;
 			}
-			if (factObject.contains("organization")){
+			if (factObject.contains("organization")) {
 				category = "organization";
 				break;
 			}
-			if (factObject.contains("artifact")){
+			if (factObject.contains("artifact")) {
 				category = "artifact";
 				break;
 			}
-			if (factObject.contains("event")){
+			if (factObject.contains("event")) {
 				category = "event";
 				break;
 			}		

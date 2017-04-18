@@ -47,7 +47,7 @@ You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-public class WikidataImageLicenseExtractor extends DataExtractor{
+public class WikidataImageLicenseExtractor extends DataExtractor {
  
   public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageLicenses", 
       "Licences extracted for wikidata Images");
@@ -133,8 +133,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     
     tempMap.put("PublicDomainLicense", Pattern.compile("(?:\\{\\{|\\|)(PD[^\\|\\}]*)(?:\\}\\}|\\|)"));
     
-    
-    
     //tempMap.put("flickrreview", Pattern.compile("(?:\\{\\{|\\|)(flickrreview\\|(.*))(?:\\}\\}|\\|)")); // http://commons.wikimedia.org/wiki/File:CIAS_2013_-_2014_Ford_Transit_Connect_Titanium_(8485216955).jpg
     
     imageLicensePatterns = Collections.unmodifiableMap(tempMap);
@@ -157,9 +155,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   
     hardCodedLicenses = Collections.unmodifiableMap(tempMap);
   }
-  
-  
-
   
   @Override
   public Set<Theme> input() {
@@ -214,7 +209,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
           WIKIDATAIMAGELICENSE.write(new Fact(licenseID, YAGO.hasUrl, url));
         }
 
-        if (licenses.imageLicenses.isEmpty()) cntImagesNOLicense++;
+        if (licenses.imageLicenses.isEmpty()) {
+          cntImagesNOLicense++;
+        }
         
         for(String license:licenses.imageLicenses)
           WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasLicense, FactComponent.forYagoEntity(license)));
@@ -222,17 +219,21 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
         if(author.name != null || author.url != null) {
           String authorID = FactComponent.forYagoEntity("author_" + (++authorCnt));
           WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasAuthor, authorID));
-          if(author.name != null)
+          if(author.name != null) {
             WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasName, FactComponent.forYagoEntity(author.name)));
-          if(author.url != null)
+          }
+          if(author.url != null) {
             WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasUrl, FactComponent.forYagoEntity(author.url)));
+          }
         }
         
-        if(permissionOTRS != null)
+        if(permissionOTRS != null) {
           WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasOTRSId, FactComponent.forYagoEntity(permissionOTRS)));
+        }
           
-        if(trademark)
+        if(trademark) {
           WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasTrademark, FactComponent.forYagoEntity(trademark.toString())));
+        }
         
         //if(attribution != null)
           //WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasAttributionTag, attribution));
@@ -247,7 +248,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   }
   
   /**
-   * Return a mapping from image file names to their image wiki page.
+   * Return a mapping from image file names to their image wikipedia page.
    * @return
    * @throws IOException
    */
@@ -274,8 +275,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
    */
   private String findOTRSPermission(String text) {
     Matcher matcher = OTRSPermissionPattern.matcher(text);
-    if(matcher.find())
+    if(matcher.find()) {
       return matcher.group(1);
+    }
     return null;
   }
 
@@ -313,22 +315,29 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   private static licenseReturn findLicense(String text, String imageFileName) {
     licenseReturn licenses = new licenseReturn();
     
+    //TODO: In order to support more licenses, one has to add the pattern to "imageLicensePatterns" and then support it in the loop below.
     for(String key:imageLicensePatterns.keySet()) {
       Matcher licenseMatcher = imageLicensePatterns.get(key).matcher(text);
       while(licenseMatcher.find()) {
+        // If the license is found was one of the hard coded licenses:
         if (hardCodedLicenses.containsKey(key)) {
           licenses.imageLicenses.add(key);
         } 
+        // If it is Creative Common and does not have a specific language (It is still in the hard coded licenses with different key):
         else if (key.equals("CreativeCommonsLicense") && licenseMatcher.group(3) == null) {
-          if(licenseMatcher.group(2).equals("all"))
-            for(String version:CC_VERSIONS)
+          if(licenseMatcher.group(2).equals("all")) {
+            // Add all of the CC versions to the image licenses.
+            for(String version:CC_VERSIONS) {
               licenses.imageLicenses.add(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + version);
-          else
+            }
+          }
+          else {
             licenses.imageLicenses.add(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + licenseMatcher.group(2));
+          }
         }
+        // It is not in the hard coded licenses:
         else {
           String licenseID = FactComponent.forYagoEntity("license_" + (++licenseCnt));
-          
           
           licenses.imageLicenses.add(licenseID);
           
@@ -374,6 +383,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     Matcher matcher = authorFieldPattern.matcher(text);
     if(matcher.find()) {
       String authorFieldText = matcher.group(1);
+      //TODO: In order to support, one has to add the pattern to "authorPatterns" and then support it in the loop below.
       for (String key:authorPatterns.keySet()) {
         Matcher authorTypeMatcher = authorPatterns.get(key).matcher(authorFieldText);
         if (authorTypeMatcher.find()) {
@@ -384,19 +394,24 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
               break;
               
             case "wikiLanguageUser":
-              if (authorTypeMatcher.group(1) != null) 
+              if (authorTypeMatcher.group(1) != null) { 
                 author.url = "http://" + authorTypeMatcher.group(1) + "." + wikipediaUrl + authorTypeMatcher.group(2).replaceAll(" ", "_");
-              else 
+              }
+              else { 
                 author.url = wikimediaCommonUrl + authorTypeMatcher.group(2).replaceAll(" ", "_");
-              if (authorTypeMatcher.group(3) != null)
+              }
+              if (authorTypeMatcher.group(3) != null) {
                 author.name = authorTypeMatcher.group(3);
+              }
               break;
               
             case "wikiCommonUser":
-              if(authorTypeMatcher.group(2).equals("creator") || authorTypeMatcher.group(2).equals("Creator"))
+              if(authorTypeMatcher.group(2).equals("creator") || authorTypeMatcher.group(2).equals("Creator")) {
                 author.url = wikimediaCommonUrl + "Creator:" + authorTypeMatcher.group(4);
-              else
+              }
+              else {
                 author.url = wikimediaCommonUrl + "User:" + authorTypeMatcher.group(4);
+              }
               author.name = authorTypeMatcher.group(4);
               break;
               
@@ -411,8 +426,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
               
             case "externalLink":
               author.url = authorTypeMatcher.group(1);
-              if(authorTypeMatcher.group(2) != null)
+              if(authorTypeMatcher.group(2) != null) {
                 author.name = authorTypeMatcher.group(2);
+              }
               break;
               
             case "wikiUserAtProject":
@@ -437,8 +453,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
    */
   private static Boolean findTrademark(String text) {
     Matcher matcher = trademark.matcher(text);
-    if (matcher.find())
+    if (matcher.find()) {
       return true;
+    }
     return false;
   }
 
