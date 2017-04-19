@@ -1,2 +1,3 @@
 	<yagoTheme_infoboxTemplateDictionary_de>	<hasGloss>	"testing DictionaryExtractor Maps a foreign infobox template name to the English name. INTERNAL"	
 	"staat"@de	<_hasTranslation>	"country"@en	
+	<yagoTheme_infoboxTemplateDictionary_de_end>	xsd:string	"end"	

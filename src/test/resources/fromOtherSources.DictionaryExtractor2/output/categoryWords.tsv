@@ -1,3 +1,4 @@
 	<yagoTheme_categoryWords>	<hasGloss>	"testing DictionaryExtractor Words for 'category' in different languages. INTERNAL"	
 	"de"	<_hasCategoryWord>	"Kategorie"	
 	"en"	<_hasCategoryWord>	"Category"	
+	<yagoTheme_categoryWords_end>	xsd:string	"end"	
