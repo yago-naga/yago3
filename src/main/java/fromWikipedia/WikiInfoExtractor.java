@@ -85,7 +85,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public void extract() throws Exception {
-    TitleExtractor titleExtractor = new TitleExtractor(language);
+    TitleExtractor titleExtractor = TitleExtractor.rawExtractor(language);
     Reader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     while (FileLines.scrollTo(in, "<title>")) {
       String entity = titleExtractor.getTitleEntityRaw(in);

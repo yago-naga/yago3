@@ -274,6 +274,19 @@
 <infobox/en/year> <_infoboxPattern> <happenedOnDate> .
 <infobox/en/IATA>	<_infoboxPattern> <hasAirportCode> .
 
+# fix issues with issues, i.e. successors mapped to children
+# TypeChecker probably removes these facts
+<infobox/ar/successor>	<_infoboxPattern>	<hasSuccessor>
+<infobox/en/succesor>	<_infoboxPattern>	<hasSuccessor>
+<infobox/en/coregency>	<_infoboxPattern>	<hasSuccessor>
+<infobox/fr/coempereur>	<_infoboxPattern>	<hasSuccessor>
+<infobox/fr/cousurpateur>	<_infoboxPattern>	<hasSuccessor>
+<infobox/nl/medekeizer>	<_infoboxPattern>	<hasSuccessor>
+<infobox/nl/opvolger>	<_infoboxPattern>	<hasSuccessor>
+<infobox/pl/następca>	<_infoboxPattern>	<hasSuccessor>
+<infobox/zh/successor>	<_infoboxPattern>	<hasSuccessor>
+
+
 # ------------ Replacements ----------
 "<br ?/>"	<_infoboxReplace>	"\n" .
 "<br ?>"	<_infoboxReplace>	"\n" .

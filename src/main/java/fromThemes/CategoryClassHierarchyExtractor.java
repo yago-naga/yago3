@@ -117,7 +117,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
   public void extract() throws Exception {
     // Fabian: Don't do that, switching this on in a parallel system
     // will generate gigabytes of output because it influences the
-    // other extractors 
+    // other extractors
     //Announce.Level oldLevel = Announce.setLevel(Announce.Level.DEBUG);
     Announce.doing("Extracting the CategoryClassHierarchy");
     //		debugWriter_removeBadCats = new PrintWriter(new File("debugOutput_removeBadCats.txt"));
@@ -290,12 +290,11 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
     }
     Announce.done();
 
-    Announce.progressStart("Getting subcatregory roots", indexedCategoryClassesReversed.keySet().size());
+    Announce.doing("Getting subcatregory roots", indexedCategoryClassesReversed.keySet().size());
     {
       IndexedGraph subgraphRoots = new IndexedGraph();
 
       for (Integer wnClass : indexedCategoryClassesReversed.keySet()) {
-        Announce.progressStep();
         Set<Integer> currentFacts = indexedCategoryClassesReversed.get(wnClass);
         Set<Integer> possibleRoots = new HashSet<>(currentFacts);
         Set<Integer> alreadyChecked = new HashSet<>();
@@ -334,7 +333,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
       result.putAll(subgraphRoots);
 
     }
-    Announce.progressDone();
+    Announce.done();
 
     // join the roots and the subgraph
     result = new IndexedGraph();
@@ -1601,10 +1600,10 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
   /**
    * check if the given category has roots and if so prints them
    * invalid roots are also printed out
-   
+
    Fabian 2016-04-06: This code uses FactCollection.getObject(), which got removed.
-   
-   
+
+
   protected static String testCategory(String category, FactCollection cachedCategoryHierarchy,
   									 FactCollection cachedClassHierarchy) {
   	if (category.equals("random") || category.equals("rnd") || category.equals("")) {
@@ -1664,7 +1663,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
   	alreadyProcessed = alreadyProcessed.getReverse();
   //		if (roots.size() > 1) {
   //			System.out.println("Multiple roots detected: " + roots);
-  //		} else 
+  //		} else
   	{
   		Stack<Fact> path = new Stack<>();
   		for (String root : roots) {
@@ -1696,7 +1695,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
   				new Fact(factToPrint.getObject(), factToPrint.getRelation(), factToPrint.getSubject()));
   		}
   	}
-  
+
   	return "===================================";
   }*/
 

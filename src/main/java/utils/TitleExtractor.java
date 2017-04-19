@@ -107,6 +107,13 @@ public class TitleExtractor {
     return (createTitleEntity(title));
   }
 
+  /** TitleExtractor which only supports create/getTitleEntityRaw(...) */
+  public static TitleExtractor rawExtractor(String language) throws IOException {
+    TitleExtractor e = new TitleExtractor(PatternHardExtractor.TITLEPATTERNS.factCollection(), null);
+    e.language = language;
+    return e;
+  }
+
   /** Transforms the entity name to a YAGO entity, without checkes */
   public String createTitleEntityRaw(String title) {
     title = replacer.transform(title);
