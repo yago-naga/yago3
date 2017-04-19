@@ -1463,4 +1463,4 @@
 	<id_EmIbaIa!HQ_Tm9_a!?lkyuE30>	<extractionTechnique>	"WikidataLabelExtractor"	
 <id_EmIbaIa!HQ_Tm9_a!?lkyuE30>	<id_DxXqAcQY91_SBd_DxXqAcQY91>	<extractionSource>	<http://wikidata.org>	
 	<id_EmIbaIa!HQ_Tm9_a!?lkyuE30>	<extractionTechnique>	"WikidataLabelExtractor"	
-	<yagoTheme_wikidataMultiLabelSources_end>	xsd:string	"end"	
+# end of file wikidataMultiLabelSources

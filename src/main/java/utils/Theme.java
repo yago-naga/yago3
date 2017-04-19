@@ -188,7 +188,7 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
   /** Closes the theme for writing */
   public void close() throws IOException {
     if (factWriter == null) throw new IOException("Theme " + this + " cannot be closed because it was not open");
-    factWriter.write(new Fact(FactComponent.forYagoEntity("yagoTheme_" + name + "_end"), YAGO.string, FactComponent.forString("end")));
+    factWriter.writeComment("end of file " + name);
     factWriter.close();
     factWriter = null;
   }
