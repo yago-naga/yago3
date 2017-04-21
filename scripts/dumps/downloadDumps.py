@@ -82,7 +82,7 @@ def execute(cmd, customEnv=None):
     raise subprocess.CalledProcessError(return_code, cmd)
 
 def main(argv=None):
-  global dumpsFolder, languages, wikipedias, wikidata
+  global dumpsFolder, languages, wikipedias, wikidata, wikipediaIds
   
   print "Loading YAGO configuration..."
   loadYagoConfiguration()
@@ -116,7 +116,7 @@ def main(argv=None):
 Loads the YAGO configuration file.
 """  
 def loadYagoConfiguration():  
-  global dumpsFolder, languages, wikipedias, wikidata
+  global dumpsFolder, languages, wikipedias, wikidata, commons_wiki
   
   for line in fileinput.input(yagoConfigurationFile):
     if re.match('^' + YAGO3_DUMPSFOLDER_PROPERTY + '\s*=', line):
@@ -188,6 +188,7 @@ def adaptYagoConfiguration():
     elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
       commonsWikiDone = True
     elif re.match('^' + YAGO3_YAGOFOLDER_PROPERTY + '\s*=', line):
+      print wikipediaIds
       yagoFolder = os.path.join(yagoIndexDir, 'yago_aida_' + '_'.join(wikipediaIds))
       line = YAGO3_YAGOFOLDER_PROPERTY + ' = ' + yagoFolder + '\n'
       
