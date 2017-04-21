@@ -141,7 +141,7 @@ def loadYagoConfiguration():
     sys.exit(1)
   
     
-  if (wikipedias == None or wikidata == None) and dumpsFolder == None: 
+  if (wikipedias == None or wikidata == None or commons_wiki == None) and dumpsFolder == None: 
     print "ERROR: Some resources require downloading dumps before YAGO can be run. You must set the 'dumpsFolder' property in the configuration file."
     sys.exit(1)
   
