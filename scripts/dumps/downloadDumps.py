@@ -188,7 +188,6 @@ def adaptYagoConfiguration():
     elif re.match('^' + YAGO3_COMMONSWIKI_PROPERTY + '\s*=', line):
       commonsWikiDone = True
     elif re.match('^' + YAGO3_YAGOFOLDER_PROPERTY + '\s*=', line):
-      print wikipediaIds
       yagoFolder = os.path.join(yagoIndexDir, 'yago_aida_' + '_'.join(wikipediaIds))
       line = YAGO3_YAGOFOLDER_PROPERTY + ' = ' + yagoFolder + '\n'
       
