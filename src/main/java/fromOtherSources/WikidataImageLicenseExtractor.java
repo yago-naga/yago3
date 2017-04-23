@@ -47,7 +47,7 @@ You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-public class WikidataImageLicenseExtractor extends DataExtractor{
+public class WikidataImageLicenseExtractor extends DataExtractor {
  
   public static final Theme WIKIDATAIMAGELICENSE = new Theme("wikidataImageLicenses", 
       "Licences extracted for wikidata Images");
@@ -133,8 +133,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     
     tempMap.put("PublicDomainLicense", Pattern.compile("(?:\\{\\{|\\|)(PD[^\\|\\}]*)(?:\\}\\}|\\|)"));
     
-    
-    
     //tempMap.put("flickrreview", Pattern.compile("(?:\\{\\{|\\|)(flickrreview\\|(.*))(?:\\}\\}|\\|)")); // http://commons.wikimedia.org/wiki/File:CIAS_2013_-_2014_Ford_Transit_Connect_Titanium_(8485216955).jpg
     
     imageLicensePatterns = Collections.unmodifiableMap(tempMap);
@@ -158,9 +156,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     hardCodedLicenses = Collections.unmodifiableMap(tempMap);
   }
   
-  
-
-  
   @Override
   public Set<Theme> input() {
     return (new FinalSet<>(WikidataImageExtractor.WIKIDATAIMAGES));
@@ -182,14 +177,14 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     Reader in = FileUtils.getBufferedUTF8Reader(inputData);
     
     // Mapping of image file name to its url.
-    Map<String, String> fileNameToUrl = getFileNames();
+    Map<String, String> imageUrlByName = getFileNames();
     
     // Go through commonswiki dump and stop at titles which are File
-    while(FileLines.findIgnoreCase(in, "<title>File:" ) != -1) {
+    while (FileLines.findIgnoreCase(in, "<title>File:" ) != -1) {
       String imageFileName = FileLines.readToBoundary(in, "</title>");
       imageFileName = Char17.decodeAmpersand(imageFileName);
       // If the title was not null and was one of the image files that we extracted before:
-      if (imageFileName != null && fileNameToUrl.containsKey(imageFileName)){
+      if (imageFileName != null && imageUrlByName.containsKey(imageFileName)) {
         cntImages++;
         
         String text = FileLines.readBetween(in, "<text", "</text>");
@@ -200,42 +195,50 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
         Boolean trademark = false;
         //String attribution = null;
         
-        author = findAuthor(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "), imageFileName);
+        author = findAuthor(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
         licenses = findLicense(text, imageFileName);
         permissionOTRS = findOTRSPermission(text);
         trademark = findTrademark(text);
         //attribution = findAttribution(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
         
-        String imageUrl = FactComponent.forYagoEntity(fileNameToUrl.get(imageFileName));
+        String imageUrl = FactComponent.forYagoEntity(imageUrlByName.get(imageFileName));
         
         // Write available information:
-        for(String licenseID:licenses.addedLicenses.keySet()) {
+        for (String licenseID:licenses.addedLicenses.keySet()) {
           String url = FactComponent.forYagoEntity(licenses.addedLicenses.get(licenseID));
           WIKIDATAIMAGELICENSE.write(new Fact(licenseID, YAGO.hasUrl, url));
         }
 
-        if (licenses.imageLicenses.isEmpty()) cntImagesNOLicense++;
-        
-        for(String license:licenses.imageLicenses)
-          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasLicense, FactComponent.forYagoEntity(license)));
-          
-        if(author.name != null || author.url != null) {
-          String authorID = FactComponent.forYagoEntity("author_" + (++authorCnt));
-          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasAuthor, authorID));
-          if(author.name != null)
-            WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasName, FactComponent.forYagoEntity(author.name)));
-          if(author.url != null)
-            WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasUrl, FactComponent.forYagoEntity(author.url)));
+        if (licenses.imageLicenses.isEmpty()) {
+          cntImagesNOLicense++;
         }
         
-        if(permissionOTRS != null)
-          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasOTRSId, FactComponent.forYagoEntity(permissionOTRS)));
+        for (String license:licenses.imageLicenses) {
+          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasLicense, FactComponent.forYagoEntity(license)));
+        }
           
-        if(trademark)
-          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasTrademark, FactComponent.forYagoEntity(trademark.toString())));
+        if (author.name != null || author.url != null) {
+          String authorID = FactComponent.forYagoEntity("author_" + (++authorCnt));
+          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasAuthor, authorID));
+          if (author.name != null) {
+            WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasName, FactComponent.forYagoEntity(author.name)));
+          }
+          if (author.url != null) {
+            WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasUrl, FactComponent.forYagoEntity(author.url)));
+          }
+        }
         
-        //if(attribution != null)
+        if (permissionOTRS != null) {
+          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasOTRSId, FactComponent.forYagoEntity(permissionOTRS)));
+        }
+          
+        if (trademark) {
+          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasTrademark, FactComponent.forYagoEntity(trademark.toString())));
+        }
+        
+        //if (attribution != null) {
           //WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasAttributionTag, attribution));
+        //}
         // something else: attcc : http://commons.wikimedia.org/wiki/File:Ph_locator_camiguin_mambajao.png
       }
     }
@@ -247,8 +250,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   }
   
   /**
-   * Return a mapping from image file names to their image wiki page.
-   * @return
+   * Create a mapping from image file names to their image Wikipedia page for easy access.
+   * 
+   * @return A map of image file names to image Wikipedia Urls.
    * @throws IOException
    */
   private Map<String, String> getFileNames() throws IOException {
@@ -257,7 +261,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
     // Load extracted images. Facts here will be: <yagoEntity> <hasImageID> <image_ID>
     Set<Fact> entityImages = WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasImageID);
     
-    for(Fact f:entityImages) {
+    for (Fact f:entityImages) {
       String imageID = f.getObject();
       String imageWikiPageUrl = FactComponent.stripBrackets(WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getObject(imageID, YAGO.hasWikiPage));
       String imageFileName = imageWikiPageUrl.substring(imageWikiPageUrl.indexOf("/wiki/File:") + "/wiki/File:".length()).replaceAll("_", " ");
@@ -269,13 +273,15 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
 
   /**
    * Find if there exist an OTRS permission tag and return its ticket id.
-   * @param text
-   * @return
+   * 
+   * @param text Image's Wikipedia page content.
+   * @return Return OTRS id if it exists and null otherwise.
    */
   private String findOTRSPermission(String text) {
     Matcher matcher = OTRSPermissionPattern.matcher(text);
-    if(matcher.find())
+    if (matcher.find()) {
       return matcher.group(1);
+    }
     return null;
   }
 
@@ -283,6 +289,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   /**
    * This function create facts for hard coded licenses such as:
    * <publicDomainLicense> <hasUrl> <https://en.wikipedia.org/wiki/Public_domain>
+   * 
    * @throws IOException 
    */
   private static void writeHardcodedLicenses() throws IOException {
@@ -295,7 +302,7 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
 //  /**
 //   * Find if there exist an Attribution tag.
 //   * TODO: what to to with the info after it like user, ... There is also a Attribution-CC....
-//   * @param text
+//   * @param text Image's Wikipedia page content.
 //   * @return
 //   */
 //  private String findAttribution(String text) {
@@ -307,36 +314,44 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   
   /**
    * Find existing licenses from the defined licenses.
-   * @param text
-   * @return
+   * 
+   * @param text Image's Wikipedia page content.
+   * @return Return the found licenses for the image.
    */
   private static licenseReturn findLicense(String text, String imageFileName) {
     licenseReturn licenses = new licenseReturn();
     
-    for(String key:imageLicensePatterns.keySet()) {
+    //TODO: In order to support more licenses, one has to add the pattern to "imageLicensePatterns" and then support it in the loop below.
+    for (String key:imageLicensePatterns.keySet()) {
       Matcher licenseMatcher = imageLicensePatterns.get(key).matcher(text);
-      while(licenseMatcher.find()) {
+      while (licenseMatcher.find()) {
+        // If the license is found was one of the hard coded licenses:
         if (hardCodedLicenses.containsKey(key)) {
           licenses.imageLicenses.add(key);
         } 
+        // If it is Creative Common and does not have a specific language (It is still in the hard coded licenses with different key):
         else if (key.equals("CreativeCommonsLicense") && licenseMatcher.group(3) == null) {
-          if(licenseMatcher.group(2).equals("all"))
-            for(String version:CC_VERSIONS)
+          if (licenseMatcher.group(2).equals("all")) {
+            // Add all of the CC versions to the image licenses.
+            for (String version:CC_VERSIONS) {
               licenses.imageLicenses.add(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + version);
-          else
+            }
+          }
+          else {
             licenses.imageLicenses.add(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + licenseMatcher.group(2));
+          }
         }
+        // It is not in the hard coded licenses:
         else {
           String licenseID = FactComponent.forYagoEntity("license_" + (++licenseCnt));
-          
           
           licenses.imageLicenses.add(licenseID);
           
           String url = null;
           switch(key) {
             case "CreativeCommonsLicense":
-              if(licenseMatcher.group(2).equals("all")) {
-                for(String version:CC_VERSIONS) {
+              if (licenseMatcher.group(2).equals("all")) {
+                for (String version:CC_VERSIONS) {
                   url = hardCodedLicenses.get(key + "-" + licenseMatcher.group(1).toUpperCase() + "-" + version) + "/" + licenseMatcher.group(3);
                   licenses.addedLicenses.put(licenseID, url);
                 }
@@ -351,11 +366,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
               url = "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/" + ( (licenseMatcher.group(1) == null) ? "1" : licenseMatcher.group(1));
               licenses.addedLicenses.put(licenseID, url);
               break;
-
           }
         }
       }
-        
     }
     
     return licenses;
@@ -363,40 +376,46 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   
   /**
    * Find the author of the image, return its name and url if available.
-   * @param text
-   * @param imageFileName 
-   * @return
+   * 
+   * @param text Image's Wikipedia page content.
+   * @return Return the author/creator of the image.
    */
   //TODO: multiple authors https://commons.wikimedia.org/wiki/File:N%C3%BCrnberger_Ringbahn.png
-  private static authorUser findAuthor(String text, String imageFileName) {
+  private static authorUser findAuthor(String text) {
     
     authorUser author = new authorUser();
     Matcher matcher = authorFieldPattern.matcher(text);
-    if(matcher.find()) {
+    if (matcher.find()) {
       String authorFieldText = matcher.group(1);
+      //TODO: In order to support, one has to add the pattern to "authorPatterns" and then support it in the loop below.
       for (String key:authorPatterns.keySet()) {
         Matcher authorTypeMatcher = authorPatterns.get(key).matcher(authorFieldText);
         if (authorTypeMatcher.find()) {
-          switch(key){
+          switch(key) {
             
             case "Unknown":
               author.name = "Unknown";
               break;
               
             case "wikiLanguageUser":
-              if (authorTypeMatcher.group(1) != null) 
+              if (authorTypeMatcher.group(1) != null) { 
                 author.url = "http://" + authorTypeMatcher.group(1) + "." + wikipediaUrl + authorTypeMatcher.group(2).replaceAll(" ", "_");
-              else 
+              }
+              else { 
                 author.url = wikimediaCommonUrl + authorTypeMatcher.group(2).replaceAll(" ", "_");
-              if (authorTypeMatcher.group(3) != null)
+              }
+              if (authorTypeMatcher.group(3) != null) {
                 author.name = authorTypeMatcher.group(3);
+              }
               break;
               
             case "wikiCommonUser":
-              if(authorTypeMatcher.group(2).equals("creator") || authorTypeMatcher.group(2).equals("Creator"))
+              if(authorTypeMatcher.group(2).equals("creator") || authorTypeMatcher.group(2).equals("Creator")) {
                 author.url = wikimediaCommonUrl + "Creator:" + authorTypeMatcher.group(4);
-              else
+              }
+              else {
                 author.url = wikimediaCommonUrl + "User:" + authorTypeMatcher.group(4);
+              }
               author.name = authorTypeMatcher.group(4);
               break;
               
@@ -411,8 +430,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
               
             case "externalLink":
               author.url = authorTypeMatcher.group(1);
-              if(authorTypeMatcher.group(2) != null)
+              if(authorTypeMatcher.group(2) != null) {
                 author.name = authorTypeMatcher.group(2);
+              }
               break;
               
             case "wikiUserAtProject":
@@ -431,14 +451,16 @@ public class WikidataImageLicenseExtractor extends DataExtractor{
   }
   
   /**
-   * Find if there exist a trademak tag.
-   * @param text
-   * @return
+   * Find if there exist a trademark tag.
+   * 
+   * @param text Image's Wikipedia page content.
+   * @return Return whether there is a trademark tag. 
    */
   private static Boolean findTrademark(String text) {
     Matcher matcher = trademark.matcher(text);
-    if (matcher.find())
+    if (matcher.find()) {
       return true;
+    }
     return false;
   }
 

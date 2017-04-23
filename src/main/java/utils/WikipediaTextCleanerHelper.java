@@ -69,11 +69,9 @@ public class WikipediaTextCleanerHelper {
   
   public static Pattern firstParagraph = Pattern.compile("^(.+?)\\n(.*)");
   
-  //new Pair<>(Pattern.compile(""), ""),
-  
   /** 
    * Remove useless links from Wikipedia page content.
-   * Such as linkes to Files, Images, ect.
+   * Such as linkes to Files, Images, etc.
    * 
    * @param page The Wikipedia page content, from which the useless links are removed.
    * @return The page content without the useless links.
