@@ -28,7 +28,7 @@ import utils.FactCollection;
 import utils.Theme;
 
 /**
- * Extract images from wikidata
+ * Extract images for entities from Wikidata dump.
  * 
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
@@ -53,9 +53,9 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 public class WikidataImageExtractor extends DataExtractor {
 
 	public static final Theme WIKIDATAIMAGES = new Theme("wikidataImages", 
-			"Images in wikidata dump for entities");
+	    "Images in wikidata dump for entities");
 
-	 private static final String WIKIDATA = "wikidata";
+	private static final String WIKIDATA = "wikidata";
 	 
 	private static final String IMAGE_ORIGINALURL_TEMPLATE = "https://upload.wikimedia.org/wikipedia/commons/";
 	private static final String IMAGETYPE = "image_";
@@ -63,6 +63,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	private static FactCollection transitiveTypes = new FactCollection();
 	private static FactCollection reverseWikidataInstances = new FactCollection();
 	
+	// Order of image relations to use for each entity category.
 	private static final Map<String, List<String>> imageRelationsInOrder;
 	static {
 		Map<String, List<String>> tempMap = new HashMap<String, List<String>>();
@@ -186,9 +187,10 @@ public class WikidataImageExtractor extends DataExtractor {
   }
 
   /**
-	 * Return the most English entity name given all entity names available
-	 * @param entityFacts yago entity in different languages
-	 * @return most English entity name
+	 * Return the most English entity name given all entity names available.
+	 * 
+	 * @param entityFacts yago entity in different languages.
+	 * @return The most English entity name.
 	 */
 	private static String getMostEnglishEntityName(Set<Fact> entityFacts) {
 	  // Map of entity names for each language 
@@ -211,9 +213,10 @@ public class WikidataImageExtractor extends DataExtractor {
 	
 	/**
 	 * Pick the best image with regard to its category using manual order for images for each category.
-	 * @param yagoEntity
-	 * @param images The images extracted for the yagoEntity
-	 * @return picked image
+	 * 
+	 * @param yagoEntity The yago entity.
+	 * @param images The images extracted for the yagoEntity.
+	 * @return Picked image for the input entity.
 	 * @throws IOException
 	 */
 	private static String pickImage(String yagoEntity, Map<String, String> images) throws IOException {
@@ -234,13 +237,14 @@ public class WikidataImageExtractor extends DataExtractor {
 	
 	
 	/**
-	 * To make the image's original url, we use the first 2 characters of md5 hashed version of the file name
+	 * To make the image's original url, we use the first 2 characters of md5 hashed version of the file name.
    * example: input= "http://commons.wikimedia.org/wiki/Special:FilePath/Spelterini_Blüemlisalp.jpg"
    * file name = "Spelterini_Blüemlisalp.jpg" hashed = "ae1a26d34d6a674d4400c8a1e6fe73f8"
    * original url = https://upload.wikimedia.org/wikipedia/commons/a/ae/Spelterini_Bl%C3%BCemlisalp.jpg
+   * 
    * @see https://commons.wikimedia.org/wiki/Commons:FAQ#What_are_the_strangely_named_components_in_file_paths.3F 
-	 * @param wikiUrl Url to image's wiki page
-	 * @return Image's original url 
+	 * @param wikiUrl Url to image's wiki page.
+	 * @return Image's original url .
 	 * @throws NoSuchAlgorithmException
 	 */
 	public static String getOriginalImageUrl(String wikiUrl) throws NoSuchAlgorithmException {
@@ -259,9 +263,10 @@ public class WikidataImageExtractor extends DataExtractor {
 	}
 	
 	/**
-	 * Return the high level category of the entity based on yago transitive types
-	 * @param entity Yago entity
-	 * @return High level category of the entity
+	 * Return the high level category of the entity based on yago transitive types.
+	 * 
+	 * @param entity Yago entity.
+	 * @return High level category of the entity.
 	 * @throws IOException
 	 */
 	private static String getHighlevelCategory(String entity) throws IOException {

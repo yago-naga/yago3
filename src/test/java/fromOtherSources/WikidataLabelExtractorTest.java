@@ -12,6 +12,13 @@ import org.junit.Test;
 
 import extractors.MultilingualExtractor;
 
+/**
+ * Test cases to check WikidataLabelExtractor.
+ * This extractor extract multilingual labels from wikidata.
+ * @author Ghazaleh Haratinezhad Torbati
+ *
+ */
+
 public class WikidataLabelExtractorTest {
   
   private static final String RESOURCESPATH = "src/test/resources/" + WikidataLabelExtractor.class.getName();
