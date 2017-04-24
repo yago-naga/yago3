@@ -86,16 +86,20 @@ public class WordnetExtractor extends DataExtractor {
     Announce.doing("Extracting from Wordnet");
     Set<String> definedWords = new HashSet<>();
     for (Fact f : HardExtractor.HARDWIREDFACTS) {
-      if (!f.getRelation().equals("<isPreferredMeaningOf>")) continue;
+      if (!f.getRelation().equals("<isPreferredMeaningOf>")) {
+        continue;
+      }
       PREFMEANINGS.write(f);
       definedWords.add(f.getArgJavaString(2));
     }
 
     Collection<String> instances = new HashSet<String>(8000);
     for (String line : new FileLines(new File(inputData, "wn_ins.pl"), "Loading instances")) {
-      line = line.replace("''", "'");
+      line = line.replace("''", "'"); //TODO: what is this?
       Matcher m = RELATIONPATTERN.matcher(line);
-      if (!m.matches()) continue;
+      if (!m.matches()) {
+        continue;
+      }
       instances.add(m.group(1));
     }
     Map<String, String> id2class = new HashMap<String, String>(80000);
@@ -106,18 +110,30 @@ public class WordnetExtractor extends DataExtractor {
       line = line.replace("''", "'"); // TODO: Does this work for
       // wordnet_child's_game_100483935 ?
       Matcher m = SYNSETPATTERN.matcher(line);
-      if (!m.matches()) continue;
+      if (!m.matches()) {
+        continue;
+      }
       String id = m.group(1);
       String word = m.group(2);
       String type = m.group(3);
       String numMeaning = m.group(4);
       if (instances.contains(id)) continue;
       // The instance list does not contain all instances...
-      if (Name.couldBeName(word)) continue;
-      if (!type.equals("n")) continue;
+      if (Name.couldBeName(word)) {
+        System.out.println("NAME: " + id + " " + word);
+        continue;
+      }
+      if (!type.equals("n")) {
+        System.out.println("NOT N: " + id + " " + word);
+        continue;
+      }
       if (!id.equals(lastId)) {
-        if (id.equals("100001740")) lastClass = YAGO.entity;
-        else lastClass = FactComponent.forWordnetEntity(word, id);
+        if (id.equals("100001740")) {
+          lastClass = YAGO.entity;
+        }
+        else {
+          lastClass = FactComponent.forWordnetEntity(word, id);
+        }
         id2class.put(lastId = id, lastClass);
         WORDNETWORDS.write(new Fact(null, lastClass, "skos:prefLabel", FactComponent.forStringWithLanguage(word, "eng")));
         WORDNETIDS.write(new Fact(null, lastClass, "<hasSynsetId>", FactComponent.forString(id)));
@@ -145,7 +161,9 @@ public class WordnetExtractor extends DataExtractor {
       if (!id2class.containsKey(arg1)) {
         continue;
       }
-      if (!id2class.containsKey(arg2)) continue;
+      if (!id2class.containsKey(arg2)) {
+        continue;
+      }
       WORDNETCLASSES.write(new Fact(null, id2class.get(arg1), "rdfs:subClassOf", id2class.get(arg2)));
     }
 
