@@ -49,3 +49,13 @@
 <infobox/nl/opvolger>   <_infoboxPattern>       owl:Nothing .
 <infobox/ro/succesor>   <_infoboxPattern>       owl:Nothing .
 <infobox/ro/urmași>     <_infoboxPattern>       owl:Nothing .
+
+
+# fix issues with issues, i.e. successors mapped to children
+<infobox/ar/successor>	<_infoboxPattern>	owl:Nothing .
+<infobox/fr/coempereur>	<_infoboxPattern>	owl:Nothing .
+<infobox/fr/cousurpateur>	<_infoboxPattern>	owl:Nothing .
+<infobox/nl/medekeizer>	<_infoboxPattern>	owl:Nothing .
+<infobox/nl/opvolger>	<_infoboxPattern>	owl:Nothing .
+<infobox/pl/następca>	<_infoboxPattern>	owl:Nothing .
+<infobox/zh/successor>	<_infoboxPattern>	owl:Nothing .

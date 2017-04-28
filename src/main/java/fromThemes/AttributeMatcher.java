@@ -259,8 +259,14 @@ public class AttributeMatcher extends MultilingualExtractor {
     try {
       if (yagoFolder != null) {
         PatternHardExtractor.INFOBOXPATTERNS.assignToFolder(new File(yagoFolder));
+        PatternHardExtractor.MULTILINGUALATTRIBUTES.assignToFolder(new File(yagoFolder));
       }
       tmp = PatternHardExtractor.INFOBOXPATTERNS.factCollection().getMap("<_infoboxPattern>");
+      for (Entry<String, String> e : tmp.entrySet()) {
+        result.put(e.getKey(), e.getValue());
+        result.put(e.getKey().toLowerCase(), e.getValue());
+      }
+      tmp = PatternHardExtractor.MULTILINGUALATTRIBUTES.factCollection().getMap("<_infoboxPattern>");
       for (Entry<String, String> e : tmp.entrySet()) {
         result.put(e.getKey(), e.getValue());
         result.put(e.getKey().toLowerCase(), e.getValue());

@@ -155,6 +155,8 @@
 <infobox/en/died> <_infoboxPattern> <diedOnDate> .
 <infobox/en/spouse> <_infoboxPattern> <isMarriedTo> .
 <infobox/en/children> <_infoboxPattern> <hasChild> .
+<infobox/en/daughter> <_infoboxPattern> <hasChild> .
+<infobox/en/daughters> <_infoboxPattern> <hasChild> .
 <infobox/en/occupation> <_infoboxPattern> rdf:type .
 <infobox/en/profession> <_infoboxPattern> rdf:type .
 <infobox/en/politicalparty> <_infoboxPattern> <isAffiliatedTo> .
@@ -275,16 +277,9 @@
 <infobox/en/IATA>	<_infoboxPattern> <hasAirportCode> .
 
 # fix issues with issues, i.e. successors mapped to children
-# TypeChecker probably removes these facts
-<infobox/ar/successor>	<_infoboxPattern>	<hasSuccessor>
-<infobox/en/succesor>	<_infoboxPattern>	<hasSuccessor>
-<infobox/en/coregency>	<_infoboxPattern>	<hasSuccessor>
-<infobox/fr/coempereur>	<_infoboxPattern>	<hasSuccessor>
-<infobox/fr/cousurpateur>	<_infoboxPattern>	<hasSuccessor>
-<infobox/nl/medekeizer>	<_infoboxPattern>	<hasSuccessor>
-<infobox/nl/opvolger>	<_infoboxPattern>	<hasSuccessor>
-<infobox/pl/następca>	<_infoboxPattern>	<hasSuccessor>
-<infobox/zh/successor>	<_infoboxPattern>	<hasSuccessor>
+<infobox/en/successor>	<_infoboxPattern>	owl:Nothing .
+<infobox/en/succesor>	<_infoboxPattern>	owl:Nothing .
+<infobox/en/coregency>	<_infoboxPattern>	owl:Nothing .
 
 
 # ------------ Replacements ----------
