@@ -26,7 +26,7 @@ import utils.TitleExtractor;
 
 /**
  * Extracts context keyphrases (the X in SPOTLX) facts from Wikipedia.
- * 
+ *
  * For now, the provenance generation (yagoConteXtFacts) is disabled.
 
 This class is part of the YAGO project at the Max Planck Institute
@@ -99,7 +99,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 
     FactCollection contextPatternCollection = PatternHardExtractor.CONTEXTPATTERNS.factCollection();
     FactTemplateExtractor contextPatterns = new FactTemplateExtractor(contextPatternCollection, "<_extendedContextWikiPattern>");
-    PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS.factCollection(), "<_aidaCleaning>");
+    PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS, "<_aidaCleaning>");
 
     // FactWriter outSources = output.get(CONTEXTSOURCES);
 
@@ -141,7 +141,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 
   /**
    * Needs Wikipedia as input
-   * 
+   *
    * @param wikipedia
    *            Wikipedia XML dump
    */

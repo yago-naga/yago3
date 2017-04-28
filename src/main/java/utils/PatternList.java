@@ -12,7 +12,7 @@ import javatools.datatypes.Pair;
 
 /**
  * Replaces patterns by strings
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -39,32 +39,32 @@ public class PatternList {
 
   /**
    * Constructor
-   * 
+   *
    * @throws IOException
    */
   public PatternList(Theme facts, String relation) throws IOException {
     if (!facts.isAvailableForReading()) throw new RuntimeException("Theme " + facts + " has to be available before using a "
         + this.getClass().getSimpleName() + "! Consider caching it by declaring it in inputCached() of the extracor.");
-    load(new FactCollection(facts), relation);
+    load(facts, relation);
   }
 
   /**
    * Constructor
-   * 
+   *
    * @throws IOException
    */
   public PatternList(FactSource facts, String relation) throws IOException {
-    this(new FactCollection(facts), relation);
+    load(facts, relation);
   }
 
   /** Constructor */
-  public PatternList(FactCollection facts, String relation) {
+  /*public PatternList(FactCollection facts, String relation) {
     load(facts, relation);
-  }
-  
+  }*/
+
   /**
    * Constructor by array of patterns.
-   * 
+   *
    * @param _patterns List of pattern and their replace string.
    */
   public PatternList(List<Pair<Pattern, String>> _patterns) {
@@ -74,10 +74,12 @@ public class PatternList {
   }
 
   /** Loads all patterns */
-  protected void load(FactCollection facts, String relation) {
+  protected void load(FactSource facts, String relation) {
     Announce.doing("Loading patterns of", relation);
-    for (Fact fact : facts.getFactsWithRelation(relation)) {
-      patterns.add(new Pair<Pattern, String>(fact.getArgPattern(1), fact.getArgJavaString(2)));
+    for (Fact fact : facts) {
+      if (relation.equals(fact.getRelation())) {
+        patterns.add(new Pair<Pattern, String>(fact.getArgPattern(1), fact.getArgJavaString(2)));
+      }
     }
     if (patterns.isEmpty()) {
       Announce.warning("No patterns found!");

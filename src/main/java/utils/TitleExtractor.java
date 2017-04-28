@@ -54,7 +54,7 @@ public class TitleExtractor {
   protected String language;
 
   /** Constructs a TitleExtractor */
-  public TitleExtractor(FactCollection titlePatternFacts, Set<String> wordnetWords) {
+  public TitleExtractor(Theme titlePatternFacts, Set<String> wordnetWords) throws IOException {
     replacer = new PatternList(titlePatternFacts, "<_titleReplace>");
     this.wordnetWords = wordnetWords;
     entities = null;
@@ -69,7 +69,7 @@ public class TitleExtractor {
     if (!PatternHardExtractor.TITLEPATTERNS.isAvailableForReading()) {
       throw new RuntimeException("The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
     }
-    replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS.factCollection(), "<_titleReplace>");
+    replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS, "<_titleReplace>");
     if (FactComponent.isEnglish(language)) {
       if (TransitiveTypeExtractor.TRANSITIVETYPE.isAvailableForReading()) {
         this.entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
@@ -109,7 +109,7 @@ public class TitleExtractor {
 
   /** TitleExtractor which only supports create/getTitleEntityRaw(...) */
   public static TitleExtractor rawExtractor(String language) throws IOException {
-    TitleExtractor e = new TitleExtractor(PatternHardExtractor.TITLEPATTERNS.factCollection(), null);
+    TitleExtractor e = new TitleExtractor(PatternHardExtractor.TITLEPATTERNS, null);
     e.language = language;
     return e;
   }

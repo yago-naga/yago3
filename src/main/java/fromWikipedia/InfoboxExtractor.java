@@ -31,7 +31,7 @@ import utils.TitleExtractor;
 
 /**
  * Extracts facts from infoboxes for all languages.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -271,7 +271,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
   public void extract() throws Exception {
 
     TitleExtractor titleExtractor = new TitleExtractor(language);
-    valueCleaner = new PatternList(PatternHardExtractor.INFOBOXPATTERNS.factCollection(), "<_infoboxReplace>");
+    valueCleaner = new PatternList(PatternHardExtractor.INFOBOXPATTERNS, "<_infoboxReplace>");
 
     Map<String, Set<String>> template2attributes = new HashMap<String, Set<String>>();
 

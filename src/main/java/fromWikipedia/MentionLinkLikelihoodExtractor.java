@@ -142,7 +142,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     TitleExtractor titleExtractor = new TitleExtractor(language);
 
-    PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS.factCollection(), "<_aidaCleaning>");
+    PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS, "<_aidaCleaning>");
 
     // Load all mentions.
     loadMentions();
@@ -214,7 +214,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
             }
           }
 
-          // increase denumerator in token counts for all tokens of the article, 
+          // increase denumerator in token counts for all tokens of the article,
           // excluding linked tokens
           for (String token : pageVocabulary) {
             if (mentionTokensLinkCount.containsKey(token) && !linkedTokens.contains(token)) {
@@ -243,7 +243,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
   /**
    * Needs Wikipedia as input
-   * 
+   *
    * @param wikipedia
    *            Wikipedia XML dump
    */
@@ -253,7 +253,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
   /**
    * Removes non alpha-numeric characters
-   * 
+   *
    * @param text
    * 		   Input text
    */

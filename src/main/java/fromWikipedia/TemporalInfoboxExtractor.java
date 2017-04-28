@@ -44,7 +44,7 @@ import utils.termParsers.TermParser;
 /**
  * Extract temporal facts from infoboxes. It uses the patterns
  * /data/_infoboxTemporalPatterns.ttl for the extraction.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -130,7 +130,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     Map<String, String> preferredMeaning = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings();
     TitleExtractor titleExtractor = new TitleExtractor("en");
 
-    valueCleaner = new PatternList(PatternHardExtractor.INFOBOXTEMPORALPATTERNS.factCollection(), "<_infoboxReplace>");
+    valueCleaner = new PatternList(PatternHardExtractor.INFOBOXTEMPORALPATTERNS, "<_infoboxReplace>");
     String typeRelation = FactComponent.forInfoboxTypeRelation("en");
     // Extract the information
     // Announce.progressStart("Extracting", 4_500_000);
@@ -223,7 +223,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
       // Extract all terms //change it. Extract terms per value in the valuestring ;-)
 
-      // split the values based on list items:"* " 
+      // split the values based on list items:"* "
       // extract multivalues, such as,
       // spouse=[[[Shawn Andrews(actor)|Shawn Andrews]] (1992-1993)\n[[Luc
       // Besson]] (1997-1999)
@@ -584,6 +584,11 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   public static void main(String[] args) throws Exception {
     Announce.setLevel(Announce.Level.DEBUG);
+
+    String folder = "/home/tr/tmp/yago3-debug/";
+    for (Theme t : new TemporalInfoboxExtractor(new File(folder + "enwiki.xml")).input()) {
+      t.assignToFolder(new File(folder));
+    }
     // new PatternHardExtractor(new File("./data")).extract(new
     // File("/var/tmp/test/facts"), "test");
     // new HardExtractor(new File("./basics2s/data")).extract(new
@@ -594,7 +599,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     // new TemporalInfoboxExtractor(new
     // File("/var/tmp/Wikipedia_Archive/DavidBeckham.xml")).extract(new
     // File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
-    new TemporalInfoboxExtractor(new File("./testCases/en_wikitest.xml")).extract(new File("./out"), "Test on 1 wikipedia article");
+    new TemporalInfoboxExtractor(new File(folder + "enwiki.xml")).extract(new File("./out"), "Test on 1 wikipedia article");
 
   }
 }

@@ -28,7 +28,7 @@ import utils.termParsers.TermParser;
 
 /**
  * Extracts the terms from the Infobox templates.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -87,7 +87,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 
   @Override
   public void extract() throws Exception {
-    PatternList replacements = new PatternList(PatternHardExtractor.INFOBOXPATTERNS.factCollection(), "<_infoboxReplace>");
+    PatternList replacements = new PatternList(PatternHardExtractor.INFOBOXPATTERNS, "<_infoboxReplace>");
     Map<String, String> unitDictionary = PatternHardExtractor.INFOBOXPATTERNS.factCollection().getMap("<_hasPredefinedUnit>");
     Map<String, String> preferredMeanings = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings();
 

@@ -96,7 +96,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
     BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
     Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
-    PatternList replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS.factCollection(), "<_titleReplace>");
+    PatternList replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS, "<_titleReplace>");
 
     String titleEntity = null;
     while (true) {

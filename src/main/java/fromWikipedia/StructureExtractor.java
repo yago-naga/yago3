@@ -28,7 +28,7 @@ import utils.TitleExtractor;
 
 /**
  * Extracts Wikipedia links
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -109,7 +109,7 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 
     FactCollection structurePatternCollection = PatternHardExtractor.STRUCTUREPATTERNS.factCollection();
     FactTemplateExtractor structurePatterns = new FactTemplateExtractor(structurePatternCollection, "<_extendedStructureWikiPattern>");
-    PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS.factCollection(), "<_aidaCleaning>");
+    PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS, "<_aidaCleaning>");
 
     String titleEntity = null;
     while (true) {
@@ -135,7 +135,7 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 
   /**
    * Needs Wikipedia as input
-   * 
+   *
    * @param wikipedia
    *            Wikipedia XML dump
    */
