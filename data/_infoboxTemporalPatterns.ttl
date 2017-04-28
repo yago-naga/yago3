@@ -181,6 +181,12 @@
 "combatant"	<_infoboxPattern>	<participatedIn-> .
 
 # ------------ Replacements ----------
+"''"	<_infoboxReplace>	"\u0022" .
+"<small>.*</small>"	<_infoboxReplace>	"" .
+"<!--.*-->"	<_infoboxReplace>	"" .
+"</?span[^>]*>"	<_infoboxReplace>	"" .
+"(?s)<ref.+?</ref>"	<_infoboxReplace>	"" .
+"(?s)<ref.+?/>" <_infoboxReplace> "" .
 "<br ?/>"	<_infoboxReplace>	"\n" .
 "<br ?>"	<_infoboxReplace>	"\n" .
 "</ ?br ?>"	<_infoboxReplace>	"\n" .
@@ -210,7 +216,7 @@
 "\\{\\{PAGENAME\\}\\}"	<_infoboxReplace>	"NIL" . # We don't know how to handle this at this level
 "\\{\\{nowrap\\|(.*?)\\}\\}"	<_infoboxReplace>	"$1" .
 "\\{\\{birth date(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)(\\|[^\\|\\d]+)?\\}\\}"	<_infoboxReplace>	" $2-$3-$4 " .
-"\\{\\{Death date and age(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)\\|\\d+\\|\\d+\\|\\d+\\}\\}"	<_infoboxReplace>	" $2-$3-$4 " .
+"\\{\\{(birth|Death) date and age(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)(\\|\\d+\\|\\d+\\|\\d+\\}\\})?"  <_infoboxReplace> " $3-$4-$5 " .
 "\\{\\{BirthDeathAge\\|([^\\|\\d]+)?\\|\\d*\\|\\d*\\|\\d*\\|(\\d+)\\|(\\d+)\\|(\\d+)[^\\}]*\\}\\}"  <_infoboxReplace> " $2-$3-$4 " .
 "\\{\\{dda(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)\\|\\d+\\|\\d+\\|\\d+\\}\\}"	<_infoboxReplace>	" $1-$2-$3 " .
 "\\{\\{polytonic\\|(.*?)\\}\\}"	<_infoboxReplace>	" ''$1'' " .
@@ -227,10 +233,4 @@
 "\\{\\{award\\|"	<_infoboxReplace>	"" .
 "\\{\\{birth-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
 "\\{\\{death-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
-"''"	<_infoboxReplace>	"\u0022" .
-"<small>.*</small>"	<_infoboxReplace>	"" .
-"<!--.*-->"	<_infoboxReplace>	"" .
-"</?span[^>]*>"	<_infoboxReplace>	"" .
-"<ref.+?</ref>"	<_infoboxReplace>	"" .
-"<ref.+?/>" <_infoboxReplace> "" .
 "\\{\\{BirthDeathAge\\|[^0-9]*\\d{3,4}\\|\\d{1,2}\\|\\d{1,2}"	<_infoboxReplace> "" .
