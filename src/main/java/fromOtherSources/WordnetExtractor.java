@@ -25,7 +25,7 @@ import utils.Theme.ThemeGroup;
 
 /**
  * Extracts facts form wordnet.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -120,18 +120,17 @@ public class WordnetExtractor extends DataExtractor {
       if (instances.contains(id)) continue;
       // The instance list does not contain all instances...
       if (Name.couldBeName(word)) {
-        System.out.println("NAME: " + id + " " + word);
+        //System.out.println("NAME: " + id + " " + word);
         continue;
       }
       if (!type.equals("n")) {
-        System.out.println("NOT N: " + id + " " + word);
+        //System.out.println("NOT N: " + id + " " + word);
         continue;
       }
       if (!id.equals(lastId)) {
         if (id.equals("100001740")) {
           lastClass = YAGO.entity;
-        }
-        else {
+        } else {
           lastClass = FactComponent.forWordnetEntity(word, id);
         }
         id2class.put(lastId = id, lastClass);
