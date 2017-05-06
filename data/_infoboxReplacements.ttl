@@ -1,0 +1,77 @@
+# Manually coded facts of YAGO2s.
+#  DO NOT OVERWRITE!
+# This file contains the infobox replacements.
+
+# This file is part of the YAGO project at the Max Planck Institute
+# for Informatics/Germany and Télécom ParisTech University/France:
+# http://yago-knowledge.org
+
+# This file is copyright 2016 Erdal Kuzey.
+
+# YAGO is free software: you can redistribute it and/or modify it
+# under the terms of the GNU General Public License as published
+# by the Free Software Foundation, either version 3 of the License,
+# or (at your option) any later version.
+
+# YAGO is distributed in the hope that it will be useful, but WITHOUT
+# ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+# or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+# License for more details.
+
+# You should have received a copy of the GNU General Public License
+# along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+
+# ------------ Replacements ----------
+"''"	<_infoboxReplace>	"\u0022" .
+"<small>.*</small>"	<_infoboxReplace>	"" .
+"<!--.*-->"	<_infoboxReplace>	"" .
+"</?span[^>]*>"	<_infoboxReplace>	"" .
+"(?s)<ref.+?</ref>"	<_infoboxReplace>	"" .
+"(?s)<ref.+?/>" <_infoboxReplace> "" .
+"<br ?/>"	<_infoboxReplace>	"\n" .
+"<br ?>"	<_infoboxReplace>	"\n" .
+"</ ?br ?>"	<_infoboxReplace>	"\n" .
+"'''"	<_infoboxReplace>	"" .
+"''"	<_infoboxReplace>	"" .
+"\\{\\{efn.*"	<_infoboxReplace>	"" .
+"\\[\\[File:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
+"\\[\\[Image:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
+"\\[\\[wp:[^\\]]*\\]\\]"	<_infoboxReplace>	"" .
+"\\[\\[minute\\]\\]s?"	<_infoboxReplace>	" minutes " .
+"\\[\\[1000000000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" trillion " .
+"\\[\\[1000000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" billion " .
+"\\[\\[1000000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" million " .
+"\\[\\[1000 \\(number\\)\\|.*?\\]\\]"	<_infoboxReplace>	" thousand " .
+"\\[\\[euro\\|.*?\\]\\]"	<_infoboxReplace>	" Euro " .
+"\\{\\{coord\\|(\\d+)\\|(\\d+)\\|([\\d\\.]+)\\|(.)\\|(\\d+)\\|(\\d+)\\|([\\d\\.]+)\\|(.)\\|.*?\\}\\}"	<_infoboxReplace>	" |_latitude = $1 degrees $2 minutes $3 seconds $4 |_longitude = $5 degrees $6 minutes $7 seconds $8 " .
+"\\{\\{cite .*?\\}\\}"	<_infoboxReplace>	"" .
+"\\{\\{USA\\}\\}"	<_infoboxReplace>	"[[United_States]]" .
+"\\{\\{RUS\\}\\}"	<_infoboxReplace>	"[[Russia]]" .
+"\\{\\{FRA\\}\\}"	<_infoboxReplace>	"[[France]]" .
+"\\{\\{ARG\\}\\}"	<_infoboxReplace>	"[[Argentina]]" .
+"\\{\\{AUS\\}\\}"	<_infoboxReplace>	"[[Australia]]" .
+"\\{\\{PAK\\}\\}"	<_infoboxReplace>	"[[Pakistan]]" .
+"\\{\\{UK\\}\\}"	<_infoboxReplace>	"[[United_Kingdom]]" .
+"\\{\\{GBR\\}\\}"	<_infoboxReplace>	"[[United_Kingdom]]" .
+"\\{\\{CHINA\\}\\}"	<_infoboxReplace>	"[[China]]" .
+"\\{\\{PAGENAME\\}\\}"	<_infoboxReplace>	"NIL" . # We don't know how to handle this at this level
+"\\{\\{nowrap\\|(.*?)\\}\\}"	<_infoboxReplace>	"$1" .
+"\\{\\{birth date(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)(\\|[^\\|\\d]+)?\\}\\}"	<_infoboxReplace>	" $2-$3-$4 " .
+"\\{\\{(birth|Death) date and age(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)(\\|\\d+\\|\\d+\\|\\d+\\}\\})?"  <_infoboxReplace> " $3-$4-$5 " .
+"\\{\\{BirthDeathAge\\|([^\\|\\d]+)?\\|\\d*\\|\\d*\\|\\d*\\|(\\d+)\\|(\\d+)\\|(\\d+)[^\\}]*\\}\\}"  <_infoboxReplace> " $2-$3-$4 " .
+"\\{\\{dda(\\|[^\\|\\d]+)?\\|(\\d+)\\|(\\d+)\\|(\\d+)\\|\\d+\\|\\d+\\|\\d+\\}\\}"	<_infoboxReplace>	" $1-$2-$3 " .
+"\\{\\{polytonic\\|(.*?)\\}\\}"	<_infoboxReplace>	" ''$1'' " .
+"\\{\\{lang[\\|\\-].*?\\|(.*?)\\}\\}"	<_infoboxReplace>	" ''$1'' " .
+"\\{\\{spaces\\|.*?\\}\\}"	<_infoboxReplace>	" " .
+"\\{\\{convert\\|(\\d+\\.?\\d*)\\|(.*?)\\|.*?\\}\\}"	<_infoboxReplace>	" $1 $2 " .
+"\\{\\{height\\|ft=(\\d+)\\|in=(\\d+\\.?\\d*)\\}\\}"	<_infoboxReplace>	" $1 feet $2 inches " .
+"\\{\\{([a-z]+) to [a-z]+\\|(\\d+\\.?\\d*).*?\\}\\}"	<_infoboxReplace>	" $2 $1 " .
+"\\{\\{bday\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
+#"\\{\\{flag ?(icon)?\\|(.*?)\\}\\}"	<_infoboxReplace>	"[[$2]]" .
+"\\{\\{flag ?(icon)?\\|([^\\|\\}]+)[^\\}]*\\}\\}"	<_infoboxReplace>	"[[$2]]" .
+"\\{\\{flagcountry\\|([^\\|\\}]+)[^\\}]*\\}\\}"	<_infoboxReplace>	"[[$1]]" .
+"\\{\\{awd\\|"	<_infoboxReplace>	"" .
+"\\{\\{award\\|"	<_infoboxReplace>	"" .
+"\\{\\{birth-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
+"\\{\\{death-date\\|(.*?)\\}\\}"	<_infoboxReplace>	" $1 " .
+"\\{\\{BirthDeathAge\\|[^0-9]*\\d{3,4}\\|\\d{1,2}\\|\\d{1,2}"	<_infoboxReplace> "" .

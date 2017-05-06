@@ -11,7 +11,7 @@ import utils.Theme;
 
 /**
  * Produces the hard-coded facts that are YAGO-internal.
- * 
+ *
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -51,6 +51,9 @@ public class PatternHardExtractor extends HardExtractor {
 
   public static final Theme INFOBOXTEMPORALPATTERNS = new Theme("_infoboxTemporalPatterns", "The Wikipedia infobox patterns used in YAGO");
 
+  /** Regexes which transform infobox values */
+  public static final Theme INFOBOXREPLACEMENTS = new Theme("_infoboxReplacements", "The Wikipedia infobox patterns used in YAGO");
+
   /** Patterns of titles */
   public static final Theme TITLEPATTERNS = new Theme("_titlePatterns", "The replacement patterns for Wikipedia titles used in YAGO");
 
@@ -86,9 +89,9 @@ public class PatternHardExtractor extends HardExtractor {
 
   @Override
   public Set<Theme> output() {
-    return (new FinalSet<Theme>(INFOBOXPATTERNS, INFOBOXTEMPORALPATTERNS, TITLEPATTERNS, CATEGORYPATTERNS, RULES, DISAMBIGUATIONTEMPLATES,
-        CONTEXTPATTERNS, STRUCTUREPATTERNS, LANGUAGECODEMAPPING, SPOTLX_ENTITY_RULES, SPOTLX_FACT_RULES, STRINGPARSER, NUMBERPARSER, DATEPARSER,
-        AIDACLEANINGPATTERNS, FALSEFACTS, MULTILINGUALATTRIBUTES));
+    return (new FinalSet<Theme>(INFOBOXPATTERNS, INFOBOXTEMPORALPATTERNS, INFOBOXREPLACEMENTS, TITLEPATTERNS, CATEGORYPATTERNS, RULES,
+        DISAMBIGUATIONTEMPLATES, CONTEXTPATTERNS, STRUCTUREPATTERNS, LANGUAGECODEMAPPING, SPOTLX_ENTITY_RULES, SPOTLX_FACT_RULES, STRINGPARSER,
+        NUMBERPARSER, DATEPARSER, AIDACLEANINGPATTERNS, FALSEFACTS, MULTILINGUALATTRIBUTES));
   }
 
   @Override

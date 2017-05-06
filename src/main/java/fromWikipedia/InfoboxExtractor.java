@@ -74,12 +74,12 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
+    return new FinalSet<Theme>(PatternHardExtractor.INFOBOXREPLACEMENTS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<Theme>(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
+    return new FinalSet<Theme>(PatternHardExtractor.INFOBOXREPLACEMENTS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
   }
 
   @Override
@@ -271,7 +271,7 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
   public void extract() throws Exception {
 
     TitleExtractor titleExtractor = new TitleExtractor(language);
-    valueCleaner = new PatternList(PatternHardExtractor.INFOBOXPATTERNS, "<_infoboxReplace>");
+    valueCleaner = new PatternList(PatternHardExtractor.INFOBOXREPLACEMENTS, "<_infoboxReplace>");
 
     Map<String, Set<String>> template2attributes = new HashMap<String, Set<String>>();
 

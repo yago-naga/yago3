@@ -61,9 +61,9 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, WordnetExtractor.PREFMEANINGS, HardExtractor.HARDWIREDFACTS,
-        InfoboxExtractor.INFOBOX_ATTRIBUTES.inLanguage(this.language), PatternHardExtractor.DATEPARSER, PatternHardExtractor.STRINGPARSER,
-        PatternHardExtractor.NUMBERPARSER));
+    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.INFOBOXREPLACEMENTS,
+        WordnetExtractor.PREFMEANINGS, HardExtractor.HARDWIREDFACTS, InfoboxExtractor.INFOBOX_ATTRIBUTES.inLanguage(this.language),
+        PatternHardExtractor.DATEPARSER, PatternHardExtractor.STRINGPARSER, PatternHardExtractor.NUMBERPARSER));
   }
 
   @Override
@@ -73,8 +73,8 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<>(PatternHardExtractor.INFOBOXPATTERNS, WordnetExtractor.PREFMEANINGS, PatternHardExtractor.DATEPARSER,
-        PatternHardExtractor.STRINGPARSER, PatternHardExtractor.NUMBERPARSER);
+    return new FinalSet<>(PatternHardExtractor.INFOBOXPATTERNS, PatternHardExtractor.INFOBOXREPLACEMENTS, WordnetExtractor.PREFMEANINGS,
+        PatternHardExtractor.DATEPARSER, PatternHardExtractor.STRINGPARSER, PatternHardExtractor.NUMBERPARSER);
   }
 
   @Override
@@ -87,7 +87,7 @@ public class InfoboxTermExtractor extends MultilingualExtractor {
 
   @Override
   public void extract() throws Exception {
-    PatternList replacements = new PatternList(PatternHardExtractor.INFOBOXPATTERNS, "<_infoboxReplace>");
+    PatternList replacements = new PatternList(PatternHardExtractor.INFOBOXREPLACEMENTS, "<_infoboxReplace>");
     Map<String, String> unitDictionary = PatternHardExtractor.INFOBOXPATTERNS.factCollection().getMap("<_hasPredefinedUnit>");
     Map<String, String> preferredMeanings = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings();
 

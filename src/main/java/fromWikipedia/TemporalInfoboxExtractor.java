@@ -74,9 +74,9 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(
-        Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, WordnetExtractor.PREFMEANINGS, PatternHardExtractor.INFOBOXTEMPORALPATTERNS,
-            WordnetExtractor.WORDNETWORDS, PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER));
+    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, WordnetExtractor.PREFMEANINGS,
+        PatternHardExtractor.INFOBOXTEMPORALPATTERNS, PatternHardExtractor.INFOBOXREPLACEMENTS, WordnetExtractor.WORDNETWORDS,
+        PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER));
   }
 
   /** Infobox facts, non-checked */
@@ -130,7 +130,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     Map<String, String> preferredMeaning = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings();
     TitleExtractor titleExtractor = new TitleExtractor("en");
 
-    valueCleaner = new PatternList(PatternHardExtractor.INFOBOXTEMPORALPATTERNS, "<_infoboxReplace>");
+    valueCleaner = new PatternList(PatternHardExtractor.INFOBOXREPLACEMENTS, "<_infoboxReplace>");
     String typeRelation = FactComponent.forInfoboxTypeRelation("en");
     // Extract the information
     // Announce.progressStart("Extracting", 4_500_000);
