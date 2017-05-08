@@ -81,7 +81,7 @@ public class DemonymPattern {
 
       String output;
       while ((output = in.readLine()) != null) {
-        response.append(output);
+        response.append(output + "\n");
       }
       in.close();
 

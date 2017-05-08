@@ -1,5 +1,6 @@
 package utils.demonyms;
 
+import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -38,8 +39,9 @@ public class WikiTable {
   public static WikiTable parse(String content) {
     WikiTable result = new WikiTable();
 
+    StringReader reader = new StringReader(content);
     // split rows
-    List<String> rawRows = Arrays.asList(content.split("\\|-|</tr>"));
+    List<String> rawRows = Arrays.asList(content.split("\\r?\\n(\\|-|</tr>)\\r?\\n"));
     for (String rawRow : rawRows) {
       // split cols
       List<String> cols = Arrays.asList(rawRow.trim().split("\\s*([\\|!]{2}|\\R[\\|!])\\s*"));
