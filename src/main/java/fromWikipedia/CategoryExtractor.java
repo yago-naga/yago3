@@ -107,7 +107,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
     if (categoryWord == null) throw new Exception("Category word undefined in language " + language);
     categoryWord = FactComponent.asJavaString(categoryWord);
     while (true) {
-      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "[[" + categoryWord + ":")) {
+      switch (FileLines.findIgnoreCase(in, "<title>", "[[Category:", "[[" + categoryWord + ":", "<!--")) {
         case -1:
           // Announce.progressDone();
           in.close();
@@ -130,6 +130,9 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
             CATEGORYMEMBERS.inLanguage(language)
                 .write(new Fact(titleEntity, "<hasWikipediaCategory>", FactComponent.forForeignWikiCategory(category, language)));
           }
+          break;
+        case 3:
+          FileLines.findIgnoreCase(in, "-->");
           break;
       }
     }
