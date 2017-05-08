@@ -71,6 +71,7 @@ public class DemonymsPageExtractor {
       Helper t = new Helper();
       t.remaining = parts[1];
       extract(t);
+      t.found.remove("or");
       subjectToDemonym.put(country, t.found);
 
       // print not completely processed entries
