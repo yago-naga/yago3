@@ -362,8 +362,9 @@ public class ParallelCaller {
         Announce.warning("path: ", act, " --> ", map.get(act));
       } while ((act = prev.get(act)) != null);
       Announce.warning("path: ", start, " --> ", map.get(start));
-
     }
+    while (result.remove(null))
+      ;
     return result;
   }
 
