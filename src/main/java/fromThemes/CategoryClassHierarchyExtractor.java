@@ -185,11 +185,12 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
         if ((index.contains(fact.getSubject()) || index.contains(fact.getObject())) && !fact.getSubject().equals(fact.getObject())) {
           index.addLow(fact.getSubject()); // is wnClass so add low
           index.addLow(fact.getObject()); // is wnClass so add low
-          indexedClassHierarchy.put(fact, index);
+          if (!indexedClassHierarchy.put(fact, index)) { // break endless loop
           factsToCheck.addAll(notMatchingFacts.getFactsWithSubjectAndRelation(fact.getSubject(), WORDNET_RELATION));
           factsToCheck.addAll(notMatchingFacts.getFactsWithSubjectAndRelation(fact.getObject(), WORDNET_RELATION));
           factsToCheck.addAll(notMatchingFacts.seekFactsWithRelationAndObject(WORDNET_RELATION, fact.getSubject()));
           factsToCheck.addAll(notMatchingFacts.seekFactsWithRelationAndObject(WORDNET_RELATION, fact.getObject()));
+          }
         } else notMatchingFacts.add(fact);
       }
       Announce.done();
@@ -1349,8 +1350,8 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
       return false;
     }
 
-    public void put(Fact fact, Index<String> index) {
-      put(index.get(fact.getSubject()), index.get(fact.getObject()));
+    public boolean put(Fact fact, Index<String> index) {
+      return put(index.get(fact.getSubject()), index.get(fact.getObject()));
     }
 
     public boolean put(Integer key, Set<Integer> newSet) {
