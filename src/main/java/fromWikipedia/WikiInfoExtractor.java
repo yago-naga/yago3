@@ -110,7 +110,6 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
         endPos = target.indexOf('|');
         if (endPos != -1) target = target.substring(0, endPos);
         target = FactComponent.forForeignWikipediaTitle(target, language);
-        if (isEnglish() && !titleExtractor.entities.contains(target)) continue;
         targets.add(target);
       }
 
