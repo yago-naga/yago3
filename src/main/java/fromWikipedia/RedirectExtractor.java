@@ -20,8 +20,8 @@ import fromOtherSources.PatternHardExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
+import javatools.filehandlers.FileUtils;
 import javatools.parsers.Char17;
-import javatools.util.FileUtils;
 import utils.MultilingualTheme;
 import utils.Theme;
 

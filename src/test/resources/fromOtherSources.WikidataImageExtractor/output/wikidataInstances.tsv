@@ -1,9 +1,0 @@
-	<yagoTheme_wikidataInstances>	<hasGloss>	"This file is a test file for testing WikidataImageExtraction"	
-	<de/George_Washington>	owl:sameAs	<http://www.wikidata.org/entity/Q23>	
-	<George_Washington>	owl:sameAs	<http://www.wikidata.org/entity/Q23>
-	<de/Mount_Everest>	owl:sameAs	<http://www.wikidata.org/entity/Q513>	
-	<Mount_Everest>	owl:sameAs	<http://www.wikidata.org/entity/Q513>		
-	<de/Friedrich_Hedde>	owl:sameAs	<http://www.wikidata.org/entity/Q15055738>	
-	<de/Pcim>	owl:sameAs	<http://www.wikidata.org/entity/Q429>	
-	<Pcim>	owl:sameAs	<http://www.wikidata.org/entity/Q429>	
-

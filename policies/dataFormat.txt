@@ -4,7 +4,7 @@ Author: Fabian M. Suchanek
 -------------- Format --------------------
 
 The data format of YAGO is RDF/Turtle, as specified here:
- http://www.w3.org/TeamSubmission/turtle/#sec-grammar-grammar 
+ https://www.w3.org/TR/turtle/#sec-grammar-grammar 
 
 -------------- Design Choices --------------------
  

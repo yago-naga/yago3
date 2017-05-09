@@ -1,7 +1,0 @@
-// Test
-// Raw types from the Wikipedia infoboxes
-// WIKIPEDIA
-
-	<Giulia_Sarkozy>	rdf:type	<wordnet_girl>
-	<de/Afghanistan>	<infobox/de/type>	"staat"@de
-	<Sarkozy>	<loves>	<Giulia_Sarkozy>

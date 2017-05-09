@@ -21,7 +21,7 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 import utils.FactCollection;
 import utils.MultilingualTheme;
 import utils.Theme;

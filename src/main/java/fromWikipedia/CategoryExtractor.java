@@ -19,7 +19,7 @@ import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;

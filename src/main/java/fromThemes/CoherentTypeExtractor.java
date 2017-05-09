@@ -19,7 +19,7 @@ import fromOtherSources.WordnetExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.IntHashMap;
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 import utils.FactCollection;
 import utils.Theme;
 

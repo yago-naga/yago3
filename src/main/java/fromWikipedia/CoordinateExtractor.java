@@ -15,7 +15,7 @@ import fromOtherSources.WordnetExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 import utils.Theme;
 import utils.TitleExtractor;
 

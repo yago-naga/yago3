@@ -14,7 +14,7 @@ import fromOtherSources.PatternHardExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.datatypes.IntHashMap;
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 import utils.FactCollection;
 import utils.FactCollection.Add;
 import utils.Theme;

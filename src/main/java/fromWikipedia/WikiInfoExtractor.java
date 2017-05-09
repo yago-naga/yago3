@@ -14,7 +14,7 @@ import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
