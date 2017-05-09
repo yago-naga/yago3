@@ -19,7 +19,7 @@ import fromThemes.TransitiveTypeExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 import utils.FactCollection;
 import utils.FactTemplateExtractor;
 import utils.MultilingualTheme;

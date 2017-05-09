@@ -1,9 +1,0 @@
-	<yagoTheme_entityDictionary_de>	<hasGloss>	"testing DictionaryExtractor Maps a foreign entity to a YAGO entity. Data from (http://http://www.wikidata.org/). INTERNAL"	
-	<de/Montag>	<_hasTranslation>	<Monday>	
-	<de/George_Washington>	<_hasTranslation>	<George_Washington>	
-	<de/Belgien>	<_hasTranslation>	<Belgium>	
-	<de/Mustafa_Kaplan>	<_hasTranslation>	<de/Mustafa_Kaplan>	
-	<de/Jorge_Cramez>	<_hasTranslation>	<de/Jorge_Cramez>	
-	<de/Flakpanzer_IV>	<_hasTranslation>	<Flakpanzer_IV>	
-	<de/Hansa>	<_hasTranslation>	<Hansa>	
-# end of file entityDictionary_de

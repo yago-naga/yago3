@@ -24,7 +24,7 @@ import basics.FactComponent;
 import basics.N4Reader;
 import javatools.datatypes.Pair;
 import javatools.filehandlers.FileLines;
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 
 public class WikidataIDInvestigator {
   

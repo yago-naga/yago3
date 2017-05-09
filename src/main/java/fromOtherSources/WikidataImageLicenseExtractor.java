@@ -20,8 +20,8 @@ import extractors.DataExtractor;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
+import javatools.filehandlers.FileUtils;
 import javatools.parsers.Char17;
-import javatools.util.FileUtils;
 import utils.Theme;
 
 /**

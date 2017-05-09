@@ -9,7 +9,7 @@ import java.net.URL;
 import java.net.URLEncoder;
 import java.util.regex.Pattern;
 
-import javatools.util.FileUtils;
+import javatools.filehandlers.FileUtils;
 
 /**
  * Helper functions/patterns to deal with Wikipedia

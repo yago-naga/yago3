@@ -13,10 +13,8 @@ The following Java projects belong to YAGO
 * Basics
   These classes are used to represent facts, TSV files, etc.
   The files in "data" describe the schema of YAGO.
-  This project can be shared with others or be externalized.
 * YAGO
   This project contains all main YAGO extractors, together with
   - their data (patterns etc.)
   - policies that describe the code, architecture, and data format 
-  - scripts that run YAGO (s.b.)
-  - test cases (see policies)
+  - scripts that run YAGO 

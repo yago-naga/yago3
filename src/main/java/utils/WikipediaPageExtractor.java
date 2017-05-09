@@ -4,8 +4,8 @@ import java.io.File;
 import java.io.Reader;
 
 import javatools.filehandlers.FileLines;
+import javatools.filehandlers.FileUtils;
 import javatools.filehandlers.UTF8Writer;
-import javatools.util.FileUtils;
 
 /**
  * Finds Wikipedia page from the article. Can be used for debugging, when a
