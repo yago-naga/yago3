@@ -76,6 +76,7 @@ public class NumberParser extends LiteralParser {
       Announce.warning("Cannot parse the numerical value", resultMatch.group());
       return (null);
     }
+    bigdec = bigdec.setScale(2000, BigDecimal.ROUND_HALF_DOWN).stripTrailingZeros();
     return (FactComponent.forStringWithDatatype(bigdec.toPlainString(), unit));
   }
 
