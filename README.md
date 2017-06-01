@@ -51,13 +51,13 @@ wikidata = /Users/yago/yago3-dumps/wikidatawiki/20160621/wikidata-20160621-all-B
 commons_wiki = /Users/yago/yago3-dumps/commonswiki/20160621/commonswiki-20160621-pages-articles.xml
 ```
 
-```yagoFolder``` denotes the directory where YAGO will put its output files. ```reuse``` indicates whether or not any previous output in that folder will be preserved or not. This feature is particularly relevant if you reconfigure the ```extractors``` parameter and would like to keep already created results around for speeding up subsequent builds. ```languages``` tells YAGO which language-specific Wikipedia snapshots will be taken into account and hence allows for building a multilingual knowledge graph. 
+```yagoFolder``` denotes the directory where YAGO will put its output files. ```reuse``` indicates whether or not any previous output in that folder will be preserved or not. This feature is particularly relevant if you reconfigure the ```extractors``` parameter and would like to keep already created results around for speeding up subsequent builds. ```languages``` tells YAGO which language-specific Wikipedia snapshots will be taken into account and hence allows for building a multilingual knowledge graph. For this parameter, use [ISO 639-1 language codes](https://www.loc.gov/standards/iso639-2/php/code_list.php).
 
 #### Variant A
 
 The ```dumpsFolder``` denotes the directory where YAGO will download the latest versions of all required resources into. Required resources are dumps of [Wikipedia](https://www.wikipedia.org/), [Wikidata](https://www.wikidata.org), and [Wikimedia Commons](https://commons.wikimedia.org). The download needs to be invoked manually prior to running YAGO like this:
 
-```shell
+```bash
 python /PATH_TO_YAGO3/scripts/dumps/downloadDumps.py -i PATH_TO_YAGOFOLDER -y PATH_TO_CONFIGURATION_FILE
 ```
 
@@ -67,28 +67,32 @@ python /PATH_TO_YAGO3/scripts/dumps/downloadDumps.py -i PATH_TO_YAGOFOLDER -y PA
 
 Alternatively, you may choose to manually download the required resources and reference them in the configuration file (Variant B) as indicated in the aforementioned configuration snippet. That way, YAGO will pick those resources up during build, and no further steps are necessary at this time.
 
-###
+### Run YAGO
 
-###
+Once the configuration file has been prepared and all required resources have been downloaded, a YAGO build can be started like this:
 
+```bash
+cd PATH_TO_YAGO3
+mvn clean verify exec:java -Dexec.args=PATH_TO_CONFIGURATION_FILE
+```
 
+Again, ```PATH_TO_YAGO3``` is the directory where you checked out this project to and ```PATH_TO_CONFIGURATION_FILE``` is your adapted copy of the [template](blob/master/configuration/yago.ini).
 
-Wikipedia and Wikidata snapshots by ...
-
----
+Once processing finished, all output can be found in the directory denoted by ```yagoFolder```in your configuration file.
 
 ## Developers
 
-The main YAGO developers are (in alphabetical order):
-* Daniel Bär
-* Johannes Hoffart ( http://www.mpi-inf.mpg.de/~jhoffart )
-* Thomas Rebele ( https://thomasrebele.org ) 
-* Fabian Suchanek ( https://suchanek.name )
+The YAGO development is lead by (in alphabetical order):
+* [Daniel Bär](https://www.linkedin.com/in/daniel-baer/)
+* [Johannes Hoffart](http://www.mpi-inf.mpg.de/~jhoffart)
+* [Thomas Rebele](https://thomasrebele.org) 
+* [Fabian Suchanek](https://suchanek.name)
 
-Other contributors include
+Contributors include (in alphabetical order):
 * Joanna Biega
 * Erdal Kuzey
 * Farzaneh Mahdisoltani
+* Ghazaleh Haratinezhad Torbati
 
 ## License
 
