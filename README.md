@@ -24,6 +24,7 @@ YAGO is at jointly developed at the [DBWeb group](http://dbweb.enst.fr/) at [Té
 
 * Java 8
 * Maven
+* Python
 
 ## Downloads
 
