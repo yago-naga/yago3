@@ -74,10 +74,11 @@ Once the configuration file has been prepared and all required resources have be
 
 ```bash
 cd PATH_TO_YAGO3
+export MAVEN_OPTS=-Xmx212G
 mvn clean verify exec:java -Dexec.args=PATH_TO_CONFIGURATION_FILE
 ```
 
-Again, ```PATH_TO_YAGO3``` is the directory where you checked out this project to and ```PATH_TO_CONFIGURATION_FILE``` is your adapted copy of the [template](blob/master/configuration/yago.ini).
+Again, ```PATH_TO_YAGO3``` is the directory where you checked out this project to and ```PATH_TO_CONFIGURATION_FILE``` is your adapted copy of the [template](blob/master/configuration/yago.ini). Allocating 212G of main memory to YAGO is a reasonable estimate which typically works fine, but of course this highly depends on the number of languages you execute the build for. Increase this value if necessary.
 
 Once processing finished, all output can be found in the directory denoted by ```yagoFolder```in your configuration file.
 
