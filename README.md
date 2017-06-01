@@ -133,6 +133,7 @@ Turtle leaves some design choices open. We make the following conventions:
 ## Entities 
 
 We use predefined RDF entities wherever possible, in particular 
+
     rdfs:domain, skos:prefLabel, rdfs:range, rdfs:label, rdfs:subClassOf,  
     rdfs:subPropertyOf, rdf:type, rdf:Resource, xsd:boolean, rdf:Class, 
     xsd:date, xsd:duration, rdf:Statement, xsd:integer, xsd:nonNegativeInteger, 
@@ -143,7 +144,9 @@ We integrate XML types into the YAGO literal type hierarchy. We use YAGO literal
 ## N4 
 
 We extend RDF/Turtle by giving each triple an optional (!) fact id. This id is given in the line before the fact as a comment of the form
+
      #@ XXX
+
 where XXX is a valid Turtle id for the following fact.
 
 ## Implementation 
