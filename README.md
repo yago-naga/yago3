@@ -104,9 +104,9 @@ An extractor is a unit of code that
   - a raw data file
 * produces as output one or more themes
 
-Every extraction module shall follow this scheme, i.e., implement extractors.Extractor. This defines a dependency graph of extractors.
+Every extraction module shall follow this scheme, i.e., implement extractors.Extractor. This defines a dependency graph of extractors. Extractors are scheduled in the right order and called by main.ParallelCaller.
 
-Extractors are scheduled in the right order and called by main.Caller
+Common postprocessing steps, e.g., translating entities, shall be implemented as `FollowUpExtractor`.
 
 ## Final Themes 
 
@@ -117,6 +117,18 @@ Themes that are free of duplicates and ready for export are called "final themes
 Facts can have a meta-fact `<extractionSource>`. This meta-fact can have a meta-fact `<extractionTechnique>`.  There should be a finite set of techniques that does not grow with the data.
 
 Facts that do not have such an annotation are assumed to be trivially clean.
+
+## Packages
+
+Extractors are split into the following packages:
+
+* deduplicators: extractors aggregating results from previous ones, removing duplicate facts
+* extractors: abstract classes specifying the interfaces for extractors
+* followUp: classes implementing filtering and mapping postprocessing steps
+* fromGeonames: extractors working on Geonames
+* fromOtherSources: extractors working on Wordnet, Wikidata, etc.
+* fromThemes: extractors depending on other extractors
+* fromWikipedia: extractors working on Wikipedia dumps
 
 # Format 
 
