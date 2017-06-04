@@ -76,8 +76,9 @@ public class NumberParser extends LiteralParser {
       Announce.warning("Cannot parse the numerical value", resultMatch.group());
       return (null);
     }
-    bigdec = bigdec.setScale(2000, BigDecimal.ROUND_HALF_DOWN).stripTrailingZeros();
-    return (FactComponent.forStringWithDatatype(bigdec.toPlainString(), unit));
+    // expand number for exponent < 100 or > -100 (e.g. 1e-99 gets expandend to 0.00...001, but 1e-100 stays)
+    String bigdecString = (Math.abs(bigdec.scale()) < 100) ? bigdec.toPlainString() : bigdec.toEngineeringString();
+    return (FactComponent.forStringWithDatatype(bigdecString, unit));
   }
 
   /* This is the old code before taking into account Thomas Rebele's patterns in 2014.
