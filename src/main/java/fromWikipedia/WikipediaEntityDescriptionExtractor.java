@@ -15,9 +15,6 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.TimeoutException;
 import java.util.regex.Matcher;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
 import basics.Fact;
 import basics.FactComponent;
 import basics.YAGO;
