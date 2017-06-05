@@ -10,6 +10,7 @@ import java.util.Set;
 import basics.Fact;
 import basics.FactComponent;
 import basics.FactSource;
+import basics.RDFS;
 import extractors.MultilingualExtractor;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
@@ -94,6 +95,9 @@ public class InfoboxMapper extends MultilingualExtractor {
     }
     Map<String, Set<String>> attribute2relations = new HashMap<>();
     for (Fact f : infoboxAttributeMappings.getFactsWithRelation("<_infoboxPattern>")) {
+      if (RDFS.nothing.equals(f.getObject())) {
+        continue;
+      }
       D.addKeyValue(attribute2relations, f.getSubject().toLowerCase(), f.getObject(), HashSet.class);
     }
     for (Fact f : input) {
@@ -111,7 +115,7 @@ public class InfoboxMapper extends MultilingualExtractor {
         // we get subjects that are strings. This is always wrong.
         if (FactComponent.isLiteral(f.getSubject())) continue;
         write(INFOBOXFACTS_TOREDIRECT.inLanguage(language), fact, INFOBOXSOURCES.inLanguage(language),
-            FactComponent.wikipediaSourceURL(f.getSubject(), language), "InfoboxExtractor from " + f.getRelation());
+            FactComponent.wikipediaSourceURL(f.getSubject(), language), "InfoboxMapper from " + f.getRelation());
       }
     }
 
