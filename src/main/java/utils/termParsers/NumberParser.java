@@ -2,6 +2,7 @@ package utils.termParsers;
 
 import java.io.IOException;
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.regex.Matcher;
 
 import basics.Fact;
@@ -43,7 +44,7 @@ public class NumberParser extends LiteralParser {
     BigDecimal result = null;
     try {
       // Use a lookahead, so that we can retrieve the delimiter.
-      String split[] = expression.split("(?=[\\+\\*])");
+      String split[] = expression.split("(?=[\\+\\*\\/])");
       result = new BigDecimal(split[0]);
       for (int i = 1; i < split.length; i++) {
         char operator = split[i].charAt(0);
@@ -54,6 +55,9 @@ public class NumberParser extends LiteralParser {
             break;
           case '+':
             result = result.add(factor);
+            break;
+          case '/':
+            result = result.divide(factor, factor.scale() + 10, RoundingMode.HALF_EVEN);
             break;
           default:
             Announce.warning("Faulty operator:", operator);

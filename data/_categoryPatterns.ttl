@@ -99,8 +99,8 @@
 "(?:Presidents|Governors|Chancellors|Vice Presidents|Deputy Prime Ministers|Ministers|Prime Ministers) of (?:the )?(.+)"	<_categoryPattern>	"$0 <isPoliticianOf> @Entity($1)" .
 
 # experimental
-"(\u005cd+.*century(\s+BC)?).*"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
-"(\u005cd+.*century(\s+BC)?).*"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .
+#"(\u005cd+.*century(\s+BC)?).*"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
+#"(\u005cd+.*century(\s+BC)?).*"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .
 
 "(\u005cd+s?( BC)?) births"	<_categoryPattern>	"$0 <wasBornOnDate> @Date($1)" .
 "(\u005cd+s?( BC)?) deaths"	<_categoryPattern>	"$0 <diedOnDate> @Date($1)" .

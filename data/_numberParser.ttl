@@ -71,6 +71,11 @@
 "(\d+):(\d{2}):(\d{2})" <mapsTo> "_number_$3*3600+$2*60+$3_ s " .
 "(\d+):(\d{2})" <mapsTo> "_number_$1*60+$2_ s " .
 
+
+# latitude / longitude
+"_number_([^_]++)_ degrees _number_([^_]++)_ minutes _number_([^_]++)_ seconds (N|E)" <mapsTo> " " .
+"_number_([^_]++)_ degrees _number_([^_]++)_ minutes _number_([^_]++)_ seconds (S|W)" <mapsTo> " " .
+
 # quantities
 
 # units
