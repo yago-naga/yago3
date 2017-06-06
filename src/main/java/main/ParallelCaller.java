@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
@@ -97,11 +98,11 @@ public class ParallelCaller {
   /** TRUE if we run extractors which take a theme as an input, which was regenerated */
   protected static boolean rerunDependentExtractors = false;
 
-  /** Maps from an extractor to those that need to run before it */
-  protected static Map<Extractor, Set<Extractor>> extractorDependencies = new HashMap<>();
-
   /** Maps from a theme to the extractor which produces it */
   protected static Map<Theme, Extractor> theme2extractor = new HashMap<>();
+
+  /** Maps from a follow-up theme to the base extractor */
+  protected static Map<Extractor, List<Extractor>> baseExtractor2FollowUp = new HashMap<>();
 
   protected static Map<String, List<Extractor>> call2extractor = new HashMap<>();
 
@@ -230,14 +231,6 @@ public class ParallelCaller {
     }
   }
 
-  /** Adds all follow up extractors to the list */
-  public static void addFollowUps(List<Extractor> extractors) {
-    for (int i = 0; i < extractors.size(); i++) {
-      Set<FollowUpExtractor> followUps = extractors.get(i).followUp();
-      extractors.addAll(followUps);
-    }
-  }
-
   /** Create the list of Wikipedias */
   public static void createWikipediaList(List<String> languages, List<String> wikis) {
     if (wikis == null || wikis.isEmpty() || languages == null || languages.isEmpty() || wikis.size() > languages.size()
@@ -285,7 +278,8 @@ public class ParallelCaller {
               }
               for (FollowUpExtractor fe : e.followUp()) {
                 for (Theme t : fe.output()) {
-                  theme2extractor.put(t, e);
+                  theme2extractor.put(t, fe);
+                  baseExtractor2FollowUp.computeIfAbsent(e, k -> new ArrayList<>()).add(fe);
                 }
               }
             }
@@ -417,7 +411,7 @@ public class ParallelCaller {
 
   /** Run */
   public static void main(String[] args) throws Exception {
-    String initFile = args.length == 0 ? "yago.ini" : args[0];
+    String initFile = args.length == 0 ? "../yago.ini" : args[0];
     D.p("Initializing from", initFile);
     Parameters.init(initFile);
     simulate = Parameters.getBoolean("simulate", false);
@@ -443,18 +437,24 @@ public class ParallelCaller {
       System.exit(-1);
     }
 
-    addFollowUps(extractorsToDo);
     fillTheme2Extractor();
     // Make sure all themes are generated.
     // This is to make sure that Theme.all() works,
     // which is important for the 'reuse'-flag further down to work.
-    for (Extractor e : extractorsToDo) {
-      extractorDependencies.computeIfAbsent(e, k -> new HashSet<>());
-      for (Theme t : e.input()) {
-        Extractor eForTheme = theme2extractor.get(t);
-        extractorDependencies.get(e).add(eForTheme);
+    /** Maps from an extractor to those that need to run before it */
+    Map<Extractor, Set<Extractor>> extractorDependencies = new HashMap<>();
+    for (int i = 0; i < extractorsToDo.size(); i++) {
+      Extractor e = extractorsToDo.get(i);
+      if (e != null && !extractorDependencies.containsKey(e)) {
+        extractorDependencies.computeIfAbsent(e, k -> new HashSet<>());
+        for (Theme t : e.input()) {
+          Extractor eForTheme = theme2extractor.get(t);
+          extractorDependencies.get(e).add(eForTheme);
+          extractorsToDo.add(eForTheme);
+        }
+        e.output();
+        baseExtractor2FollowUp.getOrDefault(e, Arrays.asList()).forEach(fe -> extractorsToDo.add(fe));
       }
-      e.output();
     }
     extractorsToDo = topologicalSort(extractorDependencies);
 
@@ -476,12 +476,14 @@ public class ParallelCaller {
         for (Extractor e : extractorsToDo) {
           if (!reusable.containsAll(e.input())) {
             reusable.removeAll(e.output());
-          } else pattern_loop: for (Pattern p : rerunDependentOn) {
-            for (Theme t : e.input()) {
-              Matcher m = p.matcher(t.name);
-              if (m.matches()) {
-                reusable.removeAll(e.output());
-                break pattern_loop;
+          } else {
+            pattern_loop: for (Pattern p : rerunDependentOn) {
+              for (Theme t : e.input()) {
+                Matcher m = p.matcher(t.name);
+                if (m.matches()) {
+                  reusable.removeAll(e.output());
+                  break pattern_loop;
+                }
               }
             }
           }
