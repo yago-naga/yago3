@@ -27,6 +27,17 @@ If you are interested in using the source code of YAGO, or in contributing to it
 
 If you run the code yourself, you can define (a) what Wikipedia languages to cover, and (b) which specific [Wikipedia](https://www.wikipedia.org/), [Wikidata](https://www.wikidata.org), and [Wikimedia Commons](https://commons.wikimedia.org) snapshots should be used during the build.
 
+### Project components
+
+The following Java projects belong to YAGO
+  * Javatools:  These classes are Java utilities. They are shared with other projects.
+  * Basics: These classes are used to represent facts, TSV files, etc.
+  The files in "data" describe the schema of YAGO.
+  * YAGO: This project contains all main YAGO extractors, together with
+    - their data (patterns etc.)
+    - policies that describe the code, architecture, and data format 
+    - scripts that run YAGO 
+  
 ### Prerequisites
 
 To run YAGO, you need the following:
