@@ -33,9 +33,9 @@ The following Java projects belong to YAGO
   * Javatools:  These classes are Java utilities. They are shared with other projects.
   * Basics: These classes are used to represent facts, TSV files, etc.
   The files in "data" describe the schema of YAGO.
-  * YAGO: This project contains all main YAGO extractors, together with
-    - their data (patterns etc.)
-    - policies that describe the code, architecture, and data format 
+  * YAGO: This project contains 
+    - all main YAGO extractors
+    - some hand-crafted data
     - scripts that run YAGO 
   
 ### Prerequisites
