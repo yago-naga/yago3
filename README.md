@@ -43,7 +43,7 @@ The following Java projects belong to YAGO
 To run YAGO, you need the following:
   * Java 8
   * Maven
-  * Python
+  * Python 2.7
   * a machine with at least 256 GB of RAM
   
 ### The YAGO configuration file
@@ -69,7 +69,7 @@ If you want to download the lastest versions of the data sources automatically, 
 Then run the following code:
 
 ```bash
-python /<PATH_TO_YAGO3>/scripts/dumps/downloadDumps.py -i PATH_TO_YAGOFOLDER -y <PATH_TO_CONFIGURATION_FILE>
+python scripts/dumps/downloadDumps.py -i <PATH_TO_YAGO_DUMP_FOLDER> -y <PATH_TO_CONFIGURATION_FILE>
 ```
 
 Alternatively, you can download the required data sources manually. Then add the following lines to your configuration file:
