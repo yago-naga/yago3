@@ -18,6 +18,7 @@ import basics.YAGO;
 import extractors.DataExtractor;
 import fromThemes.InfoboxMapper;
 import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import utils.FactCollection;
@@ -268,6 +269,6 @@ public class GeoNamesDataImporter extends DataExtractor {
   }
 
   public GeoNamesDataImporter() {
-    this(new File("./data/geonames/"));
+    this(new File(Parameters.get("geonames")));
   }
 }

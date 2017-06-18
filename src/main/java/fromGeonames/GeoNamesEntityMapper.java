@@ -11,6 +11,7 @@ import basics.RDFS;
 import extractors.DataExtractor;
 import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import utils.Theme;
@@ -96,7 +97,7 @@ public class GeoNamesEntityMapper extends DataExtractor {
   }
 
   public GeoNamesEntityMapper() {
-    this(new File("./data/geonames/alternateNames/alternateNames.txt"));
+    this(new File(Parameters.get("geonames") + "/" + "alternateNames.txt"));
   }
 
   public static void main(String[] args) throws Exception {
