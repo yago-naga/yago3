@@ -1,6 +1,8 @@
 package followUp;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import basics.Fact;
@@ -58,8 +60,8 @@ public class TypeChecker extends FollowUpExtractor {
     this(in, out, null);
   }
 
-  /** Holds the transitive types */
-  protected FactCollection types;
+  /** Holds the transitive types in a map from subjects to types */
+  protected Map<String, Set<String>> types = new HashMap<>();
 
   /** Holds Relations without domain/range */
   protected Set<String> untypedRelations = new HashSet<>();
@@ -152,7 +154,7 @@ public class TypeChecker extends FollowUpExtractor {
       case RDFS.resource:
         return (true);
       case YAGO.entity:
-        return (types.containsSubject(entity));
+        return (types.containsKey(entity));
       case RDFS.statement:
         return (FactComponent.isFactId(entity));
       case RDFS.clss:
@@ -161,13 +163,14 @@ public class TypeChecker extends FollowUpExtractor {
         return (entity.startsWith("<http"));
     }
 
-    Set<String> myTypes = types.collectObjects(entity, RDFS.type);
+    Set<String> myTypes = types.get(entity);
     return (myTypes != null && myTypes.contains(type));
   }
 
   @Override
   public void extract() throws Exception {
-    types = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
+    types = TransitiveTypeExtractor.getSubjectToTypes();
+
     schema = HardExtractor.HARDWIREDFACTS.factCollection();
     Announce.doing("Type-checking facts of", checkMe);
     for (Fact f : checkMe) {

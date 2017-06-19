@@ -4,11 +4,11 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 import basics.Fact;
 import basics.FactComponent;
-import basics.RDFS;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
@@ -49,7 +49,7 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor {
 
-  private FactCollection types;
+  private Map<String, Set<String>> types;
 
   private static final String LANGUAGE = "<wordnet_language_106282651>";
 
@@ -101,7 +101,7 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
     Announce.doing("Extracting disambiguation means");
 
     // Needed for checking constraints
-    types = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
+    types = TransitiveTypeExtractor.getSubjectToTypes();
 
     BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 
@@ -135,15 +135,8 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
   }
 
   private boolean hasLanguageAsSubject(Fact fact) {
-    Set<Fact> subjectTypes = types.getFactsWithSubjectAndRelation(fact.getSubject(), RDFS.type);
-
-    for (Fact f : subjectTypes) {
-      if (f.getObject().equals(LANGUAGE)) {
-        return true;
-      }
-    }
-
-    return false;
+    Set<String> subjectTypes = types.get(fact.getSubject());
+    return subjectTypes.contains(LANGUAGE);
   }
 
   protected static String cleanDisambiguationEntity(String titleEntity) {

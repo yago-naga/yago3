@@ -1,7 +1,9 @@
 package fromThemes;
 
 import java.io.File;
+import java.lang.ref.SoftReference;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -51,6 +53,9 @@ public class TransitiveTypeExtractor extends Extractor {
   public static final Theme TRANSITIVETYPE = new Theme("yagoTransitiveType", "Transitive closure of all rdf:type/rdfs:subClassOf facts",
       ThemeGroup.TAXONOMY);
 
+  /** Cache for transitive type */
+  protected static SoftReference<Map<String, Set<String>>> cache = new SoftReference<>(null);
+
   @Override
   public Set<Theme> output() {
     return new FinalSet<>(TRANSITIVETYPE);
@@ -85,6 +90,20 @@ public class TransitiveTypeExtractor extends Extractor {
     }
     Announce.done();
     Announce.done();
+  }
+
+  public static synchronized Map<String, Set<String>> getSubjectToTypes() {
+    Announce.doing("Loading transitive type");
+    Map<String, Set<String>> map = cache.get();
+    if (map == null) {
+      cache = new SoftReference<>(map = new HashMap<>());
+      for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
+        if (RDFS.type.equals(f.getRelation())) {
+          map.computeIfAbsent(f.getSubject(), k -> new HashSet<>()).add(f.getObject());
+        }
+      }
+    }
+    return map;
   }
 
   public static void main(String[] args) throws Exception {
