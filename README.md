@@ -43,7 +43,9 @@ The following Java projects belong to YAGO
 To run YAGO, you need the following:
   * Java 8
   * Maven
-  * Python 2.7
+  * Python 2.7, with the modules
+  	* requests
+  	(you can use `pip install` to install these modules)
   * a machine with at least 256 GB of RAM
   
 ### The YAGO configuration file
