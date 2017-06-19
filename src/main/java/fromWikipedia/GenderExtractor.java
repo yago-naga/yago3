@@ -12,7 +12,6 @@ import java.util.regex.Pattern;
 import basics.Fact;
 import basics.Fact.ImplementationNote;
 import basics.FactComponent;
-import basics.RDFS;
 import basics.YAGO;
 import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
@@ -22,7 +21,6 @@ import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileUtils;
-import utils.FactCollection;
 import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
@@ -99,7 +97,7 @@ public class GenderExtractor extends MultilingualWikipediaExtractor {
       return;
     }
     Pattern he = lang2he.get(language);
-    FactCollection types = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
+    Map<String, Set<String>> subjToTypes = TransitiveTypeExtractor.getSubjectToTypes();
     TitleExtractor titleExtractor = new TitleExtractor("en");
     Reader in = FileUtils.getBufferedUTF8Reader(this.wikipedia);
     String titleEntity = null;
@@ -114,7 +112,8 @@ public class GenderExtractor extends MultilingualWikipediaExtractor {
           // Announce.progressStep();
           titleEntity = titleExtractor.getTitleEntity(in);
           if (titleEntity != null) {
-            if (!types.contains(titleEntity, RDFS.type, YAGO.person)) continue;
+            Set<String> types = subjToTypes.get(titleEntity);
+            if (types == null || !types.contains(YAGO.person)) continue;
             String page = FileLines.readBetween(in, "<text", "</text>");
             String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
             // New heuristics: First pronoun

@@ -15,7 +15,7 @@ import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
 import fromOtherSources.PatternHardExtractor;
-import fromThemes.TransitiveTypeExtractor;
+import fromThemes.CoherentTypeExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -57,12 +57,12 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
+    return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, CoherentTypeExtractor.YAGOTYPES));
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
+    return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, CoherentTypeExtractor.YAGOTYPES));
   }
 
   public static final MultilingualTheme NONENTITIESNEEDSTRANSLATION = new MultilingualTheme("nonEntitiesNeedsTranslation",
@@ -95,7 +95,7 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
     Announce.doing("Extracting context facts");
 
     BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-    Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
+    Set<String> entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
     PatternList replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS, "<_titleReplace>");
 
     String titleEntity = null;

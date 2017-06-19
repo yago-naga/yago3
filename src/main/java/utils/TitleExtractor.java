@@ -7,7 +7,7 @@ import java.util.Set;
 import basics.FactComponent;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import fromThemes.TransitiveTypeExtractor;
+import fromThemes.CoherentTypeExtractor;
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char17;
@@ -16,7 +16,7 @@ import javatools.parsers.Char17;
  * Extracts Wikipedia title
  *
  * This tool requires PatternHardExtractor.TITLEPATTERNS and - either
- * WordnetExtractor.WORDNETWORDS - or TransitiveTypeExtractor.TRANSITIVETYPE
+ * WordnetExtractor.WORDNETWORDS - or CoherentTypeExtractor.YAGOTYPES
  *
  * It does a profound check whether this entity should become a YAGO entity.
  *
@@ -71,14 +71,14 @@ public class TitleExtractor {
     }
     replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS, "<_titleReplace>");
     if (FactComponent.isEnglish(language)) {
-      if (TransitiveTypeExtractor.TRANSITIVETYPE.isAvailableForReading()) {
-        this.entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
+      if (CoherentTypeExtractor.YAGOTYPES.isAvailableForReading()) {
+        this.entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
         this.wordnetWords = null;
       } else if (WordnetExtractor.PREFMEANINGS.isAvailableForReading()) {
         this.wordnetWords = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings().keySet();
         this.entities = null;
       } else {
-        Announce.error("The English TitleExtractor needs WordnetExtractor.PREFMEANINGS or TransitiveTypeExtractor.TRANSITIVETYPE as input. "
+        Announce.error("The English TitleExtractor needs WordnetExtractor.PREFMEANINGS or CoherentTypeExtractor.YAGOTYPES as input. "
             + "This is in order to avoid that Wikipedia articles that describe common nouns (such as 'table') become instances in YAGO.");
         this.entities = null;
         this.wordnetWords = null;

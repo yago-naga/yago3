@@ -6,7 +6,7 @@ if [ $# -ne "$PARAMS" ]
 then
     echo "Usage: $0 <dump_target_dir> <url>"
     echo "  Parameters:"
-    echo "    <dump_targer_dir>  e.g. /GW/aida/work/data/"
+    echo "    <dump_target_dir>  e.g. /GW/aida/work/data/"
     echo "    <url>              e.g. https://dumps.wikimedia.org/wikidatawiki/entities/20170227/"
     echo "                            wikidata-20170227-all-BETA.ttl.bz2"
     exit 1
@@ -19,7 +19,7 @@ wd_download_url="${args[1]}"
 
 echo "Processing $wd_download_url"
 
-# Create targer directory
+# Create target directory
 # Check if the target directory ends with "/", add it other wise
 wd_dir="wikidatawiki"
 i=$((${#wd_dump_dir}-1))

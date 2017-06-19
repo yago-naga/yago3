@@ -1,6 +1,6 @@
 package fromOtherSources;
 
-import java.io.File;  
+import java.io.File;
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
@@ -60,7 +60,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	private static final String IMAGE_ORIGINALURL_TEMPLATE = "https://upload.wikimedia.org/wikipedia/commons/";
 	private static final String IMAGETYPE = "image_";
 	
-	private static FactCollection transitiveTypes = new FactCollection();
+  private static Map<String, Set<String>> transitiveTypes = null;
 	private static FactCollection reverseWikidataInstances = new FactCollection();
 	
 	// Order of image relations to use for each entity category.
@@ -101,7 +101,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	  // Example of the facts in reverseWikidataInstances:
 	  // <http://www.wikidata.org/entity/Q23>  owl:sameAs <George_Washington>      
 	  reverseWikidataInstances = WikidataLabelExtractor.WIKIDATAINSTANCES.factCollection().getReverse();
-	  transitiveTypes = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
+    transitiveTypes = TransitiveTypeExtractor.getSubjectToTypes();
 		
 		N4Reader nr = new N4Reader(inputData);
 		String yagoEntityMostEnglish = null;
@@ -270,28 +270,27 @@ public class WikidataImageExtractor extends DataExtractor {
 	 * @throws IOException
 	 */
 	private static String getHighlevelCategory(String entity) throws IOException {
-		Set<Fact> facts = transitiveTypes.getFactsWithSubjectAndRelation(entity, RDFS.type);
+    Set<String> types = transitiveTypes.get(entity);
 		String category = "other";
 		
-		for (Fact fact:facts) {
-			String factObject = fact.getObject();
-			if (factObject.contains("person")) {
+    for (String type : types) {
+      if (type.contains("person")) {
 				category = "person";
 				break;
 			}
-			if (factObject.contains("location")) {
+      if (type.contains("location")) {
 				category = "location";
 				break;
 			}
-			if (factObject.contains("organization")) {
+      if (type.contains("organization")) {
 				category = "organization";
 				break;
 			}
-			if (factObject.contains("artifact")) {
+      if (type.contains("artifact")) {
 				category = "artifact";
 				break;
 			}
-			if (factObject.contains("event")) {
+      if (type.contains("event")) {
 				category = "event";
 				break;
 			}		

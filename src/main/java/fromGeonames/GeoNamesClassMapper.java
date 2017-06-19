@@ -18,6 +18,7 @@ import extractors.DataExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.NounGroup;
@@ -283,7 +284,7 @@ public class GeoNamesClassMapper extends DataExtractor {
   }
 
   public GeoNamesClassMapper() {
-    this(new File("./data/geonames/featureCodes_en.txt"));
+    this(new File(Parameters.get("geonames") + "/" + "featureCodes_en.txt"));
   }
 
   public static void main(String[] args) throws Exception {
