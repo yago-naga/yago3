@@ -6,6 +6,7 @@ import java.text.Normalizer;
 import java.text.Normalizer.Form;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
@@ -14,6 +15,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
+import fromOtherSources.PatternHardExtractor;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import javatools.parsers.Name.PersonName;
@@ -49,7 +51,7 @@ public class PersonNameExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE);
+    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.LANGUAGECODEMAPPING);
   }
 
   /** Names of people */
@@ -68,6 +70,8 @@ public class PersonNameExtractor extends Extractor {
 
   @Override
   public void extract() throws Exception {
+    Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
+
     Set<String> people = new TreeSet<>();
     String source = TransitiveTypeExtractor.TRANSITIVETYPE.asYagoEntity();
     for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
@@ -91,6 +95,7 @@ public class PersonNameExtractor extends Extractor {
       if (given == null) continue;
       String family = name.familyName();
       if (family == null) continue;
+      lang = languagemap.getOrDefault(lang, lang);
       if (!given.endsWith(".") && given.length() > 1) {
         write(PERSONNAMES, new Fact(f.getArg(1), "<hasGivenName>", FactComponent.forStringWithLanguage(given, lang)), PERSONNAMESOURCES, source,
             "PersonNameExtractor");
