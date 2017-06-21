@@ -43,7 +43,7 @@ public class TypeChecker extends FollowUpExtractor {
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<>(HardExtractor.HARDWIREDFACTS, TransitiveTypeExtractor.TRANSITIVETYPE);
+    return new FinalSet<>(HardExtractor.HARDWIREDFACTS);
   }
 
   @Override
