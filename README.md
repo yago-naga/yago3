@@ -47,7 +47,7 @@ To run YAGO, you need the following:
     * Python 2.7
     * the Python module `requests` (you can use `pip install requests` to install this module)
     * a unix machine
-  * a machine with at least 256 GB of RAM
+  * a machine with at least 256 GB of RAM and 1 TB of disk space
   
 ### The YAGO configuration file
 
@@ -61,25 +61,35 @@ YAGO is configured with a configuration file. Use this [template](blob/master/co
 ### Downloading the data sources
 
 YAGO needs the following data sources: 
-  * [Wikipedia](https://www.wikipedia.org/)
-  * [Wikidata](https://www.wikidata.org)
-  * [Wikimedia Commons](https://commons.wikimedia.org)
+  * [Wikipedia](https://www.wikipedia.org/): the [latest version](https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2) of `pages-articles`.
+  * [Wikidata](https://www.wikidata.org): the latest [version](https://dumps.wikimedia.org/wikidatawiki/entities/20170612/wikidata-20170612-all-BETA.ttl.bz2) of `wikidata-DATE-all-ttl`.
+  * [Wikimedia Commons](https://commons.wikimedia.org): the [latest version(https://dumps.wikimedia.org/commonswiki/latest/commonswiki-latest-pages-articles.xml.bz2) of pages-articles.
+  * [Geonames](http://www.geonames.org/): the files 
+    [countryInfo](http://download.geonames.org/export/dump/countryInfo.txt), 
+    [hierarchy](http://download.geonames.org/export/dump/hierarchy.zip),
+    [alternateNames](http://download.geonames.org/export/dump/alternateNames.zip), 
+    [userTags](http://download.geonames.org/export/dump/userTags.zip), 
+    [featureCodes_en](http://download.geonames.org/export/dump/featureCodes_en.txt), 
+    [allCountries](http://download.geonames.org/export/dump/allCountries.zip)
   
-If you want to download the lastest versions of the data sources automatically, add the following line to your YAGO configuration file:
+If you want to download the latest versions of the data sources automatically, add the following line to your YAGO configuration file:
 
   * `dumpsFolder = ...`: points to a folder where the data sources live.
 
-Then run the following code:
+Then run the following code (works only on a Linux machine):
 
 ```bash
 python scripts/dumps/downloadDumps.py -i <PATH_TO_YAGO_DUMP_FOLDER> -y <PATH_TO_CONFIGURATION_FILE>
 ```
 
+This code will create a new configuration file, which you will have to use in the sequel.
+  
 Alternatively, you can download the required data sources manually. Then add the following lines to your configuration file:
 
   * `wikipedias = ...`: a comma-separated list of the Wikipedia dumps, in the order of the languages specified with the `languages` parameter.
   * `wikidata = ...`: Points to the WikiData file.
   * `commons_wiki = ...`: Points to the WikiCommons file.
+  * `geonames = ...`: Points to the folder where Geonames is stored.
 
 
 ### Running YAGO
@@ -92,7 +102,7 @@ export MAVEN_OPTS=-Xmx220G
 mvn clean verify exec:java -Dexec.args=<PATH_TO_CONFIGURATION_FILE>
 ```
 
-Allocating 220G of main memory to YAGO is a reasonable estimate which typically works fine, but of course this highly depends on the number of languages you execute the build for. Increase this value if necessary.
+Watch out to use the new configuration file if you used the Python script to download the data resources. Allocating 220G of main memory to YAGO is a reasonable estimate which typically works fine, but of course this highly depends on the number of languages you execute the build for. Increase this value if necessary.
 
 Once the processing finished, all output can be found in the directory given by the `yagoFolder` parameter in your configuration file.
 
