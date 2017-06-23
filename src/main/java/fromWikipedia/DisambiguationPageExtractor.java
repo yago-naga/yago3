@@ -136,7 +136,7 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
 
   private boolean hasLanguageAsSubject(Fact fact) {
     Set<String> subjectTypes = types.get(fact.getSubject());
-    return subjectTypes.contains(LANGUAGE);
+    return subjectTypes != null && subjectTypes.contains(LANGUAGE);
   }
 
   protected static String cleanDisambiguationEntity(String titleEntity) {

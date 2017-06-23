@@ -68,11 +68,6 @@ public class GenderExtractor extends MultilingualWikipediaExtractor {
   }
 
   @Override
-  public Set<Theme> inputCached() {
-    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE);
-  }
-
-  @Override
   public Set<Theme> output() {
     return (new FinalSet<Theme>(GENDERBYPRONOUN.inLanguage(language), GENDERBYPRONOUNSOURCES.inLanguage(language)));
   }
