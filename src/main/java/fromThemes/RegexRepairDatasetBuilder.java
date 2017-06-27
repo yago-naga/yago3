@@ -85,7 +85,6 @@ public class RegexRepairDatasetBuilder extends InfoboxTermExtractor {
       StringBuffer sb = new StringBuffer();
       int lastValPos = 0;
       do {
-        System.out.println("found " + m.group());
         if (exclude != null && exclude.matcher(m.group()).find()) {
           continue;
         }
@@ -100,7 +99,6 @@ public class RegexRepairDatasetBuilder extends InfoboxTermExtractor {
       sb.append(val.substring(lastValPos));
 
       if (lastValPos != 0) {
-        System.out.println("=====" + tag.toUpperCase() + ":" + sb.toString());
         return sb.toString();
       }
       //datesOut.write(m.replaceAll("<date>$1</date>") + "\n");
@@ -113,8 +111,11 @@ public class RegexRepairDatasetBuilder extends InfoboxTermExtractor {
   }
 
   public static void main(String[] args) throws Exception {
+    if (args.length == 0) {
+      args = new String[] { "/home/tr/tmp/yago3-debug/" };
+    }
     RegexRepairDatasetBuilder extractor = new RegexRepairDatasetBuilder("en");
-    extractor.extract(new File("/home/tr/tmp/yago3-debug/"), "mapping infobox attributes into infobox facts");
+    extractor.extract(new File(args[0]), "mapping infobox attributes into infobox facts");
   }
 
 }
