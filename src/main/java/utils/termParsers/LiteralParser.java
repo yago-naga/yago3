@@ -39,7 +39,7 @@ public abstract class LiteralParser extends TermParser {
   public static final Pattern resultPattern = Pattern.compile("_result_([^_]++)_([^_]*+)_");
 
   /** Holds the pattern list */
-  protected final PatternList patternList;
+  public final PatternList patternList;
 
   /**
    * Constructs a LiteralParser from a theme that contains patterns
