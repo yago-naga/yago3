@@ -170,7 +170,7 @@ public class CategoryMapper extends MultilingualExtractor {
           List<Fact> facts = FactTemplate.instantiate(group, variables, language, languageMap);
           for (Fact fact : facts) {
             if (fact != null) {
-              write(output, fact, outputSource, source, "CategoryMapper");
+              write(output, fact, outputSource, source, "CategoryMapper from " + f.getObjectAsJavaString());
             }
           }
         }
@@ -218,7 +218,7 @@ public class CategoryMapper extends MultilingualExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new CategoryMapper("de").extract(new File("c:/fabian/data/yago3"), "mapping categories into facts");
+    new CategoryMapper("en").extract(new File("/home/tr/tmp/yago3-debug"), "mapping categories into facts");
   }
 
 }
