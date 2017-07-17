@@ -3,6 +3,7 @@ package fromWikipedia;
 import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
@@ -10,7 +11,6 @@ import java.util.regex.Pattern;
 
 import basics.Fact;
 import basics.FactComponent;
-import basics.RDFS;
 import basics.YAGO;
 import extractors.EnglishWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
@@ -19,7 +19,6 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileUtils;
-import utils.FactCollection;
 import utils.Theme;
 import utils.TitleExtractor;
 
@@ -69,7 +68,7 @@ public class OldGenderExtractor extends EnglishWikipediaExtractor {
 
   @Override
   public void extract() throws Exception {
-    FactCollection types = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
+    Map<String, Set<String>> subjToTypes = TransitiveTypeExtractor.getSubjectToTypes();
     TitleExtractor titleExtractor = new TitleExtractor("en");
     Reader in = FileUtils.getBufferedUTF8Reader(inputData);
     String titleEntity = null;
@@ -84,7 +83,8 @@ public class OldGenderExtractor extends EnglishWikipediaExtractor {
           // Announce.progressStep();
           titleEntity = titleExtractor.getTitleEntity(in);
           if (titleEntity != null) {
-            if (!types.contains(titleEntity, RDFS.type, YAGO.person)) continue;
+            Set<String> types = subjToTypes.get(titleEntity);
+            if (types == null || !types.contains(YAGO.person)) continue;
             String page = FileLines.readBetween(in, "<text", "</text>");
             String normalizedPage = page.replaceAll("[\\s\\x00-\\x1F]+", " ");
             int male = 0;
