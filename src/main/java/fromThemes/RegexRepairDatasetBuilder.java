@@ -50,7 +50,7 @@ public class RegexRepairDatasetBuilder extends InfoboxTermExtractor {
 
     Pattern datePattern = Pattern.compile("_result_\\d+-\\d+-\\d+_");
     Pattern numberPattern = Pattern.compile("_result_[^_]*_<[^>%]*>_");
-    Pattern numberPatternExclude = Pattern.compile("<percent>");
+    Pattern numberPatternExclude = Pattern.compile("<(percent|px)>");
 
     try (Writer datesOut = java.nio.file.Files.newBufferedWriter(dateOutputFile.toPath())) {
       try (Writer numbersOut = java.nio.file.Files.newBufferedWriter(numberOutputFile.toPath())) {
