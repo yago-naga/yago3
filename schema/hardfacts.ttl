@@ -1,0 +1,111 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+# These are hard wired facts of YAGO2s.
+# The HardExtractor will make this data part of YAGO2s
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+#@ <hardId9>
+<yagoLegalActorGeo>	rdfs:subClassOf	owl:Thing .
+<hardId9>	rdfs:comment	"Additional YAGO class" .
+<yagoLegalActorGeo>	skos:prefLabel	"legal actor or geographic entity"@eng .
+<yagoLegalActorGeo>	<hasGloss>	"legal actor or geographic entity"@eng .
+<yagoLegalActorGeo>	rdfs:label	"yagoLegalActorGeo"@eng .
+#@ <hardId10>
+<yagoLegalActor>	rdfs:subClassOf	<yagoLegalActorGeo> .
+<hardId10>	rdfs:comment	"Additional YAGO class" .
+<yagoLegalActor>	skos:prefLabel	"legal actor" .
+<yagoLegalActor>	<hasGloss>	"legal actor" .
+<yagoLegalActor>	rdfs:label	"yagoLegalActor" .
+<wordnet_person_100007846>	rdfs:subClassOf	<yagoLegalActor> .
+<wordnet_organization_108008335>	rdfs:subClassOf	<yagoLegalActor> .
+<wordnet_location_100027167>	rdfs:subClassOf	<yagoLegalActorGeo> .
+<wordnet_candidate_109890749>	rdfs:subClassOf	<yagoLegalActor> .
+<wordnet_winner_110782940>	rdfs:subClassOf	<yagoLegalActor> .
+#@ <hardId11>
+<yagoGeoEntity>	rdfs:label	"yagoGeoEntity"@eng .
+<hardId11>	rdfs:comment	"Additional YAGO class for individuals with geographical coordinates" .
+<yagoGeoEntity>	skos:prefLabel	"geographical entity"@eng .
+<yagoGeoEntity>	<hasGloss>	"geographical entity"@eng .
+<wordnet_location_100027167>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_body_of_water_109225146>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_geological_formation_109287968>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_real_property_113246475>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_facility_103315023>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_excavation_103302121>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_structure_104341686>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_watercourse_104559275>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_way_104564698>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_land_109334396>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_land_109335240>	rdfs:subClassOf	<yagoGeoEntity> .
+<wordnet_location_100027167>	rdfs:subClassOf	<yagoGeoEntity> .
+<yagoPermanentlyLocatedEntity>	rdfs:label	"yagoPermanentlyLocatedEntity"@eng .
+#@ <hardId12>
+<yagoPermanentlyLocatedEntity>	rdfs:subClassOf	owl:Thing .
+<hardId12>	rdfs:comment	"Additional YAGO class for entities that can be permanently located somewhere"@eng .
+<wordnet_event_100029378>	rdfs:subClassOf	<yagoPermanentlyLocatedEntity> .
+<wordnet_organization_108008335>	rdfs:subClassOf	<yagoPermanentlyLocatedEntity> .
+<yagoGeoEntity>	rdfs:subClassOf	<yagoPermanentlyLocatedEntity> .
+<male>	rdf:type	<wordnet_sex_105006898> .
+<male>	rdfs:label	"male"@eng .
+<female>	rdf:type	<wordnet_sex_105006898> .
+<female>	rdfs:label	"female"@eng .
+<Earth>	rdf:type	<yagoGeoEntity> .
+<Africa>	rdf:type	<yagoGeoEntity> .
+<Africa>	<isLocatedIn>	<Earth> .
+<Antartica>	rdf:type	<yagoGeoEntity> .	
+<Antartica>	<isLocatedIn>	<Earth> .
+<Asia>	rdf:type	<yagoGeoEntity> .
+<Asia>	<isLocatedIn>	<Earth> .
+<Europe>	rdf:type	<yagoGeoEntity> .
+<Europe>	<isLocatedIn>	<Earth> .
+<North_America>	rdf:type	<yagoGeoEntity> .
+<North_America>	<isLocatedIn>	<Earth> .
+<Oceania>	rdf:type	<yagoGeoEntity> .
+<Oceania>	<isLocatedIn>	<Earth> .
+<South_America>	rdf:type	<yagoGeoEntity> .
+<South_America>	<isLocatedIn>	<Earth> .
+<European_Union>	rdfs:label	"EU"@eng .
+<European_Union>	rdfs:label	"EC"@eng .
+<United_States>	rdfs:label	"US"@eng .
+<United_States>	rdfs:label	"USA"@eng .
+<United_Nations>	rdfs:label	"UN"@eng .
+<United_Kingdom>	rdfs:label	"UK"@eng .
+<Great_Britain>	rdfs:label	"GB"@eng .
+<Richard_Rashid>	rdfs:label	"Rick"@eng .
+<Frédéric_Joliot-Curie>	rdfs:label	"Frederic"@eng .
+<wordnet_lock_103683079>	rdfs:label	"lock flight"@eng .	
+
+# Bugfixes suggested by Hannah Bast's team
+#@ <hbfix1>
+<wordnet_musician_110340312>	rdfs:subClassOf	<wordnet_musician_110339966> .
+<hbfix1>	rdfs:comment	"Bugfix in WordNet suggested by Hannah Bast's team. This makes all musicians artists."@eng .
+#@ <hbfix2>
+<wordnet_city_108540903>	rdfs:subClassOf		<wordnet_city_108524735> .
+<hbfix2>	rdfs:comment	"Bugfix in WordNet suggested by Hannah Bast's team. "@eng .
+#@ <hbfix3>
+<wordnet_cabbage_107713895> 	rdfs:subClassOf		<wordnet_cabbage_111875691> .
+<hbfix3>	rdfs:comment	"Bugfix in WordNet suggested by Hannah Bast's team. "@eng .
+#@ <hbfix4>
+<wordnet_vegetable_112212361> 	rdfs:subClassOf		<wordnet_plant_100017222> .
+<hbfix4>	rdfs:comment	"Bugfix in WordNet suggested by Hannah Bast's team. "@eng .
+#@ <hbfix5>
+<wordnet_vegetable_107707451> 	rdfs:subClassOf		<wordnet_plant_100017222> .
+<hbfix5>	rdfs:comment	"Bugfix in WordNet suggested by Hannah Bast's team. "@eng .
+
+# Bug fixes from Svitlana
+<wordnet_emulator_0> 	rdfs:subClassOf		<wordnet_software_106566077> .
+
+# Bug fix from Luis
+# <wordnet_book_106410904> (41872 instances): “written corpus”
+# <wordnet_book_102870092> (533 instances): “physical object”
+# <wordnet_picture_book_103931651> is only a subclass of 102870092. Adding 106410904.
+<wordnet_picture_book_103931651>	rdfs:subClassOf	<wordnet_book_106410904> .

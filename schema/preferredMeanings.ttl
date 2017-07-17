@@ -1,0 +1,178 @@
+# Manually coded facts of YAGO2s.
+#  DO NOT OVERWRITE!
+# These are preferred meanings of certain words.
+# They are used by the CategoryExtractor, but also part of YAGO2s.
+# The HardExtractor will make this data part of YAGO2s
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Avoid that these entities get kicked out because they have a corresponding wordnet word
+<Turkey>	<isPreferredMeaningOf>	"Turkey"@eng .
+<Brazil>	<isPreferredMeaningOf>	"Brazil"@eng .
+<China>	<isPreferredMeaningOf>	"China"@eng .
+<Twitter>	<isPreferredMeaningOf>	"Twitter"@eng .
+
+#@ <id_minister>
+<wordnet_minister_110320863>	<isPreferredMeaningOf>	"minister"@eng .
+<id_minister> rdfs:comment "not the religious minister" .
+#@ <id_company>
+<wordnet_company_108058098>	<isPreferredMeaningOf>	"medium"@eng .
+<id_company> rdfs:comment "To deal with media companies" .
+#@ <id_chain>
+<wordnet_company_108058098>	<isPreferredMeaningOf>	"chain"@eng .
+<id_chain> rdfs:comment "To deal with chains of companies" .
+#@ <id_reclabel>
+<wordnet_company_108058098>	<isPreferredMeaningOf>	"record label"@eng .
+<id_chain> rdfs:comment "To deal with record label companies" .
+<wordnet_calamity_107314838>	<isPreferredMeaningOf>	"disaster"@eng .
+<wordnet_fellow_110083526>	<isPreferredMeaningOf>	"fellow"@eng .
+<wordnet_regent_110516117>	<isPreferredMeaningOf>	"regent"@eng .
+<wordnet_pirate_110435367>	<isPreferredMeaningOf>	"pirate"@eng .
+<wordnet_university_108286569>	<isPreferredMeaningOf>	"university"@eng .
+<wordnet_organization_108008335>	<isPreferredMeaningOf>	"organisation"@eng .
+<wordnet_organization_108008335>	<isPreferredMeaningOf>	"organization"@eng .
+
+<wordnet_administrative_district_108491826> <isPreferredMeaningOf>  "state"@eng .
+
+<wordnet_episode_106396330>	<isPreferredMeaningOf>	"episode"@eng .
+
+<wordnet_attraction_106615561>	<isPreferredMeaningOf>	"attraction"@eng .
+
+<wordnet_airline_102690081>	<isPreferredMeaningOf>	"airline"@eng .
+
+<wordnet_hit_100064504>	<isPreferredMeaningOf>	"hit"@eng .
+
+<wordnet_medium_106254669>	<isPreferredMeaningOf>	"single"@eng .
+
+<wordnet_religious_person_109628382>	<isPreferredMeaningOf>	"christian scientist"@eng .
+
+<wordnet_region_108630039>	<isPreferredMeaningOf>	"hundred"@eng .
+
+<wordnet_ace_100568701>	<isPreferredMeaningOf>	"ace"@eng .
+
+<wordnet_drugstore_103249342>	<isPreferredMeaningOf>	"pharmacy"@eng .
+
+<wordnet_antiquity_102724026>	<isPreferredMeaningOf>	"antiquity"@eng .
+
+<wordnet_trio_107986198>	<isPreferredMeaningOf>	"trio"@eng .
+
+<wordnet_sovereign_110628644>	<isPreferredMeaningOf>	"royalty"@eng .
+
+<wordnet_welterweight_110774113>	<isPreferredMeaningOf>	"welterweight"@eng .
+
+<wordnet_cruiser_103140900>	<isPreferredMeaningOf>	"cruiser"@eng .
+
+<wordnet_bus_topology_105730591>	<isPreferredMeaningOf>	"computer bus"@eng .
+<wordnet_championship_107457834>	<isPreferredMeaningOf>	"championship"@eng .
+
+<wordnet_class_107997703>	<isPreferredMeaningOf>	"language family"@eng .
+<wordnet_capital_108518505>	<isPreferredMeaningOf>	"capital"@eng .
+
+<wordnet_sports_fan_110639925>	<isPreferredMeaningOf>	"fan"@eng .
+
+<wordnet_mansion_103719053>	<isPreferredMeaningOf>	"mansion"@eng .
+
+<wordnet_oeuvre_103841417>	<isPreferredMeaningOf>	"work"@eng .
+
+<wordnet_person_100007846>	<isPreferredMeaningOf>	"person"@eng .
+
+<wordnet_award_106696483>	<isPreferredMeaningOf>	"award"@eng .
+
+<wordnet_religious_person_109628382>	<isPreferredMeaningOf>	"quaker"@eng .
+
+<wordnet_production_107006951>	<isPreferredMeaningOf>	"production"@eng .
+
+<wordnet_club_108227214>	<isPreferredMeaningOf>	"club"@eng .
+
+<wordnet_contest_107456188>	<isPreferredMeaningOf>	"competition"@eng .
+
+<wordnet_game_100456199>	<isPreferredMeaningOf>	"game"@eng .
+
+<wordnet_site_108651247>	<isPreferredMeaningOf>	"place"@eng .
+
+<wordnet_church_103028079>	<isPreferredMeaningOf>	"church"@eng .
+
+<wordnet_periodical_106593296>	<isPreferredMeaningOf>	"journal"@eng .
+
+<wordnet_critic_109979321>	<isPreferredMeaningOf>	"critic"@eng .
+
+<wordnet_ruler_110541229>	<isPreferredMeaningOf>	"ruler"@eng .
+
+<wordnet_colleague_109935990>	<isPreferredMeaningOf>	"fellow"@eng .
+
+<wordnet_counterspy_109970192>	<isPreferredMeaningOf>	"mole"@eng .
+
+<wordnet_model_110324560>	<isPreferredMeaningOf>	"model"@eng .
+
+<wordnet_country_108544813>	<isPreferredMeaningOf>	"country"@eng .
+
+<wordnet_village_108672738>	<isPreferredMeaningOf>	"village"@eng .
+
+<wordnet_count_109969218>	<isPreferredMeaningOf>	"count"@eng .
+
+<wordnet_queen_110499355>	<isPreferredMeaningOf>	"queen"@eng .
+
+<wordnet_saint_110546850>	<isPreferredMeaningOf>	"saint"@eng .
+
+<wordnet_application_106570110>	<isPreferredMeaningOf>	"application"@eng .
+
+<wordnet_player_110440387>	<isPreferredMeaningOf>	"shooter"@eng .
+
+<wordnet_traveler_109629752>	<isPreferredMeaningOf>	"runner"@eng .
+
+<wordnet_candidate_109890749>	<isPreferredMeaningOf>	"nominee"@eng .
+
+<wordnet_broadcasting_company_108002015>	<isPreferredMeaningOf>	"broadcaster"@eng .
+
+<yagoLegalActorGeo>	<isPreferredMeaningOf>	"sponsor"@eng .
+
+<yagoLegalActorGeo>	<isPreferredMeaningOf>	"recipient"@eng .
+
+<yagoLegalActorGeo>	<isPreferredMeaningOf>	"partner"@eng .
+
+<wordnet_browser_106571301>	<isPreferredMeaningOf>	"browser"@eng .
+
+<wordnet_subsidiary_company_108003935>	<isPreferredMeaningOf>	"subsidiary"@eng .
+
+<wordnet_head_110162991>	<isPreferredMeaningOf>	"head"@eng .
+
+<wordnet_public_square_108619620>	<isPreferredMeaningOf>	"square"@eng .
+
+<wordnet_administrative_district_108491826>	<isPreferredMeaningOf>	"settlement"@eng .
+
+<wordnet_canal_102947212>	<isPreferredMeaningOf>	"canal"@eng .
+
+<wordnet_president_110467179>	<isPreferredMeaningOf>	"president"@eng .
+
+<wordnet_foodstuff_107566340>	<isPreferredMeaningOf>	"foodstuff"@eng .
+
+<wordnet_cacao_bean_107754894>	<isPreferredMeaningOf>	"cocoa"@eng .
+
+<wordnet_coffee_bean_107929351>	<isPreferredMeaningOf>	"coffee"@eng .
+
+<wordnet_depository_financial_institution_108420278>	<isPreferredMeaningOf>	"bank"@eng .
+
+<wordnet_musician_110339966>	<isPreferredMeaningOf>	"musician"@eng .
+<wordnet_city_108524735>	<isPreferredMeaningOf>	"city"@eng .
+<wordnet_climber_109929298>	<isPreferredMeaningOf>	"climber"@eng .
+<wordnet_cabbage_111875691>	<isPreferredMeaningOf>	"cabbage"@eng .
+<wordnet_emulator_0>	<isPreferredMeaningOf>	"emulator"@eng .
+<wordnet_server_104175147>	<isPreferredMeaningOf>	"server"@eng .
+<wordnet_plant_100017222>	<isPreferredMeaningOf>	"plant"@eng .
+
+<wordnet_politician_110450303>	<isPreferredMeaningOf>	"politician"@eng .
+
+# For the Ipod
+<wordnet_device_103183080>	<isPreferredMeaningOf>	"audio player"@eng .
+<wordnet_device_103183080>	<isPreferredMeaningOf>	"media player"@eng .
+
+<wordnet_shrimp_101986806>	<isPreferredMeaningOf>	"shrimp"@eng .
+#... and not "derogatory name for small people"

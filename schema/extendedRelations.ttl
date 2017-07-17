@@ -1,0 +1,76 @@
+# Manually coded facts of YAGO2s.
+#  DO NOT OVERWRITE!
+# These are the text-based relations of YAGO2s.
+# The HardExtractor will make this data part of YAGO2s
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<hasInternalWikipediaLinkTo>	rdfs:domain	owl:Thing .
+<hasInternalWikipediaLinkTo>	rdfs:range	owl:Thing .
+<hasInternalWikipediaLinkTo>	rdf:type	<yagoExtendedRelation> .
+<hasExternalWikipediaLinkTo>	rdfs:domain	owl:Thing .
+<hasExternalWikipediaLinkTo>	rdfs:range	owl:Thing .
+<hasExternalWikipediaLinkTo>	rdf:type	<yagoExtendedRelation> .
+<hasAnchorText>	rdfs:domain	rdf:Statement .
+<hasAnchorText>	rdfs:range	xsd:string .
+<hasAnchorText>	rdf:type	<yagoExtendedRelation> .
+<hasContextPrecedingAnchor>	rdfs:domain	rdf:Statement .
+<hasContextPrecedingAnchor>	rdfs:range	xsd:string .
+<hasContextPrecedingAnchor>	rdf:type	<yagoExtendedRelation> .
+<hasContextSucceedingAnchor>	rdfs:domain	rdf:Statement .
+<hasContextSucceedingAnchor>	rdfs:range	xsd:string .
+<hasContextSucceedingAnchor>	rdf:type	<yagoExtendedRelation> .
+<hasWikipediaId>    rdfs:domain owl:Thing .
+<hasWikipediaId>    rdfs:range  xsd:nonNegativeInteger .
+<hasWikipediaId>    rdf:type    <yagoExtendedRelation> .
+<hasWikipediaCategory>	rdfs:domain	owl:Thing .
+<hasWikipediaCategory>	rdfs:range	xsd:string .
+<hasWikipediaCategory>	rdf:type	<yagoExtendedRelation> .
+<hasWikipediaCategory>	 rdfs:subPropertyOf	<hasContext> .
+<wikipediaSubCategoryOf>	rdfs:domain	owl:Thing .
+<wikipediaSubCategoryOf>	rdfs:range	xsd:string .
+<wikipediaSubCategoryOf>	rdf:type	<yagoExtendedRelation> .
+<hasWikipediaAnchorText>	rdfs:domain	owl:Thing .
+<hasWikipediaAnchorText>	rdfs:range	xsd:string .
+<hasWikipediaAnchorText>	rdf:type	<yagoExtendedRelation> .
+<hasWikipediaAnchorText>	 rdfs:subPropertyOf	<hasContext> .
+<hasWikipediaArticleLength>	rdfs:domain	owl:Thing .
+<hasWikipediaArticleLength>	rdfs:range	xsd:decimal .
+<hasWikipediaArticleLength>	rdf:type	<yagoExtendedRelation> .
+<hasWikipediaAbstract>	rdfs:domain	owl:Thing .
+<hasWikipediaAbstract>	rdfs:range	xsd:string .
+<hasWikipediaAbstract>	rdf:type	<yagoExtendedRelation> .
+<hasCitationTitle>	rdfs:domain	owl:Thing .
+<hasCitationTitle>	rdfs:range	xsd:string .
+<hasCitationTitle>	rdf:type	<yagoExtendedRelation> .
+<hasCitationTitle>	 rdfs:subPropertyOf	<hasContext> .
+# excluded <hasTitleText>	rdfs:domain	owl:Thing .
+# excluded <hasTitleText>	rdfs:range	xsd:string .
+# excluded <hasTitleText>	rdf:type	<yagoExtendedRelation> .
+# excluded <hasTitleText>	 rdfs:subPropertyOf	<hasContext> .
+# excluded <hasTitleText>	<hasGloss>	"$1 has a title '$2'" .
+<hasInternalWikipediaLinkTo>	<hasGloss>	"$1 has internal link target $2 in Wikipedia" .
+<hasExternalWikipediaLinkTo>	<hasGloss>	"$1 has external link target $2 in Wikipedia" .
+<hasAnchorText>	<hasGloss>	"Link $1 has anchor text $2" .
+<hasContextPrecedingAnchor>	<hasGloss>	"Link $1 has context $2 preceding the anchor" .
+<hasContextSucceedingAnchor>	<hasGloss>	"Link $1 has context $1 succeeding the anchor" .
+<hasWikipediaAnchorText>	<hasGloss>	"$1 has the link anchor text $2 in Wikipedia" .
+<hasWikipediaCategory>	<hasGloss>	"$1 has Wikipedia category $2" .
+<wikipediaSubCategoryOf>	<hasGloss>	"$1 is a Wikipedia subcategory of $2" .
+<hasWikipediaArticleLength>	<hasGloss>	"$1 has a Wikipedia article with length $2" .
+<hasWikipediaAbstract>	<hasGloss>	"$1 has $2 as Wikipedia abstract text" .
+<hasCitationTitle>	<hasGloss>	"$1 has a citation with the title '$2'" .
+<_yagoMetadata>    rdfs:domain xsd:String .
+<_yagoMetadata>    rdfs:range  xsd:String .
+<_yagoMetadata>    rdf:type    <yagoMetadataRelation> .
+<_hasLinkLikelihood>    rdfs:domain xsd:String .
+<_hasLinkLikelihood>    rdfs:range  xsd:double .
+<_hasLinkLikelihood>    rdf:type    <yagoExtendedRelation> .
