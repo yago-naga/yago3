@@ -1,0 +1,559 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+# These are the relations of YAGO2s.
+# The HardExtractor will make this data part of YAGO2s
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+rdfs:Class	rdf:type	rdfs:Resource .
+rdf:Statement	rdf:type	rdfs:Resource .
+rdf:Property	rdf:type	rdfs:Resource .
+rdfs:Literal	rdfs:subClassOf	rdfs:Resource .
+xsd:date	rdfs:subClassOf	rdfs:Literal .
+xsd:string	rdfs:subClassOf	rdfs:Literal .
+xsd:decimal	rdfs:subClassOf	rdfs:Literal .
+xsd:integer	rdfs:subClassOf	rdfs:Literal .
+xsd:nonNegativeInteger	rdfs:subClassOf	rdfs:Literal .
+<yagoExtendedRelation>	rdfs:subClassOf	rdf:Property .
+owl:FunctionalProperty	rdfs:subClassOf	rdf:Property .
+owl:FunctionalProperty	rdfs:subClassOf	<yagoFunctionInTime> .
+owl:SymmetricProperty	rdfs:subClassOf	rdf:Property .
+owl:TransitiveProperty	rdfs:subClassOf	rdf:Property .
+owl:sameAs	rdfs:domain	owl:Thing .
+<yagoInternalRelation>	rdfs:subClassOf	rdf:Property .
+rdfs:comment	rdfs:domain	rdfs:Resource .
+rdfs:comment	rdfs:range	xsd:string .
+rdfs:comment	rdf:type	rdf:Property .
+rdfs:domain	rdfs:domain	rdf:Property .
+rdfs:range	rdfs:domain	rdf:Property .
+rdf:type	rdfs:domain	rdfs:Resource .
+rdf:type	rdfs:range	rdfs:Class .
+rdf:type	rdf:type	rdf:Property .
+rdf:type	rdf:type	<permanentRelationToSubject> .
+rdfs:subClassOf	rdfs:domain	rdfs:Class .
+rdfs:subClassOf	rdfs:range	rdfs:Class .
+rdfs:subClassOf	rdf:type	rdf:Property .
+rdfs:subClassOf	rdf:type	owl:TransitiveProperty .
+rdfs:domain	rdfs:range	rdfs:Class .
+rdfs:domain	rdf:type	owl:FunctionalProperty .
+rdfs:range	rdfs:range	rdfs:Class .
+rdfs:range	rdf:type	owl:FunctionalProperty .
+rdfs:subPropertyOf	rdfs:domain	rdf:Property .
+rdfs:subPropertyOf	rdfs:range	rdf:Property .
+rdfs:subPropertyOf	rdf:type	rdf:Property .
+rdfs:subPropertyOf	rdf:type	owl:TransitiveProperty .
+<_hasTypeCheckPattern>	rdf:type	<yagoInternalRelation> .
+<_hasTypeCheckPattern>	rdfs:domain	rdfs:Class .
+<_hasTypeCheckPattern>	rdfs:range	xsd:string .
+<hasConfidence>	rdfs:domain	rdf:Property .
+<hasConfidence>	rdfs:range	<yagoFraction> .
+<hasConfidence>	rdf:type	rdf:Property .
+<occursSince>	rdfs:domain	rdf:Statement .
+<occursSince>	rdfs:range	xsd:date .
+<occursSince>	rdf:type	owl:FunctionalProperty .
+<occursUntil>	rdfs:domain	rdf:Statement .
+<occursUntil>	rdfs:range	xsd:date .
+<occursUntil>	rdf:type	owl:FunctionalProperty .
+<isConnectedTo> rdf:type rdf:Property .
+<isConnectedTo> rdfs:range	<yagoGeoEntity> .
+<isConnectedTo> rdfs:domain	<yagoGeoEntity> .
+<byTransport>	rdf:type rdf:Property .
+<byTransport>	rdfs:domain	rdf:Statement .
+<byTransport>	rdfs:range	<wordnet_airline_102690081> .
+<hasAirportCode>	rdf:type owl:FunctionalProperty .
+<hasAirportCode>	rdfs:range	xsd:string .
+<hasAirportCode>	rdfs:domain	<wordnet_airport_102692232> .
+<hasAirportCode>	rdfs:subPropertyOf	rdfs:label .
+<linksTo>	rdfs:domain	owl:Thing .
+<linksTo>	rdfs:range	owl:Thing .
+<linksTo>	rdf:type	rdf:Property .
+<startsExistingOnDate>	rdfs:domain	owl:Thing .
+<startsExistingOnDate>	rdfs:range	xsd:date .
+<startsExistingOnDate>	rdf:type	owl:FunctionalProperty .
+<endsExistingOnDate>	rdfs:domain	owl:Thing .
+<endsExistingOnDate>	rdfs:range	xsd:date .
+<endsExistingOnDate>	rdf:type	owl:FunctionalProperty .
+<subjectStartRelation>	rdfs:domain	owl:Thing .
+<subjectStartRelation>	rdfs:range	owl:Thing .
+<subjectStartRelation>	rdfs:subClassOf	rdf:Property .
+<subjectStartRelation>	rdf:type	rdf:Property .
+<subjectEndRelation>	rdfs:domain	owl:Thing .
+<subjectEndRelation>	rdfs:range	owl:Thing .
+<subjectEndRelation>	rdfs:subClassOf	rdf:Property .
+<subjectEndRelation>	rdf:type	rdf:Property .
+<objectStartRelation>	rdfs:domain	owl:Thing .
+<objectStartRelation>	rdfs:range	owl:Thing .
+<objectStartRelation>	rdfs:subClassOf	rdf:Property .
+<objectStartRelation>	rdf:type	rdf:Property .
+<objectEndRelation>	rdfs:domain	owl:Thing .
+<objectEndRelation>	rdfs:range	owl:Thing .
+<objectEndRelation>	rdfs:subClassOf	rdf:Property .
+<objectEndRelation>	rdf:type	rdf:Property .
+<permanentRelationToSubject>	rdfs:domain	owl:Thing .
+<permanentRelationToSubject>	rdfs:range	owl:Thing .
+<permanentRelationToSubject>	rdfs:subClassOf	rdf:Property .
+<permanentRelationToSubject>	rdf:type	rdf:Property .
+<permanentRelationToObject>	rdfs:domain	owl:Thing .
+<permanentRelationToObject>	rdfs:range	owl:Thing .
+<permanentRelationToObject>	rdfs:subClassOf	rdf:Property .
+<permanentRelationToObject>	rdf:type	rdf:Property .
+<isLocatedIn>	rdfs:domain	<yagoPermanentlyLocatedEntity> .
+<isLocatedIn>	rdfs:range	<yagoGeoEntity> .
+# <isLocatedIn>	rdf:type	owl:FunctionalProperty . # A place can be located in several units
+<isLocatedIn>	rdf:type	owl:TransitiveProperty .
+<isLocatedIn>	 rdfs:subPropertyOf	<placedIn> .
+<occursIn>	rdfs:domain	rdf:Statement .
+<occursIn>	rdfs:range	<yagoGeoEntity> .
+<occursIn>	rdf:type	rdf:Property .
+<placedIn>	rdfs:domain	owl:Thing .
+<placedIn>	rdfs:range	<yagoGeoEntity> .
+<placedIn>	rdf:type	rdf:Property .
+# <placedIn>	rdf:type	owl:FunctionalProperty . # A place can be located in several units
+<_timeToLocation>	rdfs:domain	rdf:Property .
+<_timeToLocation>	rdfs:range	rdf:Property .
+<_timeToLocation>	rdf:type	rdf:Property .
+<relationLocatedByObject>	rdfs:domain	owl:Thing .
+<relationLocatedByObject>	rdfs:range	owl:Thing .
+<relationLocatedByObject>	rdfs:subClassOf	rdf:Property .
+<relationLocatedByObject>	rdf:type	rdf:Property .
+<hasContext>	rdfs:domain	owl:Thing .
+<hasContext>	rdfs:range	xsd:string .
+<hasContext>	rdf:type	rdf:Property .
+<hasContext>	rdfs:range	xsd:string .
+<hasContext>	rdf:type	rdf:Property .
+<hasImdb>	rdfs:domain	<wordnet_movie_106613686> .
+<hasImdb>	rdfs:range	xsd:string .
+<hasImdb>	rdf:type	owl:FunctionalProperty .
+<hasWikipediaUrl>	rdfs:domain	owl:Thing .
+<hasWikipediaUrl>	rdfs:range	<yagoURL> .
+<hasWikipediaUrl>	rdf:type	owl:FunctionalProperty .
+<extractionSource>	rdfs:domain	rdf:Statement.
+<extractionSource>	rdfs:range	<yagoURL> .
+<extractionSource>	rdf:type	rdfs:Property .
+<extractionTechnique>	rdfs:domain	rdf:Statement .
+<extractionTechnique>	rdf:type	rdfs:Property .
+<extractionTechnique>	rdfs:range	xsd:string .
+<isPreferredMeaningOf>	rdfs:domain	owl:Thing .
+<isPreferredMeaningOf>	rdfs:range	xsd:string .
+<isPreferredMeaningOf>	rdf:type	owl:FunctionalProperty .
+<isPreferredMeaningOf>	rdf:type	<permanentRelationToSubject> .
+skos:prefLabel	rdfs:domain	owl:Thing .
+skos:prefLabel	rdfs:range	xsd:string .
+skos:prefLabel	rdf:type	owl:FunctionalProperty .
+skos:prefLabel	rdf:type	<permanentRelationToSubject> .
+<hasSynsetId>	rdfs:domain	rdfs:Class .
+<hasSynsetId>	rdfs:range	xsd:string .
+<hasSynsetId>	rdf:type	owl:FunctionalProperty .
+<hasGeonamesClassId>	rdfs:domain	owl:Thing .
+<hasGeonamesClassId>	rdfs:range	xsd:string .
+<hasGeonamesClassId>	rdf:type	owl:FunctionalProperty .
+<hasGeonamesEntityId>	rdfs:domain	owl:Thing .
+<hasGeonamesEntityId>	rdfs:range	xsd:string .
+<hasGeonamesEntityId>	rdf:type	owl:FunctionalProperty .
+<hasThreeLetterLanguageCode>	rdf:type	rdf:Property .
+<hasThreeLetterLanguageCode>	rdfs:domain	<wordnet_language_106282651> .
+<hasThreeLetterLanguageCode>	rdfs:range	xsd:string .
+<hasLanguageCode>	rdf:type	rdf:Property .
+<hasLanguageCode>	rdfs:domain	<wordnet_language_106282651> .
+<hasLanguageCode>	rdfs:range	xsd:string .
+<hasGloss>	rdfs:domain	owl:Thing .
+<hasGloss>	rdfs:range	xsd:string .
+<hasGloss>	rdf:type	owl:FunctionalProperty .
+rdfs:label	rdfs:range	xsd:string .
+rdfs:label	rdfs:domain	owl:Thing .
+rdfs:label	rdf:type	rdf:Property .
+rdfs:label	rdf:type	<permanentRelationToSubject> .
+<redirectedFrom> rdfs:range  xsd:string .
+<redirectedFrom> rdfs:domain owl:Thing .
+<redirectedFrom> rdf:type  rdf:Property .
+<redirectedFrom> rdf:type  <permanentRelationToSubject> .
+<hasGender>	rdfs:domain	<wordnet_person_100007846> .
+<hasGender>	rdfs:range	<wordnet_sex_105006898> .
+<hasGender>	rdf:type	owl:FunctionalProperty .
+<actedIn>	rdfs:domain	<wordnet_actor_109765278> .
+<actedIn>	rdfs:range	<wordnet_movie_106613686> .
+<actedIn>	rdf:type	rdf:Property .
+<wasBornIn>	rdfs:domain	<wordnet_person_100007846> .
+<wasBornIn>	rdfs:range	<yagoGeoEntity> .
+<wasBornIn>	rdf:type	owl:FunctionalProperty .
+<wasBornIn>	rdf:type	<subjectStartRelation> .
+<wasBornIn>	rdf:type	<relationLocatedByObject> .
+<wasBornOnDate>	rdfs:domain	<wordnet_person_100007846> .
+<wasBornOnDate>	rdfs:range	xsd:date .
+<wasBornOnDate>	 rdfs:subPropertyOf	<startsExistingOnDate> .
+<wasBornOnDate>	rdf:type	owl:FunctionalProperty .
+<wasBornOnDate> rdf:type  <subjectStartRelation> .
+<created>	rdfs:domain	<yagoLegalActor> .
+<created>	rdfs:range	owl:Thing .
+<created>	rdf:type	<objectStartRelation> .
+<isKnownFor>	rdfs:domain	<yagoLegalActor> .
+<isKnownFor>	rdfs:range	owl:Thing .
+<isKnownFor>	rdf:type	rdf:Property .
+<diedIn>	rdfs:domain	<wordnet_person_100007846> .
+<diedIn>	rdfs:range	<yagoGeoEntity> .
+<diedIn>	rdf:type	owl:FunctionalProperty .
+<diedIn>	rdf:type	<subjectEndRelation> .
+<diedIn>	rdf:type	<relationLocatedByObject> .
+<diedOnDate>	rdfs:domain	<wordnet_person_100007846> .
+<diedOnDate>	rdfs:range	xsd:date .
+<diedOnDate>	 rdfs:subPropertyOf	<endsExistingOnDate> .
+<diedOnDate>	rdf:type	owl:FunctionalProperty .
+<diedOnDate>  rdf:type  <subjectEndRelation> .
+<directed>	rdfs:domain	<wordnet_person_100007846> .
+<directed>	rdfs:range	<wordnet_movie_106613686> .
+<directed>	rdf:type	<objectStartRelation> .
+<edited>	rdfs:domain	<wordnet_editor_110044879> . # We had lots of trouble with "person"
+<edited>	rdfs:range	<wordnet_movie_106613686> .
+<edited>	rdf:type	rdf:Property .
+<wroteMusicFor>	rdfs:domain	<wordnet_person_100007846> .
+<wroteMusicFor>	rdfs:range	<wordnet_movie_106613686> .
+<wroteMusicFor>	rdf:type	rdf:Property .
+<hasFamilyName>	rdfs:range	xsd:string .
+<hasFamilyName>	rdfs:domain	<wordnet_person_100007846> .
+<hasFamilyName>	rdf:type	owl:FunctionalProperty .
+<hasFamilyName>	rdf:type	<permanentRelationToSubject> .
+<hasFamilyName>	 rdfs:subPropertyOf	rdfs:label .
+<hasGivenName>	rdfs:range	xsd:string .
+<hasGivenName>	rdfs:domain	<wordnet_person_100007846> .
+<hasGivenName>	rdf:type	owl:FunctionalProperty .
+<hasGivenName>	rdf:type	<permanentRelationToSubject> .
+<hasGivenName>	 rdfs:subPropertyOf	rdfs:label .
+<graduatedFrom>	rdfs:domain	<wordnet_person_100007846> .
+<graduatedFrom>	rdfs:range	<wordnet_university_108286569> .
+<graduatedFrom>	rdf:type	<yagoFunctionInTime> .
+<graduatedFrom>	rdf:type	<relationLocatedByObject> .
+<hasAcademicAdvisor>	rdfs:domain	<wordnet_person_100007846> .
+<hasAcademicAdvisor>	rdfs:range	<wordnet_person_100007846> .
+<hasAcademicAdvisor>	rdf:type	<yagoFunctionInTime> .
+<hasChild>	rdfs:domain	<wordnet_person_100007846> .
+<hasChild>	rdfs:range	<wordnet_person_100007846> .
+<hasChild>	rdf:type	rdf:Property .
+<hasWonPrize>	rdfs:domain	<yagoLegalActorGeo> .
+<hasWonPrize>	rdfs:range	<wordnet_award_106696483> .
+<hasWonPrize>	rdf:type	rdf:Property .
+<influences>	rdfs:domain	<wordnet_person_100007846> .
+<influences>	rdfs:range	<wordnet_person_100007846> .
+<influences>	rdf:type	rdf:Property .
+<isInterestedIn>	rdfs:domain	<wordnet_person_100007846> .
+<isInterestedIn>	rdfs:range	owl:Thing .
+<isInterestedIn>	rdf:type	rdf:Property .
+<isAffiliatedTo>	rdfs:domain	<yagoLegalActor> .
+<isAffiliatedTo>	rdfs:range	<yagoLegalActor> .
+<isAffiliatedTo>	rdf:type	rdf:Property .
+<isCitizenOf>	rdfs:domain	<wordnet_person_100007846> .
+<isCitizenOf>	rdfs:range	<wordnet_country_108544813> .
+<isCitizenOf>	rdf:type	rdf:Property .
+<isLeaderOf>	rdfs:domain	<wordnet_person_100007846> .
+<isLeaderOf>	rdfs:range	<yagoLegalActorGeo> .
+<isLeaderOf>	rdf:type	rdf:Property .
+<isMarriedTo>	rdfs:domain	<wordnet_person_100007846> .
+<isMarriedTo>	rdfs:range	<wordnet_person_100007846> .
+<isMarriedTo>	rdf:type	rdf:Property .
+<isMarriedTo>	rdf:type	owl:SymmetricProperty .
+<livesIn>	rdfs:domain	<wordnet_person_100007846> .
+<livesIn>	rdfs:range	<wordnet_location_100027167> .
+<livesIn>	rdf:type	rdf:Property .
+<hasMusicalRole>	rdfs:domain	<wordnet_person_100007846> .
+<hasMusicalRole>	rdfs:range	rdfs:Class .
+<hasMusicalRole>	rdf:type	rdf:Property .
+<participatedIn>	rdfs:domain	<yagoLegalActorGeo> .
+<participatedIn>	rdfs:range	owl:Thing .
+<participatedIn>	rdf:type	rdf:Property .
+<participatedIn>	rdf:type	<relationLocatedByObject> .
+<isPoliticianOf>	rdfs:domain	<wordnet_person_100007846> .
+<isPoliticianOf>	rdfs:range	<wordnet_administrative_district_108491826> .
+<isPoliticianOf>	rdf:type	<yagoFunctionInTime> .
+#<produced>	rdfs:domain	<yagoLegalActor> . # No infobox patterns, see there
+#<produced>	rdfs:range	<wordnet_movie_106613686> .
+#<produced>	rdf:type	<objectStartRelation> .
+<worksAt>	rdfs:domain	<wordnet_person_100007846> .
+<worksAt>	rdfs:range	<wordnet_organization_108008335> .
+<worksAt>	rdf:type	<yagoFunctionInTime> .
+<worksAt>	rdf:type	<relationLocatedByObject> .
+<owns>	rdfs:domain	<yagoLegalActorGeo> .
+<owns>	rdfs:range	owl:Thing .
+<owns>	rdf:type	rdf:Property .
+<hasLatitude>	rdfs:domain	<yagoGeoEntity> .
+<hasLatitude>	rdfs:range	<degrees> .
+<hasLatitude>	rdf:type	owl:FunctionalProperty .
+<hasLatitude>	rdf:type	<permanentRelationToSubject> .
+<hasLongitude>	rdfs:domain	<yagoGeoEntity> .
+<hasLongitude>	rdfs:range	<degrees> .
+<hasLongitude>	rdf:type	owl:FunctionalProperty .
+<hasLongitude>	rdf:type	<permanentRelationToSubject> .
+# <dealsWith>	rdfs:domain	<wordnet_location_100027167> .
+# <dealsWith>	rdfs:range	<wordnet_location_100027167> .
+<dealsWith>	rdfs:domain	<wordnet_country_108544813> .
+<dealsWith>	rdfs:range	<wordnet_country_108544813> .
+<dealsWith>	rdf:type	rdf:Property .
+<exports>	rdfs:domain	<wordnet_location_100027167> .
+<exports>	rdfs:range	rdfs:Class .
+<exports>	rdf:type	rdf:Property .
+<hasArea>	rdfs:domain	<wordnet_location_100027167> .
+<hasArea>	rdfs:range	<km2> .
+<hasArea>	rdf:type	owl:FunctionalProperty .
+<hasCapital>	rdfs:domain	<wordnet_location_100027167> .
+# <hasCapital>	rdfs:range	<wordnet_location_100027167> .
+<hasCapital>	rdfs:range	<wordnet_city_108524735>	.
+<hasCapital>	rdf:type	<yagoFunctionInTime> .
+<hasCurrency>	rdfs:domain	<wordnet_location_100027167> .
+<hasCurrency>	rdfs:range	owl:Thing .
+<hasCurrency>	rdf:type	owl:FunctionalProperty .
+<hasEconomicGrowth>	rdfs:domain	<wordnet_location_100027167> .
+<hasEconomicGrowth>	rdfs:range	<percent> .
+<hasEconomicGrowth>	rdf:type	owl:FunctionalProperty .
+<hasExpenses>	rdfs:domain	<yagoLegalActorGeo> .
+<hasExpenses>	rdfs:range	<yagoMonetaryValue> .
+<hasExpenses>	rdf:type	owl:FunctionalProperty .
+<hasExport>	rdfs:domain	<wordnet_location_100027167> .
+<hasExport>	rdfs:range	<yagoMonetaryValue> .
+<hasExport>	rdf:type	owl:FunctionalProperty .
+<hasGini>	rdfs:domain	<wordnet_location_100027167> .
+<hasGini>	rdfs:range	<yago0to100> .
+<hasGini>	rdf:type	owl:FunctionalProperty .
+#<hasHDI>	rdfs:domain	<wordnet_location_100027167> .
+#<hasHDI>	rdfs:range	<yagoFraction> .
+#<hasHDI>	rdf:type	<yagoFunctionInTime> .
+<hasImport>	rdfs:domain	<wordnet_location_100027167> .
+<hasImport>	rdfs:range	<yagoMonetaryValue> .
+<hasImport>	rdf:type	owl:FunctionalProperty .
+<hasInflation>	rdfs:domain	<wordnet_location_100027167> .
+<hasInflation>	rdfs:range	<percent> .
+<hasInflation>	rdf:type	<yagoFunctionInTime> .
+<hasMotto>	rdfs:domain	<yagoLegalActorGeo> .
+<hasMotto>	rdfs:range	xsd:string .
+<hasMotto>	rdf:type	rdf:Property .
+<hasGDP>	rdfs:domain	<wordnet_location_100027167> .
+<hasGDP>	rdfs:range	<yagoMonetaryValue> .
+<hasGDP>	rdf:type	<yagoFunctionInTime> .
+<hasNumberOfPeople>	rdfs:domain	<yagoLegalActorGeo> .
+<hasNumberOfPeople>	rdfs:range	xsd:nonNegativeInteger .
+<hasNumberOfPeople>	rdf:type	<yagoFunctionInTime> .
+<hasOfficialLanguage>	rdfs:domain	<wordnet_location_100027167> .
+<hasOfficialLanguage>	rdfs:range	<wordnet_language_106282651> .
+<hasOfficialLanguage>	rdf:type	rdf:Property .
+<hasPopulationDensity>	rdfs:domain	<wordnet_location_100027167> .
+<hasPopulationDensity>	rdfs:range	</km2> .
+<hasPopulationDensity>	rdf:type	<yagoFunctionInTime> .
+<hasPoverty>	rdfs:domain	<wordnet_location_100027167> .
+<hasPoverty>	rdfs:range	<percent> .
+<hasPoverty>	rdf:type	<yagoFunctionInTime> .
+<hasTLD>	rdfs:domain	<wordnet_location_100027167> .
+<hasTLD>	rdfs:range	<yagoTLD> .
+<hasTLD>	rdf:type	owl:FunctionalProperty .
+<hasUnemployment>	rdfs:domain	<wordnet_location_100027167> .
+<hasUnemployment>	rdfs:range	<percent> .
+<hasUnemployment>	rdf:type	<yagoFunctionInTime> .
+#<hasUTCOffset>	rdfs:domain	<wordnet_location_100027167> .
+#<hasUTCOffset>	rdfs:range	xsd:integer .
+#<hasUTCOffset>	rdf:type	owl:FunctionalProperty .
+<hasWebsite>	rdfs:domain	<yagoLegalActorGeo> .
+<hasWebsite>	rdfs:range	<yagoURL> .
+<hasWebsite>	rdf:type	rdf:Property .
+<imports>	rdfs:domain	<wordnet_location_100027167> .
+<imports>	rdfs:range	rdfs:Class .
+<imports>	rdf:type	rdf:Property .
+<hasNeighbor>	rdfs:domain	<yagoGeoEntity> .
+<hasNeighbor>	rdfs:range	<yagoGeoEntity> .
+<hasNeighbor>	rdf:type	rdf:Property .
+<wasCreatedOnDate>	rdfs:domain	owl:Thing .
+<wasCreatedOnDate>	rdfs:range	xsd:date .
+<wasCreatedOnDate>	 rdfs:subPropertyOf	<startsExistingOnDate> .
+<wasCreatedOnDate>	rdf:type	owl:FunctionalProperty .
+<wasDestroyedOnDate>	rdfs:domain	owl:Thing .
+<wasDestroyedOnDate>	rdfs:range	xsd:date .
+<wasDestroyedOnDate>	 rdfs:subPropertyOf	<endsExistingOnDate> .
+<wasDestroyedOnDate>	rdf:type	owl:FunctionalProperty .
+<hasBudget>	rdfs:domain	<yagoLegalActorGeo> .
+<hasBudget>	rdfs:range	<yagoMonetaryValue> .
+<hasBudget>	rdf:type	owl:FunctionalProperty .
+<hasDuration>	rdfs:domain	owl:Thing .
+<hasDuration>	rdfs:range	<s> .
+<hasDuration>	rdf:type	owl:FunctionalProperty .
+<hasHeight>	rdfs:domain	<wordnet_physical_entity_100001930> .
+<hasHeight>	rdfs:range	<m> .
+<hasHeight>	rdf:type	owl:FunctionalProperty .
+<hasLength>	rdfs:domain	<yagoGeoEntity> .
+<hasLength>	rdfs:range	<m> .
+<hasLength>	rdf:type	owl:FunctionalProperty .
+<hasISBN>	rdfs:domain	owl:Thing .
+<hasISBN>	rdfs:range	<yagoISBN> .
+<hasISBN>	rdf:type	owl:FunctionalProperty .
+<hasISBN>	rdf:type	<permanentRelationToSubject> .
+<hasPages>	rdfs:domain	owl:Thing .
+<hasPages>	rdfs:range	xsd:nonNegativeInteger .
+<hasPages>	rdf:type	owl:FunctionalProperty .
+<hasRevenue>	rdfs:domain	<yagoLegalActorGeo> .
+<hasRevenue>	rdfs:range	<yagoMonetaryValue> .
+<hasRevenue>	rdf:type	owl:FunctionalProperty .
+<hasWeight>	rdfs:domain	<wordnet_physical_entity_100001930> .
+<hasWeight>	rdfs:range	<g> .
+<hasWeight>	rdf:type	owl:FunctionalProperty .
+#<hasICD10>	rdfs:domain	<wordnet_disease_114070360> .
+#<hasICD10>	rdfs:range	<yagoICD10id> .
+#<hasICD10>	rdf:type	owl:FunctionalProperty .
+#<hasICD10>	rdf:type	<permanentRelationToSubject> . # Extraction does not work
+<happenedIn>	rdfs:domain	<wordnet_event_100029378> .
+<happenedIn>	rdfs:range	<yagoGeoEntity> .
+<happenedIn>	rdf:type	<relationLocatedByObject> .
+<happenedIn>	 rdfs:subPropertyOf	<placedIn> .
+<happenedOnDate>	rdfs:domain	<wordnet_event_100029378> .
+<happenedOnDate>	rdfs:range	xsd:date .
+<happenedOnDate>	 rdfs:subPropertyOf	<startsExistingOnDate> .
+<happenedOnDate>	 rdfs:subPropertyOf	<endsExistingOnDate> .
+<happenedOnDate>	 rdfs:subPropertyOf	<startedOnDate> .
+<happenedOnDate>	 rdfs:subPropertyOf	<endedOnDate> .
+<happenedOnDate>	rdf:type	owl:FunctionalProperty .
+<startedOnDate>	rdfs:domain	<wordnet_event_100029378> .
+<startedOnDate>	rdfs:range	xsd:date .
+<startedOnDate>	 rdfs:subPropertyOf	<startsExistingOnDate> .
+<startedOnDate>	rdf:type	owl:FunctionalProperty .
+<endedOnDate>	rdfs:domain	<wordnet_event_100029378> .
+<endedOnDate>	rdfs:range	xsd:date .
+<endedOnDate>	 rdfs:subPropertyOf	<endsExistingOnDate> .
+<endedOnDate>	rdf:type	owl:FunctionalProperty .
+rdfs:label	<hasGloss>	"By '$2', someone could mean $1" .
+<redirectedFrom> <hasGloss> "Wikipedia redirects $2 to the page of $1".
+rdf:type	<hasGloss>	"$1 belongs or belonged to the group of $2 (even if fictional)" .
+rdfs:subClassOf	<hasGloss>	"If something is in the group of $1, then it is also in the group of $2 (even if fictional)" .
+rdfs:domain	<hasGloss>	"The domain of $1 is the group of $2" .
+rdfs:range	<hasGloss>	"The range of $1 is the group of $2" .
+ rdfs:subPropertyOf	<hasGloss>	"$1 is a subproperty of $2" .
+<hasFamilyName>	<hasGloss>	"$1's family name is $2" .
+<hasGivenName>	<hasGloss>	"$1's (first) given name is $2" .
+<hasWonPrize>	<hasGloss>	"$1 has won the $2" .
+<isLocatedIn>	<hasGloss>	"$1 is located in $2" .
+<isPoliticianOf>	<hasGloss>	"$1 is or was a politican of $2" .
+<isCitizenOf>	<hasGloss>	"$1 is or was a citizen of $2" .
+<wasBornOnDate>	<hasGloss>	"$1 was born $2" .
+<wasBornIn>	<hasGloss>	"$1 was born in $2" .
+<diedOnDate>	<hasGloss>	"$1 died $2" .
+<diedIn>	<hasGloss>	"$1 died in $2" .
+<isLeaderOf>	<hasGloss>	"$1 is or was a leading person of $2" .
+<hasArea>	<hasGloss>	"$1 has an area of $2" .
+<hasPopulationDensity>	<hasGloss>	"$1 has or had a population density of $2" .
+#<hasUTCOffset>	<hasGloss>	"$1 is in the time zone UTC+$2 or UTC+$2:30" .
+<hasWebsite>	<hasGloss>	"$1 has the website $2" .
+<isMarriedTo>	<hasGloss>	"$1 is or was married to $2" .
+<isAffiliatedTo>	<hasGloss>	"$1 is or was affiliated to $2" .
+<influences>	<hasGloss>	"$1 influenced $2 (Watch out: If Wikipedia says 'influences: X', this means that X was an influence!)" .
+<directed>	<hasGloss>	"$1 directed $2" .
+#<produced>	<hasGloss>	"$1 produced $2" .
+<actedIn>	<hasGloss>	"$1 acted in $2" .
+<hasDuration>	<hasGloss>	"$1 has or had a duration of $2" .
+<hasBudget>	<hasGloss>	"$1 has or had a budget of $2" .
+<hasImdb>	<hasGloss>	"$1 is in the IMDb at http://www.imdb.com/title/tt$2 (See link under 'External Links' at the bottom of the page)" .
+<hasChild>	<hasGloss>	"$2 is or was the child of $1" .
+<hasMotto>	<hasGloss>	"$1 has or had the motto/slogan $2 (Look in the Wikipedia infobox)" .
+<hasOfficialLanguage>	<hasGloss>	"$2 is or was an official language of $1" .
+<hasCapital>	<hasGloss>	"$2 is or was the capital of $1" .
+<hasGDP>	<hasGloss>	"$1 has or had a nominal GDP of $2" .
+#<hasHDI>	<hasGloss>	"$1 has or had the HDI $2" .
+<hasGini>	<hasGloss>	"$1 has or had the GINI $2" .
+<hasCurrency>	<hasGloss>	"$1 uses the currency $2" .
+<hasTLD>	<hasGloss>	"$1 has the top level domain (TLD) $2" .
+<hasPages>	<hasGloss>	"'$1' has $2 pages" .
+<hasISBN>	<hasGloss>	"'$1' has the ISBN code $2" .
+<livesIn>	<hasGloss>	"$1 lives or lived in $2" .
+<hasHeight>	<hasGloss>	"$1 is or was ca. $2 in height" .
+<hasLength>	<hasGloss>	"$1 is or was ca. $2 in length" .
+<hasWeight>	<hasGloss>	"$1 has or had a weight of $2" .
+<created>	<hasGloss>	"$1 contributed to the creation or invention of $2" .
+<isKnownFor>	<hasGloss>	"$1 is known for $2" .
+<wasCreatedOnDate>	<hasGloss>	"$1 was created/invented/founded/established $2" .
+<wasDestroyedOnDate>	<hasGloss>	"$1 was destroyed/abolished/abandoned/disestablished $2" .
+<isInterestedIn>	<hasGloss>	"$1 is or was interested in $2" .
+<hasInflation>	<hasGloss>	"$1 has an inflation of $2" .
+<hasUnemployment>	<hasGloss>	"$1 has an unemployment of $2" .
+<exports>	<hasGloss>	"$1 exports the goods $2" .
+<imports>	<hasGloss>	"$1 imports the goods $2" .
+<hasNeighbor>	<hasGloss>	"$1 has $2 as neighbor" .
+<dealsWith>	<hasGloss>	"$1 deals with $2" .
+<hasRevenue>	<hasGloss>	"$1 has or had a revenue of $2" .
+<hasNumberOfPeople>	<hasGloss>	"$1 has $2 people" .
+<worksAt>	<hasGloss>	"$1 works at or worked at $2" .
+<graduatedFrom>	<hasGloss>	"$1 graduated from $2" .
+<hasAcademicAdvisor>	<hasGloss>	"$1 had $2 as academic advisor" .
+<happenedOnDate>	<hasGloss>	"$1 happened on $2" .
+<happenedIn>	<hasGloss>	"$1 happened in or near $2" .
+<participatedIn>	<hasGloss>	"$1 participated in $2" .
+<hasMusicalRole>	<hasGloss>	"$1 has or had the following musical role: $2" .
+<hasEconomicGrowth>	<hasGloss>	"$1 has or had an economic growth of $2" .
+<hasExpenses>	<hasGloss>	"$1 has or had expenses of $2" .
+<hasExport>	<hasGloss>	"$1 exports goods with total value of $2" .
+<hasGloss>	<hasGloss>	"$1 is described by $2" .
+#<hasICD10>	<hasGloss>	"$1 has the ICD10 identifier $2" .
+<hasImport>	<hasGloss>	"$1 imports goods with total value of $2" .
+<hasThreeLetterLanguageCode>	<hasGloss>	"$1 has the 3-letter language code $2" .
+<hasLanguageCode>	<hasGloss>	"$1 has the 2-letter language code $2" .
+<hasLatitude>	<hasGloss>	"$1 is at latitude $2 (Negative latitude means 'South')" .
+<hasLongitude>	<hasGloss>	"$1 is at longitude $2 (Negative longitude means 'West')" .
+<hasPoverty>	<hasGloss>	"$1 has or had a poverty of $2" .
+<isPreferredMeaningOf>	<hasGloss>	"By '$2', we usually mean $1" .
+skos:prefLabel	<hasGloss>	"$1 has as preferred name $1" .
+<hasWikipediaUrl>	<hasGloss>	"$1 has the Wikipedia URL $2" .
+<hasGeonamesClassId>	<hasGloss>	"$1 has the geonames.org identifier $2" .
+<hasGeonamesEntityId>	<hasGloss>	"$1 has the geonames.org identifier $2" .
+<hasSynsetId>	<hasGloss>	"$1 has the WordNet identifier $2" .
+<holdsPoliticalPosition>	rdfs:domain	<wordnet_person_100007846> .
+<holdsPoliticalPosition>	rdfs:range	<wordnet_person_100007846> .
+<holdsPoliticalPosition>	rdf:type	rdf:Property .
+<hasSuccessor>	rdfs:domain	rdf:Statement .
+<hasSuccessor>	rdfs:range	<wordnet_person_100007846> .
+<hasSuccessor>	rdf:type	owl:FunctionalProperty .
+<hasPredecessor>	rdfs:domain	rdf:Statement .
+<hasPredecessor>	rdfs:range	<wordnet_person_100007846> .
+<hasPredecessor>	rdf:type	owl:FunctionalProperty .
+<playsFor>	rdfs:domain	<wordnet_person_100007846> .
+<playsFor>	rdfs:range	<wordnet_organization_108008335> .
+<playsFor>	rdf:type	rdf:Property .
+<holdsPoliticalPosition>	<hasGloss>	"$1 holds or held the political office $2" .
+<hasSuccessor>	<hasGloss>	"$2 is or was the successor of the person in the fact with id $1" .
+<hasPredecessor>	<hasGloss>	"$2 was predecessor of $1" .
+<playsFor>	<hasGloss>	"$1 plays (or played) for $2" .
+<startedOnDate>	<hasGloss>	"$1 had a start event (creation, ratification, beginning, etc.) on $2" .
+<endedOnDate>	<hasGloss>	"$1 had an ending event (destruction, end of validity, etc.) on $2" .
+<occursSince>	<hasGloss>	"$1 occurs (or occurred) since $2" .
+<occursUntil>	<hasGloss>	"$1 occurs (or occurred) until $2" .
+<occursIn>	<hasGloss>	"$1 happened at $2" .
+<startsExistingOnDate>	<hasGloss>	"$1 defines the begin of the entity's timespan" .
+<endsExistingOnDate>	<hasGloss>	"$1 defines the end of the entity's timespan" .
+<subjectStartRelation>	<hasGloss>	"$1 defines the begin of the subjects's timespan" .
+<subjectEndRelation>	<hasGloss>	"$1 defines the end of the subject's timespan" .
+<objectStartRelation>	<hasGloss>	"$1 defines the begin of the objects's timespan" .
+<objectEndRelation>	<hasGloss>	"$1 defines the end of the objects's timespan" .
+<relationLocatedByObject>	<hasGloss>	"relation that has a (direct or indirect) physical location as object in a semantic sense (not type)" .
+<placedIn>	<hasGloss>	"relation for grouping various more specific ones that assign to an entity (like isLocatedIn)" .
+<permanentRelationToSubject>	<hasGloss>	"relation is valid during the existence of subject" .
+<permanentRelationToObject>	<hasGloss>	"relation is valid during the existence of object" .
+<hasContext>	<hasGloss>	"$1 has the textual context $2" .
+<hasGender>	<hasGloss>	"$1 is $2" .
+<edited>	<hasGloss>	"$1 edited $2" .
+<owns>	<hasGloss>	"$1 (partly) owns or owned $2" .
+<wroteMusicFor>	<hasGloss>	"$1 wrote music for $2" .
+<_hasTypeCheckPattern>	<hasGloss>	"Relation $1 is type-checked by pattern $2" .
+<_timeToLocation>	<hasGloss>	"Relation $1 expressed the time of the location expressed by $2" .
+<extractionTechnique>	<hasGloss>	"Fact $1 was extracted by technique $2" .
+<extractionSource>	<hasGloss>	"Fact $1 was extracted from $2" .
+<hasConfidence>	<hasGloss>	"Relation $1 has a confidence of $2 in YAGO" .
+rdfs:comment	<hasGloss>	"$1 has comment $2" .
+<linksTo> <hasGloss> "The Wikipedia article about $1 links to the Wikipedia article about $2" .
+<isConnectedTo> <hasGloss> "There is an airline connection from $1 to $2" .
+<byTransport> <hasGloss> "The connecting airline for $1 is $2" .
+<hasAirportCode> <hasGloss> "The airport code of $1 is $2" .
+
+# Added for the project with the Spiegel
+# These appear only in the German Wikipedia, and are extracted
+# by a manual mapping in _multilingualAttributes.ttl
+<hasISIN>	rdfs:domain	 <wordnet_organization_108008335> .
+<hasISIN>	rdfs:range	<yagoISIN> .
+<hasISIN>	rdf:type	owl:FunctionalProperty .
+<hasISIN>	<hasGloss>	"The company $1 has the ISIN code $2" .

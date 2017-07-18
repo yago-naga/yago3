@@ -65,7 +65,7 @@ public class HardExtractor extends DataExtractor {
   }
 
   public HardExtractor() {
-    this(new File("../basics3/data"));
+    this(new File("schema"));
   }
 
   @Override

@@ -43,8 +43,6 @@ The following Java projects belong to YAGO
 To run YAGO, you need the following:
   * Java 8
   * Maven
-  * Javatools
-  * Basics3
   * for the automated downloading of data resources:
     * Python 2.7
     * the Python module `requests` (you can use `pip install requests` to install this module)

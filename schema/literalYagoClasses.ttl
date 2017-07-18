@@ -1,0 +1,65 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+# These are the literal relations of YAGO2s.
+# The HardExtractor will make this data part of YAGO2s
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<musicBrainsId>	rdfs:subClassOf	xsd:string .
+<geonamesId>	rdfs:subClassOf	xsd:string .
+<m2>	rdfs:subClassOf	<yagoQuantity> .
+<km2>	rdfs:subClassOf	<yagoQuantity> .
+<yagoTLD>	<_hasTypeCheckPattern>	"\.[a-z]{2,5}" .
+<yagoTLD>	rdfs:subClassOf	xsd:string .
+<yagoICD10id>	<_hasTypeCheckPattern>	"[A-Z][0-9]{1,2}\\.[0-9]" .
+<yagoICD10id>	rdfs:subClassOf	xsd:string .
+xsd:boolean	<_hasTypeCheckPattern>	"true|false" .
+xsd:boolean	rdfs:subClassOf	<yagoLiteral> .
+<yagoChar>	<_hasTypeCheckPattern>	"." .
+<yagoChar>	rdfs:subClassOf	xsd:string .
+<yagoFormula>	rdfs:subClassOf	xsd:string .
+</km2>		rdfs:subClassOf	<yagoQuantity> .
+<s>	rdfs:subClassOf	<yagoQuantity> .
+xsd:integer	<_hasTypeCheckPattern>	"([\u005c-\u005c+]?[0-9]++)" .
+xsd:integer	rdfs:subClassOf	xsd:decimal .
+<yagoISBN>	<_hasTypeCheckPattern>	"[\u005cd\u005c-X]{8,20}+" .
+<yagoISBN>	rdfs:subClassOf	xsd:string .
+<m>	rdfs:subClassOf	<yagoQuantity> .
+<yagoLiteral>	rdfs:subClassOf	rdf:Resource .
+<yagoMonetaryValue>	rdfs:subClassOf	<yagoQuantity> .
+<dollar>	rdfs:subClassOf	<yagoMonetaryValue> .
+<euro>	rdfs:subClassOf	<yagoMonetaryValue> .
+xsd:nonNegativeInteger	<_hasTypeCheckPattern>	"([0-9]+)" .
+xsd:nonNegativeInteger	rdfs:subClassOf	xsd:integer .
+xsd:decimal	rdfs:subClassOf	<yagoLiteral> .
+<yagoFraction>	rdfs:subClassOf	xsd:decimal .
+<yagoFraction>	<_hasTypeCheckPattern>	"0\.[0-9]+" .
+<yago0to100>	rdfs:subClassOf	xsd:decimal .
+<yago0to100>	<_hasTypeCheckPattern>	"[0-9][0-9](\.[0-9])?" .
+<percent>	rdfs:subClassOf	xsd:decimal .
+<yagoQuantity>	rdfs:subClassOf	<yagoLiteral> .
+xsd:string	rdfs:subClassOf	<yagoLiteral> .
+xsd:date	rdfs:subClassOf	<yagoLiteral> .
+<yagoTLD>	<_hasTypeCheckPattern>	"\u005c.([a-z]{2,5})" .
+<yagoTLD>	rdfs:subClassOf	xsd:string .
+<yagoURL>	rdfs:subClassOf	rdf:Resource .
+<yagoNonConceptualWord>	rdfs:subClassOf	xsd:string .
+<g>	rdfs:subClassOf	<yagoQuantity> .
+<degrees>	rdfs:subClassOf	<yagoLiteral> .
+<yagoGeoCoordinatePair>	<_hasTypeCheckPattern>	"(-?\u005cd++(?:\u005c.[0-9]++)?(?:[Ee]\u005c-?[0-9]++)?)/(-?\u005cd++(?:\u005c.[0-9]++)?(?:[Ee]\u005c-?[0-9]++)?)" .
+<yagoGeoCoordinatePair>	rdfs:subClassOf	<yagoLiteral> .
+<yagoWordInContext>	<_hasTypeCheckPattern>	"\u005c^.*" .
+<yagoWordInContext>	rdfs:subClassOf	xsd:string .
+xsd:gYear	<_hasTypeCheckPattern>	"[0-9]{1,4}" .
+<percent>	<_hasTypeCheckPattern>	"[0-9]{1,2}(\\.[0-9]{1,2})" .
+xsd:gYear	rdfs:subClassOf	xsd:integer .
+<yagoISIN>	rdfs:subClassOf	xsd:string .
+<yagoISIN>	<_hasTypeCheckPattern>	"[A-Z][A-Z][A-Z0-9]{9}[0-9]" .

@@ -1,0 +1,22 @@
+# Manually coded facts of YAGO.
+#  DO NOT OVERWRITE!
+# These are particular time/location links of YAGO2s.
+# The HardExtractor will make this data part of YAGO2s
+
+@base <http://yago-knowledge.org/resource/> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<wasBornOnDate>	<_timeToLocation>	<wasBornIn> .
+<diedOnDate>	<_timeToLocation>	<diedIn> .
+<startedOnDate>	<_timeToLocation>	<happenedIn> .
+<endedOnDate>	<_timeToLocation>	<happenedIn> .
+<wasCreatedOnDate>	<_timeToLocation>	<happenedIn> .
+<wasDestroyedOnDate>	<_timeToLocation>	<happenedIn> .
+<happenedOnDate>	<_timeToLocation>	<happenedIn> .
