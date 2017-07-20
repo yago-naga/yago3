@@ -6,6 +6,7 @@ import java.util.Set;
 import basics.Fact;
 import basics.FactSource;
 import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
 
@@ -118,6 +119,8 @@ public class PatternHardExtractor extends HardExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new PatternHardExtractor(new File("./data")).extract(new File("c:/fabian/data/yago3"), "test");
+    Parameters.init(args[0]);
+    File yago = Parameters.getFile("yagoFolder");
+    new PatternHardExtractor(new File("./data")).extract(yago, "test");
   }
 }

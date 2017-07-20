@@ -96,6 +96,8 @@
 "(\d{1})0s" <mapsTo> "_result_0$1#-##-##__" .
 "0s" <mapsTo> "_result_00#-##-##__" .
 
+# 428/427 or 424/423 BC
+"_result_([^_]*)-([^_]*)__(?=.{0,100} ?_bce_)" <mapsTo> "_result_-$1-$2__" .
 # BC/BCE
 "_result_([^_]*)-([^_]*)__ ?_bce_" <mapsTo> "_result_-$1-$2__" .
 

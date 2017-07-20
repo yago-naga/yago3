@@ -42,6 +42,7 @@ public class DateParser extends LiteralParser {
   }
 
   public static void main(String[] args) throws Exception {
+    //PatternList.printDebug = true;
     File y = new File("/home/tr/tmp/yago3-debug");
     new PatternHardExtractor(new File("./data")).extract(new File("/home/tr/tmp/yago3-debug"), "test");
     PatternHardExtractor.DATEPARSER.assignToFolder(y);
@@ -75,5 +76,6 @@ public class DateParser extends LiteralParser {
     System.out.println(p.extractList("AD 123"));
     System.out.println(p.extractList("AD 1234"));
 
+    System.out.println(p.extractList("428/427 or 424/423 BC"));
   }
 }
