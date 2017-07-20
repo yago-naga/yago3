@@ -74,9 +74,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, WordnetExtractor.PREFMEANINGS,
-        PatternHardExtractor.INFOBOXTEMPORALPATTERNS, PatternHardExtractor.INFOBOXREPLACEMENTS, WordnetExtractor.WORDNETWORDS,
-        PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER));
+    return new HashSet<Theme>(Arrays.asList(WordnetExtractor.PREFMEANINGS, PatternHardExtractor.INFOBOXTEMPORALPATTERNS,
+        PatternHardExtractor.INFOBOXREPLACEMENTS, WordnetExtractor.WORDNETWORDS, HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER));
   }
 
   /** Infobox facts, non-checked */
