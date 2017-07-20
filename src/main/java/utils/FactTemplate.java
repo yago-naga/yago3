@@ -1,5 +1,6 @@
 package utils;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -13,7 +14,6 @@ import java.util.regex.Pattern;
 import basics.Fact;
 import basics.FactComponent;
 import javatools.administrative.Announce;
-import javatools.parsers.DateParser;
 
 /**
  * This class can instantiate a template of the form "S P O; S P O; ..."
@@ -149,6 +149,17 @@ public class FactTemplate {
     return (FactComponent.forAny(s));
   }
 
+  private static utils.termParsers.DateParser dateParser = null;
+
+  public static utils.termParsers.DateParser dateParser() {
+    try {
+      dateParser = new utils.termParsers.DateParser();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    return dateParser;
+  }
+
   /** Creates a fact component for a formatted string of the form @XXX()
    * @param LanguageMap */
   public static String format(String word, String language, Map<String, String> languageMap) {
@@ -180,13 +191,15 @@ public class FactTemplate {
         if (thing.endsWith(">")) thing = thing.substring(0, thing.length() - 1);
         return (FactComponent.forForeignWikipediaTitle(thing, language));
       case "Date":
-        String date = DateParser.normalize(thing);
-        String[] datecomp = DateParser.getDate(date);
-        if (datecomp == null) {
+        List<String> dates = dateParser().extractList(thing);
+        //dateParser.String date = DateParser.normalize(thing);
+        //String[] datecomp = DateParser.getDate(date);
+        if (dates == null || dates.size() == 0) {
           Announce.debug("Not a date:", thing);
           return (null);
         }
-        return (FactComponent.forDate(DateParser.newDate(datecomp[0], datecomp[1], datecomp[2])));
+        return dates.get(0);
+      //return (FactComponent.forDate(DateParser.newDate(datecomp[0], datecomp[1], datecomp[2])));
       default:
         Announce.warning("Unknown formatter", word);
     }
