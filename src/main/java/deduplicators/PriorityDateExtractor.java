@@ -2,9 +2,10 @@ package deduplicators;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import basics.Fact;
@@ -12,6 +13,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
+import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromThemes.CategoryMapper;
@@ -19,7 +21,9 @@ import fromThemes.InfoboxMapper;
 import fromThemes.RuleExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
 import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
+import main.ParallelCaller;
 import utils.FactCollection;
 import utils.FactCollection.Add;
 import utils.Theme;
@@ -60,8 +64,8 @@ public class PriorityDateExtractor extends Extractor {
     List<Theme> input = new ArrayList<Theme>();
     input.add(SchemaExtractor.YAGOSCHEMA);
     input.add(HardExtractor.HARDWIREDFACTS);
-    input.addAll(CategoryMapper.CATEGORYFACTS.inLanguages(Arrays.asList("en")));
-    input.addAll(InfoboxMapper.INFOBOXFACTS.inLanguages(Arrays.asList("en")));
+    input.addAll(CategoryMapper.CATEGORYFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.addAll(InfoboxMapper.INFOBOXFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.add(RuleExtractor.RULERESULTS);
     //		input.add(TemporalCategoryExtractor.TEMPORALCATEGORYFACTS);
     input.add(TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
@@ -112,19 +116,20 @@ public class PriorityDateExtractor extends Extractor {
     functions.addAll(SchemaExtractor.YAGOSCHEMA.factCollection().seekSubjects(RDFS.type, YAGO.functionInTime));
 
     Announce.doing("Loading");
-    FactCollection categoryFacts = new FactCollection(), infoboxFacts = new FactCollection();
+
+    // collect category facts, and use them to check dates
+    Map<String, Map<String, List<Fact>>> predToSubjToFacts = new HashMap<>();
 
     // add category facts first
-    for (Theme theme : CategoryMapper.CATEGORYFACTS.inLanguages(Arrays.asList("en"))) {
+    for (Theme theme : CategoryMapper.CATEGORYFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
       if (!theme.isAvailableForReading()) continue;
       Announce.doing("Loading from", theme);
       for (Fact fact : theme) {
         if (isMyRelation(fact)) {
-          if (categoryFacts.add(fact, functions) == Add.FUNCLASH) {
-            fact.makeId();
-            DATEFACTCONFLICTS.write(fact);
-            DATEFACTCONFLICTS.write(new Fact(fact.getId(), YAGO.extractionSource, theme.asYagoEntity()));
-          }
+          predToSubjToFacts //
+              .computeIfAbsent(fact.getRelation(), k -> new HashMap<>()) //
+              .computeIfAbsent(fact.getSubject(), k -> new ArrayList<>(1)) //
+              .add(fact);
         }
       }
       Announce.done();
@@ -132,21 +137,26 @@ public class PriorityDateExtractor extends Extractor {
 
     // add infobox facts
     // add only those, which agree with category facts
-    List<Theme> infoboxThemes = new ArrayList<>();
-    infoboxThemes.addAll(InfoboxMapper.INFOBOXFACTS.inLanguages(Arrays.asList("en")));
-    infoboxThemes.add(TemporalInfoboxExtractor.TEMPORALINFOBOXFACTS);
+    FactCollection infoboxFacts = new FactCollection();
+    Map<String, List<Fact>> emptyMap = new HashMap<>(0);
+    List<Fact> emptyList = new ArrayList<>(0);
     for (Theme theme : inputOrdered()) {
       if (!theme.isAvailableForReading()) continue;
       Announce.doing("Loading from", theme);
       for (Fact fact : theme) {
         if (isMyRelation(fact)) {
+
           // check
-          Set<Fact> facts = categoryFacts.getFactsWithSubjectAndRelation(fact.getSubject(), fact.getRelation());
-          boolean add = true;
+          List<Fact> facts = predToSubjToFacts.getOrDefault(fact.getSubject(), emptyMap).getOrDefault(fact.getRelation(), emptyList);
+          boolean add = facts.size() == 0;
           for (Fact other : facts) {
-            if (other.getObject().equals(fact.getObject())) continue;
-            if (!FactComponent.isMoreSpecific(fact.getObject(), other.getObject())) {
-              add = false;
+            if (other.getObject().equals(fact.getObject())) {
+              add = true;
+              break;
+            }
+            if (FactComponent.isMoreSpecific(fact.getObject(), other.getObject())) {
+              add = true;
+              break;
             }
           }
 
@@ -179,8 +189,12 @@ public class PriorityDateExtractor extends Extractor {
   }
 
   public static void main(String[] args) throws Exception {
+    Parameters.init(args[0]);
+    File yago = Parameters.getFile("yagoFolder");
+    ParallelCaller.createWikipediaList(Parameters.getList("languages"), Parameters.getList("wikipedias"));
     //Announce.setLevel(Announce.Level.DEBUG);
-    new PriorityDateExtractor().extract(new File("/san/suchanek/yago3-2017-02-20"), "test");
+    //new PriorityDateExtractor().extract(new File("/san/suchanek/yago3-2017-02-20"), "test");
+    new PriorityDateExtractor().extract(yago, "test");
   }
 
 }
