@@ -3,12 +3,6 @@ package fromThemes;
 import java.io.File;
 import java.util.Set;
 
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.datatypes.IntHashMap;
-import javatools.parsers.NumberFormatter;
-import utils.Theme;
-import utils.Theme.ThemeGroup;
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -16,12 +10,17 @@ import basics.YAGO;
 import deduplicators.ClassExtractor;
 import deduplicators.DateExtractor;
 import deduplicators.FactExtractor;
-import deduplicators.LabelExtractor;
 import deduplicators.LiteralFactExtractor;
 import deduplicators.MetaFactExtractor;
 import deduplicators.SchemaExtractor;
 import extractors.Extractor;
 import fromWikipedia.WikiInfoExtractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import javatools.datatypes.IntHashMap;
+import javatools.parsers.NumberFormatter;
+import utils.Theme;
+import utils.Theme.ThemeGroup;
 
 /**
  * YAGO2s - StatisticsExtractor
@@ -35,9 +34,8 @@ public class StatisticsExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(ClassExtractor.YAGOTAXONOMY, CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
-        MetaFactExtractor.YAGOMETAFACTS, SchemaExtractor.YAGOSCHEMA, DateExtractor.YAGODATEFACTS, LiteralFactExtractor.YAGOLITERALFACTS,
-        WikiInfoExtractor.WIKIINFO.inLanguage("en"));
+    return new FinalSet<Theme>(ClassExtractor.YAGOTAXONOMY, CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS, MetaFactExtractor.YAGOMETAFACTS,
+        SchemaExtractor.YAGOSCHEMA, DateExtractor.YAGODATEFACTS, LiteralFactExtractor.YAGOLITERALFACTS, WikiInfoExtractor.WIKIINFO.inLanguage("en"));
   }
 
   /** YAGO statistics theme */
@@ -85,8 +83,8 @@ public class StatisticsExtractor extends Extractor {
     }
     for (String lan : entityLanguages) {
       Announce.message(lan, ":", entityLanguages.get(lan), "things");
-      STATISTICS.write(new Fact(FactComponent.forString(lan), FactComponent.forYagoEntity("hasNumberOfThings"), FactComponent
-          .forNumber(entityLanguages.get(lan))));
+      STATISTICS.write(new Fact(FactComponent.forString(lan), FactComponent.forYagoEntity("hasNumberOfThings"),
+          FactComponent.forNumber(entityLanguages.get(lan))));
     }
     Announce.message(instances.size(), "things");
     STATISTICS.write(new Fact(YAGO.yago, FactComponent.forYagoEntity("hasNumberOfThings"), FactComponent.forNumber(instances.size())));

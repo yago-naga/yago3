@@ -1,21 +1,5 @@
 package fromWikipedia;
 
-import basics.Fact;
-import basics.FactComponent;
-import basics.RDFS;
-import extractors.MultilingualWikipediaExtractor;
-import followUp.EntityTranslator;
-import followUp.FollowUpExtractor;
-import fromOtherSources.PatternHardExtractor;
-import fromOtherSources.WordnetExtractor;
-import fromThemes.TransitiveTypeExtractor;
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.parsers.Char17;
-import javatools.util.FileUtils;
-import utils.*;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.util.Arrays;
@@ -23,6 +7,23 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import basics.Fact;
+import basics.FactComponent;
+import basics.RDFS;
+import extractors.MultilingualWikipediaExtractor;
+import followUp.EntityTranslator;
+import followUp.FollowUpExtractor;
+import fromOtherSources.PatternHardExtractor;
+import fromThemes.TransitiveTypeExtractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import javatools.parsers.Char17;
+import javatools.util.FileUtils;
+import utils.MultilingualTheme;
+import utils.PatternList;
+import utils.Theme;
 
 /**
  * Extracts all articles that are non-entities (concepts).
@@ -38,11 +39,13 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
   private static Pattern linkPattern = Pattern.compile("\\[\\[.*?\\]\\]");
 
-  @Override public Set<Theme> input() {
+  @Override
+  public Set<Theme> input() {
     return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
   }
 
-  @Override public Set<Theme> inputCached() {
+  @Override
+  public Set<Theme> inputCached() {
     return new HashSet<>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, TransitiveTypeExtractor.TRANSITIVETYPE));
   }
 
@@ -51,7 +54,8 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
   public static final MultilingualTheme NONENTITIES = new MultilingualTheme("nonEntities", "Non-entity article");
 
-  @Override public Set<Theme> output() {
+  @Override
+  public Set<Theme> output() {
     if (isEnglish()) {
       return new FinalSet<>(NONENTITIES.inLanguage(language));
     } else {
@@ -59,7 +63,8 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
     }
   }
 
-  @Override public Set<FollowUpExtractor> followUp() {
+  @Override
+  public Set<FollowUpExtractor> followUp() {
     Set<FollowUpExtractor> result = new HashSet<>();
 
     if (!isEnglish()) {
@@ -68,12 +73,13 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
     return result;
   }
 
-  @Override public void extract() throws Exception {
+  @Override
+  public void extract() throws Exception {
     // Extract the information
     Announce.doing("Extracting context facts");
 
     BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
-    Set<String> entities = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects();
+    Set<String> entities = TransitiveTypeExtractor.getSubjectToTypes().keySet();
     PatternList replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS.factCollection(), "<_titleReplace>");
 
     String titleEntity = null;
@@ -161,8 +167,8 @@ public class NonEntityExtractor extends MultilingualWikipediaExtractor {
 
     clean = clean.replaceAll("\\s+", " ");
     // Leave Wikipedia links.
-//    clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
-//    clean = clean.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
+    //    clean = clean.replaceAll("\\[\\[[^\\]\n]+?\\|([^\\]\n]+?)\\]\\]", "$1");
+    //    clean = clean.replaceAll("\\[\\[([^\\]\n]+?)\\]\\]", "$1");
     clean = clean.replaceAll("\\[https?:.*?\\]", " ");
     clean = clean.replaceAll("\\[\\[.*?:.*?\\]\\]", " ");
     clean = clean.replaceAll("'{2,}", "");

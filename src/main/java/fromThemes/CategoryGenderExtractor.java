@@ -1,17 +1,16 @@
 package fromThemes;
 
 import java.io.File;
+import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 import basics.Fact;
 import basics.FactComponent;
-import basics.RDFS;
 import basics.YAGO;
 import extractors.MultilingualExtractor;
 import fromWikipedia.CategoryExtractor;
 import javatools.datatypes.FinalSet;
-import utils.FactCollection;
 import utils.MultilingualTheme;
 import utils.Theme;
 
@@ -62,13 +61,14 @@ public class CategoryGenderExtractor extends MultilingualExtractor {
     Theme output = CATEGORYGENDER.inLanguage(language);
     Theme sourceOutput = CATEGORYGENDERSOURCES.inLanguage(language);
     Theme input = input().iterator().next();
-    FactCollection types = TransitiveTypeExtractor.TRANSITIVETYPE.factCollection();
+    Map<String, Set<String>> types = TransitiveTypeExtractor.getSubjectToTypes();
 
     String lastEntity = "";
     // Run through all category memberships
     for (Fact f : input) {
       if (!f.getRelation().equals("<hasWikipediaCategory>")) continue;
-      if (!types.contains(f.getSubject(), RDFS.type, YAGO.person)) continue;
+      if (!types.containsKey(f.getSubject())) continue;
+      if (!types.get(f.getSubject()).contains(YAGO.person)) continue;
       String category = f.getObject();
       if (category.startsWith("<wikicat_Male_") && !lastEntity.equals(f.getSubject())) {
         write(output, new Fact(f.getSubject(), "<hasGender>", "<male>"), sourceOutput, FactComponent.forYagoEntity(f.getSubject()),
