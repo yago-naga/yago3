@@ -436,7 +436,10 @@ public class ParallelCaller {
       System.exit(-1);
     }
 
+    Announce.doing("Loading extractors");
     fillTheme2Extractor();
+    Announce.done("done loading extractors");
+
     // Make sure all themes are generated.
     // This is to make sure that Theme.all() works,
     // which is important for the 'reuse'-flag further down to work.
@@ -444,18 +447,25 @@ public class ParallelCaller {
     Map<Extractor, Set<Extractor>> extractorDependencies = new HashMap<>();
     for (int i = 0; i < extractorsToDo.size(); i++) {
       Extractor e = extractorsToDo.get(i);
+
       if (e != null && !extractorDependencies.containsKey(e)) {
         extractorDependencies.computeIfAbsent(e, k -> new HashSet<>());
         for (Theme t : e.input()) {
           Extractor eForTheme = theme2extractor.get(t);
-          extractorDependencies.get(e).add(eForTheme);
-          extractorsToDo.add(eForTheme);
+          if (eForTheme == null) {
+            Announce.warning("extractor ", e, " uses non existing theme ", t);
+            //System.exit(0);
+          } else {
+            extractorDependencies.get(e).add(eForTheme);
+            extractorsToDo.add(eForTheme);
+          }
         }
         e.output();
         baseExtractor2FollowUp.getOrDefault(e, Arrays.asList()).forEach(fe -> extractorsToDo.add(fe));
       }
     }
     extractorsToDo = topologicalSort(extractorDependencies);
+
 
     extractorsRunning.clear();
     extractorsFailed.clear();
