@@ -1,7 +1,9 @@
 package main;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.RandomAccessFile;
 import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.util.ArrayList;
@@ -158,7 +160,9 @@ public class ParallelCaller {
         if (!ex.output().isEmpty() && themesWeHave.containsAll(ex.output())) {
           D.p("Skipping", ex);
         } else {
-          D.p("Starting", ex);
+          Set<Theme> missing = new HashSet<>(ex.output());
+          missing.removeAll(themesWeHave);
+          D.p("Starting", ex, " because of missing ", missing);
           StringBuilder caches = new StringBuilder();
           for (Theme t : ex.inputCached())
             caches.append(t).append(t.isCached() ? " (cached)" : "").append(", ");
@@ -408,6 +412,31 @@ public class ParallelCaller {
     return es;
   }
 
+  /** Read file backwards. Does not use buffers, therefore slow */
+  public static String tail(File src, int maxLines) throws FileNotFoundException, IOException {
+    if (src == null || !src.isFile()) return null;
+    // based on https://stackoverflow.com/a/15612710
+    StringBuilder sb = new StringBuilder();
+    int lines = 0;
+    try (RandomAccessFile f = new RandomAccessFile(src, "r")) {
+      long length = f.length(), p;
+      for (p = length - 1; p >= 0 && lines < maxLines; p--) {
+        f.seek(p);
+        int b = f.read();
+        if (b == 10 || p == 0) {
+          if (p < length - 1) {
+            if (sb.length() > 0 && lines < maxLines - 1 && p != 0) sb.append('\n');
+            lines++;
+          }
+        } else if (b != 13) {
+          sb.append((char) b);
+        }
+      }
+    }
+
+    return sb.reverse().toString();
+  }
+
   /** Run */
   public static void main(String[] args) throws Exception {
     String initFile = args.length == 0 ? "../yago.ini" : args[0];
@@ -466,7 +495,6 @@ public class ParallelCaller {
     }
     extractorsToDo = topologicalSort(extractorDependencies);
 
-
     extractorsRunning.clear();
     extractorsFailed.clear();
     themesWeHave.clear();
@@ -475,7 +503,7 @@ public class ParallelCaller {
       Set<Theme> available = new HashSet<>(), reusable = new HashSet<>();
       for (Theme t : Theme.all()) {
         File f = t.findFileInFolder(outputFolder);
-        if (f == null || f.length() < 200) {
+        if (f == null || !tail(f, 1).contains("# end of file")) {
           continue;
         }
         available.add(t);
