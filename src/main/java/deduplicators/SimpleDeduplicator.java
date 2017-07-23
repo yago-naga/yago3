@@ -115,6 +115,7 @@ public abstract class SimpleDeduplicator extends Extractor {
 			Announce.done();
 		}
 		Announce.done();
+		tsv.write("# end of file");
 		tsv.close();
 
 		Announce.doing("Removing false facts");

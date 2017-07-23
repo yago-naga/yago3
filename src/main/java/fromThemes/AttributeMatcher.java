@@ -198,6 +198,7 @@ public class AttributeMatcher extends MultilingualExtractor {
     }
 
     if (tsv != null) {
+      tsv.write("# end of file");
       tsv.close();
     }
   }

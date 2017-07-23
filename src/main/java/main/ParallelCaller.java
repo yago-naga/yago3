@@ -5,12 +5,14 @@ import java.io.IOException;
 import java.lang.reflect.Modifier;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
@@ -27,12 +29,9 @@ import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.administrative.Parameters;
 import javatools.parsers.NumberFormatter;
-import javatools.util.FileUtils;
 import utils.Theme;
 
 /**
- * YAGO2s -- ParallelCaller
- *
  * Calls the extractors in parallel as given in the ini-file. The format in the
  * ini-file is: extractors = fromOtherSources.HardExtractor(./mydatafolder),
  * fromWikipedia.WikipediaExtractor(myWikipediaFile), ...
@@ -40,9 +39,26 @@ import utils.Theme;
  * Optionally, the ini-file can contain the parameter reuse=true ... which will
  * re-use themes that are already there.
  *
- * @author Fabian M. Suchanek
- *
- */
+This class is part of the YAGO project at the Max Planck Institute
+for Informatics/Germany and Télécom ParisTech University/France:
+http://yago-knowledge.org
+
+This class is copyright 2016 Fabian M. Suchanek, with contributions
+from Mohamed Amir Yosef and Johannes Hoffart.
+
+YAGO is free software: you can redistribute it and/or modify it
+under the terms of the GNU General Public License as published
+by the Free Software Foundation, either version 3 of the License,
+or (at your option) any later version.
+
+YAGO is distributed in the hope that it will be useful, but WITHOUT
+ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public
+License for more details.
+
+You should have received a copy of the GNU General Public License
+along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
 public class ParallelCaller {
 
   /** Where the files shall go */
@@ -77,6 +93,17 @@ public class ParallelCaller {
 
   /** TRUE if we are just simulating a run */
   protected static boolean simulate = true;
+
+  /** TRUE if we run extractors which take a theme as an input, which was regenerated */
+  protected static boolean rerunDependentExtractors = false;
+
+  /** Maps from a theme to the extractor which produces it */
+  protected static Map<Theme, Extractor> theme2extractor = new HashMap<>();
+
+  /** Maps from a follow-up theme to the base extractor */
+  protected static Map<Extractor, List<Extractor>> baseExtractor2FollowUp = new HashMap<>();
+
+  protected static Map<String, List<Extractor>> call2extractor = new HashMap<>();
 
   /** Finds the themes that nobody produced */
   protected static Set<Theme> culprits() {
@@ -117,7 +144,6 @@ public class ParallelCaller {
     }
     for (Theme theme : themesWeHave) {
       if (!requiredCaches.contains(theme) && !cachesWeKilled.contains(theme)) {
-        D.p("Killing cache", theme);
         theme.killCache();
         cachesWeKilled.add(theme);
       }
@@ -192,20 +218,15 @@ public class ParallelCaller {
       boolean success = false;
       try {
         if (!simulate) ex.extract(outputFolder, ParallelCaller.header + NumberFormatter.ISOtime() + ".\n\n");
+        for (Theme o : ex.output()) {
+          o.flush();
+        }
         success = true;
       } catch (Exception e) {
         e.printStackTrace();
         e.printStackTrace(System.out);
       }
       callNext(ex, success);
-    }
-  }
-
-  /** Adds all follow up extractors to the list */
-  public static void addFollowUps(List<Extractor> extractors) {
-    for (int i = 0; i < extractors.size(); i++) {
-      Set<FollowUpExtractor> followUps = extractors.get(i).followUp();
-      extractors.addAll(followUps);
     }
   }
 
@@ -222,7 +243,7 @@ public class ParallelCaller {
       if (!l.matches("[a-z]{2,3}")) Announce.error("Languages have to be 2 or 3-digit language codes, not", l);
       MultilingualExtractor.wikipediaLanguages.add(l);
     }
-    wikipedias = new HashMap<String, File>();
+    wikipedias = new HashMap<>();
     for (int i = 0; i < languages.size(); i++) {
       File wiki = new File(wikis.get(i));
       if (!wiki.exists()) Announce.error("Wikipedia not found:", wiki);
@@ -230,9 +251,7 @@ public class ParallelCaller {
     }
   }
 
-  /** Get extractors that produce themes. */
-  public static void printNeededExtractorsForThemes(Set<Theme> themes) {
-    Map<Theme, Extractor> theme2extractor = new HashMap<>();
+  public static void fillTheme2Extractor() {
     Enumeration<URL> roots = null;
     try {
       roots = ParallelCaller.class.getClassLoader().getResources("");
@@ -242,7 +261,7 @@ public class ParallelCaller {
     while (roots.hasMoreElements()) {
       URL rootURL = roots.nextElement();
       File root = new File(rootURL.getPath());
-      for (File file : FileUtils.getAllFiles(root)) {
+      for (File file : javatools.util.FileUtils.getAllFiles(root)) {
         if (file.getName().endsWith(".class") && !file.getName().contains("$")) {
           String fullClassName = file.getAbsolutePath().replace(root.getAbsolutePath() + "/", "").replace("/", ".");
           fullClassName = fullClassName.substring(0, fullClassName.lastIndexOf("."));
@@ -258,7 +277,8 @@ public class ParallelCaller {
               }
               for (FollowUpExtractor fe : e.followUp()) {
                 for (Theme t : fe.output()) {
-                  theme2extractor.put(t, e);
+                  theme2extractor.put(t, fe);
+                  baseExtractor2FollowUp.computeIfAbsent(e, k -> new ArrayList<>()).add(fe);
                 }
               }
             }
@@ -266,7 +286,83 @@ public class ParallelCaller {
         }
       }
     }
+  }
 
+  /** Returns a topological sort. If map contains a -> [b, c], b -> [c, d], it may return c, d, b, a */
+  public static <T> List<T> topologicalSort(Map<T, Set<T>> itemToAncestors) {
+    Map<T, HashSet<T>> map = new HashMap<>();
+    for (T e : itemToAncestors.keySet()) {
+      map.put(e, new HashSet<>(itemToAncestors.get(e)));
+      for (T a : itemToAncestors.get(e)) {
+        map.computeIfAbsent(a, k -> new HashSet<>());
+      }
+    }
+
+    List<T> result = new ArrayList<>();
+    Set<T> done = new HashSet<>();
+    while (map.size() > 0) {
+      boolean changed = false;
+      for (T e : new ArrayList<>(map.keySet())) {
+        changed |= map.get(e).removeIf(d -> done.contains(d));
+        if (map.get(e).size() == 0) {
+          done.add(e);
+          map.remove(e);
+          result.add(e);
+          changed = true;
+        }
+      }
+      if (!changed) break;
+    }
+
+    if (map.size() > 0) {
+      Announce.warning("Circular dependencies within following extractors:");
+      Announce.warning(result);
+
+      // print path
+      List<T> path = new ArrayList<>();
+      Map<T, Integer> toDistance = new HashMap<>();
+      Map<T, T> prev = new HashMap<>();
+      T start = map.keySet().iterator().next(), act = start;
+      int actDist = 0;
+      while (!done.contains(act)) {
+        done.add(act);
+        path.add(act);
+        toDistance.remove(act);
+        for (T neighbor : map.get(act)) {
+          if (!done.contains(neighbor) && map.containsKey(neighbor)) {
+            if (toDistance.containsKey(neighbor)) {
+              T fAct = act;
+              toDistance.merge(neighbor, actDist + 1, (a, b) -> {
+                prev.put(neighbor, fAct);
+                return Math.min(a, b);
+              });
+            } else {
+              toDistance.put(neighbor, actDist + 1);
+              prev.put(neighbor, act);
+            }
+          }
+        }
+        actDist = Integer.MAX_VALUE;
+        for (Entry<T, Integer> e : toDistance.entrySet()) {
+          if (actDist > e.getValue()) {
+            actDist = e.getValue();
+            act = e.getKey();
+          }
+        }
+      }
+
+      do {
+        Announce.warning("path: ", act, " --> ", map.get(act));
+      } while ((act = prev.get(act)) != null);
+      Announce.warning("path: ", start, " --> ", map.get(start));
+    }
+    while (result.remove(null))
+      ;
+    return result;
+  }
+
+  /** Get extractors that produce themes. */
+  public static void printNeededExtractorsForThemes(Set<Theme> themes) {
     Set<Theme> stillMissing = new HashSet<>(themes);
     Set<Theme> unresolvable = new HashSet<>();
     Set<Extractor> extractorsToRun = new HashSet<>();
@@ -314,45 +410,116 @@ public class ParallelCaller {
 
   /** Run */
   public static void main(String[] args) throws Exception {
-    String initFile = args.length == 0 ? "yago.ini" : args[0];
+    String initFile = args.length == 0 ? "../yago.ini" : args[0];
     D.p("Initializing from", initFile);
     Parameters.init(initFile);
     simulate = Parameters.getBoolean("simulate", false);
+    rerunDependentExtractors = Parameters.getBoolean("rerunDependent", false);
+    List<Pattern> rerunDependentOn = new ArrayList<>();
+    List<String> rerunDependentOnRegex = Parameters.getList("rerunDependentOn");
+    if (rerunDependentOnRegex != null) {
+      for (String regex : rerunDependentOnRegex) {
+        rerunDependentOn.add(Pattern.compile(regex.trim()));
+      }
+    }
     if (simulate) D.p("Simulating a YAGO run");
     else D.p("Running YAGO extractors in parallel");
     numThreads = Parameters.getInt("numThreads", numThreads);
     createWikipediaList(Parameters.getList("languages"), Parameters.getList("wikipedias"));
     boolean reuse = Parameters.getBoolean("reuse", false);
     outputFolder = simulate ? Parameters.getFile("yagoSimulationFolder") : Parameters.getFile("yagoFolder");
-    extractorsToDo = extractors(Parameters.getList("extractors"));
-    addFollowUps(extractorsToDo);
+    extractorsToDo = new ArrayList<>(extractors(Parameters.getList("extractors")));
+
+    String lockFile = outputFolder.getAbsolutePath() + "/yago.lock";
+    if (!lock(lockFile)) {
+      System.out.println("another instance of YAGO seems to be running. (Otherwise delete " + lockFile + ")");
+      System.exit(-1);
+    }
+
+    fillTheme2Extractor();
     // Make sure all themes are generated.
     // This is to make sure that Theme.all() works,
     // which is important for the 'reuse'-flag further down to work.
-    for (Extractor e : extractorsToDo) {
-      e.input();
-      e.output();
+    /** Maps from an extractor to those that need to run before it */
+    Map<Extractor, Set<Extractor>> extractorDependencies = new HashMap<>();
+    for (int i = 0; i < extractorsToDo.size(); i++) {
+      Extractor e = extractorsToDo.get(i);
+      if (e != null && !extractorDependencies.containsKey(e)) {
+        extractorDependencies.computeIfAbsent(e, k -> new HashSet<>());
+        for (Theme t : e.input()) {
+          Extractor eForTheme = theme2extractor.get(t);
+          extractorDependencies.get(e).add(eForTheme);
+          extractorsToDo.add(eForTheme);
+        }
+        e.output();
+        baseExtractor2FollowUp.getOrDefault(e, Arrays.asList()).forEach(fe -> extractorsToDo.add(fe));
+      }
     }
+    extractorsToDo = topologicalSort(extractorDependencies);
 
     extractorsRunning.clear();
     extractorsFailed.clear();
     themesWeHave.clear();
     if (reuse) {
-      D.p("Reusing existing themes");
+      // check which themes exist, and which we could reuse
+      Set<Theme> available = new HashSet<>(), reusable = new HashSet<>();
       for (Theme t : Theme.all()) {
         File f = t.findFileInFolder(outputFolder);
         if (f == null || f.length() < 200) {
-          D.p(" Not found:", t);
           continue;
         }
-        t.assignToFolder(outputFolder);
-        D.p(" Reusing:", t);
-        themesWeHave.add(t);
+        available.add(t);
+        reusable.add(t);
+      }
+      if (rerunDependentExtractors) {
+        for (Extractor e : extractorsToDo) {
+          if (!reusable.containsAll(e.input())) {
+            reusable.removeAll(e.output());
+          } else {
+            pattern_loop: for (Pattern p : rerunDependentOn) {
+              for (Theme t : e.input()) {
+                Matcher m = p.matcher(t.name);
+                if (m.matches()) {
+                  reusable.removeAll(e.output());
+                  break pattern_loop;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      D.p("Reusing existing themes");
+      for (Theme t : Theme.all()) {
+        if (!available.contains(t)) {
+          D.p(" Not found:", t);
+        } else {
+          if (reusable.contains(t)) {
+            t.assignToFolder(outputFolder);
+            D.p(" Reusing:", t);
+            themesWeHave.add(t);
+          } else {
+            D.p(" Overwriting:", t);
+          }
+        }
       }
     }
     startTime = System.currentTimeMillis();
     if (!simulate) Announce.setLevel(Announce.Level.WARNING);
     callNext(null, true);
+  }
+
+  private static boolean lock(String lockFile) {
+    try {
+      final File file = new File(lockFile);
+      if (file.createNewFile()) {
+        file.deleteOnExit();
+        return true;
+      }
+      return false;
+    } catch (IOException e) {
+      return false;
+    }
   }
 
   /** Header for the YAGO files */
@@ -388,7 +555,7 @@ public class ParallelCaller {
        */
     }
 
-    List<Extractor> extractors = new ArrayList<Extractor>();
+    List<Extractor> extractors = new ArrayList<>();
     for (String extractorName : extractorNames) {
       if (extractorName.trim().startsWith("#")) continue;
       extractors.addAll(extractorsForCall(extractorName));
@@ -400,44 +567,46 @@ public class ParallelCaller {
   /** Creates an extractor for a call of the form "extractorName(File)" */
   @SuppressWarnings("unchecked")
   public static List<Extractor> extractorsForCall(String extractorCall) {
-    if (extractorCall == null || extractorCall.isEmpty()) return (null);
-    Announce.doing("Creating", extractorCall);
-    Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)(?:\\(([A-Za-z_0-9\\-:/\\.\\\\]*)\\))?").matcher(extractorCall);
-    if (!m.matches()) {
-      Announce.error("Cannot parse extractor call:", extractorCall);
-    }
-    List<Extractor> extractors = new ArrayList<Extractor>();
-    Class<? extends Extractor> clss;
-    try {
-      clss = (Class<? extends Extractor>) Class.forName(m.group(1));
-    } catch (Exception e) {
-      Announce.error(e);
-      return (null);
-    }
-    Set<Class<?>> superclasses = new HashSet<>();
-    Class<?> s = clss;
-    while (s != Object.class) {
-      superclasses.add(s);
-      s = s.getSuperclass();
-    }
-    if (superclasses.contains(MultilingualWikipediaExtractor.class)) {
-      for (String language : wikipedias.keySet()) {
-        extractors.add(MultilingualWikipediaExtractor.forName((Class<MultilingualWikipediaExtractor>) clss, language, wikipedias.get(language)));
+    return call2extractor.computeIfAbsent(extractorCall, k -> {
+      if (extractorCall == null || extractorCall.isEmpty()) return (null);
+      Announce.doing("Creating", extractorCall);
+      Matcher m = Pattern.compile("([A-Za-z0-9\\.]+)(?:\\(([A-Za-z_0-9\\-:/\\.\\\\]*)\\))?").matcher(extractorCall);
+      if (!m.matches()) {
+        Announce.error("Cannot parse extractor call:", extractorCall);
       }
-    } else if (superclasses.contains(MultilingualExtractor.class)) {
-      for (String language : wikipedias.keySet()) {
-        extractors.add(MultilingualExtractor.forName((Class<MultilingualExtractor>) clss, language));
+      List<Extractor> extractors = new ArrayList<>();
+      Class<? extends Extractor> clss;
+      try {
+        clss = (Class<? extends Extractor>) Class.forName(m.group(1));
+      } catch (Exception e) {
+        Announce.error(e);
+        return (null);
       }
-    } else if (superclasses.contains(EnglishWikipediaExtractor.class)) {
-      extractors.add(EnglishWikipediaExtractor.forName((Class<DataExtractor>) clss, wikipedias.get("en")));
-    } else if (superclasses.contains(DataExtractor.class)) {
-      File input = null;
-      if (m.group(2) != null && !m.group(2).isEmpty()) input = new File(m.group(2));
-      extractors.add(DataExtractor.forName((Class<DataExtractor>) clss, input));
-    } else {
-      extractors.add(Extractor.forName((Class<Extractor>) clss));
-    }
-    Announce.done();
-    return (extractors);
+      Set<Class<?>> superclasses = new HashSet<>();
+      Class<?> s = clss;
+      while (s != Object.class) {
+        superclasses.add(s);
+        s = s.getSuperclass();
+      }
+      if (superclasses.contains(MultilingualWikipediaExtractor.class)) {
+        for (String language : wikipedias.keySet()) {
+          extractors.add(MultilingualWikipediaExtractor.forName((Class<MultilingualWikipediaExtractor>) clss, language, wikipedias.get(language)));
+        }
+      } else if (superclasses.contains(MultilingualExtractor.class)) {
+        for (String language : wikipedias.keySet()) {
+          extractors.add(MultilingualExtractor.forName((Class<MultilingualExtractor>) clss, language));
+        }
+      } else if (superclasses.contains(EnglishWikipediaExtractor.class)) {
+        extractors.add(EnglishWikipediaExtractor.forName((Class<DataExtractor>) clss, wikipedias.get("en")));
+      } else if (superclasses.contains(DataExtractor.class)) {
+        File input = null;
+        if (m.group(2) != null && !m.group(2).isEmpty()) input = new File(m.group(2));
+        extractors.add(DataExtractor.forName((Class<DataExtractor>) clss, input));
+      } else {
+        extractors.add(Extractor.forName((Class<Extractor>) clss));
+      }
+      Announce.done();
+      return (extractors);
+    });
   }
 }

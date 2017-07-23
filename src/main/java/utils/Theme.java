@@ -170,9 +170,15 @@ public class Theme extends FactSource.FileFactSource implements Comparable<Theme
     cache = null;
   }
 
+  /** Flush the theme */
+  public void flush() throws IOException {
+    if (factWriter != null) factWriter.flush();
+  }
+
   /** Closes the theme for writing */
   public void close() throws IOException {
     if (factWriter == null) throw new IOException("Theme " + this + " cannot be closed because it was not open");
+    factWriter.writeComment("end of file " + name);
     factWriter.close();
     factWriter = null;
   }
