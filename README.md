@@ -76,10 +76,10 @@ If you want to download the latest versions of the data sources automatically, a
 
   * `dumpsFolder = ...`: points to a folder where the data sources live.
 
-Then run the following code (works only on a Linux machine):
+Then run the following code (works on Linux or Mac):
 
 ```bash
-python scripts/dumps/downloadDumps.py -i <PATH_TO_YAGO_DUMP_FOLDER> -y <PATH_TO_CONFIGURATION_FILE>
+python scripts/dumps/downloadDumps.py -y <PATH_TO_CONFIGURATION_FILE>
 ```
 
 This code will create a new configuration file, which you will have to use in the sequel.
