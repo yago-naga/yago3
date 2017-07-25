@@ -65,8 +65,8 @@ public class FactCollection extends AbstractSet<Fact> {
   /** Type of things that happen when a fact is added */
   public enum Add {
     NULL(false, false, false, false), DUPLICATE(false, false, false, true), TOOGENERAL(false, false, false, true), NOID(false, false, false,
-        false), FUNCLASH(false, false, true, false), MORESPECIFIC(true, true, false, true), ADDED(true, false, false, false), HASID(true, true, false,
-            true);
+        false), FUNCLASH(false, false, true,
+            false), MORESPECIFIC(true, true, false, true), ADDED(true, false, false, false), HASID(true, true, false, true);
 
     public final boolean added;
 
@@ -108,7 +108,7 @@ public class FactCollection extends AbstractSet<Fact> {
           Announce.debug("More general fact not added:", fact, "because of", other);
           return (Add.TOOGENERAL);
         }
-        if (!other.getObject().equals(fact.getObject())) continue;
+        if (!other.getObject().equals(fact.getObject())) return Add.DUPLICATE;
         if (other.getId() != null && fact.getId() == null) {
           Announce.debug("Fact without id not added:", fact, "because of", other);
           return (Add.NOID);
