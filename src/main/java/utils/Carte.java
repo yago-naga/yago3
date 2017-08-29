@@ -96,14 +96,15 @@ public class Carte {
         }
         boolean wroteGroup = false;
         for (File f : groups.get(group)) {
-          w.write("<tr style='background-color:" + colors[group.ordinal() % colors.length] + "'><td>");
+          String cellstyle = " style='background-color:" + colors[group.ordinal() % colors.length] + "'";
+          w.write("<tr><td" + cellstyle + ">");
           if (!wroteGroup) w.write(group.toString());
           wroteGroup = true;
-          w.write("\n  <td><b>" + FileSet.newExtension(f.getName(), null) + "</b>\n");
+          w.write("\n  <td" + cellstyle + "><b>" + FileSet.newExtension(f.getName(), null) + "</b>\n");
           w.write("      <br>" + descriptions.get(f) + "\n");
-          w.write("  <td><a href='" + FileSet.newExtension(f.getName(), "txt") + "'>Preview</a>\n");
-          w.write("  <td><a href='" + FileSet.newExtension(f.getName(), "ttl.7z") + "'>Download&nbsp;TTL</a>\n");
-          w.write("  <td><a href='" + FileSet.newExtension(f.getName(), "tsv.7z") + "'>Download&nbsp;TSV</a>\n");
+          w.write("  <td" + cellstyle + "><a href='" + FileSet.newExtension(f.getName(), "txt") + "'>Preview</a>\n");
+          w.write("  <td" + cellstyle + "><a href='" + FileSet.newExtension(f.getName(), "ttl.7z") + "'>Download&nbsp;TTL</a>\n");
+          w.write("  <td" + cellstyle + "><a href='" + FileSet.newExtension(f.getName(), "tsv.7z") + "'>Download&nbsp;TSV</a>\n");
         }
       }
       w.write("</BODY></HTML>");
