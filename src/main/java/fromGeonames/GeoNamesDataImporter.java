@@ -71,7 +71,7 @@ public class GeoNamesDataImporter extends DataExtractor {
 
   /** geonames types sources */
   public static final Theme GEONAMES_TYPES_SOURCE = new Theme("yagoGeonamesTypesSources",
-      "Source for all GeoNames types for both mapped and non-mapped entities.", ThemeGroup.META);
+      "Source for all GeoNames types for both mapped and non-mapped entities", ThemeGroup.META);
 
   @Override
   public Set<Theme> input() {
