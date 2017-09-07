@@ -1,0 +1,968 @@
+{{refimprove|date=March 2017}}
+A '''demonym''' ({{IPAc-en|ˈ|d|ɛ|m|ə|n|ɪ|m}}; δῆμος ''dẽmos'' "people, tribe", ὄνομα ''ónoma'' "name") is a word that identifies residents or natives of a particular place, which is derived from the name of that particular place.<ref name="Scheetz">{{Cite book |title=Names' Names: A Descriptive and Pervasive Onymicon |author=George H. Scheetz |publisher=Schütz Verlag |year=1988}}</ref> It is a [[neologism]] (i.e., a recently minted term); previously '''''gentilic''''' was recorded in English dictionaries, e.g., the ''[[Oxford English Dictionary]]'' and ''Chambers Twentieth Century Dictionary''.<ref>{{Cite OED |gentile, adj. and n.|id=77647}}</ref><ref>"gentile --  adj. of or belonging to a ''gens'' or clan; belonging to any nation but the Jews; (gram.) denoting a race or country"--Davidson, Thomas, ed. (1901) ''Chambers's Twentieth Century Dictionary of the English Language''. London: W. & R. Chambers; p. 382</ref><ref>"gentile --  adj. of or belonging to a ''gens'' or clan; belonging to the Gentiles; (gram.) denoting a race or country"--Macdonald, A. M., ed. (1972) ''Chambers Twentieth Century Dictionary''; new ed. Edinburgh: W. & R. Chambers; p. 544</ref>
+
+Examples of demonyms include a ''[[Pakistani]]'' for a person from [[Pakistan]], ''[[Swahili people|Swahili]]'' for a person of the [[Swahili coast]], the colloquial ''[[Kiwi (people)|Kiwi]]'' for a person from  [[New Zealand]], and a ''Cochabambino'' for a person from the city of [[Cochabamba]].
+
+Demonyms do not always clearly distinguish  place of origin or ethnicity from place of residence or citizenship, and many demonyms overlap with the [[ethnonym]] for the ethnically dominant group of a region. Thus a ''Thai'' may be any resident or citizen of [[Thailand]] of any ethnic group, or more narrowly a member of the [[Thai people]]. Conversely, some groups of people may be associated with multiple demonyms. For example, a native of the [[United Kingdom]] may be called a ''[[British person]]'', a ''Briton'' or, informally, a ''Brit''. In some languages, when a parallel demonym does not exist, a demonym is borrowed from another language as a nickname or descriptive adjective of a group of people.{{Example needed}}
+
+In English, demonyms are [[capitalization|capitalized]]<ref>{{cite web|url=http://www.mansioningles.com/gram19.htm|title=Gramática Inglesa. Adjetivos Gentilicios|work=mansioningles.com}}</ref> and are often the same as the adjectival form of the place, e.g. ''Egyptian'', ''Japanese'', or ''Greek''. Significant exceptions exist; for instance the adjectival form of [[Spain]] is "Spanish", but the demonym is "''Spaniard''".
+
+English widely includes country-level demonyms such as ''Ethiopian'' or ''Guatemalan'' and more local demonyms such as ''[[Wisconsin]]ite'', ''[[Chicago]]an'', ''[[Michigan]]der'', "''[[Rio de Janeiro (state)|Fluminense]]''", and "''[[São Paulo (state)|Paulista]]''".<ref>{{cite web|url=https://books.google.com/ngrams/graph?content=from+Russia%2CRussian&year_start=1808&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Cfrom%20Russia%3B%2Cc0%3B.t1%3B%2CRussian%3B%2Cc0|title=Google Ngram Viewer|work=google.com}}</ref><ref>{{cite web|url=https://books.google.com/ngrams/graph?content=from+Kentucky%2CKentuckian&year_start=1808&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Cfrom%20Kentucky%3B%2Cc0%3B.t1%3B%2CKentuckian%3B%2Cc0|title=Google Ngram Viewer|work=google.com}}</ref><ref>{{cite web|url=https://books.google.com/ngrams/graph?content=from+Perth%2CPerthite&year_start=1808&year_end=2008&corpus=15&smoothing=3&share=&direct_url=t1%3B%2Cfrom%20Perth%3B%2Cc0%3B.t1%3B%2CPerthite%3B%2Cc0|title=Google Ngram Viewer|work=google.com}}</ref> Some places lack a commonly used and accepted demonym. This poses a particular challenge to those [[toponymy|toponymist]]s who research demonyms.
+
+==Etymology==
+The word ''gentilic'' comes from the Latin ''gentilis'' ("of a clan, or gens") and the English suffix ''-ic''.<ref>{{cite web|title=Dictionary|url=http://www.merriam-webster.com/dictionary/gentilic|website=Merriam Webster|accessdate=25 July 2015}}</ref> The word ''demonym'' was derived from the [[Greek language|Greek]] word meaning "populace" ({{lang|grc|δῆμος}} ''[[Glossary of rhetorical terms#D|demos]]'') with the suffix for "name" ([[-onym]]).
+
+''[[National Geographic (magazine)|National Geographic]]'' attributes the term "demonym" to [[Merriam-Webster]] editor [[Paul Dickson]] in a recent work from 1990.<ref>{{cite journal |publisher=National Geographic Society (U.S.) |url=https://books.google.com/?id=krIOAAAAIAAJ&q=demonym&dq=demonym |title=Gentilés, Demonyms: What's in a Name? |journal=[[National Geographic Magazine]] |volume=177 |date=February 1990 |page=170}}</ref> However, the word does not appear for nouns, adjectives, and verbs derived from geographical names in the Merriam-Webster Collegiate Dictionary nor in prominent style manuals such as the ''[[The Chicago Manual of Style|Chicago Manual of Style]]''. It was subsequently popularized in this sense in 1997 by Dickson in his book ''Labels for Locals''.<ref>{{cite news |work=[[New York Times]] |url=https://query.nytimes.com/gst/fullpage.html?res=9F04EEDB143CF937A25751C1A961958260&scp=1 |date=1997-12-14 |author=[[William Safire]] |title=On Language; Gifts of Gab for 1998}}</ref> Dickson. However, in ''What Do You Call a Person From...? A Dictionary of Resident Names'' (the first edition of ''Labels for Locals'')<ref>''What Do You Call a Person From...? A Dictionary of Resident Names'' by Paul Dickson (Facts on File, February 1990). {{ISBN|978-0-8160-1983-0}}.</ref> attributed the term to George H. Scheetz, in his ''Names' Names: A Descriptive and Prescriptive Onymicon'' (1988),<ref name="Scheetz"/> which is apparently where the term first appears. The term may have been fashioned after ''demonymic'', which the ''[[Oxford English Dictionary]]'' defines as the name of an [[Athenian]] [[citizen]] according to the [[deme]] to which the citizen belongs, with its first use traced to 1893.<ref name="OED">{{cite web |url=http://www.oed.com/ |title=Oxford English Dictionary |publisher=Oxford University Press}}</ref><ref>{{cite web |url=https://archive.org/details/constitutionofat00arisuoft |title=Aristotle's ''Constitution of Athens'', edited by J.E. Sandy, at the Internet Archive |page=116}}</ref>
+
+==Suffixation==
+Several linguistic elements are used to create demonyms in the [[English language]]. The most common is to add a [[Affix|suffix]] to the end of the location name, slightly modified in some instances. These may resemble [[Late Latin]], [[Semitic languages|Semitic]], [[Celtic languages|Celtic]], or [[Germanic languages|Germanic]] suffixes, such as:
+
+===''-(a)n''===
+====Continents====
+*[[Africa]] → African
+*[[Asia]] → Asian
+*[[Australia (continent)|Australia]] → Australian
+*[[Europe]] → European
+*[[North America]] → North American
+*[[South America]] → South American
+
+====Countries====
+{{columns-list|3|
+*[[Afghanistan]] → Afghan
+*[[Albania]] → Albanian
+*[[Algeria]] → Algerian
+*[[Andorra]] → Andorran
+*[[Angola]] → Angolan
+*[[Antigua and Barbuda|Antigua]] → Antiguan
+*[[Argentina]] → Argentinean
+*[[Armenia]] → Armenian
+*[[Assyria]] → Assyrian
+*[[Australia]] → Australian (also "[[Aboriginal_Australians|Aboriginal]]", or "Aussie")
+*[[Austria]] → Austrian
+*[[Barbuda]] → Barbudan
+*[[Belize]] → Belizean
+*[[Bolivia]] → Bolivian
+*[[Bosnia]] → Bosnian
+*[[Brunei]] → Bruneian
+*[[Bulgaria]] → Bulgarian
+*[[Canada]] → Canadian
+*[[Cayman]]→ Caymanian
+*[[Chile]] → Chilean
+*[[Colombia]] → Colombian
+*[[Costa Rica]] → Costa Rican
+*[[Croatia]] → Croatian (also "''Croat''")
+*[[Cuba]] → Cuban
+*[[Czech Republic]] → Czech
+*[[Cyprus]] → Cypriot
+*[[Denmark]] → Dane
+*[[Dominica]] → Dominican
+*[[Dominican Republic]] → Dominican
+*[[El Salvador]] → Salvadoran
+*[[Eritrea]] → Eritrean
+*[[Estonia]] → Estonian
+*[[Ethiopia]] → Ethiopian
+*[[Fiji]] → Fijian
+*[[the Gambia|Gambia]] → Gambian
+*[[Gaza city|Gaza]] → Gazan
+*[[Georgia (country)|Georgia]] → Georgian
+<!-- Do not add Germany. "German" is not derived by suffixation of the term "Germ"; rather, it is the shortened form of Latin ''[[Germanus (disambiguation)|Germanus]]''. -->
+*[[Germany]] → German
+*[[Guatemala]] → Guatemalan
+*[[Guinea]] → Guinean
+*[[Guyana]] → Guyanese
+*[[Haiti]] → Haitian
+*[[Honduras]] → Honduran
+*[[India]] → Indian
+*[[Indonesia]] → Indonesian
+*[[Israel]] → Israeli
+*[[Ivory Coast]] → Ivorian
+*[[Jamaica]] → Jamaican
+*[[Kenya]] → Kenyan
+*[[North Korea|Korea (North)]] → North Korean
+*[[South Korea|Korea (South)]] → South Korean
+*[[Latvia]] → Latvian
+*[[Liberia]] → Liberian
+*[[Libya]] → Libyan
+*[[Lithuania]] → Lithuanian
+*[[Macedonia (region)|Macedonia]] → Macedonian
+*[[Malawi]] → Malawian
+*[[Malaysia]] → Malaysian
+*[[Mali]] → Malian
+*[[Isle of Man|Man, Isle of]] → ManxMan
+*[[Mauritania]] → Mauritanian
+*[[Mauritius]] → Mauritian
+*[[Mexico]] → Mexican
+*[[Federated States of Micronesia|Micronesia]] → Micronesian
+*[[Moldova]] → Moldovan
+*[[Mongolia]] → Mongolian (also ''"Mongol"'')
+*[[Morocco]] → Moroccan
+*[[Mozambique]] → Mozambican
+*[[Namibia]] → Namibian
+*[[Nauru]] → Nauruan
+*[[Nicaragua]] → Nicaraguan
+*[[Nigeria]] → Nigerian
+*[[Palau]] → Palauan
+*[[Palestine (region)|Palestine]] → Palestinian
+*[[Papua New Guinea]] → Papua New Guinean
+*[[Paraguay]] → Paraguayan
+*[[Persia]] → Persian
+*[[Peru]] → Peruvian
+*[[Poland]] → Pole
+*[[Romania]] → Romanian
+*[[Russia]] → Russian
+*[[Rwanda]] → Rwandan (also "''Rwandese''")
+*[[Saint Lucia]] → Saint Lucian
+*[[Saint Vincent and the Grenadines]] → Vincentian
+*[[Samoa]] → Samoan
+*[[Saudi Arabia]] → Saudi Arabian (also "''Saudi''")
+*[[Serbia]] → Serbian (also "''Serb''")
+*[[Sierra Leone]] → Sierra Leonean
+*[[Singapore]] → Singaporean
+*[[Slovakia]] → Slovakian (also "''Slovak''")
+*[[Slovenia]] → Slovenian (also "''Slovene''")
+*[[South Africa]] → South African
+*[[Sri Lanka]] → Sri Lankan
+*[[St. Kitts and Nevis]] → Kittitian or Nevisian
+*[[Sweden]] → Swede 
+*[[Syria]] → Syrian
+*[[Lebanon]] → Lebanese
+*[[Tanzania]] → Tanzanian
+*[[Tonga]] → Tongan
+*[[Tunisia]] → Tunisian
+*[[Tuvalu]] → Tuvaluan
+*[[Uganda]] → Ugandan
+*[[United States of America]] → American
+*[[Uruguay]] → Uruguayan
+*[[Venezuela]] → Venezuelan
+*[[Yemen]] → Yemeni
+*[[Zambia]] → Zambian
+*[[Zimbabwe]] → Zimbabwean}}
+
+====States and provinces====
+{{columns-list|3|
+*[[Alaska]] → Alaskan
+*[[Alberta]] → Albertan
+*[[Andalusia]] → Andalusian
+*[[Arizona]] → Arizonan
+*[[Arkansas]] → Arkansan
+*[[Asturias]] → Asturian
+*[[Bavaria]] → Bavarian
+*[[Bohemia]] → Bohemian
+*[[Borneo]] → Bornean
+*[[British Columbia]] → British Columbian
+*[[California]] → Californian
+*[[Cantabria]] → Cantabrian
+*[[Carinthia (disambiguation)|Carinthia]] → Carinthian
+*[[Colorado]] → Coloradan
+*[[Corsica]] → Corsican
+*[[Crete]] → Cretan
+*[[Crimea]] → Crimean
+*[[Dalmatia]] → Dalmatian
+*[[Delaware]] → Delawarean
+*[[Extremadura]] → Extremaduran
+*[[Florida]] → Floridan (more commonly "Floridian" below)
+*[[Galicia, Spain|Galicia]] → Galician
+*[[Galilee]] → Galilean
+*[[Hawaiʻi]] → Hawaiian{{efn|Local usage generally reserves ''Hawaiian'' as an [[ethnonym]] referring to [[Native Hawaiians]]. ''Hawaii resident'' is the preferred local form to refer to state residents in general regardless of ethnicity.<ref>{{cite book|last1=Press|first1=AIP, Associated|title=Stylebook and briefing on media law|date=2007|publisher=Basic Books|location=New York|isbn=9780465004898|page=112|edition=42nd}}</ref>}}
+*[[Hebrides]] → Hebridean
+*[[Idaho]] → Idahoan
+*[[Illinois]] → Illinoisan
+*[[Indiana]] → Hoosier
+*[[Iowa]] → Iowan
+*[[Java]] → Javan (also "''Javanese''")
+*[[Johor]] → Johorean
+*[[Judea]] → Judean
+*[[Kansas]] → Kansan
+*[[Karelia]] → Karelian
+*[[Kedah]] → Kedahan
+*[[Kelantan]] → Kelantanese
+*[[Liguria]] → Ligurian
+*[[Louisiana]] → Louisianan (also "''Louisianian''")
+*[[Madeira]] → Madeiran
+*[[Malacca]] → Malaccan
+*[[Majorca]] → Majorcan
+*[[Manitoba]] → Manitoban
+*[[Masuria]] → Masurian
+*[[Michigan]] → Michigander
+*[[Minnesota]] → Minnesotan
+*[[Minorca]] → Minorcan
+*[[Mississippi]] → Mississippian
+*[[Missouri]] → Missourian
+*[[Maluku Islands|Moluccas]] → Moluccan
+*[[Montana]] → Montanan
+*[[Moravia]] → Moravian
+*[[Nebraska]] → Nebraskan
+*[[Negeri Sembilan]] → Negeri Sembilanese
+*[[Nevada]] → Nevadan
+*[[New Brunswick]] → New Brunswicker
+*[[New Hampshire]] → New Hampshirite
+*[[New Jersey]] → New Jerseyan
+*[[New Mexico]] → New Mexican
+*[[North Carolina]] → North Carolinian (also "''Carolinian''", see also South Carolina below)
+*[[North Dakota]] → North Dakotan
+*[[Nova Scotia]] → Nova Scotian
+*[[Ohio]] → Ohioan
+*[[Oklahoma]] → Oklahoman
+*[[Ontario]] → Ontarian 
+*[[Oregon]] → Oregonian
+*[[Papua (province)|Papua]] → Papuan
+*[[Pahang]] → Pahangese, Pahangite
+*[[Patagonia]] → Patagonian
+*[[Perlis]] → Perlisian
+*[[Perak]] → Perakian
+*[[Penang]] → Penangite
+*[[Pennsylvania]] → Pennsylvanian
+*[[Pomerania]] → Pomeranian
+*[[Puerto Rico]] → Puerto Rican
+*[[Samogitia]] → Samogitian
+*[[Sabah]] → Sabahan
+*[[Sardinia]] → Sardinian
+*[[Sarawak]] → Sarawakian
+*[[Silesia]] → Silesian
+*[[South Australia]] → South Australian
+*[[South Dakota]] → South Dakotan
+*[[South Carolina]] → South Carolinian (also "''Carolinian''")
+*[[Styria]] → Styrian
+*[[Sumatra]] → Sumatran
+*[[Tahiti]] → Tahitian
+*[[Tasmania]] → Tasmanian
+*[[Tennessee]] → Tennesseean
+*[[Terengganu]] → Terengganuan, Terengganurian
+*[[Texas]] → Texan
+*[[Thuringia]] → Thuringian
+*[[Transylvania]] → Transylvanian
+*[[Umbria]] → Umbrian
+*[[Utah]] → Utahn
+*[[Vermont]] → Vermonter
+*[[Victoria (Australia)|Victoria]] → Victorian
+*[[Virginia]] → Virginian
+*[[Wake Island]] → Wakean
+*[[Wallachia]] → Wallachian
+*[[Western Australia]] → Western Australian (informally, ''Westralian'')
+*[[West Papua (province)|West Papua]] → West Papuan
+*[[North Rhine-Westphalia|Westphalia]] → Westphalian}}
+*[[Yukon]] → Yukonian
+
+====Cities====
+{{columns-list|3|
+*[[Alexandria]] → Alexandrian
+*[[Annapolis]] → Annapolitan
+*[[Atlanta]] → Atlantan
+*[[Austin]] → Austinite
+*[[Baltimore]] → Baltimorean
+*[[Bogotá]] → Bogotan
+*[[Canberra]] → Canberran
+*[[Cape Town]] - Capetonian
+*[[Charlotte]] → Charlottean
+*[[Chicago]] → Chicagoan
+*[[Cincinnati]] → Cincinnatian
+*[[El Paso, Texas|El Paso]] → El Pasoan, El Paseño
+*[[Hanoi]] → Hanoian
+*[[Houston]] → Houstonian
+*[[Indianapolis]] → Indianapolitan
+*[[Jakarta]] → Jakartan
+*[[Kalamazoo]] → Kalamazooan
+*[[Kiev]] → Kievan
+*[[Kolkata]] → Calcuttan
+*[[Las Vegas]] → Las Vegan
+*[[Los Angeles]] → Los Angelan 
+*[[Lancaster]] → Lancastrian
+*[[Liverpool]] → Liverpudlian
+*[[London]] → Londoner  
+*[[Manchester]] → Mancunian 
+*[[Miami]] → Miamian
+*[[Minneapolis]] → Minneapolitan
+*[[New York City]] → New Yorker
+*[[Oklahoma City]] → Oklahoma Cityan
+*[[Ottawa]] → Ottawan
+*[[Philadelphia]] → Philadelphian
+*[[Phoenix (disambiguation)|Phoenix]] → Phoenician
+*[[Paris]] → Parisian
+*[[Pisa]] → Pisan
+*[[Regina, Saskatchewan|Regina]] → Reginan
+*[[Riga]] → Rigan
+*[[Rome]] → Roman
+*[[San Antonio]] → San Antonian
+*[[San Diego]] → San Diegan
+*[[San Francisco]] → San Franciscan
+*[[San Jose, California|San Jose]] → San Josean
+*[[Sarasota]] → Sarasotan
+*[[Sioux City]] → Sioux Cityan
+*[[Springville, Alabama|Springville]] → Springvillian
+*[[Sofia]] → Sofian
+*[[St. Louis]] → St. Louisan
+*[[Thebes, Greece|Thebes]] → Theban
+*[[Toledo, Ohio]] → Toledoan
+*[[Toronto]] → Torontonian 
+*[[Tucson, Arizona|Tucson]] → Tucsonan
+*[[Tulsa, Oklahoma|Tulsa]] → Tulsan
+*[[Valencia]]  → Valencian
+*[[Vilnius]] → Vilnian
+*[[Yuma, Arizona|Yuma]] → Yuman}}
+
+===''-ian''===
+====Countries====
+{{columns-list|3|
+*[[Argentina]] → Argentinian (more commonly "''Argentine''",  also "''Argentinean''")
+*[[Azerbaijan]] → Azerbaijanian (more accurately "''Azeri''")
+*[[Bahamas]] → Bahamian
+*[[Barbados]] → Barbadian (also "''Bajan''")
+*[[Belarus]] → Belarusian
+*[[Belgium]] → Belgian
+*[[Bermuda]] → Bermudian
+*[[Brazil]] → Brazilian
+*[[Cameroon]] → Cameroonian
+*[[Canada]] → Canadian (or Canadien [Canadienne] in French)
+*[[Cayman Islands]] → Caymanian
+*[[Chad]] → Chadian
+*[[Comoros]] → Comorian
+*[[Croatia]] → Croatian 
+*[[Ecuador]] → Ecuadorian
+*[[Egypt]] → Egyptian
+*[[Ghana]] → Ghanaian
+*[[Grenada]] → Grenadian
+*[[Hungary]] → Hungarian
+*[[India]] → Indian
+*[[Iran]] → Iranian (also "''Irani''" or "''[[Persian people|Persian]]''")
+*[[Italy]] → Italian
+*[[Jordan]] → Jordanian
+*[[Laos]] → Laotian
+*[[Maldives]] → Maldivian
+*[[Mongolia]] → Mongolian (ethnic demonym "''Mongol''")
+*[[State of Palestine|Palestine]] → Palestinian
+*[[Saint Vincent and the Grenadines|Saint Vincent]] → Vincentian
+*[[Serbia]] → Serbian (ethnic demonym "''Serb''")
+*[[Slovakia]] → Slovakian (ethnic demonym "''Slovak''")
+*[[Slovenia]] → Slovenian (ethnic demonym "''Slovene''")
+*[[Trinidad]] → Trinidadian
+*[[Ukraine]] → Ukrainian}}
+
+====States, provinces, counties, and cities====
+{{columns-list|3|
+*[[Adelaide]] → Adelaidian
+*[[Alabama]] → Alabamian (also "''Alabaman''")
+*[[Athens]] → Athenian
+*[[Ballarat]] → Ballaratian
+*[[Birmingham, Alabama]] → Birminghamian
+*[[Blackburn]] → Blackburnian
+*[[Blackpool]] → Blackpudlian 
+*[[Bangkok]] → Bangkokian
+*[[Boston]] → Bostonian
+*[[Brisbane]] → Brisbanian (also "''Brisbanite''")
+*[[Bristol]] → Bristolian
+*[[Burgundy]] → Burgundian
+*[[Calgary]] → Calgarian
+*[[Canary Islands]] → Canarian
+*[[Canterbury, New Zealand]] → Cantabrian
+*[[Cardiff]] → Cardiffian
+*[[Castile (historical region)|Castile]] → Castilian
+*[[Chelmsford]] → Chelmsfordian
+*[[Chittagong]] → Chittagonian
+*[[Christchurch]] → Christchurchian (also "''Christchurcher''")
+*[[Corinth]] → Corinthian
+*[[Coventry]] → Coventrian
+*[[Cumbria]] → Cumbrian
+*[[Dayton]] → Daytonian
+*[[Devon]] → Devonian
+*[[Duluth]] → Duluthian
+*[[Edmonton]] → Edmontonian
+*[[Florida]] → Floridian
+*[[Fort Worth, Texas|Fort Worth]] → Fort Worthian
+*[[Fredericton]] → Frederictonian
+*[[Gibraltar]] → Gibraltarian
+*[[Greenville (disambiguation)|Greenville]] → Greenvillian
+*[[Hamilton, Ontario|Hamilton]] → Hamiltonian
+*[[Harrow, London|Harrow]] → Harrovian
+*[[Hartlepool]] → Hartlepudlian
+*[[Hereford]] → Herefordian
+*[[Hesse]] → Hessian
+*[[Hobart]] → Hobartian
+*[[Houston]] → Houstonian
+*[[Isles of Scilly]] → Scillonian
+*[[Iowa City]] → Iowa Citian
+*[[Jessup, Pennsylvania|Jessup]] → Jessupian
+*[[Kansas City, Missouri|Kansas City]] → Kansas Citian
+*[[Kentucky]] → Kentuckian
+*[[Kingston, Ontario|Kingston]] →Kingstonian
+*[[Lancashire]] → Lancastrian
+*[[Lancaster, Lancashire|Lancaster]] → Lancastrian
+*[[Lethbridge]] → Lethbridgian
+*[[Liverpool]] → Liverpudlian (also, though insulting and a negative term "''Scouser''")
+*[[Louisiana]] → Louisianian (also "''Louisianan''")
+*[[Louisville, Kentucky|Louisville]] → Louisvillian
+*[[Madrid]] → Madrilenian
+*[[Maharashtra]] → Maharashtrian
+*[[McKinney, Texas|McKinney]] → McKinnian
+*[[Melbourne]] → Melburnian
+*[[Memphis]] → Memphian
+*[[Michigan]] → Michiganian or Michigander
+*[[Nelson Region|Nelson]] → Nelsonian
+*[[New Guinea]] → New Guinian
+*[[New Orleans]] → New Orleanian
+*[[North Carolina]] → North Carolinian
+*[[Northern Territory]] → Territorian
+*[[Oregon]] → Oregonian
+*[[Paris]] → Parisian
+*[[Peterborough]] → Peterborian
+*[[Phoenix, Arizona|Phoenix]] → Phoenician
+*[[Plymouth]] → Plymothian
+*[[Port Harcourt]] → Harcourtian
+*[[Preston, Lancashire]] →Prestonian
+*[[Prince George's County, Maryland|Prince George's County]] → Prince Georgian
+*[[Rivers State]] → Riverian
+*[[Saskatchewan]] → Saskatchewanian
+*[[Saskatoon, Saskatchewan|Saskatoon]] → Saskatonian
+*[[Sicily]] → Sicilian
+*[[Solihull]] → Silhillian
+*[[South Carolina]] → South Carolinian
+*[[Swindon]] → Swindonian
+*[[Tel Aviv, Israel]] → Tel Avivian
+*[[Thrace]] → Thracian
+*[[Towcester]] → Towcestrian
+*[[Washington (state)|Washington]] → Washingtonian
+*[[Wellington]] → Wellingtonian
+}}
+*[[Wilmington, North Carolina|Wilmington]] → Wilmingtonian
+
+===''-anian''===
+
+*[[Guam]] → Guamanian
+*[[Panama]] → Panamanian
+
+===''-nian''===
+*[[Bendigo]] → Bendigonian
+*[[Buffalo, New York|Buffalo]] → Buffalonian
+*[[Manchester (UK)]] → Mancunian
+*[[Panama]] → Panamanian
+*[[Sligo]] → Sligonian
+*[[Tampa, FL|Tampa]] → Tampanian
+*[[Tobago]] → Tobagonian
+*[[Toronto]] → Torontonian
+*[[Torquay]] → Torquinian
+*[[Trinidad & Tobago]] → Trinbagonian
+
+===''-in(e)''===
+*[[Argentina]] → Argentine (and less commonly as "''Argentinian''" or "''Argentinean''")
+*[[Byzantium]] → Byzantine
+*[[Florence]] → Florentine (also Latin "''Florentia''")
+*The [[Levant]] → Levantine
+*[[Montenegro]] → Montenegrin
+*[[Palatinate (region)|Palatinate]] → Palatine
+*[[Philippines]] → Filipino (feminine: Filipina,, see below)
+*[[Philistia]] → Philistine
+
+===''-a(ñ/n)o/a, -e(ñ/n)o/a, or -i(ñ/n)o/a''===
+as adaptations from the standard [[Spanish language|Spanish]] suffix ''-e(ñ/n)o''
+
+(sometimes using  a final ''-a'' instead of ''-o'' for a female, following the Spanish suffix standard  ''-e(ñ/n)a'' )
+
+====Countries and regions====
+*[[Cebu]] → ''Cebuano''
+*[[El Salvador]] → ''Salvadoreño'' (also "''Salvadoran''")
+*[[Philippines]] → ''Filipino''
+
+====Cities====
+*[[Albuquerque]]  → ''Burqueño''
+*[[Cavite]] → ''Caviteño''
+*[[Davao City]] → ''Davaoeño''
+*[[Los Angeles]] → ''Angelino'' or ''Angeleno''
+*[[Madrid]] → ''Madrileño''
+*[[Málaga]] → ''Malagueño''
+*[[City of Manila|Manila]] → ''Manileño''
+*[[São Paulo]] → ''Paulistano''
+*[[Zamboanga City]] → ''Zamboangueño''
+
+===''-ite''===
+{{columns-list|3|
+*[[Akron, Ohio|Akron]] → Akronite
+*[[Ann Arbor, Michigan|Ann Arbor]] → Ann Arborite
+*[[Austin, Texas|Austin]] → Austinite
+*[[Bergen County, New Jersey]] → Bergenite
+*[[Boulder, Colorado|Boulder]] → Boulderite
+*[[Brisbane]] → Brisbanite (also "''Brisbanian''")
+*[[Bronx]] → Bronxite
+*[[Brooklyn]] → Brooklynite <ref>"Investing in Future, Quiet Manhattan Apartments Next to Construction Sites" http://www.nytimes.com/2014/10/12/realestate/manhattan-apartments-next-to-construction-sites.html</ref>
+*[[Carson City, Nevada]] → Carsonite
+*[[Chennai]] → Chennaiite
+*[[Dallas]] → Dallasite
+*[[Decatur, Georgia|Decatur]] → Decaturite
+*[[Delhi]] → Delhite
+*[[Denton, Texas]] → Dentonite
+*[[Denver]] → Denverite
+*[[Dhaka]] → Dhakaite (also "''Dhakai''" or "''Dhakaiya''")
+*[[Dubai]] → Dubaiite
+*[[Dunedin]] → Dunedinite
+*[[Durban]] → Durbanite
+*[[Erie, Pennsylvania]] → Erieite
+*[[Gaya, India|Gaya]] → Gayaite
+*[[Irmo, South Carolina]] → Irmite
+*[[Israel]] → Israelite (also "''Israeli''", depending on the usage; see below)
+*[[Istanbul]] → Istanbulite
+*[[Jerusalem]] → Jerusalemite
+*[[Karachi]] → Karachiite
+*[[Kerala]] → Keralite (also Malayali or Malayalee)
+*[[Manhattan]] → Manhattanite
+*[[Moscow]] → Muscovite (also Latin "''Muscovia''")
+*[[Montpelier, Vermont]] → Montpelierite
+*[[Mumbai]] → Mumbaiite
+*[[New Hampshire]] → New Hampshirite
+*[[Oban]] → Obanite
+*[[Odessa]] → Odessite
+*[[Patna]] → Patnaite
+*[[Perth]] → Perthite (also "''Perthian''" and "''Perthling''")
+*[[Putney]] → Putneyite
+*[[Queens]] → Queensite<ref>{{cite web|url=http://blog.yupnet.org/2008/03/24/copquin-explain/|title=Copquin explains "Queensites" for New York Times - Yale Press Log|work=Yale Press Log}}</ref>
+*[[Reading, Berkshire|Reading]] → Readingite
+*[[Reno, Nevada]] → Renoite
+*[[Ruskin, Florida]] → Ruskinite
+*[[Seattle]] → Seattleite
+*[[Seoul]] → Seoulite
+*[[Shiloh (disambiguation)#Places|Shiloh]] → Shilonite (as in: "''[[Ahijah the Shilonite]]''")
+*[[Springfield (The Simpsons)]] → Springfieldianite
+*[[Spokane]] → Spokanite
+*[[Sydney]] → Sydneyite (also "''Sydneysider''")
+*[[Telangana]]→ Telanganite
+*[[Tokyo]] → Tokyoite
+*[[Vancouver]] → Vancouverite
+*[[Vizag]] → Vizagite
+*[[Wenham, Massachusetts]] → Wenhamite
+*[[Westchester County, New York]] → Westchesterite
+*[[Whittier, California]] → Whittierite
+*[[Winston-Salem]] → Winston-Salemite
+*[[Wisconsin]] → Wisconsinite
+*[[Wyoming]] → Wyomingite}}
+
+===''-(e)r''===
+{{columns-list|3|
+*[[Amsterdam]] → Amsterdammer
+*[[Auckland]] → Aucklander
+*[[Beijing]] → Beijinger
+*[[Belgrade]] → Belgrader
+*[[Berlin]] → Berliner
+*[[Bucharest]] → Bucharester
+*[[Budapest]] → Budapester
+*[[Cleveland]] → Clevelander
+*[[Cook Islands]] →Cook Islander
+*[[Copenhagen]] → Copenhagener
+*[[Detroit]] → Detroiter
+*[[Dublin]] → Dubliner
+*[[Dresden]] → Dresdener
+*[[Fife]] → Fifer
+*[[Frankfurt]] → Frankfurter
+*[[Greenland]] →Greenlander (also "''Greenlandic''")
+*[[Hamburg]] → Hamburger
+*[[Hannover]] → Hannoveraner
+*[[Hong Kong]] → [[Hongkonger]]/Hong Konger (also "''Hong Kongese''"/"''Hongkongese''")
+*[[Iceland]] → Icelander (also "''Icelandic''")
+*[[Leeds]] → Loiner
+*[[Leipzig]] → Leipziger
+*[[Liechtenstein]] → Liechtensteiner
+*[[Little Rock, AR]] → Little Rocker
+*[[London]] → Londoner
+*[[Lorraine (region)|Lorraine]] → Lorrainer
+*[[Luxembourg]] → Luxembourger
+*[[Maine]] → Mainer
+*[[Maryland]] → Marylander
+*[[Michigan]] → Michigander
+*[[Montreal]] → Montrealer
+*[[Netherlands]] → Netherlander (also "''Dutchman''" and "''Hollander''")
+*[[New England]] → New Englander
+*[[New York (state)|New York]] → New Yorker
+*[[New Zealand]] → New Zealander
+*[[Newfoundland]] → Newfoundlander
+*[[Pittsburgh]] → Pittsburgher
+*[[Prague]] → Praguer
+*[[Puntland]] → Puntlander
+*[[Quebec]] → Quebecker or Quebecer (though see below; irregular forms)
+*[[Queensland]] → Queenslander
+*[[Rhineland]] → Rhinelander
+*[[Rhode Island]] → Rhode Islander
+*[[Rotterdam]] → Rotterdammer
+*[[Saigon]] → Saigoner
+*[[Solomon Islands]] → Solomon Islander
+*[[Somaliland]] → Somalilander
+*[[Stockholm]] → Stockholmer
+*[[Stuttgart]] → Stuttgarter
+*[[Tallinn]] → Tallinner
+*[[Vermont]] → Vermonter
+*[[Winnipeg]] → Winnipegger
+*[[Yellowknife]] → Yellowknifer
+*[[Yukon]] → Yukoner
+*[[Zurich]] → Zuricher}}
+
+Often used for [[Europe]]an locations and [[Canada|Canadian]] locations
+
+===''-ish''===
+(Usually suffixed to a truncated form of the [[toponym]], or place-name.)
+
+"-ish" is usually  proper only as an adjective. See note below list.
+{{columns-list|3|
+*[[Åland]] → Ålandish
+*[[Great Britain|Britain]], [[Great Britain]] and [[United Kingdom of Great Britain and Northern Ireland]] → British (demonym "''Briton''")
+*[[Cornwall]] → Cornish (demonym "''Cornishman, Cornishwoman''")
+*[[Denmark]] → Danish (demonym "''Dane''")
+*[[England]] → English (demonym "''Englishman, Englishwoman''")
+*[[Finland]] → Finnish (demonym "''Finn''" or "''Finnic''")
+*[[Flanders]] → Flemish (demonym "''Fleming''") 
+*[[Ireland]] → Irish (demonym "''Irishman, Irishwoman''")
+*[[Kurdistan]] → Kurdish (demonym "''Kurd''")
+*[[Luxembourg]] → Luxembourgish (demonym "''Luxembourger''")
+*[[Northern Ireland]] → Northern Irish
+*[[Poland]] → Polish (demonym "''Pole''")
+*[[Scotland]] → Scottish (demonym "''Scot''" or "''Scotsman, Scotswoman''")
+*[[Spain]] → Spanish (demonym "''Spaniard''")
+*[[Sweden]] → Swedish (demonym "''Swede''")
+*[[Turkey]] → Turkish (demonym "''Turk''")
+}}
+
+===''-ene'' or ''eek''===
+*[[Cairo]] → Cairene
+*[[Cyrenaica]] → Cyrene
+*[[Damascus]] → Damascene
+*[[Greece]] → Greek
+*[[Nazareth]] → Nazarene
+*[[Slovenia]] → Slovene (also "''Slovenian''")
+
+Often used for [[Middle East]]ern locations and [[Europe]]an locations.
+
+===''-ensian''===
+*Kingston-upon-Hull (UK) → Hullensian
+*Leeds (UK) → Leodensian
+
+===''-ard''===
+*[[Spain]] → Spaniard (also "''Spanish''")
+*[[Savoy]] → Savoyard
+*Montagne → [[Montagnard (people)|Montagnard]]
+
+===''-ese, -lese, -vese, or -nese''===
+{{columns-list|3|
+*[[Abruzzo]] → Abruzzese
+*[[Aragon]] → Aragonese
+*[[Aceh]] → Acehnese
+*[[Assam]] → Assamese
+*[[Bali]] → Balinese
+*[[Benin]] → Beninese (also "''Beninois''")
+*[[Bern]] → Bernese
+*[[Bhutan]] → Bhutanese
+*[[Bologna]] → Bolognese
+*[[Calabria]] → Calabrese
+*[[China]] → Chinese
+*[[Congo Basin|Congo]] → Congolese
+*[[Da Lat]] → Dalatese
+*[[East Timor]] → East Timorese
+*[[Faroe Islands]] → Faroese
+*[[Gabon]] → Gabonese (also Gabonais/e)
+*[[Genoa]] → Genovese
+*[[Guangdong]] ("Canton") → [[Cantonese]]
+*[[Guyana]] → Guyanese
+*[[Hainan]] → [[Hainanese]]
+*[[Hong Kong]] → Hongkongese
+*[[Hunan]] → Hunanese
+*[[Japan]] → Japanese
+*[[Java]] → Javanese (also "''Javan''")
+*[[Lebanon]] → Lebanese
+*[[Macao]] → Macanese/Chinese
+*[[Malta]] → Maltese
+*[[Manila]] → Manilese
+*[[Marshall Islands]] → Marshallese
+*[[Milan]] → Milanese
+*[[Myanmar/Burma]] → Burmese (though see below; irregular forms)
+*[[Nepal]] → Nepalese (also "''Nepali''")
+*[[Piedmont]] → Piedmontese
+*[[Pittsburgh]] → Pittsburghese (as used routinely by residents of Pittsburgh referring only to the accent/dialect)
+*[[Portugal]] → Portuguese
+*[[Rwanda]] → Rwandese (also "''Rwandan''")
+*[[San Marino]] → Sammarinese
+*[[Sark]] → Sarkese
+*[[Senegal]] → Senegalese
+*[[Shanghai]] → Shanghaiese
+*[[Siam]] → Siamese
+*[[Sikkim]] → Sikkimese
+*([[South Sudan|South]]) [[Sudan]] → (South) Sudanese
+*[[Suriname]] → Surinamese
+*[[Taiwan]] → Taiwanese
+*[[Togo]] → Togolese
+*[[Turin]] → Torinese
+*[[County of Tyrol|Tyrol]] → Tyrolese
+*[[Vienna]] → Viennese
+*[[Vietnam]] → Vietnamese}}
+
+"-ese" is usually considered proper only as an adjective, or to refer to the entirety.{{Citation needed|date=April 2013}} Thus, "a Chinese person" is used rather than "a Chinese". Often used for East Asian and [[Francophone]] locations, from the similar-sounding French suffix ''-ais(e)'', which is originally from the Latin adjectival ending ''-ensis'', designating origin from a place: thus Hispaniensis (Spanish), Danensis (Danish), etc.
+
+===''-i(e)''===
+{{columns-list|3|
+*[[Allahabad]] → Allahabadi
+*[[Azawad]] → Azawadi
+*[[Azerbaijan]] → Azeri (also "''Azerbaijanian'' or ''Azerbaijani''")
+*[[Azra District|Azra]] → Azragi
+*[[Balochistan]] → Balochistani (also "''Baloch''" or "''Baluch''" or "''Baluchi''")
+*[[Bahrain]] → Bahraini
+*[[Bangladesh]] → Bangladeshi
+*[[Barisal]] → Barisali (also "''Borishali''")
+*[[Bengal]] → Bengali
+*[[Bhārat Gaṇarājya|Bharat]] → Bharati
+*[[Bihar]] → Bihari
+*[[Birmingham]] (UK) → Brummie
+*[[Dagestan]] → Dagestani
+*[[Dhaka]] → Dhakai (also "''Dhakaiya''" or "''Dhakaite''") 
+*[[Faridabad]] → Faridabadi
+*[[Gujarat]] → Gujarati
+*[[Hayastan]] → Hayastani (also "''Armenian''")
+*[[Hazara people|Hazara]] → Hazaragi (also "''Azragi''")
+*[[Hyderabad, India|Hyderabad]] → Hyderabadi
+*[[Iran]] → Irani (also "''Iranian''" or "''Persian''")
+*[[Iraq]] → Iraqi
+*[[Israel]] → Israeli (in the modern State of Israel)
+*[[Kerala]] → [[Malayali]] or Malayalee (also Keralite)
+*[[Kashmir]] → Kashmiri
+*[[Kazakhstan]] → Kazakhstani (also "''Kazakh''")
+*[[Kurdistan]] → Kurdistani (also "''Kurdish''", "''Kurd''")
+*[[Kuwait]] → Kuwaiti
+*[[Kyrgyzstan]] → Kyrgyzstani (also "''Kyrgyz''")
+*[[Lahore]] → Lahori
+*[[Nepal]] → Nepali (also "''Nepalese''")
+*[[Oman]] → Omani
+*[[Pakistan]] → Pakistani
+*[[Punjab region|Punjab]] → Punjabi
+*[[Qatar]] → Qatari
+*[[Rajasthan]] → Rajasthani
+*[[Rangpur Division|Rangpur]] → Rangpuri
+*[[Sindh]] → Sindhi
+*[[Somalia]] → Somali
+*[[Sylhet]] → Sylheti (also "''Siloti''")
+*[[Tajikistan]] → Tajikistani (also "''Tajik''")
+*[[Tel Aviv]] → Tel Avivi (also "''Tel Avivim''" ''(plural)'')
+*[[Turkmenistan]] → Turkmenistani (also "''Turkmen''")
+*[[United Arab Emirates]] → Emirati
+*[[Uzbekistan]] → Uzbekistani (also "''Uzbek''")
+*[[Yemen]] → Yemeni
+*[[Yorkshire]] → Yorkie (also "''Yorkshireman''" or "''Tyke''")
+}}
+
+Mostly for [[Middle East]]ern and [[South Asia]]n locales and in Latinate names for the various people that ancient Romans encountered (e.g. [[Allemanni]], [[Helvetia|Helvetii]])
+
+===''-ic''===
+*[[Finland]] → [[Finnic language|Finnic]] (also "''Finnish''" or "''Finn''")
+*[[Antarctica]] → Antarctic
+*[[Greenland]] → Greenlandic (also "''Greenlander''")
+*[[Iceland]] → [[Icelanders|Icelandic]] (also "Icelander")
+*[[Slavic countries]] → Slavs/Slavic
+
+===''-iot(e)''===
+*[[Chios]] →Chiot
+*[[Corfu]] → Corfiot
+*[[Cyprus]] → Cypriot ("Cyprian" before 1960 independence of Cyprus)
+*[[Phanar]] → Phanariote
+
+Used especially for [[Greece|Greek]] locations.
+
+===''-asque''===
+*[[Monaco]] → Monégasque (native citizen of Monaco)
+*[[Menton]] → Mentonasque
+*[[Basque Country (greater region)|Basque Country]] → Basque
+
+Often used for [[France|French]] locations.
+
+===''-(we)gian''===
+*[[Galloway]] → Galwegian
+*[[Galway]] → Galwegian
+*[[Glasgow]] → Glaswegian
+*[[Norway]] → Norwegian
+
+===''-onian''===
+*[[Aberdeen]] → Aberdonian
+*[[Bath, Somerset|Bath]] → Bathonian
+*[[Boston]] → Bostonian
+*[[Connacht]] → Connachtonian
+*[[Cork (city)|Cork]] → Corkonian <ref>{{cite web|url=http://www.merriam-webster.com/dictionary/corkonian|title=Corkonian|work=merriam-webster.com}}</ref>
+*[[Dundee]] → Dundonian
+*[[Halifax, Nova Scotia|Halifax]] → Haligonian
+*[[Newport, Wales|Newport]] → Newportonian
+*[[Oxford]] → Oxonian
+*[[Edmonton]]→Edmontonian
+Often used for [[United Kingdom|British]] and [[Republic of Ireland|Irish]] locations.
+
+===''-vian''===
+*[[Barrow-in-Furness]] → Barrovian <ref>{{cite web|url=http://www.nwemail.co.uk/home/2.4887/what-it-means-to-be-barrovian-1.280102 |title=North West Evening Mail |work=nwemail.co.uk |deadurl=yes |archiveurl=https://web.archive.org/web/20140531105817/http://www.nwemail.co.uk/home/2.4887/what-it-means-to-be-barrovian-1.280102 |archivedate=2014-05-31 |df= }}</ref>
+*[[Oamaru]] → Oamaruvian
+*[[Oslo]] → Oslovian
+*[[Peru]] → Peruvian
+*[[Warsaw]] → Warsovian
+*[[Waterloo, Ontario|Waterloo]] → Waterluvian <ref>{{cite web|url=https://twitter.com/citywaterloo/status/395633428395081728|title=City of Waterloo on Twitter}}</ref>
+*[[Wythenshawe]]- Wythenshavian
+
+===''-san''===
+*[[Burkina Faso]] → Burkina Fasan
+
+===''-ois(e), -ais(e)''===
+*[[Benin]] → Beninois(e) (also Beninese)
+*[[Gabon]] → Gabonais(e) (also Gabonese)
+*[[Seychelles]] → Seychellois(e)
+*[[Quebec]] → Quebecois(e) (also Quebecker, most common within [[Canada]])
+While derived from French, these are also official demonyms in English.
+
+===From Latin or Latinization===
+*[[Alsace]] → Alsatian (''Alsatia'')
+*[[Ashbourne (disambiguation)|Ashbourne]] → Ashburnian (''Essiburn'')
+*[[Cambridge]] → [[Cantabrigian]]
+*[[Colchester]] → Colcestrian
+*[[Courland]] → Couronian (''Curonia'')
+*[[Exeter]] → Exonian
+*[[Germany]] → [[Germans|German]] (''Germani'')
+*[[Guernsey]] → Sarnian (''Sarnia'')
+*[[Halifax Regional Municipality|Halifax]] → [[Halifax Regional Municipality|Haligonian]]
+*[[Hispanic America]] → [[Hispanic]] (''Hispania'')
+*[[Leeds]] → [[Leodensian]] (''Ledesia'')
+*[[Lviv]] → Leopolitan (''Leopolis'')
+*[[Manchester]] → [[List of people from Manchester|Mancunian]] (''Mancunia'')
+*[[Melbourne]] → [[Melburnian]] (''Melburnia'')
+*[[Minneapolis]] → Minneapolitan
+*[[Naples]] → Neapolitan (''Neapolis'')
+*[[Newcastle upon Tyne|Newcastle]] → Novocastrian (''Novum Castrum'')
+*[[Orkney Islands]] → [[Orcadian]] (''Orcadia'')
+*[[Oswestry]] → Oswestrian (''Oswestria'')
+*[[Shropshire]] → Salopian (''Salopia'')
+*[[Tripoli]] → Tripolitan (''Tripolis'')
+*[[Venice]] → Venetian
+*[[Wolverhampton]] → Wulfrunian
+
+==Prefixation==
+It is much rarer to find Demonyms created with a prefix. Mostly they are from Africa and the Pacific, and are not generally known or used outside the country concerned. In much of East Africa, a person of a particular ethnic group will be denoted by a prefix. For example, a person of the [[Luba people]] would be a Muluba, the plural form Baluba, and the language, [[Kiluba]] or [[Tshiluba]]. Similar patterns with minor variations in the prefixes exist throughout on a tribal level. And Fijians who are indigenous Fijians are known as Kaiviti (Viti being the Fijian name for [[Fiji]]). On a country level:
+*[[Botswana]] → Motswana (singlular), Batswana (plural)
+*[[Burundi]] → Umurundi (singular), Abarundi (plural)
+*[[Lesotho]] → Mosotho (singular), Basotho (plural)
+
+In the Pacific, at least two countries use prefixation:
+*[[Kiribati]] → i-Kiribati
+*[[Vanuatu]] → Ni-Vanuatu
+
+===Cities===
+*[[Shillong]] → nong Shillong
+
+==Not derived from the name==
+Demonyms may also not conform to the underlying naming of a particular place, but instead arise out of historical or cultural particularities that become associated with its denizens. These demonyms are usually more informal and colloquial. In the United States such informal demonyms frequently become associated with mascots of the intercollegiate sports teams of the [[state university system]]. In other countries the origins are often disputed. 
+===Formal===
+*[[Buenos Aires]] → [[Porteño]]
+*[[Rio de Janeiro]] → [[Carioca]]
+*[[Massachusetts]] → [[Bay Stater]]<ref>{{cite web|url=https://malegislature.gov/Laws/GeneralLaws/PartI/TitleI/Chapter2/Section35|title=Massachusetts: General Laws, Section 35|work=malegislature.gov}}</ref><ref>Prior to the Massachusetts State Legislature designating "Bay Stater" as the state's official demonym, other terms used included ''Massachusett'', borrowed from the native [[Massachusett]] tribe, ''Massachusite'', championed by the early English [[Boston Brahmin|Brahmins]], ''Massachusettsian'', by analogy with other state demonyms, and ''Masshole'', originally derogatory.</ref>
+*[[Valparaíso]] → [[Porteño]]
+===Informal===
+*[[Arizona]] → Sand Cutter<ref>{{cite web|url=http://www.netstate.com/states/intro/az_intro.htm|title=The State of Arizona - An Introduction to the Grand Canyon State|work=netstate.com}}</ref>
+*[[Birmingham, England]] → Brummie
+*[[Canada]] → [[Canuck]]
+*[[Connecticut]] → [[Nutmegger]]
+*[[Indiana]] → [[Hoosier]]
+*[[Jersey]] → [[Jèrriais]] (adjectival), Jerseyman (demonym)
+*[[Kansas]] → [[Jayhawker]]
+*[[Liverpool]] → Scouser or Liverpudlian
+*[[London, England]] → Cockney (Specifically: One hailing from East London, England)
+*[[Newcastle upon Tyne, England]] → [[Geordie]]
+*[[Newfoundland and Labrador|Newfoundland, Canada]] → [[Newfie]]
+*[[New Zealand]] → [[Kiwi_(people)|Kiwi]]
+*[[North Carolina]] → [[Tar Heel]]
+*[[Scotland]] → Jock<ref>{{cite web|url=http://news.bbc.co.uk/1/hi/scotland/8094716.stm|title=Is it a slur to call someone a Jock?|work=BBC}}</ref>
+*[[Sydney]] → Sydneysider
+*[[Ohio]] → Buckeye
+*[[Oklahoma]] → [[Okie]], [[Sooner]]
+
+==Ethnic demonyms==
+*[[Abkhazia]] → Abkhaz
+*[[Afghanistan]] → Afghan
+*[[Arabia]] → Arab
+*[[Azerbaijan]] → Azerbaijani, Azeri
+*[[Catalonia]] → Catalan
+*[[Chechnya]] → Chechen
+*[[Cornwall]] → Cornishman, Cornishwoman
+*[[Croatia]] → Croat
+*[[Czech Republic]] → Czech
+*[[Denmark]] → Dane
+*[[England]] → Englishman, Englishwoman
+*[[Finland]] → [[Finns|Finn]]
+*[[Flanders]] → Fleming
+*[[France]] → French
+*[[Ingushetia]] → Ingush
+*[[Ireland]] → Irishman, Irishwoman
+*[[Jersey]] → Jerseyman, Jerseywoman
+*[[Kalmykia]] → Kalmyk
+*[[Kazakhstan]] → Kazakh
+*[[County Kerry|Kerry]] → Kerryman
+*[[KwaZulu]] → Zulu
+*[[Kurdistan]] → Kurd
+*[[Kyrgyzstan]] → Kyrgyz
+*[[Sápmi|Lapland]] → Lapp (note: considered offensive in Norwegian)
+*[[Luxembourg]] → Luxembourger
+*[[Mongolia]] → Mongol
+*[[Netherlands]] → Dutch
+*[[New South Wales]] → New South Welshman
+*[[Philippines]] - Filipino
+*[[Poland]] → Pole
+*[[Scotland]] → Scot, Scotsman, Scotswoman
+*[[Serbia]] → Serb
+*[[Slovakia]] → Slovak
+*[[Slovenia]] → Slovene
+*[[Somalia]] → Somali
+*[[Spain]] → Spaniard
+*[[Swaziland]] → Swazi
+*[[Sweden]] → Swede
+*[[Tajikistan]] → Tajik
+*[[Tamil Nadu]] → Tamil
+*[[Tatarstan]] →Tatar
+*[[Thailand]] → Thai
+*[[Turkey]] → Turk
+*[[Turkmenistan]] → Turkmen
+*[[Ulster]] → Ulsterman
+*[[Uzbekistan]] → Uzbek
+*[[Wales]] → Welsh
+*[[Yorkshire]] → Yorkshireman, Yorkshirewoman
+
+==Fiction==
+Literature and science fiction have created a wealth of gentilics that are not directly associated with a cultural group. These will typically be formed using the standard models above. Examples include [[Martian]] for hypothetical people of [[Mars]] (credited to scientist [[Percival Lowell]]) or ''Gondorian'' for the people of [[Tolkien]]'s fictional land of [[Gondor]].
+
+Other science fiction examples include [[Jovian (fiction)|Jovian]] for those of [[Jupiter]] or its moons, and [[Venusians|Venusian]] for those of [[Venus]]. Fictional aliens refer to the inhabitants of Earth as [[Earthling]] (from the [[diminutive]] ''-ling'', ultimately from [[Old English]] ''-ing'' meaning "descendant"), as well as "[[wikt:Terran|Terran]]", "Terrene", "Tellurian", "Earther", "Earthican", "Terrestrial", and "Solarian" (from Sol, the sun).
+
+Fantasy literature which involves other worlds or other lands also has a rich supply of gentilics. Examples include ''Lilliputians'' and ''Brobdingnagians'', from the islands of [[Lilliput and Blefuscu|Lilliput]] and [[Brobdingnag]] in the satire ''[[Gulliver's Travels]]''.
+
+In a few cases, where a linguistic background has been created, non-standard gentilics are formed (or the eponyms back-formed). Examples include Tolkien's ''[[Rohirrim]]'' (from [[Rohan (Middle-earth)|Rohan]]) and the [[Star Trek]] world's ''[[Klingon]]'' people (with various version of homeworld name).
+
+==See also==
+{{portal|Geography}}
+*[[List of adjectival and demonymic forms of place names]]
+**[[List of adjectivals and demonyms for astronomical bodies]]
+**[[List of adjectivals and demonyms for continental regions]]
+***[[List of adjectivals and demonyms for subcontinental regions]]
+**[[List of adjectival and demonymic forms for countries and nations]]
+***[[List of adjectivals and demonyms for Australia]]
+***[[List of adjectivals and demonyms for Canada]]
+***[[List of adjectivals and demonyms for India]]
+***[[List of adjectivals and demonyms for Malaysia]]
+***[[List of adjectivals and demonyms for Mexico]]
+***[[List of adjectivals and demonyms for New Zealand]]
+***[[List of adjectivals and demonyms for the Philippines]]
+***[[List of adjectivals and demonyms for the United States]]
+**[[List of adjectivals and demonyms for cities]]
+**[[List of adjectivals and demonyms for former regions]]
+***[[List of adjectivals and demonyms for Greco-Roman antiquity]]
+**[[List of adjectivals and demonyms for fictional regions]]
+*[[List of regional nicknames]]
+*[[Macedonia naming dispute]]
+*[[Nationality]]
+[[-onym]], especially [[ethnonym]] and [[Exonym and endonym]]
+
+==References==
+{{Reflist|30em}}
+
+===Notes===
+{{notelist}}
+
+==External links==
+{{Wiktionary|demonym|gentilic}}
+{{Wikidata property |P1549}}
+*[http://www.geography-site.co.uk/pages/countries/demonyms.html www.geography-site.co.uk] Alphabetical list of world demonyms.
+*[http://www.everything2.com/index.pl?node=Demonyms%20of%20the%20World www.everything2.com] Demonyms of the World.
+*[https://www.cia.gov/library/publications/the-world-factbook/fields/print_2110.html CIA World Factbook – NATIONALITY]
+*[http://www.peoplefrom.co.uk/index.php www.peoplefrom.co.uk] Demonyms of the United Kingdom.
+{{Ethnicity}}
+
+[[Category:Demonyms| ]]
+[[Category:Semantics]]
+[[Category:Types of words]]
