@@ -10,6 +10,8 @@ import java.util.TreeSet;
 
 import basics.Fact;
 import basics.FactComponent;
+import basics.RDFS;
+import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import fromWikipedia.CategoryExtractor;
@@ -53,11 +55,6 @@ public class LocationExtractor extends Extractor {
     return result;
   }
 
-  /*@Override
-  public Set<Theme> inputCached() {
-    return new FinalSet<Theme>(PatternHardExtractor.INFOBOXREPLACEMENTS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
-  }*/
-
   @Override
   public Set<Theme> output() {
     return new FinalSet<>(CATEGORYLOCATIONS, CATEGORYLOCATIONSSOURCES);
@@ -90,19 +87,17 @@ public class LocationExtractor extends Extractor {
       }
     }
 
-    for (String entity : entityToLocToCount.keySet()) {
-      Map<String, Integer> locToCount = entityToLocToCount.get(entity);
+    for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
+      if (f.getRelation().equals(RDFS.type) && f.getObject().equals(YAGO.person)) {
+        Map<String, Integer> locToCount = entityToLocToCount.get(f.getSubject());
 
-      // output most frequent location
-      int max = Collections.max(locToCount.values());
-      for (String loc : locToCount.keySet()) {
-        if (locToCount.get(loc) == max) {
-          Fact f = new Fact(entity, "<livedIn>", loc);
-          // TODO: filter non-people
-          //if (people.contains(entity)) {
-          //  output.write(f);
-          //}
-          write(CATEGORYLOCATIONS, f, CATEGORYLOCATIONSSOURCES, FactComponent.wikipediaURL(entity), "LocationExtractor");
+        // output most frequent location
+        int max = Collections.max(locToCount.values());
+        for (String loc : locToCount.keySet()) {
+          if (locToCount.get(loc) == max) {
+            Fact nf = new Fact(f.getSubject(), "<livedIn>", loc);
+            write(CATEGORYLOCATIONS, nf, CATEGORYLOCATIONSSOURCES, FactComponent.wikipediaURL(f.getSubject()), "LocationExtractor");
+          }
         }
       }
     }
