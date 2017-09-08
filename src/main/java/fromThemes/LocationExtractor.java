@@ -1,5 +1,6 @@
 package fromThemes;
 
+import java.io.File;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
@@ -15,7 +16,9 @@ import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import fromWikipedia.CategoryExtractor;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
+import main.ParallelCaller;
 import utils.Theme;
 import utils.demonyms.LocationNames;
 
@@ -52,6 +55,7 @@ public class LocationExtractor extends Extractor {
     Set<Theme> result = new TreeSet<>();
     result.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     result.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
+    result.add(TransitiveTypeExtractor.TRANSITIVETYPE);
     return result;
   }
 
@@ -102,6 +106,15 @@ public class LocationExtractor extends Extractor {
       }
     }
 
+  }
+
+  public static void main(String[] args) throws Exception {
+    if (args.length == 0) args = new String[] { "../yago.ini" };
+    Parameters.init(args[0]);
+    File yago = Parameters.getFile("yagoFolder");
+    TransitiveTypeExtractor.TRANSITIVETYPE.assignToFolder(yago);
+    ParallelCaller.createWikipediaList(Parameters.getList("languages"), Parameters.getList("wikipedias"));
+    new LocationExtractor().extract(yago, "test");
   }
 
 }
