@@ -76,7 +76,7 @@ public class DemonymsPageExtractor {
 
       // print not completely processed entries
       if (t.remaining.length() > 0) {
-        Announce.warning(country + ": " + demonyms + " \t\t\n" + line + "\n" + t.remaining + "\n");
+        Announce.debug(country + ": " + demonyms + " \t\t\n" + line + "\n" + t.remaining + "\n");
       }
     }
     return subjectToDemonym;

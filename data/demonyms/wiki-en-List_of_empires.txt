@@ -1,0 +1,459 @@
+{{for|list of empires by size|list of largest empires}}
+This is an alphabetical '''list of empires'''.  The table may be resorted by other columns if your browser supports this function.
+
+{{compact ToC|side=yes|top=yes|num=yes}}
+
+==Empires and dynasties==
+ {| class="wikitable sortable"
+|-
+!align=center|Empire
+!  style="text-align:center; width:10%;"|Origin
+!  style="text-align:center; width:15%;"|Capital
+!  style="white-space:nowrap; text-align:center; width:7%;"|From
+!  style="white-space:nowrap; text-align:center; width:7%;"|To
+!  style="white-space:nowrap; text-align:center; width:3%;"|Duration
+!align=center nowrap|Note
+|-
+|[[Achaemenid Empire]]||[[Persia]]||Various, including [[Pasargadae]], [[Ecbatana]], [[Persepolis]], [[Susa]], [[Babylon]] ||{{dts|-550}} ||{{dts|-330}} ||220|| ''The first Persian Empire, and the largest one in [[Classical Antiquity]], founded by [[Cyrus the Great]]. ''
+|-
+|[[Afsharid Dynasty]]||[[Persia]]||[[Mashhad]]||{{dts|1736}} ||{{dts|1796}} ||60||
+|-
+|[[Akkadian Empire]]||[[Sumer]]||[[Akkad (city)|Akkad]]||{{dts|-2300}} ||{{dts|-2200}} ||100||
+|-
+|[[Aksumite Empire]]||[[Ethiopia]]||[[Axum]]||{{dts|150}} ||{{dts|940}} ||790||''Succeeded by the [[Ethiopian Empire]].''
+|-
+|[[Akwamu]]||[[West Africa]]||[[Akwamufie]], Nyanoase||{{dts|1505}} ||{{dts|1867}} ||362||
+|-
+|[[Almohad Dynasty]]||[[Morocco]]||[[Marrakech]], [[Seville]]||{{dts|1121}} ||{{dts|1269}} ||148||
+|-
+|[[Almoravid Dynasty]]||[[Morocco]]||[[Aghmat]] (1040–1062), [[Marrakech]] (1062–1147)||{{dts|1040}} ||{{dts|1147}} ||107||
+|-
+|[[Angevin Empire]]||[[Kingdom of England|England]], [[Kingdom of France|France]]||No official capital. Court was generally held at [[Angers]] and [[Chinon]]||{{dts|1154}} ||{{dts|1242}} ||88||
+|-
+|[[Armenian Empire]]||[[Armenia]]||[[Tigranakert of Artsakh|Tigranakert]]||{{dts|-190}} ||{{dts|428}} ||618||''[[Tigranes the Great]] took the title [[king of kings]].''
+|-
+|[[Ashanti Empire]]||[[West Africa]]||[[Kumasi]]||{{dts|1670}} ||{{dts|1902}} ||232||
+|-
+|[[Austrian Empire]]||[[Austria]]||[[Vienna]]||{{dts|1804}} ||{{dts|1867}} ||63||''Preceded by the [[Holy Roman Empire]].''
+|-
+|[[Austro-Hungarian Empire]]||[[Austria]], [[Hungary]]||[[Vienna]], [[Budapest]]||{{dts|1867}} ||{{dts|1918}} ||51||''Preceded by the [[Austrian Empire]].''
+|-
+|[[Ayyubid Dynasty]]{{citation needed|date=February 2010}}||[[Middle East]]||[[Cairo]], [[Damascus]], [[Hama]]||{{dts|1171}} ||{{dts|1341}} ||170||''Founded by [[Saladin]], See also [[List of Muslim empires and dynasties]]''.
+|-
+|[[Aztec Empire]]||[[Mesoamerica]]||[[Tenochtitlan]]||{{dts|1428}} ||{{dts|1521}} ||93||''The capital of [[Mexico]], [[Mexico City]], is built on the ruins of [[Tenochtitlan]].''
+|-
+|<span id="B"></span>[[Babylonian Empire]]||[[Mesopotamia]]||[[Babylon]]||{{dts|-1900}} ||{{dts|-1600}} ||300||''See also [[Neo-Babylonian Empire]].''
+|-
+|[[Balhae]]||[[North Korea]], [[Manchuria]]||[[Shangjing Longquanfu|Sanggyeong]]||{{dts|698}} ||{{dts|926}} ||228||''Successor of [[Goguryeo]].''
+|-
+|[[Bamana Empire]]||[[West Africa]]||[[Ségou]]||{{dts|1712}} ||{{dts|1861}} ||149||''Also known as the Bambara Empire or Ségou Empire''
+|-
+|[[Belgian Colonial Empire]]||[[Belgium]]||[[Brussels]]||{{dts|1901}} ||{{dts|1962}} ||61||''Overseas possessions were referred to as "the colonies" rather than an empire''.
+|-
+|[[Benin Empire]]||[[Nigeria]]||[[Benin City]]||{{dts|1440}} ||{{dts|1897}} ||457||
+|-
+|[[Bornu Empire]]||[[Nigeria]]||[[Ngazargamu]]||{{dts|1387}} ||{{dts|1893}} ||506||''The continuation of the [[Kanem Empire]]''.
+|-
+|[[Empire of Brazil]]||[[Brazil]]||[[Rio de Janeiro]]||{{dts|1822}} ||{{dts|1889}} ||67||''Established after [[Pedro I of Brazil]] declared the independence of Brazil from [[Portugal]].''
+|-
+|[[Britannic Empire]]||[[Roman Britain|Britain]]||[[Londinium]]||{{dts|286}} ||{{dts|296}} ||10||''Was a break-away state of the [[Roman Empire]]. See also [[Carausian Revolt]].''
+|-
+|[[British Colonial Empire]]||[[United Kingdom]]||[[London]]||{{dts|1603}} ||{{dts|1997}} ||394||''The largest Empire in world history. Precursor to the modern [[Commonwealth of Nations]].''
+|-
+|[[British Raj]]||[[Indian Subcontinent]]||[[Calcutta]] (1858–1912), [[New Delhi]] (1912–1947)||{{dts|1858}} ||{{dts|1947}} ||89||''Governed by [[the Crown]] and part of the [[British Empire]]. Queen [[Victoria of the United Kingdom|Victoria]] was proclaimed [[Empress of India]] in 1876''.
+|-
+|[[Bruneian Empire]]||[[Borneo]]||Not specified, possibly [[Kota Batu, Brunei-Muara|Kota Batu]]||{{dts|1368}} ||{{dts|1888}} ||520||''Lasted until it became a British protectorate in 1888.''
+|-
+|[[First Bulgarian Empire]]||[[Balkans]]||[[Pliska]] (680–893), [[Preslav]] (893–972), [[Skopie]] (972–992), [[Ohrid]] (992–1018) ||{{dts|680}} ||{{dts|1018}} ||338||''Founded by [[Khan (title)|Khan]] [[Asparukh of Bulgaria|Asparukh]]. Under [[Tsar]] [[Simeon I of Bulgaria|Simeon I]] became the first powerful [[Slavic peoples|Slavic]] Empire. Falls to the Byzantine Empire under [[Emperor]] [[Basil II]].''
+|-
+|[[Second Bulgarian Empire]]||[[Balkans]]||[[Tarnovo]]||{{dts|1185}} ||{{dts|1422}} ||237||''Successor of the [[First Bulgarian Empire]]. Under the Tsars [[Kaloyan of Bulgaria|Kaloyan]] and [[Ivan Asen II of Bulgaria|Ivan Asen II]] became the most powerful state in the Balkans.''
+|-
+|[[Buyid Dynasty]]||[[Persia]]||[[Shiraz]]||{{dts|934}} ||{{dts|1055}} ||121||
+|-
+|[[Byzantine Empire]]||[[Eastern Roman Empire]] <small>([[Greece]], [[Anatolia]], [[Africa]], [[Palestine (region)|Palestine]], [[Syria]], [[Italy]])</small>||[[Constantinople]]||{{dts|330}} ||{{dts|1453}} ||1123||''Term conventionally used since the 19th century to describe the [[Greek language|Greek]]-speaking [[Roman Empire]] during the [[Middle Ages]].''
+|-
+|<span id="C"></span>[[Caliphate of Córdoba]]||[[Iberian Peninsula]]||[[Córdoba, Spain|Córdoba]]||{{dts|756}} ||{{dts|1031}} ||275||''See also [[Caliphate|Islamic Empire]]''.
+|-
+|[[Carthaginian Empire]]||[[North Africa]]||[[Carthage]]||{{dts|-650}} ||{{dts|-146}} ||504||
+|-
+|[[Chagatai Khanate]]||[[Transoxania]]||[[Almaliq, Xinjiang|Almaliq]], [[Qarshi]]||{{dts|1225}} ||{{dts|1687}} ||462||''Division of the [[Mongol Empire]].''
+|-
+|[[Chalukya Dynasty]]||[[India]]||[[Badami]]||{{dts|543}} ||{{dts|753}} ||210||
+|-
+|[[Chera Dynasty]]||[[Southern India|India]]||[[Vanchi Muthur]]||{{dts|-300}} ||{{dts|300}} ||600||''A [[Tamil Nadu|Tamil]] Empire.''
+|-
+|[[Chola Dynasty]]||[[Southern India|India]]||Various, including [[Poompuhar]], [[Urayur]], [[Pazhaiyaarai]], [[Thanjavur]], [[Gangaikonda Cholapuram]]||{{dts|-350}} ||{{dts|1279}} ||1629||''A [[Tamil Nadu|Tamil]] Empire.
+|-
+|<span id="D"></span>[[Danish colonial empire]]||[[Denmark]]||[[Copenhagen]]||{{dts|1350}} ||{{dts|1953}} ||600||''See also [[List of former Danish colonies]]''.
+|-
+|[[Delhi Sultanate]] ||[[Indian Subcontinent|India]]||[[Delhi]]||{{dts|1206}} ||{{dts|1527}} ||321||
+|-
+|[[Durrani Empire]]||[[Afghanistan]]||[[Kandahar]], [[Kabul]]||{{dts|1747}} ||{{dts|1823}} ||76||
+|-
+|[[Dutch Empire]]||[[Netherlands]]||[[Amsterdam]]||{{dts|1568}} ||{{dts|1975}} ||407||''See also [[Dutch East India Company]] and  [[Dutch West India Company]].''
+|-
+|<span id="E"></span>[[Egyptian Empire]]||[[Egypt]]||Various, including [[Thebes, Egypt|Thebes]], [[Akhetaten]], [[Pi-Ramesses]], [[Memphis, Egypt|Memphis]]||{{dts|-1550}} ||{{dts|-1077}}||473||''See also [[Eighteenth Dynasty|18th Dynasty]], [[Nineteenth Dynasty|19th Dynasty]] & [[Twentieth Dynasty|20th Dynasty]]''.
+|-
+|[[Ethiopian Empire]]||[[Ethiopia]]||[[Addis Ababa]]||{{dts|1137}} ||{{dts|1974}} ||837||
+|-
+|<span id="F"></span>[[Fatimid Caliphate]]||[[Egypt]]||[[Mahdia]] (909–969), [[Cairo]] (969–1171) ||{{dts|909}} ||{{dts|1171}} ||262||''See also [[Caliphate|Islamic Empire]]''.
+|-
+|[[First French empire]]||[[France]]||[[Paris]]||{{dts|1804}} ||{{dts|1814}}/{{dts|1815}} ||10||
+|-
+|[[Second French Empire]]||[[France]]||[[Paris]]||{{dts|1852}} ||{{dts|1870}} ||18||
+|-
+|[[French colonial empires]]||[[France]]||[[Paris]]||{{dts|1534}} ||{{dts|1980}} ||446||''End of Empire was formally recognized with the end of French presence in condominium of [[Vanuatu]] (see [[New Hebrides]])''.
+|-
+|[[Frankish Empire]]||[[Western Europe]]||Various, including [[Soissons]], [[Paris]], [[Reims]], [[Orléans]], [[Metz]] & [[Aachen]]||{{dts|250}} ||{{dts|950}} ||700||
+|-
+|<span id="G"></span>[[Gallic Empire]]||[[Rhineland-Palatinate]]||[[Cologne|Colonia Agrippina]]||{{dts|260}} ||{{dts|274}} ||14||''Broke off from the [[Roman Empire]] during the [[Crisis of the Third Century]].''
+|-
+|[[Gaza Empire]]||[[Southern Africa]]||Not specified||{{dts|1824}} ||{{dts|1895}} ||71||.
+|-
+|[[Kingdom of Georgia|Georgian Empire]]||[[Georgia (country)|Georgia]]||[[Kutaisi]], [[Tbilisi]]||{{dts|1008}} ||{{dts|1490}} ||482||''Established at 1008 as an unified kingdom. Georgian kings took title "King of Kings", which ruled over large territory consisted by Georgian, Armenian and Muslim areas, as well as numerous client states. Officially dissolved at 1490 ''.
+|-
+|[[German Empire]]||[[Germany]]||[[Berlin]]||{{dts|1871}} ||{{dts|1918}} ||47||''See also [[German Colonial Empire]]''.
+|-
+|[[Ghana Empire]]||[[Mauritania]], and Western [[Mali]]||[[Koumbi Saleh]]||{{dts|790}} ||{{dts|1240}} ||450||''The Empire became known in Europe and Arabia as the "Ghana Empire" by the title of its ruler (meaning "Warrior King").''
+|-
+|[[Ghaznavid Dynasty]] ||[[Afghanistan]]||[[Ghazni]] later [[Lahore]]||{{dts|963}} ||{{dts|1187}} ||224||
+|-
+|[[Ghurid Dynasty]]||[[Afghanistan]]||[[Firuzkuh]]||{{dts|1148}} ||{{dts|1215}} ||67||
+|-
+|[[Goguryeo]]||[[Korea]]||[[Jolbon]], [[Gungnae City]], [[Pyongyang]]||{{dts|-37}} ||{{dts|668}} ||705||''Predecessor of [[Balhae]] and [[Goryeo]].''
+|-
+|[[Goryeo]]||[[Korea]]||[[Kaesong|Gaegyeong]], [[Ganghwa Island|Ganghwa]]||{{dts|918}} ||{{dts|1392}} ||474||''Successor of [[Goguryeo]]. Unification of the [[Korean Peninsula]]. State maintained as an empire between 918 and 1274.''
+|-
+|[[Gorkha|Gorkha Empire]]||[[Greater Nepal]]||||{{dts|1600}} ||{{dts|1850}} ||250||''Unification of Greater Nepal. State maintained as an empire between 1600 and 1840.''
+|-
+|[[Göktürk Khaganate]]||[[Inner Asia]]||[[Ötüken]]||{{dts|552}} ||{{dts|747}} ||195||''552–603 First empire, 603–658 Double empire, 658–681 Dark age, 681–747 Second empire.''
+|-
+|[[Golden Horde]] ||[[Central Asia]]||[[Sarai (city)|Sarai Batu]]||{{dts|1240}} ||{{dts|1502}} ||260||''Break-away state of the [[Mongol Empire]].''
+|-
+|[[Empire of Great Fulo]]||[[Senegal]]||[[Tekrur]]||{{dts|1514}} ||{{dts|1776}} ||262||
+|-
+|[[Great Moravian Empire]]||[[Central Europe]]||[[Mikulčice|Mikulčice-Valy]]||{{dts|833}} ||{{dts|900}} ||67||''The word "Moravia" did not refer only to present-day [[Moravia]].''
+|-
+|[[Great Seljuq Empire]]||[[Aral Sea]], [[Asia Minor]], [[Persia]]||[[Nishapur]] and later on [[Rey, Iran|Rey]]||{{dts|1037}} ||{{dts|1194}} ||157||''Turkish empire, Predecessor of the [[Sultanate of Rum]]''.
+|-
+|[[Gurjara-Pratihara ]]||[[Indian Subcontinent|India]]||[[Kannauj]]||{{dts|600}} ||{{dts|1136}} ||660||Founded by great king of [[Gujjars]]
+|-
+|[[Gupta Empire]]||[[Indian Subcontinent|India]]||[[Pataliputra]]||{{dts|320}} ||{{dts|550}} ||230||Founded by [[Sri Gupta]]
+|-
+|<span id="H"></span>[[Han Dynasty]]||[[China]]||[[Chang'an]], [[Luoyang]], [[Xuchang]]||{{dts|-206}} ||{{dts|220}} ||426||
+|-
+|[[Harsha|Empire of Harsha]]||[[Northern India]]||[[Kannauj]]||{{dts|606}} ||{{dts|647}} ||41||''Founded by '''Harshavardhana''', collapsed after his death''.
+|-
+|[[Hephthalite Empire]]||[[Afghanistan]]||[[Kabul]]||{{dts|420}} ||{{dts|567}} ||147||
+|-
+|[[Hittite Empire]]||[[Anatolia]]||[[Hattusa]]||{{dts|-1460}} ||{{dts|-1180}}||280||''See also [[Neo-Hittite]].''
+|-
+|[[Holy Roman Empire]]||[[Central Europe]]||''no capital city''||{{dts|962}} ||{{dts|1806}} ||844||''Officially known as the '''Holy Roman Empire of the German Nation''' from 1512 on.
+|-
+|[[Hotaki Dynasty]]||[[Persia]]||[[Isfahan]]||{{dts|1709}} ||{{dts|1738}} ||29||
+|-
+|[[Hoysala Empire]]||[[India]]||[[Belur]], [[Halebidu]]||{{dts|1026}} ||{{dts|1343}} ||317||
+|-
+|[[Huns#Unified Empire under Attila|Hunnic Empire]]||[[Eurasia]]||Not specified||{{dts|370}} ||{{dts|469}} ||99||
+|-
+|[[Idrisid dynasty]]||[[Morocco]] ||[[Fes]]||{{dts|788}} ||{{dts|974}}||186||''Founders of the first [[Morocco|Moroccan]] state.'' 
+|-
+|<span id="I"></span>[[Ilkhanate]]||[[Persia]]||[[Maragheh]], [[Tabriz]], [[Soltaniyeh]]||{{dts|1256}} ||{{dts|1335}} ||79||''Division of the [[Mongol Empire]].''
+|-
+|[[Pahlavi Dynasty|Imperial State of Iran]]||[[Persia]]||[[Tehran]]||{{dts|1925}} ||{{dts|1979}} ||54||''Was the last Imperial dynasty of [[Iran]].''
+|-
+|[[Inca Empire]] (''[[Tawantinsuyo]]'')||[[Andes]] <small>([[Peru]], [[Bolivia]], [[Ecuador]], parts of [[Chile]], [[Argentina]] and [[Colombia]])</small>||[[Cusco]]||{{dts|1438}} ||{{dts|1533}} ||95||''The largest empire in [[pre-Columbian]] America.''
+|-
+|[[Italian Colonial Empire]]||[[Italy]]||[[Rome]]||{{dts|1885}} ||{{dts|1943}} ||58||''See also [[Imperial Italy (fascist)]]''.
+|-
+|<span id="J"></span>[[Empire of Japan]]||[[Japan]]||[[Tokyo]]||{{dts|1868}} ||{{dts|1947}} ||79||''Emperor's government took control of the country in 1868. Regional hegemony in East Asia ended in 1945. The new constitution of 1947 formally abolished the empire.''<ref>{{cite web | title=Chronological table 5    1 December 1946 – 23 June 1947  | publisher = [[National Diet Library]] | url = http://www.ndl.go.jp/constitution/e/etc/history05.html |accessdate = September 30, 2010}}</ref>
+|-
+|[[Jin dynasty (265–420)]] ||[[China]]||[[Luoyang]] (265–311), [[Chang'an]] (312–316), [[Jiankang]] (317–420)||{{dts|265}} ||{{dts|420}} ||155||''Subdivided into two dynasties. Western Jìn Dynasty, (265–316) Eastern Jìn Dynasty (317–420).''
+|-
+|[[Jin dynasty (1115–1234)]] ||[[Northern and southern China|Northern China]], [[Manchuria]]||[[Huining Prefecture|Huining]], [[History of Beijing#Liao and Jin Dynasties|Zhongdu]], [[Kaifeng]]||{{dts|1115}} ||{{dts|1234}} ||119||''Also known as the [[Jurchens]], were the ancestors of the Manchus who established the Qing Dynasty.''
+|-
+|[[Jolof Empire]] ||[[West Africa]]||[[Linguère]]||{{dts|1350}} ||{{dts|1549}} ||199||''Also known as the Wollof Empire. Succeeded by the [[Kingdom of Jolof]] (1549–1875).''
+|-
+|<span id="K"></span>|[[Kaabu|Kaabu Empire]] ||[[West Africa]]||Kansala||{{dts|1537}} ||{{dts|1867}} ||330||''Also written Gabu, Ngabou, and N’Gabu'.''
+|-
+|[[Kanem Empire]]||[[Chad]]||[[Njimi]]||{{dts|700}} ||{{dts|1387}} ||687||
+|-
+|[[Kara-Khanid Khanate]]||[[Turkistan]]||[[Kashgar]]||{{dts|840}} ||{{dts|1212}} ||372||''First [[Turkic peoples|Turkic]] dynasty to embrace Islam.''
+|-
+| [[Khazar Khaganate]]||[[Pontic steppe]], [[North Caucasus]]||[[Balanjar]], later [[Atil]]||{{dts|700}} ||{{dts|1000}} ||300||''Founded by [[Western Turks]], the members of the royal family embraced [[Judaism]].''
+|-
+| [[Khmer Empire]]||[[Cambodia]]|| [[Hariharalaya]] (802–889), [[Angkor]] (889–1431) ||{{dts|802}} ||{{dts|1431}} ||629||''Succeeded from the kingdom of [[Chenla]].''
+|-
+|[[Khilji Dynasty]]||[[Afghanistan]]||[[Kabul]], [[Delhi]]||{{dts|1290}} ||{{dts|1320}} ||30||
+|-
+|[[Khwarezmid Dynasty]]||[[Persia]]||[[Konye-Urgench|Urgench]]||{{dts|1077}} ||{{dts|1221}} ||144||
+|-
+|[[Kong Empire]] ||[[West Africa]]||[[Kong, Ivory Coast|Kong]]||{{dts|1710}} ||{{dts|1898}} ||298||''Also known as the Wattara Empire or Ouattara Empire.''
+|-
+|[[Korean Empire]]||[[Korean Peninsula]]||[[Hanseong]]||{{dts|1897}} ||{{dts|1910}} ||13||''Was the last ruling [[List of monarchs of Korea|Korean dynasties]].''
+|-
+|[[Kushan Empire]]||[[Afghanistan]]||Various, including [[Mathura, Uttar Pradesh|Mathura]], [[Peshawar]], [[Begram]], [[Taxila]]||{{dts|30}} ||{{dts|345}} ||315||
+|-
+|[[Kushite Empire]]||[[Egypt]], [[Nubia]]||Not specified||{{dts|-760}} ||{{dts|-656}} ||104||
+|-
+|<span id="L"></span>[[Latin Empire]]||[[Thrace]], [[Asia Minor]]||[[Constantinople]]||{{dts|1204}} ||{{dts|1261}} ||57||''See also [[Frangokratia|Latinokratia]].''
+|-
+|-
+|<span id="L"></span>[[Later Lê dynasty]]|||[[Vietnam]]||[[Đông Kinh]]||{{dts|1428}} ||{{dts|1789}} ||361||
+|-
+|[[Liao Dynasty]]||[[China]]||[[List of provinces of Liao|Shangjing]]||{{dts|915}} ||{{dts|1125}} ||210||
+|-
+|[[Lodi Dynasty|Lodi Sultanate]]||[[Afghanistan]]||[[Delhi]]||{{dts|1451}} ||{{dts|1526}} ||75||
+|-
+|<span id="M"></span>[[Macedonian Empire#Empire|Macedonian Empire]]||[[Macedonian Kingdom]]||[[Pella]]||{{dts|-334}} ||{{dts|-323}} ||11||''Founded by [[Alexander the Great]].''
+|-
+|[[Majapahit Empire]]||[[Malay Archipelago]]||Majapahit, [[Trowulan|Wilwatikta]]||{{dts|1293}} ||{{dts|1527}} ||234||
+|-
+|[[Mali Empire]]||[[West Africa]]||[[Niani, Mali|Niani]], later [[Kangaba|Ka-ba]]||{{dts|1235}} ||{{dts|1610}} ||375||''A [[Mandinka people|Mandinka]] empire founded by [[Sundiata Keita]].''
+|-
+|[[Mamluk Sultanate (Cairo)|Mamluk Sultanate]]||[[Egypt]], [[Syria]]||[[Cairo]]||{{dts|1250}} ||{{dts|1517}} ||267||''See also [[Caliphate|Islamic Empire]]''.
+|-
+|[[Manchukuo]]||[[Manchuria]]||[[Hsinking]]||{{dts|1932}} ||{{dts|1945}} ||13||''Created as a [[Puppet state]] of the [[Japanese Empire]], with Emperor [[Puyi]] (the last emperor of the Qing Dynasty) installed as nominal regent and emperor''.
+|-
+|[[Maratha Empire]]||[[Indian Subcontinent|India]]||[[Raigad fort|Raigad]], later [[Pune]]||{{dts|1674}} ||{{dts|1818}} ||144||''Founded by [[Shivaji]] Maharaj, also known as the Maratha Confederacy''. 
+|-
+|[[Marinid dynasty]]||[[Morocco]] ||[[Fes]]||{{dts|1244}} ||{{dts|1465}}||221||
+|-
+|[[Massina Empire]]||[[West Africa]]||[[Hamdullahi]]||{{dts|1820}} ||{{dts|1862}} ||42||
+|-
+|[[Mauryan Empire]]||[[Kingdoms of Ancient India|Ancient India]]||[[Pataliputra]]||{{dts|-321}} ||{{dts|-185}} ||136||''Founded by [[Chandragupta Maurya]].''
+|-
+|[[Median Empire]]||[[Persia]]||[[Ecbatana]]||{{dts|-625}} ||{{dts|-549}} ||76||''First [[Achaemenid Empire|Persian Empire]], Founded by [[Deioces]].''
+|-
+|[[First Mexican Empire]]||[[Mexico]]||[[Mexico City]]||{{dts|1821}} ||{{dts|1823}} ||2||''Preceded the ''Second Mexican Empire'' which was short lived (1864–1867). See also [[Mexican Imperial Orders]].''
+|-
+|[[Second Mexican Empire]]||[[Mexico]]||[[Mexico City]]||{{dts|1864}} ||{{dts|1867}} ||3||''Succeeded the ''First Mexican Empire'' which was short lived (1821–1823). See also [[Mexican Imperial Orders]].''
+|-
+|[[Ming Dynasty]]||[[China]]||[[Nanjing]] (1368–1421), [[Beijing]] (1421–1644)
+||{{dts|1368}} ||{{dts|1644}} ||276||
+|-
+|[[Mongol Empire]]||[[Mongolia]]||[[Karakorum (Mongolia)|Karakorum]]||{{dts|1206}} ||{{dts|1368}} ||162||''Split into four empires ([[Yuan Dynasty]], [[Ilkhanate]], [[Chagatai Khanate]] and [[Golden Horde]]). Largest contiguous land empire.''
+|-
+|[[Mughal Empire]]||[[India]]||[[Agra]], [[Delhi]]||{{dts|1526}} ||{{dts|1758}} ||232||''Founded by [[Babur]]. "Mughal" is a [[Persian language|Persian]] word for the [[Mongols]].''
+|-
+|<span id="N"></span>[[Nanda Empire]]||[[Indian Subcontinent|India]]||[[Pataliputra]]||{{dts|-450}} ||{{dts|-350}} ||100||''[[Dravidian peoples|Dravidian]] Empire.''
+|-
+|[[Neo-Assyrian Empire]]||[[Mesopotamia]]||[[Assur]], later [[Nineveh]]||{{dts|-934}} ||{{dts|-609}} ||325||''See also [[Assyrian Empire]].''
+|-
+|[[Neo-Babylonian Empire]]||[[Mesopotamia]]||[[Babylon]]||{{dts|-626}} ||{{dts|-539}} ||87||''See also [[Babylonian Empire]].''
+|-
+|[[Nguyễn Dynasty]]||[[Vietnam]]||[[Phú Xuân]]||{{dts|1802}} ||{{dts|1945}} ||143||''Was the last ruling [[List of Vietnamese monarchs|Vietnamese Dynasty]]''.
+|-
+|[[Norwegian Empire]]||[[Norway]]||[[Trondheim]], [[Sarpsborg]], [[Kungahälla]], [[Bergen]], [[Oslo]]||{{dts|872}} ||{{dts|1397}} ||423||''See also [[Greater Norway]]''.
+|-
+|[[Empire of Nicaea]]||[[Bithynia]]||[[İznik|Nicaea]]||{{dts|1204}} ||{{dts|1261}} ||57||''Successor state of the [[Byzantine Empire]].''
+|-
+|[[Northern Yuan Dynasty]]||[[Mongolia]]||[[Shangdu]], [[Yingchang]], [[Karakorum]]||{{dts|1368}} ||{{dts|1635}} ||267||''Created after the expulsion of the Yuan Dynasty from China in 1368''.
+|-
+|[[Omani Empire]]||[[Oman]]||[[Muscat, Oman|Muscat]]||{{dts|1698}} ||{{dts|1958}} ||260||''See [[Oman]]''.
+|-
+|<span id="O"></span>[[Ottoman Empire]]||[[Anatolia]]||[[Söğüt]], [[Bursa, Turkey|Bursa]], [[Edirne]], [[Constantinople]]
+||{{dts|1299}} ||{{dts|1922}} ||623||''Predecessor of the [[Republic of Turkey]].''
+|-
+|[[Oyo Empire]]||Southwestern [[Nigeria]]||Oyo-Ile||{{dts|1400}} ||{{dts|1905}} ||505||
+|-
+|<span id="P"></span>[[Pala Empire]]||[[Bengal]], [[East India]]||[[Pataliputra]]||{{dts|750}} ||{{dts|1174}} ||424||
+|-
+|[[Palmyrene Empire]]||[[Syria (Roman province)|Syria]]||[[Palmyra]]||{{dts|260}} ||{{dts|273}} ||13||''Broke off from the [[Roman Empire]] during the [[Crisis of the Third Century]].''
+|-
+|[[Pandyan Empire]]||[[Southern India|India]]||[[Madurai]] . Also [[Tirunelveli]], [[Korkai]] for few years||{{dts|-500}} ||{{dts|1350}} ||1850||''A Tamil Empire.'
+|-
+|[[Parthian Empire]]||[[Persia]]||Various, including [[Asaak]], [[Hecatompylos]], [[Ecbatana]], [[Ctesiphon]], [[Nisa, Turkmenistan|Nisa]]||{{dts|-247}} ||{{dts|224}} ||471||''Third [[Achaemenid Empire|Persian Empire]], Founded by [[Arsaces I]]''.
+|-
+|[[Pontic Empire]]||[[Pontus (region)|Pontus]]||[[Amaseia]], [[Sinop, Turkey|Sinope]]||{{dts|-120}} ||{{dts|-47}} ||73||''[[Mithridates VI]] had the title: [[King of Kings]].''
+|-
+|[[Portuguese Empire]]||[[Portugal]]||[[Lisbon]], [[Rio de Janeiro]] (1815–1821)||{{dts|1415}} ||{{dts|2002}} ||587||''Was the first [[List of largest empires|global]] empire and the earliest and longest lived of the [[Colonialism|colonial]] [[Western Europe]]an empires. See also [[United Kingdom of Portugal, Brazil and the Algarves]].''
+|-
+|[[Ptolemaic Empire]]||[[Egypt]]||[[Alexandria]]||{{dts|-305}} ||{{dts|-30}} ||275||''See also [[Diadochi]].''
+|-
+|<span id="Q"></span>[[Qajar Dynasty]]{{citation needed|date=February 2010}}||[[Persia]]||[[Tehran]]||{{dts|1794}} ||{{dts|1925}} ||131||
+|-
+|[[Qin Dynasty]] ||[[China]]||[[Xianyang]]||{{dts|-221}} ||{{dts|-206}} ||15||''First dynasty of the Imperial Period.''
+|-
+|[[Qing Dynasty]] ||[[China]]||[[Shenyang]], [[Beijing]]||{{dts|1644}} ||{{dts|1912}} ||268||''Last dynasty of the Imperial Period.''
+|-
+|<span id="R"></span>[[Rashidun Caliphate]]||[[Saudi Arabia]]||[[Medina]], [[Kufa]]||{{dts|632}} ||{{dts|661}} ||29||''Predecessor of the [[Umayyad Caliphate]], See also [[Caliphate|Islamic Empire]]''.
+|-
+|[[Rashtrakuta Dynasty]]||[[India]]||[[Manyakheta]]||{{dts|753}} ||{{dts|982}} ||229||
+|-
+|[[Roman Empire]]||[[Greece]], [[Italy]]||[[Rome]]||{{dts|-27}} ||{{dts|1453}} || 1480 ||''Together with The [[Roman Kingdom]], The [[Roman Republic]] and the [[Byzantine Empire]], direct Roman states lasted from 753 BC until 1453 AD, 2206 years.''
+|-
+|[[Rouran Khaganate]]||[[Inner China]]||Not specified||{{dts|330}} ||{{dts|555}} ||225||
+|-
+|[[Rozwi Empire]]||[[Southern Africa]]||[[Danangombe]]||{{dts|1660}} ||{{dts|1866}} ||206||
+|-
+|[[Russian Empire]] (Romanov)||[[Russia]]||[[Saint Petersburg]]||{{dts|1721}} ||{{dts|1917}} ||196||''Successor state of the [[Tsardom of Russia]].''
+|-
+|[[Saadi dynasty]]||[[Morocco]] ||[[Marrakech]]||{{dts|1554}} ||{{dts|1659}}||105||''Destroyed and colonized the [[Songhai Empire]].'' 
+|-
+|<span id="S"></span>[[Safavid Dynasty]] ||[[Persia]]||[[Tabriz]], [[Qazvin]], [[Esfahan]]||{{dts|1501}} ||{{dts|1736}} ||235||
+|-
+|[[Saffarid Dynasty]] ||[[Afghanistan]]||[[Zaranj]]||{{dts|867}} ||{{dts|1002}} ||135||
+|-
+|[[Sassanid Dynasty]]  ||[[Persia]]||[[Ctesiphon]]||{{dts|224}} ||{{dts|651}} ||427||''Fourth [[Achaemenid Empire|Persian Empire]].''
+|-
+|[[Satavahana Dynasty]]||[[India]]||[[Amaravathi village, Guntur district]] [[Dharanikota]]||{{dts|-230}} ||{{dts|220}} ||450||''An Andhra Dynasty which preceded the Vengi Dynasty of Andhra.''
+|-
+|[[Samanid Dynasty]] ||[[Persia]]||[[Balkh]], [[Bukhara]]||{{dts|819}} ||{{dts|999}} ||180||
+|-
+|[[North Sea Empire]]||[[Denmark]]||[[Ribe]]||{{dts|1016}} ||{{dts|1035}} ||19||''See also [[Viking expansion]].''
+|-
+|[[Seleucid Empire]]||[[Persia]], [[Mesopotamia]], [[Syria]]||[[Seleucia]], [[Antioch]]||{{dts|-312}} ||{{dts|-63}} ||249||''See also [[Diadochi]].''
+|-
+|[[Serbian Empire]]||[[Serbia]]||[[Skopje]], [[Prizren]]||{{dts|1346}} ||{{dts|1371}} ||25||''Founded by [[Stephen Uroš IV Dušan of Serbia|Stephen Uroš IV]] (Dušan the Mighty), fell into feudal disarray after his death.''
+|-
+|[[Shu Han]]||[[China]]||[[Chengdu]]||{{dts|221}} ||{{dts|263}} ||42||''See also [[Three Kingdoms]]''.
+|-
+|[[Rattanakosin Kingdom|Siam Empire]]||[[Thailand]]||[[Bangkok]]||{{dts|1782}} ||{{dts|1932}} ||150||
+|-
+|[[Sikh Empire]]||[[Punjab region]], [[India]]||[[Amritsar]]||{{dts|1733}} ||{{dts|1849}} ||116||''Preceded the [[British Empire]] in the [[Indian subcontinent]].''
+|-
+|[[Sokoto Caliphate]] ||[[West Africa]]||[[Sokoto]] (1804-1850), (1851-1902), [[Gudu]] (1804), [[Birnin Konni]] (1850, 1903)||{{dts|1804}} ||{{dts|1903}} ||99||
+|-
+|[[Song Dynasty]] ||[[China]]||[[Bianjing]] (960–1127), [[Hangzhou|Lin'an]] (1127–1279)
+||{{dts|960}} ||{{dts|1279}} ||319||
+|-
+|[[Songhai Empire]]||[[West Africa]]||[[Gao]]||{{dts|1340}} ||{{dts|1591}} ||251||''Former vassal of the [[Mali Empire]] which became one of the largest African empires in history.''
+|-
+|[[Spanish Empire]]||[[Iberian Peninsula]]||[[Madrid]]||{{dts|1402}} ||{{dts|1975}} ||573||''Was founded with the conquest of the Canary Islands. It was one of the first [[global empire]]s.''
+|-
+|[[Srivijaya|Srivijaya Empire]]||[[Malay Archipelago]]||[[Palembang]], [[Mataram Sultanate|Mataram]]||{{dts|683}} ||{{dts|1293}} ||610||''was a powerful ancient thalassocratic Malay empire based on the island of Sumatra, then based on Mataram ([[Medang Kingdom]]) under [[Sailendra]]'s Dynasty''
+|-
+|[[Sui Dynasty]]||[[China]]||[[Chang'an]]||{{dts|581}} ||{{dts|618}} ||37||
+|-
+|[[Shunga Empire]]||[[Indian Subcontinent|India]]||[[Pataliputra]], [[Vidisa]]||{{dts|-185}} ||{{dts|-73}} ||112||''[[Magadha]] dynasty that controlled North-central and Eastern India.''
+|-
+|[[Swedish Empire]]||[[Scandinavia]]||[[Stockholm]]||{{dts|1611}} ||{{dts|1718}} ||107||''See also [[Swedish overseas colonies]].''
+|-
+|<span id="T"></span>[[Tahirid Dynasty]] ||[[Persia]]||[[Nishapur]]||{{dts|821}} ||{{dts|873}} ||52||
+|-
+|[[Tang Dynasty]] ||[[China]]||[[Chang'an]] (618–904), [[Luoyang]] (904–907)
+||{{dts|618}} ||{{dts|907}} ||289||''Founded By [[Li Yuan]] (aka. [[Emperor Gaozu of Tang]])''.
+|-
+|[[Tây Sơn dynasty|Tay Son Dynasty]]||[[Vietnam]]||[[Phú Xuân]]||{{dts|1778}} ||{{dts|1802}} ||24||
+|-
+|[[Empire of Thessalonica]]||[[Epirus]], [[Kingdom of Thessalonica]]||[[Thessaloniki]]||{{dts|1224}}||{{dts|1246}} ||42||''Evolved from the [[Despotate of Epirus]]''.
+|-
+|[[Nazi Germany|Third Reich]]||[[Germany]]||[[Berlin]] (1933–1945), [[Flensburg]] (1945)||{{dts|1933}} ||{{dts|1945}} ||12||''Nazi Germany signed a treaty (Tripartite Pact) with the [[Japanese Empire|Japanese]] and [[Italian Empire|Italian]] Empires.''
+|-
+|[[Tibetan Empire]]||[[Tibet]]||[[Lhasa]]||{{dts|755}} ||{{dts|870}} ||115||
+|-
+|[[Tondo Dynasty]]||[[Philippines]]||[[Tondo, Manila|Tondo]]||{{dts|900}} ||{{dts|1587}} ||687||
+|-
+|[[Timurid Empire]]||[[Persia]] and [[Central Asia]]||[[Samarkand]], [[Herat]]||{{dts|1370}} ||{{dts|1526}} ||156||''Persianized form of the [[Mongolia]]n word kürügän, [[Turko-Mongol|Turko-Mongol Empire]]''.
+|-
+|[[Kingdom of Tlemcen|Tlemcen]] ||[[Algeria]]||[[Tlemcen]]||{{dts|1235}} ||{{dts|1556}}||321|| [[Zayyanid dynasty]]
+|-
+|[[Empire of Trebizond]]||[[Pontus (region)|Pontus]]||[[Trabzon|Trebizond]]||{{dts|1204}} ||{{dts|1461}} ||257||''Successor state of the [[Byzantine Empire]] and client state of [[Kingdom of Georgia]]''
+|-
+|[[Toltec Empire]]||[[Mesoamerica]]||[[Tula (Mesoamerican site)|Tollan-Xicocotitlan]]||{{dts|496}} ||{{dts|1122}} ||626||
+|-
+|[[Toucouleur Empire]]||[[West Africa]]||[[Ségou]]||{{dts|1848}} ||{{dts|1893}} ||45||
+|-
+|[[Tu'i Tonga Empire]]||[[Tonga]], [[Pacific Ocean]]||[[Mu'a (Tongatapu)|Mu'a]]||{{dts|950}} ||{{dts|1865}} ||915||''See [[History of Tonga]].''
+|-
+|[[Turgesh|Turgesh Khaganate]]||[[Turkistan]]||[[Balasagun]]||{{dts|699}} ||{{dts|766}} ||67||''Founded as a successor of West Turkish empire.''
+|-
+|<span id="U"></span>[[Umayyad Caliphate]]||[[Syria]]||[[Damascus]], [[Córdoba, Spain|Córdoba]] (Capital-in-exile)||{{dts|661}} ||{{dts|750}} ||89||''Successor of the [[Rashidun Caliphate]], See also [[Caliphate|Islamic Empire]]''.
+|-
+|[[Uyunid dynasty]]||[[Arabian]]||[[Al-Hasa]], [[Qatif]]||{{dts|1076}}||{{dts|1253}}||163||The '''Uyunids''', were a [[Sunni]] [[Arab]] dynasty that ruled [[Bahrain (historical region)|Bahrain]] for 163 years, from the 11th to the 13th centuries.
+|-
+|[[Uyghur Khaganate]]||[[Central Asia]] ||[[Ordu-Baliq|Ordubaliq]] ||{{dts|742}} ||{{dts|848}} ||106||''742–848 Founded as a successor of [[Göktürk Khaganate]], 848–1036 '''Gansu state''', 856–1209 '''Turfan state.'''''
+|-
+|<span id="V"></span>[[Vijayanagara Empire]]||[[South India]]||[[Vijayanagara]]||{{dts|1336}} ||{{dts|1646}} ||310||''The founding of the original kingdom was based on the principality of [[Anegondi]].''
+|-
+|<span id="W"></span>[[Wari Empire]]||[[Peru]], [[Bolivia]]||[[Huari, Peru|Huari]]/[[Tiwanaku]]||{{dts|500}} ||{{dts|1100}} ||600||''It is a matter of conflict as to whether it was a real organized state that could be called an empire. If so, it would be considered the first empire in the Americas''.
+|-
+|[[Wassoulou Empire]]||[[West Africa]]||[[Bissandugu]]||{{dts|1878}} ||{{dts|1895}} ||45||''Also known as the Mandinka Empire''.
+|-
+|[[Cao Wei|Wei Empire]]||[[China]]||[[Luoyang]]||{{dts|220}} ||{{dts|265}} ||45||''See also [[Three Kingdoms]]''.
+|-
+|[[Western Chalukya Empire]]||[[South India]]||[[Manyakheta]], [[Basavakalyan]]||{{dts|973}} ||{{dts|1189}} ||216||
+|-
+|[[Western Roman Empire]]||[[Italy]]||[[Mediolanum]], [[Ravenna]]||{{dts|395}} ||{{dts|476}} ||81||''The western half of the [[Roman Empire]]''.
+|-
+|[[Eastern Wu]]||[[China]]||[[Wuchang District|Wuchang]], [[Nanjing|Jianye]]||{{dts|229}} ||{{dts|280}} ||51||''See also [[Three Kingdoms]]''.
+|-
+|<span id="X"></span>[[Western Xia Dynasty]]||[[China]]||[[Yinchuan|Xingqing]]||{{dts|1038}} ||{{dts|1227}} ||189||''Also called the [[Tangut people|Tangut]] Dynasty.''
+|-
+|[[Xin Dynasty]]||[[China]]||[[Chang'an]]||{{dts|9}} ||{{dts|23}} ||14||''The Xin Dynasty had only one ruling Emperor.''
+|-
+|<span id="Y"></span>[[Yuan Dynasty]]||[[China]], [[Mongolia]]||[[Khanbaliq|Dadu]]||{{dts|1271}} ||{{dts|1368}} ||97||''Division of the [[Mongol Empire]]. ''The Yuan emperors had nominal supremacy over western khanates.''
+|-
+|<span id="Z"></span>[[Zand Dynasty]]||[[Persia]]||[[Shiraz]]||{{dts|1750}} ||{{dts|1794}} ||44||
+|-
+|[[Zulu Empire]]||[[South Africa]]||[[Bulawayo (Zulu Empire)|KwaBulawayo]], [[Ulundi]]||{{dts|1818}} ||{{dts|1897}} ||79||
+|}
+
+==Possible and informal empires==
+These governments, confederations and other entities have sometimes been informally referred to as "empires". Some did not fit the modern definition of [[empire]] (e.g. the [[Delian League]]), some were self-proclaimed by their first and often last ruler, others were short-lived attempts to turn an existing government into an empire, and there are also instances of the word "empire" being used to refer to unofficial spheres of influence which do not consider themselves empires.
+
+{| class="wikitable sortable"
+|-
+!align=center|"Empire"
+!  style="text-align:center; width:10%;"|Origin
+!  style="text-align:center; width:15%;"|Capital
+!  style="white-space:nowrap; text-align:center; width:5%;"|From
+!  style="white-space:nowrap; text-align:center; width:5%;"|To
+!  style="white-space:nowrap; text-align:center; width:3%;"|Duration
+!align=center nowrap|Note
+|-	
+|[[American imperialism|American Empire]]||[[United States]]||[[Washington, D.C.]]||{{dts|1776}} || Present ||{{Age|1776|6|4}}|| ''The concept of an American Empire was first popularized during the presidency of [[James K. Polk]] who led the United States into the [[Mexican–American War]] of 1846. In recent times the concept has been revived to refer to the sphere of influence of the United States by critics of the United States.''
+|-
+|[[Athenian Empire]] ([[Delian League]]) ||[[Ancient Greece]]||[[Delos|Delos island]]||{{dts|-478}} ||{{dts|-404}} ||74||''Also known as Delian League. It was an association of Greek [[city-state]]s''.
+|-
+|[[Second Athenian Empire]]||[[Ancient Greece]]||[[Athens]]||{{dts|-378}} ||{{dts|-355}} ||23||''Second Athenian Empire, headed by Athens primarily for self-defense against the growth of [[Sparta]] and the [[Achaemenid Empire|Persian Empire]]''.
+|-
+|[[Central African Empire]]||[[Central African Republic]]||[[Bangui]]||{{dts|1976}} ||{{dts|1979}} ||3||''President [[Jean-Bédel Bokassa]] declared himself Emperor Bokassa I.''
+|-
+|[[Empire of China (1915–1916)|Empire of China]]||[[China]]||[[Beijing]]||{{dts|1915}} ||{{dts|1916}} ||1||''Was a short-lived attempt by [[Yuan Shikai]] to reinstate the Imperial Monarchy''.
+|-
+|[[Empire of Haiti (1804-1806)|First Empire of Haiti]]||[[North America]]||[[Port-au-Prince]]||{{dts|1804}} ||{{dts|1806}} ||2||
+''First Haitian Empire, [[Jean-Jacques Dessalines]] declared himself Emperor Jacques I.''
+|-
+|[[Empire of Haiti (1849-1859)|Second Empire of Haiti]]||[[North America]]||[[Port-au-Prince]]||{{dts|1849}} ||{{dts|1859}} ||10||
+''Second Haitian Empire, [[Faustin Soulouque]] is proclaimed Emperor Faustin I.''
+|-
+|[[Grand Duchy of Lithuania]]||[[Lithuania]]||[[Vilnius]]||{{dts|1200}} ||{{dts|1569}} ||369||''It was the largest state in Europe in the 15th century''.
+|-
+|[[Maya civilization#Classic period|Mayan Empire]]||[[Central America]]||Not specified ||{{dts|250}} ||{{dts|900}} ||650||  
+|-
+|[[Norwegian Empire]]||[[Norway]]||[[Trondheim]], [[Sarpsborg]], [[Kungahälla]], [[Bergen]], [[Oslo]]||{{dts|872}} ||{{dts|1814}} ||942||''See also [[List of possessions of Norway]] The empire was under [[Denmark-Norway|Danish control]] from the [[Kalmar Union]] and forward, but the possessions remained Norwegian until the end of the Danish rule of Norway. See also [[Danish colonial empire]]''.
+|-
+|[[Polish–Lithuanian Commonwealth]]||[[Poland]], [[Lithuania]]||[[Kraków]]||{{dts|1569}} ||{{dts|1795}} ||226 ||''It was formed by the [[Union of Lublin]] in 1569, between the [[Crown of the Kingdom of Poland|Kingdom of Poland]] and the [[Grand Duchy of Lithuania]]. It was one of the largest and one of the most populous countries of 16th and 17th-century Europe, with some 390,000 square miles (1,000,000 km2) and a multi-ethnic population of 11 million at its peak in the early 17th century.<ref>{{cite book|last=Davies|first=Norman|year=1996|title=Europe: a history|location=Oxford|publisher=Oxford University 5555Press|isbn=9780198201717|page=554|url=https://books.google.com/books?id=jrVW9W9eiYMC&pg=PA554|quote=Poland-Lithuania was another country which experienced its 'Golden Age' during the sixteenth and early seventeenth centuries. The realm of the last Jagiellons was absolutely the largest state in Europe.}}</ref><ref name="Wandycz2001-66">{{cite book|last=Wandycz|first=Piotr Stefan|year=2001|title=The price of freedom: a history of East Central Europe from the Middle Ages to the present|edition=2nd|location=London [u.a.]|publisher=Routledge|isbn=978-0-415-25491-5|page=66|url=https://books.google.com/books?id=m5plR3x6jLAC&pg=PA66|quote=The multinational character of the Habsburg monarchy was comparable to that of the Commonwealth [...]}}</ref><ref>{{cite book|year=2014|editor-last=McKenna|editor-first=Amy|title=Estonia, Latvia, Lithuania, and Poland|series=Britannica guide to countries of the European Union|location=Chicago|publisher=Britannica Educational Publishing|isbn=9781615309917|page=203|url=https://books.google.com/books?id=Ef2cAAAAQBAJ&pg=PA203|quote=Lithuania was also a powerful empire and dominated much of eastern Europe in the 14th–16th centuries in close alignment with Poland; then, from 1569, it was part of a confederation with Poland [...]}}</ref><ref>{{cite encyclopedia|year=2005|last=Lozny|first=Ludomir|title=Poland|editor-last=Skutsch|editor-first=Carl|encyclopedia=Encyclopedia of the world's minorities|location=New York [u.a.]|publisher=Routledge|volume=3|isbn=9781135193881|page=963|url=https://books.google.com/books?id=yXYKAgAAQBAJ&pg=PA963|quote=It was indeed an Eastern European empire, a multiethnic and multicultural state with great economic strength and strong military power, controlling most of central and eastern European politics.}}</ref><ref>{{cite book|last=Kupisz|first=Dariusz|year=2012|chapter=The Polish-Lithuanian army in the reign of King Stefan Bathory (1576–1586)|chapterurl=https://books.google.com/books?id=ie8xAQAAQBAJ&pg=PA63|editor-last=Davies|editor-first=Brian L.|title=Warfare in Eastern Europe, 1500-1800|series=History of warfare|volume=72|location=Boston|publisher=Brill|isbn=9789004221963|page=63|quote=In terms of territorial expanse in Europe the Polish-Lithuanian state was surpassed only by Russia and the Ottoman Empire and in respect to population was behind only France, Spain, and the German Empire.}}</ref><ref>{{cite book|last=Davies|first=Brian L.|year=2011|title=Empire and military revolution in Eastern Europe: Russia's Turkish wars in the eighteenth century|series=Continuum studies in military history|volume=|others=|edition=|location=London [u.a.]|publisher=Continuum|isbn=9781441170040|page=29|url=https://books.google.com/books?id=H1cSBwAAQBAJ&pg=PA29|quote=Poland-Lithuania had entered the seventeenth century as one of the great powers in Eastern Europe.}}</ref>
+|-
+|[[Roman Republic]]||[[Italy]]||[[Rome]]||{{dts|-509}} ||{{dts|-27}} || 482 ||''Predecessor of the [[Roman Empire]]. Technically a [[Republic]], had imperial holdings throughout its existence.''
+|-
+|[[Soviet Empire]]||[[Soviet Union]]||[[Moscow]]||{{dts|1922}} ||{{dts|1991}} ||69||''A political term for the sphere of influence of the Soviet Union used by its critics.''
+|-
+|[[Ur III Empire]]||[[Sumer]]||[[Ur]]||{{dts|-2100}} ||{{dts|-2000}} ||100||''The dynasty/empire is also known as the '''Sumerian Renaissance.'''''
+|-
+|[[Empire of Vietnam]]||[[Vietnam]]||[[Huế]]||{{dts|1945}} ||{{dts|1945}} ||0.45||''A short-lived (March 11 – August 23) [[puppet state]] of the [[Japanese Empire]]''.
+|}
+
+==See also==
+* [[List of extinct states]]
+* [[:Category:Fictional empires|Fictional empires]]
+* [[List of kingdoms]]
+* [[List of historical countries and empires spanning more than one continent]]
+* [[Historical powers]]
+* [[List of largest empires]]
+* [[Middle Eastern Empires]]
+
+==References==
+{{reflist}}
+
+{{Empires}}
+
+==External links==
+* Pella, John & Erik Ringmar, [http://www.irhistory.info/ History of International Relations Open Textbook Project], Cambridge: Open Book, forthcoming.
+
+{{DEFAULTSORT:List Of Empires}}
+[[Category:Empires|*]]
+[[Category:Former empires|*]]
+[[Category:History-related lists|Empires]]

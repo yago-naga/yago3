@@ -55,6 +55,7 @@ public class CoherentTypeExtractor extends Extractor {
     result.add(CategoryClassExtractor.CATEGORYCLASSES);
     result.addAll(InfoboxTypeExtractor.INFOBOXTYPES.inLanguages(MultilingualExtractor.wikipediaLanguages));
     result.addAll(CategoryTypeExtractor.CATEGORYTYPES.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    result.add(PeopleExtractor.MANUALPEOPLE);
     return result;
   }
 

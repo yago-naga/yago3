@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLEncoder;
 import java.util.regex.Pattern;
 
 import javatools.filehandlers.FileUtils;
@@ -37,17 +36,12 @@ public class DemonymPattern {
    * @return
    */
   public static String getPage(String title, String language) {
-    // check cache
-    String tempDir = System.getProperty("java.io.tmpdir");
+    // load file locally if exists
+    String dir = "data/demonyms/";
     String filename = "wiki-" + language + "-" + title + ".txt";
-    File cacheFile = new File(tempDir, filename);
-    boolean reuse = false;
-    if (cacheFile.exists()) {
-      long age = System.currentTimeMillis() - cacheFile.lastModified();
-      reuse = age < 10 * 3600 * 1000; // ten hours
-    }
+    File cacheFile = new File(dir, filename);
     String content = null;
-    if (reuse) {
+    if (cacheFile.exists()) {
       // load from cache
       try {
         content = FileUtils.getFileContent(cacheFile);
@@ -56,14 +50,14 @@ public class DemonymPattern {
         e.printStackTrace();
       }
     }
-    try {
+    /*try {
       // download from wikipedia.org
       String url = "https://" + language + ".wikipedia.org/w/index.php?title=" + URLEncoder.encode(title, "utf-8") + "&action=raw";
       content = httpGetRequest(url);
       FileUtils.writeFileContent(cacheFile, content);
     } catch (IOException e) {
       e.printStackTrace();
-    }
+    }*/
     return content;
   }
 

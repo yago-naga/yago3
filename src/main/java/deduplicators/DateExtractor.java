@@ -12,7 +12,6 @@ import fromThemes.CategoryMapper;
 import fromThemes.InfoboxMapper;
 import fromThemes.RuleExtractor;
 import fromWikipedia.TemporalInfoboxExtractor;
-import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
 import utils.Theme.ThemeGroup;
@@ -75,11 +74,6 @@ public class DateExtractor extends SimpleDeduplicator {
   public static final Set<String> relationsIncluded = new FinalSet<>("<wasBornOnDate>", "<diedOnDate>", "<wasCreatedOnDate>", "<wasDestroyedOnDate>",
       "<happenedOnDate>", "<startedOnDate>", "<endedOnDate>");
 
-  public static void main(String[] args) throws Exception {
-    Announce.setLevel(Announce.Level.DEBUG);
-    new DateExtractor().extract(new File("C:/fabian/data/yago2s"), "test");
-  }
-
   @Override
   public Theme myOutput() {
     return YAGODATEFACTS;
@@ -89,4 +83,10 @@ public class DateExtractor extends SimpleDeduplicator {
   public boolean isMyRelation(Fact fact) {
     return (relationsIncluded.contains(fact.getRelation()));
   }
+
+  public static void main(String[] args) throws Exception {
+    //Announce.setLevel(Announce.Level.DEBUG);
+    new DateExtractor().extract(new File("/san/suchanek/yago3-2017-02-20"), "test");
+  }
+
 }

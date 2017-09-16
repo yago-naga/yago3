@@ -26,6 +26,7 @@ import utils.FactCollection;
 import utils.FactTemplate;
 import utils.FactTemplateExtractor;
 import utils.MultilingualTheme;
+import utils.PatternList;
 import utils.Theme;
 
 /**
@@ -69,7 +70,7 @@ public class CategoryMapper extends MultilingualExtractor {
 
   @Override
   public Set<Theme> inputCached() {
-    return (new FinalSet<>(PatternHardExtractor.CATEGORYPATTERNS));
+    return (new FinalSet<>(PatternHardExtractor.CATEGORYPATTERNS, PatternHardExtractor.DATEPARSER));
   }
 
   @Override
@@ -169,8 +170,12 @@ public class CategoryMapper extends MultilingualExtractor {
         for (List<FactTemplate> group : templateGroups) {
           List<Fact> facts = FactTemplate.instantiate(group, variables, language, languageMap);
           for (Fact fact : facts) {
+            String provenance = "CategoryMapper";
+            if (f.getObject() != null) {
+              provenance += " from " + f.getObjectAsJavaString();
+            }
             if (fact != null) {
-              write(output, fact, outputSource, source, "CategoryMapper");
+              write(output, fact, outputSource, source, provenance);
             }
           }
         }
@@ -218,7 +223,12 @@ public class CategoryMapper extends MultilingualExtractor {
   }
 
   public static void main(String[] args) throws Exception {
-    new CategoryMapper("de").extract(new File("c:/fabian/data/yago3"), "mapping categories into facts");
+    PatternList.printDebug = false;
+    File y = new File("/home/tr/tmp/yago3-debug");
+    new PatternHardExtractor(new File("./data")).extract(new File("/home/tr/tmp/yago3-debug"), "test");
+    PatternHardExtractor.DATEPARSER.assignToFolder(y);
+
+    new CategoryMapper("en").extract(y, "mapping categories into facts");
   }
 
 }

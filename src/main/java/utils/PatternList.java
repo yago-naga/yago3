@@ -97,10 +97,12 @@ public class PatternList {
     if (input == null) return (null);
     if (printDebug) System.out.println("Input: " + input);
     for (Pair<Pattern, String> pattern : patterns) {
-      if (printDebug) System.out.println("Pattern: " + pattern);
       String previous = input;
       input = pattern.first.matcher(input).replaceAll(pattern.second);
-      if (printDebug && !previous.equals(input)) System.out.println("--------> " + input);
+      if (printDebug && !previous.equals(input)) {
+        System.out.println("Pattern: " + pattern);
+        System.out.println("--------> " + input);
+      }
       if (input.contains("NIL") && pattern.second.equals("NIL")) return (null);
     }
     return (input);

@@ -18,6 +18,7 @@ import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
 import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
@@ -74,9 +75,9 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CATEGORYPATTERNS, WordnetExtractor.PREFMEANINGS,
-        PatternHardExtractor.INFOBOXTEMPORALPATTERNS, PatternHardExtractor.INFOBOXREPLACEMENTS, WordnetExtractor.WORDNETWORDS,
-        PatternHardExtractor.TITLEPATTERNS, HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER));
+    return new HashSet<Theme>(
+        Arrays.asList(WordnetExtractor.PREFMEANINGS, PatternHardExtractor.INFOBOXTEMPORALPATTERNS, PatternHardExtractor.INFOBOXREPLACEMENTS,
+            WordnetExtractor.WORDNETWORDS, HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER, PatternHardExtractor.TITLEPATTERNS));
   }
 
   /** Infobox facts, non-checked */
@@ -115,7 +116,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<>(HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER);
+    return new FinalSet<>(HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER, PatternHardExtractor.TITLEPATTERNS);
   }
 
   @Override
@@ -177,6 +178,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     }
   }
 
+  protected Map<String, TermParser> parserForRelation = new HashMap<>();
+
   /** Extracts a relation from a string */
   protected void extract(String entity, String valueString, String relation, Map<String, String> preferredMeanings, FactCollection factCollection,
       PatternList replacements) throws IOException {
@@ -217,7 +220,15 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
       }
 
       // Get the term extractor
-      TermParser extractor = cls.equals(RDFS.clss) ? new ClassParser(preferredMeanings) : TermParser.forType(cls);
+      TermParser extractor = parserForRelation.computeIfAbsent(cls, k -> {
+        try {
+          return k.equals(RDFS.clss) ? new ClassParser(preferredMeanings) : TermParser.forType(k);
+        } catch (IOException e1) {
+          e1.printStackTrace();
+        }
+        return null;
+      });
+
       // String syntaxChecker = FactComponent.asJavaString(factCollection
       // .getObject(cls, "<_hasTypeCheckPattern>"));
 
@@ -412,7 +423,15 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
       }
 
       // Get the term extractor
-      TermParser extractor = cls.equals(RDFS.clss) ? new ClassParser(preferredMeanings) : TermParser.forType(cls);
+      TermParser extractor = parserForRelation.computeIfAbsent(cls, k -> {
+        try {
+          return k.equals(RDFS.clss) ? new ClassParser(preferredMeanings) : TermParser.forType(k);
+        } catch (IOException e1) {
+          e1.printStackTrace();
+        }
+        return null;
+      });
+
       // String syntaxChecker = FactComponent.asJavaString(factCollection
       // .getObject(cls, "<_hasTypeCheckPattern>"));
 
@@ -586,7 +605,11 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     Announce.setLevel(Announce.Level.DEBUG);
 
     String folder = "/home/tr/tmp/yago3-debug/";
-    for (Theme t : new TemporalInfoboxExtractor(new File(folder + "enwiki.xml")).input()) {
+    Extractor e = new TemporalInfoboxExtractor(new File(folder + "enwiki.xml"));
+    for (Theme t : e.input()) {
+      t.assignToFolder(new File(folder));
+    }
+    for (Theme t : e.inputCached()) {
       t.assignToFolder(new File(folder));
     }
     // new PatternHardExtractor(new File("./data")).extract(new
@@ -599,7 +622,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     // new TemporalInfoboxExtractor(new
     // File("/var/tmp/Wikipedia_Archive/DavidBeckham.xml")).extract(new
     // File("/var/tmp/test/facts"), "Test on 1 wikipedia article");
-    new TemporalInfoboxExtractor(new File(folder + "enwiki.xml")).extract(new File("./out"), "Test on 1 wikipedia article");
+    e.extract(new File("./out"), "Test on 1 wikipedia article");
 
   }
 }

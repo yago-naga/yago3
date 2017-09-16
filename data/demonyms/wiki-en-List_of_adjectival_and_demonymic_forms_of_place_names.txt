@@ -1,0 +1,909 @@
+The following is a partial '''list of adjectival forms of place names''' in [[English (language)|English]] '''and their [[demonym]]ic equivalents''', which denote the people or the inhabitants of these places.
+
+Note: [[Demonyms]] are given in plural forms. Singular forms simply remove the final 's' or, in the case of ''-ese'' endings, are the same as the plural forms.
+The ending ''-men'' has [[grammatical gender|feminine]] equivalent ''-women'' (e.g. ''an Irishman and a Scotswoman''). The [[French language|French]] terminations ''-ois'' / ''ais'' serve as both the singular and plural [[grammatical gender|masculine]]; adding 'e' (''-oise'' / ''aise'') makes them singular feminine; 'es' (''-oises'' / ''aises'') makes them plural feminine. The [[Spanish language|Spanish]] termination "-o" usually denotes the [[grammatical gender|masculine]] and is normally changed to [[grammatical gender|feminine]] by replacing the "-o" with "-a". The plural forms are usually "-os" and "-as" respectively.
+
+Adjectives ending ''-ish'' can be used as collective demonyms (e.g. ''the English, the Cornish'').  So can those ending in ''-ch'' / ''-tch'' (e.g. ''the French'', ''the Dutch'') provided they are pronounced with a 'ch' sound (e.g., the adjective ''Czech'' does not qualify).
+
+Where an adjective is a link, the link is to the [[language]] or [[dialect]] of the same name. (Reference: [http://www.ethnologue.org/ Ethnologue, Languages of the World])
+
+Many place-name adjectives and many demonyms refer also to various other things, sometimes with and sometimes without one or more additional words.  (Sometimes, the use of one or more additional words is optional.)  Notable examples are [[list of cheeses|cheeses]], [[list of cat breeds|cat breeds]], [[list of dog breeds|dog breeds]], and [[list of horse breeds|horse breeds]].  (See [[List of words derived from toponyms]].)
+__TOC__
+
+==Planets==
+{{main|List of adjectivals and demonyms of astronomical bodies}}
+
+== Continents ==
+Entries in ''italics'' are continental regions.
+
+{| class="wikitable"
+!width="120px"| Name  !!width="120px"| Adjective !!width="120px"| [[Demonym]]
+|-
+| ''[[Afro-Eurasia]]''          || ''Afro-Eurasian''          || ''Afro-Eurasians''
+|-
+| [[Africa]]          || African          || Africans
+|-
+| ''[[Eurasia]]''     || ''Eurasian''     || ''Eurasians''
+|-
+| [[Asia]]            || Asian            || Asians
+|-
+| ''[[Middle East]]''     || ''Middle Eastern''   || ''Middle Easterners''
+|-
+| [[Europe]]          || European         || Europeans
+|-
+| ''[[Americas]]''    || ''American''<sup>a</sup> || ''Americans''<sup>a</sup>
+|-
+| [[North America]]   || North American   || North Americans
+|-
+| ''[[Caribbean]]'' || ''Caribbean'' || ''Caribbeans''
+|-
+| ''[[West Indies]]'' || ''West Indian'' || ''West Indians''
+|-
+| ''[[Central America]]'' || ''Central American'' || ''Central Americans''
+|-
+| ''[[Northern America]]''   || ''Northern American''   || ''Northern Americans''
+|-
+| [[South America]]   || South American   || South Americans
+|-
+| [[Antarctica]]      || Antarctic        || Antarcticans
+|-
+| ''[[Oceania]]''         ||  ''Oceanian''        ||   ''Oceanians''
+|-
+| ''[[Australasia]]'' || ''Australasian'' || ''Australasians''
+|-
+| [[Australia (continent)|Australia]]<sup>b</sup>       || Australian<sup>b</sup>       || Australians<sup>b</sup>
+|-
+| ''[[Zealandia]]'' || ''Zealandian'' || ''Zealandians''
+|-
+| ''[[Pacific Islands]]'' || ''Pacific Islands'' || ''Pacific Islanders''
+|-
+|colspan="3" style="padding-left:0.5em; font-size:90%;"|
+<sup>a</sup>Usually used to identify specifically the [[United States|United States of America]] or its people.<br/>
+<sup>b</sup>Usually used to identify specifically the [[Australia|Commonwealth of Australia]] or its people.<br/>
+|}
+
+==Subcontinental regions==
+{{Main|Adjectivals and demonyms for subcontinental regions}}
+
+==Countries and nations==
+{{Main|List of adjectival and demonymic forms for countries and nations}}
+
+==States, Provinces, Regions and Territories==
+
+===Australian states and territories===
+
+{| class="wikitable"
+! rowspan="2" | State/territory
+! rowspan="2" | Adjective
+! colspan="2" | [[Demonym]]
+|-
+! &nbsp;
+! {{smaller|''[[Colloquialism|colloquial]]''}}
+|-
+| [[Australian Capital Territory]]
+| Canberran
+| Canberrans
+| &nbsp;
+|- {{smaller|"Inlanders", "Round Abouters", "Canberries"}}
+
+| [[New South Wales]]
+| New South Welsh
+| New South Welshmen
+| {{smaller|"Waratahs", "Cockroaches", "Blues"}}
+|-
+| [[Northern Territory]]
+| Northern Territory
+| Territorians
+| {{smaller|"Top Enders"}}
+|-
+| [[Queensland]]
+| Queensland
+| Queenslanders
+| {{smaller|"Banana Benders", "Cane Toads", "Maroons"}}
+|-
+| [[South Australia]]
+| South Australian
+| South Australians
+| {{smaller|"Crow Eaters"}}
+|-
+| [[Tasmania]]
+| Tasmanian
+| Tasmanians
+| {{smaller|"Apple Eaters", "Taswegians", "Tazzies", "Inbreds"}}
+|-
+| [[Victoria (Australia)|Victoria]]
+| Victorian
+| Victorians
+| {{smaller|"Vics", "Mexicans"}}
+|-
+| [[Western Australia]]
+| Western Australian
+| Western Australians
+| {{smaller|"Sandgropers", "Westralians"}}
+|-
+|}
+
+===Canadian provinces and territories===
+
+{| class="wikitable"
+!rowspan="2" width="24%"| Province Or Territory !!rowspan="2" width="38%"| Adjective !!colspan="2"| [[Demonym]]
+|-
+! !!width="10%"| {{smaller|''[[Colloquialism|colloquial]]''}}
+|-
+|-
+| [[Alberta]] ([[Province]])          || Albertan      ||colspan="2"| Albertans
+|-
+| [[British Columbia]] ([[Province]]) || British Columbian{{spaces|2}}{{smaller|("B.C.")}} || British Columbians || {{smaller|"B.C.ers"}}
+|-
+| [[Manitoba]] ([[Province]])         || Manitoban     ||colspan="2"| Manitobans
+|-
+| [[New Brunswick]] ([[Province]])    || New Brunswick ||colspan="2"| New Brunswickers
+|-
+| [[Newfoundland and Labrador]] ([[Province]]) || Newfoundland and Labrador || Newfoundlanders, Labradorians || {{smaller|"Newfies"}}
+|-
+| [[Northwest Territories]] ([[Territory]]) || Northwest Territorian {{spaces|2}}{{smaller|("N.W.T.")}}||Northwest Territorians|| {{smaller|"N.W.T.ers"}}
+|-
+| [[Nunavut]] ([[Territory]])          || Nunavut       ||colspan="2"| Nunavummiut ([[Grammatical case|''sing.'']] Nunavummiuq)
+|-
+| [[Nova Scotia]] ([[Province]])      || Nova Scotian  || Nova Scotians || {{smaller|"[[Bluenose]]rs"}}
+|-
+| [[Ontario]] ([[Province]])          || Ontario       ||colspan="2"| Ontarians
+|-
+| [[Prince Edward Island]] ([[Province]]) || Prince Edward Island, P.E.I., Island ||colspan="2"| Islanders
+|-
+| [[Quebec]] ([[Province]])           || Quebec<br/>[[French language|''French'']]:&nbsp;Québécois&nbsp;{{smaller|([[Grammatical genders|''masc.'']])}}, Québécoise&nbsp;{{smaller|([[Grammatical genders|''fem.'']])}} ||colspan="2"| Quebeckers, Quebecers<br/>''French:''&nbsp;Québécois
+|-
+| [[Saskatchewan]] ([[Province]])     || Saskatchewan  || Saskatchewanians || {{smaller|"Flat-Landers"}}
+|-
+| [[Yukon]] ([[Territory]])            || Yukon         || Yukoners || {{smaller|"Sourdoughs"}}
+|-
+|}
+
+===Federated states and other territories of Germany===
+{| class="wikitable"
+! rowspan="2" | State/territory
+! rowspan="2" | Adjective
+! colspan="2" | [[Demonym]]
+|-
+! &nbsp;
+! {{smaller|''[[Colloquialism|colloquial]]''}}
+|-
+| [[Baden-Württemberg]] (''[[federated state]]'')
+| 
+| 
+| &nbsp;
+|- {{smaller|"Inlanders", "Round Abouters"}}.
+|-
+|[[Bavaria]] (''[[federated state]]'')
+|Bavarian
+|Bavarians
+|German: Bazis
+|-
+|[[Berlin]] (''[[federated state]]'')
+|
+|Berliners
+|
+|-
+|[[Brandenburg]] (''[[federated state]]'')
+|Brandenburgish
+|Brandenburgers
+|
+|-
+|[[Franconia]]
+|Franconian
+|Franconians
+|
+|-
+|[[Bremen (state)|Free Hanseatic City of Bremen]]
+|
+|
+|German: Fischköppe
+|-
+|[[Hamburg|Free and Hanseatic City of Hamburg]]
+|Hamburgish
+|Hamburgers
+|
+|-
+|[[Kingdom of Hanover|Hannover]] (''ancient German state'')
+|Hanoverian
+|Hanoverians
+|
+|-
+|[[Hesse]] (''[[federated state]]'')
+|Hessian
+|Hessians
+|
+|-
+|[[Lower Saxony]] (''[[federated state]]'')
+|Lower Saxon
+|Lower Saxons
+|
+|-
+|[[Mecklenburg-Western Pomerania]] (''[[federated state]]'')
+|
+|
+|
+|-
+|[[North Rhine-Westphalia]] (''[[federated state]]'')
+|North Rhine - Westphalian
+|North Rhine - Westphalians
+|
+|-
+|[[Pomerania]] (''ancient German territory'')
+|Pomeranian
+|Pomeranians
+|
+|-
+|[[Prussia]] (''ancient German state'')
+|Prussian
+|Prussians
+|Bavarian: Saupreiß'n
+|-
+|[[Rhineland]] (''area'')
+|Rhenish
+|Rhinelanders
+|
+|-
+|[[Rhineland-Palatinate]] (''[[federated state]]'')
+|
+|
+|
+|-
+|[[Saarland]] (''[[federated state]]'')
+|
+|Saarlanders
+|
+|-
+|[[Saxony]] (''[[federated state]]'')
+|Saxon
+|Saxons
+|
+|-
+|[[Saxony-Anhalt]] (''[[federated state]]'')
+|
+|
+|
+|-
+|[[Silesia]] (''ancient German territory'')
+|Silesian
+|Silesians
+|
+|-
+|[[Schleswig-Holstein]] (''[[federated state]]'')
+|
+|
+|German: Fischköpfe
+|-
+|[[Swabia]] ''(South German area and ancient territory)''
+|Swabian
+|Swabians
+|
+|-
+|[[Thuringia]] (''[[federated state]]'')
+|Thuringian
+|Thuringians
+|
+|}
+
+===Indian states and territories===
+{{:List of adjectivals and demonyms for states and territories of India}}
+
+===Malaysian states and territories===
+
+{| class="wikitable"
+!rowspan="2" width="25%"| State / Territory !!rowspan="2" width="30%"| Adjective !!colspan="3"| [[Demonym]]
+|-
+! !!width="25%"| {{smaller|''[[Colloquialism|colloquial]]''}}
+|-
+| [[Johor]]   || Johorean           || Johoreans || Southerners
+|-
+| [[Kedah]]     || Kedahan      ||colspan="3"| Kedahans
+|-
+| [[Kelantan]]   || Kelantanese           ||Kelantanese || East Coasters
+|-
+| [[Kuala Lumpur]]   || Kuala Lumpurian          ||Kuala Lumpurians || Federal Territorians, KL-ites
+|-
+| [[Labuan]]     || Labuanese      ||Labuanese ||Federal Territorians
+|-
+| [[Malacca]]     || Malaccan      ||colspan="3"| Malaccans
+|-
+| [[Negeri Sembilan]]   || Negeri Sembilanese           ||Negeri Sembilanese || Negrians
+|-
+| [[Pahang]]     || Pahangite      ||colspan="3"| Pahangites
+|-
+| [[Penang]]   || Penangite           ||Penangites || Penang Islanders
+|-
+| [[Perak]]     || Perakian      ||colspan="3"| Perakians
+|-
+| [[Perlis]]     || Perlisian      ||colspan="3"| Perlisians
+|-
+| [[Putrajaya]]   || Putrajayan           ||Putrajayans || Federal Territorians
+|-
+| [[Sabah]]   || Sabahan           ||Sabahans || Borneoans
+|-
+| [[Sarawak]]   || Sarawakian           ||Sarawakians || Borneoans
+|-
+| [[Selangor]]     || Selangorean      ||colspan="3"| Selangoreans
+|-
+| style="border-bottom: 3px solid grey;" | [[Terengganu]]
+| style="border-bottom: 3px solid grey;" | Terengganuan
+| style="border-bottom: 3px solid grey;" | Terengganuans
+| style="border-bottom: 3px solid grey;" | East Coasters
+|-
+| '''[[Peninsular Malaysia|Peninsular (West) Malaysia]]''' || Peninsular, West Malaysian || Peninsularians, West Malaysians||
+|-
+| '''[[East Malaysia]]'''           || East Malaysian         || East Malaysians || Borneoans
+|-
+|}
+
+===States of Mexico===
+{{Main|States of Mexico}}
+{| class="wikitable"
+!rowspan="2"| Federal entity !!rowspan="2"| Adjective !!colspan="2"| [[Demonym]]
+|-
+! !! {{smaller|''[[Colloquialism|colloquial]]''}}
+|-
+| [[Aguascalientes]]         ||                  || Hidrocálido/-a ||colspan="2"|
+|-
+| [[Baja California]]         || Lower Californian || Bajacaliforniano/-a ||colspan="2"|
+|-
+| [[Baja California Sur]]        || South Lower Californian || Sudcaliforniano/-a ||colspan="2"|
+|-
+| [[Campeche]] 	     || Campechan || Campechano/-a ||colspan="2"|
+|-
+| [[Chiapas]] 	     || Chiapan || Chiapaneco/-a ||colspan="2"|
+|-
+| [[Chihuahua (state)|Chihuahua]]	     || Chihuahuan || Chihuahuense ||colspan="2"|
+|-
+| [[Colima]] 	     || || Colimense ||colspan="2"|
+|-
+| [[Coahuila]]	     || Coahuilan || Coahuilense ||colspan="2"|
+|-
+| [[Mexico City|Distrito Federal]]       || || Defeño/-a || {{smaller|"[[Chilango]]"}}
+|-
+| [[Durango]]	     || Durangoan || Duranguense ||colspan="2"|
+|-
+| [[Guerrero]]	     || Guerreran || Guerrerense ||colspan="2"|
+|-
+| [[Guanajuato]]     || || Guanajuatense ||colspan="2"|
+|-
+| [[Hidalgo (state)|Hidalgo]] 	     || || Hidalguense ||colspan="2"|
+|-
+| [[Jalisco]]        || Jaliscan || Jalisciense ||colspan="2"|
+|-
+| [[Michoacán]]	     || || Michoacano/-a ||colspan="2"|
+|-
+| [[Morelos]]	     || || Morelense ||colspan="2"|
+|-
+| [[State of Mexico|Mexico]]	     || Mexican || Mexiquense ||colspan="2"|
+|-
+| [[Nayarit]]		     || || Nayarita ||colspan="2"|
+|-
+| [[Nuevo León]] 	     ||  || Neoleonés ||colspan="2"|
+|-
+| [[Oaxaca]] 	     || Oaxacan || Oaxaqueño/-a ||colspan="2"|
+|-
+| [[Puebla]] 	     || Pueblan/Poblano || Poblano/-a ||colspan="2"|
+|-
+| [[Quintana Roo]]	     || Quintanaroan || Quintanarroense ||colspan="2"|
+|-
+| [[Querétaro]]	     || Queretan || Queretano/-a ||colspan="2"|
+|-
+| [[Sinaloa]]	     || Sinaloan || Sinaloense ||colspan="2"|
+|-
+| [[San Luis Potosí]]	     || || Potosino/-a ||colspan="2"|
+|-
+| [[Sonora]] 	     || Sonoran || Sonorense ||colspan="2"|
+|-
+| [[Tabasco]] 	     || || Tabasqueño/-a ||colspan="2"|
+|-
+| [[Tlaxcala]]	     || || Tlaxcalteco/ -a ||colspan="2"|
+|-
+| [[Tamaulipas]]	     || Tamaulipan || Tamaulipeco/-a ||colspan="2"|
+|-
+| [[Veracruz]]	     || || Veracruzano/-a ||colspan="2"|
+|-
+| [[Yucatán]] 	     || || Yucateco/-a ||colspan="2"|
+|-
+| [[Zacatecas]]	     || Zacatecan || Zacatecano/-a ||colspan="2"|
+|-
+|-
+|colspan="4" style="padding-left:0.5em; font-size:90%;"|
+# ''Capitalino'' is often used to refer to people from Mexico City; however, ''capitalino'' can be used to refer to people from any state capital. "Defeño" and "Chilango" are listed by the [[Royal Spanish Academy]]
+|}
+
+===New Zealand regions===
+
+{| class="wikitable"
+!rowspan="2" width="29%"| Region/Island !!rowspan="2" width="31%"| Adjective !!colspan="2"| [[Demonym]]
+|-
+!width="23%"| !!width="80px"| {{smaller|''[[Colloquialism|colloquial]]''}}
+|-
+| [[Auckland Region]]   || Auckland           ||Aucklanders || {{smaller|"[[Jafa]]s"}}
+|-
+| [[Bay of Plenty Region]]     || Bay of Plenty      ||Bay of Plentiers || {{smaller|"BOPians"}}
+|-
+| [[Canterbury, New Zealand|Canterbury]] region   || Canterbury           ||Cantabrians || {{smaller|"Cantabs"}}
+|-
+| [[Gisborne Region]] || East Coast, Gisborne ||colspan="2"| East Coasters, Gisbornians
+|-
+| [[Hawke's Bay Region]]       || Hawke's Bay        ||colspan="2"| Hawke's Bayers
+|-
+| [[Manawatu-Wanganui Region]] ||  Manawatu, Wanganui ||colspan="2"| Manawatuans, Wanganuians
+|-
+| [[Marlborough Region]] || Marlborough ||colspan="2"| Marlburians
+|-
+| [[Nelson Region]] || Nelsonian ||colspan="2"| Nelsonians
+|-
+| [[Northland Region]] || Northland ||colspan="2"| Northlanders
+|-
+| [[Otago]] region             || Otago              ||colspan="2"| Otagoites
+|-
+| [[Southland, New Zealand|Southland]] region || Southland ||colspan="2"| Southlanders
+|-
+| [[Taranaki Region]]	        || Taranaki           ||colspan="2"| Taranakians
+|-
+| [[Tasman Region]] || Tasman ||colspan="2"| Tasmanites
+|-
+| [[Waikato region]]           || Waikato            || Waikatoans || {{smaller|"Mooloos"}}
+|-
+| [[Wellington Region]] || Wellington, Wellingtonian ||colspan="2"| Wellingtonians
+|-
+| style="border-bottom: 3px solid grey;" | [[West Coast, New Zealand|West Coast]] region
+| style="border-bottom: 3px solid grey;" | West Coast
+|style="border-bottom: 3px solid grey;" | West Coasters|| {{smaller|"Coasters"}}
+|-
+| '''[[North Island]]''' || North Island ||colspan="2"| North Islanders
+|-
+| '''[[South Island]]'''           || South Island  / Mainland         || South Islanders || {{smaller|"Mainlanders"}}
+|-
+| '''[[Stewart Island]]''' || Stewart Island ||colspan="2"| Stewart Islanders
+|-
+| '''[[Chatham Islands]]''' || Chatham ||colspan="2"| Chatham Islanders
+|-
+|}
+
+===States of Nigeria===
+{{main|List of demonyms for states in Nigeria}}
+
+===Philippine provinces===
+{{main|List of demonyms for Philippine provinces}}
+
+===U.S. states===
+{{Main|List of demonyms for U.S. states}}
+
+===Regions in Greco-Roman antiquity===
+ 
+{{smaller|Regions tracing their origins (''or otherwise referenced'') in [[Greco-Roman]] antiquity [in cases where ancient regions are extant, this table is limited to cases where the present-day regional names retain their original/ancient form].
+
+(References: [[Herodotus]]' "Histories"; [[Thucydides]]' "Peloponnesian War"; [[Pausanias (geographer)|Pausanias]]' "Description of Greece"; [[John Lemprière|Lemprière]]'s [[Lemprière's Bibliotheca Classica|Bibliotheca Classica]]; Leverett's 1838 edition of the "Lexicon of the Latin Language"; Freeman's "The History of Sicily..."; et al.)}}
+
+{| class="wikitable"
+!rowspan="2" width="26%"| Name !!rowspan="2" width="30%"| Adjective !!colspan="2"| [[Demonym]]
+|-
+!width="21%"| !! {{smaller|''[[Colloquialism|colloquial]]''}}
+|-
+| [[Acarnania]]     || Acarnanian       ||colspan="2"| Acarnanians
+|-
+| [[Achaea]]        || Achaean       ||colspan="2"| Achaeans
+|-
+| [[Aegina]]        || Aeginetan       ||colspan="2"| Aeginetans
+|-
+| [[Aethaea]]        || Aethaean       ||colspan="2"| Aethaeans
+|-
+| [[Aetolia]]       || Aetolian       ||colspan="2"| Aetolians
+|-
+| [[Andalusia]]     || Andalusian ||colspan="2"| Andalusians
+|-
+| [[Apulia]]        || Apulian       ||colspan="2"| Apulians
+|-
+| [[Aquitania]]     || Aquitanian       ||colspan="2"| Aquitanians
+|-
+| [[Arcadia]]       || Arcadian      ||colspan="2"| Arcadians
+|-
+| [[Argos]]         || Argive        ||colspan="2"| Argives
+|-
+| [[Arretium]]      || Arretine      ||colspan="2"| Arretines
+|-
+| [[Athens]]        || Athenian      ||colspan="2"| Athenians
+|-
+| [[Bactria|Bactria, Bactriana]] || Bactrian ||colspan="2"| Bactrians
+|-
+| [[Bavaria]]       || Bavarian      ||colspan="2"| Bavarians
+|-
+| [[Boeotia]]       || Boeotian, Beotian ||colspan="2"| Boeotians, Beotians
+|-
+| [[Bohemia|Boiohaemum]]     || Boius    ||colspan="2"| Boii
+|-
+| [[Bosporus|Bosporus, Bosphorus]]     || Bosporan, Bosphoran    ||colspan="2"| Bosporans, Bosphorans
+|-
+| [[Bruttium]]     || (Bruttus ?), Bruttian    ||colspan="2"| Brutti, Bruttians
+|-
+| [[Byzantium]]     || Byzantine     ||colspan="2"| Byzantines
+|-
+| [[Calabria]]      || Calabrian     ||colspan="2"| Calabrians
+|-
+| [[Campania]]      || Campanian     ||colspan="2"| Campanians
+|-
+| [[Cantabria]]     || Cantabrian    ||colspan="2"| Cantabrians
+|-
+| [[Caria]]         || Carian     ||colspan="2"| Carians
+|-
+| [[Carthage]]      || Carthaginian  ||colspan="2"| Carthaginians
+|-
+| [[Carystus]]         || Carystian     ||colspan="2"| Carystians
+|-
+| [[Catalonia]]     || Catalan, Catalonian ||colspan="2"| Catalans, Catalonians
+|-
+| [[Cephalonia]]     || Cephalonian   ||colspan="2"| Cephalonians
+|-
+| [[Chalcis]]       || Chalcidian       ||colspan="2"| Chalcidians
+|-
+| [[Chios]]         || Chiot       ||colspan="2"| Chiots
+|-
+| [[Colchis]]       || Colchian     ||colspan="2"| Colchians
+|-
+| [[Colossae]]      || Colossian     ||colspan="2"| Colossians
+|-
+| [[Consentia]]       || Consentian     ||colspan="2"| Consentians
+|-
+| [[Corcyra]]       || Corcyrean     ||colspan="2"| Corcyreans
+|-
+| [[Corsica]]       || Corsican     ||colspan="2"| Corsicans
+|-
+| [[Crete]]         || Cretan        ||colspan="2"| Cretans
+|-
+| [[Crotone|Croton]]        || Crotonian     ||colspan="2"| Crotonians
+|-
+| [[Cyclades]]      || Cycladian      ||colspan="2"| Cycladians
+|-
+| [[Cyprus]]        || Cypriot, Cypriote      ||colspan="2"| Cypriots, Cypriotes
+|-
+| [[Cyrenaica]]     || Cyrenaic      ||colspan="2"| Cyrenaics
+|-
+| [[Cyrene, Libya|Cyrene]]        || Cyrenian      ||colspan="2"| Cyrenians
+|-
+| [[Dacia]]         || Dacian ||colspan="2"| Dacians
+|-
+| [[Dalmatia]]      || Dalmatian ||colspan="2"| Dalmatians
+|-
+| [[Delos]]         || Delian      ||colspan="2"| Delians
+|-
+| [[Dodecanese]]    || Dodecanesian          ||colspan="2"| Dodecanesians
+|-
+| [[Edonia]]    || Edonian          ||colspan="2"| Edonians
+|-
+| [[Egesta]]    || Egestan          ||colspan="2"| Egestans
+|-
+| [[Eleusina|Eleusina or Eleusis]]   || Eleusian, Eleusinian          ||colspan="2"| Eleusians, Eleusinians
+|-
+| [[Elis|Elis or Eleia]]      || Elian      ||colspan="2"| Elians
+|-
+| [[Ephesus]]       || Ephesian      ||colspan="2"| Ephesians
+|-
+| [[Epidamnus|Epidamnus or Epidamnos]]      || Epidamnian      ||colspan="2"| Epidamnians
+|-
+| [[Epidaurus]]     || Epidaurian      ||colspan="2"| Epidaurians
+|-
+| [[Epirus]]        || Epirote          ||colspan="2"| Epirotes
+|-
+| [[Eretria]]       || Eretrian      ||colspan="2"| Eretrians
+|-
+| [[Etruria]]       || Etruscan      ||colspan="2"| Etruscans
+|-
+| [[Euboea]]        || Euboean       ||colspan="2"| Euboeans
+|-
+| [[Galatia]]       || Galatian      ||colspan="2"| Galatians
+|-
+| [[Gallaecia]]     || Gallaecus ||colspan="2"| Gallaeci
+|-
+| [[Gaul|Gallia or Gaul]]   || Gaulish ||colspan="2"| Gauls
+|-
+| [[Germania]]      || Germanic, Germanus ||colspan="2"| Germanic, Germani
+|-
+| [[Iberia]]       || Iberian      ||colspan="2"| Iberians
+|-
+| [[Illyria]]       || Illyrian      ||colspan="2"| Illyrians
+|-
+| [[Ionia]]         || Ionian      ||colspan="2"| Ionians
+|-
+| [[Kalymnos]]      || Kalymnian   ||colspan="2"| Kalymnians
+|-
+| [[Caulonia (ancient city)|Kaulonia]]      || Kaulonian   ||colspan="2"| Kaulonians
+|-
+| [[Knossos]]       || Knossian       ||colspan="2"| Knossians
+|-
+| [[Lakedaimon|Lakedaimon/ia or Lakedaemon/ia]]       || Lakedaimonian  or Lakedaemonian     ||colspan="2"| Lakedaimonians  or Lakedaemonians
+|-
+| [[Larissa]]        || Larissan     ||colspan="2"| Larissans
+|-
+| [[Latium]]        || Latin     ||colspan="2"| Latins
+|-
+| [[Leontini|Leontini, Leontium]]        || Leontinian     ||colspan="2"| Leontinians
+|-
+| [[Lesbos]]        || Lesbian     ||colspan="2"| Lesbians
+|-
+| [[Locris]]        || Locrian       ||colspan="2"| Locrians
+|-
+| [[Lucania]]         || Lucanian       ||colspan="2"| Lucanians
+|-
+| [[Lydia]]         || Lydian       ||colspan="2"| Lydians
+|-
+| [[Macedonia (Greece)|Macedonia]]     || Macedonian      ||colspan="2"| Macedonians
+|-
+| [[Maeonia]]       || Maeonian    ||colspan="2"| Maeonians
+|-
+| [[Mantineia]]     || Mantinean     ||colspan="2"| Mantineans
+|-
+| [[Marathon]]     || Marathonian     ||colspan="2"| Marathonians
+|-
+| [[Medes|Media]]   || Median ||colspan="2"| Medes, Medians
+|-
+| [[Megara]]        || Megarian  ||colspan="2"| Megarians
+|-
+| [[Malta|Melite]]         || Melitian  ||colspan="2"| Melitians
+|-
+| [[Melos]]         || Melian  ||colspan="2"| Melians
+|-
+| [[Mesopotamia]]   || Mesopotamian  ||colspan="2"| Mesopotamians
+|-
+| [[Messenia]]      || Messenian      ||colspan="2"| Messenians
+|-
+| [[Miletus]]       || Milesian  ||colspan="2"| Milesians
+|-
+| [[Mithymna|Mithymna or Methymna]]     || Methymnian      ||colspan="2"| Methymnians
+|-
+| [[Moravia]]       || Moravian      ||colspan="2"| Moravians
+|-
+| [[Mycenae]]       || Mycenaean  ||colspan="2"| Mycenaeans
+|-
+| [[Mytilene]]      || Mytilenean       ||colspan="2"| Mytileneans
+|-
+| [[Naupactus|Naupactus or Nafpaktos]]     || Naupactian     ||colspan="2"| Naupactians
+|-
+| [[Naxos Island|Naxos]]     || Naxian     ||colspan="2"| Naxians
+|-
+| [[Nisyros]]       || Nisyrian     ||colspan="2"| Nisyrians
+|-
+| [[Oea]] || Oean ||colspan="2"| Oeans
+|-
+| [[Olympia, Greece|Olympia]] || Olympian ||colspan="2"| Olympians
+|-
+| [[Oiniades|Oiniades, Oiniadai]] || Oiniadan   ||colspan="2"| Oiniadans
+|-
+| [[Orkney Islands]] || Orcadian   ||colspan="2"| Orcadians
+|-
+| [[Paionia|Paeonia or Paionia]]  || Paeonian  ||colspan="2"| Paeonians
+|-
+| [[Pamphylia]]     || Pamphylian  ||colspan="2"| Pamphylians
+|-
+| [[Paros]]         || Parian        ||colspan="2"| Parians
+|-
+| [[Patmos]]        || Patmian        ||colspan="2"| Patmians
+|-
+| [[Peloponnese]]   || Peloponnesian        ||colspan="2"| Peloponnesians
+|-
+| [[Pergamum]]        || Pergamian ||colspan="2"| Pergamians
+|-
+| [[Persia]]        || Persian ||colspan="2"| Persians
+|-
+| [[Philippi]]      || Philippian    ||colspan="2"| Philippians
+|-
+| [[Phlius]]        || Phliasian    ||colspan="2"| Phliasians
+|-
+| [[Phocis]]        || Phocian       ||colspan="2"| Phocians
+|-
+| [[Phoenicia]]     || Phoenician ||colspan="2"| Phoenicians
+|-
+| [[Phrygia]]       || Phrygian      ||colspan="2"| Phrygians
+|-
+| [[Pisidia]]       || Pisidian       ||colspan="2"| Pisidians
+|-
+| [[Pontus (region)|Pontus]]        || Pontian       ||colspan="2"| Pontians
+|-
+| [[Pylos]]         || Pylosian ||colspan="2"| Pylosians
+|-
+| [[Rhegion]]       || Rhegian, Rhegine ||colspan="2"| Rhegians, Rhegines
+|-
+| [[Rhodes]]         || Rhodian ||colspan="2"| Rhodians
+|-
+| [[Rhithymna|Rhithymna, Rhithymnia, Rithymna]]         || Rhithymnian ||colspan="2"| Rhithymnians
+|-
+| [[Rome]]          || Roman ||colspan="2"| Romans
+|-
+| [[Sabinium]]       || Sabine  ||colspan="2"| Sabines
+|-
+| [[Salamis Island|Salamis]]   || Salaminian       ||colspan="2"| Salaminians
+|-
+| [[Samnium]]       || Samnite  ||colspan="2"| Samnites
+|-
+| [[Samos]]       || Samian  ||colspan="2"| Samians
+|-
+| [[Sardinia]]      || Sardinian, Sardi   ||colspan="2"| Sardinians, Sardi
+|-
+| [[Sardis]]        || Sardianus, Sardian     ||colspan="2"| Sardiani, Sardians
+|-
+| [[Sarmatia]]      || Sarmatian, Sarmata, or Sauromata     ||colspan="2"| Sarmatians, Sarmatae, or Sauromatae
+|-
+| [[Scythia]]       || Scytha, Scythian     ||colspan="2"| Scythae, Scythians
+|-
+| [[Serrae|Serrae, Serrhae]]       || Serrean     ||colspan="2"| Serreans
+|-
+| [[Serica]]      || Sere   ||colspan="2"| Seres
+|-
+| [[Sicily]]        || Sicilian     ||colspan="2"| Sicilians
+|-
+| [[Sicyon]]        || Sicyonian     ||colspan="2"| Sicyonian
+|-
+| [[Sidon|Sidon, or Saïda]]     || Sidonian      ||colspan="2"| Sidonians
+|-
+| [[Silesia]]       || Silesian      ||colspan="2"| Silesians
+|-
+| [[Skopelos]]      || Skopelitan      ||colspan="2"| Skopelitans
+|-
+| [[Sparta]]        || Spartan      ||colspan="2"| Spartans
+|-
+| [[Suebia]]        || Suebius       ||colspan="2"| Suebi
+|-
+| [[Symi]]          || Symian       ||colspan="2"| Symians
+|-
+| [[Syracuse, Sicily|Syracuse]]      || Syracusan       ||colspan="2"| Syracusans
+|-
+| [[History of Taranto|Taras, Tarentum]]         || Tarentine, Tarentumian    ||colspan="2"| Tarentines, Tarentumians
+|-
+| [[Tegea]]         || Tegean    ||colspan="2"| Tegeans
+|-
+| [[Tenedos]]       || Tenedian    ||colspan="2"| Tenedians
+|-
+| [[Tenedos]]       || Tenedian    ||colspan="2"| Tenedians
+|-
+| [[Thasos]]       || Thasian    ||colspan="2"| Thasians
+|-
+| [[Thebes, Greece|Thebes]]       || Theban        ||colspan="2"| Thebans
+|-
+| [[Thespis]]      || Thespian    ||colspan="2"| Thespians
+|-
+| [[Thessaly]]      || Thessalian    ||colspan="2"| Thessalians
+|-
+| [[Thrace]]        || Thracian       ||colspan="2"| Thracians
+|-
+| [[Thria]]        || Thriasian       ||colspan="2"| Thriasians
+|-
+| [[Thouria, Messenia|Thuria]]        || Thuriat       ||colspan="2"| Thuriats
+|-
+| [[Thurii]]        || Thurian       ||colspan="2"| Thurians
+|-
+| [[Thynia]]      || Thynian      ||colspan="2"| Thynians
+|-
+| [[Trichonos]]       || Trichonian       ||colspan="2"| Trichonians
+|-
+| [[Troezen]]       || Troezenian       ||colspan="2"| Troezenians
+|-
+| [[Troy]]          || Trojan        ||colspan="2"| Trojans
+|-
+| [[Umbria]]        || Umbrian       ||colspan="2"| Umbrians
+|-
+| [[Xanthi]]        || Xanthian       ||colspan="2"| Xanthians
+|-
+| [[Zakynthos]]     || Zakynthian   ||colspan="2"| Zakynthians
+|-
+|-
+|colspan="4" style="padding-left:0.5em; font-size:90%;"|
+|}
+
+===Other former nations and regions===
+{{Main|List of adjectivals and demonyms for former regions}}
+[[Ancient history|Ancient civilization]]s, former [[Colony|colonies]], [[Geographical renaming|renamed]] countries and regions, [[annexation]]s, [[secession]]s, etc. ('''''other than''' Greco-Roman, which see '''[[List of adjectival and demonymic forms of place names#Regions in Greco-Roman antiquity|above]]''''').
+
+===Fictional regions===
+{| class="wikitable"
+! Name             !! Adjective      !! [[Demonym]]
+|-
+| [[Atlantis]]     || Atlantean, Atlantine      || Atlanteans, Atlantans
+|-
+| [[Aloria]]       || Alorn          || Alorns
+|-
+| [[Andor (Wheel of Time)|Andor]]       || Andorian         || Andorians
+|-
+| [[Attilan]]      ||                || Inhumans
+|-
+| [[Lilliput and Blefuscu|Blefuscu]] || Blefuscudian || Blefuscudians
+|-
+| [[Borduria]]       || Bordurian        || Bordurians
+|-
+| [[Brobdingnag]]  || Brobdingnagian || Brobdingnagians
+|-
+| [[Laputa]]       || Laputian        || Laputans
+|-
+| [[Lilliput and Blefuscu|Lilliput]] || Lilliputian  || Lilliputians
+|-
+| Cardassia Prime  || [[Cardassian]] || Cardassians
+|-
+| Bajor            || Bajoran        || [[Bajorans]], Bajora
+|-
+| Ferenginar       || [[Ferengi]]    || Ferengi
+|-
+| [[Gallifrey]]    || Gallifreyan   || Gallifreyans
+|-
+| [[Genosha]]      || Genoshan          || Genoshans
+|-
+|[[Islandia (novel)|Islandia]]
+|Islandian
+|Islandians
+|-
+| [[Latveria]]     || Latverian      || Latverians
+|-
+| [[Gulliver's Travels|Luggnagg]]    ||              || Struldbrugs
+|-
+| [[The Chronicles of Narnia|Narnia]]    || Narnian             || Narnian
+|-
+| [[Land of Oz|Oz]]|| Ozian          || Ozite<ref>{{cite book
+ | last = Baum
+ | first = L. Frank
+ | author-link = L. Frank Baum
+ | title = Dorothy and the Wizard in Oz
+ | publisher = Reilly & Britton
+ | date = 1908
+ | location = United States
+ | pages = 272
+ | language = English
+ | url = https://archive.org/details/dorothywizardino00baum2
+}}</ref>
+|-
+| Qo'noS           || [[Klingon]]    || Klingons
+|-
+| Remus            || Reman          || [[Remans]]
+|-
+| [[Rohan (Middle-earth)|Rohan]]        || Rohirric       || Rohirrim
+|-
+| Romulus          || [[Romulan]]    || [[Romulan]]s
+|-
+| [[Skaro]]        || Skaroene, Skarosian || Skarosians
+|-
+| Sontar           || Sontaran       || [[Sontarans]]
+|-
+| [[Syldavia]]       || Syldavian        || Syldavians
+|-
+| [[Utopia]]       || Utopian        || Utopians
+|-
+| [[Wakanda (comics)|Wakanda]]       || Wakandan || Wakandans
+|-
+| [[Vulcan (Star Trek)#Homeworld|Vulcan]] || [[Vulcan (Star Trek)|Vulcan]], Vulcanian || Vulcans
+|-
+|}
+
+==Cities==
+{{main|Adjectivals and demonyms for cities}}
+
+==See also==
+{{portal|Geography}}
+*[[Demonym]]
+**'''List of adjectival and demonymic forms of place names'''
+***[[List of adjectivals and demonyms for astronomical bodies]]
+***[[List of adjectivals and demonyms for continental regions]]
+****[[List of adjectivals and demonyms for subcontinental regions]]
+***[[List of adjectival and demonymic forms for countries and nations]]
+****[[List of adjectivals and demonyms for Australia]]
+****[[List of adjectivals and demonyms for Canada]]
+****[[List of adjectivals and demonyms for India]]
+****[[List of adjectivals and demonyms for Malaysia]]
+****[[List of adjectivals and demonyms for Mexico]]
+****[[List of adjectivals and demonyms for New Zealand]]
+****[[List of adjectivals and demonyms for the Philippines]]
+****[[List of adjectivals and demonyms for the United States]]
+***[[List of adjectivals and demonyms for cities]]
+***[[List of adjectivals and demonyms for former regions]]
+****[[List of adjectivals and demonyms for Greco-Roman antiquity]]
+***[[List of adjectivals and demonyms for fictional regions]]
+
+==References==
+{{reflist}}
+
+==External links==
+{{Wiktionary|demonym|gentilic}}
+*[http://www.geography-site.co.uk/pages/countries/demonyms.html Alphabetical list of world demonyms]
+*[http://www.everything2.com/index.pl?node=Demonyms%20of%20the%20World Demonyms of the World]
+
+[[Category:Lists of place names|Adjectival Forms Of Place Names]]
+[[Category:Lists of demonyms|Adjectival Forms Of Place Names]]
+[[Category:Etymologies of geographic names|Placename Etymologies]]
