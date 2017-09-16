@@ -74,7 +74,6 @@ public class LocationExtractor extends Extractor {
 
     // count locations for entities 
     for (Theme theme : input()) {
-      System.out.println("count locations for entities");
       for (Fact f : theme) {
         Map<String, Integer> locToCount = null;
         List<String> locs = catToLocations.computeIfAbsent(f.getObject(), cat -> {
@@ -94,6 +93,7 @@ public class LocationExtractor extends Extractor {
     for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
       if (f.getRelation().equals(RDFS.type) && f.getObject().equals(YAGO.person)) {
         Map<String, Integer> locToCount = entityToLocToCount.get(f.getSubject());
+        if (locToCount == null) continue;
 
         // output most frequent location
         int max = Collections.max(locToCount.values());

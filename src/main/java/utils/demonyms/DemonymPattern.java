@@ -36,17 +36,12 @@ public class DemonymPattern {
    * @return
    */
   public static String getPage(String title, String language) {
-    // check cache
+    // load file locally if exists
     String dir = "data/demonyms/";
     String filename = "wiki-" + language + "-" + title + ".txt";
     File cacheFile = new File(dir, filename);
-    boolean reuse = false;
-    if (cacheFile.exists()) {
-      long age = System.currentTimeMillis() - cacheFile.lastModified();
-      reuse = age < 10 * 3600 * 1000; // ten hours
-    }
     String content = null;
-    if (reuse) {
+    if (cacheFile.exists()) {
       // load from cache
       try {
         content = FileUtils.getFileContent(cacheFile);
