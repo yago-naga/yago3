@@ -46,7 +46,6 @@ YAGO3_WIKIDATA_PROPERTY = 'wikidata'
 YAGO3_COMMONSWIKI_PROPERTY = "commons_wiki"
 YAGO3_GEONAMES_PROPERTY = "geonames"
 
-
 WIKIPEDIA_DUMPS_PAGE = 'https://dumps.wikimedia.org/'
 WIKIDATA_DUMPS_PAGE = 'https://dumps.wikimedia.org/wikidatawiki/entities/'
 COMMONSWIKI_DUMP_PAGE = 'https://dumps.wikimedia.org/commonswiki/'
@@ -432,7 +431,8 @@ Invokes the external shell script for downloading and extracting Geonames dump
 def downloadGeonames():
   subprocess.call(
     [os.path.join(os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe()))), DOWNLOAD_GEONAMES_DUMP_SCRIPT),
-    dumpsFolder])
+    dumpsFolder,
+    startDate.strftime("%Y%m%d")])
 
 
 """
@@ -505,9 +505,9 @@ def getCommonsWiki():
 Gets the path to wikidata dump
 """
 def getGeonames():
-  dirs = sorted(os.listdir(os.path.join(dumpsFolder, GEONAMES_DIR)))
-  if len(dirs) == 0: return None
-  return os.path.join(dumpsFolder, GEONAMES_DIR, dirs[-1])
+  # There will always be a folder which is named according to startDate. Either it's a symlink or a real dir,
+  # but this doesn't matter here.
+  return os.path.join(dumpsFolder, GEONAMES_DIR, startDate.strftime("%Y-%m-%d"))
 
 
 if __name__ == "__main__":
