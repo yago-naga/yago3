@@ -8,10 +8,10 @@ YAGO is special in several ways:
   * The accuracy of YAGO has been manually evaluated, proving a confirmed accuracy of 95% (*). Every relation is annotated with its confidence value.
   * YAGO combines the clean taxonomy of WordNet with the richness of the Wikipedia category system, assigning the entities to more than 350,000 classes.
   * YAGO is anchored in time and space. YAGO attaches a temporal dimension and a spatial dimension to many of its facts and entities.
-  * In addition to a taxonomy, YAGO has thematic domains such as "music" or "science" from WordNet Domains.
+  * In addition to taxonomy, YAGO has thematic domains such as "music" or "science" from WordNet Domains.
   * YAGO extracts and combines entities and facts from 10 Wikipedias in different languages.
 
-YAGO is at jointly developed at the [DBWeb group](http://dbweb.enst.fr/) at [Télécom ParisTech University](https://www.telecom-paristech.fr/), the [Databases and Information Systems group](http://www.mpi-inf.mpg.de/departments/databases-and-information-systems/) at the [Max Planck Institute for Informatics](http://www.mpi-inf.mpg.de/home/), and [Ambiverse](https://www.ambiverse.com/).
+YAGO is jointly developed at the [DBWeb group](http://dbweb.enst.fr/) at [Télécom ParisTech University](https://www.telecom-paristech.fr/), the [Databases and Information Systems group](http://www.mpi-inf.mpg.de/departments/databases-and-information-systems/) at the [Max Planck Institute for Informatics](http://www.mpi-inf.mpg.de/home/), and [Ambiverse](https://www.ambiverse.com/).
 
 <!-- TODO: mailing list -->
 
