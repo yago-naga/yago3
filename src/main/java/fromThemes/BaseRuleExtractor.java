@@ -4,18 +4,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.TreeMap;
 
 import basics.Fact;
-import basics.FactSource;
-import basics.FactWriter;
 import extractors.Extractor;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
-import javatools.parsers.NumberFormatter;
 import utils.FactCollection;
 import utils.FactTemplate;
 import utils.Theme;
@@ -223,16 +221,19 @@ public abstract class BaseRuleExtractor extends Extractor {
     return ruleSets;
   }
 
-  public FactCollection loadInputFacts() {
-    FactCollection facts = new FactCollection();
+  private Map<String, Map<String, List<Fact>>> loadInputFacts() {
+    Map<String, Map<String, List<Fact>>> relationToSubjectToFacts = new HashMap<>();
     for (Theme theme : input()) {
       Announce.doing("Loading ", theme);
       for (Fact fact : theme) {
-        facts.add(fact);
+        relationToSubjectToFacts //
+            .computeIfAbsent(fact.getRelation(), k -> new HashMap<>()) //
+            .computeIfAbsent(fact.getSubject(), k -> new ArrayList<Fact>(1)) //
+            .add(fact);
       }
       Announce.done();
     }
-    return facts;
+    return relationToSubjectToFacts;
   }
 
   /** TRUE if the relation of a fact(template) is negated */
@@ -240,7 +241,7 @@ public abstract class BaseRuleExtractor extends Extractor {
     return (f.getRelation().startsWith("-"));
   }
 
-  private void instantiate(Rule r, FactCollection allFacts) throws Exception {
+  private void instantiate(Rule r, Map<String, Map<String, List<Fact>>> relationToSubjectToFacts) throws Exception {
     if (r.isReadyToGo()) {
       for (Fact h : r.headFacts()) {
         write(getRULERESULTS(), h, getRULESOURCES(), /* Theme reference? */
@@ -264,29 +265,48 @@ public abstract class BaseRuleExtractor extends Extractor {
           return;
         }
         // If it is contained in the KB, just return
-        if (allFacts.contains(firstBody.getArg1(), firstBody.getRelation().substring(1), firstBody.getArg2())) return;
+        String relation = firstBody.getRelation().substring(1);
+        if (relationToSubjectToFacts.containsKey(relation)) {
+          List<Fact> factsWithSubjectAndRelation = relationToSubjectToFacts.get(relation).getOrDefault(firstBody.getArg1(), Arrays.asList());
+
+          for (Fact f : factsWithSubjectAndRelation) {
+            if (f.getObject().equals(firstBody.getArg2())) {
+              return;
+            }
+          }
+        }
         // Otherwise continue recursively
-        instantiate(r.rest(Collections.<String, String> emptyMap(), null), allFacts);
+        instantiate(r.rest(Collections.<String, String> emptyMap(), null), relationToSubjectToFacts);
         return;
       }
 
-      Collection<Fact> fc = null;
-
-      if (relBound && subjBound) {
-        fc = allFacts.getFactsWithSubjectAndRelation(r.firstBody().getArg1(), r.firstBody().getRelation());
-      } else if (relBound) {
-        fc = allFacts.getFactsWithRelation(r.firstBody().getRelation());
-      } else if (subjBound) {
-        fc = allFacts.collectFactsWithSubject(r.firstBody().getArg1());
+      List<Collection<Fact>> fcs = new ArrayList<>();
+      if (relBound) {
+        String relation = r.firstBody().getRelation();
+        if (relationToSubjectToFacts.containsKey(relation)) {
+          if (subjBound) {
+            fcs.add(relationToSubjectToFacts.get(relation).getOrDefault(r.firstBody().getArg1(), Arrays.asList()));
+          } else {
+            fcs.addAll(relationToSubjectToFacts.get(relation).values());
+          }
+        }
       } else {
-        fc = allFacts;
+        for (String relation : relationToSubjectToFacts.keySet()) {
+          if (subjBound) {
+            fcs.add(relationToSubjectToFacts.get(relation).getOrDefault(r.firstBody().getArg1(), Arrays.asList()));
+          } else {
+            fcs.addAll(relationToSubjectToFacts.get(relation).values());
+          }
+        }
       }
 
-      for (Fact f : fc) {
-        Map<String, String> map = r.mapFirstTo(f);
+      for (Collection<Fact> fc : fcs) {
+        for (Fact f : fc) {
+          Map<String, String> map = r.mapFirstTo(f);
 
-        if (map != null) {
-          instantiate(r.rest(map, f.getId()), allFacts);
+          if (map != null) {
+            instantiate(r.rest(map, f.getId()), relationToSubjectToFacts);
+          }
         }
       }
 
@@ -295,71 +315,73 @@ public abstract class BaseRuleExtractor extends Extractor {
 
   @Override
   public void extract() throws Exception {
-    List<RuleSet> ruleSets = initializeRuleSet();
-    FactCollection allFacts = loadInputFacts();
+    Announce.warning("DISABLED RULE EXTRACTOR");
 
+    /*List<RuleSet> ruleSets = initializeRuleSet();
+    Map<String, Map<String, List<Fact>>> relationToSubjectToFacts = loadInputFacts();
+    
     Announce.doing("Doing a pass on all rules");
     for (RuleSet rules : ruleSets) {
       for (Rule r : rules.allRules()) {
         Announce.doing("Processing the rule: ", r);
         Announce.message("Starting at", NumberFormatter.ISOtime());
         Announce.doing("Doing a pass on all fact themes");
-        instantiate(r, allFacts);
+        instantiate(r, relationToSubjectToFacts);
         Announce.done();
         Announce.message("Rule " + r + " finished at", NumberFormatter.ISOtime());
         Announce.done();
       }
     }
-    Announce.done();
+    Announce.done();*/
 
   }
 
   // @Override
-  public void extractOld(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
-    List<RuleSet> ruleSets = initializeRuleSet();
-
-    FactCollection allFacts = loadInputFacts();
-
-    Announce.debug(ruleSets);
-    // Loop
-    for (RuleSet rules : ruleSets) {
-      Announce.doing("Applying rules");
-      Announce.debug(rules);
-      RuleSet survivingRules = new RuleSet();
-      do {
-        // Apply all rules
-        Announce.doing("Doing a pass on all facts");
-        int factCounter = 0;
-        for (Fact fact : allFacts) {
-
-          factCounter++;
-          if (factCounter % 10 == 0) Announce.debug("Processed ", factCounter, " facts");
-
-          for (Rule r : rules.potentialMatches(fact)) {
-            Map<String, String> map = r.mapFirstTo(fact);
-            if (map != null) {
-              // Announce.debug("Matched", fact, "with", r);
-              Rule newRule = r.rest(map, fact.getId());
-              if (newRule.isReadyToGo()) {
-                for (Fact h : newRule.headFacts()) {
-                  write(getRULERESULTS(), h, getRULESOURCES(), /*
-                                                               * FactComponent.
-                                                               * forTheme
-                                                               * (reader.getKey())
-                                                               */
-                      "", "RuleExtractor from " + r.original.toString());
-                }
-              } else {
-                survivingRules.add(newRule);
-              }
-            }
-          }
-        }
-        Announce.done();
-        rules = survivingRules;
-        survivingRules = new RuleSet();
-      } while (!rules.isEmpty());
-      Announce.done();
-    }
-  }
+  //public void extractOld(Map<Theme, FactWriter> output, Map<Theme, FactSource> input) throws Exception {
+  //  List<RuleSet> ruleSets = initializeRuleSet();
+  //
+  //  FactCollection allFacts = loadInputFacts();
+  //
+  //  Announce.debug(ruleSets);
+  //  // Loop
+  //  for (RuleSet rules : ruleSets) {
+  //    Announce.doing("Applying rules");
+  //    Announce.debug(rules);
+  //    RuleSet survivingRules = new RuleSet();
+  //    do {
+  //      // Apply all rules
+  //      Announce.doing("Doing a pass on all facts");
+  //      int factCounter = 0;
+  //      for (Fact fact : allFacts) {
+  //
+  //        factCounter++;
+  //        if (factCounter % 10 == 0) Announce.debug("Processed ", factCounter, " facts");
+  //
+  //        for (Rule r : rules.potentialMatches(fact)) {
+  //          Map<String, String> map = r.mapFirstTo(fact);
+  //          if (map != null) {
+  //            // Announce.debug("Matched", fact, "with", r);
+  //            Rule newRule = r.rest(map, fact.getId());
+  //            if (newRule.isReadyToGo()) {
+  //              for (Fact h : newRule.headFacts()) {
+  //                write(getRULERESULTS(), h, getRULESOURCES(), /*
+  //                                                             * FactComponent.
+  //                                                             * forTheme
+  //                                                             * (reader.getKey())
+  //                                                             */
+  //                    "", "RuleExtractor from " + r.original.toString());
+  //              }
+  //            } else {
+  //              survivingRules.add(newRule);
+  //            }
+  //          }
+  //        }
+  //      }
+  //      Announce.done();
+  //      rules = survivingRules;
+  //      survivingRules = new RuleSet();
+  //    } while (!rules.isEmpty());
+  //    Announce.done();
+  //  }
+  //}
 }
