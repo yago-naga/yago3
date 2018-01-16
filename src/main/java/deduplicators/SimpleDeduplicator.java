@@ -98,7 +98,7 @@ public abstract class SimpleDeduplicator extends Extractor {
     Writer tsv = FileUtils.getBufferedUTF8Writer(
         new File(SchemaExtractor.YAGOSCHEMA.file().getParent(), "_factStatistics_" + this.getClass().getSimpleName() + ".tsv"));
     Announce.doing("Loading");
-    FactCollection batch = new FactCollection();
+    FactCollection batch = new FactCollection(false);
     for (Theme theme : inputOrdered()) {
       if (!theme.isAvailableForReading()) continue;
       Announce.doing("Loading from", theme);

@@ -59,10 +59,10 @@ public class FactCollection extends AbstractSet<Fact> {
   protected int size = 0;
 
   /** Maps first arg to relation to facts */
-  protected Map<String, Map<String, Set<Fact>>> index = new HashMap<String, Map<String, Set<Fact>>>();
+  protected final Map<String, Map<String, Set<Fact>>> index = new HashMap<String, Map<String, Set<Fact>>>();
 
   /** Maps relation to facts */
-  protected Map<String, Set<Fact>> relindex = new HashMap<String, Set<Fact>>();
+  protected final Map<String, Set<Fact>> relindex;
 
   /** Adds a fact, adds a source fact and a technique fact */
   public boolean add(Fact fact, String source, String technique) {
@@ -80,8 +80,8 @@ public class FactCollection extends AbstractSet<Fact> {
   /** Type of things that happen when a fact is added */
   public enum Add {
     NULL(false, false, false, false), DUPLICATE(false, false, false, true), TOOGENERAL(false, false, false, true), NOID(false, false, false,
-        false), FUNCLASH(false, false, true, false), MORESPECIFIC(true, true, false, true), ADDED(true, false, false, false), HASID(true, true, false,
-            true);
+        false), FUNCLASH(false, false, true,
+            false), MORESPECIFIC(true, true, false, true), ADDED(true, false, false, false), HASID(true, true, false, true);
 
     public final boolean added;
 
@@ -194,10 +194,10 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** Adds a fact, does not check for duplicates, does not canonicalize */
   public boolean addFast(final Fact fact) {
-    if (!index.computeIfAbsent(fact.getSubject(), k -> new HashMap<>()).computeIfAbsent(fact.getRelation(), k -> new HashSet<>(1)).add(fact))
+    if (!index.computeIfAbsent(fact.getSubject(), k -> new HashMap<>(2)).computeIfAbsent(fact.getRelation(), k -> new HashSet<>(1)).add(fact))
       return (false);
     size++;
-    relindex.computeIfAbsent(fact.getRelation(), k -> new HashSet<>()).add(fact);
+    if (relindex != null) relindex.computeIfAbsent(fact.getRelation(), k -> new HashSet<>()).add(fact);
     return (true);
   }
 
@@ -273,6 +273,7 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** Returns facts with matching relation */
   public Set<Fact> getFactsWithRelation(String relation) {
+    if (relindex == null) throw new IllegalStateException("relation index not initialized, use right constructor!");
     if (!relindex.containsKey(relation)) return (Collections.emptySet());
     return (relindex.get(relation));
   }
@@ -282,6 +283,7 @@ public class FactCollection extends AbstractSet<Fact> {
    * slow.
    */
   public List<Fact> seekFactsWithRelationAndObject(String relation, String arg2) {
+    if (relindex == null) throw new IllegalStateException("relation index not initialized, use right constructor!");
     if (!relindex.containsKey(relation)) return (Collections.emptyList());
     List<Fact> result = new ArrayList<Fact>();
     for (Fact f : relindex.get(relation)) {
@@ -319,12 +321,17 @@ public class FactCollection extends AbstractSet<Fact> {
 
   /** Loads from N4 file. FAST does not check duplicates */
   public FactCollection(FactSource n4File, boolean fast) throws IOException {
+    this();
     if (fast) loadFast(n4File);
     else load(n4File);
   }
 
   public FactCollection() {
+    this(true);
+  }
 
+  public FactCollection(boolean withRelationIndex) {
+    this.relindex = withRelationIndex ? new HashMap<String, Set<Fact>>() : null;
   }
 
   /** Add facts. Checks duplicates */
@@ -346,7 +353,7 @@ public class FactCollection extends AbstractSet<Fact> {
     if (facts == null) return (false);
     facts.remove(fact);
     size--;
-    relindex.get(fact.getRelation()).remove(fact);
+    if (relindex != null) relindex.get(fact.getRelation()).remove(fact);
     if (fact.getId() != null) {
       List<Fact> metaFacts = collectFactsWithSubject(fact.getId());
       for (Fact m : metaFacts) {
@@ -360,7 +367,7 @@ public class FactCollection extends AbstractSet<Fact> {
   @Override
   public void clear() {
     index.clear();
-    relindex.clear();
+    if (relindex != null) relindex.clear();
     size = 0;
   }
 
@@ -394,7 +401,11 @@ public class FactCollection extends AbstractSet<Fact> {
 
   @Override
   public Iterator<Fact> iterator() {
-    return (relindex.entrySet().stream().flatMap(entry -> entry.getValue().stream()).iterator());
+    if (relindex != null) {
+      return (relindex.entrySet().stream().flatMap(entry -> entry.getValue().stream()).iterator());
+    } else {
+      return index.values().stream().flatMap(m -> (m.values().stream().flatMap(s -> s.stream()))).iterator();
+    }
   }
 
   @Override
