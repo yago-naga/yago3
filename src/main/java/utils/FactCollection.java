@@ -525,7 +525,7 @@ public class FactCollection extends AbstractSet<Fact> {
   public FactCollection getReverse() {
     FactCollection reverseFactCollection = new FactCollection();
     for (Fact f : this)
-      reverseFactCollection.addFast(new Fact(f.getObject(), f.getRelation(), f.getSubject()));
+      reverseFactCollection.addFast(new Fact(f.getId(), f.getObject(), f.getRelation(), f.getSubject()));
     return reverseFactCollection;
   }
 
