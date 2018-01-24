@@ -37,7 +37,7 @@ You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
 public class DBpediaLinker extends Extractor {
-
+//TODO: This Extractor is not updated with the changes of includeConcept. YagoTypes -> allEntities, YagoTaxanomy -> YagoTaxanomy+CatMembers? and not just subclass relation
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(CoherentTypeExtractor.YAGOTYPES, ClassExtractor.YAGOTAXONOMY);

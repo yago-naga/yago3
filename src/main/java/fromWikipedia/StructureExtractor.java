@@ -5,8 +5,10 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import basics.Fact;
+import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
@@ -52,14 +54,28 @@ public class StructureExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.STRUCTUREPATTERNS, PatternHardExtractor.TITLEPATTERNS,
-        PatternHardExtractor.AIDACLEANINGPATTERNS, WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
+    Set<Theme> input = new TreeSet<Theme>(Arrays.asList(
+        PatternHardExtractor.STRUCTUREPATTERNS, 
+        PatternHardExtractor.TITLEPATTERNS,
+        PatternHardExtractor.AIDACLEANINGPATTERNS, 
+        PatternHardExtractor.LANGUAGECODEMAPPING));
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.STRUCTUREPATTERNS, PatternHardExtractor.TITLEPATTERNS,
-        PatternHardExtractor.AIDACLEANINGPATTERNS, WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
+    Set<Theme> input = new TreeSet<Theme>(Arrays.asList(
+        PatternHardExtractor.STRUCTUREPATTERNS, 
+        PatternHardExtractor.TITLEPATTERNS,
+        PatternHardExtractor.AIDACLEANINGPATTERNS, 
+        PatternHardExtractor.LANGUAGECODEMAPPING));
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override

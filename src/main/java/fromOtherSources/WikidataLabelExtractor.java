@@ -3,6 +3,7 @@ package fromOtherSources;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -14,10 +15,12 @@ import basics.N4Reader;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
+import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 import fromThemes.CoherentTypeExtractor;
+import fromWikipedia.CategoryExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
@@ -60,7 +63,16 @@ public class WikidataLabelExtractor extends DataExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(CoherentTypeExtractor.YAGOTYPES, PatternHardExtractor.LANGUAGECODEMAPPING);
+    Set<Theme> input = new TreeSet<>();
+    input.add(PatternHardExtractor.LANGUAGECODEMAPPING);
+    if (Extractor.includeConcepts) {
+      input.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
+      input.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
+    }
+    else {
+      input.add(CoherentTypeExtractor.YAGOTYPES);
+    }
+    return input;
   }
 
   @Override
@@ -81,23 +93,27 @@ public class WikidataLabelExtractor extends DataExtractor {
   public static final Theme YAGOWIKIDATAINSTANCES = new Theme("yagoWikidataInstances", "Mappings of YAGO instances to Wikidata QIDs");
 
   /** Facts deduced from categories */
+  public static final Theme WIKIDATAMULTILABELSNEEDSTYPECHECK = new Theme("wikidataMultiLabelsNeedsTypeCheck", "Labels from Wikidata in multiple languages");
   public static final Theme WIKIDATAMULTILABELS = new Theme("wikidataMultiLabels", "Labels from Wikidata in multiple languages");
 
   /** Sources */
   public static final Theme WIKIDATAMULTILABELSOURCES = new Theme("wikidataMultiLabelSources", "Sources for the multilingual labels");
 
   /** Number of translations */
+  public static final Theme WIKIDATATRANSLATIONSNEEDSTYPECHECK = new Theme("wikidataTranslationsNeedsTypeCheck", "Number of translations per entity");
   public static final Theme WIKIDATATRANSLATIONS = new Theme("wikidataTranslations", "Number of translations per entity");
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(WIKIPEDIALABELSOURCES, WIKIPEDIALABELS, WIKIDATAINSTANCES, WIKIDATAMULTILABELSOURCES, WIKIDATAMULTILABELS,
-        WIKIDATATRANSLATIONS);
+    return new FinalSet<Theme>(WIKIPEDIALABELSOURCES, WIKIPEDIALABELS, WIKIDATAINSTANCES, WIKIDATAMULTILABELSOURCES, WIKIDATAMULTILABELSNEEDSTYPECHECK,
+        WIKIDATATRANSLATIONSNEEDSTYPECHECK);
   }
 
   @Override
   public Set<FollowUpExtractor> followUp() {
-    return new FinalSet<FollowUpExtractor>(new TypeChecker(WIKIDATAINSTANCES, YAGOWIKIDATAINSTANCES));
+    return new FinalSet<FollowUpExtractor>(new TypeChecker(WIKIDATAINSTANCES, YAGOWIKIDATAINSTANCES),
+        new TypeChecker(WIKIDATAMULTILABELSNEEDSTYPECHECK, WIKIDATAMULTILABELS),
+        new TypeChecker(WIKIDATATRANSLATIONSNEEDSTYPECHECK, WIKIDATATRANSLATIONS));
   }
 
   @Override
@@ -105,11 +121,21 @@ public class WikidataLabelExtractor extends DataExtractor {
     List<String> availableLanguages = new ArrayList<>(MultilingualExtractor.wikipediaLanguages);
 
     Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
-    Set<String> entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
+    Set<String> entities;
+    if (Extractor.includeConcepts) {
+      entities = new HashSet<>();
+      entities.addAll(CategoryExtractor.CATEGORYMEMBERS.inEnglish().factCollection().getSubjects());
+      for (String lang : MultilingualExtractor.allLanguagesExceptEnglish()) {
+        entities.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguage(lang).factCollection().getSubjects());
+      }
+    }
+    else {
+      entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
+    }
 
     Announce.message("Loaded", languagemap.size(), "languages and ", entities.size(), "entities");
 
-    // first write the English names
+    // first write the English names 
     for (String yagoEntity : entities) {
       write(WIKIPEDIALABELS, new Fact(yagoEntity, YAGO.hasPreferredName, FactComponent.forStringWithLanguage(preferredName(yagoEntity), "eng")),
           WIKIPEDIALABELSOURCES, "<http://wikidata.org>", "WikidataLabelExtractor");
@@ -145,23 +171,21 @@ public class WikidataLabelExtractor extends DataExtractor {
             String mostEnglishName = language2name.get(mostEnglishLan);
             String yagoEntity = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
 
-            if (entities.contains(yagoEntity)) {
-              WIKIDATATRANSLATIONS.write(new Fact(yagoEntity, "<numberOfTranslations>", "" + language2name.size()));
-              // For on all languages
-              for (String lang : language2name.keySet()) {
-                String foreignName = language2name.get(lang);
+            WIKIDATATRANSLATIONSNEEDSTYPECHECK.write(new Fact(yagoEntity, "<numberOfTranslations>", "" + language2name.size()));
+            // For on all languages
+            for (String lang : language2name.keySet()) {
+              String foreignName = language2name.get(lang);
 
-                // Check if the language is available (input languages)
-                if (availableLanguages.contains(lang))
-                  WIKIDATAINSTANCES.write(new Fact(FactComponent.forForeignYagoEntity(foreignName, lang), RDFS.sameas, lastqid));
+              // Check if the language is available (input languages)
+              if (availableLanguages.contains(lang))
+                WIKIDATAINSTANCES.write(new Fact(FactComponent.forForeignYagoEntity(foreignName, lang), RDFS.sameas, lastqid));
 
-                // Change 2-letter language code to 3-letter
-                if (lang.length() == 2) lang = languagemap.get(lang);
-                if (lang == null || lang.length() != 3) continue;
-                for (String name : trivialNamesOf(foreignName)) {
-                  write(WIKIDATAMULTILABELS, new Fact(yagoEntity, RDFS.label, FactComponent.forStringWithLanguage(name, lang)),
-                      WIKIDATAMULTILABELSOURCES, "<http://wikidata.org>", "WikidataLabelExtractor");
-                }
+              // Change 2-letter language code to 3-letter
+              if (lang.length() == 2) lang = languagemap.get(lang);
+              if (lang == null || lang.length() != 3) continue;
+              for (String name : trivialNamesOf(foreignName)) {
+                write(WIKIDATAMULTILABELSNEEDSTYPECHECK, new Fact(yagoEntity, RDFS.label, FactComponent.forStringWithLanguage(name, lang)),
+                    WIKIDATAMULTILABELSOURCES, "<http://wikidata.org>", "WikidataLabelExtractor");
               }
             }
           }

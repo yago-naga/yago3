@@ -4,12 +4,14 @@ import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
 import java.util.Set;
+import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import basics.Fact;
 import basics.FactComponent;
 import extractors.EnglishWikipediaExtractor;
+import extractors.Extractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import javatools.administrative.Announce;
@@ -57,13 +59,22 @@ public class CoordinateExtractor extends EnglishWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(WordnetExtractor.PREFMEANINGS, PatternHardExtractor.TITLEPATTERNS);
+    Set<Theme> input = new TreeSet<>();
+    input.add(PatternHardExtractor.TITLEPATTERNS);
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<Theme>(WordnetExtractor.PREFMEANINGS, PatternHardExtractor.TITLEPATTERNS);
-  }
+    Set<Theme> input = new TreeSet<>();
+    input.add(PatternHardExtractor.TITLEPATTERNS);
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;  }
 
   @Override
   public Set<Theme> output() {

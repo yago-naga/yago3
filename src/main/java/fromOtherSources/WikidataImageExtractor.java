@@ -273,27 +273,29 @@ public class WikidataImageExtractor extends DataExtractor {
     Set<String> types = transitiveTypes.get(entity);
 		String category = "other";
 		
-    for (String type : types) {
-      if (type.contains("person")) {
-				category = "person";
-				break;
-			}
-      if (type.contains("location")) {
-				category = "location";
-				break;
-			}
-      if (type.contains("organization")) {
-				category = "organization";
-				break;
-			}
-      if (type.contains("artifact")) {
-				category = "artifact";
-				break;
-			}
-      if (type.contains("event")) {
-				category = "event";
-				break;
-			}		
+		if (types != null) {
+      for (String type : types) {
+        if (type.contains("person")) {
+  				category = "person";
+  				break;
+  			}
+        if (type.contains("location")) {
+  				category = "location";
+  				break;
+  			}
+        if (type.contains("organization")) {
+  				category = "organization";
+  				break;
+  			}
+        if (type.contains("artifact")) {
+  				category = "artifact";
+  				break;
+  			}
+        if (type.contains("event")) {
+  				category = "event";
+  				break;
+  			}		
+  		}
 		}
 		return category;
 	}

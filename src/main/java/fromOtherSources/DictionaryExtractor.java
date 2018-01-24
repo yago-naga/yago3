@@ -15,6 +15,7 @@ import basics.Fact;
 import basics.FactComponent;
 import basics.N4Reader;
 import extractors.DataExtractor;
+import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
@@ -83,7 +84,12 @@ public class DictionaryExtractor extends DataExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
+    if (Extractor.includeConcepts) {
+      return new FinalSet<>(PatternHardExtractor.TITLEPATTERNS);
+    }
+    else {
+      return new FinalSet<>(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
+    }
   }
 
   @Override
