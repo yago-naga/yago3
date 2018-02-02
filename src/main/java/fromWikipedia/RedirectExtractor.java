@@ -127,7 +127,9 @@ public class RedirectExtractor extends MultilingualWikipediaExtractor {
     Matcher m = pattern.matcher(redirect);
 
     if (m.find()) {
-      return m.group(1);
+      String entity = m.group(1);
+      entity = entity.substring(0, 1).toUpperCase() + (entity.length() > 1 ? entity.substring(1, entity.length()):"");
+      return entity;
     } else {
       return null;
     }

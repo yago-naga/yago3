@@ -90,7 +90,7 @@ public class ParallelCaller {
 
   /** Number of threads we want */
   protected static int numThreads = 16;
-
+  
   /** Starting time */
   protected static long startTime;
 
@@ -457,6 +457,13 @@ public class ParallelCaller {
     numThreads = Parameters.getInt("numThreads", numThreads);
     createWikipediaList(Parameters.getList("languages"), Parameters.getList("wikipedias"));
     boolean reuse = Parameters.getBoolean("reuse", false);
+    boolean includeConcepts = Parameters.getBoolean("includeConcepts", false);
+    Extractor.includeConcepts = includeConcepts;
+    if (includeConcepts) {
+      D.p("Including Concepts");
+    } else {
+      D.p("Only Named Entities");
+    }
     outputFolder = simulate ? Parameters.getFile("yagoSimulationFolder") : Parameters.getFile("yagoFolder");
     extractorsToDo = new ArrayList<>(extractors(Parameters.getList("extractors")));
 

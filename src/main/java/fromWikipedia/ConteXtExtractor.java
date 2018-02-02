@@ -5,8 +5,10 @@ import java.io.File;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import basics.Fact;
+import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
@@ -52,15 +54,28 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CONTEXTPATTERNS, PatternHardExtractor.TITLEPATTERNS,
-        PatternHardExtractor.AIDACLEANINGPATTERNS, WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
+    Set<Theme> input = new TreeSet<>();
+    input.add(PatternHardExtractor.TITLEPATTERNS);
+    input.add(PatternHardExtractor.CONTEXTPATTERNS);
+    input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
+    input.add(PatternHardExtractor.LANGUAGECODEMAPPING);
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new HashSet<Theme>(Arrays.asList(PatternHardExtractor.CONTEXTPATTERNS, PatternHardExtractor.TITLEPATTERNS,
-        PatternHardExtractor.AIDACLEANINGPATTERNS, WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING));
-  }
+    Set<Theme> input = new TreeSet<>();
+    input.add(PatternHardExtractor.TITLEPATTERNS);
+    input.add(PatternHardExtractor.CONTEXTPATTERNS);
+    input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
+    input.add(PatternHardExtractor.LANGUAGECODEMAPPING);
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;  }
 
   public static final MultilingualTheme CONTEXTFACTSNEEDSTRANSLATION = new MultilingualTheme("conteXtFactsNeedsTranslation",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");

@@ -6,7 +6,6 @@ import java.io.Reader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -75,9 +74,17 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<Theme>(
-        Arrays.asList(WordnetExtractor.PREFMEANINGS, PatternHardExtractor.INFOBOXTEMPORALPATTERNS, PatternHardExtractor.INFOBOXREPLACEMENTS,
-            WordnetExtractor.WORDNETWORDS, HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER, PatternHardExtractor.TITLEPATTERNS));
+    Set<Theme> input = new TreeSet<Theme>(Arrays.asList(
+        PatternHardExtractor.TITLEPATTERNS, 
+        PatternHardExtractor.INFOBOXTEMPORALPATTERNS,
+        PatternHardExtractor.INFOBOXREPLACEMENTS,
+        WordnetExtractor.WORDNETWORDS, 
+        HardExtractor.HARDWIREDFACTS, 
+        PatternHardExtractor.DATEPARSER));
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   /** Infobox facts, non-checked */

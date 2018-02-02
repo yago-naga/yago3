@@ -5,7 +5,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import basics.Fact;
+import extractors.Extractor;
 import extractors.MultilingualExtractor;
+import fromOtherSources.AllEntitiesTypesExtractorFromWikidata;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.PersonNameExtractor;
@@ -60,6 +62,11 @@ public class AIDAFunctionalExtractor extends SimpleDeduplicator {
 
     // Metadata.
     input.addAll(WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    
+    // Name Entities.
+    if (Extractor.includeConcepts) {
+      input.add(AllEntitiesTypesExtractorFromWikidata.ALL_ENTITIES_WIKIDATA);
+    }
 
     return input;
   }
