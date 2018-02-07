@@ -5,6 +5,7 @@ import java.util.Set;
 
 import basics.Fact;
 import basics.FactSource;
+import extractors.Extractor;
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
@@ -56,8 +57,16 @@ public class PatternHardExtractor extends HardExtractor {
   public static final Theme INFOBOXREPLACEMENTS = new Theme("_infoboxReplacements", "The Wikipedia infobox patterns used in YAGO");
 
   /** Patterns of titles */
-  public static final Theme TITLEPATTERNS = new Theme("_titlePatterns", "The replacement patterns for Wikipedia titles used in YAGO");
-
+  public static final Theme TITLEPATTERNS;
+  static {
+    if (Extractor.includeConcepts) {
+      TITLEPATTERNS = new Theme("_titlePatterns_includeConcepts", "The replacement patterns for Wikipedia titles used in YAGO");
+    }
+    else {
+      TITLEPATTERNS = new Theme("_titlePatterns_onlyNamedEntities", "The replacement patterns for Wikipedia titles used in YAGO");
+    }
+  }
+  
   /** Patterns of strings for the TermParser */
   public static final Theme STRINGPARSER = new Theme("_stringParser", "The replacement patterns for string extraction");
 

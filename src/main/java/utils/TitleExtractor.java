@@ -5,6 +5,7 @@ import java.io.Reader;
 import java.util.Set;
 
 import basics.FactComponent;
+import extractors.Extractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromThemes.CoherentTypeExtractor;
@@ -39,6 +40,7 @@ License for more details.
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 public class TitleExtractor {
 
   /** Holds the patterns to apply to titles */
@@ -70,7 +72,7 @@ public class TitleExtractor {
       throw new RuntimeException("The TitleExtractor needs PatternHardExtractor.TITLEPATTERNS as input.");
     }
     replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS, "<_titleReplace>");
-    if (FactComponent.isEnglish(language)) {
+    if (FactComponent.isEnglish(language) && !Extractor.includeConcepts) {
       if (CoherentTypeExtractor.YAGOTYPES.isAvailableForReading()) {
         this.entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
         this.wordnetWords = null;

@@ -2,11 +2,14 @@ package fromWikipedia;
 
 import java.io.BufferedReader;
 import java.io.File;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.TreeSet;
 
 import basics.Fact;
 import basics.FactComponent;
+import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
@@ -49,7 +52,13 @@ public class WikiIdExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS, PatternHardExtractor.LANGUAGECODEMAPPING);
+    Set<Theme> input = new TreeSet<Theme>(Arrays.asList(
+        PatternHardExtractor.TITLEPATTERNS, 
+        PatternHardExtractor.LANGUAGECODEMAPPING));
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   public static final MultilingualTheme WIKIPEDIAIDFACTSNEEDSTRANSLATION = new MultilingualTheme("wikipediaIdNeedsTranslation",

@@ -4,16 +4,19 @@ import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
+import java.util.TreeSet;
 
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
+import fromOtherSources.AllEntitiesTypesExtractorFromWikidata;
 import fromOtherSources.HardExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
+import utils.EntityType;
 import utils.FactCollection;
 import utils.Theme;
 
@@ -39,6 +42,7 @@ License for more details.
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 */
+
 public class TypeChecker extends FollowUpExtractor {
 
   @Override
@@ -48,7 +52,15 @@ public class TypeChecker extends FollowUpExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(checkMe, TransitiveTypeExtractor.TRANSITIVETYPE, HardExtractor.HARDWIREDFACTS);
+    Set<Theme> res = new TreeSet<>();
+    res.add(checkMe);
+    res.add(HardExtractor.HARDWIREDFACTS);
+    res.add(TransitiveTypeExtractor.TRANSITIVETYPE);
+    if (Extractor.includeConcepts) {
+      res.add(AllEntitiesTypesExtractorFromWikidata.ALL_ENTITIES_WIKIDATA);//TODO Change this if the splitting theme is changed
+    }
+    
+    return res;
   }
 
   /** Constructor, takes theme to be checked and theme to output */
@@ -62,6 +74,7 @@ public class TypeChecker extends FollowUpExtractor {
 
   /** Holds the transitive types in a map from subjects to types */
   protected Map<String, Set<String>> types = new HashMap<>();
+  protected Map<String, EntityType> entities = new HashMap<>();
 
   /** Holds Relations without domain/range */
   protected Set<String> untypedRelations = new HashSet<>();
@@ -154,7 +167,12 @@ public class TypeChecker extends FollowUpExtractor {
       case RDFS.resource:
         return (true);
       case YAGO.entity:
-        return (types.containsKey(entity));
+        if (Extractor.includeConcepts && entities.containsKey(entity) && entities.get(entity) != EntityType.NAMED_ENTITY) {
+          return (entities.containsKey(entity));
+        }
+        else {
+          return (types.containsKey(entity));
+        }
       case RDFS.statement:
         return (FactComponent.isFactId(entity));
       case RDFS.clss:
@@ -163,12 +181,18 @@ public class TypeChecker extends FollowUpExtractor {
         return (entity.startsWith("<http"));
     }
 
+    if (Extractor.includeConcepts && entities.containsKey(entity) && entities.get(entity) != EntityType.NAMED_ENTITY) {
+      return true;
+    }
     Set<String> myTypes = types.get(entity);
     return (myTypes != null && myTypes.contains(type));
   }
 
   @Override
   public void extract() throws Exception {
+    if (Extractor.includeConcepts) {
+      entities = AllEntitiesTypesExtractorFromWikidata.getAllEntitiesToSplitType();
+    }
     types = TransitiveTypeExtractor.getSubjectToTypes();
 
     schema = HardExtractor.HARDWIREDFACTS.factCollection();

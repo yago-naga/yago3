@@ -2,7 +2,6 @@ package fromWikipedia;
 
 import java.io.File;
 import java.io.Reader;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +10,7 @@ import java.util.TreeSet;
 import basics.Fact;
 import basics.Fact.ImplementationNote;
 import basics.FactComponent;
+import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.CategoryTranslator;
 import followUp.FollowUpExtractor;
@@ -57,13 +57,24 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS, 
-        DictionaryExtractor.CATEGORYWORDS, RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(language)));
+    Set<Theme> input = new TreeSet<>();
+    input.add(PatternHardExtractor.TITLEPATTERNS);
+    input.add(DictionaryExtractor.CATEGORYWORDS);
+    input.add(RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(language));
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<>(WordnetExtractor.PREFMEANINGS, DictionaryExtractor.CATEGORYWORDS);
+    Set<Theme> input = new TreeSet<>();
+    input.add(DictionaryExtractor.CATEGORYWORDS);
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override

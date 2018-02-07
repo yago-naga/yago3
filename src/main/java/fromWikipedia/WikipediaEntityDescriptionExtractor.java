@@ -18,6 +18,7 @@ import java.util.regex.Matcher;
 import basics.Fact;
 import basics.FactComponent;
 import basics.YAGO;
+import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
@@ -75,11 +76,14 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
 
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(
+    Set<Theme> input = new TreeSet<Theme>(Arrays.asList(
         PatternHardExtractor.TITLEPATTERNS, 
-        WordnetExtractor.PREFMEANINGS,
         RedirectExtractor.REDIRECT_FACTS_DIRTY.inLanguage(language), 
         DictionaryExtractor.CATEGORYWORDS));
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override

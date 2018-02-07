@@ -3,6 +3,7 @@ package fromWikipedia;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -13,6 +14,7 @@ import java.util.TreeSet;
 
 import basics.Fact;
 import basics.FactComponent;
+import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.FollowUpExtractor;
 import followUp.InfoboxTemplateTranslator;
@@ -74,12 +76,24 @@ public class InfoboxExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(PatternHardExtractor.INFOBOXREPLACEMENTS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
+    Set<Theme> input = new TreeSet<Theme>(Arrays.asList(
+        PatternHardExtractor.INFOBOXREPLACEMENTS, 
+        PatternHardExtractor.TITLEPATTERNS));
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<Theme>(PatternHardExtractor.INFOBOXREPLACEMENTS, PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS);
+    Set<Theme> input = new TreeSet<Theme>(Arrays.asList(
+        PatternHardExtractor.INFOBOXREPLACEMENTS, 
+        PatternHardExtractor.TITLEPATTERNS));
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override

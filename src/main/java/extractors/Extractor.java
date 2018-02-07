@@ -40,6 +40,8 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 public abstract class Extractor implements Comparable<Extractor> {
 
+  public static boolean includeConcepts;
+  
   /** The themes required */
   public abstract Set<Theme> input();
 

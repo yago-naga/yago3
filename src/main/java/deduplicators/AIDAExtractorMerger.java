@@ -61,7 +61,7 @@ public class AIDAExtractorMerger extends Extractor {
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>", "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>",
       YAGO.hasImageID, YAGO.hasWikiPage, YAGO.hasImageUrl, YAGO.hasGloss, YAGO.hasLicense, YAGO.hasAuthor, YAGO.hasTrademark,
-      YAGO.hasName, YAGO.hasUrl, YAGO.hasOTRSId, YAGO.hasShortDescription, YAGO.hasLongDescription);
+      YAGO.hasName, YAGO.hasUrl, YAGO.hasOTRSId, YAGO.hasShortDescription, YAGO.hasLongDescription, YAGO.isNamedEntity);
 
   @Override
   public Set<Theme> input() {
@@ -70,6 +70,7 @@ public class AIDAExtractorMerger extends Extractor {
     //YAGO functional facts needed for AIDA
     //hasWIkipediaUrl, hasGender
     //hasGivenName, hasFamilyName
+    //isNamedEntity (when including Concepts)
     input.add(AIDAFunctionalExtractor.AIDAFUNCTIONALFACTS);
 
     //the rest of the facts that don't need functional check

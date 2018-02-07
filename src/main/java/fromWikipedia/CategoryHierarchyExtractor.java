@@ -9,6 +9,7 @@ import java.util.TreeSet;
 
 import basics.Fact;
 import basics.FactComponent;
+import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.CategoryTranslator;
 import followUp.FollowUpExtractor;
@@ -57,7 +58,13 @@ public class CategoryHierarchyExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(PatternHardExtractor.TITLEPATTERNS, WordnetExtractor.PREFMEANINGS, DictionaryExtractor.CATEGORYWORDS));
+    Set<Theme> input = new TreeSet<>();
+    input.add(PatternHardExtractor.TITLEPATTERNS);
+    input.add(DictionaryExtractor.CATEGORYWORDS);
+    if (!Extractor.includeConcepts) {
+      input.add(WordnetExtractor.PREFMEANINGS);
+    }
+    return input;
   }
 
   @Override

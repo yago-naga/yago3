@@ -95,7 +95,7 @@ public class WordnetExtractor extends DataExtractor {
 
     Collection<String> instances = new HashSet<String>(8000);
     for (String line : new FileLines(new File(inputData, "wn_ins.pl"), "Loading instances")) {
-      line = line.replace("''", "'"); //TODO: what is this?
+      line = line.replace("''", "'");
       Matcher m = RELATIONPATTERN.matcher(line);
       if (!m.matches()) {
         continue;
@@ -107,7 +107,7 @@ public class WordnetExtractor extends DataExtractor {
     String lastClass = "";
 
     for (String line : new FileLines(new File(inputData, "wn_s.pl"), "Loading synsets")) {
-      line = line.replace("''", "'"); // TODO: Does this work for
+      line = line.replace("''", "'");
       // wordnet_child's_game_100483935 ?
       Matcher m = SYNSETPATTERN.matcher(line);
       if (!m.matches()) {
@@ -120,11 +120,9 @@ public class WordnetExtractor extends DataExtractor {
       if (instances.contains(id)) continue;
       // The instance list does not contain all instances...
       if (Name.couldBeName(word)) {
-        //System.out.println("NAME: " + id + " " + word);
         continue;
       }
       if (!type.equals("n")) {
-        //System.out.println("NOT N: " + id + " " + word);
         continue;
       }
       if (!id.equals(lastId)) {
