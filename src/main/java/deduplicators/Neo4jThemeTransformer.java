@@ -61,6 +61,10 @@ import fromWikipedia.WikipediaEntityDescriptionExtractor;
 import utils.Theme;
 
 public class Neo4jThemeTransformer extends Extractor {
+  
+  public Neo4jThemeTransformer(String yagoOutputFolderPath) {
+    YAGO_OUTPUT_PATH = yagoOutputFolderPath;
+  }
 
   private static Map<String, String> entity_wikidataId;
 
@@ -163,6 +167,8 @@ public class Neo4jThemeTransformer extends Extractor {
   private static String command = "";
 
   private static final String YAGO_OUTPUT_PATH_PLACEHOLDER = "YAGOOUTPUTPATH/";
+
+  protected static String YAGO_OUTPUT_PATH;
   
   private static final String commandFile = "import_script.txt";
   
@@ -993,7 +999,7 @@ public class Neo4jThemeTransformer extends Extractor {
     values.add(wikidatasize.toString());
     
     headers.add("datasource_YAGO3");
-    values.add(YAGO_OUTPUT_PATH_PLACEHOLDER);
+    values.add(YAGO_OUTPUT_PATH);
     
     headers.add("creationDate");
     values.add(new Date().toString());
@@ -1024,12 +1030,12 @@ public class Neo4jThemeTransformer extends Extractor {
   }
 
   private void writeToFile(String fileName, String headerFileName, String[] headers, List<String[]> lines) throws IOException {
-    tempNewHeaderCsv = new CSVWriter(new FileWriter(new File(YAGO_OUTPUT_PATH_PLACEHOLDER + headerFileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER,
+    tempNewHeaderCsv = new CSVWriter(new FileWriter(new File(YAGO_OUTPUT_PATH + headerFileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER,
         CSVWriter.NO_ESCAPE_CHARACTER);
     tempNewHeaderCsv.writeNext(headers);
     tempNewHeaderCsv.close();
 
-    tempNewCsv = new CSVWriter(new FileWriter(new File(YAGO_OUTPUT_PATH_PLACEHOLDER + fileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER);
+    tempNewCsv = new CSVWriter(new FileWriter(new File(YAGO_OUTPUT_PATH + fileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER);
     for (String[] line : lines) {
       for (int i = 0; i < line.length; i++) {
         line[i] = '"' + line[i].replaceAll("\"", "") + '"';
@@ -1040,7 +1046,7 @@ public class Neo4jThemeTransformer extends Extractor {
   }
   
   private void writeToFile(String fileName, List<String[]> lines) throws IOException {
-    tempNewCsv = new CSVWriter(new FileWriter(new File(YAGO_OUTPUT_PATH_PLACEHOLDER + fileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER);
+    tempNewCsv = new CSVWriter(new FileWriter(new File(YAGO_OUTPUT_PATH + fileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER);
     for (String[] line : lines) {
       for (int i = 0; i < line.length; i++) {
         line[i] = '"' + line[i].replaceAll("\"", "") + '"';

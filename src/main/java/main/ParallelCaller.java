@@ -20,6 +20,7 @@ import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import deduplicators.Neo4jThemeTransformer;
 import extractors.DataExtractor;
 import extractors.EnglishWikipediaExtractor;
 import extractors.Extractor;
@@ -632,6 +633,8 @@ public class ParallelCaller {
         File input = null;
         if (m.group(2) != null && !m.group(2).isEmpty()) input = new File(m.group(2));
         extractors.add(DataExtractor.forName((Class<DataExtractor>) clss, input));
+      } else if (superclasses.contains(Neo4jThemeTransformer.class)) {
+        extractors.add(new Neo4jThemeTransformer(outputFolder.getAbsolutePath()));
       } else {
         extractors.add(Extractor.forName((Class<Extractor>) clss));
       }
