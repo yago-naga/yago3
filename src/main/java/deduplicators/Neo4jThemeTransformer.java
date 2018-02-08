@@ -58,12 +58,17 @@ import fromWikipedia.RedirectExtractor;
 import fromWikipedia.StructureExtractor;
 import fromWikipedia.WikiInfoExtractor;
 import fromWikipedia.WikipediaEntityDescriptionExtractor;
+import javatools.administrative.Announce;
 import utils.Theme;
 
 public class Neo4jThemeTransformer extends Extractor {
   
   public Neo4jThemeTransformer(String yagoOutputFolderPath) {
     YAGO_OUTPUT_PATH = yagoOutputFolderPath;
+    if (YAGO_OUTPUT_PATH.charAt(YAGO_OUTPUT_PATH.length()-1) != '/') {
+      YAGO_OUTPUT_PATH += "/";
+    }
+    Announce.message("Yago output path: " + YAGO_OUTPUT_PATH);
   }
 
   private static Map<String, String> entity_wikidataId;
@@ -343,21 +348,21 @@ public class Neo4jThemeTransformer extends Extractor {
   public void extract() throws Exception {
     long startTime, startTimeFileMaking;
 
-    System.out.println("Starting " + WikidataLabelExtractor.WIKIDATAINSTANCES.name);
+    Announce.doing("Starting " + WikidataLabelExtractor.WIKIDATAINSTANCES.name);
     startTime = System.currentTimeMillis();
     entity_wikidataId = WikidataLabelExtractor.WIKIDATAINSTANCES.factCollection().getMap(RDFS.sameas);
     WikidataLabelExtractor.WIKIDATAINSTANCES.killCache();
-    System.out.println("Finishing " + WikidataLabelExtractor.WIKIDATAINSTANCES.name + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + WikidataLabelExtractor.WIKIDATAINSTANCES.name + (System.currentTimeMillis() - startTime));
 
 
     // Loading yagoWikipediaInfo Multilingual theme.
     // In these theme we want only "<hasWikipediaUrl>" relation. (In AIDAMerger).
     // We first make a temp map of the relation with WikidataInstances and then
     // make the temp list of String arrays as lines of the Csv file.
-    System.out.println("Starting " + wikipeidiaUrlNodesFileName + " " + hasWikipediaUrlRelationsFileName);
+    Announce.doing("Starting " + wikipeidiaUrlNodesFileName + " " + hasWikipediaUrlRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     for (Theme theme : WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation("<hasWikipediaUrl>")) {
         String entity = f.getSubject();
@@ -367,7 +372,7 @@ public class Neo4jThemeTransformer extends Extractor {
         tempRelations.add(new String[] { entity_wikidataId.get(entity), wikipediaUrl });
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
 
     writeToFile(wikipeidiaUrlNodesFileName, wikipeidiaUrlNodesHeaderFileName, new String[] { "url:ID(WikipediaUrl)" }, tempNodes);
@@ -379,7 +384,7 @@ public class Neo4jThemeTransformer extends Extractor {
     addNodesToCommand("WikipediaUrl", wikipeidiaUrlNodesFileName, wikipeidiaUrlNodesHeaderFileName);
     addRelationsToCommand("hasWikipediaUrl", hasWikipediaUrlRelationsFileName, hasWikipediaUrlRelationsHeaderFileName);
 
-    System.out.println(
+    Announce.done(
         "Finishing " + wikipeidiaUrlNodesFileName + " " + hasWikipediaUrlRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
 
 
@@ -387,7 +392,7 @@ public class Neo4jThemeTransformer extends Extractor {
     // Since each WikidataInstance has only one Image now, we do not need to keep them
     // in a map first. We can directly create the lines of Csv Node and Relation files.
     // Here we also need the relation <hasTrademark> in wikidataImageLicenses.
-    System.out.println("Starting " + wikidataImageNodesFileName + " " + hasImageRelationsFileName);
+    Announce.doing("Starting " + wikidataImageNodesFileName + " " + hasImageRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     for (Fact f : WikidataImageExtractor.WIKIDATAIMAGES.factCollection().getFactsWithRelation(YAGO.hasImageID)) {
       String entity = f.getSubject();
@@ -413,13 +418,13 @@ public class Neo4jThemeTransformer extends Extractor {
     addNodesToCommand("WikidataImage", wikidataImageNodesFileName, wikidataImageNodesHeaderFileName);
     addRelationsToCommand("hasImage", hasImageRelationsFileName, hasImageRelationsHeaderFileName);
 
-    System.out
-        .println("Finishing " + wikidataImageNodesFileName + " " + hasImageRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
+    Announce.done
+        ("Finishing " + wikidataImageNodesFileName + " " + hasImageRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
 
 
     // Loading wikidataImageLicenses theme.
     // Interesting relations are: <hasLicense>, <hasAuthor> (<hasName> and <hasUrl>), <hasOTRSPermissionTicketID> 
-    System.out.println("Starting " + wikidataImageLicenseNodesFileName + " " + hasLicenseRelationsFileName);
+    Announce.doing("Starting " + wikidataImageLicenseNodesFileName + " " + hasLicenseRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     // For Licenses, we make new License nodes and relationship between ImageWikipage and License.
     for (Fact f : WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getFactsWithRelation(YAGO.hasLicense)) {
@@ -441,11 +446,11 @@ public class Neo4jThemeTransformer extends Extractor {
     addNodesToCommand("WikidataImageLicense", wikidataImageLicenseNodesFileName, wikidataImageLicenseNodesHeaderFileName);
     addRelationsToCommand("hasLicense", hasLicenseRelationsFileName, hasLicenseRelationsHeaderFileName);
 
-    System.out.println(
+    Announce.done(
         "Finishing " + wikidataImageLicenseNodesFileName + " " + hasLicenseRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
 
 
-    System.out.println("Starting " + authorNodesFileName + " " + hasAuthorRelationsFileName);
+    Announce.doing("Starting " + authorNodesFileName + " " + hasAuthorRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     // For Author, we make new Author Nodes.
     // Here we need a mix constraint on both name and url but for now we just put an extra ID.
@@ -474,10 +479,10 @@ public class Neo4jThemeTransformer extends Extractor {
     addNodesToCommand("Author", authorNodesFileName, authorNodesHeaderFileName);
     addRelationsToCommand("hasAuthor", hasAuthorRelationsFileName, hasAuthorRelationsHeaderFileName);
 
-    System.out.println("Finishing " + authorNodesFileName + " " + hasAuthorRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
+    Announce.done("Finishing " + authorNodesFileName + " " + hasAuthorRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
 
 
-    System.out.println("Starting " + OTRSPermissionNodesFileName + " " + hasOTRSPermissionRelationsFileName);
+    Announce.doing("Starting " + OTRSPermissionNodesFileName + " " + hasOTRSPermissionRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     for (Fact f : WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getFactsWithRelation(YAGO.hasOTRSId)) {
       String imageWikipage = f.getSubject();
@@ -496,13 +501,13 @@ public class Neo4jThemeTransformer extends Extractor {
     addNodesToCommand("OTRSPermission", OTRSPermissionNodesFileName, OTRSPermissionNodesHeaderFileName);
     addRelationsToCommand("hasOTRSPermission", hasOTRSPermissionRelationsFileName, hasOTRSPermissionRelationsHeaderFileName);
 
-    System.out.println(
+    Announce.done(
         "Finishing " + OTRSPermissionNodesFileName + " " + hasOTRSPermissionRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
 
-    System.out.println("Starting " + hasInternalWikipediaLinkToRelationsFileName);
+    Announce.doing("Starting " + hasInternalWikipediaLinkToRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     for (Theme theme : StructureExtractor.STRUCTUREFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation("<hasInternalWikipediaLinkTo>")) {
         String entity1 = f.getSubject();
@@ -519,7 +524,7 @@ public class Neo4jThemeTransformer extends Extractor {
         }
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
     writeToFile(hasInternalWikipediaLinkToRelationsFileName, hasInternalWikipediaLinkToRelationsHeaderFileName,
         new String[] { ":START_ID(WikidataInstance)", ":END_ID(WikidataInstance)", "anchorText" }, tempRelations);
@@ -527,10 +532,10 @@ public class Neo4jThemeTransformer extends Extractor {
 
     addRelationsToCommand("hasInternalWikipediaLinkTo", hasInternalWikipediaLinkToRelationsFileName,
         hasInternalWikipediaLinkToRelationsHeaderFileName);
-    System.out.println("Finishing " + hasInternalWikipediaLinkToRelationsFileName + " " + (System.currentTimeMillis() - startTimeFileMaking));
+    Announce.done("Finishing " + hasInternalWikipediaLinkToRelationsFileName + " " + (System.currentTimeMillis() - startTimeFileMaking));
     
     // Geo Locations
-    System.out.println("Starting " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName);
+    Announce.doing("Starting " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     for (Fact f : WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getFactsWithRelation(YAGO.hasGeoLocation)) {
       String entity = f.getSubject();
@@ -555,11 +560,11 @@ public class Neo4jThemeTransformer extends Extractor {
     addNodesToCommand("Location", geoLocationNodesFileName, geoLocationNodesHeaderFileName);
     addRelationsToCommand("hasGeoLocation",hasGeoLocationRelationsFileName, hasGeoLocationRelationsHeaderFileName);
 
-    System.out
-        .println("Finishing " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
+    Announce.done
+        ("Finishing " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
 
     // Adding Types:
-    System.out.println("Starting " + typeNodesFileName + " " + hasTypeRelationsFileName + " " + hasWikipediaCategoryRelationsFileName + " "
+    Announce.doing("Starting " + typeNodesFileName + " " + hasTypeRelationsFileName + " " + hasWikipediaCategoryRelationsFileName + " "
         + isSubclassOfRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     Map<String, Set<String>> wikidataId_types = new HashMap<>();
@@ -567,7 +572,7 @@ public class Neo4jThemeTransformer extends Extractor {
     Map<String, Set<String>> type_glosses = new HashMap<>();
     Set<String> types = new HashSet<>();
 
-    System.out.println("Starting " + SchemaExtractor.YAGOSCHEMA.name);
+    Announce.doing("Starting " + SchemaExtractor.YAGOSCHEMA.name);
     startTime = System.currentTimeMillis();
     for (Fact f : SchemaExtractor.YAGOSCHEMA.factCollection().getFactsWithRelation(RDFS.type)) {
       String entity = f.getSubject();
@@ -578,10 +583,10 @@ public class Neo4jThemeTransformer extends Extractor {
       wikidataId_types.computeIfAbsent(entity_wikidataId.get(entity), k -> new HashSet<String>()).add(type);
     }
     SchemaExtractor.YAGOSCHEMA.killCache();
-    System.out.println("Finishing " + SchemaExtractor.YAGOSCHEMA.name + " " + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + SchemaExtractor.YAGOSCHEMA.name + " " + (System.currentTimeMillis() - startTime));
 
     for (Theme theme : CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation("<hasWikipediaCategory>")) {
         String entity = f.getSubject();
@@ -592,11 +597,11 @@ public class Neo4jThemeTransformer extends Extractor {
         wikidataId_categories.computeIfAbsent(entity_wikidataId.get(entity), k -> new HashSet<String>()).add(type);
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
 
     for (Theme theme : CategoryGlossExtractor.CATEGORYGLOSSES.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection()) {
         String type = f.getSubject();
@@ -604,10 +609,10 @@ public class Neo4jThemeTransformer extends Extractor {
         type_glosses.computeIfAbsent(type, k -> new HashSet<>()).add(f.getObject().replaceAll(";", ""));
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
     
-    System.out.println("Starting " + TransitiveTypeExtractor.TRANSITIVETYPE.name);
+    Announce.doing("Starting " + TransitiveTypeExtractor.TRANSITIVETYPE.name);
     startTime = System.currentTimeMillis();
     for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getFactsWithRelation("rdf:type")) {
       String entity = f.getSubject();
@@ -618,20 +623,20 @@ public class Neo4jThemeTransformer extends Extractor {
       wikidataId_types.computeIfAbsent(entity_wikidataId.get(entity), k -> new HashSet<String>()).add(type);
     }
     TransitiveTypeExtractor.TRANSITIVETYPE.killCache();
-    System.out.println("Finishing " + TransitiveTypeExtractor.TRANSITIVETYPE.name + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + TransitiveTypeExtractor.TRANSITIVETYPE.name + (System.currentTimeMillis() - startTime));
 
     // types from hardWired 
-    System.out.println("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.type + " relations");
+    Announce.doing("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.type + " relations");
     startTime = System.currentTimeMillis();
     for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(RDFS.type)) {
       if (entity_wikidataId.containsKey(f.getSubject())) {
         wikidataId_types.computeIfAbsent(entity_wikidataId.get(f.getSubject()), k -> new HashSet<String>()).add(f.getObject());
       }
     }
-    System.out.println("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + RDFS.type + " relations " + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + RDFS.type + " relations " + (System.currentTimeMillis() - startTime));
 
     // hasGloss for types from hardWired 
-    System.out.println("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + YAGO.hasGloss + " relations");
+    Announce.doing("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + YAGO.hasGloss + " relations");
     startTime = System.currentTimeMillis();
     for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(YAGO.hasGloss)) {
       String type = f.getSubject();
@@ -640,7 +645,7 @@ public class Neo4jThemeTransformer extends Extractor {
         type_glosses.computeIfAbsent(type, k -> new HashSet<>()).add(f.getObject().replaceAll(";", ""));
       }
     }
-    System.out.println("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + YAGO.hasGloss + " relations " + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + YAGO.hasGloss + " relations " + (System.currentTimeMillis() - startTime));
 
     
     // Writing to file:
@@ -668,7 +673,7 @@ public class Neo4jThemeTransformer extends Extractor {
     wikidataId_categories.clear();
     wikidataId_types.clear();
 
-    System.out.println("Starting " + ClassExtractor.YAGOTAXONOMY.name);
+    Announce.doing("Starting " + ClassExtractor.YAGOTAXONOMY.name);
     startTime = System.currentTimeMillis();
     for (Fact f : ClassExtractor.YAGOTAXONOMY.factCollection().getFactsWithRelation(RDFS.subclassOf)) {
       String type1 = f.getSubject();
@@ -679,10 +684,10 @@ public class Neo4jThemeTransformer extends Extractor {
       tempRelations.add(new String[] { type1, type2 });
     }
     ClassExtractor.YAGOTAXONOMY.killCache();
-    System.out.println("Finishing " + ClassExtractor.YAGOTAXONOMY.name + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + ClassExtractor.YAGOTAXONOMY.name + (System.currentTimeMillis() - startTime));
 
     // subClassOf from hardWired 
-    System.out.println("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.subclassOf + " relations");
+    Announce.doing("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.subclassOf + " relations");
     startTime = System.currentTimeMillis();
     for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(RDFS.subclassOf)) {
       String type1 = f.getSubject();
@@ -692,14 +697,14 @@ public class Neo4jThemeTransformer extends Extractor {
 
       tempRelations.add(new String[] { type1, type2 });
     }
-    System.out.println("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + RDFS.subclassOf + " relations " + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + RDFS.subclassOf + " relations " + (System.currentTimeMillis() - startTime));
     
     writeToFile(isSubclassOfRelationsFileName, isSubclassOfRelationsHeaderFileName, new String[] { ":START_ID(Type)", ":END_ID(Type)" },
         tempRelations);
     tempRelations.clear();
 
     for (Theme theme : DictionaryExtractor.CATEGORY_DICTIONARY.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish())) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       for (Fact f : theme.factCollection().getFactsWithRelation(YAGO.hasTranslation)) {
         String type1 = f.getSubject();
         types.add(type1);
@@ -709,7 +714,7 @@ public class Neo4jThemeTransformer extends Extractor {
         tempRelations.add(new String[] { type1, type2 });
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
     writeToFile(typeHasTranslationRelationsFileName, typeHasTranslationRelationsHeaderFileName, new String[] { ":START_ID(Type)", ":END_ID(Type)" },
         tempRelations);
@@ -737,12 +742,12 @@ public class Neo4jThemeTransformer extends Extractor {
     type_glosses.clear();
     types.clear();
 
-    System.out.println("Finishing " + typeNodesFileName + " " + hasTypeRelationsFileName + " " + hasWikipediaCategoryRelationsFileName + " "
+    Announce.done("Finishing " + typeNodesFileName + " " + hasTypeRelationsFileName + " " + hasWikipediaCategoryRelationsFileName + " "
         + isSubclassOfRelationsFileName + " " + (System.currentTimeMillis() - startTimeFileMaking));
     // Properties of Wikidata Instance:
-    System.out.println("Starting " + wikidataInstancesNodesFileName + " " + sameAsRelationsFileName + " " + entityNodesFileName);
+    Announce.doing("Starting " + wikidataInstancesNodesFileName + " " + sameAsRelationsFileName + " " + entityNodesFileName);
     startTimeFileMaking = System.currentTimeMillis();
-    System.out.println("Starting " + PersonNameExtractor.PERSONNAMES.name);
+    Announce.doing("Starting " + PersonNameExtractor.PERSONNAMES.name);
     startTime = System.currentTimeMillis();
     for (Fact f : PersonNameExtractor.PERSONNAMES.factCollection().getFactsWithRelation("<hasGivenName>")) {
       String entity = f.getSubject();
@@ -757,10 +762,10 @@ public class Neo4jThemeTransformer extends Extractor {
       wikidataId_properies.computeIfAbsent(entity_wikidataId.get(entity), k -> new wikidataInstanceProperties()).familyNames.add(f.getObject());
     }
     PersonNameExtractor.PERSONNAMES.killCache();
-    System.out.println("Finishing " + PersonNameExtractor.PERSONNAMES.name + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + PersonNameExtractor.PERSONNAMES.name + (System.currentTimeMillis() - startTime));
 
     for (Theme theme : GenderExtractor.GENDERBYPRONOUN.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation("<hasGender>")) {
         String entity = f.getSubject();
@@ -769,11 +774,11 @@ public class Neo4jThemeTransformer extends Extractor {
         wikidataId_properies.computeIfAbsent(entity_wikidataId.get(entity), k -> new wikidataInstanceProperties()).gender = f.getObject();
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
 
     for (Theme theme : RedirectExtractor.REDIRECTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation("<redirectedFrom>")) {
         String entity = f.getSubject();
@@ -782,10 +787,10 @@ public class Neo4jThemeTransformer extends Extractor {
         wikidataId_properies.computeIfAbsent(entity_wikidataId.get(entity), k -> new wikidataInstanceProperties()).redirectedFrom.add(f.getObject());
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
 
-    System.out.println("Starting " + WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.name);
+    Announce.doing("Starting " + WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.name);
     startTime = System.currentTimeMillis();
     for (Fact f : WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.factCollection().getFactsWithRelation(YAGO.hasShortDescription)) {
       String entity = f.getSubject();
@@ -795,10 +800,10 @@ public class Neo4jThemeTransformer extends Extractor {
           .add(f.getObject().replaceAll(";", ""));
     }
     WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.killCache();
-    System.out.println("Finishing " + WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.name + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.name + (System.currentTimeMillis() - startTime));
 
     for (Theme theme : WikipediaEntityDescriptionExtractor.WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation(YAGO.hasLongDescription)) {
         String entity = f.getSubject();
@@ -808,10 +813,10 @@ public class Neo4jThemeTransformer extends Extractor {
             .add(f.getObject().replaceAll(";", "") + "@" + theme.language());
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
 
-    System.out.println("Starting " + PersonNameExtractor.PERSONNAMEHEURISTICS.name);
+    Announce.doing("Starting " + PersonNameExtractor.PERSONNAMEHEURISTICS.name);
     startTime = System.currentTimeMillis();
     for (Fact f : PersonNameExtractor.PERSONNAMEHEURISTICS.factCollection().getFactsWithRelation(RDFS.label)) {
       String entity = f.getSubject();
@@ -820,9 +825,9 @@ public class Neo4jThemeTransformer extends Extractor {
       wikidataId_properies.computeIfAbsent(entity_wikidataId.get(entity), k -> new wikidataInstanceProperties()).labels.add(f.getObject());
     }
     PersonNameExtractor.PERSONNAMEHEURISTICS.killCache();
-    System.out.println("Finishing " + PersonNameExtractor.PERSONNAMEHEURISTICS.name + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + PersonNameExtractor.PERSONNAMEHEURISTICS.name + (System.currentTimeMillis() - startTime));
 
-    System.out.println("Starting " + WikidataLabelExtractor.WIKIPEDIALABELS.name);
+    Announce.doing("Starting " + WikidataLabelExtractor.WIKIPEDIALABELS.name);
     startTime = System.currentTimeMillis();
     for (Fact f : WikidataLabelExtractor.WIKIPEDIALABELS.factCollection().getFactsWithRelation(RDFS.label)) {
       String entity = f.getSubject();
@@ -831,9 +836,9 @@ public class Neo4jThemeTransformer extends Extractor {
       wikidataId_properies.computeIfAbsent(entity_wikidataId.get(entity), k -> new wikidataInstanceProperties()).labels.add(f.getObject());
     }
     WikidataLabelExtractor.WIKIPEDIALABELS.killCache();
-    System.out.println("Finishing " + WikidataLabelExtractor.WIKIPEDIALABELS.name + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + WikidataLabelExtractor.WIKIPEDIALABELS.name + (System.currentTimeMillis() - startTime));
 
-    System.out.println("Starting " + WikidataLabelExtractor.WIKIDATAMULTILABELS.name);
+    Announce.doing("Starting " + WikidataLabelExtractor.WIKIDATAMULTILABELS.name);
     startTime = System.currentTimeMillis();
     for (Fact f : WikidataLabelExtractor.WIKIDATAMULTILABELS.factCollection().getFactsWithRelation(RDFS.label)) {
       String entity = f.getSubject();
@@ -842,10 +847,10 @@ public class Neo4jThemeTransformer extends Extractor {
       wikidataId_properies.computeIfAbsent(entity_wikidataId.get(entity), k -> new wikidataInstanceProperties()).labels.add(f.getObject());
     }
     WikidataLabelExtractor.WIKIDATAMULTILABELS.killCache();
-    System.out.println("Finishing " + WikidataLabelExtractor.WIKIDATAMULTILABELS.name + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " + WikidataLabelExtractor.WIKIDATAMULTILABELS.name + (System.currentTimeMillis() - startTime));
 
     for (Theme theme : DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation(RDFS.label)) {
         String entity = f.getSubject();
@@ -854,11 +859,11 @@ public class Neo4jThemeTransformer extends Extractor {
         wikidataId_properies.computeIfAbsent(entity_wikidataId.get(entity), k -> new wikidataInstanceProperties()).labels.add(f.getObject());
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
 
     for (Theme theme : ConteXtExtractor.CONTEXTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation("<hasWikipediaAnchorText>")) {
         String entity = f.getSubject();
@@ -873,18 +878,18 @@ public class Neo4jThemeTransformer extends Extractor {
 
         wikidataId_properies.computeIfAbsent(entity_wikidataId.get(entity), k -> new wikidataInstanceProperties()).citationTitles.add(f.getObject());
       }
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
     
     // label for types from hardWired 
-    System.out.println("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.label + " relations");
+    Announce.doing("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.label + " relations");
     startTime = System.currentTimeMillis();
     for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(RDFS.label)) {
       if (entity_wikidataId.containsKey(f.getSubject())) {
         wikidataId_properies.computeIfAbsent(entity_wikidataId.get(f.getSubject()), k -> new wikidataInstanceProperties()).labels.add(f.getObject());
       }
     }
-    System.out.println("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + RDFS.label + " relations " + (System.currentTimeMillis() - startTime));
+    Announce.done("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + RDFS.label + " relations " + (System.currentTimeMillis() - startTime));
     HardExtractor.HARDWIREDFACTS.killCache();
 
     // Writing to file:
@@ -923,7 +928,7 @@ public class Neo4jThemeTransformer extends Extractor {
     tempNodes.clear();
 
     for (Theme theme : DictionaryExtractor.ENTITY_DICTIONARY.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish())) {
-      System.out.println("Starting " + theme.name);
+      Announce.doing("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation(YAGO.hasTranslation)) {
         String entity1 = f.getSubject();
@@ -939,7 +944,7 @@ public class Neo4jThemeTransformer extends Extractor {
         }
       }
       theme.killCache();
-      System.out.println("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
+      Announce.done("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
     writeToFile(entityHasTranslationRelationsFileName, entityHasTranslationRelationsHeaderFileName,
         new String[] { ":START_ID(Entity)", ":END_ID(Entity)" }, tempRelations);
@@ -963,11 +968,11 @@ public class Neo4jThemeTransformer extends Extractor {
     entity_wikidataId.clear();
     wikidataId_properies.clear();
 
-    System.out.println("Finishing " + " " + wikidataInstancesNodesFileName + " " + sameAsRelationsFileName + " " + entityNodesFileName + " "
+    Announce.done("Finishing " + " " + wikidataInstancesNodesFileName + " " + sameAsRelationsFileName + " " + entityNodesFileName + " "
         + (System.currentTimeMillis() - startTimeFileMaking));
 
     // Meta: 
-    System.out.println("Starting " + metaInformationFileName);
+    Announce.doing("Starting " + metaInformationFileName);
     List<String> languages = new ArrayList<>();
     List<String> wikiSources = new ArrayList<>();
     List<String> headers = new ArrayList<>();
@@ -1010,13 +1015,13 @@ public class Neo4jThemeTransformer extends Extractor {
     writeToFile(metaInformationFileName, tempNodes);
     tempNodes.clear();
     command += " --nodes:Meta \"" + YAGO_OUTPUT_PATH_PLACEHOLDER + metaInformationFileName + "\" ";
-    System.out.println("Finishing " + metaInformationFileName);
+    Announce.done("Finishing " + metaInformationFileName);
     
     
-    FileWriter writer = new FileWriter(commandFile);
+    FileWriter writer = new FileWriter(YAGO_OUTPUT_PATH + commandFile);
     writer.write(command);
     writer.close();
-    System.out.println("Import Script written in file: " + commandFile);
+    Announce.done("Import Script written in file: " + commandFile);
     
   }
 
