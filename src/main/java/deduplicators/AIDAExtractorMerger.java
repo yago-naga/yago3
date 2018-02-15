@@ -20,6 +20,7 @@ import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryGlossExtractor;
 import fromWikipedia.ConteXtExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
+import fromWikipedia.MentionLinkLikelihoodExtractor;
 import fromWikipedia.RedirectExtractor;
 import fromWikipedia.StructureExtractor;
 import fromWikipedia.WikiInfoExtractor;
@@ -61,7 +62,7 @@ public class AIDAExtractorMerger extends Extractor {
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>", "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>",
       YAGO.hasImageID, YAGO.hasWikiPage, YAGO.hasImageUrl, YAGO.hasGloss, YAGO.hasLicense, YAGO.hasAuthor, YAGO.hasTrademark,
-      YAGO.hasName, YAGO.hasUrl, YAGO.hasOTRSId, YAGO.hasShortDescription, YAGO.hasLongDescription, YAGO.isNamedEntity);
+      YAGO.hasName, YAGO.hasUrl, YAGO.hasOTRSId, YAGO.hasShortDescription, YAGO.hasLongDescription, YAGO.isNamedEntity, "<_hasLinkLikelihood>");
 
   @Override
   public Set<Theme> input() {
@@ -111,6 +112,9 @@ public class AIDAExtractorMerger extends Extractor {
     // Entity descriptions.
     input.add(WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS);
     input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    
+    // Mention Link Likelihood
+    input.addAll(MentionLinkLikelihoodExtractor.LIKELIHOODFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     
     return input;
   }
