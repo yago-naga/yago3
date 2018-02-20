@@ -469,9 +469,10 @@ public class ParallelCaller {
       D.p("Only Named Entities");
     }
     outputFolder = simulate ? Parameters.getFile("yagoSimulationFolder") : Parameters.getFile("yagoFolder");
+    neo4jFolder = Parameters.getFile("neo4jFolder", null);
     extractorsToDo = new ArrayList<>(extractors(Parameters.getList("extractors")));
 
-    neo4jFolder = Parameters.getFile("neo4jFolder", null);
+    
 
     String lockFile = outputFolder.getAbsolutePath() + "/yago.lock";
     if (!lock(lockFile)) {
