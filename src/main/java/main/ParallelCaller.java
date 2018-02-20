@@ -68,6 +68,9 @@ public class ParallelCaller {
   /** Where the files shall go */
   protected static File outputFolder;
 
+  /** Where the neo4j files shall go */
+  protected static File neo4jFolder;
+
   /** Wikipedias in different languages */
   protected static Map<String, File> wikipedias;
 
@@ -468,6 +471,8 @@ public class ParallelCaller {
     outputFolder = simulate ? Parameters.getFile("yagoSimulationFolder") : Parameters.getFile("yagoFolder");
     extractorsToDo = new ArrayList<>(extractors(Parameters.getList("extractors")));
 
+    neo4jFolder = Parameters.getFile("neo4jFolder", null);
+
     String lockFile = outputFolder.getAbsolutePath() + "/yago.lock";
     if (!lock(lockFile)) {
       System.out.println("another instance of YAGO seems to be running. (Otherwise delete " + lockFile + ")");
@@ -641,7 +646,12 @@ public class ParallelCaller {
         if (m.group(2) != null && !m.group(2).isEmpty()) input = new File(m.group(2));
         extractors.add(DataExtractor.forName((Class<DataExtractor>) clss, input));
       } else if (superclasses.contains(Neo4jThemeTransformer.class)) {
-        extractors.add(new Neo4jThemeTransformer(outputFolder.getAbsolutePath()));
+        if (neo4jFolder != null) {
+          extractors.add(new Neo4jThemeTransformer(neo4jFolder.getAbsolutePath()));
+        }
+        else {
+          Announce.error("Neo4jFolder not specified in the ini file.");
+        }
       } else {
         extractors.add(Extractor.forName((Class<Extractor>) clss));
       }
