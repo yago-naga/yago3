@@ -1,14 +1,4 @@
-package followUp;
-
-import java.util.Set;
-
-import extractors.Extractor;
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import utils.Theme;
-
-/** A Dummy class to indicate extractors that are called en suite 
-
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -27,6 +17,19 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package followUp;
+
+import java.util.Set;
+
+import extractors.Extractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import utils.Theme;
+
+/** A Dummy class to indicate extractors that are called en suite 
+
 */
 
 public abstract class FollowUpExtractor extends Extractor {

@@ -1,17 +1,4 @@
-package extractors;
-
-import java.io.File;
-
-import javatools.administrative.Announce;
-
-/**
- * YAGO2s - MultilingualWikipediaExtractor
- * 
- * An extractor that extracts from Wikipedia in different languages.
- * 
- * By convention, these classes have to have a constructor of with two
- * arguments: language and wikipedia
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -30,6 +17,22 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package extractors;
+
+import java.io.File;
+
+import javatools.administrative.Announce;
+
+/**
+ * YAGO2s - MultilingualWikipediaExtractor
+ * 
+ * An extractor that extracts from Wikipedia in different languages.
+ * 
+ * By convention, these classes have to have a constructor of with two
+ * arguments: language and wikipedia
+ * 
 */
 
 public abstract class MultilingualWikipediaExtractor extends MultilingualExtractor {

@@ -1,9 +1,4 @@
-package fromOtherSources;
-
-public class ImageTypes {
-
-  /** Contains the types of images
-  
+/*
   This class is part of the YAGO project at the Max Planck Institute
   for Informatics/Germany and Télécom ParisTech University/France:
   http://yago-knowledge.org
@@ -22,6 +17,14 @@ public class ImageTypes {
   
   You should have received a copy of the GNU General Public License
   along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+  */
+
+package fromOtherSources;
+
+public class ImageTypes {
+
+  /** Contains the types of images
+  
   */
   public static final String image = "P18";
 

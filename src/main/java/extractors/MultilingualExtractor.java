@@ -1,15 +1,4 @@
-package extractors;
-
-import java.util.Arrays;
-import java.util.List;
-
-import basics.Fact;
-import basics.FactComponent;
-import javatools.administrative.Announce;
-
-/**
- * MultilingualExtractor - Yago2s
- * 
+/*
  * Superclass of all multilingual extractors. This class determines which
  * Wikipedia versions can be read!
  * 
@@ -34,6 +23,20 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package extractors;
+
+import java.util.Arrays;
+import java.util.List;
+
+import basics.Fact;
+import basics.FactComponent;
+import javatools.administrative.Announce;
+
+/**
+ * MultilingualExtractor - Yago2s
+ * 
 */
 
 public abstract class MultilingualExtractor extends Extractor {

@@ -1,17 +1,4 @@
-package utils.termParsers;
-
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.math.RoundingMode;
-import java.util.regex.Matcher;
-
-import basics.Fact;
-import basics.FactComponent;
-import fromOtherSources.PatternHardExtractor;
-import javatools.administrative.Announce;
-
-/** Extracts a number from a string 
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -30,6 +17,22 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils.termParsers;
+
+import java.io.IOException;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.regex.Matcher;
+
+import basics.Fact;
+import basics.FactComponent;
+import fromOtherSources.PatternHardExtractor;
+import javatools.administrative.Announce;
+
+/** Extracts a number from a string 
+ * 
 */
 public class NumberParser extends LiteralParser {
 

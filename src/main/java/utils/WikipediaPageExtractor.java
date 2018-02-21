@@ -1,16 +1,4 @@
-package utils;
-
-import java.io.File;
-import java.io.Reader;
-
-import javatools.filehandlers.FileLines;
-import javatools.filehandlers.FileUtils;
-import javatools.filehandlers.UTF8Writer;
-
-/**
- * Finds Wikipedia page from the article. Can be used for debugging, when a
- * certain page is required.
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -29,6 +17,21 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils;
+
+import java.io.File;
+import java.io.Reader;
+
+import javatools.filehandlers.FileLines;
+import javatools.filehandlers.FileUtils;
+import javatools.filehandlers.UTF8Writer;
+
+/**
+ * Finds Wikipedia page from the article. Can be used for debugging, when a
+ * certain page is required.
+ * 
 */
 
 public class WikipediaPageExtractor {

@@ -1,21 +1,4 @@
-package utils;
-
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import basics.Fact;
-import utils.Theme.ThemeGroup;
-
-/**
- * This code is part of the YAGO project at the Max Planck Institute for
- * Informatics and the Telecom ParisTech University. It is licensed under a
- * Creative Commons Attribution License by the YAGO team:
- * https://creativecommons.org/licenses/by/3.0/
- * 
- * This class represents a theme that can be instantiated in several languages.
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -34,6 +17,20 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import basics.Fact;
+import utils.Theme.ThemeGroup;
+
+/**
+ * This class represents a theme that can be instantiated in several languages.
 */
 
 public class MultilingualTheme {

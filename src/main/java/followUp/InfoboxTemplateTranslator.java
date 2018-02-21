@@ -1,17 +1,4 @@
-package followUp;
-
-import java.util.Map;
-
-import extractors.Extractor;
-import fromOtherSources.DictionaryExtractor;
-import utils.Theme;
-
-/**
- * InfoboxTemplateTranslator - YAGO2s
- * 
- * Translates the subjects and objects of the input themes to the most English
- * language. Objects are infobox templates.
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -30,6 +17,22 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package followUp;
+
+import java.util.Map;
+
+import extractors.Extractor;
+import fromOtherSources.DictionaryExtractor;
+import utils.Theme;
+
+/**
+ * InfoboxTemplateTranslator - YAGO2s
+ * 
+ * Translates the subjects and objects of the input themes to the most English
+ * language. Objects are infobox templates.
+ * 
 */
 
 public class InfoboxTemplateTranslator extends EntityTranslator {

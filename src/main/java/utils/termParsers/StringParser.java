@@ -1,14 +1,4 @@
-package utils.termParsers;
-
-import java.io.IOException;
-import java.util.regex.Matcher;
-
-import basics.FactComponent;
-import fromOtherSources.PatternHardExtractor;
-
-/**
- * Extracts a string from a Wikipedia string
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -27,6 +17,19 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils.termParsers;
+
+import java.io.IOException;
+import java.util.regex.Matcher;
+
+import basics.FactComponent;
+import fromOtherSources.PatternHardExtractor;
+
+/**
+ * Extracts a string from a Wikipedia string
+ * 
 */
 public class StringParser extends LiteralParser {
 

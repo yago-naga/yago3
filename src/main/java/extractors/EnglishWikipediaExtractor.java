@@ -1,10 +1,4 @@
-package extractors;
-
-import java.io.File;
-
-/**
- * Superclass of all extractors that extract from the English Wikipedia
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -23,6 +17,15 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package extractors;
+
+import java.io.File;
+
+/**
+ * Superclass of all extractors that extract from the English Wikipedia
+ * 
 */
 
 public abstract class EnglishWikipediaExtractor extends DataExtractor {
