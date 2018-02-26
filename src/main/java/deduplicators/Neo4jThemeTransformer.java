@@ -248,10 +248,6 @@ public class Neo4jThemeTransformer extends Extractor {
 
   private static final String hasTypeRelationsHeaderFileName = "hasTypeRelationsHeader.csv";
 
-  private static final String hasWikipediaCategoryRelationsFileName = "hasWikipediaCategoryRelations.csv";
-
-  private static final String hasWikipediaCategoryRelationsHeaderFileName = "hasWikipediaCategoryRelationsHeader.csv";
-
   private static final String isSubclassOfRelationsFileName = "isSubclassOfRelations.csv";
 
   private static final String isSubclassOfRelationsHeaderFileName = "isSubclassOfRelationsHeader.csv";
@@ -568,11 +564,10 @@ public class Neo4jThemeTransformer extends Extractor {
         ("Finishing " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
 
     // Adding Types:
-    D.p("Starting " + typeNodesFileName + " " + hasTypeRelationsFileName + " " + hasWikipediaCategoryRelationsFileName + " "
+    D.p("Starting " + typeNodesFileName + " " + hasTypeRelationsFileName + " "
         + isSubclassOfRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     Map<String, Set<String>> wikidataId_types = new HashMap<>();
-    Map<String, Set<String>> wikidataId_categories = new HashMap<>();
     Map<String, Set<String>> type_glosses = new HashMap<>();
     Set<String> types = new HashSet<>();
 
@@ -589,28 +584,13 @@ public class Neo4jThemeTransformer extends Extractor {
     SchemaExtractor.YAGOSCHEMA.killCache();
     D.p("Finishing " + SchemaExtractor.YAGOSCHEMA.name + " " + (System.currentTimeMillis() - startTime));
 
-    for (Theme theme : CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
-      D.p("Starting " + theme.name);
-      startTime = System.currentTimeMillis();
-      for (Fact f : theme.factCollection().getFactsWithRelation("<hasWikipediaCategory>")) {
-        String entity = f.getSubject();
-        entity_wikidataId.putIfAbsent(entity, entity);
-        String type = f.getObject();
-        types.add(type);
-
-        wikidataId_categories.computeIfAbsent(entity_wikidataId.get(entity), k -> new HashSet<String>()).add(type);
-      }
-      theme.killCache();
-      D.p("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
-    }
-
     for (Theme theme : CategoryGlossExtractor.CATEGORYGLOSSES.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
       D.p("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection()) {
         String type = f.getSubject();
         types.add(type);
-        type_glosses.computeIfAbsent(type, k -> new HashSet<>()).add(f.getObject().replaceAll(";", ""));
+        type_glosses.computeIfAbsent(type, k -> new HashSet<>()).add(f.getObject().replaceAll(";", "") + "@" + theme.language());
       }
       theme.killCache();
       D.p("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
@@ -629,7 +609,7 @@ public class Neo4jThemeTransformer extends Extractor {
     TransitiveTypeExtractor.TRANSITIVETYPE.killCache();
     D.p("Finishing " + TransitiveTypeExtractor.TRANSITIVETYPE.name + (System.currentTimeMillis() - startTime));
 
-    // types from hardWired 
+    // types from hardWired TODO: only a couple are entities!!! But are added here since there are some entities.
     D.p("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.type + " relations");
     startTime = System.currentTimeMillis();
     for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(RDFS.type)) {
@@ -639,17 +619,17 @@ public class Neo4jThemeTransformer extends Extractor {
     }
     D.p("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + RDFS.type + " relations " + (System.currentTimeMillis() - startTime));
 
-    // hasGloss for types from hardWired 
-    D.p("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + YAGO.hasGloss + " relations");
-    startTime = System.currentTimeMillis();
-    for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(YAGO.hasGloss)) {
-      String type = f.getSubject();
-
-      if (types.contains(type)) {
-        type_glosses.computeIfAbsent(type, k -> new HashSet<>()).add(f.getObject().replaceAll(";", ""));
-      }
-    }
-    D.p("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + YAGO.hasGloss + " relations " + (System.currentTimeMillis() - startTime));
+    // hasGloss for types from hardWired TODO: These are glosses of relations not types. Like the previous one which the relations have types mostly not entities.
+//    D.p("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + YAGO.hasGloss + " relations");
+//    startTime = System.currentTimeMillis();
+//    for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(YAGO.hasGloss)) {
+//      String type = f.getSubject();
+//
+//      if (types.contains(type)) {
+//        type_glosses.computeIfAbsent(type, k -> new HashSet<>()).add(f.getObject().replaceAll(";", ""));
+//      }
+//    }
+//    D.p("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + YAGO.hasGloss + " relations " + (System.currentTimeMillis() - startTime));
 
     
     // Writing to file:
@@ -662,19 +642,8 @@ public class Neo4jThemeTransformer extends Extractor {
         tempRelations);
     tempRelations.clear();
 
-    for (String wikidataId : wikidataId_categories.keySet()) {
-      for (String type : wikidataId_categories.get(wikidataId)) {
-        tempRelations.add(new String[] { wikidataId, type });
-      }
-    }
-    writeToFile(hasWikipediaCategoryRelationsFileName, hasWikipediaCategoryRelationsHeaderFileName,
-        new String[] { ":START_ID(WikidataInstance)", ":END_ID(Type)" }, tempRelations);
-    tempRelations.clear();
-
 
     addRelationsToCommand("hasType", hasTypeRelationsFileName, hasTypeRelationsHeaderFileName);
-    addRelationsToCommand("hasWikipediaCategory", hasWikipediaCategoryRelationsFileName, hasWikipediaCategoryRelationsHeaderFileName);
-    wikidataId_categories.clear();
     wikidataId_types.clear();
 
     D.p("Starting " + ClassExtractor.YAGOTAXONOMY.name);
@@ -690,7 +659,7 @@ public class Neo4jThemeTransformer extends Extractor {
     ClassExtractor.YAGOTAXONOMY.killCache();
     D.p("Finishing " + ClassExtractor.YAGOTAXONOMY.name + (System.currentTimeMillis() - startTime));
 
-    // subClassOf from hardWired 
+    // subClassOf from hardWired
     D.p("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.subclassOf + " relations");
     startTime = System.currentTimeMillis();
     for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(RDFS.subclassOf)) {
@@ -746,7 +715,7 @@ public class Neo4jThemeTransformer extends Extractor {
     type_glosses.clear();
     types.clear();
 
-    D.p("Finishing " + typeNodesFileName + " " + hasTypeRelationsFileName + " " + hasWikipediaCategoryRelationsFileName + " "
+    D.p("Finishing " + typeNodesFileName + " " + hasTypeRelationsFileName + " " 
         + isSubclassOfRelationsFileName + " " + (System.currentTimeMillis() - startTimeFileMaking));
     // Properties of Wikidata Instance:
     D.p("Starting " + wikidataInstancesNodesFileName + " " + sameAsRelationsFileName + " " + entityNodesFileName);
@@ -885,7 +854,7 @@ public class Neo4jThemeTransformer extends Extractor {
       D.p("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
     
-    // label for types from hardWired 
+    // label from hardWired TODO again just some are entities some or types/...
     D.p("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.label + " relations");
     startTime = System.currentTimeMillis();
     for (Fact f:HardExtractor.HARDWIREDFACTS.factCollection().getFactsWithRelation(RDFS.label)) {
