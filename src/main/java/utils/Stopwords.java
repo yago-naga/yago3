@@ -1,10 +1,4 @@
-package utils;
-
-import java.util.HashSet;
-import java.util.Set;
-
-/** Contains stopwords
-
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -23,6 +17,15 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils;
+
+import java.util.HashSet;
+import java.util.Set;
+
+/** Contains stopwords
+
 */
 
 public class Stopwords {

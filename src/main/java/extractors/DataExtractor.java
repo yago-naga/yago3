@@ -1,16 +1,4 @@
-package extractors;
-
-import java.io.File;
-
-import javatools.administrative.Announce;
-
-/**
- * Superclass of all extractors that take a data file as input (except
- * multilingual Wikipedia, see there).
- *
- * By convention, all subclasses have a constructor that takes as argument the
- * data file.
- *
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -29,6 +17,21 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package extractors;
+
+import java.io.File;
+
+import javatools.administrative.Announce;
+
+/**
+ * Superclass of all extractors that take a data file as input (except
+ * multilingual Wikipedia, see there).
+ *
+ * By convention, all subclasses have a constructor that takes as argument the
+ * data file.
+ *
 */
 
 public abstract class DataExtractor extends Extractor {

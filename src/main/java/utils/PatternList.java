@@ -1,20 +1,4 @@
-package utils;
-
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import basics.Fact;
-import basics.FactSource;
-import javatools.administrative.Announce;
-import javatools.datatypes.Pair;
-
-/**
- * Replaces patterns by strings
- *
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -33,6 +17,25 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import basics.Fact;
+import basics.FactSource;
+import javatools.administrative.Announce;
+import javatools.datatypes.Pair;
+
+/**
+ * Replaces patterns by strings
+ *
 */
 public class PatternList {
 

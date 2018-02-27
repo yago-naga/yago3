@@ -1,19 +1,4 @@
-package utils.termParsers;
-
-import java.util.LinkedList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import basics.FactComponent;
-import javatools.administrative.Announce;
-
-/**
- * Extracts a wiki link from a string
- * 
- * This could in principle be done by a LiteralParser, but it would be very
- * complicated
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -32,6 +17,24 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils.termParsers;
+
+import java.util.LinkedList;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import basics.FactComponent;
+import javatools.administrative.Announce;
+
+/**
+ * Extracts a wiki link from a string
+ * 
+ * This could in principle be done by a LiteralParser, but it would be very
+ * complicated
+ * 
 */
 public class WikiLinkParser extends TermParser {
 

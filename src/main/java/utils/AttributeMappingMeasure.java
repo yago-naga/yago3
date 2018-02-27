@@ -1,14 +1,5 @@
-package utils;
-
-import java.util.Locale;
-
-/**
- * This class defines different strategies for mapping foreign attributes to
- * YAGO relations. Every strategy takes as input the number of total facts of
- * the attribute, the number of matches and the number of clashes, and returns
- * TRUE or FALSE.
- * 
-This class is part of the YAGO project at the Max Planck Institute
+/*
+ This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
 
@@ -26,6 +17,17 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils;
+
+import java.util.Locale;
+
+/**
+ * This class defines different strategies for mapping foreign attributes to
+ * YAGO relations. Every strategy takes as input the number of total facts of
+ * the attribute, the number of matches and the number of clashes, and returns
+ * TRUE or FALSE.
 */
 public abstract class AttributeMappingMeasure {
 

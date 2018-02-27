@@ -1,8 +1,4 @@
-package deduplicators;
-
-/**
- * Transform facts to node and relation files for Neo4j import.
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -21,6 +17,13 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package deduplicators;
+
+/**
+ * Transform facts to node and relation files for Neo4j import.
+ * 
 */
 import java.io.File;
 import java.io.FileWriter;

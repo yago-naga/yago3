@@ -1,19 +1,4 @@
-package fromOtherSources;
-
-import java.io.File;
-import java.util.Set;
-
-import basics.Fact;
-import basics.FactSource;
-import extractors.Extractor;
-import javatools.administrative.Announce;
-import javatools.administrative.Parameters;
-import javatools.datatypes.FinalSet;
-import utils.Theme;
-
-/**
- * Produces the hard-coded facts that are YAGO-internal.
- *
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -32,6 +17,24 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package fromOtherSources;
+
+import java.io.File;
+import java.util.Set;
+
+import basics.Fact;
+import basics.FactSource;
+import extractors.Extractor;
+import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
+import javatools.datatypes.FinalSet;
+import utils.Theme;
+
+/**
+ * Produces the hard-coded facts that are YAGO-internal.
+ *
 */
 public class PatternHardExtractor extends HardExtractor {
 

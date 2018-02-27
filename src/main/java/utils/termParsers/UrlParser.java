@@ -1,20 +1,4 @@
-package utils.termParsers;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import basics.FactComponent;
-import javatools.administrative.Announce;
-
-/**
- * Extracts a URL from a string
- * 
- * This could in principle be done by a LiteralParser, but since URLs can
- * contain underscores, the built-in pattern matching would be derailed.
- * 
+/*
 This class is part of the YAGO project at the Max Planck Institute
 for Informatics/Germany and Télécom ParisTech University/France:
 http://yago-knowledge.org
@@ -33,6 +17,25 @@ License for more details.
 
 You should have received a copy of the GNU General Public License
 along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+*/
+
+package utils.termParsers;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import basics.FactComponent;
+import javatools.administrative.Announce;
+
+/**
+ * Extracts a URL from a string
+ * 
+ * This could in principle be done by a LiteralParser, but since URLs can
+ * contain underscores, the built-in pattern matching would be derailed.
+ * 
 */
 public class UrlParser extends TermParser {
 

@@ -1,12 +1,4 @@
-package utils;
-
-import java.util.Arrays;
-import java.util.regex.Pattern;
-
-import javatools.datatypes.Pair;
-
-/** Helper functions and patterns to clean wikipedia text.
- * 
+/*
  * This class is part of the YAGO project at the Max Planck Institute
  * for Informatics/Germany and Télécom ParisTech University/France:
  * http://yago-knowledge.org
@@ -25,6 +17,17 @@ import javatools.datatypes.Pair;
  * 
  * You should have received a copy of the GNU General Public License
  * along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
+ * */
+
+package utils;
+
+import java.util.Arrays;
+import java.util.regex.Pattern;
+
+import javatools.datatypes.Pair;
+
+/** Helper functions and patterns to clean wikipedia text.
+ * 
 */
 public class WikipediaTextCleanerHelper {
   
