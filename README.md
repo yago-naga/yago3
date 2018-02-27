@@ -223,6 +223,10 @@ Contributors include (in alphabetical order):
 * Farzaneh Mahdisoltani
 * Ghazaleh Haratinezhad Torbati
 
+### Build Status
+
+[![Build Status](https://travis-ci.org/yago-naga/yago3.svg?branch=master)(https://travis-ci.org/yago-naga/yago3)
+
 ### Citing YAGO
 
 If you use the data of YAGO in your research, please cite:
