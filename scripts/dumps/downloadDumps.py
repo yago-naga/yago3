@@ -83,34 +83,34 @@ def execute(cmd, customEnv=None):
 def main(argv=None):
   global dumpsFolder, languages, wikipedias, wikidata, wikipediaIds
 
-  print "Loading YAGO configuration..."
+  print("Loading YAGO configuration...")
   loadYagoConfiguration()
 
   if wikipedias == None:
-    print "Downloading Wikipedia dump(s)..."
+    print("Downloading Wikipedia dump(s)...")
     wikipedias = downloadWikipediaDumps(languages)
   else:
-    print "Wikipedia dump(s) already present."
+    print("Wikipedia dump(s) already present.")
     wikipediaIds = getWikipediaIdsFromFile(wikipedias)
 
   if (wikidata == None):
-    print "Downloading Wikidata dump(s)..."
+    print("Downloading Wikidata dump(s)...")
     downloadWikidataDumps()
   else:
-    print "Wikidata dump(s) already present."
+    print("Wikidata dump(s) already present.")
 
   if commons_wiki == None:
-    print "Downloading CommonsWiki dump..."
+    print("Downloading CommonsWiki dump...")
     downloadCommonsWikiDump()
   else:
-    print "CommonsWiki dump already present."
+    print("CommonsWiki dump already present.")
 
   downloadGeonames()
 
-  print "Adapting the YAGO3 configuration..."
+  print("Adapting the YAGO3 configuration...")
   adaptYagoConfiguration()
 
-  print "Wikipedia, Wikidata and Commonswiki dumps are ready."
+  print("Wikipedia, Wikidata and Commonswiki dumps are ready.")
 
 
 """
@@ -140,12 +140,12 @@ def loadYagoConfiguration():
 
 
   if languages == None:
-    print "ERROR: 'languages' is a mandatory property and must be set in the configuration file."
+    print("ERROR: 'languages' is a mandatory property and must be set in the configuration file.")
     sys.exit(1)
 
 
   if (wikipedias == None or wikidata == None or commons_wiki == None) and dumpsFolder == None:
-    print "ERROR: Some resources require downloading dumps before YAGO can be run. You must set the 'dumpsFolder' property in the configuration file."
+    print("ERROR: Some resources require downloading dumps before YAGO can be run. You must set the 'dumpsFolder' property in the configuration file.")
     sys.exit(1)
 
 
@@ -318,7 +318,7 @@ def getWikipediaDumpUrls(languages):
       r = requests.head(url)
 
       if (r.status_code == 200):
-        print "Latest Wikipedia dump for " + language + ": " + formattedDumpDate
+        print("Latest Wikipedia dump for " + language + ": " + formattedDumpDate)
         urls.append(url)
         break
       else:
@@ -329,12 +329,12 @@ def getWikipediaDumpUrls(languages):
             urls.append(url)
             break
           else:
-            print "ERROR: No Wikipedia dump found (neither remotely nor in local cache) for language " + language + " and date " + formattedDumpDate + "."
+            print("ERROR: No Wikipedia dump found (neither remotely nor in local cache) for language " + language + " and date " + formattedDumpDate + ".")
             sys.exit(1)
         elif (startDate - dumpDate).days <= WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS:
           dumpDate -= timedelta(days=1)
         else:
-          print "ERROR: No Wikipedia dump found (neither remotely nor in local cache) for language " + language + " (oldest dump date tried was " + formattedDumpDate + ")."
+          print("ERROR: No Wikipedia dump found (neither remotely nor in local cache) for language " + language + " (oldest dump date tried was " + formattedDumpDate + ").")
           sys.exit(1)
 
   return urls
@@ -364,13 +364,13 @@ def getWikidataUrl():
     r = requests.head(url)
 
     if (r.status_code == requests.codes.ok):
-      print "Wikidata dump is available for the given date: " + formattedDumpDate
+      print("Wikidata dump is available for the given date: " + formattedDumpDate)
       resultUrl = url
     elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2')):
-      print "Wikidata dump exist: " + formattedDumpDate
+      print("Wikidata dump exist: " + formattedDumpDate)
       resultUrl = url
     else:
-      print "ERROR: No Wikidata dump file found (neither remotely nor in local cache) for date: " + formattedDumpDate
+      print("ERROR: No Wikidata dump file found (neither remotely nor in local cache) for date: " + formattedDumpDate)
       sys.exit(1)
 
   else:
@@ -381,17 +381,17 @@ def getWikidataUrl():
       r = requests.head(url)
 
       if (r.status_code == requests.codes.ok):
-        print "Latest Wikidata dump: " + formattedDumpDate
+        print("Latest Wikidata dump: " + formattedDumpDate)
         resultUrl = url
         break
       elif os.path.isfile(os.path.join(dumpsFolder, COMMONSWIKI_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2')):
-        print "Wikidata dump exist: " + formattedDumpDate
+        print("Wikidata dump exist: " + formattedDumpDate)
         resultUrl = url
         break
       elif (startDate - dumpDate).days <= WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS:
         dumpDate -= timedelta(days = 1)
       else:
-        print "ERROR: No Wikidata dump file found (neither remotely nor in local cache), oldest dump date tried was: " + formattedDumpDate
+        print("ERROR: No Wikidata dump file found (neither remotely nor in local cache), oldest dump date tried was: " + formattedDumpDate)
         sys.exit(1)
 
   return resultUrl
@@ -449,13 +449,13 @@ def getCommonsWikiUrl():
     r = requests.head(url)
 
     if (r.status_code == requests.codes.ok):
-      print "Commonswiki dump is available for the given date: " + formattedDumpDate
+      print("Commonswiki dump is available for the given date: " + formattedDumpDate)
       resultUrl = url
     elif os.path.isfile(os.path.join(dumpsFolder, COMMONSWIKI_DIR, formattedDumpDate, 'commonswiki-' + formattedDumpDate + '-pages-articles.xml')):
-      print "Commonswiki dump exist: " + formattedDumpDate
+      print("Commonswiki dump exist: " + formattedDumpDate)
       resultUrl = url
     else:
-      print "ERROR: No Commonswiki dump file found (neither remotely nor in local cache) for date: " + formattedDumpDate
+      print("ERROR: No Commonswiki dump file found (neither remotely nor in local cache) for date: " + formattedDumpDate)
       sys.exit(1)
 
   else:
@@ -466,17 +466,17 @@ def getCommonsWikiUrl():
       r = requests.head(url)
 
       if (r.status_code == requests.codes.ok):
-        print "Latest Commonswiki dump: " + formattedDumpDate
+        print("Latest Commonswiki dump: " + formattedDumpDate)
         resultUrl = url
         break
       elif os.path.isfile(os.path.join(dumpsFolder, COMMONSWIKI_DIR, formattedDumpDate, 'commonswiki-' + formattedDumpDate + '-pages-articles.xml')):
-        print "Commonswiki dump exist: " + formattedDumpDate
+        print("Commonswiki dump exist: " + formattedDumpDate)
         resultUrl = url
         break
       elif (startDate - dumpDate).days <= WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS:
         dumpDate -= timedelta(days = 1)
       else:
-        print "ERROR: No Commonswiki dump file found (neither remotely nor in local cache), oldest dump date tried was: " + formattedDumpDate
+        print("ERROR: No Commonswiki dump file found (neither remotely nor in local cache), oldest dump date tried was: " + formattedDumpDate)
         sys.exit(1)
 
   return resultUrl
