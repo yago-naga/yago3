@@ -28,7 +28,7 @@ from subprocess import PIPE, STDOUT
 import inspect
 from datetime import date, timedelta
 from docopt import docopt
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
 
 # Constants
 DOWNLOAD_WIKIPEDIA_DUMP_SCRIPT = 'downloadWikipediaDump.sh'
