@@ -67,7 +67,7 @@ import utils.Theme;
 
 public class Neo4jThemeTransformer extends Extractor {
   
-  Theme NEO4JDONE = new Theme("neo4j_extractor_done", "This is a dump theme created by Neo4j Extractor to ensure that the extractor is done and allow reusing it.");
+  public static final Theme NEO4JDONE = new Theme("neo4j_extractor_done", "This is a dump theme created by Neo4j Extractor to ensure that the extractor is done and allow reusing it.");
   
   public Neo4jThemeTransformer(String yagoOutputFolderPath) {
     OUTPUT_PATH = yagoOutputFolderPath;
