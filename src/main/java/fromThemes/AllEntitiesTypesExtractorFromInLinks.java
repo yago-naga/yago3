@@ -65,15 +65,21 @@ public class AllEntitiesTypesExtractorFromInLinks extends Extractor {
           }
         }
         
-        if(upperFirstLetter > lowerFirstLetter) {
-          ALL_ENTITIES_INLINKS.write(new Fact(entity, YAGO.isNamedEntity, EntityType.NAMED_ENTITY.getYagoName()));
-        }
-        else if(upperFirstLetter < lowerFirstLetter) {
-          ALL_ENTITIES_INLINKS.write(new Fact(entity, YAGO.isNamedEntity, EntityType.CONCEPT.getYagoName()));
+        if (upperFirstLetter != 0 ||  lowerFirstLetter != 0) {
+          if(upperFirstLetter > lowerFirstLetter) {
+            ALL_ENTITIES_INLINKS.write(new Fact(entity, YAGO.isNamedEntity, EntityType.NAMED_ENTITY.getYagoName()));
+          }
+          else if(upperFirstLetter < lowerFirstLetter) {
+            ALL_ENTITIES_INLINKS.write(new Fact(entity, YAGO.isNamedEntity, EntityType.CONCEPT.getYagoName()));
+          }
+          else {
+            ALL_ENTITIES_INLINKS.write(new Fact(entity, YAGO.isNamedEntity, EntityType.BOTH.getYagoName()));
+          }
         }
         else {
-          ALL_ENTITIES_INLINKS.write(new Fact(entity, YAGO.isNamedEntity, EntityType.BOTH.getYagoName()));
+          ALL_ENTITIES_INLINKS.write(new Fact(entity, YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
         }
+
       }
       else {
         ALL_ENTITIES_INLINKS.write(new Fact(entity, YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
