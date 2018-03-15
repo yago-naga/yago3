@@ -76,9 +76,6 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
           classes.add(f.getSubject());
           classes.add(f.getObject());
         }
-        else if (f.getRelation().equals("<http://www.wikidata.org/prop/direct/P2670>")) {//P2670 -> has part of the class
-          classes.add(f.getObject());
-        }
       }
     }
     nr.close();
