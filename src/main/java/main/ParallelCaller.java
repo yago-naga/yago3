@@ -648,9 +648,11 @@ public class ParallelCaller {
       } else if (superclasses.contains(DataExtractor.class)) {
         File input = null;
         if (m.group(2) != null && !m.group(2).isEmpty()) input = new File(m.group(2));
+        if (input == null) {
+          Announce.debug("Input folder not specified in the ini file.");
+        }
         extractors.add(DataExtractor.forName((Class<DataExtractor>) clss, input));
       } else if (superclasses.contains(Neo4jThemeTransformer.class)) {
-        System.out.println("Debug: superClass contain neo4jEx");
         if (neo4jFolder != null) {
           extractors.add(new Neo4jThemeTransformer(neo4jFolder.getAbsolutePath()));
         }
