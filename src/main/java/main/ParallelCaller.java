@@ -655,7 +655,8 @@ public class ParallelCaller {
           extractors.add(new Neo4jThemeTransformer(neo4jFolder.getAbsolutePath()));
         }
         else {
-          Announce.error("Neo4jFolder not specified in the ini file.");
+          extractors.add(new Neo4jThemeTransformer());
+          Announce.debug("Neo4jFolder not specified in the ini file.");
         }
       } else {
         extractors.add(Extractor.forName((Class<Extractor>) clss));
