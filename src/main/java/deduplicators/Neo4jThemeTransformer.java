@@ -25,7 +25,6 @@ package deduplicators;
  * Transform facts to node and relation files for Neo4j import.
  * 
 */
-import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -36,7 +35,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import au.com.bytecode.opencsv.CSVWriter;
+import org.supercsv.io.CsvBeanWriter;
+import org.supercsv.io.ICsvBeanWriter;
+import org.supercsv.prefs.CsvPreference;
+
 import basics.Fact;
 import basics.RDFS;
 import basics.YAGO;
@@ -189,93 +191,49 @@ public class Neo4jThemeTransformer extends Extractor {
   
   private static final String wikidataInstancesNodesFileName = "wikidataInstancesNodes.csv";
 
-  private static final String wikidataInstancesNodesHeaderFileName = "wikidataInstancesNodesHeader.csv";
-
   private static final String sameAsRelationsFileName = "sameAsRelations.csv";
-
-  private static final String sameAsRelationsHeaderFileName = "sameAsRelationsHeader.csv";
 
   private static final String entityNodesFileName = "entityNodes.csv";
 
-  private static final String entityNodesHeaderFileName = "entityNodesHeader.csv";
-
   private static final String entityHasTranslationRelationsFileName = "entityHasTranslationRelations.csv";
-
-  private static final String entityHasTranslationRelationsHeaderFileName = "entityHasTranslationRelationsHeader.csv";
 
   private static final String wikipeidiaUrlNodesFileName = "wikipediaUrlNodes.csv";
 
-  private static final String wikipeidiaUrlNodesHeaderFileName = "wikipediaUrlNodesHeader.csv";
-
   private static final String hasWikipediaUrlRelationsFileName = "hasWikipediaUrlRelations.csv";
-
-  private static final String hasWikipediaUrlRelationsHeaderFileName = "hasWikipediaUrlRelationsHeader.csv";
 
   private static final String wikidataImageNodesFileName = "wikidataImageNodes.csv";
 
-  private static final String wikidataImageNodesHeaderFileName = "wikidataImageNodesHeader.csv";
-
   private static final String hasImageRelationsFileName = "hasImageRelations.csv";
-
-  private static final String hasImageRelationsHeaderFileName = "hasImageRelationsHeader.csv";
 
   private static final String OTRSPermissionNodesFileName = "OTRSPermissionNodes.csv";
 
-  private static final String OTRSPermissionNodesHeaderFileName = "OTRSPermissionNodesHeader.csv";
-
   private static final String hasOTRSPermissionRelationsFileName = "hasOTRSPermissionRelations.csv";
-
-  private static final String hasOTRSPermissionRelationsHeaderFileName = "hasOTRSPermissionRelationsHeader.csv";
 
   private static final String authorNodesFileName = "authorNodes.csv";
 
-  private static final String authorNodesHeaderFileName = "authorNodesHeader.csv";
-
   private static final String hasAuthorRelationsFileName = "hasAuthorRelations.csv";
-
-  private static final String hasAuthorRelationsHeaderFileName = "hasAuthorRelationsHeader.csv";
 
   private static final String wikidataImageLicenseNodesFileName = "wikidataImageLicenseNodes.csv";
 
-  private static final String wikidataImageLicenseNodesHeaderFileName = "wikidataImageLicenseNodesHeader.csv";
-
   private static final String hasLicenseRelationsFileName = "hasLicenseRelations.csv";
-
-  private static final String hasLicenseRelationsHeaderFileName = "hasLicenseRelationsHeader.csv";
 
   private static final String hasInternalWikipediaLinkToRelationsFileName = "hasInternalWikipediaLinkToRelations.csv";
 
-  private static final String hasInternalWikipediaLinkToRelationsHeaderFileName = "hasInternalWikipediaLinkToRelationsHeader.csv";
-
   private static final String typeNodesFileName = "typeNodes.csv";
-
-  private static final String typeNodesHeaderFileName = "typeNodesHeader.csv";
 
   private static final String hasTypeRelationsFileName = "hasTypeRelations.csv";
 
-  private static final String hasTypeRelationsHeaderFileName = "hasTypeRelationsHeader.csv";
-
   private static final String isSubclassOfRelationsFileName = "isSubclassOfRelations.csv";
-
-  private static final String isSubclassOfRelationsHeaderFileName = "isSubclassOfRelationsHeader.csv";
 
   private static final String typeHasTranslationRelationsFileName = "typeHasTranslationRelations.csv";
 
-  private static final String typeHasTranslationRelationsHeaderFileName = "typeHasTranslationRelationsHeader.csv";
-  
   private static final String geoLocationNodesFileName = "geoLocationNodes.csv";
-  
-  private static final String geoLocationNodesHeaderFileName = "geoLocationNodesHeader.csv";
   
   private static final String hasGeoLocationRelationsFileName = "hasGeoLocationRelations.csv";
   
-  private static final String hasGeoLocationRelationsHeaderFileName = "hasGeoLocationRelationsHeader.csv";
-  
   private static final String metaInformationFileName = "metaInformation.tsv";
   
-  private CSVWriter tempNewCsv;
-
-  private CSVWriter tempNewHeaderCsv;
+  private ICsvBeanWriter tempNewCsv;
 
   private List<String[]> tempNodes = new ArrayList<>();
 
@@ -382,14 +340,14 @@ public class Neo4jThemeTransformer extends Extractor {
       D.p("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
 
-    writeToFile(wikipeidiaUrlNodesFileName, wikipeidiaUrlNodesHeaderFileName, new String[] { "url:ID(WikipediaUrl)" }, tempNodes);
+    writeToFile(wikipeidiaUrlNodesFileName, new String[] { "url:ID(WikipediaUrl)" }, tempNodes);
     tempNodes.clear();
-    writeToFile(hasWikipediaUrlRelationsFileName, hasWikipediaUrlRelationsHeaderFileName,
+    writeToFile(hasWikipediaUrlRelationsFileName,
         new String[] { ":START_ID(WikidataInstance)", ":END_ID(WikipediaUrl)" }, tempRelations);
     tempRelations.clear();
 
-    addNodesToCommand("WikipediaUrl", wikipeidiaUrlNodesFileName, wikipeidiaUrlNodesHeaderFileName);
-    addRelationsToCommand("hasWikipediaUrl", hasWikipediaUrlRelationsFileName, hasWikipediaUrlRelationsHeaderFileName);
+    addNodesToCommand("WikipediaUrl", wikipeidiaUrlNodesFileName);
+    addRelationsToCommand("hasWikipediaUrl", hasWikipediaUrlRelationsFileName);
 
     D.p(
         "Finishing " + wikipeidiaUrlNodesFileName + " " + hasWikipediaUrlRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
@@ -415,15 +373,15 @@ public class Neo4jThemeTransformer extends Extractor {
       tempRelations.add(new String[] { entity_wikidataId.get(entity), wikiPage });
     }
     WikidataImageExtractor.WIKIDATAIMAGES.killCache();
-    writeToFile(wikidataImageNodesFileName, wikidataImageNodesHeaderFileName,
+    writeToFile(wikidataImageNodesFileName,
         new String[] { "wikiPage:ID(WikidataImage)", "imageUrl", "hasTrademark" }, tempNodes);
     tempNodes.clear();
-    writeToFile(hasImageRelationsFileName, hasImageRelationsHeaderFileName, new String[] { ":START_ID(WikidataInstance)", ":END_ID(WikidataImage)" },
+    writeToFile(hasImageRelationsFileName, new String[] { ":START_ID(WikidataInstance)", ":END_ID(WikidataImage)" },
         tempRelations);
     tempRelations.clear();
 
-    addNodesToCommand("WikidataImage", wikidataImageNodesFileName, wikidataImageNodesHeaderFileName);
-    addRelationsToCommand("hasImage", hasImageRelationsFileName, hasImageRelationsHeaderFileName);
+    addNodesToCommand("WikidataImage", wikidataImageNodesFileName);
+    addRelationsToCommand("hasImage", hasImageRelationsFileName);
 
     D.p
         ("Finishing " + wikidataImageNodesFileName + " " + hasImageRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
@@ -443,15 +401,15 @@ public class Neo4jThemeTransformer extends Extractor {
       tempRelations.add(new String[] { imageWikipage, licenseName });
     }
 
-    writeToFile(wikidataImageLicenseNodesFileName, wikidataImageLicenseNodesHeaderFileName, new String[] { "name:ID(WikidataImageLicense)", "url" },
+    writeToFile(wikidataImageLicenseNodesFileName, new String[] { "name:ID(WikidataImageLicense)", "url" },
         tempNodes);
     tempNodes.clear();
-    writeToFile(hasLicenseRelationsFileName, hasLicenseRelationsHeaderFileName,
+    writeToFile(hasLicenseRelationsFileName,
         new String[] { ":START_ID(WikidataImage)", ":END_ID(WikidataImageLicense)" }, tempRelations);
     tempRelations.clear();
 
-    addNodesToCommand("WikidataImageLicense", wikidataImageLicenseNodesFileName, wikidataImageLicenseNodesHeaderFileName);
-    addRelationsToCommand("hasLicense", hasLicenseRelationsFileName, hasLicenseRelationsHeaderFileName);
+    addNodesToCommand("WikidataImageLicense", wikidataImageLicenseNodesFileName);
+    addRelationsToCommand("hasLicense", hasLicenseRelationsFileName);
 
     D.p(
         "Finishing " + wikidataImageLicenseNodesFileName + " " + hasLicenseRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
@@ -477,14 +435,14 @@ public class Neo4jThemeTransformer extends Extractor {
       tempRelations.add(new String[] { imageWikipage, authorId });
     }
 
-    writeToFile(authorNodesFileName, authorNodesHeaderFileName, new String[] { "id:ID(Author)", "name", "url" }, tempNodes);
+    writeToFile(authorNodesFileName, new String[] { "id:ID(Author)", "name", "url" }, tempNodes);
     tempNodes.clear();
-    writeToFile(hasAuthorRelationsFileName, hasAuthorRelationsHeaderFileName, new String[] { ":START_ID(WikidataImage)", ":END_ID(Author)" },
+    writeToFile(hasAuthorRelationsFileName, new String[] { ":START_ID(WikidataImage)", ":END_ID(Author)" },
         tempRelations);
     tempRelations.clear();
 
-    addNodesToCommand("Author", authorNodesFileName, authorNodesHeaderFileName);
-    addRelationsToCommand("hasAuthor", hasAuthorRelationsFileName, hasAuthorRelationsHeaderFileName);
+    addNodesToCommand("Author", authorNodesFileName);
+    addRelationsToCommand("hasAuthor", hasAuthorRelationsFileName);
 
     D.p("Finishing " + authorNodesFileName + " " + hasAuthorRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
 
@@ -499,14 +457,14 @@ public class Neo4jThemeTransformer extends Extractor {
       tempRelations.add(new String[] { imageWikipage, otrsId });
     }
     WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.killCache();
-    writeToFile(OTRSPermissionNodesFileName, OTRSPermissionNodesHeaderFileName, new String[] { "id:ID(OTRSPermission)" }, tempNodes);
+    writeToFile(OTRSPermissionNodesFileName, new String[] { "id:ID(OTRSPermission)" }, tempNodes);
     tempNodes.clear();
-    writeToFile(hasOTRSPermissionRelationsFileName, hasOTRSPermissionRelationsHeaderFileName,
+    writeToFile(hasOTRSPermissionRelationsFileName,
         new String[] { ":START_ID(WikidataImage)", ":END_ID(OTRSPermission)" }, tempRelations);
     tempRelations.clear();
 
-    addNodesToCommand("OTRSPermission", OTRSPermissionNodesFileName, OTRSPermissionNodesHeaderFileName);
-    addRelationsToCommand("hasOTRSPermission", hasOTRSPermissionRelationsFileName, hasOTRSPermissionRelationsHeaderFileName);
+    addNodesToCommand("OTRSPermission", OTRSPermissionNodesFileName);
+    addRelationsToCommand("hasOTRSPermission", hasOTRSPermissionRelationsFileName);
 
     D.p(
         "Finishing " + OTRSPermissionNodesFileName + " " + hasOTRSPermissionRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
@@ -533,12 +491,11 @@ public class Neo4jThemeTransformer extends Extractor {
       theme.killCache();
       D.p("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
-    writeToFile(hasInternalWikipediaLinkToRelationsFileName, hasInternalWikipediaLinkToRelationsHeaderFileName,
+    writeToFile(hasInternalWikipediaLinkToRelationsFileName,
         new String[] { ":START_ID(WikidataInstance)", ":END_ID(WikidataInstance)", "anchorText" }, tempRelations);
     tempRelations.clear();
 
-    addRelationsToCommand("hasInternalWikipediaLinkTo", hasInternalWikipediaLinkToRelationsFileName,
-        hasInternalWikipediaLinkToRelationsHeaderFileName);
+    addRelationsToCommand("hasInternalWikipediaLinkTo", hasInternalWikipediaLinkToRelationsFileName);
     D.p("Finishing " + hasInternalWikipediaLinkToRelationsFileName + " " + (System.currentTimeMillis() - startTimeFileMaking));
     
     // Geo Locations
@@ -556,16 +513,16 @@ public class Neo4jThemeTransformer extends Extractor {
       tempRelations.add(new String[] { entity_wikidataId.get(entity), location_id });
     }
     WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.killCache();
-    writeToFile(geoLocationNodesFileName, geoLocationNodesHeaderFileName,
+    writeToFile(geoLocationNodesFileName,
         new String[] { "location_id:ID(Location)", "latitude:float", "longitude:float" }, tempNodes);
     tempNodes.clear();
-    writeToFile(hasGeoLocationRelationsFileName, hasGeoLocationRelationsHeaderFileName, 
+    writeToFile(hasGeoLocationRelationsFileName, 
         new String[] { ":START_ID(WikidataInstance)", ":END_ID(Location)" },
         tempRelations);
     tempRelations.clear();
 
-    addNodesToCommand("Location", geoLocationNodesFileName, geoLocationNodesHeaderFileName);
-    addRelationsToCommand("hasGeoLocation",hasGeoLocationRelationsFileName, hasGeoLocationRelationsHeaderFileName);
+    addNodesToCommand("Location", geoLocationNodesFileName);
+    addRelationsToCommand("hasGeoLocation",hasGeoLocationRelationsFileName);
 
     D.p
         ("Finishing " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName + (System.currentTimeMillis() - startTimeFileMaking));
@@ -645,12 +602,12 @@ public class Neo4jThemeTransformer extends Extractor {
         tempRelations.add(new String[] { wikidataId, type });
       }
     }
-    writeToFile(hasTypeRelationsFileName, hasTypeRelationsHeaderFileName, new String[] { ":START_ID(WikidataInstance)", ":END_ID(Type)" },
+    writeToFile(hasTypeRelationsFileName, new String[] { ":START_ID(WikidataInstance)", ":END_ID(Type)" },
         tempRelations);
     tempRelations.clear();
 
 
-    addRelationsToCommand("hasType", hasTypeRelationsFileName, hasTypeRelationsHeaderFileName);
+    addRelationsToCommand("hasType", hasTypeRelationsFileName);
     wikidataId_types.clear();
 
     D.p("Starting " + ClassExtractor.YAGOTAXONOMY.name);
@@ -679,7 +636,7 @@ public class Neo4jThemeTransformer extends Extractor {
     }
     D.p("Finishing " +HardExtractor.HARDWIREDFACTS.name + " " + RDFS.subclassOf + " relations " + (System.currentTimeMillis() - startTime));
     
-    writeToFile(isSubclassOfRelationsFileName, isSubclassOfRelationsHeaderFileName, new String[] { ":START_ID(Type)", ":END_ID(Type)" },
+    writeToFile(isSubclassOfRelationsFileName, new String[] { ":START_ID(Type)", ":END_ID(Type)" },
         tempRelations);
     tempRelations.clear();
 
@@ -696,7 +653,7 @@ public class Neo4jThemeTransformer extends Extractor {
       theme.killCache();
       D.p("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
-    writeToFile(typeHasTranslationRelationsFileName, typeHasTranslationRelationsHeaderFileName, new String[] { ":START_ID(Type)", ":END_ID(Type)" },
+    writeToFile(typeHasTranslationRelationsFileName, new String[] { ":START_ID(Type)", ":END_ID(Type)" },
         tempRelations);
     tempRelations.clear();
 
@@ -713,12 +670,12 @@ public class Neo4jThemeTransformer extends Extractor {
       }
     }
 
-    writeToFile(typeNodesFileName, typeNodesHeaderFileName, new String[] { "type:ID(Type)", "gloss:string[]" }, tempNodes);
+    writeToFile(typeNodesFileName, new String[] { "type:ID(Type)", "gloss:string[]" }, tempNodes);
     tempNodes.clear();
 
-    addNodesToCommand("Type", typeNodesFileName, typeNodesHeaderFileName);
-    addRelationsToCommand("isSubclassOf", isSubclassOfRelationsFileName, isSubclassOfRelationsHeaderFileName);
-    addRelationsToCommand("hasTranslation", typeHasTranslationRelationsFileName, typeHasTranslationRelationsHeaderFileName);
+    addNodesToCommand("Type", typeNodesFileName);
+    addRelationsToCommand("isSubclassOf", isSubclassOfRelationsFileName);
+    addRelationsToCommand("hasTranslation", typeHasTranslationRelationsFileName);
     type_glosses.clear();
     types.clear();
 
@@ -892,7 +849,7 @@ public class Neo4jThemeTransformer extends Extractor {
           properties.getCitationTitles() });
     }
 
-    writeToFile(wikidataInstancesNodesFileName, wikidataInstancesNodesHeaderFileName,
+    writeToFile(wikidataInstancesNodesFileName,
         new String[] {
             "url:ID(WikidataInstance)",
             "gender",
@@ -926,7 +883,7 @@ public class Neo4jThemeTransformer extends Extractor {
       theme.killCache();
       D.p("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
-    writeToFile(entityHasTranslationRelationsFileName, entityHasTranslationRelationsHeaderFileName,
+    writeToFile(entityHasTranslationRelationsFileName,
         new String[] { ":START_ID(Entity)", ":END_ID(Entity)" }, tempRelations);
     tempRelations.clear();
 
@@ -934,17 +891,17 @@ public class Neo4jThemeTransformer extends Extractor {
       tempNodes.add(new String[] { entity });
       tempRelations.add(new String[] { entity_wikidataId.get(entity), entity });
     }
-    writeToFile(entityNodesFileName, entityNodesHeaderFileName, new String[] { "entity:ID(Entity)" }, tempNodes);
+    writeToFile(entityNodesFileName, new String[] { "entity:ID(Entity)" }, tempNodes);
     tempNodes.clear();
-    writeToFile(sameAsRelationsFileName, sameAsRelationsHeaderFileName, new String[] { ":START_ID(WikidataInstance)", ":END_ID(Entity)" },
+    writeToFile(sameAsRelationsFileName, new String[] { ":START_ID(WikidataInstance)", ":END_ID(Entity)" },
         tempRelations);
     tempRelations.clear();
 
 
-    addNodesToCommand("WikidataInstance", wikidataInstancesNodesFileName, wikidataInstancesNodesHeaderFileName);
-    addNodesToCommand("Entity", entityNodesFileName, entityNodesHeaderFileName);
-    addRelationsToCommand("sameAs", sameAsRelationsFileName, sameAsRelationsHeaderFileName);
-    addRelationsToCommand("hasTranslation", entityHasTranslationRelationsFileName, entityHasTranslationRelationsHeaderFileName);
+    addNodesToCommand("WikidataInstance", wikidataInstancesNodesFileName);
+    addNodesToCommand("Entity", entityNodesFileName);
+    addRelationsToCommand("sameAs", sameAsRelationsFileName);
+    addRelationsToCommand("hasTranslation", entityHasTranslationRelationsFileName);
     entity_wikidataId.clear();
     wikidataId_properies.clear();
 
@@ -955,16 +912,13 @@ public class Neo4jThemeTransformer extends Extractor {
     D.p("Starting " + metaInformationFileName);
     List<String> languages = new ArrayList<>();
     List<String> wikiSources = new ArrayList<>();
-    List<String> headers = new ArrayList<>();
     List<String> values = new ArrayList<>();
     
-    headers.add("confName:ID(Meta)");
     values.add("YAGO3");
     
     
     for(Fact f : MetadataExtractor.METADATAFACTS.factCollection().getFactsWithRelation("<_yagoMetadata>")) {
       if (f.getSubject().contains("CreationDate")) {
-        headers.add("KB_creationDate");
         values.add(f.getObject());
         continue;
       }
@@ -973,26 +927,21 @@ public class Neo4jThemeTransformer extends Extractor {
       languages.add(f.getObject().substring(1, 3));
     }
     MetadataExtractor.METADATAFACTS.killCache();
-    headers.add("languages:string[]");
     values.add(String.join(";", languages));
     
-    headers.add("KB_WikipediaSources:string[]");
     values.add(String.join(";", wikiSources));
     
-    headers.add("collection_size");
     Integer wikidatasize = new HashSet<>(entity_wikidataId.values()).size();
     values.add(wikidatasize.toString());
     
-    headers.add("datasource_YAGO3");
     values.add(OUTPUT_PATH);
     
-    headers.add("creationDate");
     values.add(new Date().toString());
     
-    tempNodes.add(headers.toArray(new String[headers.size()]));
     tempNodes.add(values.toArray(new String[values.size()]));
     
-    writeToFile(metaInformationFileName, tempNodes);
+    writeToFile(metaInformationFileName, new String[] {"confName:ID(Meta)", "KB_creationDate", "languages:string[]", 
+        "KB_WikipediaSources:string[]", "collection_size", "datasource_YAGO3", "creationDate"}, tempNodes);
     tempNodes.clear();
     command += " --nodes:Meta \"" + YAGO_OUTPUT_PATH_PLACEHOLDER + metaInformationFileName + "\" ";
     D.p("Finishing " + metaInformationFileName);
@@ -1006,39 +955,27 @@ public class Neo4jThemeTransformer extends Extractor {
     NEO4JDONE.write(new Fact("Extractor", "isDone", "true"));
   }
 
-  private void addRelationsToCommand(String type, String dataFile, String headerFile) {
+  private void addRelationsToCommand(String type, String dataFile) {
 
-    command += " --relationships:" + type + " \"" + YAGO_OUTPUT_PATH_PLACEHOLDER + headerFile + "," + YAGO_OUTPUT_PATH_PLACEHOLDER + dataFile + "\"";
+    command += " --relationships:" + type + " \"" +  YAGO_OUTPUT_PATH_PLACEHOLDER + dataFile + "\"";
   }
 
-  private void addNodesToCommand(String label, String dataFile, String headerFile) {
-    command += " --nodes:" + label + " \"" + YAGO_OUTPUT_PATH_PLACEHOLDER + headerFile + "," + YAGO_OUTPUT_PATH_PLACEHOLDER + dataFile + "\"";
+  private void addNodesToCommand(String label, String dataFile) {
+    command += " --nodes:" + label + " \"" + YAGO_OUTPUT_PATH_PLACEHOLDER + dataFile + "\"";
   }
 
-  private void writeToFile(String fileName, String headerFileName, String[] headers, List<String[]> lines) throws IOException {
-    tempNewHeaderCsv = new CSVWriter(new FileWriter(new File(OUTPUT_PATH + headerFileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER,
-        CSVWriter.NO_ESCAPE_CHARACTER);
-    tempNewHeaderCsv.writeNext(headers);
-    tempNewHeaderCsv.close();
-
-    tempNewCsv = new CSVWriter(new FileWriter(new File(OUTPUT_PATH + fileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER);
+  private void writeToFile(String fileName, String[] headers, List<String[]> lines) throws IOException {
+    tempNewCsv = new CsvBeanWriter(new FileWriter(OUTPUT_PATH + fileName), CsvPreference.TAB_PREFERENCE); 
+    tempNewCsv.writeHeader(headers);
+    
     for (String[] line : lines) {
       for (int i = 0; i < line.length; i++) {
         line[i] = '"' + line[i].replaceAll("\"", "") + '"';
+        tempNewCsv.write(line, headers);
       }
-      tempNewCsv.writeNext(line);
+      
     }
     tempNewCsv.close();
   }
   
-  private void writeToFile(String fileName, List<String[]> lines) throws IOException {
-    tempNewCsv = new CSVWriter(new FileWriter(new File(OUTPUT_PATH + fileName)), '\t', CSVWriter.NO_QUOTE_CHARACTER, CSVWriter.NO_ESCAPE_CHARACTER);
-    for (String[] line : lines) {
-      for (int i = 0; i < line.length; i++) {
-        line[i] = '"' + line[i].replaceAll("\"", "") + '"';
-      }
-      tempNewCsv.writeNext(line);
-    }
-    tempNewCsv.close();
-  }
 }
