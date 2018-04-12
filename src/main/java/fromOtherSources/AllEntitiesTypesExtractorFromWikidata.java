@@ -42,7 +42,7 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
   @Override
   public Set<Theme> input() {
     Set<Theme> input =  new HashSet<Theme>();
-//  input.add(WikidataLabelExtractor.WIKIDATAINSTANCES);
+  input.add(WikidataLabelExtractor.WIKIDATAINSTANCES);
 //  input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     //this extractor actually depends on WikidataInstances and CatMembers to get all entity names, but since I do this in other extractor AllEntitiesFromYago, to write less code I assume that is already called and load the entity names from that theme's subjects
     input.add(AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings.ALL_ENTITIES_YAGO);
@@ -83,29 +83,39 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
     System.out.println("classes: " + classes.size());
     
     for (String entity : AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings.ALL_ENTITIES_YAGO.factCollection().getSubjects()) {
+      if (entity == null) {
+        continue;
+      }
       String wikidataId = WikidataLabelExtractor.WIKIDATAINSTANCES.factCollection().getObject(entity, RDFS.sameas);
       if (wikidataId != null ) {
-        if (mostEnglishyagoEntityWikidataId.get(wikidataId).equals(entity)) {
-          if (instances.contains(wikidataId) && classes.contains(wikidataId)) {
-            ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.BOTH.getYagoName()));
-          }
-          else if (classes.contains(wikidataId)) {
-            ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.CONCEPT.getYagoName()));
-          }
-          else if (instances.contains(wikidataId)) {
-            ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.NAMED_ENTITY.getYagoName()));
+        if (mostEnglishyagoEntityWikidataId.containsKey(wikidataId)) {
+          if (mostEnglishyagoEntityWikidataId.get(wikidataId).equals(entity)) {
+            if (instances.contains(wikidataId) && classes.contains(wikidataId)) {
+              ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.BOTH.getYagoName()));
+            }
+            else if (classes.contains(wikidataId)) {
+              ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.CONCEPT.getYagoName()));
+            }
+            else if (instances.contains(wikidataId)) {
+              ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.NAMED_ENTITY.getYagoName()));
+            }
+            else {
+              ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
+            }
           }
           else {
-            ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
+            System.out.println("Warn: Most English was not equal to entity: " + entity + " " + mostEnglishyagoEntityWikidataId.get(wikidataId) + " " + wikidataId);
           }
         }
         else {
-          System.out.println("Warn: Most English was not equal to entity: " + entity + " " + mostEnglishyagoEntityWikidataId.get(wikidataId));
+          System.out.println("Warn: Entity not present in most English entities " + entity + " " + wikidataId);
         }
+    
       }
       else {
         ALL_ENTITIES_WIKIDATA.write(new Fact(entity, YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
       }
+        
     }
   }
   
@@ -117,7 +127,12 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
     FactCollection reverseWikidataInstances = WikidataLabelExtractor.WIKIDATAINSTANCES.factCollection().getReverse();
     
     for(String subject:reverseWikidataInstances.getSubjects()) {
-      mostEnglishyagoEntityWikidataId.put(subject, getMostEnglishEntityName(reverseWikidataInstances.getFactsWithSubjectAndRelation(subject, RDFS.sameas))); 
+      String mostEn = getMostEnglishEntityName(reverseWikidataInstances.getFactsWithSubjectAndRelation(subject, RDFS.sameas));
+      if (mostEn == null) {
+        System.out.println(subject);
+        continue;
+      }
+      mostEnglishyagoEntityWikidataId.put(subject, mostEn); 
     }
   }
 
@@ -158,5 +173,6 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
     }
     return map;
   }
+
 
 }

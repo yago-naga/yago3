@@ -1,7 +1,9 @@
 package fromThemes;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -15,6 +17,7 @@ import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromWikipedia.CategoryExtractor;
+import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.EntityType;
 import utils.FactCollection;
@@ -32,7 +35,8 @@ public class AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings extends Extrac
   public Set<Theme> input() {
     Set<Theme> input = new HashSet<>();
     input.add(WikidataLabelExtractor.WIKIDATAINSTANCES);
-    input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
+    input.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
     input.add(WordnetExtractor.PREFMEANINGS);
     return input;
   }
@@ -79,10 +83,12 @@ public class AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings extends Extrac
     int temp_wd_ents = done.size();
     
     // Add other entities that does not have a wikidata ID
-    for (Theme theme:CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
+    List<Theme> categoryThemes = new ArrayList<>();
+    categoryThemes.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
+    categoryThemes.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
+    for (Theme theme:categoryThemes) {
       for (String entity : theme.factCollection().getSubjects()) {
         if (!done.contains(entity)) {
-          System.out.println("NOT IN WD: " + entity);
           done.add(entity);
           String isNamedEntity = EntityType.UNKNOWN.getYagoName();
           if (theme.isEnglishOrDefault()) {
@@ -97,8 +103,7 @@ public class AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings extends Extrac
         }
       }
     }
-    System.out.println("#Wikidata entities in all langs: " + temp_wd_ents);
-    System.out.println("#Extra entities in all langs added by CatMems: " + (done.size() - temp_wd_ents));
+    Announce.done(this.getClass().getName() + " #Wikidata entities in all langs: " + temp_wd_ents + "#Entities not available in Wikidata but in Wikipedia: " + (done.size() - temp_wd_ents));
   }
 
   private boolean isConcept(String title) {
