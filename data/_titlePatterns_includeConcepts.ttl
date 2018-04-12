@@ -30,19 +30,19 @@
 @prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
-"Economy of the Bahamas"  <_titleReplace> "The_Bahamas" .
-"Economy of the Gambia" <_titleReplace> "The_Gambia" .
-"Economy of the (.+)" <_titleReplace> "$1" .
-"Economy of (.+)" <_titleReplace> "$1" .
+"Economy of the Bahamas"	<_titleReplace>	"The_Bahamas" .
+"Economy of the Gambia"	<_titleReplace>	"The_Gambia" .
+"Economy of the (.+)"	<_titleReplace>	"$1" .
+"Economy of (.+)"	<_titleReplace>	"$1" .
 "Political divisions"	<_titleReplace>	"NIL" .
 "List of"	<_titleReplace>	"NIL" .
 "[^:<]+:[^<]+"	<_titleReplace>	"NIL" .
 "[Pp]layers"	<_titleReplace>	"NIL" .
-"History of"  <_titleReplace> "NIL" .
+"History of"	<_titleReplace> "NIL" .
 "Comparison of"	<_titleReplace>	"NIL" .
 "Demography of"	<_titleReplace>	"NIL" .
 "Demographics of"	<_titleReplace>	"NIL" .
-"Geography of"  <_titleReplace> "NIL" .
+"Geography of"	<_titleReplace> "NIL" .
 "[^<]{100,}"	<_titleReplace>	"NIL" .
 "Category:"	<_titleReplace>	"NIL" .
 "\\(disambiguation\\)"	<_titleReplace>	"NIL" .
