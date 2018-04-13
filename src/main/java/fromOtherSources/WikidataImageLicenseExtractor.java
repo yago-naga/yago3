@@ -123,9 +123,9 @@ public class WikidataImageLicenseExtractor extends DataExtractor {
     
     tempMap.put("CreativeCommonsLicense", Pattern.compile("(?:\\{\\{|\\|)cc-(by(?:-sa|-nd|-nc|-nc-sa|-nc-nd|))-(\\d\\.\\d|all)(?:-(.{2,3}))?(?:\\}\\}|\\|)", Pattern.CASE_INSENSITIVE));
     
-    tempMap.put("GNUFreeDocumentationLicense", Pattern.compile("(?:\\{\\{|\\|)(GFDL)(?:\\}\\}|\\|)"));
-    tempMap.put("GNUGeneralPublicLicense", Pattern.compile("(?:\\{\\{|\\|)(GPL)(?:\\}\\}|\\|)"));
-    tempMap.put("GNULesserGeneralPublicLicense", Pattern.compile("(?:\\{\\{|\\|)(LGPL)(?:\\}\\}|\\|)"));
+    tempMap.put("GNUFreeDocumentationLicense", Pattern.compile("(?:\\{\\{|\\|)(GFDL)(-\\d\\.\\d)?(-\\w+)?(?:\\}\\}|\\|)"));
+    tempMap.put("GNUGeneralPublicLicense", Pattern.compile("(?:\\{\\{|\\|)(GPL)(v\\d\\+)?(v\\d)?( only)?(?:\\}\\}|\\|)"));
+    tempMap.put("GNULesserGeneralPublicLicense", Pattern.compile("(?:\\{\\{|\\|)(LGPL)(v\\d(?:\\.\\d)?\\+?)?( only)?(?:\\}\\}|\\|)"));
     tempMap.put("GNUAfferoGeneralPublicLicense", Pattern.compile("(?:\\{\\{|\\|)(AGPL)(?:\\}\\}|\\|)"));
     
     tempMap.put("FreeArtLicense", Pattern.compile("artlibre.org/licence/"));
@@ -145,8 +145,11 @@ public class WikidataImageLicenseExtractor extends DataExtractor {
   static {
     Map<String, String> tempMap = new HashMap<>();
     tempMap.put("PublicDomainLicense",            "https://en.wikipedia.org/wiki/Public_domain");
-    tempMap.put("GNUFreeDocumentationLicense",    "https://www.gnu.org/licenses/gfdl");
-    tempMap.put("GNUGeneralPublicLicense",        "https://www.gnu.org/licenses/gpl");
+    tempMap.put("GNUFreeDocumentationLicense-1.1",    "https://www.gnu.org/licenses/fdl-1.1");
+    tempMap.put("GNUFreeDocumentationLicense-1.2",    "https://www.gnu.org/licenses/fdl-1.2");
+    tempMap.put("GNUFreeDocumentationLicense-1.3",    "https://www.gnu.org/licenses/fdl-1.3");
+    tempMap.put("GNUGeneralPublicLicense-v2",        "https://www.gnu.org/licenses/gpl-2.0");
+    tempMap.put("GNUGeneralPublicLicense-v3",        "https://www.gnu.org/licenses/gpl-3.0");
     tempMap.put("GNULesserGeneralPublicLicense",  "https://www.gnu.org/licenses/lgpl");
     tempMap.put("GNUAfferoGeneralPublicLicense",  "https://www.gnu.org/licenses/agpl");
     tempMap.put("FreeArtLicense",                 "http://artlibre.org/licence/lal/en/");
@@ -332,6 +335,24 @@ public class WikidataImageLicenseExtractor extends DataExtractor {
         if (hardCodedLicenses.containsKey(key)) {
           licenses.imageLicenses.add(key);
         } 
+        // If it is GFDL, check if it has a specific version.
+        else if (key.equals("GNUFreeDocumentationLicense")) {
+          if(licenseMatcher.group(2) != null) {//version
+            licenses.imageLicenses.add(key + licenseMatcher.group(2));
+          }
+          else {
+            licenses.imageLicenses.add(key + "-1.3");
+          }
+        }
+        // If it is GPL, check for versions.
+        else if (key.equals("GNUGeneralPublicLicense")) {
+          if (licenseMatcher.group(3) != null) {//specific version
+            licenses.imageLicenses.add(key + "-" + licenseMatcher.group(3));
+          }
+          else {
+            licenses.imageLicenses.add(key + "-v3");
+          }
+        }
         // If it is Creative Common and does not have a specific language (It is still in the hard coded licenses with different key):
         else if (key.equals("CreativeCommonsLicense") && licenseMatcher.group(3) == null) {
           if (licenseMatcher.group(2).equals("all")) {
