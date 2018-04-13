@@ -365,7 +365,7 @@ def getWikidataUrl():
     if (r.status_code == requests.codes.ok):
       print("Wikidata dump is available for the given date: " + formattedDumpDate)
       resultUrl = url
-    elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2')):
+    elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl')):
       print("Wikidata dump exist: " + formattedDumpDate)
       resultUrl = url
     else:
@@ -383,7 +383,7 @@ def getWikidataUrl():
         print("Latest Wikidata dump: " + formattedDumpDate)
         resultUrl = url
         break
-      elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2')):
+      elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl')):
         print("Wikidata dump exist: " + formattedDumpDate)
         resultUrl = url
         break
