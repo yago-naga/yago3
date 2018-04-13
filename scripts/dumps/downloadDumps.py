@@ -383,7 +383,7 @@ def getWikidataUrl():
         print("Latest Wikidata dump: " + formattedDumpDate)
         resultUrl = url
         break
-      elif os.path.isfile(os.path.join(dumpsFolder, COMMONSWIKI_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2')):
+      elif os.path.isfile(os.path.join(dumpsFolder, WIKIDATA_DIR, formattedDumpDate, 'wikidata-' + formattedDumpDate + '-all-BETA.ttl.bz2')):
         print("Wikidata dump exist: " + formattedDumpDate)
         resultUrl = url
         break
