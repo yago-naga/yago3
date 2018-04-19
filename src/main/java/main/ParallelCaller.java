@@ -475,7 +475,7 @@ public class ParallelCaller {
     neo4jFolder = Parameters.getFile("neo4jFolder", null);
     extractorsToDo = new ArrayList<>(extractors(Parameters.getList("extractors")));
 
-    
+    Announce.debug("ExtractorsToDo initially: " + extractorsToDo);
 
     String lockFile = outputFolder.getAbsolutePath() + "/yago.lock";
     if (!lock(lockFile)) {
@@ -504,6 +504,8 @@ public class ParallelCaller {
     }
     extractorsToDo = topologicalSort(extractorDependencies);
 
+    Announce.debug("ExtractorsToDo after topological sort: " + extractorsToDo);
+    
     extractorsRunning.clear();
     extractorsFailed.clear();
     themesWeHave.clear();
