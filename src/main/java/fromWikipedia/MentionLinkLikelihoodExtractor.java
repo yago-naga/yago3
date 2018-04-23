@@ -87,6 +87,16 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
     input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
 
+    input.add(PatternHardExtractor.TITLEPATTERNS);
+    input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
+    
+    return input;
+  }
+  
+  @Override
+  public Set<Theme> inputCached() {
+    Set<Theme> input = new HashSet<>();
+    input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
     return input;
   }
 
