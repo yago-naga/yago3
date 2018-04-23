@@ -37,11 +37,14 @@ import java.util.regex.Pattern;
 
 import basics.Fact;
 import basics.RDFS;
+import extractors.Extractor;
+import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.PersonNameExtractor;
 import javatools.administrative.Announce;
+import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileUtils;
@@ -86,7 +89,17 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     input.add(PersonNameExtractor.PERSONNAMEHEURISTICS);
     input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
     input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
-
+    
+    input.add(PatternHardExtractor.TITLEPATTERNS);
+    input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
+    
+    return input;
+  }
+  
+  @Override
+  public Set<Theme> inputCached() {
+    Set<Theme> input = new HashSet<>();
+    input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
     return input;
   }
 
@@ -149,6 +162,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     // Load all mentions.
     loadMentions();
+    D.p("Loading Mentions Done.");
 
     int pagesProcessed = 0;
 
