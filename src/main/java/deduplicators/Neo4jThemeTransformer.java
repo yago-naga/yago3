@@ -21,12 +21,14 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package deduplicators;
 
+import java.io.File;
 /**
  * Transform facts to node and relation files for Neo4j import.
  * 
 */
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
@@ -34,10 +36,6 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
-
-import org.supercsv.io.CsvBeanWriter;
-import org.supercsv.io.ICsvBeanWriter;
-import org.supercsv.prefs.CsvPreference;
 
 import basics.Fact;
 import basics.RDFS;
@@ -65,6 +63,7 @@ import fromWikipedia.WikiInfoExtractor;
 import fromWikipedia.WikipediaEntityDescriptionExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
+import javatools.filehandlers.FileUtils;
 import utils.Theme;
 
 public class Neo4jThemeTransformer extends Extractor {
@@ -233,7 +232,7 @@ public class Neo4jThemeTransformer extends Extractor {
   
   private static final String metaInformationFileName = "metaInformation.tsv";
   
-  private ICsvBeanWriter tempNewCsv;
+  private Writer writer;
 
   private List<String[]> tempNodes = new ArrayList<>();
 
@@ -965,17 +964,17 @@ public class Neo4jThemeTransformer extends Extractor {
   }
 
   private void writeToFile(String fileName, String[] headers, List<String[]> lines) throws IOException {
-    tempNewCsv = new CsvBeanWriter(new FileWriter(OUTPUT_PATH + fileName), CsvPreference.TAB_PREFERENCE); 
-    tempNewCsv.writeHeader(headers);
+    writer = FileUtils.getBufferedUTF8Writer(new File(OUTPUT_PATH + fileName));
+    
+    writer.write(String.join("\t", headers) + "\n");
+    
     
     for (String[] line : lines) {
       for (int i = 0; i < line.length; i++) {
         line[i] = '"' + line[i].replaceAll("\"", "") + '"';
-        tempNewCsv.write(line, headers);
       }
-      
+      writer.write(String.join("\t", line) + "\n");
     }
-    tempNewCsv.close();
+    writer.close();
   }
-  
 }
