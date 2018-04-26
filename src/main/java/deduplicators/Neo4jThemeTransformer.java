@@ -389,6 +389,7 @@ public class Neo4jThemeTransformer extends Extractor {
     // Loading wikidataImageLicenses theme.
     // Interesting relations are: <hasLicense>, <hasAuthor> (<hasName> and <hasUrl>), <hasOTRSPermissionTicketID> 
     D.p("Starting " + wikidataImageLicenseNodesFileName + " " + hasLicenseRelationsFileName);
+    Set<String> doneLicenseKeys = new HashSet<>();
     startTimeFileMaking = System.currentTimeMillis();
     // For Licenses, we make new License nodes and relationship between ImageWikipage and License.
     for (Fact f : WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getFactsWithRelation(YAGO.hasLicense)) {
@@ -396,7 +397,10 @@ public class Neo4jThemeTransformer extends Extractor {
       String licenseName = f.getObject();
       String licenseUrl = WikidataImageLicenseExtractor.WIKIDATAIMAGELICENSE.factCollection().getObject(licenseName, YAGO.hasUrl);
 
-      tempNodes.add(new String[] { licenseName, licenseUrl });
+      if (!doneLicenseKeys.contains(licenseName)) {
+        tempNodes.add(new String[] { licenseName, licenseUrl });
+        doneLicenseKeys.add(licenseName);
+      }
       tempRelations.add(new String[] { imageWikipage, licenseName });
     }
 
