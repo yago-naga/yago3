@@ -175,9 +175,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor {
   @Override
   public void extract() throws Exception {
    
-    int cntImagesNOLicense = 0;
-    int cntImages = 0;
-    
     writeHardcodedLicenses();
     
     Reader in = FileUtils.getBufferedUTF8Reader(inputData);
@@ -191,8 +188,6 @@ public class WikidataImageLicenseExtractor extends DataExtractor {
       imageFileName = Char17.decodeAmpersand(imageFileName);
       // If the title was not null and was one of the image files that we extracted before:
       if (imageFileName != null && imageUrlByName.containsKey(imageFileName)) {
-        cntImages++;
-        
         String text = FileLines.readBetween(in, "<text", "</text>");
         
         authorUser author = new authorUser();
@@ -207,16 +202,12 @@ public class WikidataImageLicenseExtractor extends DataExtractor {
         trademark = findTrademark(text);
         //attribution = findAttribution(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
         
-        String imageUrl = FactComponent.forYagoEntity(imageUrlByName.get(imageFileName));
+        String imageUrl = FactComponent.forUri(imageUrlByName.get(imageFileName));
         
         // Write available information:
         for (String licenseID:licenses.addedLicenses.keySet()) {
           String url = FactComponent.forYagoEntity(licenses.addedLicenses.get(licenseID));
           WIKIDATAIMAGELICENSE.write(new Fact(licenseID, YAGO.hasUrl, url));
-        }
-
-        if (licenses.imageLicenses.isEmpty()) {
-          cntImagesNOLicense++;
         }
         
         for (String license:licenses.imageLicenses) {
