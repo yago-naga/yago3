@@ -168,7 +168,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     // Load all mentions.
     loadMentions();
     
-    D.p("LoadMentions Done, mentionTokensLinkCount: " + mentionTokensLinkCount.keySet().size());
+    System.out.println(NumberFormatter.formatMS(System.currentTimeMillis()) + " - LoadMentions Done, mentionTokensLinkCount(" + language + "): " + mentionTokensLinkCount.keySet().size());
 
     int pagesProcessed = 0;
 
