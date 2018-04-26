@@ -554,7 +554,7 @@ public class ParallelCaller {
       }
     }
     startTime = System.currentTimeMillis();
-    if (!simulate) Announce.setLevel(Announce.Level.WARNING);
+    if (!simulate) Announce.setLevel(Announce.Level.MESSAGES);
     callNext(null, true);
   }
 
