@@ -38,10 +38,11 @@ import java.util.regex.Pattern;
 import basics.Fact;
 import basics.RDFS;
 import extractors.Extractor;
-import extractors.MultilingualExtractor;
 import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
+import fromOtherSources.WordnetExtractor;
+import fromThemes.CoherentTypeExtractor;
 import fromThemes.PersonNameExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
@@ -49,6 +50,7 @@ import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileUtils;
 import javatools.parsers.Char17;
+import javatools.parsers.NumberFormatter;
 import utils.MultilingualTheme;
 import utils.PatternList;
 import utils.Theme;
@@ -89,9 +91,12 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     input.add(PersonNameExtractor.PERSONNAMEHEURISTICS);
     input.add(WikidataLabelExtractor.WIKIPEDIALABELS);
     input.add(WikidataLabelExtractor.WIKIDATAMULTILABELS);
-    
+
     input.add(PatternHardExtractor.TITLEPATTERNS);
     input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
+    if (includeConcepts) {
+      input.add(CoherentTypeExtractor.YAGOTYPES);
+    }
     
     return input;
   }
@@ -162,7 +167,8 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     // Load all mentions.
     loadMentions();
-    D.p("Loading Mentions Done.");
+    
+    D.p("LoadMentions Done, mentionTokensLinkCount: " + mentionTokensLinkCount.keySet().size());
 
     int pagesProcessed = 0;
 
@@ -187,7 +193,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
         case 0:
           pagesProcessed++;
           if (pagesProcessed % 100_000 == 0) {
-            System.out.println("MentionLinkLikelihoodExtractor: " + pagesProcessed + " pages Processed");
+            System.out.println(NumberFormatter.formatMS(System.currentTimeMillis()) + " - MentionLinkLikelihoodExtractor(" + language + "): " + pagesProcessed + " pages Processed. mentionTokensLinkCount: " + mentionTokensLinkCount.size());
           }
 
           titleEntity = titleExtractor.getTitleEntity(in);
@@ -276,6 +282,14 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
    */
   private String clean(String text) {
     return text.replaceAll("[^\\p{L}\\p{N} ]", "");
+  }
+  
+  public static void main(String[] args) throws Exception {
+    MultilingualWikipediaExtractor.wikipediaLanguages = Arrays.asList("en", "de", "zh", "es");
+    Extractor.includeConcepts = true;
+    MentionLinkLikelihoodExtractor ex = new MentionLinkLikelihoodExtractor("en", new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation/tmp_dumps/en/20180120/enwiki-20180120-pages-articles.xml"));
+    ex.extract(new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation_concepts/tmp_yago/yago_aida_en20180120_de20180120_zh20180120_es20180120/"), 
+        new File("/home/ghazaleh/Projects/data/test_yago_mll_concepts/"), "test");
   }
 
 }
