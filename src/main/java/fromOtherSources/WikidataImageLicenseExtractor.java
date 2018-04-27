@@ -202,21 +202,21 @@ public class WikidataImageLicenseExtractor extends DataExtractor {
         trademark = findTrademark(text);
         //attribution = findAttribution(text.replaceAll("[\\p{Zl}\\p{Zs}\\p{Zp}\\n]+", " "));
         
-        String imageUrl = FactComponent.forUri(imageUrlByName.get(imageFileName));
+        String imageUrl = imageUrlByName.get(imageFileName);
         
         // Write available information:
         for (String licenseID:licenses.addedLicenses.keySet()) {
-          String url = FactComponent.forYagoEntity(licenses.addedLicenses.get(licenseID));
-          WIKIDATAIMAGELICENSE.write(new Fact(licenseID, YAGO.hasUrl, url));
+          String url = licenses.addedLicenses.get(licenseID);
+          WIKIDATAIMAGELICENSE.write(new Fact(licenseID, YAGO.hasUrl, FactComponent.forUri(url)));
         }
         
         for (String license:licenses.imageLicenses) {
-          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasLicense, FactComponent.forYagoEntity(license)));
+          WIKIDATAIMAGELICENSE.write(new Fact(FactComponent.forUri(imageUrl), YAGO.hasLicense, FactComponent.forYagoEntity(license)));
         }
           
         if (author.name != null || author.url != null) {
           String authorID = FactComponent.forYagoEntity("author_" + (++authorCnt));
-          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasAuthor, authorID));
+          WIKIDATAIMAGELICENSE.write(new Fact(FactComponent.forUri(imageUrl), YAGO.hasAuthor, authorID));
           if (author.name != null) {
             WIKIDATAIMAGELICENSE.write(new Fact(authorID, YAGO.hasName, FactComponent.forYagoEntity(author.name)));
           }
@@ -226,11 +226,11 @@ public class WikidataImageLicenseExtractor extends DataExtractor {
         }
         
         if (permissionOTRS != null) {
-          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasOTRSId, FactComponent.forYagoEntity(permissionOTRS)));
+          WIKIDATAIMAGELICENSE.write(new Fact(FactComponent.forUri(imageUrl), YAGO.hasOTRSId, FactComponent.forYagoEntity(permissionOTRS)));
         }
           
         if (trademark) {
-          WIKIDATAIMAGELICENSE.write(new Fact(imageUrl, YAGO.hasTrademark, FactComponent.forYagoEntity(trademark.toString())));
+          WIKIDATAIMAGELICENSE.write(new Fact(FactComponent.forUri(imageUrl), YAGO.hasTrademark, FactComponent.forYagoEntity(trademark.toString())));
         }
         
         //if (attribution != null) {

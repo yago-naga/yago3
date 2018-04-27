@@ -118,8 +118,8 @@ public class WikidataImageExtractor extends DataExtractor {
 			// example: <http://www.wikidata.org/entity/Q1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/ontology#Item>
 			if(f.getObject().endsWith("#Item>")) {
 				if(!images.isEmpty()) {
-				  String image = FactComponent.forUri(pickImage(yagoEntityMostEnglish, images));
-					String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
+				  String image = Char17.decodePercentage(pickImage(yagoEntityMostEnglish, images)).replaceAll(" ", "_");
+					String originalUrl = getOriginalImageUrl(FactComponent.stripBrackets(image));
 					
 					// Get image's wiki page:
 					String imageWikipage = image.replace("wiki/Special:FilePath/", "wiki/File:");
@@ -128,8 +128,8 @@ public class WikidataImageExtractor extends DataExtractor {
 					
 					// Saving imageID along with image wiki page url and image original url to the theme
 					WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
-					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, imageWikipage));
-					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
+					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, FactComponent.forUri(imageWikipage)));
+					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, FactComponent.forUri(originalUrl)));
 	        images.clear();
 				}
 				// reverseWikidataInstances facts like: <http://www.wikidata.org/entity/Q23>  owl:sameAs <George_Washington>
@@ -159,13 +159,13 @@ public class WikidataImageExtractor extends DataExtractor {
     // Saving information of the last entity in the file
 		if (!images.isEmpty() && yagoEntityMostEnglish != null) {
 		  String image = Char17.decodePercentage(pickImage(yagoEntityMostEnglish, images)).replaceAll(" ", "_");
-      String originalUrl = FactComponent.forUri(getOriginalImageUrl(FactComponent.stripBrackets(image)));
+      String originalUrl = getOriginalImageUrl(FactComponent.stripBrackets(image));
       String imageWikipage = image.replace("wiki/Special:FilePath/", "wiki/File:");
 		  String imageID = FactComponent.forYagoEntity(IMAGETYPE + imageCounter);
 		  
       WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
-      WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, imageWikipage));
-      WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, originalUrl));
+      WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, FactComponent.forUri(imageWikipage)));
+      WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, FactComponent.forUri(originalUrl)));
       images.clear();
 		}
 		
