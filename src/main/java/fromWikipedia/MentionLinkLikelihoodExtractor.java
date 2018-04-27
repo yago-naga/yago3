@@ -40,12 +40,14 @@ import basics.RDFS;
 import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
+import fromThemes.CoherentTypeExtractor;
 import fromThemes.PersonNameExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileUtils;
 import javatools.parsers.Char17;
+import javatools.parsers.NumberFormatter;
 import utils.MultilingualTheme;
 import utils.PatternList;
 import utils.Theme;
@@ -62,7 +64,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
    * int[0]: how many times has the token been found as link in Wikipedia articles
    * int[1]: how many times has the token been found in general in Wikipeida articles
    */
-  private static Map<String, int[]> mentionTokensLinkCount = new HashMap<>();
+  private Map<String, int[]> mentionTokensLinkCount = new HashMap<>();
 
   //Extract set of all link surface forms via regex.
   // [[target|linkname]] or [[target]]
@@ -89,6 +91,9 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     input.add(PatternHardExtractor.TITLEPATTERNS);
     input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
+    if (!includeConcepts) {
+      input.add(CoherentTypeExtractor.YAGOTYPES);
+    }
     
     return input;
   }
@@ -159,6 +164,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     // Load all mentions.
     loadMentions();
+    System.out.println(NumberFormatter.timeStamp() + " - LoadMentions Done(" + language + ").");
 
     int pagesProcessed = 0;
 
@@ -184,6 +190,8 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
           pagesProcessed++;
           if (pagesProcessed % 100_000 == 0) {
             System.out.println("MentionLinkLikelihoodExtractor: " + pagesProcessed + " pages Processed");
+            System.out.println(NumberFormatter.timeStamp() + " - MentionLinkLikelihoodExtractor(" + language + "): " + pagesProcessed + " pages Processed.");
+
           }
 
           titleEntity = titleExtractor.getTitleEntity(in);
