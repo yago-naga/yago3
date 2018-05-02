@@ -37,7 +37,6 @@ import java.util.regex.Pattern;
 
 import basics.Fact;
 import basics.RDFS;
-import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
@@ -191,6 +190,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
           pagesProcessed++;
           if (pagesProcessed % 100_000 == 0) {
             System.out.println(NumberFormatter.ISOtime() + " - MentionLinkLikelihoodExtractor(" + language + "): " + pagesProcessed + " pages Processed.");
+
           }
 
           titleEntity = titleExtractor.getTitleEntity(in);
@@ -279,14 +279,6 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
    */
   private String clean(String text) {
     return text.replaceAll("[^\\p{L}\\p{N} ]", "");
-  }
-  
-  public static void main(String[] args) throws Exception {
-    MultilingualWikipediaExtractor.wikipediaLanguages = Arrays.asList("en", "de", "zh", "es");
-    Extractor.includeConcepts = true;
-    MentionLinkLikelihoodExtractor ex = new MentionLinkLikelihoodExtractor("en", new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation/tmp_dumps/en/20180120/enwiki-20180120-pages-articles.xml"));
-    ex.extract(new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation_concepts/tmp_yago/yago_aida_en20180120_de20180120_zh20180120_es20180120/"), 
-        new File("/home/ghazaleh/Projects/data/test_yago_mll_concepts/"), "test");
   }
 
 }

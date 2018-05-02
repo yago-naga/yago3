@@ -302,10 +302,4 @@ public class WikidataImageExtractor extends DataExtractor {
 		}
 		return category;
 	}
-	
-	public static void main(String[] args) throws Exception {
-	  WikidataImageExtractor ex = new WikidataImageExtractor(new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation/tmp_dumps/wikidatawiki/20180122/wikidata-20180122-all-BETA.ttl"));
-	  ex.extract(new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation_neo4j/tmp_yago/yago_aida_en20180120_de20180120_zh20180120_es20180120"), 
-	      new File("/home/ghazaleh/Projects/data/test_yago_images/"), "test");
-	}
 }
