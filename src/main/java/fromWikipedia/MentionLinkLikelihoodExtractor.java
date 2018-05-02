@@ -41,11 +41,9 @@ import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
-import fromOtherSources.WordnetExtractor;
 import fromThemes.CoherentTypeExtractor;
 import fromThemes.PersonNameExtractor;
 import javatools.administrative.Announce;
-import javatools.administrative.D;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileUtils;
@@ -67,7 +65,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
    * int[0]: how many times has the token been found as link in Wikipedia articles
    * int[1]: how many times has the token been found in general in Wikipeida articles
    */
-  private static Map<String, int[]> mentionTokensLinkCount = new HashMap<>();
+  private Map<String, int[]> mentionTokensLinkCount = new HashMap<>();
 
   //Extract set of all link surface forms via regex.
   // [[target|linkname]] or [[target]]
@@ -94,7 +92,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     input.add(PatternHardExtractor.TITLEPATTERNS);
     input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
-    if (includeConcepts) {
+    if (!includeConcepts) {
       input.add(CoherentTypeExtractor.YAGOTYPES);
     }
     
@@ -167,8 +165,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     // Load all mentions.
     loadMentions();
-    
-    D.p("LoadMentions Done, mentionTokensLinkCount: " + mentionTokensLinkCount.keySet().size());
+    System.out.println(NumberFormatter.ISOtime() + " - LoadMentions Done(" + language + ").");
 
     int pagesProcessed = 0;
 
@@ -193,7 +190,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
         case 0:
           pagesProcessed++;
           if (pagesProcessed % 100_000 == 0) {
-            System.out.println(NumberFormatter.formatMS(System.currentTimeMillis()) + " - MentionLinkLikelihoodExtractor(" + language + "): " + pagesProcessed + " pages Processed. mentionTokensLinkCount: " + mentionTokensLinkCount.size());
+            System.out.println(NumberFormatter.ISOtime() + " - MentionLinkLikelihoodExtractor(" + language + "): " + pagesProcessed + " pages Processed.");
           }
 
           titleEntity = titleExtractor.getTitleEntity(in);
