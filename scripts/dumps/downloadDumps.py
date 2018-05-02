@@ -307,10 +307,6 @@ def getWikipediaDumpUrls(languages):
     # If a fixed data is set, use exactly this one.
     if len(dates) > i and dates[i]:
       dumpDate = datetime.strptime(dates[i], '%Y%m%d')
-    else:
-      dumpDate = startDate
-
-    while True:
       formattedDumpDate = dumpDate.strftime("%Y%m%d")
       url = WIKIPEDIA_DUMPS_PAGE + language + 'wiki/' + formattedDumpDate + '/' + language + 'wiki-' + formattedDumpDate + '-pages-articles.xml.bz2'
 
@@ -319,22 +315,35 @@ def getWikipediaDumpUrls(languages):
       if (r.status_code == 200):
         print("Latest Wikipedia dump for " + language + ": " + formattedDumpDate)
         urls.append(url)
-        break
+      elif os.path.isfile(getWikipedias([url])[0]):
+        print("Wikipedia dump for " + language + ": " + formattedDumpDate + " available offline")
+        urls.append(url)
       else:
-        if len(dates) > i and dates[i]:
-          url = url + '/' + language + 'wiki-' + formattedDumpDate + '-pages-articles.xml.bz2'
+        print("ERROR: No Wikipedia dump found (neither remotely nor in local cache) for language " + language + " and date " + formattedDumpDate + ".")
+        sys.exit(1)
 
-          if os.path.isfile(getWikipedias([url])[0]):
-            urls.append(url)
-            break
-          else:
-            print("ERROR: No Wikipedia dump found (neither remotely nor in local cache) for language " + language + " and date " + formattedDumpDate + ".")
-            sys.exit(1)
-        elif (startDate - dumpDate).days <= WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS:
-          dumpDate -= timedelta(days=1)
+    else:
+      dumpDate = startDate
+      while True:
+        formattedDumpDate = dumpDate.strftime("%Y%m%d")
+        url = WIKIPEDIA_DUMPS_PAGE + language + 'wiki/' + formattedDumpDate + '/' + language + 'wiki-' + formattedDumpDate + '-pages-articles.xml.bz2'
+
+        r = requests.head(url)
+
+        if (r.status_code == 200):
+          print("Latest Wikipedia dump for " + language + ": " + formattedDumpDate)
+          urls.append(url)
+          break
+        elif os.path.isfile(getWikipedias([url])[0]):
+          print("Wikipedia dump for " + language + ": " + formattedDumpDate + " available offline")
+          urls.append(url)
+          break
         else:
-          print("ERROR: No Wikipedia dump found (neither remotely nor in local cache) for language " + language + " (oldest dump date tried was " + formattedDumpDate + ").")
-          sys.exit(1)
+          if (startDate - dumpDate).days <= WIKIPEDIA_DUMP_MAX_AGE_IN_DAYS:
+            dumpDate -= timedelta(days=1)
+          else:
+            print("ERROR: No Wikipedia dump found (neither remotely nor in local cache) for language " + language + " (oldest dump date tried was " + formattedDumpDate + ").")
+            sys.exit(1)
 
   return urls
 
