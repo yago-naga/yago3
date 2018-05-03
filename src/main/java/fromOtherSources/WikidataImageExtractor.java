@@ -118,8 +118,8 @@ public class WikidataImageExtractor extends DataExtractor {
 			// example: <http://www.wikidata.org/entity/Q1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/ontology#Item>
 			if(f.getObject().endsWith("#Item>")) {
 				if(!images.isEmpty()) {
-				  String image = Char17.decodePercentage(pickImage(yagoEntityMostEnglish, images)).replaceAll(" ", "_");
-					String originalUrl = getOriginalImageUrl(FactComponent.stripBrackets(image));
+				  String image = Char17.decodePercentage(FactComponent.stripBrackets(pickImage(yagoEntityMostEnglish, images))).replaceAll(" ", "_");
+					String originalUrl = getOriginalImageUrl(image);
 					
 					// Get image's wiki page:
 					String imageWikipage = image.replace("wiki/Special:FilePath/", "wiki/File:");
