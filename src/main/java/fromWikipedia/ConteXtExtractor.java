@@ -87,7 +87,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
   public static final MultilingualTheme CONTEXTFACTSNEEDSTRANSLATION = new MultilingualTheme("conteXtFactsNeedsTranslation",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
   
-  public static final MultilingualTheme CONTEXTFACTSNEEDSREDIRECTION = new MultilingualTheme("yagoConteXtFactsNeedsRedirection",
+  public static final MultilingualTheme CONTEXTFACTSNEEDSREDIRECTION = new MultilingualTheme("conteXtFactsNeedsRedirection",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
   /** Context for entities */
