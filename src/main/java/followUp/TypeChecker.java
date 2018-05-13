@@ -69,6 +69,10 @@ public class TypeChecker extends FollowUpExtractor {
   /** Constructor, takes theme to be checked and theme to output */
   public TypeChecker(Theme in, Theme out, Extractor parent) {
     super(in, out, parent);
+
+    // For testing only.
+    restrictedTypes = new HashSet<>();
+    restrictedTypes.add("<wikicat_Heavy_metal_musical_groups>");
   }
 
   public TypeChecker(Theme in, Theme out) {
@@ -77,7 +81,12 @@ public class TypeChecker extends FollowUpExtractor {
 
   /** Holds the transitive types in a map from subjects to types */
   protected Map<String, Set<String>> types = new HashMap<>();
+
+  /** Holds the kind of the entity id (entity or concept) */
   protected Map<String, EntityType> entities = new HashMap<>();
+
+  /** If not null, entities are required to match these types */
+  protected Set<String> restrictedTypes;
 
   /** Holds Relations without domain/range */
   protected Set<String> untypedRelations = new HashSet<>();
@@ -188,7 +197,16 @@ public class TypeChecker extends FollowUpExtractor {
       return true;
     }
     Set<String> myTypes = types.get(entity);
-    return (myTypes != null && myTypes.contains(type));
+    if (myTypes != null) {
+      boolean correctType = myTypes.contains(type);
+      if (restrictedTypes != null) {
+        correctType = correctType && restrictedTypes.contains(type);
+      }
+      return correctType;
+    } else {
+      // Entities without type are dropped.
+      return false;
+    }
   }
 
   @Override
