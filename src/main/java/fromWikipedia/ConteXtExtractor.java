@@ -33,6 +33,7 @@ import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
+import followUp.Redirector;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import javatools.administrative.Announce;
@@ -80,20 +81,26 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
     }
     return input;  }
 
+  public static final MultilingualTheme CONTEXTFACTSNEEDSREDIRECTIONANDTRANSLATION = new MultilingualTheme("conteXtFactsNeedsRedirectionAndTranslation",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
+
   public static final MultilingualTheme CONTEXTFACTSNEEDSTRANSLATION = new MultilingualTheme("conteXtFactsNeedsTranslation",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
+  
+  public static final MultilingualTheme CONTEXTFACTSNEEDSREDIRECTION = new MultilingualTheme("conteXtFactsNeedsRedirection",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
   /** Context for entities */
   public static final MultilingualTheme CONTEXTFACTS = new MultilingualTheme("yagoConteXtFacts",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
-
+  
+  
   @Override
   public Set<Theme> output() {
-    // return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);
     if (isEnglish()) {
-      return new FinalSet<Theme>(CONTEXTFACTS.inLanguage(language));
+      return new FinalSet<Theme>(CONTEXTFACTSNEEDSREDIRECTION.inLanguage(language));
     } else {
-      return new FinalSet<Theme>(CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language));
+      return new FinalSet<Theme>(CONTEXTFACTSNEEDSREDIRECTIONANDTRANSLATION.inLanguage(language));
     }
   }
 
@@ -102,7 +109,11 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
     Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
 
     if (!isEnglish()) {
-      result.add(new EntityTranslator(CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language), CONTEXTFACTS.inLanguage(this.language), this));
+      result.add(new Redirector(CONTEXTFACTSNEEDSREDIRECTIONANDTRANSLATION.inLanguage(language), CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language), this));
+      result.add(new EntityTranslator(CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language), CONTEXTFACTS.inLanguage(language), this));
+    }
+    else {
+      result.add(new Redirector(CONTEXTFACTSNEEDSREDIRECTION.inLanguage(language), CONTEXTFACTS.inLanguage(language), this));
     }
     return result;
   }
@@ -147,9 +158,9 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           for (Fact fact : contextPatterns.extract(transformedPage, titleEntity, language)) {
             if (fact != null) {
               if (isEnglish()) {
-                CONTEXTFACTS.inLanguage(language).write(fact);
+                CONTEXTFACTSNEEDSREDIRECTION.inLanguage(language).write(fact);
               } else {
-                CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language).write(fact);
+                CONTEXTFACTSNEEDSREDIRECTIONANDTRANSLATION.inLanguage(language).write(fact);
               }
             }
           }
