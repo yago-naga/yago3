@@ -60,7 +60,7 @@ public class TypeChecker extends FollowUpExtractor {
     res.add(HardExtractor.HARDWIREDFACTS);
     res.add(TransitiveTypeExtractor.TRANSITIVETYPE);
     if (Extractor.includeConcepts) {
-      res.add(AllEntitiesTypesExtractorFromWikidata.ALL_ENTITIES_WIKIDATA);//TODO Change this if the splitting theme is changed
+      res.add(AllEntitiesTypesExtractorFromWikidata.ALLENTITIES_WIKIDATA);//TODO Change this if the splitting theme is changed
     }
     
     return res;

@@ -52,7 +52,6 @@ import fromOtherSources.WikidataImageLicenseExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.PersonNameExtractor;
 import fromThemes.TransitiveTypeExtractor;
-import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryGlossExtractor;
 import fromWikipedia.ConteXtExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
@@ -259,8 +258,6 @@ public class Neo4jThemeTransformer extends Extractor {
     // For YAGO compliance.
     input.add(SchemaExtractor.YAGOSCHEMA);
     
-    input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
-    
     // Wikipedie category glosses.
     input.addAll(CategoryGlossExtractor.CATEGORYGLOSSES.inLanguages(MultilingualExtractor.wikipediaLanguages));
 
@@ -292,7 +289,7 @@ public class Neo4jThemeTransformer extends Extractor {
         
     // Entity descriptions.
     input.add(WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS);
-    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIAENTITYDESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 
     // Entity Geocoordinates
     input.add(WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES);
@@ -742,7 +739,7 @@ public class Neo4jThemeTransformer extends Extractor {
     WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.killCache();
     D.p("Finishing " + WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.name + (System.currentTimeMillis() - startTime));
 
-    for (Theme theme : WikipediaEntityDescriptionExtractor.WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
+    for (Theme theme : WikipediaEntityDescriptionExtractor.WIKIPEDIAENTITYDESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
       D.p("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation(YAGO.hasLongDescription)) {

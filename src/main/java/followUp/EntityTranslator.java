@@ -147,14 +147,14 @@ public class EntityTranslator extends FollowUpExtractor {
   public static void main(String... args) throws Exception {
     String language = "ro";
 
-    Theme in = WikiInfoExtractor.WIKIINFONEEDSTRANSLATION.inLanguage("ro");
+    Theme in = WikiInfoExtractor.WIKIINFONEEDSTYPECHECKANDTRANSLATION.inLanguage("ro");
     in.assignToFolder(new File(args[0]));
     FactCollection fc = in.factCollection();
     for (Fact f : fc) {
       System.out.println("fact: " + f);
     }
 
-    new EntityTranslator(WikiInfoExtractor.WIKIINFONEEDSTRANSLATION.inLanguage(language), WikiInfoExtractor.WIKIINFO.inLanguage(language), null, true)
+    new EntityTranslator(WikiInfoExtractor.WIKIINFONEEDSTYPECHECKANDTRANSLATION.inLanguage(language), WikiInfoExtractor.WIKIINFONEEDSTYPECHECK.inLanguage(language), null, true)
         .extract(new File(args[0]), "none");
   }
 

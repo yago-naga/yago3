@@ -25,7 +25,7 @@ import utils.Theme;
 
 public class AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings extends Extractor {
 
-  public static final Theme ALL_ENTITIES_YAGO = new Theme("allEntities_from_yago",
+  public static final Theme ALLENTITIES_YAGO = new Theme("allEntities_from_yago",
       "List of all entities specifying if they are named entities or concepts or unknown, extracted from yago-preffered meanings.");
   
   /** Holds the words of wordnet -- only for English title extractors*/
@@ -43,7 +43,7 @@ public class AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings extends Extrac
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(ALL_ENTITIES_YAGO);
+    return new FinalSet<>(ALLENTITIES_YAGO);
   }
 
   @Override
@@ -78,7 +78,7 @@ public class AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings extends Extrac
           isNamedEntity = EntityType.NAMED_ENTITY.getYagoName();
         }
       }
-      ALL_ENTITIES_YAGO.write(new Fact(language2entity.get(mostEnglishLan), YAGO.isNamedEntity, isNamedEntity));
+      ALLENTITIES_YAGO.write(new Fact(language2entity.get(mostEnglishLan), YAGO.isNamedEntity, isNamedEntity));
     }
     int temp_wd_ents = done.size();
     
@@ -99,7 +99,7 @@ public class AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings extends Extrac
               isNamedEntity = EntityType.NAMED_ENTITY.getYagoName();
             }
           }
-          ALL_ENTITIES_YAGO.write(new Fact(entity, YAGO.isNamedEntity, isNamedEntity));
+          ALLENTITIES_YAGO.write(new Fact(entity, YAGO.isNamedEntity, isNamedEntity));
         }
       }
     }
