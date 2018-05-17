@@ -68,7 +68,10 @@ public class AIDAFunctionalExtractor extends SimpleDeduplicator {
     
     // Name Entities.
     if (Extractor.includeConcepts) {
-      input.add(AllEntitiesTypesExtractorFromWikidata.ALL_ENTITIES_WIKIDATA);
+      input.add(AllEntitiesTypesExtractorFromWikidata.ALLENTITIES_WIKIDATA);
+    }
+    else {
+      input.add(AllNamedEntitiesDumpThemeExtractor.ALLNAMEDENTITIES);
     }
 
     return input;
