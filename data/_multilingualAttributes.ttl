@@ -49,7 +49,7 @@
 <infobox/nl/opvolger>   <_infoboxPattern>       owl:Nothing .
 <infobox/ro/succesor>   <_infoboxPattern>       owl:Nothing .
 <infobox/ro/urmași>     <_infoboxPattern>       owl:Nothing .
-
+<infobox/de/weblink>	<_infoboxPattern>	<hasWebsite> .
 
 # fix issues with issues, i.e. successors mapped to children
 <infobox/ar/successor>	<_infoboxPattern>	owl:Nothing .
