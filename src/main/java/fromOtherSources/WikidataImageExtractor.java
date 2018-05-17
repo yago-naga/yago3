@@ -29,6 +29,7 @@ import java.security.NoSuchAlgorithmException;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -41,6 +42,8 @@ import basics.N4Reader;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
+import followUp.FollowUpExtractor;
+import followUp.TypeChecker;
 import fromThemes.TransitiveTypeExtractor;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
@@ -57,6 +60,9 @@ public class WikidataImageExtractor extends DataExtractor {
 
 	public static final Theme WIKIDATAIMAGES = new Theme("wikidataImages", 
 	    "Images in wikidata dump for entities");
+	
+	public static final Theme WIKIDATAIMAGESNEEDSTYPECHECK = new Theme("wikidataImagesNeedsTypeCheck", 
+      "Images in wikidata dump for entities");
 
 	private static final String WIKIDATA = "wikidata";
 	 
@@ -96,8 +102,17 @@ public class WikidataImageExtractor extends DataExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		return (new FinalSet<>(WIKIDATAIMAGES));
+		return (new FinalSet<>(WIKIDATAIMAGESNEEDSTYPECHECK));
 	}
+	
+  @Override
+  public Set<followUp.FollowUpExtractor> followUp() {
+    Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
+    
+    result.add(new TypeChecker(WIKIDATAIMAGESNEEDSTYPECHECK, WIKIDATAIMAGES, this));
+    
+    return result;
+  }
 
 	@Override
 	public void extract() throws Exception {
@@ -127,9 +142,9 @@ public class WikidataImageExtractor extends DataExtractor {
 					imageCounter++;
 					
 					// Saving imageID along with image wiki page url and image original url to the theme
-					WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
-					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, FactComponent.forUri(imageWikipage)));
-					WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, FactComponent.forUri(originalUrl)));
+					WIKIDATAIMAGESNEEDSTYPECHECK.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
+					WIKIDATAIMAGESNEEDSTYPECHECK.write(new Fact(imageID, YAGO.hasWikiPage, FactComponent.forUri(imageWikipage)));
+					WIKIDATAIMAGESNEEDSTYPECHECK.write(new Fact(imageID, YAGO.hasImageUrl, FactComponent.forUri(originalUrl)));
 	        images.clear();
 				}
 				// reverseWikidataInstances facts like: <http://www.wikidata.org/entity/Q23>  owl:sameAs <George_Washington>
@@ -163,9 +178,9 @@ public class WikidataImageExtractor extends DataExtractor {
       String imageWikipage = image.replace("wiki/Special:FilePath/", "wiki/File:");
 		  String imageID = FactComponent.forYagoEntity(IMAGETYPE + imageCounter);
 		  
-      WIKIDATAIMAGES.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
-      WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasWikiPage, FactComponent.forUri(imageWikipage)));
-      WIKIDATAIMAGES.write(new Fact(imageID, YAGO.hasImageUrl, FactComponent.forUri(originalUrl)));
+		  WIKIDATAIMAGESNEEDSTYPECHECK.write(new Fact(yagoEntityMostEnglish, YAGO.hasImageID, imageID));
+		  WIKIDATAIMAGESNEEDSTYPECHECK.write(new Fact(imageID, YAGO.hasWikiPage, FactComponent.forUri(imageWikipage)));
+		  WIKIDATAIMAGESNEEDSTYPECHECK.write(new Fact(imageID, YAGO.hasImageUrl, FactComponent.forUri(originalUrl)));
       images.clear();
 		}
 		

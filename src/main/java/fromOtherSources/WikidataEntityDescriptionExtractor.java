@@ -24,6 +24,7 @@ package fromOtherSources;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -34,6 +35,8 @@ import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
 import extractors.MultilingualExtractor;
+import followUp.FollowUpExtractor;
+import followUp.TypeChecker;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.FactCollection;
@@ -45,6 +48,9 @@ import utils.Theme;
 */
 public class WikidataEntityDescriptionExtractor extends DataExtractor {
  
+  public static final Theme WIKIDATAENTITYDESCRIPTIONSNEEDSTYPECHECK = new Theme("wikidataEntityDescriptionsNeedsTypeCheck", 
+      "Description extracted from wikidata for entities.");
+  
   public static final Theme WIKIDATAENTITYDESCRIPTIONS = new Theme("wikidataEntityDescriptions", 
       "Description extracted from wikidata for entities.");
   
@@ -67,7 +73,16 @@ public class WikidataEntityDescriptionExtractor extends DataExtractor {
 
   @Override
   public Set<Theme> output() {
-    return (new FinalSet<>(WIKIDATAENTITYDESCRIPTIONS));
+    return (new FinalSet<>(WIKIDATAENTITYDESCRIPTIONSNEEDSTYPECHECK));
+  }
+
+  @Override
+  public Set<followUp.FollowUpExtractor> followUp() {
+    Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
+    
+    result.add(new TypeChecker(WIKIDATAENTITYDESCRIPTIONSNEEDSTYPECHECK, WIKIDATAENTITYDESCRIPTIONS, this));
+    
+    return result;
   }
 
   @Override
@@ -87,7 +102,7 @@ public class WikidataEntityDescriptionExtractor extends DataExtractor {
           String description = f.getObject();
           // Write the description into the theme if its language is in our available languages.
           if(MultilingualExtractor.wikipediaLanguages.contains(FactComponent.getLanguageOfString(description)))
-              WIKIDATAENTITYDESCRIPTIONS.write(new Fact(yagoEntity, YAGO.hasShortDescription, description));
+            WIKIDATAENTITYDESCRIPTIONSNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasShortDescription, description));
         }
       }
       

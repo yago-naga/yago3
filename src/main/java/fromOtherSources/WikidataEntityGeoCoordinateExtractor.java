@@ -36,6 +36,8 @@ import basics.N4Reader;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
+import followUp.FollowUpExtractor;
+import followUp.TypeChecker;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.FactCollection;
@@ -48,6 +50,9 @@ import utils.Theme;
 public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
  
   public static final Theme WIKIDATAENTITYGEOCOORDINATES = new Theme("wikidataEntityGeoCoordinates", 
+      "Geo Coordinates extracted from wikidata for entities.");
+  
+  public static final Theme WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK = new Theme("wikidataEntityGeoCoordinatesNeedsTypeCheck", 
       "Geo Coordinates extracted from wikidata for entities.");
   
   private static final String WIKIDATA = "wikidata";
@@ -72,7 +77,16 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
 
   @Override
   public Set<Theme> output() {
-    return (new FinalSet<>(WIKIDATAENTITYGEOCOORDINATES));
+    return (new FinalSet<>(WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK));
+  }
+  
+  @Override
+  public Set<followUp.FollowUpExtractor> followUp() {
+    Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
+    
+    result.add(new TypeChecker(WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK, WIKIDATAENTITYGEOCOORDINATES, this));
+    
+    return result;
   }
   
   private class Location {
@@ -85,9 +99,12 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
       this.longitude = longitude;
     }
 
-    public boolean equals(Location obj) {
-      return ((latitude == obj.latitude) && (longitude == obj.longitude));
-    }
+    @Override//TODO: run kon ino k bbini chi shod doroste 
+    public boolean equals(Object obj) {
+      return ((latitude == ((Location) obj).latitude) && (longitude == ((Location) obj).longitude));
+    };
+    
+
 
     public int hashCode() {
       return latitude.hashCode() * longitude.hashCode();
@@ -126,16 +143,17 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
             String location_id;
             if (locations.containsKey(location)) {
               location_id = locations.get(location);
+              System.out.println("SAME:::: " + location_id);
             }
             else {
               location_id = "LOCATION_" + location_cnt;
               locations.put(location, location_id);
-              WIKIDATAENTITYGEOCOORDINATES.write(new Fact(location_id, YAGO.hasLatitude, location.latitude.toString()));
-              WIKIDATAENTITYGEOCOORDINATES.write(new Fact(location_id, YAGO.hasLongitude, location.longitude.toString()));
+              WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(location_id, YAGO.hasLatitude, location.latitude.toString()));
+              WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(location_id, YAGO.hasLongitude, location.longitude.toString()));
               location_cnt++;
             }
             if (!entityLocations.containsKey(yagoEntity) || (entityLocations.get(yagoEntity).contains(location_id))) {
-              WIKIDATAENTITYGEOCOORDINATES.write(new Fact(yagoEntity, YAGO.hasGeoLocation, location_id));
+              WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasGeoLocation, location_id));
               entityLocations.computeIfAbsent(yagoEntity, k -> new HashSet<>()).add(location_id);
             }
           }
@@ -181,8 +199,12 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
   }
   
   public static void main(String[] args) throws Exception {
-    WikidataEntityGeoCoordinateExtractor ex = new WikidataEntityGeoCoordinateExtractor(new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation/tmp_dumps/wikidatawiki/20170626/wikidata-20170626-all-BETA.ttl"));
-    ex.extract(new File("/local_san2/tmp/yago_aida_en20170620_de20170620_zh20170620_es20170620_ar20170620_fr20170620/"), "Test");
+    WikidataEntityGeoCoordinateExtractor ex = 
+        new WikidataEntityGeoCoordinateExtractor(new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation/tmp_dumps/wikidatawiki/20180122/wikidata-20180122-all-BETA.ttl"));
+    ex.extract(
+        new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation_concepts/tmp_yago/yago_aida_en20180120_de20180120_zh20180120_es20180120/"),
+        new File("/home/ghazaleh/Projects/data/test_yago_geo/"),
+        "test");
   }
 
 }
