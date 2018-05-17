@@ -47,6 +47,7 @@ import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.Theme;
+import utils.TitleExtractor;
 
 /**
  * Extracts labels from wikidata
@@ -68,6 +69,7 @@ public class WikidataLabelExtractor extends DataExtractor {
   public Set<Theme> input() {
     Set<Theme> input = new TreeSet<>();
     input.add(PatternHardExtractor.LANGUAGECODEMAPPING);
+    input.add(PatternHardExtractor.TITLEPATTERNS);
     if (Extractor.includeConcepts) {
       input.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
       input.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
@@ -80,7 +82,7 @@ public class WikidataLabelExtractor extends DataExtractor {
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<Theme>(CoherentTypeExtractor.YAGOTYPES, PatternHardExtractor.LANGUAGECODEMAPPING);
+    return new FinalSet<Theme>(CoherentTypeExtractor.YAGOTYPES, PatternHardExtractor.LANGUAGECODEMAPPING, PatternHardExtractor.TITLEPATTERNS);
   }
 
   /** Facts deduced from categories */
@@ -150,6 +152,11 @@ public class WikidataLabelExtractor extends DataExtractor {
     }
     // Now write the foreign names
     N4Reader nr = new N4Reader(inputData);
+    Map<String, TitleExtractor> rawTitleExtractors = new HashMap<>();
+    for (String language:MultilingualExtractor.wikipediaLanguages) {
+      rawTitleExtractors.put(language, TitleExtractor.rawExtractor(language));
+    }
+    
     // Maps a language such as "en" to the name in that language
     Map<String, String> language2name = new HashMap<String, String>();
     String lastqid = null;
@@ -160,7 +167,9 @@ public class WikidataLabelExtractor extends DataExtractor {
         String lang = FactComponent.stripQuotes(f.getObject());
         String name = FactComponent.stripWikipediaPrefix(Char17.decodePercentage(f.getSubject()));
 
-        if (name != null) language2name.put(lang, name);
+        if (name != null) {
+          language2name.put(lang, name);
+        }
       }
       // Get to the line that information about a new item begin from.
       // example: <http://www.wikidata.org/entity/Q1> <http://www.w3.org/1999/02/22-rdf-syntax-ns#type> <http://www.wikidata.org/ontology#Item> .
@@ -172,16 +181,25 @@ public class WikidataLabelExtractor extends DataExtractor {
           String mostEnglishLan = DictionaryExtractor.mostEnglishLanguage(language2name.keySet());
           if (mostEnglishLan != null) {
             String mostEnglishName = language2name.get(mostEnglishLan);
-            String yagoEntity = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
 
+            // Title Extractor replacer eliminate Categories/Templates/Lists/...
+            String yagoEntity = rawTitleExtractors.get(mostEnglishLan).createTitleEntityRaw(mostEnglishName.replace('_', ' '));
+            if (yagoEntity == null) {
+              continue;
+            }
+            
             WIKIDATATRANSLATIONSNEEDSTYPECHECK.write(new Fact(yagoEntity, "<numberOfTranslations>", "" + language2name.size()));
             // For on all languages
             for (String lang : language2name.keySet()) {
               String foreignName = language2name.get(lang);
 
               // Check if the language is available (input languages)
-              if (availableLanguages.contains(lang))
-                WIKIDATAINSTANCES.write(new Fact(FactComponent.forForeignYagoEntity(foreignName, lang), RDFS.sameas, lastqid));
+              if (availableLanguages.contains(lang)) {
+                String foreignEntity = rawTitleExtractors.get(lang).createTitleEntityRaw(foreignName.replace('_', ' '));
+                if (foreignEntity != null) {
+                  WIKIDATAINSTANCES.write(new Fact(foreignEntity, RDFS.sameas, lastqid));
+                }
+              }
 
               // Change 2-letter language code to 3-letter
               if (lang.length() == 2) lang = languagemap.get(lang);
