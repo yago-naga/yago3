@@ -62,6 +62,7 @@ import fromWikipedia.WikiInfoExtractor;
 import fromWikipedia.WikipediaEntityDescriptionExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
+import javatools.datatypes.Pair;
 import javatools.filehandlers.FileUtils;
 import utils.Theme;
 
@@ -498,18 +499,28 @@ public class Neo4jThemeTransformer extends Extractor {
     addRelationsToCommand("hasInternalWikipediaLinkTo", hasInternalWikipediaLinkToRelationsFileName);
     D.p("Finishing " + hasInternalWikipediaLinkToRelationsFileName + " " + (System.currentTimeMillis() - startTimeFileMaking));
     
+    Map<Pair<String, String>, String> locations = new HashMap<Pair<String, String>, String>();
+    Integer location_cnt = 0;
     // Geo Locations
     D.p("Starting " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
-    for (Fact f : WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getFactsWithRelation(YAGO.hasGeoLocation)) {
-      String entity = f.getSubject();
+    for (String entity : WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getSubjects()) {
       entity_wikidataId.putIfAbsent(entity, entity);
       
-      String location_id = f.getObject();
-      String latitude = WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(location_id, YAGO.hasLatitude);
-      String longitude = WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(location_id, YAGO.hasLongitude);
+      String latitude = WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLatitude);
+      String longitude = WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLongitude);
+      Pair<String, String> location = new Pair<String, String>(latitude, longitude);
       
-      tempNodes.add(new String[] {location_id, latitude, longitude });
+
+      String location_id = locations.get(location);
+      if (location_id == null) {
+        location_id = "LOCATION_" + location_cnt;
+        location_cnt++;
+
+        tempNodes.add(new String[] {location_id, latitude, longitude });
+        locations.put(location, location_id);
+      }
+      
       tempRelations.add(new String[] { entity_wikidataId.get(entity), location_id });
     }
     WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.killCache();

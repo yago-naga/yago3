@@ -89,29 +89,6 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
     return result;
   }
   
-  private class Location {
-    Double latitude;
-    Double longitude;
-    
-    public Location(Double latitude, Double longitude) {
-      super();
-      this.latitude = latitude;
-      this.longitude = longitude;
-    }
-
-    @Override//TODO: run kon ino k bbini chi shod doroste 
-    public boolean equals(Object obj) {
-      return ((latitude == ((Location) obj).latitude) && (longitude == ((Location) obj).longitude));
-    };
-    
-
-
-    public int hashCode() {
-      return latitude.hashCode() * longitude.hashCode();
-      
-    }
-  }
-  
   static final Pattern POINT = Pattern.compile("Point\\(([-\\.\\d]+) ([-\\.\\d]+)\\)");
   static final int LONGITUDE = 1, LATITUDE = 2;
   
@@ -121,10 +98,7 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
     // Loading the map from wikidataIds to the most English yago entity.
     loadMostEnglishEntities();
     
-    Map<Location, String> locations = new HashMap<>();
-    Map<String, Set<String>> entityLocations = new HashMap<>();
     N4Reader nr = new N4Reader(inputData);
-    int location_cnt = 0;
     while(nr.hasNext()) {
       Fact f = nr.next();
 //    Fact:<http://www.wikidata.org/entity/Q22> <http://www.wikidata.org/prop/direct/P625> "Point(-5 57)"^^<http://www.opengis.net/ont/geosparql#wktLiteral>
@@ -139,23 +113,8 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
         if(yagoEntity != null) {
           Matcher matcher = POINT.matcher(f.getObject());
           if (matcher.find()) {
-            Location location = new Location(new Double(matcher.group(LATITUDE)), new Double(matcher.group(LONGITUDE)));
-            String location_id;
-            if (locations.containsKey(location)) {
-              location_id = locations.get(location);
-              System.out.println("SAME:::: " + location_id);
-            }
-            else {
-              location_id = "LOCATION_" + location_cnt;
-              locations.put(location, location_id);
-              WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(location_id, YAGO.hasLatitude, location.latitude.toString()));
-              WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(location_id, YAGO.hasLongitude, location.longitude.toString()));
-              location_cnt++;
-            }
-            if (!entityLocations.containsKey(yagoEntity) || (entityLocations.get(yagoEntity).contains(location_id))) {
-              WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasGeoLocation, location_id));
-              entityLocations.computeIfAbsent(yagoEntity, k -> new HashSet<>()).add(location_id);
-            }
+            WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasLatitude, matcher.group(LATITUDE)));
+            WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasLongitude, matcher.group(LONGITUDE)));
           }
         }
       }
@@ -198,15 +157,6 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
     return languageEntityName.get(mostEnglishLanguage);
   }
   
-  public static void main(String[] args) throws Exception {
-    WikidataEntityGeoCoordinateExtractor ex = 
-        new WikidataEntityGeoCoordinateExtractor(new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation/tmp_dumps/wikidatawiki/20180122/wikidata-20180122-all-BETA.ttl"));
-    ex.extract(
-        new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation_concepts/tmp_yago/yago_aida_en20180120_de20180120_zh20180120_es20180120/"),
-        new File("/home/ghazaleh/Projects/data/test_yago_geo/"),
-        "test");
-  }
-
 }
 
 
