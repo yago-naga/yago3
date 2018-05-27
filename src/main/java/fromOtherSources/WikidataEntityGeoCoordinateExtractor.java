@@ -113,8 +113,8 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
         if(yagoEntity != null) {
           Matcher matcher = POINT.matcher(f.getObject());
           if (matcher.find()) {
-            WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasLatitude, matcher.group(LATITUDE)));
-            WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasLongitude, matcher.group(LONGITUDE)));
+            WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasLatitude, FactComponent.forStringWithDatatype(matcher.group(LATITUDE), "<degrees>")));
+            WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasLongitude, FactComponent.forStringWithDatatype(matcher.group(LONGITUDE), "<degrees>")));
           }
         }
       }

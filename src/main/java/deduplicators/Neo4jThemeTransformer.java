@@ -38,6 +38,7 @@ import java.util.Map;
 import java.util.Set;
 
 import basics.Fact;
+import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
@@ -507,8 +508,8 @@ public class Neo4jThemeTransformer extends Extractor {
     for (String entity : WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getSubjects()) {
       entity_wikidataId.putIfAbsent(entity, entity);
       
-      String latitude = WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLatitude);
-      String longitude = WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLongitude);
+      String latitude = FactComponent.stripQuotes(FactComponent.getString(WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLatitude)));
+      String longitude = FactComponent.stripQuotes(FactComponent.getString(WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLongitude)));
       Pair<String, String> location = new Pair<String, String>(latitude, longitude);
       
 
