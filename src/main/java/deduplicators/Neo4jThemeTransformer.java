@@ -75,12 +75,12 @@ public class Neo4jThemeTransformer extends Extractor {
     
   }
   
-  public Neo4jThemeTransformer(String yagoOutputFolderPath) {
-    OUTPUT_PATH = yagoOutputFolderPath;
+  public Neo4jThemeTransformer(String neo4jOutputFolderPath) {
+    OUTPUT_PATH = neo4jOutputFolderPath;
     if (OUTPUT_PATH.charAt(OUTPUT_PATH.length()-1) != '/') {
       OUTPUT_PATH += "/";
     }
-    Announce.message("Yago output path: " + OUTPUT_PATH);
+    Announce.message("Neo4j output path: " + OUTPUT_PATH);
   }
 
   private static Map<String, String> entity_wikidataId;
@@ -506,13 +506,13 @@ public class Neo4jThemeTransformer extends Extractor {
     D.p("Starting " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
     for (String entity : WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getSubjects()) {
+      if (entity.startsWith("<yagoTheme_")) continue;
       entity_wikidataId.putIfAbsent(entity, entity);
-      
+
       String latitude = FactComponent.stripQuotes(FactComponent.getString(WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLatitude)));
       String longitude = FactComponent.stripQuotes(FactComponent.getString(WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLongitude)));
       Pair<String, String> location = new Pair<String, String>(latitude, longitude);
       
-
       String location_id = locations.get(location);
       if (location_id == null) {
         location_id = "LOCATION_" + location_cnt;
