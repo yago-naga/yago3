@@ -201,6 +201,10 @@ public class TypeChecker extends FollowUpExtractor {
       boolean correctType = myTypes.contains(type);
       if (restrictedTypes != null) {
         correctType = correctType && restrictedTypes.contains(type);
+
+        if (correctType) {
+          Announce.debug("Restricted type matched " + entity + ".");
+        }
       }
       return correctType;
     } else {
