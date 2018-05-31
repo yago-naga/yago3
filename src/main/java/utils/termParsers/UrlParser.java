@@ -40,19 +40,24 @@ import javatools.administrative.Announce;
 public class UrlParser extends TermParser {
 
   // also needs to match \ for yago-encoded stuff
-  private static List<Pattern> urlPatterns = Arrays.asList(Pattern.compile("http[s]?://([-\\w\\./\\\\]+)"),
-      Pattern.compile("(www\\.[-\\w\\./\\\\]+)"));
+  private static Pattern urlPatternWithProtocol = Pattern.compile("(http[s]?)://([-\\w\\./\\\\]+)");
+  private static Pattern urlPatternNoProtocol = Pattern.compile("(www\\.[-\\w\\./\\\\]+)");
 
   @Override
   public List<String> extractList(String s) {
     List<String> urls = new ArrayList<String>(3);
 
-    for (Pattern p : urlPatterns) {
-      Matcher m = p.matcher(s);
-      while (m.find()) {
-        String url = FactComponent.forUri("http://" + m.group(1));
-        urls.add(url);
-      }
+    Matcher m = urlPatternWithProtocol.matcher(s);
+    while (m.find()) {
+      String url = FactComponent.forUri("m.group(1)://" + m.group(2));
+      urls.add(url);
+    }
+
+    m = urlPatternNoProtocol.matcher(s);
+    while (m.find()) {
+      // Use http as default protocol.
+      String url = FactComponent.forUri("http://" + m.group(2));
+      urls.add(url);
     }
 
     if (urls.size() == 0) Announce.debug("Could not find URL in", s);
