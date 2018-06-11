@@ -53,6 +53,10 @@
 <infobox/de/homepage>	<_infoboxPattern>	<hasWebsite> .
 <infobox/de/website>	<_infoboxPattern>	<hasWebsite> .
 <infobox/de/webseite>	<_infoboxPattern>	<hasWebsite> .
+<infobox/de/webpräsenz>	<_infoboxPattern>	<hasWebsite> .
+<infobox/de/url>	<_infoboxPattern>	<hasWebsite> .
+<infobox/de/link>	<_infoboxPattern>	<hasWebsite> .
+<infobox/de/www>	<_infoboxPattern>	<hasWebsite> .
 
 # fix issues with issues, i.e. successors mapped to children
 <infobox/ar/successor>	<_infoboxPattern>	owl:Nothing .
