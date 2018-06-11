@@ -51,6 +51,8 @@
 <infobox/ro/urmași>     <_infoboxPattern>       owl:Nothing .
 <infobox/de/weblink>	<_infoboxPattern>	<hasWebsite> .
 <infobox/de/homepage>	<_infoboxPattern>	<hasWebsite> .
+<infobox/de/website>	<_infoboxPattern>	<hasWebsite> .
+<infobox/de/webseite>	<_infoboxPattern>	<hasWebsite> .
 
 # fix issues with issues, i.e. successors mapped to children
 <infobox/ar/successor>	<_infoboxPattern>	owl:Nothing .
