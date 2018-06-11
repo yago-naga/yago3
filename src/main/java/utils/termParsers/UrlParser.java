@@ -49,15 +49,18 @@ public class UrlParser extends TermParser {
 
     Matcher m = urlPatternWithProtocol.matcher(s);
     while (m.find()) {
-      String url = FactComponent.forUri("m.group(1)://" + m.group(2));
+      String url = FactComponent.forUri(m.group(1) + "://" + m.group(2));
       urls.add(url);
     }
 
-    m = urlPatternNoProtocol.matcher(s);
-    while (m.find()) {
-      // Use http as default protocol.
-      String url = FactComponent.forUri("http://" + m.group(2));
-      urls.add(url);
+    // Only check for no protocol as fallback.
+    if (urls.isEmpty()) {
+      m = urlPatternNoProtocol.matcher(s);
+      while (m.find()) {
+        // Use http as default protocol.
+        String url = FactComponent.forUri("http://" + m.group(1));
+        urls.add(url);
+      }
     }
 
     if (urls.size() == 0) Announce.debug("Could not find URL in", s);
