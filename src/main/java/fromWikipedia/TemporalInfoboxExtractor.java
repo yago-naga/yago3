@@ -124,8 +124,6 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   protected PatternList valueCleaner;
 
-  DateParser dateParser;
-
   @Override
   public Set<Theme> inputCached() {
     return new FinalSet<>(HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER, PatternHardExtractor.TITLEPATTERNS);
@@ -144,6 +142,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     TitleExtractor titleExtractor = new TitleExtractor("en");
 
     valueCleaner = new PatternList(PatternHardExtractor.INFOBOXREPLACEMENTS, "<_infoboxReplace>");
+    DateParser dateParser = new DateParser();
     String typeRelation = FactComponent.forInfoboxTypeRelation("en");
     // Extract the information
     // Announce.progressStart("Extracting", 4_500_000);
@@ -182,7 +181,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
             if (relations == null) continue;
             for (String relation : relations) {
               for (String value : attributes.get(attribute)) {
-                extract(titleEntity, value, relation, preferredMeaning, hardWiredFacts, valueCleaner);
+                extract(titleEntity, value, relation, preferredMeaning, hardWiredFacts, valueCleaner, dateParser);
               }
             }
           }
@@ -194,7 +193,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   /** Extracts a relation from a string */
   protected void extract(String entity, String valueString, String relation, Map<String, String> preferredMeanings, FactCollection factCollection,
-      PatternList replacements) throws IOException {
+      PatternList replacements, DateParser dateParser) throws IOException {
 
     // If the relation is for a combined attribute
     if (relation.contains(",")) {
@@ -607,10 +606,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     return (patterns);
   }
 
-  public TemporalInfoboxExtractor(File wikipedia) throws IOException {
+  public TemporalInfoboxExtractor(File wikipedia) {
     super(wikipedia);
-
-    dateParser = new DateParser();
   }
 
   public static void main(String[] args) throws Exception {
