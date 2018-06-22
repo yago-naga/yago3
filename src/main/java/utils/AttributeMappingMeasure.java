@@ -132,6 +132,11 @@ public abstract class AttributeMappingMeasure {
    */
   public static double[] wilson(int total, int correct) {
     double z = 1.96;
+
+    // As manually created mappings come with a correct count far exceeding the total,
+    // the calculations are off. As sanity check, taking correct = min(total,correct).
+    correct = Math.min(total, correct);
+
     double p = (double) correct / total;
     double center = (p + 1 / 2.0 / total * z * z) / (1 + 1.0 / total * z * z);
     double d = z * Math.sqrt((p * (1 - p) + 1 / 4.0 / total * z * z) / total) / (1 + 1.0 / total * z * z);
