@@ -124,6 +124,8 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   protected PatternList valueCleaner;
 
+  DateParser dateParser;
+
   @Override
   public Set<Theme> inputCached() {
     return new FinalSet<>(HardExtractor.HARDWIREDFACTS, PatternHardExtractor.DATEPARSER, PatternHardExtractor.TITLEPATTERNS);
@@ -193,8 +195,6 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
   /** Extracts a relation from a string */
   protected void extract(String entity, String valueString, String relation, Map<String, String> preferredMeanings, FactCollection factCollection,
       PatternList replacements) throws IOException {
-
-    DateParser dateParser = new DateParser();
 
     // If the relation is for a combined attribute
     if (relation.contains(",")) {
@@ -607,8 +607,10 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     return (patterns);
   }
 
-  public TemporalInfoboxExtractor(File wikipedia) {
+  public TemporalInfoboxExtractor(File wikipedia) throws IOException {
     super(wikipedia);
+
+    dateParser = new DateParser();
   }
 
   public static void main(String[] args) throws Exception {
