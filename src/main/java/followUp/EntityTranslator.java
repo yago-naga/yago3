@@ -114,7 +114,8 @@ public class EntityTranslator extends FollowUpExtractor {
         }
         String translatedObject = translateObject(f.getObject(), objectDictionary);
         if (translatedObject == null) {
-          if (gracefulTranslation) {
+          // Do not drop objects if they are a url (which look like entities but cannot be translated).
+          if (gracefulTranslation || isUrl(translatedObject)) {
             translatedObject = f.getObject();
           } else {
             continue;
@@ -124,6 +125,10 @@ public class EntityTranslator extends FollowUpExtractor {
         baseFactWasTranslated = true;
       }
     }
+  }
+
+  private boolean isUrl(String translatedObject) {
+    return translatedObject.startsWith("<http://") || translatedObject.startsWith("<https://");
   }
 
   public EntityTranslator(Theme in, Theme out, Extractor parent, boolean graceful) {
