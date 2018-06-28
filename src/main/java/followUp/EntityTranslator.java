@@ -115,7 +115,7 @@ public class EntityTranslator extends FollowUpExtractor {
         String translatedObject = translateObject(f.getObject(), objectDictionary);
         if (translatedObject == null) {
           // Do not drop objects if they are a url (which look like entities but cannot be translated).
-          if (gracefulTranslation || isUrl(translatedObject)) {
+          if (gracefulTranslation || isUrl(f.getObject())) {
             translatedObject = f.getObject();
           } else {
             continue;
