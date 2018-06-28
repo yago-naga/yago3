@@ -61,7 +61,7 @@ public class AIDAExtractorMerger extends Extractor {
   public static final Theme AIDAFACTS = new Theme("aidaFacts", "All facts necessary for AIDA", ThemeGroup.OTHER);
 
   /** Relations that AIDA needs. */
-  public static final Set<String> relations = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.label, "skos:prefLabel", RDFS.sameas, "<hasGivenName>", "<hasFamilyName>",
+  public static final Set<String> relations = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.label, YAGO.hasPreferredName, RDFS.sameas, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>", "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>",
       YAGO.hasImageID, YAGO.hasWikiPage, YAGO.hasImageUrl, YAGO.hasGloss, YAGO.hasLicense, YAGO.hasAuthor, YAGO.hasTrademark,
