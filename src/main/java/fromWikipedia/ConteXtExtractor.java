@@ -148,6 +148,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           if (titleEntity == null) continue;
 
           String page = FileLines.readBetween(in, "<text", "</text>");
+          if (page == null || page.isEmpty()) continue;
           String normalizedPage = Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
           String transformedPage = replacements.transform(normalizedPage);
 
