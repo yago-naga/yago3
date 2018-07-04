@@ -62,7 +62,7 @@ public class TypeChecker extends FollowUpExtractor {
     if (Extractor.includeConcepts) {
       res.add(AllEntitiesTypesExtractorFromWikidata.ALL_ENTITIES_WIKIDATA);//TODO Change this if the splitting theme is changed
     }
-    
+
     return res;
   }
 
@@ -71,8 +71,8 @@ public class TypeChecker extends FollowUpExtractor {
     super(in, out, parent);
 
     // For testing only.
-    restrictedTypes = new HashSet<>();
-    restrictedTypes.add("<wikicat_Heavy_metal_musical_groups>");
+    entitySubgraph = new HashSet<>();
+    entitySubgraph.add("<Ulm>");
   }
 
   public TypeChecker(Theme in, Theme out) {
@@ -85,8 +85,8 @@ public class TypeChecker extends FollowUpExtractor {
   /** Holds the kind of the entity id (entity or concept) */
   protected Map<String, EntityType> entities = new HashMap<>();
 
-  /** If not null, entities are required to match these types */
-  protected Set<String> restrictedTypes;
+  /** If not null, facts are required to contain at least one entity in the subgraph */
+  protected Set<String> entitySubgraph;
 
   /** Holds Relations without domain/range */
   protected Set<String> untypedRelations = new HashSet<>();
@@ -117,6 +117,13 @@ public class TypeChecker extends FollowUpExtractor {
       Announce.debug("Range check failed", fact);
       return (false);
     }
+
+    // Make sure that at least one entity in the fact is part of the
+    // requested subgraph.
+    if (entitySubgraph != null) {
+      return (entitySubgraph.contains(fact.getSubject()) || entitySubgraph.contains(fact.getObject()));
+    }
+
     return (true);
   }
 
@@ -125,16 +132,16 @@ public class TypeChecker extends FollowUpExtractor {
 
     /*
      * // This is the old code, replaced by the new code below.
-     * 
+     *
      * // Check syntax String syntaxChecker =
      * FactComponent.asJavaString(schema.getObject( type,
      * "<_hasTypeCheckPattern>"));
-     * 
+     *
      * if (syntaxChecker != null && FactComponent.asJavaString(entity) !=
      * null && !FactComponent.asJavaString(entity).matches(syntaxChecker)) {
      * Announce.debug("Typechecking", entity, "for", entity, type,
      * "does not match syntax check", syntaxChecker); return false; }
-     * 
+     *
      * // Check data type if (FactComponent.isLiteral(entity)) { String
      * parsedDatatype = FactComponent.getDatatype(entity); if
      * (parsedDatatype == null) parsedDatatype = YAGO.string; if
@@ -197,20 +204,7 @@ public class TypeChecker extends FollowUpExtractor {
       return true;
     }
     Set<String> myTypes = types.get(entity);
-    if (myTypes != null) {
-      boolean correctType = myTypes.contains(type);
-      if (restrictedTypes != null) {
-        correctType = correctType && restrictedTypes.contains(type);
-
-        if (correctType) {
-          Announce.debug("Restricted type matched " + entity + ".");
-        }
-      }
-      return correctType;
-    } else {
-      // Entities without type are dropped.
-      return false;
-    }
+    return (myTypes != null && myTypes.contains(type));
   }
 
   @Override
@@ -232,5 +226,4 @@ public class TypeChecker extends FollowUpExtractor {
     types = null;
     Announce.done();
   }
-
 }
