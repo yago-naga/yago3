@@ -21,11 +21,7 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package followUp;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 import basics.Fact;
 import basics.FactComponent;
@@ -69,10 +65,6 @@ public class TypeChecker extends FollowUpExtractor {
   /** Constructor, takes theme to be checked and theme to output */
   public TypeChecker(Theme in, Theme out, Extractor parent) {
     super(in, out, parent);
-
-    // For testing only.
-    entitySubgraph = new HashSet<>();
-    entitySubgraph.add("<Ulm>");
   }
 
   public TypeChecker(Theme in, Theme out) {
@@ -213,6 +205,19 @@ public class TypeChecker extends FollowUpExtractor {
       entities = AllEntitiesTypesExtractorFromWikidata.getAllEntitiesToSplitType();
     }
     types = TransitiveTypeExtractor.getSubjectToTypes();
+
+    // For testing only.
+    entitySubgraph = new HashSet<>();
+
+    Set<String> restrictedTypes = new HashSet<>();
+    restrictedTypes.add("<wikicat_Heavy_metal_musical_groups>");
+
+    for (Map.Entry<String, Set<String>> entry : types.entrySet()) {
+      Set<String> entityTypes = entry.getValue();
+      if (!Collections.disjoint(entityTypes, restrictedTypes)) {
+        entitySubgraph.add(entry.getKey());
+      }
+    }
 
     schema = HardExtractor.HARDWIREDFACTS.factCollection();
     Announce.doing("Type-checking facts of", checkMe);
