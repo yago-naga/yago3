@@ -203,14 +203,14 @@ public class TypeChecker extends FollowUpExtractor {
   private Set<String> getSubgraphEntities() {
     Set<String> subgraph = new HashSet<>();
 
-    String pEntities = Parameters.get("subgraphEntities");
-    if (pEntities != null) {
+    String pEntities = Parameters.get("subgraphEntities", "");
+    if (pEntities != null && !pEntities.isEmpty()) {
       Arrays.stream(pEntities.split(",")).forEach(e -> subgraph.add(e));
     }
 
     Set<String> restrictedTypes = new HashSet<>();
-    String pClasses = Parameters.get("subgraphClasses");
-    if (pClasses != null) {
+    String pClasses = Parameters.get("subgraphClasses", "");
+    if (pClasses != null && !pClasses.isEmpty()) {
       Arrays.stream(pClasses.split(",")).forEach(e -> restrictedTypes.add(e));
     }
 
