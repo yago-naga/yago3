@@ -31,6 +31,7 @@ import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
+import followUp.Redirector;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import javatools.datatypes.FinalSet;
@@ -56,7 +57,13 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
     return new FinalSet<>(PatternHardExtractor.TITLEPATTERNS);
   }
 
-  public static final MultilingualTheme WIKIINFONEEDSTRANSLATION = new MultilingualTheme("wikipediaInfoNeedsTranslation",
+  public static final MultilingualTheme WIKIINFONEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION = new MultilingualTheme("wikipediaInfoNeedsTypeCheckAndTranslationAndRedirection",
+      "Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities.");
+  
+  public static final MultilingualTheme WIKIINFONEEDSTYPECHECKANDTRANSLATION = new MultilingualTheme("wikipediaInfoNeedsTypeCheckAndTranslation",
+      "Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities.");
+  
+  public static final MultilingualTheme WIKIINFONEEDSTYPECHECKANDREDIRECTION = new MultilingualTheme("wikipediaInfoNeedsTypeCheckAndRedirection",
       "Stores the sizes, outlinks, and URLs of the Wikipedia articles of the YAGO entities.");
 
   public static final MultilingualTheme WIKIINFONEEDSTYPECHECK = new MultilingualTheme("wikipediaInfoNeedsTypeCheck",
@@ -68,9 +75,9 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
   @Override
   public Set<Theme> output() {
     if (isEnglish()) {
-      return new FinalSet<>(WIKIINFONEEDSTYPECHECK.inLanguage(language));
+      return new FinalSet<>(WIKIINFONEEDSTYPECHECKANDREDIRECTION.inLanguage(language));
     } else {
-      return new FinalSet<>(WIKIINFONEEDSTRANSLATION.inLanguage(language));
+      return new FinalSet<>(WIKIINFONEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language));
     }
   }
 
@@ -78,11 +85,12 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
   public Set<FollowUpExtractor> followUp() {
     HashSet<FollowUpExtractor> s = new HashSet<>();
     if (isEnglish()) {
-      s.add(new TypeChecker(WIKIINFONEEDSTYPECHECK.inLanguage(language), WIKIINFO.inLanguage(language), this));
+      s.add(new Redirector(WIKIINFONEEDSTYPECHECKANDREDIRECTION.inLanguage(language), WIKIINFONEEDSTYPECHECK.inLanguage(language), this));
     } else {
-      s.add(new EntityTranslator(WIKIINFONEEDSTRANSLATION.inLanguage(language), WIKIINFONEEDSTYPECHECK.inLanguage(language), this, true));
-      s.add(new TypeChecker(WIKIINFONEEDSTYPECHECK.inLanguage(language), WIKIINFO.inLanguage(language), this));
+      s.add(new Redirector(WIKIINFONEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language), WIKIINFONEEDSTYPECHECKANDTRANSLATION.inLanguage(language), this));
+      s.add(new EntityTranslator(WIKIINFONEEDSTYPECHECKANDTRANSLATION.inLanguage(language), WIKIINFONEEDSTYPECHECK.inLanguage(language), this, true));
     }
+    s.add(new TypeChecker(WIKIINFONEEDSTYPECHECK.inLanguage(language), WIKIINFO.inLanguage(language), this));
     return s;
   }
 
@@ -98,12 +106,12 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
       String page = FileLines.readToBoundary(in, "</text>");
       if (page == null) continue;
       if (isEnglish()) {
-        WIKIINFONEEDSTYPECHECK.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
-        WIKIINFONEEDSTYPECHECK.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
+        WIKIINFONEEDSTYPECHECKANDREDIRECTION.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
+        WIKIINFONEEDSTYPECHECKANDREDIRECTION.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
       } else {
         // This number is per Wikipedia language edition
-        WIKIINFONEEDSTRANSLATION.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
-        WIKIINFONEEDSTRANSLATION.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
+        WIKIINFONEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language).write(new Fact(entity, "<hasWikipediaArticleLength>", FactComponent.forNumber(page.length())));
+        WIKIINFONEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language).write(new Fact(entity, "<hasWikipediaUrl>", FactComponent.wikipediaURL(entity, language)));
       }
       Set<String> targets = new HashSet<>();
       for (int pos = page.indexOf("[["); pos != -1; pos = page.indexOf("[[", pos + 2)) {
@@ -116,7 +124,7 @@ public class WikiInfoExtractor extends MultilingualWikipediaExtractor {
         targets.add(target);
       }
 
-      MultilingualTheme out = isEnglish() ? WIKIINFONEEDSTYPECHECK : WIKIINFONEEDSTRANSLATION;
+      MultilingualTheme out = isEnglish() ? WIKIINFONEEDSTYPECHECKANDREDIRECTION : WIKIINFONEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION;
 
       for (String target : targets) {
         out.inLanguage(language).write(new Fact(entity, "<linksTo>", target));

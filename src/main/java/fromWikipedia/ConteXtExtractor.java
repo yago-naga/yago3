@@ -23,7 +23,6 @@ package fromWikipedia;
 
 import java.io.BufferedReader;
 import java.io.File;
-import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
@@ -33,6 +32,8 @@ import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import javatools.administrative.Announce;
@@ -80,20 +81,29 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
     }
     return input;  }
 
-  public static final MultilingualTheme CONTEXTFACTSNEEDSTRANSLATION = new MultilingualTheme("conteXtFactsNeedsTranslation",
+  public static final MultilingualTheme CONTEXTFACTSNEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION  = new MultilingualTheme("conteXtFactsNeedsTypeCheckAndTranslationAndRedirection",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
+  
+  public static final MultilingualTheme CONTEXTFACTSNEEDSTYPECHECKANDTRANSLATION  = new MultilingualTheme("conteXtFactsNeedsTypeCheckAndTranslation",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
+  
+  public static final MultilingualTheme CONTEXTFACTSNEEDSTYPECHECK  = new MultilingualTheme("conteXtFactsNeedsTypeCheck",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
 
+  public static final MultilingualTheme CONTEXTFACTSNEEDSTYPECHECKANDREDIRECTION  = new MultilingualTheme("conteXtFactsNeedsTypeCheckAndRedirection",
+      "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
+  
   /** Context for entities */
   public static final MultilingualTheme CONTEXTFACTS = new MultilingualTheme("yagoConteXtFacts",
       "Keyphrases for the X in SPOTLX - gathered from (internal and external) link anchors, citations and category names");
-
+  
+  
   @Override
   public Set<Theme> output() {
-    // return new FinalSet<Theme>(DIRTYCONTEXTFACTS, CONTEXTSOURCES);
     if (isEnglish()) {
-      return new FinalSet<Theme>(CONTEXTFACTS.inLanguage(language));
+      return new FinalSet<Theme>(CONTEXTFACTSNEEDSTYPECHECKANDREDIRECTION.inLanguage(language));
     } else {
-      return new FinalSet<Theme>(CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language));
+      return new FinalSet<Theme>(CONTEXTFACTSNEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language));
     }
   }
 
@@ -102,8 +112,13 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
     Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
 
     if (!isEnglish()) {
-      result.add(new EntityTranslator(CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language), CONTEXTFACTS.inLanguage(this.language), this));
+      result.add(new Redirector(CONTEXTFACTSNEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language), CONTEXTFACTSNEEDSTYPECHECKANDTRANSLATION.inLanguage(language), this));
+      result.add(new EntityTranslator(CONTEXTFACTSNEEDSTYPECHECKANDTRANSLATION.inLanguage(language), CONTEXTFACTSNEEDSTYPECHECK.inLanguage(language), this));
     }
+    else {
+      result.add(new Redirector(CONTEXTFACTSNEEDSTYPECHECKANDREDIRECTION.inLanguage(language), CONTEXTFACTSNEEDSTYPECHECK.inLanguage(language), this));
+    }
+    result.add(new TypeChecker(CONTEXTFACTSNEEDSTYPECHECK.inLanguage(language), CONTEXTFACTS.inLanguage(language), this));
     return result;
   }
 
@@ -133,6 +148,7 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           if (titleEntity == null) continue;
 
           String page = FileLines.readBetween(in, "<text", "</text>");
+          if (page == null || page.isEmpty()) continue;
           String normalizedPage = Char17.decodeAmpersand(Char17.decodeAmpersand(page.replaceAll("[\\s\\x00-\\x1F]+", " ")));
           String transformedPage = replacements.transform(normalizedPage);
 
@@ -147,9 +163,9 @@ public class ConteXtExtractor extends MultilingualWikipediaExtractor {
           for (Fact fact : contextPatterns.extract(transformedPage, titleEntity, language)) {
             if (fact != null) {
               if (isEnglish()) {
-                CONTEXTFACTS.inLanguage(language).write(fact);
+                CONTEXTFACTSNEEDSTYPECHECKANDREDIRECTION.inLanguage(language).write(fact);
               } else {
-                CONTEXTFACTSNEEDSTRANSLATION.inLanguage(language).write(fact);
+                CONTEXTFACTSNEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language).write(fact);
               }
             }
           }

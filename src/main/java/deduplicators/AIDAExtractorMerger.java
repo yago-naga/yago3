@@ -61,7 +61,7 @@ public class AIDAExtractorMerger extends Extractor {
   public static final Theme AIDAFACTS = new Theme("aidaFacts", "All facts necessary for AIDA", ThemeGroup.OTHER);
 
   /** Relations that AIDA needs. */
-  public static final Set<String> relations = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.label, RDFS.sameas, "<hasGivenName>", "<hasFamilyName>",
+  public static final Set<String> relations = new FinalSet<>(RDFS.type, RDFS.subclassOf, RDFS.label, YAGO.hasPreferredName, RDFS.sameas, "<hasGivenName>", "<hasFamilyName>",
       "<hasGender>", "<hasAnchorText>", "<hasInternalWikipediaLinkTo>", "<redirectedFrom>", "<hasWikipediaUrl>", "<hasCitationTitle>",
       "<hasWikipediaCategory>", "<hasWikipediaAnchorText>", "<_hasTranslation>", "<hasWikipediaId>", "<_yagoMetadata>",
       YAGO.hasImageID, YAGO.hasWikiPage, YAGO.hasImageUrl, YAGO.hasGloss, YAGO.hasLicense, YAGO.hasAuthor, YAGO.hasTrademark,
@@ -74,7 +74,7 @@ public class AIDAExtractorMerger extends Extractor {
     //YAGO functional facts needed for AIDA
     //hasWIkipediaUrl, hasGender
     //hasGivenName, hasFamilyName
-    //isNamedEntity (when including Concepts)
+    //isNamedEntity
     input.add(AIDAFunctionalExtractor.AIDAFUNCTIONALFACTS);
 
     //the rest of the facts that don't need functional check
@@ -90,7 +90,8 @@ public class AIDAExtractorMerger extends Extractor {
 
     // Keyphrases.
     input.addAll(ConteXtExtractor.CONTEXTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
-    input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
+    input.addAll(CategoryExtractor.CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
 
     // Translation.
     input.addAll(DictionaryExtractor.ENTITY_DICTIONARY.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
@@ -114,7 +115,7 @@ public class AIDAExtractorMerger extends Extractor {
 
     // Entity descriptions.
     input.add(WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS);
-    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIAENTITYDESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     
     // Mention Link Likelihood
     input.addAll(MentionLinkLikelihoodExtractor.LIKELIHOODFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));

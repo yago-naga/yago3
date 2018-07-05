@@ -32,7 +32,7 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
     this(Parameters.getFile(WIKIDATA));
   }
 
-  public static final Theme ALL_ENTITIES_WIKIDATA = new Theme("allEntities_from_wikidata",
+  public static final Theme ALLENTITIES_WIKIDATA = new Theme("allEntities_from_wikidata",
       "List of all entities specifying if they are named entities or concepts or unknown, extracted from wikidata.");
   
   private static final String WIKIDATA = "wikidata";
@@ -45,13 +45,13 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
   input.add(WikidataLabelExtractor.WIKIDATAINSTANCES);
 //  input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     //this extractor actually depends on WikidataInstances and CatMembers to get all entity names, but since I do this in other extractor AllEntitiesFromYago, to write less code I assume that is already called and load the entity names from that theme's subjects
-    input.add(AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings.ALL_ENTITIES_YAGO);
+    input.add(AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings.ALLENTITIES_YAGO);
     return input;
   }
 
   @Override
   public Set<Theme> output() {
-    return (new FinalSet<>(AllEntitiesTypesExtractorFromWikidata.ALL_ENTITIES_WIKIDATA));
+    return (new FinalSet<>(AllEntitiesTypesExtractorFromWikidata.ALLENTITIES_WIKIDATA));
   }
 
   @Override
@@ -82,7 +82,7 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
     System.out.println("intsances: " + instances.size());
     System.out.println("classes: " + classes.size());
     
-    for (String entity : AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings.ALL_ENTITIES_YAGO.factCollection().getSubjects()) {
+    for (String entity : AllEntitiesTypesExtractorFromYagoWordnetPrefMeanings.ALLENTITIES_YAGO.factCollection().getSubjects()) {
       if (entity == null) {
         continue;
       }
@@ -91,16 +91,16 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
         if (mostEnglishyagoEntityWikidataId.containsKey(wikidataId)) {
           if (mostEnglishyagoEntityWikidataId.get(wikidataId).equals(entity)) {
             if (instances.contains(wikidataId) && classes.contains(wikidataId)) {
-              ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.BOTH.getYagoName()));
+              ALLENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.BOTH.getYagoName()));
             }
             else if (classes.contains(wikidataId)) {
-              ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.CONCEPT.getYagoName()));
+              ALLENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.CONCEPT.getYagoName()));
             }
             else if (instances.contains(wikidataId)) {
-              ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.NAMED_ENTITY.getYagoName()));
+              ALLENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.NAMED_ENTITY.getYagoName()));
             }
             else {
-              ALL_ENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
+              ALLENTITIES_WIKIDATA.write(new Fact(mostEnglishyagoEntityWikidataId.get(wikidataId), YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
             }
           }
           else {
@@ -113,7 +113,7 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
     
       }
       else {
-        ALL_ENTITIES_WIKIDATA.write(new Fact(entity, YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
+        ALLENTITIES_WIKIDATA.write(new Fact(entity, YAGO.isNamedEntity, EntityType.UNKNOWN.getYagoName()));
       }
         
     }
@@ -165,7 +165,7 @@ public class AllEntitiesTypesExtractorFromWikidata extends DataExtractor {
     Map<String, EntityType> map = cache.get();
     if (map == null) {
       cache = new SoftReference<>(map = new HashMap<>());
-      for (Fact f : ALL_ENTITIES_WIKIDATA) {
+      for (Fact f : ALLENTITIES_WIKIDATA) {
         if (YAGO.isNamedEntity.equals(f.getRelation())) {
           map.put(f.getSubject(), EntityType.find(f.getObject()));
         }

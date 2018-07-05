@@ -114,7 +114,8 @@ public class EntityTranslator extends FollowUpExtractor {
         }
         String translatedObject = translateObject(f.getObject(), objectDictionary);
         if (translatedObject == null) {
-          if (gracefulTranslation) {
+          // Do not drop objects if they are a url (which look like entities but cannot be translated).
+          if (gracefulTranslation || isUrl(f.getObject())) {
             translatedObject = f.getObject();
           } else {
             continue;
@@ -124,6 +125,10 @@ public class EntityTranslator extends FollowUpExtractor {
         baseFactWasTranslated = true;
       }
     }
+  }
+
+  private boolean isUrl(String translatedObject) {
+    return translatedObject.startsWith("<http://") || translatedObject.startsWith("<https://");
   }
 
   public EntityTranslator(Theme in, Theme out, Extractor parent, boolean graceful) {
@@ -147,14 +152,14 @@ public class EntityTranslator extends FollowUpExtractor {
   public static void main(String... args) throws Exception {
     String language = "ro";
 
-    Theme in = WikiInfoExtractor.WIKIINFONEEDSTRANSLATION.inLanguage("ro");
+    Theme in = WikiInfoExtractor.WIKIINFONEEDSTYPECHECKANDTRANSLATION.inLanguage("ro");
     in.assignToFolder(new File(args[0]));
     FactCollection fc = in.factCollection();
     for (Fact f : fc) {
       System.out.println("fact: " + f);
     }
 
-    new EntityTranslator(WikiInfoExtractor.WIKIINFONEEDSTRANSLATION.inLanguage(language), WikiInfoExtractor.WIKIINFO.inLanguage(language), null, true)
+    new EntityTranslator(WikiInfoExtractor.WIKIINFONEEDSTYPECHECKANDTRANSLATION.inLanguage(language), WikiInfoExtractor.WIKIINFONEEDSTYPECHECK.inLanguage(language), null, true)
         .extract(new File(args[0]), "none");
   }
 

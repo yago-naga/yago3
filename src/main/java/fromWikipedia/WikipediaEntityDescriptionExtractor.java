@@ -24,7 +24,6 @@ package fromWikipedia;
  import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.TreeSet;
@@ -43,6 +42,8 @@ import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
+import followUp.Redirector;
+import followUp.TypeChecker;
 import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
@@ -61,10 +62,19 @@ import utils.WikipediaTextCleanerHelper;
 
 public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaExtractor {
 
-  public static final MultilingualTheme WIKIPEDIA_ENTITY_DESCRIPTIONS = new MultilingualTheme("wikipediaEntityDescriptions", 
+  public static final MultilingualTheme WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION = new MultilingualTheme("wikipediaEntityDescriptionsNeedsTypeCheckAndTranslationAndRedirection", 
+      "Descriptions extracted from Wikipedia for entities.");
+  
+  public static final MultilingualTheme WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDTRANSLATION = new MultilingualTheme("wikipediaEntityDescriptionsNeedsTypeCheckAndTranslation", 
+      "Descriptions extracted from Wikipedia for entities.");
+  
+  public static final MultilingualTheme WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECK = new MultilingualTheme("wikipediaEntityDescriptionsNeedsTypeCheck", 
+      "Descriptions extracted from Wikipedia for entities.");
+  
+  public static final MultilingualTheme WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDREDIRECTION = new MultilingualTheme("wikipediaEntityDescriptionsNeedsTypeCheckAndRedirection", 
       "Descriptions extracted from Wikipedia for entities.");
 
-  public static final MultilingualTheme WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION = new MultilingualTheme("wikipediaEntityDescriptionsNeedTranslation", 
+  public static final MultilingualTheme WIKIPEDIAENTITYDESCRIPTIONS = new MultilingualTheme("wikipediaEntityDescriptions", 
       "Descriptions extracted from Wikipedia for entities.");
 
   
@@ -92,20 +102,26 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
   @Override
   public Set<Theme> output() {
     if (isEnglish()) {
-      return (new FinalSet<>(WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(language)));
+      return (new FinalSet<>(WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDREDIRECTION.inLanguage(language)));
     }
     else {
-      return (new FinalSet<>(WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(language)));
+      return (new FinalSet<>(WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language)));
     }
   }
   
   @Override
   public Set<FollowUpExtractor> followUp() {
-    if (isEnglish()) {
-      return (Collections.emptySet());
+    Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
+    
+    if (!isEnglish()) {
+      result.add(new Redirector(WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language), WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDTRANSLATION.inLanguage(language), this));
+      result.add(new EntityTranslator(WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDTRANSLATION.inLanguage(language), WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECK.inLanguage(language), this));
     }
-    return (new FinalSet<FollowUpExtractor>(
-        new EntityTranslator(WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(this.language), WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(this.language), this)));
+    else {
+      result.add(new Redirector(WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDREDIRECTION.inLanguage(language), WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECK.inLanguage(language), this));
+    }
+    result.add(new TypeChecker(WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECK.inLanguage(language), WIKIPEDIAENTITYDESCRIPTIONS.inLanguage(language), this));
+    return result;
   }
 
   @Override
@@ -149,12 +165,12 @@ public class WikipediaEntityDescriptionExtractor extends MultilingualWikipediaEx
       // needs translation which is done in follow up extractor.
       if(description != null) {
         if(isEnglish()) {
-          WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguage(language).write(new Fact(
+          WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDREDIRECTION.inLanguage(language).write(new Fact(
               titleEntity, 
               YAGO.hasLongDescription, 
               FactComponent.forString(Char17.decodeBackslash(description))));
         } else {
-          WIKIPEDIA_ENTITY_DESCRIPTIONS_NEED_TRANSLATION.inLanguage(language).write(new Fact(
+          WIKIPEDIAENTITYDESCRIPTIONSNEEDSTYPECHECKANDTRANSLATIONANDREDIRECTION.inLanguage(language).write(new Fact(
               titleEntity, 
               YAGO.hasLongDescription, 
               FactComponent.forString(Char17.decodeBackslash(description))));

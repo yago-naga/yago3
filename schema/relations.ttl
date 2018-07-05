@@ -355,7 +355,7 @@ rdfs:label	rdf:type	<permanentRelationToSubject> .
 #<hasUTCOffset>	rdfs:domain	<wordnet_location_100027167> .
 #<hasUTCOffset>	rdfs:range	xsd:integer .
 #<hasUTCOffset>	rdf:type	owl:FunctionalProperty .
-<hasWebsite>	rdfs:domain	<yagoLegalActorGeo> .
+<hasWebsite>	rdfs:domain	owl:Thing .
 <hasWebsite>	rdfs:range	<yagoURL> .
 <hasWebsite>	rdf:type	rdf:Property .
 <imports>	rdfs:domain	<wordnet_location_100027167> .
@@ -550,7 +550,6 @@ rdfs:comment	<hasGloss>	"$1 has comment $2" .
 <byTransport> <hasGloss> "The connecting airline for $1 is $2" .
 <hasAirportCode> <hasGloss> "The airport code of $1 is $2" .
 
-# Added for the project with the Spiegel
 # These appear only in the German Wikipedia, and are extracted
 # by a manual mapping in _multilingualAttributes.ttl
 <hasISIN>	rdfs:domain	 <wordnet_organization_108008335> .

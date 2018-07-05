@@ -23,6 +23,7 @@ package fromWikipedia;
 
 import java.io.File;
 import java.io.Reader;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
@@ -34,6 +35,7 @@ import basics.FactComponent;
 import extractors.Extractor;
 import extractors.MultilingualWikipediaExtractor;
 import followUp.CategoryTranslator;
+import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
 import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.PatternHardExtractor;
@@ -57,7 +59,10 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
   public static final MultilingualTheme CATEGORYMEMBERS_TRANSLATED = new MultilingualTheme("categoryMembersTranslated",
       "Category Members facts with translated subjects and objects");
-
+  
+  public static final MultilingualTheme CATEGORYMEMBERS_ENTITIES_TRANSLATED = new MultilingualTheme("categoryMembersEntitiesTranslated",
+      "Category Members facts with translated subjects");
+  
   @Override
   public Set<Theme> input() {
     Set<Theme> input = new TreeSet<>();
@@ -87,9 +92,12 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<FollowUpExtractor> followUp() {
-    if (language.equals("en")) return (Collections.emptySet());
-    return (new FinalSet<FollowUpExtractor>(
-        new CategoryTranslator(CATEGORYMEMBERS.inLanguage(this.language), CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language), this)));
+    Set<FollowUpExtractor> followUps = new HashSet<>();
+    if (!isEnglish()) {
+      followUps.add(new CategoryTranslator(CATEGORYMEMBERS.inLanguage(this.language), CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language), this));
+      followUps.add(new EntityTranslator(CATEGORYMEMBERS.inLanguage(this.language), CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguage(this.language), this, true));
+    }
+    return followUps;
   }
 
   @Override

@@ -38,6 +38,7 @@ import java.util.Map;
 import java.util.Set;
 
 import basics.Fact;
+import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
@@ -52,7 +53,6 @@ import fromOtherSources.WikidataImageLicenseExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.PersonNameExtractor;
 import fromThemes.TransitiveTypeExtractor;
-import fromWikipedia.CategoryExtractor;
 import fromWikipedia.CategoryGlossExtractor;
 import fromWikipedia.ConteXtExtractor;
 import fromWikipedia.DisambiguationPageExtractor;
@@ -63,6 +63,7 @@ import fromWikipedia.WikiInfoExtractor;
 import fromWikipedia.WikipediaEntityDescriptionExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
+import javatools.datatypes.Pair;
 import javatools.filehandlers.FileUtils;
 import utils.Theme;
 
@@ -74,12 +75,12 @@ public class Neo4jThemeTransformer extends Extractor {
     
   }
   
-  public Neo4jThemeTransformer(String yagoOutputFolderPath) {
-    OUTPUT_PATH = yagoOutputFolderPath;
+  public Neo4jThemeTransformer(String neo4jOutputFolderPath) {
+    OUTPUT_PATH = neo4jOutputFolderPath;
     if (OUTPUT_PATH.charAt(OUTPUT_PATH.length()-1) != '/') {
       OUTPUT_PATH += "/";
     }
-    Announce.message("Yago output path: " + OUTPUT_PATH);
+    Announce.message("Neo4j output path: " + OUTPUT_PATH);
   }
 
   private static Map<String, String> entity_wikidataId;
@@ -259,8 +260,6 @@ public class Neo4jThemeTransformer extends Extractor {
     // For YAGO compliance.
     input.add(SchemaExtractor.YAGOSCHEMA);
     
-    input.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
-    
     // Wikipedie category glosses.
     input.addAll(CategoryGlossExtractor.CATEGORYGLOSSES.inLanguages(MultilingualExtractor.wikipediaLanguages));
 
@@ -292,7 +291,7 @@ public class Neo4jThemeTransformer extends Extractor {
         
     // Entity descriptions.
     input.add(WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS);
-    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
+    input.addAll(WikipediaEntityDescriptionExtractor.WIKIPEDIAENTITYDESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages));
 
     // Entity Geocoordinates
     input.add(WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES);
@@ -501,18 +500,28 @@ public class Neo4jThemeTransformer extends Extractor {
     addRelationsToCommand("hasInternalWikipediaLinkTo", hasInternalWikipediaLinkToRelationsFileName);
     D.p("Finishing " + hasInternalWikipediaLinkToRelationsFileName + " " + (System.currentTimeMillis() - startTimeFileMaking));
     
+    Map<Pair<String, String>, String> locations = new HashMap<Pair<String, String>, String>();
+    Integer location_cnt = 0;
     // Geo Locations
     D.p("Starting " + geoLocationNodesFileName + " " + hasGeoLocationRelationsFileName);
     startTimeFileMaking = System.currentTimeMillis();
-    for (Fact f : WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getFactsWithRelation(YAGO.hasGeoLocation)) {
-      String entity = f.getSubject();
+    for (String entity : WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getSubjects()) {
+      if (entity.startsWith("<yagoTheme_")) continue;
       entity_wikidataId.putIfAbsent(entity, entity);
+
+      String latitude = FactComponent.stripQuotes(FactComponent.getString(WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLatitude)));
+      String longitude = FactComponent.stripQuotes(FactComponent.getString(WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(entity, YAGO.hasLongitude)));
+      Pair<String, String> location = new Pair<String, String>(latitude, longitude);
       
-      String location_id = f.getObject();
-      String latitude = WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(location_id, YAGO.hasLatitude);
-      String longitude = WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.factCollection().getObject(location_id, YAGO.hasLongitude);
+      String location_id = locations.get(location);
+      if (location_id == null) {
+        location_id = "LOCATION_" + location_cnt;
+        location_cnt++;
+
+        tempNodes.add(new String[] {location_id, latitude, longitude });
+        locations.put(location, location_id);
+      }
       
-      tempNodes.add(new String[] {location_id, latitude, longitude });
       tempRelations.add(new String[] { entity_wikidataId.get(entity), location_id });
     }
     WikidataEntityGeoCoordinateExtractor.WIKIDATAENTITYGEOCOORDINATES.killCache();
@@ -742,7 +751,7 @@ public class Neo4jThemeTransformer extends Extractor {
     WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.killCache();
     D.p("Finishing " + WikidataEntityDescriptionExtractor.WIKIDATAENTITYDESCRIPTIONS.name + (System.currentTimeMillis() - startTime));
 
-    for (Theme theme : WikipediaEntityDescriptionExtractor.WIKIPEDIA_ENTITY_DESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
+    for (Theme theme : WikipediaEntityDescriptionExtractor.WIKIPEDIAENTITYDESCRIPTIONS.inLanguages(MultilingualExtractor.wikipediaLanguages)) {
       D.p("Starting " + theme.name);
       startTime = System.currentTimeMillis();
       for (Fact f : theme.factCollection().getFactsWithRelation(YAGO.hasLongDescription)) {

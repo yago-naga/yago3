@@ -164,7 +164,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     // Load all mentions.
     loadMentions();
-    System.out.println(NumberFormatter.ISOtime() + " - LoadMentions Done(" + language + ").");
+    Announce.debug(NumberFormatter.ISOtime() + " - LoadMentions Done(" + language + ").");
 
     int pagesProcessed = 0;
 
@@ -189,8 +189,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
         case 0:
           pagesProcessed++;
           if (pagesProcessed % 100_000 == 0) {
-            System.out.println(NumberFormatter.ISOtime() + " - MentionLinkLikelihoodExtractor(" + language + "): " + pagesProcessed + " pages Processed.");
-
+            Announce.debug(NumberFormatter.ISOtime() + " - MentionLinkLikelihoodExtractor(" + language + "): " + pagesProcessed + " pages Processed.");
           }
 
           titleEntity = titleExtractor.getTitleEntity(in);

@@ -36,6 +36,8 @@ import basics.N4Reader;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.DataExtractor;
+import followUp.FollowUpExtractor;
+import followUp.TypeChecker;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.FactCollection;
@@ -48,6 +50,9 @@ import utils.Theme;
 public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
  
   public static final Theme WIKIDATAENTITYGEOCOORDINATES = new Theme("wikidataEntityGeoCoordinates", 
+      "Geo Coordinates extracted from wikidata for entities.");
+  
+  public static final Theme WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK = new Theme("wikidataEntityGeoCoordinatesNeedsTypeCheck", 
       "Geo Coordinates extracted from wikidata for entities.");
   
   private static final String WIKIDATA = "wikidata";
@@ -72,27 +77,16 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
 
   @Override
   public Set<Theme> output() {
-    return (new FinalSet<>(WIKIDATAENTITYGEOCOORDINATES));
+    return (new FinalSet<>(WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK));
   }
   
-  private class Location {
-    Double latitude;
-    Double longitude;
+  @Override
+  public Set<followUp.FollowUpExtractor> followUp() {
+    Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
     
-    public Location(Double latitude, Double longitude) {
-      super();
-      this.latitude = latitude;
-      this.longitude = longitude;
-    }
-
-    public boolean equals(Location obj) {
-      return ((latitude == obj.latitude) && (longitude == obj.longitude));
-    }
-
-    public int hashCode() {
-      return latitude.hashCode() * longitude.hashCode();
-      
-    }
+    result.add(new TypeChecker(WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK, WIKIDATAENTITYGEOCOORDINATES, this));
+    
+    return result;
   }
   
   static final Pattern POINT = Pattern.compile("Point\\(([-\\.\\d]+) ([-\\.\\d]+)\\)");
@@ -104,10 +98,7 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
     // Loading the map from wikidataIds to the most English yago entity.
     loadMostEnglishEntities();
     
-    Map<Location, String> locations = new HashMap<>();
-    Map<String, Set<String>> entityLocations = new HashMap<>();
     N4Reader nr = new N4Reader(inputData);
-    int location_cnt = 0;
     while(nr.hasNext()) {
       Fact f = nr.next();
 //    Fact:<http://www.wikidata.org/entity/Q22> <http://www.wikidata.org/prop/direct/P625> "Point(-5 57)"^^<http://www.opengis.net/ont/geosparql#wktLiteral>
@@ -122,22 +113,8 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
         if(yagoEntity != null) {
           Matcher matcher = POINT.matcher(f.getObject());
           if (matcher.find()) {
-            Location location = new Location(new Double(matcher.group(LATITUDE)), new Double(matcher.group(LONGITUDE)));
-            String location_id;
-            if (locations.containsKey(location)) {
-              location_id = locations.get(location);
-            }
-            else {
-              location_id = "LOCATION_" + location_cnt;
-              locations.put(location, location_id);
-              WIKIDATAENTITYGEOCOORDINATES.write(new Fact(location_id, YAGO.hasLatitude, location.latitude.toString()));
-              WIKIDATAENTITYGEOCOORDINATES.write(new Fact(location_id, YAGO.hasLongitude, location.longitude.toString()));
-              location_cnt++;
-            }
-            if (!entityLocations.containsKey(yagoEntity) || (entityLocations.get(yagoEntity).contains(location_id))) {
-              WIKIDATAENTITYGEOCOORDINATES.write(new Fact(yagoEntity, YAGO.hasGeoLocation, location_id));
-              entityLocations.computeIfAbsent(yagoEntity, k -> new HashSet<>()).add(location_id);
-            }
+            WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasLatitude, FactComponent.forStringWithDatatype(matcher.group(LATITUDE), "<degrees>")));
+            WIKIDATAENTITYGEOCOORDINATESNEEDSTYPECHECK.write(new Fact(yagoEntity, YAGO.hasLongitude, FactComponent.forStringWithDatatype(matcher.group(LONGITUDE), "<degrees>")));
           }
         }
       }
@@ -180,11 +157,6 @@ public class WikidataEntityGeoCoordinateExtractor extends DataExtractor {
     return languageEntityName.get(mostEnglishLanguage);
   }
   
-  public static void main(String[] args) throws Exception {
-    WikidataEntityGeoCoordinateExtractor ex = new WikidataEntityGeoCoordinateExtractor(new File("/local_san2/ambiverse/jenkins/workspace/entity_linking_repository_creation/tmp_dumps/wikidatawiki/20170626/wikidata-20170626-all-BETA.ttl"));
-    ex.extract(new File("/local_san2/tmp/yago_aida_en20170620_de20170620_zh20170620_es20170620_ar20170620_fr20170620/"), "Test");
-  }
-
 }
 
 

@@ -142,6 +142,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
     TitleExtractor titleExtractor = new TitleExtractor("en");
 
     valueCleaner = new PatternList(PatternHardExtractor.INFOBOXREPLACEMENTS, "<_infoboxReplace>");
+    DateParser dateParser = new DateParser();
     String typeRelation = FactComponent.forInfoboxTypeRelation("en");
     // Extract the information
     // Announce.progressStart("Extracting", 4_500_000);
@@ -180,7 +181,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
             if (relations == null) continue;
             for (String relation : relations) {
               for (String value : attributes.get(attribute)) {
-                extract(titleEntity, value, relation, preferredMeaning, hardWiredFacts, valueCleaner);
+                extract(titleEntity, value, relation, preferredMeaning, hardWiredFacts, valueCleaner, dateParser);
               }
             }
           }
@@ -192,9 +193,7 @@ public class TemporalInfoboxExtractor extends EnglishWikipediaExtractor {
 
   /** Extracts a relation from a string */
   protected void extract(String entity, String valueString, String relation, Map<String, String> preferredMeanings, FactCollection factCollection,
-      PatternList replacements) throws IOException {
-
-    DateParser dateParser = new DateParser();
+      PatternList replacements, DateParser dateParser) throws IOException {
 
     // If the relation is for a combined attribute
     if (relation.contains(",")) {
