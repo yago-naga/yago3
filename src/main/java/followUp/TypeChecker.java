@@ -32,6 +32,7 @@ import fromOtherSources.AllEntitiesTypesExtractorFromWikidata;
 import fromOtherSources.HardExtractor;
 import fromThemes.TransitiveTypeExtractor;
 import javatools.administrative.Announce;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.EntityType;
 import utils.FactCollection;
@@ -112,7 +113,7 @@ public class TypeChecker extends FollowUpExtractor {
 
     // Make sure that at least one entity in the fact is part of the
     // requested subgraph.
-    if (entitySubgraph != null) {
+    if (entitySubgraph != null && !entitySubgraph.isEmpty()) {
       return (entitySubgraph.contains(fact.getSubject()) || entitySubgraph.contains(fact.getObject()));
     }
 
@@ -199,6 +200,30 @@ public class TypeChecker extends FollowUpExtractor {
     return (myTypes != null && myTypes.contains(type));
   }
 
+  private Set<String> getSubgraphEntities() {
+    Set<String> subgraph = new HashSet<>();
+
+    String pEntities = Parameters.get("subgraphEntities");
+    if (pEntities != null) {
+      Arrays.stream(pEntities.split(",")).forEach(e -> subgraph.add(e));
+    }
+
+    Set<String> restrictedTypes = new HashSet<>();
+    String pClasses = Parameters.get("subgraphClasses");
+    if (pClasses != null) {
+      Arrays.stream(pClasses.split(",")).forEach(e -> restrictedTypes.add(e));
+    }
+
+    for (Map.Entry<String, Set<String>> entry : types.entrySet()) {
+      Set<String> entityTypes = entry.getValue();
+      if (!Collections.disjoint(entityTypes, restrictedTypes)) {
+        subgraph.add(entry.getKey());
+      }
+    }
+
+    return subgraph;
+  }
+
   @Override
   public void extract() throws Exception {
     if (Extractor.includeConcepts) {
@@ -206,18 +231,7 @@ public class TypeChecker extends FollowUpExtractor {
     }
     types = TransitiveTypeExtractor.getSubjectToTypes();
 
-    // For testing only.
-    entitySubgraph = new HashSet<>();
-
-    Set<String> restrictedTypes = new HashSet<>();
-    restrictedTypes.add("<wikicat_Heavy_metal_musical_groups>");
-
-    for (Map.Entry<String, Set<String>> entry : types.entrySet()) {
-      Set<String> entityTypes = entry.getValue();
-      if (!Collections.disjoint(entityTypes, restrictedTypes)) {
-        entitySubgraph.add(entry.getKey());
-      }
-    }
+    entitySubgraph = getSubgraphEntities();
 
     schema = HardExtractor.HARDWIREDFACTS.factCollection();
     Announce.doing("Type-checking facts of", checkMe);
