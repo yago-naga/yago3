@@ -99,7 +99,7 @@ public class GeoNamesDataImporter extends DataExtractor {
     // FactWriter typeOut = output.get(GEONAMESTYPES);
 
     FactCollection mappedEntityIds = GeoNamesEntityMapper.GEONAMESENTITYIDS.factCollection();
-    Map<String, String> geoEntityId2yago = mappedEntityIds.getReverseMap("<hasGeonamesEntityId>");
+    Map<String, String> geoEntityId2yago = mappedEntityIds.getReverseMap(RDFS.sameas);
     FactCollection mappedClassIds = GeoNamesClassMapper.GEONAMESCLASSSIDS.factCollection();
     Map<String, String> geoClassId2yago = mappedClassIds.getReverseMap("<hasGeonamesClassId>");
     FactSource ibFacts = InfoboxMapper.INFOBOXFACTS.inEnglish();
@@ -117,7 +117,7 @@ public class GeoNamesDataImporter extends DataExtractor {
       String[] data = line.split("\t");
 
       String geonamesId = data[0];
-      String geonamesIdYagoFormat = FactComponent.forString(geonamesId);
+      String geonamesIdYagoFormat = FactComponent.forGeoNamesId(geonamesId);
       String name = data[1];
       String canonicalName = FactComponent.forStringWithLanguage(name, "eng");
       geoId2name.put(Integer.parseInt(geonamesId), name);
@@ -157,7 +157,6 @@ public class GeoNamesDataImporter extends DataExtractor {
       writeFact(out, new Fact(name, RDFS.label, canonicalName), outSource);
       writeFact(out, new Fact(name, "<hasLatitude>", FactComponent.forStringWithDatatype(lati.toString(), "<degrees>")), outSource);
       writeFact(out, new Fact(name, "<hasLongitude>", FactComponent.forStringWithDatatype(longi.toString(), "<degrees>")), outSource);
-      writeFact(out, new Fact(name, "<hasGeonamesEntityId>", geonamesIdYagoFormat), outSource);
       writeFact(typeOut, new Fact(name, RDFS.type, geoClassId2yago.get(FactComponent.forString(fc))), typeOutSource);
 
       if (namesList != null) {
@@ -182,8 +181,8 @@ public class GeoNamesDataImporter extends DataExtractor {
         continue;
       }
 
-      String parent = FactComponent.forString(data[0]);
-      String child = FactComponent.forString(data[1]);
+      String parent = FactComponent.forGeoNamesId(data[0]);
+      String child = FactComponent.forGeoNamesId(data[1]);
       Theme out = onlyOut;
       Theme outSource = null;
       // When both parent and child are part of Wikipedia, write to
@@ -262,7 +261,7 @@ public class GeoNamesDataImporter extends DataExtractor {
       // To avoid clashes with canoncial Wikipedia names, add the GeoNames
       // id
       // to unmatched GeoNames entities.
-      String geonamesIdOnly = FactComponent.stripQuotes(FactComponent.getString(geonamesIdYagoFormat));
+      String geonamesIdOnly = FactComponent.geoNamesIdFromEntity(geonamesIdYagoFormat);
       return FactComponent.forYagoEntity(GEO_ENTITY_PREFIX + name + "_" + geonamesIdOnly);
     }
   }

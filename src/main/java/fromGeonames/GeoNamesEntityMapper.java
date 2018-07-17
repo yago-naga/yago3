@@ -28,6 +28,7 @@ import java.util.Set;
 
 import basics.Fact;
 import basics.FactComponent;
+import basics.GeoNames;
 import basics.RDFS;
 import extractors.DataExtractor;
 import followUp.FollowUpExtractor;
@@ -58,8 +59,6 @@ public class GeoNamesEntityMapper extends DataExtractor {
   /** geonames entity links */
   public static final Theme GEONAMESENTITYIDS = new Theme("yagoGeonamesEntityIds", "IDs from GeoNames entities", ThemeGroup.LINK);
 
-  public static final String GEONAMES_NAMESPACE = "http://sws.geonames.org/";
-
   @Override
   public Set<Theme> input() {
     return new HashSet<Theme>();
@@ -89,7 +88,7 @@ public class GeoNamesEntityMapper extends DataExtractor {
           String geoId = data[1];
           // Links missing in YAGO will be dropped by the
           // type-checker.
-          DIRTYGEONAMESENTITYIDS.write(new Fact(geoEntity, RDFS.sameas, FactComponent.forUri(GEONAMES_NAMESPACE + geoId)));
+          DIRTYGEONAMESENTITYIDS.write(new Fact(geoEntity, RDFS.sameas, FactComponent.forUri(GeoNames.GEONAMES_NAMESPACE + geoId)));
         }
       }
     }
