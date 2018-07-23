@@ -187,8 +187,9 @@ public class WikidataLabelExtractor extends DataExtractor {
             if (yagoEntity == null) {
               continue;
             }
-            
-            WIKIDATATRANSLATIONSNEEDSTYPECHECK.write(new Fact(yagoEntity, "<numberOfTranslations>", "" + language2name.size()));
+
+            // Use mostEnglishName, not yagoEntity - titlePatterns are only used to REMOVE entities, not to rename the titles for sameAs links.
+            WIKIDATATRANSLATIONSNEEDSTYPECHECK.write(new Fact(mostEnglishName, "<numberOfTranslations>", "" + language2name.size()));
             // For on all languages
             for (String lang : language2name.keySet()) {
               String foreignName = language2name.get(lang);
