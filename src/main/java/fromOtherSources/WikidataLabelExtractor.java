@@ -198,7 +198,8 @@ public class WikidataLabelExtractor extends DataExtractor {
               if (availableLanguages.contains(lang)) {
                 String foreignEntity = rawTitleExtractors.get(lang).createTitleEntityRaw(foreignName.replace('_', ' '));
                 if (foreignEntity != null) {
-                  WIKIDATAINSTANCES.write(new Fact(foreignEntity, RDFS.sameas, lastqid));
+                  // Use mostEnglishName, not yagoEntity - titlePatterns are only used to REMOVE entities, not to rename the titles for sameAs links.
+                  WIKIDATAINSTANCES.write(new Fact(mostEnglishName, RDFS.sameas, lastqid));
                 }
               }
 
