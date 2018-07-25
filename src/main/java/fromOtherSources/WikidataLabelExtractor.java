@@ -189,7 +189,8 @@ public class WikidataLabelExtractor extends DataExtractor {
             }
 
             // Use mostEnglishName, not yagoEntity - titlePatterns are only used to REMOVE entities, not to rename the titles for sameAs links.
-            WIKIDATATRANSLATIONSNEEDSTYPECHECK.write(new Fact(mostEnglishName, "<numberOfTranslations>", "" + language2name.size()));
+            String yagoEntityNoTitlePattern = FactComponent.forForeignYagoEntity(mostEnglishName, mostEnglishLan);
+            WIKIDATATRANSLATIONSNEEDSTYPECHECK.write(new Fact(yagoEntityNoTitlePattern, "<numberOfTranslations>", "" + language2name.size()));
             // For on all languages
             for (String lang : language2name.keySet()) {
               String foreignName = language2name.get(lang);
@@ -199,7 +200,8 @@ public class WikidataLabelExtractor extends DataExtractor {
                 String foreignEntity = rawTitleExtractors.get(lang).createTitleEntityRaw(foreignName.replace('_', ' '));
                 if (foreignEntity != null) {
                   // Use mostEnglishName, not yagoEntity - titlePatterns are only used to REMOVE entities, not to rename the titles for sameAs links.
-                  WIKIDATAINSTANCES.write(new Fact(mostEnglishName, RDFS.sameas, lastqid));
+                  String yagoEntityNoTitlePatternForeign = FactComponent.forForeignYagoEntity(foreignName, lang);
+                  WIKIDATAINSTANCES.write(new Fact(yagoEntityNoTitlePatternForeign, RDFS.sameas, lastqid));
                 }
               }
 
