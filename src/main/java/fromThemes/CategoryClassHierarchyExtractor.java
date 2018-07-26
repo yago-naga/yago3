@@ -87,7 +87,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
   public Set<Theme> input() {
     Set<Theme> result = new TreeSet<>(
         Arrays.asList(CategoryClassExtractor.CATEGORYCLASSES, WordnetExtractor.WORDNETWORDS, PatternHardExtractor.CATEGORYPATTERNS,
-            CoherentTypeExtractor.YAGOTYPES, WordnetExtractor.WORDNETCLASSES, WordnetExtractor.PREFMEANINGS, HardExtractor.HARDWIREDFACTS));
+            TypeSubgraphExtractor.YAGOTYPES, WordnetExtractor.WORDNETCLASSES, WordnetExtractor.PREFMEANINGS, HardExtractor.HARDWIREDFACTS));
     if (isEnglish()) result.add(CategoryHierarchyExtractor.CATEGORYHIERARCHY.inLanguage(language));
     else result.add(CategoryHierarchyExtractor.CATEGORYHIERARCHY_TRANSLATED.inLanguage(language));
     return result;
