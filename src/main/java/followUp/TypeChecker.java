@@ -196,6 +196,7 @@ public class TypeChecker extends FollowUpExtractor {
     if (Extractor.includeConcepts) {
       entities = AllEntitiesTypesExtractorFromWikidata.getAllEntitiesToSplitType();
     }
+    types = TransitiveTypeExtractor.getSubjectToTypes();
 
     schema = HardExtractor.HARDWIREDFACTS.factCollection();
     Announce.doing("Type-checking facts of", checkMe);
