@@ -63,13 +63,13 @@ public class CoherentTypeExtractor extends Extractor {
   }
 
   /** All types of YAGO */
-  public static final Theme YAGOTYPES = new Theme("yagoTypes", "The coherent types extracted from different wikipedias", Theme.ThemeGroup.TAXONOMY);
+  public static final Theme TYPES = new Theme("types", "The coherent types extracted from different wikipedias", Theme.ThemeGroup.TAXONOMY);
 
-  public static final Theme YAGOTYPESSOURCES = new Theme("yagoTypesSources", "Sources for the coherent types extracted from different wikipedias");
+  public static final Theme TYPESSOURCES = new Theme("typesSources", "Sources for the coherent types extracted from different wikipedias");
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(YAGOTYPES, YAGOTYPESSOURCES);
+    return new FinalSet<>(TYPES, TYPESSOURCES);
   }
 
   /** Caches the YAGO branches */
@@ -109,7 +109,7 @@ public class CoherentTypeExtractor extends Extractor {
     for (String currentEntity : typeFacts.getSubjects()) {
       flush(currentEntity, typeFacts.collectObjects(currentEntity, RDFS.type));
     }
-    try (Writer w = FileUtils.getBufferedUTF8Writer(new File(YAGOTYPES.file().getParent(), "_typeStatistics.tsv"))) {
+    try (Writer w = FileUtils.getBufferedUTF8Writer(new File(TYPES.file().getParent(), "_typeStatistics.tsv"))) {
       for (Theme theme : numTypeFacts) {
         w.write(theme.name + "\t" + numTypeFacts.get(theme) + "\n");
       }
@@ -170,7 +170,7 @@ public class CoherentTypeExtractor extends Extractor {
         Theme source = sources.get(f.getId());
         if (source == null) continue;
         numTypeFacts.increase(source);
-        write(YAGOTYPES, f, YAGOTYPESSOURCES, FactComponent.wikipediaURL(entity), source.name);
+        write(TYPES, f, TYPESSOURCES, FactComponent.wikipediaURL(entity), source.name);
       }
     }
   }

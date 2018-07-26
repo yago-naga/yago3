@@ -78,9 +78,6 @@ public class TypeChecker extends FollowUpExtractor {
   /** Holds the kind of the entity id (entity or concept) */
   protected Map<String, EntityType> entities = new HashMap<>();
 
-  /** If not null, facts are required to contain at least one entity in the subgraph */
-  protected Set<String> entitySubgraph;
-
   /** Holds Relations without domain/range */
   protected Set<String> untypedRelations = new HashSet<>();
 
@@ -109,12 +106,6 @@ public class TypeChecker extends FollowUpExtractor {
     if (!check(fact.getArg(2), range)) {
       Announce.debug("Range check failed", fact);
       return (false);
-    }
-
-    // Make sure that at least one entity in the fact is part of the
-    // requested subgraph.
-    if (entitySubgraph != null && !entitySubgraph.isEmpty()) {
-      return (entitySubgraph.contains(fact.getSubject()) || entitySubgraph.contains(fact.getObject()));
     }
 
     return (true);
@@ -200,38 +191,11 @@ public class TypeChecker extends FollowUpExtractor {
     return (myTypes != null && myTypes.contains(type));
   }
 
-  private Set<String> getSubgraphEntities() {
-    Set<String> subgraph = new HashSet<>();
-
-    String pEntities = Parameters.get("subgraphEntities", "");
-    if (pEntities != null && !pEntities.isEmpty()) {
-      Arrays.stream(pEntities.split(",")).forEach(e -> subgraph.add(e));
-    }
-
-    Set<String> restrictedTypes = new HashSet<>();
-    String pClasses = Parameters.get("subgraphClasses", "");
-    if (pClasses != null && !pClasses.isEmpty()) {
-      Arrays.stream(pClasses.split(",")).forEach(e -> restrictedTypes.add(e));
-    }
-
-    for (Map.Entry<String, Set<String>> entry : types.entrySet()) {
-      Set<String> entityTypes = entry.getValue();
-      if (!Collections.disjoint(entityTypes, restrictedTypes)) {
-        subgraph.add(entry.getKey());
-      }
-    }
-
-    return subgraph;
-  }
-
   @Override
   public void extract() throws Exception {
     if (Extractor.includeConcepts) {
       entities = AllEntitiesTypesExtractorFromWikidata.getAllEntitiesToSplitType();
     }
-    types = TransitiveTypeExtractor.getSubjectToTypes();
-
-    entitySubgraph = getSubgraphEntities();
 
     schema = HardExtractor.HARDWIREDFACTS.factCollection();
     Announce.doing("Type-checking facts of", checkMe);

@@ -41,6 +41,7 @@ import extractors.MultilingualExtractor;
 import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
 import fromThemes.CoherentTypeExtractor;
+import fromThemes.TypeSubgraphExtractor;
 import fromWikipedia.CategoryExtractor;
 import javatools.administrative.Announce;
 import javatools.administrative.Parameters;
@@ -75,14 +76,14 @@ public class WikidataLabelExtractor extends DataExtractor {
       input.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
     }
     else {
-      input.add(CoherentTypeExtractor.YAGOTYPES);
+      input.add(TypeSubgraphExtractor.YAGOTYPES);
     }
     return input;
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<Theme>(CoherentTypeExtractor.YAGOTYPES, PatternHardExtractor.LANGUAGECODEMAPPING, PatternHardExtractor.TITLEPATTERNS);
+    return new FinalSet<Theme>(TypeSubgraphExtractor.YAGOTYPES, PatternHardExtractor.LANGUAGECODEMAPPING, PatternHardExtractor.TITLEPATTERNS);
   }
 
   /** Facts deduced from categories */
@@ -135,7 +136,7 @@ public class WikidataLabelExtractor extends DataExtractor {
       }
     }
     else {
-      entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
+      entities = TypeSubgraphExtractor.YAGOTYPES.factCollection().getSubjects();
     }
 
     Announce.message("Loaded", languagemap.size(), "languages and ", entities.size(), "entities");
