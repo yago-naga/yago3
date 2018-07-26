@@ -30,6 +30,7 @@ import extractors.Extractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
 import fromThemes.CoherentTypeExtractor;
+import fromThemes.TypeSubgraphExtractor;
 import javatools.administrative.Announce;
 import javatools.filehandlers.FileLines;
 import javatools.parsers.Char17;
@@ -76,8 +77,8 @@ public class TitleExtractor {
     }
     replacer = new PatternList(PatternHardExtractor.TITLEPATTERNS, "<_titleReplace>");
     if (FactComponent.isEnglish(language) && !Extractor.includeConcepts) {
-      if (CoherentTypeExtractor.YAGOTYPES.isAvailableForReading()) {
-        this.entities = CoherentTypeExtractor.YAGOTYPES.factCollection().getSubjects();
+      if (TypeSubgraphExtractor.YAGOTYPES.isAvailableForReading()) {
+        this.entities = TypeSubgraphExtractor.YAGOTYPES.factCollection().getSubjects();
         this.wordnetWords = null;
       } else if (WordnetExtractor.PREFMEANINGS.isAvailableForReading()) {
         this.wordnetWords = WordnetExtractor.PREFMEANINGS.factCollection().getPreferredMeanings().keySet();

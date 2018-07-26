@@ -51,7 +51,7 @@ public class SimpleTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CoherentTypeExtractor.YAGOTYPES, ClassExtractor.YAGOTAXONOMY);
+    return new FinalSet<>(TypeSubgraphExtractor.YAGOTYPES, ClassExtractor.YAGOTAXONOMY);
   }
 
   @Override
@@ -81,7 +81,7 @@ public class SimpleTypeExtractor extends Extractor {
     FactCollection taxonomy = ClassExtractor.YAGOTAXONOMY.factCollection();
     Set<String> leafClasses = new HashSet<>();
     Announce.doing("Loading YAGO types");
-    for (Fact f : CoherentTypeExtractor.YAGOTYPES) {
+    for (Fact f : TypeSubgraphExtractor.YAGOTYPES) {
       if (!f.getRelation().equals(RDFS.type)) continue;
       String clss = f.getArg(2);
       if (clss.startsWith("<wikicategory")) clss = taxonomy.getObject(clss, RDFS.subclassOf);

@@ -42,6 +42,7 @@ import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.CoherentTypeExtractor;
 import fromThemes.PersonNameExtractor;
+import fromThemes.TypeSubgraphExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -92,7 +93,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     input.add(PatternHardExtractor.TITLEPATTERNS);
     input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
     if (!includeConcepts) {
-      input.add(CoherentTypeExtractor.YAGOTYPES);
+      input.add(TypeSubgraphExtractor.YAGOTYPES);
     }
     
     return input;

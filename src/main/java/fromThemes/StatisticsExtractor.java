@@ -52,7 +52,7 @@ public class StatisticsExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<Theme>(ClassExtractor.YAGOTAXONOMY, CoherentTypeExtractor.YAGOTYPES, FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
+    return new FinalSet<Theme>(ClassExtractor.YAGOTAXONOMY, TypeSubgraphExtractor.YAGOTYPES, FactExtractor.YAGOFACTS, LabelExtractor.YAGOLABELS,
         MetaFactExtractor.YAGOMETAFACTS, SchemaExtractor.YAGOSCHEMA, DateExtractor.YAGODATEFACTS, LiteralFactExtractor.YAGOLITERALFACTS,
         WikiInfoExtractor.WIKIINFO.inLanguage("en"));
   }
