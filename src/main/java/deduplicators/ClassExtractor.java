@@ -48,7 +48,7 @@ public class ClassExtractor extends SimpleDeduplicator {
   @Override
   public List<Theme> inputOrdered() {
     return (Arrays.asList(SchemaExtractor.YAGOSCHEMA, HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES,
-        CategoryClassExtractor.CATEGORYCLASSES, CategoryClassHierarchyExtractor.CATEGORYCLASSHIERARCHY.inEnglish()
+        CategoryClassExtractor.CATEGORYCLASSES, CategoryClassHierarchyExtractor.CATEGORYCLASSHIERARCHY
     // GeoNamesClassMapper.GEONAMESCLASSES
     ));
   }
