@@ -20,7 +20,7 @@ public class TypeSubgraphExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CoherentTypeExtractor.TYPES, CoherentTypeExtractor.TYPESSOURCES);
+    return new FinalSet<>(CoherentTypeExtractor.TYPES, CoherentTypeExtractor.TYPESSOURCES, TransitiveTypeExtractor.TRANSITIVETYPE);
   }
 
   @Override
