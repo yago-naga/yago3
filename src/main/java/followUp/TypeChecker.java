@@ -31,8 +31,8 @@ import extractors.Extractor;
 import fromOtherSources.AllEntitiesTypesExtractorFromWikidata;
 import fromOtherSources.HardExtractor;
 import fromThemes.TransitiveTypeExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
 import javatools.administrative.Announce;
-import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.EntityType;
 import utils.FactCollection;
@@ -196,7 +196,7 @@ public class TypeChecker extends FollowUpExtractor {
     if (Extractor.includeConcepts) {
       entities = AllEntitiesTypesExtractorFromWikidata.getAllEntitiesToSplitType();
     }
-    types = TransitiveTypeExtractor.getSubjectToTypes();
+    types = TransitiveTypeSubgraphExtractor.getSubjectToTypes();
 
     schema = HardExtractor.HARDWIREDFACTS.factCollection();
     Announce.doing("Type-checking facts of", checkMe);
