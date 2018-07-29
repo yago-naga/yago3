@@ -21,13 +21,6 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromWikipedia;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
-
 import basics.Fact;
 import basics.FactComponent;
 import extractors.MultilingualWikipediaExtractor;
@@ -36,7 +29,7 @@ import followUp.FollowUpExtractor;
 import followUp.Redirector;
 import followUp.TypeChecker;
 import fromOtherSources.PatternHardExtractor;
-import fromThemes.TransitiveTypeExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
@@ -45,6 +38,13 @@ import utils.FactCollection;
 import utils.FactTemplateExtractor;
 import utils.MultilingualTheme;
 import utils.Theme;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Extracts means facts from Wikipedia disambiguation pages
@@ -59,7 +59,7 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
   @Override
   public Set<Theme> input() {
     return new HashSet<>(Arrays.asList(PatternHardExtractor.DISAMBIGUATIONTEMPLATES, PatternHardExtractor.LANGUAGECODEMAPPING,
-        TransitiveTypeExtractor.TRANSITIVETYPE));
+        TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE));
   }
 
   @Override
@@ -104,7 +104,7 @@ public class DisambiguationPageExtractor extends MultilingualWikipediaExtractor 
     Announce.doing("Extracting disambiguation means");
 
     // Needed for checking constraints
-    types = TransitiveTypeExtractor.getSubjectToTypes();
+    types = TransitiveTypeSubgraphExtractor.getSubjectToTypes();
 
     BufferedReader in = FileUtils.getBufferedUTF8Reader(wikipedia);
 

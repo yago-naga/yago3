@@ -21,9 +21,6 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromThemes;
 
-import java.io.File;
-import java.util.Set;
-
 import deduplicators.DateExtractor;
 import deduplicators.FactExtractor;
 import deduplicators.LiteralFactExtractor;
@@ -33,6 +30,9 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.FactCollection;
 import utils.Theme;
+
+import java.io.File;
+import java.util.Set;
 
 /**
  * The base representative for SPOTLX rule deduction. It first uses time&space
@@ -53,7 +53,7 @@ public class SPOTLXRuleExtractor extends BaseRuleExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(PatternHardExtractor.SPOTLX_ENTITY_RULES, PatternHardExtractor.HARDWIREDFACTS, TransitiveTypeExtractor.TRANSITIVETYPE,
+    return new FinalSet<>(PatternHardExtractor.SPOTLX_ENTITY_RULES, PatternHardExtractor.HARDWIREDFACTS, TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE,
         DateExtractor.YAGODATEFACTS, FactExtractor.YAGOFACTS, LiteralFactExtractor.YAGOLITERALFACTS);
   }
 

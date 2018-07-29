@@ -21,11 +21,6 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromThemes;
 
-import java.io.File;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.Set;
-
 import deduplicators.ClassExtractor;
 import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;
@@ -36,6 +31,11 @@ import javatools.datatypes.FinalSet;
 import utils.FactCollection;
 import utils.Theme;
 
+import java.io.File;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * Generates the results of rules.
  * 
@@ -44,7 +44,7 @@ public class RuleExtractor extends BaseRuleExtractor {
 
   @Override
   public Set<Theme> input() {
-    Set<Theme> input = new HashSet<Theme>(Arrays.asList(PatternHardExtractor.RULES, TransitiveTypeExtractor.TRANSITIVETYPE,
+    Set<Theme> input = new HashSet<Theme>(Arrays.asList(PatternHardExtractor.RULES, TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE,
         ClassExtractor.YAGOTAXONOMY, HardExtractor.HARDWIREDFACTS, WordnetExtractor.WORDNETCLASSES));
     input.addAll(CategoryMapper.CATEGORYFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     input.addAll(InfoboxMapper.INFOBOXFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));

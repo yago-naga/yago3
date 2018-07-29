@@ -21,51 +21,31 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package deduplicators;
 
-import java.io.File;
-/**
- * Transform facts to node and relation files for Neo4j import.
- * 
-*/
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
-import fromOtherSources.DictionaryExtractor;
-import fromOtherSources.HardExtractor;
-import fromOtherSources.MetadataExtractor;
-import fromOtherSources.WikidataEntityDescriptionExtractor;
-import fromOtherSources.WikidataEntityGeoCoordinateExtractor;
-import fromOtherSources.WikidataImageExtractor;
-import fromOtherSources.WikidataImageLicenseExtractor;
-import fromOtherSources.WikidataLabelExtractor;
+import fromOtherSources.*;
 import fromThemes.PersonNameExtractor;
-import fromThemes.TransitiveTypeExtractor;
-import fromWikipedia.CategoryGlossExtractor;
-import fromWikipedia.ConteXtExtractor;
-import fromWikipedia.DisambiguationPageExtractor;
-import fromWikipedia.GenderExtractor;
-import fromWikipedia.RedirectExtractor;
-import fromWikipedia.StructureExtractor;
-import fromWikipedia.WikiInfoExtractor;
-import fromWikipedia.WikipediaEntityDescriptionExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
+import fromWikipedia.*;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
 import javatools.datatypes.Pair;
 import javatools.filehandlers.FileUtils;
 import utils.Theme;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Writer;
+import java.util.*;
+
+/**
+ * Transform facts to node and relation files for Neo4j import.
+ */
 
 public class Neo4jThemeTransformer extends Extractor {
   
@@ -264,7 +244,7 @@ public class Neo4jThemeTransformer extends Extractor {
     input.addAll(CategoryGlossExtractor.CATEGORYGLOSSES.inLanguages(MultilingualExtractor.wikipediaLanguages));
 
     // Types and Taxonomy.MAIN
-    input.add(TransitiveTypeExtractor.TRANSITIVETYPE);
+    input.add(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
     input.add(ClassExtractor.YAGOTAXONOMY);
     
     input.addAll(DictionaryExtractor.CATEGORY_DICTIONARY.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
@@ -572,9 +552,9 @@ public class Neo4jThemeTransformer extends Extractor {
       D.p("Finishing " + theme.name + (System.currentTimeMillis() - startTime));
     }
     
-    D.p("Starting " + TransitiveTypeExtractor.TRANSITIVETYPE.name);
+    D.p("Starting " + TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE.name);
     startTime = System.currentTimeMillis();
-    for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getFactsWithRelation("rdf:type")) {
+    for (Fact f : TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE.factCollection().getFactsWithRelation("rdf:type")) {
       String entity = f.getSubject();
       entity_wikidataId.putIfAbsent(entity, entity);
       String type = f.getObject();
@@ -582,8 +562,8 @@ public class Neo4jThemeTransformer extends Extractor {
 
       wikidataId_types.computeIfAbsent(entity_wikidataId.get(entity), k -> new HashSet<String>()).add(type);
     }
-    TransitiveTypeExtractor.TRANSITIVETYPE.killCache();
-    D.p("Finishing " + TransitiveTypeExtractor.TRANSITIVETYPE.name + (System.currentTimeMillis() - startTime));
+    TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE.killCache();
+    D.p("Finishing " + TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE.name + (System.currentTimeMillis() - startTime));
 
     // types from hardWired TODO: only a couple are entities!!! But are added here since there are some entities.
     D.p("Starting " + HardExtractor.HARDWIREDFACTS.name + " " + RDFS.type + " relations");

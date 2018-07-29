@@ -21,35 +21,25 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromOtherSources;
 
-import java.io.File;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import basics.Fact;
-import basics.FactComponent;
-import basics.N4Reader;
-import basics.RDFS;
-import basics.YAGO;
+import basics.*;
 import extractors.DataExtractor;
 import followUp.FollowUpExtractor;
 import followUp.TypeChecker;
-import fromThemes.TransitiveTypeExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
 import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import javatools.parsers.Char17;
 import utils.FactCollection;
 import utils.Theme;
+
+import java.io.File;
+import java.io.IOException;
+import java.nio.charset.StandardCharsets;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Extract images for entities from Wikidata dump.
@@ -97,7 +87,7 @@ public class WikidataImageExtractor extends DataExtractor {
 
 	@Override
 	public Set<Theme> input() {
-		return (new FinalSet<>(WikidataLabelExtractor.WIKIDATAINSTANCES, TransitiveTypeExtractor.TRANSITIVETYPE));
+		return (new FinalSet<>(WikidataLabelExtractor.WIKIDATAINSTANCES, TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE));
 	}
 
 	@Override
@@ -119,7 +109,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	  // Example of the facts in reverseWikidataInstances:
 	  // <http://www.wikidata.org/entity/Q23>  owl:sameAs <George_Washington>      
 	  reverseWikidataInstances = WikidataLabelExtractor.WIKIDATAINSTANCES.factCollection().getReverse();
-    transitiveTypes = TransitiveTypeExtractor.getSubjectToTypes();
+    transitiveTypes = TransitiveTypeSubgraphExtractor.getSubjectToTypes();
 		
 		N4Reader nr = new N4Reader(inputData);
 		String yagoEntityMostEnglish = null;

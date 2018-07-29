@@ -65,7 +65,7 @@ public class GenderNameExtractor extends Extractor {
   @Override
   public Set<Theme> input() {
     Set<Theme> result = new HashSet<>();
-    result.add(TransitiveTypeExtractor.TRANSITIVETYPE);
+    result.add(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
     return (result);
   }
 
@@ -99,7 +99,7 @@ public class GenderNameExtractor extends Extractor {
 
   @Override
   public void extract() throws Exception {
-    String source = TransitiveTypeExtractor.TRANSITIVETYPE.asYagoEntity();
+    String source = TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE.asYagoEntity();
     Map<String, int[]> givenName2gender = new HashMap<>();
 
     // run through category members, guess gender from the category, save in personToGender
@@ -126,7 +126,7 @@ public class GenderNameExtractor extends Extractor {
     String lastEntity = "";
     boolean isPerson = false;
     String gender = null;
-    for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
+    for (Fact f : TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE) {
       if (!f.getRelation().equals(RDFS.type)) continue;
       if (!lastEntity.equals(f.getSubject())) {
         if (isPerson) {
@@ -153,7 +153,7 @@ public class GenderNameExtractor extends Extractor {
     }
 
     // Deduce the gender from the first name
-    for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
+    for (Fact f : TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE) {
       if (f.getRelation().equals(RDFS.type) && f.getObject().equals(YAGO.person)) {
         String givenName = givenName(f.getSubject());
         if (givenName != null) {

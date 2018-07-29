@@ -21,29 +21,23 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package deduplicators;
 
-import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Set;
-
 import basics.Fact;
 import basics.RDFS;
 import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
 import fromThemes.PersonNameExtractor;
-import fromThemes.TransitiveTypeExtractor;
-import fromWikipedia.CategoryExtractor;
-import fromWikipedia.ConteXtExtractor;
-import fromWikipedia.DisambiguationPageExtractor;
-import fromWikipedia.GenderExtractor;
-import fromWikipedia.RedirectExtractor;
-import fromWikipedia.StructureExtractor;
-import fromWikipedia.WikiInfoExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
+import fromWikipedia.*;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
 import utils.Theme.ThemeGroup;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Set;
 
 /**
  * AIDA Fact Extractor
@@ -77,7 +71,7 @@ public class AIDAOneShotExtractor extends SimpleDeduplicator {
     input.addAll(WikiInfoExtractor.WIKIINFO.inLanguages(MultilingualExtractor.wikipediaLanguages));
 
     // Types and Taxonomy.
-    input.add(TransitiveTypeExtractor.TRANSITIVETYPE);
+    input.add(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
     input.add(ClassExtractor.YAGOTAXONOMY);
 
     // Keyphrases.

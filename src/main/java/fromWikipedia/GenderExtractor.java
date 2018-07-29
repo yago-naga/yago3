@@ -21,22 +21,13 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromWikipedia;
 
-import java.io.File;
-import java.io.Reader;
-import java.util.Arrays;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import basics.Fact;
 import basics.Fact.ImplementationNote;
 import basics.FactComponent;
 import basics.YAGO;
 import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
-import fromThemes.TransitiveTypeExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalMap;
 import javatools.datatypes.FinalSet;
@@ -45,6 +36,15 @@ import javatools.filehandlers.FileUtils;
 import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
+
+import java.io.File;
+import java.io.Reader;
+import java.util.Arrays;
+import java.util.Map;
+import java.util.Set;
+import java.util.TreeSet;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Extracts the gender for persons in wikipedia
@@ -67,7 +67,7 @@ public class GenderExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.TITLEPATTERNS));
+    return new TreeSet<Theme>(Arrays.asList(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE, PatternHardExtractor.TITLEPATTERNS));
   }
 
   @Override
@@ -95,7 +95,7 @@ public class GenderExtractor extends MultilingualWikipediaExtractor {
       return;
     }
     Pattern he = lang2he.get(language);
-    Map<String, Set<String>> subjToTypes = TransitiveTypeExtractor.getSubjectToTypes();
+    Map<String, Set<String>> subjToTypes = TransitiveTypeSubgraphExtractor.getSubjectToTypes();
     TitleExtractor titleExtractor = new TitleExtractor("en");
     Reader in = FileUtils.getBufferedUTF8Reader(this.wikipedia);
     String titleEntity = null;

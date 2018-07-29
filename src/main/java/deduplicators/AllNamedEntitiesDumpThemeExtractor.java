@@ -1,14 +1,14 @@
 package deduplicators;
 
-import java.util.Set;
-
 import basics.Fact;
 import basics.YAGO;
 import extractors.Extractor;
-import fromThemes.TransitiveTypeExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
 import javatools.datatypes.FinalSet;
 import utils.EntityType;
 import utils.Theme;
+
+import java.util.Set;
 
 public class AllNamedEntitiesDumpThemeExtractor extends Extractor {
 
@@ -17,7 +17,7 @@ public class AllNamedEntitiesDumpThemeExtractor extends Extractor {
   
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE);
+    return new FinalSet<>(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
   }
 
   @Override
@@ -27,9 +27,8 @@ public class AllNamedEntitiesDumpThemeExtractor extends Extractor {
 
   @Override
   public void extract() throws Exception {
-    for (String entity:TransitiveTypeExtractor.TRANSITIVETYPE.factCollection().getSubjects()) {
+    for (String entity : TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE.factCollection().getSubjects()) {
       ALLNAMEDENTITIES.write(new Fact(entity, YAGO.isNamedEntity, EntityType.NAMED_ENTITY.getYagoName()));
     }
   }
-
 }
