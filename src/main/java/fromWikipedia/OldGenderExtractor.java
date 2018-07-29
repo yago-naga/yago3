@@ -1,5 +1,19 @@
 package fromWikipedia;
 
+import basics.Fact;
+import basics.FactComponent;
+import basics.YAGO;
+import extractors.EnglishWikipediaExtractor;
+import fromOtherSources.PatternHardExtractor;
+import fromThemes.TransitiveTypeExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
+import javatools.administrative.Announce;
+import javatools.datatypes.FinalSet;
+import javatools.filehandlers.FileLines;
+import javatools.filehandlers.FileUtils;
+import utils.Theme;
+import utils.TitleExtractor;
+
 import java.io.File;
 import java.io.Reader;
 import java.util.Arrays;
@@ -8,19 +22,6 @@ import java.util.Set;
 import java.util.TreeSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
-import basics.Fact;
-import basics.FactComponent;
-import basics.YAGO;
-import extractors.EnglishWikipediaExtractor;
-import fromOtherSources.PatternHardExtractor;
-import fromThemes.TransitiveTypeExtractor;
-import javatools.administrative.Announce;
-import javatools.datatypes.FinalSet;
-import javatools.filehandlers.FileLines;
-import javatools.filehandlers.FileUtils;
-import utils.Theme;
-import utils.TitleExtractor;
 
 /**
  * GenderExtractor - YAGO2s
@@ -47,12 +48,12 @@ public class OldGenderExtractor extends EnglishWikipediaExtractor {
 
   @Override
   public Set<Theme> input() {
-    return new TreeSet<Theme>(Arrays.asList(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.TITLEPATTERNS));
+    return new TreeSet<Theme>(Arrays.asList(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE, PatternHardExtractor.TITLEPATTERNS));
   }
 
   @Override
   public Set<Theme> inputCached() {
-    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE);
+    return new FinalSet<>(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
   }
 
   @Override

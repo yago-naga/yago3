@@ -58,7 +58,7 @@ public class LocationExtractor extends Extractor {
     Set<Theme> result = new TreeSet<>();
     result.addAll(CategoryExtractor.CATEGORYMEMBERS.inLanguages(MultilingualExtractor.wikipediaLanguages));
     result.addAll(CategoryExtractor.CATEGORYMEMBERS_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
-    result.add(TransitiveTypeExtractor.TRANSITIVETYPE);
+    result.add(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
     return result;
   }
 
@@ -93,7 +93,7 @@ public class LocationExtractor extends Extractor {
       }
     }
 
-    for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
+    for (Fact f : TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE) {
       if (f.getRelation().equals(RDFS.type) && f.getObject().equals(YAGO.person)) {
         Map<String, Integer> locToCount = entityToLocToCount.get(f.getSubject());
         if (locToCount == null) continue;
@@ -115,7 +115,7 @@ public class LocationExtractor extends Extractor {
     if (args.length == 0) args = new String[] { "../yago.ini" };
     Parameters.init(args[0]);
     File yago = Parameters.getFile("yagoFolder");
-    TransitiveTypeExtractor.TRANSITIVETYPE.assignToFolder(yago);
+    TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE.assignToFolder(yago);
     ParallelCaller.createWikipediaList(Parameters.getList("languages"), Parameters.getList("wikipedias"));
     new LocationExtractor().extract(yago, "test");
   }

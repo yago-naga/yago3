@@ -54,7 +54,7 @@ public class PersonNameExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(TransitiveTypeExtractor.TRANSITIVETYPE, PatternHardExtractor.LANGUAGECODEMAPPING);
+    return new FinalSet<>(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE, PatternHardExtractor.LANGUAGECODEMAPPING);
   }
 
   /** Names of people */
@@ -76,8 +76,8 @@ public class PersonNameExtractor extends Extractor {
     Map<String, String> languagemap = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
 
     Set<String> people = new TreeSet<>();
-    String source = TransitiveTypeExtractor.TRANSITIVETYPE.asYagoEntity();
-    for (Fact f : TransitiveTypeExtractor.TRANSITIVETYPE) {
+    String source = TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE.asYagoEntity();
+    for (Fact f : TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE) {
       if (!f.getRelation().equals(RDFS.type) || !f.getArg(2).equals(YAGO.person)) continue;
       if (people.contains(f.getArg(1))) continue;
       people.add(f.getArg(1));
