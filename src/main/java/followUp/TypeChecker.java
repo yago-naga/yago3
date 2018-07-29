@@ -21,8 +21,6 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package followUp;
 
-import java.util.*;
-
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -30,13 +28,14 @@ import basics.YAGO;
 import extractors.Extractor;
 import fromOtherSources.AllEntitiesTypesExtractorFromWikidata;
 import fromOtherSources.HardExtractor;
-import fromThemes.TransitiveTypeExtractor;
 import fromThemes.TransitiveTypeSubgraphExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.EntityType;
 import utils.FactCollection;
 import utils.Theme;
+
+import java.util.*;
 
 /**
  * Does a type check
@@ -55,7 +54,7 @@ public class TypeChecker extends FollowUpExtractor {
     Set<Theme> res = new TreeSet<>();
     res.add(checkMe);
     res.add(HardExtractor.HARDWIREDFACTS);
-    res.add(TransitiveTypeExtractor.TRANSITIVETYPE);
+    res.add(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
     if (Extractor.includeConcepts) {
       res.add(AllEntitiesTypesExtractorFromWikidata.ALLENTITIES_WIKIDATA);//TODO Change this if the splitting theme is changed
     }
