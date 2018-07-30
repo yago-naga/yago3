@@ -28,6 +28,7 @@ import basics.YAGO;
 import extractors.Extractor;
 import fromOtherSources.AllEntitiesTypesExtractorFromWikidata;
 import fromOtherSources.HardExtractor;
+import fromThemes.TransitiveTypeExtractor;
 import fromThemes.TransitiveTypeSubgraphExtractor;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
@@ -107,7 +108,11 @@ public class TypeChecker extends FollowUpExtractor {
       return (false);
     }
 
-    return (true);
+    // Make sure that at least one entity in the fact is part of the
+    // requested subgraph.
+    boolean keep = TransitiveTypeSubgraphExtractor.checkInSubgraph(fact, entitySubgraph);
+
+    return (keep);
   }
 
   /** Checks whether an entity is of a type */
@@ -195,7 +200,9 @@ public class TypeChecker extends FollowUpExtractor {
     if (Extractor.includeConcepts) {
       entities = AllEntitiesTypesExtractorFromWikidata.getAllEntitiesToSplitType();
     }
-    types = TransitiveTypeSubgraphExtractor.getSubjectToTypes();
+    types = TransitiveTypeExtractor.getSubjectToTypes();
+
+    entitySubgraph = TransitiveTypeExtractor.getSubgraphEntities();
 
     schema = HardExtractor.HARDWIREDFACTS.factCollection();
     Announce.doing("Type-checking facts of", checkMe);
