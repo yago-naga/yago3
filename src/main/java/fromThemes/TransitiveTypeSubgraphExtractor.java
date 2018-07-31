@@ -1,6 +1,7 @@
 package fromThemes;
 
 import basics.Fact;
+import basics.FactComponent;
 import basics.RDFS;
 import extractors.Extractor;
 import javatools.administrative.Announce;
@@ -62,9 +63,17 @@ public class TransitiveTypeSubgraphExtractor extends Extractor {
     return map;
   }
 
+  /**
+   * Checks if either subject or object of fact are part of the entity subgraph to keep. If so, returns true,
+   * otherwise false. Keeps all metafacts.
+   *
+   * @param f Fact to check.
+   * @param entitySubgraph  Entity subgraph to check fact against.
+   * @return  True if f is in entitySubgraph or if f is a meta fact, false otherwise.
+   */
   public static boolean checkInSubgraph(Fact f, Set<String> entitySubgraph) {
     if (entitySubgraph != null && !entitySubgraph.isEmpty()) {
-      return (entitySubgraph.contains(f.getSubject()) || entitySubgraph.contains(f.getObject()));
+      return (entitySubgraph.contains(f.getSubject()) || entitySubgraph.contains(f.getObject()) || FactComponent.isFactId(f.getSubject()));
     } else {
       // If there is no subgraph restriction, write all facts.
       return true;
