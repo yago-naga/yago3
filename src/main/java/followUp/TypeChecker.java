@@ -55,7 +55,7 @@ public class TypeChecker extends FollowUpExtractor {
     Set<Theme> res = new TreeSet<>();
     res.add(checkMe);
     res.add(HardExtractor.HARDWIREDFACTS);
-    res.add(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
+    res.add(TransitiveTypeExtractor.TRANSITIVETYPE);
     if (Extractor.includeConcepts) {
       res.add(AllEntitiesTypesExtractorFromWikidata.ALLENTITIES_WIKIDATA);//TODO Change this if the splitting theme is changed
     }
@@ -77,6 +77,9 @@ public class TypeChecker extends FollowUpExtractor {
 
   /** Holds the kind of the entity id (entity or concept) */
   protected Map<String, EntityType> entities = new HashMap<>();
+
+  /** If not null, facts are required to contain at least one entity in the subgraph */
+  protected Set<String> entitySubgraph;
 
   /** Holds Relations without domain/range */
   protected Set<String> untypedRelations = new HashSet<>();
