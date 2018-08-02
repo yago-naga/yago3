@@ -21,14 +21,6 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromWikipedia;
 
-import java.io.File;
-import java.io.Reader;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
-
 import basics.Fact;
 import basics.Fact.ImplementationNote;
 import basics.FactComponent;
@@ -37,6 +29,7 @@ import extractors.MultilingualWikipediaExtractor;
 import followUp.CategoryTranslator;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
+import followUp.TypeChecker;
 import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
@@ -47,6 +40,12 @@ import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
 
+import java.io.File;
+import java.io.Reader;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
+
 /**
  * Extracts facts from Wikipedia categories.
  * 
@@ -54,8 +53,11 @@ import utils.TitleExtractor;
 
 public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
-  public static final MultilingualTheme CATEGORYMEMBERS = new MultilingualTheme("categoryMembers",
+  public static final MultilingualTheme CATEGORYMEMBERS_TO_TYPECHECK = new MultilingualTheme("categoryMembersNeedsTypeChecking",
       "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
+
+  public static final MultilingualTheme CATEGORYMEMBERS = new MultilingualTheme("categoryMembers",
+          "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated.");
 
   public static final MultilingualTheme CATEGORYMEMBERS_TRANSLATED = new MultilingualTheme("categoryMembersTranslated",
       "Category Members facts with translated subjects and objects");
@@ -93,6 +95,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
   @Override
   public Set<FollowUpExtractor> followUp() {
     Set<FollowUpExtractor> followUps = new HashSet<>();
+    followUps.add(new TypeChecker(CATEGORYMEMBERS_TO_TYPECHECK.inLanguage(this.language), CATEGORYMEMBERS.inLanguage(this.language)));
     if (!isEnglish()) {
       followUps.add(new CategoryTranslator(CATEGORYMEMBERS.inLanguage(this.language), CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language), this));
       followUps.add(new EntityTranslator(CATEGORYMEMBERS.inLanguage(this.language), CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguage(this.language), this, true));
@@ -149,7 +152,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
           // There are sometimes categories of length 0
           // This causes problems, so avoid them
           if (category.length() >= 4 && !category.contains(":")) {
-            CATEGORYMEMBERS.inLanguage(language)
+            CATEGORYMEMBERS_TO_TYPECHECK.inLanguage(language)
                 .write(new Fact(titleEntity, "<hasWikipediaCategory>", FactComponent.forForeignWikiCategory(category, language)));
           }
           break;
