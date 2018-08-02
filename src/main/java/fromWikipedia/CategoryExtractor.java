@@ -29,11 +29,9 @@ import extractors.MultilingualWikipediaExtractor;
 import followUp.CategoryTranslator;
 import followUp.EntityTranslator;
 import followUp.FollowUpExtractor;
-import followUp.TypeChecker;
 import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileUtils;
 import utils.MultilingualTheme;
@@ -53,11 +51,8 @@ import java.util.TreeSet;
 
 public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
-  public static final MultilingualTheme CATEGORYMEMBERS_TO_TYPECHECK = new MultilingualTheme("categoryMembersNeedsTypeChecking",
-      "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
-
   public static final MultilingualTheme CATEGORYMEMBERS = new MultilingualTheme("categoryMembers",
-          "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated.");
+      "Facts about Wikipedia instances, derived from the Wikipedia categories, still to be translated");
 
   public static final MultilingualTheme CATEGORYMEMBERS_TRANSLATED = new MultilingualTheme("categoryMembersTranslated",
       "Category Members facts with translated subjects and objects");
@@ -89,13 +84,18 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(CATEGORYMEMBERS.inLanguage(language));
+    Set<Theme> result = new TreeSet<>();
+    result.add(CATEGORYMEMBERS.inLanguage(this.language));
+    if (!isEnglish()) {
+      result.add(CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language));
+      result.add(CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguage(this.language));
+    }
+    return result;
   }
 
   @Override
   public Set<FollowUpExtractor> followUp() {
     Set<FollowUpExtractor> followUps = new HashSet<>();
-    followUps.add(new TypeChecker(CATEGORYMEMBERS_TO_TYPECHECK.inLanguage(this.language), CATEGORYMEMBERS.inLanguage(this.language)));
     if (!isEnglish()) {
       followUps.add(new CategoryTranslator(CATEGORYMEMBERS.inLanguage(this.language), CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language), this));
       followUps.add(new EntityTranslator(CATEGORYMEMBERS.inLanguage(this.language), CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguage(this.language), this, true));
@@ -152,7 +152,7 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
           // There are sometimes categories of length 0
           // This causes problems, so avoid them
           if (category.length() >= 4 && !category.contains(":")) {
-            CATEGORYMEMBERS_TO_TYPECHECK.inLanguage(language)
+            CATEGORYMEMBERS.inLanguage(language)
                 .write(new Fact(titleEntity, "<hasWikipediaCategory>", FactComponent.forForeignWikiCategory(category, language)));
           }
           break;

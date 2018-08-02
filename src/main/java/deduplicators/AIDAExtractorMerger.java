@@ -28,6 +28,7 @@ import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import fromOtherSources.*;
+import fromThemes.CategoryConteXtExtractor;
 import fromThemes.TransitiveTypeSubgraphExtractor;
 import fromWikipedia.*;
 import javatools.administrative.Announce;
@@ -76,8 +77,8 @@ public class AIDAExtractorMerger extends Extractor {
 
     // Keyphrases.
     input.addAll(ConteXtExtractor.CONTEXTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
-    input.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
-    input.addAll(CategoryExtractor.CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
+    input.add(CategoryConteXtExtractor.CATEGORY_CONTEXT.inEnglish());
+    input.addAll(CategoryConteXtExtractor.CATEGORY_CONTEXT_ENTITIES_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
 
     // Translation.
     input.addAll(DictionaryExtractor.ENTITY_DICTIONARY.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
