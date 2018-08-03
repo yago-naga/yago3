@@ -368,7 +368,7 @@ rdfs:label	rdf:type	<permanentRelationToSubject> .
 <numberOfTranslations>    rdfs:range  xsd:nonNegativeInteger .
 <numberOfTranslations>    rdf:type    rdf:Property .
 <hasImageID>    rdfs:domain owl:Thing .
-<hasImageID>    rdfs:range  owl:Thing .
+<hasImageID>    rdfs:range  rdfs:Resource .
 <hasImageID>    rdf:type    rdf:Property .
 <hasImageUrl>    rdfs:domain owl:Thing .
 <hasImageUrl>    rdfs:range  <yagoURL> .
