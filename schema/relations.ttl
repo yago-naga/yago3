@@ -370,10 +370,10 @@ rdfs:label	rdf:type	<permanentRelationToSubject> .
 <hasImageID>    rdfs:domain owl:Thing .
 <hasImageID>    rdfs:range  rdfs:Resource .
 <hasImageID>    rdf:type    rdf:Property .
-<hasImageUrl>    rdfs:domain owl:Thing .
+<hasImageUrl>    rdfs:domain rdfs:Resource .
 <hasImageUrl>    rdfs:range  <yagoURL> .
 <hasImageUrl>    rdf:type    rdf:Property .
-<hasWikiPage>    rdfs:domain owl:Thing .
+<hasWikiPage>    rdfs:domain rdfs:Resource .
 <hasWikiPage>    rdfs:range  <yagoURL> .
 <hasWikiPage>    rdf:type    rdf:Property .
 <imports>	rdfs:domain	<wordnet_location_100027167> .
