@@ -65,15 +65,19 @@ public class TransitiveTypeSubgraphExtractor extends Extractor {
 
   /**
    * Checks if either subject or object of fact are part of the entity subgraph to keep. If so, returns true,
-   * otherwise false. Keeps all metafacts.
+   * otherwise false. Keeps all metafacts and internal entities (starting with _).
    *
    * @param f Fact to check.
-   * @param entitySubgraph  Entity subgraph to check fact against.
+   * @param subgraph  Entity subgraph to check fact against.
    * @return  True if f is in entitySubgraph or if f is a meta fact, false otherwise.
    */
-  public static boolean checkInSubgraph(Fact f, Set<String> entitySubgraph) {
-    if (entitySubgraph != null && !entitySubgraph.isEmpty()) {
-      return (entitySubgraph.contains(f.getSubject()) || entitySubgraph.contains(f.getObject()) || FactComponent.isFactId(f.getSubject()));
+  public static boolean checkInSubgraph(Fact f, Set<String> subgraph) {
+    if (subgraph != null && !subgraph.isEmpty()) {
+      return (
+              subgraph.contains(f.getSubject()) ||
+              subgraph.contains(f.getObject()) ||
+              FactComponent.isFactId(f.getSubject()) ||
+              FactComponent.isEmptyNode(f.getSubject()));
     } else {
       // If there is no subgraph restriction, write all facts.
       return true;

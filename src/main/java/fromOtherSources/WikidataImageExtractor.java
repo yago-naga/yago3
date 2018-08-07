@@ -57,7 +57,7 @@ public class WikidataImageExtractor extends DataExtractor {
 	private static final String WIKIDATA = "wikidata";
 	 
 	private static final String IMAGE_ORIGINALURL_TEMPLATE = "https://upload.wikimedia.org/wikipedia/commons/";
-	private static final String IMAGETYPE = "image_";
+	private static final String IMAGETYPE = "_image_";
 	
   private static Map<String, Set<String>> transitiveTypes = null;
 	private static FactCollection reverseWikidataInstances = new FactCollection();
@@ -92,14 +92,14 @@ public class WikidataImageExtractor extends DataExtractor {
 
 	@Override
 	public Set<Theme> output() {
-		return (new FinalSet<>(WIKIDATAIMAGESNEEDSTYPECHECK));
+		return (new FinalSet<>(WIKIDATAIMAGESNEEDSTYPECHECK, WIKIDATAIMAGES));
 	}
 	
   @Override
   public Set<followUp.FollowUpExtractor> followUp() {
     Set<FollowUpExtractor> result = new HashSet<FollowUpExtractor>();
     
-    result.add(new TypeChecker(WIKIDATAIMAGESNEEDSTYPECHECK, WIKIDATAIMAGES, this));
+    result.add(new TypeChecker(WIKIDATAIMAGESNEEDSTYPECHECK, WIKIDATAIMAGES));
     
     return result;
   }
