@@ -55,22 +55,17 @@ public class CategoryConteXtExtractor extends MultilingualExtractor {
     }
     return result;
   }
+
   @Override
   public Set<Theme> output() {
-    Set<Theme> result = new TreeSet<>();
-    if (isEnglish()) {
-      result.add(CATEGORY_CONTEXT.inEnglish());
-    } else {
-      result.add(CATEGORY_CONTEXT_ENTITIES_TRANSLATED.inLanguage(this.language));
-    }
-    return result;
+    return new HashSet<>();
   }
 
   @Override
   public Set<FollowUpExtractor> followUp() {
     Set<FollowUpExtractor> followUps = new HashSet<>();
     if (isEnglish()) {
-      followUps.add(new TypeChecker(CATEGORY_CONTEXT.inEnglish(), CATEGORY_CONTEXT.inEnglish()));
+      followUps.add(new TypeChecker(CategoryExtractor.CATEGORYMEMBERS.inEnglish(), CATEGORY_CONTEXT.inEnglish()));
     } else {
       followUps.add(new TypeChecker(
               CategoryExtractor.CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguage(this.language),

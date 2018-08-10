@@ -86,10 +86,6 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
   public Set<Theme> output() {
     Set<Theme> result = new TreeSet<>();
     result.add(CATEGORYMEMBERS.inLanguage(this.language));
-    if (!isEnglish()) {
-      result.add(CATEGORYMEMBERS_TRANSLATED.inLanguage(this.language));
-      result.add(CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguage(this.language));
-    }
     return result;
   }
 
