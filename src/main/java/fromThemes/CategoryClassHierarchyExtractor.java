@@ -41,6 +41,7 @@ import basics.FactComponent;
 import basics.FactSource;
 import basics.RDFS;
 import basics.YAGO;
+import extractors.Extractor;
 import extractors.MultilingualExtractor;
 import fromOtherSources.HardExtractor;
 import fromOtherSources.PatternHardExtractor;
@@ -61,11 +62,9 @@ import utils.Theme;
  *
  * Clothing Companies from Italy -> Cothing Comapnies -> Companies
  * from Wikipedia categories, them natch Companies to the proper WordNet synset.
- *
- * TODO this is multilingual but the heuristics only work for English - probably a mistake!
- *
+ **
 */
-public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
+public class CategoryClassHierarchyExtractor extends Extractor {
 
   // === Settings:
   // allows only cat A to be a subcat of cat B if the generated calss of A is a subcalss of the generated class of B
@@ -77,33 +76,26 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 
   public static boolean REMOVE_C2C_NULLS = true; // default = true
 
-  public static final MultilingualTheme CATEGORYCLASSHIERARCHY = new MultilingualTheme("categoryClassHierarchy",
-      "Wikipedia category hierarchy combined with the WordNet hierarchy, still to be translated");
-
-  public static final MultilingualTheme CATEGORYCLASSHIERARCHY_TRANSLATED = new MultilingualTheme("categoryClassHierarchyTranslated",
-      "Wikipedia category hierarchy combined with the WordNet hierarchy translated subjects and objects");
+  public static final Theme CATEGORYCLASSHIERARCHY = new Theme("categoryClassHierarchy",
+      "Wikipedia category hierarchy combined with the WordNet hierarchy.");
 
   @Override
   public Set<Theme> input() {
-    Set<Theme> result = new TreeSet<>(
+    return new TreeSet<>(
         Arrays.asList(CategoryClassExtractor.CATEGORYCLASSES, WordnetExtractor.WORDNETWORDS, PatternHardExtractor.CATEGORYPATTERNS,
-            CoherentTypeExtractor.YAGOTYPES, WordnetExtractor.WORDNETCLASSES, WordnetExtractor.PREFMEANINGS, HardExtractor.HARDWIREDFACTS));
-    if (isEnglish()) result.add(CategoryHierarchyExtractor.CATEGORYHIERARCHY.inLanguage(language));
-    else result.add(CategoryHierarchyExtractor.CATEGORYHIERARCHY_TRANSLATED.inLanguage(language));
-    return result;
+            CoherentTypeExtractor.TYPES, WordnetExtractor.WORDNETCLASSES, WordnetExtractor.PREFMEANINGS, HardExtractor.HARDWIREDFACTS,
+                CategoryHierarchyExtractor.CATEGORYHIERARCHY.inLanguage("en")));
   }
 
   @Override
   public Set<Theme> inputCached() {
-    Set<Theme> result = new TreeSet<>(Arrays.asList(CategoryClassExtractor.CATEGORYCLASSES, WordnetExtractor.WORDNETCLASSES));
-    if (isEnglish()) result.add(CategoryHierarchyExtractor.CATEGORYHIERARCHY.inLanguage(language));
-    else result.add(CategoryHierarchyExtractor.CATEGORYHIERARCHY_TRANSLATED.inLanguage(language));
-    return result;
+    return new TreeSet<>(Arrays.asList(CategoryClassExtractor.CATEGORYCLASSES, WordnetExtractor.WORDNETCLASSES, CategoryHierarchyExtractor.CATEGORYHIERARCHY.inLanguage("en")));
   }
+
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<>(CATEGORYCLASSHIERARCHY.inLanguage(language));
+    return new FinalSet<>(CATEGORYCLASSHIERARCHY);
   }
 
   public static final String WORDNET_RELATION = RDFS.subclassOf;
@@ -144,9 +136,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
     {
       Theme categoryClasses = CategoryClassExtractor.CATEGORYCLASSES;
       Theme wordnetClasses = WordnetExtractor.WORDNETCLASSES;
-      Theme categoryHierarchy;
-      if (isEnglish()) categoryHierarchy = CategoryHierarchyExtractor.CATEGORYHIERARCHY.inLanguage(language);
-      else categoryHierarchy = CategoryHierarchyExtractor.CATEGORYHIERARCHY_TRANSLATED.inLanguage(language);
+      Theme categoryHierarchy = CategoryHierarchyExtractor.CATEGORYHIERARCHY.inLanguage("en");
 
       index = new Index<>();
 
@@ -226,7 +216,7 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
 
     // writing
     for (Fact f : result) {
-      CATEGORYCLASSHIERARCHY.inLanguage(language).write(f);
+      CATEGORYCLASSHIERARCHY.write(f);
     }
 
     if (debugWriter_removeBadCats != null) {
@@ -1595,10 +1585,6 @@ public class CategoryClassHierarchyExtractor extends MultilingualExtractor {
           + checkedGraph.getFactsWithRelation(WORDNET_RELATION).size() + "\n" + "\t\tWikipediaCats: " +
           /*checkedGraph.getObjects().size() + */"\n" + "\t\tWikipediaFacts: " + checkedGraph.getFactsWithRelation(WIKIPEDIA_RELATION).size());
     }
-  }
-
-  public CategoryClassHierarchyExtractor(String lang) {
-    super(lang);
   }
 
   /**

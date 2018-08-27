@@ -43,7 +43,7 @@ public class DBpediaLinker extends Extractor {
 //TODO: This Extractor is not updated with the changes of includeConcept. YagoTypes -> allEntities, YagoTaxanomy -> YagoTaxanomy+CatMembers? and not just subclass relation
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(CoherentTypeExtractor.YAGOTYPES, ClassExtractor.YAGOTAXONOMY);
+    return new FinalSet<>(TypeSubgraphExtractor.YAGOTYPES, ClassExtractor.YAGOTAXONOMY);
   }
 
   /** Mapping to DBpedia classes */
@@ -64,7 +64,7 @@ public class DBpediaLinker extends Extractor {
   public void extract() throws Exception {
     Announce.doing("Mapping instances");
     Set<String> instances = new TreeSet<>();
-    for (Fact fact : CoherentTypeExtractor.YAGOTYPES) {
+    for (Fact fact : TypeSubgraphExtractor.YAGOTYPES) {
       // Take only type facts
       if (!fact.getRelation().equals(RDFS.type)) continue;
       // Don't write out the same entity twice

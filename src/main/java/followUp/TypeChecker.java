@@ -21,8 +21,6 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package followUp;
 
-import java.util.*;
-
 import basics.Fact;
 import basics.FactComponent;
 import basics.RDFS;
@@ -31,12 +29,14 @@ import extractors.Extractor;
 import fromOtherSources.AllEntitiesTypesExtractorFromWikidata;
 import fromOtherSources.HardExtractor;
 import fromThemes.TransitiveTypeExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
 import javatools.administrative.Announce;
-import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.EntityType;
 import utils.FactCollection;
 import utils.Theme;
+
+import java.util.*;
 
 /**
  * Does a type check
@@ -113,11 +113,9 @@ public class TypeChecker extends FollowUpExtractor {
 
     // Make sure that at least one entity in the fact is part of the
     // requested subgraph.
-    if (entitySubgraph != null && !entitySubgraph.isEmpty()) {
-      return (entitySubgraph.contains(fact.getSubject()) || entitySubgraph.contains(fact.getObject()));
-    }
+    boolean keep = TransitiveTypeSubgraphExtractor.checkInSubgraph(fact, entitySubgraph);
 
-    return (true);
+    return (keep);
   }
 
   /** Checks whether an entity is of a type */
@@ -200,30 +198,6 @@ public class TypeChecker extends FollowUpExtractor {
     return (myTypes != null && myTypes.contains(type));
   }
 
-  private Set<String> getSubgraphEntities() {
-    Set<String> subgraph = new HashSet<>();
-
-    String pEntities = Parameters.get("subgraphEntities", "");
-    if (pEntities != null && !pEntities.isEmpty()) {
-      Arrays.stream(pEntities.split(",")).forEach(e -> subgraph.add(e));
-    }
-
-    Set<String> restrictedTypes = new HashSet<>();
-    String pClasses = Parameters.get("subgraphClasses", "");
-    if (pClasses != null && !pClasses.isEmpty()) {
-      Arrays.stream(pClasses.split(",")).forEach(e -> restrictedTypes.add(e));
-    }
-
-    for (Map.Entry<String, Set<String>> entry : types.entrySet()) {
-      Set<String> entityTypes = entry.getValue();
-      if (!Collections.disjoint(entityTypes, restrictedTypes)) {
-        subgraph.add(entry.getKey());
-      }
-    }
-
-    return subgraph;
-  }
-
   @Override
   public void extract() throws Exception {
     if (Extractor.includeConcepts) {
@@ -231,7 +205,7 @@ public class TypeChecker extends FollowUpExtractor {
     }
     types = TransitiveTypeExtractor.getSubjectToTypes();
 
-    entitySubgraph = getSubgraphEntities();
+    entitySubgraph = TransitiveTypeExtractor.getSubgraphEntities();
 
     schema = HardExtractor.HARDWIREDFACTS.factCollection();
     Announce.doing("Type-checking facts of", checkMe);

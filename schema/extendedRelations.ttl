@@ -32,12 +32,9 @@
 <hasWikipediaId>    rdfs:range  xsd:nonNegativeInteger .
 <hasWikipediaId>    rdf:type    <yagoExtendedRelation> .
 <hasWikipediaCategory>	rdfs:domain	owl:Thing .
-<hasWikipediaCategory>	rdfs:range	xsd:string .
+<hasWikipediaCategory>	rdfs:range	rdfs:Class .
 <hasWikipediaCategory>	rdf:type	<yagoExtendedRelation> .
 <hasWikipediaCategory>	 rdfs:subPropertyOf	<hasContext> .
-<wikipediaSubCategoryOf>	rdfs:domain	owl:Thing .
-<wikipediaSubCategoryOf>	rdfs:range	xsd:string .
-<wikipediaSubCategoryOf>	rdf:type	<yagoExtendedRelation> .
 <hasWikipediaAnchorText>	rdfs:domain	owl:Thing .
 <hasWikipediaAnchorText>	rdfs:range	xsd:string .
 <hasWikipediaAnchorText>	rdf:type	<yagoExtendedRelation> .
@@ -64,7 +61,6 @@
 <hasContextSucceedingAnchor>	<hasGloss>	"Link $1 has context $1 succeeding the anchor" .
 <hasWikipediaAnchorText>	<hasGloss>	"$1 has the link anchor text $2 in Wikipedia" .
 <hasWikipediaCategory>	<hasGloss>	"$1 has Wikipedia category $2" .
-<wikipediaSubCategoryOf>	<hasGloss>	"$1 is a Wikipedia subcategory of $2" .
 <hasWikipediaArticleLength>	<hasGloss>	"$1 has a Wikipedia article with length $2" .
 <hasWikipediaAbstract>	<hasGloss>	"$1 has $2 as Wikipedia abstract text" .
 <hasCitationTitle>	<hasGloss>	"$1 has a citation with the title '$2'" .

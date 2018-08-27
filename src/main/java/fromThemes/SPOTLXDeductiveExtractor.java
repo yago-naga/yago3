@@ -21,9 +21,6 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromThemes;
 
-import java.io.File;
-import java.util.Set;
-
 import deduplicators.DateExtractor;
 import deduplicators.FactExtractor;
 import deduplicators.LabelExtractor;
@@ -33,6 +30,9 @@ import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.FactCollection;
 import utils.Theme;
+
+import java.io.File;
+import java.util.Set;
 
 /**
  * A SPOTLX extractor which follows the SPOTLSRuleExtractor. It uses previously
@@ -70,7 +70,7 @@ public class SPOTLXDeductiveExtractor extends BaseRuleExtractor {
   @Override
   public Set<Theme> input() {
     return new FinalSet<>(PatternHardExtractor.HARDWIREDFACTS, PatternHardExtractor.SPOTLX_ENTITY_RULES, PatternHardExtractor.SPOTLX_FACT_RULES,
-        TransitiveTypeExtractor.TRANSITIVETYPE, LabelExtractor.YAGOLABELS, SPOTLXRuleExtractor.RULERESULTS, DateExtractor.YAGODATEFACTS,
+        TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE, LabelExtractor.YAGOLABELS, SPOTLXRuleExtractor.RULERESULTS, DateExtractor.YAGODATEFACTS,
         FactExtractor.YAGOFACTS, LiteralFactExtractor.YAGOLITERALFACTS);
   }
 

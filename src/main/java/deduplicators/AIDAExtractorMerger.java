@@ -22,35 +22,22 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package deduplicators;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import basics.Fact;
 import basics.RDFS;
 import basics.YAGO;
 import extractors.Extractor;
 import extractors.MultilingualExtractor;
-import fromOtherSources.DictionaryExtractor;
-import fromOtherSources.HardExtractor;
-import fromOtherSources.MetadataExtractor;
-import fromOtherSources.WikidataEntityDescriptionExtractor;
-import fromOtherSources.WikidataImageExtractor;
-import fromOtherSources.WikidataImageLicenseExtractor;
-import fromOtherSources.WikidataLabelExtractor;
-import fromThemes.TransitiveTypeExtractor;
-import fromWikipedia.CategoryExtractor;
-import fromWikipedia.CategoryGlossExtractor;
-import fromWikipedia.ConteXtExtractor;
-import fromWikipedia.DisambiguationPageExtractor;
-import fromWikipedia.MentionLinkLikelihoodExtractor;
-import fromWikipedia.RedirectExtractor;
-import fromWikipedia.StructureExtractor;
-import fromWikipedia.WikiInfoExtractor;
-import fromWikipedia.WikipediaEntityDescriptionExtractor;
+import fromOtherSources.*;
+import fromThemes.CategoryConteXtExtractor;
+import fromThemes.TransitiveTypeSubgraphExtractor;
+import fromWikipedia.*;
 import javatools.administrative.Announce;
 import javatools.datatypes.FinalSet;
 import utils.Theme;
 import utils.Theme.ThemeGroup;
+
+import java.util.HashSet;
+import java.util.Set;
 
 /**
 */
@@ -85,13 +72,13 @@ public class AIDAExtractorMerger extends Extractor {
     input.add(HardExtractor.HARDWIREDFACTS);
 
     // Types and Taxonomy.
-    input.add(TransitiveTypeExtractor.TRANSITIVETYPE);
+    input.add(TransitiveTypeSubgraphExtractor.YAGOTRANSITIVETYPE);
     input.add(ClassExtractor.YAGOTAXONOMY);
 
     // Keyphrases.
     input.addAll(ConteXtExtractor.CONTEXTFACTS.inLanguages(MultilingualExtractor.wikipediaLanguages));
-    input.add(CategoryExtractor.CATEGORYMEMBERS.inEnglish());
-    input.addAll(CategoryExtractor.CATEGORYMEMBERS_ENTITIES_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
+    input.add(CategoryConteXtExtractor.CATEGORY_CONTEXT.inEnglish());
+    input.addAll(CategoryConteXtExtractor.CATEGORY_CONTEXT_ENTITIES_TRANSLATED.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));
 
     // Translation.
     input.addAll(DictionaryExtractor.ENTITY_DICTIONARY.inLanguages(MultilingualExtractor.allLanguagesExceptEnglish()));

@@ -62,7 +62,7 @@ public class TransitiveHierarchyExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new HashSet<>(Arrays.asList(CategoryClassHierarchyExtractor.CATEGORYCLASSHIERARCHY.inEnglish(), CategoryMapper.CATEGORYFACTS.inEnglish(),
+    return new HashSet<>(Arrays.asList(CategoryClassHierarchyExtractor.CATEGORYCLASSHIERARCHY, CategoryMapper.CATEGORYFACTS.inEnglish(),
         TransitiveTypeExtractor.TRANSITIVETYPE));
   }
 
@@ -104,7 +104,7 @@ public class TransitiveHierarchyExtractor extends Extractor {
     Announce.done("done (non Location Entities: " + nonLocationEntities.size() + ")");
 
     Map<String, Set<String>> transitiveProperties = new HashMap<>();
-    for (Fact fact : CategoryClassHierarchyExtractor.CATEGORYCLASSHIERARCHY.inEnglish()) {
+    for (Fact fact : CategoryClassHierarchyExtractor.CATEGORYCLASSHIERARCHY) {
       transitiveProperties.put(fact.getSubject(), getPossibleTPs(fact.getSubject(), locations, nonLocationEntities));
     }
 

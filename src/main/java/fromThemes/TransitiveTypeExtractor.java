@@ -23,12 +23,8 @@ package fromThemes;
 
 import java.io.File;
 import java.lang.ref.SoftReference;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
-import java.util.TreeSet;
 
 import basics.Fact;
 import basics.RDFS;
@@ -36,6 +32,7 @@ import deduplicators.ClassExtractor;
 import extractors.Extractor;
 import javatools.administrative.Announce;
 import javatools.administrative.D;
+import javatools.administrative.Parameters;
 import javatools.datatypes.FinalSet;
 import utils.FactCollection;
 import utils.Theme;
@@ -49,11 +46,11 @@ public class TransitiveTypeExtractor extends Extractor {
 
   @Override
   public Set<Theme> input() {
-    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, CoherentTypeExtractor.YAGOTYPES);
+    return new FinalSet<>(ClassExtractor.YAGOTAXONOMY, CoherentTypeExtractor.TYPES);
   }
 
   /** All type facts */
-  public static final Theme TRANSITIVETYPE = new Theme("yagoTransitiveType", "Transitive closure of all rdf:type/rdfs:subClassOf facts",
+  public static final Theme TRANSITIVETYPE = new Theme("transitiveTypes", "Transitive closure of all rdf:type/rdfs:subClassOf facts",
       ThemeGroup.TAXONOMY);
 
   /** Cache for transitive type */
@@ -74,7 +71,7 @@ public class TransitiveTypeExtractor extends Extractor {
     FactCollection classes = ClassExtractor.YAGOTAXONOMY.factCollection();
     Map<String, Set<String>> yagoTaxonomy = new HashMap<>();
     Announce.doing("Computing the transitive closure");
-    for (Fact f : CoherentTypeExtractor.YAGOTYPES) {
+    for (Fact f : CoherentTypeExtractor.TYPES) {
       if (f.getRelation().equals(RDFS.type)) {
         D.addKeyValue(yagoTaxonomy, f.getArg(1), f.getArg(2), TreeSet.class);
         for (String c : classes.superClasses(f.getArg(2))) {
@@ -107,6 +104,32 @@ public class TransitiveTypeExtractor extends Extractor {
       }
     }
     return map;
+  }
+
+  public static synchronized Set<String> getSubgraphEntities() {
+    Map<String, Set<String>> types = TransitiveTypeExtractor.getSubjectToTypes();
+
+    Set<String> subgraph = new HashSet<>();
+
+    String pEntities = Parameters.get("subgraphEntities", "");
+    if (pEntities != null && !pEntities.isEmpty()) {
+      Arrays.stream(pEntities.split(",")).forEach(e -> subgraph.add(e));
+    }
+
+    Set<String> restrictedTypes = new HashSet<>();
+    String pClasses = Parameters.get("subgraphClasses", "");
+    if (pClasses != null && !pClasses.isEmpty()) {
+      Arrays.stream(pClasses.split(",")).forEach(e -> restrictedTypes.add(e));
+    }
+
+    for (Map.Entry<String, Set<String>> entry : types.entrySet()) {
+      Set<String> entityTypes = entry.getValue();
+      if (!Collections.disjoint(entityTypes, restrictedTypes)) {
+        subgraph.add(entry.getKey());
+      }
+    }
+
+    return subgraph;
   }
 
   public static void main(String[] args) throws Exception {

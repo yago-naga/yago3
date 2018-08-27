@@ -21,14 +21,6 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromWikipedia;
 
-import java.io.File;
-import java.io.Reader;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Set;
-import java.util.TreeSet;
-
 import basics.Fact;
 import basics.Fact.ImplementationNote;
 import basics.FactComponent;
@@ -40,12 +32,17 @@ import followUp.FollowUpExtractor;
 import fromOtherSources.DictionaryExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WordnetExtractor;
-import javatools.datatypes.FinalSet;
 import javatools.filehandlers.FileLines;
 import javatools.filehandlers.FileUtils;
 import utils.MultilingualTheme;
 import utils.Theme;
 import utils.TitleExtractor;
+
+import java.io.File;
+import java.io.Reader;
+import java.util.HashSet;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  * Extracts facts from Wikipedia categories.
@@ -87,7 +84,9 @@ public class CategoryExtractor extends MultilingualWikipediaExtractor {
 
   @Override
   public Set<Theme> output() {
-    return new FinalSet<Theme>(CATEGORYMEMBERS.inLanguage(language));
+    Set<Theme> result = new TreeSet<>();
+    result.add(CATEGORYMEMBERS.inLanguage(this.language));
+    return result;
   }
 
   @Override
