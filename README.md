@@ -57,6 +57,8 @@ YAGO is configured with a configuration file. Use this [template](blob/master/co
   * `yagoFolder = ...`: Specifies the folder where the YAGO facts shall be stored.
   * `languages = en, de, fr, nl, it, es, ro, pl, ar, fa`: Specifies the Wikipedia languages from which YAGO shall extract the facts. Use [ISO 639-1 language codes](https://www.loc.gov/standards/iso639-2/php/code_list.php).
   * `extractors`: List of extractors to run. By default, just use the list from the template.
+  * `subgraphClasses`: Specify a single class (e.g. <wordnet_person_100007846>), or list of classes (e.g. <wikicat_Rock_musicians>,<wikicat_American_singers>). The final YAGO output will contain only entities of the specified classes, and entities connected to them. Additionally, the final YAGO output will contain entities specified in `subgraphEntities`.
+  * `subgraphEntities`: Specify a single entity (e.g. <Jimmy_Page>), or list of entities (e.g. <Kashmir_(song>,<Knebworth_Festival_1979>). The final YAGO output will contain only these entities and entities connected to them. Additionally, the final YAGO output will contain entities specified in `subgraphClasses`.
 
 ### Downloading the data sources
 
