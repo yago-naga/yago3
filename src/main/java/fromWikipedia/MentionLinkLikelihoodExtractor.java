@@ -21,26 +21,12 @@ along with YAGO.  If not, see <http://www.gnu.org/licenses/>.
 
 package fromWikipedia;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 import basics.Fact;
+import basics.FactComponent;
 import basics.RDFS;
 import extractors.MultilingualWikipediaExtractor;
 import fromOtherSources.PatternHardExtractor;
 import fromOtherSources.WikidataLabelExtractor;
-import fromThemes.CoherentTypeExtractor;
 import fromThemes.PersonNameExtractor;
 import fromThemes.TypeSubgraphExtractor;
 import javatools.administrative.Announce;
@@ -53,6 +39,13 @@ import utils.MultilingualTheme;
 import utils.PatternList;
 import utils.Theme;
 import utils.TitleExtractor;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * Extracts link likelihood for mentions from Wikipedia.
@@ -78,6 +71,8 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
   private static final Pattern anchorTextPattern = Pattern.compile(anchorTextRegex);
 
+  private Set<String> languages = new HashSet<>();
+
   @Override
   public Set<Theme> input() {
     Set<Theme> input = new HashSet<>();
@@ -92,6 +87,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     input.add(PatternHardExtractor.TITLEPATTERNS);
     input.add(PatternHardExtractor.AIDACLEANINGPATTERNS);
+    input.add(PatternHardExtractor.LANGUAGECODEMAPPING);
     if (!includeConcepts) {
       input.add(TypeSubgraphExtractor.YAGOTYPES);
     }
@@ -106,7 +102,7 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
     return input;
   }
 
-  private void loadMentions() throws IOException {
+  private void loadMentionsForLanguage() throws IOException {
     Collection<Fact> fs = DisambiguationPageExtractor.DISAMBIGUATIONMEANSFACTS.inLanguage(language).factCollection().getFactsWithRelation(RDFS.label);
     addFacts(fs);
 
@@ -135,7 +131,15 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
   private void addFacts(Collection<Fact> fs) {
     for (Fact f : fs) {
       String mention = f.getObjectAsJavaString();
+      String mentionLanguage = FactComponent.getLanguageOfString(f.getObject());
+
+      // Only load mentions for this language.
+      if (!languages.contains(mentionLanguage)) {
+        continue;
+      }
+
       mention = clean(mention);
+
       for (String mentionToken : mention.split(" ")) {
         if (!mentionTokensLinkCount.containsKey(mentionToken)) {
           mentionTokensLinkCount.put(mentionToken, new int[2]);
@@ -163,8 +167,13 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
 
     PatternList replacements = new PatternList(PatternHardExtractor.AIDACLEANINGPATTERNS, "<_aidaCleaning>");
 
+    Map<String, String> languagemap
+            = PatternHardExtractor.LANGUAGECODEMAPPING.factCollection().getStringMap("<hasThreeLetterLanguageCode>");
+    languages.add(language);
+    languages.add(languagemap.get(language));
+
     // Load all mentions.
-    loadMentions();
+    loadMentionsForLanguage();
     Announce.debug(NumberFormatter.ISOtime() + " - LoadMentions Done(" + language + ").");
 
     int pagesProcessed = 0;
@@ -180,7 +189,9 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
             if (counts[1] > 0) {
               linkLikelihood = counts[0] / (double) counts[1];
             }
-            Fact f = new Fact(mentionToken, "<_hasLinkLikelihood>", "\"" + linkLikelihood + "\"^^xsd:double");
+            Fact f = new Fact(FactComponent.forStringWithLanguage(mentionToken, language),
+                    "<_hasLinkLikelihood>",
+                    "\"" + linkLikelihood + "\"^^xsd:double");
             LIKELIHOODFACTS.inLanguage(language).write(f);
           }
 
@@ -254,11 +265,8 @@ public class MentionLinkLikelihoodExtractor extends MultilingualWikipediaExtract
             }
           }
           break;
-
       }
-
     }
-
   }
 
   /**
