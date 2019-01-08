@@ -51,7 +51,7 @@ To run YAGO, you need the following:
   
 ### The YAGO configuration file
 
-YAGO is configured with a configuration file. Use this [template](blob/master/configuration/yago.ini) to generate your own copy of that file. It should contain the following lines:
+YAGO is configured with a configuration file. Use this [template](configuration/yago.ini) to generate your own copy of that file. It should contain the following lines:
 
   * `reuse = true|false`: Specifies whether a new run of YAGO should overwrite or re-use the facts that have already been generated in a previous run.
   * `yagoFolder = ...`: Specifies the folder where the YAGO facts shall be stored.
