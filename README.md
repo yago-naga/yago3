@@ -30,8 +30,8 @@ If you run the code yourself, you can define (a) what Wikipedia languages to cov
 ### Project components
 
 The following Java projects belong to YAGO
-  * Javatools:  These classes are Java utilities. They are shared with other projects.
-  * Basics: These classes are used to represent facts, TSV files, etc.
+  * [Javatools](https://github.com/yago-naga/javatools):  These classes are Java utilities. They are shared with other projects.
+  * [Basics](https://github.com/yago-naga/basics3): These classes are used to represent facts, TSV files, etc.
   The files in "data" describe the schema of YAGO.
   * YAGO: This project contains 
     - all main YAGO extractors
