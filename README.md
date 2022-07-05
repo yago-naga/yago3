@@ -64,7 +64,7 @@ YAGO is configured with a configuration file. Use this [template](configuration/
 
 YAGO needs the following data sources: 
   * [Wikipedia](https://www.wikipedia.org/): the [latest version](https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2) of `pages-articles`.
-  * [Wikidata](https://www.wikidata.org): the latest [version](https://dumps.wikimedia.org/wikidatawiki/entities/20170612/wikidata-20170612-all-BETA.ttl.bz2) of `wikidata-DATE-all-ttl`.
+  * [Wikidata](https://www.wikidata.org): the latest [version](https://dumps.wikimedia.org/wikidatawiki/entities/latest-all.ttl.bz2) of `wikidata-DATE-all-ttl`.
   * [Wikimedia Commons](https://commons.wikimedia.org): the [latest version(https://dumps.wikimedia.org/commonswiki/latest/commonswiki-latest-pages-articles.xml.bz2) of pages-articles.
   * [Geonames](http://www.geonames.org/): the files 
     [countryInfo](http://download.geonames.org/export/dump/countryInfo.txt), 
